@@ -24,6 +24,10 @@ export const Translations = {
             monthSelectLabel: 'Select a month',
             yearSelectLabel: 'Select a year',
         },
+        'dropdown-list': {
+            inputAriaLabel: 'Select an option',
+            validationErrorMessage: 'You must select an option',
+        },
         'error-summary': {
             title: 'The form contains one or more errors',
             message: 'Please correct them to proceed to the next step.',
@@ -46,6 +50,11 @@ export const Translations = {
         },
         'nav-menu-button': {
             ariaLabel: 'Menu',
+        },
+        'numeric-input': {
+            requiredValidationErrorMessage: 'This field is required',
+            maxValidationErrorMessage: 'The value must be less than or equal to {{max}}',
+            minValidationErrorMessage: 'The value must be greater than or equal to {{min}}',
         },
         pagination: {
             pagination: 'Pagination',
@@ -76,11 +85,9 @@ export const Translations = {
             Warning: 'Warning',
             Success: 'Success',
             Info: 'Information',
+            Discovery: 'Pro-tip',
+            Neutral: 'Information',
             dismissLabel: 'Dismiss banner',
-        },
-        select: {
-            inputAriaLabel: 'Select an option',
-            validationErrorMessage: 'You must select an option',
         },
         'skip-link': {
             label: 'Skip to main content',
@@ -138,6 +145,10 @@ export const Translations = {
             monthSelectLabel: 'Choisissez un mois',
             yearSelectLabel: 'Choisissez une année',
         },
+        'dropdown-list': {
+            inputAriaLabel: 'Choisissez une option',
+            validationErrorMessage: 'Vous devez choisir une option',
+        },
         'error-summary': {
             title: 'Le formulaire contient une ou plusieurs erreurs',
             message: 'Veuillez les corriger avant de passer à l\'étape suivante.',
@@ -160,6 +171,11 @@ export const Translations = {
         },
         'nav-menu-button': {
             ariaLabel: 'Menu',
+        },
+        'numeric-input': {
+            requiredValidationErrorMessage: 'Ce champ est obligatoire',
+            maxValidationErrorMessage: 'La valeur doit être inférieure ou égale à {{max}}',
+            minValidationErrorMessage: 'La valeur doit être supérieure ou égale à {{min}}',
         },
         pagination: {
             pagination: 'Pagination',
@@ -190,11 +206,9 @@ export const Translations = {
             Warning: 'Attention',
             Success: 'Succès',
             Info: 'Information',
+            Discovery: 'Truc de pro',
+            Neutral: 'Information',
             dismissLabel: 'Rejeter la bannière',
-        },
-        select: {
-            inputAriaLabel: 'Choisissez une option',
-            validationErrorMessage: 'Vous devez choisir une option',
         },
         'skip-link': {
             label: 'Passer au contenu principal',

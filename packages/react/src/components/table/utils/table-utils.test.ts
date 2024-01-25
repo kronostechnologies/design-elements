@@ -26,14 +26,14 @@ function getTable(): HTMLTableElement {
 }
 
 function getTableValues() : {
-    headerCells: HTMLCollectionOf<HTMLTableHeaderCellElement>,
-    rows: HTMLCollectionOf<HTMLTableRowElement>,
+    headerCells: NodeListOf<HTMLTableHeaderCellElement>,
+    rows: NodeListOf<HTMLTableRowElement>,
     } {
     const table = getTable();
 
     return {
-        headerCells: table.getElementsByTagName('th'),
-        rows: table.getElementsByTagName('tr'),
+        headerCells: table.querySelectorAll('th'),
+        rows: table.querySelectorAll('tr'),
     };
 }
 

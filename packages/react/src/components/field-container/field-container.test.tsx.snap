@@ -45,6 +45,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="test-id"
+    id="test-id_label"
   >
     test label
   </label>
@@ -123,6 +124,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="test-id"
+    id="test-id_label"
   >
     test label
   </label>
@@ -190,6 +192,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="test-id"
+    id="test-id_label"
   >
     test label
   </label>

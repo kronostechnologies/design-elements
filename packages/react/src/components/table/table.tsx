@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect, CSSProperties } from 'react';
 import styled from 'styled-components';
 import {
     HeaderContext,
@@ -9,6 +9,7 @@ import {
     SortingState,
     SortingFn,
     useReactTable,
+    ColumnSort,
 } from '@tanstack/react-table';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
@@ -18,8 +19,6 @@ import { DeviceType, useDeviceContext } from '../device-context-provider/device-
 import { Theme } from '../../themes';
 
 type RowSize = 'small' | 'medium';
-type ColumnSortDirection = 'asc' | 'desc';
-type TextAlignOptions = 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit';
 
 interface StyledTableProps {
     clickableRows: boolean;
@@ -30,9 +29,8 @@ interface StyledTableProps {
 }
 
 type CustomColumn<T extends object> = ColumnDef<T> & {
-    defaultSort?: ColumnSortDirection;
     sortable?: boolean;
-    textAlign?: TextAlignOptions;
+    textAlign?: CSSProperties['textAlign'];
     className?: string;
     colSpan?: number;
     sticky?: boolean;
@@ -99,11 +97,9 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
                 return (
                     <Checkbox
                         data-testid="row-checkbox-all"
-                        {...{
-                            checked: table.getIsAllRowsSelected(),
-                            indeterminate: table.getIsSomeRowsSelected(),
-                            onChange: table.getToggleAllRowsSelectedHandler(),
-                        }}
+                        checked={table.getIsAllRowsSelected()}
+                        indeterminate={table.getIsSomeRowsSelected()}
+                        onChange={table.getToggleAllRowsSelectedHandler()}
                     />
                 );
             }
@@ -115,12 +111,10 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
                 return (
                     <Checkbox
                         data-testid={`row-checkbox-${row.index}`}
-                        {...{
-                            checked: row.getIsSelected(),
-                            disabled: !row.getCanSelect(),
-                            indeterminate: row.getIsSomeSelected(),
-                            onChange: row.getToggleSelectedHandler(),
-                        }}
+                        checked={row.getIsSelected()}
+                        disabled={!row.getCanSelect()}
+                        indeterminate={row.getIsSomeSelected()}
+                        onChange={row.getToggleSelectedHandler()}
                     />
                 );
             }
@@ -140,6 +134,7 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
 
 const StyledTable = styled.table<StyledTableProps>`
     border-collapse: collapse;
+    color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
 
     th {
@@ -158,7 +153,7 @@ const StyledTable = styled.table<StyledTableProps>`
         margin: 0;
         text-align: left;
 
-        :last-child {
+        &:last-child {
             border-right: 0;
         }
     }
@@ -176,6 +171,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
 export interface TableProps<T extends object> {
     data: T[];
+    defaultSort?: ColumnSort;
     columns: ColumnDef<T>[];
     /**
      * Adds row numbers
@@ -203,6 +199,7 @@ export interface TableProps<T extends object> {
 export const Table = <T extends object>({
     className,
     data,
+    defaultSort,
     columns: defaultColumns,
     stickyHeader = false,
     stickyFooter = false,
@@ -215,7 +212,7 @@ export const Table = <T extends object>({
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
-    const [sorting, setSorting] = useState<SortingState>([]);
+    const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState({});
 
     // Add custom columns for row numbers and row selection
@@ -236,12 +233,12 @@ export const Table = <T extends object>({
             sorting,
             rowSelection,
         },
+        enableMultiSort: false,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
         onSortingChange: setSorting,
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
-        debugTable: true,
     };
 
     const table = useReactTable(tableOptions);

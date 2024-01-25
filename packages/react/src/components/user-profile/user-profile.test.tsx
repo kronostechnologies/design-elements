@@ -6,27 +6,35 @@ import { getFirstFocusableItem, UserProfile } from './user-profile';
 const onClick = jest.fn();
 const options: NavItemProps[] = [
     {
-        label: 'Option A',
-        value: 'optionA',
         href: '/testa',
+        label: 'Option A',
         onClick,
+        value: 'optionA',
     },
     {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testb',
-        onClick,
         disabled: true,
+        href: '/testb',
+        label: 'Option B',
+        onClick,
+        value: 'optionB',
     },
     {
+        href: '/testc',
         label: 'Option C',
         value: 'optionC',
-        href: '/testc',
     },
     {
+        href: 'www.test.ca',
+        isHtmlLink: true,
         label: 'Option D',
+        target: '_blank',
         value: 'optionD',
-        href: '/testd',
+    },
+    {
+        href: 'www.test.ca',
+        isExternalLink: true,
+        label: 'Option E',
+        value: 'optionE',
     },
 ];
 

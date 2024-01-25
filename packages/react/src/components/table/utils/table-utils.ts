@@ -2,8 +2,8 @@ import * as React from 'react';
 
 export function calculateStickyColumns(
     stickyColumns: boolean[],
-    headerCells: HTMLCollectionOf<HTMLTableHeaderCellElement>,
-    rows: HTMLCollectionOf<HTMLTableRowElement>,
+    headerCells: NodeListOf<HTMLTableCellElement>,
+    rows: NodeListOf<HTMLTableRowElement>,
 ): void {
     let left = 0;
     stickyColumns.forEach((sticky, index) => {
@@ -24,7 +24,7 @@ export function calculateStickyColumns(
 
 export function calculateStickyHeader(
     stickyColumns: boolean[],
-    headerCells: HTMLCollectionOf<HTMLTableHeaderCellElement>,
+    headerCells: NodeListOf<HTMLTableCellElement>,
 ): void {
     Array.from(headerCells).forEach((headerCell, index) => {
         headerCell.style.setProperty('top', '0px');
@@ -32,19 +32,36 @@ export function calculateStickyHeader(
     });
 }
 
+export function calculateStickyFooter(
+    stickyColumns: boolean[],
+    footerCells: NodeListOf<HTMLTableCellElement>,
+): void {
+    Array.from(footerCells).forEach((footerCell, index) => {
+        footerCell.style.setProperty('bottom', '0px');
+        footerCell.style.setProperty('z-index', stickyColumns[index] ? '5' : '4');
+    });
+}
+
 export function calculateStickyPosition(
     stickyColumns: boolean[],
     stickyHeader: boolean,
+    stickyFooter: boolean,
     tableRef: React.RefObject<HTMLTableElement>,
 ): void {
     if (tableRef.current === null) {
         return;
     }
-    const headerCells = tableRef.current.getElementsByTagName('th');
-    const rows = tableRef.current.getElementsByTagName('tr');
+    const headerCells = tableRef.current.querySelectorAll('th');
+    const rows = tableRef.current.querySelectorAll<HTMLTableRowElement>('tbody > tr');
+    const footerCells = tableRef.current.querySelector('tfoot')?.querySelectorAll('td');
 
     calculateStickyColumns(stickyColumns, headerCells, rows);
+
     if (stickyHeader) {
         calculateStickyHeader(stickyColumns, headerCells);
+    }
+
+    if (stickyFooter && footerCells !== null && footerCells !== undefined) {
+        calculateStickyFooter(stickyColumns, footerCells);
     }
 }

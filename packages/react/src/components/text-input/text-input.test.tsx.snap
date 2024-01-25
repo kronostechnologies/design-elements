@@ -117,6 +117,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     Telephone
   </label>
@@ -250,6 +251,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     Telephone (required)
   </label>
@@ -383,6 +385,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     Telephone
   </label>

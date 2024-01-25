@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-import { Option, DropdownList } from '../dropdown-list/dropdown-list';
+import { DropdownList, DropdownListOption } from '../dropdown-list/dropdown-list';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;
@@ -44,10 +44,10 @@ const DropdownListWrapper = styled.div<{ isMobile: boolean }>`
 interface CalendarHeaderProps {
     date: Date;
     months: string[];
-    monthsOptions: Option[];
+    monthsOptions: DropdownListOption[];
     nextMonthButtonDisabled: boolean;
     prevMonthButtonDisabled: boolean;
-    yearsOptions: Option[];
+    yearsOptions: DropdownListOption[];
 
     changeMonth(month: number): void;
 

@@ -1,8 +1,6 @@
 import {
-    ChangeEvent,
     HTMLProps,
     ReactNode,
-    useCallback,
     useMemo,
     useRef,
     VoidFunctionComponent,
@@ -15,6 +13,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
+import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
 
 interface StyledInputProps {
     device: DeviceContextProps;
@@ -27,17 +26,8 @@ const StyledInput = styled.input<StyledInputProps>`
 
     border: 0;
     flex: 1 1 auto;
+    min-height: 100%;
     text-align: ${({ $textAlign }) => $textAlign};
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-        margin: 0;
-    }
-
-    &[type='number'] {
-        -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
-    }
 
     &:focus,
     &:disabled {
@@ -62,7 +52,9 @@ const Wrapper = styled.div<StyledWrapperProps>`
     background: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
+    box-sizing: border-box;
     display: flex;
+    height: var(--size-2x);
 
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.notifications['alert-2.1']};
@@ -83,7 +75,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
     }
 `;
 
-type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'onBlur'>;
+type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
 interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
@@ -95,15 +87,16 @@ interface NumericInputProps extends NativeInputProps {
     label?: string;
     max?: number;
     min?: number;
-    step?: number;
     noMargin?: boolean;
-    noInvalidFieldIcon?: boolean;
+    onBlur?: UseNumericInputParams['onBlur'];
+    onChange?: UseNumericInputParams['onChange'];
+    precision?: number;
+    required?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
-    valid?: boolean;
+    invalid?: boolean;
     validationErrorMessage?: string;
     value?: number | string;
-    onChange?(value: number | null): void;
 }
 
 export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
@@ -117,31 +110,35 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     label,
     max,
     min,
-    noInvalidFieldIcon,
     noMargin,
-    step,
-    textAlign = 'left',
-    tooltip,
-    valid = true,
-    validationErrorMessage,
-    value,
     onBlur,
     onChange,
     onFocus,
+    placeholder,
+    precision,
+    required,
+    textAlign = 'left',
+    tooltip,
+    invalid,
+    validationErrorMessage,
+    value,
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const device = useDeviceContext();
     const fieldId = useId(id);
 
-    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue = event.target.value;
-        if (inputValue === '') {
-            onChange?.(null);
-        } else {
-            const currentValue = Number(inputValue);
-            onChange?.(currentValue);
-        }
-    }, [onChange]);
+    const numericInput = useNumericInput({
+        defaultValue,
+        max,
+        min,
+        onBlur,
+        onChange,
+        precision,
+        required,
+        invalid,
+        validationErrorMessage,
+        value,
+    });
 
     const adornmentContent = useMemo(() => (
         adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
@@ -155,28 +152,27 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={valid}
-            noInvalidFieldIcon={noInvalidFieldIcon}
-            validationErrorMessage={validationErrorMessage ?? ''}
+            valid={!numericInput.invalid}
+            noInvalidFieldIcon={!numericInput.validationErrorMessage}
+            validationErrorMessage={numericInput.validationErrorMessage ?? ''}
         >
-            <Wrapper $disabled={disabled} $invalid={!valid}>
+            <Wrapper $disabled={disabled} $invalid={numericInput.invalid}>
                 {(adornment && adornmentPosition === 'start') && adornmentContent}
                 <StyledInput
                     $textAlign={textAlign}
                     data-testid="numeric-input"
-                    defaultValue={defaultValue}
                     device={device}
                     disabled={disabled}
                     id={fieldId}
-                    max={max}
-                    min={min}
-                    onChange={handleChange}
-                    onBlur={onBlur}
+                    inputMode="numeric"
+                    onBlur={numericInput.onBlurHandler}
+                    onChange={numericInput.onChangeHandler}
                     onFocus={onFocus}
+                    onPaste={numericInput.onPasteHandler}
+                    placeholder={placeholder}
                     ref={inputRef}
-                    step={step}
-                    type="number"
-                    value={value}
+                    type="text"
+                    value={numericInput.value}
                 />
                 {(adornment && adornmentPosition === 'end') && adornmentContent}
             </Wrapper>

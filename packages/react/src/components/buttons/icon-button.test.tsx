@@ -85,6 +85,18 @@ describe('Icon Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Has destructive-secondary styles', () => {
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="destructive-secondary"
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Has small styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,

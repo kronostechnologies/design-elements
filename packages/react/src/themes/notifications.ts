@@ -1,7 +1,9 @@
 import { Theme } from './theme';
 
 export const notifications: Theme['notifications'] = {
-    'info-1.1': '#602FA0',
+    'info-1.1': '#006296',
+    'discovery-1.1': '#602FA0',
+    'neutral-1.1': '#878F9A',
     'success-1.1': '#008533',
     'success-1.2': '#F6FCF8',
     'success-1.3': '#8ADDA9',

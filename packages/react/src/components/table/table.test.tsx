@@ -85,7 +85,6 @@ const columnsSorted: TableColumn<TestData> = [
         header: 'Column 1',
         accessorKey: 'column1',
         sortable: true,
-        defaultSort: 'asc',
     },
     {
         header: 'Column 2',
@@ -148,7 +147,11 @@ const stickyColumnsData: TestData3Columns[] = [
 
 describe('Table', () => {
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
-        const wrapper = mountWithProviders(<Table columns={columnsSorted} data={data} />);
+        const wrapper = mountWithProviders(<Table
+            columns={columnsSorted}
+            data={data}
+            defaultSort={{ id: 'column1', desc: false }}
+        />);
 
         expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
     });
@@ -242,7 +245,7 @@ describe('Table', () => {
     });
 
     test('has sorting styles', () => {
-        const tree = renderTable(columnsSorted);
+        const tree = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
 
         expect(tree).toMatchSnapshot();
     });

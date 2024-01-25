@@ -102,6 +102,27 @@ describe('Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('has destructive-secondary styles', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="destructive" label="Destructive Button" />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has destructive-secondary styles (inverted)', () => {
+        const tree = renderWithProviders(
+            <Button
+                onClick={doNothing}
+                buttonType="destructive-secondary"
+                label="Destructive Secondary Button"
+                inverted
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('has small styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,

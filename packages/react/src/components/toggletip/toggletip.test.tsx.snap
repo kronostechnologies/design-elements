@@ -78,18 +78,12 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
   color: #B7BBC2;
-}
-
-.c0:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
 }
 
 .c0 > svg {
@@ -434,18 +428,12 @@ exports[`Toggletip Has default desktop styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
   color: #B7BBC2;
-}
-
-.c0:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
 }
 
 .c0 > svg {
@@ -609,18 +597,12 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
   color: #B7BBC2;
-}
-
-.c0:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
 }
 
 .c0 > svg {
@@ -965,18 +947,12 @@ exports[`Toggletip Has mobile styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
   color: #B7BBC2;
-}
-
-.c0:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
 }
 
 .c0 > svg {

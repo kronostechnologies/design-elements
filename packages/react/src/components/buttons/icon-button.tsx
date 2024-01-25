@@ -4,9 +4,7 @@ import { Theme } from '../../themes';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
-import { AbstractButton, getButtonTypeStyles } from './abstract-button';
-
-type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
 type Size = 'small' | 'medium';
 

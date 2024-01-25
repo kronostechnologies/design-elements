@@ -7,7 +7,8 @@ import { StyledLink } from '../route-link/styles/styled-link';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 
 const LeftIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
+    align-self: center;
+    margin-right: var(--spacing-quarter);
 `;
 
 const ExternalIcon = styled(Icon)`
@@ -20,7 +21,8 @@ const ExternalIcon = styled(Icon)`
 `;
 
 const Link = styled(StyledLink)`
-    display: flex;
+    align-items: baseline;
+    display: inline-flex;
 
     &:visited {
         svg {
@@ -43,7 +45,7 @@ export interface ExternalLinkProps {
     label?: string;
     target?: string;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<Element, globalThis.MouseEvent>): void;
 }
 
 export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
@@ -62,7 +64,7 @@ export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
         if (!href) {
             event.preventDefault();
         }
-        onClick?.();
+        onClick?.(event);
     }, [href, onClick]);
 
     return (

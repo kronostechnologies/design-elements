@@ -135,8 +135,11 @@ exports[`Table has aria-label on header columns 1`] = `
 
 exports[`Table has clickable rows styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2:focus {
@@ -170,10 +173,21 @@ exports[`Table has clickable rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -221,6 +235,7 @@ exports[`Table has clickable rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -228,6 +243,7 @@ exports[`Table has clickable rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -243,12 +259,14 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -262,12 +280,14 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -281,12 +301,14 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -298,8 +320,11 @@ exports[`Table has clickable rows styles 1`] = `
 
 exports[`Table has custom text alignment 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -309,10 +334,21 @@ exports[`Table has custom text alignment 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -360,6 +396,7 @@ exports[`Table has custom text alignment 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:right"
       >
         Column 1
@@ -367,6 +404,7 @@ exports[`Table has custom text alignment 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:center"
       >
         Column 2
@@ -380,12 +418,14 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:right"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:center"
       >
         World
@@ -397,12 +437,14 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:right"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:center"
       >
         Planet
@@ -414,12 +456,14 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:right"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:center"
       >
         Galaxy
@@ -431,8 +475,11 @@ exports[`Table has custom text alignment 1`] = `
 
 exports[`Table has desktop styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -442,10 +489,21 @@ exports[`Table has desktop styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -493,6 +551,7 @@ exports[`Table has desktop styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -500,6 +559,7 @@ exports[`Table has desktop styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -513,12 +573,14 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -530,12 +592,14 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -547,12 +611,14 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -564,9 +630,12 @@ exports[`Table has desktop styles 1`] = `
 
 exports[`Table has error rows styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   position: relative;
   background-color: #fcf8f9;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2::after {
@@ -595,8 +664,11 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c3 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c3:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c3 td {
@@ -606,10 +678,21 @@ exports[`Table has error rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -657,6 +740,7 @@ exports[`Table has error rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -664,6 +748,7 @@ exports[`Table has error rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -677,12 +762,14 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -694,12 +781,14 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -711,12 +800,14 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -728,8 +819,11 @@ exports[`Table has error rows styles 1`] = `
 
 exports[`Table has mobile styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -739,10 +833,21 @@ exports[`Table has mobile styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -790,6 +895,7 @@ exports[`Table has mobile styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -797,6 +903,7 @@ exports[`Table has mobile styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -810,12 +917,14 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -827,12 +936,14 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -844,12 +955,14 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -861,8 +974,11 @@ exports[`Table has mobile styles 1`] = `
 
 exports[`Table has rowNumbers styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -872,10 +988,21 @@ exports[`Table has rowNumbers styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -923,11 +1050,13 @@ exports[`Table has rowNumbers styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       />
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 1
@@ -935,6 +1064,7 @@ exports[`Table has rowNumbers styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="300"
         style="text-align:left"
       >
         Column 2
@@ -948,6 +1078,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <span
@@ -958,12 +1089,14 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         World
@@ -975,6 +1108,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <span
@@ -985,12 +1119,14 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         Planet
@@ -1002,6 +1138,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <span
@@ -1012,12 +1149,14 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         Galaxy
@@ -1029,8 +1168,11 @@ exports[`Table has rowNumbers styles 1`] = `
 
 exports[`Table has selectable rows styles 1`] = `
 .c10 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c10:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c10 td {
@@ -1040,6 +1182,16 @@ exports[`Table has selectable rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c7 {
@@ -1134,6 +1286,7 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -1181,6 +1334,7 @@ exports[`Table has selectable rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         <label
@@ -1214,6 +1368,7 @@ exports[`Table has selectable rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 1
@@ -1221,6 +1376,7 @@ exports[`Table has selectable rows styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="300"
         style="text-align:left"
       >
         Column 2
@@ -1234,6 +1390,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <label
@@ -1266,12 +1423,14 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         World
@@ -1283,6 +1442,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <label
@@ -1315,12 +1475,14 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         Planet
@@ -1332,6 +1494,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         <label
@@ -1364,12 +1527,14 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         Galaxy
@@ -1381,8 +1546,11 @@ exports[`Table has selectable rows styles 1`] = `
 
 exports[`Table has small rowSize styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -1392,10 +1560,21 @@ exports[`Table has small rowSize styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -1443,6 +1622,7 @@ exports[`Table has small rowSize styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -1450,6 +1630,7 @@ exports[`Table has small rowSize styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -1463,12 +1644,14 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -1480,12 +1663,14 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -1497,12 +1682,14 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -1513,12 +1700,15 @@ exports[`Table has small rowSize styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
-.c3 {
-  border-top: 1px solid #DBDEE1;
+.c4 {
   background-color: #FFFFFF;
 }
 
-.c3 td {
+.c4:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c4 td {
   background-color: inherit;
 }
 
@@ -1532,7 +1722,7 @@ exports[`Table has sorting styles 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: var(--spacing-1x);
+  font: inherit;
   text-align: left;
 }
 
@@ -1543,10 +1733,25 @@ exports[`Table has sorting styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -1595,6 +1800,7 @@ exports[`Table has sorting styles 1`] = `
         aria-sort="ascending"
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         <button
@@ -1602,6 +1808,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 1
           <svg
+            class="c3"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1613,6 +1820,7 @@ exports[`Table has sorting styles 1`] = `
         aria-sort="none"
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         <button
@@ -1620,6 +1828,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 2
           <svg
+            class="c3"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1631,51 +1840,57 @@ exports[`Table has sorting styles 1`] = `
   </thead>
   <tbody>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-0"
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-1"
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-2"
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -1687,8 +1902,11 @@ exports[`Table has sorting styles 1`] = `
 
 exports[`Table has sticky column styles 1`] = `
 .c4 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c4:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c4 td {
@@ -1712,28 +1930,59 @@ exports[`Table has sticky column styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
   left: 0px;
   position: -webkit-sticky;
   position: sticky;
   z-index: 5;
 }
 
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
 .c2 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
   left: 75px;
   position: -webkit-sticky;
   position: sticky;
   z-index: 5;
 }
 
+.c2:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
 .c3 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -1781,6 +2030,7 @@ exports[`Table has sticky column styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -1788,6 +2038,7 @@ exports[`Table has sticky column styles 1`] = `
       <th
         class="c2"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -1795,6 +2046,7 @@ exports[`Table has sticky column styles 1`] = `
       <th
         class="c3"
         scope="col"
+        startoffset="300"
         style="text-align:left"
       >
         Column 3
@@ -1808,18 +2060,21 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c5"
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class="c6"
+        startoffset="150"
         style="text-align:left"
       >
         Big
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         World
@@ -1831,18 +2086,21 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c5"
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class="c6"
+        startoffset="150"
         style="text-align:left"
       >
         Big
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         World
@@ -1854,18 +2112,21 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c5"
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class="c6"
+        startoffset="150"
         style="text-align:left"
       >
         Big
       </td>
       <td
         class=""
+        startoffset="300"
         style="text-align:left"
       >
         World
@@ -1877,8 +2138,11 @@ exports[`Table has sticky column styles 1`] = `
 
 exports[`Table has sticky header styles 1`] = `
 .c3 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c3:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c3 td {
@@ -1888,6 +2152,16 @@ exports[`Table has sticky header styles 1`] = `
 .c2 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c2:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c1 {
@@ -1899,6 +2173,7 @@ exports[`Table has sticky header styles 1`] = `
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -1946,6 +2221,7 @@ exports[`Table has sticky header styles 1`] = `
       <th
         class="c2"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -1953,6 +2229,7 @@ exports[`Table has sticky header styles 1`] = `
       <th
         class="c2"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -1966,12 +2243,14 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -1983,12 +2262,14 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -2000,12 +2281,14 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -2017,8 +2300,11 @@ exports[`Table has sticky header styles 1`] = `
 
 exports[`Table has striped styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2:nth-child(odd) {
@@ -2032,10 +2318,21 @@ exports[`Table has striped styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -2083,6 +2380,7 @@ exports[`Table has striped styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -2090,6 +2388,7 @@ exports[`Table has striped styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -2103,12 +2402,14 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -2120,12 +2421,14 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -2137,12 +2440,14 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
@@ -2154,8 +2459,11 @@ exports[`Table has striped styles 1`] = `
 
 exports[`Table has tablet styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -2165,10 +2473,21 @@ exports[`Table has tablet styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -2216,6 +2535,7 @@ exports[`Table has tablet styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -2223,6 +2543,7 @@ exports[`Table has tablet styles 1`] = `
       <th
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       >
         Column 2
@@ -2236,12 +2557,14 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -2253,12 +2576,14 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -2270,12 +2595,14 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy

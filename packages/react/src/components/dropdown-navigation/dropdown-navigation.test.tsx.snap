@@ -84,12 +84,6 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   color: #003A5A;
 }
 
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c8 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -344,12 +338,6 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 .c2:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c8 {
@@ -607,12 +595,6 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 .c2:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c8 {

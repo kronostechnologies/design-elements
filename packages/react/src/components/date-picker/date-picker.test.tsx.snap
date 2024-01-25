@@ -262,6 +262,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -560,6 +561,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -860,6 +862,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1158,6 +1161,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1486,6 +1490,7 @@ label + .c5 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1803,6 +1808,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1910,68 +1916,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2x);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
   overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
 }
 
 .c14 {
@@ -1979,15 +1960,17 @@ input + .c1 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -2257,6 +2240,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -2291,7 +2275,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -2337,38 +2323,38 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid2"
+                          aria-invalid="false"
+                          aria-label="Select a month"
+                          aria-labelledby="uuid2_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="month-select"
+                          id="uuid2"
+                          role="combobox"
+                          tabindex="0"
+                          value="october"
                         >
                           <input
-                            aria-activedescendant="uuid2_october"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid2"
-                            aria-label="Select a month"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="month-select"
-                            id="uuid2"
-                            type="text"
-                            value="Oct"
+                            data-testid="input"
+                            type="hidden"
+                            value="october"
                           />
-                          <button
-                            aria-labelledby="uuid2"
-                            class="c14"
-                            data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
+                          <span
+                            class="c13"
                           >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            Oct
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="c14"
+                            color="currentColor"
+                            data-testid="arrow"
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2379,38 +2365,38 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid3"
+                          aria-invalid="false"
+                          aria-label="Select a year"
+                          aria-labelledby="uuid3_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="year-select"
+                          id="uuid3"
+                          role="combobox"
+                          tabindex="0"
+                          value="2010"
                         >
                           <input
-                            aria-activedescendant="uuid3_2010"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid3"
-                            aria-label="Select a year"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="year-select"
-                            id="uuid3"
-                            type="text"
+                            data-testid="input"
+                            type="hidden"
                             value="2010"
                           />
-                          <button
-                            aria-labelledby="uuid3"
-                            class="c14"
-                            data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
+                          <span
+                            class="c13"
                           >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            2010
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="c14"
+                            color="currentColor"
+                            data-testid="arrow"
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3140,68 +3126,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2x);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
   overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
 }
 
 .c14 {
@@ -3209,15 +3170,17 @@ input + .c1 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -3493,6 +3456,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -3527,7 +3491,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -3573,38 +3539,38 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid2"
+                          aria-invalid="false"
+                          aria-label="Select a month"
+                          aria-labelledby="uuid2_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="month-select"
+                          id="uuid2"
+                          role="combobox"
+                          tabindex="0"
+                          value="october"
                         >
                           <input
-                            aria-activedescendant="uuid2_october"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid2"
-                            aria-label="Select a month"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="month-select"
-                            id="uuid2"
-                            type="text"
-                            value="Oct"
+                            data-testid="input"
+                            type="hidden"
+                            value="october"
                           />
-                          <button
-                            aria-labelledby="uuid2"
-                            class="c14"
-                            data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
+                          <span
+                            class="c13"
                           >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            Oct
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="c14"
+                            color="currentColor"
+                            data-testid="arrow"
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3615,38 +3581,38 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid3"
+                          aria-invalid="false"
+                          aria-label="Select a year"
+                          aria-labelledby="uuid3_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="year-select"
+                          id="uuid3"
+                          role="combobox"
+                          tabindex="0"
+                          value="2010"
                         >
                           <input
-                            aria-activedescendant="uuid3_2010"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid3"
-                            aria-label="Select a year"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="year-select"
-                            id="uuid3"
-                            type="text"
+                            data-testid="input"
+                            type="hidden"
                             value="2010"
                           />
-                          <button
-                            aria-labelledby="uuid3"
-                            class="c14"
-                            data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
+                          <span
+                            class="c13"
                           >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            2010
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="c14"
+                            color="currentColor"
+                            data-testid="arrow"
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -4305,68 +4271,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2.5rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2halfx);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 1rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
   overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 1rem;
 }
 
 .c14 {
@@ -4374,15 +4315,17 @@ input + .c1 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -4654,6 +4597,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -4684,7 +4628,9 @@ label + .c3 {
           class="react-datepicker__portal"
           tabindex="-1"
         >
-          <div>
+          <div
+            style="display:contents"
+          >
             <div
               aria-label="Choose date"
               aria-live="polite"
@@ -4730,38 +4676,38 @@ label + .c3 {
                           class="c10 c11"
                         >
                           <div
+                            aria-controls="uuid2_listbox"
                             aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-owns="listbox_uuid2"
+                            aria-invalid="false"
+                            aria-label="Select a month"
+                            aria-labelledby="uuid2_label"
+                            aria-required="false"
                             class="c12"
-                            data-testid="input-wrapper"
+                            data-testid="month-select"
+                            id="uuid2"
+                            role="combobox"
+                            tabindex="0"
+                            value="october"
                           >
                             <input
-                              aria-activedescendant="uuid2_october"
-                              aria-autocomplete="list"
-                              aria-controls="listbox_uuid2"
-                              aria-label="Select a month"
-                              aria-multiline="false"
-                              class="c13"
-                              data-testid="month-select"
-                              id="uuid2"
-                              type="text"
-                              value="Oct"
+                              data-testid="input"
+                              type="hidden"
+                              value="october"
                             />
-                            <button
-                              aria-labelledby="uuid2"
-                              class="c14"
-                              data-testid="arrow"
-                              tabindex="-1"
-                              type="button"
+                            <span
+                              class="c13"
                             >
-                              <svg
-                                color="currentColor"
-                                focusable="false"
-                                height="24"
-                                width="24"
-                              />
-                            </button>
+                              Oct
+                            </span>
+                            <svg
+                              aria-hidden="true"
+                              class="c14"
+                              color="currentColor"
+                              data-testid="arrow"
+                              focusable="false"
+                              height="24"
+                              width="24"
+                            />
                           </div>
                         </div>
                       </div>
@@ -4772,38 +4718,38 @@ label + .c3 {
                           class="c10 c11"
                         >
                           <div
+                            aria-controls="uuid3_listbox"
                             aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-owns="listbox_uuid3"
+                            aria-invalid="false"
+                            aria-label="Select a year"
+                            aria-labelledby="uuid3_label"
+                            aria-required="false"
                             class="c12"
-                            data-testid="input-wrapper"
+                            data-testid="year-select"
+                            id="uuid3"
+                            role="combobox"
+                            tabindex="0"
+                            value="2010"
                           >
                             <input
-                              aria-activedescendant="uuid3_2010"
-                              aria-autocomplete="list"
-                              aria-controls="listbox_uuid3"
-                              aria-label="Select a year"
-                              aria-multiline="false"
-                              class="c13"
-                              data-testid="year-select"
-                              id="uuid3"
-                              type="text"
+                              data-testid="input"
+                              type="hidden"
                               value="2010"
                             />
-                            <button
-                              aria-labelledby="uuid3"
-                              class="c14"
-                              data-testid="arrow"
-                              tabindex="-1"
-                              type="button"
+                            <span
+                              class="c13"
                             >
-                              <svg
-                                color="currentColor"
-                                focusable="false"
-                                height="24"
-                                width="24"
-                              />
-                            </button>
+                              2010
+                            </span>
+                            <svg
+                              aria-hidden="true"
+                              class="c14"
+                              color="currentColor"
+                              data-testid="arrow"
+                              focusable="false"
+                              height="24"
+                              width="24"
+                            />
                           </div>
                         </div>
                       </div>

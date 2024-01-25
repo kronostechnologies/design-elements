@@ -14,12 +14,14 @@ export const IconButtons: Story = () => (
         <IconButton label="mail" buttonType="secondary" iconName="mail" />
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" />
         <IconButton label="Delete" buttonType="destructive" iconName="x" />
+        <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" />
     </>
 );
 
 export const Inverted: Story = () => (
     <InvertedBackground>
         <IconButton label="Delete" buttonType="destructive" iconName="x" inverted />
+        <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" inverted />
     </InvertedBackground>
 );
 
@@ -29,6 +31,7 @@ export const Disabled: Story = () => (
         <IconButton label="mail" buttonType="secondary" iconName="mail" disabled />
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" disabled />
         <IconButton label="Delete" buttonType="destructive" iconName="x" disabled />
+        <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" disabled />
     </>
 );
 
@@ -48,5 +51,6 @@ export const Small: Story = () => (
         <IconButton label="mail" buttonType="secondary" iconName="mail" size="small" />
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" size="small" />
         <IconButton label="Delete" buttonType="destructive" iconName="x" size="small" />
+        <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" size="small" />
     </>
 );

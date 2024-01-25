@@ -93,10 +93,10 @@ exports[`Lozenge info matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #f9f7fb;
-  border: 1px solid #602FA0;
+  border: 1px solid #006296;
   border-radius: var(--border-radius-half);
   box-sizing: border-box;
-  color: #602FA0;
+  color: #006296;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
