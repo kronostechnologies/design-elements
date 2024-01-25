@@ -95,7 +95,7 @@ const ThemeCustomization2: ThemeCustomization = {
 export const Theming: Story = {
     render() {
         const [theme, setTheme] = useState(equisoftTheme);
-        const [label, setLabel] = useState('Equisoft Theme');
+        const [label, setLabel] = useState('Default Equisoft Theme');
 
         function setCustomTheme(newSelectedTheme: DropdownListOption): void {
             setLabel(newSelectedTheme.label);
@@ -115,50 +115,71 @@ export const Theming: Story = {
         }
 
         return (
-            <>
-                <DesignSystem>
-                    <div>
-                        <h3>Default Equisoft theme</h3>
-                        <Button label="Primary" buttonType="primary" />
-                        <Button label="Secondary" buttonType="secondary" />
-                        <Button label="Tertiary" buttonType="tertiary" />
-                        <Button label="Destructive" buttonType="destructive" />
-                        <Button label="Destructive Secondary" buttonType="destructive-secondary" />
-                    </div>
-                </DesignSystem>
-                <DesignSystem theme={theme}>
-                    <div>
-                        <div style={{ display: 'box', alignItems: 'center', gap: '2rem' }}>
-                            <h3>{label}</h3>
-                            <div style={{ width: '200px' }}>
-                                <DropdownList
-                                    onChange={(option) => setCustomTheme(option)}
-                                    defaultValue="equisoftTheme"
-                                    options={[
-                                        {
-                                            label: 'Equisoft Theme',
-                                            value: 'equisoftTheme',
-                                        },
-                                        {
-                                            label: 'Custom theme 1',
-                                            value: 'customTheme1',
-                                        },
-                                        {
-                                            label: 'Custom Theme 2',
-                                            value: 'customTheme2',
-                                        },
-                                    ]}
-                                />
-                            </div>
+            <DesignSystem theme={theme}>
+                <div>
+                    <div style={{ display: 'box', alignItems: 'center', gap: '2rem' }}>
+                        <h3>{label}</h3>
+                        <div style={{ width: '200px' }}>
+                            <DropdownList
+                                onChange={(option) => setCustomTheme(option)}
+                                defaultValue="equisoftTheme"
+                                options={[
+                                    {
+                                        label: 'Default Equisoft Theme',
+                                        value: 'equisoftTheme',
+                                    },
+                                    {
+                                        label: 'Custom theme 1',
+                                        value: 'customTheme1',
+                                    },
+                                    {
+                                        label: 'Custom Theme 2',
+                                        value: 'customTheme2',
+                                    },
+                                ]}
+                            />
                         </div>
-                        <Button label="Primary" buttonType="primary" />
-                        <Button label="Secondary" buttonType="secondary" />
-                        <Button label="Tertiary" buttonType="tertiary" />
-                        <Button label="Destructive" buttonType="destructive" />
-                        <Button label="Destructive Secondary" buttonType="destructive-secondary" />
                     </div>
-                </DesignSystem>
-            </>
+                    <div style={{
+                        display: 'table-row', alignItems: 'center',
+                    }}
+                    >
+                        <div style={{ padding: '1rem' }}>
+                            <Button label="Primary" buttonType="primary" />
+                            <Button label="Secondary" buttonType="secondary" />
+                            <Button label="Tertiary" buttonType="tertiary" />
+                            <Button label="Destructive" buttonType="destructive" />
+                            <Button label="Destructive Secondary" buttonType="destructive-secondary" />
+                        </div>
+                        <div style={{ padding: '1rem' }}>
+                            <Button label="Primary" buttonType="primary" disabled />
+                            <Button label="Secondary" buttonType="secondary" disabled />
+                            <Button label="Tertiary" buttonType="tertiary" disabled />
+                            <Button label="Destructive" buttonType="destructive" disabled />
+                            <Button label="Destructive Secondary" buttonType="destructive-secondary" disabled />
+                        </div>
+                        <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
+                            <Button label="Primary" buttonType="primary" inverted />
+                            <Button label="Secondary" buttonType="secondary" inverted />
+                            <Button label="Tertiary" buttonType="tertiary" inverted />
+                            <Button label="Destructive" buttonType="destructive" inverted />
+                            <Button label="Destructive Secondary" buttonType="destructive-secondary" inverted />
+                        </div>
+                        <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
+                            <Button label="Primary" buttonType="primary" inverted disabled />
+                            <Button label="Secondary" buttonType="secondary" inverted disabled />
+                            <Button label="Tertiary" buttonType="tertiary" inverted disabled />
+                            <Button label="Destructive" buttonType="destructive" inverted disabled />
+                            <Button
+                                label="Destructive Secondary"
+                                buttonType="destructive-secondary"
+                                inverted
+                                disabled
+                            />
+                        </div>
+                    </div>
+                </div>
+            </DesignSystem>
         );
     },
 };

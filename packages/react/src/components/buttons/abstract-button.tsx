@@ -102,12 +102,6 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
             color: ${theme.component[`button-${buttonType}${inversionSuffix}-hover-text-color`]};
         }
 
-        &:focus {
-            background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-focus-background-color`]};
-            border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-focus-border-color`]};
-            color: ${theme.component[`button-${buttonType}${inversionSuffix}-focus-text-color`]};
-        }
-
         &:disabled {
             background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-background-color`]};
             border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
