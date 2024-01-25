@@ -71,11 +71,10 @@ interface GetValidationErrorTypeOptions {
 function getValidationErrorType(value: string, {
     max, min, required, skipRequired,
 }: GetValidationErrorTypeOptions): ValidationErrorType | undefined {
-    if (required && value === '') {
-        if (!skipRequired) {
-            return 'required';
-        }
-    } if (value !== '') {
+    if (value === '' && required && !skipRequired) {
+        return 'required';
+    }
+    if (value !== '') {
         if (max !== undefined && Number(value) > max) {
             return 'max';
         } if (min !== undefined && Number(value) < min) {
