@@ -127,4 +127,3 @@ export type ButtonTokens =
     | 'button-search-disabled-background-color'
     | 'button-search-disabled-border-color'
     | 'button-search-disabled-text-color';
-
