@@ -226,6 +226,10 @@ const StyledTableHead = styled.thead`
     background: inherit;
 `;
 
+const StyledTBody = styled.tbody`
+    background: inherit;
+`;
+
 const StyledFooterTableRow = styled.tr`
     background: inherit;
 `;
@@ -400,7 +404,7 @@ export const Table = <T extends object>({
                     </StyledTableRow>
                 ))}
             </StyledTableHead>
-            <tbody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
+            <StyledTBody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                 {rows.map((row: Row<T>, i: number) => {
                     prepareRow(row);
                     return (
@@ -414,7 +418,7 @@ export const Table = <T extends object>({
                         />
                     );
                 })}
-            </tbody>
+            </StyledTBody>
             {hasFooter && (
                 <StyledTableFooter>
                     {footerGroups.map((group) => (

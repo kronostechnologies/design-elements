@@ -569,7 +569,6 @@ interface StickyData {
 }
 
 const Wrap = styled.div`
-    background-color: inherit;
     height: 400px;
     overflow: scroll;
 `;
