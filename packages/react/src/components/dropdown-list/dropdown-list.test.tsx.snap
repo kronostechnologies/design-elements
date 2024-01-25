@@ -662,7 +662,7 @@ input + .c2 {
   <span
     aria-live="polite"
     class="c4"
-    data-testid="invalid-error-message"
+    data-testid="invalid-field"
     id="uuid1_invalid"
     role="alert"
   >
