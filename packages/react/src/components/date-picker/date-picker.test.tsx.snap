@@ -3049,11 +3049,13 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 
 .c17:hover,
 .c17[aria-expanded='true'] {
+  background-color: #FFFFFF;
   border-color: #003A5A;
   color: #003A5A;
 }
 
 .c17:disabled {
+  background-color: #FFFFFF;
   border-color: #84C6EA;
   color: #84C6EA;
 }

@@ -75,18 +75,15 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c4 {
@@ -314,18 +311,15 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -347,11 +341,13 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -595,18 +591,15 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -628,11 +621,13 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -876,18 +871,15 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -909,11 +901,13 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -1169,18 +1163,15 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c4 {
@@ -1411,18 +1402,15 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -1444,11 +1432,13 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -1695,18 +1685,15 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -1728,11 +1715,13 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -1979,18 +1968,15 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
 .c8:disabled {
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
-}
-
-.c8:focus {
-  background-color: #012639;
-  border-color: #006296 color:#FFFFFF;
 }
 
 .c10 {
@@ -2012,11 +1998,13 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 

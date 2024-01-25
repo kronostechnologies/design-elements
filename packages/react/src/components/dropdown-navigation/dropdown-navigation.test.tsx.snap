@@ -76,11 +76,13 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -332,11 +334,13 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 
@@ -589,11 +593,13 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #003A5A;
 }
 

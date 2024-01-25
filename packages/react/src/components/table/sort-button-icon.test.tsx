@@ -1,13 +1,14 @@
 import { shallow } from 'enzyme';
 import { useTheme } from '../../hooks/use-theme';
-import { equisoftTheme } from '../../themes/tokens/theme';
+import { equisoftTheme } from '../../themes';
+import { mergeTheme } from '../../themes/merge-theme';
 import { SortButtonIcon } from './sort-button-icon';
 
 jest.mock('../../hooks/use-theme');
 
 describe('SortButtonIcon', () => {
     beforeEach(() => {
-        jest.mocked(useTheme).mockReturnValue(equisoftTheme);
+        jest.mocked(useTheme).mockReturnValue(mergeTheme(equisoftTheme));
     });
 
     it('should display arrow up when sort is ascending', () => {

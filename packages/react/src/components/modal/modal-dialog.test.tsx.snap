@@ -159,11 +159,13 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c14:hover,
 .c14[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c14:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -199,11 +201,13 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -227,11 +231,13 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c11[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c11:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c3 {
@@ -504,11 +510,13 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 .c8:hover,
 .c8[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c8:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -805,11 +813,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c14:hover,
 .c14[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c14:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -845,11 +855,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -873,11 +885,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c11[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c11:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c3 {
@@ -1206,11 +1220,13 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c14:hover,
 .c14[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c14:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -1246,11 +1262,13 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -1274,11 +1292,13 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c11[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c11:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c3 {
@@ -1550,11 +1570,13 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c13:hover,
 .c13[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c13:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -1590,11 +1612,13 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c10:hover,
 .c10[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c10:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -1618,11 +1642,13 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c11[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c11:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c3 {

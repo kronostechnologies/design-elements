@@ -78,11 +78,13 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c6:hover,
 .c6[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c6:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -417,11 +419,13 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 .c6:hover,
 .c6[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c6:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -756,11 +760,13 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c6:hover,
 .c6[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c6:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -1095,11 +1101,13 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 .c6:hover,
 .c6[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c6:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
