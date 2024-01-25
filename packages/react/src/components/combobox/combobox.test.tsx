@@ -206,6 +206,17 @@ describe('Combobox', () => {
     });
 
     describe('inline autocomplete', () => {
+        test('typing a valid letter opens the listbox', () => {
+            const wrapper = shallow(<Combobox options={provinces} autoComplete="inline" />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'q' } },
+            );
+
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(1);
+        });
+
         test('typing the first letter of an existing option autocompletes the input', () => {
             const wrapper = shallow(<Combobox options={provinces} autoComplete="inline" />);
 

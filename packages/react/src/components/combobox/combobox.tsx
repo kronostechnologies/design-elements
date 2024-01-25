@@ -415,7 +415,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     }
 
     function handleTextboxChange(event: ChangeEvent<HTMLInputElement>): void {
-        if (hasAutoComplete('list') && !open) {
+        if (!open) {
             openListbox();
         }
 
