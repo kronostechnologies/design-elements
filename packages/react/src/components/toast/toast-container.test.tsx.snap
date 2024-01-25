@@ -231,6 +231,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
             buttonType="tertiary"
             className="c3"
             data-testid="dismiss"
+            focusable={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -240,11 +241,13 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
               buttonType="tertiary"
               className="c4 c3"
               data-testid="dismiss"
+              focusable={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
             >
               <styled.button
+                $focusable={true}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -516,6 +519,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
             buttonType="tertiary"
             className="c3"
             data-testid="dismiss"
+            focusable={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -525,11 +529,13 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
               buttonType="tertiary"
               className="c4 c3"
               data-testid="dismiss"
+              focusable={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
             >
               <styled.button
+                $focusable={true}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -801,6 +807,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             buttonType="tertiary"
             className="c3"
             data-testid="dismiss"
+            focusable={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -810,11 +817,13 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
               buttonType="tertiary"
               className="c4 c3"
               data-testid="dismiss"
+              focusable={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
             >
               <styled.button
+                $focusable={true}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -1086,6 +1095,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             buttonType="tertiary"
             className="c3"
             data-testid="dismiss"
+            focusable={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -1095,11 +1105,13 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
               buttonType="tertiary"
               className="c4 c3"
               data-testid="dismiss"
+              focusable={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
             >
               <styled.button
+                $focusable={true}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"

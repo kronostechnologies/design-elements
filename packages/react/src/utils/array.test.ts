@@ -1,6 +1,8 @@
 import {
     findFirstElement,
-    findLastElement, findNextElement, findPreviousElement,
+    findLastElement,
+    findNextElement,
+    findPreviousElement,
     getFirstElement,
     getLastElement,
     getNextElement,

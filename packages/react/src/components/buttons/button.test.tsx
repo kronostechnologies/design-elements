@@ -7,7 +7,7 @@ describe('Button', () => {
         const callback = jest.fn();
         const wrapper = mountWithProviders(<Button onClick={callback} buttonType="primary" label="Primary Button" />);
 
-        wrapper.find(Button).simulate('click');
+        wrapper.simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
@@ -23,7 +23,7 @@ describe('Button', () => {
             />,
         );
 
-        wrapper.find(Button).simulate('click');
+        wrapper.simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(0);
     });
@@ -152,13 +152,13 @@ describe('Button', () => {
     test('focusable button has no tabIndex prop', () => {
         const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
 
-        expect(wrapper.find(Button).getDOMNode().getAttribute('tabIndex')).toBeNull();
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
     });
 
     test('non-focusable button has tabIndex=-1', () => {
         const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
 
-        expect(wrapper.find(Button).getDOMNode().getAttribute('tabIndex')).toBe('-1');
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
     });
 
     test('focusable button has focus styles', () => {

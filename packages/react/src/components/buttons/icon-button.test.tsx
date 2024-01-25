@@ -30,7 +30,7 @@ describe('Icon Button', () => {
             />,
         );
 
-        wrapper.find(IconButton).simulate('click');
+        wrapper.simulate('click');
         expect(callback).not.toHaveBeenCalled();
     });
 
@@ -128,7 +128,7 @@ describe('Icon Button', () => {
             label="home"
         />);
 
-        expect(wrapper.find(IconButton).getDOMNode().getAttribute('tabIndex')).toBeNull();
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
     });
 
     test('non-focusable button has tabIndex=-1', () => {
@@ -139,7 +139,7 @@ describe('Icon Button', () => {
             focusable={false}
         />);
 
-        expect(wrapper.find(IconButton).getDOMNode().getAttribute('tabIndex')).toBe('-1');
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
     });
 
     test('focusable button has focus styles', () => {

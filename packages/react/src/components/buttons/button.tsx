@@ -47,7 +47,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     children,
     className,
     disabled,
-    focusable,
+    focusable = true,
     label,
     onClick,
     onKeyDown,

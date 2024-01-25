@@ -85,7 +85,7 @@ export const IconButton = forwardRef(({
     type = 'submit',
     buttonType,
     disabled,
-    focusable,
+    focusable = true,
     title,
     onClick,
     onKeyDown,

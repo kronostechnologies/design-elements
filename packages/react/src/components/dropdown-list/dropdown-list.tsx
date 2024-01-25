@@ -97,7 +97,6 @@ export interface DropdownListProps {
      * Aria label for the input (used when no visual label is present)
      */
     ariaLabel?: string;
-    autoComplete?: boolean;
     className?: string;
     /**
      * @default false
