@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
@@ -33,7 +33,7 @@ interface ButtonProps {
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
-const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
+const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
     ${getButtonTypeStyles}
 `;
 

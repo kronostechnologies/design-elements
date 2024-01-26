@@ -1,13 +1,13 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { TooltipProps } from '../tooltip/tooltip';
 
 interface StyledDivProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     hasLabel: boolean;
     hasHint: boolean;
     valid: boolean;

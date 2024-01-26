@@ -57,7 +57,7 @@ export interface ThemeCustomization {
     component?: Partial<ComponentTokenMap>;
 }
 
-export interface Theme {
+export interface ResolvedTheme {
     main: LegacyTheme['main'];
     greys: LegacyTheme['greys'];
     notifications: LegacyTheme['notifications'];

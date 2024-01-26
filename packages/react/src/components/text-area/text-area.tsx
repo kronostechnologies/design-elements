@@ -2,7 +2,7 @@ import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } fro
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -20,7 +20,7 @@ const StyledTextArea = styled.textarea`
     resize: vertical;
 `;
 
-const Counter = styled.div<{ valid: boolean, theme: Theme }>`
+const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
     color: ${({ valid, theme }) => (valid ? `${theme.greys['dark-grey']}` : `${theme.notifications['alert-2.1']}`)};
     font-size: 0.75rem;
     letter-spacing: 0.02rem;

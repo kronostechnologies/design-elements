@@ -1,8 +1,8 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../themes/tokens/theme';
+import { ResolvedTheme } from '../themes/tokens/theme';
 
 export const focus = (
-    { theme }: { theme: Theme },
+    { theme }: { theme: ResolvedTheme },
     hasBorder = false,
     selector: string | undefined = undefined,
     inset = false,
@@ -24,9 +24,9 @@ export const focus = (
 };
 
 export const focusVisibleReset = (
-    _props: { theme: Theme },
+    _props: { theme: ResolvedTheme },
     hasBorder = false,
-): FlattenInterpolation<ThemeProps<Theme>> => css`
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     &:focus:not(:focus-visible) {
         ${hasBorder && 'border-color: inherit;'}
 

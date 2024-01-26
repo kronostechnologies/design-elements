@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { Row } from 'react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 
 interface StyledTableRowProps {
     clickable: boolean;
@@ -12,7 +12,7 @@ interface StyledTableRowProps {
 
 function getRowBackgroundColor({
     theme, selected, error,
-}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+}: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     if (selected) {
         return css`
             /* TODO fix with next thematization */
@@ -32,7 +32,7 @@ function getRowBackgroundColor({
 
 function getCellBackgroundCss({
     theme, clickable,
-}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+}: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     if (!clickable) {
         return css`
             td {
@@ -52,7 +52,7 @@ function getCellBackgroundCss({
     `;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
+const StyledTableRow = styled.tr<StyledTableRowProps & { theme: ResolvedTheme }>`
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }

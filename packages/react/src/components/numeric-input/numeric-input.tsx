@@ -8,7 +8,7 @@ import {
 import styled, { css } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -17,7 +17,7 @@ import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
 
 interface StyledInputProps {
     device: DeviceContextProps;
-    theme: Theme;
+    theme: ResolvedTheme;
     $textAlign: 'left' | 'right';
 }
 

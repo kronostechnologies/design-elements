@@ -11,7 +11,7 @@ import {
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
-import { Theme as ThemeType } from '../../themes/tokens/theme';
+import { ResolvedTheme as ThemeType } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

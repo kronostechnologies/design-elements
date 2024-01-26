@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef, PropsWithChildren, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 
 type Size = 'small' | 'medium';
@@ -80,10 +80,10 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
     inverted?: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
-const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = ({
     inverted,
     buttonType,
     theme,
@@ -119,7 +119,7 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
 `;
 };
 
-export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
+export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = (props) => css`
     ${focus(props, true)};
     ${getButtonStyles(props)};
 `;

@@ -1,10 +1,10 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { Theme } from '../../../themes/tokens/theme';
+import { ResolvedTheme } from '../../../themes/tokens/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInterpolation = (
-    theme: Theme,
+export const inputsStyle: (theme: ResolvedTheme, isMobile?: boolean) => FlattenSimpleInterpolation = (
+    theme: ResolvedTheme,
     isMobile = false,
 ) => css`
     background: ${theme.greys.white};
@@ -40,7 +40,7 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
 `;
 
 interface ResponsiveInputsStyles {
-    theme: Theme;
+    theme: ResolvedTheme;
     device: DeviceContextProps;
 }
 

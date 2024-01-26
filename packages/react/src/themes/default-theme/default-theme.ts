@@ -1,12 +1,13 @@
-import { Theme, ThemeCustomization } from '../tokens/theme';
+import { ResolvedTheme, ThemeCustomization } from '../tokens/theme';
 import {
     AliasTokenMap,
     TextAttributeTokenMap,
-    PaletteTokenMap, RefTokenMap,
+    PaletteTokenMap,
+    RefTokenMap,
 } from '../tokens';
 import { defaultComponentTokens } from './default-component-tokens';
 
-export const defaultMain: Theme['main'] = {
+export const defaultMain: ResolvedTheme['main'] = {
     'primary-1.1': '#006296',
     'primary-1.2': '#84C6EA',
     'primary-1.3': '#003A5A',
@@ -18,7 +19,7 @@ export const defaultMain: Theme['main'] = {
     'secondary-4.3': '#D41F14',
 };
 
-export const defaultGreys: Theme['greys'] = {
+export const defaultGreys: ResolvedTheme['greys'] = {
     white: '#FFFFFF',
     'neutral-90': '#1B1C1E',
     'colored-white': '#FAFAFA',
@@ -29,7 +30,7 @@ export const defaultGreys: Theme['greys'] = {
     black: '#000000',
 };
 
-export const defaultNotifications: Theme['notifications'] = {
+export const defaultNotifications: ResolvedTheme['notifications'] = {
     'info-1.1': '#006296',
     'discovery-1.1': '#602FA0',
     'neutral-1.1': '#878F9A',
@@ -44,7 +45,7 @@ export const defaultNotifications: Theme['notifications'] = {
     'warning-3.4': '#A36D00',
 };
 
-export const defaultTokens: Theme['tokens'] = {
+export const defaultTokens: ResolvedTheme['tokens'] = {
     'focus-box-shadow': `0 0 0 2px ${defaultMain['primary-1.2']}`,
     'focus-box-shadow-inset': `inset 0 0 0 2px ${defaultMain['primary-1.2']}`,
     'focus-border-box-shadow': ` 0 0 0 1px ${defaultMain['primary-1.1']}, 0 0 0 3px ${defaultMain['primary-1.2']}`,

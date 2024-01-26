@@ -1,13 +1,13 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { Circle } from '../circle/circle';
 
 const RADIUS = 62;
 const STROKE = 8;
 
 interface ResultProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     secondary?: boolean;
 }
 

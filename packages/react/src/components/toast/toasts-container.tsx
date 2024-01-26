@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useToasts } from '../../hooks/use-toasts';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { ToastContainer } from './toast-container';
 import { ToastPosition } from './toast-position';
@@ -18,7 +18,7 @@ type ContainerProps = ToastProps & MobileDeviceContextProps;
 function getToastPosition({
     isMobile,
     position,
-}: ContainerProps): FlattenInterpolation<ThemeProps<Theme>> {
+}: ContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     const lateralPosition = isMobile ? '0' : 'var(--spacing-2x)';
     switch (position) {
         case 'top-right':

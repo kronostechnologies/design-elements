@@ -14,9 +14,9 @@ import {
     RefTokens,
     RefTokenValue,
 } from './tokens';
-import { LegacyTheme, Theme, ThemeCustomization } from './tokens/theme';
+import { LegacyTheme, ResolvedTheme, ThemeCustomization } from './tokens/theme';
 
-export function mergeTheme(customization: ThemeCustomization): Theme {
+export function mergeTheme(customization: ThemeCustomization): ResolvedTheme {
     // Merge the default theme with the customization provided
     const mergedTheme: ThemeCustomization = {
         main: { ...defaultMain, ...customization.main },
@@ -61,7 +61,7 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
     }
 
     // Final theme with resolved values
-    const finalTheme: Theme = {
+    const finalTheme: ResolvedTheme = {
         main: mergedTheme.main as LegacyTheme['main'],
         greys: mergedTheme.greys as LegacyTheme['greys'],
         notifications: mergedTheme.notifications as LegacyTheme['notifications'],

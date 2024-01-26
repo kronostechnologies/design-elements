@@ -1,10 +1,10 @@
 import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { Bar } from '../bar/bar';
 
 const Label = styled.label`
-    color: ${(props: { theme: Theme }) => props.theme.greys.black};
+    color: ${(props: { theme: ResolvedTheme }) => props.theme.greys.black};
     display: block;
     font-size: 0.875rem;
     letter-spacing: 0.02875rem;

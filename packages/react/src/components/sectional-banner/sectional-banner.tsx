@@ -10,7 +10,7 @@ import {
 import styled, { css, ThemedCssFunction } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -38,7 +38,7 @@ const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { isMobile: boole
     margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
 `;
 
-function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFunction<Theme>> {
+function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFunction<ResolvedTheme>> {
     if (isMobile) {
         return css`
             display: grid;
@@ -55,8 +55,8 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 
 function abstractContainer(
     bgColor: string,
-    color?: keyof Theme['notifications'],
-    iconColor: keyof Theme['notifications'] | undefined = color,
+    color?: keyof ResolvedTheme['notifications'],
+    iconColor: keyof ResolvedTheme['notifications'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};

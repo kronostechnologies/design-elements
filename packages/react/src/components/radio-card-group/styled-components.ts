@@ -1,26 +1,26 @@
 import styled from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 
 interface InputContainerProps {
     disabled?: boolean;
     isMobile: boolean;
     isChecked?: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
 interface DescriptionProps {
     disabled?: boolean;
     isMobile: boolean;
     isChecked?: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
 interface CardProps {
     disabled?: boolean;
     isMobile: boolean;
     isChecked?: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
 export const RadioInput = styled.span<CardProps>`

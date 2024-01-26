@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/tokens/theme';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
@@ -44,7 +44,7 @@ export interface IconButtonProps {
 
 const getButtonSizeStyles = (
     { isMobile, size }: { isMobile: boolean, size?: Size },
-): FlattenInterpolation<ThemeProps<Theme>> => {
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> => {
     switch (size) {
         case 'small':
             return css`
