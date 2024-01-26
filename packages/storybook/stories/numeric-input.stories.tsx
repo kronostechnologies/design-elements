@@ -87,6 +87,8 @@ export const ControlledValue: Story = () => {
     return (
         <NumericInput
             label="Label"
+            min={0}
+            max={100}
             onChange={(_event, { value, valueAsNumber }) => {
                 setInputValue(value);
                 console.info(`NumericInput onChange value: ${value}`);
@@ -110,7 +112,7 @@ export const Disabled: Story = () => (
     />
 );
 
-export const ExplicitInvalid: Story = () => (
+export const ControlledInvalid: Story = () => (
     <>
         <NumericInput
             label="Label"
