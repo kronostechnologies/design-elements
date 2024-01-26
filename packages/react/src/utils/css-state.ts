@@ -1,16 +1,28 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../themes/tokens/theme';
 
+export type FocusableComponent =
+    | 'button';
+
 export const focus = (
     { theme }: { theme: ResolvedTheme },
     hasBorder = false,
     selector: string | undefined = undefined,
     inset = false,
+    component: FocusableComponent | undefined = undefined,
 ): string => {
-    const focusBorder = `${theme.component['focus-border']}`;
-    const focusBoxShadow = `0 0 0 2px ${theme.component['focus-box-shadow']}`;
-    const focusBorderBoxShadow = `0 0 0 1px ${theme.component['focus-border-box-shadow-1']}, 0 0 0 3px ${theme.component['focus-border-box-shadow-2']}`;
-    const focusBorderBoxShadowInset = `inset 0 0 0 2px ${theme.component['focus-border-box-shadow-inset-1']}, inset 0 0 0 3px ${theme.component['focus-border-box-shadow-inset-2']}`;
+    const focusBorder = component
+        ? `${theme.component[`${component}-focus-border-color`]}`
+        : `${theme.tokens['focus-border']}`;
+    const focusBoxShadow = component
+        ? `0 0 0 2px ${theme.component[`${component}-focus-box-shadow-color`]}`
+        : `${theme.tokens['focus-box-shadow']}`;
+    const focusBorderBoxShadow = component
+        ? `0 0 0 1px ${theme.component[`${component}-focus-border-box-shadow-color-1`]}, 0 0 0 3px ${theme.component[`${component}-focus-border-box-shadow-color-2`]}`
+        : `${theme.tokens['focus-border-box-shadow']}`;
+    const focusBorderBoxShadowInset = component
+        ? `inset 0 0 0 2px ${theme.component[`${component}-focus-border-box-shadow-inset-color-1`]}, inset 0 0 0 3px ${theme.component[`${component}-focus-border-box-shadow-inset-color-2`]}`
+        : `${theme.tokens['focus-border-box-shadow-inset']}`;
 
     return `
         ${selector === undefined ? '&:focus { outline: none; }' : ''}

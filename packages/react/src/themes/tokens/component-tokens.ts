@@ -1,9 +1,9 @@
-import { ButtonTokens } from '../../components/buttons/button-tokens';
-import { StateTokens } from './component-tokens/state-tokens';
+import { ButtonTokens } from './component-tokens/button-tokens';
 import { AliasTokens } from './alias-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
-export type ComponentTokens = ButtonTokens | StateTokens;
+export type ComponentTokens =
+    | ButtonTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 

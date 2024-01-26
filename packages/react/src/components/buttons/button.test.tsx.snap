@@ -859,8 +859,8 @@ exports[`Button has secondary styles (inverted) 1`] = `
 
 .c1:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 <button
@@ -1236,7 +1236,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
 .c1:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 <button

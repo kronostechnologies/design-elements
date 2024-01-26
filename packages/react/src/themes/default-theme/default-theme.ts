@@ -10,8 +10,13 @@ export const defaultRefTokens: RefTokenMap = {
 };
 
 export const defaultAliasTokens: AliasTokenMap = {
-    'button-color-secondary': 'color-brand-05',
-    'interaction-color': 'color-brand-05',
+    'focus-border-color': 'color-brand-50',
+    'focus-box-shadow-color': 'color-brand-20',
+    'focus-box-shadow-inset-color': 'color-brand-20',
+    'focus-border-box-shadow-color-1': 'color-brand-50',
+    'focus-border-box-shadow-color-2': 'color-brand-20',
+    'focus-border-box-shadow-inset-color-1': 'color-brand-20',
+    'focus-border-box-shadow-inset-color-2': 'color-brand-50',
 };
 
 export const defaultTheme: ThemeCustomization = {

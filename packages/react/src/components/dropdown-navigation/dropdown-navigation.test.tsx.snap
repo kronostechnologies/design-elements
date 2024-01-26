@@ -83,7 +83,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 .c2:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c8 {
@@ -341,7 +341,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 .c2:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c8 {
@@ -600,7 +600,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 .c2:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c8 {

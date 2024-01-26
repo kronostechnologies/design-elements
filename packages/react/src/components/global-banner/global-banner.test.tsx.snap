@@ -82,8 +82,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c4 {
@@ -318,8 +318,8 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -348,7 +348,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {
@@ -598,8 +598,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -628,7 +628,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {
@@ -878,8 +878,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -908,7 +908,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {
@@ -1170,8 +1170,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c4 {
@@ -1409,8 +1409,8 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -1439,7 +1439,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {
@@ -1692,8 +1692,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -1722,7 +1722,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {
@@ -1975,8 +1975,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c8:disabled {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c10 {
@@ -2005,7 +2005,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c4 {

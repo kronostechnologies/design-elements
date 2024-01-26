@@ -390,7 +390,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c2:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c5 {
@@ -1064,7 +1064,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c2:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #003A5A;
+  color: #006296;
 }
 
 .c5 {

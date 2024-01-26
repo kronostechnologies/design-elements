@@ -2,7 +2,9 @@ import {
     defaultMain,
     defaultGreys,
     defaultNotifications,
-    defaultTokens, defaultRefTokens, defaultAliasTokens,
+    defaultTokens,
+    defaultRefTokens,
+    defaultAliasTokens,
 } from './default-theme';
 import { mergeTheme } from './merge-theme';
 import { ThemeCustomization } from './tokens/theme';
@@ -11,14 +13,17 @@ const customization : ThemeCustomization = {
     ref: {
         'color-brand-05': 'red',
         'color-brand-20': 'green',
+        'color-neutral-02': 'blue',
     },
     alias: {
-        'button-color-secondary': 'color-brand-05',
-        'interaction-color': 'button-color-secondary',
+        'focus-border-color': 'color-brand-05',
+        'focus-box-shadow-color': 'color-brand-20',
+        'focus-box-shadow-inset-color': 'focus-border-color',
     },
     component: {
-        'button-primary-background-color': 'button-color-secondary',
+        'button-primary-background-color': 'color-neutral-02',
         'button-primary-inverted-background-color': 'color-brand-20',
+        'button-focus-border-color': 'focus-box-shadow-inset-color',
     },
 };
 
@@ -31,15 +36,18 @@ const expectedTheme = {
         ...defaultRefTokens,
         'color-brand-05': 'red',
         'color-brand-20': 'green',
+        'color-neutral-02': 'blue',
     },
     alias: {
         ...defaultAliasTokens,
-        'button-color-secondary': 'color-brand-05',
-        'interaction-color': 'button-color-secondary',
+        'focus-border-color': 'color-brand-05',
+        'focus-box-shadow-color': 'color-brand-20',
+        'focus-box-shadow-inset-color': 'focus-border-color',
     },
     component: {
-        'button-primary-background-color': 'red',
+        'button-primary-background-color': 'blue',
         'button-primary-inverted-background-color': 'green',
+        'button-focus-border': 'red',
         'button-primary-border-color': '#006296',
     },
 };
@@ -103,14 +111,14 @@ describe('mergeTheme', () => {
         const consoleSpy = jest.spyOn(console, 'error');
         consoleSpy.mockImplementation(() => {});
 
-        const token = 'button-color-secondary';
+        const token = 'focus-border-color';
         const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
             alias: {
                 // @ts-ignore-self-referenced-token-test-purpose
-                'button-color-secondary': 'button-color-secondary',
+                'focus-border-color': 'focus-border-color',
             },
             component: {
-                'button-primary-background-color': 'button-color-secondary',
+                'button-primary-background-color': 'focus-border-color',
             },
         };
 

@@ -66,8 +66,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-secondary-inverted-focus-text-color': 'color-white',
     // Secondary inverted disabled
     'button-secondary-inverted-disabled-background-color': 'transparent-100',
-    'button-secondary-inverted-disabled-border-color': 'color-brand-70',
-    'button-secondary-inverted-disabled-text-color': 'color-brand-70',
+    'button-secondary-inverted-disabled-border-color': 'color-brand-50',
+    'button-secondary-inverted-disabled-text-color': 'color-brand-50',
 
     // Tertiary
     'button-tertiary-background-color': 'transparent-100',
@@ -101,7 +101,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     // Tertiary inverted disabled
     'button-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-tertiary-inverted-disabled-border-color': 'transparent-100',
-    'button-tertiary-inverted-disabled-text-color': 'color-brand-70',
+    'button-tertiary-inverted-disabled-text-color': 'color-brand-50',
 
     // Destructive
     'button-destructive-background-color': 'color-alert-50',
@@ -183,11 +183,11 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-search-disabled-border-color': 'color-neutral-15',
     'button-search-disabled-text-color': 'color-neutral-30',
 
-    'focus-border': 'color-brand-50',
-    'focus-box-shadow': 'color-brand-20',
-    'focus-box-shadow-inset': 'color-brand-20',
-    'focus-border-box-shadow-1': 'color-brand-50',
-    'focus-border-box-shadow-2': 'color-brand-20',
-    'focus-border-box-shadow-inset-1': 'color-brand-20',
-    'focus-border-box-shadow-inset-2': 'color-brand-50',
+    'button-focus-border-color': 'focus-border-color',
+    'button-focus-box-shadow-color': 'focus-box-shadow-color',
+    'button-focus-box-shadow-inset-color': 'focus-box-shadow-inset-color',
+    'button-focus-border-box-shadow-color-1': 'focus-border-box-shadow-color-1',
+    'button-focus-border-box-shadow-color-2': 'focus-border-box-shadow-color-2',
+    'button-focus-border-box-shadow-inset-color-1': 'focus-border-box-shadow-inset-color-1',
+    'button-focus-border-box-shadow-inset-color-2': 'focus-border-box-shadow-inset-color-2',
 };
