@@ -53,11 +53,11 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-secondary-disabled-border-color': 'color-brand-20',
     'button-secondary-disabled-text-color': 'color-brand-20',
     // Secondary inverted
-    'button-secondary-inverted-background-color': 'transparent',
+    'button-secondary-inverted-background-color': 'transparent-100',
     'button-secondary-inverted-border-color': 'color-white',
     'button-secondary-inverted-text-color': 'color-white',
     // Secondary inverted hover
-    'button-secondary-inverted-hover-background-color': 'transparent',
+    'button-secondary-inverted-hover-background-color': 'transparent-100',
     'button-secondary-inverted-hover-border-color': 'color-brand-20',
     'button-secondary-inverted-hover-text-color': 'color-brand-20',
     // Secondary inverted focus
@@ -65,42 +65,42 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-secondary-inverted-focus-border-color': 'color-brand-50',
     'button-secondary-inverted-focus-text-color': 'color-white',
     // Secondary inverted disabled
-    'button-secondary-inverted-disabled-background-color': 'transparent',
+    'button-secondary-inverted-disabled-background-color': 'transparent-100',
     'button-secondary-inverted-disabled-border-color': 'color-brand-70',
     'button-secondary-inverted-disabled-text-color': 'color-brand-70',
 
     // Tertiary
-    'button-tertiary-background-color': 'transparent',
-    'button-tertiary-border-color': 'transparent',
+    'button-tertiary-background-color': 'transparent-100',
+    'button-tertiary-border-color': 'transparent-100',
     'button-tertiary-text-color': 'color-neutral-65',
     // Tertiary hover
     'button-tertiary-hover-background-color': 'color-neutral-15',
-    'button-tertiary-hover-border-color': 'transparent',
+    'button-tertiary-hover-border-color': 'transparent-100',
     'button-tertiary-hover-text-color': 'color-neutral-90',
     // Tertiary focus
     'button-tertiary-focus-background-color': 'color-white',
     'button-tertiary-focus-border-color': 'color-brand-50',
     'button-tertiary-focus-text-color': 'color-neutral-65',
     // Tertiary disabled
-    'button-tertiary-disabled-background-color': 'transparent',
-    'button-tertiary-disabled-border-color': 'transparent',
+    'button-tertiary-disabled-background-color': 'transparent-100',
+    'button-tertiary-disabled-border-color': 'transparent-100',
     'button-tertiary-disabled-text-color': 'color-neutral-30',
 
     // Tertiary inverted
-    'button-tertiary-inverted-background-color': 'transparent',
-    'button-tertiary-inverted-border-color': 'transparent',
+    'button-tertiary-inverted-background-color': 'transparent-100',
+    'button-tertiary-inverted-border-color': 'transparent-100',
     'button-tertiary-inverted-text-color': 'color-white',
     // Tertiary inverted hover
     'button-tertiary-inverted-hover-background-color': 'color-brand-70',
-    'button-tertiary-inverted-hover-border-color': 'transparent',
+    'button-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-tertiary-inverted-hover-text-color': 'color-white',
     // Tertiary inverted focus
     'button-tertiary-inverted-focus-background-color': 'color-brand-80',
     'button-tertiary-inverted-focus-border-color': 'color-brand-50',
     'button-tertiary-inverted-focus-text-color': 'color-white',
     // Tertiary inverted disabled
-    'button-tertiary-inverted-disabled-background-color': 'transparent',
-    'button-tertiary-inverted-disabled-border-color': 'transparent',
+    'button-tertiary-inverted-disabled-background-color': 'transparent-100',
+    'button-tertiary-inverted-disabled-border-color': 'transparent-100',
     'button-tertiary-inverted-disabled-text-color': 'color-brand-70',
 
     // Destructive
@@ -155,11 +155,11 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-destructive-secondary-disabled-text-color': 'color-alert-20',
 
     // Secondary destructive inverted
-    'button-destructive-secondary-inverted-background-color': 'transparent',
+    'button-destructive-secondary-inverted-background-color': 'transparent-100',
     'button-destructive-secondary-inverted-border-color': 'color-alert-50',
     'button-destructive-secondary-inverted-text-color': 'color-alert-50',
     // Secondary destructive inverted hover
-    'button-destructive-secondary-inverted-hover-background-color': 'transparent',
+    'button-destructive-secondary-inverted-hover-background-color': 'transparent-100',
     'button-destructive-secondary-inverted-hover-border-color': 'color-alert-70',
     'button-destructive-secondary-inverted-hover-text-color': 'color-alert-70',
     // Secondary destructive inverted focus
@@ -167,7 +167,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     'button-destructive-secondary-inverted-focus-border-color': 'color-white',
     'button-destructive-secondary-inverted-focus-text-color': 'color-alert-20',
     // Secondary destructive inverted disabled
-    'button-destructive-secondary-inverted-disabled-background-color': 'transparent',
+    'button-destructive-secondary-inverted-disabled-background-color': 'transparent-100',
     'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-70',
     'button-destructive-secondary-inverted-disabled-text-color': 'color-alert-70',
 

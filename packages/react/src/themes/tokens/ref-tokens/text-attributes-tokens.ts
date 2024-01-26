@@ -1,8 +1,7 @@
 export type TextAttributeValue = string;
 
 export type TextAttributeTokens =
-    | 'font-weight-bold'
-    | 'transparent';
+    | 'font-weight-bold';
 
 export type TextAttributeTokenMap = {
     [Token in TextAttributeTokens]: TextAttributeValue;

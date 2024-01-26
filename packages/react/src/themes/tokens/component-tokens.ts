@@ -1,5 +1,5 @@
 import { ButtonTokens } from '../../components/buttons/button-tokens';
-import { StateTokens } from './state-tokens';
+import { StateTokens } from './component-tokens/state-tokens';
 import { AliasTokens } from './alias-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
