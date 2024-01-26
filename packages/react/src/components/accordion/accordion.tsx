@@ -19,7 +19,7 @@ interface AccordionProps {
     id?: string;
     items: ItemsProps[];
     mode?: 'single' | 'multi';
-    handleToggle?: (uniqueId: string, expanded: boolean) => void;
+    onToggle?: (itemId: string, expanded: boolean) => void;
 }
 
 export const StyledAccordionGroup = styled.div`
@@ -32,7 +32,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     id: providedId,
     mode = 'single',
     items,
-    handleToggle,
+    onToggle,
 }) => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
 
@@ -50,7 +50,7 @@ export const Accordion: React.FC<AccordionProps> = ({
             .filter((expandedId) => expandedId !== null) as string[]
     ));
 
-    const onToggle = useCallback(
+    const handleToggle = useCallback(
         (itemId: string): void => {
             if (mode === 'single') {
                 setExpandedItemIds((prevIds) => (prevIds.includes(itemId) ? [] : [itemId]));
@@ -62,8 +62,9 @@ export const Accordion: React.FC<AccordionProps> = ({
                     return [...prevIds, itemId];
                 });
             }
+            onToggle?.(itemId, !expandedItemIds.includes(itemId));
         },
-        [mode, setExpandedItemIds],
+        [mode, onToggle, expandedItemIds, setExpandedItemIds],
     );
 
     const handleButtonKeyDown = (
@@ -110,10 +111,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                         expanded={expandedItemIds.includes(uniqueId)}
                         disabled={item.disabled}
                         buttonRef={buttonRefs[index]}
-                        onToggle={() => {
-                            onToggle(uniqueId);
-                            handleToggle?.(uniqueId, !expandedItemIds.includes(uniqueId));
-                        }}
+                        onToggle={() => handleToggle(uniqueId)}
                         onKeyDown={(event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index)}
                     />
                 );

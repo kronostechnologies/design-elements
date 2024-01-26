@@ -103,10 +103,10 @@ export const DefaultDisabled: Story = () => {
     return <Accordion id="disabled" items={items} />;
 };
 
-export const HandleToggle: Story = () => {
-    const handleToggle = (uniqueId: string, expanded: boolean): void => {
+export const OnToggle: Story = () => {
+    const onToggle = (itemId: string, expanded: boolean): void => {
         // eslint-disable-next-line no-console
-        console.log(uniqueId, expanded);
+        console.log(itemId, expanded);
     };
     const items: ItemsProps[] = [
         {
@@ -123,5 +123,5 @@ export const HandleToggle: Story = () => {
         },
     ];
 
-    return <Accordion id="handleToggle" items={items} handleToggle={handleToggle} />;
+    return <Accordion id="handleToggle" items={items} onToggle={onToggle} />;
 };
