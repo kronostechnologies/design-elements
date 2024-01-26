@@ -5,14 +5,24 @@ import {
     defaultTokens,
     defaultTheme,
 } from './default-theme';
-import { AliasTokenMap, AliasTokens } from './tokens/alias-tokens';
-import { ComponentTokens, ResolvedComponentTokens } from './tokens/component-tokens';
-import { RefTokenMap, RefTokens, RefTokenValue } from './tokens/ref-tokens';
-import { Theme, ThemeCustomization } from './tokens/theme';
+import {
+    AliasTokenMap,
+    AliasTokens,
+    ComponentTokens,
+    ResolvedComponentTokens,
+    RefTokenMap,
+    RefTokens,
+    RefTokenValue,
+} from './tokens';
+import { LegacyTheme, Theme, ThemeCustomization } from './tokens/theme';
 
 export function mergeTheme(customization: ThemeCustomization): Theme {
     // Merge the default theme with the customization provided
     const mergedTheme: ThemeCustomization = {
+        main: { ...defaultMain, ...customization.main },
+        greys: { ...defaultGreys, ...customization.greys },
+        notifications: { ...defaultNotifications, ...customization.notifications },
+        tokens: { ...defaultTokens, ...customization.tokens },
         ref: { ...defaultTheme.ref, ...customization.ref },
         alias: { ...defaultTheme.alias, ...customization.alias },
         component: { ...defaultTheme.component, ...customization.component },
@@ -52,10 +62,10 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
 
     // Final theme with resolved values
     const finalTheme: Theme = {
-        main: defaultMain,
-        greys: defaultGreys,
-        notifications: defaultNotifications,
-        tokens: defaultTokens,
+        main: mergedTheme.main as LegacyTheme['main'],
+        greys: mergedTheme.greys as LegacyTheme['greys'],
+        notifications: mergedTheme.notifications as LegacyTheme['notifications'],
+        tokens: mergedTheme.tokens as LegacyTheme['tokens'],
         ref: mergedTheme.ref as RefTokenMap,
         alias: mergedTheme.alias as AliasTokenMap,
         component: {} as ResolvedComponentTokens,
