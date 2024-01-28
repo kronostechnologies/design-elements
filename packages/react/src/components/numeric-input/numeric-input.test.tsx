@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { NumericInput } from './numeric-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 
 describe('NumericInput', () => {
     test('matches the snapshot (Normal - Adornment at start)', () => {
@@ -78,5 +78,25 @@ describe('NumericInput', () => {
         const wrapper = shallow(<NumericInput value="test" />);
 
         expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('');
+    });
+
+    test('should display error message on invalid value', () => {
+        const wrapper = mountWithTheme(<NumericInput value="2" min={100} />);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
+    });
+
+    test('should display error message on invalid defaultValue', () => {
+        const wrapper = mountWithTheme(<NumericInput defaultValue="2" min={100} />);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
+    });
+
+    test('should not have error message on required when value is empty', () => {
+        const wrapper = mountWithTheme(<NumericInput value="" required />);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(false);
+    });
+
+    test('should not have error message on required when defaultValue is empty', () => {
+        const wrapper = mountWithTheme(<NumericInput defaultValue="" required />);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(false);
     });
 });

@@ -333,6 +333,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   <span
     aria-live="polite"
     class="c1"
+    data-testid="invalid-field"
     id="uuid1_invalid"
     role="alert"
   >
