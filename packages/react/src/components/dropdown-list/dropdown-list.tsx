@@ -115,9 +115,6 @@ export interface DropdownListProps {
     id?: string;
     label?: string;
     name?: string;
-    /**
-     * { value: string; label: string; caption?: string; disabled?: boolean }[]
-     */
     options: DropdownListOption[];
     required?: boolean;
     tooltip?: TooltipProps;

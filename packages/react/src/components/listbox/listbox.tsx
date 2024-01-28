@@ -32,9 +32,6 @@ export interface ListboxOption {
 interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
-    /**
-     * { value: string; label?: string; caption?: string; disabled?: boolean }[]
-     */
     options: ListboxOption[];
     className?: string;
     /**

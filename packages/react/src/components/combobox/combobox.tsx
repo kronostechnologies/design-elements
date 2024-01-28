@@ -131,9 +131,6 @@ interface ComboboxProps {
     id?: string;
     label?: string;
     name?: string;
-    /**
-     * { value: string; caption?: string; disabled?: boolean }[]
-     */
     options: ComboboxOption[];
     required?: boolean;
     tooltip?: TooltipProps;
