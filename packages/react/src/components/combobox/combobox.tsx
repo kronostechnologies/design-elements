@@ -216,7 +216,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     const [suggestedInputValue, setSuggestedInputValue] = useState('');
 
     function getSuggestedOption(searchValue: string): ComboboxOption | undefined {
-        return filteredOptions.find(
+        return options.find(
             (option) => stripDiacritics(option.value)
                 .toLowerCase()
                 .startsWith(
@@ -284,10 +284,8 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         setOpen(false);
     }, [setFocusedOption]);
 
-    if (filteredOptions.length === 0) {
-        if (open) {
-            closeListbox();
-        }
+    if (open && filteredOptions.length === 0) {
+        closeListbox();
     }
 
     const handleClickOutside: () => void = useCallback(() => {
@@ -422,11 +420,11 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         const newInputValue = event.target.value;
         changeInputValue(newInputValue);
 
-        if (hideInlineAutoComplete.current) {
-            setSuggestedInputValue('');
-            setFocusedOption(undefined);
-            hideInlineAutoComplete.current = false;
-        } else if (hasAutoComplete('inline')) {
+        // Always clear the focused option to prevent unwanted selection on textbox blur
+        setSuggestedInputValue('');
+        setFocusedOption(undefined);
+
+        if (hasAutoComplete('inline') && !hideInlineAutoComplete.current) {
             const newSuggestedOption = getSuggestedOption(newInputValue);
             setSuggestedInputValue(newSuggestedOption?.value ?? '');
 
@@ -434,14 +432,12 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                 suggestionSource.current = 'textbox';
                 setFocusedOption(newSuggestedOption);
             }
+        } else {
+            hideInlineAutoComplete.current = false;
         }
 
         // Select option if the input text is an exact match
         setSelectedOption(findOptionByValue(newInputValue));
-
-        if (newInputValue === '') {
-            setFocusedOption(undefined);
-        }
     }
 
     useEffect(() => {
@@ -451,7 +447,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 
         if (suggestedInputValue.length > inputValue.length) {
             textboxRef.current?.setSelectionRange(inputValue.length, suggestedInputValue.length);
-        } else {
+        } else if (textboxRef.current?.selectionStart === inputValue.length) {
             textboxRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
     }, [inputValue.length, suggestedInputValue.length]);
