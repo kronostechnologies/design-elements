@@ -1088,3 +1088,143 @@ export const StickyHeaderAndFooter: Story = () => {
         </Wrap>
     );
 };
+
+const StyledTableWithBackground = styled(Table<StickyFooterData>)`
+        background: #a9cad8;
+`;
+export const WithBackgroundColor: Story = () => {
+    const columns: TableColumn<StickyFooterData> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            Footer: 'Footer 1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            Footer: 'Footer 2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            Footer: 'Footer 3',
+        },
+        {
+            Header: 'Column 4',
+            accessor: 'column4',
+            Footer: 'Footer 4',
+        },
+        {
+            Header: 'Column 5',
+            accessor: 'column5',
+            Footer: 'Footer 5',
+        },
+        {
+            Header: 'Column 6',
+            accessor: 'column6',
+            Footer: 'Footer 6',
+        },
+        {
+            Header: 'Column 7',
+            accessor: 'column7',
+            Footer: 'Footer 7',
+        },
+    ];
+
+    const data: TableRow<StickyFooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+            column4: 'a',
+            column5: 'a',
+            column6: 'a',
+            column7: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+            column4: 'b',
+            column5: 'b',
+            column6: 'b',
+            column7: 'b',
+        },
+        {
+            column1: 'c',
+            column2: 'c',
+            column3: 'c',
+            column4: 'c',
+            column5: 'c',
+            column6: 'c',
+            column7: 'c',
+        },
+        {
+            column1: 'd',
+            column2: 'd',
+            column3: 'd',
+            column4: 'd',
+            column5: 'd',
+            column6: 'd',
+            column7: 'd',
+        },
+        {
+            column1: 'e',
+            column2: 'e',
+            column3: 'e',
+            column4: 'e',
+            column5: 'e',
+            column6: 'e',
+            column7: 'e',
+        },
+        {
+            column1: 'f',
+            column2: 'f',
+            column3: 'f',
+            column4: 'f',
+            column5: 'f',
+            column6: 'f',
+            column7: 'f',
+        },
+        {
+            column1: 'g',
+            column2: 'g',
+            column3: 'g',
+            column4: 'g',
+            column5: 'g',
+            column6: 'g',
+            column7: 'g',
+        },
+        {
+            column1: 'h',
+            column2: 'h',
+            column3: 'h',
+            column4: 'h',
+            column5: 'h',
+            column6: 'h',
+            column7: 'h',
+        },
+        {
+            column1: 'i',
+            column2: 'i',
+            column3: 'i',
+            column4: 'i',
+            column5: 'i',
+            column6: 'i',
+            column7: 'i',
+        },
+    ];
+
+    return (
+        <Wrap>
+            <StyledTableWithBackground
+                selectableRows
+                stickyHeader
+                stickyFooter
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={console.info}
+            />
+        </Wrap>
+    );
+};

@@ -26,7 +26,7 @@ function getRowBackgroundColor({
         `;
     }
     return css`
-        background-color: ${theme.greys.white};
+        background-color: inherit;
     `;
 }
 

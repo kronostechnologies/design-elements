@@ -83,7 +83,6 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
             {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
-                    data-testid="text-input-error-msg"
                     controlId={fieldId}
                     feedbackMsg={validationErrorMessage}
                     noIcon={noInvalidFieldIcon}
