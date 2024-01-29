@@ -2,6 +2,7 @@
 
 exports[`Heading matches snapshot (large) 1`] = `
 .c0 {
+  color: #000000;
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.25rem;
@@ -23,6 +24,7 @@ exports[`Heading matches snapshot (large) 1`] = `
 
 exports[`Heading matches snapshot (medium) 1`] = `
 .c0 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -44,6 +46,7 @@ exports[`Heading matches snapshot (medium) 1`] = `
 
 exports[`Heading matches snapshot (no margin) 1`] = `
 .c0 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -68,6 +71,7 @@ exports[`Heading matches snapshot (no margin) 1`] = `
 
 exports[`Heading matches snapshot (small) 1`] = `
 .c0 {
+  color: #000000;
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
@@ -89,7 +93,7 @@ exports[`Heading matches snapshot (small) 1`] = `
 
 exports[`Heading matches snapshot (subtitle) 1`] = `
 .c0 {
-  color: #60666E;
+  color: #DBDEE1;
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
@@ -111,6 +115,7 @@ exports[`Heading matches snapshot (subtitle) 1`] = `
 
 exports[`Heading matches snapshot (xlarge) 1`] = `
 .c0 {
+  color: #000000;
   font-size: 2rem;
   font-weight: var(--font-normal);
   line-height: 3rem;

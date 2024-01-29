@@ -1,5 +1,3 @@
-export type ColorUtilityValue = string;
-
 export type ColorUtilityTokens =
     | 'transparent-10'
     | 'transparent-20'
@@ -11,6 +9,8 @@ export type ColorUtilityTokens =
     | 'transparent-80'
     | 'transparent-90'
     | 'transparent-100';
+
+export type ColorUtilityValue = string;
 
 export type ColorUtilityTokenMap = {
     [Token in ColorUtilityTokens]: ColorUtilityValue;

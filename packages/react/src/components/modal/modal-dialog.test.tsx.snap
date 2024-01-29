@@ -241,6 +241,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c3 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -534,6 +535,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 }
 
 .c3 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -895,6 +897,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c3 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -1302,6 +1305,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c3 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -1652,6 +1656,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c3 {
+  color: #000000;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;

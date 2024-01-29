@@ -1,6 +1,11 @@
-import { ColorUtilityTokens, ColorUtilityValue } from './ref-tokens/color-utility-tokens';
-import { PaletteTokens, PaletteValue } from './ref-tokens/palette-tokens';
-import { TextAttributeTokens, TextAttributeValue } from './ref-tokens/text-attributes-tokens';
+import {
+    PaletteTokens,
+    PaletteValue,
+    ColorUtilityTokens,
+    ColorUtilityValue,
+    TextAttributeTokens,
+    TextAttributeValue,
+} from './ref';
 
 export type RefTokenValue =
     | PaletteValue

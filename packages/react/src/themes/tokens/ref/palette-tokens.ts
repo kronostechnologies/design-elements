@@ -1,5 +1,3 @@
-export type PaletteValue = string;
-
 export type PaletteTokens =
     | 'color-brand-05'
     | 'color-brand-20'
@@ -44,6 +42,8 @@ export type PaletteTokens =
     | 'color-discovery-20'
     | 'color-discovery-50'
     | 'color-discovery-70';
+
+export type PaletteValue = string;
 
 export type PaletteTokenMap = {
     [Token in PaletteTokens]: PaletteValue;

@@ -1,7 +1,9 @@
 import { RefTokenMap } from '../tokens';
-import { defaultColorUtilityTokens } from './default-ref-tokens/default-color-utility-tokens';
-import { defaultPaletteTokens } from './default-ref-tokens/default-palette-tokens';
-import { defaultTextAttributeTokens } from './default-ref-tokens/default-text-attributes-tokens';
+import {
+    defaultPaletteTokens,
+    defaultTextAttributeTokens,
+    defaultColorUtilityTokens,
+} from './default-ref';
 
 export const defaultRefTokens: RefTokenMap = {
     ...defaultPaletteTokens,

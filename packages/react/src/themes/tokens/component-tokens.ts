@@ -1,9 +1,15 @@
-import { ButtonTokens } from './component-tokens/button-tokens';
+import {
+    ButtonTokens,
+    HeadingTokens,
+    LabelTokens,
+} from './component';
 import { AliasTokens } from './alias-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
-    | ButtonTokens;
+    | ButtonTokens
+    | HeadingTokens
+    | LabelTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
