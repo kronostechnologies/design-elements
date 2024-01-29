@@ -1,3 +1,6 @@
+import { AliasTokens } from '../alias-tokens';
+import { RefTokens } from '../ref-tokens';
+
 export type ButtonTokens =
     | 'button-primary-background-color'
     | 'button-primary-border-color'
@@ -134,3 +137,9 @@ export type ButtonTokens =
     | 'button-focus-border-box-shadow-color-2'
     | 'button-focus-border-box-shadow-inset-color-1'
     | 'button-focus-border-box-shadow-inset-color-2';
+
+export type ButtonTokenValue = AliasTokens | RefTokens;
+
+export type ButtonTokenMap = {
+    [Token in ButtonTokens]: ButtonTokenValue;
+};
