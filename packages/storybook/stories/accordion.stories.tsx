@@ -102,3 +102,26 @@ export const DefaultDisabled: Story = () => {
 
     return <Accordion id="disabled" items={items} />;
 };
+
+export const OnToggle: Story = () => {
+    const onToggle = (itemId: string, expanded: boolean): void => {
+        // eslint-disable-next-line no-console
+        console.log(itemId, expanded);
+    };
+    const items: ItemsProps[] = [
+        {
+            title: 'Panel Title 1',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 2',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 3',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+    ];
+
+    return <Accordion id="handleToggle" items={items} onToggle={onToggle} />;
+};
