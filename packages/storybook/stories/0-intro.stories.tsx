@@ -31,9 +31,8 @@ const ThemeCustomization1: ThemeCustomization = {
         'color-accent-70': '#3F474C',
     },
     alias: {
-        'focus-border-color': 'color-brand-05',
-        'focus-box-shadow-color': 'color-brand-20',
-        'focus-box-shadow-inset-color': 'focus-border-color',
+        'default-text-color': 'color-brand-05',
+        'alternate-text-color': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'color-brand-50',

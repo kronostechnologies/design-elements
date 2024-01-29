@@ -1,5 +1,6 @@
 import {
     ButtonTokens,
+    FocusTokens,
     HeadingTokens,
     LabelTokens,
 } from './component';
@@ -9,7 +10,8 @@ import { RefTokens, RefTokenValue } from './ref-tokens';
 export type ComponentTokens =
     | ButtonTokens
     | HeadingTokens
-    | LabelTokens;
+    | LabelTokens
+    | FocusTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 

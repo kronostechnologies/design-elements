@@ -182,13 +182,4 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-search-disabled-background-color': 'color-neutral-05',
     'button-search-disabled-border-color': 'color-neutral-15',
     'button-search-disabled-text-color': 'color-neutral-30',
-
-    // Focus border
-    'button-focus-border-color': 'focus-border-color',
-    'button-focus-box-shadow-color': 'focus-box-shadow-color',
-    'button-focus-box-shadow-inset-color': 'focus-box-shadow-inset-color',
-    'button-focus-border-box-shadow-color-1': 'focus-border-box-shadow-color-1',
-    'button-focus-border-box-shadow-color-2': 'focus-border-box-shadow-color-2',
-    'button-focus-border-box-shadow-inset-color-1': 'focus-border-box-shadow-inset-color-1',
-    'button-focus-border-box-shadow-inset-color-2': 'focus-border-box-shadow-inset-color-2',
 };

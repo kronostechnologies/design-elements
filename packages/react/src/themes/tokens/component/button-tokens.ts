@@ -129,14 +129,7 @@ export type ButtonTokens =
     | 'button-search-hover-text-color'
     | 'button-search-disabled-background-color'
     | 'button-search-disabled-border-color'
-    | 'button-search-disabled-text-color'
-    | 'button-focus-border-color'
-    | 'button-focus-box-shadow-color'
-    | 'button-focus-box-shadow-inset-color'
-    | 'button-focus-border-box-shadow-color-1'
-    | 'button-focus-border-box-shadow-color-2'
-    | 'button-focus-border-box-shadow-inset-color-1'
-    | 'button-focus-border-box-shadow-inset-color-2';
+    | 'button-search-disabled-text-color';
 
 export type ButtonTokenValue = AliasTokens | RefTokens;
 

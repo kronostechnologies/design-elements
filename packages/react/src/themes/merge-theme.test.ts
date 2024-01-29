@@ -4,7 +4,8 @@ import {
     defaultNotifications,
     defaultTokens,
     defaultRefTokens,
-    defaultAliasTokens, defaultComponentTokens,
+    defaultAliasTokens,
+    defaultComponentTokens,
 } from './default-theme';
 import { mergeTheme } from './merge-theme';
 import { ThemeCustomization } from './tokens/theme';
@@ -67,14 +68,13 @@ const customization : ThemeCustomization = {
         'color-neutral-02': 'blue',
     },
     alias: {
-        'focus-border-color': 'color-brand-05',
-        'focus-box-shadow-color': 'color-brand-20',
-        'focus-box-shadow-inset-color': 'focus-border-color',
+        'default-text-color': 'color-brand-05',
+        'alternate-text-color': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'color-neutral-02',
         'button-primary-inverted-background-color': 'color-brand-20',
-        'button-focus-border-color': 'focus-box-shadow-inset-color',
+        'focus-border-color': 'alternate-text-color',
     },
 };
 
@@ -91,9 +91,8 @@ const expectedTheme = {
     },
     alias: {
         ...defaultAliasTokens,
-        'focus-border-color': 'color-brand-05',
-        'focus-box-shadow-color': 'color-brand-20',
-        'focus-box-shadow-inset-color': 'focus-border-color',
+        'default-text-color': 'color-brand-05',
+        'alternate-text-color': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'blue',
@@ -170,14 +169,14 @@ describe('mergeTheme', () => {
         const consoleSpy = jest.spyOn(console, 'error');
         consoleSpy.mockImplementation(() => {});
 
-        const token = 'focus-border-color';
+        const token = 'default-text-color';
         const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
             alias: {
                 // @ts-ignore-self-referenced-token-test-purpose
-                'focus-border-color': 'focus-border-color',
+                'default-text-color': 'default-text-color',
             },
             component: {
-                'button-primary-background-color': 'focus-border-color',
+                'button-primary-background-color': 'default-text-color',
             },
         };
 
