@@ -1089,6 +1089,9 @@ export const StickyHeaderAndFooter: Story = () => {
     );
 };
 
+const StyledTableWithBackground = styled(Table<StickyFooterData>)`
+        background: #a9cad8;
+`;
 export const WithBackgroundColor: Story = () => {
     const columns: TableColumn<StickyFooterData> = [
         {
@@ -1212,13 +1215,9 @@ export const WithBackgroundColor: Story = () => {
         },
     ];
 
-    const StyleTable = styled(Table<StickyFooterData>)`
-        background: #a9cad8;
-    `;
-
     return (
         <Wrap>
-            <StyleTable
+            <StyledTableWithBackground
                 selectableRows
                 stickyHeader
                 stickyFooter
