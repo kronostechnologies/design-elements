@@ -2273,7 +2273,7 @@ label + .c3 {
       />
       <div
         class="react-datepicker-popper popper"
-        data-placement="bottom"
+        data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
         <div
@@ -3489,7 +3489,7 @@ label + .c3 {
       />
       <div
         class="react-datepicker-popper popper"
-        data-placement="bottom"
+        data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
         <div
