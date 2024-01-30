@@ -97,10 +97,9 @@ const Navigation = styled.nav`
 interface PaginationProps {
     className?: string;
     /**
-     * Total number of pages
-     * @default desktop
+     * Number of results to display per page
      */
-    totalPages: number;
+    resultsPerPage: number;
     /**
      * Displays the total number of results when provided
      */
@@ -129,7 +128,7 @@ interface PaginationProps {
 
 export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     className,
-    totalPages,
+    resultsPerPage,
     numberOfResults,
     defaultActivePage = 1,
     pagesShown = 3,
@@ -139,9 +138,10 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
     const headingId = useId();
+    const currentNumberOfResults = numberOfResults === undefined ? 0 : numberOfResults;
+    const totalPages = currentNumberOfResults === 0 ? 0 : Math.ceil(currentNumberOfResults / resultsPerPage);
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
-    const currentNumberOfResults = numberOfResults === undefined ? 0 : numberOfResults;
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
@@ -186,10 +186,10 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     const ariaLabelledby = headingId;
     let pageStartIndex;
     let pageEndIndex;
-    const pageSize = currentNumberOfResults !== 0 ? Math.ceil(currentNumberOfResults / totalPages) : 0;
-    if (pageSize !== 0 && currentNumberOfResults !== 0) {
-        pageStartIndex = (pageSize * (currentPage - 1)) + 1;
-        pageEndIndex = Math.min(currentNumberOfResults, (pageSize * currentPage));
+
+    if (resultsPerPage !== 0 && currentNumberOfResults !== 0) {
+        pageStartIndex = (resultsPerPage * (currentPage - 1)) + 1;
+        pageEndIndex = Math.min(currentNumberOfResults, (resultsPerPage * currentPage));
     } else {
         pageStartIndex = 0;
         pageEndIndex = 0;

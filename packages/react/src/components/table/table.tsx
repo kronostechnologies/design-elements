@@ -10,6 +10,8 @@ import {
     SortingFn,
     useReactTable,
     ColumnSort,
+    Updater,
+    functionalUpdate,
 } from '@tanstack/react-table';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
@@ -170,7 +172,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
 export interface TableProps<T extends object> {
     data: T[];
-    defaultSort?: ColumnSort;
+    defaultSorting?: ColumnSort;
     columns: ColumnDef<T>[];
     /**
      * Adds row numbers
@@ -191,6 +193,8 @@ export interface TableProps<T extends object> {
     className?: string;
     stickyHeader?: boolean;
     stickyFooter?: boolean;
+    manualSorting?: boolean;
+    onSorting?(sort: ColumnSort): void;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
 }
@@ -198,7 +202,7 @@ export interface TableProps<T extends object> {
 export const Table = <T extends object>({
     className,
     data,
-    defaultSort,
+    defaultSorting,
     columns: defaultColumns,
     stickyHeader = false,
     stickyFooter = false,
@@ -206,12 +210,14 @@ export const Table = <T extends object>({
     rowSize = 'medium',
     selectableRows,
     striped = false,
+    manualSorting = false,
+    onSorting,
     onRowClick,
     onSelectedRowsChange,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
-    const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
+    const [sorting, setSorting] = useState<SortingState>(defaultSorting ? [defaultSorting] : []);
     const [rowSelection, setRowSelection] = useState({});
 
     // Add custom columns for row numbers and row selection
@@ -233,9 +239,14 @@ export const Table = <T extends object>({
             rowSelection,
         },
         enableMultiSort: false,
+        manualSorting,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        onSortingChange: setSorting,
+        onSortingChange: (updater: Updater<SortingState>) => {
+            const newValue = functionalUpdate(updater, sorting);
+            setSorting(newValue);
+            onSorting?.(newValue[0]);
+        },
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
     };
