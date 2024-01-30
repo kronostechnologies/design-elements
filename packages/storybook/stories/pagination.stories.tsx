@@ -12,19 +12,18 @@ export default {
 
 export const Normal: Story = () => (
     <>
-        <Pagination totalPages={0} numberOfResults={undefined} />
-        <Pagination totalPages={3} numberOfResults={30} />
-        <Pagination totalPages={5} numberOfResults={100} />
-        <Pagination totalPages={50} numberOfResults={1530} />
+        <Pagination resultsPerPage={10} numberOfResults={30} />
+        <Pagination resultsPerPage={50} numberOfResults={100} />
+        <Pagination resultsPerPage={75} numberOfResults={1530} />
     </>
 );
 
 export const ControlledPagination: Story = () => {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(18);
 
     return (
         <Pagination
-            totalPages={5}
+            resultsPerPage={5}
             numberOfResults={100}
             onPageChange={setCurrentPage}
             activePage={currentPage}
@@ -34,9 +33,9 @@ export const ControlledPagination: Story = () => {
 ControlledPagination.parameters = rawCodeParameters;
 
 export const WithoutResults: Story = () => (
-    <Pagination totalPages={11} />
+    <Pagination resultsPerPage={11} />
 );
 
 export const With4DigitsNumberOfPages: Story = () => (
-    <Pagination totalPages={1000} />
+    <Pagination resultsPerPage={2} numberOfResults={2000} />
 );
