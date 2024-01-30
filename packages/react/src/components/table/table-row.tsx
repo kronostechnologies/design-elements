@@ -29,7 +29,7 @@ interface CustomCell<TData extends object, TValue> extends Cell<TData, TValue> {
 }
 
 function getRowBackgroundColor({
-    theme, selected, error,
+    selected, error,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
     if (selected) {
         return css`
@@ -44,7 +44,7 @@ function getRowBackgroundColor({
         `;
     }
     return css`
-        background-color: ${theme.greys.white};
+        background-color: inherit;
     `;
 }
 
@@ -72,6 +72,8 @@ function getCellBackgroundCss({
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
+    background-color: inherit;
+
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
@@ -134,6 +136,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
 `;
 
 const StyledCell = styled.td<{ sticky?: boolean, startOffset: number }>`
+    background-color: inherit;
     ${({ sticky, startOffset }) => (sticky) && css`
         left: ${startOffset / 2}px;
         position: sticky;

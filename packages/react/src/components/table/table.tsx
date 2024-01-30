@@ -132,6 +132,7 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
 }
 
 const StyledTable = styled.table<StyledTableProps>`
+    background: ${({ theme }) => theme.greys.white};;
     border-collapse: collapse;
     color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
@@ -166,6 +167,18 @@ const StyledTable = styled.table<StyledTableProps>`
         transform: translateX(-50%);
         width: var(--size-2halfx);
     }
+`;
+
+const StyledTHead = styled.thead`
+    background: inherit;
+`;
+
+const StyledTBody = styled.tbody`
+    background: inherit;
+`;
+
+const StyledTFoot = styled.tfoot`
+    background: inherit;
 `;
 
 export interface TableProps<T extends object> {
@@ -263,15 +276,15 @@ export const Table = <T extends object>({
             clickableRows={onRowClick !== undefined}
             ref={tableRef}
         >
-            <thead>
+            <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>
                         headerGroup={headerGroup}
                         stickyHeader={stickyHeader}
                     />
                 ))}
-            </thead>
-            <tbody>
+            </StyledTHead>
+            <StyledTBody>
                 {table.getRowModel().rows.map((row) => (
                     <TableRow<T>
                         striped={striped}
@@ -280,16 +293,16 @@ export const Table = <T extends object>({
                         onClick={onRowClick}
                     />
                 ))}
-            </tbody>
+            </StyledTBody>
             {hasFooter && (
-                <tfoot>
+                <StyledTFoot>
                     {table.getFooterGroups().map((footerGroup) => (
                         <TableFooter<T>
                             footerGroup={footerGroup}
                             stickyFooter={stickyFooter}
                         />
                     ))}
-                </tfoot>
+                </StyledTFoot>
             )}
         </StyledTable>
     );

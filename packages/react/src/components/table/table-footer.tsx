@@ -23,7 +23,7 @@ interface CustomFooter<TData extends object, TValue> extends Header<TData, TValu
 }
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: inherit;
     font-weight: var(--font-semi-bold);
     position: relative;
     ${({ sticky }) => sticky && css`
@@ -41,6 +41,7 @@ const StyledFooter = styled.td<{ sticky: boolean }>`
 `;
 
 const StyleFooterRow = styled.tr<{ stickyFooter: boolean }>`
+    background-color: inherit;
     ${({ stickyFooter }) => stickyFooter && css`
         bottom: 0;
         position: sticky;

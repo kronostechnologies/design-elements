@@ -39,7 +39,7 @@ const SortButton = styled.button<{ textAlign: string }>`
 `;
 
 const StyledHeader = styled.th<{ sticky: boolean, startOffset: number }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: inherit;
     box-sizing: border-box;
     position: relative;
     ${({ sticky, startOffset }) => sticky && css`
@@ -58,6 +58,7 @@ const StyledHeader = styled.th<{ sticky: boolean, startOffset: number }>`
 `;
 
 const StyleHeaderRow = styled.tr<{ stickyHeader: boolean }>`
+    background-color: inherit;
     ${({ stickyHeader }) => stickyHeader && css`
         position: sticky;
         top: 0;

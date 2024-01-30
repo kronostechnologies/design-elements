@@ -19,6 +19,7 @@ interface AccordionProps {
     id?: string;
     items: ItemsProps[];
     mode?: 'single' | 'multi';
+    onToggle?: (itemId: string, expanded: boolean) => void;
 }
 
 export const StyledAccordionGroup = styled.div`
@@ -31,6 +32,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     id: providedId,
     mode = 'single',
     items,
+    onToggle,
 }) => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
 
@@ -60,8 +62,9 @@ export const Accordion: React.FC<AccordionProps> = ({
                     return [...prevIds, itemId];
                 });
             }
+            onToggle?.(itemId, !expandedItemIds.includes(itemId));
         },
-        [mode, setExpandedItemIds],
+        [mode, onToggle, expandedItemIds, setExpandedItemIds],
     );
 
     const handleButtonKeyDown = (
