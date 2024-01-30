@@ -1,6 +1,6 @@
-import { PaletteTokenMap } from '../../tokens';
+import { PaletteTokenMap } from '../../tokens/ref/palette-tokens';
 
-export const defaultPaletteTokens: PaletteTokenMap = {
+export const paletteTokens: PaletteTokenMap = {
     'color-brand-05': '#E0F0F9',
     'color-brand-20': '#84C6EA',
     'color-brand-50': '#006296',

@@ -1,6 +1,6 @@
 import { AliasTokenMap } from '../tokens';
 
-export const defaultAliasTokens: AliasTokenMap = {
+export const aliasTokens: AliasTokenMap = {
     'default-text-color': 'color-black',
     'alternate-text-color': 'color-neutral-65',
 };

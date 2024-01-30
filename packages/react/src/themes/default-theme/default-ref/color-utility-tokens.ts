@@ -1,6 +1,6 @@
-import { ColorUtilityTokenMap } from '../../tokens';
+import { ColorUtilityTokenMap } from '../../tokens/ref/color-utility-tokens';
 
-export const defaultColorUtilityTokens: ColorUtilityTokenMap = {
+export const colorUtilityTokens: ColorUtilityTokenMap = {
     'transparent-10': 'rgba(0, 0, 0, 0.1)',
     'transparent-20': 'rgba(0, 0, 0, 0.2)',
     'transparent-30': 'rgba(0, 0, 0, 0.3)',

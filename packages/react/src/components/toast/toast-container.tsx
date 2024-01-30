@@ -26,8 +26,7 @@ interface ToastWrapperProps {
 
 function getToastContainerBackground(
     { theme, type }: ToastWrapperProps,
-):
-    FlattenInterpolation<ThemeProps<ResolvedTheme>> {
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     switch (type) {
         case 'information':
             return css`

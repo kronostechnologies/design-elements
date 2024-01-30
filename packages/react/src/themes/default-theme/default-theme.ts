@@ -1,10 +1,10 @@
 import { ThemeCustomization } from '../tokens/theme';
-import { defaultAliasTokens } from './default-alias-tokens';
-import { defaultComponentTokens } from './default-component-tokens';
-import { defaultRefTokens } from './default-ref-tokens';
+import { aliasTokens } from './alias-tokens';
+import { componentTokens } from './component-tokens';
+import { refTokens } from './ref-tokens';
 
 export const defaultTheme: ThemeCustomization = {
-    ref: defaultRefTokens,
-    alias: defaultAliasTokens,
-    component: defaultComponentTokens,
+    ref: refTokens,
+    alias: aliasTokens,
+    component: componentTokens,
 };

@@ -1,6 +1,6 @@
-import { ButtonTokenMap } from '../../tokens';
+import { ButtonTokenMap } from '../../tokens/component/button-tokens';
 
-export const defaultButtonTokens: ButtonTokenMap = {
+export const buttonTokens: ButtonTokenMap = {
 
     // Primary
     'button-primary-background-color': 'color-brand-50',

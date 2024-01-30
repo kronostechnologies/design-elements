@@ -1,6 +1,6 @@
-import { FocusTokenMap } from '../../tokens';
+import { FocusTokenMap } from '../../tokens/component/focus-tokens';
 
-export const defaultFocusTokens: FocusTokenMap = {
+export const focusTokens: FocusTokenMap = {
     'focus-border-color': 'color-brand-50',
     'focus-box-shadow-color': 'color-brand-20',
     'focus-box-shadow-inset-color': 'color-brand-20',
