@@ -9,7 +9,7 @@ import {
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -26,7 +26,7 @@ import { useListSearch } from '../../hooks/use-list-search';
 interface TextboxProps {
     $disabled?: boolean;
     $isMobile: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
     $valid: boolean;
     value: string;
 }
@@ -69,7 +69,7 @@ const Textbox = styled.div<TextboxProps>`
     text-wrap: none;
     user-select: none;
     width: 100%;
-    
+
     ${({ theme }) => focus({ theme }, true)};
 `;
 

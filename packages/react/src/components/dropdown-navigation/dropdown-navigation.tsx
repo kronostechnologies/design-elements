@@ -12,7 +12,7 @@ import {
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { menuDimensions } from '../../tokens/menuDimensions';
+import { menuDimensions } from '../../legacy-constants/menuDimensions';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';

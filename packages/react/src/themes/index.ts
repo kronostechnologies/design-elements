@@ -1,2 +1,2 @@
 export * from './equisoft';
-export * from './theme';
+export * from './tokens';

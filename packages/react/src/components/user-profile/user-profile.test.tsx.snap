@@ -103,12 +103,14 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
-  color: #003A5A;
+  border-color: transparent;
+  color: #006296;
 }
 
 .c7 {
@@ -795,12 +797,14 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
-  color: #003A5A;
+  border-color: transparent;
+  color: #006296;
 }
 
 .c7 {
@@ -1463,12 +1467,14 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c3:disabled {
   background-color: transparent;
-  color: #003A5A;
+  border-color: transparent;
+  color: #006296;
 }
 
 .c3 > svg {
@@ -2176,12 +2182,14 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
 .c2:disabled {
   background-color: transparent;
-  color: #003A5A;
+  border-color: transparent;
+  color: #006296;
 }
 
 .c7 {

@@ -1,10 +1,10 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 
 export type StatusType = 'enabled' | 'disabled' | 'blocked';
 
-function getBackgroundColor(type: StatusType, theme: Theme): string {
+function getBackgroundColor(type: StatusType, theme: ResolvedTheme): string {
     switch (type) {
         case 'enabled':
             return theme.notifications['success-1.1'];
