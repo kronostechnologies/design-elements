@@ -12,7 +12,6 @@ export default {
 
 export const Normal: Story = () => (
     <>
-        <Pagination resultsPerPage={0} numberOfResults={undefined} />
         <Pagination resultsPerPage={10} numberOfResults={30} />
         <Pagination resultsPerPage={50} numberOfResults={100} />
         <Pagination resultsPerPage={75} numberOfResults={1530} />
