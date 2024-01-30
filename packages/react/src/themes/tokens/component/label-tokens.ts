@@ -9,3 +9,7 @@ export type LabelTokenValue = AliasTokens | RefTokens;
 export type LabelTokenMap = {
     [Token in LabelTokens]: LabelTokenValue;
 };
+
+export const defaultLabelTokens: LabelTokenMap = {
+    'label-text-color': 'default-text-color',
+};

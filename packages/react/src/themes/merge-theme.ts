@@ -1,10 +1,4 @@
-import {
-    defaultMain,
-    defaultGreys,
-    defaultNotifications,
-    defaultTokens,
-    defaultTheme,
-} from './default-theme';
+import { defaultTheme } from './default-theme';
 import {
     AliasTokenMap,
     AliasTokens,
@@ -14,7 +8,8 @@ import {
     RefTokens,
     RefTokenValue,
 } from './tokens';
-import { LegacyTheme, ResolvedTheme, ThemeCustomization } from './tokens/theme';
+import { LegacyTheme, ResolvedTheme, ThemeCustomization } from './theme';
+import { defaultGreys, defaultMain, defaultNotifications, defaultTokens } from './tokens/legacy-tokens';
 
 export function mergeTheme(customization: ThemeCustomization): ResolvedTheme {
     // Merge the default theme with the customization provided

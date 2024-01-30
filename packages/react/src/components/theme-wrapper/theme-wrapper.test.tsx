@@ -2,7 +2,7 @@ import { render, shallow } from 'enzyme';
 import { Button } from '../..';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 import { ThemeWrapper } from './theme-wrapper';
-import { ThemeCustomization } from '../../themes/tokens/theme';
+import { ThemeCustomization } from '../../themes/theme';
 
 const ThemeCustomization: ThemeCustomization = {
     ref: {

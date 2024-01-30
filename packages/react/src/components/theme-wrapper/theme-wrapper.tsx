@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme } from '../../themes';
 import { mergeTheme } from '../../themes/merge-theme';
-import { ThemeCustomization } from '../../themes/tokens/theme';
+import { ThemeCustomization } from '../../themes/theme';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {

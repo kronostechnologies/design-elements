@@ -3,12 +3,10 @@ import {
     defaultGreys,
     defaultNotifications,
     defaultTokens,
-    refTokens,
-    aliasTokens,
-    componentTokens,
-} from './default-theme';
+} from './tokens/legacy-tokens';
 import { mergeTheme } from './merge-theme';
-import { ThemeCustomization } from './tokens/theme';
+import { ThemeCustomization } from './theme';
+import { defaultRefTokens, defaultComponentTokens, defaultAliasTokens } from './tokens';
 
 const legacyThemeCustomization: ThemeCustomization = {
     main: {
@@ -56,9 +54,9 @@ const expectedLegacyTheme = {
     },
     notifications: defaultNotifications,
     tokens: defaultTokens,
-    ref: refTokens,
-    alias: aliasTokens,
-    component: componentTokens,
+    ref: defaultRefTokens,
+    alias: defaultAliasTokens,
+    component: defaultComponentTokens,
 };
 
 const customization : ThemeCustomization = {
@@ -84,13 +82,13 @@ const expectedTheme = {
     notifications: defaultNotifications,
     tokens: defaultTokens,
     ref: {
-        ...refTokens,
+        ...defaultRefTokens,
         'color-brand-05': 'red',
         'color-brand-20': 'green',
         'color-neutral-02': 'blue',
     },
     alias: {
-        ...aliasTokens,
+        ...defaultAliasTokens,
         'default-text-color': 'color-brand-05',
         'alternate-text-color': 'color-brand-20',
     },

@@ -1,7 +1,7 @@
 import { useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

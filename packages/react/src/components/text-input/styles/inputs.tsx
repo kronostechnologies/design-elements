@@ -1,5 +1,5 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { ResolvedTheme } from '../../../themes/tokens/theme';
+import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 

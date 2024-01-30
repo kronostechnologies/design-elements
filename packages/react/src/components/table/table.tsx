@@ -12,7 +12,7 @@ import {
     useTable,
 } from 'react-table';
 import styled, { css } from 'styled-components';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';

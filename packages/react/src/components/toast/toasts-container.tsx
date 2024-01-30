@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useToasts } from '../../hooks/use-toasts';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { ToastContainer } from './toast-container';
 import { ToastPosition } from './toast-position';

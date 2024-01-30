@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';

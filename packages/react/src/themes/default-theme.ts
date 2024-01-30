@@ -1,7 +1,7 @@
+import { defaultComponentTokens, defaultAliasTokens, defaultRefTokens } from './tokens';
 import { ThemeCustomization } from './theme';
-import { defaultRefTokens, defaultComponentTokens, defaultAliasTokens } from './tokens';
 
-export const equisoftTheme: ThemeCustomization = {
+export const defaultTheme: ThemeCustomization = {
     ref: defaultRefTokens,
     alias: defaultAliasTokens,
     component: defaultComponentTokens,

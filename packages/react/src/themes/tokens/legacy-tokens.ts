@@ -1,4 +1,4 @@
-import { ResolvedTheme } from '../tokens/theme';
+import { ResolvedTheme } from '../theme';
 
 export const defaultMain: ResolvedTheme['main'] = {
     'primary-1.1': '#006296',

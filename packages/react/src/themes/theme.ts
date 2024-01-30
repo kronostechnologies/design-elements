@@ -1,4 +1,4 @@
-import { AliasTokenMap, RefTokenMap, ComponentTokenMap, ResolvedComponentTokens } from './index';
+import { AliasTokenMap, RefTokenMap, ComponentTokenMap, ResolvedComponentTokens } from './tokens';
 
 export interface LegacyTheme {
     main: {

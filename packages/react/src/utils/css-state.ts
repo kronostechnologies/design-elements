@@ -1,5 +1,5 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../themes/tokens/theme';
+import { ResolvedTheme } from '../themes/theme';
 
 export const focus = (
     { theme }: { theme: ResolvedTheme },

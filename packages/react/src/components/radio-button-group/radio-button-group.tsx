@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef, PropsWithChildren, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/tokens/theme';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 
 type Size = 'small' | 'medium';
