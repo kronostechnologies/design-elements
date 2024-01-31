@@ -28,7 +28,7 @@ describe('Button', () => {
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
-    test('has disabled styles', () => {
+    test('has primary disabled styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" disabled label="Primary Button" />,
         );

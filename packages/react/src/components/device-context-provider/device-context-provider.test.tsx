@@ -1,6 +1,6 @@
 import { mount, ReactWrapper } from 'enzyme';
 import { ReactElement } from 'react';
-import { breakpoints } from '../../tokens/breakpoints';
+import { breakpoints } from '../../legacy-constants/breakpoints';
 import { DeviceContextProps, DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
 
 const TestComponent = (): ReactElement => {

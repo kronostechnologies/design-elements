@@ -12,7 +12,7 @@ import {
     useTable,
 } from 'react-table';
 import styled, { css } from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
@@ -27,7 +27,7 @@ interface StyledTableProps {
     clickableRows: boolean;
     device: DeviceType;
     striped: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
     rowSize?: RowSize;
 }
 
@@ -50,7 +50,8 @@ interface CustomRowProps {
 const utilColumnClassName = 'eq-table__util-column';
 
 const StyledHeader = styled.th<{ sticky: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: inherit;
+
     position: relative;
     ${({ sticky }) => sticky && css`
         position: sticky;
@@ -84,7 +85,7 @@ function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: bool
 }
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: inherit;
     font-weight: var(--font-semi-bold);
     position: relative;
     ${({ sticky }) => sticky && css`
@@ -182,6 +183,7 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
 }
 
 const StyledTable = styled.table<StyledTableProps>`
+    background: ${({ theme }) => theme.greys.white};;
     border-collapse: collapse;
     color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
@@ -201,7 +203,6 @@ const StyledTable = styled.table<StyledTableProps>`
         line-height: 1.5rem;
         margin: 0;
         text-align: left;
-
         :last-child {
             border-right: 0;
         }
@@ -215,6 +216,26 @@ const StyledTable = styled.table<StyledTableProps>`
         text-align: center;
         width: var(--size-2halfx);
     }
+`;
+
+const StyledTableRow = styled.tr`
+    background: inherit;
+`;
+
+const StyledTableHead = styled.thead`
+    background: inherit;
+`;
+
+const StyledTBody = styled.tbody`
+    background: inherit;
+`;
+
+const StyledFooterTableRow = styled.tr`
+    background: inherit;
+`;
+
+const StyledTableFooter = styled.tfoot`
+    background: inherit;
 `;
 
 interface SelectableRowProps<T extends object> extends CellProps<T> {
@@ -375,14 +396,15 @@ export const Table = <T extends object>({
             {...getTableProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             ref={tableRef}
         >
-            <thead>
+            <StyledTableHead>
                 {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
+                    /* eslint-disable-next-line max-len */
+                    <StyledTableRow {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                         {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
-                    </tr>
+                    </StyledTableRow>
                 ))}
-            </thead>
-            <tbody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
+            </StyledTableHead>
+            <StyledTBody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                 {rows.map((row: Row<T>, i: number) => {
                     prepareRow(row);
                     return (
@@ -396,17 +418,18 @@ export const Table = <T extends object>({
                         />
                     );
                 })}
-            </tbody>
+            </StyledTBody>
             {hasFooter && (
-                <tfoot>
+                <StyledTableFooter>
                     {footerGroups.map((group) => (
-                        <tr {...group.getFooterGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
+                        /* eslint-disable-next-line max-len */
+                        <StyledFooterTableRow {...group.getFooterGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                             {group.headers.map((column) => (
                                 getFooter(column, stickyFooter)
                             ))}
-                        </tr>
+                        </StyledFooterTableRow>
                     ))}
-                </tfoot>
+                </StyledTableFooter>
             )}
         </StyledTable>
     );
