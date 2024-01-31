@@ -1,13 +1,13 @@
 import { useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 interface StyledLabelProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     isMobile: boolean;
     disabled: boolean;
 }
@@ -20,7 +20,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
 `;
 
 interface StyledButtonSpanProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     isMobile: boolean;
 }
 
@@ -37,7 +37,7 @@ const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
 `;
 
 interface StyledButtonProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     isMobile: boolean
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
@@ -18,7 +18,7 @@ export interface AccordionItemProps {
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
 
-const AccordionSection = styled.section<{ theme: Theme }>`
+const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.greys['colored-white']};
     border-color: ${({ theme }) => theme.greys.grey};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
@@ -38,7 +38,7 @@ const AccordionSection = styled.section<{ theme: Theme }>`
     }
 `;
 
-const AccordionBody = styled.div<{ theme: Theme }>`
+const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.greys['colored-white']};
     color: ${({ theme }) => theme.greys['neutral-90']};
     font-size: 0.75rem;
@@ -60,7 +60,7 @@ const HeadingStyled = styled(Heading)`
     position: relative;
 `;
 
-const ButtonStyled = styled(Button)<{ theme: Theme }>`
+const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     align-items: flex-start;
     border: 1px solid ${({ theme }) => theme.greys.grey};
     border-radius: var(--border-radius-2x);

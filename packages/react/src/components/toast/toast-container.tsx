@@ -10,7 +10,7 @@ import styled, {
 import { useTheme } from '../../hooks/use-theme';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { IconButton, IconButtonProps } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
@@ -20,11 +20,13 @@ import { ToastType } from './toast-type';
 interface ToastWrapperProps {
     isMobile: boolean;
     position: ToastPosition;
-    theme: Theme;
+    theme: ResolvedTheme;
     type: ToastType;
 }
 
-function getToastContainerBackground({ theme, type }: ToastWrapperProps): FlattenInterpolation<ThemeProps<Theme>> {
+function getToastContainerBackground(
+    { theme, type }: ToastWrapperProps,
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     switch (type) {
         case 'information':
             return css`
@@ -65,7 +67,7 @@ const toastInRight = keyframes` /* stylelint-disable-line keyframes-name-pattern
     }
 `;
 
-function getToastPosition({ position }: ToastWrapperProps): FlattenInterpolation<ThemeProps<Theme>> {
+function getToastPosition({ position }: ToastWrapperProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     switch (position) {
         case 'top-right':
             return css`
@@ -108,7 +110,7 @@ const StyledMessage = styled.p<{ color: string, $isMobile: boolean }>`
     margin: 0 var(--spacing-1halfx);
 `;
 
-type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onClick'>, Theme> & {
+type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onClick'>, ResolvedTheme> & {
     $color: string;
     $isMobile: boolean;
     $type: ToastType;
@@ -197,7 +199,7 @@ function getToastIconName(type: ToastType): IconName {
     }
 }
 
-function getToastTextColor(type: ToastType, theme: Theme): string {
+function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
     return type === 'warning' ? theme.greys.black : theme.greys.white;
 }
 

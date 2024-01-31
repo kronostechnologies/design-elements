@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Theme } from '../themes';
+import { ResolvedTheme } from '../themes/theme';
 
-export function useTheme(): Theme {
+export function useTheme(): ResolvedTheme {
     return useContext(ThemeContext);
 }

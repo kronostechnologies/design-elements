@@ -1,2 +1,2 @@
 export { equisoftTheme } from './themes/equisoft';
-export { Theme } from './themes/theme';
+export { ResolvedTheme } from './themes/theme';

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Theme } from '../../../themes';
+import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 
 export const Label = styled.label`
-    ${({ theme }: { theme: Theme }) => `
+    ${({ theme }: { theme: ResolvedTheme }) => `
             --border-radius: 8px;
 
             align-items: center;
