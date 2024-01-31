@@ -1,7 +1,9 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
-import { equisoftTheme, Theme } from '../../themes';
+import { equisoftTheme } from '../../themes';
+import { mergeTheme } from '../../themes/merge-theme';
+import { ThemeCustomization } from '../../themes/theme';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {
@@ -10,7 +12,7 @@ export interface ThemeWrapperProps {
      * @default false
      */
     isolateStyles?: boolean;
-    theme?: Theme;
+    theme?: ThemeCustomization;
 }
 
 /**
@@ -21,14 +23,7 @@ export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps
     isolateStyles = false,
     theme,
 }) => {
-    let selectedTheme = theme;
-    if (selectedTheme) {
-        if (Object.entries(selectedTheme).length === 0 && selectedTheme.constructor === Object) {
-            selectedTheme = equisoftTheme;
-        }
-    } else {
-        selectedTheme = equisoftTheme;
-    }
+    const selectedTheme = mergeTheme(theme || equisoftTheme);
 
     let content: ReactNode;
     if (isolateStyles) {

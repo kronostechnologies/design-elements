@@ -19,7 +19,7 @@ import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepick
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
@@ -42,17 +42,17 @@ import {
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
     valid?: boolean;
 }
 
 interface CalendarButtonProps {
     disabled?: boolean;
-    theme: Theme;
+    theme: ResolvedTheme;
     isMobile?: boolean;
 }
 
-const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
+const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
     display: flex;
 
     .popper {
@@ -583,6 +583,7 @@ export const Datepicker = forwardRef(({
                         openToDate={openToDate || undefined}
                         placeholderText={getPlaceholder}
                         popperClassName="popper"
+                        popperPlacement="bottom-start"
                         preventOpenOnFocus
                         selected={selectedDate}
                         showPopperArrow={false}

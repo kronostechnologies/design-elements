@@ -7,7 +7,7 @@ import {
     RowData,
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { CustomColumnDef } from './types';
 
 interface StyledTableRowProps {
@@ -25,7 +25,7 @@ interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData
 
 function getRowBackgroundColor({
     $selected, $error,
-}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+}: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     if ($selected) {
         return css`
             /* TODO fix with next thematization */
@@ -46,7 +46,7 @@ function getRowBackgroundColor({
 function getCellBackgroundCss({
     theme,
     $clickable,
-}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+}: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     if (!$clickable) {
         return css`
             td {

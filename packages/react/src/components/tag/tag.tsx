@@ -9,7 +9,7 @@ import {
 } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
@@ -106,7 +106,7 @@ const DeleteIcon = styled(Icon).attrs({
     color: '#60666e',
 })``;
 
-function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<Theme>> | false {
+function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
         &:hover {
             /* TODO fix with next thematization gray65 */
