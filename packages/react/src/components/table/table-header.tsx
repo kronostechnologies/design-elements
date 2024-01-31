@@ -76,7 +76,7 @@ function getHeading<TData extends object, TValue>(
         sortState = 'descending';
     }
 
-    if (header.column.columnDef.sortable) {
+    if (header.column.getCanSort()) {
         return (
             <StyledHeader
                 aria-sort={sortState}
@@ -90,7 +90,6 @@ function getHeading<TData extends object, TValue>(
                 {header.isPlaceholder ? null : (
                     <SortButton
                         $textAlign={header.column.columnDef.textAlign ?? 'left'}
-                        className={header.column.getCanSort() ? 'cursor-pointer select-none' : ''}
                         onClick={header.column.getToggleSortingHandler()}
                     >
                         {flexRender(
