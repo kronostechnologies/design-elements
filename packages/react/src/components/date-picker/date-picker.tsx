@@ -583,6 +583,7 @@ export const Datepicker = forwardRef(({
                         openToDate={openToDate || undefined}
                         placeholderText={getPlaceholder}
                         popperClassName="popper"
+                        popperPlacement="bottom-start"
                         preventOpenOnFocus
                         selected={selectedDate}
                         showPopperArrow={false}
