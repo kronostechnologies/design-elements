@@ -4,40 +4,35 @@ import {
     Row,
     Cell,
     Column,
-    ColumnDef,
+    RowData,
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
+import { CustomColumnDef } from './types';
 
 interface StyledTableRowProps {
-    clickable: boolean;
-    error: boolean;
-    selected: boolean;
-    striped?: boolean;
+    $clickable: boolean;
+    $error: boolean;
+    $selected: boolean;
+    $striped?: boolean;
 }
 
-type CustomColumnDef<TData extends object, TValue> = ColumnDef<TData, TValue> & {
-    className?: string;
-    textAlign?: CSSProperties['textAlign'];
-    sticky?: boolean;
-};
-
-interface CustomCell<TData extends object, TValue> extends Cell<TData, TValue> {
+interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
     column: Column<TData, TValue> & {
         columnDef: CustomColumnDef<TData, TValue>;
     };
 }
 
 function getRowBackgroundColor({
-    selected, error,
+    $selected, $error,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
-    if (selected) {
+    if ($selected) {
         return css`
             /* TODO fix with next thematization */
             background-color: #e0f0f9;
         `;
     }
-    if (error) {
+    if ($error) {
         return css`
             /* TODO fix with next thematization theme.notifications.error4 */
             background-color: #fcf8f9;
@@ -50,9 +45,9 @@ function getRowBackgroundColor({
 
 function getCellBackgroundCss({
     theme,
-    clickable,
+    $clickable,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
-    if (!clickable) {
+    if (!$clickable) {
         return css`
             td {
                 background-color: inherit;
@@ -61,31 +56,31 @@ function getCellBackgroundCss({
     }
 
     return css`
-        :hover td {
+        &:hover td {
             background-color: ${theme.greys.grey};
         }
 
-        :not(:hover) td {
+        &:not(:hover) td {
             background-color: inherit;
         }
     `;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
+const StyledTableRow = styled.tr<StyledTableRowProps>`
     background-color: inherit;
 
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
 
-    ${({ error, striped, theme }) => striped && !error && css`
-        :nth-child(odd) {
+    ${({ $error, $striped, theme }) => $striped && !$error && css`
+        &:nth-child(odd) {
             background-color: ${theme.greys['colored-white']};
         }
     `}
 
-    ${({ clickable, theme }) => clickable && css`
-        :focus {
+    ${({ $clickable, theme }) => $clickable && css`
+        &:focus {
             position: relative;
 
             &::after {
@@ -101,12 +96,12 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
             }
         }
 
-        :hover {
+        &:hover {
             cursor: pointer;
         }
     `}
 
-    ${({ error, theme }) => error && css`
+    ${({ $error, theme }) => $error && css`
         position: relative;
 
         &::after {
@@ -135,10 +130,12 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
     ${getCellBackgroundCss}
 `;
 
-const StyledCell = styled.td<{ sticky?: boolean, startOffset: number }>`
+const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
     background-color: inherit;
-    ${({ sticky, startOffset }) => (sticky) && css`
-        left: ${startOffset / 2}px;
+    text-align: ${({ $textAlign }) => $textAlign};
+
+    ${({ $sticky, $startOffset }) => ($sticky) && css`
+        left: ${$startOffset / 2}px;
         position: sticky;
         z-index: 2;
     `}
@@ -147,9 +144,9 @@ const StyledCell = styled.td<{ sticky?: boolean, startOffset: number }>`
 function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {
     return (
         <StyledCell
-            sticky={cell.column.columnDef.sticky || false}
-            style={{ textAlign: cell.column.columnDef.textAlign || 'left' }}
-            startOffset={cell.column.getStart()}
+            $sticky={cell.column.columnDef.sticky || false}
+            $textAlign={cell.column.columnDef.textAlign}
+            $startOffset={cell.column.getStart()}
             key={cell.id}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -157,7 +154,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
     );
 }
 
-interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'clickable' | 'selected'> {
+interface TableRowProps<T extends object> {
     row: Row<T>;
     striped: boolean;
     error: boolean;
@@ -171,16 +168,16 @@ export const TableRow = <T extends object>({
     striped,
 }: TableRowProps<T>): ReactElement => (
     <StyledTableRow
-        clickable={!!onClick}
+        $clickable={!!onClick}
         data-testid={`table-row-${row.index}`}
-        error={error}
+        $error={error}
         key={row.id}
-        striped={striped}
-        selected={row.getIsSelected()}
+        $striped={striped}
+        $selected={row.getIsSelected()}
         onClick={() => onClick && onClick(row)}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
     >
-        {row.getVisibleCells().map((cell) => getCell(cell))}
+        {row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
     </StyledTableRow>
 );

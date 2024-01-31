@@ -1,13 +1,11 @@
-import { ReactElement, useRef, useState, useMemo, useEffect, CSSProperties } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
 import styled from 'styled-components';
 import {
     HeaderContext,
     Row,
-    ColumnDef,
     getCoreRowModel,
     getSortedRowModel,
     SortingState,
-    SortingFn,
     useReactTable,
     ColumnSort,
 } from '@tanstack/react-table';
@@ -16,30 +14,11 @@ import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Theme } from '../../themes';
+import { CustomColumnDef } from './types';
 
 type RowSize = 'small' | 'medium';
 
-interface StyledTableProps {
-    clickableRows: boolean;
-    device: DeviceType;
-    striped: boolean;
-    theme: Theme;
-    rowSize?: RowSize;
-}
-
-type CustomColumn<T extends object> = ColumnDef<T> & {
-    sortable?: boolean;
-    textAlign?: CSSProperties['textAlign'];
-    className?: string;
-    colSpan?: number;
-    sticky?: boolean;
-    sortingFn?: SortingFn<T>;
-    headerColSpan?: number;
-    footerColSpan?: number;
-};
-
-export type TableColumn<T extends object> = CustomColumn<T>[];
+export type TableColumn<T extends object> = CustomColumnDef<T>[];
 export type TableRow<T> = T & { error?: boolean };
 
 interface CustomRowProps {
@@ -87,7 +66,8 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
 }
 
 const utilColumnClassName = 'eq-table__util-column';
-function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
+
+function getCustomColumn<T extends object>(type: string): CustomColumnDef<T> {
     return {
         id: type,
         header(props: HeaderContext<T, unknown>) {
@@ -131,24 +111,31 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
     };
 }
 
+interface StyledTableProps {
+    $clickableRows: boolean;
+    $device: DeviceType;
+    $striped: boolean;
+    $rowSize?: RowSize;
+}
+
 const StyledTable = styled.table<StyledTableProps>`
-    background: ${({ theme }) => theme.greys.white};;
+    background: ${({ theme }) => theme.greys.white};
     border-collapse: collapse;
     color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
 
     th {
         font-weight: var(--font-semi-bold);
-        padding: ${({ device, rowSize }) => getThPadding(device, rowSize)};
+        padding: ${({ $device, $rowSize }) => getThPadding($device, $rowSize)};
     }
 
     td {
-        padding: ${({ device, rowSize }) => getTdPadding(device, rowSize)};
+        padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
     }
 
     th,
     td {
-        font-size: ${({ device }) => (device === 'desktop' ? 0.875 : 1)}rem;
+        font-size: ${({ $device }) => ($device === 'desktop' ? 0.875 : 1)}rem;
         line-height: 1.5rem;
         margin: 0;
         text-align: left;
@@ -158,7 +145,7 @@ const StyledTable = styled.table<StyledTableProps>`
         }
     }
 
-    ${`.${utilColumnClassName}`} {
+    .${utilColumnClassName} {
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys['dark-grey']};
         font-size: 0.75rem;
@@ -184,7 +171,7 @@ const StyledTFoot = styled.tfoot`
 export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
-    columns: ColumnDef<T>[];
+    columns: CustomColumnDef<T>[];
     /**
      * Adds row numbers
      * @default false
@@ -270,17 +257,17 @@ export const Table = <T extends object>({
     return (
         <StyledTable
             className={className}
-            rowSize={rowSize}
-            striped={striped}
-            device={device}
-            clickableRows={onRowClick !== undefined}
+            $rowSize={rowSize}
+            $striped={striped}
+            $device={device}
+            $clickableRows={onRowClick !== undefined}
             ref={tableRef}
         >
             <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>
                         headerGroup={headerGroup}
-                        stickyHeader={stickyHeader}
+                        sticky={stickyHeader}
                     />
                 ))}
             </StyledTHead>
@@ -299,7 +286,7 @@ export const Table = <T extends object>({
                     {table.getFooterGroups().map((footerGroup) => (
                         <TableFooter<T>
                             footerGroup={footerGroup}
-                            stickyFooter={stickyFooter}
+                            sticky={stickyFooter}
                         />
                     ))}
                 </StyledTFoot>
