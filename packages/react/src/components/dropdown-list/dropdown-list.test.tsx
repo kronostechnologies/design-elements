@@ -131,7 +131,7 @@ describe('Dropdown list', () => {
         });
     });
 
-    describe(('component is controlled'), () => {
+    describe('component is controlled', () => {
         test('the input value is set according to the value prop', () => {
             const wrapper = shallow(<DropdownList options={provinces} value="qc" />);
 

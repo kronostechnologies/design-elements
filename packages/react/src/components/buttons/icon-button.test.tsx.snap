@@ -602,6 +602,9 @@ exports[`Icon Button Has small styles 1`] = `
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c1:focus {
@@ -627,11 +630,23 @@ exports[`Icon Button Has small styles 1`] = `
   color: #FFFFFF;
 }
 
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 <button
+  aria-label="home"
   class="c0 c1"
-  type="button"
+  type="submit"
 >
-  Small Primary Button
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </button>
 `;
 

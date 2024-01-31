@@ -12,7 +12,7 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
+import { getNextElement, getPreviousElement } from '../../utils/array';
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -280,7 +280,7 @@ export const Menu = forwardRef(({
         switch (event.key) {
             case 'ArrowUp': {
                 event.preventDefault();
-                const previousElement = getPreviousElementInArray(activeMenuOptions, focusedIndex);
+                const previousElement = getPreviousElement(activeMenuOptions, focusedIndex, { wrapAround: true });
                 if (previousElement) {
                     setFocusedIndex(previousElement.focusIndex);
                 }
@@ -288,7 +288,7 @@ export const Menu = forwardRef(({
             }
             case 'ArrowDown': {
                 event.preventDefault();
-                const nextElement = getNextElementInArray(activeMenuOptions, focusedIndex);
+                const nextElement = getNextElement(activeMenuOptions, focusedIndex, { wrapAround: true });
                 if (nextElement) {
                     setFocusedIndex(nextElement.focusIndex);
                 }
