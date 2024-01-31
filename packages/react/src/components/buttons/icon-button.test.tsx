@@ -1,7 +1,5 @@
 import { shallow } from 'enzyme';
-import { doNothing } from '../../test-utils/callbacks';
-import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { Button } from './button';
+import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from './icon-button';
 
 describe('Icon Button', () => {
@@ -32,7 +30,7 @@ describe('Icon Button', () => {
             />,
         );
 
-        wrapper.find(IconButton).simulate('click');
+        wrapper.simulate('click');
         expect(callback).not.toHaveBeenCalled();
     });
 
@@ -99,7 +97,12 @@ describe('Icon Button', () => {
 
     test('Has small styles', () => {
         const tree = renderWithProviders(
-            <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="primary"
+                size="small"
+            />,
         );
 
         expect(tree).toMatchSnapshot();
@@ -116,5 +119,51 @@ describe('Icon Button', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('focusable button has no tabIndex prop', () => {
+        const wrapper = mountWithProviders(<IconButton
+            iconName="home"
+            buttonType="primary"
+            label="home"
+        />);
+
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
+    });
+
+    test('non-focusable button has tabIndex=-1', () => {
+        const wrapper = mountWithProviders(<IconButton
+            iconName="home"
+            buttonType="primary"
+            label="home"
+            focusable={false}
+        />);
+
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
+    });
+
+    test('focusable button has focus styles', () => {
+        const wrapper = mountWithProviders(<IconButton
+            iconName="home"
+            buttonType="primary"
+            label="home"
+        />);
+
+        expect(wrapper).toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
+    });
+
+    test('non-focusable button does not have focus styles', () => {
+        const wrapper = mountWithProviders(<IconButton
+            iconName="home"
+            buttonType="primary"
+            label="home"
+            focusable={false}
+        />);
+
+        expect(wrapper).not.toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
     });
 });

@@ -64,10 +64,7 @@ export const Invalid: Story = () => (
 );
 
 export const Required: Story = () => (
-    <form onSubmit={(event) => event.preventDefault()}>
-        <DropdownList required label="Select an option" options={provinces} />
-        <Button type="submit" buttonType="primary">Submit</Button>
-    </form>
+    <DropdownList required label="Select an option" options={provinces} />
 );
 
 export const WithCallback: Story = () => (

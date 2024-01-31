@@ -6,3 +6,7 @@ export function getRootDocument(element: Element | null): DocumentOrShadowRoot |
 
     return null;
 }
+
+export function sanitizeId(id: string): string {
+    return id.replace(/\s/g, '_');
+}

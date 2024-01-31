@@ -22,6 +22,7 @@ import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useListSearch } from '../../hooks/use-list-search';
+import { sanitizeId } from '../../utils/dom';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -91,7 +92,7 @@ const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     width: var(--size-1x);
 `;
 
-interface DropdownListProps {
+export interface DropdownListProps {
     /**
      * Aria label for the input (used when no visual label is present)
      */
@@ -114,9 +115,6 @@ interface DropdownListProps {
     id?: string;
     label?: string;
     name?: string;
-    /**
-     * { disabled?: boolean, value: string; label: string; }[]
-     */
     options: DropdownListOption[];
     required?: boolean;
     tooltip?: TooltipProps;
@@ -382,7 +380,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
         >
             <Textbox
                 aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                aria-activedescendant={open && focusedOption ? `${id}_${focusedOption.value}` : undefined}
+                aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
                 aria-controls={`${id}_listbox`}
                 aria-describedby={ariaDescribedBy}
                 aria-expanded={open}
