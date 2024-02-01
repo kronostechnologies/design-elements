@@ -8,6 +8,8 @@ import {
     SortingState,
     useReactTable,
     ColumnSort,
+    Updater,
+    functionalUpdate,
 } from '@tanstack/react-table';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
@@ -191,8 +193,14 @@ export interface TableProps<T extends object> {
     className?: string;
     stickyHeader?: boolean;
     stickyFooter?: boolean;
+    /**
+    * Disable the built-in sorting. You can then use the onSorting event to sort the data yourself before passing it
+    * to the table.
+    */
+    manualSorting?: boolean;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
+    onSorting?(sort: ColumnSort): void;
 }
 
 export const Table = <T extends object>({
@@ -206,8 +214,10 @@ export const Table = <T extends object>({
     rowSize = 'medium',
     selectableRows,
     striped = false,
+    manualSorting = false,
     onRowClick,
     onSelectedRowsChange,
+    onSorting,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
@@ -233,9 +243,14 @@ export const Table = <T extends object>({
             rowSelection,
         },
         enableMultiSort: false,
+        manualSorting,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        onSortingChange: setSorting,
+        onSortingChange: (updater: Updater<SortingState>) => {
+            const newValue = functionalUpdate(updater, sorting);
+            setSorting(newValue);
+            onSorting?.(newValue[0]);
+        },
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
     };
