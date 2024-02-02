@@ -193,11 +193,7 @@ export interface TableProps<T extends object> {
     className?: string;
     stickyHeader?: boolean;
     stickyFooter?: boolean;
-    /**
-    * Disable the built-in sorting. You can then use the onSorting event to sort the data yourself before passing it
-    * to the table.
-    */
-    manualSorting?: boolean;
+    disableBuiltInSorting?: boolean;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
     onSorting?(sort: ColumnSort): void;
@@ -214,7 +210,7 @@ export const Table = <T extends object>({
     rowSize = 'medium',
     selectableRows,
     striped = false,
-    manualSorting = false,
+    disableBuiltInSorting = false,
     onRowClick,
     onSelectedRowsChange,
     onSorting,
@@ -243,7 +239,7 @@ export const Table = <T extends object>({
             rowSelection,
         },
         enableMultiSort: false,
-        manualSorting,
+        manualSorting: disableBuiltInSorting,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
         onSortingChange: (updater: Updater<SortingState>) => {

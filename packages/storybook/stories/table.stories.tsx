@@ -1242,7 +1242,7 @@ export const TableWithPagination: Story = () => {
                         setData([...data].sort((a, b) => sortFn(a[key], b[key], sorting.desc)));
                     }
                 }}
-                manualSorting
+                disableBuiltInSorting
             />
             <Pagination
                 resultsPerPage={ITEMS_PER_PAGE}
