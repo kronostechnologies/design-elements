@@ -76,7 +76,7 @@ function getHeading<TData extends object, TValue>(
         sortState = 'descending';
     }
 
-    if (header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
+    if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
         console.error(
             `headerAriaLabel missing for column ${header.id}. aria label is required for headers without text.`
         );
