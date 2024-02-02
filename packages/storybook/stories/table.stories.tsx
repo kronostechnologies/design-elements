@@ -1099,17 +1099,17 @@ export const HeaderAriaLabel: Story = () => {
     const columns: TableColumn<Data> = [
         {
             header: 'Column with text',
-            headerAriaLabel: 'Column with text',
+            headerAriaLabel: '',
             accessorKey: 'column1',
         },
         {
             header: '',
-            headerAriaLabel: 'Column 2 without text',
+            headerAriaLabel: 'Column 2 aria label',
             accessorKey: 'column2',
         },
         {
             header: 'Column 3 with text',
-            headerAriaLabel: 'Column 3 with text',
+            headerAriaLabel: '',
             accessorKey: 'column3',
         },
     ];

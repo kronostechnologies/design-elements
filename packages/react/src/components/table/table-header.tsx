@@ -78,7 +78,7 @@ function getHeading<TData extends object, TValue>(
 
     if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
         console.warn(
-            `headerAriaLabel missing for column ${header.id}. aria label is required for headers without text.`,
+            `aria-label missing for column ${header.id} without text. please add headerAriaLabel to column.`,
         );
     }
 
