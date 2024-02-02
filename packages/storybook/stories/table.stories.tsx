@@ -574,7 +574,7 @@ interface StickyData {
 
 const Wrap = styled.div`
     height: 400px;
-    overflow: scroll;
+    overflow: auto;
 `;
 
 export const Sticky: Story = () => {
