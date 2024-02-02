@@ -67,8 +67,6 @@ function getCellBackgroundCss({
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps>`
-    background-color: inherit;
-
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
