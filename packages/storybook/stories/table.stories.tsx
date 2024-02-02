@@ -1095,6 +1095,42 @@ export const WithBackgroundColor: Story = () => {
     );
 };
 
+export const HeaderAriaLabel: Story = () => {
+    const columns: TableColumn<Data> = [
+        {
+            header: 'Column with text',
+            headerAriaLabel: '',
+            accessorKey: 'column1',
+        },
+        {
+            header: '',
+            headerAriaLabel: 'Column 2 aria label',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3 with text',
+            headerAriaLabel: '',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+    ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
 interface OptimizationData {
     id: number;
     name: string;

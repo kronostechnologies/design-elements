@@ -1,5 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Table has aria-label on header columns 1`] = `
+.c7 {
+  background-color: inherit;
+  background-color: inherit;
+}
+
+.c7:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c7 td {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  background: #FFFFFF;
+  border-collapse: collapse;
+  color: #1B1C1E;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  margin-left: 50%;
+  min-width: var(--size-2halfx);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: var(--size-2halfx);
+}
+
+.c1 {
+  background: inherit;
+}
+
+.c6 {
+  background: inherit;
+}
+
+<table
+  class="c0"
+>
+  <thead
+    class="c1"
+  >
+    <tr
+      class="c2"
+    >
+      <th
+        aria-label="column 1 aria label"
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+      <th
+        aria-label="column 2 aria label"
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c4"
+        >
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="c6"
+  >
+    <tr
+      class="c7"
+      data-testid="table-row-0"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c7"
+      data-testid="table-row-1"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c7"
+      data-testid="table-row-2"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Table has clickable rows styles 1`] = `
 .c7 {
   background-color: inherit;

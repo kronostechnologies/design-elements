@@ -76,9 +76,16 @@ function getHeading<TData extends object, TValue>(
         sortState = 'descending';
     }
 
+    if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
+        console.warn(
+            `aria-label missing for column ${header.id} without text. please add headerAriaLabel to column.`,
+        );
+    }
+
     if (header.column.getCanSort()) {
         return (
             <StyledHeader
+                aria-label={header.column.columnDef.headerAriaLabel}
                 aria-sort={sortState}
                 key={header.id}
                 className={header.column.columnDef.className ?? ''}
@@ -105,6 +112,7 @@ function getHeading<TData extends object, TValue>(
 
     return (
         <StyledHeader
+            aria-label={header.column.columnDef.headerAriaLabel}
             key={header.id}
             className={header.column.columnDef.className ?? undefined}
             scope="col"
