@@ -9,7 +9,7 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 interface StyledInputProps {
     device: DeviceContextProps;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
 const StyledInput = styled.input<StyledInputProps>`

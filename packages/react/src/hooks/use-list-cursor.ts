@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { findFirstElement, findLastElement, findNextElement, findPreviousElement } from '../utils/array';
 
 interface UseListCursorResponse<T> {
     selectedElement: T | undefined;
@@ -13,17 +14,19 @@ interface UseListCursorRequest<T> {
     elements: T[];
     initialElement?: T;
     predicate?: (element: T) => boolean;
+    wrapAround?: boolean;
 }
 
 export function useListCursor<TElement>({
     elements,
     initialElement,
     predicate = () => true,
+    wrapAround = false,
 }: UseListCursorRequest<TElement>): UseListCursorResponse<TElement> {
     const [selectedElement, setSelectedElement] = useState<TElement | undefined>(initialElement);
 
     const selectFirst: () => TElement | undefined = useCallback(() => {
-        const firstElement = elements.find(predicate);
+        const firstElement = findFirstElement(elements, predicate);
 
         if (firstElement) {
             setSelectedElement(firstElement);
@@ -33,7 +36,7 @@ export function useListCursor<TElement>({
     }, [elements, predicate]);
 
     const selectLast: () => TElement | undefined = useCallback(() => {
-        const lastElement = [...elements].reverse().find(predicate);
+        const lastElement = findLastElement(elements, predicate);
 
         if (lastElement) {
             setSelectedElement(lastElement);
@@ -48,14 +51,14 @@ export function useListCursor<TElement>({
         }
 
         const selectedIndex = elements.indexOf(selectedElement);
-        const previousElement = elements.slice(0, selectedIndex).reverse().find(predicate);
+        const previousElement = findPreviousElement(elements, selectedIndex, predicate, { wrapAround });
 
         if (previousElement) {
             setSelectedElement(previousElement);
         }
 
         return previousElement;
-    }, [elements, predicate, selectFirst, selectedElement]);
+    }, [elements, predicate, selectFirst, selectedElement, wrapAround]);
 
     const selectNext: () => TElement | undefined = useCallback(() => {
         if (selectedElement === undefined) {
@@ -63,14 +66,14 @@ export function useListCursor<TElement>({
         }
 
         const selectedIndex = elements.indexOf(selectedElement);
-        const nextElement = elements.slice(selectedIndex + 1).find(predicate);
+        const nextElement = findNextElement(elements, selectedIndex, predicate, { wrapAround });
 
         if (nextElement) {
             setSelectedElement(nextElement);
         }
 
         return nextElement;
-    }, [elements, predicate, selectFirst, selectedElement]);
+    }, [elements, predicate, selectFirst, selectedElement, wrapAround]);
 
     return {
         selectedElement,

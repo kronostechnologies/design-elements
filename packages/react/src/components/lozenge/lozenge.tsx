@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -11,7 +11,7 @@ export type LozengeType = 'default' | 'success' | 'alert' | 'warning' | 'info' |
 interface StyledLozengeProps {
     $isMobile: boolean;
     $type?: LozengeType;
-    theme: Theme;
+    theme: ResolvedTheme;
 }
 
 function getLozengeBackgroundColor({ $type, theme }: StyledLozengeProps): string {

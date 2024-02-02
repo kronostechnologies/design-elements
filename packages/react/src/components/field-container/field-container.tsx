@@ -1,13 +1,13 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { TooltipProps } from '../tooltip/tooltip';
 
 interface StyledDivProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     hasLabel: boolean;
     hasHint: boolean;
     valid: boolean;
@@ -83,7 +83,6 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
             {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
-                    data-testid="text-input-error-msg"
                     controlId={fieldId}
                     feedbackMsg={validationErrorMessage}
                     noIcon={noInvalidFieldIcon}

@@ -20,6 +20,7 @@ interface StyledHeadingProps {
 }
 
 const HeadingXlarge = styled.h1<StyledHeadingProps>`
+    color: ${({ theme }) => theme.component['heading-text-color']};
     font-size: 2rem;
     font-weight: var(--font-normal);
     line-height: 3rem;
@@ -27,6 +28,7 @@ const HeadingXlarge = styled.h1<StyledHeadingProps>`
 `;
 
 const HeadingLarge = styled.h2<StyledHeadingProps>`
+    color: ${({ theme }) => theme.component['heading-text-color']};
     font-size: 1.5rem;
     font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: 2.25rem;
@@ -34,6 +36,7 @@ const HeadingLarge = styled.h2<StyledHeadingProps>`
 `;
 
 const HeadingMedium = styled.h3<StyledHeadingProps>`
+    color: ${({ theme }) => theme.component['heading-text-color']};
     font-size: 1.25rem;
     font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: 2rem;
@@ -41,6 +44,7 @@ const HeadingMedium = styled.h3<StyledHeadingProps>`
 `;
 
 const HeadingSmall = styled.h4<StyledHeadingProps>`
+    color: ${({ theme }) => theme.component['heading-text-color']};
     font-size: 1rem;
     font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: 1.5rem;
@@ -48,7 +52,7 @@ const HeadingSmall = styled.h4<StyledHeadingProps>`
 `;
 
 const HeadingSubtitle = styled.h2<StyledHeadingProps>`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['heading-subtitle-text-color']};
     font-size: 1rem;
     font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: 1.5rem;

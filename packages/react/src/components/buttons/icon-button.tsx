@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
@@ -20,6 +20,10 @@ export interface IconButtonProps {
     buttonType: ButtonType;
     className?: string;
     disabled?: boolean;
+    /**
+     * @default true
+     */
+    focusable?: boolean;
     inverted?: boolean;
     /**
      * Name of the desired icon (refer to icon library)
@@ -44,7 +48,7 @@ export interface IconButtonProps {
 
 const getButtonSizeStyles = (
     { isMobile, size }: { isMobile: boolean, size?: Size },
-): FlattenInterpolation<ThemeProps<Theme>> => {
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> => {
     switch (size) {
         case 'small':
             return css`
@@ -81,6 +85,7 @@ export const IconButton = forwardRef(({
     type = 'submit',
     buttonType,
     disabled,
+    focusable = true,
     title,
     onClick,
     onKeyDown,
@@ -99,6 +104,7 @@ export const IconButton = forwardRef(({
             type={type}
             buttonType={buttonType}
             disabled={disabled}
+            focusable={focusable}
             onClick={onClick}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}

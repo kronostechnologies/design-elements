@@ -3,7 +3,7 @@ import XIcon from 'feather-icons/dist/icons/x.svg';
 import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons/search-button';
@@ -33,7 +33,7 @@ const InnerWrapper = styled.div`
     z-index: 1;
 `;
 
-function iconColor(props: { theme: Theme, disabled?: boolean }): string {
+function iconColor(props: { theme: ResolvedTheme, disabled?: boolean }): string {
     if (props.disabled) {
         return props.theme.greys['mid-grey'];
     }
@@ -55,7 +55,7 @@ const IcoReset = styled(XIcon)`
 `;
 
 interface InputProps {
-    theme: Theme;
+    theme: ResolvedTheme;
     hasButton: boolean;
     hasIcon: boolean;
     hasReset: boolean;

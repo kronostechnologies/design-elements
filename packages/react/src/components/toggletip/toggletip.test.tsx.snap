@@ -78,11 +78,13 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -243,6 +245,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       aria-label="info"
       buttonType="tertiary"
       data-testid="toggletip"
+      focusable={true}
       inverted={false}
       isMobile={false}
       onClick={[Function]}
@@ -255,12 +258,14 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
         buttonType="tertiary"
         className="c0"
         data-testid="toggletip"
+        focusable={true}
         inverted={false}
         isMobile={false}
         onClick={[Function]}
         type="button"
       >
         <styled.button
+          $focusable={true}
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -428,11 +433,13 @@ exports[`Toggletip Has default desktop styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -459,6 +466,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
       aria-label="info"
       buttonType="tertiary"
       data-testid="toggletip"
+      focusable={true}
       inverted={false}
       isMobile={false}
       onClick={[Function]}
@@ -471,12 +479,14 @@ exports[`Toggletip Has default desktop styles 1`] = `
         buttonType="tertiary"
         className="c0"
         data-testid="toggletip"
+        focusable={true}
         inverted={false}
         isMobile={false}
         onClick={[Function]}
         type="button"
       >
         <styled.button
+          $focusable={true}
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
@@ -597,11 +607,13 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -762,6 +774,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       aria-label="info"
       buttonType="tertiary"
       data-testid="toggletip"
+      focusable={true}
       inverted={false}
       isMobile={true}
       onClick={[Function]}
@@ -774,12 +787,14 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
         buttonType="tertiary"
         className="c0"
         data-testid="toggletip"
+        focusable={true}
         inverted={false}
         isMobile={true}
         onClick={[Function]}
         type="button"
       >
         <styled.button
+          $focusable={true}
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -947,11 +962,13 @@ exports[`Toggletip Has mobile styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c0:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 
@@ -978,6 +995,7 @@ exports[`Toggletip Has mobile styles 1`] = `
       aria-label="info"
       buttonType="tertiary"
       data-testid="toggletip"
+      focusable={true}
       inverted={false}
       isMobile={true}
       onClick={[Function]}
@@ -990,12 +1008,14 @@ exports[`Toggletip Has mobile styles 1`] = `
         buttonType="tertiary"
         className="c0"
         data-testid="toggletip"
+        focusable={true}
         inverted={false}
         isMobile={true}
         onClick={[Function]}
         type="button"
       >
         <styled.button
+          $focusable={true}
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"

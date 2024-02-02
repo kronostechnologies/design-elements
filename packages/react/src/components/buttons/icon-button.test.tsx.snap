@@ -83,12 +83,6 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 }
 
 .c1:disabled {
-  color: #F99D99;
-}
-
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
   background-color: #FFFFFF;
   border-color: #F99D99;
   color: #F99D99;
@@ -193,11 +187,13 @@ exports[`Icon Button Has disabled styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c1 > svg {
@@ -300,11 +296,13 @@ exports[`Icon Button Has mobile styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c1 > svg {
@@ -406,11 +404,13 @@ exports[`Icon Button Has primary styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c1 > svg {
@@ -510,11 +510,13 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
+  background-color: #FFFFFF;
   border-color: #003A5A;
   color: #003A5A;
 }
 
 .c1:disabled {
+  background-color: #FFFFFF;
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -600,6 +602,9 @@ exports[`Icon Button Has small styles 1`] = `
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c1:focus {
@@ -616,18 +621,32 @@ exports[`Icon Button Has small styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <button
+  aria-label="home"
   class="c0 c1"
-  type="button"
+  type="submit"
 >
-  Small Primary Button
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </button>
 `;
 
@@ -709,11 +728,13 @@ exports[`Icon Button Has tertiary styles 1`] = `
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #1B1C1E;
 }
 
 .c1:disabled {
   background-color: transparent;
+  border-color: transparent;
   color: #B7BBC2;
 }
 

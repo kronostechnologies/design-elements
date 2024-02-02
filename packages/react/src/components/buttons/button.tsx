@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
@@ -18,6 +18,10 @@ interface ButtonProps {
     buttonType: ButtonType;
     className?: string;
     disabled?: boolean;
+    /**
+     * @default true
+     */
+    focusable?: boolean;
     inverted?: boolean;
     label?: string;
     /**
@@ -33,12 +37,23 @@ interface ButtonProps {
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
-const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
+const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
     ${getButtonTypeStyles}
 `;
 
 export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
-    autofocus, children, className, label, title, type = 'button', buttonType, disabled, onClick, onKeyDown, ...props
+    autofocus,
+    buttonType,
+    children,
+    className,
+    disabled,
+    focusable = true,
+    label,
+    onClick,
+    onKeyDown,
+    title,
+    type = 'button',
+    ...props
 }: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
 
@@ -52,6 +67,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             buttonType={buttonType}
             className={className}
             disabled={disabled}
+            focusable={focusable}
             onClick={onClick}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}

@@ -59,6 +59,31 @@ function validateProvidedValue(newValue: number | string): string {
     return '';
 }
 
+type ValidationErrorType = 'required' | 'max' | 'min';
+
+interface GetValidationErrorTypeOptions {
+    max?: number;
+    min?: number;
+    required?: boolean;
+    skipRequired?: boolean;
+}
+
+function getValidationErrorType(value: string, {
+    max, min, required, skipRequired,
+}: GetValidationErrorTypeOptions): ValidationErrorType | undefined {
+    if (value === '' && required && !skipRequired) {
+        return 'required';
+    }
+    if (value !== '') {
+        if (max !== undefined && Number(value) > max) {
+            return 'max';
+        } if (min !== undefined && Number(value) < min) {
+            return 'min';
+        }
+    }
+    return undefined;
+}
+
 const createCallbackData = (inputValue: string): NumericInputCallbackData => ({
     value: inputValue,
     valueAsNumber: inputValue === '' ? null : Number(inputValue),
@@ -80,33 +105,17 @@ export function useNumericInput({
     const [inputValue, setInputValue] = useState(
         validateProvidedValue(providedValue ?? defaultValue ?? ''),
     );
-    const [validationErrorMessage, setValidationErrorMessage] = useState<string | undefined>();
 
-    if (providedValue !== undefined) {
-        const validatedProvidedValue = validateProvidedValue(providedValue);
-        if (validatedProvidedValue !== inputValue) {
-            setInputValue(validatedProvidedValue);
-        }
-    }
-
-    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorMessage !== undefined);
-    const errorMessage = (providedValidationErrorMessage ?? validationErrorMessage);
+    const [validationErrorType, setValidationErrorType] = useState<ValidationErrorType | undefined>(
+        getValidationErrorType(inputValue, {
+            max, min, required, skipRequired: true,
+        }),
+    );
 
     const validate = useCallback((value: string): void => {
-        let error: string | undefined;
-
-        if (required && value === '') {
-            error = t('requiredValidationErrorMessage');
-        } else if (value !== '') {
-            if (max !== undefined && Number(value) > max) {
-                error = t('maxValidationErrorMessage', { max });
-            } else if (min !== undefined && Number(value) < min) {
-                error = t('minValidationErrorMessage', { min });
-            }
-        }
-
-        setValidationErrorMessage(error);
-    }, [max, min, required, t]);
+        const errorType = getValidationErrorType(value, { max, min, required });
+        setValidationErrorType(errorType);
+    }, [max, min, required]);
 
     const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
@@ -147,6 +156,30 @@ export function useNumericInput({
         validate(value);
         onBlur?.(event, createCallbackData(value));
     }, [onBlur, validate]);
+
+    if (providedValue !== undefined) {
+        const validatedProvidedValue = validateProvidedValue(providedValue);
+        if (validatedProvidedValue !== inputValue) {
+            setInputValue(validatedProvidedValue);
+            validate(validatedProvidedValue);
+        }
+    }
+
+    const getErrorMessage = (): string | undefined => {
+        switch (validationErrorType) {
+            case 'required':
+                return t('requiredValidationErrorMessage');
+            case 'max':
+                return t('maxValidationErrorMessage', { max });
+            case 'min':
+                return t('minValidationErrorMessage', { min });
+            default:
+                return undefined;
+        }
+    };
+
+    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorType !== undefined);
+    const errorMessage = (providedValidationErrorMessage ?? getErrorMessage());
 
     return {
         max,

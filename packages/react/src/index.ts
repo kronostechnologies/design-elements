@@ -11,6 +11,7 @@ export { ToggleButtonGroup } from './components/toggle-button-group/toggle-butto
 export { Avatar } from './components/avatar/avatar';
 export { Checkbox } from './components/checkbox/checkbox';
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
+export { Combobox, ComboboxOption } from './components/combobox/combobox';
 export { Datepicker, DatepickerHandles } from './components/date-picker/date-picker';
 export { DropdownList, DropdownListOption } from './components/dropdown-list/dropdown-list';
 export { MoneyInput } from './components/money-input/money-input';
@@ -90,9 +91,8 @@ export { Pagination } from './components/pagination/pagination';
 
 // Themes
 export { equisoftTheme } from './themes/equisoft';
-export { testTheme } from './themes/test-theme';
 export { injectMainCss } from './styles';
-export { Theme } from './themes/theme';
+export { ResolvedTheme, ThemeCustomization, ThemeCustomization as Theme } from './themes/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';

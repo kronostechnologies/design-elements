@@ -1,8 +1,8 @@
 import { MutableRefObject, useEffect } from 'react';
 import { eventIsInside } from '../utils/events';
 
-export function useClickOutside<T extends HTMLElement>(
-    targets: MutableRefObject<T | null>[],
+export function useClickOutside(
+    targets: MutableRefObject<HTMLElement | null>[],
     callback: () => void,
 ): void {
     useEffect(() => {

@@ -7,7 +7,7 @@ describe('Button', () => {
         const callback = jest.fn();
         const wrapper = mountWithProviders(<Button onClick={callback} buttonType="primary" label="Primary Button" />);
 
-        wrapper.find(Button).simulate('click');
+        wrapper.simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
@@ -23,12 +23,12 @@ describe('Button', () => {
             />,
         );
 
-        wrapper.find(Button).simulate('click');
+        wrapper.simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
-    test('has disabled styles', () => {
+    test('has primary disabled styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" disabled label="Primary Button" />,
         );
@@ -147,5 +147,33 @@ describe('Button', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('focusable button has no tabIndex prop', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
+    });
+
+    test('non-focusable button has tabIndex=-1', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
+    });
+
+    test('focusable button has focus styles', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        expect(wrapper).toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
+    });
+
+    test('non-focusable button does not have focus styles', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        expect(wrapper).not.toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
     });
 });
