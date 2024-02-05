@@ -572,8 +572,8 @@ interface StickyData {
     column15: string,
 }
 
-const Wrap = styled.div`
-    height: 400px;
+const ScrollableWrap = styled.div`
+    max-height: 400px;
     overflow: auto;
 `;
 
@@ -801,9 +801,9 @@ export const Sticky: Story = () => {
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table columns={columns} data={data} stickyHeader onRowClick={(row) => console.info('row: ', row)} />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
@@ -896,9 +896,9 @@ export const StickyFooter: Story = () => {
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table columns={columns} data={data} stickyFooter onRowClick={(row) => console.info('row: ', row)} />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
@@ -984,7 +984,7 @@ export const StickyHeaderAndFooter: Story = () => {
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table
                 columns={columns}
                 data={data}
@@ -992,7 +992,7 @@ export const StickyHeaderAndFooter: Story = () => {
                 stickyFooter
                 onRowClick={(row) => console.info('row: ', row)}
             />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
@@ -1082,7 +1082,7 @@ export const WithBackgroundColor: Story = () => {
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <StyledTableWithBackground
                 selectableRows
                 stickyHeader
@@ -1091,7 +1091,7 @@ export const WithBackgroundColor: Story = () => {
                 data={data}
                 onSelectedRowsChange={console.info}
             />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
