@@ -1,5 +1,5 @@
 import { ReactElement, useMemo, useRef, useState } from 'react';
-import { Button, Table, TableColumn, TableRow, TextInput, Tooltip } from '@equisoft/design-elements-react';
+import { Button, Pagination, Table, TableColumn, TableRow, TextInput, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
@@ -1202,6 +1202,90 @@ export const Optimization: Story = () => {
             <Table
                 columns={columns}
                 data={data}
+            />
+        </>
+    );
+};
+
+interface TablePaginationData {
+    id: number;
+    age: number;
+    country: string;
+}
+
+function makeData(): TableRow<TablePaginationData>[] {
+    const countries = ['Canada', 'United States', 'France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Japan'];
+    return [...Array(35).keys()].map((i) => ({
+        id: i + 1,
+        age: Math.floor(Math.random() * 90) + 10,
+        country: countries[Math.floor(Math.random() * countries.length)],
+    }));
+}
+
+export const TableWithPagination: Story = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function sortFn(a: any, b: any, isDescending = false): number {
+        let compareValue = 0;
+
+        if (typeof a === 'string') {
+            compareValue = a.localeCompare(b, 'en', { sensitivity: 'base' });
+        } else if (typeof a === 'number') {
+            compareValue = a - b;
+        }
+
+        if (isDescending) {
+            return compareValue * -1;
+        }
+
+        return compareValue;
+    }
+
+    const ITEMS_PER_PAGE = 10;
+
+    const [data, setData] = useState<TableRow<TablePaginationData>[]>(makeData());
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const columns: TableColumn<TablePaginationData> = useMemo(() => [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+            sortable: true,
+            sortDescFirst: false,
+        },
+        {
+            header: 'Age',
+            accessorKey: 'age',
+            sortable: true,
+        },
+        {
+            header: 'Country',
+            accessorKey: 'country',
+            sortable: true,
+        },
+    ], []);
+
+    const currentPageData = data.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+    return (
+        <>
+            <Table
+                columns={columns}
+                data={currentPageData}
+                defaultSort={{ id: 'id', desc: false }}
+                onSorting={(sorting) => {
+                    if (sorting) {
+                        const key = sorting.id as keyof TablePaginationData;
+                        setData([...data].sort((a, b) => sortFn(a[key], b[key], sorting.desc)));
+                    }
+                }}
+                disableBuiltInSorting
+            />
+            <Pagination
+                resultsPerPage={ITEMS_PER_PAGE}
+                numberOfResults={data.length}
+                activePage={currentPage}
+                onPageChange={(page) => setCurrentPage(page)}
+                pagesShown={5}
             />
         </>
     );
