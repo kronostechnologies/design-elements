@@ -1681,7 +1681,7 @@ __metadata:
     jest-styled-components: "npm:^7.1.1"
     prop-types: "npm:^15.8.1"
     react: "npm:~17.0.2"
-    react-datepicker: "npm:^5.0.0"
+    react-datepicker: "npm:^6.0.0"
     react-docgen-typescript-plugin: "npm:^1.0.5"
     react-dom: "npm:~17.0.2"
     react-is: "npm:~17.0.2"
@@ -7458,7 +7458,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.0.1, date-fns@npm:^2.30.0":
+"date-fns@npm:^2.0.1":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
@@ -7467,7 +7467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^3.0.0":
+"date-fns@npm:^3.0.0, date-fns@npm:^3.3.1":
   version: 3.3.1
   resolution: "date-fns@npm:3.3.1"
   checksum: 10c0/e04ff79244010e03b912d791cd3250af5f18866ce868604958d76bd87e5fb0b79f0a810b8e7066248452b41779b288c4fd21de1cac2cd4b6d384e9dd931c9674
@@ -13646,19 +13646,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "react-datepicker@npm:5.0.0"
+"react-datepicker@npm:^6.0.0":
+  version: 6.1.0
+  resolution: "react-datepicker@npm:6.1.0"
   dependencies:
     "@floating-ui/react": "npm:^0.26.2"
     classnames: "npm:^2.2.6"
-    date-fns: "npm:^2.30.0"
+    date-fns: "npm:^3.3.1"
     prop-types: "npm:^15.7.2"
     react-onclickoutside: "npm:^6.13.0"
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 10c0/61608eda8a9982276d2915e3850ca79298d3d3f3f58f709f3ac58b95552e30df17576a6ea94df7d8db33483ffb0df31f701856292fffa048ff4c8a46689f9c4f
+  checksum: 10c0/512328dcc62a4d58d550a5f007b3bb2907649383b51b4595eaf16ef5b170d34e33d734d80992aa57888f7454618f20cd1f11678412263c8346ff9ca05579efc4
   languageName: node
   linkType: hard
 
