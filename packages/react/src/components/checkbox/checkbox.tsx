@@ -16,7 +16,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 const checkboxWidth = 'var(--size-1x)';
 
 const iconStyles = css`
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.component['checkbox-checked-text-color']};
     display: none;
     height: 100%;
     left: 0;
@@ -34,8 +34,8 @@ const IndeterminateIcon = styled(Icon).attrs({ name: 'minus' })`
 
 const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     align-self: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-unchecked-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-unchecked-border-color'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
@@ -46,7 +46,8 @@ const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     width: ${checkboxWidth};
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-hover-disabled-background-color'] : theme.component['checkbox-hover-background-color'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-hover-disabled-border-color'] : theme.component['checkbox-hover-border-color'])};
     }
 `;
 
@@ -57,8 +58,8 @@ const StyledInput = styled.input`
     width: 0;
 
     &:checked + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
+        border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
 
         > ${CheckMarkIcon} {
             display: block;
@@ -66,8 +67,8 @@ const StyledInput = styled.input`
     }
 
     :indeterminate + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        background-color: ${({ theme }) => theme.component['checkbox-indeterminiate-background-color']};
+        border: 1px solid ${({ theme }) => theme.component['checkbox-indeterminiate-background-color']};
 
         > ${IndeterminateIcon} {
             display: block;

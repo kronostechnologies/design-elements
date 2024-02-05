@@ -1,5 +1,6 @@
 import { AliasTokens } from './alias-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
+import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
@@ -9,7 +10,8 @@ export type ComponentTokens =
     | ButtonTokens
     | HeadingTokens
     | LabelTokens
-    | FocusTokens;
+    | FocusTokens
+    | CheckboxTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -22,6 +24,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultFocusTokens,
+    ...defaultCheckboxTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
