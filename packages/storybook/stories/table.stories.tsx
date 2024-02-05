@@ -1272,13 +1272,13 @@ export const TableWithPagination: Story = () => {
                 columns={columns}
                 data={currentPageData}
                 defaultSort={{ id: 'id', desc: false }}
-                onSorting={(sorting) => {
-                    if (sorting) {
-                        const key = sorting.id as keyof TablePaginationData;
-                        setData([...data].sort((a, b) => sortFn(a[key], b[key], sorting.desc)));
+                onSort={(sort) => {
+                    if (sort) {
+                        const key = sort.id as keyof TablePaginationData;
+                        setData([...data].sort((a, b) => sortFn(a[key], b[key], sort.desc)));
                     }
                 }}
-                disableBuiltInSorting
+                manualSort
             />
             <Pagination
                 resultsPerPage={ITEMS_PER_PAGE}

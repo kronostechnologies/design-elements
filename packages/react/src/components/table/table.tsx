@@ -193,10 +193,10 @@ export interface TableProps<T extends object> {
     className?: string;
     stickyHeader?: boolean;
     stickyFooter?: boolean;
-    disableBuiltInSorting?: boolean;
+    manualSort?: boolean;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
-    onSorting?(sort: ColumnSort): void;
+    onSort?(sort: ColumnSort | null): void;
 }
 
 export const Table = <T extends object>({
@@ -210,10 +210,10 @@ export const Table = <T extends object>({
     rowSize = 'medium',
     selectableRows,
     striped = false,
-    disableBuiltInSorting = false,
+    manualSort = false,
     onRowClick,
     onSelectedRowsChange,
-    onSorting,
+    onSort,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
@@ -239,13 +239,13 @@ export const Table = <T extends object>({
             rowSelection,
         },
         enableMultiSort: false,
-        manualSorting: disableBuiltInSorting,
+        manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
             setSorting(newValue);
-            onSorting?.(newValue[0]);
+            onSort?.(newValue[0] ?? null);
         },
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
