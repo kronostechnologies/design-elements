@@ -442,8 +442,17 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonMouseDown(): void {
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
+
+            if (onCalendarClose) {
+                onCalendarClose();
+            }
         } else {
             dateInputRef.current?.setOpen(true);
+
+            if (onCalendarOpen) {
+                onCalendarOpen();
+            }
+
             focusCalendarDate();
         }
     }
@@ -573,8 +582,6 @@ export const Datepicker = forwardRef(({
                         onChange={handleInputChange}
                         onSelect={handleCalendarSelect}
                         onBlur={handleInputBlur}
-                        onCalendarClose={onCalendarClose}
-                        onCalendarOpen={onCalendarOpen}
                         onFocus={onFocus}
                         onClickOutside={handleClickOutside}
                         onInputClick={handleInputClick}
