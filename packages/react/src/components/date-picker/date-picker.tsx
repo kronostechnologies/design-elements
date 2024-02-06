@@ -434,8 +434,8 @@ export const Datepicker = forwardRef(({
                 break;
             case 'Enter':
             case ' ':
-                event.stopPropagation();
                 if (dateInputRef.current?.isCalendarOpen()) {
+                    event.stopPropagation();
                     dateInputRef.current?.setOpen(false);
 
                     if (onCalendarClose) {
