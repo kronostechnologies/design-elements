@@ -432,6 +432,17 @@ export const Datepicker = forwardRef(({
                 dateInputRef.current?.setOpen(false);
                 calendarButtonRef.current?.focus();
                 break;
+            case 'Enter':
+            case ' ':
+                event.stopPropagation();
+                if (dateInputRef.current?.isCalendarOpen()) {
+                    dateInputRef.current?.setOpen(false);
+
+                    if (onCalendarClose) {
+                        onCalendarClose();
+                    }
+                }
+                break;
         }
     }
 
@@ -460,6 +471,11 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
         if (event.key === 'Enter' || event.key === ' ' /* Space bar */) {
             dateInputRef.current?.setOpen(true);
+
+            if (onCalendarOpen) {
+                onCalendarOpen();
+            }
+
             focusCalendarDate();
         }
     }
