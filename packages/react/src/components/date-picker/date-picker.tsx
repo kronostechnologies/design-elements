@@ -437,10 +437,7 @@ export const Datepicker = forwardRef(({
                 if (dateInputRef.current?.isCalendarOpen()) {
                     event.stopPropagation();
                     dateInputRef.current?.setOpen(false);
-
-                    if (onCalendarClose) {
-                        onCalendarClose();
-                    }
+                    onCalendarClose?.();
                 }
                 break;
         }
@@ -453,17 +450,10 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonMouseDown(): void {
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
-
-            if (onCalendarClose) {
-                onCalendarClose();
-            }
+            onCalendarClose?.();
         } else {
             dateInputRef.current?.setOpen(true);
-
-            if (onCalendarOpen) {
-                onCalendarOpen();
-            }
-
+            onCalendarOpen?.();
             focusCalendarDate();
         }
     }
@@ -471,11 +461,7 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
         if (event.key === 'Enter' || event.key === ' ' /* Space bar */) {
             dateInputRef.current?.setOpen(true);
-
-            if (onCalendarOpen) {
-                onCalendarOpen();
-            }
-
+            onCalendarOpen?.();
             focusCalendarDate();
         }
     }
