@@ -1,43 +1,17 @@
 import { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { clamp, toInt } from '../../utils/math';
+import { Icon } from '../icon/icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { clamp } from '../../utils/math';
 
-const Container = styled.div`
+const Container = styled.section`
+    padding: var(--spacing-2x) 0;
     position: relative;
     width: 100%;
 `;
 
-function getHalfStepLength(props: JSX.IntrinsicElements['progress']): number {
-    return 50 / (toInt(props.max, 1) + 1);
-}
-
-const StyledProgress = styled.progress`
-    appearance: none;
-    background-color: ${(props) => props.theme.greys.grey};
-    border: none;
-    bottom: 1.5rem;
-    color: ${(props) => props.theme.main['primary-3']};
-    height: 4px;
-    left: ${getHalfStepLength}%;
-    position: absolute;
-    width: ${(props) => `${100 - (2 * getHalfStepLength(props))}%`};
-
-    &[value] {
-        &::-moz-progress-bar {
-            background-color: ${(props) => props.theme.main['primary-3']};
-        }
-
-        &::-webkit-progress-bar {
-            background-color: ${(props) => props.theme.greys.grey};
-        }
-
-        &::-webkit-progress-value {
-            background-color: ${(props) => props.theme.main['primary-3']};
-        }
-    }
-`;
-
 const Steps = styled.ol`
+    align-items: start;
     counter-reset: step;
     display: grid;
     grid-auto-columns: unset;
@@ -47,115 +21,201 @@ const Steps = styled.ol`
     padding: 0;
 `;
 
-const Step = styled.li`
-    color: ${(props) => props.theme.main['primary-3']};
+const Label = styled.span`
+    font-size: 0.875rem;
+    font-weight: var(--font-normal);
+    letter-spacing: 0.0125rem;
+    line-height: 1.25rem;
+    margin-top: var(--spacing-half);
+`;
+
+const Step = styled.li<{ $linear: boolean }>`
+    color: ${({ theme }) => theme.main['primary-3']};
     display: flex;
     flex-direction: column;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-normal);
     justify-content: flex-end;
     position: relative;
     text-align: center;
 
-    ::after {
+    &::before {
         align-items: center;
-        background-color: ${(props) => props.theme.greys.white};
-        border: 0.25rem solid;
+        background-color: ${({ theme }) => theme.greys.white};
+        border: 0.125rem solid;
         border-radius: 50%;
         box-sizing: border-box;
+        color: #1b1c1e;
         content: counter(step);
         counter-increment: step;
         display: flex;
-        height: var(--size-2x);
+        font-size: 0.75rem;
+        height: var(--size-1halfx);
         justify-content: center;
-        line-height: 2rem;
-        margin: 0 auto 0.625rem;
+        margin: 0 auto 0.25rem;
         text-align: center;
+        width: var(--size-1halfx);
+    }
+
+    &::after {
+        background-color: ${({ theme }) => theme.greys.grey};
+        content: '';
+        height: 0.25rem;
+        left: calc(-50% - 0.5rem);
+        position: absolute;
+        top: 0.625rem;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &:first-child::after {
+        content: none;
+    }
+
+    a {
+        margin-top: calc(var(--size-2x) * -1);
+        padding-top: var(--size-2x);
+        text-decoration: none;
+    }
+`;
+
+const CompletedStep = styled(Step)`
+    &::before {
+        background-color: ${({ theme }) => theme.main['primary-3']};
+        border-color: ${({ theme }) => theme.main['primary-3']};
+        color: ${({ theme }) => theme.greys.white};
+        font-weight: var(--font-bold);
+    }
+
+    &::after {
+        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-3']};
+    }
+
+    ${Label} {
+        color: ${({ theme }) => theme.main['primary-1.1']};
+    }
+`;
+
+const CurrentStep = styled(Step)`
+    &::before {
+        border-color: ${({ theme }) => theme.main['primary-3']};
+        border-width: 0.25rem;
+        color: ${({ theme }) => theme.main['primary-1.3']};
+        font-weight: var(--font-bold);
+        height: var(--size-2x);
+        margin: -0.25rem auto 0;
         width: var(--size-2x);
     }
 
-    > span {
-        color: ${(props) => props.theme.greys.black};
-        font-size: 0.75rem;
-        font-weight: var(--font-normal);
-        letter-spacing: 0.0125rem;
-        line-height: 1.25rem;
-        margin-bottom: var(--spacing-1x);
-    }
-`;
-
-const PastStep = styled(Step)`
-    ::after {
-        background-color: ${(props) => props.theme.main['primary-3']};
-        border-color: ${(props) => props.theme.main['primary-3']};
-        color: ${(props) => props.theme.greys.white};
+    &::after {
+        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-3']};
     }
 
-    > span {
-        color: ${(props) => props.theme.greys['dark-grey']};
-    }
-`;
-
-const CurrentStep = styled(Step).attrs({ 'aria-current': 'step' })`
-    color: ${(props) => props.theme.main['primary-3']};
-
-    ::after {
-        border-color: ${(props) => props.theme.main['primary-3']};
-    }
-
-    span {
-        color: ${(props) => props.theme.main['primary-3']};
+    ${Label} {
+        color: ${({ theme }) => theme.main['primary-1.3']};
         font-weight: var(--font-bold);
     }
 `;
 
-const FutureStep = styled(Step)`
-    ::after {
-        border-color: ${(props) => props.theme.greys.grey};
-        color: ${(props) => props.theme.greys['dark-grey']};
+const IncompleteIcon = styled(Icon)`
+    left: calc(50% + 0.25rem);
+    position: absolute;
+    top: -0.5rem;
+`;
+
+const IncompleteStep = styled(Step)`
+    &::before {
+        border-color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.greys['neutral-90']};
+    }
+
+    ${Label} {
+        color: ${({ theme }) => theme.greys['dark-grey']};
     }
 `;
 
-export interface ProgressTracker {
+export interface ProgressTrackerStep {
+    href?: string;
     label?: string;
+    nonLinearState?: 'incomplete' | 'completed' | 'default';
+    onClick?: (stepNumber: number) => void;
 }
 
-interface ProgressProps {
+interface ProgressTrackerProps {
+    ariaLabel?: string;
     className?: string;
-    steps: ProgressTracker[];
+    linear?: boolean;
+    steps: ProgressTrackerStep[];
     value: number;
 }
 
-function renderStep(step: ProgressTracker, stepIndex: number, value: number): ReactElement {
-    let StepComponent;
-    let dataTestId: string;
+function renderStep(step: ProgressTrackerStep, stepNumber: number, value: number, linear: boolean): ReactElement {
+    let StepComponent: typeof Step;
+    let dataTestId: string | undefined;
+    let screenReaderText: string | undefined;
+    const isLink = step.href || step.onClick;
+    const showIncompleteIcon = !linear && step.nonLinearState === 'incomplete';
 
-    if (stepIndex < value) {
-        dataTestId = 'progress-step-past';
-        StepComponent = PastStep;
-    } else if (stepIndex === value) {
-        dataTestId = 'progress-step-current';
+    if (stepNumber === value) {
+        dataTestId = 'progress-tracker-step-current';
         StepComponent = CurrentStep;
+    } else if ((linear && stepNumber < value) || (!linear && step.nonLinearState === 'completed')) {
+        dataTestId = 'progress-tracker-step-completed';
+        screenReaderText = 'completed';
+        StepComponent = CompletedStep;
     } else {
-        dataTestId = 'progress-step-future';
-        StepComponent = FutureStep;
+        dataTestId = 'progress-tracker-step-incomplete';
+        screenReaderText = 'not completed';
+        StepComponent = IncompleteStep;
     }
 
+    const content = (
+        <>
+            {showIncompleteIcon && <IncompleteIcon name='alertFilledRound' size='16' />}
+            {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
+            {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
+        </>
+    );
+
+    const linkClickHandler = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+        if (!step.href) {
+            event.preventDefault();
+        }
+        step.onClick!(stepNumber);
+    };
+
     return (
-        <StepComponent key={stepIndex} data-testid={dataTestId}>
-            <span>{step.label}</span>
+        <StepComponent
+            key={stepNumber}
+            data-testid={dataTestId}
+            aria-current={stepNumber === value ? 'step' : undefined}
+            $linear={linear}
+        >
+            {isLink ? (
+                <a href={step.href ?? '#'} onClick={step.onClick && linkClickHandler}>
+                    {content}
+                </a>
+            ) : (
+                content
+            )}
         </StepComponent>
     );
 }
 
-export const Progress:VoidFunctionComponent<ProgressProps> = ({ className, steps, value }) => {
+export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
+    ariaLabel,
+    linear = true,
+    className,
+    steps,
+    value,
+}) => {
     const max = steps.length;
-    const zeroBasedValue = clamp(value, 1, max) - 1;
+    const clampValue = clamp(value, 1, max);
+    const hasAnyLink = steps.some((step) => step.href || step.onClick);
 
     return (
-        <Container className={className}>
-            <StyledProgress max={max - 1} value={zeroBasedValue} />
+        <Container className={className} aria-label={ariaLabel} as={hasAnyLink ? 'nav' : undefined}>
             <Steps data-testid="progress-tracker">
-                {steps.map((step, stepIndex: number) => renderStep(step, stepIndex, zeroBasedValue))}
+                {steps.map((step, stepNumber) => renderStep(step, stepNumber + 1, clampValue, linear))}
             </Steps>
         </Container>
     );

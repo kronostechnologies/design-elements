@@ -1,38 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Progress Component Snapshots with labels 1`] = `
+.c6 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   position: relative;
+  padding: var(--spacing-2x) 0;
   width: 100%;
 }
 
 .c1 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #DBDEE1;
-  border: none;
-  bottom: 1.5rem;
-  color: #004E78;
-  height: 4px;
-  left: 16.666666666666668%;
-  position: absolute;
-  width: 66.66666666666666%;
-}
-
-.c1[value]::-moz-progress-bar {
-  background-color: #004E78;
-}
-
-.c1[value]::-webkit-progress-bar {
-  background-color: #DBDEE1;
-}
-
-.c1[value]::-webkit-progress-value {
-  background-color: #004E78;
-}
-
-.c2 {
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
   counter-reset: step;
   display: grid;
   grid-auto-columns: unset;
@@ -42,7 +33,18 @@ exports[`Progress Component Snapshots with labels 1`] = `
   padding: 0;
 }
 
-.c3 {
+.c5 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin-top: var(--spacing-half);
+}
+
+.c2 {
   color: #004E78;
   display: -webkit-box;
   display: -webkit-flex;
@@ -51,7 +53,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-normal);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -60,146 +62,175 @@ exports[`Progress Component Snapshots with labels 1`] = `
   text-align: center;
 }
 
-.c3::after {
+.c2::before {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 0.25rem solid;
+  border: 0.125rem solid;
   border-radius: 50%;
   box-sizing: border-box;
+  color: #1b1c1e;
   content: counter(step);
   counter-increment: step;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
+  font-size: 0.75rem;
+  height: var(--size-1halfx);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
+  margin: 0 auto 0.25rem;
   text-align: center;
-  width: var(--size-2x);
+  width: var(--size-1halfx);
 }
 
-.c3 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.0125rem;
-  -moz-letter-spacing: 0.0125rem;
-  -ms-letter-spacing: 0.0125rem;
-  letter-spacing: 0.0125rem;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
+.c2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background-color: #DBDEE1;
+  top: 0.625rem;
+  left: calc(-50% - 0.5rem);
+  z-index: -1;
 }
 
-.c4::after {
+.c2:first-child::after {
+  content: none;
+}
+
+.c2 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3::before {
   background-color: #004E78;
   border-color: #004E78;
   color: #FFFFFF;
-}
-
-.c4 > span {
-  color: #60666E;
-}
-
-.c5 {
-  color: #004E78;
-}
-
-.c5::after {
-  border-color: #004E78;
-}
-
-.c5 span {
-  color: #004E78;
   font-weight: var(--font-bold);
 }
 
-.c6::after {
-  border-color: #DBDEE1;
+.c3::after {
+  background-color: #004E78;
+}
+
+.c3 .c4 {
+  color: #006296;
+}
+
+.c7::before {
+  border-color: #004E78;
+  border-width: 0.25rem;
+  font-weight: var(--font-bold);
+  height: var(--size-2x);
+  width: var(--size-2x);
+  margin: -0.25rem auto 0;
+  color: #003A5A;
+}
+
+.c7::after {
+  background-color: #004E78;
+}
+
+.c7 .c4 {
+  color: #003A5A;
+  font-weight: var(--font-bold);
+}
+
+.c8::before {
+  border-color: #B7BBC2;
+  color: #1B1C1E;
+}
+
+.c8 .c4 {
   color: #60666E;
 }
 
-<div
+<section
   class="c0"
 >
-  <progress
-    class="c1"
-    max="2"
-    value="1"
-  />
   <ol
-    class="c2"
+    class="c1"
     data-testid="progress-tracker"
   >
     <li
-      class="c3 c4"
-      data-testid="progress-step-past"
+      class="c2 c3"
+      data-testid="progress-tracker-step-completed"
     >
-      <span>
+      <span
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
         Step 1
+      </span>
+      <span
+        class="c6"
+      >
+        completed
       </span>
     </li>
     <li
       aria-current="step"
-      class="c3 c5"
-      data-testid="progress-step-current"
+      class="c2 c7"
+      data-testid="progress-tracker-step-current"
     >
-      <span>
+      <span
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
         Step 2
       </span>
     </li>
     <li
-      class="c3 c6"
-      data-testid="progress-step-future"
+      class="c2 c8"
+      data-testid="progress-tracker-step-incomplete"
     >
-      <span>
+      <span
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
         Step 3
+      </span>
+      <span
+        class="c6"
+      >
+        not completed
       </span>
     </li>
   </ol>
-</div>
+</section>
 `;
 
 exports[`Progress Component Snapshots without labels 1`] = `
+.c4 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   position: relative;
+  padding: var(--spacing-2x) 0;
   width: 100%;
 }
 
 .c1 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #DBDEE1;
-  border: none;
-  bottom: 1.5rem;
-  color: #004E78;
-  height: 4px;
-  left: 16.666666666666668%;
-  position: absolute;
-  width: 66.66666666666666%;
-}
-
-.c1[value]::-moz-progress-bar {
-  background-color: #004E78;
-}
-
-.c1[value]::-webkit-progress-bar {
-  background-color: #DBDEE1;
-}
-
-.c1[value]::-webkit-progress-value {
-  background-color: #004E78;
-}
-
-.c2 {
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
   counter-reset: step;
   display: grid;
   grid-auto-columns: unset;
@@ -209,7 +240,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
   padding: 0;
 }
 
-.c3 {
+.c2 {
   color: #004E78;
   display: -webkit-box;
   display: -webkit-flex;
@@ -218,7 +249,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-normal);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -227,103 +258,115 @@ exports[`Progress Component Snapshots without labels 1`] = `
   text-align: center;
 }
 
-.c3::after {
+.c2::before {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 0.25rem solid;
+  border: 0.125rem solid;
   border-radius: 50%;
   box-sizing: border-box;
+  color: #1b1c1e;
   content: counter(step);
   counter-increment: step;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
+  font-size: 0.75rem;
+  height: var(--size-1halfx);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
+  margin: 0 auto 0.25rem;
   text-align: center;
-  width: var(--size-2x);
+  width: var(--size-1halfx);
 }
 
-.c3 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.0125rem;
-  -moz-letter-spacing: 0.0125rem;
-  -ms-letter-spacing: 0.0125rem;
-  letter-spacing: 0.0125rem;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
+.c2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background-color: #DBDEE1;
+  top: 0.625rem;
+  left: calc(-50% - 0.5rem);
+  z-index: -1;
 }
 
-.c4::after {
+.c2:first-child::after {
+  content: none;
+}
+
+.c2 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3::before {
   background-color: #004E78;
   border-color: #004E78;
   color: #FFFFFF;
-}
-
-.c4 > span {
-  color: #60666E;
-}
-
-.c5 {
-  color: #004E78;
-}
-
-.c5::after {
-  border-color: #004E78;
-}
-
-.c5 span {
-  color: #004E78;
   font-weight: var(--font-bold);
 }
 
-.c6::after {
-  border-color: #DBDEE1;
-  color: #60666E;
+.c3::after {
+  background-color: #004E78;
 }
 
-<div
+.c5::before {
+  border-color: #004E78;
+  border-width: 0.25rem;
+  font-weight: var(--font-bold);
+  height: var(--size-2x);
+  width: var(--size-2x);
+  margin: -0.25rem auto 0;
+  color: #003A5A;
+}
+
+.c5::after {
+  background-color: #004E78;
+}
+
+.c6::before {
+  border-color: #B7BBC2;
+  color: #1B1C1E;
+}
+
+<section
   class="c0"
 >
-  <progress
-    class="c1"
-    max="2"
-    value="1"
-  />
   <ol
-    class="c2"
+    class="c1"
     data-testid="progress-tracker"
   >
     <li
-      class="c3 c4"
-      data-testid="progress-step-past"
+      class="c2 c3"
+      data-testid="progress-tracker-step-completed"
     >
-      <span />
+      <span
+        class="c4"
+      >
+        completed
+      </span>
     </li>
     <li
       aria-current="step"
-      class="c3 c5"
-      data-testid="progress-step-current"
-    >
-      <span />
-    </li>
+      class="c2 c5"
+      data-testid="progress-tracker-step-current"
+    />
     <li
-      class="c3 c6"
-      data-testid="progress-step-future"
+      class="c2 c6"
+      data-testid="progress-tracker-step-incomplete"
     >
-      <span />
+      <span
+        class="c4"
+      >
+        not completed
+      </span>
     </li>
   </ol>
-</div>
+</section>
 `;
