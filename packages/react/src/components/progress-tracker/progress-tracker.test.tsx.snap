@@ -14,8 +14,8 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c0 {
-  position: relative;
   padding: var(--spacing-2x) 0;
+  position: relative;
   width: 100%;
 }
 
@@ -90,13 +90,13 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c2::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.25rem;
   background-color: #DBDEE1;
-  top: 0.625rem;
+  content: '';
+  height: 0.25rem;
   left: calc(-50% - 0.5rem);
+  position: absolute;
+  top: 0.625rem;
+  width: 100%;
   z-index: -1;
 }
 
@@ -105,6 +105,8 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c2 a {
+  margin-top: calc(var(--size-2x) * -1);
+  padding-top: var(--size-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -127,11 +129,11 @@ exports[`Progress Component Snapshots with labels 1`] = `
 .c7::before {
   border-color: #004E78;
   border-width: 0.25rem;
+  color: #003A5A;
   font-weight: var(--font-bold);
   height: var(--size-2x);
-  width: var(--size-2x);
   margin: -0.25rem auto 0;
-  color: #003A5A;
+  width: var(--size-2x);
 }
 
 .c7::after {
@@ -221,8 +223,8 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c0 {
-  position: relative;
   padding: var(--spacing-2x) 0;
+  position: relative;
   width: 100%;
 }
 
@@ -286,13 +288,13 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c2::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.25rem;
   background-color: #DBDEE1;
-  top: 0.625rem;
+  content: '';
+  height: 0.25rem;
   left: calc(-50% - 0.5rem);
+  position: absolute;
+  top: 0.625rem;
+  width: 100%;
   z-index: -1;
 }
 
@@ -301,6 +303,8 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c2 a {
+  margin-top: calc(var(--size-2x) * -1);
+  padding-top: var(--size-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -319,11 +323,11 @@ exports[`Progress Component Snapshots without labels 1`] = `
 .c5::before {
   border-color: #004E78;
   border-width: 0.25rem;
+  color: #003A5A;
   font-weight: var(--font-bold);
   height: var(--size-2x);
-  width: var(--size-2x);
   margin: -0.25rem auto 0;
-  color: #003A5A;
+  width: var(--size-2x);
 }
 
 .c5::after {
