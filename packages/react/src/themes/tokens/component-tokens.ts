@@ -6,6 +6,7 @@ import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens'
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
+import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -15,7 +16,8 @@ export type ComponentTokens =
     | HeadingTokens
     | LabelTokens
     | PaginationTokens
-    | RouteLinkTokens;
+    | RouteLinkTokens
+    | SkipLinkTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -31,6 +33,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultLabelTokens,
     ...defaultPaginationTokens,
     ...defaultRouteLinkTokens,
+    ...defaultSkipLinkTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
