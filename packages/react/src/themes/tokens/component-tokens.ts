@@ -9,6 +9,7 @@ import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
+import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -21,7 +22,8 @@ export type ComponentTokens =
     | DatepickerTokens
     | DropdownListTokens
     | ListboxTokens
-    | ComboboxTokens;
+    | ComboboxTokens
+    | MenuTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -40,6 +42,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultDropdownListTokens,
     ...defaultListboxTokens,
     ...defaultComboboxTokens,
+    ...defaultMenuTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

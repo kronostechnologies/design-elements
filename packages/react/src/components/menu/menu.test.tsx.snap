@@ -165,9 +165,9 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
 exports[`Menu matches the snapshot (menu with icons) 1`] = `
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #878f9a;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
