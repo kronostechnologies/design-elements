@@ -45,16 +45,15 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
         case 'alert':
         case 'info':
         case 'default':
-            return theme.component['global-banner-default-container-color'];
+            return theme.component['global-banner-default-color'];
         case 'warning':
-            return theme.component['global-banner-warning-container-color'];
+            return theme.component['global-banner-warning-color'];
     }
 }
 
 const Label = styled.strong<{ isMobile: boolean }>`
     display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
     font-weight: var(--font-semi-bold);
-
     ${({ isMobile }) => (isMobile ? css`
         margin-bottom: var(--spacing-half);
     ` : css`
@@ -170,19 +169,19 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProp
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${({ bannerType, theme }) => bannerType === 'warning'
-    && theme.component['global-banner-tertiary-button-color']};
+    /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
+    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-color']};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning'
-    && theme.component['global-banner-tertiary-button-focus-color']};
+        /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-focus-color']};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning'
-    && theme.component['global-banner-tertiary-button-hover-color']};
+        /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-hover-color']};
     }
 `;
 

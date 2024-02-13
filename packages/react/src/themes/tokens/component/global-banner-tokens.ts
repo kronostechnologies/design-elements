@@ -6,8 +6,8 @@ export type GlobalBannerTokens =
     | 'global-banner-warning-background-color'
     | 'global-banner-info-background-color'
     | 'global-banner-default-background-color'
-    | 'global-banner-default-container-color'
-    | 'global-banner-warning-container-color'
+    | 'global-banner-default-color'
+    | 'global-banner-warning-color'
     | 'global-banner-action-button-warning-color'
     | 'global-banner-action-button-warning-background-color'
     | 'global-banner-action-button-alert-hover-color'
@@ -33,8 +33,8 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     'global-banner-warning-background-color': 'color-warning-50',
     'global-banner-info-background-color': 'color-informative-50',
     'global-banner-default-background-color': 'color-neutral-65',
-    'global-banner-default-container-color': 'color-white',
-    'global-banner-warning-container-color': 'color-black',
+    'global-banner-default-color': 'color-white',
+    'global-banner-warning-color': 'color-black',
     'global-banner-action-button-warning-color': 'color-black',
     'global-banner-action-button-warning-background-color': 'color-black',
     'global-banner-action-button-alert-hover-color': 'color-alert-20',

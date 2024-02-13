@@ -18,7 +18,7 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-3x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -31,7 +31,7 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
 }
 
@@ -103,7 +103,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -123,7 +123,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -166,7 +166,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
     <svg
       aria-hidden="true"
       class=""
-      color="#60666e"
+      color="currentColor"
       focusable="false"
       height="12"
       width="12"
@@ -177,7 +177,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
 .c2 {
-  color: #60666e;
+  color: #60666E;
   height: var(--size-1x);
   margin-right: var(--spacing-half);
   vertical-align: text-bottom;
@@ -201,7 +201,7 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -262,7 +262,7 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -313,7 +313,7 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -364,7 +364,7 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-3x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -377,7 +377,7 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
 }
 
@@ -449,7 +449,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -469,7 +469,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -512,7 +512,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
     <svg
       aria-hidden="true"
       class=""
-      color="#60666e"
+      color="currentColor"
       focusable="false"
       height="12"
       width="12"
@@ -523,7 +523,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
 .c2 {
-  color: #60666e;
+  color: #60666E;
   height: var(--size-1x);
   margin-right: var(--spacing-half);
   vertical-align: text-bottom;
@@ -547,7 +547,7 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -608,7 +608,7 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -659,7 +659,7 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -710,7 +710,7 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-2x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -723,7 +723,7 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
 }
 
@@ -795,7 +795,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -815,7 +815,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -858,7 +858,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
     <svg
       aria-hidden="true"
       class=""
-      color="#60666e"
+      color="currentColor"
       focusable="false"
       height="12"
       width="12"
@@ -869,7 +869,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 
 exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 .c2 {
-  color: #60666e;
+  color: #60666E;
   height: var(--size-1x);
   margin-right: var(--spacing-half);
   vertical-align: text-bottom;
@@ -893,7 +893,7 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -954,7 +954,7 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1005,7 +1005,7 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1056,7 +1056,7 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-2x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1069,7 +1069,7 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
 }
 
@@ -1141,7 +1141,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -1161,7 +1161,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1204,7 +1204,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
     <svg
       aria-hidden="true"
       class=""
-      color="#60666e"
+      color="currentColor"
       focusable="false"
       height="12"
       width="12"
@@ -1215,7 +1215,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 
 exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 .c2 {
-  color: #60666e;
+  color: #60666E;
   height: var(--size-1x);
   margin-right: var(--spacing-half);
   vertical-align: text-bottom;
@@ -1239,7 +1239,7 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1300,7 +1300,7 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1351,7 +1351,7 @@ exports[`Tag Tag small matches snapshot (mobile) 2`] = `
   align-items: center;
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

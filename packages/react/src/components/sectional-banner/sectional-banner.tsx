@@ -60,8 +60,10 @@ function abstractContainer(
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${(props) => props.theme.component[bgColor]};
-        border: 1px solid ${(props) => (color ? props.theme.component[color]
-        : props.theme.component['sectional-banner-container-border-color'])};
+        /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
+        border:
+            1px solid ${(props) => (color ? props.theme.component[color]
+                : props.theme.component['sectional-banner-border-color'])};
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
@@ -76,8 +78,10 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            color: ${(props) => (iconColor ? props.theme.component[iconColor]
-        : props.theme.component['sectional-banner-icon-color'])};
+            /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
+            color:
+                ${(props) => (iconColor ? props.theme.component[iconColor]
+                    : props.theme.component['sectional-banner-icon-color'])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;
@@ -86,29 +90,29 @@ function abstractContainer(
 }
 
 const NeutralContainer = abstractContainer(
-    'sectional-banner-container-neutral-background-color',
-    'sectional-banner-container-neutral-border-color',
+    'sectional-banner-neutral-background-color',
+    'sectional-banner-neutral-border-color',
 );
 const InfoContainer = abstractContainer(
-    'sectional-banner-container-info-background-color',
-    'sectional-banner-container-info-border-color',
+    'sectional-banner-info-background-color',
+    'sectional-banner-info-border-color',
 );
 const DiscoveryContainer = abstractContainer(
-    'sectional-banner-container-discovery-background-color',
-    'sectional-banner-container-discovery-border-color',
+    'sectional-banner-discovery-background-color',
+    'sectional-banner-discovery-border-color',
 );
 const SuccessContainer = abstractContainer(
-    'sectional-banner-container-success-background-color',
-    'sectional-banner-container-success-border-color',
+    'sectional-banner-success-background-color',
+    'sectional-banner-success-border-color',
 );
 const WarningContainer = abstractContainer(
-    'sectional-banner-container-warning-background-color',
-    'sectional-banner-container-warning-border-color',
-    'sectional-banner-container-warning-icon-color',
+    'sectional-banner-warning-background-color',
+    'sectional-banner-warning-border-color',
+    'sectional-banner-warning-icon-color',
 );
 const AlertContainer = abstractContainer(
-    'sectional-banner-container-alert-background-color',
-    'sectional-banner-container-alert-border-color',
+    'sectional-banner-alert-background-color',
+    'sectional-banner-alert-border-color',
 );
 
 const Message = styled.p<MobileDeviceContext>`
