@@ -38,13 +38,13 @@ export interface DropdownListOption extends ListboxOption {
 
 function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     if ($disabled) {
-        return theme.greys['mid-grey'];
+        return theme.component['dropdown-list-textbox-disabled-border-color'];
     }
     if (!$valid) {
-        return theme.notifications['alert-2.1'];
+        return theme.component['dropdown-list-textbox-invalid-border-color'];
     }
 
-    return theme.greys['dark-grey'];
+    return theme.component['dropdown-list-textbox-border-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -58,11 +58,11 @@ const StyledListbox = styled(Listbox)`
 
 const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-textbox-disabled-background-color'] : theme.component['dropdown-list-textbox-background-color'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.greys['mid-grey']}`};
+    ${({ $disabled, theme }) => $disabled && `color: ${theme.component['dropdown-list-textbox-disabled-text-color']}`};
     display: flex;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
@@ -83,7 +83,7 @@ const TextWrapper = styled.span`
 
 const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     align-items: center;
-    color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
     display: flex;
     flex: none;
     height: var(--size-1x);
