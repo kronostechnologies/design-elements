@@ -102,7 +102,7 @@ const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
 
 const DeleteIcon = styled(Icon).attrs({
     'aria-hidden': 'true',
-    name: 'x'
+    name: 'x',
 })`
     color: ${({ theme }) => theme.component['tag-delete-icon-color']};
 `;

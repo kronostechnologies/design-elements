@@ -170,18 +170,18 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProp
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${({ bannerType, theme }) => bannerType === 'warning' 
+    color: ${({ bannerType, theme }) => bannerType === 'warning'
     && theme.component['global-banner-tertiary-button-color']};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' 
+        color: ${({ bannerType, theme }) => bannerType === 'warning'
     && theme.component['global-banner-tertiary-button-focus-color']};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' 
+        color: ${({ bannerType, theme }) => bannerType === 'warning'
     && theme.component['global-banner-tertiary-button-hover-color']};
     }
 `;
