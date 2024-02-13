@@ -34,24 +34,22 @@ const PasswordContainer = styled.div`
     > div:first-of-type:focus-within {
         border-radius: var(--border-radius);
 
-        /* TODO change when updating thematization */
-        box-shadow: 0 0 0 2px #84c6ea;
+        box-shadow: 0 0 0 2px  ${({ theme }) => theme.component['password-creation-input-focus-within-shadow-color']};
         outline: none;
 
         input,
         + span > button {
-            /* TODO change when updating thematization */
-            border-color: #006296;
+            border-color: ${({ theme }) => theme.component['password-creation-input-focus-within-border-color']};
         }
     }
 `;
 
 export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolean; }>): string {
     if (isValid) {
-        return theme.greys['dark-grey'];
+        return theme.component['password-creation-input-border-color'];
     }
 
-    return theme.notifications['alert-2.1'];
+    return theme.component['password-creation-input-invalid-border-color'];
 }
 
 const StyledInput = styled(TextInput)`
@@ -71,7 +69,7 @@ const StyledInput = styled(TextInput)`
 `;
 
 const StyledIconButton = styled(IconButton)<{ isValid: boolean }>`
-    background-color: white;
+    background-color: ${({ theme }) => theme.component['password-input-show-password-button-background-color']};
     border-color: ${getBorderColor};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border-width: 1px 1px 1px 0;

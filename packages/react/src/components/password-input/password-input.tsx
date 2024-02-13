@@ -24,20 +24,20 @@ const StyledTextInput = styled(TextInput)`
 `;
 
 const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border-color: ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.component['password-input-show-password-button-background-color']};
+    border-color: ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
     border-left-width: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     min-height: 2rem;
     width: 2rem;
 
     ${(props) => !props.$isValid && css`
-        border-color: ${props.theme.notifications['alert-2.1']};
+        border-color: ${props.theme.component['password-input-show-password-button-invalid-border-color']};
     `}
 
     &:disabled {
-        background-color: ${({ theme }) => theme.greys['light-grey']};
-        border-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-border-color']};
     }
 `;
 
@@ -51,7 +51,7 @@ const PasswordContainer = styled.div`
 
         input,
         ${StyledIconButton} {
-            border-color: ${({ theme }) => theme.main['primary-1.1']};
+            border-color: ${({ theme }) => theme.component['password-input-show-password-button-focus-within-border-color']};
         }
     }
 `;

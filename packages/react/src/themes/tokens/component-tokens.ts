@@ -10,6 +10,7 @@ import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens'
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
+import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -23,7 +24,8 @@ export type ComponentTokens =
     | DropdownListTokens
     | ListboxTokens
     | ComboboxTokens
-    | MenuTokens;
+    | MenuTokens
+    | PasswordInputTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -43,6 +45,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultListboxTokens,
     ...defaultComboboxTokens,
     ...defaultMenuTokens,
+    ...defaultPasswordInputTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
