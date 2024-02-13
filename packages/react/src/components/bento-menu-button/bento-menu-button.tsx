@@ -40,7 +40,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
 
         ul:not(:last-child)::after,
         ol:not(:last-child)::after {
-            border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+            border-bottom: 1px solid ${({ theme }) => theme.component['bento-menu-divider-border-color']};
             content: '';
             display: block;
             margin: var(--spacing-2x) var(--spacing-4x);
