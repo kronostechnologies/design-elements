@@ -22,7 +22,7 @@ export type ListboxTokens =
     | 'listbox-item-selected-border-color'
     | 'listbox-item-selected-checkmark-icon-color'
     | 'listbox-item-caption-text-color'
-    | 'listbox-item-caption-disabled-text-color'
+    | 'listbox-item-caption-disabled-text-color';
 
 export type ListboxTokenValue = AliasTokens | RefTokens;
 
