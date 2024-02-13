@@ -1,4 +1,5 @@
 import { AliasTokens } from './alias-tokens';
+import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
@@ -10,6 +11,7 @@ import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tok
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
+    | BentoMenuButtonTokens
     | ButtonTokens
     | CardLinkTokens
     | FocusTokens
@@ -26,6 +28,7 @@ export type ComponentTokenMap = {
 }
 
 export const defaultComponentTokens: ComponentTokenMap = {
+    ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
     ...defaultCardLinkTokens,
     ...defaultFocusTokens,
