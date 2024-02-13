@@ -15,6 +15,7 @@ import { RefTokens, RefTokenValue } from './ref-tokens';
 import {BadgeTokens, defaultBadgeTokens} from "./component/badge-tokens";
 import {defaultGlobalBannerTokens, GlobalBannerTokens} from "./component/global-banner-tokens";
 import {defaultSectionalBannerTokens, SectionalBannerTokens} from "./component/sectional-banner-tokens";
+import {defaultSpinnerTokens, SpinnerTokens} from "./component/spinner-tokens";
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -31,7 +32,8 @@ export type ComponentTokens =
     | SkipLinkTokens
     | BadgeTokens
     | GlobalBannerTokens
-    | SectionalBannerTokens;
+    | SectionalBannerTokens
+    | SpinnerTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -55,7 +57,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFocusTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
-    ...defaultSectionalBannerTokens
+    ...defaultSectionalBannerTokens,
+    ...defaultSpinnerTokens
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
