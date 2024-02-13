@@ -5,6 +5,8 @@ import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tok
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
+import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
+import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
@@ -17,6 +19,8 @@ export type ComponentTokens =
     | FocusTokens
     | HeadingTokens
     | LabelTokens
+    | NavListTokens
+    | NavListItemTokens
     | PaginationTokens
     | RouteLinkTokens
     | SkipLinkTokens;
@@ -34,6 +38,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
+    ...defaultNavListTokens,
+    ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
