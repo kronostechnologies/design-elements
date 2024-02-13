@@ -5,6 +5,7 @@ import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
+import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -13,7 +14,8 @@ export type ComponentTokens =
     | FocusTokens
     | HeadingTokens
     | LabelTokens
-    | PaginationTokens;
+    | PaginationTokens
+    | RouteLinkTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -28,6 +30,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultPaginationTokens,
+    ...defaultRouteLinkTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
