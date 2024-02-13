@@ -4,6 +4,7 @@ import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tok
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
+import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -11,7 +12,8 @@ export type ComponentTokens =
     | CardLinkTokens
     | FocusTokens
     | HeadingTokens
-    | LabelTokens;
+    | LabelTokens
+    | PaginationTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -25,6 +27,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
+    ...defaultPaginationTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

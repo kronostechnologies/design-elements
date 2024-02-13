@@ -11,6 +11,12 @@ import { IconName } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { calculateShownPageRange } from './util/pagination-util';
 
+type SelectionSuffix = '-selected' | '';
+
+function getSelectionSuffix(isSelected: boolean): SelectionSuffix {
+    return isSelected ? '-selected' : '';
+}
+
 const Pages = styled.ol`
     display: flex;
     margin: 0 var(--spacing-half);
@@ -19,27 +25,27 @@ const Pages = styled.ol`
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
-    background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.4'] : props.theme.greys.white)};
+    background-color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-background-color`]};
     border-radius: 1rem;
     box-sizing: border-box;
-    color: ${(props) => (props.isSelected ? props.theme.main['primary-1.3'] : props.theme.greys['dark-grey'])};
+    color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-text-color`]};
     display: inline-flex;
-    font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
+    font-size: ${({ isMobile }) => (isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
-    height: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     justify-content: center;
-    line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
+    line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
-    min-width: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-    outline: ${(props) => (props.isSelected ? `1px solid ${props.theme.main['primary-1.1']}` : '0')};
+    min-width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+    outline: ${({ isSelected, theme }) => (isSelected ? theme.component['pagination-selected-outline-color'] : '0')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 
     ${focus};
 
     &:hover {
-        background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.4'] : props.theme.greys.grey)};
-        cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
+        background-color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-hover-background-color`]};
+        cursor: ${({ isSelected }) => (isSelected ? 'default' : 'pointer')};
     }
 `;
 
