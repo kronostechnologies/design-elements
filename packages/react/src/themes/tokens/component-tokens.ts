@@ -1,5 +1,6 @@
 import { AliasTokens } from './alias-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
+import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
@@ -7,9 +8,10 @@ import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
     | ButtonTokens
+    | CardLinkTokens
+    | FocusTokens
     | HeadingTokens
-    | LabelTokens
-    | FocusTokens;
+    | LabelTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -19,9 +21,10 @@ export type ComponentTokenMap = {
 
 export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultButtonTokens,
+    ...defaultCardLinkTokens,
+    ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
-    ...defaultFocusTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
