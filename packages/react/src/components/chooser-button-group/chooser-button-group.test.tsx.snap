@@ -36,14 +36,15 @@ exports[`Chooser Button GroupItem Matches the snapshot 1`] = `
 
 .c3:hover {
   background: #DBDEE1;
-  border-color: #DBDEE1;
+  border-color: #1B1C1E;
+  color: #1B1C1E;
 }
 
 input[type="checkbox"]:checked + .c2,
 input[type="radio"]:checked + .c3 {
-  background: #006296;
+  background: #E0F0F9;
   border-color: #006296;
-  color: #FFFFFF;
+  color: #003A5A;
 }
 
 input[type="checkbox"]:focus + .c2,
@@ -56,8 +57,8 @@ input[type="radio"]:focus + .c3 {
 input[type="checkbox"]:disabled + .c2,
 input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #B7BBC2;
+  border-color: #F1F2F2;
+  color: #F1F2F2;
 }
 
 .c3 b {
@@ -160,14 +161,15 @@ input[type="radio"]:disabled + .c3 {
 
 .c3:hover {
   background: #DBDEE1;
-  border-color: #DBDEE1;
+  border-color: #1B1C1E;
+  color: #1B1C1E;
 }
 
 input[type="checkbox"]:checked + .c2,
 input[type="radio"]:checked + .c3 {
-  background: #006296;
+  background: #E0F0F9;
   border-color: #006296;
-  color: #FFFFFF;
+  color: #003A5A;
 }
 
 input[type="checkbox"]:focus + .c2,
@@ -180,8 +182,8 @@ input[type="radio"]:focus + .c3 {
 input[type="checkbox"]:disabled + .c2,
 input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #B7BBC2;
+  border-color: #F1F2F2;
+  color: #F1F2F2;
 }
 
 .c3 b {
