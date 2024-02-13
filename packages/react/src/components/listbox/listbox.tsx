@@ -90,16 +90,16 @@ interface ListItemProps {
 }
 
 const Container = styled.div<ContainerProps>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.component['listbox-background-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.component['listbox-box-shadow-color-1']}, 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-color-2']};
     display: flex;
     max-height: 160px;
     overflow-y: auto;
     padding: var(--spacing-half) 0;
     position: relative;
     z-index: 1000;
-  
+
     ${({ $focusable, theme }) => $focusable && focus({ theme })};
 `;
 
@@ -112,15 +112,15 @@ const List = styled.ul`
 `;
 
 const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.component['listbox-item-selected-checkmark-icon-color']};
     height: 100%;
     width: 100%;
 `;
 
 const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-background-color'] : theme.component['listbox-checkbox-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-border-color'] : theme.component['listbox-checkbox-border-color'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -130,9 +130,9 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     width: var(--size-1x);
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-hover-disabled-border-color'] : theme.component['listbox-checkbox-hover-border-color'])};
     }
-  
+
     ${({ checked }) => (!checked && css`
         > ${CheckMarkIcon} {
             display: none;
@@ -142,33 +142,33 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
+    color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-item-disabled-text-color'] : theme.component['listbox-item-text-color'])};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
-  
+
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
-    
+
     user-select: none;
 
     &:hover {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
+        background-color: ${({ theme, disabled }) => (disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
     }
-  
+
     ${({ focused, disabled, theme }) => (focused && css`
-        outline: 2px solid ${disabled ? 'transparent' : theme.main['primary-1.1']};
+        outline: 2px solid ${disabled ? theme.component['listbox-item-focused-disabled-outline-color'] : theme.component['listbox-item-focused-outline-color']};
         outline-offset: -2px;
     `)}
 
     ${({ selected }) => (selected && css`
         & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
-            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+            background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
+            border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
         }
     `)}
 `;
@@ -179,7 +179,7 @@ const ListItemTextContainer = styled.span`
 `;
 
 const ListItemCaption = styled.span<{ disabled?: boolean, isMobile: boolean }>`
-    color: ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-item-caption-disabled-text-color'] : theme.component['listbox-item-caption-text-color'])};
     display: block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
 `;

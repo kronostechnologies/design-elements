@@ -42,7 +42,7 @@ input + .c2 {
 .c7 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -490,7 +490,7 @@ input + .c2 {
 .c9 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -908,7 +908,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 .c5 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1333,7 +1333,7 @@ input + .c2 {
 .c8 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
