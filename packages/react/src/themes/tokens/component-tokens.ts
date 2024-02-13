@@ -2,6 +2,7 @@ import { AliasTokens } from './alias-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
+import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
@@ -13,7 +14,8 @@ export type ComponentTokens =
     | LabelTokens
     | FocusTokens
     | CheckboxTokens
-    | ChooserTokens;
+    | ChooserTokens
+    | DatepickerTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -28,6 +30,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFocusTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
+    ...defaultDatepickerTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
