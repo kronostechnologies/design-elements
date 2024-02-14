@@ -1644,6 +1644,7 @@ __metadata:
     "@equisoft/typescript-config": "npm:^2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:^3.0.0"
     "@svgr/webpack": "npm:^8.0.0"
+    "@tanstack/react-table": "npm:^8.10.7"
     "@testing-library/react": "npm:^12.1.5"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/cheerio": "npm:^0.22.31"
@@ -1655,7 +1656,6 @@ __metadata:
     "@types/react-datepicker": "npm:^4.11.2"
     "@types/react-dom": "npm:~17.0.20"
     "@types/react-modal": "npm:^3.16.0"
-    "@types/react-table": "npm:^7.7.14"
     "@types/styled-components": "npm:^5.1.26"
     "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
     "@typescript-eslint/parser": "npm:^6.0.0"
@@ -1690,7 +1690,6 @@ __metadata:
     react-router-dom: "npm:~6.22.0"
     react-shadow: "npm:^20.0.0"
     react-swipeable: "npm:~7.0.0"
-    react-table: "npm:^7.8.0"
     sass: "npm:~1.70.0"
     sass-loader: "npm:~14.1.0"
     stream-browserify: "npm:^3.0.0"
@@ -4331,6 +4330,25 @@ __metadata:
   version: 0.1.5
   resolution: "@swc/types@npm:0.1.5"
   checksum: 10c0/b35f93fe896a2240f6f10544e408f9648c2bd4bcff9bd8d022d9a6942d31cf859f86119fb0bbb04a12eefa1f6a6745ffc7d18f3a490d76d7b6a074a7c9608144
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-table@npm:^8.10.7":
+  version: 8.10.7
+  resolution: "@tanstack/react-table@npm:8.10.7"
+  dependencies:
+    "@tanstack/table-core": "npm:8.10.7"
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 10c0/2ddf6f90b06e7af069f16dbe5d0dc8c8afab3de88c25e33f6c297beaf2507c2e46fee1f746f7977d48bad2114909bba0016026fc2b6a85bcaee472cdafdc7ffd
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.10.7":
+  version: 8.10.7
+  resolution: "@tanstack/table-core@npm:8.10.7"
+  checksum: 10c0/3f671484319094443bb2db86356f408d4246e22bebd7ad444edc919fef131899384c3a27261c5ee01fb18887bc9157c5a0d9db3e32aae940ce5416f6e58b038b
   languageName: node
   linkType: hard
 
@@ -14002,15 +14020,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.3 || ^17 || ^18
   checksum: 10c0/ebd34ac4cad0053db2a43a5113a1b1f2ecbe2badbf4b3aae14cf7292cf836991378637dc7b7da6cf5217215b92559b43dd43775ba3fea95e7e451dc76d029893
-  languageName: node
-  linkType: hard
-
-"react-table@npm:^7.8.0":
-  version: 7.8.0
-  resolution: "react-table@npm:7.8.0"
-  peerDependencies:
-    react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
-  checksum: 10c0/592938cb331331a4b10a67e881458ccf590c16639e2781a0329ca0803bad92991c9b9a2a3b1db1dce0de9ad325195fc5b38e1ea13813f8a55a35c94dc194757a
   languageName: node
   linkType: hard
 

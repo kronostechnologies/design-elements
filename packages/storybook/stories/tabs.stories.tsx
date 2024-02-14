@@ -21,12 +21,12 @@ interface Data {
 export const Normal: Story = () => {
     const contactTableColumns: TableColumn<Data> = [
         {
-            Header: 'First Name',
-            accessor: 'column1',
+            header: 'First Name',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Last Name',
-            accessor: 'column2',
+            header: 'Last Name',
+            accessorKey: 'column2',
         },
     ];
 
