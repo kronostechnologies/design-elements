@@ -26,7 +26,7 @@ const Link = styled(StyledLink)`
 
     &:visited {
         svg {
-            color: #62a; /* TODO change colors when updating thematization */
+            color: ${({ theme }) => theme.component[`external-link-visited-text-color`]};
         }
     }
 `;
