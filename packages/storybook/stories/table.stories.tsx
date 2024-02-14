@@ -150,7 +150,7 @@ export const WithFooter: Story = () => {
         {
             header: 'Column 1',
             accessorKey: 'column1',
-            footer: 'Total:',
+            footer: 'Footer with colspan',
             footerColSpan: 2,
 
         },
@@ -1138,13 +1138,14 @@ interface OptimizationData {
 }
 
 /**
- * The table will always update the table with the new data and columns when React is re-rendering this component.
- * But the important key here is if you pass a different **columns** object, the table will UNMOUNT and RE-MOUNT
- * every cell (instead of the usual React update). So it is very important to memoize the columns object (ex: using
- * useMemo) and reuse it as much as possible.
+ * When the components is re-rendering, it will always update the table with the provided data and columns, even when
+ * you pass the same data and columns. But the very important key here is if you pass a different **columns** object
+ * between renders, the table will UNMOUNT and RE-MOUNT every cell instead of doing the usual React update. This will
+ * impact the performance and could create unwanted behaviors. So to prevent that, you should give the column
+ * definitions a stable identity by memoizing it (ex: store it in a useMemo or useState hook).
  *
- * If you are recreating the memoized columns just to update a dependency, you could pass these dependencies via useRef
- * instead. This way you will always retrieve the current value of that variable.
+ * Additionally, if your columns use some dependencies, you can pass them via useRef instead, so you don't have to
+ * recreate the columns object everytime the dependencies changes.
  */
 export const Optimization: Story = () => {
     const [data, setData] = useState<OptimizationData[]>([
