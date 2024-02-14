@@ -34,7 +34,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c6:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c6:focus {
@@ -94,7 +94,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c7:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c9 {
@@ -450,7 +450,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c6:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c6:focus {
@@ -510,7 +510,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c7:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c9 {
