@@ -25,10 +25,10 @@ const Pages = styled.ol`
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
-    background-color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-background-color`]};
+    background-color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-background-color`]};
     border-radius: 1rem;
     box-sizing: border-box;
-    color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-text-color`]};
+    color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-text-color`]};
     display: inline-flex;
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
@@ -37,14 +37,14 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-    outline: ${({ isSelected, theme }) => (isSelected ? theme.component['pagination-selected-outline-color'] : '0')};
+    outline: ${({ isSelected, theme }) => (isSelected ? theme.component['pagination-page-selected-outline-color'] : '0')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 
     ${focus};
 
     &:hover {
-        background-color: ${({ isSelected, theme }) => theme.component[`pagination${getSelectionSuffix(isSelected)}-hover-background-color`]};
+        background-color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-hover-background-color`]};
         cursor: ${({ isSelected }) => (isSelected ? 'default' : 'pointer')};
     }
 `;

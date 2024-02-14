@@ -2,7 +2,7 @@ import { AliasTokens } from './alias-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
-import { defaultExternalLinkTokens, ExternalLinkTokens } from "./component/external-link-tokens";
+import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/external-link-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';

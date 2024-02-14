@@ -30,9 +30,9 @@ export const StyledLink = styled.a<ContainerProps>`
     }
 
     &:visited {
-        ${({ disabled }) => !disabled && `
-             color: #62a;
-        `}/* TODO change colors when updating thematization */
+        ${({ disabled, theme }) => !disabled && `
+             color: ${theme.component['route-link-visited-text-color']};
+        `}
     }
 
     ${focus};
