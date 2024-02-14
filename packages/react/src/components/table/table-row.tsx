@@ -1,25 +1,38 @@
 import { CSSProperties, ReactElement } from 'react';
-import { Row } from 'react-table';
+import {
+    flexRender,
+    Row,
+    Cell,
+    Column,
+    RowData,
+} from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
+import { CustomColumnDef } from './types';
 
 interface StyledTableRowProps {
-    clickable: boolean;
-    error: boolean;
-    selected: boolean;
-    striped?: boolean;
+    $clickable: boolean;
+    $error: boolean;
+    $selected: boolean;
+    $striped?: boolean;
+}
+
+interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
+    column: Column<TData, TValue> & {
+        columnDef: CustomColumnDef<TData, TValue>;
+    };
 }
 
 function getRowBackgroundColor({
-    selected, error,
+    $selected, $error,
 }: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
-    if (selected) {
+    if ($selected) {
         return css`
             /* TODO fix with next thematization */
             background-color: #e0f0f9;
         `;
     }
-    if (error) {
+    if ($error) {
         return css`
             /* TODO fix with next thematization theme.notifications.error4 */
             background-color: #fcf8f9;
@@ -31,9 +44,10 @@ function getRowBackgroundColor({
 }
 
 function getCellBackgroundCss({
-    theme, clickable,
+    theme,
+    $clickable,
 }: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
-    if (!clickable) {
+    if (!$clickable) {
         return css`
             td {
                 background-color: inherit;
@@ -42,29 +56,29 @@ function getCellBackgroundCss({
     }
 
     return css`
-        :hover td {
+        &:hover td {
             background-color: ${theme.greys.grey};
         }
 
-        :not(:hover) td {
+        &:not(:hover) td {
             background-color: inherit;
         }
     `;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps & { theme: ResolvedTheme }>`
+const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
 
-    ${({ error, striped, theme }) => striped && !error && css`
-        :nth-child(odd) {
+    ${({ $error, $striped, theme }) => $striped && !$error && css`
+        &:nth-child(odd) {
             background-color: ${theme.greys['colored-white']};
         }
     `}
 
-    ${({ clickable, theme }) => clickable && css`
-        :focus {
+    ${({ $clickable, theme }) => $clickable && css`
+        &:focus {
             position: relative;
 
             &::after {
@@ -80,12 +94,12 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: ResolvedTheme }>
             }
         }
 
-        :hover {
+        &:hover {
             cursor: pointer;
         }
     `}
 
-    ${({ error, theme }) => error && css`
+    ${({ $error, theme }) => $error && css`
         position: relative;
 
         &::after {
@@ -114,16 +128,34 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: ResolvedTheme }>
     ${getCellBackgroundCss}
 `;
 
-const StyledCell = styled.td<{ sticky?: boolean }>`
-    ${({ sticky }) => (sticky) && css`
+const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
+    background-color: inherit;
+    text-align: ${({ $textAlign }) => $textAlign};
+
+    ${({ $sticky, $startOffset }) => ($sticky) && css`
+        left: ${$startOffset / 2}px;
         position: sticky;
+        z-index: 2;
     `}
 `;
 
-interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'clickable' | 'selected'> {
-    row: Row<T>;
-    viewIndex: number;
+function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {
+    return (
+        <StyledCell
+            $sticky={cell.column.columnDef.sticky || false}
+            $textAlign={cell.column.columnDef.textAlign}
+            $startOffset={cell.column.getStart()}
+            key={cell.id}
+        >
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+        </StyledCell>
+    );
+}
 
+interface TableRowProps<T extends object> {
+    row: Row<T>;
+    striped: boolean;
+    error: boolean;
     onClick?(row: Row<T>): void;
 }
 
@@ -132,35 +164,18 @@ export const TableRow = <T extends object>({
     onClick,
     row,
     striped,
-    viewIndex,
-}: TableRowProps<T>): ReactElement => { // eslint-disable-line arrow-body-style
-    return (
-        <StyledTableRow
-            clickable={!!onClick}
-            data-testid={`table-row-${row.index}`}
-            error={error}
-            selected={row.isSelected}
-            striped={striped}
-            onClick={() => onClick && onClick(row)}
-            {...row.getRowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-            {...(onClick ? { tabIndex: 0, role: 'button' } : {}) /* eslint-disable-line react/jsx-props-no-spreading */}
-        >
-            {row.cells.map((cell) => {
-                const style: CSSProperties = { textAlign: cell.column.textAlign };
-                return (
-                    <StyledCell
-                        style={style}
-                        sticky={cell.column.sticky}
-                        className={cell.column.className}
-                        {...{ /* eslint-disable-line react/jsx-props-no-spreading */
-                            ...cell.getCellProps(),
-                            key: `${cell.column.id}-${cell.row.id}`,
-                        }}
-                    >
-                        {cell.render('Cell', { viewIndex })}
-                    </StyledCell>
-                );
-            })}
-        </StyledTableRow>
-    );
-};
+}: TableRowProps<T>): ReactElement => (
+    <StyledTableRow
+        $clickable={!!onClick}
+        data-testid={`table-row-${row.index}`}
+        $error={error}
+        key={row.id}
+        $striped={striped}
+        $selected={row.getIsSelected()}
+        onClick={() => onClick && onClick(row)}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
+    >
+        {row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
+    </StyledTableRow>
+);

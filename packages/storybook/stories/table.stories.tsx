@@ -1,6 +1,6 @@
-import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
+import { ReactElement, useMemo, useRef, useState } from 'react';
+import { Button, Pagination, Table, TableColumn, TableRow, TextInput, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -19,16 +19,16 @@ interface Data {
 export const Normal: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -54,63 +54,6 @@ export const Normal: Story = () => {
     );
 };
 
-interface FooterData {
-    column1: string;
-    column2: string;
-    numbers: number;
-}
-
-export const WithFooter: Story = () => {
-    const columns: TableColumn<FooterData> = [
-        {
-            Header: 'Column 1',
-            accessor: 'column1',
-            Footer: 'Total:',
-            footerColSpan: 2,
-
-        },
-        {
-            Header: 'Column 2',
-            accessor: 'column2',
-            footerColSpan: 0,
-        },
-        {
-            Header: 'Numbers',
-            accessor: 'numbers',
-            Footer: (value) => {
-                const total = useMemo(
-                    () => value.rows.reduce((sum, row) => row.values.numbers + sum, 0),
-                    [value.rows],
-                );
-
-                return total;
-            },
-        },
-    ];
-
-    const data: TableRow<FooterData>[] = [
-        {
-            column1: 'a',
-            column2: 'a',
-            numbers: 10,
-        },
-        {
-            column1: 'b',
-            column2: 'b',
-            numbers: 20,
-        },
-        {
-            column1: 'a',
-            column2: 'a',
-            numbers: 30,
-        },
-    ];
-
-    return (
-        <Table columns={columns} data={data} />
-    );
-};
-
 const StyledTable = styled(
     ({ className, columns, data }) => (<Table<Data> className={className} columns={columns} data={data} />),
 )`
@@ -128,18 +71,18 @@ const StyledTable = styled(
 export const WithColumnClassnames: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
             className: 'column-1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             className: 'column-2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             className: 'column-3',
         },
     ];
@@ -166,19 +109,81 @@ export const WithColumnClassnames: Story = () => {
     );
 };
 
+interface FooterData {
+    column1: string;
+    column2: string;
+    numbers: number;
+}
+
+export const WithFooter: Story = () => {
+    const data: TableRow<FooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            numbers: 20,
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 30,
+        },
+    ];
+
+    // Footer function for the 'numbers' column
+    const footerSum = (): ReactElement => {
+        const total = data.reduce((sum, row) => row.numbers + sum, 0);
+        return (
+            <span>
+                Total:
+                {total}
+            </span>
+        );
+    };
+
+    // Calculate the total sum of 'numbers'
+    const columns: TableColumn<FooterData> = [
+        {
+            header: 'Column 1',
+            accessorKey: 'column1',
+            footer: 'Footer with colspan',
+            footerColSpan: 2,
+
+        },
+        {
+            header: 'Column 2',
+            accessorKey: 'column2',
+            footerColSpan: 0,
+        },
+        {
+            header: 'Numbers',
+            accessorKey: 'numbers',
+            footer: footerSum,
+        },
+    ];
+
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
 export const ErrorRows: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -209,16 +214,16 @@ export const ErrorRows: Story = () => {
 export const Striped: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -247,16 +252,16 @@ export const Striped: Story = () => {
 export const RowNumbers: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -285,16 +290,16 @@ export const RowNumbers: Story = () => {
 export const SmallRows: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -330,16 +335,16 @@ export const RowClickCallback: Story = () => {
 
     const columns: TableColumn<DataWithHref> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -373,17 +378,17 @@ export const RowClickCallback: Story = () => {
 export const CustomTextAlignment: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             textAlign: 'center',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             textAlign: 'right',
         },
     ];
@@ -414,40 +419,25 @@ interface ComplexData {
     amount?: string;
 }
 
-interface CategoryCellProps {
-    value: ComplexData['category'];
-}
+const CategoryCell = ({ cellValue }: { cellValue: ComplexData['category'] }): ReactElement => {
+    const { value, tooltip } = cellValue;
 
-const CategoryCell: VoidFunctionComponent<CategoryCellProps> = ({ value }) => (
-    <div style={{ display: 'flex' }}>
-        <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
-        {value.tooltip && (<Tooltip label={value.tooltip} />)}
-    </div>
+    return (
+        <div style={{ display: 'flex' }}>
+            <p style={{ marginRight: 'var(--spacing-half)' }}>{value}</p>
+            {tooltip && <Tooltip label={tooltip} />}
+        </div>
+    );
+};
+
+const AmountHeader = (): ReactElement => (
+    <div style={{ textAlign: 'right' }}>Amount ($)</div>
 );
-
-interface AmountCellProps {
-    value: ComplexData['amount'];
-}
-
-const AmountHeader: VoidFunctionComponent = () => <div style={{ textAlign: 'right' }}>Amount ($)</div>;
-const AmountCell: VoidFunctionComponent<AmountCellProps> = ({ value }) => (
-    <div style={{ textAlign: 'right' }}>{value}</div>
+const AmountCell = ({ cellValue }: { cellValue: ComplexData['amount'] }): ReactElement => (
+    <div style={{ textAlign: 'right' }}>{cellValue}</div>
 );
 
 export const CustomColumns: Story = () => {
-    const columns: TableColumn<ComplexData> = [
-        {
-            Header: 'Category',
-            accessor: 'category',
-            Cell: CategoryCell,
-        },
-        {
-            Header: AmountHeader,
-            accessor: 'amount',
-            Cell: AmountCell,
-        },
-    ];
-
     const data: ComplexData[] = [
         {
             category: {
@@ -461,6 +451,21 @@ export const CustomColumns: Story = () => {
                 value: 'Investments',
             },
             amount: '12000$',
+        },
+    ];
+
+    const columns: TableColumn<ComplexData> = [
+        {
+            header: 'Category',
+            accessorKey: 'category',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => <CategoryCell cellValue={props.cell.getValue() as ComplexData['category']} />,
+        },
+        {
+            header: AmountHeader,
+            accessorKey: 'amount',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => <AmountCell cellValue={props.cell.getValue() as ComplexData['amount']} />,
         },
     ];
 
@@ -478,18 +483,17 @@ export const SortableRows: Story = () => {
 
     const columns: TableColumn<SortableData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             sortable: true,
-            defaultSort: 'asc',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             sortable: true,
         },
     ];
@@ -507,7 +511,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} />
+        <Table<SortableData> columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
     );
 };
 
@@ -520,16 +524,16 @@ export const SelectableRows: Story = () => {
 
     const columns: TableColumn<SelectableData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -568,74 +572,74 @@ interface StickyData {
     column15: string,
 }
 
-const Wrap = styled.div`
-    height: 400px;
-    overflow: scroll;
+const ScrollableWrap = styled.div`
+    max-height: 400px;
+    overflow: auto;
 `;
 
 export const Sticky: Story = () => {
     const columns: TableColumn<StickyData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
             sticky: true,
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             sticky: true,
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
         {
-            Header: 'Column 4',
-            accessor: 'column4',
+            header: 'Column 4',
+            accessorKey: 'column4',
         },
         {
-            Header: 'Column 5',
-            accessor: 'column5',
+            header: 'Column 5',
+            accessorKey: 'column5',
         },
         {
-            Header: 'Column 6',
-            accessor: 'column6',
+            header: 'Column 6',
+            accessorKey: 'column6',
         },
         {
-            Header: 'Column 7',
-            accessor: 'column7',
+            header: 'Column 7',
+            accessorKey: 'column7',
         },
         {
-            Header: 'Column 8',
-            accessor: 'column8',
+            header: 'Column 8',
+            accessorKey: 'column8',
         },
         {
-            Header: 'Column 9',
-            accessor: 'column9',
+            header: 'Column 9',
+            accessorKey: 'column9',
         },
         {
-            Header: 'Column 10',
-            accessor: 'column10',
+            header: 'Column 10',
+            accessorKey: 'column10',
         },
         {
-            Header: 'Column 11',
-            accessor: 'column11',
+            header: 'Column 11',
+            accessorKey: 'column11',
         },
         {
-            Header: 'Column 12',
-            accessor: 'column12',
+            header: 'Column 12',
+            accessorKey: 'column12',
         },
         {
-            Header: 'Column 13',
-            accessor: 'column13',
+            header: 'Column 13',
+            accessorKey: 'column13',
         },
         {
-            Header: 'Column 14',
-            accessor: 'column14',
+            header: 'Column 14',
+            accessorKey: 'column14',
         },
         {
-            Header: 'Column 15',
-            accessor: 'column15',
+            header: 'Column 15',
+            accessorKey: 'column15',
         },
     ];
 
@@ -797,287 +801,190 @@ export const Sticky: Story = () => {
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table columns={columns} data={data} stickyHeader onRowClick={(row) => console.info('row: ', row)} />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
-interface StickyFooterData {
+interface StickyHeaderFooterData {
     column1: string;
     column2: string;
     column3: string;
     column4: string;
-    column5: string;
-    column6: string;
-    column7: string;
 }
 
 export const StickyFooter: Story = () => {
-    const columns: TableColumn<StickyFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
-            Footer: 'Footer 1',
+            header: 'Column 1',
+            accessorKey: 'column1',
+            footer: 'Footer 1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
-            Footer: 'Footer 2',
+            header: 'Column 2',
+            accessorKey: 'column2',
+            footer: 'Footer 2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
-            Footer: 'Footer 3',
+            header: 'Column 3',
+            accessorKey: 'column3',
+            footer: 'Footer 3',
         },
         {
-            Header: 'Column 4',
-            accessor: 'column4',
-            Footer: 'Footer 4',
-        },
-        {
-            Header: 'Column 5',
-            accessor: 'column5',
-            Footer: 'Footer 5',
-        },
-        {
-            Header: 'Column 6',
-            accessor: 'column6',
-            Footer: 'Footer 6',
-        },
-        {
-            Header: 'Column 7',
-            accessor: 'column7',
-            Footer: 'Footer 7',
+            header: 'Column 4',
+            accessorKey: 'column4',
+            footer: 'Footer 4',
         },
     ];
 
-    const data: TableRow<StickyFooterData>[] = [
+    const data: TableRow<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
             column3: 'a',
             column4: 'a',
-            column5: 'a',
-            column6: 'a',
-            column7: 'a',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 'b',
             column4: 'b',
-            column5: 'b',
-            column6: 'b',
-            column7: 'b',
         },
         {
             column1: 'c',
             column2: 'c',
             column3: 'c',
             column4: 'c',
-            column5: 'c',
-            column6: 'c',
-            column7: 'c',
         },
         {
             column1: 'd',
             column2: 'd',
             column3: 'd',
             column4: 'd',
-            column5: 'd',
-            column6: 'd',
-            column7: 'd',
         },
         {
             column1: 'e',
             column2: 'e',
             column3: 'e',
             column4: 'e',
-            column5: 'e',
-            column6: 'e',
-            column7: 'e',
         },
         {
             column1: 'f',
             column2: 'f',
             column3: 'f',
             column4: 'f',
-            column5: 'f',
-            column6: 'f',
-            column7: 'f',
         },
         {
             column1: 'g',
             column2: 'g',
             column3: 'g',
             column4: 'g',
-            column5: 'g',
-            column6: 'g',
-            column7: 'g',
         },
         {
             column1: 'h',
             column2: 'h',
             column3: 'h',
             column4: 'h',
-            column5: 'h',
-            column6: 'h',
-            column7: 'h',
         },
         {
             column1: 'i',
             column2: 'i',
             column3: 'i',
             column4: 'i',
-            column5: 'i',
-            column6: 'i',
-            column7: 'i',
         },
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table columns={columns} data={data} stickyFooter onRowClick={(row) => console.info('row: ', row)} />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
-interface StickyFooterData {
-    column1: string;
-    column2: string;
-    column3: string;
-    column4: string;
-    column5: string;
-    column6: string;
-    column7: string;
-}
-
 export const StickyHeaderAndFooter: Story = () => {
-    const columns: TableColumn<StickyFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
-            Footer: 'Footer 1',
+            header: 'Column 1',
+            accessorKey: 'column1',
+            footer: 'Footer 1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
-            Footer: 'Footer 2',
+            header: 'Column 2',
+            accessorKey: 'column2',
+            footer: 'Footer 2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
-            Footer: 'Footer 3',
+            header: 'Column 3',
+            accessorKey: 'column3',
+            footer: 'Footer 3',
         },
         {
-            Header: 'Column 4',
-            accessor: 'column4',
-            Footer: 'Footer 4',
-        },
-        {
-            Header: 'Column 5',
-            accessor: 'column5',
-            Footer: 'Footer 5',
-        },
-        {
-            Header: 'Column 6',
-            accessor: 'column6',
-            Footer: 'Footer 6',
-        },
-        {
-            Header: 'Column 7',
-            accessor: 'column7',
-            Footer: 'Footer 7',
+            header: 'Column 4',
+            accessorKey: 'column4',
+            footer: 'Footer 4',
         },
     ];
 
-    const data: TableRow<StickyFooterData>[] = [
+    const data: TableRow<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
             column3: 'a',
             column4: 'a',
-            column5: 'a',
-            column6: 'a',
-            column7: 'a',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 'b',
             column4: 'b',
-            column5: 'b',
-            column6: 'b',
-            column7: 'b',
         },
         {
             column1: 'c',
             column2: 'c',
             column3: 'c',
             column4: 'c',
-            column5: 'c',
-            column6: 'c',
-            column7: 'c',
         },
         {
             column1: 'd',
             column2: 'd',
             column3: 'd',
             column4: 'd',
-            column5: 'd',
-            column6: 'd',
-            column7: 'd',
         },
         {
             column1: 'e',
             column2: 'e',
             column3: 'e',
             column4: 'e',
-            column5: 'e',
-            column6: 'e',
-            column7: 'e',
         },
         {
             column1: 'f',
             column2: 'f',
             column3: 'f',
             column4: 'f',
-            column5: 'f',
-            column6: 'f',
-            column7: 'f',
         },
         {
             column1: 'g',
             column2: 'g',
             column3: 'g',
             column4: 'g',
-            column5: 'g',
-            column6: 'g',
-            column7: 'g',
         },
         {
             column1: 'h',
             column2: 'h',
             column3: 'h',
             column4: 'h',
-            column5: 'h',
-            column6: 'h',
-            column7: 'h',
         },
         {
             column1: 'i',
             column2: 'i',
             column3: 'i',
             column4: 'i',
-            column5: 'i',
-            column6: 'i',
-            column7: 'i',
         },
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <Table
                 columns={columns}
                 data={data}
@@ -1085,138 +992,97 @@ export const StickyHeaderAndFooter: Story = () => {
                 stickyFooter
                 onRowClick={(row) => console.info('row: ', row)}
             />
-        </Wrap>
+        </ScrollableWrap>
     );
 };
 
-const StyledTableWithBackground = styled(Table<StickyFooterData>)`
-        background: #a9cad8;
+const StyledTableWithBackground = styled(Table<StickyHeaderFooterData>)`
+    background: #a9cad8;
 `;
+
 export const WithBackgroundColor: Story = () => {
-    const columns: TableColumn<StickyFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
-            Footer: 'Footer 1',
+            header: 'Column 1',
+            accessorKey: 'column1',
+            footer: 'Footer 1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
-            Footer: 'Footer 2',
+            header: 'Column 2',
+            accessorKey: 'column2',
+            footer: 'Footer 2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
-            Footer: 'Footer 3',
+            header: 'Column 3',
+            accessorKey: 'column3',
+            footer: 'Footer 3',
         },
         {
-            Header: 'Column 4',
-            accessor: 'column4',
-            Footer: 'Footer 4',
-        },
-        {
-            Header: 'Column 5',
-            accessor: 'column5',
-            Footer: 'Footer 5',
-        },
-        {
-            Header: 'Column 6',
-            accessor: 'column6',
-            Footer: 'Footer 6',
-        },
-        {
-            Header: 'Column 7',
-            accessor: 'column7',
-            Footer: 'Footer 7',
+            header: 'Column 4',
+            accessorKey: 'column4',
+            footer: 'Footer 4',
         },
     ];
 
-    const data: TableRow<StickyFooterData>[] = [
+    const data: TableRow<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
             column3: 'a',
             column4: 'a',
-            column5: 'a',
-            column6: 'a',
-            column7: 'a',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 'b',
             column4: 'b',
-            column5: 'b',
-            column6: 'b',
-            column7: 'b',
         },
         {
             column1: 'c',
             column2: 'c',
             column3: 'c',
             column4: 'c',
-            column5: 'c',
-            column6: 'c',
-            column7: 'c',
         },
         {
             column1: 'd',
             column2: 'd',
             column3: 'd',
             column4: 'd',
-            column5: 'd',
-            column6: 'd',
-            column7: 'd',
         },
         {
             column1: 'e',
             column2: 'e',
             column3: 'e',
             column4: 'e',
-            column5: 'e',
-            column6: 'e',
-            column7: 'e',
         },
         {
             column1: 'f',
             column2: 'f',
             column3: 'f',
             column4: 'f',
-            column5: 'f',
-            column6: 'f',
-            column7: 'f',
         },
         {
             column1: 'g',
             column2: 'g',
             column3: 'g',
             column4: 'g',
-            column5: 'g',
-            column6: 'g',
-            column7: 'g',
         },
         {
             column1: 'h',
             column2: 'h',
             column3: 'h',
             column4: 'h',
-            column5: 'h',
-            column6: 'h',
-            column7: 'h',
         },
         {
             column1: 'i',
             column2: 'i',
             column3: 'i',
             column4: 'i',
-            column5: 'i',
-            column6: 'i',
-            column7: 'i',
         },
     ];
 
     return (
-        <Wrap>
+        <ScrollableWrap>
             <StyledTableWithBackground
                 selectableRows
                 stickyHeader
@@ -1225,6 +1091,203 @@ export const WithBackgroundColor: Story = () => {
                 data={data}
                 onSelectedRowsChange={console.info}
             />
-        </Wrap>
+        </ScrollableWrap>
+    );
+};
+
+export const HeaderAriaLabel: Story = () => {
+    const columns: TableColumn<Data> = [
+        {
+            header: 'Column with text',
+            headerAriaLabel: '',
+            accessorKey: 'column1',
+        },
+        {
+            header: '',
+            headerAriaLabel: 'Column 2 aria label',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3 with text',
+            headerAriaLabel: '',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+    ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
+interface OptimizationData {
+    id: number;
+    name: string;
+    country: string;
+}
+
+/**
+ * When the components is re-rendering, it will always update the table with the provided data and columns, even when
+ * you pass the same data and columns. But the very important key here is if you pass a different **columns** object
+ * between renders, the table will UNMOUNT and RE-MOUNT every cell instead of doing the usual React update. This will
+ * impact the performance and could create unwanted behaviors. So to prevent that, you should give the column
+ * definitions a stable identity by memoizing it (ex: store it in a useMemo or useState hook).
+ *
+ * Additionally, if your columns use some dependencies, you can pass them via useRef instead, so you don't have to
+ * recreate the columns object everytime the dependencies changes.
+ */
+export const Optimization: Story = () => {
+    const [data, setData] = useState<OptimizationData[]>([
+        {
+            id: 1,
+            name: 'Jennifer',
+            country: 'Canada',
+        },
+        {
+            id: 2,
+            name: 'William',
+            country: 'USA',
+        },
+    ]);
+
+    const [allowEditing, setAllowEditing] = useState<boolean>(true);
+
+    const allowEditingRef = useRef<boolean>();
+    allowEditingRef.current = allowEditing;
+
+    const columns: TableColumn<OptimizationData> = useMemo(() => [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: ({ row }) => (allowEditingRef.current ? (
+                <TextInput
+                    noMargin
+                    value={row.original.name}
+                    onChange={(event) => {
+                        setData((prev) => prev.map((d) => (
+                            d.id === row.original.id
+                                ? { ...d, name: event.target.value }
+                                : d
+                        )));
+                    }}
+                />
+            ) : row.original.name),
+        },
+        {
+            header: 'Country',
+            accessorKey: 'country',
+        },
+    ], []);
+
+    return (
+        <>
+            <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                Toggle Editable
+            </Button>
+            <Table
+                columns={columns}
+                data={data}
+            />
+        </>
+    );
+};
+
+interface TablePaginationData {
+    id: number;
+    age: number;
+    country: string;
+}
+
+function makeData(): TableRow<TablePaginationData>[] {
+    const countries = ['Canada', 'United States', 'France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Japan'];
+    return [...Array(35).keys()].map((i) => ({
+        id: i + 1,
+        age: Math.floor(Math.random() * 90) + 10,
+        country: countries[Math.floor(Math.random() * countries.length)],
+    }));
+}
+
+export const TableWithPagination: Story = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function sortFn(a: any, b: any, isDescending = false): number {
+        let compareValue = 0;
+
+        if (typeof a === 'string') {
+            compareValue = a.localeCompare(b, 'en', { sensitivity: 'base' });
+        } else if (typeof a === 'number') {
+            compareValue = a - b;
+        }
+
+        if (isDescending) {
+            return compareValue * -1;
+        }
+
+        return compareValue;
+    }
+
+    const ITEMS_PER_PAGE = 10;
+
+    const [data, setData] = useState<TableRow<TablePaginationData>[]>(makeData());
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const columns: TableColumn<TablePaginationData> = useMemo(() => [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+            sortable: true,
+            sortDescFirst: false,
+        },
+        {
+            header: 'Age',
+            accessorKey: 'age',
+            sortable: true,
+        },
+        {
+            header: 'Country',
+            accessorKey: 'country',
+            sortable: true,
+        },
+    ], []);
+
+    const currentPageData = data.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+    return (
+        <>
+            <Table
+                columns={columns}
+                data={currentPageData}
+                defaultSort={{ id: 'id', desc: false }}
+                onSort={(sort) => {
+                    if (sort) {
+                        const key = sort.id as keyof TablePaginationData;
+                        setData([...data].sort((a, b) => sortFn(a[key], b[key], sort.desc)));
+                    }
+                }}
+                manualSort
+            />
+            <Pagination
+                resultsPerPage={ITEMS_PER_PAGE}
+                numberOfResults={data.length}
+                activePage={currentPage}
+                onPageChange={(page) => setCurrentPage(page)}
+                pagesShown={5}
+            />
+        </>
     );
 };
