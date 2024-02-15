@@ -131,12 +131,11 @@ const UncompletedStep = styled(StyledStep)`
 `;
 
 const UncompletedIcon = styled(Icon)`
+    color: ${({ theme }) => theme.greys.white};
+    fill: ${({ theme }) => theme.notifications['alert-2.1']};
     left: calc(50% + 0.25rem);
     position: absolute;
     top: -0.5rem;
-
-    fill: ${({ theme }) => theme.notifications['alert-2.1']};
-    color: ${({ theme }) => theme.greys.white};
 `;
 
 export interface ProgressTrackerStep {
