@@ -74,10 +74,10 @@ export const NonLinear: Story = () => {
     const [currentStep, setCurrentStep] = useState(3);
 
     const steps: ProgressTrackerStep[] = [
-        { label: 'Step 1', onClick: (stepNumber) => setCurrentStep(stepNumber), nonLinearState: 'completed' },
-        { label: 'Step 2', onClick: (stepNumber) => setCurrentStep(stepNumber), nonLinearState: 'incomplete' },
+        { label: 'Step 1', onClick: (stepNumber) => setCurrentStep(stepNumber), completion: 'completed' },
+        { label: 'Step 2', onClick: (stepNumber) => setCurrentStep(stepNumber), completion: 'uncompleted' },
         { label: 'Step 3', onClick: (stepNumber) => setCurrentStep(stepNumber) },
-        { label: 'Step 4', onClick: (stepNumber) => setCurrentStep(stepNumber), nonLinearState: 'default' },
+        { label: 'Step 4', onClick: (stepNumber) => setCurrentStep(stepNumber) },
     ];
     return <ProgressTracker linear={false} steps={steps} value={currentStep} />;
 };

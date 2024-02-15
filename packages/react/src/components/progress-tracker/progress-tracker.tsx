@@ -1,5 +1,6 @@
 import { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { clamp } from '../../utils/math';
@@ -29,7 +30,15 @@ const Label = styled.span`
     margin-top: var(--spacing-half);
 `;
 
-const Step = styled.li<{ $linear: boolean }>`
+const StepLink = styled.a`
+    display: inline-block;
+    margin-top: calc(var(--size-2x) * -1);
+    padding-top: var(--size-2x);
+    text-decoration: none;
+`;
+
+const StyledStep = styled.li<{ $linear: boolean }>`
+    align-items: center;
     color: ${({ theme }) => theme.main['primary-3']};
     display: flex;
     flex-direction: column;
@@ -70,15 +79,9 @@ const Step = styled.li<{ $linear: boolean }>`
     &:first-child::after {
         content: none;
     }
-
-    a {
-        margin-top: calc(var(--size-2x) * -1);
-        padding-top: var(--size-2x);
-        text-decoration: none;
-    }
 `;
 
-const CompletedStep = styled(Step)`
+const CompletedStep = styled(StyledStep)`
     &::before {
         background-color: ${({ theme }) => theme.main['primary-3']};
         border-color: ${({ theme }) => theme.main['primary-3']};
@@ -95,7 +98,7 @@ const CompletedStep = styled(Step)`
     }
 `;
 
-const CurrentStep = styled(Step)`
+const CurrentStep = styled(StyledStep)`
     &::before {
         border-color: ${({ theme }) => theme.main['primary-3']};
         border-width: 0.25rem;
@@ -116,13 +119,7 @@ const CurrentStep = styled(Step)`
     }
 `;
 
-const IncompleteIcon = styled(Icon)`
-    left: calc(50% + 0.25rem);
-    position: absolute;
-    top: -0.5rem;
-`;
-
-const IncompleteStep = styled(Step)`
+const UncompletedStep = styled(StyledStep)`
     &::before {
         border-color: ${({ theme }) => theme.greys['mid-grey']};
         color: ${({ theme }) => theme.greys['neutral-90']};
@@ -133,10 +130,19 @@ const IncompleteStep = styled(Step)`
     }
 `;
 
+const UncompletedIcon = styled(Icon)`
+    left: calc(50% + 0.25rem);
+    position: absolute;
+    top: -0.5rem;
+
+    fill: ${({ theme }) => theme.notifications['alert-2.1']};
+    color: ${({ theme }) => theme.greys.white};
+`;
+
 export interface ProgressTrackerStep {
     href?: string;
     label?: string;
-    nonLinearState?: 'incomplete' | 'completed' | 'default';
+    completion?: 'uncompleted' | 'completed';
     onClick?: (stepNumber: number) => void;
 }
 
@@ -148,29 +154,40 @@ interface ProgressTrackerProps {
     value: number;
 }
 
-function renderStep(step: ProgressTrackerStep, stepNumber: number, value: number, linear: boolean): ReactElement {
-    let StepComponent: typeof Step;
+interface StepProps {
+    step: ProgressTrackerStep,
+    stepNumber: number,
+    value: number,
+    linear: boolean
+}
+
+const Step: VoidFunctionComponent<StepProps> = ({
+    step, stepNumber, value, linear,
+}): ReactElement => {
+    const { t } = useTranslation('progress-tracker');
+
+    let StepComponent: typeof StyledStep;
     let dataTestId: string | undefined;
     let screenReaderText: string | undefined;
     const isLink = step.href || step.onClick;
-    const showIncompleteIcon = !linear && step.nonLinearState === 'incomplete';
+    const showUncompletedIcon = !linear && step.completion === 'uncompleted';
 
     if (stepNumber === value) {
         dataTestId = 'progress-tracker-step-current';
         StepComponent = CurrentStep;
-    } else if ((linear && stepNumber < value) || (!linear && step.nonLinearState === 'completed')) {
+    } else if ((linear && stepNumber < value) || (!linear && step.completion === 'completed')) {
         dataTestId = 'progress-tracker-step-completed';
-        screenReaderText = 'completed';
+        screenReaderText = t('completedAriaLabel');
         StepComponent = CompletedStep;
     } else {
-        dataTestId = 'progress-tracker-step-incomplete';
-        screenReaderText = 'not completed';
-        StepComponent = IncompleteStep;
+        dataTestId = 'progress-tracker-step-uncompleted';
+        screenReaderText = t('uncompletedAriaLabel');
+        StepComponent = UncompletedStep;
     }
 
     const content = (
         <>
-            {showIncompleteIcon && <IncompleteIcon name='alertFilledRound' size='16' />}
+            {showUncompletedIcon && <UncompletedIcon name='alertCircle' size='16' />}
             {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
             {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
         </>
@@ -180,7 +197,7 @@ function renderStep(step: ProgressTrackerStep, stepNumber: number, value: number
         if (!step.href) {
             event.preventDefault();
         }
-        step.onClick!(stepNumber);
+        step.onClick?.(stepNumber);
     };
 
     return (
@@ -191,15 +208,15 @@ function renderStep(step: ProgressTrackerStep, stepNumber: number, value: number
             $linear={linear}
         >
             {isLink ? (
-                <a href={step.href ?? '#'} onClick={step.onClick && linkClickHandler}>
+                <StepLink href={step.href ?? '#'} onClick={step.onClick && linkClickHandler}>
                     {content}
-                </a>
+                </StepLink>
             ) : (
                 content
             )}
         </StepComponent>
     );
-}
+};
 
 export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
     ariaLabel,
@@ -215,7 +232,16 @@ export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
     return (
         <Container className={className} aria-label={ariaLabel} as={hasAnyLink ? 'nav' : undefined}>
             <Steps data-testid="progress-tracker">
-                {steps.map((step, stepNumber) => renderStep(step, stepNumber + 1, clampValue, linear))}
+                {steps.map((step, index) => (
+                    <Step
+                        step={step}
+                        stepNumber={index + 1}
+                        value={clampValue}
+                        linear={linear}
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                    />
+                ))}
             </Steps>
         </Container>
     );

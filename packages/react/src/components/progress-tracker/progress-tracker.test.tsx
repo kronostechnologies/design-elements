@@ -74,15 +74,15 @@ describe('Progress Component', () => {
         expect(currentStep).toEqual(expect.arrayContaining(['Step 3']));
     });
 
-    it('should have incomplete steps', () => {
+    it('should have uncompleted steps', () => {
         const steps = generateSteps(3);
 
         const wrapper = shallow(<ProgressTracker steps={steps} value={1} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
 
-        const incompleteStep = findByTestId(stepsWrapper, 'progress-tracker-step-incomplete')
+        const uncompletedStep = findByTestId(stepsWrapper, 'progress-tracker-step-uncompleted')
             .map((w) => findByTestId(w, 'progress-tracker-label').text());
-        expect(incompleteStep).toEqual(expect.arrayContaining(['Step 2', 'Step 3']));
+        expect(uncompletedStep).toEqual(expect.arrayContaining(['Step 2', 'Step 3']));
     });
 
     describe('Snapshots', () => {

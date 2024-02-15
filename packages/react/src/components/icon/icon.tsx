@@ -55,12 +55,10 @@ import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import CaretDown from '../../icons/caret-down.svg';
 import CaretRight from '../../icons/caret-right.svg';
-import AlertFilledRound from '../../icons/alert-filled-round.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
     alertFilled: AlertFilled,
-    alertFilledRound: AlertFilledRound,
     alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
     arrowDown: ArrowDown,

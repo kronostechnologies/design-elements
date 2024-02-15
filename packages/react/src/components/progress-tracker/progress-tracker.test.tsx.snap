@@ -104,13 +104,6 @@ exports[`Progress Component Snapshots with labels 1`] = `
   content: none;
 }
 
-.c2 a {
-  margin-top: calc(var(--size-2x) * -1);
-  padding-top: var(--size-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c3::before {
   background-color: #004E78;
   border-color: #004E78;
@@ -191,7 +184,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
     </li>
     <li
       class="c2 c8"
-      data-testid="progress-tracker-step-incomplete"
+      data-testid="progress-tracker-step-uncompleted"
     >
       <span
         class="c4 c5"
@@ -302,13 +295,6 @@ exports[`Progress Component Snapshots without labels 1`] = `
   content: none;
 }
 
-.c2 a {
-  margin-top: calc(var(--size-2x) * -1);
-  padding-top: var(--size-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c3::before {
   background-color: #004E78;
   border-color: #004E78;
@@ -363,7 +349,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
     />
     <li
       class="c2 c6"
-      data-testid="progress-tracker-step-incomplete"
+      data-testid="progress-tracker-step-uncompleted"
     >
       <span
         class="c4"
