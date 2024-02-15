@@ -14,5 +14,4 @@ export type NavListTokenMap = {
 export const defaultNavListTokens: NavListTokenMap = {
     'nav-list-background-color': 'color-white',
     'nav-list-border-color': 'color-neutral-65',
-
 };

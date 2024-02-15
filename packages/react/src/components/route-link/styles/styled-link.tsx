@@ -4,8 +4,7 @@ import { focus, focusVisibleReset } from '../../../utils/css-state';
 type DisabledSuffix = '-disabled' | '';
 
 function getDisabledSuffix(disabled: boolean | undefined): DisabledSuffix {
-    const isDisabled = disabled ?? false;
-    return isDisabled ? '-disabled' : '';
+    return disabled === true ? '-disabled' : '';
 }
 
 interface ContainerProps {

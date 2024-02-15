@@ -20,8 +20,7 @@ import { NavListOption } from './nav-list-option';
 type DisabledSuffix = '-disabled' | '';
 
 function getDisabledSuffix(disabled: boolean | undefined): DisabledSuffix {
-    const isDisabled = disabled ?? false;
-    return isDisabled ? '-disabled' : '';
+    return disabled === true ? '-disabled' : '';
 }
 
 export interface ListOption extends NavListOption {
