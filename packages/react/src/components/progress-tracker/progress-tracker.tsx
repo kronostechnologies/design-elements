@@ -83,14 +83,14 @@ const StyledStep = styled.li<{ $linear: boolean }>`
 
 const CompletedStep = styled(StyledStep)`
     &::before {
-        background-color: ${({ theme }) => theme.main['primary-3']};
-        border-color: ${({ theme }) => theme.main['primary-3']};
+        background-color: ${({ theme }) => theme.main['primary-1.1']};
+        border-color: ${({ theme }) => theme.main['primary-1.1']};
         color: ${({ theme }) => theme.greys.white};
-        font-weight: var(--font-bold);
+        font-weight: var(--font-semi-bold);
     }
 
     &::after {
-        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-3']};
+        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-1.1']};
     }
 
     ${Label} {
@@ -100,7 +100,7 @@ const CompletedStep = styled(StyledStep)`
 
 const CurrentStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.main['primary-3']};
+        border-color: ${({ theme }) => theme.main['primary-1.1']};
         border-width: 0.25rem;
         color: ${({ theme }) => theme.main['primary-1.3']};
         font-weight: var(--font-bold);
@@ -110,7 +110,7 @@ const CurrentStep = styled(StyledStep)`
     }
 
     &::after {
-        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-3']};
+        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-1.1']};
     }
 
     ${Label} {
@@ -140,8 +140,8 @@ const UncompletedIcon = styled(Icon)`
 
 export interface ProgressTrackerStep {
     href?: string;
-    label?: string;
-    completion?: 'uncompleted' | 'completed';
+    label: string;
+    completion?: 'completed' | 'uncompleted';
     onClick?: (stepNumber: number) => void;
 }
 
@@ -186,7 +186,7 @@ const Step: VoidFunctionComponent<StepProps> = ({
 
     const content = (
         <>
-            {showUncompletedIcon && <UncompletedIcon name='alertCircle' size='16' />}
+            {showUncompletedIcon && <UncompletedIcon name='alertCircle' size='16' aria-hidden="true" />}
             {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
             {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
         </>
@@ -227,6 +227,10 @@ export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
     const max = steps.length;
     const clampValue = clamp(value, 1, max);
     const hasAnyLink = steps.some((step) => step.href || step.onClick);
+
+    if (!ariaLabel) {
+        console.warn('ariaLabel is required for Accessibility');
+    }
 
     return (
         <Container className={className} aria-label={ariaLabel} as={hasAnyLink ? 'nav' : undefined}>

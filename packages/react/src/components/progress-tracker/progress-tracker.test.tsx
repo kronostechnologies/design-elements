@@ -8,12 +8,8 @@ function generateSteps(count: number): ProgressTrackerStep[] {
 }
 
 describe('Progress Component', () => {
-    it('should render all steps', () => {
-        const steps = generateSteps(3);
-
-        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={1} />);
-        const allSteps = wrapper.find('li[data-testid^="progress-tracker-step-"]');
-        expect(allSteps.length).toBe(3);
+    beforeEach(() => {
+        jest.spyOn(console, 'warn').mockImplementation(() => { });
     });
 
     it('should render all steps labels', () => {
@@ -71,7 +67,7 @@ describe('Progress Component', () => {
     });
 
     describe('Snapshots', () => {
-        it('with labels', () => {
+        it('linear', () => {
             const steps = generateSteps(3);
 
             const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={2} />);
@@ -79,10 +75,15 @@ describe('Progress Component', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('without labels', () => {
-            const steps: ProgressTrackerStep[] = [{}, {}, {}];
+        it('non linear', () => {
+            const steps: ProgressTrackerStep[] = [
+                { label: 'Step 1', completion: 'completed' },
+                { label: 'Step 2', completion: 'uncompleted' },
+                { label: 'Step 3' },
+                { label: 'Step 4' },
+            ];
 
-            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={2} />);
+            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={3} />);
 
             expect(wrapper).toMatchSnapshot();
         });

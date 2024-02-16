@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress Component Snapshots with labels 1`] = `
+exports[`Progress Component Snapshots linear 1`] = `
 .c6 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -109,14 +109,14 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c3::before {
-  background-color: #004E78;
-  border-color: #004E78;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
 }
 
 .c3::after {
-  background-color: #004E78;
+  background-color: #006296;
 }
 
 .c3 .c4 {
@@ -124,7 +124,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c7::before {
-  border-color: #004E78;
+  border-color: #006296;
   border-width: 0.25rem;
   color: #003A5A;
   font-weight: var(--font-bold);
@@ -134,7 +134,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c7::after {
-  background-color: #004E78;
+  background-color: #006296;
 }
 
 .c7 .c4 {
@@ -206,8 +206,8 @@ exports[`Progress Component Snapshots with labels 1`] = `
 </section>
 `;
 
-exports[`Progress Component Snapshots without labels 1`] = `
-.c4 {
+exports[`Progress Component Snapshots non linear 1`] = `
+.c6 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -237,6 +237,17 @@ exports[`Progress Component Snapshots without labels 1`] = `
   grid-template-columns: repeat(auto-fit,minmax(1rem,1fr));
   margin: 0;
   padding: 0;
+}
+
+.c5 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin-top: var(--spacing-half);
 }
 
 .c2 {
@@ -304,18 +315,22 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c3::before {
-  background-color: #004E78;
-  border-color: #004E78;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
 }
 
 .c3::after {
-  background-color: #004E78;
+  background-color: #006296;
 }
 
-.c5::before {
-  border-color: #004E78;
+.c3 .c4 {
+  color: #006296;
+}
+
+.c7::before {
+  border-color: #006296;
   border-width: 0.25rem;
   color: #003A5A;
   font-weight: var(--font-bold);
@@ -324,13 +339,22 @@ exports[`Progress Component Snapshots without labels 1`] = `
   width: var(--size-2x);
 }
 
-.c5::after {
-  background-color: #004E78;
+.c7::after {
+  background-color: #006296;
 }
 
-.c6::before {
+.c7 .c4 {
+  color: #003A5A;
+  font-weight: var(--font-bold);
+}
+
+.c8::before {
   border-color: #B7BBC2;
   color: #1B1C1E;
+}
+
+.c8 .c4 {
+  color: #60666E;
 }
 
 <section
@@ -345,22 +369,57 @@ exports[`Progress Component Snapshots without labels 1`] = `
       data-testid="progress-tracker-step-completed"
     >
       <span
-        class="c4"
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
+        Step 1
+      </span>
+      <span
+        class="c6"
+      >
+        completed
+      </span>
+    </li>
+    <li
+      class="c2 c3"
+      data-testid="progress-tracker-step-completed"
+    >
+      <span
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
+        Step 2
+      </span>
+      <span
+        class="c6"
       >
         completed
       </span>
     </li>
     <li
       aria-current="step"
-      class="c2 c5"
+      class="c2 c7"
       data-testid="progress-tracker-step-current"
-    />
+    >
+      <span
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
+        Step 3
+      </span>
+    </li>
     <li
-      class="c2 c6"
+      class="c2 c8"
       data-testid="progress-tracker-step-uncompleted"
     >
       <span
-        class="c4"
+        class="c4 c5"
+        data-testid="progress-tracker-label"
+      >
+        Step 4
+      </span>
+      <span
+        class="c6"
       >
         not completed
       </span>

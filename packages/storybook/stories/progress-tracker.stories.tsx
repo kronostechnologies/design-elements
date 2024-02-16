@@ -10,14 +10,6 @@ export default {
 
 };
 
-function createEmptySteps(count: number): ProgressTrackerStep[] {
-    const steps: ProgressTrackerStep[] = [];
-    for (let i = 1; i <= count; i++) {
-        steps.push({});
-    }
-    return steps;
-}
-
 function createSteps(count: number): ProgressTrackerStep[] {
     const steps: ProgressTrackerStep[] = [];
     for (let i = 1; i <= count; i++) {
@@ -27,14 +19,14 @@ function createSteps(count: number): ProgressTrackerStep[] {
 }
 
 export const Normal: Story = () => (
-    <ProgressTracker steps={createEmptySteps(3)} value={2} />
+    <ProgressTracker steps={createSteps(3)} value={2} ariaLabel='Storybook progress' />
 );
 
 export const Steps: Story = () => (
     <>
-        <ProgressTracker steps={createEmptySteps(3)} value={1} />
-        <ProgressTracker steps={createEmptySteps(3)} value={2} />
-        <ProgressTracker steps={createEmptySteps(3)} value={3} />
+        <ProgressTracker steps={createSteps(3)} value={1} ariaLabel='Storybook progress' />
+        <ProgressTracker steps={createSteps(3)} value={2} ariaLabel='Storybook progress' />
+        <ProgressTracker steps={createSteps(3)} value={3} ariaLabel='Storybook progress' />
     </>
 );
 
@@ -44,9 +36,9 @@ export const WithLabels: Story = () => (
 
 export const AriaLabel: Story = () => (
     <ProgressTracker
-        steps={createEmptySteps(3)}
+        steps={createSteps(3)}
         value={2}
-        ariaLabel="Create account steps"
+        ariaLabel='Storybook progress'
     />
 );
 
@@ -58,7 +50,7 @@ export const OnclickEvent: Story = () => {
         { label: 'Step 2', onClick: (stepNumber) => setCurrentStep(stepNumber) },
         { label: 'Step 3', onClick: (stepNumber) => setCurrentStep(stepNumber) },
     ];
-    return <ProgressTracker steps={steps} value={currentStep} />;
+    return <ProgressTracker steps={steps} value={currentStep} ariaLabel='Storybook progress' />;
 };
 
 export const HrefLinks: Story = () => {
@@ -67,7 +59,7 @@ export const HrefLinks: Story = () => {
         { label: 'Step 2', href: 'https://equisoft.com' },
         { label: 'Step 3', href: 'https://equisoft.com' },
     ];
-    return <ProgressTracker steps={steps} value={2} />;
+    return <ProgressTracker steps={steps} value={2} ariaLabel='Storybook progress' />;
 };
 
 export const NonLinear: Story = () => {
@@ -79,5 +71,5 @@ export const NonLinear: Story = () => {
         { label: 'Step 3', onClick: (stepNumber) => setCurrentStep(stepNumber) },
         { label: 'Step 4', onClick: (stepNumber) => setCurrentStep(stepNumber) },
     ];
-    return <ProgressTracker linear={false} steps={steps} value={currentStep} />;
+    return <ProgressTracker linear={false} steps={steps} value={currentStep} ariaLabel='Storybook progress' />;
 };
