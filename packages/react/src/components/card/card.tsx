@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const StyledDiv = styled.div<{ $noPadding?: boolean }>`
-    background: ${(props) => props.theme.greys.white};
-    border: 1px solid ${(props) => props.theme.greys['light-grey']};
+    background: ${(props) => props.theme.component['card-background-color']};
+    border: 1px solid ${(props) => props.theme.component['card-border-color']};
     border-radius: var(--border-radius-2x);
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 20%);
     box-sizing: border-box;

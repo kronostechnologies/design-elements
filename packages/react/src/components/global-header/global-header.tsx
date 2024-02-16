@@ -19,7 +19,7 @@ const getPadding = (device: DeviceType): string => {
 
 const Header = styled.header<{ device: DeviceType }>`
     align-items: center;
-    background: ${(props) => props.theme.main['primary-2']};
+    background: ${(props) => props.theme.component['global-header-background']};
     box-sizing: border-box;
     display: flex;
     height: ${({ device }) => (device === 'desktop' ? 'var(--size-3x)' : 'var(--size-3halfx)')};
@@ -52,7 +52,7 @@ const HtmlLink = styled.a.attrs({ 'aria-label': 'Home' })`
 `;
 
 const StyledSpan = styled.span`
-    border-left: 1px solid ${({ theme }) => theme.main['primary-1.3']};
+    border-left: 1px solid ${({ theme }) => theme.component['global-header-logo-content-span-border-color']};
     color: ${({ theme }) => theme.greys.white};
     font-size: 1rem;
     font-weight: var(--font-normal);
@@ -64,7 +64,7 @@ const StyledSpan = styled.span`
 `;
 
 const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMobile?: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.component['global-header-skiplink-background-color']};
     transform: translateY(-50%);
     transition: top 0.2s cubic-bezier(0.5, 1, 0, 1);
 
