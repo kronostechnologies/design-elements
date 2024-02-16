@@ -103,7 +103,7 @@ const CurrentStep = styled(StyledStep)`
         border-color: ${({ theme }) => theme.main['primary-1.1']};
         border-width: 0.25rem;
         color: ${({ theme }) => theme.main['primary-1.3']};
-        font-weight: var(--font-bold);
+        font-weight: var(--font-semi-bold);
         height: var(--size-2x);
         margin: -0.25rem auto 0;
         width: var(--size-2x);
@@ -115,7 +115,7 @@ const CurrentStep = styled(StyledStep)`
 
     ${Label} {
         color: ${({ theme }) => theme.main['primary-1.3']};
-        font-weight: var(--font-bold);
+        font-weight: var(--font-semi-bold);
     }
 `;
 

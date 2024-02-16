@@ -127,7 +127,7 @@ exports[`Progress Component Snapshots linear 1`] = `
   border-color: #006296;
   border-width: 0.25rem;
   color: #003A5A;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
   height: var(--size-2x);
   margin: -0.25rem auto 0;
   width: var(--size-2x);
@@ -139,7 +139,7 @@ exports[`Progress Component Snapshots linear 1`] = `
 
 .c7 .c4 {
   color: #003A5A;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
 }
 
 .c8::before {
@@ -333,7 +333,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
   border-color: #006296;
   border-width: 0.25rem;
   color: #003A5A;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
   height: var(--size-2x);
   margin: -0.25rem auto 0;
   width: var(--size-2x);
@@ -345,7 +345,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
 
 .c7 .c4 {
   color: #003A5A;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semi-bold);
 }
 
 .c8::before {
