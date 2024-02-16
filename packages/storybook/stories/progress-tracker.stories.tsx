@@ -24,22 +24,10 @@ export const Normal: Story = () => (
 
 export const Steps: Story = () => (
     <>
-        <ProgressTracker steps={createSteps(3)} value={1} ariaLabel='Storybook progress' />
-        <ProgressTracker steps={createSteps(3)} value={2} ariaLabel='Storybook progress' />
-        <ProgressTracker steps={createSteps(3)} value={3} ariaLabel='Storybook progress' />
+        <ProgressTracker steps={createSteps(5)} value={1} ariaLabel='Storybook progress' />
+        <ProgressTracker steps={createSteps(5)} value={3} ariaLabel='Storybook progress' />
+        <ProgressTracker steps={createSteps(5)} value={5} ariaLabel='Storybook progress' />
     </>
-);
-
-export const WithLabels: Story = () => (
-    <ProgressTracker steps={createSteps(10)} value={4} />
-);
-
-export const AriaLabel: Story = () => (
-    <ProgressTracker
-        steps={createSteps(3)}
-        value={2}
-        ariaLabel='Storybook progress'
-    />
 );
 
 export const OnclickEvent: Story = () => {
