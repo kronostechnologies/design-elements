@@ -17,55 +17,54 @@ interface StyledLozengeProps {
 function getLozengeBackgroundColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.2'];
+            return theme.component['lozenge-success-background-color'];
         case 'disabled':
-            return theme.greys['light-grey'];
+            return theme.component['lozenge-disabled-background-color'];
         case 'alert':
-            return theme.notifications['alert-2.2'];
+            return theme.component['lozenge-alert-background-color'];
         case 'warning':
-            return theme.notifications['warning-3.2'];
+            return theme.component['lozenge-warning-background-color'];
         case 'info':
-            // TODO: add this color in default themes
-            return '#f9f7fb';
+            return theme.component['lozenge-info-background-color'];
         case 'default':
         default:
-            return theme.greys['light-grey'];
+            return theme.component['lozenge-default-background-color'];
     }
 }
 
 function getLozengeBorderColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.1'];
+            return theme.component['lozenge-success-border-color'];
         case 'disabled':
-            return theme.greys['mid-grey'];
+            return theme.component['lozenge-disabled-border-color'];
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.component['lozenge-alert-border-color'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.component['lozenge-warning-border-color'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.component['lozenge-info-border-color'];
         case 'default':
         default:
-            return theme.greys['dark-grey'];
+            return theme.component['lozenge-default-border-color'];
     }
 }
 
 function getLozengeColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.1'];
+            return theme.component['lozenge-success-color'];
         case 'disabled':
-            return theme.greys['mid-grey'];
+            return theme.component['lozenge-disabled-color'];
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.component['lozenge-alert-color'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.component['lozenge-warning-color'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.component['lozenge-info-color'];
         case 'default':
         default:
-            return theme.greys['dark-grey'];
+            return theme.component['lozenge-default-color'];
     }
 }
 

@@ -17,7 +17,7 @@ const BurgerButton = styled.button`
 
 const Container = styled.div`
     align-items: center;
-    color: ${(props) => props.theme.greys.white};
+    color: ${(props) => props.theme.component['global-header-content-container-color']};
     display: flex;
     justify-content: flex-end;
     width: 100%;

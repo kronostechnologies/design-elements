@@ -6,7 +6,7 @@ exports[`Lozenge alert matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFAFB;
+  background-color: #FAEAE9;
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius-half);
   box-sizing: border-box;
@@ -92,7 +92,7 @@ exports[`Lozenge info matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #f9f7fb;
+  background-color: #E0F0F9;
   border: 1px solid #006296;
   border-radius: var(--border-radius-half);
   box-sizing: border-box;
@@ -221,7 +221,7 @@ exports[`Lozenge warning matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFF9F5;
+  background-color: #FFF7E5;
   border: 1px solid #F5A200;
   border-radius: var(--border-radius-half);
   box-sizing: border-box;
