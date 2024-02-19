@@ -13,6 +13,7 @@ import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
+import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -29,7 +30,8 @@ export type ComponentTokens =
     | MenuTokens
     | PasswordInputTokens
     | NumericInputTokens
-    | PhoneInputTokens;
+    | PhoneInputTokens
+    | SearchInputTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -52,6 +54,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultPasswordInputTokens,
     ...defaultNumericInputTokens,
     ...defaultPhoneInputTokens,
+    ...defaultSearchInputTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

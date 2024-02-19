@@ -16,7 +16,7 @@ const SearchWrapper = styled.div`
 
     label {
         bottom: 0.5rem;
-        color: ${(props) => props.theme.greys['dark-grey']};
+        color: ${(props) => props.theme.component['search-input-label-text-color']};
         display: inline-block;
         height: 1rem;
         left: 0.5rem;
@@ -35,10 +35,10 @@ const InnerWrapper = styled.div`
 
 function iconColor(props: { theme: ResolvedTheme, disabled?: boolean }): string {
     if (props.disabled) {
-        return props.theme.greys['mid-grey'];
+        return props.theme.component['search-input-disabled-icon-color'];
     }
 
-    return props.theme.greys['dark-grey'];
+    return props.theme.component['search-input-icon-color'];
 }
 
 const IcoSearch = styled(SearchIcon)`
@@ -48,7 +48,7 @@ const IcoSearch = styled(SearchIcon)`
 `;
 
 const IcoReset = styled(XIcon)`
-    color: ${(props) => props.theme.greys['dark-grey']};
+    color: ${(props) => props.theme.component['search-input-icon-color']};
     height: 1.25rem;
     margin: -1px;
     width: 1.25rem;
@@ -87,8 +87,8 @@ const Input = styled.input<InputProps>`
 
 const Reset = styled.button`
     appearance: none;
-    background: transparent;
-    border: 1px solid transparent;
+    background: ${(props) => props.theme.component['search-input-reset-icon-background-color']};
+    border: 1px solid ${(props) => props.theme.component['search-input-reset-icon-border-color']};
     bottom: 0.5rem;
     display: none;
     height: 1.25rem;
