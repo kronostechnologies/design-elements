@@ -10,7 +10,7 @@
     "checkLicense": "yarn licenses audit --config=licenses.config.js --output-file=./build/license/license.xml --summary"
   },
   "devDependencies": {
-    "@equisoft/stylelint-config": "^3.0.1",
+    "@equisoft/stylelint-config": "^4.0.0",
     "@types/eslint": "^8.37.0",
     "@types/yargs": "^17.0.24",
     "conventional-changelog-cli": "^4.0.0",
