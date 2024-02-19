@@ -32,9 +32,9 @@ interface PhoneInputProps {
 }
 
 const MaskContainer = styled.div<{ isMobile: boolean }>`
-    background: transparent;
+    background: ${({ theme }) => theme.component['phone-input-background-color']};
     bottom: 1px;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['phone-input-mask-text-color']};
     font-family: inherit;
     font-size: ${({ isMobile }) => (isMobile ? '1' : '0.875')}rem;
     left: 2px;
@@ -50,7 +50,7 @@ const Container = styled.div`
 `;
 
 const InputDuplicatedValue = styled.span`
-    color: transparent;
+    color: ${({ theme }) => theme.component['phone-input-duplicate-text-color']};
 `;
 
 const PLACEHOLDER_CHAR = '_';

@@ -12,6 +12,7 @@ import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens'
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
+import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -27,7 +28,8 @@ export type ComponentTokens =
     | ComboboxTokens
     | MenuTokens
     | PasswordInputTokens
-    | NumericInputTokens;
+    | NumericInputTokens
+    | PhoneInputTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -49,6 +51,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultMenuTokens,
     ...defaultPasswordInputTokens,
     ...defaultNumericInputTokens,
+    ...defaultPhoneInputTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
