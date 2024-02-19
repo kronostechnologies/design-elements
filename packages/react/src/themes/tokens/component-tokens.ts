@@ -7,7 +7,7 @@ import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicke
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
-import { defaultInvalidFieldTokens, InvalidFieldTokens } from './component/invalid-field-tokens';
+import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
@@ -37,7 +37,7 @@ export type ComponentTokens =
     | SearchInputTokens
     | StepperInputTokens
     | TextAreaTokens
-    | InvalidFieldTokens;
+    | FieldTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -63,7 +63,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSearchInputTokens,
     ...defaultStepperInputTokens,
     ...defaultTextAreaTokens,
-    ...defaultInvalidFieldTokens,
+    ...defaultFieldTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
