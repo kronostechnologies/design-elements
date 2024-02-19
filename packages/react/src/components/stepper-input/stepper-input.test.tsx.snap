@@ -78,6 +78,17 @@ input + .c1 {
   outline: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c6:focus {
+  border: none;
+  z-index: 1000;
+}
+
 .c6:hover {
   background-color: #DBDEE1;
 }
@@ -118,6 +129,17 @@ input + .c1 {
 
 .c7:focus {
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c7:focus {
+  border: none;
+  z-index: 1000;
 }
 
 .c7:hover {
@@ -394,6 +416,17 @@ input + .c1 {
   outline: none;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c8:focus {
+  border: none;
+  z-index: 1000;
+}
+
 .c8:hover {
   background-color: #DBDEE1;
 }
@@ -434,6 +467,17 @@ input + .c1 {
 
 .c9:focus {
   outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c9:focus {
+  border: none;
+  z-index: 1000;
 }
 
 .c9:hover {
@@ -854,6 +898,17 @@ input + .c1 {
   outline: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c6:focus {
+  border: none;
+  z-index: 1000;
+}
+
 .c6:hover {
   background-color: #DBDEE1;
 }
@@ -894,6 +949,17 @@ input + .c1 {
 
 .c7:focus {
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c7:focus {
+  border: none;
+  z-index: 1000;
 }
 
 .c7:hover {
