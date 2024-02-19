@@ -14,6 +14,7 @@ import { defaultNumericInputTokens, NumericInputTokens } from './component/numer
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
+import { defaultStepperInputTokens, StepperInputTokens } from './component/stepper-input-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -31,7 +32,8 @@ export type ComponentTokens =
     | PasswordInputTokens
     | NumericInputTokens
     | PhoneInputTokens
-    | SearchInputTokens;
+    | SearchInputTokens
+    | StepperInputTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -55,6 +57,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNumericInputTokens,
     ...defaultPhoneInputTokens,
     ...defaultSearchInputTokens,
+    ...defaultStepperInputTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
