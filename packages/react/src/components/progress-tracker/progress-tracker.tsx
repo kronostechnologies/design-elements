@@ -1,5 +1,5 @@
 import { ReactElement, VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
@@ -39,7 +39,7 @@ const StepLink = styled.a`
 
 const StyledStep = styled.li<{ $linear: boolean }>`
     align-items: center;
-    color: ${({ theme }) => theme.main['primary-3']};
+    color: ${({ theme }) => theme.component['progress-tracker-step-text-color']};
     display: flex;
     flex-direction: column;
     font-weight: var(--font-normal);
@@ -49,7 +49,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
 
     &::before {
         align-items: center;
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.component['progress-tracker-step-background-color']};
         border: 0.125rem solid;
         border-radius: 50%;
         box-sizing: border-box;
@@ -66,7 +66,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 
     &::after {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-color']};
         content: '';
         height: 0.25rem;
         left: calc(-50% - 0.5rem);
@@ -81,28 +81,30 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 `;
 
-const CompletedStep = styled(StyledStep)`
+const CompleteStep = styled(StyledStep)`
     &::before {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border-color: ${({ theme }) => theme.main['primary-1.1']};
-        color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.component['progress-tracker-step-complete-background-color']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-complete-border-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-complete-text-color']};
         font-weight: var(--font-semi-bold);
     }
 
     &::after {
-        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-1.1']};
+        ${({ $linear, theme }) => $linear && css`
+            background-color: ${theme.component['progress-tracker-bridge-complete-color']};
+        `}
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.main['primary-1.1']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-label-complete-text-color']};
     }
 `;
 
-const CurrentStep = styled(StyledStep)`
+const ActiveStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.main['primary-1.1']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-active-border-color']};
         border-width: 0.25rem;
-        color: ${({ theme }) => theme.main['primary-1.3']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-active-text-color']};
         font-weight: var(--font-semi-bold);
         height: var(--size-2x);
         margin: -0.25rem auto 0;
@@ -110,29 +112,31 @@ const CurrentStep = styled(StyledStep)`
     }
 
     &::after {
-        background-color: ${({ $linear, theme }) => $linear && theme.main['primary-1.1']};
+        ${({ $linear, theme }) => $linear && css`
+            background-color: ${theme.component['progress-tracker-bridge-active-color']};
+        `}
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.main['primary-1.3']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-label-active-text-color']};
         font-weight: var(--font-semi-bold);
     }
 `;
 
-const UncompletedStep = styled(StyledStep)`
+const IncompleteStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.greys['mid-grey']};
-        color: ${({ theme }) => theme.greys['neutral-90']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-incomplete-border-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-incomplete-text-color']};
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.greys['dark-grey']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-label-incomplete-text-color']};
     }
 `;
 
-const UncompletedIcon = styled(Icon)`
-    color: ${({ theme }) => theme.greys.white};
-    fill: ${({ theme }) => theme.notifications['alert-2.1']};
+const NotificationBadgeIcon = styled(Icon)`
+    color: ${({ theme }) => theme.component['progress-tracker-notification-badge-color']};
+    fill: ${({ theme }) => theme.component['progress-tracker-notification-badge-fill-color']};
     left: calc(50% + 0.25rem);
     position: absolute;
     top: -0.5rem;
@@ -173,20 +177,20 @@ const Step: VoidFunctionComponent<StepProps> = ({
 
     if (stepNumber === value) {
         dataTestId = 'progress-tracker-step-current';
-        StepComponent = CurrentStep;
+        StepComponent = ActiveStep;
     } else if ((linear && stepNumber < value) || (!linear && step.completion === 'completed')) {
         dataTestId = 'progress-tracker-step-completed';
         screenReaderText = t('completedAriaLabel');
-        StepComponent = CompletedStep;
+        StepComponent = CompleteStep;
     } else {
         dataTestId = 'progress-tracker-step-uncompleted';
         screenReaderText = t('uncompletedAriaLabel');
-        StepComponent = UncompletedStep;
+        StepComponent = IncompleteStep;
     }
 
     const content = (
         <>
-            {showUncompletedIcon && <UncompletedIcon name='alertCircle' size='16' aria-hidden="true" />}
+            {showUncompletedIcon && <NotificationBadgeIcon name='alertCircle' size='16' aria-hidden="true" />}
             {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
             {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
         </>
