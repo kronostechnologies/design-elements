@@ -22,8 +22,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 1px solid;
-  border-color: #878f9a;
+  border: 1px solid #878F9A;
   border-right: 0;
   box-sizing: border-box;
   color: #60666E;
@@ -37,7 +36,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 }
 
 .c1:last-child {
-  border-right: 1px solid #878f9a;
+  border-right: 1px solid #878F9A;
   margin: 0;
 }
 
@@ -70,9 +69,8 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e0f0f9;
-  border: 1px solid;
-  border-color: #012639;
+  background-color: #E0F0F9;
+  border: 1px solid #012639;
   border-right: 1px solid;
   box-sizing: border-box;
   color: #012639;
@@ -178,8 +176,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 1px solid;
-  border-color: #878f9a;
+  border: 1px solid #878F9A;
   border-right: 0;
   box-sizing: border-box;
   color: #60666E;
@@ -193,7 +190,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 }
 
 .c1:last-child {
-  border-right: 1px solid #878f9a;
+  border-right: 1px solid #878F9A;
   margin: 0;
 }
 
@@ -226,9 +223,8 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e0f0f9;
-  border: 1px solid;
-  border-color: #012639;
+  background-color: #E0F0F9;
+  border: 1px solid #012639;
   border-right: 1px solid;
   box-sizing: border-box;
   color: #012639;
