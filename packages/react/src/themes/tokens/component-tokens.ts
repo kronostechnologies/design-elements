@@ -19,6 +19,7 @@ import { defaultSearchInputTokens, SearchInputTokens } from './component/search-
 import { defaultStepperInputTokens, StepperInputTokens } from './component/stepper-input-tokens';
 import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
 import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
+import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -41,7 +42,8 @@ export type ComponentTokens =
     | TextAreaTokens
     | FieldTokens
     | RadioButtonGroupTokens
-    | ToggleButtonGroupTokens;
+    | ToggleButtonGroupTokens
+    | ToggleSwitchTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -70,6 +72,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFieldTokens,
     ...defaultRadioButtonGroupTokens,
     ...defaultToggleButtonGroupTokens,
+    ...defaultToggleSwitchTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
