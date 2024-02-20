@@ -60,10 +60,7 @@ function abstractContainer(
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${(props) => props.theme.component[bgColor]};
-        /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
-        border:
-            1px solid ${(props) => (color ? props.theme.component[color]
-                : props.theme.component['sectional-banner-border-color'])};
+        border: 1px solid ${(props) => props.theme.component[color || 'sectional-banner-border-color']};
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
@@ -78,10 +75,7 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
-            color:
-                ${(props) => (iconColor ? props.theme.component[iconColor]
-                    : props.theme.component['sectional-banner-icon-color'])};
+            color: ${(props) => (props.theme.component[iconColor || 'sectional-banner-icon-color'])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;

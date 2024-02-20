@@ -47,7 +47,7 @@ function getToastContainerBackground(
     }
 }
 
-const toastInLeft = keyframes` /* stylelint-disable-line keyframes-name-pattern */
+const toastInLeft = keyframes`
     from {
         transform: translateX(-100%);
     }
@@ -57,7 +57,7 @@ const toastInLeft = keyframes` /* stylelint-disable-line keyframes-name-pattern 
     }
 `;
 
-const toastInRight = keyframes` /* stylelint-disable-line keyframes-name-pattern */
+const toastInRight = keyframes`
     from {
         transform: translateX(100%);
     }

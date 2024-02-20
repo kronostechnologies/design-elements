@@ -71,7 +71,7 @@ const Input = styled.input<InputProps>`
     padding-bottom: var(--spacing-half);
     padding-left: ${({ hasIcon }) => (hasIcon ? '1.75rem' : 'var(--spacing-1x)')};
     padding-right: ${({ hasReset }) => (hasReset ? '1.75rem' : 'var(--spacing-1x)')};
-    padding-top: var(--spacing-half); /* stylelint-disable-line declaration-block-no-redundant-longhand-properties */
+    padding-top: var(--spacing-half);
 
     label + & {
         margin-top: 0;

@@ -106,7 +106,6 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys.black};
 
-        /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.main['primary-1.1']};
             box-shadow: ${theme.tokens['focus-box-shadow']};
@@ -143,7 +142,6 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 50%;
 
-        /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
                 box-shadow: ${theme.tokens['focus-box-shadow']};

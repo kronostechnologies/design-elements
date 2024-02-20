@@ -135,7 +135,6 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
 }
 
 const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    /* stylelint-disable-next-line declaration-colon-newline-after */
     ${({ bannerType, theme }) => (bannerType === 'warning') && css`
         border-color: ${theme.component['global-banner-action-button-warning-background-color']};
         color: ${theme.component['global-banner-action-button-warning-color']};
@@ -168,20 +167,29 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProp
     }
 }
 
+function getTertiaryButtonColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-color'] : null;
+}
+
+function getTertiaryButtonFocusColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-focus-color'] : null;
+}
+
+function getTertiaryButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-hover-color'] : null;
+}
+
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
-    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-color']};
+    color: ${(getTertiaryButtonColor)};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-focus-color']};
+        color: ${getTertiaryButtonFocusColor};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        /* eslint-disable-next-line stylistic/declaration-colon-newline-after stylistic/value-list-comma-newline-after */
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.component['global-banner-tertiary-button-hover-color']};
+        color: ${getTertiaryButtonHoverColor};
     }
 `;
 

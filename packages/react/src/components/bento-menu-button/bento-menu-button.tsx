@@ -21,7 +21,6 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
         right: 0;
         width: initial;
 
-        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
         ${StyledNavItem},
         ${HtmlLink} {
             height: 2.75rem;

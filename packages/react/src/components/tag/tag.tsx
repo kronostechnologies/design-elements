@@ -171,7 +171,7 @@ const Container = styled.span<ContainerProps>`
         margin-left: var(--spacing-1x);
     }
 
-    ${DeleteButton} { /* stylelint-disable-line no-descending-specificity */
+    ${DeleteButton} {
         margin-right: calc(-1 * var(--spacing-half));
     }
 
