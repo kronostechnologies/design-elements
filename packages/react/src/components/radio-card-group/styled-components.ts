@@ -24,8 +24,8 @@ interface CardProps {
 }
 
 export const RadioInput = styled.span<CardProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-border-color'])};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -37,31 +37,29 @@ export const RadioInput = styled.span<CardProps>`
 
 function getContentColor({ disabled, theme }: InputContainerProps): string {
     if (disabled) {
-        return theme.greys['mid-grey'];
+        return theme.component['radio-card-disabled-text-color'];
     }
-    // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.greys.black;
+    return theme.component['radio-card-text-color'];
 }
 
 function getLabelBackgroundColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.greys['light-grey'];
+        return theme.component['radio-card-disabled-background-color'];
     }
     if (isChecked) {
-        return theme.main['primary-1.4'];
+        return theme.component['radio-card-checked-background-color'];
     }
-    return theme.greys.white;
+    return theme.component['radio-card-background-color'];
 }
 
 function getLabelBorderColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.greys.grey;
+        return theme.component['radio-card-disabled-border-color'];
     }
     if (isChecked) {
-        return theme.main['primary-1.1'];
+        return theme.component['radio-card-checked-border-color'];
     }
-    // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.greys.black;
+    return theme.component['radio-card-border-color'];
 }
 
 export const Legend = styled.legend<{ isMobile: boolean }>`
@@ -104,14 +102,14 @@ export const Card = styled.div<CardProps>`
     }
 
     &:hover:not([disabled]) {
-        background-color: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys.black};
+        background-color: ${({ theme }) => theme.component['radio-card-hover-background-color']};
+        border-color: ${({ theme }) => theme.component['radio-card-hover-border-color']};
 
         /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
 
         ${Description},
         ${Title} {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.component['radio-card-hover-text-color']};
         }
     }
 `;
@@ -138,10 +136,10 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 
     &:checked + ${Label} > ${Title} > ${RadioInput} {
-        border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
+        border: 2px solid ${({ theme }) => theme.component['radio-card-hidden-input-checked-border-color']};
 
         &::after {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            background-color: ${({ theme }) => theme.component['radio-card-hidden-input-checked-background-color']};
             border-radius: 50%;
             content: '';
             height: var(--size-half);

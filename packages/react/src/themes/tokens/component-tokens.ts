@@ -16,6 +16,7 @@ import { defaultNumericInputTokens, NumericInputTokens } from './component/numer
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
 import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
+import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
 import { defaultStepperInputTokens, StepperInputTokens } from './component/stepper-input-tokens';
 import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
@@ -45,7 +46,8 @@ export type ComponentTokens =
     | RadioButtonGroupTokens
     | ToggleButtonGroupTokens
     | ToggleSwitchTokens
-    | InputsTokens;
+    | InputsTokens
+    | RadioCardTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -76,6 +78,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultToggleButtonGroupTokens,
     ...defaultToggleSwitchTokens,
     ...defaultInputsTokens,
+    ...defaultRadioCardTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
