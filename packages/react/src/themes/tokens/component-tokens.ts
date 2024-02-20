@@ -12,6 +12,7 @@ import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
 import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
+import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
@@ -36,6 +37,7 @@ export type ComponentTokens =
     | NavListItemTokens
     | PaginationTokens
     | ProgressCircleTokens
+    | ProgressIndicatorTokens
     | RouteLinkTokens
     | SkipLinkTokens
     | BadgeTokens
@@ -65,6 +67,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
     ...defaultProgressCircleTokens,
+    ...defaultProgressIndicatorTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
     ...defaultFocusTokens,
