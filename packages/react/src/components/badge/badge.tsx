@@ -50,7 +50,7 @@ function getPositionRules(position: BadgePosition, offsetX = 0, offsetY = 0): CS
 function getAnimationRules(position: BadgePosition): SimpleInterpolation {
     const baseTransform = getPositionRules(position).transform || '';
 
-    const bounceKeyframes = keyframes` /* stylelint-disable-line keyframes-name-pattern */
+    const bounceKeyframes = keyframes`
         10% { transform: ${baseTransform} translateY(-4px); }
         20% { transform: ${baseTransform}; }
     `;
