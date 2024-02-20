@@ -8,6 +8,7 @@ import { defaultDropdownListTokens, DropdownListTokens } from './component/dropd
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultInputsTokens, InputsTokens } from './component/inputs-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
@@ -43,7 +44,8 @@ export type ComponentTokens =
     | FieldTokens
     | RadioButtonGroupTokens
     | ToggleButtonGroupTokens
-    | ToggleSwitchTokens;
+    | ToggleSwitchTokens
+    | InputsTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -73,6 +75,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultRadioButtonGroupTokens,
     ...defaultToggleButtonGroupTokens,
     ...defaultToggleSwitchTokens,
+    ...defaultInputsTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
