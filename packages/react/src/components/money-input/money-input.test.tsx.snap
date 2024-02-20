@@ -68,6 +68,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
@@ -185,6 +186,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
@@ -302,6 +304,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
