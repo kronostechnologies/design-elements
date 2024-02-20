@@ -1,4 +1,5 @@
 import { AliasTokens } from './alias-tokens';
+import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
@@ -20,6 +21,7 @@ import { defaultTagTokens, TagTokens } from './component/tag-tokens';
 import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
 
 export type ComponentTokens =
+    | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
     | CardLinkTokens
@@ -46,6 +48,7 @@ export type ComponentTokenMap = {
 }
 
 export const defaultComponentTokens: ComponentTokenMap = {
+    ...defaultAvatarTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
     ...defaultCardLinkTokens,
