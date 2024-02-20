@@ -14,7 +14,9 @@ const Link = styled(StyledLink)`
 
     &:visited {
         svg {
-            ${({ disabled }) => (disabled ? '' : 'color: #62a;')}
+            ${({ disabled, theme }) => !disabled && `
+                color: ${theme.component['route-link-visited-text-color']};
+            `}
         }
     }
 

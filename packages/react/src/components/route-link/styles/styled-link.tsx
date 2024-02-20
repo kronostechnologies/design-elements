@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { focus, focusVisibleReset } from '../../../utils/css-state';
 
+type DisabledSuffix = '-disabled' | '';
+
+function getDisabledSuffix(disabled: boolean | undefined): DisabledSuffix {
+    return disabled === true ? '-disabled' : '';
+}
+
 interface ContainerProps {
     disabled?: boolean;
     $hasLabel: boolean;
@@ -9,7 +15,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
     align-items: center;
-    color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
+    color: ${({ disabled, theme }) => theme.component[`route-link${getDisabledSuffix(disabled)}-text-color`]};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
@@ -17,11 +23,15 @@ export const StyledLink = styled.a<ContainerProps>`
     text-decoration: underline;
 
     &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)};
+        ${({ disabled, theme }) => !disabled && `
+             color: ${theme.component['route-link-hover-text-color']};
+        `}
     }
 
     &:visited {
-        ${({ disabled }) => (disabled ? '' : 'color: #62a;')}; /* TODO change colors when updating thematization */
+        ${({ disabled, theme }) => !disabled && `
+             color: ${theme.component['route-link-visited-text-color']};
+        `}
     }
 
     ${focus};

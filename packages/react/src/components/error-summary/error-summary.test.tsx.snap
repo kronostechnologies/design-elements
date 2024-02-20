@@ -23,7 +23,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c9:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c9:focus {

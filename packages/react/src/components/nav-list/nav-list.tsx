@@ -6,8 +6,8 @@ import { ListOption, NavListItem } from './nav-list-item';
 import { NavListOption } from './nav-list-option';
 
 const List = styled.ul`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.component['nav-list-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['nav-list-border-color']};
     border-radius: var(--border-radius);
     box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
     list-style-type: none;
