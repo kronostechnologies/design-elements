@@ -30,19 +30,19 @@ function getToastContainerBackground(
     switch (type) {
         case 'information':
             return css`
-                background: ${theme.notifications['info-1.1']};
+                background: ${theme.component['toast-container-information-background']};
             `;
         case 'success':
             return css`
-                background: ${theme.notifications['success-1.1']};
+                background: ${theme.component['toast-container-success-background']};
             `;
         case 'warning':
             return css`
-                background: ${theme.notifications['warning-3.3']};
+                background: ${theme.component['toast-container-warning-background']};
             `;
         case 'error':
             return css`
-                background: ${theme.notifications['alert-2.1']};
+                background: ${theme.component['toast-container-error-background']};
             `;
     }
 }
@@ -120,23 +120,23 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
     switch ($type) {
         case 'information':
             return css`
-                background-color: #3a1c60; /* TODO: theme */
-                color: ${theme.greys.white};
+                background-color: ${theme.component['toast-container-dismiss-icon-information-hover-background-color']};
+                color: ${theme.component['toast-container-dismiss-icon-information-hover-color']};
             `;
         case 'success':
             return css`
-                background-color: #004f1e; /* TODO: theme */
-                color: ${theme.greys.white};
+                background-color: ${theme.component['toast-container-dismiss-icon-success-hover-background-color']};
+                color: ${theme.component['toast-container-dismiss-icon-success-hover-color']};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.notifications['warning-3.4']};
-                color: ${theme.greys.black};
+                background-color: ${theme.component['toast-container-dismiss-icon-warning-hover-background-color']};
+                color: ${theme.component['toast-container-dismiss-icon-warning-hover-color']};
             `;
         case 'error':
             return css`
-                background-color: #7b1a15; /* TODO: theme */
-                color: ${theme.greys.white};
+                background-color: ${theme.component['toast-container-dismiss-icon-error-hover-background-color']};
+                color: ${theme.component['toast-container-dismiss-icon-error-hover-color']};
             `;
     }
 }
@@ -154,7 +154,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.main['primary-1.2']};
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['toast-container-dismiss-icon-focus-box-shadow']};
     }
 
     &:hover {
@@ -200,7 +200,8 @@ function getToastIconName(type: ToastType): IconName {
 }
 
 function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
-    return type === 'warning' ? theme.greys.black : theme.greys.white;
+    return type === 'warning' ? theme.component['toast-container-warning-text-color']
+        : theme.component['toast-container-default-text-color'];
 }
 
 interface ToastContainerProps {

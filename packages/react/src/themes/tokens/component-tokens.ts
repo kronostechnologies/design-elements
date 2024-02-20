@@ -12,6 +12,12 @@ import { defaultPaginationTokens, PaginationTokens } from './component/paginatio
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
+import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
+import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
+import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component/sectional-banner-tokens';
+import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
+import { defaultTagTokens, TagTokens } from './component/tag-tokens';
+import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -25,7 +31,13 @@ export type ComponentTokens =
     | NavListItemTokens
     | PaginationTokens
     | RouteLinkTokens
-    | SkipLinkTokens;
+    | SkipLinkTokens
+    | BadgeTokens
+    | GlobalBannerTokens
+    | SectionalBannerTokens
+    | SpinnerTokens
+    | TagTokens
+    | ToastContainerTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -46,6 +58,13 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultPaginationTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
+    ...defaultFocusTokens,
+    ...defaultBadgeTokens,
+    ...defaultGlobalBannerTokens,
+    ...defaultSectionalBannerTokens,
+    ...defaultSpinnerTokens,
+    ...defaultTagTokens,
+    ...defaultToastContainerTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

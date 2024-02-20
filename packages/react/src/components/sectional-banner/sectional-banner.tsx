@@ -54,13 +54,16 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 }
 
 function abstractContainer(
-    bgColor: string,
-    color?: keyof ResolvedTheme['notifications'],
-    iconColor: keyof ResolvedTheme['notifications'] | undefined = color,
+    bgColor: keyof ResolvedTheme['component'],
+    color?: keyof ResolvedTheme['component'],
+    iconColor: keyof ResolvedTheme['component'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
-        background-color: ${bgColor};
-        border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+        background-color: ${(props) => props.theme.component[bgColor]};
+        /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
+        border:
+            1px solid ${(props) => (color ? props.theme.component[color]
+                : props.theme.component['sectional-banner-border-color'])};
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
@@ -75,7 +78,10 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            color: ${(props) => (iconColor ? props.theme.notifications[iconColor] : props.theme.main['primary-3'])};
+            /* eslint-disable-next-line stylistic/declaration-colon-newline-after */
+            color:
+                ${(props) => (iconColor ? props.theme.component[iconColor]
+                    : props.theme.component['sectional-banner-icon-color'])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;
@@ -83,12 +89,31 @@ function abstractContainer(
     `;
 }
 
-const NeutralContainer = abstractContainer('#fafafa', 'neutral-1.1');
-const InfoContainer = abstractContainer('#f3f9fd', 'info-1.1');
-const DiscoveryContainer = abstractContainer('#f9f7fb', 'discovery-1.1');
-const SuccessContainer = abstractContainer('#f6fbf8', 'success-1.1');
-const WarningContainer = abstractContainer('#fffbf5', 'warning-3.1', 'warning-3.4');
-const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
+const NeutralContainer = abstractContainer(
+    'sectional-banner-neutral-background-color',
+    'sectional-banner-neutral-border-color',
+);
+const InfoContainer = abstractContainer(
+    'sectional-banner-info-background-color',
+    'sectional-banner-info-border-color',
+);
+const DiscoveryContainer = abstractContainer(
+    'sectional-banner-discovery-background-color',
+    'sectional-banner-discovery-border-color',
+);
+const SuccessContainer = abstractContainer(
+    'sectional-banner-success-background-color',
+    'sectional-banner-success-border-color',
+);
+const WarningContainer = abstractContainer(
+    'sectional-banner-warning-background-color',
+    'sectional-banner-warning-border-color',
+    'sectional-banner-warning-icon-color',
+);
+const AlertContainer = abstractContainer(
+    'sectional-banner-alert-background-color',
+    'sectional-banner-alert-border-color',
+);
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
