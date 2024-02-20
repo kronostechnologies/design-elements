@@ -7,6 +7,7 @@ import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/exter
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
+import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
@@ -29,6 +30,7 @@ export type ComponentTokens =
     | FocusTokens
     | HeadingTokens
     | LabelTokens
+    | LegendTokens
     | NavListTokens
     | NavListItemTokens
     | PaginationTokens
@@ -56,6 +58,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
+    ...defaultLegendTokens,
     ...defaultNavListTokens,
     ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
