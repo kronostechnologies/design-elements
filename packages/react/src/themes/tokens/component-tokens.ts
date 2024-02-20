@@ -11,6 +11,7 @@ import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
+import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
@@ -34,6 +35,7 @@ export type ComponentTokens =
     | NavListTokens
     | NavListItemTokens
     | PaginationTokens
+    | ProgressCircleTokens
     | RouteLinkTokens
     | SkipLinkTokens
     | BadgeTokens
@@ -62,6 +64,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNavListTokens,
     ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
+    ...defaultProgressCircleTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
     ...defaultFocusTokens,
