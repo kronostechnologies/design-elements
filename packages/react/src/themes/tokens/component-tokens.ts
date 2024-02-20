@@ -12,6 +12,7 @@ import { defaultPaginationTokens, PaginationTokens } from './component/paginatio
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
+import {BadgeTokens, defaultBadgeTokens} from "./component/badge-tokens";
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -25,7 +26,8 @@ export type ComponentTokens =
     | NavListItemTokens
     | PaginationTokens
     | RouteLinkTokens
-    | SkipLinkTokens;
+    | SkipLinkTokens
+    | BadgeTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -46,6 +48,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultPaginationTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
+    ...defaultFocusTokens,
+    ...defaultBadgeTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
