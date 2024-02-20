@@ -113,8 +113,21 @@ export const ControlledContent: Story = () => {
                 groupName="controlled-default"
                 checkedValue={value}
                 buttons={[
-                    { label: 'Blue', value: 'blue', content: { element: (<div>Pewpew</div>) } },
-                    { label: 'Red', value: 'red', content: { element: (<div>Coucou</div>) } },
+                    {
+                        label: 'Blue',
+                        value: 'blue',
+                        content: {
+                            maxHeight: 38,
+                            element: (
+                                <div>
+                                    Pewpew
+                                    <br />
+                                    Potato
+                                </div>
+                            ),
+                        },
+                    },
+                    { label: 'Red', value: 'red', content: { maxHeight: 19, element: (<div>Coucou</div>) } },
                     { label: 'Green', value: 'green', disabled: true },
                     { label: 'Yellow', value: 'yellow' },
                 ]}
