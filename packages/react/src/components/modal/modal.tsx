@@ -178,7 +178,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     const { t } = useTranslation('modal');
     const theme = useTheme();
     const customStyles = {
-        overlay: { /* stylelint-disable-line selector-type-no-unknown */
+        overlay: {
             alignItems: 'center',
             backgroundColor: theme.tokens['modal-overlay-background-color'],
             display: 'flex',

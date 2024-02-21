@@ -30,13 +30,13 @@ interface IsMobileProps {
 function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
     switch (bannerType) {
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.component['global-banner-alert-background-color'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.component['global-banner-warning-background-color'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.component['global-banner-info-background-color'];
         case 'default':
-            return theme.greys['dark-grey'];
+            return theme.component['global-banner-default-background-color'];
     }
 }
 
@@ -45,16 +45,15 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
         case 'alert':
         case 'info':
         case 'default':
-            return theme.greys.white;
+            return theme.component['global-banner-default-color'];
         case 'warning':
-            return theme.greys.black;
+            return theme.component['global-banner-warning-color'];
     }
 }
 
 const Label = styled.strong<{ isMobile: boolean }>`
     display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
     font-weight: var(--font-semi-bold);
-
     ${({ isMobile }) => (isMobile ? css`
         margin-bottom: var(--spacing-half);
     ` : css`
@@ -125,21 +124,20 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
     /* TODO change colors when updating thematization */
     switch (bannerType) {
         case 'alert':
-            return '#f99d99';
+            return theme.component['global-banner-action-button-alert-hover-color'];
         case 'warning':
-            return '#9e6900';
+            return theme.component['global-banner-action-button-warning-hover-color'];
         case 'info':
-            return '#cfc1e3';
+            return theme.component['global-banner-action-button-info-hover-color'];
         case 'default':
-            return theme.greys['mid-grey'];
+            return theme.component['global-banner-action-button-default-hover-color'];
     }
 }
 
 const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    /* stylelint-disable-next-line declaration-colon-newline-after */
     ${({ bannerType, theme }) => (bannerType === 'warning') && css`
-        border-color: ${theme.greys.black};
-        color: ${theme.greys.black};
+        border-color: ${theme.component['global-banner-action-button-warning-background-color']};
+        color: ${theme.component['global-banner-action-button-warning-color']};
     `};
 
     &:hover {
@@ -150,36 +148,48 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
     &:focus {
         background-color: ${getContainerBackgroundColor};
         ${({ bannerType, theme }) => bannerType === 'warning' && css`
-            color: ${theme.greys.black};
+            color: ${theme.component['global-banner-action-button-warning-color']};
         `}
     }
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (bannerType) {
         case 'alert':
-            return '#7b1a15';
+            return theme.component['global-banner-tertiary-button-alert-hover-background-color'];
         case 'warning':
-            return '#9e6900';
+            return theme.component['global-banner-tertiary-button-warning-hover-background-color'];
         case 'info':
-            return '#3a1c60';
+            return theme.component['global-banner-tertiary-button-info-hover-background-color'];
         case 'default':
-            return '#878f9a';
+            return theme.component['global-banner-tertiary-button-default-hover-background-color'];
     }
 }
 
+function getTertiaryButtonColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-color'] : null;
+}
+
+function getTertiaryButtonFocusColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-focus-color'] : null;
+}
+
+function getTertiaryButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
+    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-hover-color'] : null;
+}
+
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
+    color: ${(getTertiaryButtonColor)};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
+        color: ${getTertiaryButtonFocusColor};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.white};
+        color: ${getTertiaryButtonHoverColor};
     }
 `;
 

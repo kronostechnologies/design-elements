@@ -82,7 +82,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -112,7 +112,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
@@ -158,7 +158,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -188,7 +188,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
@@ -233,7 +233,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -263,7 +263,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
@@ -361,7 +361,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -391,7 +391,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
@@ -437,7 +437,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -467,7 +467,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
@@ -512,7 +512,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 .c0:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c0:focus {
@@ -542,7 +542,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 .c1:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c1[disabled] {
