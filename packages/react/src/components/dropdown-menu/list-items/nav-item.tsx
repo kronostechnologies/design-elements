@@ -67,18 +67,18 @@ export const HtmlLink = styled.a<LinkProps>`
 
 export const StyledExternalLink = styled(ExternalLink)`
     ${NavItemStyle}
-  
+
     &:visited {
         svg {
             color: ${({ theme }) => theme.greys.black};
         }
     }
-    
+
     span {
         color: ${({ theme }) => theme.greys.black};
         padding: 0 0 0 var(--spacing-half);
     }
-    
+
     padding: 0 var(--spacing-2x);
 `;
 

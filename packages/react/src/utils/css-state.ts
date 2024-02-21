@@ -5,22 +5,38 @@ export const focus = (
     { theme }: { theme: ResolvedTheme },
     hasBorder = false,
     selector: string | undefined = undefined,
-    inset = false,
+    inset = true,
+    inverted = false,
 ): string => {
-    const focusBorder = `${theme.component['focus-border-color']}`;
-    const focusBoxShadow = `0 0 0 2px ${theme.component['focus-box-shadow-color']}`;
-    const focusBorderBoxShadow = `0 0 0 1px ${theme.component['focus-border-box-shadow-color-1']}, 0 0 0 3px ${theme.component['focus-border-box-shadow-color-2']}`;
-    const focusBorderBoxShadowInset = `inset 0 0 0 2px ${theme.component['focus-border-box-shadow-inset-color-1']}, inset 0 0 0 3px ${theme.component['focus-border-box-shadow-inset-color-2']}`;
+    const inversionSuffix = inverted ? '-inverted' : '';
+    const focusBorderColor = theme.component[`focus${inversionSuffix}-border-color`];
+    const boxShadowColor = theme.component[`focus${inversionSuffix}-box-shadow-color`];
+    const boxShadow = `${inset ? 'inset ' : ''}0 0 0 ${hasBorder ? '1px' : '2px'} ${focusBorderColor}, 0 0 0 2px ${boxShadowColor};`;
+    const outerOnlyBoxShadow = `0 0 0 2px ${boxShadowColor};`;
+    const outlineWeight = hasBorder ? '1px' : '2px';
+    const outlineOffset = hasBorder ? '-1px' : '-2px';
+    const transition = 'all .25s ease-in-out;';
+    const baseSelector = selector === undefined ? '' : `${selector}`;
 
-    return `
-        ${selector === undefined ? '&:focus { outline: none; }' : ''}
-        ${selector === undefined ? '&:focus' : `${selector}`} {
-            outline: none;
-            ${hasBorder ? `border-color: ${focusBorder};` : ''}
-            box-shadow: ${focusBoxShadow};
-            ${!hasBorder ? `box-shadow: ${inset ? focusBorderBoxShadowInset : focusBorderBoxShadow};` : ''}
-        }
-    `;
+    const notFocusStyle = `
+        &:not(:focus) ${baseSelector} {
+            transition: ${transition};
+            box-shadow: none;
+            border-color: ${hasBorder ? 'transparent' : ''};
+            outline: ${hasBorder ? '1px' : '2px'} solid transparent;
+            outline-offset: ${outlineOffset};
+        }`;
+
+    const focusStyle = `
+        &:focus ${baseSelector} {
+            transition: ${transition};
+            box-shadow: ${hasBorder ? `${boxShadow}` : `${outerOnlyBoxShadow}`};
+            border-color: ${hasBorder ? `${focusBorderColor}` : ''};
+            outline: ${outlineWeight} solid ${focusBorderColor};
+            outline-offset: ${outlineOffset};
+        }`;
+
+    return notFocusStyle + focusStyle;
 };
 
 export const focusVisibleReset = (

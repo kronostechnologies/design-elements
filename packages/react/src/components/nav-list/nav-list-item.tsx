@@ -55,10 +55,11 @@ const linkStyles = css<LinkProps>`
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
+    margin: 2px;
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    ${(props) => focus(props, undefined, undefined, true)};
+    ${(props) => focus(props, false, undefined, false)};
 
     :hover {
         background-color: ${({ theme }) => theme.greys.grey};

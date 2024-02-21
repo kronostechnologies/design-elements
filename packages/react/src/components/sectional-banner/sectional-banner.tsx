@@ -70,7 +70,7 @@ function abstractContainer(
 
         ${getLayout};
 
-        ${(props) => focus(props, true)};
+        ${(props) => focus(props, false)};
 
         ${(props) => focusVisibleReset(props, true)};
 

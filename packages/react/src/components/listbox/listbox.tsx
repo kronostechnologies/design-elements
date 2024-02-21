@@ -91,6 +91,7 @@ interface ListItemProps {
 
 const Container = styled.div<ContainerProps>`
     background-color: ${({ theme }) => theme.component['listbox-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['listbox-border-color']};
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px ${({ theme }) => theme.component['listbox-box-shadow-color-1']}, 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-color-2']};
     display: flex;
@@ -98,9 +99,10 @@ const Container = styled.div<ContainerProps>`
     overflow-y: auto;
     padding: var(--spacing-half) 0;
     position: relative;
-    z-index: 1000;
 
-    ${({ $focusable, theme }) => $focusable && focus({ theme })};
+    margin-top: 6px;
+
+    ${({ $focusable, theme }) => $focusable && focus({ theme }, false)};
 `;
 
 const List = styled.ul`
@@ -149,6 +151,7 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
+    transition: all 0.1s ease-in-out;
 
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
@@ -162,7 +165,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ focused, disabled, theme }) => (focused && css`
         outline: 2px solid ${disabled ? theme.component['listbox-item-focused-disabled-outline-color'] : theme.component['listbox-item-focused-outline-color']};
-        outline-offset: -2px;
+        outline-offset: -3px;
     `)}
 
     ${({ selected }) => (selected && css`

@@ -75,7 +75,7 @@ const Textbox = styled.input<TextboxProps>`
     padding: 0 var(--spacing-1x);
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, true)};
+    ${({ theme }) => focus({ theme }, false)};
 `;
 
 const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`

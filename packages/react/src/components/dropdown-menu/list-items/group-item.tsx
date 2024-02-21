@@ -20,7 +20,7 @@ export const StyledHeading = styled(Heading)<HeadingProps>`
 const StyledGroup = styled.ul`
     margin: 0;
     overflow-y: auto;
-    padding: 0;
+    padding: 2px;
 
     :not(:last-child)::after {
         border-bottom: 1px solid ${({ theme }) => theme.greys.grey};

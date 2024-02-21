@@ -60,7 +60,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
                 width: var(--size-half);
             }
         }
-        ${(theme) => focus(theme, true, '&:focus + .radioInput')}
+        ${(theme) => focus(theme, false, '+ .radioInput')}
     }
 
     .radioInput {

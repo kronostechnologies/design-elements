@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import styled from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 
 interface TabPanelProps {
     buttonId: string,
@@ -15,8 +15,7 @@ const StyledDiv = styled.div<{ $contained?: boolean }>`
     border-top: none;
 
     ${focus}
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')}
-    ${focusVisibleReset}
+    ${({ theme }) => focus({ theme }, false, '&:focus-visible')}
 `;
 
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({

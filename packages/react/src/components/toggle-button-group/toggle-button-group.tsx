@@ -47,7 +47,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         z-index: 1;
     }
 
-    ${(theme) => focus(theme, true)};
+    ${(theme) => focus(theme, false)};
 
     ${({ theme, disabled }) => disabled && css`
         &:disabled, &:disabled:hover {

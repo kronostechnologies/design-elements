@@ -3,9 +3,14 @@ import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export const inputsStyle: (theme: ResolvedTheme, isMobile?: boolean) => FlattenSimpleInterpolation = (
+export const inputsStyle: (
+    theme: ResolvedTheme,
+    isMobile?: boolean,
+    isFocusable?: boolean
+) => FlattenSimpleInterpolation = (
     theme: ResolvedTheme,
     isMobile = false,
+    isFocusable = true,
 ) => css`
     background: ${theme.component['inputs-background-color']};
     border: 1px solid ${theme.component['inputs-border-color']};
@@ -22,8 +27,6 @@ export const inputsStyle: (theme: ResolvedTheme, isMobile?: boolean) => FlattenS
     padding: 0 var(--spacing-1x);
     width: 100%;
 
-    ${focus({ theme }, true)};
-
     &::placeholder {
         color: ${theme.component['inputs-placeholder-text-color']};
     }
@@ -38,6 +41,8 @@ export const inputsStyle: (theme: ResolvedTheme, isMobile?: boolean) => FlattenS
             color: ${theme.component['inputs-disabled-placeholder-text-color']};
         }
     }
+
+    ${isFocusable && focus({ theme }, false)};
 `;
 
 interface ResponsiveInputsStyles {
@@ -75,5 +80,5 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
         }
     }
 
-    ${focus({ theme }, true)}
+    ${focus({ theme }, false)};
 `;

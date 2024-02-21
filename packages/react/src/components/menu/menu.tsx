@@ -87,8 +87,8 @@ const Button = styled.button<ButtonProps>`
     width: 100%;
 
     &:focus {
-        box-shadow: inset 0 0 0 2px ${({ theme }) => theme.component['menu-item-focus-shadow-color-1']}, inset 0 0 0 3px ${({ theme }) => theme.component['menu-item-focus-shadow-color-2']};
-        outline: none;
+        outline: 2px solid ${({ theme }) => theme.component['menu-item-focus-shadow-color-2']};
+        outline-offset: -2px;
     }
 
     &:hover {

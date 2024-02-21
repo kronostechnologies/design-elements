@@ -66,6 +66,7 @@ const Dot = styled.button<DotProps>`
     display: inline-block;
     height: 12px;
     width: 12px;
+    margin-bottom: 2px;
 
     ${focus};
 

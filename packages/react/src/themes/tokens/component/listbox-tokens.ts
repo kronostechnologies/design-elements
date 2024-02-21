@@ -3,6 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type ListboxTokens =
     | 'listbox-background-color'
+    | 'listbox-border-color'
     | 'listbox-box-shadow-color-1'
     | 'listbox-box-shadow-color-2'
     | 'listbox-checkbox-checkmark-icon-color'
@@ -32,6 +33,7 @@ export type ListboxTokenMap = {
 
 export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-background-color': 'color-white',
+    'listbox-border-color': 'color-neutral-50',
     'listbox-box-shadow-color-1': 'color-neutral-15',
     'listbox-box-shadow-color-2': 'transparent-20',
     'listbox-checkbox-background-color': 'color-white',

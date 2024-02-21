@@ -21,13 +21,6 @@ const buttonStyles = css`
     justify-content: center;
     padding: 0 var(--spacing-half);
 
-    ${focus};
-    &:focus {
-        //outline: none;
-        border: none;
-        z-index: 1000;
-    }
-
     &:hover {
         background-color: ${({ theme }) => theme.component['stepper-input-buttons-hover-background-color']};
     }
@@ -37,6 +30,11 @@ const buttonStyles = css`
         border-color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-border-color']};
         color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-text-color']};
     }
+
+    &:focus {
+        z-index: 1000;
+    }
+    ${({ theme }) => focus({ theme }, false)};
 `;
 
 const IncrementButton = styled.button`

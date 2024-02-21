@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -15,7 +15,9 @@ interface StyledButtonProps extends IsSelected {
 
 const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
+    border: 1px solid transparent;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
+    border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
     bottom: -1px;
     color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
@@ -31,8 +33,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 
     ${focus};
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')};
-    ${focusVisibleReset};
+    ${({ theme }) => focus({ theme }, false, '&:focus-visible')};
 
     &:focus {
         z-index: 2;
@@ -57,7 +58,6 @@ const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${theme.greys.white};
         border: 1px solid #878f9a; /* TODO change colors when updating thematization */
         border-bottom: 1px solid transparent;
-        border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: #1b1c1e; /* TODO change colors when updating thematization */
         z-index: 1;
     `}
