@@ -19,6 +19,7 @@ import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens'
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
 import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
 import { AccordionItemTokens, defaultAccordionItemTokens } from "./component/accordion-item-tokens";
+import { CarouselTokens, defaultCarouselTokens } from "./component/carousel-tokens";
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -39,7 +40,8 @@ export type ComponentTokens =
     | SpinnerTokens
     | TagTokens
     | ToastContainerTokens
-    | AccordionItemTokens;
+    | AccordionItemTokens
+    | CarouselTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -67,7 +69,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSpinnerTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
-    ...defaultAccordionItemTokens
+    ...defaultAccordionItemTokens,
+    ...defaultCarouselTokens
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
