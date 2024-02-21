@@ -92,7 +92,6 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
-    /* TODO change when updating thematization */
     color: ${({ theme }) => theme.component['tag-delete-icon-color']};
     height: var(--size-1x);
     margin-right: var(--spacing-half);
@@ -108,7 +107,6 @@ const DeleteIcon = styled(Icon).attrs({
 function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
         &:hover {
-            /* TODO fix with next thematization gray65 */
             background-color: ${({ theme }) => theme.component['tag-clickable-hover-background-color']};
             border-color: ${({ theme }) => theme.component['tag-clickable-hover-border-color']};
 
@@ -146,7 +144,6 @@ const DeleteButton = styled.button<IconOrButtonProps>`
     }
 
     &:hover {
-        /* TODO fix with next thematization gray65 */
         background-color: ${({ theme }) => theme.component['tag-delete-button-hover-background-color']};
 
         ${DeleteIcon} {
@@ -161,9 +158,8 @@ const Container = styled.span<ContainerProps>`
     align-items: center;
     background-color: ${({ theme }) => theme.component['tag-background-color']};
 
-    /* TODO fix with next thematization gray50 */
     border-radius: ${getBorderRadius};
-    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.component['tag-box-shadow-color']};
+    border: 1px solid ${({ theme }) => theme.component['tag-border-color']};
     display: inline-flex;
     padding: ${getPadding};
 
