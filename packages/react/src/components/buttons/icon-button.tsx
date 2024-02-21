@@ -1,4 +1,4 @@
-import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
+import { FocusEventHandler, forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { AvatarProps } from '../avatar/avatar';
@@ -42,7 +42,8 @@ export interface IconButtonProps {
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
-
+    onFocus?: FocusEventHandler<HTMLButtonElement>;
+    onBlur?: FocusEventHandler<HTMLButtonElement>;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
@@ -88,6 +89,8 @@ export const IconButton = forwardRef(({
     focusable = true,
     title,
     onClick,
+    onFocus,
+    onBlur,
     onKeyDown,
     ...props
 }: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
@@ -106,6 +109,8 @@ export const IconButton = forwardRef(({
             disabled={disabled}
             focusable={focusable}
             onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >

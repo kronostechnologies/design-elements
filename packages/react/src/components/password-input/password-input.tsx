@@ -6,53 +6,49 @@ import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Tooltip } from '../tooltip/tooltip';
 import { focus } from '../../utils/css-state';
+import { Tooltip } from '../tooltip/tooltip';
 
-const StyledTextInput = styled(TextInput)`
-    flex: 1;
-    margin-bottom: 0;
-
-    input {
-        &::-ms-reveal {
-            display: none;
-        }
-
-        border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-right-width: 0;
-    }
+const StyledIconButton = styled(IconButton)`
 `;
 
-const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
-    background-color: ${({ theme }) => theme.component['password-input-show-password-button-background-color']};
-    border-color: ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
-    border-left-width: 0;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    min-height: 2rem;
-    width: 2rem;
+const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: boolean; $isDisabled: boolean | undefined }>`
+    display: flex;
+    flex-direction: row;
+    border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
+    border-radius: var(--border-radius);
+    transition: all .25s ease-in-out;
+
+    ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
+        { theme },
+        false,
+        ', &:focus-within',
+    )}
 
     ${(props) => !props.$isValid && css`
         border-color: ${props.theme.component['password-input-show-password-button-invalid-border-color']};
     `}
 
-    &:disabled {
-        background-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-background-color']};
-        border-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-border-color']};
-    }
+    ${(props) => props.$isDisabled && css`
+        &:disabled {
+            background-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-background-color']};
+            border-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-border-color']};
+        }
+    `}
 `;
 
-const PasswordContainer = styled.div`
-    display: flex;
-    flex-direction: row;
+const StyledTextInput = styled(TextInput)`
+    flex: 1;
+    margin-bottom: 0;
 
-    &:focus-within {
-        border-radius: var(--border-radius);
-        ${({ theme }) => focus({ theme }, true, '&')}
-
-        input,
-        ${StyledIconButton} {
-            border-color: ${({ theme }) => theme.component['password-input-show-password-button-focus-within-border-color']};
+    input, input:not(:focus), input:focus, input:focus-within {
+        &::-ms-reveal {
+            display: none;
         }
+
+        border: none transparent;
+        outline: none;
+        box-shadow: none;
     }
 `;
 
@@ -91,6 +87,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     const isValid = validationErrorMessage === undefined || validationErrorMessage === '';
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
+    const [iconButtonFocused, setIconButtonFocused] = useState(false);
 
     const handleShowPassword = useCallback((): void => {
         setShowPassword(!showPassword);
@@ -109,7 +106,11 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
             validationErrorMessage={validationErrorMessage ?? ''}
             valid={isValid}
         >
-            <PasswordContainer>
+            <PasswordContainer
+                $isValid={isValid}
+                $iconButtonFocused={iconButtonFocused}
+                $isDisabled={disabled}
+            >
                 <StyledTextInput
                     id={id}
                     disabled={disabled}
@@ -126,9 +127,11 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     value={value}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                <Tooltip desktopPlacement="top" label={showPassword ? t('hide-password') : t('show-password')}>
+                <Tooltip
+                    desktopPlacement="top"
+                    label={showPassword ? t('hide-password') : t('show-password')}
+                >
                     <StyledIconButton
-                        $isValid={isValid}
                         disabled={disabled}
                         buttonType="tertiary"
                         aria-label={t('show-password')}
@@ -137,6 +140,8 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                         data-testid="show-password-button"
                         type="button"
                         onClick={handleShowPassword}
+                        onFocus={() => setIconButtonFocused(true)}
+                        onBlur={() => setIconButtonFocused(false)}
                     />
                 </Tooltip>
             </PasswordContainer>
