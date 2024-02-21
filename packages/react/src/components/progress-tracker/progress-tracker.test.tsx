@@ -89,7 +89,7 @@ describe('Progress Component', () => {
                 { label: 'Step 4' },
             ];
 
-            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={3} />);
+            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={3} linear={false} />);
 
             expect(wrapper).toMatchSnapshot();
         });

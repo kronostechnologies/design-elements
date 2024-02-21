@@ -321,15 +321,11 @@ exports[`Progress Component Snapshots non linear 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
-.c3::after {
-  background-color: #006296;
-}
-
 .c3 .c4 {
   color: #006296;
 }
 
-.c7::before {
+.c9::before {
   border-color: #006296;
   border-width: 0.25rem;
   color: #003A5A;
@@ -339,22 +335,26 @@ exports[`Progress Component Snapshots non linear 1`] = `
   width: var(--size-2x);
 }
 
-.c7::after {
-  background-color: #006296;
-}
-
-.c7 .c4 {
+.c9 .c4 {
   color: #003A5A;
   font-weight: var(--font-semi-bold);
 }
 
-.c8::before {
+.c7::before {
   border-color: #B7BBC2;
   color: #1B1C1E;
 }
 
-.c8 .c4 {
+.c7 .c4 {
   color: #60666E;
+}
+
+.c8 {
+  color: #FFFFFF;
+  fill: #CD2C23;
+  left: calc(50% + 0.25rem);
+  position: absolute;
+  top: -0.5rem;
 }
 
 <section
@@ -381,9 +381,17 @@ exports[`Progress Component Snapshots non linear 1`] = `
       </span>
     </li>
     <li
-      class="c2 c3"
-      data-testid="progress-tracker-step-completed"
+      class="c2 c7"
+      data-testid="progress-tracker-step-uncompleted"
     >
+      <svg
+        aria-hidden="true"
+        class="c8"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
       <span
         class="c4 c5"
         data-testid="progress-tracker-label"
@@ -393,12 +401,12 @@ exports[`Progress Component Snapshots non linear 1`] = `
       <span
         class="c6"
       >
-        completed
+        not completed
       </span>
     </li>
     <li
       aria-current="step"
-      class="c2 c7"
+      class="c2 c9"
       data-testid="progress-tracker-step-current"
     >
       <span
@@ -409,7 +417,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
       </span>
     </li>
     <li
-      class="c2 c8"
+      class="c2 c7"
       data-testid="progress-tracker-step-uncompleted"
     >
       <span
