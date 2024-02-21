@@ -4,6 +4,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
+import { focus } from '../../utils/css-state';
 
 export interface AccordionItemProps {
     title: string;
@@ -27,13 +28,12 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, border-width 0.5s ease;
+    transition: all 0.5s ease;
+
     &[aria-expanded='true'] {
         border-width: 0 1px 1px 1px;
         max-height: 1000px;
         overflow-y: auto;
-        transform: translateZ(0);
-        transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
     }
 `;
@@ -74,26 +74,17 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
-    transition-delay: 0.5s;
-    transition-duration: 0.2s;
-    transition-property: border-radius;
-    transition-timing-function: ease;
+    transition: all 0.5s ease;
     width: 100%;
 
     &[aria-expanded='true'] {
         background: ${({ theme }) => theme.greys.white};
+        border-color: ${({ theme }) => theme.greys.grey};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: ${({ theme }) => theme.greys['neutral-90']};
-        transition-delay: 0s;
-        transition-duration: 0.1s;
-        transition-property: border-radius;
-        transition-timing-function: ease;
     }
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow-inset']};
-        color: ${({ theme }) => theme.greys['neutral-90']};
-    }
+    ${({ theme }) => focus({ theme }, false)};
 
     &:hover {
         background: ${({ theme }) => theme.greys.grey};
