@@ -22,6 +22,7 @@ import { AccordionItemTokens, defaultAccordionItemTokens } from "./component/acc
 import { CarouselTokens, defaultCarouselTokens } from "./component/carousel-tokens";
 import { defaultModalTokens, ModalTokens } from "./component/modal-tokens";
 import { defaultTooltipTokens, TooltipTokens } from "./component/tooltip-tokens";
+import { defaultToggleTipTokens, ToggleTipTokens } from "./component/toggletip-tokens";
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -45,7 +46,8 @@ export type ComponentTokens =
     | AccordionItemTokens
     | CarouselTokens
     | ModalTokens
-    | TooltipTokens;
+    | TooltipTokens
+    | ToggleTipTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -76,7 +78,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultAccordionItemTokens,
     ...defaultCarouselTokens,
     ...defaultModalTokens,
-    ...defaultTooltipTokens
+    ...defaultTooltipTokens,
+    ...defaultToggleTipTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
