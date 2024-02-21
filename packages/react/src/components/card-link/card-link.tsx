@@ -15,12 +15,12 @@ const StyledIcon = styled(Icon)`
 `;
 
 const StyledLink = styled(Link)`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys.grey};
+    background-color: ${({ theme }) => theme.component['card-link-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['card-link-box-shadow-inset-color']};
     border-color: ${({ theme }) => theme.greys.grey};
     border-radius: var(--border-radius-2x);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['card-link-text-color']};
     display: block;
     font-size: 1rem;
     font-weight: var(--font-semi-bold);
@@ -34,8 +34,8 @@ const StyledLink = styled(Link)`
     width: 100%;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys['dark-grey']};
+        background-color: ${({ theme }) => theme.component['card-link-hover-background-color']};
+        border-color: ${({ theme }) => theme.component['card-link-hover-box-shadow-inset-color']};
     }
 
     ${({ theme }) => focus({ theme }, false)};

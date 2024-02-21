@@ -103,8 +103,6 @@ export const Card = styled.div<CardProps>`
         background-color: ${({ theme }) => theme.component['radio-card-hover-background-color']};
         border-color: ${({ theme }) => theme.component['radio-card-hover-border-color']};
 
-        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
-
         ${Description},
         ${Title} {
             color: ${({ theme }) => theme.component['radio-card-hover-text-color']};

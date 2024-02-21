@@ -79,7 +79,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c13:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c13:focus {
@@ -176,7 +176,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c14:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c16 {
@@ -753,7 +753,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c13:visited {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c13:focus {
@@ -850,7 +850,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c14:visited svg {
-  color: #62a;
+  color: #602FA0;
 }
 
 .c16 {

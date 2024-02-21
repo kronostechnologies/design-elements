@@ -12,4 +12,12 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
     },
+    overrides: [
+        {
+            files: ['*.tsx'],
+            rules: {
+                indent: 'off', // buggy and conflicting with react/jsx-indent
+            },
+        },
+    ],
 };

@@ -17,6 +17,12 @@ import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { NavListOption } from './nav-list-option';
 
+type DisabledSuffix = '-disabled' | '';
+
+function getDisabledSuffix(disabled: boolean | undefined): DisabledSuffix {
+    return disabled === true ? '-disabled' : '';
+}
+
 export interface ListOption extends NavListOption {
     id: string;
     focusIndex: number;
@@ -31,7 +37,7 @@ const Label = styled.span`
 
 const iconSize = '16';
 const BaseIcon = styled(Icon).attrs({ size: iconSize })`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['nav-list-item-icon-text-color']};
     min-width: ${iconSize}px;
 `;
 
@@ -50,7 +56,7 @@ interface LinkProps {
 
 const linkStyles = css<LinkProps>`
     align-items: center;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme, disabled }) => theme.component[`nav-list-item${getDisabledSuffix(disabled)}-text-color`]};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
@@ -62,15 +68,15 @@ const linkStyles = css<LinkProps>`
     ${(props) => focus(props, false, undefined, false)};
 
     :hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};
 
         ${BaseIcon} {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.component['nav-list-item-icon-hover-text-color']};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['nav-list-item-disabled-text-color']};
         pointer-events: none;
     }
 `;

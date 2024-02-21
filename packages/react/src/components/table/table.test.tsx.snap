@@ -1,19 +1,226 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table has clickable rows styles 1`] = `
-.c5 {
+exports[`Table has aria-label on header columns 1`] = `
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5:focus {
+.c7 td {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
-.c5:focus::after {
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  background: #FFFFFF;
+  border-collapse: collapse;
+  color: #1B1C1E;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  margin-left: 50%;
+  min-width: var(--size-2halfx);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: var(--size-2halfx);
+}
+
+.c1 {
+  background: inherit;
+}
+
+.c6 {
+  background: inherit;
+}
+
+<table
+  class="c0"
+>
+  <thead
+    class="c1"
+  >
+    <tr
+      class="c2"
+    >
+      <th
+        aria-label="column 1 aria label"
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+      <th
+        aria-label="column 2 aria label"
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c4"
+        >
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="c6"
+  >
+    <tr
+      class="c7"
+      data-testid="table-row-0"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c7"
+      data-testid="table-row-1"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c7"
+      data-testid="table-row-2"
+    >
+      <td
+        class="c8"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has clickable rows styles 1`] = `
+.c7 {
+  background-color: inherit;
+}
+
+.c7:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c7:focus {
+  position: relative;
+}
+
+.c7:focus::after {
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
   content: '';
   height: calc(100% + 3px);
@@ -25,20 +232,43 @@ exports[`Table has clickable rows styles 1`] = `
   z-index: 3;
 }
 
-.c5:hover {
+.c7:hover {
   cursor: pointer;
 }
 
-.c5:hover td {
+.c7:hover td {
   background-color: #DBDEE1;
 }
 
-.c5:not(:hover) td {
+.c7:not(:hover) td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -49,6 +279,14 @@ exports[`Table has clickable rows styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -84,109 +322,119 @@ exports[`Table has clickable rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
       role="button"
       tabindex="0"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
       role="button"
       tabindex="0"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
       role="button"
       tabindex="0"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -196,21 +444,69 @@ exports[`Table has clickable rows styles 1`] = `
 `;
 
 exports[`Table has custom text alignment 1`] = `
-.c5 {
+.c9 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c9:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c9 td {
   background-color: inherit;
+}
+
+.c10 {
+  background-color: inherit;
+  text-align: right;
+}
+
+.c11 {
+  background-color: inherit;
+  text-align: center;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: right;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: center;
+}
+
+.c7:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
+  text-align: right;
 }
 
 .c3:before {
@@ -220,6 +516,30 @@ exports[`Table has custom text alignment 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c6 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+}
+
+.c6:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -255,114 +575,113 @@ exports[`Table has custom text alignment 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c8 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
-        style="text-align:right"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
-        class="c3"
-        colspan="1"
-        role="columnheader"
+        aria-sort="none"
+        class="c6"
         scope="col"
-        style="text-align:center"
       >
-        Column 2
+        <button
+          class="c7"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c8"
   >
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
-        style="text-align:right"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
-        style="text-align:center"
+        class="c11"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
-        style="text-align:right"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
-        style="text-align:center"
+        class="c11"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
-        style="text-align:right"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
-        style="text-align:center"
+        class="c11"
       >
         Galaxy
       </td>
@@ -372,20 +691,43 @@ exports[`Table has custom text alignment 1`] = `
 `;
 
 exports[`Table has desktop styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -396,6 +738,14 @@ exports[`Table has desktop styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -431,106 +781,113 @@ exports[`Table has desktop styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -540,16 +897,16 @@ exports[`Table has desktop styles 1`] = `
 `;
 
 exports[`Table has error rows styles 1`] = `
-.c5 {
+.c7 {
   position: relative;
   background-color: #fcf8f9;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5::after {
+.c7::after {
   box-shadow: inset 0 0 0 1px #CD2C23;
   content: '';
   height: calc(100% + 1px);
@@ -560,7 +917,7 @@ exports[`Table has error rows styles 1`] = `
   z-index: 3;
 }
 
-.c5 td:first-child::after {
+.c7 td:first-child::after {
   border-left: 1px solid #CD2C23;
   content: '';
   height: 100%;
@@ -570,24 +927,47 @@ exports[`Table has error rows styles 1`] = `
   z-index: 3;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
 }
 
-.c6 {
+.c9 {
   background-color: inherit;
 }
 
-.c6:not(:first-child) {
+.c9:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c6 td {
+.c9 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -598,6 +978,14 @@ exports[`Table has error rows styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -633,106 +1021,113 @@ exports[`Table has error rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c6"
+      class="c9"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
@@ -742,20 +1137,43 @@ exports[`Table has error rows styles 1`] = `
 `;
 
 exports[`Table has mobile styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -766,6 +1184,14 @@ exports[`Table has mobile styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -801,106 +1227,113 @@ exports[`Table has mobile styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -910,20 +1343,43 @@ exports[`Table has mobile styles 1`] = `
 `;
 
 exports[`Table has rowNumbers styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -934,6 +1390,14 @@ exports[`Table has rowNumbers styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -969,130 +1433,144 @@ exports[`Table has rowNumbers styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
-        class="c3 eq-table__util-column"
-        colspan="1"
-        role="columnheader"
+        class="c3"
         scope="col"
       />
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c8"
       >
-        1
+        <span
+          class="eq-table__util-column"
+        >
+          1
+        </span>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c8"
       >
-        2
+        <span
+          class="eq-table__util-column"
+        >
+          2
+        </span>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c8"
       >
-        3
+        <span
+          class="eq-table__util-column"
+        >
+          3
+        </span>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -1102,6 +1580,63 @@ exports[`Table has rowNumbers styles 1`] = `
 `;
 
 exports[`Table has selectable rows styles 1`] = `
+.c15 {
+  background-color: inherit;
+}
+
+.c15:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c15 td {
+  background-color: inherit;
+}
+
+.c16 {
+  background-color: inherit;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c12:focus {
+  outline: none;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c13 {
+  margin-left: var(--spacing-1x);
+}
+
 .c9 {
   color: #FFFFFF;
   display: none;
@@ -1193,32 +1728,6 @@ exports[`Table has selectable rows styles 1`] = `
   margin-top: var(--spacing-1x);
 }
 
-.c13 {
-  background-color: inherit;
-}
-
-.c13:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c13 td {
-  background-color: inherit;
-}
-
-.c3 {
-  background-color: inherit;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
 .c0 {
   background: #FFFFFF;
   border-collapse: collapse;
@@ -1252,38 +1761,33 @@ exports[`Table has selectable rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c12 {
+.c14 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
-        class="c3 eq-table__util-column"
-        colspan="1"
-        role="columnheader"
+        class="c3"
         scope="col"
       >
         <label
@@ -1315,35 +1819,52 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c12"
+        >
+          Column 1
+          <svg
+            class="c13"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c12"
+        >
+          Column 2
+          <svg
+            class="c13"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c12"
-    role="rowgroup"
+    class="c14"
   >
     <tr
-      class="c13"
+      class="c15"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c16"
       >
         <label
           class="c4"
@@ -1374,26 +1895,22 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         World
       </td>
     </tr>
     <tr
-      class="c13"
+      class="c15"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c16"
       >
         <label
           class="c4"
@@ -1424,26 +1941,22 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c13"
+      class="c15"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class="eq-table__util-column"
-        role="cell"
+        class="c16"
       >
         <label
           class="c4"
@@ -1474,14 +1987,12 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c16"
       >
         Galaxy
       </td>
@@ -1491,20 +2002,43 @@ exports[`Table has selectable rows styles 1`] = `
 `;
 
 exports[`Table has small rowSize styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -1515,6 +2049,14 @@ exports[`Table has small rowSize styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -1550,106 +2092,113 @@ exports[`Table has small rowSize styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -1659,40 +2208,6 @@ exports[`Table has small rowSize styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
-.c5 {
-  cursor: pointer;
-  margin-left: var(--spacing-1x);
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
-  background-color: inherit;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
 .c7 {
   background-color: inherit;
 }
@@ -1705,6 +2220,51 @@ exports[`Table has sorting styles 1`] = `
   background-color: inherit;
 }
 
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
+}
+
 .c0 {
   background: #FFFFFF;
   border-collapse: collapse;
@@ -1738,13 +2298,12 @@ exports[`Table has sorting styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
@@ -1757,85 +2316,65 @@ exports[`Table has sorting styles 1`] = `
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
         aria-sort="ascending"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
-        style="cursor:pointer"
-        title="Toggle SortBy"
       >
-        <div
+        <button
           class="c4"
         >
           Column 1
-          <button
+          <svg
             class="c5"
-          >
-            <svg
-              color="#60666E"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </div>
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
         aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
-        style="cursor:pointer"
-        title="Toggle SortBy"
       >
-        <div
+        <button
           class="c4"
         >
           Column 2
-          <button
+          <svg
             class="c5"
-          >
-            <svg
-              color="#60666E"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </div>
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
     class="c6"
-    role="rowgroup"
   >
     <tr
       class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
@@ -1843,17 +2382,14 @@ exports[`Table has sorting styles 1`] = `
     <tr
       class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
@@ -1861,17 +2397,14 @@ exports[`Table has sorting styles 1`] = `
     <tr
       class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -1881,26 +2414,64 @@ exports[`Table has sorting styles 1`] = `
 `;
 
 exports[`Table has sticky column styles 1`] = `
-.c5 {
+.c9 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c9:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c9 td {
   background-color: inherit;
 }
 
-.c6 {
+.c10 {
+  background-color: inherit;
+  left: 0px;
   position: -webkit-sticky;
   position: sticky;
+  z-index: 2;
+}
+
+.c11 {
+  background-color: inherit;
+  left: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+}
+
+.c12 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
+  left: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
 }
 
 .c3:before {
@@ -1910,6 +2481,48 @@ exports[`Table has sticky column styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c6 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+  left: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
+}
+
+.c6:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c7 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c7:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -1945,132 +2558,146 @@ exports[`Table has sticky column styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c8 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
-        class="c3"
-        colspan="1"
-        role="columnheader"
+        aria-sort="none"
+        class="c6"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
-        class="c3"
-        colspan="1"
-        role="columnheader"
+        aria-sort="none"
+        class="c7"
         scope="col"
       >
-        Column 3
+        <button
+          class="c4"
+        >
+          Column 3
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c8"
   >
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class="c6"
-        role="cell"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class="c6"
-        role="cell"
+        class="c11"
       >
         Big
       </td>
       <td
-        class=""
-        role="cell"
+        class="c12"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class="c6"
-        role="cell"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class="c6"
-        role="cell"
+        class="c11"
       >
         Big
       </td>
       <td
-        class=""
-        role="cell"
+        class="c12"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c9"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class="c6"
-        role="cell"
+        class="c10"
       >
         Hello
       </td>
       <td
-        class="c6"
-        role="cell"
+        class="c11"
       >
         Big
       </td>
       <td
-        class=""
-        role="cell"
+        class="c12"
       >
         World
       </td>
@@ -2080,23 +2707,44 @@ exports[`Table has sticky column styles 1`] = `
 `;
 
 exports[`Table has sticky header styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 .c3:before {
@@ -2106,6 +2754,18 @@ exports[`Table has sticky header styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -2141,106 +2801,113 @@ exports[`Table has sticky header styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -2250,24 +2917,47 @@ exports[`Table has sticky header styles 1`] = `
 `;
 
 exports[`Table has striped styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5:nth-child(odd) {
+.c7:nth-child(odd) {
   background-color: #FAFAFA;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -2278,6 +2968,14 @@ exports[`Table has striped styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -2313,106 +3011,113 @@ exports[`Table has striped styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>
@@ -2422,20 +3127,43 @@ exports[`Table has striped styles 1`] = `
 `;
 
 exports[`Table has tablet styles 1`] = `
-.c5 {
+.c7 {
   background-color: inherit;
 }
 
-.c5:not(:first-child) {
+.c7:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 td {
+.c7 td {
   background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c3 {
   background-color: inherit;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -2446,6 +3174,14 @@ exports[`Table has tablet styles 1`] = `
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -2481,106 +3217,113 @@ exports[`Table has tablet styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
+  margin-left: 50%;
   min-width: var(--size-2halfx);
-  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: var(--size-2halfx);
-}
-
-.c2 {
-  background: inherit;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c4 {
+.c6 {
   background: inherit;
 }
 
 <table
   class="c0"
-  role="table"
 >
   <thead
     class="c1"
   >
     <tr
       class="c2"
-      role="row"
     >
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 1
+        <button
+          class="c4"
+        >
+          Column 1
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
       <th
+        aria-sort="none"
         class="c3"
-        colspan="1"
-        role="columnheader"
         scope="col"
       >
-        Column 2
+        <button
+          class="c4"
+        >
+          Column 2
+          <svg
+            class="c5"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </th>
     </tr>
   </thead>
   <tbody
-    class="c4"
-    role="rowgroup"
+    class="c6"
   >
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-0"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         World
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-1"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c5"
+      class="c7"
       data-testid="table-row-2"
-      role="row"
     >
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Hello
       </td>
       <td
-        class=""
-        role="cell"
+        class="c8"
       >
         Galaxy
       </td>

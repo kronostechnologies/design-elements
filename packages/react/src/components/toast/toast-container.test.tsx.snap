@@ -109,8 +109,8 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: etjUAa 0.25s ease-out;
-  animation: etjUAa 0.25s ease-out;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
   background: #CD2C23;
 }
 
@@ -137,7 +137,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 }
 
 .c3:hover {
-  background-color: #7b1a15;
+  background-color: #7B1A15;
   color: #FFFFFF;
 }
 
@@ -399,8 +399,8 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: etjUAa 0.25s ease-out;
-  animation: etjUAa 0.25s ease-out;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
   background: #006296;
 }
 
@@ -427,7 +427,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 }
 
 .c3:hover {
-  background-color: #3a1c60;
+  background-color: #3A1C60;
   color: #FFFFFF;
 }
 
@@ -689,8 +689,8 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: etjUAa 0.25s ease-out;
-  animation: etjUAa 0.25s ease-out;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
   background: #008533;
 }
 
@@ -717,7 +717,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 }
 
 .c3:hover {
-  background-color: #004f1e;
+  background-color: #004F1E;
   color: #FFFFFF;
 }
 
@@ -979,9 +979,9 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: etjUAa 0.25s ease-out;
-  animation: etjUAa 0.25s ease-out;
-  background: #FFB302;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #F5A200;
 }
 
 .c2 {
@@ -1007,7 +1007,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c3:hover {
-  background-color: #A36D00;
+  background-color: #9E6900;
   color: #000000;
 }
 

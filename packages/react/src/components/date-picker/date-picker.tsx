@@ -107,7 +107,6 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         box-sizing: border-box;
         color: ${({ theme }) => theme.component['datepicker-day-keyboard-selected-text-color']};
 
-        /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.component['datepicker-day-keyboard-selected-mobile-border-color']};
             box-shadow: 0 0 0 2px ${theme.component['datepicker-day-keyboard-selected-mobile-shadow-color']};
@@ -149,7 +148,6 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
         font-weight: var(--font-semi-bold);
 
-        /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
                 box-shadow: 0 0 0 2px ${theme.component['datepicker-day-selected-mobile-shadow-color']};
@@ -437,6 +435,14 @@ export const Datepicker = forwardRef(({
                 dateInputRef.current?.setOpen(false);
                 calendarButtonRef.current?.focus();
                 break;
+            case 'Enter':
+            case ' ':
+                if (dateInputRef.current?.isCalendarOpen()) {
+                    event.stopPropagation();
+                    dateInputRef.current?.setOpen(false);
+                    onCalendarClose?.();
+                }
+                break;
         }
     }
 
@@ -447,8 +453,10 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonMouseDown(): void {
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
+            onCalendarClose?.();
         } else {
             dateInputRef.current?.setOpen(true);
+            onCalendarOpen?.();
             focusCalendarDate();
         }
     }
@@ -456,6 +464,7 @@ export const Datepicker = forwardRef(({
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
         if (event.key === 'Enter' || event.key === ' ' /* Space bar */) {
             dateInputRef.current?.setOpen(true);
+            onCalendarOpen?.();
             focusCalendarDate();
         }
     }
@@ -578,8 +587,6 @@ export const Datepicker = forwardRef(({
                         onChange={handleInputChange}
                         onSelect={handleCalendarSelect}
                         onBlur={handleInputBlur}
-                        onCalendarClose={onCalendarClose}
-                        onCalendarOpen={onCalendarOpen}
                         onFocus={onFocus}
                         onClickOutside={handleClickOutside}
                         onInputClick={handleInputClick}

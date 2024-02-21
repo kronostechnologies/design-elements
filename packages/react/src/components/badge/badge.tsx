@@ -50,7 +50,7 @@ function getPositionRules(position: BadgePosition, offsetX = 0, offsetY = 0): CS
 function getAnimationRules(position: BadgePosition): SimpleInterpolation {
     const baseTransform = getPositionRules(position).transform || '';
 
-    const bounceKeyframes = keyframes` /* stylelint-disable-line keyframes-name-pattern */
+    const bounceKeyframes = keyframes`
         10% { transform: ${baseTransform} translateY(-4px); }
         20% { transform: ${baseTransform}; }
     `;
@@ -72,10 +72,10 @@ export const BadgeCircle = styled.span<{
 }>`
     align-content: center;
     align-items: center;
-    background-color: ${(props) => props.theme.notifications['alert-2.1']};
+    background-color: ${(props) => props.theme.component['badge-background-color']};
     border-radius: 0.5rem;
     box-sizing: border-box;
-    color: ${(props) => props.theme.greys.white};
+    color: ${(props) => props.theme.component['badge-color']};
     display: flex;
     font-size: 0.75rem;
     font-weight: 400;
