@@ -58,12 +58,12 @@ interface TooltipColorProps {
 
 const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     if (variant === 'success') {
-        return theme.notifications['success-1.1'];
+        return theme.component['tooltip-success-color'];
     }
-    return theme.greys['dark-grey'];
+    return theme.component['tooltip-default-color'];
 }}`;
 
-const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.greys.white}`;
+const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.component['tooltip-border-color']}`;
 
 const TooltipContainer = styled.div<TooltipContainerProps>`
     background-color: ${tooltipColor};
@@ -71,7 +71,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.component['tooltip-color']};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
