@@ -1,97 +1,95 @@
-import { shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { range } from '../../utils/range';
-import { Progress, ProgressTracker } from './progress-tracker';
+import { ProgressTracker, ProgressTrackerStep } from './progress-tracker';
 
-function generateSteps(count: number): ProgressTracker[] {
+function generateSteps(count: number): ProgressTrackerStep[] {
     return range(1, count).map((i) => ({ label: `Step ${i}` }));
 }
 
 describe('Progress Component', () => {
-    it('should render all steps', () => {
-        const steps = generateSteps(3);
-
-        const wrapper = shallow(<Progress steps={steps} value={1} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
-
-        const allSteps = findByTestId(stepsWrapper, 'progress-step-', '^');
-        expect(allSteps.length).toBe(3);
+    beforeEach(() => {
+        jest.spyOn(console, 'warn').mockImplementation(() => { });
     });
 
     it('should render all steps labels', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={1} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={1} />);
 
-        const allStepsLabels = findByTestId(stepsWrapper, 'progress-step-', '^').map((w) => w.text());
+        const allStepsLabels = findByTestId(wrapper, 'progress-tracker-step-', '^')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
         expect(allStepsLabels).toEqual(expect.arrayContaining(['Step 1', 'Step 2', 'Step 3']));
     });
 
-    it('should have past steps', () => {
+    it('should have completed steps', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={3} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={3} />);
 
-        const pastSteps = findByTestId(stepsWrapper, 'progress-step-past').map((w) => w.text());
-        expect(pastSteps).toEqual(expect.arrayContaining(['Step 1', 'Step 2']));
+        const completedSteps = findByTestId(wrapper, 'progress-tracker-step-completed')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
+        expect(completedSteps).toEqual(expect.arrayContaining(['Step 1', 'Step 2']));
     });
 
     it('should have current step', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={2} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={2} />);
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
+        const currentStep = findByTestId(wrapper, 'progress-tracker-step-current')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 2']));
     });
 
     it('should fallback to first step if value is less than 1', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={0} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={0} />);
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
+        const currentStep = findByTestId(wrapper, 'progress-tracker-step-current')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 1']));
     });
 
     it('should fallback to last step if value is higher than number of steps', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={4} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={4} />);
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
+        const currentStep = findByTestId(wrapper, 'progress-tracker-step-current')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 3']));
     });
 
-    it('should have future steps', () => {
+    it('should have uncompleted steps', () => {
         const steps = generateSteps(3);
 
-        const wrapper = shallow(<Progress steps={steps} value={1} />);
-        const stepsWrapper = getByTestId(wrapper, 'progress-tracker');
+        const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={1} />);
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-future').map((w) => w.text());
-        expect(currentStep).toEqual(expect.arrayContaining(['Step 2', 'Step 3']));
+        const uncompletedStep = findByTestId(wrapper, 'progress-tracker-step-uncompleted')
+            .map((w) => getByTestId(w, 'progress-tracker-label').text());
+        expect(uncompletedStep).toEqual(expect.arrayContaining(['Step 2', 'Step 3']));
     });
 
     describe('Snapshots', () => {
-        it('with labels', () => {
+        it('linear', () => {
             const steps = generateSteps(3);
 
-            const wrapper = renderWithProviders(<Progress steps={steps} value={2} />);
+            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={2} />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('without labels', () => {
-            const steps: ProgressTracker[] = [{}, {}, {}];
+        it('non linear', () => {
+            const steps: ProgressTrackerStep[] = [
+                { label: 'Step 1', completion: 'completed' },
+                { label: 'Step 2', completion: 'uncompleted' },
+                { label: 'Step 3' },
+                { label: 'Step 4' },
+            ];
 
-            const wrapper = renderWithProviders(<Progress steps={steps} value={2} />);
+            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={3} linear={false} />);
 
             expect(wrapper).toMatchSnapshot();
         });

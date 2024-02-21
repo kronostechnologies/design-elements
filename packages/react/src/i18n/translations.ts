@@ -80,6 +80,10 @@ export const Translations = {
             'show-password': 'Show password in plain text.',
             'hide-password': 'Hide password.',
         },
+        'progress-tracker': {
+            completedAriaLabel: 'completed',
+            uncompletedAriaLabel: 'not completed',
+        },
         'search-input': {
             label: 'Search',
         },
@@ -203,6 +207,10 @@ export const Translations = {
         'password-input': {
             'show-password': 'Montrer le mot de passe.',
             'hide-password': 'Cacher le mot de passe.',
+        },
+        'progress-tracker': {
+            completedAriaLabel: 'complété',
+            uncompletedAriaLabel: 'non complété',
         },
         'search-input': {
             label: 'Rechercher',
