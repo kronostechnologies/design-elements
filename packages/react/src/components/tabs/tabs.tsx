@@ -16,7 +16,7 @@ import { TabPanel } from './tab-panel';
 
 const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     align-items: center;
-    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tab-button-border-bottom-color']}`)}; /* TODO change colors when updating thematization */
     display: flex;
     padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
 `;
