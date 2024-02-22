@@ -126,7 +126,7 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     }
 
     &[data-popper-placement*="left"] > ${ToggletipArrow}::after {
-        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-arrow-left-before-border-color']};
+        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-arrow-left-after-border-color']};
         border-width: 0.5rem 0 0.5rem 0.4rem;
         left: 0.25rem;
         top: 0;
