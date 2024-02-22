@@ -24,6 +24,7 @@ import { defaultModalTokens, ModalTokens } from "./component/modal-tokens";
 import { defaultTooltipTokens, TooltipTokens } from "./component/tooltip-tokens";
 import { defaultToggleTipTokens, ToggleTipTokens } from "./component/toggletip-tokens";
 import { defaultTabTokens, TabTokens } from "./component/tab-tokens";
+import { defaultTabPanelTokens, TabPanelTokens } from "./component/tab-panel";
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -49,7 +50,8 @@ export type ComponentTokens =
     | ModalTokens
     | TooltipTokens
     | ToggleTipTokens
-    | TabTokens;
+    | TabTokens
+    | TabPanelTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -83,6 +85,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTooltipTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
+    ...defaultTabPanelTokens
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
