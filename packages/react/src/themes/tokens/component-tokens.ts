@@ -18,14 +18,12 @@ import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
 import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
-import { AccordionItemTokens, defaultAccordionItemTokens } from './component/accordion-item-tokens';
+import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
 import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
 import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
 import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
 import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
 import { defaultTabTokens, TabTokens } from './component/tab-tokens';
-import { defaultTabPanelTokens, TabPanelTokens } from './component/tab-panel';
-import { defaultTabButtonTokens, TabButtonTokens } from './component/tab-button-tokens';
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -46,14 +44,12 @@ export type ComponentTokens =
     | SpinnerTokens
     | TagTokens
     | ToastContainerTokens
-    | AccordionItemTokens
+    | AccordionTokens
     | CarouselTokens
     | ModalTokens
     | TooltipTokens
     | ToggleTipTokens
-    | TabTokens
-    | TabPanelTokens
-    | TabButtonTokens;
+    | TabTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -81,14 +77,12 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSpinnerTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
-    ...defaultAccordionItemTokens,
+    ...defaultAccordionTokens,
     ...defaultCarouselTokens,
     ...defaultModalTokens,
     ...defaultTooltipTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
-    ...defaultTabPanelTokens,
-    ...defaultTabButtonTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
