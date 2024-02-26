@@ -20,6 +20,7 @@ const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
     background: ${({ theme, $isGlobal }) => (!$isGlobal && theme.greys['light-grey'])};
     border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+    border-radius: ${({ $isGlobal }) => !$isGlobal && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
     box-sizing: border-box;
     display: flex;
     gap: var(--spacing-half);
@@ -186,6 +187,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             hidden={!isTabSelected(tabItem.id)}
                             id={tabItem.panelId}
                             key={tabItem.panelId}
+                            isGlobal={global}
                         >
                             {tabItem.panelContent}
                         </TabPanel>

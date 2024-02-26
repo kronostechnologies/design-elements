@@ -369,6 +369,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c7 {
   border: none;
+  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
 
@@ -385,6 +386,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 .c0 {
   background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -609,6 +611,7 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c7 {
   border: none;
+  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
 
@@ -625,6 +628,7 @@ exports[`Tabs matches snapshot 1`] = `
 .c0 {
   background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;

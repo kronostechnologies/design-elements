@@ -71,7 +71,7 @@ export const Normal: Story = () => {
     ];
 
     return (
-        <Tabs tabs={tabs} />
+        <Tabs tabs={tabs} contained />
     );
 };
 
