@@ -100,8 +100,8 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
 
     &:disabled {
         background-color: ${({ theme }) => theme.greys['light-grey']};
+        border-color: ${({ theme }) => theme.greys.grey};
         &:hover {
-            border-color: ${({ theme }) => theme.greys.grey};
             color: ${({ theme }) => theme.greys['mid-grey']};
         }
         > svg {
