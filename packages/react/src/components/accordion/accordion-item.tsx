@@ -81,9 +81,9 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     width: 100%;
 
     &[aria-expanded='true'] {
-        background: ${({ theme }) => theme.component['accordion-button-aria-extended-background-color']};
+        background: ${({ theme }) => theme.component['accordion-button-extended-background-color']};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: ${({ theme }) => theme.component['accordion-button-aria-extended-color']};
+        color: ${({ theme }) => theme.component['accordion-button-extended-color']};
         transition-delay: 0s;
         transition-duration: 0.1s;
         transition-property: border-radius;

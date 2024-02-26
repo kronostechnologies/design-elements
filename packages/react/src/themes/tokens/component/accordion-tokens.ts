@@ -8,8 +8,8 @@ export type AccordionTokens =
     | 'accordion-body-color'
     | 'accordion-button-border-color'
     | 'accordion-button-color'
-    | 'accordion-button-aria-extended-background-color'
-    | 'accordion-button-aria-extended-color'
+    | 'accordion-button-extended-background-color'
+    | 'accordion-button-extended-color'
     | 'accordion-button-focus-box-shadow-inset-color'
     | 'accordion-button-focus-color'
     | 'accordion-button-hover-background-color'
@@ -33,8 +33,8 @@ export const defaultAccordionTokens: AccordionTokenMap = {
     'accordion-body-color': 'color-neutral-90',
     'accordion-button-border-color': 'color-neutral-15',
     'accordion-button-color': 'color-neutral-90',
-    'accordion-button-aria-extended-background-color': 'color-white',
-    'accordion-button-aria-extended-color': 'color-neutral-90',
+    'accordion-button-extended-background-color': 'color-white',
+    'accordion-button-extended-color': 'color-neutral-90',
     'accordion-button-focus-box-shadow-inset-color': 'color-brand-20',
     'accordion-button-focus-color': 'color-neutral-90',
     'accordion-button-hover-background-color': 'color-neutral-15',

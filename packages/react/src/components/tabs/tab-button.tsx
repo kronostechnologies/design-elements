@@ -17,7 +17,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
     border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tab-button-border-bottom-color']}`)}; /* TODO change colors when updating thematization */
     bottom: -1px;
-    color: ${({ $isGlobal, theme }) => ($isGlobal ? `${theme.component['tab-button-global-color']}` : `${theme.component['tab-button-not-global-color']}`)}; /* TODO change colors when updating thematization */
+    color: ${({ $isGlobal, theme }) => ($isGlobal ? `${theme.component['tab-button-global-color']}` : `${theme.component['tab-button-color']}`)}; /* TODO change colors when updating thematization */
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
@@ -54,11 +54,11 @@ const StyledButton = styled.button<StyledButtonProps>`
     `}
 
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
-        background-color: ${theme.component['tab-button-not-global-selected-background-color']};
-        border: 1px solid ${theme.component['tab-button-not-global-selected-border-color']}; /* TODO change colors when updating thematization */
+        background-color: ${theme.component['tab-button-selected-background-color']};
+        border: 1px solid ${theme.component['tab-button-selected-border-color']}; /* TODO change colors when updating thematization */
         border-bottom: 1px solid transparent;
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: ${theme.component['tab-button-not-global-selected-color']}; /* TODO change colors when updating thematization */
+        color: ${theme.component['tab-button-selected-color']}; /* TODO change colors when updating thematization */
         z-index: 1;
     `}
 `;

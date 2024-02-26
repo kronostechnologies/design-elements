@@ -89,12 +89,12 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
 
 const LeftArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
-    return <Icon name="arrowLeft" size="100%" color={theme.component['carousel-left-arrow-icon-color']} />;
+    return <Icon name="arrowLeft" size="100%" color={theme.component['carousel-arrow-icon-color']} />;
 };
 
 const RightArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
-    return <Icon name="arrowRight" size="100%" color={theme.component['carousel-right-arrow-icon-color']} />;
+    return <Icon name="arrowRight" size="100%" color={theme.component['carousel-arrow-icon-color']} />;
 };
 
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
