@@ -45,16 +45,6 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   text-align: left;
 }
 
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c4::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -97,7 +87,6 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   color: #B7BBC2;
 }
 
-.c4:focus,
 .c4:disabled {
   border: 0;
   box-shadow: none;
@@ -128,18 +117,24 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   border-color: #DBDEE1;
 }
 
+.c1:not(:focus-within) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c1:focus-within {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c1 .c2 {
   color: #B7BBC2;
-}
-
-.c1:focus-within {
-  border-radius: var(--border-radius);
-}
-
-.c1:focus-within {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 <div
@@ -237,16 +232,6 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   text-align: left;
 }
 
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c5::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -289,7 +274,6 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   color: #B7BBC2;
 }
 
-.c5:focus,
 .c5:disabled {
   border: 0;
   box-shadow: none;
@@ -319,14 +303,20 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   border-color: #CD2C23;
 }
 
-.c3:focus-within {
-  border-radius: var(--border-radius);
+.c3:not(:focus-within) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus-within {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -413,16 +403,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   text-align: left;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -465,7 +445,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   color: #B7BBC2;
 }
 
-.c2:focus,
 .c2:disabled {
   border: 0;
   box-shadow: none;
@@ -494,14 +473,20 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   height: var(--size-2x);
 }
 
-.c1:focus-within {
-  border-radius: var(--border-radius);
+.c1:not(:focus-within) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus-within {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -572,16 +557,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   text-align: left;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c3::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -624,7 +599,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   color: #B7BBC2;
 }
 
-.c3:focus,
 .c3:disabled {
   border: 0;
   box-shadow: none;
@@ -653,14 +627,20 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   height: var(--size-2x);
 }
 
-.c1:focus-within {
-  border-radius: var(--border-radius);
+.c1:not(:focus-within) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus-within {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div

@@ -66,11 +66,24 @@ input[type="radio"]:checked + .c1 {
   color: #003A5A;
 }
 
-input[type="checkbox"]:focus + .c0,
+.c1:not(:focus),
+input[type="checkbox"]:focus + .c1,
 input[type="radio"]:focus + .c1 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c1:focus,
+input[type="checkbox"]:focus + .c1,
+input[type="radio"]:focus + .c1 {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 input[type="checkbox"]:disabled + .c0,

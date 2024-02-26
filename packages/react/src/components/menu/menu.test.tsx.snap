@@ -42,8 +42,8 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
 }
 
 .c2:focus {
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover {
@@ -204,8 +204,8 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover {

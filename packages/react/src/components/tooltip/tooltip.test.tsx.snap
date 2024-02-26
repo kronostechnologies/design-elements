@@ -159,14 +159,20 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -432,14 +438,20 @@ exports[`Tooltip Has default desktop styles 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -707,14 +719,20 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -980,14 +998,20 @@ exports[`Tooltip Has mobile styles 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip

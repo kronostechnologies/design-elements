@@ -198,26 +198,44 @@ label + .c3 {
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -252,14 +270,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c6:focus {
-  outline: none;
+.c6:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6:focus {
@@ -513,26 +537,44 @@ label + .c3 {
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -567,14 +609,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c6:focus {
-  outline: none;
+.c6:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6:focus {
@@ -830,26 +878,44 @@ label + .c3 {
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -884,14 +950,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c6:focus {
-  outline: none;
+.c6:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6:focus {
@@ -1163,14 +1235,20 @@ label + .c3 {
   color: #B7BBC2;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -1205,14 +1283,20 @@ label + .c3 {
   color: #B7BBC2;
 }
 
-.c6:focus {
-  outline: none;
+.c6:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6:focus {
@@ -1496,26 +1580,44 @@ label + .c5 {
   width: 6.8rem;
 }
 
-.c7.datePickerInput:focus {
-  outline: none;
+.c7.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7.datePickerInput:focus {
-  outline: none;
-}
-
-.c7.datePickerInput:focus {
-  outline: none;
-}
-
-.c7.datePickerInput:focus {
-  outline: none;
-}
-
-.c7.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7.datePickerInput:focus {
@@ -1550,14 +1652,20 @@ label + .c5 {
   color: #1B1C1E;
 }
 
-.c8:focus {
-  outline: none;
+.c8:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c8:focus {
@@ -1831,26 +1939,44 @@ label + .c3 {
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -1885,14 +2011,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c6:focus {
-  outline: none;
+.c6:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6:focus {
@@ -2038,14 +2170,20 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -2105,14 +2243,20 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7:focus {
@@ -2289,26 +2433,44 @@ label + .c3 {
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -2343,14 +2505,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c15:focus {
-  outline: none;
+.c15:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c15:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c15:focus {
@@ -3144,14 +3312,20 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   user-select: none;
 }
 
-.c16:focus {
-  outline: none;
+.c16:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c16 > svg {
@@ -3166,14 +3340,21 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #006296;
 }
 
-.c17:focus {
-  outline: none;
+.c17:not(:focus),
+.c17:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c17:hover,
@@ -3276,14 +3457,20 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -3343,14 +3530,20 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7:focus {
@@ -3527,26 +3720,44 @@ label + .c3 {
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -3587,14 +3798,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c18:focus {
-  outline: none;
+.c18:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c18:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18:focus {
@@ -4447,14 +4664,20 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -4514,14 +4737,20 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7:focus {
@@ -4700,26 +4929,44 @@ label + .c3 {
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  outline: none;
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
@@ -4754,14 +5001,20 @@ label + .c3 {
   color: #1B1C1E;
 }
 
-.c15:focus {
-  outline: none;
+.c15:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c15:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c15:focus {

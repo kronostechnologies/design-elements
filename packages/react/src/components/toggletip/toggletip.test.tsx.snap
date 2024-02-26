@@ -41,14 +41,20 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -65,14 +71,21 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: var(--size-2x);
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus),
+.c0:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0:hover,
@@ -396,14 +409,20 @@ exports[`Toggletip Has default desktop styles 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -420,14 +439,21 @@ exports[`Toggletip Has default desktop styles 1`] = `
   width: var(--size-2x);
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus),
+.c0:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0:hover,
@@ -570,14 +596,20 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -594,14 +626,21 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: var(--size-3x);
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus),
+.c0:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0:hover,
@@ -925,14 +964,20 @@ exports[`Toggletip Has mobile styles 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -949,14 +994,21 @@ exports[`Toggletip Has mobile styles 1`] = `
   width: var(--size-3x);
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus),
+.c0:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0:hover,

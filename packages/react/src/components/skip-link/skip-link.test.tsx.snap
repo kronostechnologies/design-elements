@@ -52,14 +52,20 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -140,14 +146,20 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {

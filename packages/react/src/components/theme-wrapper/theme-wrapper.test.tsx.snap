@@ -41,14 +41,20 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #00874E;
-  box-shadow: 0 0 0 2px #9EDBC1;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #00874E;
+  outline: 2px solid #9EDBC1;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -63,14 +69,21 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus),
+.c1:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #00874E;
-  box-shadow: 0 0 0 2px #9EDBC1;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #00874E;
+  outline: 2px solid #9EDBC1;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -133,14 +146,20 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -155,14 +174,21 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus),
+.c1:active:hover {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
