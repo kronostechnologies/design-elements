@@ -19,8 +19,8 @@ exports[`NavList Is hidden 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
-  overflow: hidden;
   margin: 2px;
+  overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -145,8 +145,8 @@ exports[`NavList Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
-  overflow: hidden;
   margin: 2px;
+  overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;

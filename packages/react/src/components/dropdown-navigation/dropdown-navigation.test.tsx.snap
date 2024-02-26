@@ -117,8 +117,8 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
-  overflow: hidden;
   margin: 2px;
+  overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -384,8 +384,8 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
-  overflow: hidden;
   margin: 2px;
+  overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -652,8 +652,8 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
-  overflow: hidden;
   margin: 2px;
+  overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;

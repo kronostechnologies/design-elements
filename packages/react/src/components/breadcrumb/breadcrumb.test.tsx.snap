@@ -25,9 +25,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c2:hover {
@@ -147,9 +147,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c2:hover {
@@ -328,9 +328,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c2:hover {
@@ -439,9 +439,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c2:hover {

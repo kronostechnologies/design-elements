@@ -77,9 +77,9 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c13:hover {
@@ -120,9 +120,9 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c19:not(:focus) {
@@ -778,9 +778,9 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c13:hover {
@@ -821,9 +821,9 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c19:not(:focus) {

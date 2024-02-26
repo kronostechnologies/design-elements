@@ -10,11 +10,11 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c0:not(:focus) {
@@ -399,11 +399,11 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c0:not(:focus) {

@@ -48,11 +48,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c9 {
@@ -507,11 +507,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c11 {
@@ -936,11 +936,11 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c7 {
@@ -1372,11 +1372,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c10 {

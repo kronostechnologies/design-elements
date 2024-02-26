@@ -142,9 +142,9 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c18:hover {
@@ -185,9 +185,9 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c24:not(:focus) {
@@ -1000,9 +1000,9 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c18:hover {
@@ -1043,9 +1043,9 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c24:not(:focus) {
@@ -1770,9 +1770,9 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c18:hover {
@@ -1813,9 +1813,9 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c24:not(:focus) {

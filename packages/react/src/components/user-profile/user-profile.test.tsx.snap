@@ -172,9 +172,9 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c19:hover {
@@ -901,9 +901,9 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c19:hover {
@@ -1628,9 +1628,9 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   display: inline-flex;
   font-size: 1rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c18:hover {
@@ -2356,9 +2356,9 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c19:hover {

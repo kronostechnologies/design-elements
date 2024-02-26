@@ -120,11 +120,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c11 {
@@ -613,11 +613,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c13 {
@@ -1075,11 +1075,11 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c9 {
@@ -1545,11 +1545,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  margin-top: 6px;
 }
 
 .c12 {

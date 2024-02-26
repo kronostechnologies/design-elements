@@ -26,9 +26,9 @@ exports[`DropdownMenu Is hidden 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c6:hover {
@@ -452,9 +452,9 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  padding: 4px;
 }
 
 .c6:hover {
