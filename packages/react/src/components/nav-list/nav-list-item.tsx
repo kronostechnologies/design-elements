@@ -11,7 +11,6 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { focus } from '../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
@@ -65,7 +64,10 @@ const linkStyles = css<LinkProps>`
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    ${(props) => focus(props, false, undefined, false)};
+    :focus {
+        outline: 2px solid ${({ theme }) => theme.component['listbox-item-focused-outline-color']};
+        outline-offset: -2px;
+    }
 
     :hover {
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};

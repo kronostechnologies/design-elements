@@ -55,7 +55,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
     display: flex;
     height: var(--size-2x);
 
-    ${({ theme }) => focus({ theme }, false, ', &:focus-within')};
+    ${({ theme }) => focus({ theme }, false, undefined, true, false, false, 'focus-within')};
 
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.component['numeric-input-invalid-border-color']};

@@ -239,10 +239,10 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
             ${({ disabled, theme }) => (disabled ? `color: ${theme.component['datepicker-input-placeholder-disabled-text-color']};` : '')}
         }
 
+        ${focus};
         &:focus {
             border: 1px solid ${getInputFocusBorderColor};
         }
-        ${({ theme }) => focus({ theme }, false)};
     }
 `;
 
@@ -270,7 +270,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
         color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-text-color'] : theme.component['datepicker-calendar-button-hover-text-color'])};
     }
 
-    ${({ theme }) => focus({ theme }, false)};
+    ${focus};
     &:focus {
         border: 1px solid ${({ theme }) => theme.component['datepicker-calendar-button-focus-border-color']};
         z-index: 10;

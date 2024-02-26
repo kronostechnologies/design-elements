@@ -97,7 +97,7 @@ export const Card = styled.div<CardProps>`
     padding: var(--spacing-2x) var(--spacing-3x);
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, false, ', &:focus-within')}
+    ${({ theme }) => focus({ theme }, false, undefined, true, false, false, 'focus-within')};
 
     &:hover:not([disabled]) {
         background-color: ${({ theme }) => theme.component['radio-card-hover-background-color']};

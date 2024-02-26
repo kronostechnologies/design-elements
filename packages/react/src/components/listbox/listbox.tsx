@@ -102,7 +102,7 @@ const Container = styled.div<ContainerProps>`
 
     margin-top: 6px;
 
-    ${({ $focusable, theme }) => $focusable && focus({ theme }, false)};
+    ${({ $focusable }) => $focusable && focus};
 `;
 
 const List = styled.ul`

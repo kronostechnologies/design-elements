@@ -1,12 +1,16 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../themes/theme';
 
+type FocusType = 'focus' | 'focus-visible' | 'focus-within';
+
 export const focus = (
     { theme }: { theme: ResolvedTheme },
     hasBorder = false,
     selector: string | undefined = undefined,
     inset = true,
     inverted = false,
+    clickResetFocus = false,
+    focusTypeSelector: FocusType = 'focus',
 ): string => {
     const inversionSuffix = inverted ? '-inverted' : '';
     const focusBorderColor = theme.component[`focus${inversionSuffix}-border-color`];
@@ -17,18 +21,19 @@ export const focus = (
     const outlineOffset = hasBorder ? '-1px' : '-2px';
     const transition = 'all .25s ease-in-out;';
     const baseSelector = selector === undefined ? '' : `${selector}`;
+    const clickResetSelector = clickResetFocus ? ', &:active:hover' : '';
 
     const notFocusStyle = `
-        &:not(:focus) ${baseSelector} {
+        &:not(:${focusTypeSelector}) ${baseSelector} ${clickResetSelector} {
             transition: ${transition};
             box-shadow: none;
             border-color: ${hasBorder ? 'transparent' : ''};
-            outline: ${hasBorder ? '1px' : '2px'} solid transparent;
+            outline: ${outlineWeight} solid transparent;
             outline-offset: ${outlineOffset};
         }`;
 
     const focusStyle = `
-        &:focus ${baseSelector} {
+        &:${focusTypeSelector} ${baseSelector} {
             transition: ${transition};
             box-shadow: ${hasBorder ? `${boxShadow}` : `${outerOnlyBoxShadow}`};
             border-color: ${hasBorder ? `${focusBorderColor}` : ''};

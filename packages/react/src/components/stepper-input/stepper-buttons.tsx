@@ -31,10 +31,10 @@ const buttonStyles = css`
         color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-text-color']};
     }
 
+    ${focus};
     &:focus {
         z-index: 1000;
     }
-    ${({ theme }) => focus({ theme }, false)};
 `;
 
 const IncrementButton = styled.button`

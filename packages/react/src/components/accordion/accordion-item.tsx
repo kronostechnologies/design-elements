@@ -84,7 +84,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
         color: ${({ theme }) => theme.greys['neutral-90']};
     }
 
-    ${({ theme }) => focus({ theme }, false)};
+    ${focus};
 
     &:hover {
         background: ${({ theme }) => theme.greys.grey};

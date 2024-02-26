@@ -33,11 +33,6 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 
     ${focus};
-    ${({ theme }) => focus({ theme }, false, '&:focus-visible')};
-
-    &:focus {
-        z-index: 2;
-    }
 
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
         z-index: 1;

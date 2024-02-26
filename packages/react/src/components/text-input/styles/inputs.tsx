@@ -42,7 +42,7 @@ export const inputsStyle: (
         }
     }
 
-    ${isFocusable && focus({ theme }, false)};
+    ${isFocusable && focus({ theme })};
 `;
 
 interface ResponsiveInputsStyles {
@@ -80,5 +80,5 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
         }
     }
 
-    ${focus({ theme }, false)};
+    ${focus({ theme })};
 `;

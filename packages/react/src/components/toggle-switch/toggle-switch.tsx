@@ -50,7 +50,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     vertical-align: middle;
     width: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2halfx)')};
 
-    ${({ theme }) => focus({ theme }, true)};
+    ${focus};
 
     &[aria-checked='false'] {
         background: ${({ theme }) => theme.component['toggle-switch-container-background-color']};

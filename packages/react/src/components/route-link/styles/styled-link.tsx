@@ -37,6 +37,4 @@ export const StyledLink = styled.a<ContainerProps>`
     }
 
     ${focus};
-
-    ${({ theme }) => focus({ theme }, false, '&:focus-visible')}
 `;

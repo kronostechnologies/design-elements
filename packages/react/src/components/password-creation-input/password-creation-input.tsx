@@ -37,7 +37,11 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
         false,
-        ', &:focus-within',
+        undefined,
+        true,
+        false,
+        false,
+        'focus-within',
     )}
 `;
 
