@@ -177,7 +177,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1035,7 +1035,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1805,7 +1805,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

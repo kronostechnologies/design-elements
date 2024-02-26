@@ -763,8 +763,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 }
 
 .c9:hover {
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #8FCEF0;
+  color: #8FCEF0;
 }
 
 .c9:focus {
@@ -1933,8 +1933,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 }
 
 .c9:hover {
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #8FCEF0;
+  color: #8FCEF0;
 }
 
 .c9:focus {
