@@ -30,17 +30,17 @@ function getRowBackgroundColor({
         return css`
             /* TODO fix with next thematization */
             background-color: #e0f0f9;
-        `;
+`;
     }
     if ($error) {
         return css`
             /* TODO fix with next thematization theme.notifications.error4 */
             background-color: #fcf8f9;
-        `;
+`;
     }
     return css`
         background-color: inherit;
-    `;
+`;
 }
 
 function getCellBackgroundCss({
@@ -52,7 +52,7 @@ function getCellBackgroundCss({
             td {
                 background-color: inherit;
             }
-        `;
+`;
     }
 
     return css`
@@ -63,24 +63,21 @@ function getCellBackgroundCss({
         &:not(:hover) td {
             background-color: inherit;
         }
-    `;
+`;
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
-
     ${({ $error, $striped, theme }) => $striped && !$error && css`
         &:nth-child(odd) {
             background-color: ${theme.greys['colored-white']};
         }
-    `}
-
+`}
     ${({ $clickable, theme }) => $clickable && css`
         &:focus {
             position: relative;
-
             &::after {
                 box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
                 content: '';
@@ -93,15 +90,12 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
                 z-index: 3;
             }
         }
-
         &:hover {
             cursor: pointer;
         }
     `}
-
     ${({ $error, theme }) => $error && css`
         position: relative;
-
         &::after {
             box-shadow: inset 0 0 0 1px ${theme.notifications['alert-2.1']};
             content: '';
@@ -112,7 +106,6 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
             width: 100%;
             z-index: 3;
         }
-
         td:first-child::after {
             border-left: 1px solid ${theme.notifications['alert-2.1']};
             content: '';
@@ -123,7 +116,6 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
             z-index: 3;
         }
     `}
-
     ${getRowBackgroundColor}
     ${getCellBackgroundCss}
 `;
@@ -131,12 +123,11 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
 const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
     background-color: inherit;
     text-align: ${({ $textAlign }) => $textAlign};
-
     ${({ $sticky, $startOffset }) => ($sticky) && css`
         left: ${$startOffset / 2}px;
         position: sticky;
         z-index: 2;
-    `}
+`}
 `;
 
 function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {

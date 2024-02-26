@@ -29,7 +29,6 @@ interface StyledInputProps {
 
 const StyledInput = styled.input<StyledInputProps>`
     ${responsiveInputsStyle}
-
     border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
     height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
     width: ${({ device }) => (device.isMobile ? 10.25 : 3.5)}rem;

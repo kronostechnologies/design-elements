@@ -114,9 +114,8 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
                 color: ${({ theme }) => theme.component['tag-clickable-hover-icon-color']};
             }
         }
-
         ${focus};
-    `;
+`;
 }
 
 const TagLabel = styled.span<TagLabelProps>`
@@ -150,7 +149,6 @@ const DeleteButton = styled.button<IconOrButtonProps>`
             color: ${({ theme }) => theme.component['tag-delete-button-icon-color']};
         }
     }
-
     ${focus};
 `;
 
@@ -170,9 +168,7 @@ const Container = styled.span<ContainerProps>`
     ${DeleteButton} {
         margin-right: calc(-1 * var(--spacing-half));
     }
-
     ${getClickableStyle};
-
     ${focus};
 `;
 

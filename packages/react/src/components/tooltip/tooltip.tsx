@@ -173,7 +173,6 @@ const StyledSpan = styled.span`
     align-items: center;
     display: flex;
     width: fit-content;
-
     ${focus};
 `;
 

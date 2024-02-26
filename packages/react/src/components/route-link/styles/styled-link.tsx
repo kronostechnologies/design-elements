@@ -35,6 +35,5 @@ export const StyledLink = styled.a<ContainerProps>`
              color: ${theme.component['route-link-visited-text-color']};
         `}
     }
-
     ${focus};
 `;

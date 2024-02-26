@@ -56,9 +56,9 @@ const Label = styled.strong<{ isMobile: boolean }>`
     font-weight: var(--font-semi-bold);
     ${({ isMobile }) => (isMobile ? css`
         margin-bottom: var(--spacing-half);
-    ` : css`
+` : css`
         margin-right: var(--spacing-1x);
-    `)}
+`)}
 `;
 
 const Message = styled.span`
@@ -99,12 +99,12 @@ function getIconPosition(props: IsMobileProps): SimpleInterpolation {
     if (props.$isMobile) {
         return css`
             align-self: flex-start;
-        `;
+`;
     }
 
     return css`
         align-self: initial;
-    `;
+`;
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
@@ -138,8 +138,7 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
     ${({ bannerType, theme }) => (bannerType === 'warning') && css`
         border-color: ${theme.component['global-banner-action-button-warning-background-color']};
         color: ${theme.component['global-banner-action-button-warning-color']};
-    `};
-
+`};
     &:hover {
         border-color: ${getActionButtonHoverColor};
         color: ${getActionButtonHoverColor};
@@ -149,7 +148,7 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
         background-color: ${getContainerBackgroundColor};
         ${({ bannerType, theme }) => bannerType === 'warning' && css`
             color: ${theme.component['global-banner-action-button-warning-color']};
-        `}
+`}
     }
 `;
 

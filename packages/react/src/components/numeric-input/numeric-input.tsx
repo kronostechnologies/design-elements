@@ -23,7 +23,6 @@ interface StyledInputProps {
 
 const StyledInput = styled.input<StyledInputProps>`
     ${({ theme, device }) => inputsStyle(theme, device.isMobile, false)}
-
     border: 0;
     flex: 1 1 auto;
     min-height: 100%;
@@ -54,17 +53,13 @@ const Wrapper = styled.div<StyledWrapperProps>`
     box-sizing: border-box;
     display: flex;
     height: var(--size-2x);
-
     ${({ theme }) => focus({ theme }, false, undefined, true, false, false, 'focus-within')};
-
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.component['numeric-input-invalid-border-color']};
-    `};
-
+`};
     ${({ $disabled, theme }) => $disabled && css`
         background-color: ${theme.component['numeric-input-disabled-background-color']};
         border-color: ${theme.component['numeric-input-disabled-border-color']};
-
         ${Adornment} {
             color: ${theme.component['numeric-input-disabled-adornment-text-color']};
         }

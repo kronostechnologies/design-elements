@@ -64,7 +64,6 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
         display: block;
         padding-bottom: ${getPadding};
     }
-
     ${({ theme }) => focus({ theme }, false, undefined, true, true)};
 `;
 

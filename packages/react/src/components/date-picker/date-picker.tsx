@@ -110,7 +110,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.component['datepicker-day-keyboard-selected-mobile-border-color']};
             box-shadow: 0 0 0 2px ${theme.component['datepicker-day-keyboard-selected-mobile-shadow-color']};
-        `};
+`};
 
         &:focus {
             border: 1px solid ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-border-color']};

@@ -84,7 +84,6 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
     height: 34px;
     visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
     width: 34px;
-
     ${focus};
 `;
 

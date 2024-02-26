@@ -59,8 +59,8 @@ const linkStyles = css<LinkProps>`
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
-    overflow: hidden;
     margin: 2px;
+    overflow: hidden;
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 

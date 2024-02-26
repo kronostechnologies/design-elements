@@ -37,7 +37,6 @@ const StyledLink = styled(Link)`
         background-color: ${({ theme }) => theme.component['card-link-hover-background-color']};
         border-color: ${({ theme }) => theme.component['card-link-hover-box-shadow-inset-color']};
     }
-
     ${focus};
 `;
 

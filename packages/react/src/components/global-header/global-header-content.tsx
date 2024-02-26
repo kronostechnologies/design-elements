@@ -11,7 +11,6 @@ const BurgerButton = styled.button`
     border: 1px solid transparent;
     margin: 0;
     padding: 0;
-
     ${focus};
 `;
 

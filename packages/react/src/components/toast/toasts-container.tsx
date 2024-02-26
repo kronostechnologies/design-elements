@@ -25,22 +25,22 @@ function getToastPosition({
             return css`
                 right: ${lateralPosition};
                 top: var(--spacing-2x);
-            `;
+`;
         case 'bottom-right':
             return css`
                 bottom: var(--spacing-2x);
                 right: ${lateralPosition};
-            `;
+`;
         case 'top-left':
             return css`
                 left: ${lateralPosition};
                 top: var(--spacing-2x);
-            `;
+`;
         case 'bottom-left':
             return css`
                 bottom: var(--spacing-2x);
                 left: ${lateralPosition};
-            `;
+`;
     }
 }
 
@@ -54,7 +54,6 @@ const ToastListWrapper = styled.div<ContainerProps>`
     box-sizing: border-box;
     position: fixed;
     z-index: 100000;
-
     ${getToastPosition}
 `;
 

@@ -41,7 +41,6 @@ export const inputsStyle: (
             color: ${theme.component['inputs-disabled-placeholder-text-color']};
         }
     }
-
     ${isFocusable && focus({ theme })};
 `;
 
@@ -79,6 +78,5 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
             color: ${theme.component['inputs-disabled-placeholder-text-color']};
         }
     }
-
     ${focus({ theme })};
 `;

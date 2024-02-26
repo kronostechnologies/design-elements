@@ -31,12 +31,9 @@ const StyledButton = styled.button<StyledButtonProps>`
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
-
     ${focus};
-
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
         z-index: 1;
-
         ::after {
             background-color: ${theme.main['primary-1.1']};
             bottom: 0;
@@ -48,14 +45,13 @@ const StyledButton = styled.button<StyledButtonProps>`
             width: 100%;
         }
     `}
-
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
         background-color: ${theme.greys.white};
         border: 1px solid #878f9a; /* TODO change colors when updating thematization */
         border-bottom: 1px solid transparent;
         color: #1b1c1e; /* TODO change colors when updating thematization */
         z-index: 1;
-    `}
+`}
 `;
 
 const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`

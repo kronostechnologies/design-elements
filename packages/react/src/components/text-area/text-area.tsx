@@ -12,7 +12,6 @@ import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
-
     min-height: 6.5rem;
     min-width: 100%;
     outline: none;

@@ -30,10 +30,9 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
     flex-direction: row;
     border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
     border-radius: var(--border-radius);
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
     margin-bottom: calc(var(--spacing-1x) * 1.5);
     position: relative;
-
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
         false,
@@ -57,14 +56,17 @@ const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input, input:not(:focus), input:focus, input:focus-within {
+    input,
+ input:not(:focus),
+ input:focus,
+ input:focus-within {
         ::-ms-reveal {
             display: none;
         }
 
         border: none transparent;
-        outline: none;
         box-shadow: none;
+        outline: none;
     }
 `;
 

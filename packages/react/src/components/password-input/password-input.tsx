@@ -17,8 +17,7 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
     flex-direction: row;
     border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
     border-radius: var(--border-radius);
-    transition: all .25s ease-in-out;
-
+    transition: all 0.25s ease-in-out;
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
         false,
@@ -28,31 +27,32 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
         false,
         'focus-within',
     )}
-
     ${(props) => !props.$isValid && css`
         border-color: ${props.theme.component['password-input-show-password-button-invalid-border-color']};
-    `}
-
+`}
     ${(props) => props.$isDisabled && css`
         &:disabled {
             background-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-background-color']};
             border-color: ${({ theme }) => theme.component['password-input-show-password-button-disabled-border-color']};
         }
-    `}
+`}
 `;
 
 const StyledTextInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input, input:not(:focus), input:focus, input:focus-within {
+    input,
+ input:not(:focus),
+ input:focus,
+ input:focus-within {
         &::-ms-reveal {
             display: none;
         }
 
         border: none transparent;
-        outline: none;
         box-shadow: none;
+        outline: none;
     }
 `;
 

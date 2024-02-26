@@ -24,7 +24,7 @@ const ModalRoles: Record<DialogType, string> = {
 const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
     ${({ $hasTitleIcon }) => $hasTitleIcon && css`
         padding-left: var(--spacing-4x);
-    `}
+`}
 `;
 
 const Subtitle = styled.h3<MobileDeviceContextProps>`
@@ -38,10 +38,9 @@ const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: b
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
     justify-content: end;
-
     ${({ isMobile, $hasTitleIcon }) => (isMobile && $hasTitleIcon) && css`
         margin-left: calc(var(--spacing-4x) * -1);
-    `}
+`}
 `;
 
 const ConfirmButton = styled(Button)<MobileDeviceContextProps>`

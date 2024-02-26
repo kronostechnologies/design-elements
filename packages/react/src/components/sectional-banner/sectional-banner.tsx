@@ -46,11 +46,11 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
                 'icon content'
                 'button button';
             grid-template-columns: auto 1fr;
-        `;
+`;
     }
     return css`
         display: flex;
-    `;
+`;
 }
 
 function abstractContainer(
@@ -78,7 +78,7 @@ function abstractContainer(
             height: 1rem;
             width: 1rem;
         }
-    `;
+`;
 }
 
 const NeutralContainer = abstractContainer(

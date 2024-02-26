@@ -127,9 +127,9 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
                     border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
                     color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-text-color`]};
                 }
-            `}
+`}
         }
-    `;
+`;
 };
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = (props) => css`

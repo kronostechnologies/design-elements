@@ -39,7 +39,6 @@ const buttonStyles = css`
 
 const IncrementButton = styled.button`
     ${buttonStyles};
-
     border-bottom: none;
     border-radius: 0 var(--border-radius) 0 0;
     height: calc(50% - 1px);
@@ -53,7 +52,6 @@ const IncrementButton = styled.button`
 
 const DecrementButton = styled.button`
     ${buttonStyles};
-
     border-radius: 0 0 var(--border-radius) 0;
     height: calc(50% + 1px);
 
