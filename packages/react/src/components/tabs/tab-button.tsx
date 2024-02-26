@@ -1,90 +1,98 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useTranslation } from '../../i18n/use-translation';
+import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
-interface IsSelected {
-    $isSelected: boolean;
-}
+const selectedIndicatorPosition = (isGlobal: boolean | undefined): string => (isGlobal ? 'bottom: 0' : 'top: 0');
 
-interface StyledButtonProps extends IsSelected {
-    $isGlobal?: boolean;
-    $isMobile: boolean;
-}
-
-const StyledButton = styled.button<StyledButtonProps>`
+const StyledButton = styled.button<{ $isGlobal?: boolean; $isSelected?: boolean; $hasDelete?: boolean; }>`
     align-items: center;
-    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
-    bottom: -1px;
-    color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
+    color: ${({ $isSelected, theme }) => ($isSelected ? theme.greys['neutral-90'] : '#60666e')};
     display: flex;
-    justify-content: center;
-    line-height: 1.5rem;
-    min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-3halfx)' : 'var(--size-3x)')};
-    min-width: 82px;
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    gap: var(--spacing-half);
     padding: 0 var(--spacing-2x);
+    padding-right: ${({ $hasDelete }) => ($hasDelete && 'var(--spacing-4halfx)')};
     position: relative;
+    user-select: none;
 
-    &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+    &::after {
+        content: '';
+        display: block;
+        height: 4px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        ${({ $isGlobal }) => selectedIndicatorPosition($isGlobal)};
     }
 
-    ${focus};
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')};
-    ${focusVisibleReset};
+    ${({ $isSelected, theme }) => !$isSelected && css`
+        &:active {
+            color: ${theme.greys['neutral-90']};
+            font-weight: var(--font-semi-bold);
 
-    &:focus {
-        z-index: 2;
-    }
-
-    ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
-        z-index: 1;
-
-        ::after {
-            background-color: ${theme.main['primary-1.1']};
-            bottom: 0;
-            content: '';
-            display: block;
-            height: 4px;
-            left: 0;
-            position: absolute;
-            width: 100%;
+            &::after {
+                background-color: ${theme.main['primary-1.3']} !important;
+            }
         }
     `}
 
-    ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
-        background-color: ${theme.greys.white};
-        border: 1px solid #878f9a; /* TODO change colors when updating thematization */
-        border-bottom: 1px solid transparent;
-        border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: #1b1c1e; /* TODO change colors when updating thematization */
-        z-index: 1;
+    ${({ $isSelected, theme }) => $isSelected && css`
+        background: ${theme.greys.white};
+        font-weight: var(--font-semi-bold);
+
+        &::after {
+            background-color: ${theme.main['primary-1.1']};
+        }
     `}
+
+    ${focus};
 `;
 
-const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
-    color: ${({ theme }) => theme.greys.black};
-    font-family: var(--font-family);
-    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
-    font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    line-height: 1.5rem;
+export const StyledButtonIcon = styled(Icon)`
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    vertical-align: middle;
 `;
 
-const LeftIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
-    height: 1rem;
-    min-width: fit-content;
-    padding-right: var(--spacing-half);
-    width: 1rem;
+const StyledTab = styled.div<{ $isSelected: boolean; }>`
+    display: flex;
+    margin-bottom: -1px;
+    position: relative;
+
+    ${({ $isSelected }) => !$isSelected && css`
+        &:hover {
+            ${StyledButton} {
+                &::after {
+                    background-color: ${({ theme }) => theme.greys.grey};
+                }
+            }
+        }
+    `};
 `;
 
-const RightIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
-    height: 1rem;
-    min-width: fit-content;
-    padding-left: var(--spacing-half);
-    width: 1rem;
+const StyledDeleteButton = styled.button`
+    color: #60666e;
+    padding: 0;
+    position: absolute;
+    right: var(--spacing-1halfx);
+    top: 50%;
+    transform: translateY(-50%);
+
+    ${focus};
+`;
+
+const ButtonLabel = styled.span`
+    // Prevent width shifting between normal and semi-bold
+    &::after {
+        content: attr(data-content);
+        display: block;
+        font-weight: var(--font-semi-bold);
+        height: 0;
+        visibility: hidden;
+    }
 `;
 
 interface TabButtonProps {
@@ -95,9 +103,8 @@ interface TabButtonProps {
     leftIcon?: IconName
     rightIcon?: IconName;
     isSelected: boolean;
-
     onClick(): void;
-
+    onDelete?(tabId: string): void;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
@@ -110,44 +117,61 @@ export const TabButton = forwardRef(({
     rightIcon,
     isSelected,
     onClick,
+    onDelete,
     onKeyDown,
+    ...rest
 }: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
-    const { isMobile } = useDeviceContext();
+    const { t } = useTranslation('tabs');
+    const dataAttributes = useDataAttributes(rest);
+    const dataTestId = dataAttributes['data-testid'];
+    const hasDelete = !!onDelete;
 
     return (
-        <StyledButton
-            id={id}
-            aria-controls={panelId}
-            role="tab"
-            aria-selected={isSelected}
-            ref={ref}
-            data-testid="tab-button"
-            tabIndex={isSelected ? undefined : -1}
-            $isGlobal={global}
-            $isMobile={isMobile}
-            $isSelected={isSelected}
-            onClick={onClick}
-            onKeyDown={onKeyDown}
-        >
-            {leftIcon && (
-                <LeftIcon
-                    data-testid="tab-button-left-icon"
-                    $isSelected={isSelected}
-                    name={leftIcon}
-                    size="16"
-                />
+        <StyledTab $isSelected={isSelected} data-testid={dataTestId}>
+            <StyledButton
+                type="button"
+                id={id}
+                aria-controls={panelId}
+                role="tab"
+                aria-selected={isSelected}
+                ref={ref}
+                data-testid="tab-button"
+                tabIndex={isSelected ? undefined : -1}
+                onClick={onClick}
+                onKeyDown={onKeyDown}
+                $hasDelete={hasDelete}
+                $isSelected={isSelected}
+                $isGlobal={global}
+            >
+                {leftIcon && (
+                    <StyledButtonIcon
+                        aria-hidden="true"
+                        data-testid="tab-button-left-icon"
+                        name={leftIcon}
+                        size="16"
+                    />
+                )}
+                <ButtonLabel data-testid="tab-button-text" data-content={children}>
+                    {children}
+                </ButtonLabel>
+                {rightIcon && (
+                    <StyledButtonIcon
+                        aria-hidden="true"
+                        data-testid="tab-button-right-icon"
+                        name={rightIcon}
+                        size="16"
+                    />
+                )}
+            </StyledButton>
+            {hasDelete && (
+                <StyledDeleteButton
+                    onClick={() => onDelete(id)}
+                    data-testid="tab-delete"
+                    aria-label={t('dismissTab', { label: children })}
+                >
+                    <StyledButtonIcon name="x" size="16" aria-hidden="true" />
+                </StyledDeleteButton>
             )}
-            <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected} $isMobile={isMobile}>
-                {children}
-            </StyledButtonText>
-            {rightIcon && (
-                <RightIcon
-                    data-testid="tab-button-right-icon"
-                    $isSelected={isSelected}
-                    name={rightIcon}
-                    size="16"
-                />
-            )}
-        </StyledButton>
+        </StyledTab>
     );
 });

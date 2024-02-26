@@ -8,17 +8,38 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
+import { focus } from '../../utils/css-state';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconName } from '../icon/icon';
-import { TabButton } from './tab-button';
+import { StyledButtonIcon, TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 
 const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
-    align-items: center;
-    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
+    /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
+    background: ${({ theme, $isGlobal }) => (!$isGlobal && theme.greys['light-grey'])};
+    border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+    box-sizing: border-box;
     display: flex;
+    gap: var(--spacing-half);
+    min-height: var(--size-2halfx);
     padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
+`;
+
+const StyledAddButton = styled.button`
+    align-items: center;
+    align-self: center;
+    color: #60666e;
+    display: flex;
+    font-size: 0.75rem;
+    font-weight: var(--font-bold);
+    gap: var(--spacing-half);
+    margin-bottom: -1px;
+    padding: var(--spacing-half) var(--spacing-1x);
+    text-transform: uppercase;
+
+    ${focus};
 `;
 
 export interface Tab {
@@ -27,6 +48,7 @@ export interface Tab {
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
+    onDelete?(tabId: string): void;
     onBeforeUnload?(): Promise<boolean>;
 }
 
@@ -44,11 +66,14 @@ interface Props {
     forceRenderTabPanels?: boolean;
     global?: boolean;
     tabs: Tab[];
+    onAddTab?(): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
-    className, contained, global, forceRenderTabPanels, tabs,
+    className, contained, global, forceRenderTabPanels, tabs, onAddTab,
 }) => {
+    const { t } = useTranslation('tabs');
+
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
@@ -139,11 +164,18 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         isSelected={isTabSelected(tabItem.id)}
                         ref={tabItem.buttonRef}
                         onClick={() => handleTabSelected(tabItem)}
+                        onDelete={tabItem.onDelete}
                         onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                     >
                         {tabItem.title}
                     </TabButton>
                 ))}
+                {onAddTab && (
+                    <StyledAddButton type="button" onClick={onAddTab}>
+                        <StyledButtonIcon name="plusSign" size='16' aria-hidden="true" focusable={false} />
+                        <span>{t('addTabs')}</span>
+                    </StyledAddButton>
+                )}
             </TabButtonsContainer>
             {tabItems.map((tabItem) => {
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {

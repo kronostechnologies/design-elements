@@ -1,6 +1,7 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
+import { useMemo, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -121,6 +122,49 @@ export const WithIcons: Story = () => {
 
     return (
         <Tabs tabs={tabs} />
+    );
+};
+
+let addTabCounter = 3;
+
+export const AddAndDeleteTabs: Story = () => {
+    const [tabs, setTabs] = useState<Tab[]>([
+        {
+            id: 'tab1',
+            title: 'First Button',
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
+        },
+        {
+            id: 'tab2',
+            title: 'Second Button',
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
+        },
+        {
+            id: 'tab3',
+            title: 'Third Button',
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
+        },
+    ]);
+
+    function handleDelete(tabId: string): void {
+        setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
+    }
+
+    const tabsWithDelete = useMemo(() => tabs.map((t) => ({ ...t, onDelete: handleDelete })), [tabs]);
+
+    return (
+        <Tabs
+            tabs={tabsWithDelete}
+            onAddTab={() => {
+                addTabCounter += 1;
+                setTabs([...tabs, {
+                    id: `tab${addTabCounter}`,
+                    title: 'New Tab',
+                    panelContent: <StyledDiv>New tab content</StyledDiv>,
+                },
+                ]);
+            }}
+        />
     );
 };
 

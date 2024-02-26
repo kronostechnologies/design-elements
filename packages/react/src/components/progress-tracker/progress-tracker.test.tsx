@@ -17,7 +17,7 @@ describe('Progress Component', () => {
 
         const wrapper = mountWithTheme(<ProgressTracker steps={steps} value={1} />);
 
-        const allStepsLabels = findByTestId(wrapper, 'progress-tracker-step-', '^')
+        const allStepsLabels = findByTestId(wrapper, 'progress-tracker-step-', { modifier: '^' })
             .map((w) => getByTestId(w, 'progress-tracker-label').text());
         expect(allStepsLabels).toEqual(expect.arrayContaining(['Step 1', 'Step 2', 'Step 3']));
     });
