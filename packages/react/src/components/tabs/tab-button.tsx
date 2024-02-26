@@ -44,7 +44,7 @@ const StyledButton = styled.button<StyledButtonProps>`
             position: absolute;
             width: 100%;
         }
-    `}
+`}
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
         background-color: ${theme.greys.white};
         border: 1px solid #878f9a; /* TODO change colors when updating thematization */

@@ -95,12 +95,12 @@ const Container = styled.div<ContainerProps>`
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px ${({ theme }) => theme.component['listbox-box-shadow-color-1']}, 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-color-2']};
     display: flex;
+    margin-top: 6px;
     max-height: 160px;
     overflow-y: auto;
     padding: var(--spacing-half) 0;
     position: relative;
 
-    margin-top: 6px;
     ${({ $focusable }) => $focusable && focus};
 `;
 

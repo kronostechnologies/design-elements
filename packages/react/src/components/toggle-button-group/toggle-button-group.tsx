@@ -64,7 +64,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
                 border-left-color: ${theme.component['toggle-button-hover-border-color']};
             }
         }
-    `}
+`}
 `;
 
 interface ToggleButtonGroupProps {

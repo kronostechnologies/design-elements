@@ -156,8 +156,8 @@ const Container = styled.span<ContainerProps>`
     align-items: center;
     background-color: ${({ theme }) => theme.component['tag-background-color']};
 
-    border-radius: ${getBorderRadius};
     border: 1px solid ${({ theme }) => theme.component['tag-border-color']};
+    border-radius: ${getBorderRadius};
     display: inline-flex;
     padding: ${getPadding};
 

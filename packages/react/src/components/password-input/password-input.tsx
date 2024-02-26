@@ -13,10 +13,10 @@ const StyledIconButton = styled(IconButton)`
 `;
 
 const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: boolean; $isDisabled: boolean | undefined }>`
-    display: flex;
-    flex-direction: row;
     border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
     border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
     transition: all 0.25s ease-in-out;
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },

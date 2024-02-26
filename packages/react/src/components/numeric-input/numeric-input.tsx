@@ -63,7 +63,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
         ${Adornment} {
             color: ${theme.component['numeric-input-disabled-adornment-text-color']};
         }
-    `};
+`};
 `;
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;

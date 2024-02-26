@@ -26,13 +26,13 @@ const StyledUl = styled.ul`
 `;
 
 const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: boolean; }>`
-    display: flex;
-    flex-direction: row;
     border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
     border-radius: var(--border-radius);
-    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: row;
     margin-bottom: calc(var(--spacing-1x) * 1.5);
     position: relative;
+    transition: all 0.25s ease-in-out;
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
         false,

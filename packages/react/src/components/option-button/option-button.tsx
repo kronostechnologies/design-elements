@@ -23,7 +23,7 @@ const Input = styled.input`
             border-color: ${theme.main['primary-1.1']};
             color: ${theme.greys.white};
         }
-    `}
+`}
 `;
 
 interface OptionButtonProps {
