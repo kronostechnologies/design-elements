@@ -271,6 +271,7 @@ input + .c2 {
       aria-required="false"
       class="c5"
       data-testid="textbox"
+      disabled=""
       id="uuid1"
       role="combobox"
       tabindex="0"
