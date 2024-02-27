@@ -52,14 +52,17 @@ const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input, input:not(:focus), input:focus, input:focus-within {
+    input,
+    input:not(:focus),
+    input:focus,
+    input:focus-within {
         ::-ms-reveal {
             display: none;
         }
 
         border: none transparent;
-        outline: none;
         box-shadow: none;
+        outline: none;
     }
 `;
 

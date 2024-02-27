@@ -50,7 +50,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     ${focus};
 
     ${({ theme, disabled }) => disabled && css`
-        &:disabled, &:disabled:hover {
+        &:disabled,
+        &:disabled:hover {
             background-color: ${theme.component['toggle-button-disabled-background-color']};
             border-color: ${theme.component['toggle-button-disabled-border-color']};
             color: ${theme.component['toggle-button-disabled-text-color']};
