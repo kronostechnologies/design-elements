@@ -16,7 +16,7 @@ function getColor({ isEmpty, isSuccess, theme }: StyledProps<StyledLiProps>): st
         return theme.component['password-rule-success-text-color'];
     }
 
-    return theme.component['password-rule-invalid-text-color'];
+    return theme.component['password-rule-error-text-color'];
 }
 
 interface ContainerProps {
