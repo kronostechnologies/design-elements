@@ -23,7 +23,7 @@ function getTranslate({ open, origin }: ContainerProps): string {
 
 const Container = styled.div<ContainerProps>`
     background-color: ${(props) => props.theme.component['side-drawer-background-color']};
-    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 6px 10px 0 ${(props) => props.theme.component['side-drawer-shadow-color']};
     height: calc(100vh - ${({ isDesktop }) => (isDesktop ? 48 : 56)}px);
     ${({ origin }) => `${origin}: 0`};
     overflow-x: hidden; /* stylelint-disable-line declaration-empty-line-before */
