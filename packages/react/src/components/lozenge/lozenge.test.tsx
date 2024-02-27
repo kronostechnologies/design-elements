@@ -17,31 +17,31 @@ describe('Lozenge', () => {
     });
 
     test('default matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge type='default'>default</Lozenge>);
+        const tree = renderWithTheme(<Lozenge variant='default'>default</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('success matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge type='success'>success</Lozenge>);
+        const tree = renderWithTheme(<Lozenge variant='success'>success</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('warning matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge type='warning'>warning</Lozenge>);
+        const tree = renderWithTheme(<Lozenge variant='warning'>warning</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('info matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge type='info'>info</Lozenge>);
+        const tree = renderWithTheme(<Lozenge variant='info'>info</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('alert matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge type='alert'>alert</Lozenge>);
+        const tree = renderWithTheme(<Lozenge variant='alert'>alert</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
