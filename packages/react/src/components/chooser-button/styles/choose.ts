@@ -31,7 +31,7 @@ export const Label = styled.label`
                 border-color: ${theme.component['chooser-selected-border-color']};
                 color: ${theme.component['chooser-selected-text-color']};
             }
-            ${focus({ theme }, false, ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
+            ${focus({ theme }, { selector: ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &' })}
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {
                 background: ${theme.component['chooser-disabled-background-color']};

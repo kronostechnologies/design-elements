@@ -3,22 +3,32 @@ import { ResolvedTheme } from '../themes/theme';
 
 type FocusType = 'focus' | 'focus-visible' | 'focus-within';
 
+export interface FocusOptions {
+    selector?: string;
+    focusTypeSelector?: FocusType;
+    inverted?: boolean;
+    insideOnly?: boolean;
+    clickResetFocus?: boolean;
+}
+
 export const focus = (
     { theme }: { theme: ResolvedTheme },
-    hasBorder = false,
-    selector: string | undefined = undefined,
-    inset = true,
-    inverted = false,
-    clickResetFocus = false,
-    focusTypeSelector: FocusType = 'focus',
+    options: FocusOptions = {},
 ): string => {
+    const {
+        selector,
+        focusTypeSelector = 'focus',
+        inverted = false,
+        insideOnly = false,
+        clickResetFocus = false,
+    } = options;
+
     const inversionSuffix = inverted ? '-inverted' : '';
-    const focusBorderColor = theme.component[`focus${inversionSuffix}-border-color`];
-    const boxShadowColor = theme.component[`focus${inversionSuffix}-box-shadow-color`];
-    const boxShadow = `${inset ? 'inset ' : ''}0 0 0 ${hasBorder ? '1px' : '2px'} ${focusBorderColor}, 0 0 0 2px ${boxShadowColor};`;
-    const outerOnlyBoxShadow = `0 0 0 2px ${boxShadowColor};`;
-    const outlineWeight = hasBorder ? '1px' : '2px';
-    const outlineOffset = hasBorder ? '-1px' : '-2px';
+    const insideFocusBorderColor = insideOnly ? theme.component[`focus${inversionSuffix}-outside-border-color`] : theme.component[`focus${inversionSuffix}-inside-border-color`];
+    const outsideFocusBorderColor = insideOnly ? 'transparent' : theme.component[`focus${inversionSuffix}-outside-border-color`];
+    const insideFocusBorderWeight = '2px';
+    const insideFocusBorderOffset = '-2px';
+    const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
     const transition = 'all .25s ease-in-out;';
     const baseSelector = selector === undefined ? '' : `${selector}`;
     const clickResetSelector = clickResetFocus ? ', &:active:hover' : '';
@@ -27,18 +37,16 @@ export const focus = (
         &:not(:${focusTypeSelector}) ${baseSelector} ${clickResetSelector} {
             transition: ${transition};
             box-shadow: none;
-            border-color: ${hasBorder ? 'transparent' : ''};
-            outline: ${outlineWeight} solid transparent;
-            outline-offset: ${outlineOffset};
+            outline: ${insideFocusBorderWeight} solid transparent;
+            outline-offset: ${insideFocusBorderOffset};
         }`;
 
     const focusStyle = `
         &:${focusTypeSelector} ${baseSelector} {
             transition: ${transition};
-            box-shadow: ${hasBorder ? `${boxShadow}` : `${outerOnlyBoxShadow}`};
-            border-color: ${hasBorder ? `${focusBorderColor}` : ''};
-            outline: ${outlineWeight} solid ${focusBorderColor};
-            outline-offset: ${outlineOffset};
+            box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
+            outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
+            outline-offset: ${insideFocusBorderOffset};
         }`;
 
     return notFocusStyle + focusStyle;

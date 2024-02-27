@@ -74,7 +74,7 @@ const StyledInput = styled.input`
             display: block;
         }
     }
-    ${({ theme }) => focus({ theme }, false, `+ ${CustomCheckbox}`)};
+    ${({ theme }) => focus({ theme }, { selector: `+ ${CustomCheckbox}` })};
 `;
 
 interface StyledLabelProps {

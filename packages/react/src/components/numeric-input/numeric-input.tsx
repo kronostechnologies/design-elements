@@ -53,7 +53,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
     box-sizing: border-box;
     display: flex;
     height: var(--size-2x);
-    ${({ theme }) => focus({ theme }, false, undefined, true, false, false, 'focus-within')};
+    ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-within' })};
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.component['numeric-input-error-border-color']};
 `};

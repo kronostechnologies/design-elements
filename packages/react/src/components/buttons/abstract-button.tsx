@@ -133,6 +133,6 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
 };
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = (props) => css`
-    ${props.focusable !== false && focus(props, false, undefined, true, props.inverted, true)};
+    ${props.focusable !== false && focus(props, { inverted: props.inverted, clickResetFocus: true })};
     ${getButtonStyles(props)};
 `;

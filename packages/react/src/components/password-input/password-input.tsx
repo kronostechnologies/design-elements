@@ -20,12 +20,7 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
     transition: all 0.25s ease-in-out;
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
-        false,
-        undefined,
-        true,
-        false,
-        false,
-        'focus-within',
+        { focusTypeSelector: 'focus-within' },
     )}
     ${(props) => !props.$isValid && css`
         border-color: ${props.theme.component['password-input-show-password-button-error-border-color']};
