@@ -14,10 +14,10 @@ export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconP
 
     switch (sort) {
         case 'ascending':
-            return <Icon name="arrowDown" size="16" color={theme.greys['dark-grey']} className={className} />;
+            return <Icon name="arrowDown" size="16" color={theme.component['sort-button-ascending-color']} className={className} />;
         case 'descending':
-            return <Icon name="arrowUp" size="16" color={theme.greys['dark-grey']} className={className} />;
+            return <Icon name="arrowUp" size="16" color={theme.component['sort-button-descending-color']} className={className} />;
         default:
-            return <Icon name="reorder" size="16" color={theme.greys['dark-grey']} className={className} />;
+            return <Icon name="reorder" size="16" color={theme.component['sort-button-default-color']} className={className} />;
     }
 };
