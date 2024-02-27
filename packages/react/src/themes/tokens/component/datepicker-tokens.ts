@@ -31,8 +31,8 @@ export type DatepickerTokens =
     | 'datepicker-portal-background-color'
     | 'datepicker-input-background-color'
     | 'datepicker-input-border-color'
-    | 'datepicker-input-invalid-border-color'
-    | 'datepicker-input-focus-invalid-border-color'
+    | 'datepicker-input-error-border-color'
+    | 'datepicker-input-focus-error-border-color'
     | 'datepicker-input-placeholder-disabled-text-color'
     | 'datepicker-input-disabled-background-color'
     | 'datepicker-input-disabled-border-color'
@@ -85,9 +85,9 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-portal-background-color': 'transparent-50',
     'datepicker-input-disabled-border-color': 'color-neutral-30',
     'datepicker-input-border-color': 'color-neutral-65',
-    'datepicker-input-invalid-border-color': 'color-alert-50',
+    'datepicker-input-error-border-color': 'color-alert-50',
     'datepicker-input-focus-border-color': 'color-brand-50',
-    'datepicker-input-focus-invalid-border-color': 'color-alert-50',
+    'datepicker-input-focus-error-border-color': 'color-alert-50',
     'datepicker-input-disabled-background-color': 'color-neutral-05',
     'datepicker-input-background-color': 'color-white',
     'datepicker-input-placeholder-disabled-text-color': 'color-neutral-30',

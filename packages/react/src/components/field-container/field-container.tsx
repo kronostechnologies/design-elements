@@ -20,11 +20,11 @@ const StyledDiv = styled.div<StyledDivProps>`
     input,
     select,
     textarea {
-        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-border-color'] : theme.component['field-input-invalid-border-color'])};
+        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
     }
 
     &:focus {
-        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-focus-border-color'] : theme.component['field-input-focus-invalid-border-color'])};
+        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-focus-border-color'] : theme.component['field-input-focus-error-border-color'])};
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {

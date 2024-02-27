@@ -41,7 +41,7 @@ function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
         return theme.component['combobox-disabled-border-color'];
     }
     if (!$valid) {
-        return theme.component['combobox-invalid-border-color'];
+        return theme.component['combobox-error-border-color'];
     }
 
     return theme.component['combobox-border-color'];
@@ -479,6 +479,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     id={id}
                     $isMobile={isMobile}
                     $disabled={disabled}
+                    disabled={disabled}
                     name={name}
                     onBlur={handleTextboxBlur}
                     onChange={handleTextboxChange}

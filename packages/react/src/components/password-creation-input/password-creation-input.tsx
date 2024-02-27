@@ -49,7 +49,7 @@ export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolea
         return theme.component['password-creation-input-border-color'];
     }
 
-    return theme.component['password-creation-input-invalid-border-color'];
+    return theme.component['password-creation-input-error-border-color'];
 }
 
 const StyledInput = styled(TextInput)`

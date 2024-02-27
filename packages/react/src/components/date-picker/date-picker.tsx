@@ -212,14 +212,14 @@ function getInputBorderColor({ theme, disabled, valid }: StyledDatePickerProps):
     if (valid) {
         return theme.component['datepicker-input-border-color'];
     }
-    return theme.component['datepicker-input-invalid-border-color'];
+    return theme.component['datepicker-input-error-border-color'];
 }
 
 function getInputFocusBorderColor({ theme, valid }: StyledDatePickerProps): string {
     if (valid) {
         return theme.component['datepicker-input-focus-border-color'];
     }
-    return theme.component['datepicker-input-focus-invalid-border-color'];
+    return theme.component['datepicker-input-focus-error-border-color'];
 }
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`

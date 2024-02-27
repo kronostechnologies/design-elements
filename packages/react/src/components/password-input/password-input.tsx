@@ -28,7 +28,7 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
         'focus-within',
     )}
     ${(props) => !props.$isValid && css`
-        border-color: ${props.theme.component['password-input-show-password-button-invalid-border-color']};
+        border-color: ${props.theme.component['password-input-show-password-button-error-border-color']};
 `}
     ${(props) => props.$isDisabled && css`
         &:disabled {
