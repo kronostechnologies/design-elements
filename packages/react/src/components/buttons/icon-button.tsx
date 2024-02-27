@@ -54,21 +54,23 @@ const getButtonSizeStyles = (
         case 'small':
             return css`
                 ${!isMobile && 'min-width: var(--size-1halfx)'};
+
                 padding: 0;
                 width: ${isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)'};
-`;
+            `;
         case 'medium':
         default:
             return css`
                 padding: 0;
                 width: ${isMobile ? 'var(--size-3x)' : 'var(--size-2x)'};
-`;
+            `;
     }
 };
 
 const StyledButton = styled(AbstractButton)`
     ${getButtonTypeStyles};
     ${getButtonSizeStyles};
+
     > svg {
         height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
         width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};

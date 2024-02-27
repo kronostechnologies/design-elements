@@ -74,6 +74,7 @@ const Textbox = styled.input<TextboxProps>`
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
     width: 100%;
+
     ${focus};
 `;
 

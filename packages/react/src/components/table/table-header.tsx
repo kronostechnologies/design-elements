@@ -38,7 +38,7 @@ const StyledHeader = styled.th<{ $sticky: boolean, $startOffset: number; $textAl
         left: ${$startOffset / 2}px;
         position: sticky;
         z-index: 5;
-`}
+    `}
 
     &:before {
         border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
@@ -56,7 +56,7 @@ const StyleHeaderRow = styled.tr<{ $sticky: boolean }>`
         position: sticky;
         top: 0;
         z-index: 6;
-`}
+    `}
 `;
 
 const StyledSortButtonIcon = styled(SortButtonIcon)`

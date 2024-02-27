@@ -31,19 +31,19 @@ function getToastContainerBackground(
         case 'information':
             return css`
                 background: ${theme.component['toast-container-information-background']};
-`;
+            `;
         case 'success':
             return css`
                 background: ${theme.component['toast-container-success-background']};
-`;
+            `;
         case 'warning':
             return css`
                 background: ${theme.component['toast-container-warning-background']};
-`;
+            `;
         case 'error':
             return css`
                 background: ${theme.component['toast-container-error-background']};
-`;
+            `;
     }
 }
 
@@ -72,19 +72,19 @@ function getToastPosition({ position }: ToastWrapperProps): FlattenInterpolation
         case 'top-right':
             return css`
                 animation: ${toastInRight} 0.25s ease-out;
-`;
+            `;
         case 'bottom-right':
             return css`
                 animation: ${toastInRight} 0.25s ease-out;
-`;
+            `;
         case 'top-left':
             return css`
                 animation: ${toastInLeft} 0.25s ease-out;
-`;
+            `;
         case 'bottom-left':
             return css`
                 animation: ${toastInLeft} 0.25s ease-out;
-`;
+            `;
     }
 }
 
@@ -97,6 +97,7 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-2halfx)' : 'var(--spacing-2x)')};
     transition: 0.3s ease;
     width: ${({ isMobile }) => (isMobile ? '100vw' : '400px')};
+
     ${getToastPosition}
     ${getToastContainerBackground}
 `;
@@ -121,22 +122,22 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
             return css`
                 background-color: ${theme.component['toast-container-dismiss-icon-information-hover-background-color']};
                 color: ${theme.component['toast-container-dismiss-icon-information-hover-color']};
-`;
+            `;
         case 'success':
             return css`
                 background-color: ${theme.component['toast-container-dismiss-icon-success-hover-background-color']};
                 color: ${theme.component['toast-container-dismiss-icon-success-hover-color']};
-`;
+            `;
         case 'warning':
             return css`
                 background-color: ${theme.component['toast-container-dismiss-icon-warning-hover-background-color']};
                 color: ${theme.component['toast-container-dismiss-icon-warning-hover-color']};
-`;
+            `;
         case 'error':
             return css`
                 background-color: ${theme.component['toast-container-dismiss-icon-error-hover-background-color']};
                 color: ${theme.component['toast-container-dismiss-icon-error-hover-color']};
-`;
+            `;
     }
 }
 

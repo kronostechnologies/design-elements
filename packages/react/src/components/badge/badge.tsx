@@ -61,7 +61,7 @@ function getAnimationRules(position: BadgePosition): SimpleInterpolation {
         @media (prefers-reduced-motion: reduce) {
             animation: none;
         }
-`;
+    `;
 }
 
 export const BadgeCircle = styled.span<{

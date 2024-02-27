@@ -7,6 +7,7 @@ const Input = styled.input`
     ${({ theme }) => css`
         position: absolute;
         z-index: -1;
+
         + label {
             align-items: center;
             background-color: ${theme.greys.white};
@@ -18,6 +19,7 @@ const Input = styled.input`
             justify-content: center;
             min-height: 40px;
         }
+
         &:checked + label {
             background-color: ${theme.main['primary-1.1']};
             border-color: ${theme.main['primary-1.1']};

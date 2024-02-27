@@ -74,6 +74,7 @@ const StyledInput = styled.input`
             display: block;
         }
     }
+
     ${({ theme }) => focus({ theme }, { selector: `+ ${CustomCheckbox}` })};
 `;
 

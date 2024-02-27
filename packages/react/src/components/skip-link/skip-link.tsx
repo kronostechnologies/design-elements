@@ -6,6 +6,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 
 const StyledLink = styled.a<{ isMobile: boolean }>`
     ${defaultButtonStyles}
+
     color: ${({ theme }) => theme.component['skip-link-text-color']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);

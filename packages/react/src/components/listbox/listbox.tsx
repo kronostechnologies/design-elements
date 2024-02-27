@@ -133,11 +133,12 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     &:hover {
         border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-hover-disabled-border-color'] : theme.component['listbox-checkbox-hover-border-color'])};
     }
+
     ${({ checked }) => (!checked && css`
         > ${CheckMarkIcon} {
             display: none;
         }
-`)}
+    `)}
 `;
 
 const ListItem = styled.li<ListItemProps>`
@@ -153,23 +154,25 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
-`)}
+    `)}
 
     user-select: none;
 
     &:hover {
         background-color: ${({ theme, disabled }) => (disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
     }
+
     ${({ focused, disabled, theme }) => (focused && css`
         outline: 2px solid ${disabled ? theme.component['listbox-item-focused-disabled-outline-color'] : theme.component['listbox-item-focused-outline-color']};
         outline-offset: -3px;
-`)}
+    `)}
+
     ${({ selected }) => (selected && css`
         & ${CustomCheckbox} {
             background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
             border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
         }
-`)}
+    `)}
 `;
 
 const ListItemTextContainer = styled.span`

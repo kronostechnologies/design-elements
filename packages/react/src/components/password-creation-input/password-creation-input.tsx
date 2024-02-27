@@ -33,6 +33,7 @@ const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: bo
     margin-bottom: calc(var(--spacing-1x) * 1.5);
     position: relative;
     transition: all 0.25s ease-in-out;
+
     ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
         { theme },
         { focusTypeSelector: 'focus-within' },
@@ -51,17 +52,14 @@ const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input,
- input:not(:focus),
- input:focus,
- input:focus-within {
+    input, input:not(:focus), input:focus, input:focus-within {
         ::-ms-reveal {
             display: none;
         }
 
         border: none transparent;
-        box-shadow: none;
         outline: none;
+        box-shadow: none;
     }
 `;
 

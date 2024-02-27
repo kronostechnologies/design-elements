@@ -36,7 +36,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
     ${({ pressed }) => pressed && css`
         & + button { border-left: 0; }
-`}
+    `}
 
     &:last-child {
         border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-border-color'] : theme.component['toggle-button-border-color'])};
@@ -46,20 +46,23 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     &:focus {
         z-index: 1;
     }
+
     ${focus};
+
     ${({ theme, disabled }) => disabled && css`
-        &:disabled,
- &:disabled:hover {
+        &:disabled, &:disabled:hover {
             background-color: ${theme.component['toggle-button-disabled-background-color']};
             border-color: ${theme.component['toggle-button-disabled-border-color']};
             color: ${theme.component['toggle-button-disabled-text-color']};
         }
-`}
+    `}
+
     ${({ theme, pressed }) => !pressed && css`
         &:hover {
             background-color: ${theme.component['toggle-button-hover-background-color']};
             border-color: ${theme.component['toggle-button-hover-border-color']};
             color: ${theme.component['toggle-button-hover-text-color']};
+
             & + button {
                 border-left-color: ${theme.component['toggle-button-hover-border-color']};
             }

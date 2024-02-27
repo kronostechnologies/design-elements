@@ -18,6 +18,7 @@ function getBackgroundColor(type: StatusType, theme: ResolvedTheme): string {
 const Wrapper = styled.div<{ type: StatusType }>`
     align-items: center;
     display: flex;
+
     ${({ type, theme }) => type === 'disabled' && `color: ${theme.greys['dark-grey']}`}
 `;
 

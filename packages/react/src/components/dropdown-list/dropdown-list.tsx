@@ -70,6 +70,7 @@ const Textbox = styled.div<TextboxProps>`
     text-wrap: none;
     user-select: none;
     width: 100%;
+
     ${focus};
 `;
 

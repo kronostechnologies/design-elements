@@ -21,7 +21,7 @@ const StyledFooter = styled.td<{ $sticky: boolean }>`
     position: relative;
     ${({ $sticky }) => $sticky && css`
         position: sticky;
-`}
+    `}
     &:before {
         border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
         content: '';
@@ -39,7 +39,7 @@ const StyleFooterRow = styled.tr<{ $sticky: boolean }>`
         bottom: 0;
         position: sticky;
         z-index: 6;
-`}
+    `}
 `;
 
 function getFooter<TData extends object, TValue>(
