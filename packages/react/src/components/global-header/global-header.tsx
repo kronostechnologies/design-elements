@@ -52,7 +52,7 @@ const HtmlLink = styled.a.attrs({ 'aria-label': 'Home' })`
 `;
 
 const StyledSpan = styled.span`
-    border-left: 1px solid ${({ theme }) => theme.component['global-header-logo-content-span-border-color']};
+    border-left: 1px solid ${({ theme }) => theme.component['global-header-logo-title-separator-color']};
     color: ${({ theme }) => theme.component['global-header-logo-content-text-color']};
     font-size: 1rem;
     font-weight: var(--font-normal);
