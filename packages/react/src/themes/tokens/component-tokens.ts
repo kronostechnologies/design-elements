@@ -7,6 +7,7 @@ import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens'
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
+import { defaultSortButtonTokens, SortButtonIconTokens } from './component/sort-button-icon-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type ComponentTokens =
@@ -17,7 +18,8 @@ export type ComponentTokens =
     | LozengeTokens
     | SideDrawerTokens
     | GlobalHeaderTokens
-    | CardTokens;
+    | CardTokens
+    | SortButtonIconTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -33,7 +35,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultLozengeTokens,
     ...defaultSideDrawerTokens,
     ...defaultGlobalHeaderTokens,
-    ...defaultCardTokens
+    ...defaultCardTokens,
+    ...defaultSortButtonTokens
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
