@@ -28,12 +28,13 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
-    transition: all 0.5s ease;
+    transition: max-height 0.5s ease, border-width 0.5s ease;
 
     &[aria-expanded='true'] {
         border-width: 0 1px 1px 1px;
         max-height: 1000px;
         overflow-y: auto;
+        transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
     }
 `;
@@ -74,7 +75,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
-    transition: all 0.5s ease;
+    transition: border-radius 0.2s ease 0.5s;
     width: 100%;
 
     &[aria-expanded='true'] {
@@ -82,6 +83,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
         border-color: ${({ theme }) => theme.greys.grey};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: ${({ theme }) => theme.greys['neutral-90']};
+        transition: border-radius 0.1s ease;
     }
 
     ${focus};
