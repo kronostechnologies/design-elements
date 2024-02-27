@@ -4,7 +4,7 @@ import Enso from '../../icons/enso.svg';
 const Spinner = styled(Enso)`
     animation: roll 1s infinite;
     animation-timing-function: linear;
-    fill: ${(props) => props.theme.main['primary-1.1']};
+    fill: ${(props) => props.theme.component['spinner-fill']};
     height: 80px;
     width: 83px;
 

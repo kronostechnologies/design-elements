@@ -107,8 +107,6 @@ export const Card = styled.div<CardProps>`
         background-color: ${({ theme }) => theme.greys.grey};
         border-color: ${({ theme }) => theme.greys.black};
 
-        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
-
         ${Description},
         ${Title} {
             color: ${({ theme }) => theme.greys.black};

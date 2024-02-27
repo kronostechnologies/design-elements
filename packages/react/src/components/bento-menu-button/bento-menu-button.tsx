@@ -21,7 +21,6 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
         right: 0;
         width: initial;
 
-        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
         ${StyledNavItem},
         ${HtmlLink} {
             height: 2.75rem;
@@ -40,7 +39,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
 
         ul:not(:last-child)::after,
         ol:not(:last-child)::after {
-            border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+            border-bottom: 1px solid ${({ theme }) => theme.component['bento-menu-divider-color']};
             content: '';
             display: block;
             margin: var(--spacing-2x) var(--spacing-4x);

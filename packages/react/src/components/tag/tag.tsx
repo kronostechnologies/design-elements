@@ -93,7 +93,7 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     /* TODO change when updating thematization */
-    color: #60666e;
+    color: ${({ theme }) => theme.component['tag-delete-icon-color']};
     height: var(--size-1x);
     margin-right: var(--spacing-half);
     vertical-align: text-bottom;
@@ -103,18 +103,17 @@ const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
 const DeleteIcon = styled(Icon).attrs({
     'aria-hidden': 'true',
     name: 'x',
-    color: '#60666e',
 })``;
 
 function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
         &:hover {
             /* TODO fix with next thematization gray65 */
-            background-color: #dbdee1;
-            border-color: ${({ theme }) => theme.greys['dark-grey']};
+            background-color: ${({ theme }) => theme.component['tag-clickable-hover-background-color']};
+            border-color: ${({ theme }) => theme.component['tag-clickable-hover-border-color']};
 
             ${StyledIcon} {
-                color: ${({ theme }) => theme.greys.black};
+                color: ${({ theme }) => theme.component['tag-clickable-hover-icon-color']};
             }
         }
 
@@ -148,10 +147,10 @@ const DeleteButton = styled.button<IconOrButtonProps>`
 
     &:hover {
         /* TODO fix with next thematization gray65 */
-        background-color: #dbdee1;
+        background-color: ${({ theme }) => theme.component['tag-delete-button-hover-background-color']};
 
         ${DeleteIcon} {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.component['tag-delete-button-icon-color']};
         }
     }
 
@@ -160,11 +159,11 @@ const DeleteButton = styled.button<IconOrButtonProps>`
 
 const Container = styled.span<ContainerProps>`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys['light-grey']};
+    background-color: ${({ theme }) => theme.component['tag-background-color']};
 
     /* TODO fix with next thematization gray50 */
     border-radius: ${getBorderRadius};
-    box-shadow: inset 0 0 0 1px #878f9a;
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.component['tag-box-shadow-color']};
     display: inline-flex;
     padding: ${getPadding};
 
@@ -172,7 +171,7 @@ const Container = styled.span<ContainerProps>`
         margin-left: var(--spacing-1x);
     }
 
-    ${DeleteButton} { /* stylelint-disable-line no-descending-specificity */
+    ${DeleteButton} {
         margin-right: calc(-1 * var(--spacing-half));
     }
 

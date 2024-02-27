@@ -43,58 +43,70 @@ function renderTable(
     );
 }
 
-const columns: TableColumn<TestData> = [
+const columnsWithHeaderAriaLabel: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        headerAriaLabel: 'column 1 aria label',
+        accessorKey: 'column1',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: '',
+        headerAriaLabel: 'column 2 aria label',
+        accessorKey: 'column2',
+    },
+];
+
+const columns: TableColumn<TestData> = [
+    {
+        header: 'Column 1',
+        accessorKey: 'column1',
+    },
+    {
+        header: 'Column 2',
+        accessorKey: 'column2',
     },
 ];
 
 const columnsTextAligned: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         textAlign: 'right',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         textAlign: 'center',
     },
 ];
 
 const columnsSorted: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         sortable: true,
-        defaultSort: 'asc',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         sortable: true,
     },
 ];
 
 const columnsSticky: TableColumn<TestData3Columns> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         sticky: true,
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         sticky: true,
     },
     {
-        Header: 'Column 3',
-        accessor: 'column3',
+        header: 'Column 3',
+        accessorKey: 'column3',
     },
 ];
 
@@ -135,7 +147,11 @@ const stickyColumnsData: TestData3Columns[] = [
 
 describe('Table', () => {
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
-        const wrapper = mountWithProviders(<Table columns={columnsSorted} data={data} />);
+        const wrapper = mountWithProviders(<Table
+            columns={columnsSorted}
+            data={data}
+            defaultSort={{ id: 'column1', desc: false }}
+        />);
 
         expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
     });
@@ -229,7 +245,7 @@ describe('Table', () => {
     });
 
     test('has sorting styles', () => {
-        const tree = renderTable(columnsSorted);
+        const tree = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
 
         expect(tree).toMatchSnapshot();
     });
@@ -278,6 +294,17 @@ describe('Table', () => {
 
     test('has sticky column styles', () => {
         const tree = renderWithProviders(<Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has aria-label on header columns', () => {
+        const tree = renderWithProviders(
+            <Table<TestData>
+                columns={columnsWithHeaderAriaLabel}
+                data={data}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
