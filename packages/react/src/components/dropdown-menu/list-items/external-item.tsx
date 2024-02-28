@@ -17,7 +17,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 }
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['external-item-color']};
     display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
@@ -29,22 +29,22 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['external-item-hover-color']};
     }
 
     &:visited {
-        color: ${({ theme }) => theme.greys.black};
-        fill: ${({ theme }) => theme.greys.black};
+        color: ${({ theme }) => theme.component['external-item-visited-color']};
+        fill: ${({ theme }) => theme.component['external-item-visited-fill-color']};
 
         svg {
-            color: ${({ theme }) => theme.greys.black};
-            fill: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.component['external-item-svg-visited-color']};
+            fill: ${({ theme }) => theme.component['external-item-svg-visited-fill-color']};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.greys['mid-grey']};
-        fill: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['external-item-disabled-color']};
+        fill: ${({ theme }) => theme.component['external-item-disabled-fill-color']};
         pointer-events: none;
     }
 `;
