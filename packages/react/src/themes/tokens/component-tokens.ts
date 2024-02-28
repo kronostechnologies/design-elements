@@ -8,6 +8,7 @@ import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
+import { defaultNavItemTokens, NavItemTokens } from './component/nav-item-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
@@ -43,12 +44,12 @@ export type ComponentTokens =
     | SpinnerTokens
     | TagTokens
     | ToastContainerTokens
-    | FocusTokens
     | LozengeTokens
     | SideDrawerTokens
     | GlobalHeaderTokens
     | CardTokens
-    | SortButtonIconTokens;
+    | SortButtonIconTokens
+    | NavItemTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -80,7 +81,8 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSideDrawerTokens,
     ...defaultGlobalHeaderTokens,
     ...defaultCardTokens,
-    ...defaultSortButtonTokens
+    ...defaultSortButtonTokens,
+    ...defaultNavItemTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
