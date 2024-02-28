@@ -14,7 +14,22 @@ import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-type TagSize = 'small' | 'medium';
+type TagColor =
+    | 'default'
+    | 'purple'
+    | 'lime'
+    | 'gold'
+    | 'orange'
+    | 'turquoise'
+    | 'blue'
+    | 'red'
+    | 'green-forest'
+    | 'violet'
+    | 'magenta';
+
+type TagSize =
+    | 'small'
+    | 'medium';
 
 export interface TagValue {
     id?: string;
@@ -25,6 +40,7 @@ export interface TagProps {
     className?: string;
     iconName?: IconName;
     size?: TagSize;
+    color?: TagColor;
     value: TagValue;
 
     /** Mutually exclusive with onDelete */
@@ -34,16 +50,22 @@ export interface TagProps {
     onDelete?(tag: TagValue): void;
 }
 
-interface ContainerProps {
+interface TagContainerProps {
     $clickable: boolean;
     $deletable: boolean;
     $hasIcon: boolean;
     $isMobile: boolean;
     $tagSize: TagSize;
+    $tagColor: TagColor;
     type?: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 }
 
 interface TagLabelProps {
+    $isMobile: boolean;
+    $tagSize: TagSize;
+}
+
+interface IconOrButtonProps {
     $isMobile: boolean;
     $tagSize: TagSize;
 }
@@ -54,11 +76,6 @@ function getFontSize({ $isMobile }: TagLabelProps): number {
 
 function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
-}
-
-interface IconOrButtonProps {
-    $isMobile: boolean;
-    $tagSize: TagSize;
 }
 
 function isMedium(tagSize: TagSize): tagSize is 'medium' {
@@ -80,7 +97,7 @@ function getLineHeight({ $isMobile, $tagSize }: TagLabelProps): number {
     return $isMobile ? 1.875 : 1.5;
 }
 
-function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): string {
+function getBorderRadius({ $clickable, $isMobile, $tagSize }: TagContainerProps): string {
     if ($clickable) {
         const isSmallTag = isSmall($tagSize);
         if ($isMobile) {
@@ -92,7 +109,6 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
-    /* TODO change when updating thematization */
     color: ${({ theme }) => theme.component['tag-delete-icon-color']};
     height: var(--size-1x);
     margin-right: var(--spacing-half);
@@ -105,10 +121,9 @@ const DeleteIcon = styled(Icon).attrs({
     name: 'x',
 })``;
 
-function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
+function getClickableStyle({ $clickable }: TagContainerProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
         &:hover {
-            /* TODO fix with next thematization gray65 */
             background-color: ${({ theme }) => theme.component['tag-clickable-hover-background-color']};
             border-color: ${({ theme }) => theme.component['tag-clickable-hover-border-color']};
 
@@ -146,7 +161,6 @@ const DeleteButton = styled.button<IconOrButtonProps>`
     }
 
     &:hover {
-        /* TODO fix with next thematization gray65 */
         background-color: ${({ theme }) => theme.component['tag-delete-button-hover-background-color']};
 
         ${DeleteIcon} {
@@ -157,11 +171,10 @@ const DeleteButton = styled.button<IconOrButtonProps>`
     ${focus};
 `;
 
-const Container = styled.span<ContainerProps>`
+const TagContainer = styled.div<TagContainerProps>`
     align-items: center;
     background-color: ${({ theme }) => theme.component['tag-background-color']};
 
-    /* TODO fix with next thematization gray50 */
     border-radius: ${getBorderRadius};
     box-shadow: inset 0 0 0 1px ${({ theme }) => theme.component['tag-box-shadow-color']};
     display: inline-flex;
@@ -186,6 +199,7 @@ export const Tag = forwardRef(({
     onClick,
     onDelete,
     size = 'medium',
+    color = 'default',
     value,
 }: TagProps, ref: Ref<HTMLElement>) => {
     if (onClick && onDelete) {
@@ -206,7 +220,7 @@ export const Tag = forwardRef(({
     }, [onDelete, value]);
 
     return (
-        <Container
+        <TagContainer
             ref={ref}
             as={onClick ? 'button' : 'span'}
             className={className}
@@ -214,6 +228,7 @@ export const Tag = forwardRef(({
             type={onClick ? 'button' : undefined}
             $isMobile={isMobile}
             $tagSize={size}
+            $tagColor={color}
             $clickable={!!onClick}
             $deletable={!!onDelete}
             $hasIcon={!!iconName}
@@ -251,7 +266,7 @@ export const Tag = forwardRef(({
                     <DeleteIcon size={getIconSize(isMobile)} aria-hidden="true" />
                 </DeleteButton>
             )}
-        </Container>
+        </TagContainer>
     );
 });
 
