@@ -158,8 +158,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus),
-.c14:active:hover {
+.c14:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -207,8 +206,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -243,8 +241,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus),
-.c11:active:hover {
+.c11:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -547,8 +544,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -880,8 +876,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus),
-.c14:active:hover {
+.c14:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -929,8 +924,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -965,8 +959,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus),
-.c11:active:hover {
+.c11:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1331,8 +1324,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus),
-.c14:active:hover {
+.c14:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1380,8 +1372,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1416,8 +1407,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus),
-.c11:active:hover {
+.c11:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1719,8 +1709,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c13:not(:focus),
-.c13:active:hover {
+.c13:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1768,8 +1757,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1804,8 +1792,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus),
-.c11:active:hover {
+.c11:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

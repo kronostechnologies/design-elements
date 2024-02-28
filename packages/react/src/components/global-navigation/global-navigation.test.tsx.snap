@@ -71,8 +71,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   width: var(--size-2x);
 }
 
-.c3:not(:focus),
-.c3:active:hover {
+.c3:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

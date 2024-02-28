@@ -69,8 +69,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -184,8 +183,7 @@ exports[`Button has destructive styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -299,8 +297,7 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -406,8 +403,7 @@ exports[`Button has destructive-secondary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -521,8 +517,7 @@ exports[`Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -628,8 +623,7 @@ exports[`Button has primary disabled styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -736,8 +730,7 @@ exports[`Button has primary styles (inverted) 1`] = `
   color: #006296;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -843,8 +836,7 @@ exports[`Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -950,8 +942,7 @@ exports[`Button has secondary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1057,8 +1048,7 @@ exports[`Button has secondary styles 1`] = `
   color: #006296;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1164,8 +1154,7 @@ exports[`Button has small styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1271,8 +1260,7 @@ exports[`Button has small styles on mobile 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1378,8 +1366,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1485,8 +1472,7 @@ exports[`Button has tertiary styles 1`] = `
   color: #60666E;
 }
 
-.c1:not(:focus),
-.c1:active:hover {
+.c1:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

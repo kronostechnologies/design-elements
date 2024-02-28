@@ -96,8 +96,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -825,8 +824,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1530,8 +1528,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c3:not(:focus),
-.c3:active:hover {
+.c3:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -2280,8 +2277,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

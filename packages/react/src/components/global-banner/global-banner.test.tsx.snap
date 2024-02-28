@@ -69,8 +69,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -318,8 +317,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -354,8 +352,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -618,8 +615,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -654,8 +650,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -918,8 +913,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -954,8 +948,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1230,8 +1223,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1482,8 +1474,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1518,8 +1509,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1785,8 +1775,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1821,8 +1810,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -2088,8 +2076,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:not(:focus),
-.c8:active:hover {
+.c8:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -2124,8 +2111,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:not(:focus),
-.c10:active:hover {
+.c10:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

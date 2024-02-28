@@ -3340,8 +3340,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #006296;
 }
 
-.c17:not(:focus),
-.c17:active:hover {
+.c17:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

@@ -8,7 +8,6 @@ export interface FocusOptions {
     focusTypeSelector?: FocusType;
     inverted?: boolean;
     insideOnly?: boolean;
-    clickResetFocus?: boolean;
 }
 
 export const focus = (
@@ -20,7 +19,6 @@ export const focus = (
         focusTypeSelector = 'focus',
         inverted = false,
         insideOnly = false,
-        clickResetFocus = false,
     } = options;
 
     const inversionSuffix = inverted ? '-inverted' : '';
@@ -31,10 +29,9 @@ export const focus = (
     const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
     const transition = 'all .25s ease-in-out;';
     const baseSelector = selector === undefined ? '' : `${selector}`;
-    const clickResetSelector = clickResetFocus ? ', &:active:hover' : '';
 
     const notFocusStyle = `
-        &:not(:${focusTypeSelector}) ${baseSelector} ${clickResetSelector} {
+        &:not(:${focusTypeSelector}) ${baseSelector} {
             transition: ${transition};
             box-shadow: none;
             outline: ${insideFocusBorderWeight} solid transparent;

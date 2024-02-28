@@ -390,8 +390,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -1091,8 +1090,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

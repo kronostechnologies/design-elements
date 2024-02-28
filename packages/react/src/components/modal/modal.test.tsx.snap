@@ -308,8 +308,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -540,8 +539,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -771,8 +769,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

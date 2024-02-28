@@ -69,8 +69,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -336,8 +335,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -604,8 +602,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus),
-.c2:active:hover {
+.c2:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

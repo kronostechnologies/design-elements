@@ -71,8 +71,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: var(--size-2x);
 }
 
-.c0:not(:focus),
-.c0:active:hover {
+.c0:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -439,8 +438,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
   width: var(--size-2x);
 }
 
-.c0:not(:focus),
-.c0:active:hover {
+.c0:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -626,8 +624,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: var(--size-3x);
 }
 
-.c0:not(:focus),
-.c0:active:hover {
+.c0:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -994,8 +991,7 @@ exports[`Toggletip Has mobile styles 1`] = `
   width: var(--size-3x);
 }
 
-.c0:not(:focus),
-.c0:active:hover {
+.c0:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;

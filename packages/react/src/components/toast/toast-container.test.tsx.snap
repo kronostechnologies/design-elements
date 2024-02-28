@@ -71,8 +71,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   width: var(--size-2x);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -374,8 +373,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   width: var(--size-2x);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -677,8 +675,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   width: var(--size-2x);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
@@ -980,8 +977,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   width: var(--size-2x);
 }
 
-.c4:not(:focus),
-.c4:active:hover {
+.c4:not(:focus) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: none;
