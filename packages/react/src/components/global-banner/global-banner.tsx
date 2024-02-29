@@ -10,65 +10,31 @@ import {
     useCallback,
     useState,
 } from 'react';
-import styled, { css, SimpleInterpolation, StyledProps } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation, SimpleInterpolation, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
+export type GlobalBannerType = 'neutral' | 'discovery' | 'warning' | 'alert';
 
 interface ContainerProps {
     bannerType: GlobalBannerType;
     isMobile: boolean;
 }
 
-interface IsMobileProps {
-    $isMobile: boolean;
+function getGlobalBannerContainerColors(
+    { bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>,
+): FlattenSimpleInterpolation {
+    return css`
+        background-color: ${theme.component[`global-banner-${bannerType}-background-color`]};
+        color: ${theme.component[`global-banner-${bannerType}-text-color`]};
+    `;
 }
-
-function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
-    switch (bannerType) {
-        case 'alert':
-            return theme.component['global-banner-alert-background-color'];
-        case 'warning':
-            return theme.component['global-banner-warning-background-color'];
-        case 'info':
-            return theme.component['global-banner-info-background-color'];
-        case 'default':
-            return theme.component['global-banner-default-background-color'];
-    }
-}
-
-function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): string {
-    switch (bannerType) {
-        case 'alert':
-        case 'info':
-        case 'default':
-            return theme.component['global-banner-default-color'];
-        case 'warning':
-            return theme.component['global-banner-warning-color'];
-    }
-}
-
-const Label = styled.strong<{ isMobile: boolean }>`
-    display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
-    font-weight: var(--font-semi-bold);
-    ${({ isMobile }) => (isMobile ? css`
-        margin-bottom: var(--spacing-half);
-    ` : css`
-        margin-right: var(--spacing-1x);
-    `)}
-`;
-
-const Message = styled.span`
-    display: inline-block;
-`;
 
 const Container = styled.section<ContainerProps>`
     align-items: center;
-    background-color: ${getContainerBackgroundColor};
-    color: ${getContainerColor};
+    ${getGlobalBannerContainerColors};
     display: flex;
     flex-flow: ${({ isMobile }) => (isMobile ? 'column nowrap' : 'row rap')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
@@ -95,6 +61,10 @@ const Content = styled.div<{ isMobile: boolean }>`
     }
 `;
 
+interface IsMobileProps {
+    $isMobile: boolean;
+}
+
 function getIconPosition(props: IsMobileProps): SimpleInterpolation {
     if (props.$isMobile) {
         return css`
@@ -116,82 +86,33 @@ const Text = styled.span`
     margin: 0;
 `;
 
-interface ButtonProps {
-    bannerType: GlobalBannerType;
-}
-
-function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
-    /* TODO change colors when updating thematization */
-    switch (bannerType) {
-        case 'alert':
-            return theme.component['global-banner-action-button-alert-hover-color'];
-        case 'warning':
-            return theme.component['global-banner-action-button-warning-hover-color'];
-        case 'info':
-            return theme.component['global-banner-action-button-info-hover-color'];
-        case 'default':
-            return theme.component['global-banner-action-button-default-hover-color'];
-    }
-}
-
-const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ bannerType, theme }) => (bannerType === 'warning') && css`
-        border-color: ${theme.component['global-banner-action-button-warning-background-color']};
-        color: ${theme.component['global-banner-action-button-warning-color']};
-    `};
-
-    &:hover {
-        border-color: ${getActionButtonHoverColor};
-        color: ${getActionButtonHoverColor};
-    }
-
-    &:focus {
-        background-color: ${getContainerBackgroundColor};
-        ${({ bannerType, theme }) => bannerType === 'warning' && css`
-            color: ${theme.component['global-banner-action-button-warning-color']};
-        `}
-    }
+const Label = styled.strong<{ isMobile: boolean }>`
+    display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
+    font-weight: var(--font-semi-bold);
+    ${({ isMobile }) => (isMobile ? css`
+        margin-bottom: var(--spacing-half);
+    ` : css`
+        margin-right: var(--spacing-1x);
+    `)}
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
-    /* TODO change colors when updating thematization */
+const Message = styled.span`
+    display: inline-block;
+`;
+
+const getIconName = (bannerType: GlobalBannerType): IconName => {
     switch (bannerType) {
         case 'alert':
-            return theme.component['global-banner-tertiary-button-alert-hover-background-color'];
+            return 'alertOctagon';
         case 'warning':
-            return theme.component['global-banner-tertiary-button-warning-hover-background-color'];
-        case 'info':
-            return theme.component['global-banner-tertiary-button-info-hover-background-color'];
-        case 'default':
-            return theme.component['global-banner-tertiary-button-default-hover-background-color'];
+            return 'alertTriangle';
+        case 'discovery':
+            return 'lightbulb';
+        case 'neutral':
+        default:
+            return 'info';
     }
-}
-
-function getTertiaryButtonColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-color'] : null;
-}
-
-function getTertiaryButtonFocusColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-focus-color'] : null;
-}
-
-function getTertiaryButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-hover-color'] : null;
-}
-
-const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${(getTertiaryButtonColor)};
-
-    &:focus {
-        background-color: ${getContainerBackgroundColor};
-        color: ${getTertiaryButtonFocusColor};
-    }
-
-    &:hover {
-        background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${getTertiaryButtonHoverColor};
-    }
-`;
+};
 
 const ButtonContainer = styled.div<{ isMobile: boolean }>`
     display: flex;
@@ -204,23 +125,67 @@ const ButtonContainer = styled.div<{ isMobile: boolean }>`
     }
 `;
 
-const getIconName = (bannerType: GlobalBannerType): IconName => {
-    switch (bannerType) {
-        case 'alert':
-            return 'alertOctagon';
-        case 'warning':
-        case 'default':
-            return 'alertTriangle';
-        case 'info':
-            return 'info';
-    }
-};
+type GlobalBannerButtonState = 'default' | 'hover';
+
+interface ActionButtonProps {
+    bannerType: GlobalBannerType;
+}
 
 export interface ActionButton {
     label: string;
 
     onClick(event: MouseEvent<HTMLButtonElement>): void;
 }
+
+function getActionButtonColors(
+    { bannerType, theme, state }: StyledProps<{
+        bannerType: GlobalBannerType;
+        state: GlobalBannerButtonState
+    }>,
+): FlattenSimpleInterpolation {
+    const statePrefix = state === 'hover' ? '-hover' : '';
+    return css`
+        border-color: ${theme.component[`global-banner-${bannerType}-action-button${statePrefix}-border-color`]};
+        color: ${theme.component[`global-banner-${bannerType}-action-button${statePrefix}-text-color`]};
+    `;
+}
+
+const ActionButton = styled(Button).attrs(
+    { buttonType: 'secondary', inverted: true },
+)<ActionButtonProps>`
+    ${(props) => getActionButtonColors({ ...props, state: 'default' })};
+
+    &:hover {
+        ${(props) => getActionButtonColors({ ...props, state: 'hover' })};
+    }
+`;
+
+interface DismissButtonProps {
+    bannerType: Exclude<GlobalBannerType, 'alert'>;
+}
+
+function getDismissButtonColors(
+    { bannerType, theme, state }: StyledProps<{
+        bannerType: Exclude<GlobalBannerType, 'alert'>;
+        state: GlobalBannerButtonState
+    }>,
+): FlattenSimpleInterpolation {
+    const statePrefix = state === 'hover' ? '-hover' : '';
+    return css`
+        background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
+        color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
+    `;
+}
+
+const DismissButton = styled(Button).attrs(
+    { buttonType: 'tertiary', inverted: true },
+)<PropsWithChildren<DismissButtonProps>>`
+    ${(props) => getDismissButtonColors({ ...props, state: 'default' })};
+
+    &:hover {
+        ${(props) => getDismissButtonColors({ ...props, state: 'hover' })};
+    }
+`;
 
 interface Props {
     actionButton?: ActionButton;
@@ -246,7 +211,7 @@ export const GlobalBanner = forwardRef(({
     label,
     onDismiss,
     secondaryActionButton,
-    type = 'default',
+    type = 'neutral',
 }: Props, ref: Ref<HTMLElement>): ReactElement | null => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
@@ -288,36 +253,36 @@ export const GlobalBanner = forwardRef(({
             {hasButtons && (
                 <ButtonContainer isMobile={isMobile}>
                     {actionButton && (
-                        <ActionButtonComponent
+                        <ActionButton
                             data-testid="action-button"
                             bannerType={type}
                             onClick={actionButton.onClick}
                             type="button"
                         >
                             {actionButton.label}
-                        </ActionButtonComponent>
+                        </ActionButton>
                     )}
 
-                    {secondaryActionButton && (
-                        <TertiaryButton
+                    {secondaryActionButton && type !== 'alert' && (
+                        <DismissButton
                             data-testid="secondary-action-button"
                             bannerType={type}
                             onClick={secondaryActionButton.onClick}
                             type="button"
                         >
                             {secondaryActionButton.label}
-                        </TertiaryButton>
+                        </DismissButton>
                     )}
 
                     {hasDismissButton && (
-                        <TertiaryButton
+                        <DismissButton
                             data-testid="dismiss-button"
                             bannerType={type}
                             onClick={handleDismiss}
                             type="button"
                         >
                             {t('ignore')}
-                        </TertiaryButton>
+                        </DismissButton>
                     )}
                 </ButtonContainer>
             )}
