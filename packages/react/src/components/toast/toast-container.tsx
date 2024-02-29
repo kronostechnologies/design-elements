@@ -217,8 +217,19 @@ function getToastIconName(type: ToastType): IconName {
 }
 
 function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
-    return type === 'warning' ? theme.component['toast-container-alternate-text-color']
-        : theme.component['toast-container-default-text-color'];
+    switch (type) {
+        case 'discovery':
+            return theme.component['toast-container-discovery-text-color'];
+        case 'success':
+            return theme.component['toast-container-success-text-color'];
+        case 'warning':
+            return theme.component['toast-container-warning-text-color'];
+        case 'alert':
+            return theme.component['toast-container-alert-text-color'];
+        case 'neutral':
+        default:
+            return theme.component['toast-container-neutral-text-color'];
+    }
 }
 
 interface ToastContainerProps {

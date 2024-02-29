@@ -2,21 +2,24 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type ToastContainerTokens =
-    | 'toast-container-default-text-color'
-    | 'toast-container-alternate-text-color'
     | 'toast-container-neutral-background-color'
+    | 'toast-container-neutral-text-color'
     | 'toast-container-neutral-dismiss-icon-hover-background-color'
     | 'toast-container-neutral-dismiss-icon-hover-color'
     | 'toast-container-discovery-background-color'
+    | 'toast-container-discovery-text-color'
     | 'toast-container-discovery-dismiss-icon-hover-background-color'
     | 'toast-container-discovery-dismiss-icon-hover-color'
     | 'toast-container-success-background-color'
+    | 'toast-container-success-text-color'
     | 'toast-container-success-dismiss-icon-hover-background-color'
     | 'toast-container-success-dismiss-icon-hover-color'
     | 'toast-container-warning-background-color'
+    | 'toast-container-warning-text-color'
     | 'toast-container-warning-dismiss-icon-hover-background-color'
     | 'toast-container-warning-dismiss-icon-hover-color'
     | 'toast-container-alert-background-color'
+    | 'toast-container-alert-text-color'
     | 'toast-container-alert-dismiss-icon-hover-background-color'
     | 'toast-container-alert-dismiss-icon-hover-color'
     | 'toast-container-dismiss-icon-focus-box-shadow';
@@ -28,8 +31,11 @@ export type ToastContainerTokenMap = {
 };
 
 export const defaultToastContainerTokens: ToastContainerTokenMap = {
-    'toast-container-default-text-color': 'color-white',
-    'toast-container-alternate-text-color': 'color-neutral-90',
+    'toast-container-alert-text-color': 'color-white',
+    'toast-container-discovery-text-color': 'color-white',
+    'toast-container-success-text-color': 'color-white',
+    'toast-container-neutral-text-color': 'color-white',
+    'toast-container-warning-text-color': 'color-neutral-90',
     'toast-container-neutral-background-color': 'color-neutral-65',
     'toast-container-neutral-dismiss-icon-hover-background-color': 'color-neutral-80',
     'toast-container-neutral-dismiss-icon-hover-color': 'color-white',
