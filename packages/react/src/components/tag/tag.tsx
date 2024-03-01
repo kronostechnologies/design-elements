@@ -68,24 +68,50 @@ export type TagSize =
     | 'medium';
 
 export interface TagValue {
-    // eslint-disable-next-line react/no-unused-prop-types
     id?: string;
     label: string;
     extraLabel?: string;
 }
 
 export interface ClickableOrDeletableTag {
+
+    /*  The tag's is clickable. (optional) */
     onClick?(tag: TagValue): void;
+
+    /*  The tag's is deletable. (optional) */
     onDelete?(tag: TagValue): void;
 }
 
 export interface TagProps extends Partial<ClickableOrDeletableTag> {
     className?: string;
-    iconName?: IconName;
+
+    /*  The tag's size.
+    *   @default 'medium'
+    */
     size?: TagSize;
+
+    /*  The tag's size.
+    *   @default 'default'
+    */
     color?: TagColor;
-    selected?: boolean;
+
+    /* The tag's value
+         TagValue.id is optional
+         TagValue.label is required
+         TagValue.extraLabel is optional and works only with 'default' color
+     */
     value: TagValue;
+
+    /*  Whether the tag is selected. (optional)
+     *  Can manually set the selected state of the tag, without the need for a click event.
+    *   @default false
+    */
+    selected?: boolean;
+
+    /*  The tag's icon. (optional)
+     *  *only with 'default' color
+     */
+    iconName?: IconName;
 }
 
 interface BaseTagStylingProps {
@@ -141,7 +167,7 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: TagContainerProps)
     if ($clickable) {
         return isSmall($tagSize) ? 'var(--border-radius-3x)' : 'var(--border-radius-4x)';
     }
-    return $isMobile || isMedium($tagSize) ? 'var(--border-radius)' : 'var(--border-radius-half)';
+    return $isMobile || isMedium($tagSize) ? 'var(--border-radius-2x)' : 'var(--border-radius)';
 }
 
 type ColorProperty = 'background-color' | 'border-color' | 'text-color';
@@ -209,6 +235,7 @@ const TagLabel = styled.span<TagLabelProps>`
     text-overflow: ellipsis;
     white-space: nowrap;
     ${({ $selected }) => $selected && css`
+        font-weight: var(--font-semi-bold);
         color: ${({ theme }) => theme.component['tag-default-selected-text-color']};
     `}
 `;
@@ -283,11 +310,9 @@ const TagContainer = styled.div<TagContainerProps>`
     ${({ $selected }) => $selected && css`
         background-color: ${({ theme }) => theme.component['tag-default-selected-background-color']};
         border: 1px solid ${({ theme }) => theme.component['tag-default-selected-border-color']};
-    `})}
+    `}
 
-    ${getClickableStyle}
-
-    ${focus};
+    ${getClickableStyle};
 `;
 
 export const Tag = forwardRef(({
@@ -304,6 +329,8 @@ export const Tag = forwardRef(({
     const { isMobile } = useDeviceContext();
     const [isSelected, setSelected] = useState<boolean>(isDefault(color) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
+    const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}...` : value.label;
+    const shortenedExtraLabel = (value.extraLabel && value.extraLabel?.length > 20) ? `${value.extraLabel?.slice(0, 17)}...` : '';
 
     useEffect(() => {
         if (isDefault(color)) {
@@ -324,9 +351,6 @@ export const Tag = forwardRef(({
         e.stopPropagation();
         onDelete?.(value);
     }, [onDelete, value]);
-
-    console.log(`isSelected: ${isSelected}`);
-    console.log(`clickable: ${!!onClick && isDefault(color)}`);
 
     return (
         <TagContainer
@@ -367,7 +391,7 @@ export const Tag = forwardRef(({
                     $tagColor={color}
                     $selected={isSelected}
                 >
-                    {value.extraLabel}
+                    {shortenedExtraLabel}
                     &nbsp;
                 </TagExtraLabel>
             )}
@@ -378,7 +402,7 @@ export const Tag = forwardRef(({
                 $tagColor={color}
                 $selected={isSelected}
             >
-                {value.label}
+                {shortenedLabel}
             </TagLabel>
 
             {onDelete && isDefault(color) && (
