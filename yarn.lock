@@ -1729,6 +1729,7 @@ __metadata:
     "@microsoft/eslint-formatter-sarif": "npm:^3.0.0"
     "@storybook/addon-a11y": "npm:^7.5.3"
     "@storybook/addon-actions": "npm:^7.5.3"
+    "@storybook/addon-controls": "npm:^7.5.3"
     "@storybook/addon-docs": "npm:^7.0.8"
     "@storybook/addon-links": "npm:^7.5.3"
     "@storybook/blocks": "npm:^7.0.8"
@@ -3327,6 +3328,17 @@ __metadata:
     polished: "npm:^4.2.2"
     uuid: "npm:^9.0.0"
   checksum: 10c0/91d20a7c35fff6a0b2aa33f2c1171d457c68fb9d955da12629d6f75d931d5aa3756837e413ab7bb928c4cc4b48dcc5cdd63510e6028e7bd8fc8c82d93be967d0
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-controls@npm:^7.5.3":
+  version: 7.6.17
+  resolution: "@storybook/addon-controls@npm:7.6.17"
+  dependencies:
+    "@storybook/blocks": "npm:7.6.17"
+    lodash: "npm:^4.17.21"
+    ts-dedent: "npm:^2.0.0"
+  checksum: 10c0/da66466b801064a916e059ce127efb2ab074a5c80fb65b568ac361d09fe55e0e993cd5400d6b0361bdfd783725e59449bbd30f87643964fa0db8e02a5f9550fd
   languageName: node
   linkType: hard
 

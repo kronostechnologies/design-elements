@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@equisoft/design-elements-react": "workspace:*",
+    "@storybook/addon-controls": "^7.0.8",
     "@storybook/addon-docs": "^7.0.8",
     "@storybook/blocks": "^7.0.8",
     "@storybook/preview": "^7.0.8",
@@ -42,6 +43,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-actions": "^7.5.3",
+    "@storybook/addon-controls": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/react-webpack5": "^7.0.8",
     "@storybook/theming": "^7.0.8",

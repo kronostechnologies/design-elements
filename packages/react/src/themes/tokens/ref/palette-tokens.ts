@@ -23,6 +23,7 @@ export type PaletteTokens =
     | 'color-alert-70'
     | 'color-informative-02'
     | 'color-informative-05'
+    | 'color-informative-10'
     | 'color-informative-20'
     | 'color-informative-50'
     | 'color-informative-70'
@@ -41,7 +42,47 @@ export type PaletteTokens =
     | 'color-discovery-05'
     | 'color-discovery-20'
     | 'color-discovery-50'
-    | 'color-discovery-70';
+    | 'color-discovery-70'
+    | 'color-decorative-01-05'
+    | 'color-decorative-01-10'
+    | 'color-decorative-01-50'
+    | 'color-decorative-01-70'
+    | 'color-decorative-02-05'
+    | 'color-decorative-02-10'
+    | 'color-decorative-02-50'
+    | 'color-decorative-02-70'
+    | 'color-decorative-03-05'
+    | 'color-decorative-03-10'
+    | 'color-decorative-03-50'
+    | 'color-decorative-03-70'
+    | 'color-decorative-04-05'
+    | 'color-decorative-04-10'
+    | 'color-decorative-04-50'
+    | 'color-decorative-04-70'
+    | 'color-decorative-05-05'
+    | 'color-decorative-05-10'
+    | 'color-decorative-05-50'
+    | 'color-decorative-05-70'
+    | 'color-decorative-06-05'
+    | 'color-decorative-06-10'
+    | 'color-decorative-06-50'
+    | 'color-decorative-06-70'
+    | 'color-decorative-07-05'
+    | 'color-decorative-07-10'
+    | 'color-decorative-07-50'
+    | 'color-decorative-07-70'
+    | 'color-decorative-08-05'
+    | 'color-decorative-08-10'
+    | 'color-decorative-08-50'
+    | 'color-decorative-08-70'
+    | 'color-decorative-09-05'
+    | 'color-decorative-09-10'
+    | 'color-decorative-09-50'
+    | 'color-decorative-09-70'
+    | 'color-decorative-10-05'
+    | 'color-decorative-10-10'
+    | 'color-decorative-10-50'
+    | 'color-decorative-10-70';
 
 export type PaletteValue = string;
 
@@ -74,6 +115,7 @@ export const defaultPaletteTokens: PaletteTokenMap = {
     'color-alert-70': '#7B1A15',
     'color-informative-02': '#F3F9FD',
     'color-informative-05': '#E0F0F9',
+    'color-informative-10': '#C2E2F4',
     'color-informative-20': '#84C6EA',
     'color-informative-50': '#006296',
     'color-informative-70': '#003A5A',
@@ -93,4 +135,44 @@ export const defaultPaletteTokens: PaletteTokenMap = {
     'color-discovery-20': '#CFC1E3',
     'color-discovery-50': '#602FA0',
     'color-discovery-70': '#3A1C60',
+    'color-decorative-01-05': '#EBE6EB',
+    'color-decorative-01-10': '#D7CCD8',
+    'color-decorative-01-50': '#38023B',
+    'color-decorative-01-70': '#220123',
+    'color-decorative-02-05': '#FAF3E7',
+    'color-decorative-02-10': '#F6E7D0',
+    'color-decorative-02-50': '#CE840C',
+    'color-decorative-02-70': '#7D520B',
+    'color-decorative-03-05': '#E7F0F1',
+    'color-decorative-03-10': '#D0E1E3',
+    'color-decorative-03-50': '#126773',
+    'color-decorative-03-70': '#0B3E45',
+    'color-decorative-04-05': '#F3E6E6',
+    'color-decorative-04-10': '#E8CCCC',
+    'color-decorative-04-50': '#960000',
+    'color-decorative-04-70': '#530000',
+    'color-decorative-05-05': '#F2F5E8',
+    'color-decorative-05-10': '#E5EBD2',
+    'color-decorative-05-50': '#7B9C1D',
+    'color-decorative-05-70': '#4A5E11',
+    'color-decorative-06-05': '#FAEDE6',
+    'color-decorative-06-10': '#F5DBCC',
+    'color-decorative-06-50': '#CD4B00',
+    'color-decorative-06-70': '#7B2D00',
+    'color-decorative-07-05': '#E7EDF5',
+    'color-decorative-07-10': '#CFDAEA',
+    'color-decorative-07-50': '#104697',
+    'color-decorative-07-70': '#0A2A5B',
+    'color-decorative-08-05': '#E6EDEB',
+    'color-decorative-08-10': '#CDDAD6',
+    'color-decorative-08-50': '#064633',
+    'color-decorative-08-70': '#042A1F',
+    'color-decorative-09-05': '#F2E9EF',
+    'color-decorative-09-10': '#E5D3DE',
+    'color-decorative-09-50': '#7E235A',
+    'color-decorative-09-70': '#4C1536',
+    'color-decorative-10-05': '#F1F0F7',
+    'color-decorative-10-10': '#E3E2EE',
+    'color-decorative-10-50': '#766DAB',
+    'color-decorative-10-70': '#444167',
 };

@@ -33,6 +33,7 @@ const config: StorybookConfig = {
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
         '@storybook/addon-links',
+        '@storybook/addon-controls',
     ],
     webpackFinal: async (config) => ({
         ...config,
