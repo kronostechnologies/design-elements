@@ -191,17 +191,13 @@ const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     vertical-align: text-bottom;
     width: var(--size-1x);
 
-    ${({ $selected }) => $selected && css`
-        color: ${({ theme }) => theme.component['tag-default-selected-icon-color']};
+    ${({ $selected, theme }) => $selected && css`
+        color: ${theme.component['tag-default-selected-icon-color']};
     `}
 
-    ${({ $clickable, $selected }) => $clickable && css`
+    ${({ $clickable, $selected, theme }) => $clickable && css`
         &:hover {
-            color: ${({ theme }) => theme.component['tag-default-hover-icon-color']};
-
-            ${$selected && css`
-                color: ${({ theme }) => theme.component['tag-default-selected-hover-icon-color']};
-            `}
+            color: ${$selected ? theme.component['tag-default-selected-hover-icon-color'] : theme.component['tag-default-hover-icon-color']};
         }
     `}
 `;
@@ -212,31 +208,31 @@ const DeleteIcon = styled(Icon).attrs({
 })``;
 
 const TagExtraLabel = styled.span<TagLabelProps>`
-    display: inline-block;
     color: ${({ theme }) => theme.component['tag-default-extra-label-text-color']};
+    display: inline-block;
     font-size: ${getFontSize}rem;
     line-height: ${getLineHeight}rem;
     max-width: 312px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    ${({ $selected }) => $selected && css`
-        color: ${({ theme }) => theme.component['tag-default-selected-extra-label-text-color']};
+    ${({ $selected, theme }) => $selected && css`
+        color: ${theme.component['tag-default-selected-extra-label-text-color']};
     `}
 `;
 
 const TagLabel = styled.span<TagLabelProps>`
-    display: inline-block;
     color: ${(props) => getTagColors({ ...props, $colorProperty: 'text-color' })};
+    display: inline-block;
     font-size: ${getFontSize}rem;
     line-height: ${getLineHeight}rem;
     max-width: 312px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    ${({ $selected }) => $selected && css`
+    ${({ $selected, theme }) => $selected && css`
+        color: ${theme.component['tag-default-selected-text-color']};
         font-weight: var(--font-semi-bold);
-        color: ${({ theme }) => theme.component['tag-default-selected-text-color']};
     `}
 `;
 
@@ -245,35 +241,30 @@ const DeleteButton = styled(IconButton)<IconOrButtonProps>`
     border-radius: 50%;
     color: ${({ theme }) => theme.component['tag-default-delete-button-icon-color']};
     display: inline-flex;
-    justify-content: center;
-    margin-right: calc(-1 * var(--spacing-half));
-    margin-left: var(--spacing-half);
-    width: auto;
-    min-width: auto;
     height: auto;
+    justify-content: center;
+    margin-left: var(--spacing-half);
+    margin-right: calc(-1 * var(--spacing-half));
     min-height: auto;
+    min-width: auto;
+    width: auto;
 
     > svg {
         height: 1rem;
         width: 1rem;
     }
 
-    ${({ $selected }) => $selected && css`
-        color: ${({ theme }) => theme.component['tag-default-selected-delete-button-hover-icon-color']};
+    ${({ $selected, theme }) => $selected && css`
+        color: ${theme.component['tag-default-selected-delete-button-hover-icon-color']};
     `}
 
     &:hover {
-        background-color: ${({ theme }) => theme.component['tag-default-delete-button-hover-background-color']};
-        color: ${({ theme }) => theme.component['tag-default-delete-button-hover-icon-color']};
+        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-default-selected-delete-button-hover-background-color'] : theme.component['tag-default-delete-button-hover-background-color'])};
+        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-default-selected-delete-button-hover-icon-color'] : theme.component['tag-default-delete-button-hover-icon-color'])};
 
         ${DeleteIcon} {
             color: ${({ theme }) => theme.component['tag-default-delete-button-hover-icon-color']};
         }
-
-        ${({ $selected }) => $selected && css`
-            background-color: ${({ theme }) => theme.component['tag-default-selected-delete-button-hover-background-color']};
-            color: ${({ theme }) => theme.component['tag-default-selected-delete-button-hover-icon-color']};
-        `}
     }
 
     ${focus};
@@ -287,13 +278,8 @@ function getClickableStyle(
         padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
 
         &:hover {
-            background-color: ${({ theme }) => theme.component['tag-default-hover-background-color']};
-            border-color: ${({ theme }) => theme.component['tag-default-hover-border-color']};
-
-            ${$selected && css`
-                background-color: ${({ theme }) => theme.component['tag-default-selected-hover-background-color']};
-                border: 1px solid ${({ theme }) => theme.component['tag-default-selected-hover-border-color']};
-            `}
+            background-color: ${({ theme }) => ($selected ? theme.component['tag-default-selected-hover-background-color'] : theme.component['tag-default-hover-background-color'])};
+            border-color: ${({ theme }) => ($selected ? theme.component['tag-default-selected-hover-border-color'] : theme.component['tag-default-hover-border-color'])};
         }
 
         ${focus};
@@ -312,9 +298,9 @@ const TagContainer = styled.div<TagContainerProps>`
         margin-left: var(--spacing-1x);
     }
 
-    ${({ $selected }) => $selected && css`
-        background-color: ${({ theme }) => theme.component['tag-default-selected-background-color']};
-        border: 1px solid ${({ theme }) => theme.component['tag-default-selected-border-color']};
+    ${({ $selected, theme }) => $selected && css`
+        background-color: ${theme.component['tag-default-selected-background-color']};
+        border: 1px solid ${theme.component['tag-default-selected-border-color']};
     `}
 
     ${getClickableStyle};
