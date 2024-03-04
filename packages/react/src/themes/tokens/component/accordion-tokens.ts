@@ -2,23 +2,22 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type AccordionTokens =
-    | 'accordion-section-background-color'
-    | 'accordion-section-border-color'
-    | 'accordion-body-background-color'
-    | 'accordion-body-color'
-    | 'accordion-button-border-color'
-    | 'accordion-button-color'
-    | 'accordion-button-extended-background-color'
-    | 'accordion-button-extended-color'
-    | 'accordion-button-focus-box-shadow-inset-color'
-    | 'accordion-button-focus-color'
-    | 'accordion-button-hover-background-color'
-    | 'accordion-button-hover-border-color'
-    | 'accordion-button-hover-color'
-    | 'accordion-button-disabled-background-color'
-    | 'accordion-button-disabled-hover-border-color'
-    | 'accordion-button-disabled-hover-color'
-    | 'accordion-button-disabled-svg-color';
+    | 'accordion-content-background-color'
+    | 'accordion-content-border-color'
+    | 'accordion-content-color'
+    | 'accordion-header-border-color'
+    | 'accordion-header-color'
+    | 'accordion-header-extended-background-color'
+    | 'accordion-header-extended-color'
+    | 'accordion-header-focus-box-shadow-inset-color'
+    | 'accordion-header-focus-color'
+    | 'accordion-header-hover-background-color'
+    | 'accordion-header-hover-border-color'
+    | 'accordion-header-hover-color'
+    | 'accordion-header-disabled-background-color'
+    | 'accordion-header-disabled-hover-border-color'
+    | 'accordion-header-disabled-hover-color'
+    | 'accordion-header-disabled-svg-color';
 
 export type AccordionTokenValue = AliasTokens | RefTokens;
 
@@ -27,21 +26,20 @@ export type AccordionTokenMap = {
 };
 
 export const defaultAccordionTokens: AccordionTokenMap = {
-    'accordion-section-background-color': 'color-neutral-02',
-    'accordion-section-border-color': 'color-neutral-15',
-    'accordion-body-background-color': 'color-neutral-02',
-    'accordion-body-color': 'color-neutral-90',
-    'accordion-button-border-color': 'color-neutral-15',
-    'accordion-button-color': 'color-neutral-90',
-    'accordion-button-extended-background-color': 'color-white',
-    'accordion-button-extended-color': 'color-neutral-90',
-    'accordion-button-focus-box-shadow-inset-color': 'color-brand-20',
-    'accordion-button-focus-color': 'color-neutral-90',
-    'accordion-button-hover-background-color': 'color-neutral-15',
-    'accordion-button-hover-border-color': 'color-neutral-90',
-    'accordion-button-hover-color': 'color-neutral-90',
-    'accordion-button-disabled-background-color': 'color-neutral-05',
-    'accordion-button-disabled-hover-border-color': 'color-neutral-15',
-    'accordion-button-disabled-hover-color': 'color-neutral-30',
-    'accordion-button-disabled-svg-color': 'color-neutral-30',
+    'accordion-content-background-color': 'color-neutral-02',
+    'accordion-content-border-color': 'color-neutral-15',
+    'accordion-content-color': 'color-neutral-90',
+    'accordion-header-border-color': 'color-neutral-15',
+    'accordion-header-color': 'color-neutral-90',
+    'accordion-header-extended-background-color': 'color-white',
+    'accordion-header-extended-color': 'color-neutral-90',
+    'accordion-header-focus-box-shadow-inset-color': 'color-brand-20',
+    'accordion-header-focus-color': 'color-neutral-90',
+    'accordion-header-hover-background-color': 'color-neutral-15',
+    'accordion-header-hover-border-color': 'color-neutral-90',
+    'accordion-header-hover-color': 'color-neutral-90',
+    'accordion-header-disabled-background-color': 'color-neutral-05',
+    'accordion-header-disabled-hover-border-color': 'color-neutral-15',
+    'accordion-header-disabled-hover-color': 'color-neutral-30',
+    'accordion-header-disabled-svg-color': 'color-neutral-30',
 };
