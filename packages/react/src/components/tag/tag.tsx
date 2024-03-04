@@ -245,11 +245,13 @@ const DeleteButton = styled(IconButton)<IconOrButtonProps>`
     border-radius: 50%;
     color: ${({ theme }) => theme.component['tag-default-delete-button-icon-color']};
     display: inline-flex;
-    height: var(--size-1halfx);
     justify-content: center;
-    margin-left: var(--spacing-half);
     margin-right: calc(-1 * var(--spacing-half));
-    width: var(--size-1halfx);
+    margin-left: var(--spacing-half);
+    width: auto;
+    min-width: auto;
+    height: auto;
+    min-height: auto;
 
     > svg {
         height: 1rem;
@@ -278,9 +280,12 @@ const DeleteButton = styled(IconButton)<IconOrButtonProps>`
 `;
 
 function getClickableStyle(
-    { $clickable, $selected }: TagContainerProps,
+    { $clickable, $selected, $tagSize }: TagContainerProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
+        padding-left: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
+        padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
+
         &:hover {
             background-color: ${({ theme }) => theme.component['tag-default-hover-background-color']};
             border-color: ${({ theme }) => theme.component['tag-default-hover-border-color']};
@@ -330,7 +335,9 @@ export const Tag = forwardRef(({
     const [isSelected, setSelected] = useState<boolean>(isDefault(color) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
     const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}...` : value.label;
-    const shortenedExtraLabel = (value.extraLabel && value.extraLabel?.length > 20) ? `${value.extraLabel?.slice(0, 17)}...` : '';
+    const shortenedExtraLabel = value.extraLabel && value.extraLabel.length > 20
+        ? `${value.extraLabel.slice(0, 17)}...`
+        : value.extraLabel || '';
 
     useEffect(() => {
         if (isDefault(color)) {
