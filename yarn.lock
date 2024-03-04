@@ -1729,7 +1729,7 @@ __metadata:
     "@microsoft/eslint-formatter-sarif": "npm:^3.0.0"
     "@storybook/addon-a11y": "npm:^7.5.3"
     "@storybook/addon-actions": "npm:^7.5.3"
-    "@storybook/addon-controls": "npm:^7.5.3"
+    "@storybook/addon-controls": "npm:^7.0.8"
     "@storybook/addon-docs": "npm:^7.0.8"
     "@storybook/addon-links": "npm:^7.5.3"
     "@storybook/blocks": "npm:^7.0.8"
@@ -3331,7 +3331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-controls@npm:^7.5.3":
+"@storybook/addon-controls@npm:^7.0.8":
   version: 7.6.17
   resolution: "@storybook/addon-controls@npm:7.6.17"
   dependencies:
