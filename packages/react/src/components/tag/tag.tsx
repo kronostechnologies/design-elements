@@ -74,7 +74,6 @@ export interface TagValue {
 }
 
 export interface ClickableOrDeletableTag {
-
     /*  The tag's is clickable. (optional) */
     onClick?(tag: TagValue): void;
 
@@ -274,6 +273,7 @@ function getClickableStyle(
     { $clickable, $selected, $tagSize }: TagContainerProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
     return $clickable && css`
+        font-family: var(--font-family);
         padding-left: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
         padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
 
@@ -320,9 +320,9 @@ export const Tag = forwardRef(({
     const { isMobile } = useDeviceContext();
     const [isSelected, setSelected] = useState<boolean>(isDefault(color) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
-    const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}...` : value.label;
+    const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
     const shortenedExtraLabel = value.extraLabel && value.extraLabel.length > 20
-        ? `${value.extraLabel.slice(0, 17)}...`
+        ? `${value.extraLabel.slice(0, 17)}…`
         : value.extraLabel || '';
 
     useEffect(() => {
