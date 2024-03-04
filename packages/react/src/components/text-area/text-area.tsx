@@ -8,7 +8,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds } from '../../hooks/use-aria';
+import { useAriaConditionalIds, useAriaLabels } from '../../hooks/use-aria';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -28,8 +28,12 @@ const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
 `;
 
 export interface TextAreaProps {
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
+    label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     className?: string;
-    label: string;
     tooltip?: TooltipProps;
     defaultValue?: string;
     disabled?: boolean;
@@ -74,6 +78,9 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     defaultValue,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     placeholder,
     required,
     tooltip,
@@ -120,6 +127,14 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         }
     }
 
+    const {
+        processedLabels,
+    } = useAriaLabels({
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+    });
+
     function getValidationErrorMessage(): string {
         if (validationErrorMessage) {
             return validationErrorMessage;
@@ -130,7 +145,8 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
-    const ariaDescribedBy = useAriaConditionalIds([
+    const processedAriaDescribedBy = useAriaConditionalIds([
+        { id: ariaDescribedBy, include: !!ariaDescribedBy },
         { id: `${idTextArea}_hint`, include: !!hint },
         { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
         { id: idCounter, include: !!maxLength },
@@ -142,7 +158,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             className={className}
             noMargin={noMargin}
             fieldId={idTextArea}
-            label={label}
+            label={processedLabels.label}
             required={required}
             tooltip={tooltip}
             hint={hint}
@@ -150,11 +166,13 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             validationErrorMessage={getValidationErrorMessage()}
         >
             <StyledTextArea
+                aria-label={processedLabels.ariaLabel}
+                aria-labelledby={processedLabels.ariaLabelledBy}
+                aria-describedby={processedAriaDescribedBy}
                 data-testid="textarea"
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={ariaDescribedBy}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
