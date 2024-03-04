@@ -2,8 +2,8 @@
 
 exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -154,8 +154,8 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 }
 
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -175,16 +175,16 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  height: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: calc(-1 * var(--spacing-half));
   margin-left: var(--spacing-half);
-  width: auto;
-  min-width: auto;
-  height: auto;
+  margin-right: calc(-1 * var(--spacing-half));
   min-height: auto;
+  min-width: auto;
+  width: auto;
 }
 
 .c5 > svg {
@@ -261,8 +261,8 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
 }
 
 .c3 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -313,8 +313,8 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -355,8 +355,8 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.875rem;
   line-height: 1.875rem;
   max-width: 312px;
@@ -397,8 +397,8 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
 
 exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -549,8 +549,8 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 }
 
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -570,16 +570,16 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  height: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: calc(-1 * var(--spacing-half));
   margin-left: var(--spacing-half);
-  width: auto;
-  min-width: auto;
-  height: auto;
+  margin-right: calc(-1 * var(--spacing-half));
   min-height: auto;
+  min-width: auto;
+  width: auto;
 }
 
 .c5 > svg {
@@ -656,8 +656,8 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
 }
 
 .c3 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -708,8 +708,8 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -750,8 +750,8 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
 
 exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.875rem;
   line-height: 1.875rem;
   max-width: 312px;
@@ -792,8 +792,8 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
 
 exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -945,8 +945,8 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 }
 
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -966,16 +966,16 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  height: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: calc(-1 * var(--spacing-half));
   margin-left: var(--spacing-half);
-  width: auto;
-  min-width: auto;
-  height: auto;
+  margin-right: calc(-1 * var(--spacing-half));
   min-height: auto;
+  min-width: auto;
+  width: auto;
 }
 
 .c5 > svg {
@@ -1052,8 +1052,8 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 }
 
 .c3 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1104,8 +1104,8 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 
 exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1146,8 +1146,8 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 
 exports[`Tag Tag small matches snapshot (desktop) 2`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.875rem;
   line-height: 1.5rem;
   max-width: 312px;
@@ -1188,8 +1188,8 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
 
 exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1341,8 +1341,8 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 }
 
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1362,16 +1362,16 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  height: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: calc(-1 * var(--spacing-half));
   margin-left: var(--spacing-half);
-  width: auto;
-  min-width: auto;
-  height: auto;
+  margin-right: calc(-1 * var(--spacing-half));
   min-height: auto;
+  min-width: auto;
+  width: auto;
 }
 
 .c5 > svg {
@@ -1448,8 +1448,8 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 }
 
 .c3 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1500,8 +1500,8 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 
 exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1rem;
   max-width: 312px;
@@ -1542,8 +1542,8 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 
 exports[`Tag Tag small matches snapshot (mobile) 2`] = `
 .c2 {
-  display: inline-block;
   color: #1B1C1E;
+  display: inline-block;
   font-size: 0.875rem;
   line-height: 1.5rem;
   max-width: 312px;
