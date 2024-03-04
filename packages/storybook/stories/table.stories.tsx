@@ -470,7 +470,7 @@ export const CustomColumns: Story = () => {
     ];
 
     return (
-        <Table<ComplexData> columns={columns} data={data} />
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -511,7 +511,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
+        <Table columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
     );
 };
 
@@ -550,7 +550,108 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+    );
+};
+
+export const ExpandableRows: Story = () => {
+    interface ExpandableData {
+        id: string;
+        name: string;
+        subContent?: string,
+    }
+
+    const columns: TableColumn<ExpandableData> = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableRow<ExpandableData>[] = [
+        {
+            id: '1',
+            name: 'AAA',
+            subContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+        },
+        {
+            id: '2',
+            name: 'BBB',
+            subContent: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.',
+        },
+        {
+            id: '3',
+            name: 'CCC (not expandable)',
+        },
+        {
+            id: '4',
+            name: 'DDD',
+            subContent: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+        },
+    ];
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            expandableRows
+            rowCanExpand={(row) => row.original.subContent !== undefined}
+            renderExpandedRow={({ row }) => (
+                <div>
+                    {row.original.subContent}
+                </div>
+            )}
+        />
+    );
+};
+
+export const ExpandableSingleRow: Story = () => {
+    interface ExpandableData {
+        id: string;
+        name: string;
+    }
+
+    const columns: TableColumn<ExpandableData> = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableRow<ExpandableData>[] = [
+        {
+            id: '1',
+            name: 'AAA',
+        },
+        {
+            id: '2',
+            name: 'BBB',
+        },
+        {
+            id: '3',
+            name: 'CCC',
+        },
+    ];
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            expandableRows
+            singleExpand
+            renderExpandedRow={({ row }) => (
+                <div>
+                    Sub content of row
+                    {row.original.id}
+                </div>
+            )}
+        />
     );
 };
 
@@ -569,7 +670,7 @@ interface StickyData {
     column12: string;
     column13: string;
     column14: string;
-    column15: string,
+    column15: string;
 }
 
 const ScrollableWrap = styled.div`
