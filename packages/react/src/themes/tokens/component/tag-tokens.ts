@@ -20,12 +20,10 @@ export type TagTokens =
     | 'tag-default-selected-hover-border-color'
     | 'tag-default-selected-hover-text-color'
     | 'tag-default-selected-hover-icon-color'
-    | 'tag-default-selected-hover-extra-label-text-color'
 
     | 'tag-default-delete-button-hover-icon-color'
     | 'tag-default-delete-button-hover-background-color'
     | 'tag-default-delete-button-icon-color'
-    | 'tag-default-selected-delete-button-icon-color'
     | 'tag-default-selected-delete-button-hover-icon-color'
     | 'tag-default-selected-delete-button-hover-background-color'
 
@@ -85,14 +83,12 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-default-selected-hover-border-color': 'color-informative-70',
     'tag-default-selected-hover-icon-color': 'color-informative-70',
     'tag-default-selected-hover-text-color': 'color-informative-70',
-    'tag-default-selected-hover-extra-label-text-color': 'color-informative-50',
 
     'tag-default-delete-button-hover-background-color': 'color-neutral-15',
     'tag-default-delete-button-hover-icon-color': 'color-neutral-90',
     'tag-default-delete-button-icon-color': 'color-neutral-65',
     'tag-default-selected-delete-button-hover-background-color': 'color-informative-10',
     'tag-default-selected-delete-button-hover-icon-color': 'color-informative-70',
-    'tag-default-selected-delete-button-icon-color': 'color-informative-70',
 
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',
