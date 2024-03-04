@@ -25,6 +25,7 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0 var(--spacing-1x);
+  font-family: var(--font-family);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
 }
@@ -420,6 +421,7 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0 var(--spacing-1x);
+  font-family: var(--font-family);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
 }
@@ -815,6 +817,7 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0 var(--spacing-half);
+  font-family: var(--font-family);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
 }
@@ -1211,6 +1214,7 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0 var(--spacing-half);
+  font-family: var(--font-family);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
 }
