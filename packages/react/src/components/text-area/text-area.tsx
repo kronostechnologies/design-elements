@@ -8,7 +8,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useAriaConditionalIds } from '../../hooks/use-aria';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};

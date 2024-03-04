@@ -20,7 +20,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useAriaConditionalIds, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 
 const Input = styled.input<{ isMobile: boolean; }>`
@@ -31,6 +31,11 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
 interface TextInputProps extends PartialInputProps {
+    id?: string;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
+    label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
     ariaDescribedBy?: string;
     ariaInvalid?: boolean;
     className?: string;
@@ -38,8 +43,6 @@ interface TextInputProps extends PartialInputProps {
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
-    id?: string;
-    label?: string;
     tooltip?: TooltipProps;
     pattern?: string;
     placeholder?: string;
@@ -63,6 +66,8 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = forwardRef(({
+    ariaLabel,
+    ariaLabelledBy,
     ariaDescribedBy,
     ariaInvalid,
     className,
@@ -94,11 +99,18 @@ export const TextInput = forwardRef(({
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
-    const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
+    const fieldId = useId(providedId);
+    const {
+        processedLabels,
+    } = useAriaLabels({
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+    });
 
     const processedAriaDescribedBy = useAriaConditionalIds([
-        { id: ariaDescribedBy },
+        { id: ariaDescribedBy, include: !!ariaDescribedBy },
         { id: `${fieldId}_invalid`, include: !validity },
         { id: `${fieldId}_hint`, include: !!hint },
     ]);
@@ -142,7 +154,7 @@ export const TextInput = forwardRef(({
             className={className}
             noMargin={noMargin}
             fieldId={fieldId}
-            label={label}
+            label={processedLabels.label}
             required={required}
             tooltip={tooltip}
             valid={validity}
@@ -151,6 +163,8 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <Input
+                aria-label={processedLabels.ariaLabel}
+                aria-labelledby={processedLabels.ariaLabelledBy}
                 aria-describedby={processedAriaDescribedBy || undefined}
                 aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}

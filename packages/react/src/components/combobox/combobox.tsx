@@ -19,7 +19,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useAriaConditionalIds } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
@@ -89,7 +89,7 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     position: absolute;
     right: var(--spacing-half);
     width: var(--size-1x);
-    
+
     &:hover {
         background-color: transparent;
     }
