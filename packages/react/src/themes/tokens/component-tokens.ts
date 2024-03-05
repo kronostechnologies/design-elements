@@ -21,6 +21,7 @@ import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
 import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component/sectional-banner-tokens';
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
+import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
 import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
 
@@ -46,6 +47,7 @@ export type ComponentTokens =
     | GlobalBannerTokens
     | SectionalBannerTokens
     | SpinnerTokens
+    | StatusTokens
     | TagTokens
     | ToastContainerTokens;
 
@@ -78,6 +80,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,
     ...defaultSpinnerTokens,
+    ...defaultStatusTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
 };

@@ -4,27 +4,22 @@ import { ResolvedTheme } from '../../themes/theme';
 
 export type StatusType = 'enabled' | 'disabled' | 'blocked';
 
-function getBackgroundColor(type: StatusType, theme: ResolvedTheme): string {
-    switch (type) {
-        case 'enabled':
-            return theme.notifications['success-1.1'];
-        case 'disabled':
-            return theme.greys.white;
-        case 'blocked':
-            return theme.notifications['alert-2.1'];
-    }
+function getCircleBorderStyle(props: {theme: ResolvedTheme, type: StatusType}): string {
+    const { theme, type } = props;
+    return `border: ${type === 'disabled'
+        ? `1px solid ${theme.component['status-circle-disabled-border-color']}`
+        : 'none'}`;
 }
 
 const Wrapper = styled.div<{ type: StatusType }>`
     align-items: center;
     display: flex;
-
-    ${({ type, theme }) => type === 'disabled' && `color: ${theme.greys['dark-grey']}`}
+    ${({ type, theme }) => type === 'disabled' && `color: ${theme.component['status-disabled-text-color']}`};
 `;
 
 const Circle = styled.div<{ type: StatusType }>`
-    background-color: ${({ type, theme }) => getBackgroundColor(type, theme)};
-    border: ${({ type, theme }) => (type === 'disabled' ? `1px solid ${theme.greys['dark-grey']}` : 'none')};
+    background-color: ${({ theme, type }) => theme.component[`status-circle-${type}-color`]};
+    ${getCircleBorderStyle};
     border-radius: 50%;
     box-sizing: border-box;
     height: 0.625rem;
