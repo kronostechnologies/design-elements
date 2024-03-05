@@ -8,6 +8,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { useAriaLabels } from '../../hooks/use-aria';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { v4 as uuid } from '../../utils/uuid';
@@ -53,15 +54,19 @@ type Value = undefined | number | null;
 
 interface StepperInputProps extends PartialStepperInputProps {
     defaultValue?: number;
-    hint?: string;
-    id?: string;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
+    hint?: string;
+    valid?: boolean;
+    validationErrorMessage?: string;
+    id?: string;
     max?: number;
     min?: number;
     noMargin?: boolean;
     tooltip?: TooltipProps;
-    valid?: boolean;
-    validationErrorMessage?: string;
     value?: Value;
 
     onChange?(value: Value): void
@@ -78,6 +83,9 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     hint,
     id,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     max,
     min,
     noMargin,
@@ -125,11 +133,23 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         }
     };
 
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${fieldId}_hint`, include: !!hint },
+            { id: `${fieldId}_invalid`, include: !valid },
+        ],
+    });
+
     return (
         <FieldContainer
             fieldId={fieldId}
             hint={hint}
-            label={label}
+            label={processedLabels.label}
             tooltip={tooltip}
             noMargin={noMargin}
             valid={valid}
@@ -137,6 +157,9 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         >
             <Wrapper>
                 <StyledInput
+                    aria-label={processedLabels.ariaLabel}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     data-testid="stepper-input"
                     defaultValue={defaultValue}
                     device={device}
