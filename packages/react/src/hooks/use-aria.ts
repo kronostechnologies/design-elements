@@ -5,26 +5,31 @@ interface ConditionalId {
     include?: boolean;
 }
 
-interface UseAriaLabelsProps {
+interface AriaLabelsProps {
+    inputId: string;
     label?: string;
     ariaLabel?: string;
     ariaLabelledBy?: string;
-    ariaDescribedBy?: ConditionalId[];
+    additonalAriaLabelledBy?: ConditionalId[];
+    ariaDescribedBy?: string;
+    additionalAriaDescribedBy?: ConditionalId[];
 }
 
-export const useAriaLabels = (
-    { label, ariaLabel, ariaLabelledBy }: UseAriaLabelsProps,
-): {
+const processConditionalIds = (conditionalIds: ConditionalId[] = []): string | undefined => conditionalIds
+    .filter(({ id, include }) => id && (include ?? true))
+    .map(({ id }) => id!)
+    .join(' ') || undefined;
+
+export const useAriaLabels = ({
+    inputId, label, ariaLabel, ariaLabelledBy, ariaDescribedBy, additonalAriaLabelledBy, additionalAriaDescribedBy,
+}: AriaLabelsProps): {
     processedLabels: {
         label: string | undefined;
         ariaLabel: string | undefined;
         ariaLabelledBy: string | undefined;
-    };
+        ariaDescribedBy: string | undefined;
+    }
 } => useMemo(() => {
-    let processedLabel = label;
-    let processedAriaLabel = ariaLabel;
-    let processedAriaLabelledBy = ariaLabelledBy;
-
     const labelCount = [!!label, !!ariaLabel, !!ariaLabelledBy].filter(Boolean).length;
     if (labelCount === 0) {
         throw new Error('Component is missing a label, aria-label, or aria-labelledby.');
@@ -32,15 +37,22 @@ export const useAriaLabels = (
         throw new Error('Should not have more than one of label, aria-label, or aria-labelledby set.');
     }
 
+    let processedLabel = label;
+    let processedAriaLabel = ariaLabel;
+    const processedAriaLabelledBy = processConditionalIds([
+        { id: ariaLabelledBy, include: !!ariaLabelledBy },
+        { id: `${inputId}_label`, include: !!label },
+        ...additonalAriaLabelledBy ?? [],
+    ]);
+    const processedAriaDescribedBy = processConditionalIds([
+        { id: ariaDescribedBy, include: !!ariaDescribedBy },
+        ...additionalAriaDescribedBy ?? [],
+    ]);
+
     if (label) {
         processedAriaLabel = undefined;
-        processedAriaLabelledBy = undefined;
     } else if (ariaLabel) {
         processedLabel = undefined;
-        processedAriaLabelledBy = undefined;
-    } else if (ariaLabelledBy) {
-        processedLabel = undefined;
-        processedAriaLabel = undefined;
     }
 
     return {
@@ -48,9 +60,10 @@ export const useAriaLabels = (
             label: processedLabel,
             ariaLabel: processedAriaLabel,
             ariaLabelledBy: processedAriaLabelledBy,
+            ariaDescribedBy: processedAriaDescribedBy,
         },
     };
-}, [label, ariaLabel, ariaLabelledBy]);
+}, [label, ariaLabel, ariaLabelledBy, inputId, additonalAriaLabelledBy, ariaDescribedBy, additionalAriaDescribedBy]);
 
 export function useAriaConditionalIds(conditionalIds: ConditionalId[]): string | undefined {
     return conditionalIds

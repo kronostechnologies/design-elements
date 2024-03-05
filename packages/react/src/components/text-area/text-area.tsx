@@ -8,7 +8,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds, useAriaLabels } from '../../hooks/use-aria';
+import { useAriaLabels } from '../../hooks/use-aria';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -127,14 +127,6 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         }
     }
 
-    const {
-        processedLabels,
-    } = useAriaLabels({
-        label,
-        ariaLabel,
-        ariaLabelledBy,
-    });
-
     function getValidationErrorMessage(): string {
         if (validationErrorMessage) {
             return validationErrorMessage;
@@ -145,12 +137,18 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
-    const processedAriaDescribedBy = useAriaConditionalIds([
-        { id: ariaDescribedBy, include: !!ariaDescribedBy },
-        { id: `${idTextArea}_hint`, include: !!hint },
-        { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
-        { id: idCounter, include: !!maxLength },
-    ]);
+    const { processedLabels } = useAriaLabels({
+        inputId: idTextArea,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${idTextArea}_hint`, include: !!hint },
+            { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
+            { id: idCounter, include: !!maxLength },
+        ],
+    });
 
     return (
         <FieldContainer
@@ -168,7 +166,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             <StyledTextArea
                 aria-label={processedLabels.ariaLabel}
                 aria-labelledby={processedLabels.ariaLabelledBy}
-                aria-describedby={processedAriaDescribedBy}
+                aria-describedby={processedLabels.ariaDescribedBy}
                 data-testid="textarea"
                 defaultValue={defaultValue}
                 disabled={disabled}

@@ -19,7 +19,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaConditionalIds, useAriaLabels } from '../../hooks/use-aria';
+import { useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
@@ -454,19 +454,17 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         }
     }, [inputValue.length, suggestedInputValue.length]);
 
-    const {
-        processedLabels,
-    } = useAriaLabels({
+    const { processedLabels } = useAriaLabels({
+        inputId: id,
         label,
         ariaLabel,
         ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${id}_hint`, include: !!hint },
+            { id: `${id}_invalid`, include: !valid },
+        ],
     });
-
-    const processedAriaDescribedBy = useAriaConditionalIds([
-        { id: ariaDescribedBy, include: !!ariaDescribedBy },
-        { id: `${id}_hint`, include: !!hint },
-        { id: `${id}_invalid`, include: !valid },
-    ]);
 
     return (
         <StyledFieldContainer
@@ -483,11 +481,11 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             <StyledContainer>
                 <Textbox
                     aria-label={processedLabels.ariaLabel || t('inputAriaLabel')}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
                     aria-autocomplete={autoComplete}
                     aria-controls={`${id}_listbox`}
-                    aria-labelledby={processedLabels.ariaLabelledBy}
-                    aria-describedby={processedAriaDescribedBy}
                     aria-expanded={open}
                     aria-invalid={!valid ? 'true' : 'false'}
                     aria-required={required ? 'true' : 'false'}

@@ -20,7 +20,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
-import { useAriaConditionalIds, useAriaLabels } from '../../hooks/use-aria';
+import { useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 
 const Input = styled.input<{ isMobile: boolean; }>`
@@ -101,19 +101,17 @@ export const TextInput = forwardRef(({
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
     const dataAttributes = useDataAttributes(otherProps);
     const fieldId = useId(providedId);
-    const {
-        processedLabels,
-    } = useAriaLabels({
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
         label,
         ariaLabel,
         ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${fieldId}_hint`, include: !!hint },
+            { id: `${fieldId}_invalid`, include: !validity },
+        ],
     });
-
-    const processedAriaDescribedBy = useAriaConditionalIds([
-        { id: ariaDescribedBy, include: !!ariaDescribedBy },
-        { id: `${fieldId}_invalid`, include: !validity },
-        { id: `${fieldId}_hint`, include: !!hint },
-    ]);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
@@ -165,7 +163,7 @@ export const TextInput = forwardRef(({
             <Input
                 aria-label={processedLabels.ariaLabel}
                 aria-labelledby={processedLabels.ariaLabelledBy}
-                aria-describedby={processedAriaDescribedBy || undefined}
+                aria-describedby={processedLabels.ariaDescribedBy}
                 aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}
                 data-testid="text-input"
