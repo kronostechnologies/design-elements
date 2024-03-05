@@ -39,7 +39,7 @@ const StepLink = styled.a`
 
 const StyledStep = styled.li<{ $linear: boolean }>`
     align-items: center;
-    color: ${({ theme }) => theme.component['progress-tracker-step-text-color']};
+    color: ${({ theme }) => theme.component['progress-tracker-step-todo-text-color']};
     display: flex;
     flex-direction: column;
     font-weight: var(--font-normal);
@@ -49,7 +49,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
 
     &::before {
         align-items: center;
-        background-color: ${({ theme }) => theme.component['progress-tracker-step-background-color']};
+        background-color: ${({ theme }) => theme.component['progress-tracker-step-todo-background-color']};
         border: 0.125rem solid;
         border-radius: 50%;
         box-sizing: border-box;
@@ -66,7 +66,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 
     &::after {
-        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-color']};
+        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-todo-background-color']};
         content: '';
         height: 0.25rem;
         left: calc(-50% - 0.5rem);
@@ -113,7 +113,7 @@ const ActiveStep = styled(StyledStep)`
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-active-color']};
+            background-color: ${theme.component['progress-tracker-bridge-active-background-color']};
         `}
     }
 

@@ -18,7 +18,7 @@ const Wrapper = styled.div<{ type: StatusType }>`
 `;
 
 const Circle = styled.div<{ type: StatusType }>`
-    background-color: ${({ theme, type }) => theme.component[`status-circle-${type}-color`]};
+    background-color: ${({ theme, type }) => theme.component[`status-circle-${type}-background-color`]};
     ${getCircleBorderStyle};
     border-radius: 50%;
     box-sizing: border-box;

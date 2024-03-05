@@ -2,11 +2,11 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type StatusTokens =
-    | 'status-disabled-text-color'
-    | 'status-circle-blocked-color'
-    | 'status-circle-disabled-color'
+    | 'status-circle-blocked-background-color'
+    | 'status-circle-enabled-background-color'
+    | 'status-circle-disabled-background-color'
     | 'status-circle-disabled-border-color'
-    | 'status-circle-enabled-color';
+    | 'status-disabled-text-color';
 
 export type StatusTokenValue = AliasTokens | RefTokens;
 
@@ -15,9 +15,9 @@ export type StatusTokenMap = {
 };
 
 export const defaultStatusTokens: StatusTokenMap = {
-    'status-disabled-text-color': 'color-neutral-65',
-    'status-circle-blocked-color': 'color-alert-50',
-    'status-circle-disabled-color': 'color-white',
+    'status-circle-blocked-background-color': 'color-alert-50',
+    'status-circle-enabled-background-color': 'color-success-50',
+    'status-circle-disabled-background-color': 'color-white',
     'status-circle-disabled-border-color': 'color-neutral-65',
-    'status-circle-enabled-color': 'color-success-50',
+    'status-disabled-text-color': 'color-neutral-65',
 };
