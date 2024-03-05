@@ -24,8 +24,13 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-interface Props {
+interface MoneyInputProps {
     className?: string;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
+    label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     disabled?: boolean;
     required?: boolean;
     /**
@@ -33,7 +38,6 @@ interface Props {
      * @default Invalid number.
      */
     validationErrorMessage?: string;
-    label?: string;
     value?: number | null;
     /**
      * Sets input locale and changes visual format accordingly
@@ -65,11 +69,14 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export const MoneyInput: VoidFunctionComponent<Props> = ({
+export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     className,
     required,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     onChange,
     precision = 2,
     value = null,
@@ -151,6 +158,9 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
                 inputMode="numeric"
                 value={displayValue}
                 label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
                 placeholder="$"
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
