@@ -49,10 +49,10 @@ export const useAriaLabels = ({
         ...additionalAriaDescribedBy ?? [],
     ]);
 
-    if (label) {
-        processedAriaLabel = undefined;
-    } else if (ariaLabel) {
-        processedLabel = undefined;
+    if (label && !ariaLabel) {
+        processedAriaLabel = processedLabel;
+    } else if (ariaLabel && !label) {
+        processedLabel = processedAriaLabelledBy;
     }
 
     return {

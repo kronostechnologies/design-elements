@@ -6,6 +6,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
+import { useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { ResolvedTheme } from '../../themes/theme';
@@ -84,7 +85,11 @@ interface NumericInputProps extends NativeInputProps {
     defaultValue?: number | string;
     hint?: string;
     id?: string;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     max?: number;
     min?: number;
     noMargin?: boolean;
@@ -108,6 +113,9 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     hint,
     id,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     max,
     min,
     noMargin,
@@ -144,12 +152,24 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
     ), [adornment, adornmentPosition]);
 
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${fieldId}_hint`, include: !!hint },
+            { id: `${fieldId}_invalid`, include: !invalid },
+        ],
+    });
+
     return (
         <FieldContainer
             className={className}
             fieldId={fieldId}
             hint={hint}
-            label={label}
+            label={processedLabels.label}
             tooltip={tooltip}
             noMargin={noMargin}
             valid={!numericInput.invalid}
@@ -159,6 +179,9 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             <Wrapper $disabled={disabled} $invalid={numericInput.invalid}>
                 {(adornment && adornmentPosition === 'start') && adornmentContent}
                 <StyledInput
+                    aria-label={processedLabels.ariaLabel}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     $textAlign={textAlign}
                     data-testid="numeric-input"
                     device={device}
