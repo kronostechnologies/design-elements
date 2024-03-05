@@ -2,6 +2,7 @@ import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useAriaLabels } from '../../hooks/use-aria';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
@@ -119,7 +120,11 @@ const SearchSubmit = styled(SearchButton)`
 export interface CommonSearchProps {
     id?: string;
     disabled?: boolean;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     className?: string;
     defaultValue?: string;
     value?: string;
@@ -178,8 +183,16 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     }, [searchCurrentValue]);
 
     const {
-        className, disabled, hasButton, hasIcon, label, placeholder,
+        className, disabled, hasButton, hasIcon, label, ariaLabel, ariaLabelledBy, ariaDescribedBy, placeholder,
     } = props;
+
+    const { processedLabels } = useAriaLabels({
+        inputId: id,
+        label: label || t('label'),
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+    });
 
     return (
         <SearchWrapper className={className}>
@@ -187,11 +200,14 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                 {hasIcon && (
                     <Label forId={id} data-testid="search-icon">
                         <IcoSearch disabled={disabled} />
-                        <VisuallyHidden>{label || t('label')}</VisuallyHidden>
+                        <VisuallyHidden>{processedLabels.label}</VisuallyHidden>
                     </Label>
                 )}
 
                 <Input
+                    aria-label={processedLabels.ariaLabel}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     ref={inputRef}
                     autoComplete="on"
                     disabled={disabled}
