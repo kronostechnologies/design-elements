@@ -26,7 +26,11 @@ interface PhoneInputProps {
     defaultValue?: string;
     required?: boolean;
     disabled?: boolean;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     hint?: string;
     name?: string;
 }
@@ -73,6 +77,9 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
     required,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     hint,
     name,
     ...otherProps
@@ -225,6 +232,9 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 disabled={disabled}
                 hint={hint}
                 label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
                 onChange={handleChange}
                 onMouseUp={handleMouseUp}
                 onKeyDown={handleKeyDown}
