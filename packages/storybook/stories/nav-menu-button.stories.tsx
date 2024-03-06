@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Components/Navigation/Dropdown Navigation',
+    title: 'Components/Dropdown Navigation',
     component: DropdownNavigation,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };

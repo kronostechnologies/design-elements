@@ -5,7 +5,7 @@ import { decorateWith } from './utils/decorator';
 import { MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Components/Structure/Lozenge',
+    title: 'Components/Lozenge',
     component: Lozenge,
 };
 

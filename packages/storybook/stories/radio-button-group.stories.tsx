@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Radio Button Group',
+    title: 'Components/Radio Button Group',
     component: RadioButtonGroup,
 };
 

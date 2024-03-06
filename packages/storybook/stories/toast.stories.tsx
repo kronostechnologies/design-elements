@@ -3,7 +3,7 @@ import { VoidFunctionComponent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Notification/Toast',
+    title: 'Components/Toast',
     component: useToast,
     parameters: rawCodeParameters,
 };
