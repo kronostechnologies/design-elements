@@ -24,18 +24,18 @@ interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData
 }
 
 function getRowBackgroundColor({
-    $selected, $error,
+    theme,
+    $selected,
+    $error,
 }: ThemedStyledProps<StyledTableRowProps, ResolvedTheme>): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     if ($selected) {
         return css`
-            /* TODO fix with next thematization */
-            background-color: #e0f0f9;
+            background-color: ${theme.component['table-row-selected-background-color']};
         `;
     }
     if ($error) {
         return css`
-            /* TODO fix with next thematization theme.notifications.error4 */
-            background-color: #fcf8f9;
+            background-color: ${theme.component['table-row-error-background-color']};
         `;
     }
     return css`
@@ -57,7 +57,7 @@ function getCellBackgroundCss({
 
     return css`
         &:hover td {
-            background-color: ${theme.greys.grey};
+            background-color: ${theme.component['table-row-cell-hover-background-color']};
         }
 
         &:not(:hover) td {
@@ -68,12 +68,12 @@ function getCellBackgroundCss({
 
 const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
-        border-top: 1px solid ${({ theme }) => theme.greys.grey};
+        border-top: 1px solid ${({ theme }) => theme.component['table-row-border-top-color']};
     }
 
     ${({ $error, $striped, theme }) => $striped && !$error && css`
         &:nth-child(odd) {
-            background-color: ${theme.greys['colored-white']};
+            background-color: ${theme.component['table-row-odd-background-color']};
         }
     `}
 
@@ -103,7 +103,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
         position: relative;
 
         &::after {
-            box-shadow: inset 0 0 0 1px ${theme.notifications['alert-2.1']};
+            box-shadow: inset 0 0 0 1px ${theme.component['table-row-shadow-color']};
             content: '';
             height: calc(100% + 1px);
             left: 0;
@@ -114,7 +114,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
         }
 
         td:first-child::after {
-            border-left: 1px solid ${theme.notifications['alert-2.1']};
+            border-left: 1px solid ${theme.component['table-row-shadow-color']};
             content: '';
             height: 100%;
             left: 0;
