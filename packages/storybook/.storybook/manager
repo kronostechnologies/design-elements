@@ -4,10 +4,9 @@ import { create } from '@storybook/theming';
 addons.setConfig({
     theme: create({
         base: "light",
-
         bandTitle: "Equisoft Design System",
-        BrandUrl: "https://equisoft.dev",
-        brandImage: "/LogoEquisoft.png", // using publicly served /public directory
+        BrandUrl: "https://equisoft.com",
+        brandImage: "./LogoEquisoft.png", // using publicly served /public directory
         brandTarget: '_self',
         colorPrimary: '#006296',
         appBg: '#FAFAFA',
