@@ -10,7 +10,7 @@ import { LanguageSwitchDecorator } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Patterns/Password Creation Input',
+    title: 'Components/Password Creation Input',
     component: PasswordCreationInput,
     decorators: [LanguageSwitchDecorator],
 };
