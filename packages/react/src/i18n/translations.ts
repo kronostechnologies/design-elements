@@ -108,7 +108,7 @@ export const Translations = {
         },
         tabs: {
             addTabs: 'Add Tabs',
-            dismissTab: 'Dismiss {label} tab',
+            dismissTab: 'Dismiss {{label}} tab',
         },
         'tag-medium': {
             deleteButtonAriaLabel: 'Remove tag {{label}}',

@@ -1,8 +1,9 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
+import { IconButton } from '../buttons/icon-button';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { focus } from '../../utils/css-state';
+import { focus, focusVisibleReset } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
 const selectedIndicatorPosition = (isGlobal: boolean | undefined): string => (isGlobal ? 'bottom: 0' : 'top: 0');
@@ -15,7 +16,7 @@ const StyledButton = styled.button<{ $isGlobal?: boolean; $isSelected?: boolean;
     font-size: 0.875rem;
     gap: var(--spacing-half);
     padding: 0 var(--spacing-2x);
-    padding-right: ${({ $hasDelete }) => ($hasDelete && 'var(--spacing-4halfx)')};
+    padding-right: ${({ $hasDelete }) => ($hasDelete && 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
 
@@ -50,9 +51,10 @@ const StyledButton = styled.button<{ $isGlobal?: boolean; $isSelected?: boolean;
     `}
 
     ${focus};
+    ${focusVisibleReset};
 `;
 
-export const StyledButtonIcon = styled(Icon)`
+const StyledButtonIcon = styled(Icon)`
     color: ${({ theme }) => theme.greys['dark-grey']};
     vertical-align: middle;
 `;
@@ -73,15 +75,15 @@ const StyledTab = styled.div<{ $isSelected: boolean; }>`
     `};
 `;
 
-const StyledDeleteButton = styled.button`
-    color: #60666e;
+const DeleteButton = styled(IconButton)`
+    min-height: var(--size-1x);
+    min-width: var(--size-1x);
     padding: 0;
     position: absolute;
     right: var(--spacing-1halfx);
     top: 50%;
     transform: translateY(-50%);
-
-    ${focus};
+    width: var(--size-1x);
 `;
 
 const ButtonLabel = styled.span`
@@ -164,13 +166,13 @@ export const TabButton = forwardRef(({
                 )}
             </StyledButton>
             {hasDelete && (
-                <StyledDeleteButton
+                <DeleteButton
+                    buttonType="tertiary"
                     onClick={() => onDelete(id)}
                     data-testid="tab-delete"
                     aria-label={t('dismissTab', { label: children })}
-                >
-                    <StyledButtonIcon name="x" size="16" aria-hidden="true" />
-                </StyledDeleteButton>
+                    iconName='x'
+                />
             )}
         </StyledTab>
     );

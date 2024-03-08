@@ -9,12 +9,12 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { focus } from '../../utils/css-state';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
-import { IconName } from '../icon/icon';
-import { StyledButtonIcon, TabButton } from './tab-button';
+import { Icon, IconName } from '../icon/icon';
+import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
+import { Button } from '../buttons/button';
 
 const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
@@ -28,19 +28,8 @@ const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
 `;
 
-const StyledAddButton = styled.button`
-    align-items: center;
-    align-self: center;
-    color: #60666e;
-    display: flex;
-    font-size: 0.75rem;
-    font-weight: var(--font-bold);
-    gap: var(--spacing-half);
-    margin-bottom: -1px;
-    padding: var(--spacing-half) var(--spacing-1x);
-    text-transform: uppercase;
-
-    ${focus};
+const AddIcon = styled(Icon)`
+    margin-right: var(--spacing-half);
 `;
 
 export interface Tab {
@@ -172,10 +161,10 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     </TabButton>
                 ))}
                 {onAddTab && (
-                    <StyledAddButton type="button" onClick={onAddTab}>
-                        <StyledButtonIcon name="plusSign" size='16' aria-hidden="true" focusable={false} />
-                        <span>{t('addTabs')}</span>
-                    </StyledAddButton>
+                    <Button buttonType='tertiary' type="button" onClick={onAddTab}>
+                        <AddIcon name="plusSign" size='16' aria-hidden="true" focusable={false} />
+                        {t('addTabs')}
+                    </Button>
                 )}
             </TabButtonsContainer>
             {tabItems.map((tabItem) => {
