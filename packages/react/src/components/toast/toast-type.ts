@@ -1,8 +1,9 @@
 export enum ToastTypeEnum {
-    INFORMATION = 'information',
+    NEUTRAL = 'neutral',
+    DISCOVERY = 'discovery',
     SUCCESS = 'success',
     WARNING = 'warning',
-    ERROR = 'error'
+    ALERT = 'alert'
 }
 
 export type ToastType = `${ToastTypeEnum}`;
