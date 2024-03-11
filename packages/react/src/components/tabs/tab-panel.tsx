@@ -11,7 +11,7 @@ interface TabPanelProps {
 }
 
 const StyledDiv = styled.div<{ $contained?: boolean }>`
-    border: ${({ $contained, theme }) => ($contained ? `1px solid ${theme.component['tab-panel-border-color']}` : 'none')}; /* TODO change with next thematization */
+    border: ${({ $contained, theme }) => ($contained ? `1px solid ${theme.component['tab-panel-border-color']}` : 'none')};
     border-top: none;
 
     ${focus}

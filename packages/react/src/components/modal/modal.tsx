@@ -66,7 +66,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
 
     &:focus {
         border-color: ${({ theme }) => theme.component['modal-focus-border-color']};
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['modal-focus-shadow-color']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['modal-focus-box-shadow-color']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
         outline: none;
     }
 `;
@@ -81,7 +81,6 @@ interface HeaderProps extends ContentProps {
     isTopScrolled?: boolean;
 }
 const Header = styled.header<HeaderProps>`
-    /* TODO change colors when updating thematization */
     border-bottom: 1px solid ${({ isTopScrolled, theme }) => (isTopScrolled ? theme.component['modal-header-border-bottom-color'] : 'transparent')};
     padding: ${getTopPadding} ${getPadding} var(--spacing-2x);
 
@@ -100,7 +99,6 @@ interface FooterProps extends ContentProps {
     isBottomScrolled?: boolean;
 }
 const Footer = styled.footer<FooterProps>`
-    /* TODO change colors when updating thematization */
     border-top: 1px solid ${({ isBottomScrolled, theme }) => (isBottomScrolled ? theme.component['modal-footer-border-top-color'] : 'transparent')};
     padding: var(--spacing-4x) ${getPadding} 0;
 `;

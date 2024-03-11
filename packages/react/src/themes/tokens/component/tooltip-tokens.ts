@@ -3,9 +3,9 @@ import { RefTokens } from '../ref-tokens';
 
 export type TooltipTokens =
     | 'tooltip-border-color'
-    | 'tooltip-container-color'
-    | 'tooltip-success-color'
-    | 'tooltip-default-color'
+    | 'tooltip-container-text-color'
+    | 'tooltip-success-background-color'
+    | 'tooltip-default-background-color'
 
 export type TooltipTokenValue = AliasTokens | RefTokens;
 
@@ -15,7 +15,7 @@ export type TooltipTokenMap = {
 
 export const defaultTooltipTokens: TooltipTokenMap = {
     'tooltip-border-color': 'color-white',
-    'tooltip-container-color': 'color-white',
-    'tooltip-success-color': 'color-success-50',
-    'tooltip-default-color': 'color-neutral-65',
+    'tooltip-container-text-color': 'color-white',
+    'tooltip-success-background-color': 'color-success-50',
+    'tooltip-default-background-color': 'color-neutral-65',
 };

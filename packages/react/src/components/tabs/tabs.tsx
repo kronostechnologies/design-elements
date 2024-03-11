@@ -16,7 +16,7 @@ import { TabPanel } from './tab-panel';
 
 const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     align-items: center;
-    border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tab-button-border-bottom-color']}`)}; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tabs-tab-border-bottom-color']}`)};
     display: flex;
     padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
 `;
@@ -133,7 +133,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         id={tabItem.id}
                         panelId={tabItem.panelId}
                         key={tabItem.panelId}
-                        data-testid={`tab-button-${i + 1}`}
+                        data-testid={`tabs-tab-${i + 1}`}
                         leftIcon={tabItem.leftIcon}
                         rightIcon={tabItem.rightIcon}
                         isSelected={isTabSelected(tabItem.id)}

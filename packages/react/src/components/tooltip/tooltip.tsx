@@ -58,9 +58,9 @@ interface TooltipColorProps {
 
 const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     if (variant === 'success') {
-        return theme.component['tooltip-success-color'];
+        return theme.component['tooltip-success-background-color'];
     }
-    return theme.component['tooltip-default-color'];
+    return theme.component['tooltip-default-background-color'];
 }}`;
 
 const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.component['tooltip-border-color']}`;
@@ -71,7 +71,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.component['tooltip-container-color']};
+    color: ${({ theme }) => theme.component['tooltip-container-text-color']};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
