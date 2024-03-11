@@ -66,7 +66,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
     .react-datepicker {
         border: 1px solid ${({ theme }) => theme.component['datepicker-border-color']};
-        box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['datepicker-shadow-color']};
+        box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['datepicker-box-shadow-color']};
         font-family: var(--font-family);
         padding: var(--spacing-3x) var(--spacing-2x);
     }
@@ -109,12 +109,12 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
         ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.component['datepicker-day-keyboard-selected-mobile-border-color']};
-            box-shadow: 0 0 0 2px ${theme.component['datepicker-day-keyboard-selected-mobile-shadow-color']};
+            box-shadow: 0 0 0 2px ${theme.component['datepicker-day-keyboard-selected-mobile-box-shadow-color']};
         `};
 
         &:focus {
             border: 1px solid ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-border-color']};
-            box-shadow: 0 0 0 2px ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-shadow-color']};
+            box-shadow: 0 0 0 2px ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-box-shadow-color']};
         }
     }
 
@@ -150,11 +150,11 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
-                box-shadow: 0 0 0 2px ${theme.component['datepicker-day-selected-mobile-shadow-color']};
+                box-shadow: 0 0 0 2px ${theme.component['datepicker-day-selected-mobile-box-shadow-color']};
             }
         ` : `
             &:focus {
-                box-shadow: 0 0 0 2px  ${theme.component['datepicker-day-selected-focus-shadow-color']};
+                box-shadow: 0 0 0 2px  ${theme.component['datepicker-day-selected-focus-box-shadow-color']};
             }
         `)};
 

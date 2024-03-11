@@ -40,8 +40,8 @@ export const Label = styled.label`
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {
                 background: ${theme.component['chooser-disabled-background-color']};
-                border-color: ${theme.component['chooser-disabled-background-color']};
-                color: ${theme.component['chooser-disabled-background-color']};
+                border-color: ${theme.component['chooser-disabled-border-color']};
+                color: ${theme.component['chooser-disabled-text-color']};
             }
 
             b {

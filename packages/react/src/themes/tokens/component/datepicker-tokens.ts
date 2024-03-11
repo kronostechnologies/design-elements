@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type DatepickerTokens =
     | 'datepicker-border-color'
-    | 'datepicker-shadow-color'
+    | 'datepicker-box-shadow-color'
     | 'datepicker-day-border-color'
     | 'datepicker-day-hover-background-color'
     | 'datepicker-day-disabled-text-color'
@@ -11,9 +11,9 @@ export type DatepickerTokens =
     | 'datepicker-day-keyboard-selected-background-color'
     | 'datepicker-day-keyboard-selected-text-color'
     | 'datepicker-day-keyboard-selected-mobile-border-color'
-    | 'datepicker-day-keyboard-selected-mobile-shadow-color'
+    | 'datepicker-day-keyboard-selected-mobile-box-shadow-color'
     | 'datepicker-day-keyboard-selected-focus-border-color'
-    | 'datepicker-day-keyboard-selected-focus-shadow-color'
+    | 'datepicker-day-keyboard-selected-focus-box-shadow-color'
     | 'datepicker-day-outside-month-text-color'
     | 'datepicker-day-outside-month-selected-background-color'
     | 'datepicker-day-outside-month-selected-border-color'
@@ -22,8 +22,8 @@ export type DatepickerTokens =
     | 'datepicker-day-selected-border-color'
     | 'datepicker-day-selected-text-color'
     | 'datepicker-day-selected-hover-text-color'
-    | 'datepicker-day-selected-mobile-shadow-color'
-    | 'datepicker-day-selected-focus-shadow-color'
+    | 'datepicker-day-selected-mobile-box-shadow-color'
+    | 'datepicker-day-selected-focus-box-shadow-color'
     | 'datepicker-day-today-text-color'
     | 'datepicker-day-today-selected-text-color'
     | 'datepicker-header-background-color'
@@ -57,7 +57,7 @@ export type DatepickerTokenMap = {
 
 export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-border-color': 'color-neutral-15',
-    'datepicker-shadow-color': 'transparent-20',
+    'datepicker-box-shadow-color': 'transparent-20',
     'datepicker-day-border-color': 'transparent-100',
     'datepicker-day-hover-background-color': 'color-neutral-15',
     'datepicker-day-disabled-text-color': 'color-neutral-30',
@@ -65,9 +65,9 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-keyboard-selected-background-color': 'color-white',
     'datepicker-day-keyboard-selected-text-color': 'color-black',
     'datepicker-day-keyboard-selected-mobile-border-color': 'color-brand-50',
-    'datepicker-day-keyboard-selected-mobile-shadow-color': 'color-brand-20',
+    'datepicker-day-keyboard-selected-mobile-box-shadow-color': 'color-brand-20',
     'datepicker-day-keyboard-selected-focus-border-color': 'color-brand-50',
-    'datepicker-day-keyboard-selected-focus-shadow-color': 'color-brand-20',
+    'datepicker-day-keyboard-selected-focus-box-shadow-color': 'color-brand-20',
     'datepicker-day-outside-month-text-color': 'color-neutral-65',
     'datepicker-day-outside-month-selected-background-color': 'color-brand-05',
     'datepicker-day-outside-month-selected-border-color': 'color-brand-50',
@@ -75,8 +75,8 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-selected-background-color': 'color-brand-05',
     'datepicker-day-selected-border-color': 'color-brand-50',
     'datepicker-day-selected-text-color': 'color-brand-70',
-    'datepicker-day-selected-mobile-shadow-color': 'color-brand-20',
-    'datepicker-day-selected-focus-shadow-color': 'color-brand-20',
+    'datepicker-day-selected-mobile-box-shadow-color': 'color-brand-20',
+    'datepicker-day-selected-focus-box-shadow-color': 'color-brand-20',
     'datepicker-day-selected-hover-text-color': 'color-black',
     'datepicker-day-today-text-color': 'color-brand-70',
     'datepicker-day-today-selected-text-color': 'color-brand-70',

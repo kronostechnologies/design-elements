@@ -68,7 +68,7 @@ const StyledInput = styled.input`
 
     :indeterminate + ${CustomCheckbox} {
         background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
-        border: 1px solid ${({ theme }) => theme.component['checkbox-checked-background-color']};
+        border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
 
         > ${IndeterminateIcon} {
             display: block;

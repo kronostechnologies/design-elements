@@ -87,8 +87,8 @@ const Input = styled.input<InputProps>`
 
 const Reset = styled.button`
     appearance: none;
-    background: ${(props) => props.theme.component['search-input-reset-icon-background-color']};
-    border: 1px solid ${(props) => props.theme.component['search-input-reset-icon-border-color']};
+    background: ${(props) => props.theme.component['search-input-reset-button-background-color']};
+    border: 1px solid ${(props) => props.theme.component['search-input-reset-button-border-color']};
     bottom: 0.5rem;
     display: none;
     height: 1.25rem;

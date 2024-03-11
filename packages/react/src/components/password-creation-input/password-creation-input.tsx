@@ -60,7 +60,7 @@ const StyledInput = styled(TextInput)`
             display: none;
         }
 
-        border: none transparent;
+        border: none;
         box-shadow: none;
         outline: none;
     }

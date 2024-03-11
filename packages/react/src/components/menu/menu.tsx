@@ -30,7 +30,7 @@ const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
 
     border: 1px solid ${({ theme }) => theme.component['menu-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-shadow-color']};
+    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-box-shadow-color']};
     box-sizing: border-box;
     flex-direction: column;
     margin: 0;
@@ -52,7 +52,7 @@ const SubMenu = styled.div<SubMenuProps>`
 
     border: 1px solid ${({ theme }) => theme.component['menu-submenu-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-submenu-shadow-color']};
+    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-submenu-box-shadow-color']};
     flex-direction: column;
     left: ${({ left }) => left}px !important;
     margin: 0;
@@ -87,7 +87,7 @@ const Button = styled.button<ButtonProps>`
     width: 100%;
 
     &:focus {
-        outline: 2px solid ${({ theme }) => theme.component['menu-item-focus-shadow-color-2']};
+        outline: 2px solid ${({ theme }) => theme.component['menu-item-focus-outline-color']};
         outline-offset: -2px;
     }
 
