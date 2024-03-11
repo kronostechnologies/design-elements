@@ -447,7 +447,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
 }
 
 .c3:hover {
-  background-color: #003A5A;
+  background-color: #3A1C60;
   color: #FFFFFF;
 }
 
@@ -534,6 +534,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={true}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -544,6 +545,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -554,6 +556,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -564,6 +567,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={true}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"
@@ -641,14 +645,20 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -660,32 +670,38 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
 .c4 {
   background-color: transparent;
   border-color: transparent;
-  color: #60666E;
+  color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
 }
 
-.c4:focus {
-  outline: none;
+.c4:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: #003A5A;
   border-color: transparent;
-  color: #1B1C1E;
+  color: #FFFFFF;
 }
 
 .c4:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #B7BBC2;
+  color: #006296;
 }
 
 .c4 > svg {
@@ -730,10 +746,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   align-self: flex-start;
   color: #FFFFFF;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3:hover {

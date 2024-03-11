@@ -15,8 +15,7 @@ exports[`CardLink Matches Snapshot 1`] = `
 
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
-  border-color: #DBDEE1;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   color: #000000;

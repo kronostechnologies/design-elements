@@ -89,8 +89,8 @@ input[type="radio"]:focus + .c1 {
 input[type="checkbox"]:disabled + .c0,
 input[type="radio"]:disabled + .c1 {
   background: #F1F2F2;
-  border-color: #F1F2F2;
-  color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c1 b {

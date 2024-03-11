@@ -70,8 +70,8 @@ input[type="radio"]:focus + .c3 {
 input[type="checkbox"]:disabled + .c2,
 input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
-  border-color: #F1F2F2;
-  color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3 b {
@@ -208,8 +208,8 @@ input[type="radio"]:focus + .c3 {
 input[type="checkbox"]:disabled + .c2,
 input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
-  border-color: #F1F2F2;
-  color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3 b {
