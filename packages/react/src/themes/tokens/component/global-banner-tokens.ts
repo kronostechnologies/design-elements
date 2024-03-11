@@ -80,6 +80,6 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     'global-banner-warning-action-button-hover-text-color': 'color-warning-70',
     'global-banner-warning-dismiss-button-background-color': 'transparent-100',
     'global-banner-warning-dismiss-button-text-color': 'color-neutral-90',
-    'global-banner-warning-dismiss-button-hover-background-color': 'color-warning-70',
+    'global-banner-warning-dismiss-button-hover-background-color': 'color-warning-60',
     'global-banner-warning-dismiss-button-hover-text-color': 'color-neutral-90',
 };
