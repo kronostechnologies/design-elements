@@ -36,7 +36,7 @@ import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/globa
 import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component/sectional-banner-tokens';
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
-import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
+import { defaultToastTokens, ToastTokens } from './component/toast-container-tokens';
 
 export type ComponentTokens =
     | BentoMenuButtonTokens
@@ -75,7 +75,7 @@ export type ComponentTokens =
     | SectionalBannerTokens
     | SpinnerTokens
     | TagTokens
-    | ToastContainerTokens;
+    | ToastTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -121,7 +121,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSectionalBannerTokens,
     ...defaultSpinnerTokens,
     ...defaultTagTokens,
-    ...defaultToastContainerTokens,
+    ...defaultToastTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
