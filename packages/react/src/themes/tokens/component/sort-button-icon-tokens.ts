@@ -15,5 +15,5 @@ export type SortButtonTokensMap = {
 export const defaultSortButtonTokens: SortButtonTokensMap = {
     'sort-button-ascending-color': 'color-neutral-65',
     'sort-button-descending-color': 'color-neutral-65',
-    'sort-button-default-color': 'color-neutral-65'
-}
+    'sort-button-default-color': 'color-neutral-65',
+};

@@ -155,7 +155,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  border-bottom: 1px solid #DBDEE1;
+  border-bottom: 1px solid #E0F0F9;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
@@ -571,7 +571,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  border-bottom: 1px solid #DBDEE1;
+  border-bottom: 1px solid #E0F0F9;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);

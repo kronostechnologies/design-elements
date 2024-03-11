@@ -15,5 +15,5 @@ export type DropdownMenuTokenMap = {
 export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-border-color': 'color-neutral-65',
     'dropdown-menu-background-color': 'color-white',
-    'dropdown-menu-color': 'color-black'
+    'dropdown-menu-color': 'color-black',
 };

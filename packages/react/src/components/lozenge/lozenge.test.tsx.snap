@@ -19,7 +19,7 @@ exports[`Lozenge alert matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -62,7 +62,7 @@ exports[`Lozenge default matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -105,7 +105,7 @@ exports[`Lozenge info matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -148,7 +148,7 @@ exports[`Lozenge matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -191,7 +191,7 @@ exports[`Lozenge success matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -234,7 +234,7 @@ exports[`Lozenge warning matches the snapshot 1`] = `
   font-weight: var(--font-bold);
   line-height: 0.875rem;
   max-width: 312px;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-half) 0 var(--spacing-half);
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;

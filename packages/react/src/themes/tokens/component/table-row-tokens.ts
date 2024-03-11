@@ -17,9 +17,9 @@ export type TableRowTokenMap = {
 
 export const defaultTableRowTokens: TableRowTokenMap = {
     'table-row-selected-background-color': 'color-brand-05',
-    'table-row-error-background-color': '#fcf8f9',
+    'table-row-error-background-color': 'color-alert-05',
     'table-row-cell-hover-background-color': 'color-neutral-15',
     'table-row-border-top-color': 'color-neutral-15',
     'table-row-odd-background-color': 'color-neutral-02',
-    'table-row-shadow-color': 'color-alert-50'
+    'table-row-shadow-color': 'color-alert-50',
 };

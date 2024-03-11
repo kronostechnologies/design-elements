@@ -13,5 +13,5 @@ export type SideDrawerTokensMap = {
 
 export const defaultSideDrawerTokens: SideDrawerTokensMap = {
     'side-drawer-background-color': 'color-white',
-    'side-drawer-shadow-color': 'transparent-100'
-}
+    'side-drawer-shadow-color': 'transparent-100',
+};

@@ -15,5 +15,5 @@ export type TableTokenMap = {
 export const defaultTableTokens: TableTokenMap = {
     'table-color': 'color-neutral-90',
     'table-background-color': 'color-white',
-    'table-util-column-color': 'color-neutral-65'
+    'table-util-column-color': 'color-neutral-65',
 };

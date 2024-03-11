@@ -15,5 +15,5 @@ export type ItemContentTokenMap = {
 export const defaultItemContentTokens: ItemContentTokenMap = {
     'item-content-icon-background-color': 'color-neutral-05',
     'item-content-icon-border-color': 'color-neutral-15',
-    'item-content-description-color': 'color-neutral-65'
+    'item-content-description-color': 'color-neutral-65',
 };

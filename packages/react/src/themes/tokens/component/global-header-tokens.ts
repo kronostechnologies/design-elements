@@ -3,8 +3,8 @@ import { RefTokens } from '../ref-tokens';
 
 export type GlobalHeaderTokens =
     'global-header-background' |
-    'global-header-skiplink-background-color'|
-    'global-header-logo-title-separator-color'|
+    'global-header-skiplink-background-color' |
+    'global-header-logo-title-separator-color' |
     'global-header-content-container-color' |
     'global-header-logo-content-text-color';
 
@@ -19,5 +19,5 @@ export const defaultGlobalHeaderTokens : GlobalHeaderTokensMap = {
     'global-header-logo-title-separator-color': 'color-brand-70',
     'global-header-content-container-color': 'color-white',
     'global-header-skiplink-background-color': 'color-white',
-    'global-header-logo-content-text-color' : 'color-white',
+    'global-header-logo-content-text-color': 'color-white',
 };

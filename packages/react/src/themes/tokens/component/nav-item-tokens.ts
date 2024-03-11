@@ -23,5 +23,5 @@ export const defaultNavItemTokens: NavItemTokenMap = {
     'nav-item-disabled-color': 'color-neutral-30',
     'nav-item-disabled-fill': 'color-neutral-30',
     'nav-item-external-link-svg-color': 'color-black',
-    'nav-item-external-link-text-color': 'color-black'
+    'nav-item-external-link-text-color': 'color-black',
 };

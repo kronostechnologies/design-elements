@@ -6,7 +6,6 @@ export type CardTokens =
     'card-border-color' |
     'card-shadow-color';
 
-
 export type CardTokensValue = AliasTokens | RefTokens;
 
 export type CardTokensMap = {
@@ -14,7 +13,7 @@ export type CardTokensMap = {
 };
 
 export const defaultCardTokens : CardTokensMap = {
-    'card-background-color': "color-white",
-    'card-border-color': "color-neutral-05",
-    'card-shadow-color': "transparent-20"
+    'card-background-color': 'color-white',
+    'card-border-color': 'color-neutral-05',
+    'card-shadow-color': 'transparent-20',
 };
