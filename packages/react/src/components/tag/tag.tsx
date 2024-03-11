@@ -3,8 +3,7 @@ import {
     MouseEventHandler,
     Ref,
     SVGProps,
-    useCallback, useEffect,
-    useState,
+    useCallback, useEffect, useState,
 } from 'react';
 import styled, {
     css, FlattenInterpolation,
@@ -17,20 +16,7 @@ import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-export type DefaultTagColor =
-    | 'default'
-    | 'purple'
-    | 'lime'
-    | 'gold'
-    | 'orange'
-    | 'turquoise'
-    | 'blue'
-    | 'red'
-    | 'green-forest'
-    | 'violet'
-    | 'magenta';
-
-export type DecorativeTagColor =
+export type TagColor =
     | 'default'
     | 'decorative-01'
     | 'decorative-02'
@@ -42,26 +28,6 @@ export type DecorativeTagColor =
     | 'decorative-08'
     | 'decorative-09'
     | 'decorative-10';
-
-export type TagColor = DefaultTagColor | DecorativeTagColor;
-
-const DecorativeTagColorMap: Record<string, DecorativeTagColor> = {
-    default: 'default',
-    purple: 'decorative-01',
-    gold: 'decorative-02',
-    turquoise: 'decorative-03',
-    red: 'decorative-04',
-    lime: 'decorative-05',
-    orange: 'decorative-06',
-    blue: 'decorative-07',
-    'green-forest': 'decorative-08',
-    magenta: 'decorative-09',
-    violet: 'decorative-10',
-};
-
-function getDecorativeTagColor(color: TagColor): DecorativeTagColor {
-    return DecorativeTagColorMap[color] || color;
-}
 
 export type TagSize =
     | 'small'
@@ -89,8 +55,19 @@ export interface TagProps extends Partial<ClickableOrDeletableTag> {
     */
     size?: TagSize;
 
-    /*  The tag's size.
+    /*  The tag's color.
     *   @default 'default'
+    *  default color mapping:
+    *   decorative-01 -> purple
+    *   decorative-02 -> gold
+    *   decorative-03 -> turquoise
+    *   decorative-04 -> red
+    *   decorative-05 -> lime
+    *   decorative-06 -> orange
+    *   decorative-07 -> blue
+    *   decorative-08 -> green-forest
+    *   decorative-09 -> magenta
+    *   decorative-10 -> violet
     */
     color?: TagColor;
 
@@ -178,8 +155,7 @@ function getTagColors(
         $colorProperty: ColorProperty;
     }>,
 ): string {
-    const color = getDecorativeTagColor($tagColor);
-    return theme.component[`tag-${color}-${$colorProperty}`];
+    return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
@@ -309,12 +285,12 @@ const TagContainer = styled.div<TagContainerProps>`
 export const Tag = forwardRef(({
     className,
     iconName,
-    onClick,
-    onDelete,
     size = 'medium',
     color = 'default',
     selected = false,
     value,
+    onClick,
+    onDelete,
 }: TagProps, ref: Ref<HTMLElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();

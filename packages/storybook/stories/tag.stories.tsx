@@ -153,7 +153,7 @@ export const Colored: Story = {
     ...Default,
     args: {
         ...Default.args,
-        color: 'purple',
+        color: 'decorative-01',
     },
 };
 
