@@ -17,7 +17,7 @@ describe('TabButton', () => {
         const expectedButtonText = 'some text';
         const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>{expectedButtonText}</TabButton>);
 
-        const tabPanel = getByTestId(wrapper, 'tab-button-text');
+        const tabPanel = getByTestId(wrapper, 'tabs-tab-text');
 
         expect(tabPanel.prop('children')).toBe(expectedButtonText);
     });
@@ -25,7 +25,7 @@ describe('TabButton', () => {
     test('should not have a left icon in button when tab doesn\'t have a left icon name', () => {
         const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
 
-        const tabButtonLeftIcon = findByTestId(wrapper, 'tab-button-left-icon');
+        const tabButtonLeftIcon = findByTestId(wrapper, 'tabs-tab-left-icon');
 
         expect(tabButtonLeftIcon.length).toBe(0);
     });
@@ -36,7 +36,7 @@ describe('TabButton', () => {
             <TabButton {...focusedAndSelected} leftIcon={expectedLeftIcon}>some text</TabButton>,
         );
 
-        const tabButtonLeftIcon = getByTestId(wrapper, 'tab-button-left-icon');
+        const tabButtonLeftIcon = getByTestId(wrapper, 'tabs-tab-left-icon');
 
         expect(tabButtonLeftIcon.prop('name')).toBe(expectedLeftIcon);
     });
@@ -44,7 +44,7 @@ describe('TabButton', () => {
     test('should not have a right icon in button when tab doesn\'t have a right icon name', () => {
         const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
 
-        const tabButtonRightIcon = findByTestId(wrapper, 'tab-button-right-icon');
+        const tabButtonRightIcon = findByTestId(wrapper, 'tabs-tab-right-icon');
 
         expect(tabButtonRightIcon.length).toBe(0);
     });
@@ -55,7 +55,7 @@ describe('TabButton', () => {
             <TabButton {...focusedAndSelected} rightIcon={expectedRightIcon}>some text</TabButton>,
         );
 
-        const tabButtonRightIcon = getByTestId(wrapper, 'tab-button-right-icon');
+        const tabButtonRightIcon = getByTestId(wrapper, 'tabs-tab-right-icon');
 
         expect(tabButtonRightIcon.prop('name')).toBe(expectedRightIcon);
     });
