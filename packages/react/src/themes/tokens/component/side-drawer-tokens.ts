@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type SideDrawerTokens =
     'side-drawer-background-color' |
-    'side-drawer-shadow-color';
+    'side-drawer-box-shadow-color';
 
 export type SideDrawerTokensValue = AliasTokens | RefTokens;
 
@@ -13,5 +13,5 @@ export type SideDrawerTokensMap = {
 
 export const defaultSideDrawerTokens: SideDrawerTokensMap = {
     'side-drawer-background-color': 'color-white',
-    'side-drawer-shadow-color': 'transparent-100',
+    'side-drawer-box-shadow-color': 'transparent-100',
 };
