@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToastContainer should match snapshot (error) 1`] = `
+exports[`ToastContainer should match snapshot (alert) 1`] = `
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -154,18 +154,18 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   id="an id"
   message="a message"
   position="bottom-right"
-  type="error"
+  type="alert"
 >
   <styled.div
     isMobile={false}
     position="bottom-right"
     role="status"
-    type="error"
+    type="alert"
   >
     <div
       className="c0"
       role="status"
-      type="error"
+      type="alert"
     >
       <Styled(Icon)
         color="#FFFFFF"
@@ -173,10 +173,10 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
         name="alertOctagon"
         role="img"
         size="16"
-        type="error"
+        type="alert"
       >
         <Icon
-          aria-label="error"
+          aria-label="alert"
           className="c1"
           color="#FFFFFF"
           focusable={true}
@@ -184,17 +184,17 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
           name="alertOctagon"
           role="img"
           size="16"
-          type="error"
+          type="alert"
         >
           <svg
-            aria-label="error"
+            aria-label="alert"
             className="c1"
             color="#FFFFFF"
             focusable={true}
             height="16"
             isMobile={false}
             role="img"
-            type="error"
+            type="alert"
             width="16"
           />
         </Icon>
@@ -213,7 +213,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
       <Styled(IconButton)
         $color="#FFFFFF"
         $isMobile={false}
-        $type="error"
+        $type="alert"
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
@@ -290,7 +290,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 </ToastContainer>
 `;
 
-exports[`ToastContainer should match snapshot (information) 1`] = `
+exports[`ToastContainer should match snapshot (discovery) 1`] = `
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -401,7 +401,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   width: 400px;
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
-  background: #006296;
+  background: #602FA0;
 }
 
 .c2 {
@@ -444,47 +444,47 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   id="an id"
   message="a message"
   position="bottom-right"
-  type="information"
+  type="discovery"
 >
   <styled.div
     isMobile={false}
     position="bottom-right"
     role="status"
-    type="information"
+    type="discovery"
   >
     <div
       className="c0"
       role="status"
-      type="information"
+      type="discovery"
     >
       <Styled(Icon)
         color="#FFFFFF"
         isMobile={false}
-        name="info"
+        name="lightbulb"
         role="img"
         size="16"
-        type="information"
+        type="discovery"
       >
         <Icon
-          aria-label="info"
+          aria-label="discovery"
           className="c1"
           color="#FFFFFF"
           focusable={true}
           isMobile={false}
-          name="info"
+          name="lightbulb"
           role="img"
           size="16"
-          type="information"
+          type="discovery"
         >
           <svg
-            aria-label="info"
+            aria-label="discovery"
             className="c1"
             color="#FFFFFF"
             focusable={true}
             height="16"
             isMobile={false}
             role="img"
-            type="information"
+            type="discovery"
             width="16"
           />
         </Icon>
@@ -503,7 +503,297 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
       <Styled(IconButton)
         $color="#FFFFFF"
         $isMobile={false}
-        $type="information"
+        $type="discovery"
+        data-testid="dismiss"
+        label="Dismiss notification"
+        onClick={[Function]}
+        type="button"
+      >
+        <IconButton
+          buttonType="tertiary"
+          className="c3"
+          data-testid="dismiss"
+          iconName="x"
+          label="Dismiss notification"
+          onClick={[Function]}
+          type="button"
+        >
+          <Styled(AbstractButton)
+            aria-label="Dismiss notification"
+            buttonType="tertiary"
+            className="c3"
+            data-testid="dismiss"
+            focusable={true}
+            isMobile={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <AbstractButton
+              aria-label="Dismiss notification"
+              buttonType="tertiary"
+              className="c4 c3"
+              data-testid="dismiss"
+              focusable={true}
+              isMobile={false}
+              onClick={[Function]}
+              type="button"
+            >
+              <styled.button
+                $focusable={true}
+                aria-label="Dismiss notification"
+                buttonType="tertiary"
+                className="c4 c3"
+                data-testid="dismiss"
+                isMobile={false}
+                onClick={[Function]}
+                type="button"
+              >
+                <button
+                  aria-label="Dismiss notification"
+                  className="c5 c4 c3"
+                  data-testid="dismiss"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <Icon
+                    aria-hidden="true"
+                    color="currentColor"
+                    name="x"
+                    size="16"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+      </Styled(IconButton)>
+    </div>
+  </styled.div>
+</ToastContainer>
+`;
+
+exports[`ToastContainer should match snapshot (neutral) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c5 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: var(--spacing-2x);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 400px;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #60666E;
+}
+
+.c2 {
+  color: #FFFFFF;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0 var(--spacing-1halfx);
+}
+
+.c3 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: #FFFFFF;
+  margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover {
+  background-color: #36393D;
+  color: #FFFFFF;
+}
+
+.c1 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: var(--size-1x);
+  margin-top: 0.25rem;
+  width: var(--size-1x);
+}
+
+<ToastContainer
+  id="an id"
+  message="a message"
+  position="bottom-right"
+  type="neutral"
+>
+  <styled.div
+    isMobile={false}
+    position="bottom-right"
+    role="status"
+    type="neutral"
+  >
+    <div
+      className="c0"
+      role="status"
+      type="neutral"
+    >
+      <Styled(Icon)
+        color="#FFFFFF"
+        isMobile={false}
+        name="info"
+        role="img"
+        size="16"
+        type="neutral"
+      >
+        <Icon
+          aria-label="information"
+          className="c1"
+          color="#FFFFFF"
+          focusable={true}
+          isMobile={false}
+          name="info"
+          role="img"
+          size="16"
+          type="neutral"
+        >
+          <svg
+            aria-label="information"
+            className="c1"
+            color="#FFFFFF"
+            focusable={true}
+            height="16"
+            isMobile={false}
+            role="img"
+            type="neutral"
+            width="16"
+          />
+        </Icon>
+      </Styled(Icon)>
+      <styled.p
+        $isMobile={false}
+        color="#FFFFFF"
+      >
+        <p
+          className="c2"
+          color="#FFFFFF"
+        >
+          a message
+        </p>
+      </styled.p>
+      <Styled(IconButton)
+        $color="#FFFFFF"
+        $isMobile={false}
+        $type="neutral"
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
@@ -985,7 +1275,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -998,7 +1288,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  color: #000000;
+  color: #1B1C1E;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
 }
 
@@ -1007,7 +1297,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c3:hover {
-  background-color: #9E6900;
+  background-color: #C78500;
   color: #000000;
 }
 
@@ -1038,7 +1328,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
       type="warning"
     >
       <Styled(Icon)
-        color="#000000"
+        color="#1B1C1E"
         isMobile={false}
         name="alertTriangle"
         role="img"
@@ -1048,7 +1338,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         <Icon
           aria-label="warning"
           className="c1"
-          color="#000000"
+          color="#1B1C1E"
           focusable={true}
           isMobile={false}
           name="alertTriangle"
@@ -1059,7 +1349,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           <svg
             aria-label="warning"
             className="c1"
-            color="#000000"
+            color="#1B1C1E"
             focusable={true}
             height="16"
             isMobile={false}
@@ -1071,17 +1361,17 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#000000"
+        color="#1B1C1E"
       >
         <p
           className="c2"
-          color="#000000"
+          color="#1B1C1E"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#000000"
+        $color="#1B1C1E"
         $isMobile={false}
         $type="warning"
         data-testid="dismiss"

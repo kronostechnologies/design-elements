@@ -15,6 +15,7 @@ export type PaletteTokens =
     | 'color-neutral-30'
     | 'color-neutral-50'
     | 'color-neutral-65'
+    | 'color-neutral-80'
     | 'color-neutral-90'
     | 'color-alert-02'
     | 'color-alert-05'
@@ -36,6 +37,7 @@ export type PaletteTokens =
     | 'color-warning-05'
     | 'color-warning-20'
     | 'color-warning-50'
+    | 'color-warning-60'
     | 'color-warning-70'
     | 'color-warning-80'
     | 'color-discovery-02'
@@ -107,6 +109,7 @@ export const defaultPaletteTokens: PaletteTokenMap = {
     'color-neutral-30': '#B7BBC2',
     'color-neutral-50': '#878F9A',
     'color-neutral-65': '#60666E',
+    'color-neutral-80': '#36393D',
     'color-neutral-90': '#1B1C1E',
     'color-alert-02': '#FDF7F6',
     'color-alert-05': '#FAEAE9',
@@ -128,6 +131,7 @@ export const defaultPaletteTokens: PaletteTokenMap = {
     'color-warning-05': '#FFF7E5',
     'color-warning-20': '#FFDD99',
     'color-warning-50': '#F5A200',
+    'color-warning-60': '#C78500',
     'color-warning-70': '#9E6900',
     'color-warning-80': '#664400',
     'color-discovery-02': '#F9F7FB',
