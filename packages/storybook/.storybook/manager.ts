@@ -6,7 +6,7 @@ addons.setConfig({
         base: "light",
         bandTitle: "Equisoft Design System",
         BrandUrl: "https://equisoft.com",
-        brandImage: "./LogoEquisoft.png", // using publicly served /public directory
+        brandImage: "./logo-equisoft.svg", // using publicly served /public directory
         brandTarget: '_self',
         colorPrimary: '#006296',
         appBg: '#FAFAFA',
