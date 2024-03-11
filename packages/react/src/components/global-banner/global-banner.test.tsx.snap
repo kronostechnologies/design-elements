@@ -1028,7 +1028,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #9E6900;
+  background-color: #C78500;
   color: #1B1C1E;
 }
 
@@ -2126,7 +2126,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #9E6900;
+  background-color: #C78500;
   color: #1B1C1E;
 }
 
