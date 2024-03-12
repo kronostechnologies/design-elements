@@ -141,9 +141,9 @@ function getLineHeight({ $isMobile, $tagSize }: TagLabelProps): number {
 
 function getBorderRadius({ $clickable, $isMobile, $tagSize }: TagContainerProps): string {
     if ($clickable) {
-        return isSmall($tagSize) ? 'var(--border-radius-3x)' : 'var(--border-radius-4x)';
+        return isSmall($tagSize) ? 'var(--border-radius-2halfx)' : 'var(--border-radius-3x)';
     }
-    return $isMobile || isMedium($tagSize) ? 'var(--border-radius-2x)' : 'var(--border-radius)';
+    return $isMobile || isMedium($tagSize) ? 'var(--border-radius-1halfx)' : 'var(--border-radius)';
 }
 
 type ColorProperty = 'background-color' | 'border-color' | 'text-color';
@@ -268,6 +268,7 @@ const TagContainer = styled.div<TagContainerProps>`
     border: 1px solid ${(props) => getTagColors({ ...props, $colorProperty: 'border-color' })};
     border-radius: ${getBorderRadius};
     display: inline-flex;
+    justify-content: center;
     padding: ${getPadding};
 
     & + & {
