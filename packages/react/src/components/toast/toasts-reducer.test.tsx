@@ -2,10 +2,10 @@ import { Toast } from './toast-context';
 import { toastsReducer, ToastsState } from './toasts-reducer';
 
 describe('toastsReducer', () => {
-    const toast: Toast = { id: 'an id', type: 'information', message: 'a message' };
+    const toast: Toast = { id: 'an id', type: 'neutral', message: 'a message' };
 
     it('should add toast to state', () => {
-        const anotherToast: Toast = { id: 'another id', type: 'information', message: 'a message' };
+        const anotherToast: Toast = { id: 'another id', type: 'neutral', message: 'a message' };
         const currentState: ToastsState = [toast];
 
         const newState = toastsReducer(currentState, { type: 'add', toast: anotherToast });

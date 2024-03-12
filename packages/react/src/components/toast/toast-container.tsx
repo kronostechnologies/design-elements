@@ -28,21 +28,26 @@ function getToastContainerBackground(
     { theme, type }: ToastWrapperProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     switch (type) {
-        case 'information':
+        case 'discovery':
             return css`
-                background: ${theme.component['toast-container-information-background']};
+                background: ${theme.component['toast-container-discovery-background-color']};
             `;
         case 'success':
             return css`
-                background: ${theme.component['toast-container-success-background']};
+                background: ${theme.component['toast-container-success-background-color']};
             `;
         case 'warning':
             return css`
-                background: ${theme.component['toast-container-warning-background']};
+                background: ${theme.component['toast-container-warning-background-color']};
             `;
-        case 'error':
+        case 'alert':
             return css`
-                background: ${theme.component['toast-container-error-background']};
+                background: ${theme.component['toast-container-alert-background-color']};
+            `;
+        case 'neutral':
+        default:
+            return css`
+                background: ${theme.component['toast-container-neutral-background-color']};
             `;
     }
 }
@@ -118,25 +123,31 @@ type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onCli
 
 function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
     switch ($type) {
-        case 'information':
+        case 'discovery':
             return css`
-                background-color: ${theme.component['toast-container-dismiss-icon-information-hover-background-color']};
-                color: ${theme.component['toast-container-dismiss-icon-information-hover-color']};
+                background-color: ${theme.component['toast-container-discovery-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-container-discovery-dismiss-icon-hover-color']};
             `;
         case 'success':
             return css`
-                background-color: ${theme.component['toast-container-dismiss-icon-success-hover-background-color']};
-                color: ${theme.component['toast-container-dismiss-icon-success-hover-color']};
+                background-color: ${theme.component['toast-container-success-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-container-success-dismiss-icon-hover-color']};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.component['toast-container-dismiss-icon-warning-hover-background-color']};
-                color: ${theme.component['toast-container-dismiss-icon-warning-hover-color']};
+                background-color: ${theme.component['toast-container-warning-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-container-warning-dismiss-icon-hover-color']};
             `;
-        case 'error':
+        case 'alert':
             return css`
-                background-color: ${theme.component['toast-container-dismiss-icon-error-hover-background-color']};
-                color: ${theme.component['toast-container-dismiss-icon-error-hover-color']};
+                background-color: ${theme.component['toast-container-alert-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-container-alert-dismiss-icon-hover-color']};
+            `;
+        case 'neutral':
+        default:
+            return css`
+                background-color: ${theme.component['toast-container-neutral-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-container-neutral-dismiss-icon-hover-color']};
             `;
     }
 }
@@ -164,14 +175,17 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
 
 function getMessageLabel(type: ToastType): string {
     switch (type) {
-        case 'information':
-            return 'info';
+        case 'discovery':
+            return 'discovery';
         case 'success':
             return 'success';
         case 'warning':
             return 'warning';
-        case 'error':
-            return 'error';
+        case 'alert':
+            return 'alert';
+        case 'neutral':
+        default:
+            return 'information';
     }
 }
 
@@ -188,26 +202,40 @@ const MessageIcon = styled(Icon).attrs(({ type }: MessageIconProps) => ({
 
 function getToastIconName(type: ToastType): IconName {
     switch (type) {
-        case 'information':
-            return 'info';
+        case 'discovery':
+            return 'lightbulb';
         case 'success':
             return 'check';
         case 'warning':
             return 'alertTriangle';
-        case 'error':
+        case 'alert':
             return 'alertOctagon';
+        case 'neutral':
+        default:
+            return 'info';
     }
 }
 
 function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
-    return type === 'warning' ? theme.component['toast-container-warning-text-color']
-        : theme.component['toast-container-default-text-color'];
+    switch (type) {
+        case 'discovery':
+            return theme.component['toast-container-discovery-text-color'];
+        case 'success':
+            return theme.component['toast-container-success-text-color'];
+        case 'warning':
+            return theme.component['toast-container-warning-text-color'];
+        case 'alert':
+            return theme.component['toast-container-alert-text-color'];
+        case 'neutral':
+        default:
+            return theme.component['toast-container-neutral-text-color'];
+    }
 }
 
 interface ToastContainerProps {
     id: string;
     className?: string;
-    type: ToastType;
+    type?: ToastType;
     message: string;
     position: ToastPosition;
 }
@@ -215,7 +243,7 @@ interface ToastContainerProps {
 export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
     id,
     className,
-    type,
+    type = 'neutral',
     message,
     position,
 }) => {
