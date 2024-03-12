@@ -81,22 +81,22 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 `;
 
-const CompleteStep = styled(StyledStep)`
+const CompletedStep = styled(StyledStep)`
     &::before {
-        background-color: ${({ theme }) => theme.component['progress-tracker-step-complete-background-color']};
-        border-color: ${({ theme }) => theme.component['progress-tracker-step-complete-border-color']};
-        color: ${({ theme }) => theme.component['progress-tracker-step-complete-text-color']};
+        background-color: ${({ theme }) => theme.component['progress-tracker-step-completed-background-color']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-completed-border-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-completed-text-color']};
         font-weight: var(--font-semi-bold);
     }
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-complete-color']};
+            background-color: ${theme.component['progress-tracker-bridge-completed-color']};
         `}
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-label-complete-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-label-completed-text-color']};
     }
 `;
 
@@ -123,14 +123,14 @@ const ActiveStep = styled(StyledStep)`
     }
 `;
 
-const IncompleteStep = styled(StyledStep)`
+const UncompletedStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.component['progress-tracker-step-incomplete-border-color']};
-        color: ${({ theme }) => theme.component['progress-tracker-step-incomplete-text-color']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-uncompleted-border-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-uncompleted-text-color']};
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-label-incomplete-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-label-uncompleted-text-color']};
     }
 `;
 
@@ -181,11 +181,11 @@ const Step: VoidFunctionComponent<StepProps> = ({
     } else if ((linear && stepNumber < value) || (!linear && step.completion === 'completed')) {
         dataTestId = 'progress-tracker-step-completed';
         screenReaderText = t('completedAriaLabel');
-        StepComponent = CompleteStep;
+        StepComponent = CompletedStep;
     } else {
         dataTestId = 'progress-tracker-step-uncompleted';
         screenReaderText = t('uncompletedAriaLabel');
-        StepComponent = IncompleteStep;
+        StepComponent = UncompletedStep;
     }
 
     const content = (
