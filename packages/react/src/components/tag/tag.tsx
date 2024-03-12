@@ -295,7 +295,13 @@ export const Tag = forwardRef(({
 }: TagProps, ref: Ref<HTMLElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
-    const [isSelected, setSelected] = useState<boolean>(isDefault(color) && selected);
+
+    const [currentColor, setCurrentColor] = useState<TagColor>(color);
+    const [isSelected, setSelected] = useState<boolean>(isDefault(currentColor) && selected);
+    const [isClickable, setIsClickable] = useState<boolean>(isDefault(currentColor) && !!onClick);
+    const [isDeletable, setIsDeletable] = useState<boolean>(isDefault(currentColor) && !!onDelete);
+    const [hasIcon, setHasIcon] = useState<boolean>(isDefault(currentColor) && !!iconName);
+    const [hasExtraLabel, setHasExtraLabel] = useState<boolean>(isDefault(currentColor) && !!value.extraLabel);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
     const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
     const shortenedExtraLabel = value.extraLabel && value.extraLabel.length > 20
@@ -303,19 +309,29 @@ export const Tag = forwardRef(({
         : value.extraLabel || '';
 
     useEffect(() => {
-        if (isDefault(color)) {
+        if (onClick || onDelete || value.extraLabel || iconName) {
+            setCurrentColor('default');
             setSelected(selected);
+            setIsClickable(!!onClick);
+            setIsDeletable(!!onDelete);
+            setHasIcon(!!iconName);
+            setHasExtraLabel(!!value.extraLabel);
         } else {
+            setCurrentColor(color);
             setSelected(false);
+            setIsClickable(false);
+            setIsDeletable(false);
+            setHasIcon(false);
+            setHasExtraLabel(false);
         }
-    }, [color, selected]);
+    }, [color, iconName, onClick, onDelete, selected, value.extraLabel]);
 
     const handleClick: MouseEventHandler = useCallback(() => {
-        if (isDefault(color) && onClick) {
+        if (isDefault(currentColor) && onClick) {
             setSelected(!isSelected);
             onClick?.(value);
         }
-    }, [color, isSelected, onClick, value]);
+    }, [currentColor, isSelected, onClick, value]);
 
     const handleDelete: MouseEventHandler = useCallback((e) => {
         e.stopPropagation();
@@ -331,34 +347,34 @@ export const Tag = forwardRef(({
             type={onClick ? 'button' : undefined}
             $isMobile={isMobile}
             $tagSize={size}
-            $tagColor={color}
-            $clickable={!!onClick && isDefault(color)}
-            $deletable={!!onDelete && isDefault(color)}
-            $hasIcon={!!iconName}
+            $clickable={isClickable}
+            $deletable={isDeletable}
+            $hasIcon={hasIcon}
+            $tagColor={currentColor}
             $selected={isSelected}
         >
-            {iconName && isDefault(color) && (
+            {hasIcon && (
                 <StyledIcon
                     aria-label={hasIconLabel ? iconName : undefined}
                     aria-hidden={!hasIconLabel}
                     data-testid={`${value.label}-icon`}
-                    name={iconName}
+                    name={iconName || 'info'}
                     size={getIconSize(isMobile)}
                     role="img"
                     color={color}
                     $isMobile={isMobile}
                     $tagSize={size}
-                    $tagColor={color}
                     focusable={undefined}
+                    $tagColor={currentColor}
                     $selected={isSelected}
                 />
             )}
 
-            {value.extraLabel && isDefault(color) && (
+            {hasExtraLabel && (
                 <TagExtraLabel
                     $isMobile={isMobile}
                     $tagSize={size}
-                    $tagColor={color}
+                    $tagColor={currentColor}
                     $selected={isSelected}
                 >
                     {shortenedExtraLabel}
@@ -369,13 +385,13 @@ export const Tag = forwardRef(({
             <TagLabel
                 $isMobile={isMobile}
                 $tagSize={size}
-                $tagColor={color}
+                $tagColor={currentColor}
                 $selected={isSelected}
             >
                 {shortenedLabel}
             </TagLabel>
 
-            {onDelete && isDefault(color) && (
+            {isDeletable && (
                 <DeleteButton
                     data-testid={`${value.label}-delete-button`}
                     type="button"
@@ -386,7 +402,7 @@ export const Tag = forwardRef(({
                     onClick={handleDelete}
                     $tagSize={size}
                     $isMobile={isMobile}
-                    $tagColor={color}
+                    $tagColor={currentColor}
                     $selected={isSelected}
                 />
             )}

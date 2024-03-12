@@ -19,46 +19,26 @@ const meta: Meta<typeof Tag> = {
             },
         },
         value: {
-            if: {
-                arg: 'color',
-                eq: 'default',
-            },
             control: {
                 type: 'object',
             },
         },
         iconName: {
-            if: {
-                arg: 'color',
-                eq: 'default',
-            },
             control: {
                 type: 'select',
             },
         },
         selected: {
-            if: {
-                arg: 'color',
-                eq: 'default',
-            },
             control: {
                 type: 'boolean',
             },
         },
         onClick: {
-            if: {
-                arg: 'color',
-                eq: 'default',
-            },
             control: {
                 type: 'boolean',
             },
         },
         onDelete: {
-            if: {
-                arg: 'color',
-                eq: 'default',
-            },
             control: {
                 type: 'boolean',
             },
