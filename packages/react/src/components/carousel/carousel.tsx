@@ -60,7 +60,7 @@ interface DotProps {
 
 const Dot = styled.button<DotProps>`
     background-color: ${({ active, theme }) => (active ? theme.component['carousel-dot-active-background-color'] : theme.component['carousel-dot-inactive-background-color'])};
-    border: 1px solid transparent;
+    border: 1px solid  ${({ theme }) => theme.component['carousel-dot-border-color']};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -79,7 +79,7 @@ interface NavigationButtonProps {
 }
 
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
-    border: 1px solid transparent;
+    border: 1px solid ${({ theme }) => theme.component['carousel-nav-button-border-color']};
     height: 34px;
     visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
     width: 34px;
