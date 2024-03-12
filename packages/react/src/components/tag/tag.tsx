@@ -296,12 +296,12 @@ export const Tag = forwardRef(({
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
 
-    const [currentColor, setCurrentColor] = useState<TagColor>(color);
+    const isDeletable = !!onDelete;
+    const isClickable = !!onClick;
+    const hasIcon = !!iconName;
+    const hasExtraLabel = !!value.extraLabel;
+    const currentColor = (isDeletable || isClickable || hasExtraLabel || hasIcon) ? 'default' : (color ?? 'default');
     const [isSelected, setSelected] = useState<boolean>(isDefault(currentColor) && selected);
-    const [isClickable, setIsClickable] = useState<boolean>(isDefault(currentColor) && !!onClick);
-    const [isDeletable, setIsDeletable] = useState<boolean>(isDefault(currentColor) && !!onDelete);
-    const [hasIcon, setHasIcon] = useState<boolean>(isDefault(currentColor) && !!iconName);
-    const [hasExtraLabel, setHasExtraLabel] = useState<boolean>(isDefault(currentColor) && !!value.extraLabel);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
     const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
     const shortenedExtraLabel = value.extraLabel && value.extraLabel.length > 20
@@ -309,22 +309,12 @@ export const Tag = forwardRef(({
         : value.extraLabel || '';
 
     useEffect(() => {
-        if (onClick || onDelete || value.extraLabel || iconName) {
-            setCurrentColor('default');
+        if (isDeletable || isClickable || hasExtraLabel || hasIcon) {
             setSelected(selected);
-            setIsClickable(!!onClick);
-            setIsDeletable(!!onDelete);
-            setHasIcon(!!iconName);
-            setHasExtraLabel(!!value.extraLabel);
         } else {
-            setCurrentColor(color);
             setSelected(false);
-            setIsClickable(false);
-            setIsDeletable(false);
-            setHasIcon(false);
-            setHasExtraLabel(false);
         }
-    }, [color, iconName, onClick, onDelete, selected, value.extraLabel]);
+    }, [color, hasExtraLabel, hasIcon, isClickable, isDeletable, selected]);
 
     const handleClick: MouseEventHandler = useCallback(() => {
         if (isDefault(currentColor) && onClick) {
