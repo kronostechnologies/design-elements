@@ -65,7 +65,7 @@ const StyledInput = styled.input`
         }
     }
 
-    :indeterminate + ${CustomCheckbox} {
+    &:indeterminate + ${CustomCheckbox} {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
 

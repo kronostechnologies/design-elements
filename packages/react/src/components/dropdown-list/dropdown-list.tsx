@@ -54,6 +54,7 @@ const StyledFieldContainer = styled(FieldContainer)`
 const StyledListbox = styled(Listbox)`
     position: absolute;
     width: 100%;
+    margin-top: var(--spacing-half);
 `;
 
 const Textbox = styled.div<TextboxProps>`
