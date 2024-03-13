@@ -33,7 +33,7 @@ interface LinkProps {
 
 const NavItemStyle = css<LinkProps>`
     align-items: center;
-    color: ${({ theme }) => theme.component['nav-item-text-color']};
+    color: ${({ theme }) => theme.component['dropdown-menu-nav-item-text-color']};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     height: ${({ $hasIcon, $device: { isMobile, isTablet } }) => ((isTablet || isMobile || $hasIcon) ? 2.5 : 2)}rem;
@@ -45,14 +45,14 @@ const NavItemStyle = css<LinkProps>`
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? theme.component['nav-item-hover-disabled-background-color'] : theme.component['nav-item-hover-background-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['dropdown-menu-nav-item-hover-disabled-background-color'] : theme.component['dropdown-menu-nav-item-hover-background-color'])};
     }
 
     &[disabled],
     &[disabled] * {
-        color: ${({ theme }) => theme.component['nav-item-disabled-text-color']};
+        color: ${({ theme }) => theme.component['dropdown-menu-nav-item-disabled-text-color']};
         cursor: default;
-        fill: ${({ theme }) => theme.component['nav-item-disabled-icon-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-nav-item-disabled-icon-color']};
         pointer-events: none;
     }
 `;
@@ -70,12 +70,12 @@ export const StyledExternalLink = styled(ExternalLink)`
 
     &:visited {
         svg {
-            color: ${({ theme }) => theme.component['nav-item-external-link-svg-color']};
+            color: ${({ theme }) => theme.component['dropdown-menu-nav-item-external-link-svg-color']};
         }
     }
 
     span {
-        color: ${({ theme }) => theme.component['nav-item-external-link-text-color']};
+        color: ${({ theme }) => theme.component['dropdown-menu-nav-item-external-link-text-color']};
         padding: 0 0 0 var(--spacing-half);
     }
 

@@ -5,26 +5,26 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-border-color'
     | 'dropdown-menu-background-color'
     | 'dropdown-menu-text-color'
-    | 'nav-item-text-color'
-    | 'nav-item-hover-background-color'
-    | 'nav-item-hover-disabled-background-color'
-    | 'nav-item-disabled-text-color'
-    | 'nav-item-disabled-icon-color'
-    | 'nav-item-external-link-svg-color'
-    | 'nav-item-external-link-text-color'
-    | 'label-item-text-color'
-    | 'external-item-color'
-    | 'external-item-hover-background-color'
-    | 'external-item-visited-text-color'
-    | 'external-item-visited-fill-color'
-    | 'external-item-svg-visited-text-color'
-    | 'external-item-svg-visited-fill-color'
-    | 'external-item-disabled-text-color'
-    | 'external-item-disabled-fill-color'
-    | 'group-item-border-color'
-    | 'item-content-icon-background-color'
-    | 'item-content-icon-border-color'
-    | 'item-content-description-text-color';
+    | 'dropdown-menu-nav-item-text-color'
+    | 'dropdown-menu-nav-item-hover-background-color'
+    | 'dropdown-menu-nav-item-hover-disabled-background-color'
+    | 'dropdown-menu-nav-item-disabled-text-color'
+    | 'dropdown-menu-nav-item-disabled-icon-color'
+    | 'dropdown-menu-nav-item-external-link-svg-color'
+    | 'dropdown-menu-nav-item-external-link-text-color'
+    | 'dropdown-menu-label-item-text-color'
+    | 'dropdown-menu-external-item-color'
+    | 'dropdown-menu-external-item-hover-background-color'
+    | 'dropdown-menu-external-item-visited-text-color'
+    | 'dropdown-menu-external-item-visited-fill-color'
+    | 'dropdown-menu-external-item-svg-visited-text-color'
+    | 'dropdown-menu-external-item-svg-visited-fill-color'
+    | 'dropdown-menu-external-item-disabled-text-color'
+    | 'dropdown-menu-external-item-disabled-fill-color'
+    | 'dropdown-menu-group-item-border-color'
+    | 'dropdown-menu-item-content-icon-background-color'
+    | 'dropdown-menu-item-content-icon-border-color'
+    | 'dropdown-menu-item-content-description-text-color';
 
 export type DropdownMenuTokenValue = AliasTokens | RefTokens;
 
@@ -36,24 +36,24 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-border-color': 'color-neutral-65',
     'dropdown-menu-background-color': 'color-white',
     'dropdown-menu-text-color': 'color-black',
-    'nav-item-text-color': 'color-black',
-    'nav-item-hover-background-color': 'color-neutral-15',
-    'nav-item-hover-disabled-background-color': 'transparent-100',
-    'nav-item-disabled-text-color': 'color-neutral-30',
-    'nav-item-disabled-icon-color': 'color-neutral-30',
-    'nav-item-external-link-svg-color': 'color-black',
-    'nav-item-external-link-text-color': 'color-black',
-    'label-item-text-color': 'color-black',
-    'external-item-color': 'color-black',
-    'external-item-hover-background-color': 'color-neutral-15',
-    'external-item-svg-visited-text-color': 'color-black',
-    'external-item-svg-visited-fill-color': 'color-black',
-    'external-item-visited-text-color': 'color-black',
-    'external-item-visited-fill-color': 'color-black',
-    'external-item-disabled-text-color': 'color-neutral-30',
-    'external-item-disabled-fill-color': 'color-neutral-30',
-    'group-item-border-color': 'color-brand-05',
-    'item-content-icon-background-color': 'color-neutral-05',
-    'item-content-icon-border-color': 'color-neutral-15',
-    'item-content-description-text-color': 'color-neutral-65',
+    'dropdown-menu-nav-item-text-color': 'color-black',
+    'dropdown-menu-nav-item-hover-background-color': 'color-neutral-15',
+    'dropdown-menu-nav-item-hover-disabled-background-color': 'transparent-100',
+    'dropdown-menu-nav-item-disabled-text-color': 'color-neutral-30',
+    'dropdown-menu-nav-item-disabled-icon-color': 'color-neutral-30',
+    'dropdown-menu-nav-item-external-link-svg-color': 'color-black',
+    'dropdown-menu-nav-item-external-link-text-color': 'color-black',
+    'dropdown-menu-label-item-text-color': 'color-black',
+    'dropdown-menu-external-item-color': 'color-black',
+    'dropdown-menu-external-item-hover-background-color': 'color-neutral-15',
+    'dropdown-menu-external-item-svg-visited-text-color': 'color-black',
+    'dropdown-menu-external-item-svg-visited-fill-color': 'color-black',
+    'dropdown-menu-external-item-visited-text-color': 'color-black',
+    'dropdown-menu-external-item-visited-fill-color': 'color-black',
+    'dropdown-menu-external-item-disabled-text-color': 'color-neutral-30',
+    'dropdown-menu-external-item-disabled-fill-color': 'color-neutral-30',
+    'dropdown-menu-group-item-border-color': 'color-brand-05',
+    'dropdown-menu-item-content-icon-background-color': 'color-neutral-05',
+    'dropdown-menu-item-content-icon-border-color': 'color-neutral-15',
+    'dropdown-menu-item-content-description-text-color': 'color-neutral-65',
 };

@@ -17,7 +17,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 }
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
-    color: ${({ theme }) => theme.component['external-item-color']};
+    color: ${({ theme }) => theme.component['dropdown-menu-external-item-color']};
     display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
@@ -29,22 +29,22 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ theme }) => theme.component['external-item-hover-background-color']};
+        background-color: ${({ theme }) => theme.component['dropdown-menu-external-item-hover-background-color']};
     }
 
     &:visited {
-        color: ${({ theme }) => theme.component['external-item-visited-text-color']};
-        fill: ${({ theme }) => theme.component['external-item-visited-fill-color']};
+        color: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-text-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-fill-color']};
 
         svg {
-            color: ${({ theme }) => theme.component['external-item-svg-visited-text-color']};
-            fill: ${({ theme }) => theme.component['external-item-svg-visited-fill-color']};
+            color: ${({ theme }) => theme.component['dropdown-menu-external-item-svg-visited-text-color']};
+            fill: ${({ theme }) => theme.component['dropdown-menu-external-item-svg-visited-fill-color']};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.component['external-item-disabled-text-color']};
-        fill: ${({ theme }) => theme.component['external-item-disabled-fill-color']};
+        color: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-text-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-fill-color']};
         pointer-events: none;
     }
 `;
