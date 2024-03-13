@@ -29,7 +29,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ theme }) => theme.component['external-item-hover-color']};
+        background-color: ${({ theme }) => theme.component['external-item-hover-background-color']};
     }
 
     &:visited {
