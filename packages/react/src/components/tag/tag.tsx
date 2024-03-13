@@ -40,52 +40,64 @@ export interface TagValue {
 }
 
 export interface ClickableOrDeletableTag {
-    /*  The tag's is clickable. (optional) */
+    /**
+     * The tag's is clickable. (optional)
+     */
     onClick?(tag: TagValue): void;
 
-    /*  The tag's is deletable. (optional) */
+    /**
+     * The tag's is deletable. (optional)
+     */
     onDelete?(tag: TagValue): void;
 }
 
 export interface TagProps extends Partial<ClickableOrDeletableTag> {
     className?: string;
 
-    /*  The tag's size.
-    *   @default 'medium'
-    */
+    /**
+     * The tag's size.
+     * @default 'medium'
+     */
     size?: TagSize;
 
-    /*  The tag's color.
-    *   @default 'default'
-    *  default color mapping:
-    *   decorative-01 -> purple
-    *   decorative-02 -> gold
-    *   decorative-03 -> turquoise
-    *   decorative-04 -> red
-    *   decorative-05 -> lime
-    *   decorative-06 -> orange
-    *   decorative-07 -> blue
-    *   decorative-08 -> green-forest
-    *   decorative-09 -> magenta
-    *   decorative-10 -> violet
-    */
+    /**
+     * The tag's color.
+     * @default 'default'
+     *
+     *  if tag is clickable or deletable or selected or has an icon,
+     *  the tag color will be forced to 'default'
+     *
+     *  default color mapping:
+     *     decorative-01 -> purple
+     *     decorative-02 -> gold
+     *     decorative-03 -> turquoise
+     *     decorative-04 -> red
+     *     decorative-05 -> lime
+     *     decorative-06 -> orange
+     *     decorative-07 -> blue
+     *     decorative-08 -> green-forest
+     *     decorative-09 -> magenta
+     *     decorative-10 -> violet
+     */
     color?: TagColor;
 
-    /* The tag's value
-         TagValue.id is optional
-         TagValue.label is required
-         TagValue.extraLabel is optional and works only with 'default' color
+    /**
+     * The tag's value
+     *  TagValue.id is optional
+     *  TagValue.label is required
+     *  TagValue.extraLabel is optional and works only with 'default' color
      */
     value: TagValue;
 
-    /*  Whether the tag is selected. (optional)
-     *  Can manually set the selected state of the tag, without the need for a click event.
-    *   @default false
-    */
+    /**
+     * Whether the tag is selected. (optional)
+     * Can manually set the selected state of the tag, without the need for a click event.
+     * @default false
+     */
     selected?: boolean;
 
-    /*  The tag's icon. (optional)
-     *  *only with 'default' color
+    /**
+     * The tag's icon. (optional)
      */
     iconName?: IconName;
 }
@@ -348,7 +360,7 @@ export const Tag = forwardRef(({
                     aria-label={hasIconLabel ? iconName : undefined}
                     aria-hidden={!hasIconLabel}
                     data-testid={`${value.label}-icon`}
-                    name={iconName || 'info'}
+                    name={iconName}
                     size={getIconSize(isMobile)}
                     role="img"
                     color={color}
