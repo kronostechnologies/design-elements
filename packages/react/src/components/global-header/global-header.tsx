@@ -19,7 +19,7 @@ const getPadding = (device: DeviceType): string => {
 
 const Header = styled.header<{ device: DeviceType }>`
     align-items: center;
-    background: ${(props) => props.theme.component['global-header-background']};
+    background: ${(props) => props.theme.component['global-header-background-color']};
     box-sizing: border-box;
     display: flex;
     height: ${({ device }) => (device === 'desktop' ? 'var(--size-3x)' : 'var(--size-3halfx)')};
