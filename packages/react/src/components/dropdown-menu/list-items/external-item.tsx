@@ -33,7 +33,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     }
 
     &:visited {
-        color: ${({ theme }) => theme.component['external-item-visited-color']};
+        color: ${({ theme }) => theme.component['external-item-visited-text-color']};
         fill: ${({ theme }) => theme.component['external-item-visited-fill-color']};
 
         svg {
