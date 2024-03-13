@@ -5,7 +5,7 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-border-color'
     | 'dropdown-menu-background-color'
     | 'dropdown-menu-text-color'
-    | 'nav-item-color'
+    | 'nav-item-text-color'
     | 'nav-item-hover-background-color'
     | 'nav-item-hover-disabled-background-color'
     | 'nav-item-disabled-color'
@@ -36,7 +36,7 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-border-color': 'color-neutral-65',
     'dropdown-menu-background-color': 'color-white',
     'dropdown-menu-text-color': 'color-black',
-    'nav-item-color': 'color-black',
+    'nav-item-text-color': 'color-black',
     'nav-item-hover-background-color': 'color-neutral-15',
     'nav-item-hover-disabled-background-color': 'transparent-100',
     'nav-item-disabled-color': 'color-neutral-30',

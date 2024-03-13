@@ -33,7 +33,7 @@ interface LinkProps {
 
 const NavItemStyle = css<LinkProps>`
     align-items: center;
-    color: ${({ theme }) => theme.component['nav-item-color']};
+    color: ${({ theme }) => theme.component['nav-item-text-color']};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     height: ${({ $hasIcon, $device: { isMobile, isTablet } }) => ((isTablet || isMobile || $hasIcon) ? 2.5 : 2)}rem;
