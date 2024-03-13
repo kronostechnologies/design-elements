@@ -18,7 +18,7 @@ export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconP
                 <Icon
                     name="arrowDown"
                     size="16"
-                    color={theme.component['sort-button-ascending-color']}
+                    color={theme.component['sort-button-ascending-icon-color']}
                     className={className}
                 />
             );
@@ -27,7 +27,7 @@ export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconP
                 <Icon
                     name="arrowUp"
                     size="16"
-                    color={theme.component['sort-button-descending-color']}
+                    color={theme.component['sort-button-descending-icon-color']}
                     className={className}
                 />
             );
@@ -36,7 +36,7 @@ export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconP
                 <Icon
                     name="reorder"
                     size="16"
-                    color={theme.component['sort-button-default-color']}
+                    color={theme.component['sort-button-default-icon-color']}
                     className={className}
                 />
             );
