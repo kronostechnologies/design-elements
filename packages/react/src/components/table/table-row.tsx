@@ -103,7 +103,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
         position: relative;
 
         &::after {
-            box-shadow: inset 0 0 0 1px ${theme.component['table-row-shadow-color']};
+            box-shadow: inset 0 0 0 1px ${theme.component['table-error-row-border-color']};
             content: '';
             height: calc(100% + 1px);
             left: 0;
@@ -114,7 +114,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
         }
 
         td:first-child::after {
-            border-left: 1px solid ${theme.component['table-row-shadow-color']};
+            border-left: 1px solid ${theme.component['table-error-row-border-color']};
             content: '';
             height: 100%;
             left: 0;
