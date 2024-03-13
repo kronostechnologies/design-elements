@@ -17,7 +17,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 }
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
-    color: ${({ theme }) => theme.component['dropdown-menu-external-item-color']};
+    color: ${({ theme }) => theme.component['dropdown-menu-external-item-text-color']};
     display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;

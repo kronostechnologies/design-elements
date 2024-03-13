@@ -70,7 +70,7 @@ export const StyledExternalLink = styled(ExternalLink)`
 
     &:visited {
         svg {
-            color: ${({ theme }) => theme.component['dropdown-menu-nav-item-external-link-svg-color']};
+            color: ${({ theme }) => theme.component['dropdown-menu-nav-item-external-link-icon-color']};
         }
     }
 

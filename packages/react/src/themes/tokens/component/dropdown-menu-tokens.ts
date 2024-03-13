@@ -10,10 +10,10 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-nav-item-hover-disabled-background-color'
     | 'dropdown-menu-nav-item-disabled-text-color'
     | 'dropdown-menu-nav-item-disabled-icon-color'
-    | 'dropdown-menu-nav-item-external-link-svg-color'
+    | 'dropdown-menu-nav-item-external-link-icon-color'
     | 'dropdown-menu-nav-item-external-link-text-color'
-    | 'dropdown-menu-label-item-text-color'
-    | 'dropdown-menu-external-item-color'
+    | 'dropdown-menu-list-item-text-color'
+    | 'dropdown-menu-external-item-text-color'
     | 'dropdown-menu-external-item-hover-background-color'
     | 'dropdown-menu-external-item-visited-text-color'
     | 'dropdown-menu-external-item-visited-fill-color'
@@ -41,10 +41,10 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-nav-item-hover-disabled-background-color': 'transparent-100',
     'dropdown-menu-nav-item-disabled-text-color': 'color-neutral-30',
     'dropdown-menu-nav-item-disabled-icon-color': 'color-neutral-30',
-    'dropdown-menu-nav-item-external-link-svg-color': 'color-black',
+    'dropdown-menu-nav-item-external-link-icon-color': 'color-black',
     'dropdown-menu-nav-item-external-link-text-color': 'color-black',
-    'dropdown-menu-label-item-text-color': 'color-black',
-    'dropdown-menu-external-item-color': 'color-black',
+    'dropdown-menu-list-item-text-color': 'color-black',
+    'dropdown-menu-external-item-text-color': 'color-black',
     'dropdown-menu-external-item-hover-background-color': 'color-neutral-15',
     'dropdown-menu-external-item-svg-visited-text-color': 'color-black',
     'dropdown-menu-external-item-svg-visited-fill-color': 'color-black',
