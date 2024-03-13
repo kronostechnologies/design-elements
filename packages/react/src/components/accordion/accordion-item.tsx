@@ -59,6 +59,7 @@ const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
 
 const HeadingStyled = styled(Heading)`
     position: relative;
+    z-index: 1;
 `;
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
