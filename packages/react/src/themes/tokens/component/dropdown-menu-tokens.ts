@@ -12,7 +12,7 @@ export type DropdownMenuTokens =
     | 'nav-item-disabled-fill'
     | 'nav-item-external-link-svg-color'
     | 'nav-item-external-link-text-color'
-    | 'label-item-color'
+    | 'label-item-text-color'
     | 'external-item-color'
     | 'external-item-hover-background-color'
     | 'external-item-visited-text-color'
@@ -43,7 +43,7 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'nav-item-disabled-fill': 'color-neutral-30',
     'nav-item-external-link-svg-color': 'color-black',
     'nav-item-external-link-text-color': 'color-black',
-    'label-item-color': 'color-black',
+    'label-item-text-color': 'color-black',
     'external-item-color': 'color-black',
     'external-item-hover-background-color': 'color-neutral-15',
     'external-item-svg-visited-text-color': 'color-black',
