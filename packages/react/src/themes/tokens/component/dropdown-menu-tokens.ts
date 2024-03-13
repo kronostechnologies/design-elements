@@ -17,7 +17,7 @@ export type DropdownMenuTokens =
     | 'external-item-hover-background-color'
     | 'external-item-visited-text-color'
     | 'external-item-visited-fill-color'
-    | 'external-item-svg-visited-color'
+    | 'external-item-svg-visited-text-color'
     | 'external-item-svg-visited-fill-color'
     | 'external-item-disabled-color'
     | 'external-item-disabled-fill-color'
@@ -46,7 +46,7 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'label-item-color': 'color-black',
     'external-item-color': 'color-black',
     'external-item-hover-background-color': 'color-neutral-15',
-    'external-item-svg-visited-color': 'color-black',
+    'external-item-svg-visited-text-color': 'color-black',
     'external-item-svg-visited-fill-color': 'color-black',
     'external-item-visited-text-color': 'color-black',
     'external-item-visited-fill-color': 'color-black',

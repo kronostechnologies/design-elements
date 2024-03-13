@@ -37,7 +37,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
         fill: ${({ theme }) => theme.component['external-item-visited-fill-color']};
 
         svg {
-            color: ${({ theme }) => theme.component['external-item-svg-visited-color']};
+            color: ${({ theme }) => theme.component['external-item-svg-visited-text-color']};
             fill: ${({ theme }) => theme.component['external-item-svg-visited-fill-color']};
         }
     }
