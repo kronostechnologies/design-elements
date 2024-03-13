@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -18,6 +18,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
     color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
+    border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
@@ -31,8 +32,6 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 
     ${focus};
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')};
-    ${focusVisibleReset};
 
     &:focus {
         z-index: 2;

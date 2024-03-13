@@ -49,7 +49,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         z-index: 1;
     }
 
-    ${(theme) => focus(theme, true)};
+    ${focus};
 
     ${(props) => !props.pressed && css`
         &:hover {

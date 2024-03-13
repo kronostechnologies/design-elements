@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import styled from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 
 interface TabPanelProps {
     buttonId: string,
@@ -14,9 +14,7 @@ const StyledDiv = styled.div<{ $contained?: boolean }>`
     border: ${({ $contained }) => ($contained ? '1px solid #878F9A' : 'none')}; /* TODO change with next thematization */
     border-top: none;
 
-    ${focus}
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')}
-    ${focusVisibleReset}
+    ${focus};
 `;
 
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
