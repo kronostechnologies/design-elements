@@ -43,7 +43,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.component['external-item-disabled-color']};
+        color: ${({ theme }) => theme.component['external-item-disabled-text-color']};
         fill: ${({ theme }) => theme.component['external-item-disabled-fill-color']};
         pointer-events: none;
     }
