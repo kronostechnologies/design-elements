@@ -1,26 +1,52 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../themes/theme';
 
+type FocusType = 'focus' | 'focus-visible' | 'focus-within';
+
+export interface FocusOptions {
+    selector?: string;
+    focusTypeSelector?: FocusType;
+    inverted?: boolean;
+    insideOnly?: boolean;
+}
+
 export const focus = (
     { theme }: { theme: ResolvedTheme },
-    hasBorder = false,
-    selector: string | undefined = undefined,
-    inset = false,
+    options: FocusOptions = {},
 ): string => {
-    const focusBorder = `${theme.component['focus-border-color']}`;
-    const focusBoxShadow = `0 0 0 2px ${theme.component['focus-box-shadow-color']}`;
-    const focusBorderBoxShadow = `0 0 0 1px ${theme.component['focus-border-box-shadow-color-1']}, 0 0 0 3px ${theme.component['focus-border-box-shadow-color-2']}`;
-    const focusBorderBoxShadowInset = `inset 0 0 0 2px ${theme.component['focus-border-box-shadow-inset-color-1']}, inset 0 0 0 3px ${theme.component['focus-border-box-shadow-inset-color-2']}`;
+    const {
+        selector,
+        focusTypeSelector = 'focus',
+        inverted = false,
+        insideOnly = false,
+    } = options;
 
-    return `
-        ${selector === undefined ? '&:focus { outline: none; }' : ''}
-        ${selector === undefined ? '&:focus' : `${selector}`} {
-            outline: none;
-            ${hasBorder ? `border-color: ${focusBorder};` : ''}
-            box-shadow: ${focusBoxShadow};
-            ${!hasBorder ? `box-shadow: ${inset ? focusBorderBoxShadowInset : focusBorderBoxShadow};` : ''}
-        }
-    `;
+    const inversionSuffix = inverted ? '-inverted' : '';
+    const insideFocusBorderColor = insideOnly ? theme.component[`focus${inversionSuffix}-outside-border-color`] : theme.component[`focus${inversionSuffix}-inside-border-color`];
+    const outsideFocusBorderColor = insideOnly ? 'transparent' : theme.component[`focus${inversionSuffix}-outside-border-color`];
+    const insideFocusBorderWeight = '2px';
+    const insideFocusBorderOffset = '-2px';
+    const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
+    const transition = 'all .25s ease-in-out;';
+    const baseSelector = selector === undefined ? '' : `${selector}`;
+
+    const notFocusStyle = `
+        &:not(:${focusTypeSelector}) ${baseSelector} {
+            transition: ${transition};
+            box-shadow: none;
+            outline: ${insideFocusBorderWeight} solid transparent;
+            outline-offset: ${insideFocusBorderOffset};
+        }`;
+
+    const focusStyle = `
+        &:${focusTypeSelector} ${baseSelector} {
+            transition: ${transition};
+            box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
+            outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
+            outline-offset: ${insideFocusBorderOffset};
+        }`;
+
+    return notFocusStyle + focusStyle;
 };
 
 export const focusVisibleReset = (
@@ -29,7 +55,6 @@ export const focusVisibleReset = (
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     &:focus:not(:focus-visible) {
         ${hasBorder && 'border-color: inherit;'}
-
         box-shadow: none;
     }
 `;
