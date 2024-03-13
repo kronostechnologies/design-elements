@@ -4,7 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type DropdownMenuTokens =
     | 'dropdown-menu-border-color'
     | 'dropdown-menu-background-color'
-    | 'dropdown-menu-color'
+    | 'dropdown-menu-text-color'
     | 'nav-item-color'
     | 'nav-item-hover-background-color'
     | 'nav-item-hover-disabled-background-color'
@@ -35,7 +35,7 @@ export type DropdownMenuTokenMap = {
 export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-border-color': 'color-neutral-65',
     'dropdown-menu-background-color': 'color-white',
-    'dropdown-menu-color': 'color-black',
+    'dropdown-menu-text-color': 'color-black',
     'nav-item-color': 'color-black',
     'nav-item-hover-background-color': 'color-neutral-15',
     'nav-item-hover-disabled-background-color': 'transparent-100',

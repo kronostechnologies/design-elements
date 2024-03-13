@@ -9,7 +9,7 @@ const List = styled.div`
     border: 1px solid ${({ theme }) => theme.component['dropdown-menu-border-color']};
     border-radius: var(--border-radius);
     box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
-    color: ${({ theme }) => theme.component['dropdown-menu-color']};
+    color: ${({ theme }) => theme.component['dropdown-menu-text-color']};
     list-style-type: none;
     position: absolute;
     width: 100%;
