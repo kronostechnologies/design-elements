@@ -51,7 +51,7 @@ const Dots = styled.div`
     justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 4px;
 `;
 
 interface DotProps {
