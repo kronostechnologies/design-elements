@@ -38,7 +38,7 @@ const StyledSpan = styled.span`
 `;
 
 const Description = styled(StyledSpan)<{ $device: DeviceContextProps }>`
-    color: ${({ theme }) => theme.component['item-content-description-color']};
+    color: ${({ theme }) => theme.component['item-content-description-text-color']};
     flex: 1 0 100%;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '0.875rem' : '0.75rem')};
     line-height: 1.25rem;

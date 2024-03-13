@@ -24,7 +24,7 @@ export type DropdownMenuTokens =
     | 'group-item-border-color'
     | 'item-content-icon-background-color'
     | 'item-content-icon-border-color'
-    | 'item-content-description-color';
+    | 'item-content-description-text-color';
 
 export type DropdownMenuTokenValue = AliasTokens | RefTokens;
 
@@ -55,5 +55,5 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'group-item-border-color': 'color-brand-05',
     'item-content-icon-background-color': 'color-neutral-05',
     'item-content-icon-border-color': 'color-neutral-15',
-    'item-content-description-color': 'color-neutral-65',
+    'item-content-description-text-color': 'color-neutral-65',
 };
