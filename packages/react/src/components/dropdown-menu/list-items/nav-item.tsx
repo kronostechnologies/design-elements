@@ -50,7 +50,7 @@ const NavItemStyle = css<LinkProps>`
 
     &[disabled],
     &[disabled] * {
-        color: ${({ theme }) => theme.component['nav-item-disabled-color']};
+        color: ${({ theme }) => theme.component['nav-item-disabled-text-color']};
         cursor: default;
         fill: ${({ theme }) => theme.component['nav-item-disabled-fill']};
         pointer-events: none;
