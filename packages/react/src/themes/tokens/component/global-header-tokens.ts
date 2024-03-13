@@ -5,7 +5,7 @@ export type GlobalHeaderTokens =
     'global-header-background' |
     'global-header-skiplink-background-color' |
     'global-header-logo-title-separator-color' |
-    'global-header-content-container-color' |
+    'global-header-content-container-text-color' |
     'global-header-logo-content-text-color';
 
 export type GlobalHeaderTokensValue = AliasTokens | RefTokens;
@@ -17,7 +17,7 @@ export type GlobalHeaderTokensMap = {
 export const defaultGlobalHeaderTokens : GlobalHeaderTokensMap = {
     'global-header-background': 'color-brand-80',
     'global-header-logo-title-separator-color': 'color-brand-70',
-    'global-header-content-container-color': 'color-white',
+    'global-header-content-container-text-color': 'color-white',
     'global-header-skiplink-background-color': 'color-white',
     'global-header-logo-content-text-color': 'color-white',
 };
