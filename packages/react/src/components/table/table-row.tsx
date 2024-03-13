@@ -68,7 +68,7 @@ function getCellBackgroundCss({
 
 const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
-        border-top: 1px solid ${({ theme }) => theme.component['table-row-border-top-color']};
+        border-top: 1px solid ${({ theme }) => theme.component['table-row-border-color']};
     }
 
     ${({ $error, $striped, theme }) => $striped && !$error && css`
