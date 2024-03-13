@@ -4,6 +4,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
+import { focus } from '../../utils/css-state';
 
 export interface AccordionItemProps {
     title: string;
@@ -90,10 +91,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
         transition-timing-function: ease;
     }
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow-inset']};
-        color: ${({ theme }) => theme.greys['neutral-90']};
-    }
+    ${focus};
 
     &:hover {
         background: ${({ theme }) => theme.greys.grey};
