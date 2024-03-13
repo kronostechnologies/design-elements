@@ -1,5 +1,5 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
-import styled, { StyledProps } from 'styled-components';
+import styled from 'styled-components';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
@@ -11,6 +11,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip } from '../tooltip/tooltip';
+import { focus } from '../../utils/css-state';
 
 const StyledFieldContainer = styled(FieldContainer)`
     > :nth-child(2) {
@@ -24,61 +25,38 @@ const StyledUl = styled.ul`
     padding: 0;
 `;
 
-const PasswordContainer = styled.div`
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: boolean; }>`
+    border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: row;
     margin-bottom: calc(var(--spacing-1x) * 1.5);
     position: relative;
-
-    > div:first-of-type:focus-within {
-        border-radius: var(--border-radius);
-
-        /* TODO change when updating thematization */
-        box-shadow: 0 0 0 2px #84c6ea;
-        outline: none;
-
-        input,
-        + span > button {
-            /* TODO change when updating thematization */
-            border-color: #006296;
-        }
-    }
+    transition: all 0.25s ease-in-out;
+    ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
+        { theme },
+        { focusTypeSelector: 'focus-within' },
+    )}
 `;
-
-export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolean; }>): string {
-    if (isValid) {
-        return theme.greys['dark-grey'];
-    }
-
-    return theme.notifications['alert-2.1'];
-}
 
 const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input {
+    input,
+    input:not(:focus),
+    input:focus,
+    input:focus-within {
         ::-ms-reveal {
             display: none;
         }
-
-        border-color: ${getBorderColor};
-        border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-width: 1px 0 1px 1px;
-        width: calc(100% - 2rem);
+        border: none;
+        box-shadow: none;
+        outline: none;
     }
 `;
 
 const StyledIconButton = styled(IconButton)<{ isValid: boolean }>`
-    background-color: white;
-    border-color: ${getBorderColor};
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    border-width: 1px 1px 1px 0;
-    min-height: 2rem;
-    position: absolute;
-    transform: translateX(-2rem);
-    width: 2rem;
 `;
 
 interface PasswordCreationInputProps {
@@ -110,6 +88,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     const hintId = useMemo(() => uuid(), []);
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
+    const [iconButtonFocused, setIconButtonFocused] = useState(false);
 
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
@@ -142,10 +121,12 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                     ))}
                 </StyledUl>
             </div>
-            <PasswordContainer>
+            <PasswordContainer
+                $isValid={isValid}
+                $iconButtonFocused={iconButtonFocused}
+            >
                 <StyledInput
                     id={id}
-                    isValid={isValid || isEmpty}
                     name={name ?? 'password'}
                     autoComplete="new-password"
                     ariaDescribedBy={`${hintId} ${passwordStrengthId}`}
@@ -168,6 +149,8 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                         data-testid="show-password-button"
                         type="button"
                         onClick={handleShowPassword}
+                        onFocus={() => setIconButtonFocused(true)}
+                        onBlur={() => setIconButtonFocused(false)}
                     />
                 </Tooltip>
             </PasswordContainer>

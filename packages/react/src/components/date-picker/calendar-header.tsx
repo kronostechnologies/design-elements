@@ -5,6 +5,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { DropdownList, DropdownListOption } from '../dropdown-list/dropdown-list';
+import { focus } from '../../utils/css-state';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;
@@ -26,9 +27,10 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
 `;
 
 const StyledButton = styled.button`
+    ${focus}
     &:focus {
         border-radius: var(--border-radius);
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+        z-index: 10;
     }
 `;
 

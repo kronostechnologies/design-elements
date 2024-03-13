@@ -99,8 +99,8 @@ const Container = styled.div<ContainerProps>`
     padding: var(--spacing-half) 0;
     position: relative;
     z-index: 1000;
-  
-    ${({ $focusable, theme }) => $focusable && focus({ theme })};
+
+    ${({ $focusable }) => $focusable && focus};
 `;
 
 const List = styled.ul`
@@ -132,7 +132,7 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     &:hover {
         border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
     }
-  
+
     ${({ checked }) => (!checked && css`
         > ${CheckMarkIcon} {
             display: none;
@@ -149,20 +149,20 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
-  
+
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
-    
+
     user-select: none;
 
     &:hover {
         background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
     }
-  
+
     ${({ focused, disabled, theme }) => (focused && css`
         outline: 2px solid ${disabled ? 'transparent' : theme.main['primary-1.1']};
-        outline-offset: -2px;
+        outline-offset: -3px;
     `)}
 
     ${({ selected }) => (selected && css`

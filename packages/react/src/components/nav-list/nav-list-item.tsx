@@ -64,7 +64,7 @@ const linkStyles = css<LinkProps>`
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    ${(props) => focus(props, undefined, undefined, true)};
+    ${focus};
 
     :hover {
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};

@@ -1,7 +1,6 @@
 import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -30,59 +29,57 @@ const StyledTooltip = styled(Tooltip)`
 
 const RadioWrapper = styled.div``;
 
-const StyledLabel = styled.label`
-    ${(props: { theme: ResolvedTheme, disabled?: boolean }) => `
-            align-items: center;
-            display: flex;
-            font-size: 0.875rem;
-            line-height: 1.5rem;
-            margin-top: var(--spacing-1x);
-            position: relative;
-            user-select: none;
+const StyledLabel = styled.label<{ disabled?: boolean }>`
+    align-items: center;
+    display: flex;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin-top: var(--spacing-1x);
+    position: relative;
+    user-select: none;
 
-            input {
-                height: var(--size-1x);
-                left: 0;
-                margin: 0;
-                opacity: 0;
-                position: absolute;
-                width: var(--size-1x);
+    input {
+        height: var(--size-1x);
+        left: 0;
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        width: var(--size-1x);
 
-                &:checked + .radioInput {
-                    border: 2px solid ${props.theme.main['primary-1.1']};
+        &:checked + .radioInput {
+            border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
 
-                    &::after {
-                        background-color: ${props.theme.main['primary-1.1']};
-                        border-radius: 50%;
-                        content: '';
-                        height: var(--size-half);
-                        left: 50%;
-                        position: absolute;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        width: var(--size-half);
-                    }
-                }
-
-                ${focus(props, true, '&:focus + .radioInput')}
-            }
-
-            .radioInput {
-                background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
+            &::after {
+                background-color: ${({ theme }) => theme.main['primary-1.1']};
                 border-radius: 50%;
-                box-sizing: border-box;
-                display: inline-block;
-                height: var(--size-1x);
-                margin-right: var(--spacing-1x);
-                position: relative;
-                width: var(--size-1x);
+                content: '';
+                height: var(--size-half);
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: var(--size-half);
             }
+        }
 
-            &:hover .radioInput {
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
-            }
-            `}
+        ${(theme) => focus(theme, { selector: '+ .radioInput' })}
+    }
+
+    .radioInput {
+        background-color: ${({ theme, disabled }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: inline-block;
+        height: var(--size-1x);
+        margin-right: var(--spacing-1x);
+        position: relative;
+        width: var(--size-1x);
+    }
+
+    &:hover .radioInput {
+        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+    }
 `;
 
 const ContentWrapper = styled.div<{ isExpanded: boolean, maxHeight?: number }>(({ isExpanded, maxHeight = 500 }) => `

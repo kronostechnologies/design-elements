@@ -9,6 +9,7 @@ import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
+import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
@@ -37,7 +38,8 @@ export type ComponentTokens =
     | SectionalBannerTokens
     | SpinnerTokens
     | TagTokens
-    | ToastContainerTokens;
+    | ToastContainerTokens
+    | PasswordInputTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -65,6 +67,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSpinnerTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
+    ...defaultPasswordInputTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

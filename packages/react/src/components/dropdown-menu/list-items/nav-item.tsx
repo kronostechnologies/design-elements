@@ -42,7 +42,7 @@ const NavItemStyle = css<LinkProps>`
     text-decoration: none;
     white-space: nowrap;
 
-    ${(props) => focus(props, undefined, undefined, true)}
+    ${focus};
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.greys.grey)};
@@ -67,18 +67,18 @@ export const HtmlLink = styled.a<LinkProps>`
 
 export const StyledExternalLink = styled(ExternalLink)`
     ${NavItemStyle}
-  
+
     &:visited {
         svg {
             color: ${({ theme }) => theme.greys.black};
         }
     }
-    
+
     span {
         color: ${({ theme }) => theme.greys.black};
         padding: 0 0 0 var(--spacing-half);
     }
-    
+
     padding: 0 var(--spacing-2x);
 `;
 
