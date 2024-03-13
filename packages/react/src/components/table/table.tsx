@@ -149,7 +149,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
     .${utilColumnClassName} {
         box-sizing: border-box;
-        color: ${({ theme }) => theme.component['table-util-column-color']};
+        color: ${({ theme }) => theme.component['table-row-number-text-color']};
         font-size: 0.75rem;
         margin-left: 50%;
         min-width: var(--size-2halfx);
