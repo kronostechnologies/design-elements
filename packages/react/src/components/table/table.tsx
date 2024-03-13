@@ -123,7 +123,7 @@ interface StyledTableProps {
 const StyledTable = styled.table<StyledTableProps>`
     background: ${({ theme }) => theme.component['table-background-color']};
     border-collapse: collapse;
-    color: ${({ theme }) => theme.component['table-color']};
+    color: ${({ theme }) => theme.component['table-text-color']};
     width: 100%;
 
     th {
