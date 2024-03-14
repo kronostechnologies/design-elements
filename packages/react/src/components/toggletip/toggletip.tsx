@@ -41,7 +41,7 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.component['toggletip-color']};
+    color: ${({ theme }) => theme.component['toggletip-text-color']};
     display: flex;
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};

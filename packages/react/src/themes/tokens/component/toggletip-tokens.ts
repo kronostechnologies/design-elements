@@ -4,7 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type ToggleTipTokens =
     | 'toggletip-background-color'
     | 'toggletip-border-color'
-    | 'toggletip-color';
+    | 'toggletip-text-color';
 
 export type ToggleTipTokenValue = AliasTokens | RefTokens;
 
@@ -15,5 +15,5 @@ export type ToggleTipTokenMap = {
 export const defaultToggleTipTokens: ToggleTipTokenMap = {
     'toggletip-background-color': 'color-white',
     'toggletip-border-color': 'color-neutral-65',
-    'toggletip-color': 'color-black',
+    'toggletip-text-color': 'color-black',
 };
