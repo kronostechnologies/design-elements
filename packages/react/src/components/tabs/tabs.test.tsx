@@ -77,13 +77,13 @@ describe('Tabs', () => {
                 id: 'tab1',
                 title: 'Tab 1',
                 panelContent: <div>content</div>,
-                onDelete: () => undefined,
+                onRemove: () => undefined,
             },
             {
                 id: 'tab2',
                 title: 'Tab 2',
                 panelContent: <div>content</div>,
-                onDelete: () => undefined,
+                onRemove: () => undefined,
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);

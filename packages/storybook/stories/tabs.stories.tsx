@@ -150,7 +150,7 @@ export const AddAndDeleteTabs: Story = () => {
         setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
     }
 
-    const tabsWithDelete = useMemo(() => tabs.map((t) => ({ ...t, onDelete: handleDelete })), [tabs]);
+    const tabsWithDelete = useMemo(() => tabs.map((t) => ({ ...t, onRemove: handleDelete })), [tabs]);
 
     return (
         <Tabs

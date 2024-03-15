@@ -103,7 +103,7 @@ export interface Tab {
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
-    onDelete?(tabId: string): void;
+    onRemove?(tabId: string): void;
     onBeforeUnload?(): Promise<boolean>;
 }
 
@@ -276,7 +276,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             isSelected={isTabSelected(tabItem.id)}
                             ref={tabItem.buttonRef}
                             onClick={() => handleTabSelected(tabItem)}
-                            onDelete={tabItem.onDelete}
+                            onRemove={tabItem.onRemove}
                             onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                         >
                             {tabItem.title}
@@ -285,7 +285,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     {onAddTab && (
                         <AddButton buttonType='tertiary' type="button" onClick={onAddTab}>
                             <AddIcon name="plusSign" size='16' aria-hidden="true" focusable={false} />
-                            {t('addTabs')}
+                            {t('addTab')}
                         </AddButton>
                     )}
                 </TabButtonsList>

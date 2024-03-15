@@ -8,7 +8,7 @@ import { Icon, IconName } from '../icon/icon';
 
 const selectedIndicatorPosition = (global: boolean | undefined): string => (global ? 'bottom: 0' : 'top: 0');
 
-const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $hasDelete?: boolean; }>`
+const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $removable?: boolean; }>`
     align-items: center;
     color: ${({ $isSelected, theme }) => ($isSelected ? theme.greys['neutral-90'] : '#60666e')};
     display: flex;
@@ -16,7 +16,7 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
     font-size: 0.875rem;
     gap: var(--spacing-half);
     padding: 0 var(--spacing-2x);
-    padding-right: ${({ $hasDelete }) => ($hasDelete && 'var(--spacing-4x)')};
+    padding-right: ${({ $removable }) => ($removable && 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
 
@@ -105,7 +105,7 @@ interface TabButtonProps {
     rightIcon?: IconName;
     isSelected: boolean;
     onClick(): void;
-    onDelete?(tabId: string): void;
+    onRemove?(tabId: string): void;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
@@ -118,14 +118,14 @@ export const TabButton = forwardRef(({
     rightIcon,
     isSelected,
     onClick,
-    onDelete,
+    onRemove,
     onKeyDown,
     ...rest
 }: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { t } = useTranslation('tabs');
     const dataAttributes = useDataAttributes(rest);
     const dataTestId = dataAttributes['data-testid'];
-    const hasDelete = !!onDelete;
+    const hasRemove = !!onRemove;
 
     return (
         <StyledTab $isSelected={isSelected} data-testid={dataTestId}>
@@ -140,7 +140,7 @@ export const TabButton = forwardRef(({
                 tabIndex={isSelected ? undefined : -1}
                 onClick={onClick}
                 onKeyDown={onKeyDown}
-                $hasDelete={hasDelete}
+                $removable={hasRemove}
                 $isSelected={isSelected}
                 $global={global}
             >
@@ -164,10 +164,10 @@ export const TabButton = forwardRef(({
                     />
                 )}
             </StyledButton>
-            {hasDelete && (
+            {hasRemove && (
                 <DeleteButton
                     buttonType="tertiary"
-                    onClick={() => onDelete(id)}
+                    onClick={() => onRemove(id)}
                     data-testid="tab-delete"
                     aria-label={t('dismissTab', { label: children })}
                     iconName='x'
