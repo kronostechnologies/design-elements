@@ -24,6 +24,12 @@ import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens'
 import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
 import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
+import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
+import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
+import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
+import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
+import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
+import { defaultTabTokens, TabTokens } from './component/tab-tokens';
 
 export type ComponentTokens =
     | AvatarTokens
@@ -49,7 +55,13 @@ export type ComponentTokens =
     | SpinnerTokens
     | StatusTokens
     | TagTokens
-    | ToastContainerTokens;
+    | ToastContainerTokens
+    | AccordionTokens
+    | CarouselTokens
+    | ModalTokens
+    | TooltipTokens
+    | ToggleTipTokens
+    | TabTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -83,6 +95,12 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultStatusTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
+    ...defaultAccordionTokens,
+    ...defaultCarouselTokens,
+    ...defaultModalTokens,
+    ...defaultTooltipTokens,
+    ...defaultToggleTipTokens,
+    ...defaultTabTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
