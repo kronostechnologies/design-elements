@@ -26,7 +26,7 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
     }
 
     ::before {
-        background-color: ${({ color, theme }) => color || theme.component['legend-item-bullet-background-color']};
+        background-color: ${({ color, theme }) => color || theme.component['legend-item-bullet-color']};
         border-radius: 50%;
         content: '';
         height: var(--size-half);

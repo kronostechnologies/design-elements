@@ -2,7 +2,7 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type LegendTokens =
-    | 'legend-item-bullet-background-color'
+    | 'legend-item-bullet-color'
     | 'legend-item-description-text-color'
 
 export type LegendTokenValue = AliasTokens | RefTokens;
@@ -12,6 +12,6 @@ export type LegendTokenMap = {
 };
 
 export const defaultLegendTokens: LegendTokenMap = {
-    'legend-item-bullet-background-color': 'color-brand-20',
+    'legend-item-bullet-color': 'color-brand-20',
     'legend-item-description-text-color': 'color-neutral-65',
 };

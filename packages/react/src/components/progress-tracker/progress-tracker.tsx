@@ -96,7 +96,7 @@ const CompletedStep = styled(StyledStep)`
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-label-completed-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-completed-label-text-color']};
     }
 `;
 
@@ -118,7 +118,7 @@ const ActiveStep = styled(StyledStep)`
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-label-active-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-active-label-text-color']};
         font-weight: var(--font-semi-bold);
     }
 `;
@@ -130,7 +130,7 @@ const UncompletedStep = styled(StyledStep)`
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-label-uncompleted-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-uncompleted-label-text-color']};
     }
 `;
 

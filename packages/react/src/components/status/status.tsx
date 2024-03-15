@@ -4,11 +4,11 @@ import { ResolvedTheme } from '../../themes/theme';
 
 export type StatusType = 'enabled' | 'disabled' | 'blocked';
 
-function getCircleBorderStyle(props: {theme: ResolvedTheme, type: StatusType}): string {
-    const { theme, type } = props;
-    return `border: ${type === 'disabled'
-        ? `1px solid ${theme.component['status-circle-disabled-border-color']}`
-        : 'none'}`;
+function getCircleBorderStyle({ theme, type }: {theme: ResolvedTheme, type: StatusType}): string {
+    if (type === 'disabled') {
+        return `1px solid ${theme.component['status-circle-disabled-border-color']}`;
+    }
+    return 'none';
 }
 
 const Wrapper = styled.div<{ type: StatusType }>`
@@ -19,7 +19,7 @@ const Wrapper = styled.div<{ type: StatusType }>`
 
 const Circle = styled.div<{ type: StatusType }>`
     background-color: ${({ theme, type }) => theme.component[`status-circle-${type}-background-color`]};
-    ${getCircleBorderStyle};
+    border: ${getCircleBorderStyle};
     border-radius: 50%;
     box-sizing: border-box;
     height: 0.625rem;
