@@ -8,7 +8,7 @@ interface TabPanelProps {
     contained?: boolean;
     hidden: boolean,
     id: string,
-    isGlobal?: boolean;
+    global?: boolean;
 }
 
 const StyledDiv = styled.div<{ $contained?: boolean; $isGlobal?: boolean; }>`
@@ -26,11 +26,11 @@ export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
     contained,
     hidden,
     id,
-    isGlobal,
+    global,
 }) => (
     <StyledDiv
         $contained={contained}
-        $isGlobal={isGlobal}
+        $isGlobal={global}
         aria-hidden={hidden}
         aria-labelledby={buttonId}
         hidden={hidden}

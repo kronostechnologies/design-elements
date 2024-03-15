@@ -168,6 +168,25 @@ export const AddAndDeleteTabs: Story = () => {
     );
 };
 
+export const Scrollable: Story = () => {
+    const tabs: Tab[] = [...Array(15).keys()].map((i) => ({
+        title: `Tab ${i + 1}`,
+        panelContent: (
+            <StyledDiv>
+                Content
+                {i + 1}
+            </StyledDiv>
+        ),
+    }));
+
+    return (
+        <>
+            <Tabs tabs={tabs} contained />
+            <Tabs tabs={tabs} contained global />
+        </>
+    );
+};
+
 export const WithForceRenderTabPanels: Story = () => {
     const tabs: Tab[] = [
         {

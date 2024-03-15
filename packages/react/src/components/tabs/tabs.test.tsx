@@ -34,6 +34,14 @@ function getActionButton<W extends ReactWrapper | ShallowWrapper>(wrapper: W, in
 }
 
 describe('Tabs', () => {
+    beforeEach(() => {
+        global.ResizeObserver = jest.fn().mockImplementation(() => ({
+            observe: jest.fn(),
+            unobserve: jest.fn(),
+            disconnect: jest.fn(),
+        }));
+    });
+
     test('should display the first tab panel by default', () => {
         const expectedTabPanel = 'content';
         const tabs: Tab[] = givenTabs(1);

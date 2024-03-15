@@ -1,7 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs matches snapshot (global) 1`] = `
-.c3 {
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -24,7 +80,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
-.c3::after {
+.c7::after {
   content: '';
   display: block;
   height: 4px;
@@ -34,25 +90,25 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c3::after {
+.c7::after {
   background-color: #006296;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c3:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -73,7 +129,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   user-select: none;
 }
 
-.c6::after {
+.c10::after {
   content: '';
   display: block;
   height: 4px;
@@ -83,36 +139,27 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c6:active {
+.c10:active {
   color: #1B1C1E;
   font-weight: var(--font-semi-bold);
 }
 
-.c6:active::after {
+.c10:active::after {
   background-color: #003A5A !important;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c6:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   box-shadow: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: -1px;
-  position: relative;
 }
 
 .c5 {
@@ -120,15 +167,22 @@ exports[`Tabs matches snapshot (global) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: -1px;
   position: relative;
 }
 
-.c5:hover .c2::after {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c9:hover .c6::after {
   background-color: #DBDEE1;
 }
 
-.c4::after {
+.c8::after {
   content: attr(data-content);
   display: block;
   font-weight: var(--font-semi-bold);
@@ -136,93 +190,225 @@ exports[`Tabs matches snapshot (global) 1`] = `
   visibility: hidden;
 }
 
-.c7 {
+.c12 {
   border: none;
   border-top: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c7:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+}
+
 .c0 {
+  box-sizing: content-box;
+  height: var(--size-2halfx);
+  padding-top: var(--spacing-2x);
+  position: relative;
+}
+
+.c0::before {
   border-bottom: 1px solid #DBDEE1;
-  box-sizing: border-box;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   gap: var(--spacing-half);
-  min-height: var(--size-2halfx);
-  padding: 0;
+  height: var(--size-2halfx);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  left: 0;
+  padding: 0 var(--spacing-1x) 0 var(--spacing-2x);
+}
+
+.c3.hidden {
+  display: none;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
+  right: 0;
+}
+
+.c11.hidden {
+  display: none;
 }
 
 <div>
   <div
-    aria-label="tabs label"
     class="c0"
-    role="tablist"
   >
-    <div
-      class="c1"
-      data-testid="tab-button-1"
+    <button
+      aria-hidden="true"
+      class="c1 c2 c3 hidden"
+      type="button"
     >
-      <button
-        aria-controls="uuid1"
-        aria-selected="true"
-        class="c2 c3"
-        data-testid="tab-button"
-        id="tab-1"
-        role="tab"
-        type="button"
-      >
-        <span
-          class="c4"
-          data-content="button 1"
-          data-testid="tab-button-text"
-        >
-          button 1
-        </span>
-      </button>
-    </div>
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
     <div
-      class="c5"
-      data-testid="tab-button-2"
+      aria-label="tabs label"
+      class="c4"
+      role="tablist"
     >
-      <button
-        aria-controls="uuid2"
-        aria-selected="false"
-        class="c2 c6"
-        data-testid="tab-button"
-        id="tab-2"
-        role="tab"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c5"
+        data-testid="tab-button-1"
       >
-        <span
-          class="c4"
-          data-content="button 2"
-          data-testid="tab-button-text"
+        <button
+          aria-controls="uuid1"
+          aria-selected="true"
+          class="c6 c7"
+          data-testid="tab-button"
+          id="tab-1"
+          role="tab"
+          type="button"
         >
-          button 2
-        </span>
-      </button>
+          <span
+            class="c8"
+            data-content="button 1"
+            data-testid="tab-button-text"
+          >
+            button 1
+          </span>
+        </button>
+      </div>
+      <div
+        class="c9"
+        data-testid="tab-button-2"
+      >
+        <button
+          aria-controls="uuid2"
+          aria-selected="false"
+          class="c6 c10"
+          data-testid="tab-button"
+          id="tab-2"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="c8"
+            data-content="button 2"
+            data-testid="tab-button-text"
+          >
+            button 2
+          </span>
+        </button>
+      </div>
     </div>
+    <button
+      aria-hidden="true"
+      class="c1 c2 c11 hidden"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
   </div>
   <div
     aria-hidden="false"
     aria-labelledby="tab-1"
-    class="c7"
+    class="c12"
     id="uuid1"
     role="tabpanel"
     tabindex="0"
@@ -236,7 +422,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   <div
     aria-hidden="true"
     aria-labelledby="tab-2"
-    class="c7"
+    class="c12"
     hidden=""
     id="uuid2"
     role="tabpanel"
@@ -252,7 +438,63 @@ exports[`Tabs matches snapshot (global) 1`] = `
 `;
 
 exports[`Tabs matches snapshot (mobile) 1`] = `
-.c3 {
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -275,7 +517,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
-.c3::after {
+.c7::after {
   content: '';
   display: block;
   height: 4px;
@@ -285,25 +527,25 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c3::after {
+.c7::after {
   background-color: #006296;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c3:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -324,7 +566,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c6::after {
+.c10::after {
   content: '';
   display: block;
   height: 4px;
@@ -334,36 +576,27 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c6:active {
+.c10:active {
   color: #1B1C1E;
   font-weight: var(--font-semi-bold);
 }
 
-.c6:active::after {
+.c10:active::after {
   background-color: #003A5A !important;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c6:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   box-shadow: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: -1px;
-  position: relative;
 }
 
 .c5 {
@@ -371,15 +604,22 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: -1px;
   position: relative;
 }
 
-.c5:hover .c2::after {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c9:hover .c6::after {
   background-color: #DBDEE1;
 }
 
-.c4::after {
+.c8::after {
   content: attr(data-content);
   display: block;
   font-weight: var(--font-semi-bold);
@@ -387,96 +627,231 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   visibility: hidden;
 }
 
-.c7 {
+.c12 {
   border: none;
   border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c7:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c0 {
   background: #F1F2F2;
-  border-bottom: 1px solid #DBDEE1;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  height: var(--size-2halfx);
+  position: relative;
+}
+
+.c0::before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   gap: var(--spacing-half);
-  min-height: var(--size-2halfx);
-  padding: 0 0 0 var(--spacing-4x);
+  height: var(--size-2halfx);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  left: 0;
+  padding: 0 var(--spacing-1x) 0 var(--spacing-2x);
+  border-radius: var(--border-radius-2x) 0 0 0;
+}
+
+.c3.hidden {
+  display: none;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
+  right: 0;
+  border-radius: 0 var(--border-radius-2x) 0 0;
+}
+
+.c11.hidden {
+  display: none;
 }
 
 <div>
   <div
-    aria-label="tabs label"
     class="c0"
-    role="tablist"
   >
-    <div
-      class="c1"
-      data-testid="tab-button-1"
+    <button
+      aria-hidden="true"
+      class="c1 c2 c3 hidden"
+      type="button"
     >
-      <button
-        aria-controls="uuid1"
-        aria-selected="true"
-        class="c2 c3"
-        data-testid="tab-button"
-        id="tab-1"
-        role="tab"
-        type="button"
-      >
-        <span
-          class="c4"
-          data-content="button 1"
-          data-testid="tab-button-text"
-        >
-          button 1
-        </span>
-      </button>
-    </div>
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
     <div
-      class="c5"
-      data-testid="tab-button-2"
+      aria-label="tabs label"
+      class="c4"
+      role="tablist"
     >
-      <button
-        aria-controls="uuid2"
-        aria-selected="false"
-        class="c2 c6"
-        data-testid="tab-button"
-        id="tab-2"
-        role="tab"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c5"
+        data-testid="tab-button-1"
       >
-        <span
-          class="c4"
-          data-content="button 2"
-          data-testid="tab-button-text"
+        <button
+          aria-controls="uuid1"
+          aria-selected="true"
+          class="c6 c7"
+          data-testid="tab-button"
+          id="tab-1"
+          role="tab"
+          type="button"
         >
-          button 2
-        </span>
-      </button>
+          <span
+            class="c8"
+            data-content="button 1"
+            data-testid="tab-button-text"
+          >
+            button 1
+          </span>
+        </button>
+      </div>
+      <div
+        class="c9"
+        data-testid="tab-button-2"
+      >
+        <button
+          aria-controls="uuid2"
+          aria-selected="false"
+          class="c6 c10"
+          data-testid="tab-button"
+          id="tab-2"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="c8"
+            data-content="button 2"
+            data-testid="tab-button-text"
+          >
+            button 2
+          </span>
+        </button>
+      </div>
     </div>
+    <button
+      aria-hidden="true"
+      class="c1 c2 c11 hidden"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
   </div>
   <div
     aria-hidden="false"
     aria-labelledby="tab-1"
-    class="c7"
+    class="c12"
     id="uuid1"
     role="tabpanel"
     tabindex="0"
@@ -490,7 +865,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   <div
     aria-hidden="true"
     aria-labelledby="tab-2"
-    class="c7"
+    class="c12"
     hidden=""
     id="uuid2"
     role="tabpanel"
@@ -506,7 +881,63 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 `;
 
 exports[`Tabs matches snapshot 1`] = `
-.c3 {
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -529,7 +960,7 @@ exports[`Tabs matches snapshot 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
-.c3::after {
+.c7::after {
   content: '';
   display: block;
   height: 4px;
@@ -539,25 +970,25 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c3::after {
+.c7::after {
   background-color: #006296;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
 }
 
-.c3:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c3:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -578,7 +1009,7 @@ exports[`Tabs matches snapshot 1`] = `
   user-select: none;
 }
 
-.c6::after {
+.c10::after {
   content: '';
   display: block;
   height: 4px;
@@ -588,36 +1019,27 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c6:active {
+.c10:active {
   color: #1B1C1E;
   font-weight: var(--font-semi-bold);
 }
 
-.c6:active::after {
+.c10:active::after {
   background-color: #003A5A !important;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
 }
 
-.c6:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c6:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   box-shadow: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: -1px;
-  position: relative;
 }
 
 .c5 {
@@ -625,15 +1047,22 @@ exports[`Tabs matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: -1px;
   position: relative;
 }
 
-.c5:hover .c2::after {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c9:hover .c6::after {
   background-color: #DBDEE1;
 }
 
-.c4::after {
+.c8::after {
   content: attr(data-content);
   display: block;
   font-weight: var(--font-semi-bold);
@@ -641,96 +1070,231 @@ exports[`Tabs matches snapshot 1`] = `
   visibility: hidden;
 }
 
-.c7 {
+.c12 {
   border: none;
   border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
 }
 
-.c7:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c7:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c0 {
   background: #F1F2F2;
-  border-bottom: 1px solid #DBDEE1;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  height: var(--size-2halfx);
+  position: relative;
+}
+
+.c0::before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   gap: var(--spacing-half);
-  min-height: var(--size-2halfx);
-  padding: 0 0 0 var(--spacing-4x);
+  height: var(--size-2halfx);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  left: 0;
+  padding: 0 var(--spacing-1x) 0 var(--spacing-2x);
+  border-radius: var(--border-radius-2x) 0 0 0;
+}
+
+.c3.hidden {
+  display: none;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-bottom: 1px solid #DBDEE1;
+  border-radius: 0;
+  bottom: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-2halfx);
+  min-height: auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
+  right: 0;
+  border-radius: 0 var(--border-radius-2x) 0 0;
+}
+
+.c11.hidden {
+  display: none;
 }
 
 <div>
   <div
-    aria-label="tabs label"
     class="c0"
-    role="tablist"
   >
-    <div
-      class="c1"
-      data-testid="tab-button-1"
+    <button
+      aria-hidden="true"
+      class="c1 c2 c3 hidden"
+      type="button"
     >
-      <button
-        aria-controls="uuid1"
-        aria-selected="true"
-        class="c2 c3"
-        data-testid="tab-button"
-        id="tab-1"
-        role="tab"
-        type="button"
-      >
-        <span
-          class="c4"
-          data-content="button 1"
-          data-testid="tab-button-text"
-        >
-          button 1
-        </span>
-      </button>
-    </div>
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
     <div
-      class="c5"
-      data-testid="tab-button-2"
+      aria-label="tabs label"
+      class="c4"
+      role="tablist"
     >
-      <button
-        aria-controls="uuid2"
-        aria-selected="false"
-        class="c2 c6"
-        data-testid="tab-button"
-        id="tab-2"
-        role="tab"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c5"
+        data-testid="tab-button-1"
       >
-        <span
-          class="c4"
-          data-content="button 2"
-          data-testid="tab-button-text"
+        <button
+          aria-controls="uuid1"
+          aria-selected="true"
+          class="c6 c7"
+          data-testid="tab-button"
+          id="tab-1"
+          role="tab"
+          type="button"
         >
-          button 2
-        </span>
-      </button>
+          <span
+            class="c8"
+            data-content="button 1"
+            data-testid="tab-button-text"
+          >
+            button 1
+          </span>
+        </button>
+      </div>
+      <div
+        class="c9"
+        data-testid="tab-button-2"
+      >
+        <button
+          aria-controls="uuid2"
+          aria-selected="false"
+          class="c6 c10"
+          data-testid="tab-button"
+          id="tab-2"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="c8"
+            data-content="button 2"
+            data-testid="tab-button-text"
+          >
+            button 2
+          </span>
+        </button>
+      </div>
     </div>
+    <button
+      aria-hidden="true"
+      class="c1 c2 c11 hidden"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
   </div>
   <div
     aria-hidden="false"
     aria-labelledby="tab-1"
-    class="c7"
+    class="c12"
     id="uuid1"
     role="tabpanel"
     tabindex="0"
@@ -744,7 +1308,7 @@ exports[`Tabs matches snapshot 1`] = `
   <div
     aria-hidden="true"
     aria-labelledby="tab-2"
-    class="c7"
+    class="c12"
     hidden=""
     id="uuid2"
     role="tabpanel"

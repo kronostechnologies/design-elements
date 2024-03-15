@@ -6,9 +6,9 @@ import { useTranslation } from '../../i18n/use-translation';
 import { focus, focusVisibleReset } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
-const selectedIndicatorPosition = (isGlobal: boolean | undefined): string => (isGlobal ? 'bottom: 0' : 'top: 0');
+const selectedIndicatorPosition = (global: boolean | undefined): string => (global ? 'bottom: 0' : 'top: 0');
 
-const StyledButton = styled.button<{ $isGlobal?: boolean; $isSelected?: boolean; $hasDelete?: boolean; }>`
+const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $hasDelete?: boolean; }>`
     align-items: center;
     color: ${({ $isSelected, theme }) => ($isSelected ? theme.greys['neutral-90'] : '#60666e')};
     display: flex;
@@ -27,7 +27,7 @@ const StyledButton = styled.button<{ $isGlobal?: boolean; $isSelected?: boolean;
         left: 0;
         position: absolute;
         width: 100%;
-        ${({ $isGlobal }) => selectedIndicatorPosition($isGlobal)};
+        ${({ $global }) => selectedIndicatorPosition($global)};
     }
 
     ${({ $isSelected, theme }) => !$isSelected && css`
@@ -61,7 +61,6 @@ const StyledButtonIcon = styled(Icon)`
 
 const StyledTab = styled.div<{ $isSelected: boolean; }>`
     display: flex;
-    margin-bottom: -1px;
     position: relative;
 
     ${({ $isSelected }) => !$isSelected && css`
@@ -143,7 +142,7 @@ export const TabButton = forwardRef(({
                 onKeyDown={onKeyDown}
                 $hasDelete={hasDelete}
                 $isSelected={isSelected}
-                $isGlobal={global}
+                $global={global}
             >
                 {leftIcon && (
                     <StyledButtonIcon
