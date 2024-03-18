@@ -86,7 +86,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c10:hover {
@@ -168,20 +168,14 @@ input + .c2 {
   width: 100%;
 }
 
-.c4:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c4:focus {
+  outline: none;
 }
 
 .c4:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c5 {
@@ -545,7 +539,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c12:hover {
@@ -626,20 +620,14 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c6:focus {
+  outline: none;
 }
 
 .c6:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7 {
@@ -973,7 +961,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c8:hover {
@@ -1053,20 +1041,14 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3 {
@@ -1410,7 +1392,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c11:hover {
@@ -1491,20 +1473,14 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c5:focus {
+  outline: none;
 }
 
 .c5:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6 {

@@ -39,20 +39,24 @@ exports[`DropdownMenu Is hidden 1`] = `
   color: #602FA0;
 }
 
-.c6:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c6:focus {
+  outline: none;
 }
 
 .c6:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c6:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c11 {
@@ -116,20 +120,14 @@ exports[`DropdownMenu Is hidden 1`] = `
   white-space: nowrap;
 }
 
-.c8:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c8:focus {
+  outline: none;
 }
 
 .c8:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c8:hover {
@@ -223,20 +221,14 @@ exports[`DropdownMenu Is hidden 1`] = `
   white-space: nowrap;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c2:hover {
@@ -465,20 +457,24 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   color: #602FA0;
 }
 
-.c6:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c6:focus {
+  outline: none;
 }
 
 .c6:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c6:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c11 {
@@ -542,20 +538,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c8:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c8:focus {
+  outline: none;
 }
 
 .c8:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c8:hover {
@@ -649,20 +639,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c2:hover {

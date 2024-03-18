@@ -78,20 +78,10 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1:not(:focus) + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 {
@@ -209,20 +199,10 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1:not(:focus) + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 {
@@ -341,20 +321,10 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1:not(:focus) + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 {
@@ -475,20 +445,10 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1:not(:focus) + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus + .c2 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 {

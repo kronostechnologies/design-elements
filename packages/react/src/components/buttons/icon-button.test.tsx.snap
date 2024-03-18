@@ -41,20 +41,14 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -71,20 +65,14 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
   width: var(--size-2x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -161,20 +149,14 @@ exports[`Icon Button Has disabled styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -191,20 +173,14 @@ exports[`Icon Button Has disabled styles 1`] = `
   width: var(--size-2x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -282,20 +258,14 @@ exports[`Icon Button Has mobile styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -312,20 +282,14 @@ exports[`Icon Button Has mobile styles 1`] = `
   width: var(--size-3x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -402,20 +366,14 @@ exports[`Icon Button Has primary styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -432,20 +390,14 @@ exports[`Icon Button Has primary styles 1`] = `
   width: var(--size-2x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -522,20 +474,14 @@ exports[`Icon Button Has secondary styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -552,20 +498,14 @@ exports[`Icon Button Has secondary styles 1`] = `
   width: var(--size-2x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -642,20 +582,14 @@ exports[`Icon Button Has small styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -673,20 +607,14 @@ exports[`Icon Button Has small styles 1`] = `
   width: var(--size-1halfx);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,
@@ -763,20 +691,14 @@ exports[`Icon Button Has tertiary styles 1`] = `
   user-select: none;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0 > svg {
@@ -793,20 +715,14 @@ exports[`Icon Button Has tertiary styles 1`] = `
   width: var(--size-2x);
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover,

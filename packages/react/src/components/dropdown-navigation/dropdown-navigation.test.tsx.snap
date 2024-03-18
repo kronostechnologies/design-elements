@@ -41,20 +41,14 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1 > svg {
@@ -69,20 +63,14 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  outline: none;
+  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
 }
 
 .c2:hover,
@@ -124,8 +112,13 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c7:focus {
-  outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -307,20 +300,14 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1 > svg {
@@ -335,20 +322,14 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  outline: none;
+  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
 }
 
 .c2:hover,
@@ -390,8 +371,13 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c7:focus {
-  outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -574,20 +560,14 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   user-select: none;
 }
 
-.c1:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c1:focus {
+  outline: none;
 }
 
 .c1:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1 > svg {
@@ -602,20 +582,14 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  outline: none;
+  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
 }
 
 .c2:hover,
@@ -657,8 +631,13 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 }
 
 .c7:focus {
-  outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {

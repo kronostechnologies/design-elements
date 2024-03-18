@@ -15,8 +15,8 @@ exports[`CardLink Matches Snapshot 1`] = `
 
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #878F9A;
   border-radius: var(--border-radius-2x);
+  box-shadow: inset 0 0 0 1px #DBDEE1,0 1px 4px 0 rgb(0 0 0 / 20%);
   box-sizing: border-box;
   color: #000000;
   display: block;
@@ -35,23 +35,17 @@ exports[`CardLink Matches Snapshot 1`] = `
 
 .c0:hover {
   background-color: #DBDEE1;
-  border-color: #60666E;
-}
-
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+  box-shadow: inset 0 0 0 1px #60666E,0 1px 4px 0 rgb(0 0 0 / 20%);
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <a

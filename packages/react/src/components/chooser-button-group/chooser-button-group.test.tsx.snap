@@ -47,24 +47,11 @@ input[type="radio"]:checked + .c3 {
   color: #003A5A;
 }
 
-.c3:not(:focus),
-input[type="checkbox"]:focus + .c3,
+input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c3 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c2,
@@ -185,24 +172,11 @@ input[type="radio"]:checked + .c3 {
   color: #003A5A;
 }
 
-.c3:not(:focus),
-input[type="checkbox"]:focus + .c3,
+input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c3 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c2,
