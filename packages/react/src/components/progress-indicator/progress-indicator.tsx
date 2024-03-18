@@ -1,10 +1,9 @@
 import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
-import { Bar } from '../bar/bar';
+import { Bar } from './bar';
 
 const Label = styled.label`
-    color: ${(props: { theme: ResolvedTheme }) => props.theme.greys.black};
+    color: ${({ theme }) => theme.component['progress-indicator-label-text-color']};
     display: block;
     font-size: 0.875rem;
     letter-spacing: 0.02875rem;

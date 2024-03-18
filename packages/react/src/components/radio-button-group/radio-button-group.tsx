@@ -83,7 +83,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
 const ContentWrapper = styled.div<{ isExpanded: boolean, maxHeight?: number }>(({ isExpanded, maxHeight = 500 }) => `
     overflow: hidden;
     max-height: ${isExpanded ? `${maxHeight}px` : '0'};
-    transition: ${isExpanded ? 'max-height 1s ease-in' : 'max-height .5s ease-out'};
+    transition: max-height 0.5s ease;
 `);
 
 interface RadioButtonProps {
