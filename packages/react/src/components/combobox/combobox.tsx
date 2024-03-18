@@ -60,9 +60,9 @@ const StyledContainer = styled.div`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
-    margin-top: var(--spacing-half);
 `;
 
 const Textbox = styled.input<TextboxProps>`

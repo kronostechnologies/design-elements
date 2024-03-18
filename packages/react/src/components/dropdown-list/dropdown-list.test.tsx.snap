@@ -131,9 +131,9 @@ input + .c2 {
 }
 
 .c8 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c4 {
@@ -585,9 +585,9 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c6 {
@@ -1007,9 +1007,9 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c6 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c2 {
@@ -1440,9 +1440,9 @@ input + .c2 {
 }
 
 .c9 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c5 {

@@ -25,8 +25,8 @@ export const Label = styled.label`
         border-color: ${({ theme }) => theme.greys.grey};
     }
 
-    input[type="checkbox"]:checked + &,
-    input[type="radio"]:checked + & {
+    input[type='checkbox']:checked + &,
+    input[type='radio']:checked + & {
         background: ${({ theme }) => theme.main['primary-1.1']};
         border-color: ${({ theme }) => theme.main['primary-1.1']};
         color: ${({ theme }) => theme.greys.white};
@@ -34,8 +34,8 @@ export const Label = styled.label`
 
     ${({ theme }) => focus({ theme }, { selector: ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &' })}
 
-    input[type="checkbox"]:disabled + &,
-    input[type="radio"]:disabled + & {
+    input[type='checkbox']:disabled + &,
+    input[type='radio']:disabled + & {
         background: ${({ theme }) => theme.greys['light-grey']};
         border-color: ${({ theme }) => theme.greys.grey};
         color: ${({ theme }) => theme.greys['mid-grey']};

@@ -46,6 +46,8 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
         position: absolute;
         width: var(--size-1x);
 
+        ${(theme) => focus(theme, { selector: '+ .radioInput' })}
+
         &:checked + .radioInput {
             border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
 
@@ -61,8 +63,6 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
                 width: var(--size-half);
             }
         }
-
-        ${(theme) => focus(theme, { selector: '+ .radioInput' })}
     }
 
     .radioInput {

@@ -192,9 +192,9 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c5 {
@@ -682,9 +682,9 @@ input + .c2 {
 }
 
 .c12 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c7 {
@@ -1140,9 +1140,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c3 {
@@ -1608,9 +1608,9 @@ input + .c2 {
 }
 
 .c11 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
-  margin-top: var(--spacing-half);
 }
 
 .c6 {

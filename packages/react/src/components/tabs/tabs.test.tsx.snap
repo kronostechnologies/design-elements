@@ -7,9 +7,9 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: none;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #1B1C1E;
-  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -66,9 +66,9 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: none;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #1B1C1E;
-  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -218,8 +218,8 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #878F9A;
-  bottom: -1px;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
@@ -271,8 +271,8 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #878F9A;
-  bottom: -1px;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
@@ -423,8 +423,8 @@ exports[`Tabs matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #878F9A;
-  bottom: -1px;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
@@ -476,8 +476,8 @@ exports[`Tabs matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #878F9A;
-  bottom: -1px;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
