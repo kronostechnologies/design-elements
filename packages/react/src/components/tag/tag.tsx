@@ -39,19 +39,7 @@ export interface TagValue {
     extraLabel?: string;
 }
 
-export interface ClickableOrDeletableTag {
-    /**
-     * The tag's is clickable. (optional)
-     */
-    onClick?(tag: TagValue): void;
-
-    /**
-     * The tag's is deletable. (optional)
-     */
-    onDelete?(tag: TagValue): void;
-}
-
-export interface TagProps extends Partial<ClickableOrDeletableTag> {
+export interface TagProps {
     className?: string;
 
     /**
@@ -100,6 +88,16 @@ export interface TagProps extends Partial<ClickableOrDeletableTag> {
      * The tag's icon. (optional)
      */
     iconName?: IconName;
+
+    /**
+     * The tag's is clickable. (optional)
+     */
+    onClick?(tag: TagValue): void;
+
+    /**
+     * The tag's is deletable. (optional)
+     */
+    onDelete?(tag: TagValue): void;
 }
 
 interface BaseTagStylingProps {
@@ -161,18 +159,14 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: TagContainerProps)
 type ColorProperty = 'background-color' | 'border-color' | 'text-color';
 
 function getTagColors(
-    {
-        $tagColor, $colorProperty, theme,
-}: StyledProps<BaseTagStylingProps & {
-        $colorProperty: ColorProperty;
-    }>,
+    { $tagColor, theme }: StyledProps<BaseTagStylingProps>,
+    $colorProperty: ColorProperty,
 ): string {
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     color: ${({ theme }) => theme.component['tag-default-icon-color']};
-
     height: var(--size-1x);
     margin-right: var(--spacing-half);
     vertical-align: text-bottom;
@@ -209,7 +203,7 @@ const TagExtraLabel = styled.span<TagLabelProps>`
 `;
 
 const TagLabel = styled.span<TagLabelProps>`
-    color: ${(props) => getTagColors({ ...props, $colorProperty: 'text-color' })};
+    color: ${(props) => getTagColors(props, 'text-color')};
     display: inline-block;
     font-size: ${getFontSize}rem;
     line-height: ${getLineHeight}rem;
@@ -276,8 +270,8 @@ function getClickableStyle(
 
 const TagContainer = styled.div<TagContainerProps>`
     align-items: center;
-    background-color: ${(props) => getTagColors({ ...props, $colorProperty: 'background-color' })};
-    border: 1px solid ${(props) => getTagColors({ ...props, $colorProperty: 'border-color' })};
+    background-color: ${(props) => getTagColors(props, 'background-color')};
+    border: 1px solid ${(props) => getTagColors(props, 'border-color')};
     border-radius: ${getBorderRadius};
     display: inline-flex;
     justify-content: center;
