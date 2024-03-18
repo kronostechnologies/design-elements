@@ -23,8 +23,12 @@ interface ContainerProps {
     isMobile: boolean;
 }
 
+interface IsMobileProps {
+    $isMobile: boolean;
+}
+
 function getGlobalBannerContainerColors(
-    { bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>,
+    { bannerType, theme }: StyledProps<ContainerProps>,
 ): FlattenSimpleInterpolation {
     return css`
         background-color: ${theme.component[`global-banner-${bannerType}-background-color`]};
@@ -45,25 +49,21 @@ const Container = styled.section<ContainerProps>`
     position: relative;
 `;
 
-const Content = styled.div<{ isMobile: boolean }>`
+const Content = styled.div<IsMobileProps>`
     align-items: center;
-    align-self: ${({ isMobile }) => (isMobile ? 'flex-start' : null)};
+    align-self: ${({ $isMobile }) => ($isMobile ? 'flex-start' : null)};
     display: flex;
-    justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
+    justify-content: ${({ $isMobile }) => ($isMobile ? 'unset' : 'center')};
     padding-left: var(--spacing-4x);
     position: relative;
 
     > svg {
         flex-shrink: 0;
-        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
         margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     }
 `;
-
-interface IsMobileProps {
-    $isMobile: boolean;
-}
 
 function getIconPosition(props: IsMobileProps): SimpleInterpolation {
     if (props.$isMobile) {
@@ -86,14 +86,11 @@ const Text = styled.span`
     margin: 0;
 `;
 
-const Label = styled.strong<{ isMobile: boolean }>`
-    display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
+const Label = styled.strong<IsMobileProps>`
+    display: ${({ $isMobile }) => ($isMobile ? 'block' : 'inline')};
     font-weight: var(--font-semi-bold);
-    ${({ isMobile }) => (isMobile ? css`
-        margin-bottom: var(--spacing-half);
-    ` : css`
-        margin-right: var(--spacing-1x);
-    `)}
+    margin-bottom: ${({ $isMobile }) => $isMobile && 'var(--spacing-half)'};
+    margin-right: ${({ $isMobile }) => !$isMobile && 'var(--spacing-1x)'};
 `;
 
 const Message = styled.span`
@@ -114,14 +111,14 @@ const getIconName = (bannerType: GlobalBannerType): IconName => {
     }
 };
 
-const ButtonContainer = styled.div<{ isMobile: boolean }>`
+const ButtonContainer = styled.div<IsMobileProps>`
     display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
+    flex-direction: ${({ $isMobile }) => ($isMobile ? 'column' : 'row')};
+    width: ${({ $isMobile }) => ($isMobile ? '100%' : 'unset')};
 
     > button {
-        margin-left: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
-        margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : '0')};
+        margin-left: ${({ $isMobile }) => ($isMobile ? '0' : 'var(--spacing-1x)')};
+        margin-top: ${({ $isMobile }) => ($isMobile ? 'var(--spacing-1x)' : '0')};
     }
 `;
 
@@ -138,10 +135,8 @@ export interface ActionButton {
 }
 
 function getActionButtonColors(
-    { bannerType, theme, state }: StyledProps<{
-        bannerType: GlobalBannerType;
-        state: GlobalBannerButtonState
-    }>,
+    { bannerType, theme }: StyledProps<ActionButtonProps>,
+    state: GlobalBannerButtonState,
 ): FlattenSimpleInterpolation {
     const statePrefix = state === 'hover' ? '-hover' : '';
     return css`
@@ -153,10 +148,10 @@ function getActionButtonColors(
 const ActionButton = styled(Button).attrs(
     { buttonType: 'secondary', inverted: true },
 )<ActionButtonProps>`
-    ${(props) => getActionButtonColors({ ...props, state: 'default' })};
+    ${(props) => getActionButtonColors(props, 'default')};
 
     &:hover {
-        ${(props) => getActionButtonColors({ ...props, state: 'hover' })};
+        ${(props) => getActionButtonColors(props, 'hover')};
     }
 `;
 
@@ -165,29 +160,30 @@ interface DismissButtonProps {
 }
 
 function getDismissButtonColors(
-    { bannerType, theme, state }: StyledProps<{
-        bannerType: Exclude<GlobalBannerType, 'alert'>;
-        state: GlobalBannerButtonState
-    }>,
+    { bannerType, theme }: StyledProps<ActionButtonProps>,
+    state: GlobalBannerButtonState,
 ): FlattenSimpleInterpolation {
     const statePrefix = state === 'hover' ? '-hover' : '';
-    return css`
+    if (bannerType !== 'alert') {
+        return css`
         background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
         color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
     `;
+    }
+    return css``;
 }
 
 const DismissButton = styled(Button).attrs(
     { buttonType: 'tertiary', inverted: true },
 )<PropsWithChildren<DismissButtonProps>>`
-    ${(props) => getDismissButtonColors({ ...props, state: 'default' })};
+    ${(props) => getDismissButtonColors(props, 'default')};
 
     &:hover {
-        ${(props) => getDismissButtonColors({ ...props, state: 'hover' })};
+        ${(props) => getDismissButtonColors(props, 'hover')};
     }
 `;
 
-interface Props {
+interface GlobalBannerProps {
     actionButton?: ActionButton;
     secondaryActionButton?: ActionButton;
     className?: string;
@@ -212,7 +208,7 @@ export const GlobalBanner = forwardRef(({
     onDismiss,
     secondaryActionButton,
     type = 'neutral',
-}: Props, ref: Ref<HTMLElement>): ReactElement | null => {
+}: GlobalBannerProps, ref: Ref<HTMLElement>): ReactElement | null => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
@@ -235,7 +231,7 @@ export const GlobalBanner = forwardRef(({
             bannerType={type}
             role="status"
         >
-            <Content isMobile={isMobile}>
+            <Content $isMobile={isMobile}>
                 <StyledIcon
                     aria-label={type}
                     focusable={undefined}
@@ -245,13 +241,13 @@ export const GlobalBanner = forwardRef(({
                     size={isMobile ? '24' : '16'}
                 />
                 <Text>
-                    <Label isMobile={isMobile}>{label}</Label>
+                    <Label $isMobile={isMobile}>{label}</Label>
                     <Message>{children}</Message>
                 </Text>
             </Content>
 
             {hasButtons && (
-                <ButtonContainer isMobile={isMobile}>
+                <ButtonContainer $isMobile={isMobile}>
                     {actionButton && (
                         <ActionButton
                             data-testid="action-button"
