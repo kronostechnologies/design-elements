@@ -17,11 +17,11 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-external-item-hover-background-color'
     | 'dropdown-menu-external-item-visited-text-color'
     | 'dropdown-menu-external-item-visited-fill-color'
-    | 'dropdown-menu-external-item-svg-visited-text-color'
-    | 'dropdown-menu-external-item-svg-visited-fill-color'
+    | 'dropdown-menu-external-item-icon-visited-text-color'
+    | 'dropdown-menu-external-item-icon-visited-fill-color'
     | 'dropdown-menu-external-item-disabled-text-color'
     | 'dropdown-menu-external-item-disabled-fill-color'
-    | 'dropdown-menu-group-item-border-color'
+    | 'dropdown-menu-group-border-color'
     | 'dropdown-menu-item-content-icon-background-color'
     | 'dropdown-menu-item-content-icon-border-color'
     | 'dropdown-menu-item-content-description-text-color';
@@ -46,13 +46,13 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-list-item-text-color': 'color-black',
     'dropdown-menu-external-item-text-color': 'color-black',
     'dropdown-menu-external-item-hover-background-color': 'color-neutral-15',
-    'dropdown-menu-external-item-svg-visited-text-color': 'color-black',
-    'dropdown-menu-external-item-svg-visited-fill-color': 'color-black',
+    'dropdown-menu-external-item-icon-visited-text-color': 'color-black',
+    'dropdown-menu-external-item-icon-visited-fill-color': 'color-black',
     'dropdown-menu-external-item-visited-text-color': 'color-black',
     'dropdown-menu-external-item-visited-fill-color': 'color-black',
     'dropdown-menu-external-item-disabled-text-color': 'color-neutral-30',
     'dropdown-menu-external-item-disabled-fill-color': 'color-neutral-30',
-    'dropdown-menu-group-item-border-color': 'color-brand-05',
+    'dropdown-menu-group-border-color': 'color-brand-05',
     'dropdown-menu-item-content-icon-background-color': 'color-neutral-05',
     'dropdown-menu-item-content-icon-border-color': 'color-neutral-15',
     'dropdown-menu-item-content-description-text-color': 'color-neutral-65',

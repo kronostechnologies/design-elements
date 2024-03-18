@@ -23,7 +23,7 @@ const StyledGroup = styled.ul`
     padding: 0;
 
     :not(:last-child)::after {
-        border-bottom: 1px solid ${({ theme }) => theme.component['dropdown-menu-group-item-border-color']};
+        border-bottom: 1px solid ${({ theme }) => theme.component['dropdown-menu-group-border-color']};
         content: '';
         display: block;
         margin: 0 var(--spacing-2x);
