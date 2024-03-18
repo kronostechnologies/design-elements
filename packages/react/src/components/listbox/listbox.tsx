@@ -462,7 +462,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 {options.map((option) => (
                     <ListItem
                         aria-disabled={option.disabled}
-                        aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
+                        aria-selected={isOptionSelected(option) ? 'true' : undefined}
                         data-testid={sanitizeId(`listitem-${option.value}`)}
                         disabled={option.disabled}
                         focused={isOptionFocused(option)}
