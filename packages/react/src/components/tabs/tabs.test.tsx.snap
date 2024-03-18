@@ -9,6 +9,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   border-bottom: none;
   bottom: -1px;
   color: #1B1C1E;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,24 +30,19 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -72,6 +68,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   border-bottom: none;
   bottom: -1px;
   color: #1B1C1E;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,24 +88,19 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -134,26 +126,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
 .c5 {
   border: none;
   border-top: none;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
 }
 
 .c0 {
@@ -248,6 +220,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
   color: #878f9a;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -273,24 +246,19 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -305,6 +273,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
   color: #878f9a;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -324,24 +293,19 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -367,26 +331,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 .c5 {
   border: none;
   border-top: none;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
 }
 
 .c0 {
@@ -481,6 +425,7 @@ exports[`Tabs matches snapshot 1`] = `
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
   color: #878f9a;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -506,24 +451,19 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -538,6 +478,7 @@ exports[`Tabs matches snapshot 1`] = `
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
   color: #878f9a;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -557,24 +498,19 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -600,26 +536,6 @@ exports[`Tabs matches snapshot 1`] = `
 .c5 {
   border: none;
   border-top: none;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
 }
 
 .c0 {

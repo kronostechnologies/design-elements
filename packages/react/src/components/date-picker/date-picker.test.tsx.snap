@@ -1936,14 +1936,19 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -2003,9 +2008,24 @@ input + .c1 {
   outline: none;
 }
 
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
+  z-index: 10;
 }
 
 .c8 {
@@ -3016,14 +3036,19 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   user-select: none;
 }
 
-.c16:focus {
-  outline: none;
+.c16:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c16 > svg {
@@ -3038,14 +3063,19 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #006296;
 }
 
-.c17:focus {
-  outline: none;
+.c17:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c17:hover,
@@ -3148,14 +3178,19 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -3215,9 +3250,24 @@ input + .c1 {
   outline: none;
 }
 
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
+  z-index: 10;
 }
 
 .c8 {
@@ -4293,14 +4343,19 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c12:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 {
@@ -4360,9 +4415,24 @@ input + .c1 {
   outline: none;
 }
 
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
+  z-index: 10;
 }
 
 .c8 {

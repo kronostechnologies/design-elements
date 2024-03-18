@@ -41,14 +41,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   user-select: none;
 }
 
-.c2:focus {
-  outline: none;
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 > svg {
@@ -65,14 +70,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   width: var(--size-2x);
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3:hover,
@@ -120,6 +130,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -128,6 +139,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -140,24 +152,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #602FA0;
 }
 
-.c18:focus {
-  outline: none;
+.c18:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c18:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c18:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c24 {
@@ -165,6 +172,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
@@ -173,28 +181,24 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c24:focus {
-  outline: none;
+.c24:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c24:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c24:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c24:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c16 {
@@ -258,14 +262,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c21:focus {
-  outline: none;
+.c21:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c21:hover {
@@ -387,14 +396,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c11:hover {
@@ -428,14 +442,19 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {
@@ -872,14 +891,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   user-select: none;
 }
 
-.c2:focus {
-  outline: none;
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 > svg {
@@ -896,14 +920,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   width: var(--size-2x);
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3:hover,
@@ -951,6 +980,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -959,6 +989,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -971,24 +1002,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #602FA0;
 }
 
-.c18:focus {
-  outline: none;
+.c18:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c18:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c18:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c24 {
@@ -996,6 +1022,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
@@ -1004,28 +1031,24 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c24:focus {
-  outline: none;
+.c24:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c24:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c24:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c24:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c16 {
@@ -1089,14 +1112,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c21:focus {
-  outline: none;
+.c21:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c21:hover {
@@ -1218,14 +1246,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c11:hover {
@@ -1259,14 +1292,19 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {
@@ -1615,14 +1653,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c2:focus {
-  outline: none;
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 > svg {
@@ -1639,14 +1682,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   width: var(--size-2x);
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3:hover,
@@ -1694,6 +1742,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -1702,6 +1751,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1714,24 +1764,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #602FA0;
 }
 
-.c18:focus {
-  outline: none;
+.c18:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c18:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c18:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c24 {
@@ -1739,6 +1784,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
@@ -1747,28 +1793,24 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c24:focus {
-  outline: none;
+.c24:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c24:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c24:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c24:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c16 {
@@ -1832,14 +1874,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c21:focus {
-  outline: none;
+.c21:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c21:hover {
@@ -1961,14 +2008,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c11:hover {
@@ -2002,14 +2054,19 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {

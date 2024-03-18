@@ -59,12 +59,6 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   padding-bottom: var(--spacing-4x);
 }
 
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
-}
-
 .c2 {
   max-height: 100%;
   overflow-y: auto;
@@ -153,12 +147,6 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c2 {
@@ -257,14 +245,19 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -282,14 +275,19 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c4:focus {
-  outline: none;
+.c4:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -342,12 +340,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   content: '';
   display: block;
   padding-bottom: 0;
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c2 {
@@ -466,14 +458,19 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -491,14 +488,19 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c4:focus {
-  outline: none;
+.c4:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -551,12 +553,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c2 {
@@ -675,14 +671,19 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -699,14 +700,19 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -759,12 +765,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c2 {
