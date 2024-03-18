@@ -1,7 +1,6 @@
 import { Lozenge } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
-import { decorateWith } from './utils/decorator';
 import { MobileDecorator } from './utils/device-context-decorator';
 
 export default {
@@ -48,8 +47,6 @@ export const Variant: Story = () => (
     </>
 );
 
-Variant.decorators = [decorateWith(VariantsContainer)];
-
 export const WithIcon: Story = () => (
     <>
         <VariantsContainer>
@@ -71,5 +68,3 @@ export const WithIcon: Story = () => (
         </VariantsContainer>
     </>
 );
-
-WithIcon.decorators = [decorateWith(VariantsContainer)];
