@@ -3,7 +3,7 @@
 exports[`Side Drawer Has different height when in mobile 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 56px);
   right: 0;
   overflow-x: hidden;
@@ -41,7 +41,7 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
 exports[`Side Drawer Has nested drawer 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   left: 0;
   overflow-x: hidden;
@@ -65,7 +65,7 @@ exports[`Side Drawer Has nested drawer 1`] = `
 
 .c2 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   right: 0;
   overflow-x: hidden;
@@ -111,7 +111,7 @@ exports[`Side Drawer Has nested drawer 1`] = `
 exports[`Side Drawer Has width set to 50% 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   right: 0;
   overflow-x: hidden;
@@ -149,7 +149,7 @@ exports[`Side Drawer Has width set to 50% 1`] = `
 exports[`Side Drawer Is closed on left side 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   left: 0;
   overflow-x: hidden;
@@ -186,7 +186,7 @@ exports[`Side Drawer Is closed on left side 1`] = `
 exports[`Side Drawer Is closed on right side 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   right: 0;
   overflow-x: hidden;
@@ -223,7 +223,7 @@ exports[`Side Drawer Is closed on right side 1`] = `
 exports[`Side Drawer Is open 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 transparent;
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 48px);
   right: 0;
   overflow-x: hidden;
