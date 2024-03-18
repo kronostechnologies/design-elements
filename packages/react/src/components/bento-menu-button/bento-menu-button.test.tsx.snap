@@ -309,7 +309,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c10:not(:last-child)::after {
-  border-bottom: 1px solid #E0F0F9;
+  border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
@@ -1140,7 +1140,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c10:not(:last-child)::after {
-  border-bottom: 1px solid #E0F0F9;
+  border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
@@ -1883,7 +1883,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c10:not(:last-child)::after {
-  border-bottom: 1px solid #E0F0F9;
+  border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);

@@ -52,7 +52,7 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-external-item-visited-fill-color': 'color-black',
     'dropdown-menu-external-item-disabled-text-color': 'color-neutral-30',
     'dropdown-menu-external-item-disabled-fill-color': 'color-neutral-30',
-    'dropdown-menu-group-border-color': 'color-brand-05',
+    'dropdown-menu-group-border-color': 'color-neutral-15',
     'dropdown-menu-item-content-icon-background-color': 'color-neutral-05',
     'dropdown-menu-item-content-icon-border-color': 'color-neutral-15',
     'dropdown-menu-item-content-description-text-color': 'color-neutral-65',
