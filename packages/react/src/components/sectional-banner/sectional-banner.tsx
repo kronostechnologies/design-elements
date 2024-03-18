@@ -15,7 +15,7 @@ import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
-import { focus } from '../../utils/css-state';
+import { focus, focusVisibleReset } from '../../utils/css-state';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
 export type SectionalBannerType = 'neutral' | 'info' | 'discovery' | 'success' | 'warning' | 'alert';
@@ -70,7 +70,9 @@ function abstractContainer(
 
         ${getLayout};
 
-        ${focus};
+        ${(props) => focus(props, true)};
+
+        ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
             color: ${(props) => (props.theme.component[iconColor || 'sectional-banner-icon-color'])};

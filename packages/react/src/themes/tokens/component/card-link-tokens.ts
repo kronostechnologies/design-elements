@@ -3,7 +3,6 @@ import { RefTokens } from '../ref-tokens';
 
 export type CardLinkTokens =
     | 'card-link-background-color'
-    | 'card-link-border-color'
     | 'card-link-box-shadow-inset-color'
     | 'card-link-text-color'
     | 'card-link-hover-background-color'
@@ -18,7 +17,6 @@ export type CardLinkTokenMap = {
 export const defaultCardLinkTokens: CardLinkTokenMap = {
     'card-link-background-color': 'color-white',
     'card-link-box-shadow-inset-color': 'color-neutral-15',
-    'card-link-border-color': 'color-neutral-50',
     'card-link-text-color': 'color-black',
     'card-link-hover-background-color': 'color-neutral-15',
     'card-link-hover-box-shadow-inset-color': 'color-neutral-65',

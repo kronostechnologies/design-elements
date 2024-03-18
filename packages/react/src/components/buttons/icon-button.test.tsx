@@ -149,7 +149,7 @@ describe('Icon Button', () => {
             label="home"
         />);
 
-        expect(wrapper).toHaveStyleRule('outline', '2px solid #84C6EA', {
+        expect(wrapper).toHaveStyleRule('outline', 'none', {
             modifier: ':focus',
         });
     });

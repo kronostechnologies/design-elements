@@ -2,10 +2,13 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type FocusTokens =
-    | 'focus-inside-border-color'
-    | 'focus-inverted-inside-border-color'
-    | 'focus-outside-border-color'
-    | 'focus-inverted-outside-border-color';
+    | 'focus-border-color'
+    | 'focus-box-shadow-color'
+    | 'focus-box-shadow-inset-color'
+    | 'focus-border-box-shadow-color-1'
+    | 'focus-border-box-shadow-color-2'
+    | 'focus-border-box-shadow-inset-color-1'
+    | 'focus-border-box-shadow-inset-color-2';
 
 export type FocusTokenValue = AliasTokens | RefTokens;
 
@@ -14,8 +17,11 @@ export type FocusTokenMap = {
 };
 
 export const defaultFocusTokens: FocusTokenMap = {
-    'focus-inside-border-color': 'color-brand-20',
-    'focus-inverted-inside-border-color': 'color-brand-50',
-    'focus-outside-border-color': 'color-brand-50',
-    'focus-inverted-outside-border-color': 'color-brand-20',
+    'focus-border-color': 'color-brand-50',
+    'focus-box-shadow-color': 'color-brand-20',
+    'focus-box-shadow-inset-color': 'color-brand-20',
+    'focus-border-box-shadow-color-1': 'color-brand-50',
+    'focus-border-box-shadow-color-2': 'color-brand-20',
+    'focus-border-box-shadow-inset-color-1': 'color-brand-20',
+    'focus-border-box-shadow-inset-color-2': 'color-brand-50',
 };

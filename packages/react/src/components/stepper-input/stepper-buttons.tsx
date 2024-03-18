@@ -1,6 +1,5 @@
 import { VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
 import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon/icon';
 
@@ -29,11 +28,6 @@ const buttonStyles = css`
         background-color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-background-color']};
         border-color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-border-color']};
         color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-text-color']};
-    }
-
-    ${focus};
-    &:focus {
-        z-index: 1000;
     }
 `;
 

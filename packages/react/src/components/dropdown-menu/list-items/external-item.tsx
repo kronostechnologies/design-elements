@@ -26,7 +26,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    ${focus}
+    ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};

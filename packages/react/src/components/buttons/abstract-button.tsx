@@ -47,7 +47,7 @@ export const defaultButtonStyles = css<{ $focusable?: boolean, isMobile: boolean
     text-transform: uppercase;
     user-select: none;
 
-    ${(props) => props.$focusable !== false && focus};
+    ${(props) => props.$focusable !== false && focus(props, true)};
 
     > svg {
         color: inherit;
@@ -133,6 +133,6 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
 };
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = (props) => css`
-    ${props.focusable !== false && focus(props, { inverted: props.inverted })};
+    ${props.focusable !== false && focus(props, true)};
     ${getButtonStyles(props)};
 `;

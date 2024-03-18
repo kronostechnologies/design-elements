@@ -15,6 +15,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { NavListOption } from './nav-list-option';
+import { focus } from '../../utils/css-state';
 
 type DisabledSuffix = '-disabled' | '';
 
@@ -64,10 +65,7 @@ const linkStyles = css<LinkProps>`
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    :focus {
-        outline: 2px solid ${({ theme }) => theme.component['listbox-item-focused-outline-color']};
-        outline-offset: -2px;
-    }
+    ${(props) => focus(props, undefined, undefined, true)};
 
     :hover {
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};

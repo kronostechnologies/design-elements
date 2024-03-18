@@ -101,7 +101,7 @@ const Container = styled.div<ContainerProps>`
     padding: var(--spacing-half) 0;
     position: relative;
 
-    ${({ $focusable }) => $focusable && focus};
+    ${({ $focusable, theme }) => $focusable && focus({ theme })};
 `;
 
 const List = styled.ul`
@@ -164,7 +164,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ focused, disabled, theme }) => (focused && css`
         outline: 2px solid ${disabled ? theme.component['listbox-item-focused-disabled-outline-color'] : theme.component['listbox-item-focused-outline-color']};
-        outline-offset: -3px;
+        outline-offset: -2px;
     `)}
 
     ${({ selected }) => (selected && css`

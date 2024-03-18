@@ -4,7 +4,6 @@ import styled, { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { focus } from '../../utils/css-state';
 
 interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
     noPadding: boolean;
@@ -65,7 +64,11 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
         padding-bottom: ${getPadding};
     }
 
-    ${({ theme }) => focus({ theme }, { inverted: true })};
+    &:focus {
+        border-color: ${({ theme }) => theme.tokens['focus-border']};
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
+        outline: none;
+    }
 `;
 
 const Main = styled.main<ContentProps>`

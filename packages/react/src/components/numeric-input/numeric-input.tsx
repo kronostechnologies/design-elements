@@ -22,7 +22,7 @@ interface StyledInputProps {
 }
 
 const StyledInput = styled.input<StyledInputProps>`
-    ${({ theme, device }) => inputsStyle(theme, device.isMobile, false)}
+    ${({ theme, device }) => inputsStyle(theme, device.isMobile)};
 
     border: 0;
     flex: 1 1 auto;
@@ -55,7 +55,6 @@ const Wrapper = styled.div<StyledWrapperProps>`
     display: flex;
     height: var(--size-2x);
 
-    ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-within' })};
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.component['numeric-input-error-border-color']};
 `};
@@ -67,6 +66,11 @@ const Wrapper = styled.div<StyledWrapperProps>`
             color: ${theme.component['numeric-input-disabled-adornment-text-color']};
         }
 `};
+
+    &:focus-within {
+        ${({ theme }) => focus({ theme }, true, '&')};
+        border-radius: var(--border-radius);
+    }
 `;
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
