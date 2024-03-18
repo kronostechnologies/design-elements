@@ -44,6 +44,6 @@ export const defaultTokens: ResolvedTheme['tokens'] = {
     'focus-border-box-shadow': ` 0 0 0 1px ${defaultMain['primary-1.1']}, 0 0 0 3px ${defaultMain['primary-1.2']}`,
     'focus-border-box-shadow-inset': `inset 0 0 0 2px ${defaultMain['primary-1.2']}, inset 0 0 0 3px ${defaultMain['primary-1.1']}`,
     'focus-border': `${defaultMain['primary-1.1']}`,
-    'modal-overlay-background-color': 'rgba(0, 0, 0, 0.75)',
-    'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
+    'modal-overlay-background-color': 'rgb(0 0 0 / 0.75)',
+    'overlay-box-shadow': '0 10px 20px 0 rgb(0 0 0 / 0.19)',
 };
