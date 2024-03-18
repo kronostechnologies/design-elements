@@ -33,7 +33,6 @@ export const focus = (
     const notFocusStyle = `
         &:not(:${focusTypeSelector}) ${baseSelector} {
             transition: ${transition};
-            box-shadow: none;
             outline: ${insideFocusBorderWeight} solid transparent;
             outline-offset: ${insideFocusBorderOffset};
         }`;
