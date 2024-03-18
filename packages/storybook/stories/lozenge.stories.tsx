@@ -18,26 +18,58 @@ export const Mobile: Story = () => (
 );
 Mobile.decorators = [MobileDecorator];
 
-const TypeDecorator = styled.div`
-    > :not(:first-child) {
-        margin-left: 1rem;
-    }
+const VariantsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 `;
 
-export const Type: Story = () => (
+export const Variant: Story = () => (
     <>
-        <Lozenge>default no type</Lozenge>
-        <Lozenge type='default'>default</Lozenge>
-        <Lozenge type='success'>success</Lozenge>
-        <Lozenge type='alert'>alert</Lozenge>
-        <Lozenge type='warning'>warning</Lozenge>
-        <Lozenge type='info'>info</Lozenge>
-        <Lozenge type='disabled'>disabled</Lozenge>
+        <VariantsContainer>
+            <Lozenge>default</Lozenge>
+            <Lozenge variant="neutral">neutral</Lozenge>
+            <Lozenge variant="success">success</Lozenge>
+            <Lozenge variant="alert">alert</Lozenge>
+            <Lozenge variant="warning">warning</Lozenge>
+            <Lozenge variant="info">info</Lozenge>
+            <Lozenge variant="discovery">discovery</Lozenge>
+        </VariantsContainer>
+
+        <VariantsContainer>
+            <Lozenge subtle>default</Lozenge>
+            <Lozenge subtle variant="neutral">neutral</Lozenge>
+            <Lozenge subtle variant="success">success</Lozenge>
+            <Lozenge subtle variant="alert">alert</Lozenge>
+            <Lozenge subtle variant="warning">warning</Lozenge>
+            <Lozenge subtle variant="info">info</Lozenge>
+            <Lozenge subtle variant="discovery">discovery</Lozenge>
+        </VariantsContainer>
     </>
 );
 
-Type.decorators = [decorateWith(TypeDecorator)];
+Variant.decorators = [decorateWith(VariantsContainer)];
 
 export const WithIcon: Story = () => (
-    <Lozenge icon="eye">With icon</Lozenge>
+    <>
+        <VariantsContainer>
+            <Lozenge icon="star" variant="neutral">neutral</Lozenge>
+            <Lozenge icon="check" variant="success">success</Lozenge>
+            <Lozenge icon="alertOctagon" variant="alert">alert</Lozenge>
+            <Lozenge icon="alertTriangle" variant="warning">warning</Lozenge>
+            <Lozenge icon="info" variant="info">info</Lozenge>
+            <Lozenge icon="star" variant="discovery">discovery</Lozenge>
+        </VariantsContainer>
+
+        <VariantsContainer>
+            <Lozenge subtle icon="star" variant="neutral">neutral</Lozenge>
+            <Lozenge subtle icon="check" variant="success">success</Lozenge>
+            <Lozenge subtle icon="alertOctagon" variant="alert">alert</Lozenge>
+            <Lozenge subtle icon="alertTriangle" variant="warning">warning</Lozenge>
+            <Lozenge subtle icon="info" variant="info">info</Lozenge>
+            <Lozenge subtle icon="star" variant="discovery">discovery</Lozenge>
+        </VariantsContainer>
+    </>
 );
+
+WithIcon.decorators = [decorateWith(VariantsContainer)];
