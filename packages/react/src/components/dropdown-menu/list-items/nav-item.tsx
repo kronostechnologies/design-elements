@@ -42,7 +42,7 @@ const NavItemStyle = css<LinkProps>`
     text-decoration: none;
     white-space: nowrap;
 
-    ${focus};
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.greys.grey)};

@@ -17,6 +17,7 @@ import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
+import { focus } from '../../utils/css-state';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
@@ -88,10 +89,7 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     width: 100%;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
