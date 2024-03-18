@@ -2,9 +2,9 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type CardTokens =
-    'card-background-color' |
-    'card-border-color' |
-    'card-box-shadow-color';
+    | 'card-background-color'
+    | 'card-border-color'
+    | 'card-box-shadow-color';
 
 export type CardTokensValue = AliasTokens | RefTokens;
 
