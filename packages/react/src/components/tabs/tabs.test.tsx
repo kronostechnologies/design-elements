@@ -43,7 +43,7 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        const tabButton = getByTestId(wrapper, 'tab-button-1');
+        const tabButton = getByTestId(wrapper, 'tabs-tab-1');
 
         expect(tabButton.prop('isSelected')).toBe(true);
     });
@@ -52,8 +52,8 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        const tabButton1 = getByTestId(wrapper, 'tab-button-1');
-        const tabButton2 = getByTestId(wrapper, 'tab-button-2');
+        const tabButton1 = getByTestId(wrapper, 'tabs-tab-1');
+        const tabButton2 = getByTestId(wrapper, 'tabs-tab-2');
 
         expect(tabButton1.prop('isSelected')).toBe(true);
         expect(tabButton2.prop('isSelected')).toBe(false);
@@ -72,7 +72,7 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        getByTestId(wrapper, 'tabs-tab-2').simulate('click');
 
         expectPanelToBeRendered(wrapper, 'tab-panel-2');
     });
@@ -81,7 +81,7 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        getByTestId(wrapper, 'tabs-tab-2').simulate('click');
 
         expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
     });
@@ -96,7 +96,7 @@ describe('Tabs', () => {
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         await actAndWaitForEffects(wrapper, () => {
-            getByTestId(wrapper, 'tab-button-2').prop('onClick')();
+            getByTestId(wrapper, 'tabs-tab-2').prop('onClick')();
         });
 
         expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(true);
@@ -110,7 +110,7 @@ describe('Tabs', () => {
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         await actAndWaitForEffects(wrapper, () => {
-            const tabButton = getByTestId(wrapper, 'tab-button-2');
+            const tabButton = getByTestId(wrapper, 'tabs-tab-2');
             tabButton.prop('onClick')();
         });
 
@@ -127,7 +127,7 @@ describe('Tabs', () => {
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         await actAndWaitForEffects(wrapper, () => {
-            const tabButton2 = getByTestId(wrapper, 'tab-button-2');
+            const tabButton2 = getByTestId(wrapper, 'tabs-tab-2');
             tabButton2.prop('onClick')();
         });
 
@@ -147,7 +147,7 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        getByTestId(wrapper, 'tabs-tab-2').simulate('click');
 
         expectPanelToBeRendered(wrapper, 'tab-panel-2');
     });
@@ -194,9 +194,9 @@ describe('Tabs', () => {
                 { attachTo: divElement },
             );
 
-            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'ArrowRight' });
+            getByTestId(wrapper, 'tabs-tab-1').simulate('keydown', { key: 'ArrowRight' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-2'));
         });
 
         it('should go to the first tab-button when ArrowRight key is pressed on last tab-button', () => {
@@ -206,9 +206,9 @@ describe('Tabs', () => {
                 { attachTo: divElement },
             );
 
-            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'ArrowRight' });
+            getByTestId(wrapper, 'tabs-tab-3').simulate('keydown', { key: 'ArrowRight' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-1'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-1'));
         });
 
         it('should go to the previous tab-button when ArrowLeft key is pressed on a tab-button', () => {
@@ -218,9 +218,9 @@ describe('Tabs', () => {
                 { attachTo: divElement },
             );
 
-            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'ArrowLeft' });
+            getByTestId(wrapper, 'tabs-tab-3').simulate('keydown', { key: 'ArrowLeft' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-2'));
         });
 
         it('should go to the last tab-button when ArrowLeft key is pressed on first tab-button', () => {
@@ -230,9 +230,9 @@ describe('Tabs', () => {
                 { attachTo: divElement },
             );
 
-            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'ArrowLeft' });
+            getByTestId(wrapper, 'tabs-tab-1').simulate('keydown', { key: 'ArrowLeft' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-3'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-3'));
         });
 
         it('should go to the selected tab-button when Tab key is pressed on a tab-button that is not selected', () => {
@@ -241,11 +241,11 @@ describe('Tabs', () => {
                 <Tabs tabs={tabs} />,
                 { attachTo: divElement },
             );
-            getByTestId(wrapper, 'tab-button-2').simulate('click');
+            getByTestId(wrapper, 'tabs-tab-2').simulate('click');
 
-            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'Tab' });
+            getByTestId(wrapper, 'tabs-tab-3').simulate('keydown', { key: 'Tab' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-2'));
         });
 
         it('should go to the first tab-button when Home key is pressed on a tab-button', () => {
@@ -254,11 +254,11 @@ describe('Tabs', () => {
                 <Tabs tabs={tabs} />,
                 { attachTo: divElement },
             );
-            getByTestId(wrapper, 'tab-button-3').simulate('click');
+            getByTestId(wrapper, 'tabs-tab-3').simulate('click');
 
-            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'Home' });
+            getByTestId(wrapper, 'tabs-tab-3').simulate('keydown', { key: 'Home' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-1'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-1'));
         });
 
         it('should go to the last tab-button when End key is pressed on a tab-button', () => {
@@ -268,9 +268,9 @@ describe('Tabs', () => {
                 { attachTo: divElement },
             );
 
-            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'End' });
+            getByTestId(wrapper, 'tabs-tab-1').simulate('keydown', { key: 'End' });
 
-            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-3'));
+            expectFocusToBeOn(getByTestId(wrapper, 'tabs-tab-3'));
         });
     });
 });

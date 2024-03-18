@@ -157,7 +157,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     >
       <span
         class="c2"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 1
       </span>
@@ -173,7 +173,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     >
       <span
         class="c4"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 2
       </span>
@@ -217,10 +217,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   bottom: -1px;
-  color: #878f9a;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -235,10 +235,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x);
   position: relative;
   background-color: #FFFFFF;
-  border: 1px solid #878f9a;
+  border: 1px solid #878F9A;
   border-bottom: 1px solid transparent;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-  color: #1b1c1e;
+  color: #1B1C1E;
   z-index: 1;
 }
 
@@ -270,10 +270,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   bottom: -1px;
-  color: #878f9a;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -338,7 +338,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -362,7 +362,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     >
       <span
         class="c2"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 1
       </span>
@@ -378,7 +378,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     >
       <span
         class="c4"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 2
       </span>
@@ -422,10 +422,10 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   bottom: -1px;
-  color: #878f9a;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -440,10 +440,10 @@ exports[`Tabs matches snapshot 1`] = `
   padding: 0 var(--spacing-2x);
   position: relative;
   background-color: #FFFFFF;
-  border: 1px solid #878f9a;
+  border: 1px solid #878F9A;
   border-bottom: 1px solid transparent;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-  color: #1b1c1e;
+  color: #1B1C1E;
   z-index: 1;
 }
 
@@ -475,10 +475,10 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   bottom: -1px;
-  color: #878f9a;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -543,7 +543,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #878f9a;
+  border-bottom: 1px solid #878F9A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -567,7 +567,7 @@ exports[`Tabs matches snapshot 1`] = `
     >
       <span
         class="c2"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 1
       </span>
@@ -583,7 +583,7 @@ exports[`Tabs matches snapshot 1`] = `
     >
       <span
         class="c4"
-        data-testid="tab-button-text"
+        data-testid="tabs-tab-text"
       >
         button 2
       </span>
