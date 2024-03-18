@@ -3,12 +3,12 @@ import {
     KeyboardEvent,
     ReactNode,
     RefObject,
-    useEffect,
     useMemo,
     useState,
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
+import { useScrollable } from '../../hooks/use-scrollable';
 import { useTranslation } from '../../i18n/use-translation';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
@@ -132,6 +132,15 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     const scrollLeftButtonRef = createRef<HTMLButtonElement>();
     const scrollRightButtonRef = createRef<HTMLButtonElement>();
 
+    const { scrollToLeft, scrollToRight } = useScrollable({
+        scrollableElement: tabsListRef,
+        scrollByPercent: 0.6,
+        onScroll: ({ atStartX, atEndX }) => {
+            scrollLeftButtonRef.current?.classList.toggle('hidden', atStartX);
+            scrollRightButtonRef.current?.classList.toggle('hidden', atEndX);
+        },
+    });
+
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
@@ -141,33 +150,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
     const [selectedTab, setSelectedTab] = useState(tabItems[0]);
-
-    useEffect(() => {
-        const scrollArea = tabsListRef.current!;
-
-        function handleButtonsVisibility(): void {
-            const scrollX = scrollArea.scrollLeft;
-            if (scrollLeftButtonRef.current) {
-                scrollLeftButtonRef.current.classList.toggle('hidden', scrollX === 0);
-            }
-            if (scrollRightButtonRef.current) {
-                const wholeWidth = scrollArea.scrollWidth;
-                const scrollVisibleWidth = scrollArea.offsetWidth;
-                const isEndOfScroll = Math.ceil(scrollX) + scrollVisibleWidth >= wholeWidth;
-                scrollRightButtonRef.current.classList.toggle('hidden', isEndOfScroll);
-            }
-        }
-
-        handleButtonsVisibility();
-
-        const resizeObserver = new ResizeObserver(handleButtonsVisibility);
-        resizeObserver.observe(scrollArea);
-        scrollArea.addEventListener('scroll', handleButtonsVisibility);
-        return () => {
-            resizeObserver.unobserve(scrollArea);
-            scrollArea.removeEventListener('scroll', handleButtonsVisibility);
-        };
-    }, [tabsListRef, scrollLeftButtonRef, scrollRightButtonRef]);
 
     async function handleTabSelected(tabItem: TabItem): Promise<void> {
         if (selectedTab?.onBeforeUnload) {
@@ -230,19 +212,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }
     }
 
-    const handleScroll = (dir: 'left' | 'right') => () => {
-        if (!tabsListRef.current) {
-            return;
-        }
-
-        const scrollVisibleWidth = tabsListRef.current.offsetWidth;
-        const moveBy = scrollVisibleWidth * 0.5;
-        const currentPosX = tabsListRef.current.scrollLeft;
-        const newPosX = dir === 'left' ? currentPosX - moveBy : currentPosX + moveBy;
-
-        tabsListRef.current.scrollTo({ left: newPosX, behavior: 'smooth' });
-    };
-
     return (
         <div className={className}>
             <TabButtonsContainer $global={global}>
@@ -251,7 +220,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     buttonType="tertiary"
                     type="button"
                     aria-hidden="true"
-                    onClick={handleScroll('left')}
+                    onClick={() => scrollToLeft()}
                     $position="left"
                     $global={global}
                     ref={scrollLeftButtonRef}
@@ -294,7 +263,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     buttonType="tertiary"
                     type="button"
                     aria-hidden="true"
-                    onClick={handleScroll('right')}
+                    onClick={() => scrollToRight()}
                     $position="right"
                     $global={global}
                     ref={scrollRightButtonRef}

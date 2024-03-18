@@ -182,7 +182,7 @@ export const Scrollable: Story = () => {
     return (
         <>
             <Tabs tabs={tabs} contained />
-            <Tabs tabs={tabs} contained global />
+            <Tabs tabs={tabs} global />
         </>
     );
 };
