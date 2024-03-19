@@ -26,74 +26,7 @@ import { useClickOutside } from '../../hooks/use-click-outside';
 import { sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
 
-interface TextboxProps {
-    $disabled?: boolean;
-    $isMobile: boolean;
-    theme: ResolvedTheme;
-    $valid: boolean;
-    value: string;
-}
-
 export interface ComboboxOption extends Omit<ListboxOption, 'label'> {}
-
-function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
-    if ($disabled) {
-        return theme.component['combobox-disabled-border-color'];
-    }
-    if (!$valid) {
-        return theme.component['combobox-error-border-color'];
-    }
-
-    return theme.component['combobox-border-color'];
-}
-
-const StyledFieldContainer = styled(FieldContainer)`
-    position: relative;
-`;
-
-const StyledContainer = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-`;
-
-const StyledListbox = styled(Listbox)`
-    margin-top: 6px;
-    position: absolute;
-    width: 100%;
-`;
-
-const Textbox = styled.input<TextboxProps>`
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
-    border: 1px solid ${getBorderColor};
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    color: ${({ $disabled, theme }) => $disabled && theme.component['combobox-disabled-text-color']};
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: 0 var(--spacing-1x);
-    width: 100%;
-
-    ${({ theme }) => focus({ theme }, true)};
-`;
-
-const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
-    align-items: center;
-    background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
-    border: 0;
-    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};    display: flex;
-    height: var(--size-1x);
-    padding: var(--spacing-half);
-    position: absolute;
-    right: var(--spacing-half);
-    width: var(--size-1x);
-
-    &:hover {
-        background-color: ${({ theme }) => theme.component['combobox-arrow-button-hover-background-color']};
-    }
-`;
 
 type AutoCompleteMode = 'none' | 'inline' | 'list' | 'both';
 
@@ -154,6 +87,65 @@ interface ComboboxProps {
      */
     onChange?(value: string): void;
 }
+
+function getBorderColor(theme: ResolvedTheme, disabled = false, valid = true): string {
+    if (disabled) {
+        return theme.component['combobox-disabled-border-color'];
+    }
+    if (!valid) {
+        return theme.component['combobox-error-border-color'];
+    }
+
+    return theme.component['combobox-border-color'];
+}
+
+const StyledFieldContainer = styled(FieldContainer)`
+    position: relative;
+`;
+
+const StyledContainer = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+`;
+
+const StyledListbox = styled(Listbox)`
+    margin-top: 6px;
+    position: absolute;
+    width: 100%;
+`;
+
+const Textbox = styled.input<Pick<ComboboxProps, 'valid' | 'disabled'> & { isMobile?: boolean }>`
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
+    border: 1px solid ${({ disabled, valid, theme }) => getBorderColor(theme, disabled, valid)};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    padding: 0 var(--spacing-1x);
+    width: 100%;
+
+    ${({ theme }) => focus({ theme }, true)};
+`;
+
+const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
+    align-items: center;
+    background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
+    border: 0;
+    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};    display: flex;
+    height: var(--size-1x);
+    padding: var(--spacing-half);
+    position: absolute;
+    right: var(--spacing-half);
+    width: var(--size-1x);
+
+    &:hover {
+        background-color: ${({ theme }) => theme.component['combobox-arrow-button-hover-background-color']};
+    }
+`;
 
 const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
 
@@ -478,9 +470,10 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     aria-required={required ? 'true' : 'false'}
                     data-testid="textbox"
                     id={id}
-                    $isMobile={isMobile}
-                    $disabled={disabled}
+                    isMobile={isMobile}
                     disabled={disabled}
+                    valid={valid}
+                    value={suggestedInputValue || inputValue}
                     name={name}
                     onBlur={handleTextboxBlur}
                     onChange={handleTextboxChange}
@@ -489,8 +482,6 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     ref={textboxRef}
                     role="combobox"
                     tabIndex={0}
-                    $valid={valid}
-                    value={suggestedInputValue || inputValue}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <ArrowButton
