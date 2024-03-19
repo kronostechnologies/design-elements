@@ -82,7 +82,7 @@ function getHeading<TData extends object, TValue>(
         );
     }
 
-    if (header.column.getCanSort()) {
+    if (header.column.columnDef.sortable) {
         return (
             <StyledHeader
                 aria-label={header.column.columnDef.headerAriaLabel}

@@ -10,7 +10,12 @@ import {
     ColumnSort,
     Updater,
     functionalUpdate,
+    getExpandedRowModel,
+    ExpandedState,
+    TableOptions,
+    RowSelectionState,
 } from '@tanstack/react-table';
+import { IconButton } from '../buttons/icon-button';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
@@ -69,50 +74,6 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
 
 const utilColumnClassName = 'eq-table__util-column';
 
-function getCustomColumn<T extends object>(type: string): CustomColumnDef<T> {
-    return {
-        id: type,
-        header(props: HeaderContext<T, unknown>) {
-            if (type === 'selection') {
-                const { table } = props;
-                return (
-                    <Checkbox
-                        data-testid="row-checkbox-all"
-                        checked={table.getIsAllRowsSelected()}
-                        indeterminate={table.getIsSomeRowsSelected()}
-                        onChange={table.getToggleAllRowsSelectedHandler()}
-                    />
-                );
-            }
-            // For 'numbers' type or any other type, return null or an empty header
-            return null;
-        },
-        cell({ row }) {
-            if (type === 'selection') {
-                return (
-                    <Checkbox
-                        data-testid={`row-checkbox-${row.index}`}
-                        checked={row.getIsSelected()}
-                        disabled={!row.getCanSelect()}
-                        indeterminate={row.getIsSomeSelected()}
-                        onChange={row.getToggleSelectedHandler()}
-                    />
-                );
-            }
-
-            if (type === 'numbers') {
-                return (
-                    <span className={utilColumnClassName}>
-                        {row.index + 1}
-                    </span>
-                );
-            }
-
-            return null;
-        },
-    };
-}
-
 interface StyledTableProps {
     $clickableRows: boolean;
     $device: DeviceType;
@@ -148,14 +109,18 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 
     .${utilColumnClassName} {
-        box-sizing: border-box;
-        color: ${({ theme }) => theme.greys['dark-grey']};
-        font-size: 0.75rem;
-        margin-left: 50%;
-        min-width: var(--size-2halfx);
-        transform: translateX(-50%);
-        width: var(--size-2halfx);
+        width: 1px;
     }
+`;
+
+const RowNumber = styled.span`
+    box-sizing: border-box;
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    font-size: 0.75rem;
+    margin-left: 50%;
+    min-width: var(--size-2halfx);
+    transform: translateX(-50%);
+    width: var(--size-2halfx);
 `;
 
 const StyledTHead = styled.thead`
@@ -170,10 +135,78 @@ const StyledTFoot = styled.tfoot`
     background: inherit;
 `;
 
+const StyledSubRowCell = styled.td`
+    border-top: 1px solid ${({ theme }) => theme.greys.grey};
+`;
+
+function getUtilityColumn<T extends object>(type: string): CustomColumnDef<T> {
+    return {
+        id: type,
+        className: utilColumnClassName,
+        header(props: HeaderContext<T, unknown>) {
+            if (type === 'selection') {
+                const { table } = props;
+                return (
+                    <Checkbox
+                        data-testid="row-checkbox-all"
+                        checked={table.getIsAllRowsSelected()}
+                        indeterminate={table.getIsSomeRowsSelected()}
+                        onChange={table.getToggleAllRowsSelectedHandler()}
+                    />
+                );
+            }
+            // For 'numbers' type or any other type, return null or an empty header
+            return null;
+        },
+        cell({ row }) {
+            if (type === 'selection') {
+                return (
+                    <Checkbox
+                        data-testid={`row-checkbox-${row.index}`}
+                        checked={row.getIsSelected()}
+                        disabled={!row.getCanSelect()}
+                        indeterminate={row.getIsSomeSelected()}
+                        onChange={row.getToggleSelectedHandler()}
+                    />
+                );
+            }
+
+            if (type === 'numbers') {
+                return (
+                    <RowNumber>{row.index + 1}</RowNumber>
+                );
+            }
+
+            if (type === 'expand' && row.getCanExpand()) {
+                return row.getIsExpanded()
+                    ? (
+                        <IconButton
+                            buttonType='tertiary'
+                            iconName='caretDown'
+                            onClick={row.getToggleExpandedHandler()}
+                        />
+                    ) : (
+                        <IconButton
+                            buttonType='tertiary'
+                            iconName='caretRight'
+                            onClick={row.getToggleExpandedHandler()}
+                        />
+                    );
+            }
+
+            return null;
+        },
+    };
+}
+
 export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
     columns: CustomColumnDef<T>[];
+    expandableRows?: boolean;
+    renderExpandedRow?: (props: { row: Row<T> }) => React.ReactNode;
+    rowCanExpand?: (row: Row<T>) => boolean;
+    singleExpand?: boolean;
     /**
      * Adds row numbers
      * @default false
@@ -203,7 +236,11 @@ export const Table = <T extends object>({
     className,
     data,
     defaultSort,
-    columns: defaultColumns,
+    columns: providedColumns,
+    expandableRows,
+    renderExpandedRow,
+    rowCanExpand,
+    singleExpand,
     stickyHeader = false,
     stickyFooter = false,
     rowNumbers = false,
@@ -218,34 +255,52 @@ export const Table = <T extends object>({
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
-    const [rowSelection, setRowSelection] = useState({});
+    const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+    const [expanded, setExpanded] = useState<ExpandedState>({});
 
-    // Add custom columns for row numbers and row selection
+    // Add utility columns for row numbers and row selection
     const columns = useMemo(() => {
-        const cols = [...defaultColumns];
-        if (selectableRows) {
-            cols.unshift(getCustomColumn<T>('selection'));
-        } else if (rowNumbers) {
-            cols.unshift(getCustomColumn<T>('numbers'));
-        }
-        return cols;
-    }, [selectableRows, rowNumbers, defaultColumns]);
+        const cols = [...providedColumns];
 
-    const tableOptions = {
+        if (selectableRows) {
+            cols.unshift(getUtilityColumn<T>('selection'));
+        } else if (expandableRows) {
+            cols.unshift(getUtilityColumn<T>('expand'));
+        } else if (rowNumbers) {
+            cols.unshift(getUtilityColumn<T>('numbers'));
+        }
+
+        return cols;
+    }, [selectableRows, expandableRows, rowNumbers, providedColumns]);
+
+    const tableOptions: TableOptions<T> = {
         data,
         columns,
         state: {
             sorting,
             rowSelection,
+            expanded,
         },
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
+        getExpandedRowModel: getExpandedRowModel(),
+        getRowCanExpand: expandableRows ? (rowCanExpand ?? (() => true)) : undefined,
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
             setSorting(newValue);
             onSort?.(newValue[0] ?? null);
+        },
+        onExpandedChange: (updater: Updater<ExpandedState>) => {
+            let newValue = functionalUpdate(updater, expanded);
+
+            // Hackish because onExpandedChange doesn't provide the currently expanded/collapsed row
+            if (singleExpand && Object.keys(newValue).length > 1) {
+                newValue = functionalUpdate(updater, {});
+            }
+
+            setExpanded(newValue);
         },
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
@@ -260,7 +315,6 @@ export const Table = <T extends object>({
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
             const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
-
             onSelectedRowsChange(selectedRows);
         }
     }, [selectableRows, currentRowSelection, onSelectedRowsChange, data]);
@@ -284,12 +338,22 @@ export const Table = <T extends object>({
             </StyledTHead>
             <StyledTBody>
                 {table.getRowModel().rows.map((row) => (
-                    <TableRow<T>
-                        striped={striped}
-                        error={!!(row.original as CustomRowProps).error}
-                        row={row}
-                        onClick={onRowClick}
-                    />
+                    <>
+                        <TableRow<T>
+                            striped={striped}
+                            error={!!(row.original as CustomRowProps).error}
+                            row={row}
+                            onClick={onRowClick}
+                        />
+                        {row.getIsExpanded() && (
+                            <tr>
+                                <td />
+                                <StyledSubRowCell colSpan={999}>
+                                    {renderExpandedRow?.({ row })}
+                                </StyledSubRowCell>
+                            </tr>
+                        )}
+                    </>
                 ))}
             </StyledTBody>
             {hasFooter && (
