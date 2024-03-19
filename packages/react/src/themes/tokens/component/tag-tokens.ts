@@ -5,7 +5,6 @@ export type TagTokens =
     | 'tag-default-background-color'
     | 'tag-default-border-color'
     | 'tag-default-text-color'
-    | 'tag-default-extra-label-text-color'
     | 'tag-default-icon-color'
 
     | 'tag-default-hover-icon-color'
@@ -15,7 +14,6 @@ export type TagTokens =
     | 'tag-default-selected-border-color'
     | 'tag-default-selected-background-color'
     | 'tag-default-selected-text-color'
-    | 'tag-default-selected-extra-label-text-color'
     | 'tag-default-selected-hover-background-color'
     | 'tag-default-selected-hover-border-color'
     | 'tag-default-selected-hover-text-color'
@@ -68,7 +66,6 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-default-background-color': 'color-neutral-05',
     'tag-default-border-color': 'color-neutral-50',
     'tag-default-text-color': 'color-neutral-90',
-    'tag-default-extra-label-text-color': 'color-neutral-65',
     'tag-default-icon-color': 'color-neutral-65',
     'tag-default-hover-background-color': 'color-neutral-15',
     'tag-default-hover-border-color': 'color-neutral-90',
@@ -77,7 +74,6 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-default-selected-background-color': 'color-informative-05',
     'tag-default-selected-border-color': 'color-informative-70',
     'tag-default-selected-text-color': 'color-informative-70',
-    'tag-default-selected-extra-label-text-color': 'color-informative-50',
     'tag-default-selected-icon-color': 'color-informative-70',
     'tag-default-selected-hover-background-color': 'color-informative-10',
     'tag-default-selected-hover-border-color': 'color-informative-70',

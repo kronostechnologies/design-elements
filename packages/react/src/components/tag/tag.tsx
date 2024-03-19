@@ -36,7 +36,6 @@ export type TagSize =
 export interface TagValue {
     id?: string;
     label: string;
-    extraLabel?: string;
 }
 
 export interface TagProps {
@@ -188,20 +187,6 @@ const DeleteIcon = styled(Icon).attrs({
     name: 'x',
 })``;
 
-const TagExtraLabel = styled.span<TagLabelProps>`
-    color: ${({ theme }) => theme.component['tag-default-extra-label-text-color']};
-    display: inline-block;
-    font-size: ${getFontSize}rem;
-    line-height: ${getLineHeight}rem;
-    max-width: 312px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-default-selected-extra-label-text-color']};
-    `}
-`;
-
 const TagLabel = styled.span<TagLabelProps>`
     color: ${(props) => getTagColors(props, 'text-color')};
     display: inline-block;
@@ -305,22 +290,18 @@ export const Tag = forwardRef(({
     const isDeletable = !!onDelete;
     const isClickable = !!onClick;
     const hasIcon = !!iconName;
-    const hasExtraLabel = !!value.extraLabel;
-    const currentColor = (isDeletable || isClickable || hasExtraLabel || hasIcon) ? 'default' : (color ?? 'default');
+    const currentColor = (isDeletable || isClickable || hasIcon) ? 'default' : (color ?? 'default');
     const [isSelected, setSelected] = useState<boolean>(isDefault(currentColor) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
     const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
-    const shortenedExtraLabel = value.extraLabel && value.extraLabel.length > 20
-        ? `${value.extraLabel.slice(0, 17)}…`
-        : value.extraLabel || '';
 
     useEffect(() => {
-        if (isDeletable || isClickable || hasExtraLabel || hasIcon) {
+        if (isDeletable || isClickable || hasIcon) {
             setSelected(selected);
         } else {
             setSelected(false);
         }
-    }, [color, hasExtraLabel, hasIcon, isClickable, isDeletable, selected]);
+    }, [color, hasIcon, isClickable, isDeletable, selected]);
 
     const handleClick: MouseEventHandler = useCallback(() => {
         if (isDefault(currentColor) && onClick) {
@@ -364,18 +345,6 @@ export const Tag = forwardRef(({
                     $tagColor={currentColor}
                     $selected={isSelected}
                 />
-            )}
-
-            {hasExtraLabel && (
-                <TagExtraLabel
-                    $isMobile={isMobile}
-                    $tagSize={size}
-                    $tagColor={currentColor}
-                    $selected={isSelected}
-                >
-                    {shortenedExtraLabel}
-                    &nbsp;
-                </TagExtraLabel>
             )}
 
             <TagLabel

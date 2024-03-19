@@ -53,7 +53,6 @@ export const Default: Story = {
     args: {
         value: {
             label: 'Tag',
-            extraLabel: '',
         },
         size: 'medium',
         color: 'default',
@@ -71,7 +70,6 @@ export const Default: Story = {
             {...args}
             value={{
                     label: args.value?.label || 'Tag',
-                    extraLabel: args.value?.extraLabel || '',
                 }}
         />
         ),
@@ -90,18 +88,6 @@ export const Medium: Story = {
     args: {
         ...Default.args,
         size: 'medium',
-    },
-};
-
-export const WithExtraLabel: Story = {
-    ...Default,
-    args: {
-        ...Default.args,
-        value: {
-            id: '',
-            label: 'Tag',
-            extraLabel: 'ExtraLabel: ',
-        },
     },
 };
 
