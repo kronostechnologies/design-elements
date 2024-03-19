@@ -16,9 +16,11 @@ const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     min-height: 2rem;
     width: 2rem;
+
     ${(props) => !props.$isValid && css`
         border-color: ${props.theme.notifications['alert-2.1']};
     `}
+
     &:disabled {
         background-color: ${({ theme }) => theme.greys['light-grey']};
         border-color: ${({ theme }) => theme.greys.grey};
@@ -32,6 +34,7 @@ const PasswordContainer = styled.div`
     &:focus-within {
         border-radius: var(--border-radius);
         ${({ theme }) => focus({ theme }, true, '&')}
+
         input,
         ${StyledIconButton} {
             border-color: ${({ theme }) => theme.main['primary-1.1']};
@@ -42,10 +45,12 @@ const PasswordContainer = styled.div`
 const StyledTextInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
+
     input {
         &::-ms-reveal {
             display: none;
         }
+
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         border-right-width: 0;
     }

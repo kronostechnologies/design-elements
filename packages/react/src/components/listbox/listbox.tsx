@@ -149,7 +149,6 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
-    transition: all 0.1s ease-in-out;
 
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
@@ -162,7 +161,7 @@ const ListItem = styled.li<ListItemProps>`
     }
 
     ${({ focused, disabled, theme }) => (focused && css`
-        outline: 2px solid ${disabled ? theme.component['listbox-item-focused-disabled-outline-color'] : theme.component['listbox-item-focused-outline-color']};
+        outline: 2px solid ${disabled ? theme.component['listbox-item-disabled-focus-outline-color'] : theme.component['listbox-item-focus-outline-color']};
         outline-offset: -2px;
     `)}
 

@@ -16,8 +16,8 @@ export type ListboxTokens =
     | 'listbox-item-disabled-text-color'
     | 'listbox-item-hover-background-color'
     | 'listbox-item-hover-disabled-background-color'
-    | 'listbox-item-focused-outline-color'
-    | 'listbox-item-focused-disabled-outline-color'
+    | 'listbox-item-focus-outline-color'
+    | 'listbox-item-disabled-focus-outline-color'
     | 'listbox-item-selected-background-color'
     | 'listbox-item-selected-border-color'
     | 'listbox-item-selected-icon-color'
@@ -45,8 +45,8 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-item-disabled-text-color': 'color-neutral-30',
     'listbox-item-caption-disabled-text-color': 'color-neutral-15',
     'listbox-item-caption-text-color': 'color-neutral-65',
-    'listbox-item-focused-disabled-outline-color': 'transparent-100',
-    'listbox-item-focused-outline-color': 'color-brand-50',
+    'listbox-item-disabled-focus-outline-color': 'transparent-100',
+    'listbox-item-focus-outline-color': 'color-brand-50',
     'listbox-item-hover-background-color': 'color-neutral-15',
     'listbox-item-hover-disabled-background-color': 'color-white',
     'listbox-item-selected-background-color': 'color-brand-50',

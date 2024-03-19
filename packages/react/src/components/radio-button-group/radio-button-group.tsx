@@ -48,6 +48,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
 
         &:checked + .radioInput {
             border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};
+
             &::after {
                 background-color: ${({ theme }) => theme.component['radio-button-checked-background-color']};
                 border-radius: 50%;
@@ -60,6 +61,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
                 width: var(--size-half);
             }
         }
+
         ${(props) => focus(props, true, '&:focus + .radioInput')}
     }
 
@@ -76,7 +78,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
     }
 
     &:hover .radioInput {
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-hover-disabled-border-color'] : theme.component['radio-button-hover-border-color'])};
+        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
     }
 `;
 

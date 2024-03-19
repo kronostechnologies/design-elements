@@ -29,6 +29,7 @@ const StyledInput = styled.input<StyledInputProps>`
     min-height: 100%;
     text-align: ${({ $textAlign }) => $textAlign};
 
+    &:focus,
     &:disabled {
         border: 0;
         box-shadow: none;

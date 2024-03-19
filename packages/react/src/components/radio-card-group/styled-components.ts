@@ -134,10 +134,10 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 
     &:checked + ${Label} > ${Title} > ${RadioInput} {
-        border: 2px solid ${({ theme }) => theme.component['radio-card-hidden-input-checked-border-color']};
+        border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};
 
         &::after {
-            background-color: ${({ theme }) => theme.component['radio-card-hidden-input-checked-background-color']};
+            background-color: ${({ theme }) => theme.component['radio-button-checked-background-color']};
             border-radius: 50%;
             content: '';
             height: var(--size-half);

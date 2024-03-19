@@ -3,8 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type PhoneInputTokens =
     | 'phone-input-background-color'
-    | 'phone-input-mask-text-color'
-    | 'phone-input-hidden-mask-text-color';
+    | 'phone-input-mask-text-color';
 
 export type PhoneInputTokenValue = AliasTokens | RefTokens;
 
@@ -13,7 +12,6 @@ export type PhoneInputTokenMap = {
 };
 
 export const defaultPhoneInputTokens: PhoneInputTokenMap = {
-    'phone-input-hidden-mask-text-color': 'transparent-100',
     'phone-input-background-color': 'transparent-100',
     'phone-input-mask-text-color': 'color-neutral-65',
 };

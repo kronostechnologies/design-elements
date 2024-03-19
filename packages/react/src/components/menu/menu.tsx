@@ -99,13 +99,13 @@ const Button = styled.button<ButtonProps>`
     &[disabled] * {
         color: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         cursor: default;
-        fill: ${({ theme }) => theme.component['menu-item-disabled-fill-color']};
+        fill: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         pointer-events: none;
     }
 `;
 
 const GroupLabel = styled.span<{ $device: DeviceContextProps }>`
-    color: ${({ theme }) => theme.component['menu-grouplabel-text-color']};
+    color: ${({ theme }) => theme.component['menu-group-text-color']};
     display: block;
     font-size: 0.75rem;
     line-height: 1.25rem;

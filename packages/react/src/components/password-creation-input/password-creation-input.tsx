@@ -30,11 +30,13 @@ const PasswordContainer = styled.div`
     flex-direction: row;
     margin-bottom: calc(var(--spacing-1x) * 1.5);
     position: relative;
+
     > div:first-of-type:focus-within {
         border-radius: var(--border-radius);
         /* TODO change when updating thematization */
         box-shadow: 0 0 0 2px #84c6ea;
         outline: none;
+
         input,
         + span > button {
             /* TODO change when updating thematization */
@@ -54,10 +56,12 @@ export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolea
 const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
+
     input {
         ::-ms-reveal {
             display: none;
         }
+
         border-color: ${getBorderColor};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         border-width: 1px 0 1px 1px;
@@ -105,6 +109,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     const hintId = useMemo(() => uuid(), []);
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
+
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
     };

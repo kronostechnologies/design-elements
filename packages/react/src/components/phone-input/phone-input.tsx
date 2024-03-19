@@ -50,7 +50,7 @@ const Container = styled.div`
 `;
 
 const InputDuplicatedValue = styled.span`
-    color: ${({ theme }) => theme.component['phone-input-hidden-mask-text-color']};
+    color: transparent;
 `;
 
 const PLACEHOLDER_CHAR = '_';
