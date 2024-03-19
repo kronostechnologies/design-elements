@@ -168,7 +168,7 @@ function getDismissButtonColors(
         return css`
             background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
             color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
-    `;
+        `;
     }
     return null;
 }
