@@ -219,7 +219,7 @@ function getInputFocusBorderColor({ theme, valid }: StyledDatePickerProps): stri
     if (valid) {
         return theme.component['datepicker-input-focus-border-color'];
     }
-    return theme.component['datepicker-input-focus-error-border-color'];
+    return theme.component['datepicker-input-error-focus-border-color'];
 }
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
@@ -236,8 +236,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         width: ${({ isMobile }) => (isMobile ? 7 : 6.8)}rem;
 
         &::placeholder {
-            ${({ disabled, theme }) => (disabled ? `color: ${theme.component['datepicker-input-placeholder-disabled-text-color']};` : '')}
-        }
+            color: ${({ disabled, theme }) => disabled && theme.component['datepicker-input-placeholder-disabled-text-color']};        }
 
         ${focus};
         &:focus {
