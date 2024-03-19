@@ -69,7 +69,7 @@ const Textbox = styled.input<TextboxProps>`
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.component['combobox-disabled-text-color']}`};
+    color: ${({ $disabled, theme }) => $disabled && theme.component['combobox-disabled-text-color']};
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
@@ -80,10 +80,9 @@ const Textbox = styled.input<TextboxProps>`
 
 const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     align-items: center;
-    background-color: ${({ theme }) => (theme.component['combobox-arrow-button-background-color'])};
+    background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
-    color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-arrow-button-disabled-icon-color'] : theme.component['combobox-arrow-button-icon-color'])};
-    display: flex;
+    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};    display: flex;
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
@@ -91,7 +90,7 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     width: var(--size-1x);
 
     &:hover {
-        background-color: ${({ theme }) => (theme.component['combobox-arrow-button-hover-background-color'])};
+        background-color: ${({ theme }) => theme.component['combobox-arrow-button-hover-background-color']};
     }
 `;
 
