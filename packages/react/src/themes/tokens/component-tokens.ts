@@ -27,6 +27,7 @@ import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tok
 import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
 import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
+import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
@@ -99,7 +100,8 @@ export type ComponentTokens =
     | ModalTokens
     | TooltipTokens
     | ToggleTipTokens
-    | TabTokens;
+    | TabTokens
+    | LozengeTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -158,6 +160,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTooltipTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
+    ...defaultLozengeTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
