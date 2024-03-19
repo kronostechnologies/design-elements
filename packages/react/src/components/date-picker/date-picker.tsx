@@ -102,19 +102,19 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
     }
 
     .react-datepicker__day--keyboard-selected {
-        background-color: ${({ theme }) => theme.component['datepicker-day-keyboard-selected-background-color']};
+        background-color: ${({ theme }) => theme.component['datepicker-day-focus-background-color']};
         border-radius: 50%;
         box-sizing: border-box;
-        color: ${({ theme }) => theme.component['datepicker-day-keyboard-selected-text-color']};
+        color: ${({ theme }) => theme.component['datepicker-day-focus-text-color']};
 
         ${({ isMobile, theme }) => isMobile && css`
-            border: 1px solid ${theme.component['datepicker-day-keyboard-selected-mobile-border-color']};
-            box-shadow: 0 0 0 2px ${theme.component['datepicker-day-keyboard-selected-mobile-box-shadow-color']};
+            border: 1px solid ${theme.component['datepicker-day-focus-border-color']};
+            box-shadow: 0 0 0 2px ${theme.component['datepicker-day-focus-box-shadow-color']};
         `};
 
         &:focus {
-            border: 1px solid ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-border-color']};
-            box-shadow: 0 0 0 2px ${({ theme }) => theme.component['datepicker-day-keyboard-selected-focus-box-shadow-color']};
+            border: 1px solid ${({ theme }) => theme.component['datepicker-day-focus-border-color']};
+            box-shadow: 0 0 0 2px ${({ theme }) => theme.component['datepicker-day-focus-box-shadow-color']};
         }
     }
 
@@ -135,9 +135,9 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         color: ${({ theme }) => theme.component['datepicker-day-outside-month-text-color']};
 
         &.react-datepicker__day--selected {
-            background-color: ${({ theme }) => theme.component['datepicker-day-outside-month-selected-background-color']};
-            border: 1px solid ${({ theme }) => theme.component['datepicker-day-outside-month-selected-border-color']};
-            color: ${({ theme }) => theme.component['datepicker-day-outside-month-selected-text-color']};
+            background-color: ${({ theme }) => theme.component['datepicker-day-selected-outside-month-background-color']};
+            border: 1px solid ${({ theme }) => theme.component['datepicker-day-selected-outside-month-border-color']};
+            color: ${({ theme }) => theme.component['datepicker-day-selected-outside-month-text-color']};
         }
     }
 
@@ -150,7 +150,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
-                box-shadow: 0 0 0 2px ${theme.component['datepicker-day-selected-mobile-box-shadow-color']};
+                box-shadow: 0 0 0 2px ${theme.component['datepicker-day-selected-focus-box-shadow-color']};
             }
         ` : `
             &:focus {
