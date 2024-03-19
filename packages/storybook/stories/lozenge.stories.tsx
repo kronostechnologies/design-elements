@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Components/Structure/Lozenge',
+    title: 'Components/Lozenge',
     component: Lozenge,
 };
 

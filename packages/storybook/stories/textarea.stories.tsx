@@ -4,7 +4,7 @@ import { SyntheticEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Text Area',
+    title: 'Components/Text Area',
     component: TextArea,
 };
 

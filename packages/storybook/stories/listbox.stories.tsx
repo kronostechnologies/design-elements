@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Components/Controls/Listbox',
+    title: 'Core/Listbox',
     component: Listbox,
 };
 
