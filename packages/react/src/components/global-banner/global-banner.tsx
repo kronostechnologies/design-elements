@@ -162,15 +162,15 @@ interface DismissButtonProps {
 function getDismissButtonColors(
     { bannerType, theme }: StyledProps<ActionButtonProps>,
     state: GlobalBannerButtonState,
-): FlattenSimpleInterpolation {
+): FlattenSimpleInterpolation | null {
     const statePrefix = state === 'hover' ? '-hover' : '';
     if (bannerType !== 'alert') {
         return css`
-        background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
-        color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
+            background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
+            color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
     `;
     }
-    return css``;
+    return null;
 }
 
 const DismissButton = styled(Button).attrs(
