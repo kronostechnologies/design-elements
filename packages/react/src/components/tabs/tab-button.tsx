@@ -172,6 +172,7 @@ export const TabButton = forwardRef(({
                     data-testid="tab-delete"
                     aria-label={t('dismissTab', { label: children })}
                     iconName='x'
+                    focusable={isSelected}
                 />
             )}
         </StyledTab>
