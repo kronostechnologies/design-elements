@@ -35,6 +35,10 @@ const StyledButton = styled.button<StyledButtonProps>`
     ${({ theme }) => focus({ theme }, false, ':focus-visible')};
     ${focusVisibleReset};
 
+    &:focus {
+        z-index: 2;
+    }
+
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
         z-index: 1;
 
@@ -48,7 +52,7 @@ const StyledButton = styled.button<StyledButtonProps>`
             position: absolute;
             width: 100%;
         }
-`}
+    `}
 
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
         background-color: ${theme.component['tabs-tab-selected-background-color']};

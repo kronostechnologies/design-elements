@@ -49,14 +49,12 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
     ${(theme) => focus(theme, true)};
 
-    ${({ theme, disabled }) => disabled && css`
-        &:disabled,
-        &:disabled:hover {
-            background-color: ${theme.component['toggle-button-disabled-background-color']};
-            border-color: ${theme.component['toggle-button-disabled-border-color']};
-            color: ${theme.component['toggle-button-disabled-text-color']};
-        }
-    `}
+    &:disabled,
+    &:disabled:hover {
+        background-color: ${({ theme }) => theme.component['toggle-button-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['toggle-button-disabled-border-color']};
+        color: ${({ theme }) => theme.component['toggle-button-disabled-text-color']};
+    }
 
     ${({ theme, pressed }) => !pressed && css`
         &:hover {
@@ -68,7 +66,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
                 border-left-color: ${theme.component['toggle-button-hover-border-color']};
             }
         }
-`}
+    `}
 `;
 
 interface ToggleButtonGroupProps {

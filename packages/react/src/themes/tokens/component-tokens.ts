@@ -12,7 +12,7 @@ import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/exter
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
-import { defaultInputsTokens, InputsTokens } from './component/inputs-tokens';
+import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
@@ -22,7 +22,7 @@ import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-inp
 import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
 import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
-import { defaultStepperInputTokens, StepperInputTokens } from './component/stepper-input-tokens';
+import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
 import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
 import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
 import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
@@ -70,13 +70,13 @@ export type ComponentTokens =
     | NumericInputTokens
     | PhoneInputTokens
     | SearchInputTokens
-    | StepperInputTokens
+    | StepperTokens
     | TextAreaTokens
     | FieldTokens
     | RadioButtonGroupTokens
     | ToggleButtonGroupTokens
     | ToggleSwitchTokens
-    | InputsTokens
+    | TextInputTokens
     | RadioCardTokens
     | LegendTokens
     | NavListTokens
@@ -137,13 +137,13 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNumericInputTokens,
     ...defaultPhoneInputTokens,
     ...defaultSearchInputTokens,
-    ...defaultStepperInputTokens,
+    ...defaultStepperTokens,
     ...defaultTextAreaTokens,
     ...defaultFieldTokens,
     ...defaultRadioButtonGroupTokens,
     ...defaultToggleButtonGroupTokens,
     ...defaultToggleSwitchTokens,
-    ...defaultInputsTokens,
+    ...defaultTextInputTokens,
     ...defaultRadioCardTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,

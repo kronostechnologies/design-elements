@@ -12,22 +12,22 @@ const Wrapper = styled.div`
 
 const buttonStyles = css`
     align-items: center;
-    background-color: ${({ theme }) => theme.component['stepper-input-buttons-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['stepper-input-buttons-border-color']};
+    background-color: ${({ theme }) => theme.component['stepper-button-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['stepper-button-border-color']};
     border-left: none;
-    color: ${({ theme }) => theme.component['stepper-input-buttons-text-color']};
+    color: ${({ theme }) => theme.component['stepper-button-text-color']};
     display: flex;
     justify-content: center;
     padding: 0 var(--spacing-half);
 
     &:hover {
-        background-color: ${({ theme }) => theme.component['stepper-input-buttons-hover-background-color']};
+        background-color: ${({ theme }) => theme.component['stepper-button-hover-background-color']};
     }
 
     &:disabled {
-        background-color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-background-color']};
-        border-color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-border-color']};
-        color: ${({ theme }) => theme.component['stepper-input-buttons-disabled-text-color']};
+        background-color: ${({ theme }) => theme.component['stepper-button-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['stepper-button-disabled-border-color']};
+        color: ${({ theme }) => theme.component['stepper-button-disabled-text-color']};
     }
 `;
 

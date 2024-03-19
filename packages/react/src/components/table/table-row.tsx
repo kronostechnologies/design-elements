@@ -97,7 +97,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
         &:hover {
             cursor: pointer;
         }
-`}
+    `}
 
     ${({ $error, theme }) => $error && css`
         position: relative;
@@ -122,7 +122,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
             top: 0;
             z-index: 3;
         }
-`}
+    `}
 
     ${getRowBackgroundColor}
     ${getCellBackgroundCss}

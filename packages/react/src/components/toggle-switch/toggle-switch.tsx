@@ -42,8 +42,8 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-    background: ${({ theme }) => theme.component['toggle-switch-container-toggled-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['toggle-switch-container-toggled-border-color']};
+    background: ${({ theme }) => theme.component['toggle-switch-toggled-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['toggle-switch-toggled-border-color']};
     border-radius: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     position: relative;
@@ -53,8 +53,8 @@ const StyledButton = styled.button<StyledButtonProps>`
     ${focus};
 
     &[aria-checked='false'] {
-        background: ${({ theme }) => theme.component['toggle-switch-container-background-color']};
-        border-color: ${({ theme }) => theme.component['toggle-switch-container-border-color']};
+        background: ${({ theme }) => theme.component['toggle-switch-background-color']};
+        border-color: ${({ theme }) => theme.component['toggle-switch-border-color']};
 
         ${StyledButtonSpan} {
             transition: right 0.1s ease-in-out;
@@ -67,12 +67,12 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 
     &:disabled {
-        background: ${({ theme }) => theme.component['toggle-switch-container-disabled-background-color']};
-        border-color: ${({ theme }) => theme.component['toggle-switch-container-disabled-border-color']};
+        background: ${({ theme }) => theme.component['toggle-switch-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['toggle-switch-disabled-border-color']};
 
         &[aria-checked='true'] {
-            background: ${({ theme }) => theme.component['toggle-switch-container-disabled-toggled-background-color']};
-            border-color: ${({ theme }) => theme.component['toggle-switch-container-disabled-toggled-border-color']};
+            background: ${({ theme }) => theme.component['toggle-switch-disabled-toggled-background-color']};
+            border-color: ${({ theme }) => theme.component['toggle-switch-disabled-toggled-border-color']};
         }
     }
 `;
