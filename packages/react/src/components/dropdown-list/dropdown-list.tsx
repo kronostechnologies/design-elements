@@ -52,6 +52,7 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: 6px;
     position: absolute;
     width: 100%;
 `;
@@ -62,7 +63,7 @@ const Textbox = styled.div<TextboxProps>`
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.component['dropdown-list-input-disabled-text-color']}`};
+    color: ${({ $disabled, theme }) => $disabled && theme.component['dropdown-list-input-disabled-text-color']};
     display: flex;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
