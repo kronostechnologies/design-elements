@@ -129,7 +129,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -176,7 +175,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -309,7 +307,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 .c10 {
   margin: 0;
   overflow-y: auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .c10:not(:last-child)::after {
@@ -964,7 +962,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1011,7 +1008,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1144,7 +1140,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 .c10 {
   margin: 0;
   overflow-y: auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .c10:not(:last-child)::after {
@@ -1711,7 +1707,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1758,7 +1753,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1891,7 +1885,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c10 {
   margin: 0;
   overflow-y: auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .c10:not(:last-child)::after {

@@ -71,7 +71,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -118,7 +117,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -237,7 +235,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c7 {
   margin: 0;
   overflow-y: auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .c7:not(:last-child)::after {
@@ -749,7 +747,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -796,7 +793,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -915,7 +911,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c7 {
   margin: 0;
   overflow-y: auto;
-  padding: 2px;
+  padding: 0;
 }
 
 .c7:not(:last-child)::after {

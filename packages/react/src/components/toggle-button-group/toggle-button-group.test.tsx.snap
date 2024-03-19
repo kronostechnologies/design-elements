@@ -54,6 +54,13 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c1:disabled,
+.c1:disabled:hover {
+  background-color: #FFFFFF;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
 .c1:hover {
   background-color: #DBDEE1;
   border-color: #60666E;
@@ -104,6 +111,13 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:disabled,
+.c2:disabled:hover {
+  background-color: #FFFFFF;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 <div
@@ -208,6 +222,13 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c1:disabled,
+.c1:disabled:hover {
+  background-color: #FFFFFF;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
 .c1:hover {
   background-color: #DBDEE1;
   border-color: #60666E;
@@ -258,6 +279,13 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:disabled,
+.c2:disabled:hover {
+  background-color: #FFFFFF;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 <div

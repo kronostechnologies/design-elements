@@ -48,7 +48,6 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
@@ -78,8 +77,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -108,8 +105,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -136,6 +131,7 @@ input + .c2 {
 }
 
 .c8 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -501,7 +497,6 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
@@ -531,8 +526,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -561,8 +554,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -589,6 +580,7 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -924,7 +916,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
@@ -954,8 +945,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -983,8 +972,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1010,6 +997,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c6 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -1354,7 +1342,6 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 6px;
   max-height: 160px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
@@ -1384,8 +1371,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1414,8 +1399,6 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1442,6 +1425,7 @@ input + .c2 {
 }
 
 .c9 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }

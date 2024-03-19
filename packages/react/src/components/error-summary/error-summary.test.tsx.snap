@@ -15,7 +15,6 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }

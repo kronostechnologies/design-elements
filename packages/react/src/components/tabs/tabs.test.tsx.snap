@@ -50,6 +50,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
   box-shadow: none;
 }
 
+.c1:focus {
+  z-index: 2;
+}
+
 .c1::after {
   background-color: #006296;
   bottom: 0;
@@ -107,6 +111,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
 
 .c3:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
 }
 
 .c2 {
@@ -288,6 +296,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   box-shadow: none;
 }
 
+.c1:focus {
+  z-index: 2;
+}
+
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -334,6 +346,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c3:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
 }
 
 .c2 {
@@ -515,6 +531,10 @@ exports[`Tabs matches snapshot 1`] = `
   box-shadow: none;
 }
 
+.c1:focus {
+  z-index: 2;
+}
+
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -561,6 +581,10 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c3:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
 }
 
 .c2 {

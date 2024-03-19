@@ -97,6 +97,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   color: #B7BBC2;
 }
 
+.c4:focus,
 .c4:disabled {
   border: 0;
   box-shadow: none;
@@ -288,6 +289,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   color: #B7BBC2;
 }
 
+.c5:focus,
 .c5:disabled {
   border: 0;
   box-shadow: none;
@@ -463,6 +465,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   color: #B7BBC2;
 }
 
+.c2:focus,
 .c2:disabled {
   border: 0;
   box-shadow: none;
@@ -621,6 +624,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   color: #B7BBC2;
 }
 
+.c3:focus,
 .c3:disabled {
   border: 0;
   box-shadow: none;
