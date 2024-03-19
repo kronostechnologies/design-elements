@@ -17,6 +17,15 @@ export const GlobalBanners: Story = () => (
     <>
         <GlobalBanner
             actionButton={actionButton}
+            label="Neutral."
+            type="neutral"
+            dismissable
+        >
+            Neutral global banner.
+        </GlobalBanner>
+        <br />
+        <GlobalBanner
+            actionButton={actionButton}
             label="Alert."
             type="alert"
         >
@@ -34,8 +43,8 @@ export const GlobalBanners: Story = () => (
         <br />
         <GlobalBanner
             actionButton={actionButton}
-            label="Info."
-            type="info"
+            label="Discovery."
+            type="discovery"
             dismissable
         >
             Info message.
@@ -88,7 +97,7 @@ export const WithDismissButton: Story = () => (
 export const WithOnDismissCallback: Story = () => (
     <GlobalBanner
         label="With dismiss button and onDismiss callback."
-        type="info"
+        type="neutral"
         onDismiss={() => console.info('onDismiss callback !')}
         dismissable
     >
