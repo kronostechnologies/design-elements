@@ -71,7 +71,7 @@ export const Normal: Story = () => {
     ];
 
     return (
-        <Tabs tabs={tabs} contained />
+        <Tabs tabs={tabs} />
     );
 };
 
@@ -96,7 +96,7 @@ export const Global: Story = () => {
     ];
 
     return (
-        <Tabs global tabs={tabs} />
+        <Tabs tabs={tabs} global />
     );
 };
 
@@ -181,7 +181,7 @@ export const Scrollable: Story = () => {
 
     return (
         <>
-            <Tabs tabs={tabs} contained />
+            <Tabs tabs={tabs} />
             <Tabs tabs={tabs} global />
         </>
     );
@@ -208,27 +208,6 @@ export const WithForceRenderTabPanels: Story = () => {
     );
 };
 
-export const Contained: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'First Button',
-            panelContent: <StyledDiv>First tab content</StyledDiv>,
-        },
-        {
-            title: 'Second Button',
-            panelContent: <StyledDiv>Second tab content</StyledDiv>,
-        },
-        {
-            title: 'Third Button',
-            panelContent: <StyledDiv>Third tab content</StyledDiv>,
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} contained />
-    );
-};
-
 export const UnloadTabCallback: Story = () => {
     const tabs: Tab[] = [
         {
@@ -252,6 +231,6 @@ export const UnloadTabCallback: Story = () => {
     ];
 
     return (
-        <Tabs tabs={tabs} contained />
+        <Tabs tabs={tabs} />
     );
 };

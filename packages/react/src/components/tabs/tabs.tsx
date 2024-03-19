@@ -116,8 +116,6 @@ interface TabItem extends Tab {
 
 interface Props {
     className?: string;
-    /** Not available in global mode */
-    contained?: boolean;
     forceRenderTabPanels?: boolean;
     global?: boolean;
     tabs: Tab[];
@@ -125,7 +123,7 @@ interface Props {
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
-    className, contained, global, forceRenderTabPanels, tabs, onAddTab,
+    className, global, forceRenderTabPanels, tabs, onAddTab,
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
@@ -276,7 +274,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     return (
                         <TabPanel
                             buttonId={tabItem.id}
-                            contained={contained && !global}
                             hidden={!isTabSelected(tabItem.id)}
                             id={tabItem.panelId}
                             key={tabItem.panelId}
