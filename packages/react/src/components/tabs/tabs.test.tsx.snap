@@ -113,7 +113,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666e;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -180,6 +180,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 
 .c9:hover .c6::after {
   background-color: #DBDEE1;
+  color: #60666E;
 }
 
 .c8::after {
@@ -239,6 +240,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c0 {
+  background: #FFFFFF;
   box-sizing: content-box;
   height: var(--size-2halfx);
   padding-top: var(--spacing-2x);
@@ -347,7 +349,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     >
       <div
         class="c5"
-        data-testid="tab-button-1"
+        data-testid="tabs-tab-1"
       >
         <button
           aria-controls="uuid1"
@@ -361,7 +363,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
           <span
             class="c8"
             data-content="button 1"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 1
           </span>
@@ -369,7 +371,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
       </div>
       <div
         class="c9"
-        data-testid="tab-button-2"
+        data-testid="tabs-tab-2"
       >
         <button
           aria-controls="uuid2"
@@ -384,7 +386,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
           <span
             class="c8"
             data-content="button 2"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 2
           </span>
@@ -550,7 +552,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666e;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -617,6 +619,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c9:hover .c6::after {
   background-color: #DBDEE1;
+  color: #60666E;
 }
 
 .c8::after {
@@ -790,7 +793,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     >
       <div
         class="c5"
-        data-testid="tab-button-1"
+        data-testid="tabs-tab-1"
       >
         <button
           aria-controls="uuid1"
@@ -804,7 +807,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
           <span
             class="c8"
             data-content="button 1"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 1
           </span>
@@ -812,7 +815,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
       </div>
       <div
         class="c9"
-        data-testid="tab-button-2"
+        data-testid="tabs-tab-2"
       >
         <button
           aria-controls="uuid2"
@@ -827,7 +830,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
           <span
             class="c8"
             data-content="button 2"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 2
           </span>
@@ -993,7 +996,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666e;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1060,6 +1063,7 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c9:hover .c6::after {
   background-color: #DBDEE1;
+  color: #60666E;
 }
 
 .c8::after {
@@ -1233,7 +1237,7 @@ exports[`Tabs matches snapshot 1`] = `
     >
       <div
         class="c5"
-        data-testid="tab-button-1"
+        data-testid="tabs-tab-1"
       >
         <button
           aria-controls="uuid1"
@@ -1247,7 +1251,7 @@ exports[`Tabs matches snapshot 1`] = `
           <span
             class="c8"
             data-content="button 1"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 1
           </span>
@@ -1255,7 +1259,7 @@ exports[`Tabs matches snapshot 1`] = `
       </div>
       <div
         class="c9"
-        data-testid="tab-button-2"
+        data-testid="tabs-tab-2"
       >
         <button
           aria-controls="uuid2"
@@ -1270,7 +1274,7 @@ exports[`Tabs matches snapshot 1`] = `
           <span
             class="c8"
             data-content="button 2"
-            data-testid="tab-button-text"
+            data-testid="tabs-tab-text"
           >
             button 2
           </span>

@@ -1,6 +1,5 @@
 import { VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
-import { useTheme } from '../../hooks/use-theme';
+import styled, { useTheme } from 'styled-components';
 
 const Svg = styled.svg`
     display: block;
@@ -32,7 +31,7 @@ export const Circle: VoidFunctionComponent<CircleProps> = ({
     return (
         <Svg height="100%" width="100%" viewBox={`0 0 ${diameter} ${diameter}`}>
             <BackgroundCircle
-                stroke={theme.greys.grey}
+                stroke={theme.component['progress-circle-empty-stroke-color']}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeLinecap="round"

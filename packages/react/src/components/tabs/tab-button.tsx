@@ -10,7 +10,7 @@ const selectedIndicatorPosition = (global: boolean | undefined): string => (glob
 
 const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $removable?: boolean; }>`
     align-items: center;
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.greys['neutral-90'] : '#60666e')};
+    color: ${({ $isSelected, theme }) => ($isSelected ? theme.component['tabs-tab-selected-text-color'] : theme.component['tabs-tab-text-color'])};
     display: flex;
     font-family: var(--font-family);
     font-size: 0.875rem;
@@ -32,11 +32,11 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
 
     ${({ $isSelected, theme }) => !$isSelected && css`
         &:active {
-            color: ${theme.greys['neutral-90']};
+            color: ${theme.component['tabs-tab-active-text-color']};
             font-weight: var(--font-semi-bold);
 
             &::after {
-                background-color: ${theme.main['primary-1.3']} !important;
+                background-color: ${theme.component['tabs-tab-active-indicator-color']} !important;
             }
         }
     `}
@@ -46,7 +46,7 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
         font-weight: var(--font-semi-bold);
 
         &::after {
-            background-color: ${theme.main['primary-1.1']};
+            background-color: ${theme.component['tabs-tab-selected-indicator-color']};
         }
     `}
 
@@ -55,7 +55,7 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
 `;
 
 const StyledButtonIcon = styled(Icon)`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['tabs-tab-icon-color']};
     vertical-align: middle;
 `;
 
@@ -63,11 +63,12 @@ const StyledTab = styled.div<{ $isSelected: boolean; }>`
     display: flex;
     position: relative;
 
-    ${({ $isSelected }) => !$isSelected && css`
+    ${({ $isSelected, theme }) => !$isSelected && css`
         &:hover {
             ${StyledButton} {
                 &::after {
-                    background-color: ${({ theme }) => theme.greys.grey};
+                    background-color: ${theme.component['tabs-tab-hover-indicator-color']};
+                    color: ${theme.component['tabs-tab-hover-text-color']};
                 }
             }
         }
@@ -147,18 +148,18 @@ export const TabButton = forwardRef(({
                 {leftIcon && (
                     <StyledButtonIcon
                         aria-hidden="true"
-                        data-testid="tab-button-left-icon"
+                        data-testid="tabs-tab-left-icon"
                         name={leftIcon}
                         size="16"
                     />
                 )}
-                <ButtonLabel data-testid="tab-button-text" data-content={children}>
+                <ButtonLabel data-testid="tabs-tab-text" data-content={children}>
                     {children}
                 </ButtonLabel>
                 {rightIcon && (
                     <StyledButtonIcon
                         aria-hidden="true"
-                        data-testid="tab-button-right-icon"
+                        data-testid="tabs-tab-right-icon"
                         name={rightIcon}
                         size="16"
                     />

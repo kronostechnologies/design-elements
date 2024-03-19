@@ -19,7 +19,7 @@ import { Button } from '../buttons/button';
 
 const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ theme, $global }) => (!$global && theme.greys['light-grey'])};
+    background: ${({ theme, $global }) => ($global ? theme.component['tabs-global-background-color'] : theme.component['tabs-background-color'])};
     border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
     box-sizing: content-box;
     height: var(--size-2halfx);
@@ -27,7 +27,7 @@ const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     position: relative;
 
     &::before {
-        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        border-bottom: 1px solid ${({ theme }) => theme.component['tabs-tab-border-bottom-color']};
         bottom: 0;
         content: '';
         display: block;
@@ -49,11 +49,11 @@ const TabButtonsList = styled.div<{ $global?: boolean; }>`
     white-space: nowrap;
 `;
 
-const ScrollButton = styled(Button)<{ $global?: boolean; $position: 'left' | 'right' }>`
+const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right' }>`
     align-items: center;
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ $global, theme }) => (!$global ? theme.greys['light-grey'] : theme.greys.white)};
-    border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+    background: ${({ $global, theme }) => ($global ? theme.component['tabs-global-background-color'] : theme.component['tabs-background-color'])};
+    border-bottom: 1px solid ${({ theme }) => theme.component['tabs-tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
     display: inline-flex;
@@ -239,7 +239,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             id={tabItem.id}
                             panelId={tabItem.panelId}
                             key={tabItem.panelId}
-                            data-testid={`tab-button-${i + 1}`}
+                            data-testid={`tabs-tab-${i + 1}`}
                             leftIcon={tabItem.leftIcon}
                             rightIcon={tabItem.rightIcon}
                             isSelected={isTabSelected(tabItem.id)}
