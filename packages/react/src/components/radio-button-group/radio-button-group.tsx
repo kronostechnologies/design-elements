@@ -46,6 +46,8 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
         position: absolute;
         width: var(--size-1x);
 
+        ${(props) => focus(props, true, '&:focus + .radioInput')}
+
         &:checked + .radioInput {
             border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};
 
@@ -61,8 +63,6 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
                 width: var(--size-half);
             }
         }
-
-        ${(props) => focus(props, true, '&:focus + .radioInput')}
     }
 
     .radioInput {

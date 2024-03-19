@@ -236,7 +236,8 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         width: ${({ isMobile }) => (isMobile ? 7 : 6.8)}rem;
 
         &::placeholder {
-            color: ${({ disabled, theme }) => disabled && theme.component['datepicker-input-placeholder-disabled-text-color']};        }
+            color: ${({ disabled, theme }) => disabled && theme.component['datepicker-input-placeholder-disabled-text-color']};
+        }
 
         ${focus};
         &:focus {
