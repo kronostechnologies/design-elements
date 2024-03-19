@@ -3,11 +3,15 @@ import {
     MouseEventHandler,
     Ref,
     SVGProps,
-    useCallback, useEffect, useState,
+    useCallback,
+    useEffect,
+    useState,
 } from 'react';
 import styled, {
-    css, FlattenInterpolation,
-    StyledProps, ThemeProps,
+    css,
+    FlattenInterpolation,
+    StyledProps,
+    ThemeProps,
 } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
@@ -42,7 +46,7 @@ export interface TagProps {
     className?: string;
 
     /**
-     * The tag's size.
+     * The tag size.
      * @default 'medium'
      */
     size?: TagSize;
@@ -69,34 +73,33 @@ export interface TagProps {
     color?: TagColor;
 
     /**
-     * The tag's value
+     * The tag value.
      *  TagValue.id is optional
      *  TagValue.label is required
-     *  TagValue.extraLabel is optional and works only with 'default' color
      */
     value: TagValue;
 
     /**
-     * Whether the tag is selected. (optional)
+     * Whether the tag is selected.
      * Can manually set the selected state of the tag, without the need for a click event.
      * @default false
      */
     selected?: boolean;
 
     /**
-     * The tag's icon. (optional)
+     * The tag icon.
      */
     iconName?: IconName;
 
     /**
-     * The tag's is clickable. (optional)
+     * The tag is clickable.
      */
     onClick?(tag: TagValue): void;
 
     /**
-     * The tag's is deletable. (optional)
+     * The tag is deletable.
      */
-    onDelete?(tag: TagValue): void;
+    onRemove?(tag: TagValue): void;
 }
 
 interface BaseTagStylingProps {
@@ -109,7 +112,7 @@ interface BaseTagStylingProps {
 
 interface TagContainerProps extends BaseTagStylingProps {
     $clickable: boolean;
-    $deletable: boolean;
+    $removable: boolean;
     $hasIcon: boolean;
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
@@ -282,12 +285,12 @@ export const Tag = forwardRef(({
     selected = false,
     value,
     onClick,
-    onDelete,
+    onRemove,
 }: TagProps, ref: Ref<HTMLElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
 
-    const isDeletable = !!onDelete;
+    const isDeletable = !!onRemove;
     const isClickable = !!onClick;
     const hasIcon = !!iconName;
     const currentColor = (isDeletable || isClickable || hasIcon) ? 'default' : (color ?? 'default');
@@ -312,8 +315,8 @@ export const Tag = forwardRef(({
 
     const handleDelete: MouseEventHandler = useCallback((e) => {
         e.stopPropagation();
-        onDelete?.(value);
-    }, [onDelete, value]);
+        onRemove?.(value);
+    }, [onRemove, value]);
 
     return (
         <TagContainer
@@ -325,7 +328,7 @@ export const Tag = forwardRef(({
             $isMobile={isMobile}
             $tagSize={size}
             $clickable={isClickable}
-            $deletable={isDeletable}
+            $removable={isDeletable}
             $hasIcon={hasIcon}
             $tagColor={currentColor}
             $selected={isSelected}

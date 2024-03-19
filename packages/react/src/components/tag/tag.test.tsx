@@ -23,7 +23,7 @@ describe('Tag', () => {
                 const callback = jest.fn();
                 const stopPropagation = jest.fn();
                 const wrapper = shallow(
-                    <Tag size={size} value={{ label: 'Test' }} onDelete={callback} />,
+                    <Tag size={size} value={{ label: 'Test' }} onRemove={callback} />,
                 );
 
                 getByTestId(wrapper, 'Test-delete-button').simulate('click', { stopPropagation });
@@ -81,7 +81,7 @@ describe('Tag', () => {
                         <Tag
                             size={size}
                             value={{ label: 'Test' }}
-                            onDelete={jest.fn()}
+                            onRemove={jest.fn()}
                         />,
                     );
 

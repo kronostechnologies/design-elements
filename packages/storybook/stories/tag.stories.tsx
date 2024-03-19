@@ -38,7 +38,7 @@ const meta: Meta<typeof Tag> = {
                 type: 'boolean',
             },
         },
-        onDelete: {
+        onRemove: {
             control: {
                 type: 'boolean',
             },
@@ -59,7 +59,7 @@ export const Default: Story = {
         selected: false,
         iconName: undefined,
         onClick: undefined,
-        onDelete: undefined,
+        onRemove: undefined,
     },
     argTypes: {
         ...meta.argTypes,
@@ -103,7 +103,7 @@ export const Deletable: Story = {
     ...Default,
     args: {
         ...Default.args,
-        onDelete: (tag: TagValue) => console.info(`Deleted ${tag.label}`),
+        onRemove: (tag: TagValue) => console.info(`Deleted ${tag.label}`),
     },
 };
 
