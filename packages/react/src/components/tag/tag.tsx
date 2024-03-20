@@ -44,19 +44,19 @@ export interface TagValue {
 
 export interface TagProps {
     className?: string;
-
-    /**
-     * The tag size.
-     * @default 'medium'
-     */
     size?: TagSize;
+    value: TagValue;
+    iconName?: IconName;
 
     /**
-     * The tag's color.
-     * @default 'default'
-     *
-     *  if tag is clickable or deletable or selected or has an icon,
-     *  the tag color will be forced to 'default'
+     * Whether the tag is selected.
+     * Can manually set the selected state of the tag, without the need for a click event.
+     */
+    selected?: boolean;
+
+    /**
+     *  if tag is clickable or removable or has an icon,
+     *  the color will be forced to 'default'
      *
      *  default color mapping:
      *     decorative-01 -> purple
@@ -72,33 +72,7 @@ export interface TagProps {
      */
     color?: TagColor;
 
-    /**
-     * The tag value.
-     *  TagValue.id is optional
-     *  TagValue.label is required
-     */
-    value: TagValue;
-
-    /**
-     * Whether the tag is selected.
-     * Can manually set the selected state of the tag, without the need for a click event.
-     * @default false
-     */
-    selected?: boolean;
-
-    /**
-     * The tag icon.
-     */
-    iconName?: IconName;
-
-    /**
-     * The tag is clickable.
-     */
     onClick?(tag: TagValue): void;
-
-    /**
-     * The tag is deletable.
-     */
     onRemove?(tag: TagValue): void;
 }
 
@@ -164,23 +138,26 @@ function getTagColors(
     { $tagColor, theme }: StyledProps<BaseTagStylingProps>,
     $colorProperty: ColorProperty,
 ): string {
+    if (isDefault($tagColor)) {
+        return theme.component[`tag-${$colorProperty}`];
+    }
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
-    color: ${({ theme }) => theme.component['tag-default-icon-color']};
+    color: ${({ theme }) => theme.component['tag-icon-color']};
     height: var(--size-1x);
     margin-right: var(--spacing-half);
     vertical-align: text-bottom;
     width: var(--size-1x);
 
     ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-default-selected-icon-color']};
+        color: ${theme.component['tag-selected-icon-color']};
     `}
 
     ${({ $clickable, $selected, theme }) => $clickable && css`
         &:hover {
-            color: ${$selected ? theme.component['tag-default-selected-hover-icon-color'] : theme.component['tag-default-hover-icon-color']};
+            color: ${$selected ? theme.component['tag-selected-hover-icon-color'] : theme.component['tag-hover-icon-color']};
         }
     `}
 `;
@@ -200,15 +177,15 @@ const TagLabel = styled.span<TagLabelProps>`
     text-overflow: ellipsis;
     white-space: nowrap;
     ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-default-selected-text-color']};
+        color: ${theme.component['tag-selected-text-color']};
         font-weight: var(--font-semi-bold);
     `}
 `;
 
-const DeleteButton = styled(IconButton)<IconOrButtonProps>`
+const RemoveButton = styled(IconButton)<IconOrButtonProps>`
     align-items: center;
     border-radius: 50%;
-    color: ${({ theme }) => theme.component['tag-default-delete-button-icon-color']};
+    color: ${({ theme }) => theme.component['tag-remove-button-icon-color']};
     display: inline-flex;
     height: auto;
     justify-content: center;
@@ -224,15 +201,15 @@ const DeleteButton = styled(IconButton)<IconOrButtonProps>`
     }
 
     ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-default-selected-delete-button-hover-icon-color']};
+        color: ${theme.component['tag-selected-remove-button-hover-icon-color']};
     `}
 
     &:hover {
-        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-default-selected-delete-button-hover-background-color'] : theme.component['tag-default-delete-button-hover-background-color'])};
-        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-default-selected-delete-button-hover-icon-color'] : theme.component['tag-default-delete-button-hover-icon-color'])};
+        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-remove-button-hover-background-color'] : theme.component['tag-remove-button-hover-background-color'])};
+        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-remove-button-hover-icon-color'] : theme.component['tag-remove-button-hover-icon-color'])};
 
         ${DeleteIcon} {
-            color: ${({ theme }) => theme.component['tag-default-delete-button-hover-icon-color']};
+            color: ${({ theme }) => theme.component['tag-remove-button-hover-icon-color']};
         }
     }
 
@@ -248,8 +225,8 @@ function getClickableStyle(
         padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
 
         &:hover {
-            background-color: ${({ theme }) => ($selected ? theme.component['tag-default-selected-hover-background-color'] : theme.component['tag-default-hover-background-color'])};
-            border-color: ${({ theme }) => ($selected ? theme.component['tag-default-selected-hover-border-color'] : theme.component['tag-default-hover-border-color'])};
+            background-color: ${({ theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
+            border-color: ${({ theme }) => ($selected ? theme.component['tag-selected-hover-border-color'] : theme.component['tag-hover-border-color'])};
         }
 
         ${focus};
@@ -270,8 +247,8 @@ const TagContainer = styled.div<TagContainerProps>`
     }
 
     ${({ $selected, theme }) => $selected && css`
-        background-color: ${theme.component['tag-default-selected-background-color']};
-        border: 1px solid ${theme.component['tag-default-selected-border-color']};
+        background-color: ${theme.component['tag-selected-background-color']};
+        border: 1px solid ${theme.component['tag-selected-border-color']};
     `}
 
     ${getClickableStyle};
@@ -290,21 +267,21 @@ export const Tag = forwardRef(({
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
 
-    const isDeletable = !!onRemove;
+    const isRemovable = !!onRemove;
     const isClickable = !!onClick;
     const hasIcon = !!iconName;
-    const currentColor = (isDeletable || isClickable || hasIcon) ? 'default' : (color ?? 'default');
-    const [isSelected, setSelected] = useState<boolean>(isDefault(currentColor) && selected);
+    const currentColor = (isRemovable || isClickable || hasIcon) ? 'default' : color;
+    const [isSelected, setSelected] = useState(isDefault(currentColor) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
     const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
 
     useEffect(() => {
-        if (isDeletable || isClickable || hasIcon) {
+        if (isRemovable || isClickable || hasIcon || isDefault(currentColor)) {
             setSelected(selected);
         } else {
             setSelected(false);
         }
-    }, [color, hasIcon, isClickable, isDeletable, selected]);
+    }, [currentColor, hasIcon, isClickable, isRemovable, selected]);
 
     const handleClick: MouseEventHandler = useCallback(() => {
         if (isDefault(currentColor) && onClick) {
@@ -328,7 +305,7 @@ export const Tag = forwardRef(({
             $isMobile={isMobile}
             $tagSize={size}
             $clickable={isClickable}
-            $removable={isDeletable}
+            $removable={isRemovable}
             $hasIcon={hasIcon}
             $tagColor={currentColor}
             $selected={isSelected}
@@ -359,9 +336,9 @@ export const Tag = forwardRef(({
                 {shortenedLabel}
             </TagLabel>
 
-            {isDeletable && (
-                <DeleteButton
-                    data-testid={`${value.label}-delete-button`}
+            {isRemovable && (
+                <RemoveButton
+                    data-testid={`${value.label}-remove-button`}
                     type="button"
                     buttonType="tertiary"
                     iconName="x"

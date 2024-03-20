@@ -2,28 +2,28 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type TagTokens =
-    | 'tag-default-background-color'
-    | 'tag-default-border-color'
-    | 'tag-default-text-color'
-    | 'tag-default-icon-color'
+    | 'tag-background-color'
+    | 'tag-border-color'
+    | 'tag-text-color'
+    | 'tag-icon-color'
 
-    | 'tag-default-hover-icon-color'
-    | 'tag-default-hover-border-color'
-    | 'tag-default-hover-background-color'
-    | 'tag-default-selected-icon-color'
-    | 'tag-default-selected-border-color'
-    | 'tag-default-selected-background-color'
-    | 'tag-default-selected-text-color'
-    | 'tag-default-selected-hover-background-color'
-    | 'tag-default-selected-hover-border-color'
-    | 'tag-default-selected-hover-text-color'
-    | 'tag-default-selected-hover-icon-color'
+    | 'tag-hover-icon-color'
+    | 'tag-hover-border-color'
+    | 'tag-hover-background-color'
+    | 'tag-selected-icon-color'
+    | 'tag-selected-border-color'
+    | 'tag-selected-background-color'
+    | 'tag-selected-text-color'
+    | 'tag-selected-hover-background-color'
+    | 'tag-selected-hover-border-color'
+    | 'tag-selected-hover-text-color'
+    | 'tag-selected-hover-icon-color'
 
-    | 'tag-default-delete-button-hover-icon-color'
-    | 'tag-default-delete-button-hover-background-color'
-    | 'tag-default-delete-button-icon-color'
-    | 'tag-default-selected-delete-button-hover-icon-color'
-    | 'tag-default-selected-delete-button-hover-background-color'
+    | 'tag-remove-button-hover-icon-color'
+    | 'tag-remove-button-hover-background-color'
+    | 'tag-remove-button-icon-color'
+    | 'tag-selected-remove-button-hover-icon-color'
+    | 'tag-selected-remove-button-hover-background-color'
 
     | 'tag-decorative-01-background-color'
     | 'tag-decorative-01-border-color'
@@ -63,28 +63,28 @@ export type TagTokenMap = {
 };
 
 export const defaultTagTokens: TagTokenMap = {
-    'tag-default-background-color': 'color-neutral-05',
-    'tag-default-border-color': 'color-neutral-50',
-    'tag-default-text-color': 'color-neutral-90',
-    'tag-default-icon-color': 'color-neutral-65',
-    'tag-default-hover-background-color': 'color-neutral-15',
-    'tag-default-hover-border-color': 'color-neutral-90',
-    'tag-default-hover-icon-color': 'color-neutral-90',
+    'tag-background-color': 'color-neutral-05',
+    'tag-border-color': 'color-neutral-50',
+    'tag-text-color': 'color-neutral-90',
+    'tag-icon-color': 'color-neutral-65',
+    'tag-hover-background-color': 'color-neutral-15',
+    'tag-hover-border-color': 'color-neutral-90',
+    'tag-hover-icon-color': 'color-neutral-90',
 
-    'tag-default-selected-background-color': 'color-informative-05',
-    'tag-default-selected-border-color': 'color-informative-70',
-    'tag-default-selected-text-color': 'color-informative-70',
-    'tag-default-selected-icon-color': 'color-informative-70',
-    'tag-default-selected-hover-background-color': 'color-informative-10',
-    'tag-default-selected-hover-border-color': 'color-informative-70',
-    'tag-default-selected-hover-icon-color': 'color-informative-70',
-    'tag-default-selected-hover-text-color': 'color-informative-70',
+    'tag-selected-background-color': 'color-informative-05',
+    'tag-selected-border-color': 'color-informative-70',
+    'tag-selected-text-color': 'color-informative-70',
+    'tag-selected-icon-color': 'color-informative-70',
+    'tag-selected-hover-background-color': 'color-informative-10',
+    'tag-selected-hover-border-color': 'color-informative-70',
+    'tag-selected-hover-icon-color': 'color-informative-70',
+    'tag-selected-hover-text-color': 'color-informative-70',
 
-    'tag-default-delete-button-hover-background-color': 'color-neutral-15',
-    'tag-default-delete-button-hover-icon-color': 'color-neutral-90',
-    'tag-default-delete-button-icon-color': 'color-neutral-65',
-    'tag-default-selected-delete-button-hover-background-color': 'color-informative-10',
-    'tag-default-selected-delete-button-hover-icon-color': 'color-informative-70',
+    'tag-remove-button-hover-background-color': 'color-neutral-15',
+    'tag-remove-button-hover-icon-color': 'color-neutral-90',
+    'tag-remove-button-icon-color': 'color-neutral-65',
+    'tag-selected-remove-button-hover-background-color': 'color-informative-10',
+    'tag-selected-remove-button-hover-icon-color': 'color-informative-70',
 
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',
