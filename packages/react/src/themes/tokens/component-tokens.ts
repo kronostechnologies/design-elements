@@ -91,7 +91,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultProgressTrackerTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
-    ...defaultFocusTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,

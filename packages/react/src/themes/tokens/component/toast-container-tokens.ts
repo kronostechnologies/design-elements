@@ -21,8 +21,7 @@ export type ToastContainerTokens =
     | 'toast-container-alert-background-color'
     | 'toast-container-alert-text-color'
     | 'toast-container-alert-dismiss-icon-hover-background-color'
-    | 'toast-container-alert-dismiss-icon-hover-color'
-    | 'toast-container-dismiss-icon-focus-box-shadow';
+    | 'toast-container-alert-dismiss-icon-hover-color';
 
 export type ToastContainerTokenValue = AliasTokens | RefTokens;
 
@@ -51,5 +50,4 @@ export const defaultToastContainerTokens: ToastContainerTokenMap = {
     'toast-container-alert-background-color': 'color-alert-50',
     'toast-container-alert-dismiss-icon-hover-background-color': 'color-alert-70',
     'toast-container-alert-dismiss-icon-hover-color': 'color-white',
-    'toast-container-dismiss-icon-focus-box-shadow': 'color-brand-20',
 };

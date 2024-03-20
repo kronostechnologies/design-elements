@@ -11,18 +11,12 @@ export type ButtonTokens =
     | 'button-primary-disabled-background-color'
     | 'button-primary-disabled-border-color'
     | 'button-primary-disabled-text-color'
-    | 'button-primary-focus-background-color'
-    | 'button-primary-focus-border-color'
-    | 'button-primary-focus-text-color'
     | 'button-primary-inverted-background-color'
     | 'button-primary-inverted-border-color'
     | 'button-primary-inverted-text-color'
     | 'button-primary-inverted-hover-background-color'
     | 'button-primary-inverted-hover-border-color'
     | 'button-primary-inverted-hover-text-color'
-    | 'button-primary-inverted-focus-background-color'
-    | 'button-primary-inverted-focus-border-color'
-    | 'button-primary-inverted-focus-text-color'
     | 'button-primary-inverted-disabled-background-color'
     | 'button-primary-inverted-disabled-border-color'
     | 'button-primary-inverted-disabled-text-color'
@@ -35,18 +29,12 @@ export type ButtonTokens =
     | 'button-secondary-disabled-background-color'
     | 'button-secondary-disabled-border-color'
     | 'button-secondary-disabled-text-color'
-    | 'button-secondary-focus-background-color'
-    | 'button-secondary-focus-border-color'
-    | 'button-secondary-focus-text-color'
     | 'button-secondary-inverted-background-color'
     | 'button-secondary-inverted-border-color'
     | 'button-secondary-inverted-text-color'
     | 'button-secondary-inverted-hover-background-color'
     | 'button-secondary-inverted-hover-border-color'
     | 'button-secondary-inverted-hover-text-color'
-    | 'button-secondary-inverted-focus-background-color'
-    | 'button-secondary-inverted-focus-border-color'
-    | 'button-secondary-inverted-focus-text-color'
     | 'button-secondary-inverted-disabled-background-color'
     | 'button-secondary-inverted-disabled-border-color'
     | 'button-secondary-inverted-disabled-text-color'
@@ -59,18 +47,12 @@ export type ButtonTokens =
     | 'button-tertiary-disabled-background-color'
     | 'button-tertiary-disabled-border-color'
     | 'button-tertiary-disabled-text-color'
-    | 'button-tertiary-focus-background-color'
-    | 'button-tertiary-focus-border-color'
-    | 'button-tertiary-focus-text-color'
     | 'button-tertiary-inverted-background-color'
     | 'button-tertiary-inverted-border-color'
     | 'button-tertiary-inverted-text-color'
     | 'button-tertiary-inverted-hover-background-color'
     | 'button-tertiary-inverted-hover-border-color'
     | 'button-tertiary-inverted-hover-text-color'
-    | 'button-tertiary-inverted-focus-background-color'
-    | 'button-tertiary-inverted-focus-border-color'
-    | 'button-tertiary-inverted-focus-text-color'
     | 'button-tertiary-inverted-disabled-background-color'
     | 'button-tertiary-inverted-disabled-border-color'
     | 'button-tertiary-inverted-disabled-text-color'
@@ -83,18 +65,12 @@ export type ButtonTokens =
     | 'button-destructive-disabled-background-color'
     | 'button-destructive-disabled-border-color'
     | 'button-destructive-disabled-text-color'
-    | 'button-destructive-focus-background-color'
-    | 'button-destructive-focus-border-color'
-    | 'button-destructive-focus-text-color'
     | 'button-destructive-inverted-background-color'
     | 'button-destructive-inverted-border-color'
     | 'button-destructive-inverted-text-color'
     | 'button-destructive-inverted-hover-background-color'
     | 'button-destructive-inverted-hover-border-color'
     | 'button-destructive-inverted-hover-text-color'
-    | 'button-destructive-inverted-focus-background-color'
-    | 'button-destructive-inverted-focus-border-color'
-    | 'button-destructive-inverted-focus-text-color'
     | 'button-destructive-inverted-disabled-background-color'
     | 'button-destructive-inverted-disabled-border-color'
     | 'button-destructive-inverted-disabled-text-color'
@@ -107,18 +83,12 @@ export type ButtonTokens =
     | 'button-destructive-secondary-disabled-background-color'
     | 'button-destructive-secondary-disabled-border-color'
     | 'button-destructive-secondary-disabled-text-color'
-    | 'button-destructive-secondary-focus-background-color'
-    | 'button-destructive-secondary-focus-border-color'
-    | 'button-destructive-secondary-focus-text-color'
     | 'button-destructive-secondary-inverted-background-color'
     | 'button-destructive-secondary-inverted-border-color'
     | 'button-destructive-secondary-inverted-text-color'
     | 'button-destructive-secondary-inverted-hover-background-color'
     | 'button-destructive-secondary-inverted-hover-border-color'
     | 'button-destructive-secondary-inverted-hover-text-color'
-    | 'button-destructive-secondary-inverted-focus-background-color'
-    | 'button-destructive-secondary-inverted-focus-border-color'
-    | 'button-destructive-secondary-inverted-focus-text-color'
     | 'button-destructive-secondary-inverted-disabled-background-color'
     | 'button-destructive-secondary-inverted-disabled-border-color'
     | 'button-destructive-secondary-inverted-disabled-text-color'
@@ -147,10 +117,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-primary-hover-background-color': 'color-brand-70',
     'button-primary-hover-border-color': 'color-brand-70',
     'button-primary-hover-text-color': 'color-white',
-    // Primary focus
-    'button-primary-focus-background-color': 'color-brand-50',
-    'button-primary-focus-border-color': 'color-brand-50',
-    'button-primary-focus-text-color': 'color-white',
     // Primary disabled
     'button-primary-disabled-background-color': 'color-brand-20',
     'button-primary-disabled-border-color': 'color-brand-20',
@@ -164,10 +130,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-primary-inverted-hover-background-color': 'color-white',
     'button-primary-inverted-hover-border-color': 'color-white',
     'button-primary-inverted-hover-text-color': 'color-brand-70',
-    // Primary inverted focus
-    'button-primary-inverted-focus-background-color': 'color-white',
-    'button-primary-inverted-focus-border-color': 'color-white',
-    'button-primary-inverted-focus-text-color': 'color-brand-50',
     // Primary inverted disabled
     'button-primary-inverted-disabled-background-color': 'color-white',
     'button-primary-inverted-disabled-border-color': 'color-white',
@@ -181,10 +143,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-secondary-hover-background-color': 'color-white',
     'button-secondary-hover-border-color': 'color-brand-70',
     'button-secondary-hover-text-color': 'color-brand-70',
-    // Secondary focus
-    'button-secondary-focus-background-color': 'color-white',
-    'button-secondary-focus-border-color': 'color-brand-50',
-    'button-secondary-focus-text-color': 'color-brand-50',
     // Secondary disabled
     'button-secondary-disabled-background-color': 'color-white',
     'button-secondary-disabled-border-color': 'color-brand-20',
@@ -197,10 +155,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-secondary-inverted-hover-background-color': 'transparent-100',
     'button-secondary-inverted-hover-border-color': 'color-brand-20',
     'button-secondary-inverted-hover-text-color': 'color-brand-20',
-    // Secondary inverted focus
-    'button-secondary-inverted-focus-background-color': 'color-brand-80',
-    'button-secondary-inverted-focus-border-color': 'color-brand-50',
-    'button-secondary-inverted-focus-text-color': 'color-white',
     // Secondary inverted disabled
     'button-secondary-inverted-disabled-background-color': 'transparent-100',
     'button-secondary-inverted-disabled-border-color': 'color-brand-50',
@@ -214,10 +168,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-hover-background-color': 'color-neutral-15',
     'button-tertiary-hover-border-color': 'transparent-100',
     'button-tertiary-hover-text-color': 'color-neutral-90',
-    // Tertiary focus
-    'button-tertiary-focus-background-color': 'color-white',
-    'button-tertiary-focus-border-color': 'color-brand-50',
-    'button-tertiary-focus-text-color': 'color-neutral-65',
     // Tertiary disabled
     'button-tertiary-disabled-background-color': 'transparent-100',
     'button-tertiary-disabled-border-color': 'transparent-100',
@@ -231,10 +181,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-inverted-hover-background-color': 'color-brand-70',
     'button-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-tertiary-inverted-hover-text-color': 'color-white',
-    // Tertiary inverted focus
-    'button-tertiary-inverted-focus-background-color': 'color-brand-80',
-    'button-tertiary-inverted-focus-border-color': 'color-brand-50',
-    'button-tertiary-inverted-focus-text-color': 'color-white',
     // Tertiary inverted disabled
     'button-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-tertiary-inverted-disabled-border-color': 'transparent-100',
@@ -248,10 +194,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-hover-background-color': 'color-alert-70',
     'button-destructive-hover-border-color': 'color-alert-70',
     'button-destructive-hover-text-color': 'color-white',
-    // Destructive focus
-    'button-destructive-focus-background-color': 'color-alert-50',
-    'button-destructive-focus-border-color': 'color-alert-20',
-    'button-destructive-focus-text-color': 'color-white',
     // Destructive disabled
     'button-destructive-disabled-background-color': 'color-alert-20',
     'button-destructive-disabled-border-color': 'color-alert-20',
@@ -265,10 +207,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-inverted-hover-background-color': 'color-white',
     'button-destructive-inverted-hover-border-color': 'color-white',
     'button-destructive-inverted-hover-text-color': 'color-alert-70',
-    // Destructive inverted focus
-    'button-destructive-inverted-focus-background-color': 'color-white',
-    'button-destructive-inverted-focus-border-color': 'color-white',
-    'button-destructive-inverted-focus-text-color': 'color-alert-20',
     // Destructive inverted disabled
     'button-destructive-inverted-disabled-background-color': 'color-white',
     'button-destructive-inverted-disabled-border-color': 'color-white',
@@ -282,10 +220,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-secondary-hover-background-color': 'color-white',
     'button-destructive-secondary-hover-border-color': 'color-alert-70',
     'button-destructive-secondary-hover-text-color': 'color-alert-70',
-    // Secondary destructive focus
-    'button-destructive-secondary-focus-background-color': 'color-white',
-    'button-destructive-secondary-focus-border-color': 'color-alert-50',
-    'button-destructive-secondary-focus-text-color': 'color-alert-50',
     // Secondary destructive disabled
     'button-destructive-secondary-disabled-background-color': 'color-white',
     'button-destructive-secondary-disabled-border-color': 'color-alert-20',
@@ -299,10 +233,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-secondary-inverted-hover-background-color': 'transparent-100',
     'button-destructive-secondary-inverted-hover-border-color': 'color-alert-70',
     'button-destructive-secondary-inverted-hover-text-color': 'color-alert-70',
-    // Secondary destructive inverted focus
-    'button-destructive-secondary-inverted-focus-background-color': 'color-white',
-    'button-destructive-secondary-inverted-focus-border-color': 'color-white',
-    'button-destructive-secondary-inverted-focus-text-color': 'color-alert-20',
     // Secondary destructive inverted disabled
     'button-destructive-secondary-inverted-disabled-background-color': 'transparent-100',
     'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-70',
