@@ -1,0 +1,46 @@
+import { Checkbox } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import * as CheckboxStories  from './checkbox.stories';
+
+
+# Checkbox
+    <br />
+## Table of Contents
+    [Definition](#definition)<br />
+    [Usage](#usage)<br />
+    [Variants](#variants)<br />
+    [Properties](#properties)<br />
+
+<Meta title="Components/Checkbox/Doc" />
+    <br />
+## Definition
+    Checkboxes are a control component that allows the user to select any number of choices, including zero, one, or several [2].<br />
+    <br />
+
+## Usage
+    ### When to use
+        - Use when users have to choose between 0 to 6 options.
+        - Use it when you have multiple non-exclusive options [2].
+        - Use it when a validation is needed [4].
+        - Use when a single binary yes/no choice is provided [1].
+
+    ### When not to use
+        - Do not use it if only one option from a list can be selected, use the radio button instead [2].
+        - Do not use it if it will perform a direct action, use the toggle switch instead.
+        <br />
+
+## Variants
+    ### Default
+        <Story of={CheckboxStories.Normal} />
+<br />
+
+## Properties
+    <ArgTypes of={Checkbox} />
+<br />
+
+## References
+[1] [https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The%20toggle%20switch%20represents%20a,execution%20usually%20requires%20another%20control](https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The%20toggle%20switch%20represents%20a,execution%20usually%20requires%20another%20control)<br />
+[2] [https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/](https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/)<br />
+[3] [https://bootcamp.uxdesign.cc/checkbox-or-switch-97dd932b01c0](https://bootcamp.uxdesign.cc/checkbox-or-switch-97dd932b01c0)<br />
+[4] [https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/](https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/)<br />
+[5] [https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e](https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e)<br />

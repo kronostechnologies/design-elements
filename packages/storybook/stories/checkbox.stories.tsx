@@ -1,8 +1,9 @@
 import { Checkbox } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Checkbox',
+    title: 'Components/Checkbox/Stories',
     component: Checkbox,
 };
 
