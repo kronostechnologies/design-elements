@@ -12,14 +12,12 @@ import { focus } from '../../utils/css-state';
 const StyledTextInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
+
     input,
     input:not(:focus),
     input:focus,
     input:focus-within {
-        &::-ms-reveal {
-            display: none;
-        }
-        border: none transparent;
+        border: none;
         box-shadow: none;
         outline: none;
     }

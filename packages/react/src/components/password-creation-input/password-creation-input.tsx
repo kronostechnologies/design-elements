@@ -47,9 +47,6 @@ const StyledInput = styled(TextInput)`
     input:not(:focus),
     input:focus,
     input:focus-within {
-        ::-ms-reveal {
-            display: none;
-        }
         border: none;
         box-shadow: none;
         outline: none;
