@@ -13,7 +13,7 @@ const ChevronDownIcon = styled(Icon).attrs({ name: 'chevronDown', size: '16' })`
 `;
 
 export default {
-    title: 'Components/Button',
+    title: 'Components/Button/Stories',
     component: Button,
 };
 
