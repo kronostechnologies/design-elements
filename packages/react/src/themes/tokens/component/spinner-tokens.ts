@@ -2,7 +2,7 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type SpinnerTokens =
-    | 'spinner-fill';
+    | 'spinner-fill-color';
 
 export type SpinnerTokenValue = AliasTokens | RefTokens;
 
@@ -11,5 +11,5 @@ export type SpinnerTokenMap = {
 };
 
 export const defaultSpinnerTokens: SpinnerTokenMap = {
-    'spinner-fill': 'color-brand-50',
+    'spinner-fill-color': 'color-indicator-bg-fill',
 };

@@ -15,9 +15,9 @@ export type StatusTokenMap = {
 };
 
 export const defaultStatusTokens: StatusTokenMap = {
-    'status-circle-blocked-background-color': 'color-alert-50',
-    'status-circle-enabled-background-color': 'color-success-50',
-    'status-circle-disabled-background-color': 'color-white',
-    'status-circle-disabled-border-color': 'color-neutral-65',
-    'status-disabled-text-color': 'color-neutral-65',
+    'status-circle-blocked-background-color': 'color-feedback-bg-fill-alert',
+    'status-circle-enabled-background-color': 'color-feedback-bg-fill-success',
+    'status-circle-disabled-background-color': 'color-bg-fill-disabled',
+    'status-circle-disabled-border-color': 'color-border-disabled',
+    'status-disabled-text-color': 'color-text-disabled',
 };

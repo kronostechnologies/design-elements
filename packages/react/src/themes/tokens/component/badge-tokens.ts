@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type BadgeTokens =
     | 'badge-background-color'
-    | 'badge-color';
+    | 'badge-text-color';
 
 export type BadgeTokenValue = AliasTokens | RefTokens;
 
@@ -12,6 +12,6 @@ export type BadgeTokenMap = {
 };
 
 export const defaultBadgeTokens: BadgeTokenMap = {
-    'badge-background-color': 'color-alert-50',
-    'badge-color': 'color-white',
+    'badge-background-color': 'color-feedback-bg-fill-alert',
+    'badge-text-color': 'color-text-inverse',
 };

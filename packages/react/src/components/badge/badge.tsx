@@ -75,7 +75,7 @@ export const BadgeCircle = styled.span<{
     background-color: ${(props) => props.theme.component['badge-background-color']};
     border-radius: 0.5rem;
     box-sizing: border-box;
-    color: ${(props) => props.theme.component['badge-color']};
+    color: ${(props) => props.theme.component['badge-text-color']};
     display: flex;
     font-size: 0.75rem;
     font-weight: 400;

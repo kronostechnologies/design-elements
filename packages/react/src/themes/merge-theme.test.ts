@@ -66,13 +66,13 @@ const customization : ThemeCustomization = {
         'color-neutral-02': 'blue',
     },
     alias: {
-        'default-text-color': 'color-brand-05',
-        'alternate-text-color': 'color-brand-20',
+        'color-text': 'color-brand-05',
+        'color-text-alternate': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'color-neutral-02',
         'button-primary-inverted-background-color': 'color-brand-20',
-        'focus-border-color': 'alternate-text-color',
+        'focus-border-color': 'color-text-alternate',
     },
 };
 
@@ -174,7 +174,7 @@ describe('mergeTheme', () => {
                 'default-text-color': 'default-text-color',
             },
             component: {
-                'button-primary-background-color': 'default-text-color',
+                'button-primary-background-color': 'color-text',
             },
         };
 

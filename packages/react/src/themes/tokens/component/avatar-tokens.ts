@@ -13,5 +13,5 @@ export type AvatarTokenMap = {
 
 export const defaultAvatarTokens: AvatarTokenMap = {
     'avatar-background-color': 'color-neutral-05',
-    'avatar-text-color': 'color-neutral-65',
+    'avatar-text-color': 'color-text-alternate',
 };

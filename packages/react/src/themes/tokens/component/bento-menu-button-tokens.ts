@@ -2,7 +2,7 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type BentoMenuButtonTokens =
-    | 'bento-menu-divider-color'
+    | 'bento-menu-seperator-color'
 
 export type BentoMenuButtonTokenValue = AliasTokens | RefTokens;
 
@@ -11,5 +11,5 @@ export type BentoMenuButtonTokenMap = {
 };
 
 export const defaultBentoMenuButtonTokens: BentoMenuButtonTokenMap = {
-    'bento-menu-divider-color': 'separator-color',
+    'bento-menu-seperator-color': 'separator-color',
 };
