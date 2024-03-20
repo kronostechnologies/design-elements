@@ -246,7 +246,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   <button
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
-    data-testid="Test-delete-button"
+    data-testid="Test-remove-button"
     type="button"
   >
     <svg
@@ -662,7 +662,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   <button
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
-    data-testid="Test-delete-button"
+    data-testid="Test-remove-button"
     type="button"
   >
     <svg
@@ -1079,7 +1079,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   <button
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
-    data-testid="Test-delete-button"
+    data-testid="Test-remove-button"
     type="button"
   >
     <svg
@@ -1496,7 +1496,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   <button
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
-    data-testid="Test-delete-button"
+    data-testid="Test-remove-button"
     type="button"
   >
     <svg
