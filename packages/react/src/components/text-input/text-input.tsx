@@ -23,7 +23,7 @@ import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
 
-const Input = styled.input<{ isMobile: boolean; }>`
+export const Input = styled.input<{ isMobile: boolean; }>`
     ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
 `;
 

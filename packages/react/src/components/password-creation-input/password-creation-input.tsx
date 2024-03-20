@@ -1,8 +1,9 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
-import { FieldContainer } from '../field-container/field-container';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
-import { TextInput } from '../text-input/text-input';
+import { FieldContainer } from '../field-container/field-container';
+import { Input } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { getPasswordStrength } from './password-strength';
 import { PasswordRule } from './password-rule';
@@ -11,13 +12,6 @@ import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip } from '../tooltip/tooltip';
-import { focus } from '../../utils/css-state';
-
-const StyledFieldContainer = styled(FieldContainer)`
-    > :nth-child(2) {
-        margin-bottom: 0;
-    }
-`;
 
 const StyledUl = styled.ul`
     font-size: 0.75rem;
@@ -25,35 +19,15 @@ const StyledUl = styled.ul`
     padding: 0;
 `;
 
-const PasswordContainer = styled.div<{ $isValid: boolean; $iconButtonFocused: boolean; }>`
-    border: 1px solid ${({ theme }) => theme.component['password-input-show-password-button-border-color']};
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: row;
-    margin-bottom: calc(var(--spacing-1x) * 1.5);
+const PasswordInputContainer = styled.div`
     position: relative;
-    transition: all 0.25s ease-in-out;
-    ${({ theme, $iconButtonFocused }) => !$iconButtonFocused && focus(
-        { theme },
-        { focusTypeSelector: 'focus-within' },
-    )}
+    display: flex;
+    margin-bottom: var(--spacing-1x);
 `;
 
-const StyledInput = styled(TextInput)`
-    flex: 1;
-    margin-bottom: 0;
-
-    input,
-    input:not(:focus),
-    input:focus,
-    input:focus-within {
-        border: none;
-        box-shadow: none;
-        outline: none;
-    }
-`;
-
-const StyledIconButton = styled(IconButton)<{ isValid: boolean }>`
+const ShowPasswordButton = styled.div`
+    position: absolute;
+    right: 0;
 `;
 
 interface PasswordCreationInputProps {
@@ -75,6 +49,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     ...otherProps
 }) => {
     const { t } = useTranslation('password-creation-input');
+    const { isMobile } = useDeviceContext();
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
     const isEmpty = password.length === 0;
@@ -85,7 +60,6 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     const hintId = useMemo(() => uuid(), []);
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
-    const [iconButtonFocused, setIconButtonFocused] = useState(false);
 
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
@@ -99,12 +73,12 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     };
 
     return (
-        <StyledFieldContainer
+        <FieldContainer
             fieldId={id}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon
-            valid={isValid}
+            valid={isValid || isEmpty}
         >
             <div id={hintId} aria-live="assertive" aria-hidden="true" aria-atomic="true">
                 <StyledUl>
@@ -118,40 +92,37 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                     ))}
                 </StyledUl>
             </div>
-            <PasswordContainer
-                $isValid={isValid}
-                $iconButtonFocused={iconButtonFocused}
-            >
-                <StyledInput
+            <PasswordInputContainer>
+                <Input
                     id={id}
                     name={name ?? 'password'}
                     autoComplete="new-password"
-                    ariaDescribedBy={`${hintId} ${passwordStrengthId}`}
-                    ariaInvalid={!isValid}
+                    aria-describedby={`${hintId} ${passwordStrengthId}`}
+                    aria-invalid={!isValid}
                     onChange={handleChange}
                     data-testid="password-input"
                     type={showPassword ? 'text' : 'password'}
+                    isMobile={isMobile}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                <Tooltip
-                    desktopPlacement="top"
-                    label={showPassword ? t('hide-password') : t('show-password')}
-                >
-                    <StyledIconButton
-                        isValid={isValid || isEmpty}
-                        buttonType="tertiary"
-                        aria-label={t('show-password')}
-                        iconName={showPassword ? 'eyeOff' : 'eye'}
-                        aria-pressed={showPassword}
-                        data-testid="show-password-button"
-                        type="button"
-                        onClick={handleShowPassword}
-                        onFocus={() => setIconButtonFocused(true)}
-                        onBlur={() => setIconButtonFocused(false)}
-                    />
-                </Tooltip>
-            </PasswordContainer>
+                <ShowPasswordButton>
+                    <Tooltip
+                        desktopPlacement="top"
+                        label={showPassword ? t('hide-password') : t('show-password')}
+                    >
+                        <IconButton
+                            buttonType="tertiary"
+                            aria-label={t('show-password')}
+                            iconName={showPassword ? 'eyeOff' : 'eye'}
+                            aria-pressed={showPassword}
+                            data-testid="show-password-button"
+                            type="button"
+                            onClick={handleShowPassword}
+                        />
+                    </Tooltip>
+                </ShowPasswordButton>
+            </PasswordInputContainer>
             <PasswordStrengthContainer strength={strength} id={passwordStrengthId} />
-        </StyledFieldContainer>
+        </FieldContainer>
     );
 };
