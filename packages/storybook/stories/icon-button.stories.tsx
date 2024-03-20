@@ -4,7 +4,7 @@ import { InvertedBackground } from './utils/inverted-background';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Icon Button',
+    title: 'Components/Icon Button',
     component: IconButton,
 };
 

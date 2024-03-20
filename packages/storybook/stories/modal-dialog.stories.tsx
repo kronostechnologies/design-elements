@@ -6,7 +6,7 @@ import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 // eslint-disable-next-line import/no-default-export
 export default {
-    title: 'Components/Disclosure/Modal Dialog',
+    title: 'Components/Modal Dialog',
     component: ModalDialog,
 };
 

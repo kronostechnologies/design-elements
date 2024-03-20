@@ -5,7 +5,7 @@ import { rawCodeParameters } from './utils/parameters';
 
 const meta: Meta<typeof Tag> = {
     component: Tag,
-    title: 'Components/Notification/Tag',
+    title: 'Components/Tag',
     argTypes: {
         size: {
             control: {
