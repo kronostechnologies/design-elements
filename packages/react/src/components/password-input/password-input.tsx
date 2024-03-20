@@ -36,6 +36,10 @@ const PasswordInputContainer = styled.div`
     display: flex;
 `;
 
+const StyledInput = styled(Input)`
+    padding-right: var(--size-2x)
+`;
+
 export const ShowPasswordButton = styled.div`
     position: absolute;
     right: 0;
@@ -81,7 +85,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
             validationErrorMessage={validationErrorMessage ?? ''}
         >
             <PasswordInputContainer>
-                <Input
+                <StyledInput
                     id={id}
                     disabled={disabled}
                     name={name ?? 'password'}
