@@ -32,12 +32,12 @@ interface PasswordInputProps {
 }
 
 const PasswordInputContainer = styled.div`
-    position: relative;
     display: flex;
+    position: relative;
 `;
 
 const StyledInput = styled(Input)`
-    padding-right: var(--size-2x)
+    padding-right: var(--size-2x);
 `;
 
 export const ShowPasswordButton = styled.div`

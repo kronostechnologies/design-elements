@@ -20,9 +20,9 @@ const StyledUl = styled.ul`
 `;
 
 const PasswordInputContainer = styled.div`
-    position: relative;
     display: flex;
     margin-bottom: var(--spacing-1x);
+    position: relative;
 `;
 
 const ShowPasswordButton = styled.div`
