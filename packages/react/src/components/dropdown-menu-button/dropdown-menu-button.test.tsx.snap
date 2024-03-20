@@ -209,8 +209,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c15:focus {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
@@ -902,8 +902,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c15:focus {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
