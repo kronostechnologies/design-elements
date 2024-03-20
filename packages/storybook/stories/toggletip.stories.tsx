@@ -11,7 +11,7 @@ import { DesktopDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Disclosure/Toggletip',
+    title: 'Components/Toggletip',
     component: Toggletip,
 };
 

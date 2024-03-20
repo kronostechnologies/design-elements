@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Components/Structure/User Profile',
+    title: 'Components/User Profile',
     component: UserProfile,
     decorators: [
         (StoryComponent: ComponentType) => (

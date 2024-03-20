@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 export default {
-    title: 'Components/Disclosure/Tooltip',
+    title: 'Components/Tooltip',
     component: Tooltip,
 };
 

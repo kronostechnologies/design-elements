@@ -4,7 +4,7 @@ import { FormEventHandler, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Text Input',
+    title: 'Components/Text Input',
     component: TextInput,
 };
 

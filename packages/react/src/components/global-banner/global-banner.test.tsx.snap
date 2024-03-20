@@ -96,16 +96,6 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -174,13 +164,14 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+.c4 {
+  display: inline;
+  font-weight: var(--font-semi-bold);
+  margin-right: var(--spacing-1x);
 }
 
-.c9:focus {
-  background-color: #CD2C23;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -197,6 +188,16 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c6 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
+}
+
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #F99D99;
+  color: #F99D99;
 }
 
 <section
@@ -246,7 +247,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
+exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -376,22 +377,12 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #60666E;
+  background-color: #602FA0;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -454,21 +445,14 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
+.c4 {
+  display: inline;
+  font-weight: var(--font-semi-bold);
+  margin-right: var(--spacing-1x);
 }
 
-.c9:focus {
-  background-color: #60666E;
-}
-
-.c11:focus {
-  background-color: #60666E;
-}
-
-.c11:hover {
-  background-color: #878F9A;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -487,6 +471,26 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   margin-top: 0;
 }
 
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #CFC1E3;
+  color: #CFC1E3;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.c11:hover {
+  background-color: #3A1C60;
+  color: #FFFFFF;
+}
+
 <section
   aria-atomic="true"
   aria-live="polite"
@@ -498,7 +502,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="default"
+      aria-label="discovery"
       class="c2"
       color="currentColor"
       height="16"
@@ -511,7 +515,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
       <strong
         class="c4"
       >
-        default
+        discovery
       </strong>
       <span
         class="c5"
@@ -541,7 +545,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
+exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -671,22 +675,12 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #006296;
+  background-color: #60666E;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -749,21 +743,14 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
+.c4 {
+  display: inline;
+  font-weight: var(--font-semi-bold);
+  margin-right: var(--spacing-1x);
 }
 
-.c9:focus {
-  background-color: #006296;
-}
-
-.c11:focus {
-  background-color: #006296;
-}
-
-.c11:hover {
-  background-color: #3A1C60;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -782,6 +769,26 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   margin-top: 0;
 }
 
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.c11:hover {
+  background-color: #36393D;
+  color: #FFFFFF;
+}
+
 <section
   aria-atomic="true"
   aria-live="polite"
@@ -793,7 +800,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="info"
+      aria-label="neutral"
       class="c2"
       color="currentColor"
       height="16"
@@ -806,7 +813,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
       <strong
         class="c4"
       >
-        info
+        neutral
       </strong>
       <span
         class="c5"
@@ -966,23 +973,13 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F5A200;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1044,33 +1041,14 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   margin: 0;
 }
 
-.c9 {
-  border-color: #000000;
-  color: #000000;
+.c4 {
+  display: inline;
+  font-weight: var(--font-semi-bold);
+  margin-right: var(--spacing-1x);
 }
 
-.c9:hover {
-  border-color: #9E6900;
-  color: #9E6900;
-}
-
-.c9:focus {
-  background-color: #F5A200;
-  color: #000000;
-}
-
-.c11 {
-  color: #000000;
-}
-
-.c11:focus {
-  background-color: #F5A200;
-  color: #000000;
-}
-
-.c11:hover {
-  background-color: #9E6900;
-  color: #FFFFFF;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -1087,6 +1065,26 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c6 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
+}
+
+.c9 {
+  border-color: #1B1C1E;
+  color: #1B1C1E;
+}
+
+.c9:hover {
+  border-color: #9E6900;
+  color: #9E6900;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #1B1C1E;
+}
+
+.c11:hover {
+  background-color: #C78500;
+  color: #1B1C1E;
 }
 
 <section
@@ -1239,16 +1237,6 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: block;
-  font-weight: var(--font-semi-bold);
-  margin-bottom: var(--spacing-half);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1320,13 +1308,14 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+.c4 {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
 }
 
-.c9:focus {
-  background-color: #CD2C23;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -1343,6 +1332,16 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c6 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
+}
+
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #F99D99;
+  color: #F99D99;
 }
 
 <section
@@ -1392,7 +1391,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
+exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1522,22 +1521,12 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: block;
-  font-weight: var(--font-semi-bold);
-  margin-bottom: var(--spacing-half);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #60666E;
+  background-color: #602FA0;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1603,21 +1592,14 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
+.c4 {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
 }
 
-.c9:focus {
-  background-color: #60666E;
-}
-
-.c11:focus {
-  background-color: #60666E;
-}
-
-.c11:hover {
-  background-color: #878F9A;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -1636,6 +1618,26 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   margin-top: var(--spacing-1x);
 }
 
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #CFC1E3;
+  color: #CFC1E3;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.c11:hover {
+  background-color: #3A1C60;
+  color: #FFFFFF;
+}
+
 <section
   aria-atomic="true"
   aria-live="polite"
@@ -1647,7 +1649,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="default"
+      aria-label="discovery"
       class="c2"
       color="currentColor"
       height="24"
@@ -1660,7 +1662,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
       <strong
         class="c4"
       >
-        default
+        discovery
       </strong>
       <span
         class="c5"
@@ -1690,7 +1692,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
+exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1820,22 +1822,12 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: block;
-  font-weight: var(--font-semi-bold);
-  margin-bottom: var(--spacing-half);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #006296;
+  background-color: #60666E;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1901,21 +1893,14 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   margin: 0;
 }
 
-.c9:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
+.c4 {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
 }
 
-.c9:focus {
-  background-color: #006296;
-}
-
-.c11:focus {
-  background-color: #006296;
-}
-
-.c11:hover {
-  background-color: #3A1C60;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -1934,6 +1919,26 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   margin-top: var(--spacing-1x);
 }
 
+.c9 {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c9:hover {
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.c11:hover {
+  background-color: #36393D;
+  color: #FFFFFF;
+}
+
 <section
   aria-atomic="true"
   aria-live="polite"
@@ -1945,7 +1950,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="info"
+      aria-label="neutral"
       class="c2"
       color="currentColor"
       height="24"
@@ -1958,7 +1963,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
       <strong
         class="c4"
       >
-        info
+        neutral
       </strong>
       <span
         class="c5"
@@ -2118,23 +2123,13 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #006296;
 }
 
-.c4 {
-  display: block;
-  font-weight: var(--font-semi-bold);
-  margin-bottom: var(--spacing-half);
-}
-
-.c5 {
-  display: inline-block;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F5A200;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2199,33 +2194,14 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   margin: 0;
 }
 
-.c9 {
-  border-color: #000000;
-  color: #000000;
+.c4 {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
 }
 
-.c9:hover {
-  border-color: #9E6900;
-  color: #9E6900;
-}
-
-.c9:focus {
-  background-color: #F5A200;
-  color: #000000;
-}
-
-.c11 {
-  color: #000000;
-}
-
-.c11:focus {
-  background-color: #F5A200;
-  color: #000000;
-}
-
-.c11:hover {
-  background-color: #9E6900;
-  color: #FFFFFF;
+.c5 {
+  display: inline-block;
 }
 
 .c6 {
@@ -2242,6 +2218,26 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c6 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
+}
+
+.c9 {
+  border-color: #1B1C1E;
+  color: #1B1C1E;
+}
+
+.c9:hover {
+  border-color: #9E6900;
+  color: #9E6900;
+}
+
+.c11 {
+  background-color: transparent;
+  color: #1B1C1E;
+}
+
+.c11:hover {
+  background-color: #C78500;
+  color: #1B1C1E;
 }
 
 <section
