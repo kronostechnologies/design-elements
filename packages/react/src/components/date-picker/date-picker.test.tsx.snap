@@ -2457,7 +2457,7 @@ label + .c3 {
                 </div>
               </div>
               <div
-                aria-label="Month October, 2010"
+                aria-label="month  2010-10"
                 class="react-datepicker__month"
                 role="listbox"
               >
@@ -3675,7 +3675,7 @@ label + .c3 {
                 </div>
               </div>
               <div
-                aria-label="Month October, 2010"
+                aria-label="month  2010-10"
                 class="react-datepicker__month"
                 role="listbox"
               >
@@ -4812,7 +4812,7 @@ label + .c3 {
                   </div>
                 </div>
                 <div
-                  aria-label="Month October, 2010"
+                  aria-label="month  2010-10"
                   class="react-datepicker__month"
                   role="listbox"
                 >
