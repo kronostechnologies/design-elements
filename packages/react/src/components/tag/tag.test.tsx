@@ -19,14 +19,14 @@ describe('Tag', () => {
                 expect(callback).toHaveBeenCalledTimes(1);
             });
 
-            it('should call onDelete callback when delete-button is clicked', () => {
+            it('should call onRemove callback when delete-button is clicked', () => {
                 const callback = jest.fn();
                 const stopPropagation = jest.fn();
                 const wrapper = shallow(
                     <Tag size={size} value={{ label: 'Test' }} onRemove={callback} />,
                 );
 
-                getByTestId(wrapper, 'Test-delete-button').simulate('click', { stopPropagation });
+                getByTestId(wrapper, 'Test-remove-button').simulate('click', { stopPropagation });
 
                 expect(callback).toHaveBeenCalledTimes(1);
             });
