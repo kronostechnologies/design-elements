@@ -4,17 +4,17 @@ import * as ButtonStories  from './button.stories';
 
 # Button
 <Meta title="Components/Button/Doc" />
-<br />
+
 ## Table of Contents
-    [Definition](#definition)<br />
-    [Usage](#usage)<br />
-    [Variants](#variants)<br />
-    [Properties](#properties)<br />
-<br />
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
 
 ## Definition
-Buttons are control elements that allow users to trigger targeted actions [1][2][3]. <br />
-<br />
+Buttons are control elements that allow users to trigger targeted actions [1][2][3]. 
+
 
 ## Usage
 ### When to use
@@ -27,17 +27,14 @@ Buttons are control elements that allow users to trigger targeted actions [1][2]
 - Do not use buttons component as navigational elements. Instead, use a Link when the desired action is to take the user to somewhere else or a new page [1].
 - Do not use buttons for displaying static text or informational content without any associated action.
 - Do not use buttons if the action does not require user input or interaction.
-<br />
 
 ## Variants
-<br />
     <Story of={ButtonStories.Buttons} />
-<br />
 
 ### Primary
 - Use the primary button for the main action of a page.
-- **Only use one primary button per page**. The only exception to this is if one of them is used inside an “overlay” component such as a modal. Define the main goal of a page by asking: “What is the most important action I want to do on this page” and use the primary button accordingly.
-- **Not all pages need to have a primary button**. Therefore, it should only be used when an action requires more visual weight than the others.*
+- Only use one primary button per page. The only exception to this is if one of them is used inside an “overlay” component such as a modal. Define the main goal of a page by asking: “What is the most important action I want to do on this page” and use the primary button accordingly.
+- Not all pages need to have a primary button. Therefore, it should only be used when an action requires more visual weight than the others.*
 
 ### Secondary
 - Use the secondary button by default.
@@ -54,9 +51,8 @@ Buttons are control elements that allow users to trigger targeted actions [1][2]
 - Use the destructive button for potentially irreversible actions that must not grab as much attention as the destructive primary.
 
 ### With icon
-<br />
     <Story of={ButtonStories.WithIcons} />
-<br />
+
 - Use an icon to the left of the label to provide a quick visual feedback.
 - Use an icon to the right of the label to indicate a state *e.g.: loading state* or to indicate the role of the button *e.g.: Menu button*
 
@@ -70,14 +66,14 @@ Buttons are control elements that allow users to trigger targeted actions [1][2]
 <ArgTypes of={Button} />
 
 ## References
-[1] [https://carbondesignsystem.com/components/button/usage/](https://carbondesignsystem.com/components/button/usage/)<br />
-[2] [https://m2.material.io/components/buttons](https://m2.material.io/components/buttons)<br />
-[3] [https://uxplanet.org/how-to-create-an-effective-call-to-action-button-a-comprehensive-guide-57ecfe78d81b](https://uxplanet.org/how-to-create-an-effective-call-to-action-button-a-comprehensive-guide-57ecfe78d81b)<br />
-[4] Chat GPT<br />
-[5] [https://www.nngroup.com/articles/ten-usability-heuristics/](https://www.nngroup.com/articles/ten-usability-heuristics/)<br />
-[6] [https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb](https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb)<br />
-[7] [https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/](https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/)<br />
-[8] [https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150)<br />
-[9] [https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4](https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4)<br />
-[10] [https://www.lukew.com/ff/entry.asp?571](https://www.lukew.com/ff/entry.asp?571)<br />
-[11] [https://balsamiq.com/learn/articles/button-design-best-practices/](https://balsamiq.com/learn/articles/button-design-best-practices/)<br />
+1. [https://carbondesignsystem.com/components/button/usage/](https://carbondesignsystem.com/components/button/usage/)
+2. [https://m2.material.io/components/buttons](https://m2.material.io/components/buttons)
+3. [https://uxplanet.org/how-to-create-an-effective-call-to-action-button-a-comprehensive-guide-57ecfe78d81b](https://uxplanet.org/how-to-create-an-effective-call-to-action-button-a-comprehensive-guide-57ecfe78d81b)
+4. Chat GPT
+5. [https://www.nngroup.com/articles/ten-usability-heuristics/](https://www.nngroup.com/articles/ten-usability-heuristics/)
+6. [https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb](https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb)
+7. [https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/](https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/)
+8. [https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150)
+9. [https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4](https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4)
+10. [https://www.lukew.com/ff/entry.asp?571](https://www.lukew.com/ff/entry.asp?571)
+11. [https://balsamiq.com/learn/articles/button-design-best-practices/](https://balsamiq.com/learn/articles/button-design-best-practices/)
