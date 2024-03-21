@@ -4,32 +4,30 @@ import { RefTokens } from './ref-tokens';
 export type AliasTokens =
     // GENERAL TIER
     | 'color-error'
-    | 'color-action-light'
-    | 'color-action-mid'
-    | 'color-action-dark'
-    | 'color-feedback-success-light'
-    | 'color-feedback-success-mid'
-    | 'color-feedback-success-dark'
-    | 'color-feedback-alert-light'
-    | 'color-feedback-alert-mid'
-    | 'color-feedback-alert-dark'
-    | 'color-feedback-warning-light'
-    | 'color-feedback-warning-mid'
-    | 'color-feedback-warning-dark'
-    | 'color-feedback-discovery-light'
-    | 'color-feedback-discovery-mid'
-    | 'color-feedback-discovery-dark'
-    | 'color-feedback-informative-light'
-    | 'color-feedback-informative-mid'
-    | 'color-feedback-informative-dark'
+    | 'color-action'
+    | 'color-action-disabled'
+    | 'color-action-hover'
+    | 'color-feedback-success'
+    | 'color-feedback-success-hover'
+    | 'color-feedback-success-alternate'
+    | 'color-feedback-success-alternate-hover'
+    | 'color-feedback-alert'
+    | 'color-feedback-alert-hover'
+    | 'color-feedback-alert-alternate'
+    | 'color-feedback-alert-alternate-hover'
+    | 'color-feedback-warning'
+    | 'color-feedback-warning-hover'
+    | 'color-feedback-warning-alternate'
+    | 'color-feedback-warning-alternate-hover'
+    | 'color-feedback-discovery'
+    | 'color-feedback-discovery-hover'
+    | 'color-feedback-discovery-alternate'
+    | 'color-feedback-discovery-alternate-hover'
+    | 'color-feedback-informative'
+    | 'color-feedback-informative-hover'
+    | 'color-feedback-informative-alternate'
+    | 'color-feedback-informative-alternate-hover'
     // BACKGROUND
-    | 'color-bg-lightest'
-    | 'color-bg-lighter'
-    | 'color-bg-light'
-    | 'color-bg-mid'
-    | 'color-bg-dark'
-    | 'color-bg-darker'
-    | 'color-bg-darkest'
     | 'color-bg-surface'
     | 'color-bg-surface-alternate'
     | 'color-bg-surface-brand'
@@ -63,13 +61,6 @@ export type AliasTokens =
     | 'color-feedback-bg-fill-informative'
     | 'color-feedback-bg-fill-informative-hover'
     // BORDER
-    | 'color-border-lightest'
-    | 'color-border-lighter'
-    | 'color-border-light'
-    | 'color-border-mid'
-    | 'color-border-dark'
-    | 'color-border-darker'
-    | 'color-border-darkest'
     | 'color-border'
     | 'color-form-border'
     | 'color-separator'
@@ -93,11 +84,6 @@ export type AliasTokens =
     | 'color-feedback-border-discovery'
     | 'color-feedback-border-informative'
     // CONTENT
-    | 'color-content-lightest'
-    | 'color-content-light'
-    | 'color-content-mid'
-    | 'color-content-dark'
-    | 'color-content-darkest'
     | 'color-content'
     | 'color-content-alternate'
     | 'color-content-inverse'
@@ -167,82 +153,62 @@ export type AliasTokenMap = {
 
 export const defaultAliasTokens: AliasTokenMap = {
     // GENERAL TIER
-    'color-error': 'color-alert-50',
-    'color-action-light': 'color-brand-20',
-    'color-action-mid': 'color-brand-50',
-    'color-action-dark': 'color-brand-70',
-    'color-feedback-success-light': 'color-success-05',
-    'color-feedback-success-mid': 'color-success-50',
-    'color-feedback-success-dark': 'color-success-70',
-    'color-feedback-alert-light': 'color-alert-05',
-    'color-feedback-alert-mid': 'color-alert-50',
-    'color-feedback-alert-dark': 'color-alert-70',
-    'color-feedback-warning-light': 'color-warning-05',
-    'color-feedback-warning-mid': 'color-warning-50',
-    'color-feedback-warning-dark': 'color-warning-70',
-    'color-feedback-discovery-light': 'color-discovery-05',
-    'color-feedback-discovery-mid': 'color-discovery-50',
-    'color-feedback-discovery-dark': 'color-discovery-70',
-    'color-feedback-informative-light': 'color-informative-05',
-    'color-feedback-informative-mid': 'color-informative-50',
-    'color-feedback-informative-dark': 'color-informative-70',
+    'color-feedback-success': 'color-success-50',
+    'color-feedback-success-hover': 'color-success-70',
+    'color-feedback-success-alternate': 'color-success-05',
+    'color-feedback-success-alternate-hover': 'color-success-10',
+    'color-feedback-alert': 'color-alert-50',
+    'color-feedback-alert-hover': 'color-alert-70',
+    'color-feedback-alert-alternate': 'color-alert-05',
+    'color-feedback-alert-alternate-hover': 'color-alert-10',
+    'color-feedback-warning': 'color-warning-50',
+    'color-feedback-warning-hover': 'color-warning-70',
+    'color-feedback-warning-alternate': 'color-warning-05',
+    'color-feedback-warning-alternate-hover': 'color-warning-10',
+    'color-feedback-discovery': 'color-discovery-50',
+    'color-feedback-discovery-hover': 'color-discovery-70',
+    'color-feedback-discovery-alternate': 'color-discovery-05',
+    'color-feedback-discovery-alternate-hover': 'color-discovery-10',
+    'color-feedback-informative': 'color-informative-50',
+    'color-feedback-informative-hover': 'color-informative-70',
+    'color-feedback-informative-alternate': 'color-informative-05',
+    'color-feedback-informative-alternate-hover': 'color-informative-10',
+    'color-error': 'color-feedback-alert',
+    'color-action-disabled': 'color-brand-20',
+    'color-action': 'color-brand-50',
+    'color-action-hover': 'color-brand-70',
 
     // BACKGROUND TIER
-    // TIER 1
-    'color-bg-lightest': 'color-white',
-    'color-bg-lighter': 'color-neutral-02',
-    'color-bg-light': 'color-neutral-05',
-    'color-bg-mid': 'color-neutral-15',
-    'color-bg-dark': 'color-neutral-30',
-    'color-bg-darker': 'color-neutral-65',
-    'color-bg-darkest': 'color-neutral-90',
-    'color-action-bg-fill': 'color-action-mid',
-    'color-action-bg-fill-hover': 'color-action-dark',
-    'color-action-bg-fill-disabled': 'color-action-light',
-    /*
-     'color-feedback-bg-success-light': 'color-success-05',
-     'color-feedback-bg-success-mid': 'color-success-50',
-     'color-feedback-bg-success-dark': 'color-success-70',
-     'color-feedback-bg-alert-light': 'color-alert-05',
-     'color-feedback-bg-alert-mid': 'color-alert-50',
-     'color-feedback-bg-alert-dark': 'color-alert-70',
-     'color-feedback-bg-warning-light': 'color-warning-05',
-     'color-feedback-bg-warning-mid': 'color-warning-50',
-     'color-feedback-bg-warning-dark': 'color-warning-70',
-     'color-feedback-bg-discovery-light': 'color-discovery-05',
-     'color-feedback-bg-discovery-mid': 'color-discovery-50',
-     'color-feedback-bg-discovery-dark': 'color-discovery-70',
-     'color-feedback-bg-informative-light': 'color-informative-05',
-     'color-feedback-bg-informative-mid': 'color-informative-50',
-     'color-feedback-bg-informative-dark': 'color-informative-70',
-     */
-    'color-feedback-bg-surface-success': 'color-feedback-success-light',
-    'color-feedback-bg-surface-warning': 'color-feedback-warning-light',
-    'color-feedback-bg-surface-alert': 'color-feedback-alert-light',
-    'color-feedback-bg-surface-discovery': 'color-feedback-discovery-light',
-    'color-feedback-bg-surface-informative': 'color-feedback-informative-light',
-    'color-feedback-bg-fill-success': 'color-feedback-success-mid',
-    'color-feedback-bg-fill-success-hover': 'color-feedback-success-dark',
-    'color-feedback-bg-fill-alert': 'color-feedback-alert-mid',
-    'color-feedback-bg-fill-alert-hover': 'color-feedback-alert-dark',
-    'color-feedback-bg-fill-warning': 'color-feedback-warning-mid',
-    'color-feedback-bg-fill-warning-hover': 'color-feedback-warning-dark',
-    'color-feedback-bg-fill-discovery': 'color-feedback-discovery-mid',
-    'color-feedback-bg-fill-discovery-hover': 'color-feedback-discovery-dark',
-    'color-feedback-bg-fill-informative': 'color-feedback-informative-mid',
-    'color-feedback-bg-fill-informative-hover': 'color-feedback-informative-dark',
+    'color-feedback-bg-surface-success': 'color-feedback-success-alternate',
+    'color-feedback-bg-surface-warning': 'color-feedback-warning-alternate',
+    'color-feedback-bg-surface-alert': 'color-feedback-alert-alternate',
+    'color-feedback-bg-surface-discovery': 'color-feedback-discovery-alternate',
+    'color-feedback-bg-surface-informative': 'color-feedback-informative-alternate',
+    'color-feedback-bg-fill-success': 'color-feedback-success',
+    'color-feedback-bg-fill-success-hover': 'color-feedback-success-hover',
+    'color-feedback-bg-fill-alert': 'color-feedback-alert',
+    'color-feedback-bg-fill-alert-hover': 'color-feedback-alert-hover',
+    'color-feedback-bg-fill-warning': 'color-feedback-warning',
+    'color-feedback-bg-fill-warning-hover': 'color-feedback-warning-hover',
+    'color-feedback-bg-fill-discovery': 'color-feedback-discovery',
+    'color-feedback-bg-fill-discovery-hover': 'color-feedback-discovery-hover',
+    'color-feedback-bg-fill-informative': 'color-feedback-informative',
+    'color-feedback-bg-fill-informative-hover': 'color-feedback-informative-hover',
 
-    // TIER 2
-    'color-bg-surface': 'color-bg-lightest',
-    'color-bg-surface-alternate': 'color-bg-lighter',
-    'color-bg-fill': 'color-bg-lightest',
-    'color-bg-fill-disabled': 'color-bg-light',
-    'color-bg-fill-selected': 'color-bg-light',
-    'color-bg-fill-hover': 'color-bg-mid',
-    'color-bg-fill-alternate-disabled': 'color-bg-mid',
-    'color-bg-fill-alternate-hover': 'color-bg-dark',
-    'color-bg-fill-inverse': 'color-bg-darker',
-    'color-bg-fill-inverse-hover': 'color-bg-darkest',
+    'color-action-bg-fill': 'color-action',
+    'color-action-bg-fill-hover': 'color-action-hover',
+    'color-action-bg-fill-disabled': 'color-action-disabled',
+
+    'color-bg-surface': 'color-white',
+    'color-bg-surface-alternate': 'color-neutral-02',
+    'color-bg-fill': 'color-white',
+    'color-bg-fill-disabled': 'color-neutral-05',
+    'color-bg-fill-selected': 'color-neutral-05',
+    'color-bg-fill-hover': 'color-neutral-15',
+    'color-bg-fill-alternate-disabled': 'color-neutral-15',
+    'color-bg-fill-alternate-hover': 'color-neutral-30',
+    'color-bg-fill-inverse': 'color-neutral-65',
+    'color-bg-fill-inverse-hover': 'color-neutral-90',
 
     'color-indicator-bg-fill': 'color-brand-50',
     'color-bg-surface-brand': 'color-brand-80',
@@ -250,65 +216,48 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-surface-brand-selected': 'color-brand-70',
 
     // BORDER TIER
-    // TIER 1
-    'color-action-border': 'color-action-mid',
-    'color-action-border-hover': 'color-action-dark',
-    'color-action-border-disabled': 'color-action-light',
-    'color-feedback-border-success': 'color-feedback-success-mid',
-    'color-feedback-border-warning': 'color-feedback-warning-mid',
-    'color-feedback-border-alert': 'color-feedback-alert-mid',
-    'color-feedback-border-discovery': 'color-feedback-discovery-mid',
-    'color-feedback-border-informative': 'color-feedback-informative-mid',
+    'color-action-border': 'color-action',
+    'color-action-border-hover': 'color-action-hover',
+    'color-action-border-disabled': 'color-action-disabled',
+    'color-feedback-border-success': 'color-feedback-success',
+    'color-feedback-border-warning': 'color-feedback-warning',
+    'color-feedback-border-alert': 'color-feedback-alert',
+    'color-feedback-border-discovery': 'color-feedback-discovery',
+    'color-feedback-border-informative': 'color-feedback-informative',
     'color-border-error': 'color-error',
-    'color-border-lightest': 'color-white',
-    'color-border-lighter': 'color-neutral-05',
-    'color-border-light': 'color-neutral-15',
-    'color-border-mid': 'color-neutral-30',
-    'color-border-dark': 'color-neutral-50',
-    'color-border-darker': 'color-neutral-65',
-    'color-border-darkest': 'color-neutral-90',
-    'color-border-focus-outside': 'color-brand-50',
-    'color-border-focus-inside': 'color-brand-20',
 
-    // TIER 2
-    'color-border': 'color-border-light',
-    'color-border-inverse': 'color-border-lightest',
-    'color-border-alternate': 'color-border-dark',
-    'color-separator': 'color-border-light',
-    'color-form-border': 'color-border-darker',
-    'color-border-hover': 'color-border-darkest',
-    'color-border-disabled': 'color-border-mid',
+    'color-border': 'color-neutral-15',
+    'color-border-inverse': 'color-white',
+    'color-border-alternate': 'color-neutral-50',
+    'color-separator': 'color-neutral-15',
+    'color-form-border': 'color-neutral-65',
+    'color-border-hover': 'color-neutral-90',
+    'color-border-disabled': 'color-neutral-30',
     'color-border-selected': 'color-brand-50',
     'color-border-alternate-selected': 'color-brand-70',
+
+    'color-border-focus-outside': 'color-brand-50',
+    'color-border-focus-inside': 'color-brand-20',
     'color-border-focus-outside-inverse': 'color-border-focus-inside',
     'color-border-focus-inside-inverse': 'color-border-focus-outside',
 
     // CONTENT TIER
-    // TIER 1
     'color-content-error': 'color-error',
-    'color-action-content': 'color-action-mid',
-    'color-action-content-hover': 'color-action-dark',
-    'color-action-content-disabled': 'color-action-light',
+    'color-action-content': 'color-action',
+    'color-action-content-hover': 'color-action-hover',
+    'color-action-content-disabled': 'color-action-disabled',
 
-    'color-feedback-content-success': 'color-feedback-success-dark',
-    'color-feedback-content-alert': 'color-feedback-alert-dark',
-    'color-feedback-content-discovery': 'color-feedback-discovery-dark',
-    'color-feedback-content-informative': 'color-feedback-discovery-dark',
+    'color-feedback-content-success': 'color-success-70',
+    'color-feedback-content-alert': 'color-alert-70',
+    'color-feedback-content-discovery': 'color-discovery-70',
+    'color-feedback-content-informative': 'color-discovery-70',
     'color-feedback-content-warning': 'color-warning-80',
 
-    'color-content-lightest': 'color-white',
-    'color-content-light': 'color-neutral-30',
-    'color-content-mid': 'color-neutral-65',
-    'color-content-dark': 'color-neutral-90',
-    'color-content-darkest': 'color-black',
-
-    // TIER 2
-
-    'color-content-inverse': 'color-content-lightest',
-    'color-content-disabled': 'color-content-light',
-    'color-content-alternate': 'color-content-mid',
-    'color-content': 'color-content-dark',
-    'color-content-hover': 'color-content-darkest',
+    'color-content-inverse': 'color-white',
+    'color-content-disabled': 'color-neutral-30',
+    'color-content-alternate': 'color-neutral-65',
+    'color-content': 'color-neutral-90',
+    'color-content-hover': 'color-black',
 
     'color-content-brand': 'color-brand-70',
     'color-content-selected': 'color-brand-70',
