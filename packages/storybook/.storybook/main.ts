@@ -60,7 +60,7 @@ const config: StorybookConfig = {
     }),
     docs: {
         autodocs: true,
-    defaultName: 'All Stories'
+        defaultName: 'All Stories'
     },
     core: {
         disableTelemetry: true,
