@@ -48,7 +48,7 @@ exports[`NavList Is hidden 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -178,7 +178,7 @@ exports[`NavList Matches the snapshot 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;

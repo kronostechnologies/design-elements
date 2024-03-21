@@ -1,10 +1,14 @@
+import { RefTokens, RefTokenValue } from './ref-tokens';
 import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
+import { CardTokens, defaultCardTokens } from './component/card-tokens';
+import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
+import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
@@ -14,7 +18,9 @@ import { defaultPaginationTokens, PaginationTokens } from './component/paginatio
 import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
 import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
 import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
-import { RefTokens, RefTokenValue } from './ref-tokens';
+import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
+import { defaultSortButtonTokens, SortButtonIconTokens } from './component/sort-button-icon-tokens';
+import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
 import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component/sectional-banner-tokens';
@@ -56,6 +62,12 @@ export type ComponentTokens =
     | ModalTokens
     | TooltipTokens
     | ToggleTipTokens
+    | SideDrawerTokens
+    | GlobalHeaderTokens
+    | CardTokens
+    | SortButtonIconTokens
+    | TableTokens
+    | DropdownMenuTokens
     | TabTokens
     | LozengeTokens;
 
@@ -94,6 +106,12 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTooltipTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
+    ...defaultSideDrawerTokens,
+    ...defaultGlobalHeaderTokens,
+    ...defaultCardTokens,
+    ...defaultSortButtonTokens,
+    ...defaultTableTokens,
+    ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
 };
 
