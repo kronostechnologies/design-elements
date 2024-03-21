@@ -173,10 +173,10 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-informative-hover': 'color-informative-70',
     'color-feedback-informative-alternate': 'color-informative-05',
     'color-feedback-informative-alternate-hover': 'color-informative-10',
-    'color-error': 'color-feedback-alert',
     'color-action-disabled': 'color-brand-20',
     'color-action': 'color-brand-50',
     'color-action-hover': 'color-brand-70',
+    'color-error': 'color-feedback-alert',
 
     // BACKGROUND TIER
     'color-feedback-bg-surface-success': 'color-feedback-success-alternate',

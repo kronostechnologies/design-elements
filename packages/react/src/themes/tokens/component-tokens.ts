@@ -3,7 +3,6 @@ import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
-import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
@@ -39,7 +38,6 @@ export type ComponentTokens =
     | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
-    | CardLinkTokens
     | LinkTokens
     | FocusTokens
     | HeadingTokens
@@ -81,7 +79,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultAvatarTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
-    ...defaultCardLinkTokens,
     ...defaultLinkTokens,
     ...defaultFocusTokens,
     ...defaultHeadingTokens,

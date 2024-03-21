@@ -8,6 +8,7 @@ const StyledDiv = styled.div<{ $noPadding?: boolean }>`
     border-radius: var(--border-radius-2x);
     box-shadow: 0 1px 4px 0 ${(props) => props.theme.component['card-box-shadow-color']};
     box-sizing: border-box;
+    color: ${({ theme }) => theme.component['card-text-color']};
     margin-bottom: var(--spacing-3x);
     padding: ${({ $noPadding }) => ($noPadding ? '0' : 'var(--spacing-3x) var(--spacing-4x) var(--spacing-4x)')};
 `;
