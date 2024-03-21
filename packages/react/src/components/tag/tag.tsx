@@ -239,7 +239,6 @@ const TagContainer = styled.div<TagContainerProps>`
     border: 1px solid ${(props) => getTagColors(props, 'border-color')};
     border-radius: ${getBorderRadius};
     display: inline-flex;
-    justify-content: center;
     padding: ${getPadding};
 
     & + & {
