@@ -1,5 +1,5 @@
 import { Avatar } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as AvatarStories  from './avatar.stories';
 
 
@@ -14,7 +14,8 @@ import * as AvatarStories  from './avatar.stories';
 
 ## Definition
 
-Avatar is an atom that represents a user or an entity, that has the goal of **creating connections and humanizing online communities** [2][1]. <br />
+Avatar is an atom that represents a user or an entity, that has the goal of **creating connections and humanizing online communities** [2][1].
+    <Canvas of={AvatarStories.MediumSizeAvatar} />
 
 ## Usage
 
@@ -31,13 +32,13 @@ Avatar is an atom that represents a user or an entity, that has the goal of **cr
 
 - Text avatars display initials that represent the user's or entity's initial.
 - Text avatars always display 2 characters.
-<Story of={AvatarStories.LargeSizeAvatar} />
+<Canvas of={AvatarStories.LargeSizeAvatar} />
 
 ### Image
 
 - Image avatars are used when users can upload an image to replace the text avatar.
 - The image is centred in the container.
-<Story of={AvatarStories.AvatarWithImage} />
+<Canvas of={AvatarStories.AvatarWithImage} />
 
 ## Properties
 <ArgTypes of={Avatar} />
