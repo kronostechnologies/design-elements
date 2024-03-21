@@ -1,5 +1,5 @@
 import { Accordion } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as AccordionStories  from './accordion.stories';
 
 
@@ -16,6 +16,7 @@ import * as AccordionStories  from './accordion.stories';
 
 ## Definition
 Accordion is a **disclosure component** that allows the user to display or hide vertically stacked content.
+    <Canvas of={AccordionStories.Default} />
 
 ## Usage
 ### When to use
@@ -35,7 +36,7 @@ Accordion is a **disclosure component** that allows the user to display or hide 
 ## Variants
 ### Default
 
-<Story of={AccordionStories.Default} />
+<Canvas of={AccordionStories.Default} />
 
 ## Properties
 <ArgTypes of={Accordion} />
