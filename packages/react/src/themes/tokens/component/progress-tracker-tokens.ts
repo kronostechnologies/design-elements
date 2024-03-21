@@ -18,7 +18,7 @@ export type ProgressTrackerTokens =
     | 'progress-tracker-step-completed-background-color'
     | 'progress-tracker-step-completed-border-color'
     | 'progress-tracker-step-completed-text-color'
-    | 'progress-tracker-step-completed-label-text-color'
+    | 'progress-tracker-step-completed-label-text-color';
 
 export type ProgressTrackerTokenValue = AliasTokens | RefTokens;
 

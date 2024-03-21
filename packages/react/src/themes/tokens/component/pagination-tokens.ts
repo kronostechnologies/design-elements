@@ -8,7 +8,7 @@ export type PaginationTokens =
     | 'pagination-page-selected-hover-background-color'
     | 'pagination-page-selected-background-color'
     | 'pagination-page-selected-outline-color'
-    | 'pagination-page-selected-text-color'
+    | 'pagination-page-selected-text-color';
 
 export type PaginationTokenValue = AliasTokens | RefTokens;
 

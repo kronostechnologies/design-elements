@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type ProgressIndicatorTokens =
     | 'progress-indicator-track-color'
-    | 'progress-indicator-label-text-color'
+    | 'progress-indicator-label-text-color';
 
 export type ProgressIndicatorTokenValue = AliasTokens | RefTokens;
 

@@ -4,7 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type ProgressCircleTokens =
     | 'progress-circle-empty-stroke-color'
     | 'progress-circle-label-text-color'
-    | 'progress-circle-result-text-color'
+    | 'progress-circle-result-text-color';
 
 export type ProgressCircleTokenValue = AliasTokens | RefTokens;
 

@@ -5,7 +5,7 @@ export type TooltipTokens =
     | 'tooltip-border-color'
     | 'tooltip-text-color'
     | 'tooltip-success-background-color'
-    | 'tooltip-default-background-color'
+    | 'tooltip-default-background-color';
 
 export type TooltipTokenValue = AliasTokens | RefTokens;
 

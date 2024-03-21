@@ -18,7 +18,6 @@ import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/p
 import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
 import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
-import { defaultSortButtonTokens, SortButtonIconTokens } from './component/sort-button-icon-tokens';
 import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
@@ -63,7 +62,6 @@ export type ComponentTokens =
     | SideDrawerTokens
     | GlobalHeaderTokens
     | CardTokens
-    | SortButtonIconTokens
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
@@ -106,7 +104,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSideDrawerTokens,
     ...defaultGlobalHeaderTokens,
     ...defaultCardTokens,
-    ...defaultSortButtonTokens,
     ...defaultTableTokens,
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,

@@ -2,7 +2,10 @@ import { NoSelfReference } from '../../utility-types';
 import { RefTokens } from './ref-tokens';
 
 export type AliasTokens =
-    // GENERAL TIER
+/**
+ * TIER 1
+ * GENERAL
+ */
     | 'color-error'
     | 'color-action'
     | 'color-action-disabled'
@@ -27,7 +30,10 @@ export type AliasTokens =
     | 'color-feedback-informative-hover'
     | 'color-feedback-informative-alternate'
     | 'color-feedback-informative-alternate-hover'
-    // BACKGROUND
+/**
+ * TIER 2
+ * BACKGROUND
+ */
     | 'color-bg-surface'
     | 'color-bg-surface-alternate'
     | 'color-bg-surface-brand'
@@ -39,6 +45,7 @@ export type AliasTokens =
     | 'color-bg-fill-selected'
     | 'color-bg-fill-inverse'
     | 'color-bg-fill-inverse-hover'
+    | 'color-bg-fill-alternate'
     | 'color-bg-fill-alternate-disabled'
     | 'color-bg-fill-alternate-hover'
     | 'color-indicator-bg-fill'
@@ -60,17 +67,19 @@ export type AliasTokens =
     | 'color-feedback-bg-fill-discovery-hover'
     | 'color-feedback-bg-fill-informative'
     | 'color-feedback-bg-fill-informative-hover'
-    // BORDER
+/**
+ * TIER 2
+ * BORDER
+ */
     | 'color-border'
-    | 'color-form-border'
-    | 'color-separator'
     | 'color-border-alternate'
-    | 'color-border-selected'
-    | 'color-border-alternate-selected'
-    | 'color-border-inverse'
-    | 'color-border-disabled'
-    | 'color-border-hover'
-    | 'color-border-error'
+    | 'color-interactive-border'
+    | 'color-interactive-border-alternate'
+    | 'color-interactive-border-hover'
+    | 'color-interactive-border-disabled'
+    | 'color-interactive-border-selected'
+    | 'color-interactive-border-error'
+    | 'color-separator'
     | 'color-border-focus-outside'
     | 'color-border-focus-inside'
     | 'color-border-focus-outside-inverse'
@@ -83,7 +92,10 @@ export type AliasTokens =
     | 'color-feedback-border-alert'
     | 'color-feedback-border-discovery'
     | 'color-feedback-border-informative'
-    // CONTENT
+/**
+ * TIER 2
+ * CONTENT
+ */
     | 'color-content'
     | 'color-content-alternate'
     | 'color-content-inverse'
@@ -104,7 +116,10 @@ export type AliasTokens =
     | 'color-feedback-content-alert'
     | 'color-feedback-content-discovery'
     | 'color-feedback-content-informative'
-    // TEXT
+/**
+ * TIER 3
+ * TEXT (CONTENT)
+ */
     | 'color-text'
     | 'color-text-alternate'
     | 'color-text-inverse'
@@ -125,7 +140,10 @@ export type AliasTokens =
     | 'color-feedback-text-alert'
     | 'color-feedback-text-discovery'
     | 'color-feedback-text-informative'
-    // ICON
+/**
+ * TIER 3
+ * ICON (CONTENT)
+ */
     | 'color-icon'
     | 'color-icon-alternate'
     | 'color-icon-inverse'
@@ -145,14 +163,17 @@ export type AliasTokens =
     | 'color-feedback-icon-warning'
     | 'color-feedback-icon-alert'
     | 'color-feedback-icon-discovery'
-    | 'color-feedback-icon-informative'
+    | 'color-feedback-icon-informative';
 
 export type AliasTokenMap = {
     [Token in AliasTokens]: NoSelfReference<RefTokens | AliasTokens, Token>;
 }
 
 export const defaultAliasTokens: AliasTokenMap = {
-    // GENERAL TIER
+    /**
+     * TIER 1
+     * GENERAL
+    */
     'color-feedback-success': 'color-success-50',
     'color-feedback-success-hover': 'color-success-70',
     'color-feedback-success-alternate': 'color-success-05',
@@ -173,12 +194,18 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-informative-hover': 'color-informative-70',
     'color-feedback-informative-alternate': 'color-informative-05',
     'color-feedback-informative-alternate-hover': 'color-informative-10',
-    'color-action-disabled': 'color-brand-20',
     'color-action': 'color-brand-50',
+    'color-action-disabled': 'color-brand-20',
     'color-action-hover': 'color-brand-70',
     'color-error': 'color-feedback-alert',
 
-    // BACKGROUND TIER
+    /**
+     * TIER 2
+     * BACKGROUND
+     */
+    'color-action-bg-fill': 'color-action',
+    'color-action-bg-fill-hover': 'color-action-hover',
+    'color-action-bg-fill-disabled': 'color-action-disabled',
     'color-feedback-bg-surface-success': 'color-feedback-success-alternate',
     'color-feedback-bg-surface-warning': 'color-feedback-warning-alternate',
     'color-feedback-bg-surface-alert': 'color-feedback-alert-alternate',
@@ -195,27 +222,28 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-fill-informative': 'color-feedback-informative',
     'color-feedback-bg-fill-informative-hover': 'color-feedback-informative-hover',
 
-    'color-action-bg-fill': 'color-action',
-    'color-action-bg-fill-hover': 'color-action-hover',
-    'color-action-bg-fill-disabled': 'color-action-disabled',
-
     'color-bg-surface': 'color-white',
     'color-bg-surface-alternate': 'color-neutral-02',
+    'color-bg-surface-brand': 'color-brand-80',
+    'color-bg-surface-brand-hover': 'color-brand-70',
+    'color-bg-surface-brand-selected': 'color-brand-70',
+
     'color-bg-fill': 'color-white',
     'color-bg-fill-disabled': 'color-neutral-05',
     'color-bg-fill-selected': 'color-neutral-05',
     'color-bg-fill-hover': 'color-neutral-15',
+    'color-bg-fill-alternate': 'color-neutral-05',
     'color-bg-fill-alternate-disabled': 'color-neutral-15',
     'color-bg-fill-alternate-hover': 'color-neutral-30',
     'color-bg-fill-inverse': 'color-neutral-65',
     'color-bg-fill-inverse-hover': 'color-neutral-90',
 
     'color-indicator-bg-fill': 'color-brand-50',
-    'color-bg-surface-brand': 'color-brand-80',
-    'color-bg-surface-brand-hover': 'color-brand-70',
-    'color-bg-surface-brand-selected': 'color-brand-70',
 
-    // BORDER TIER
+    /**
+     * TIER 2
+     * BORDER
+     */
     'color-action-border': 'color-action',
     'color-action-border-hover': 'color-action-hover',
     'color-action-border-disabled': 'color-action-disabled',
@@ -224,41 +252,41 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-border-alert': 'color-feedback-alert',
     'color-feedback-border-discovery': 'color-feedback-discovery',
     'color-feedback-border-informative': 'color-feedback-informative',
-    'color-border-error': 'color-error',
 
     'color-border': 'color-neutral-15',
-    'color-border-inverse': 'color-white',
-    'color-border-alternate': 'color-neutral-50',
-    'color-separator': 'color-neutral-15',
-    'color-form-border': 'color-neutral-65',
-    'color-border-hover': 'color-neutral-90',
-    'color-border-disabled': 'color-neutral-30',
-    'color-border-selected': 'color-brand-50',
-    'color-border-alternate-selected': 'color-brand-70',
+    'color-border-alternate': 'color-neutral-05',
+    'color-interactive-border': 'color-neutral-65',
+    'color-interactive-border-alternate': 'color-neutral-50',
+    'color-interactive-border-hover': 'color-black',
+    'color-interactive-border-disabled': 'color-neutral-30',
+    'color-interactive-border-selected': 'color-brand-50',
+    'color-interactive-border-error': 'color-error',
 
+    'color-separator': 'color-border',
     'color-border-focus-outside': 'color-brand-50',
     'color-border-focus-inside': 'color-brand-20',
     'color-border-focus-outside-inverse': 'color-border-focus-inside',
     'color-border-focus-inside-inverse': 'color-border-focus-outside',
 
-    // CONTENT TIER
-    'color-content-error': 'color-error',
+    /**
+     * TIER 2
+     * CONTENT
+     */
     'color-action-content': 'color-action',
     'color-action-content-hover': 'color-action-hover',
     'color-action-content-disabled': 'color-action-disabled',
-
     'color-feedback-content-success': 'color-success-70',
     'color-feedback-content-alert': 'color-alert-70',
     'color-feedback-content-discovery': 'color-discovery-70',
     'color-feedback-content-informative': 'color-discovery-70',
     'color-feedback-content-warning': 'color-warning-80',
+    'color-content-error': 'color-error',
 
-    'color-content-inverse': 'color-white',
-    'color-content-disabled': 'color-neutral-30',
-    'color-content-alternate': 'color-neutral-65',
     'color-content': 'color-neutral-90',
+    'color-content-alternate': 'color-neutral-65',
+    'color-content-inverse': 'color-white',
     'color-content-hover': 'color-black',
-
+    'color-content-disabled': 'color-neutral-30',
     'color-content-brand': 'color-brand-70',
     'color-content-selected': 'color-brand-70',
 
@@ -267,7 +295,10 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-link-content-hover': 'color-informative-70',
     'color-link-content-visited': 'color-discovery-50',
 
-    // TEXT
+    /**
+     * TIER 3
+     * TEXT (CONTENT)
+     */
     'color-text': 'color-content',
     'color-text-alternate': 'color-content-alternate',
     'color-text-inverse': 'color-content-inverse',
@@ -288,7 +319,10 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-text-alert': 'color-feedback-content-alert',
     'color-feedback-text-discovery': 'color-feedback-content-discovery',
     'color-feedback-text-informative': 'color-feedback-content-informative',
-    // ICON
+    /**
+     * TIER 3
+     * ICON (CONTENT)
+     */
     'color-icon': 'color-content',
     'color-icon-alternate': 'color-content-alternate',
     'color-icon-inverse': 'color-content-inverse',
