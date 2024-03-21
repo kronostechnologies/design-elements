@@ -17,12 +17,28 @@ export default {
     component: Button,
 };
 
-export const Buttons: Story = () => (
+export const Primary: Story = () => (
     <>
         <Button label="Primary" buttonType="primary" />
+    </>
+);
+export const Secondary: Story = () => (
+    <>
         <Button label="Secondary" buttonType="secondary" />
+     </>
+);
+export const Tertiary: Story = () => (
+     <>
         <Button label="Tertiary" buttonType="tertiary" />
+     </>
+);
+export const Destructive: Story = () => (
+    <>
         <Button label="Destructive" buttonType="destructive" />
+    </>
+);
+export const DestructiveSecondary: Story = () => (
+     <>
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" />
     </>
 );
@@ -36,7 +52,6 @@ export const Disabled: Story = () => (
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" disabled />
     </>
 );
-
 export const Inverted: Story = () => (
     <InvertedBackground>
         <Button label="Primary" buttonType="primary" inverted />

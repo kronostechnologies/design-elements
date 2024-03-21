@@ -1,5 +1,5 @@
 import { Button } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as ButtonStories  from './button.stories';
 
 # Button
@@ -14,7 +14,7 @@ import * as ButtonStories  from './button.stories';
 
 ## Definition
 Buttons are control elements that allow users to trigger targeted actions [1][2][3]. 
-
+<Canvas of={ButtonStories.Primary} />
 
 ## Usage
 ### When to use
@@ -29,32 +29,35 @@ Buttons are control elements that allow users to trigger targeted actions [1][2]
 - Do not use buttons if the action does not require user input or interaction.
 
 ## Variants
-    <Story of={ButtonStories.Buttons} />
 
 ### Primary
 - Use the primary button for the main action of a page.
 - Only use one primary button per page. The only exception to this is if one of them is used inside an “overlay” component such as a modal. Define the main goal of a page by asking: “What is the most important action I want to do on this page” and use the primary button accordingly.
 - Not all pages need to have a primary button. Therefore, it should only be used when an action requires more visual weight than the others.*
+<Canvas of={ButtonStories.Primary} />
 
 ### Secondary
 - Use the secondary button by default.
 - If an action requires more visual weight, use the primary button.
 - If it requires less visual weight, use the tertiary button.
+<Canvas of={ButtonStories.Secondary} />
 
 ### Tertiary
 - Use the tertiary button for actions that requires less visual weight. Ex: Cancel.
+<Canvas of={ButtonStories.Tertiary} />
 
 ### Destructive
 - Use the destructive primary button for potentially irreversible actions that must grab attention such as losing data .
+<Canvas of={ButtonStories.Destructive} />
 
 ### Destructive secondary
 - Use the destructive button for potentially irreversible actions that must not grab as much attention as the destructive primary.
+<Canvas of={ButtonStories.DestructiveSecondary} />
 
 ### With icon
-    <Story of={ButtonStories.WithIcons} />
-
 - Use an icon to the left of the label to provide a quick visual feedback.
 - Use an icon to the right of the label to indicate a state *e.g.: loading state* or to indicate the role of the button *e.g.: Menu button*
+<Canvas of={ButtonStories.WithIcons} />
 
 ### Icon only
 - Use an icon button for actions that can be presented without the need for a text when space is limited.
