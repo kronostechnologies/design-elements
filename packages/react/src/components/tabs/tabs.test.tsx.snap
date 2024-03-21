@@ -209,6 +209,11 @@ exports[`Tabs matches snapshot (global) 1`] = `
   box-shadow: none;
 }
 
+.c12:focus-visible {
+  position: relative;
+  z-index: 2;
+}
+
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -631,7 +636,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c12 {
   background: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #F1F2F2;
   border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
@@ -648,6 +653,11 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c12:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c12:focus-visible {
+  position: relative;
+  z-index: 2;
 }
 
 .c2 {
@@ -1076,7 +1086,7 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c12 {
   background: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #F1F2F2;
   border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
   border-top: none;
 }
@@ -1093,6 +1103,11 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c12:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c12:focus-visible {
+  position: relative;
+  z-index: 2;
 }
 
 .c2 {

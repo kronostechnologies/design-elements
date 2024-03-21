@@ -18,6 +18,11 @@ const StyledDiv = styled.div<{ $isGlobal?: boolean; }>`
 
     ${focus};
     ${focusVisibleReset};
+
+    &:focus-visible {
+        position: relative;
+        z-index: 2;
+    }
 `;
 
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({

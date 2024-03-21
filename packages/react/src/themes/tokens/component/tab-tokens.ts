@@ -33,7 +33,7 @@ export const defaultTabTokens: TabTokenMap = {
     'tabs-tab-active-text-color': 'color-neutral-90',
     'tabs-tab-selected-indicator-color': 'color-brand-50',
     'tabs-tab-selected-text-color': 'color-neutral-90',
-    'tabs-panel-border-color': 'color-neutral-15',
+    'tabs-panel-border-color': 'color-neutral-05',
     'tabs-panel-background-color': 'color-white',
     'tabs-global-background-color': 'color-white',
 };
