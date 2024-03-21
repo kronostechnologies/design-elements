@@ -1,4 +1,3 @@
-import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../themes/theme';
 
 type FocusType = 'focus' | 'focus-visible' | 'focus-within';
@@ -47,13 +46,3 @@ export const focus = (
 
     return notFocusStyle + focusStyle;
 };
-
-export const focusVisibleReset = (
-    _props: { theme: ResolvedTheme },
-    hasBorder = false,
-): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
-    &:focus:not(:focus-visible) {
-        ${hasBorder && 'border-color: inherit;'}
-        box-shadow: none;
-    }
-`;

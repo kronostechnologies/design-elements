@@ -36,5 +36,5 @@ export const StyledLink = styled.a<ContainerProps>`
         `}
     }
 
-    ${focus};
+    ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-visible' })};
 `;
