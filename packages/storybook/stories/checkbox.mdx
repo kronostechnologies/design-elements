@@ -1,5 +1,5 @@
 import { Checkbox } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as CheckboxStories  from './checkbox.stories';
 
 
@@ -15,7 +15,7 @@ import * as CheckboxStories  from './checkbox.stories';
 
 ## Definition
     Checkboxes are a control component that allows the user to select any number of choices, including zero, one, or several [2].
- 
+    <Canvas of={CheckboxStories.Normal} />
 
 ## Usage
     ### When to use
@@ -30,7 +30,7 @@ import * as CheckboxStories  from './checkbox.stories';
 
 ## Variants
     ### Default
-        <Story of={CheckboxStories.Normal} />
+        <Canvas of={CheckboxStories.Normal} />
 
 ## Properties
     <ArgTypes of={Checkbox} />
