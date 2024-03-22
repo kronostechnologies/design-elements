@@ -125,7 +125,7 @@ export const TabButton = forwardRef(({
 }: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { t } = useTranslation('tabs');
     const dataAttributes = useDataAttributes(rest);
-    const dataTestId = dataAttributes['data-testid'];
+    const dataTestId = dataAttributes['data-testid'] ?? 'tabs-tab';
     const hasRemove = !!onRemove;
 
     return (
@@ -137,7 +137,7 @@ export const TabButton = forwardRef(({
                 role="tab"
                 aria-selected={isSelected}
                 ref={ref}
-                data-testid="tab-button"
+                data-testid={`${dataTestId}-button`}
                 tabIndex={isSelected ? undefined : -1}
                 onClick={onClick}
                 onKeyDown={onKeyDown}
@@ -148,18 +148,18 @@ export const TabButton = forwardRef(({
                 {leftIcon && (
                     <StyledButtonIcon
                         aria-hidden="true"
-                        data-testid="tabs-tab-left-icon"
+                        data-testid={`${dataTestId}-left-icon`}
                         name={leftIcon}
                         size="16"
                     />
                 )}
-                <ButtonLabel data-testid="tabs-tab-text" data-content={children}>
+                <ButtonLabel data-testid={`${dataTestId}-text`} data-content={children}>
                     {children}
                 </ButtonLabel>
                 {rightIcon && (
                     <StyledButtonIcon
                         aria-hidden="true"
-                        data-testid="tabs-tab-right-icon"
+                        data-testid={`${dataTestId}-right-icon`}
                         name={rightIcon}
                         size="16"
                     />
@@ -169,7 +169,7 @@ export const TabButton = forwardRef(({
                 <DeleteButton
                     buttonType="tertiary"
                     onClick={() => onRemove(id)}
-                    data-testid="tab-delete"
+                    data-testid={`${dataTestId}-delete`}
                     aria-label={t('dismissTab', { label: children })}
                     iconName='x'
                     focusable={isSelected}

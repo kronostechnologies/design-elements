@@ -1,4 +1,4 @@
-import { ReactWrapper, ShallowWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 import ReactDOM from 'react-dom';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
@@ -28,9 +28,8 @@ function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string):
     expect(tabPanel.isEmptyRender()).toBe(false);
 }
 
-function getActionButton<W extends ReactWrapper | ShallowWrapper>(wrapper: W, index: number): W {
-    const tab = getByTestId(wrapper, `tabs-tab-${index}`, { htmlNodesOnly: true });
-    return getByTestId(tab, 'tab-button', { htmlNodesOnly: true });
+function getActionButton<W extends ReactWrapper>(wrapper: W, index: number): W {
+    return getByTestId(wrapper, `tabs-tab-${index}-button`, { htmlNodesOnly: true });
 }
 
 describe('Tabs', () => {
