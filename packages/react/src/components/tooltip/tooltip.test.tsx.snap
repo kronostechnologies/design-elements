@@ -220,6 +220,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     data-testid="tooltip-content-container"
     id="uuid1"
     isMobile={false}
+    key="1"
     role="tooltip"
     style={
       {
@@ -492,6 +493,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
     data-testid="tooltip-content-container"
     id="uuid1"
     isMobile={false}
+    key="1"
     role="tooltip"
     style={
       {
@@ -768,6 +770,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     data-testid="tooltip-content-container"
     id="uuid1"
     isMobile={true}
+    key="1"
     role="tooltip"
     style={
       {
@@ -1040,6 +1043,7 @@ exports[`Tooltip Has mobile styles 1`] = `
     data-testid="tooltip-content-container"
     id="uuid1"
     isMobile={true}
+    key="1"
     role="tooltip"
     style={
       {
