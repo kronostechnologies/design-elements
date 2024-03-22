@@ -6,9 +6,10 @@ import {
     DropdownList,
     Tooltip,
     TooltipPlacement,
+    TextInput,
 } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
@@ -132,8 +133,9 @@ export const WithDropdownNavigation: Story = () => {
 
 WithDropdownNavigation.decorators = [RouterDecorator];
 
-const CodeContainer = styled.div`
+const CodeContainer = styled.div<{ justifyContent?: string }>`
     display: flex;
+    justify-content: ${({ justifyContent }) => (justifyContent || 'flex-start')};
 `;
 export const WithConfirmation: Story = () => {
     const code = 'JBSW Y3DP EHPK 3PXP';
@@ -155,6 +157,53 @@ export const WithConfirmation: Story = () => {
                         onClick={() => {
                             navigator.clipboard.writeText(code);
                         }}
+                    />
+                </Tooltip>
+            </CodeContainer>
+        </Container>
+    );
+};
+
+export const WithDynamicText: Story = () => {
+    const [label, setLabel] = useState<string>('Hide password');
+    const [iconName, setIconName] = useState<'eye' | 'eyeOff'>('eye');
+    const [inputType, setInputType] = useState<string>('password');
+    const [password, setPassword] = useState<string>('somePassword');
+    const handleOnClick = useCallback(() => {
+        if (label === 'Hide password') {
+            setLabel('Show password in plain text');
+            setIconName('eyeOff');
+            setInputType('password');
+        } else {
+            setLabel('Hide password');
+            setIconName('eye');
+            setInputType('text');
+        }
+    }, [label, setLabel]);
+    const handleOnPasswordChange = useCallback((newPassword) => {
+        setPassword(newPassword);
+    }, [setPassword]);
+
+    return (
+        <Container>
+            <CodeContainer justifyContent='flex-end'>
+                <TextInput
+                    required
+                    label="Password"
+                    type={inputType}
+                    value={password}
+                    onChange={handleOnPasswordChange}
+                    validationErrorMessage="This field is required"
+                />
+                <Tooltip
+                    label={label}
+                    desktopPlacement="top"
+                    defaultOpen
+                >
+                    <IconButton
+                        buttonType='primary'
+                        onClick={handleOnClick}
+                        iconName={iconName}
                     />
                 </Tooltip>
             </CodeContainer>

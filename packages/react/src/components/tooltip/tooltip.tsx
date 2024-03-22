@@ -232,8 +232,13 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
     const [isClicked, setIsClicked] = useState<boolean>(false);
+    const [tooltipKey, setTooltipKey] = useState<number>(0);
     const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
     const tooltipVariant = (mode === 'confirm' && isClicked) ? 'success' : 'normal';
+
+    useEffect(() => {
+        setTooltipKey((prevKey) => prevKey + 1);
+    }, [currentLabel]);
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -365,6 +370,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 isMobile={isMobile}
                 variant={tooltipVariant}
                 visible={popperTooltip.visible}
+                key={tooltipKey}
                 {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <TooltipArrow
