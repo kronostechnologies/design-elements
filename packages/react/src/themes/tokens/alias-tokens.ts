@@ -49,6 +49,7 @@ export type AliasTokens =
     | 'color-bg-fill-alternate-disabled'
     | 'color-bg-fill-alternate-hover'
     | 'color-indicator-bg-fill'
+    | 'color-empty-bg-fill'
     | 'color-action-bg-fill'
     | 'color-action-bg-fill-hover'
     | 'color-action-bg-fill-disabled'
@@ -73,6 +74,8 @@ export type AliasTokens =
  */
     | 'color-border'
     | 'color-border-alternate'
+    | 'color-border-inverse'
+    | 'color-overlay-border'
     | 'color-interactive-border'
     | 'color-interactive-border-alternate'
     | 'color-interactive-border-hover'
@@ -116,6 +119,11 @@ export type AliasTokens =
     | 'color-feedback-content-alert'
     | 'color-feedback-content-discovery'
     | 'color-feedback-content-informative'
+/**
+ * TIER 2
+ * BOX-SHADOW
+ */
+    | 'color-box-shadow'
 /**
  * TIER 3
  * TEXT (CONTENT)
@@ -238,6 +246,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-fill-inverse': 'color-neutral-65',
     'color-bg-fill-inverse-hover': 'color-neutral-90',
 
+    'color-empty-bg-fill': 'color-neutral-15',
     'color-indicator-bg-fill': 'color-brand-50',
 
     /**
@@ -255,6 +264,8 @@ export const defaultAliasTokens: AliasTokenMap = {
 
     'color-border': 'color-neutral-15',
     'color-border-alternate': 'color-neutral-05',
+    'color-border-inverse': 'color-white',
+    'color-overlay-border': 'color-neutral-50',
     'color-interactive-border': 'color-neutral-65',
     'color-interactive-border-alternate': 'color-neutral-50',
     'color-interactive-border-hover': 'color-black',
@@ -294,6 +305,12 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-link-content-disabled': 'color-informative-20',
     'color-link-content-hover': 'color-informative-70',
     'color-link-content-visited': 'color-discovery-50',
+
+    /**
+     * TIER 2
+     * BOX-SHADOW
+     */
+    'color-box-shadow': 'transparent-20',
 
     /**
      * TIER 3

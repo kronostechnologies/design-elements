@@ -2,7 +2,7 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type ProgressIndicatorTokens =
-    | 'progress-indicator-track-color'
+    | 'progress-indicator-empty-track-color'
     | 'progress-indicator-label-text-color';
 
 export type ProgressIndicatorTokenValue = AliasTokens | RefTokens;
@@ -12,6 +12,6 @@ export type ProgressIndicatorTokenMap = {
 };
 
 export const defaultProgressIndicatorTokens: ProgressIndicatorTokenMap = {
-    'progress-indicator-track-color': 'color-neutral-15',
-    'progress-indicator-label-text-color': 'color-black',
+    'progress-indicator-empty-track-color': 'color-empty-bg-fill',
+    'progress-indicator-label-text-color': 'color-text',
 };

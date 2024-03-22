@@ -2,7 +2,7 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type ProgressCircleTokens =
-    | 'progress-circle-empty-stroke-color'
+    | 'progress-circle-empty-track-color'
     | 'progress-circle-label-text-color'
     | 'progress-circle-result-text-color';
 
@@ -13,7 +13,7 @@ export type ProgressCircleTokenMap = {
 };
 
 export const defaultProgressCircleTokens: ProgressCircleTokenMap = {
-    'progress-circle-empty-stroke-color': 'color-neutral-15',
-    'progress-circle-label-text-color': 'color-black',
-    'progress-circle-result-text-color': 'color-black',
+    'progress-circle-empty-track-color': 'color-empty-bg-fill',
+    'progress-circle-label-text-color': 'color-text',
+    'progress-circle-result-text-color': 'color-text',
 };

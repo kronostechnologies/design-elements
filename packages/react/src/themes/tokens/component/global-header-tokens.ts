@@ -15,9 +15,9 @@ export type GlobalHeaderTokensMap = {
 };
 
 export const defaultGlobalHeaderTokens : GlobalHeaderTokensMap = {
-    'global-header-background-color': 'color-brand-80',
+    'global-header-background-color': 'color-bg-surface-brand',
+    'global-header-content-text-color': 'color-text-inverse',
+    'global-header-logo-content-text-color': 'color-text-inverse',
     'global-header-logo-title-separator-color': 'color-brand-70',
-    'global-header-content-text-color': 'color-white',
-    'global-header-skiplink-background-color': 'color-white',
-    'global-header-logo-content-text-color': 'color-white',
+    'global-header-skiplink-background-color': 'color-bg-fill',
 };

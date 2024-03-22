@@ -15,9 +15,9 @@ export type CarouselTokenMap = {
 };
 
 export const defaultCarouselTokens: CarouselTokenMap = {
-    'carousel-dot-active-background-color': 'color-brand-50',
-    'carousel-dot-inactive-background-color': 'color-neutral-15',
+    'carousel-dot-active-background-color': 'color-indicator-bg-fill',
+    'carousel-dot-inactive-background-color': 'color-empty-bg-fill',
+    'carousel-arrow-icon-color': 'color-icon-alternate',
     'carousel-dot-border-color': 'transparent-100',
     'carousel-nav-button-border-color': 'transparent-100',
-    'carousel-arrow-icon-color': 'color-neutral-65',
 };

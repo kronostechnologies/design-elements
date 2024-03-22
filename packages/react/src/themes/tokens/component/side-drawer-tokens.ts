@@ -2,8 +2,8 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type SideDrawerTokens =
-    'side-drawer-background-color' |
-    'side-drawer-box-shadow-color';
+    | 'side-drawer-background-color'
+    | 'side-drawer-box-shadow-color';
 
 export type SideDrawerTokensValue = AliasTokens | RefTokens;
 
@@ -12,6 +12,6 @@ export type SideDrawerTokensMap = {
 }
 
 export const defaultSideDrawerTokens: SideDrawerTokensMap = {
-    'side-drawer-background-color': 'color-white',
-    'side-drawer-box-shadow-color': 'transparent-10',
+    'side-drawer-background-color': 'color-bg-surface',
+    'side-drawer-box-shadow-color': 'color-box-shadow',
 };

@@ -36,12 +36,12 @@ const ToggletipArrow = styled.div`
 `;
 
 const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
-    background-color: ${({ theme }) => theme.component['toggletip-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['toggletip-border-color']};
+    background-color: ${({ theme }) => theme.component['toggletip-popper-container-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['toggletip-popper-container-border-color']};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.component['toggletip-text-color']};
+    color: ${({ theme }) => theme.component['toggletip-popper-container-text-color']};
     display: flex;
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
@@ -63,14 +63,14 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     }
 
     &[data-popper-placement*="bottom"] > ${ToggletipArrow}::before {
-        border-color: transparent transparent ${({ theme }) => theme.component['toggletip-border-color']} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent;
         border-width: 0 0.5rem 0.4rem;
         position: absolute;
         top: -1px;
     }
 
     &[data-popper-placement*="bottom"] > ${ToggletipArrow}::after {
-        border-color: transparent transparent ${({ theme }) => theme.component['toggletip-background-color']} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent;
         border-width: 0 0.5rem 0.4rem;
     }
 
@@ -83,14 +83,14 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     }
 
     &[data-popper-placement*="top"] > ${ToggletipArrow}::before {
-        border-color: ${({ theme }) => theme.component['toggletip-border-color']} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0;
         position: absolute;
         top: 1px;
     }
 
     &[data-popper-placement*="top"] > ${ToggletipArrow}::after {
-        border-color: ${({ theme }) => theme.component['toggletip-background-color']} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0;
     }
 
@@ -102,12 +102,12 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${ToggletipArrow}::before {
-        border-color: transparent ${({ theme }) => theme.component['toggletip-border-color']} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${ToggletipArrow}::after {
-        border-color: transparent ${({ theme }) => theme.component['toggletip-background-color']} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
         left: 0.375rem;
         top: 0;
@@ -121,12 +121,12 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     }
 
     &[data-popper-placement*="left"] > ${ToggletipArrow}::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-border-color']};
+        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']};
         border-width: 0.5rem 0 0.5rem 0.4rem;
     }
 
     &[data-popper-placement*="left"] > ${ToggletipArrow}::after {
-        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-background-color']};
+        border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']};
         border-width: 0.5rem 0 0.5rem 0.4rem;
         left: 0.25rem;
         top: 0;
