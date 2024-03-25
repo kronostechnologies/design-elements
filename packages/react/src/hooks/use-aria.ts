@@ -5,9 +5,13 @@ interface ConditionalId {
     include?: boolean;
 }
 
-interface AriaLabelsProps {
+export interface AriaLabelsProps {
     inputId: string;
+    /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
+    /**
+     * Aria label for the input (used when no visual label is present)
+     */
     ariaLabel?: string;
     ariaLabelledBy?: string;
     additonalAriaLabelledBy?: ConditionalId[];

@@ -2,7 +2,7 @@ import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
@@ -117,14 +117,9 @@ const SearchSubmit = styled(SearchButton)`
     }
 `;
 
-export interface CommonSearchProps {
+export interface CommonSearchProps extends AriaLabelsProps {
     id?: string;
     disabled?: boolean;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     className?: string;
     defaultValue?: string;
     value?: string;

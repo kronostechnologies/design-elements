@@ -1,10 +1,11 @@
-import { ChangeEvent, useState, VoidFunctionComponent, useMemo, FocusEvent, useCallback } from 'react';
+import { ChangeEvent, useState, VoidFunctionComponent, FocusEvent, useCallback } from 'react';
 import styled, { css } from 'styled-components';
+import { AriaLabelsProps } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
-import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip } from '../tooltip/tooltip';
 import { focus } from '../../utils/css-state';
@@ -56,10 +57,9 @@ const PasswordContainer = styled.div`
     }
 `;
 
-interface PasswordInputProps {
+interface PasswordInputProps extends AriaLabelsProps {
     id?: string;
     name?: string;
-    label?: string;
     hint?: string;
     disabled?: boolean;
     placeholder?: string;
@@ -75,6 +75,9 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     id: providedId,
     name,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     hint,
     disabled,
     placeholder,
@@ -89,7 +92,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     const { t } = useTranslation('password-input');
     const [showPassword, setShowPassword] = useState(false);
     const isValid = validationErrorMessage === undefined || validationErrorMessage === '';
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
     const handleShowPassword = useCallback((): void => {
@@ -103,7 +106,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
 
     return (
         <FieldContainer
-            fieldId={id}
+            fieldId={fieldId}
             label={label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}
@@ -111,7 +114,11 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
         >
             <PasswordContainer>
                 <StyledTextInput
-                    id={id}
+                    id={fieldId}
+                    inputId={fieldId}
+                    ariaLabel={ariaLabel}
+                    ariaLabelledBy={ariaLabelledBy}
+                    ariaDescribedBy={ariaDescribedBy}
                     disabled={disabled}
                     name={name ?? 'password'}
                     autoComplete={showPassword ? 'off' : 'current-password'}

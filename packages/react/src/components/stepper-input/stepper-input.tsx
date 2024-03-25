@@ -8,7 +8,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { v4 as uuid } from '../../utils/uuid';
@@ -52,13 +52,8 @@ type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLI
 
 type Value = undefined | number | null;
 
-interface StepperInputProps extends PartialStepperInputProps {
+interface StepperInputProps extends PartialStepperInputProps, AriaLabelsProps {
     defaultValue?: number;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     hint?: string;
     valid?: boolean;
     validationErrorMessage?: string;

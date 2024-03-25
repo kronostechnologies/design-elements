@@ -20,7 +20,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 
 const Input = styled.input<{ isMobile: boolean; }>`
@@ -30,13 +30,8 @@ const Input = styled.input<{ isMobile: boolean; }>`
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
-interface TextInputProps extends PartialInputProps {
+interface TextInputProps extends PartialInputProps, AriaLabelsProps {
     id?: string;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     ariaInvalid?: boolean;
     className?: string;
     defaultValue?: string;
@@ -66,6 +61,7 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = forwardRef(({
+    id: providedId,
     ariaLabel,
     ariaLabelledBy,
     ariaDescribedBy,
@@ -74,7 +70,6 @@ export const TextInput = forwardRef(({
     defaultValue,
     disabled,
     hint,
-    id: providedId,
     inputMode,
     label,
     tooltip,

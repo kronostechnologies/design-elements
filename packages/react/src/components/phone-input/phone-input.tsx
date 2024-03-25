@@ -10,7 +10,9 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps } from '../../hooks/use-aria';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { TextInput } from '../text-input/text-input';
 import {
@@ -21,16 +23,12 @@ import {
 import { formatFromPattern, removeDigitOnMaskCharRemoval, removeNonDigits } from './phone-input-value-formater';
 import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
 
-interface PhoneInputProps {
+interface PhoneInputProps extends AriaLabelsProps {
+    id?: string;
     pattern: string;
     defaultValue?: string;
     required?: boolean;
     disabled?: boolean;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     hint?: string;
     name?: string;
 }
@@ -72,6 +70,7 @@ function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMa
 }
 
 export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
+    id: providedId,
     pattern,
     defaultValue,
     required,
@@ -85,6 +84,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
+    const fieldId = useId(providedId);
     const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
     const formattedDefaultValue = useMemo(
         () => formatDefaultValue(defaultValue ?? '', pattern, phoneNumberMaxLength),
@@ -223,6 +223,8 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 <span>{phoneInputMaskValue}</span>
             </MaskContainer>
             <TextInput
+                id={fieldId}
+                inputId={fieldId}
                 data-testid="phone-text-input"
                 ref={inputRef}
                 type="tel"

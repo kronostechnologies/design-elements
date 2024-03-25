@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
 import styled, { StyledProps } from 'styled-components';
+import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
@@ -106,7 +107,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     const strength = getPasswordStrength(password);
     const conditions = validations ?? getDefaultValidationConditions(t);
     const passwordStrengthId = useMemo(() => uuid(), []);
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const fieldId = useId(providedId);
     const hintId = useMemo(() => uuid(), []);
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
@@ -124,7 +125,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
 
     return (
         <StyledFieldContainer
-            fieldId={id}
+            fieldId={fieldId}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon
@@ -144,7 +145,8 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
             </div>
             <PasswordContainer>
                 <StyledInput
-                    id={id}
+                    id={fieldId}
+                    inputId={fieldId}
                     isValid={isValid || isEmpty}
                     name={name ?? 'password'}
                     autoComplete="new-password"

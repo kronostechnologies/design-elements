@@ -6,7 +6,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { ResolvedTheme } from '../../themes/theme';
@@ -78,18 +78,13 @@ const Wrapper = styled.div<StyledWrapperProps>`
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
-interface NumericInputProps extends NativeInputProps {
+interface NumericInputProps extends NativeInputProps, AriaLabelsProps {
     adornment?: ReactNode;
     adornmentPosition?: 'start' | 'end';
     className?: string;
     defaultValue?: number | string;
     hint?: string;
     id?: string;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     max?: number;
     min?: number;
     noMargin?: boolean;

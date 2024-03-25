@@ -18,10 +18,11 @@ import {
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { eventIsInside } from '../../utils/events';
-import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
@@ -287,7 +288,7 @@ export interface DatepickerHandles {
     setDate(date: Date): void;
 }
 
-interface DatepickerProps {
+interface DatepickerProps extends AriaLabelsProps {
     className?: string;
     /** Sets default selected date */
     defaultDate?: Date;
@@ -300,8 +301,6 @@ interface DatepickerProps {
     firstDayOfWeek?: DayOfWeek;
     hasTodayButton?: boolean;
     id?: string;
-    /** Sets input label */
-    label?: string;
     tooltip?: TooltipProps;
     /**
      * Sets localization
@@ -351,6 +350,7 @@ registerLocale('fr-CA', frCA);
 const localeArray = [enUS, enCA, frCA];
 
 export const Datepicker = forwardRef(({
+    id: providedId,
     className,
     defaultDate,
     dateFormat,
@@ -358,8 +358,10 @@ export const Datepicker = forwardRef(({
     firstDayOfWeek,
     hasTodayButton,
     hint,
-    id,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     locale = 'en-CA',
     maxDate,
     minDate,
@@ -387,7 +389,7 @@ export const Datepicker = forwardRef(({
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const calendarRef = useRef<HTMLDivElement>(null);
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const fieldId = useId(providedId);
     const dateInputRef = useRef<DatePicker>(null);
     const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -539,6 +541,18 @@ export const Datepicker = forwardRef(({
         </div>
     ), [handleTodayButtonClick, hasTodayButton, locale, selectedDate, t]);
 
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        additionalAriaDescribedBy: [
+            { id: `${fieldId}_hint`, include: !!hint },
+            { id: `${fieldId}_invalid`, include: !valid },
+        ],
+    });
+
     return (
         <>
             <ReactDatePickerStyles />
@@ -546,7 +560,7 @@ export const Datepicker = forwardRef(({
                 className={className}
                 noMargin={noMargin}
                 fieldId={fieldId}
-                label={label}
+                label={processedLabels.label}
                 required={required}
                 tooltip={tooltip}
                 hint={hint}
@@ -563,6 +577,9 @@ export const Datepicker = forwardRef(({
                         )}
                         isMobile={isMobile}
                         id={fieldId}
+                        aria-label={processedLabels.ariaLabel}
+                        aria-labelledby={processedLabels.ariaLabelledBy}
+                        aria-describedby={processedLabels.ariaDescribedBy}
                         ref={dateInputRef}
                         renderCustomHeader={(customHeaderProps) => (
                             <CalendarHeader

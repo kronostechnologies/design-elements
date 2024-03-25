@@ -8,7 +8,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -27,12 +27,7 @@ const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
     line-height: 1.25rem;
 `;
 
-export interface TextAreaProps {
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
+export interface TextAreaProps extends AriaLabelsProps {
     className?: string;
     tooltip?: TooltipProps;
     defaultValue?: string;

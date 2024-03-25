@@ -1,6 +1,8 @@
 import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps } from '../../hooks/use-aria';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput } from '../text-input/text-input';
@@ -24,13 +26,9 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-interface MoneyInputProps {
+interface MoneyInputProps extends AriaLabelsProps {
+    id?: string
     className?: string;
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
     disabled?: boolean;
     required?: boolean;
     /**
@@ -70,6 +68,7 @@ function parseAndRound(val: string, precision: number): number | null {
 }
 
 export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
+    id: providedId,
     className,
     required,
     disabled,
@@ -88,6 +87,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
 }) => {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
+    const fieldId = useId(providedId);
     const language: Language = locale.split('-')[0] as Language;
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
@@ -150,6 +150,8 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     return (
         <InputWrapper language={language}>
             <TextInput
+                id={fieldId}
+                inputId={fieldId}
                 className={className}
                 required={required}
                 disabled={disabled}

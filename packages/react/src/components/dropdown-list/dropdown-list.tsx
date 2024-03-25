@@ -17,7 +17,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
@@ -92,15 +92,7 @@ const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     width: var(--size-1x);
 `;
 
-export interface DropdownListProps {
-    /** Mutually exclusive: label, aria-label, aria-labelledby */
-    label?: string;
-    /**
-     * Aria label for the input (used when no visual label is present)
-     */
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
+export interface DropdownListProps extends AriaLabelsProps {
     className?: string;
     /**
      * @default false

@@ -19,7 +19,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaLabels } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
@@ -97,15 +97,7 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
 
 type AutoCompleteMode = 'none' | 'inline' | 'list' | 'both';
 
-interface ComboboxProps {
-    /**
-     * Aria label for the input (used when no visual label is present)
-     * Mutually exclusive: label, aria-label, aria-labelledby
-     */
-    label?: string;
-    ariaLabel?: string;
-    ariaLabelledBy?: string;
-    ariaDescribedBy?: string;
+interface ComboboxProps extends AriaLabelsProps {
     /**
      * Sets the autocomplete mode.
      * - 'none': disables autocomplete, the component behaves like a normal textbox with list of suggestions
