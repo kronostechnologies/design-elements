@@ -52,6 +52,7 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
 `;
@@ -71,7 +72,7 @@ const Textbox = styled.div<TextboxProps>`
     user-select: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, true)};
+    ${focus};
 `;
 
 const TextWrapper = styled.span`

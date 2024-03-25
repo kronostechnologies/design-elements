@@ -41,14 +41,19 @@ exports[`Button has destructive styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -63,14 +68,19 @@ exports[`Button has destructive styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -143,14 +153,19 @@ exports[`Button has destructive styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -165,14 +180,19 @@ exports[`Button has destructive styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -245,14 +265,19 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -267,14 +292,19 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -339,14 +369,19 @@ exports[`Button has destructive-secondary styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -361,14 +396,19 @@ exports[`Button has destructive-secondary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -441,14 +481,19 @@ exports[`Button has mobile styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -463,14 +508,19 @@ exports[`Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -535,14 +585,19 @@ exports[`Button has primary disabled styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -557,14 +612,19 @@ exports[`Button has primary disabled styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -630,14 +690,19 @@ exports[`Button has primary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -652,14 +717,19 @@ exports[`Button has primary styles (inverted) 1`] = `
   color: #006296;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -724,14 +794,19 @@ exports[`Button has primary styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -746,14 +821,19 @@ exports[`Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -818,14 +898,19 @@ exports[`Button has secondary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -840,14 +925,19 @@ exports[`Button has secondary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -912,14 +1002,19 @@ exports[`Button has secondary styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -934,14 +1029,19 @@ exports[`Button has secondary styles 1`] = `
   color: #006296;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -1006,14 +1106,19 @@ exports[`Button has small styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -1028,14 +1133,19 @@ exports[`Button has small styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -1100,14 +1210,19 @@ exports[`Button has small styles on mobile 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -1122,14 +1237,19 @@ exports[`Button has small styles on mobile 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -1194,14 +1314,19 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -1216,14 +1341,19 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c1:hover,
@@ -1288,14 +1418,19 @@ exports[`Button has tertiary styles 1`] = `
   user-select: none;
 }
 
-.c0:focus {
-  outline: none;
+.c0:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -1310,14 +1445,19 @@ exports[`Button has tertiary styles 1`] = `
   color: #60666E;
 }
 
-.c1:focus {
-  outline: none;
+.c1:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover,

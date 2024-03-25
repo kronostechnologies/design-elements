@@ -72,7 +72,7 @@ const customization : ThemeCustomization = {
     component: {
         'button-primary-background-color': 'color-neutral-02',
         'button-primary-inverted-background-color': 'color-brand-20',
-        'focus-border-color': 'alternate-text-color',
+        'focus-inside-border-color': 'alternate-text-color',
     },
 };
 

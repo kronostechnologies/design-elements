@@ -15,6 +15,7 @@ import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens'
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
+import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
 import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
 import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
@@ -63,6 +64,7 @@ export type ComponentTokens =
     | StatusTokens
     | TagTokens
     | ToastContainerTokens
+    | PasswordInputTokens
     | AccordionTokens
     | CarouselTokens
     | ModalTokens
@@ -101,7 +103,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultProgressTrackerTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
-    ...defaultFocusTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,
@@ -109,6 +110,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultStatusTokens,
     ...defaultTagTokens,
     ...defaultToastContainerTokens,
+    ...defaultPasswordInputTokens,
     ...defaultAccordionTokens,
     ...defaultCarouselTokens,
     ...defaultModalTokens,

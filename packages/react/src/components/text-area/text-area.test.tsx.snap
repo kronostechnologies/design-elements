@@ -64,16 +64,6 @@ input + .c1 {
   resize: vertical;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c3::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -113,6 +103,21 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -203,16 +208,6 @@ input + .c1 {
   resize: vertical;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c3::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -252,6 +247,21 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div

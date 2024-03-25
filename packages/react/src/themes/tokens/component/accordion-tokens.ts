@@ -9,8 +9,6 @@ export type AccordionTokens =
     | 'accordion-header-text-color'
     | 'accordion-header-expanded-background-color'
     | 'accordion-header-expanded-text-color'
-    | 'accordion-header-focus-box-shadow-inset-color'
-    | 'accordion-header-focus-text-color'
     | 'accordion-header-hover-background-color'
     | 'accordion-header-hover-border-color'
     | 'accordion-header-hover-color'
@@ -33,8 +31,6 @@ export const defaultAccordionTokens: AccordionTokenMap = {
     'accordion-header-text-color': 'color-neutral-90',
     'accordion-header-expanded-background-color': 'color-white',
     'accordion-header-expanded-text-color': 'color-neutral-90',
-    'accordion-header-focus-box-shadow-inset-color': 'color-brand-20',
-    'accordion-header-focus-text-color': 'color-neutral-90',
     'accordion-header-hover-background-color': 'color-neutral-15',
     'accordion-header-hover-border-color': 'color-neutral-90',
     'accordion-header-hover-color': 'color-neutral-90',

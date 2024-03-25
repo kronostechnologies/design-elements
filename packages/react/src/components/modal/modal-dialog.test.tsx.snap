@@ -65,14 +65,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c9:focus {
-  outline: none;
+.c9:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c9 > svg {
@@ -121,14 +126,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c13:focus {
-  outline: none;
+.c13:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 > svg {
@@ -146,14 +156,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:focus {
-  outline: none;
+.c14:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c14:hover,
@@ -188,14 +203,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #60666E;
 }
 
-.c10:focus {
-  outline: none;
+.c10:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -217,14 +237,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c11:hover,
@@ -272,12 +297,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c6 {
@@ -473,14 +492,19 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7 > svg {
@@ -498,14 +522,19 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c8:focus {
-  outline: none;
+.c8:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -566,12 +595,6 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c5 {
@@ -721,14 +744,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c9:focus {
-  outline: none;
+.c9:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c9 > svg {
@@ -777,14 +805,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c13:focus {
-  outline: none;
+.c13:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 > svg {
@@ -802,14 +835,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:focus {
-  outline: none;
+.c14:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c14:hover,
@@ -844,14 +882,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #60666E;
 }
 
-.c10:focus {
-  outline: none;
+.c10:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -873,14 +916,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c11:hover,
@@ -928,12 +976,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c6 {
@@ -1129,14 +1171,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c9:focus {
-  outline: none;
+.c9:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c9 > svg {
@@ -1185,14 +1232,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c13:focus {
-  outline: none;
+.c13:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 > svg {
@@ -1210,14 +1262,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:focus {
-  outline: none;
+.c14:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c14:hover,
@@ -1252,14 +1309,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #60666E;
 }
 
-.c10:focus {
-  outline: none;
+.c10:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -1281,14 +1343,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c11:hover,
@@ -1336,12 +1403,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c6 {
@@ -1537,14 +1598,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c9:focus {
-  outline: none;
+.c9:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c9 > svg {
@@ -1561,14 +1627,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c13:focus {
-  outline: none;
+.c13:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13:hover,
@@ -1603,14 +1674,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #60666E;
 }
 
-.c10:focus {
-  outline: none;
+.c10:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -1632,14 +1708,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:focus {
-  outline: none;
+.c11:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c11:hover,
@@ -1687,12 +1768,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
 }
 
 .c6 {

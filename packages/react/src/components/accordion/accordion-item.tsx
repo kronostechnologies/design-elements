@@ -4,6 +4,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
+import { focus } from '../../utils/css-state';
 
 export interface AccordionItemProps {
     title: string;
@@ -58,6 +59,7 @@ const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
 
 const HeadingStyled = styled(Heading)`
     position: relative;
+    z-index: 1;
 `;
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
@@ -90,10 +92,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
         transition-timing-function: ease;
     }
 
-    &:focus {
-        box-shadow: inset 0 0 0 2px ${({ theme }) => theme.component['accordion-header-focus-box-shadow-inset-color']};
-        color: ${({ theme }) => theme.component['accordion-header-focus-text-color']};
-    }
+    ${focus};
 
     &:hover {
         background: ${({ theme }) => theme.component['accordion-header-hover-background-color']};

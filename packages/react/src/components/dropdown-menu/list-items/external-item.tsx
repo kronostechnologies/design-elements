@@ -26,7 +26,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    ${(props) => focus(props, undefined, undefined, true)}
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
         background-color: ${({ theme }) => theme.component['dropdown-menu-external-item-hover-background-color']};

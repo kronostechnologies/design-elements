@@ -39,16 +39,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -88,6 +78,21 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 input {
@@ -156,16 +161,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -205,6 +200,21 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 input {
@@ -273,16 +283,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -322,6 +322,21 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c2:not(:focus) {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 input {

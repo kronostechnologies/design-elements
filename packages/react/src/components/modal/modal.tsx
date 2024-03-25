@@ -63,12 +63,6 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
         display: block;
         padding-bottom: ${getPadding};
     }
-
-    &:focus {
-        border-color: ${({ theme }) => theme.component['modal-focus-border-color']};
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['modal-focus-box-shadow-color']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
-        outline: none;
-    }
 `;
 
 const Main = styled.main<ContentProps>`

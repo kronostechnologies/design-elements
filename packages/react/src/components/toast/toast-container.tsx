@@ -159,14 +159,11 @@ function getDismissIconMarginTop({ $isMobile }: DismissIconProps): string {
 const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButtonProps>>({
     buttonType: 'tertiary',
     iconName: 'x',
+    inverted: true,
 })<DismissIconProps>`
     align-self: flex-start;
     color: ${({ $color }) => $color};
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
-
-    &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['toast-container-dismiss-icon-focus-box-shadow']};
-    }
 
     &:hover {
         ${getDismissHoverCss}

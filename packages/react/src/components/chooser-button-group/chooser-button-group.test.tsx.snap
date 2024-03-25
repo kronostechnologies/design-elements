@@ -39,22 +39,34 @@ exports[`Chooser Button GroupItem Matches the snapshot 1`] = `
   border-color: #DBDEE1;
 }
 
-input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c3 {
+input[type='checkbox']:checked + .c2,
+input[type='radio']:checked + .c3 {
   background: #006296;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-input[type="checkbox"]:focus + .c2,
+.c3:not(:focus),
+input[type="checkbox"]:focus + .c3,
 input[type="radio"]:focus + .c3 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c3 {
+.c3:focus,
+input[type="checkbox"]:focus + .c3,
+input[type="radio"]:focus + .c3 {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+input[type='checkbox']:disabled + .c2,
+input[type='radio']:disabled + .c3 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
@@ -163,22 +175,34 @@ input[type="radio"]:disabled + .c3 {
   border-color: #DBDEE1;
 }
 
-input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c3 {
+input[type='checkbox']:checked + .c2,
+input[type='radio']:checked + .c3 {
   background: #006296;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-input[type="checkbox"]:focus + .c2,
+.c3:not(:focus),
+input[type="checkbox"]:focus + .c3,
 input[type="radio"]:focus + .c3 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c3 {
+.c3:focus,
+input[type="checkbox"]:focus + .c3,
+input[type="radio"]:focus + .c3 {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+input[type='checkbox']:disabled + .c2,
+input[type='radio']:disabled + .c3 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
