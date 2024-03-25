@@ -64,9 +64,15 @@ const StyledSortButtonIcon = styled(SortButtonIcon)`
     margin-left: var(--spacing-1x);
 `;
 
+function isHeaderGroup<TData extends object, TValue>(header: CustomHeader<TData, TValue>): boolean {
+    const columns = header.column.columns;
+    return columns.length > 0;
+}
+
 function getHeading<TData extends object, TValue>(
     header: CustomHeader<TData, TValue>,
 ): ReactElement {
+    const colSpan = isHeaderGroup(header) ? header.colSpan : undefined;
     const currentSort = header.column.getIsSorted();
     let sortState: SortState = 'none';
 
@@ -88,6 +94,7 @@ function getHeading<TData extends object, TValue>(
             <StyledHeader
                 aria-label={header.column.columnDef.headerAriaLabel}
                 aria-sort={sortState}
+                colSpan={colSpan}
                 key={header.id}
                 className={header.column.columnDef.className ?? ''}
                 scope="col"
@@ -114,6 +121,7 @@ function getHeading<TData extends object, TValue>(
     return (
         <StyledHeader
             aria-label={header.column.columnDef.headerAriaLabel}
+            colSpan={colSpan}
             key={header.id}
             className={header.column.columnDef.className ?? undefined}
             scope="col"
