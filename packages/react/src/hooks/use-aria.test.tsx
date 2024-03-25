@@ -6,10 +6,10 @@ import { getByTestId } from '../test-utils/enzyme-selectors';
 import { useAriaLabels } from './use-aria';
 
 describe('useAriaLabels hook', () => {
-    it('warns when no labels are provided', () => {
-        const consoleSpy = jest.spyOn(console, 'warn');
-        consoleSpy.mockImplementation(() => {});
+    const consoleSpy = jest.spyOn(console, 'warn');
+    consoleSpy.mockImplementation(() => {});
 
+    it('warns when no labels are provided', () => {
         renderHook(() => useAriaLabels({}));
         shallow(<TextInput />);
 
@@ -19,9 +19,6 @@ describe('useAriaLabels hook', () => {
     });
 
     it('warns when more than one label type is provided', () => {
-        const consoleSpy = jest.spyOn(console, 'warn');
-        consoleSpy.mockImplementation(() => {});
-
         renderHook(() => useAriaLabels({ label: 'Test Label', ariaLabel: 'Test Aria Label' }));
         shallow(<TextInput label="This is a label" ariaLabel="This is ariaLabel" />);
 
