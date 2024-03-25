@@ -17,11 +17,11 @@ export type NavListTokenMap = {
 };
 
 export const defaultNavListTokens: NavListTokenMap = {
-    'nav-list-background-color': 'color-bg-fill',
+    'nav-list-background-color': 'color-bg',
     'nav-list-border-color': 'color-overlay-border',
     'nav-list-item-text-color': 'color-text',
     'nav-list-item-icon-text-color': 'color-icon-alternate',
-    'nav-list-item-hover-background-color': 'color-bg-fill-hover',
+    'nav-list-item-hover-background-color': 'color-bg-hover',
     'nav-list-item-icon-hover-text-color': 'color-icon-hover',
     'nav-list-item-disabled-text-color': 'color-text-disabled',
 };

@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type AvatarTokens =
     | 'avatar-background-color'
-    | 'avatar-text-color'
+    | 'avatar-text-color';
 
 export type AvatarTokenValue = AliasTokens | RefTokens;
 
@@ -12,6 +12,6 @@ export type AvatarTokenMap = {
 };
 
 export const defaultAvatarTokens: AvatarTokenMap = {
-    'avatar-background-color': 'color-bg-fill-alternate',
+    'avatar-background-color': 'color-bg-alternate-subtle',
     'avatar-text-color': 'color-text-alternate',
 };

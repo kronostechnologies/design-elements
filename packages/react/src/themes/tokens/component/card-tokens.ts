@@ -17,11 +17,11 @@ export type CardTokensMap = {
 };
 
 export const defaultCardTokens : CardTokensMap = {
-    'card-background-color': 'color-bg-fill',
+    'card-background-color': 'color-bg',
     'card-border-color': 'color-border-alternate',
     'card-text-color': 'color-text',
     'card-link-border-color': 'color-interactive-border-alternate',
     'card-link-hover-border-color': 'color-interactive-border-hover',
-    'card-link-hover-background-color': 'color-bg-fill-hover',
+    'card-link-hover-background-color': 'color-bg-hover',
     'card-box-shadow-color': 'color-box-shadow',
 };

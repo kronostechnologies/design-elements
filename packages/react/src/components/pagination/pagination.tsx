@@ -26,7 +26,7 @@ const Pages = styled.ol`
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
     background-color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-background-color`]};
-    border-radius: 1rem;
+    border-radius: var(--border-radius-4x);
     box-sizing: border-box;
     color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-text-color`]};
     display: inline-flex;
@@ -37,8 +37,8 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-    outline: ${({ isSelected, theme }) => (isSelected ? theme.component['pagination-page-selected-outline-color'] : '0')};
     padding: 0 var(--spacing-1x);
+    outline: ${({ isSelected, theme }) => (isSelected ? `1px solid ${theme.component['pagination-page-selected-border-color']}` : 'none')};
     text-align: center;
 
     ${focus};

@@ -14,7 +14,7 @@ export type ModalTokenMap = {
 };
 
 export const defaultModalTokens: ModalTokenMap = {
-    'modal-background-color': 'color-bg-surface',
+    'modal-background-color': 'color-bg',
     'modal-overlay-border-color': 'color-overlay-border',
     'modal-focus-border-color': 'color-brand-50',
     'modal-focus-box-shadow-color': 'color-brand-20',

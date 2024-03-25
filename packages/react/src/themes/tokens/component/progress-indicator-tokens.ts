@@ -12,6 +12,6 @@ export type ProgressIndicatorTokenMap = {
 };
 
 export const defaultProgressIndicatorTokens: ProgressIndicatorTokenMap = {
-    'progress-indicator-empty-track-color': 'color-empty-bg-fill',
+    'progress-indicator-empty-track-color': 'color-empty-bg',
     'progress-indicator-label-text-color': 'color-text',
 };

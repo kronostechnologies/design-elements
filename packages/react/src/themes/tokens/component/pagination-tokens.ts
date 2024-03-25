@@ -7,7 +7,7 @@ export type PaginationTokens =
     | 'pagination-page-hover-background-color'
     | 'pagination-page-selected-hover-background-color'
     | 'pagination-page-selected-background-color'
-    | 'pagination-page-selected-outline-color'
+    | 'pagination-page-selected-border-color'
     | 'pagination-page-selected-text-color';
 
 export type PaginationTokenValue = AliasTokens | RefTokens;
@@ -17,11 +17,11 @@ export type PaginationTokenMap = {
 };
 
 export const defaultPaginationTokens: PaginationTokenMap = {
-    'pagination-page-background-color': 'color-white',
-    'pagination-page-text-color': 'color-neutral-65',
-    'pagination-page-hover-background-color': 'color-neutral-15',
-    'pagination-page-selected-hover-background-color': 'color-informative-05',
-    'pagination-page-selected-background-color': 'color-informative-05',
-    'pagination-page-selected-outline-color': 'color-informative-50',
-    'pagination-page-selected-text-color': 'color-informative-70',
+    'pagination-page-background-color': 'transparent-100',
+    'pagination-page-text-color': 'color-text-alternate',
+    'pagination-page-hover-background-color': 'color-bg-hover',
+    'pagination-page-selected-hover-background-color': 'color-bg-selected',
+    'pagination-page-selected-background-color': 'color-bg-selected',
+    'pagination-page-selected-border-color': 'color-interactive-border-selected',
+    'pagination-page-selected-text-color': 'color-text-selected',
 };

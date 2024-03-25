@@ -49,7 +49,7 @@ export type GlobalBannerTokenMap = {
 };
 
 export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
-    'global-banner-neutral-background-color': 'color-bg-fill-inverse',
+    'global-banner-neutral-background-color': 'color-bg-inverse',
     'global-banner-neutral-text-color': 'color-text-inverse',
     'global-banner-neutral-action-button-border-color': 'color-white',
     'global-banner-neutral-action-button-text-color': 'color-white',
@@ -60,14 +60,14 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     'global-banner-neutral-dismiss-button-hover-background-color': 'color-neutral-80',
     'global-banner-neutral-dismiss-button-hover-text-color': 'color-white',
 
-    'global-banner-alert-background-color': 'color-feedback-bg-fill-alert',
+    'global-banner-alert-background-color': 'color-feedback-bg-alert',
     'global-banner-alert-text-color': 'color-text-inverse',
     'global-banner-alert-action-button-border-color': 'color-white',
     'global-banner-alert-action-button-text-color': 'color-white',
     'global-banner-alert-action-button-hover-border-color': 'color-alert-20',
     'global-banner-alert-action-button-hover-text-color': 'color-alert-20',
 
-    'global-banner-discovery-background-color': 'color-feedback-bg-fill-discovery',
+    'global-banner-discovery-background-color': 'color-feedback-bg-discovery',
     'global-banner-discovery-text-color': 'color-text-inverse',
     'global-banner-discovery-action-button-border-color': 'color-white',
     'global-banner-discovery-action-button-text-color': 'color-white',
@@ -78,7 +78,7 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     'global-banner-discovery-dismiss-button-hover-background-color': 'color-discovery-70',
     'global-banner-discovery-dismiss-button-hover-text-color': 'color-white',
 
-    'global-banner-warning-background-color': 'color-feedback-bg-fill-warning',
+    'global-banner-warning-background-color': 'color-feedback-bg-warning',
     'global-banner-warning-text-color': 'color-text',
     'global-banner-warning-action-button-border-color': 'color-neutral-90',
     'global-banner-warning-action-button-text-color': 'color-neutral-90',

@@ -159,15 +159,15 @@ const StyledTable = styled.table<StyledTableProps>`
 `;
 
 const StyledTHead = styled.thead`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-header-background-color']};
 `;
 
 const StyledTBody = styled.tbody`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-body-background-color']};
 `;
 
 const StyledTFoot = styled.tfoot`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-footer-background-color']};
 `;
 
 export interface TableProps<T extends object> {
