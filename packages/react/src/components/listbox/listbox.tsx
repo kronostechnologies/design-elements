@@ -87,6 +87,7 @@ interface ListItemProps {
     $isMobile: boolean;
     $selected: boolean;
     $focused: boolean;
+    multiselect: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -149,6 +150,7 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
+    position: relative;
 
     ${({ $isMobile }) => (!$isMobile && css`
         padding-right: var(--spacing-1x);
@@ -167,8 +169,21 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
-            border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
+            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        }
+    `)}
+
+    ${({ $selected, multiselect }) => (!multiselect && $selected && css`
+        &::before {
+            // TODO remplacer color token 
+            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            content: "";
+            display: block;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            width: 4px;
         }
     `)}
 `;
@@ -481,6 +496,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         }}
                         role="option"
                         $selected={isOptionSelected(option)}
+                        multiselect={multiselect}
                     >
                         {multiselect ? (
                             <CustomCheckbox
