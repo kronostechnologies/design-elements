@@ -93,11 +93,11 @@ input + .c2 {
 
 .c10::before {
   background-color: #006296;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   width: 4px;
 }
 
@@ -554,11 +554,11 @@ input + .c2 {
 
 .c12::before {
   background-color: #006296;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   width: 4px;
 }
 
@@ -984,11 +984,11 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 .c8::before {
   background-color: #006296;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   width: 4px;
 }
 
@@ -1423,11 +1423,11 @@ input + .c2 {
 
 .c11::before {
   background-color: #006296;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   width: 4px;
 }
 

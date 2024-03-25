@@ -178,11 +178,11 @@ const ListItem = styled.li<ListItemProps>`
         &::before {
             /* TODO remplacer color token */
             background-color: ${({ theme }) => theme.main['primary-1.1']};
-            content: "";
+            content: '';
             display: block;
             height: 100%;
-            position: absolute;
             left: 0;
+            position: absolute;
             width: 4px;
         }
     `)}
