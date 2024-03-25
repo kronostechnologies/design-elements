@@ -1,15 +1,17 @@
 import { Card } from '@equisoft/design-elements-react';
+import { CardLink } from '@equisoft/design-elements-react';
 import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as CardStories  from './card.stories';
+import * as CardLinkStories  from './card-link.stories';
 
 
-# Cards
+# Card
 
 ## Table of contents
     1. [Definition](#definition)
     2. [Usage](#usage)
-    3. [Variants](#Variants)
-    4. [Properties](#Properties)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
 
 <Meta title="Components/Card/Doc" />
 
@@ -28,7 +30,7 @@ Cards are a **structural or navigation components** that enables users to be int
 
 ### When not to use
 - Do not use cards when your content requires direct comparison. Each card should be independent and should not require to be compared with each other.
-- Do not use cards to display a research result.
+- Do not use cards to display a search result.
 - Do not use cards when the content of the page you want to present is already grouped into very homogenous items such as:
     - A list of similar items. While cards can be used for homogenous content, in many cases it’s better to use quickly scannable list (or grid) instead of cards for that (simply because the UI will be less complex) [9].
     - Gallery of images. The use of cards can distract the user and prevent easy scannability. A standard grid view can be more relevant when it allows the human eye to scan the grid and its items more easily [7].
@@ -39,7 +41,7 @@ Cards are a **structural or navigation components** that enables users to be int
     <Canvas of={CardStories.Normal} />
 
 ### Clickable
-Coming soon
+    <Canvas of={CardLinkStories.Normal} />
 
 ## Properties
 <ArgTypes of={Card} />
