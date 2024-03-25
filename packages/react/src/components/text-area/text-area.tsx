@@ -141,7 +141,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         ariaLabelledBy,
         ariaDescribedBy,
         hasHint: !!hint,
-        isValid: !validity && !!getValidationErrorMessage(),
+        isValid: validity && !!getValidationErrorMessage(),
         additionalAriaDescribedBy: [
             { id: idCounter, include: !!maxLength },
         ],
@@ -149,7 +149,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
 
     return (
         <FieldContainer
-            data-testid="container"
+            data-testid="field-container"
             className={className}
             noMargin={noMargin}
             fieldId={idTextArea}

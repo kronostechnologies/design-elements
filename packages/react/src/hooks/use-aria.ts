@@ -54,12 +54,12 @@ export const useAriaLabels = ({
     let processedLabel = label;
     let processedAriaLabel = ariaLabel;
     const processedAriaLabelledBy = processConditionalIds([
-        { id: ariaLabelledBy, include: !!ariaLabelledBy },
         { id: `${inputId}_label`, include: !!label },
+        { id: ariaLabelledBy, include: !!ariaLabelledBy },
         ...additonalAriaLabelledBy ?? [],
     ]);
     const processedAriaDescribedBy = processConditionalIds([
-        { id: `${inputId}_hint`, include: hasHint },
+        { id: `${inputId}_hint`, include: !!hasHint },
         { id: `${inputId}_invalid`, include: !isValid },
         { id: ariaDescribedBy, include: !!ariaDescribedBy },
         ...additionalAriaDescribedBy ?? [],

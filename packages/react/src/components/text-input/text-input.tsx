@@ -96,15 +96,6 @@ export const TextInput = forwardRef(({
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
     const dataAttributes = useDataAttributes(otherProps);
     const fieldId = useId(providedId);
-    const { processedLabels } = useAriaLabels({
-        inputId: fieldId,
-        label,
-        ariaLabel,
-        ariaLabelledBy,
-        ariaDescribedBy,
-        hasHint: !!hint,
-        isValid: valid,
-    });
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
@@ -139,6 +130,16 @@ export const TextInput = forwardRef(({
             setValidity({ validity: valid });
         }
     }, [valid]);
+
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        hasHint: !!hint,
+        isValid: validity,
+    });
 
     return (
         <FieldContainer
