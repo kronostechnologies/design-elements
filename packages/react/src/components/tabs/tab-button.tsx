@@ -15,9 +15,9 @@ interface StyledButtonProps extends IsSelected {
 
 const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
-    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tabs-tab-border-bottom-color']}`)};
     bottom: -1px;
-    color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
+    color: ${({ $isGlobal, theme }) => ($isGlobal ? `${theme.component['tabs-tab-global-text-color']}` : `${theme.component['tabs-tab-text-color']}`)};
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
@@ -27,7 +27,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     position: relative;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['tabs-tab-hover-background-color']};
     }
 
     ${focus};
@@ -42,7 +42,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         z-index: 1;
 
         ::after {
-            background-color: ${theme.main['primary-1.1']};
+            background-color: ${theme.component['tabs-tab-global-selected-background-color']};
             bottom: 0;
             content: '';
             display: block;
@@ -54,17 +54,17 @@ const StyledButton = styled.button<StyledButtonProps>`
     `}
 
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
-        background-color: ${theme.greys.white};
-        border: 1px solid #878f9a; /* TODO change colors when updating thematization */
+        background-color: ${theme.component['tabs-tab-selected-background-color']};
+        border: 1px solid ${theme.component['tabs-tab-selected-border-color']};
         border-bottom: 1px solid transparent;
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: #1b1c1e; /* TODO change colors when updating thematization */
+        color: ${theme.component['tabs-tab-selected-text-color']};
         z-index: 1;
     `}
 `;
 
 const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['tabs-tab-button-text-color']};
     font-family: var(--font-family);
     font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
@@ -72,7 +72,7 @@ const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
 `;
 
 const LeftIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['tabs-tab-left-icon-color']};
     height: 1rem;
     min-width: fit-content;
     padding-right: var(--spacing-half);
@@ -80,7 +80,7 @@ const LeftIcon = styled(Icon)<IsSelected>`
 `;
 
 const RightIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['tabs-tab-right-icon-color']};
     height: 1rem;
     min-width: fit-content;
     padding-left: var(--spacing-half);
@@ -131,18 +131,18 @@ export const TabButton = forwardRef(({
         >
             {leftIcon && (
                 <LeftIcon
-                    data-testid="tab-button-left-icon"
+                    data-testid="tabs-tab-left-icon"
                     $isSelected={isSelected}
                     name={leftIcon}
                     size="16"
                 />
             )}
-            <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected} $isMobile={isMobile}>
+            <StyledButtonText data-testid="tabs-tab-text" $isSelected={isSelected} $isMobile={isMobile}>
                 {children}
             </StyledButtonText>
             {rightIcon && (
                 <RightIcon
-                    data-testid="tab-button-right-icon"
+                    data-testid="tabs-tab-right-icon"
                     $isSelected={isSelected}
                     name={rightIcon}
                     size="16"

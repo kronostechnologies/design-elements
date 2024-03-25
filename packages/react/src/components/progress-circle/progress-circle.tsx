@@ -1,15 +1,9 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
-import { Circle } from '../circle/circle';
+import { Circle } from './circle';
 
 const RADIUS = 62;
 const STROKE = 8;
-
-interface ResultProps {
-    theme: ResolvedTheme;
-    secondary?: boolean;
-}
 
 const Container = styled.div`
     display: inline-block;
@@ -35,7 +29,7 @@ const Result = styled.div`
     width: 100%;
 
     p {
-        color: ${(props: ResultProps) => props.theme.greys.black};
+        color: ${({ theme }) => theme.component['progress-circle-result-text-color']};
         font-size: 1.5rem;
         margin: 0;
         padding: 0;
@@ -43,7 +37,7 @@ const Result = styled.div`
 `;
 
 const Label = styled.p`
-    color: ${(props: ResultProps) => props.theme.greys.black};
+    color: ${({ theme }) => theme.component['progress-circle-label-text-color']};
     font-size: 1rem;
     letter-spacing: 0.02875rem;
     line-height: 1.5rem;

@@ -10,7 +10,7 @@ jest.mock('../../hooks/use-toasts');
 describe('ToastsContainer', () => {
     it('should display toasts in order', () => {
         const toasts: Toast[] = [
-            { id: 'an id', type: ToastTypeEnum.INFORMATION, message: 'a message' },
+            { id: 'an id', type: ToastTypeEnum.NEUTRAL, message: 'a message' },
             { id: 'another id', type: ToastTypeEnum.SUCCESS, message: 'a message' },
         ];
         jest.mocked(useToasts).mockReturnValue({ toasts } as ToastContextProps);

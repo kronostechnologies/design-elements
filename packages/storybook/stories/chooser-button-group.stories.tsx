@@ -23,7 +23,7 @@ const skipOption: ChooserButtonOption = {
 };
 
 export default {
-    title: 'Components/Controls/Chooser Button Group',
+    title: 'Components/Chooser Button Group',
     component: ChooserButtonGroup,
 };
 
