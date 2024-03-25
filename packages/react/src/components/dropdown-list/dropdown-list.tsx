@@ -424,7 +424,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
 
             {open && (
                 <StyledListbox
-                    ariaLabelledBy={`${fieldId}_label`}
+                    ariaLabelledBy={processedLabels.ariaLabelledBy}
                     ref={listboxRef}
                     data-testid="listbox"
                     focusable={false}

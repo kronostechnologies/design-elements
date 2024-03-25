@@ -510,7 +510,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 
             {open && (
                 <StyledListbox
-                    ariaLabelledBy={`${fieldId}_label`}
+                    ariaLabelledBy={processedLabels.ariaLabelledBy}
                     ref={listboxRef}
                     data-testid="listbox"
                     focusable={false}
