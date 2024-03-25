@@ -30,24 +30,24 @@ function getToastContainerBackground(
     switch (type) {
         case 'discovery':
             return css`
-                background: ${theme.component['toast-container-discovery-background-color']};
+                background: ${theme.component['toast-discovery-background-color']};
             `;
         case 'success':
             return css`
-                background: ${theme.component['toast-container-success-background-color']};
+                background: ${theme.component['toast-success-background-color']};
             `;
         case 'warning':
             return css`
-                background: ${theme.component['toast-container-warning-background-color']};
+                background: ${theme.component['toast-warning-background-color']};
             `;
         case 'alert':
             return css`
-                background: ${theme.component['toast-container-alert-background-color']};
+                background: ${theme.component['toast-alert-background-color']};
             `;
         case 'neutral':
         default:
             return css`
-                background: ${theme.component['toast-container-neutral-background-color']};
+                background: ${theme.component['toast-neutral-background-color']};
             `;
     }
 }
@@ -125,29 +125,29 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
     switch ($type) {
         case 'discovery':
             return css`
-                background-color: ${theme.component['toast-container-discovery-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-container-discovery-dismiss-icon-hover-color']};
+                background-color: ${theme.component['toast-discovery-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-discovery-dismiss-icon-hover-color']};
             `;
         case 'success':
             return css`
-                background-color: ${theme.component['toast-container-success-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-container-success-dismiss-icon-hover-color']};
+                background-color: ${theme.component['toast-success-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-success-dismiss-icon-hover-color']};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.component['toast-container-warning-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-container-warning-dismiss-icon-hover-color']};
+                background-color: ${theme.component['toast-warning-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-warning-dismiss-icon-hover-color']};
             `;
         case 'alert':
             return css`
-                background-color: ${theme.component['toast-container-alert-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-container-alert-dismiss-icon-hover-color']};
+                background-color: ${theme.component['toast-alert-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-alert-dismiss-icon-hover-color']};
             `;
         case 'neutral':
         default:
             return css`
-                background-color: ${theme.component['toast-container-neutral-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-container-neutral-dismiss-icon-hover-color']};
+                background-color: ${theme.component['toast-neutral-dismiss-icon-hover-background-color']};
+                color: ${theme.component['toast-neutral-dismiss-icon-hover-color']};
             `;
     }
 }
@@ -165,7 +165,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['toast-container-dismiss-icon-focus-box-shadow']};
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['toast-dismiss-icon-focus-box-shadow']};
     }
 
     &:hover {
@@ -219,16 +219,16 @@ function getToastIconName(type: ToastType): IconName {
 function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
     switch (type) {
         case 'discovery':
-            return theme.component['toast-container-discovery-text-color'];
+            return theme.component['toast-discovery-text-color'];
         case 'success':
-            return theme.component['toast-container-success-text-color'];
+            return theme.component['toast-success-text-color'];
         case 'warning':
-            return theme.component['toast-container-warning-text-color'];
+            return theme.component['toast-warning-text-color'];
         case 'alert':
-            return theme.component['toast-container-alert-text-color'];
+            return theme.component['toast-alert-text-color'];
         case 'neutral':
         default:
-            return theme.component['toast-container-neutral-text-color'];
+            return theme.component['toast-neutral-text-color'];
     }
 }
 

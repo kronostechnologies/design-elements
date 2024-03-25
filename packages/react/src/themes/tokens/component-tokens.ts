@@ -25,7 +25,7 @@ import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
 import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
-import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
+import { defaultToastTokens, ToastTokens } from './component/toast-tokens';
 import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
 import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
 import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
@@ -53,7 +53,7 @@ export type ComponentTokens =
     | SpinnerTokens
     | StatusTokens
     | TagTokens
-    | ToastContainerTokens
+    | ToastTokens
     | AccordionTokens
     | CarouselTokens
     | ModalTokens
@@ -94,7 +94,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSpinnerTokens,
     ...defaultStatusTokens,
     ...defaultTagTokens,
-    ...defaultToastContainerTokens,
+    ...defaultToastTokens,
     ...defaultAccordionTokens,
     ...defaultCarouselTokens,
     ...defaultModalTokens,

@@ -12,23 +12,28 @@ export type AliasTokens =
     | 'color-action-hover'
     | 'color-feedback-success'
     | 'color-feedback-success-hover'
-    | 'color-feedback-success-alternate'
+    | 'color-feedback-success-alternate-subtlest'
+    | 'color-feedback-success-alternate-subtle'
     | 'color-feedback-success-alternate-hover'
     | 'color-feedback-alert'
     | 'color-feedback-alert-hover'
-    | 'color-feedback-alert-alternate'
+    | 'color-feedback-alert-alternate-subtlest'
+    | 'color-feedback-alert-alternate-subtle'
     | 'color-feedback-alert-alternate-hover'
     | 'color-feedback-warning'
     | 'color-feedback-warning-hover'
-    | 'color-feedback-warning-alternate'
+    | 'color-feedback-warning-alternate-subtlest'
+    | 'color-feedback-warning-alternate-subtle'
     | 'color-feedback-warning-alternate-hover'
     | 'color-feedback-discovery'
     | 'color-feedback-discovery-hover'
-    | 'color-feedback-discovery-alternate'
+    | 'color-feedback-discovery-alternate-subtlest'
+    | 'color-feedback-discovery-alternate-subtle'
     | 'color-feedback-discovery-alternate-hover'
     | 'color-feedback-informative'
     | 'color-feedback-informative-hover'
-    | 'color-feedback-informative-alternate'
+    | 'color-feedback-informative-alternate-subtlest'
+    | 'color-feedback-informative-alternate-subtle'
     | 'color-feedback-informative-alternate-hover'
 /**
  * TIER 2
@@ -57,6 +62,11 @@ export type AliasTokens =
     | 'color-feedback-bg-alert-subtle'
     | 'color-feedback-bg-discovery-subtle'
     | 'color-feedback-bg-informative-subtle'
+    | 'color-feedback-bg-success-subtlest'
+    | 'color-feedback-bg-warning-subtlest'
+    | 'color-feedback-bg-alert-subtlest'
+    | 'color-feedback-bg-discovery-subtlest'
+    | 'color-feedback-bg-informative-subtlest'
     | 'color-feedback-bg-success'
     | 'color-feedback-bg-success-hover'
     | 'color-feedback-bg-alert'
@@ -183,23 +193,28 @@ export const defaultAliasTokens: AliasTokenMap = {
     */
     'color-feedback-success': 'color-success-50',
     'color-feedback-success-hover': 'color-success-70',
-    'color-feedback-success-alternate': 'color-success-05',
+    'color-feedback-success-alternate-subtlest': 'color-success-02',
+    'color-feedback-success-alternate-subtle': 'color-success-05',
     'color-feedback-success-alternate-hover': 'color-success-10',
     'color-feedback-alert': 'color-alert-50',
     'color-feedback-alert-hover': 'color-alert-70',
-    'color-feedback-alert-alternate': 'color-alert-05',
+    'color-feedback-alert-alternate-subtlest': 'color-alert-02',
+    'color-feedback-alert-alternate-subtle': 'color-alert-05',
     'color-feedback-alert-alternate-hover': 'color-alert-10',
     'color-feedback-warning': 'color-warning-50',
     'color-feedback-warning-hover': 'color-warning-70',
-    'color-feedback-warning-alternate': 'color-warning-05',
+    'color-feedback-warning-alternate-subtlest': 'color-warning-02',
+    'color-feedback-warning-alternate-subtle': 'color-warning-05',
     'color-feedback-warning-alternate-hover': 'color-warning-10',
     'color-feedback-discovery': 'color-discovery-50',
     'color-feedback-discovery-hover': 'color-discovery-70',
-    'color-feedback-discovery-alternate': 'color-discovery-05',
+    'color-feedback-discovery-alternate-subtlest': 'color-discovery-02',
+    'color-feedback-discovery-alternate-subtle': 'color-discovery-05',
     'color-feedback-discovery-alternate-hover': 'color-discovery-10',
     'color-feedback-informative': 'color-informative-50',
     'color-feedback-informative-hover': 'color-informative-70',
-    'color-feedback-informative-alternate': 'color-informative-05',
+    'color-feedback-informative-alternate-subtlest': 'color-informative-02',
+    'color-feedback-informative-alternate-subtle': 'color-informative-05',
     'color-feedback-informative-alternate-hover': 'color-informative-10',
     'color-action': 'color-brand-50',
     'color-action-disabled': 'color-brand-20',
@@ -214,19 +229,24 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-action-bg-hover': 'color-action-hover',
     'color-action-bg-disabled': 'color-action-disabled',
     'color-feedback-bg-success': 'color-feedback-success',
-    'color-feedback-bg-success-subtle': 'color-feedback-success-alternate',
+    'color-feedback-bg-success-subtlest': 'color-feedback-success-alternate-subtlest',
+    'color-feedback-bg-success-subtle': 'color-feedback-success-alternate-subtle',
     'color-feedback-bg-success-hover': 'color-feedback-success-hover',
     'color-feedback-bg-alert': 'color-feedback-alert',
-    'color-feedback-bg-alert-subtle': 'color-feedback-alert-alternate',
+    'color-feedback-bg-alert-subtlest': 'color-feedback-alert-alternate-subtlest',
+    'color-feedback-bg-alert-subtle': 'color-feedback-alert-alternate-subtle',
     'color-feedback-bg-alert-hover': 'color-feedback-alert-hover',
     'color-feedback-bg-warning': 'color-feedback-warning',
-    'color-feedback-bg-warning-subtle': 'color-feedback-warning-alternate',
+    'color-feedback-bg-warning-subtlest': 'color-feedback-warning-alternate-subtlest',
+    'color-feedback-bg-warning-subtle': 'color-feedback-warning-alternate-subtle',
     'color-feedback-bg-warning-hover': 'color-feedback-warning-hover',
     'color-feedback-bg-discovery': 'color-feedback-discovery',
-    'color-feedback-bg-discovery-subtle': 'color-feedback-discovery-alternate',
+    'color-feedback-bg-discovery-subtlest': 'color-feedback-discovery-alternate-subtlest',
+    'color-feedback-bg-discovery-subtle': 'color-feedback-discovery-alternate-subtle',
     'color-feedback-bg-discovery-hover': 'color-feedback-discovery-hover',
     'color-feedback-bg-informative': 'color-feedback-informative',
-    'color-feedback-bg-informative-subtle': 'color-feedback-informative-alternate',
+    'color-feedback-bg-informative-subtlest': 'color-feedback-informative-alternate-subtlest',
+    'color-feedback-bg-informative-subtle': 'color-feedback-informative-alternate-subtle',
     'color-feedback-bg-informative-hover': 'color-feedback-informative-hover',
 
     'color-bg': 'color-white',
@@ -238,7 +258,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-alternate-disabled': 'color-neutral-15',
     'color-bg-alternate-hover': 'color-neutral-30',
     'color-bg-inverse': 'color-neutral-65',
-    'color-bg-inverse-hover': 'color-neutral-90',
+    'color-bg-inverse-hover': 'color-neutral-80',
     'color-bg-brand': 'color-brand-80',
     'color-bg-brand-hover': 'color-brand-70',
     'color-bg-brand-selected': 'color-brand-70',
