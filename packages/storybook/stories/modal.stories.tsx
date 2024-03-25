@@ -3,7 +3,7 @@ import { StoryFn, StoryObj } from '@storybook/react';
 
 // eslint-disable-next-line import/no-default-export
 export default {
-    title: 'Components/Modal',
+    title: 'Core/Modal (core)',
     component: Modal,
 };
 

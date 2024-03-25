@@ -1,21 +1,49 @@
-import { ArgTypes, Meta, Stories } from '@storybook/blocks';
+import { ArgTypes, Meta, Canvas, Stories } from '@storybook/blocks';
 import { ModalDialog } from "@equisoft/design-elements-react";
 import * as ModalDialogStories from './modal-dialog.stories';
 
-<Meta of={ModalDialogStories} />
+# Modal
 
-# Modal Dialog
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+    5. [Accessibility](#accessibility)
 
-The `ModalDialog` component allows you to easily set dialog modals up in your app.
+<Meta title="Components/Modal/Doc" />
 
-## Import
+## Definition
+A modal is an overlay that requires the user to interact with it and is designed to elicit a response from the user (dialog). Modals inform users about critical information and require users to make decisions. Within apps, on the web and even on mobile, modals are increasingly used to direct the user’s attention to a specific task, without taking them away from the context of the current screen [1]. 
+<Canvas of={ModalDialogStories.Default} />
 
-```js
-    import { ModalDialog, useModal } from '@equisoft/design-elements-react'
-```
+## Usage
+
+### When to use
+- The content is urgent, and users are more likely to notice it in a modal [8].
+- It is essential to collect a small amount of information before letting the user proceed further [10].
+- You have to convey important information without losing the context of the current screen [10].
+- The user is about to take an action that has serious consequences and is difficult to reverse [9].
+
+### When not to use
+- Keep modal windows concise; avoid excessive content. Lengthy modals hinder user experience, suggesting the need for a reevaluation towards simpler approaches [5].
+- Complex interactions with modals or popovers heighten the risk of user errors. Consider employing separate pages for longer forms and inline editing for smoother user engagement [6].
+- Multi-step modals prolong user distraction, increasing the likelihood of task abandonment. If multi-step modals are necessary, provide progress indicators to maintain user engagement. Alternatively, consider utilizing a dedicated full page for such processes [7].
+- Beware of easy modal closure leading to data loss, posing a significant risk [4].
+- Nesting modals is discouraged due to negative impacts on user experience [4].
+
+## Variants
+
+### Default
+<Canvas of={ModalDialogStories.Default} />
+
+### Alert
+<Canvas of={ModalDialogStories.AlertDialog} />
+
+## Properties
+<ArgTypes of={ModalDialog} />
 
 ## Accessibility
-
 It is important for users of screenreaders that other page content be hidden (via the aria-hidden attribute) while the modal is open. To allow `ModalDialog` to do this, you should set `appElement` prop to a query selector identifying the root of your app. For example, if your app content is located inside an element with the ID `root`, you should set the `appElement` prop like this:
 
 ```jsx
@@ -28,8 +56,21 @@ It is important for users of screenreaders that other page content be hidden (vi
 </ModalDialog>
 ```
 
-## Props
+## References
 
-<ArgTypes of={ModalDialog} />
-
-<Stories of={ModalDialogStories} />
+1. [https://uxplanet.org/5-essential-ux-rules-for-dialog-design-4de258c22116](https://uxplanet.org/5-essential-ux-rules-for-dialog-design-4de258c22116)
+2. [https://medium.com/@joaopegb/ux-writing-an-effective-cancel-dialog-confirmation-on-web-539b73a39929](https://medium.com/@joaopegb/ux-writing-an-effective-cancel-dialog-confirmation-on-web-539b73a39929)
+3. [https://uxdesign.cc/are-you-sure-you-want-to-do-this-microcopy-for-confirmation-dialogues-1d94a0f73ac6](https://uxdesign.cc/are-you-sure-you-want-to-do-this-microcopy-for-confirmation-dialogues-1d94a0f73ac6)
+4. [https://ux.stackexchange.com/questions/50226/forms-modal-dialog-or-separate-page-in-single-page-app](https://ux.stackexchange.com/questions/50226/forms-modal-dialog-or-separate-page-in-single-page-app)
+5. [https://uxplanet.org/best-practices-for-modal-window-design-627f7aba57f1](https://uxplanet.org/best-practices-for-modal-window-design-627f7aba57f1)
+6. [https://coyleandrew.medium.com/form-design-for-complex-applications-d8a1d025eba6](https://coyleandrew.medium.com/form-design-for-complex-applications-d8a1d025eba6)
+7. [https://www.nngroup.com/articles/modal-nonmodal-dialog/](https://www.nngroup.com/articles/modal-nonmodal-dialog/)
+8. [https://www.nngroup.com/articles/overuse-of-overlays/](https://www.nngroup.com/articles/overuse-of-overlays/)
+9. [https://www.nngroup.com/articles/user-control-and-freedom/](https://www.nngroup.com/articles/user-control-and-freedom/)
+10. [https://uxplanet.org/modal-vs-page-a-decision-making-framework-34453e911129](https://uxplanet.org/modal-vs-page-a-decision-making-framework-34453e911129)
+11. [https://balsamiq.com/learn/articles/button-design-best-practices/](https://balsamiq.com/learn/articles/button-design-best-practices/)
+12. [https://carbondesignsystem.com/components/button/usage/#alignment](https://carbondesignsystem.com/components/button/usage/#alignment)
+13. [https://medium.theoremone.co/button-ambiguity-alignment-order-a42736e25334](https://medium.theoremone.co/button-ambiguity-alignment-order-a42736e25334)
+14. [https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb](https://uxdesign.cc/buttons-placement-and-order-bb1c4abadfcb)
+15. [https://www.interaction-design.org/literature/topics/mental-models](https://www.interaction-design.org/literature/topics/mental-models)
+16. [https://bootcamp.uxdesign.cc/when-where-and-how-to-use-modals-in-ux-design-7f69841de9e5#:~:text=The maximum width of modals,the contents of the modal](https://bootcamp.uxdesign.cc/when-where-and-how-to-use-modals-in-ux-design-7f69841de9e5#:~:text=The%20maximum%20width%20of%20modals,the%20contents%20of%20the%20modal)
