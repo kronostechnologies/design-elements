@@ -3,11 +3,11 @@ import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Components/Badge',
+    title: 'Components/Badge/Stories',
     component: Badge,
 };
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <Badge value={1}>
         <Icon name="bell" />
     </Badge>
