@@ -1,0 +1,51 @@
+import { Badge } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as BadgeStories  from './badge.stories';
+
+
+# Badge
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+<Meta title="Components/Badge/Doc" />
+
+## Definition
+A badge is a small notification component that appears on an element and indicates an unseen update.
+<Canvas of={BadgeStories.Default} />
+
+## Usage
+### When to use
+- Use a badge to notify the user of a change or update, close to the relevant item [4].
+    - Use the default badge to display numbers within a container and/or to indicate a quantifiable status change [7].
+    - Use a dot badge to notify the user that something is new or updated without showing a count [4].
+- Use a badge when you need read-only status indicators or labels that are not interactive [9].
+
+### When not tu use
+- Notification badges should not be used for critical alerts.
+- If you need a text label, use tags or lozenge instead.
+
+## Variants
+
+### Default
+<Canvas of={BadgeStories.Default} />
+
+### Dot
+<Canvas of={BadgeStories.Dot} />
+
+## Properties
+<ArgTypes of={Badge} />
+
+## References
+1. [https://uxplanet.org/5-types-of-ui-notifications-dbfbda284456](https://uxplanet.org/5-types-of-ui-notifications-dbfbda284456)
+2. [https://uxdesign.cc/badge-notifications-why-everyone-wants-to-get-rid-of-them-decedb28b46d](https://uxdesign.cc/badge-notifications-why-everyone-wants-to-get-rid-of-them-decedb28b46d)
+3. [https://setproduct.com/blog/badge-ui-design](https://setproduct.com/blog/badge-ui-design)
+4. [https://cultureamp.design/components/badge/](https://cultureamp.design/components/badge/)
+5. [https://app.uxcel.com/courses/ui-components-best-practices/notifications-best-practices-164](https://app.uxcel.com/courses/ui-components-best-practices/notifications-best-practices-164)
+6. [https://design.mindsphere.io/patterns/badge.html](https://design.mindsphere.io/patterns/badge.html)
+7. [https://m3.material.io/components/badges/overview](https://m3.material.io/components/badges/overview)
+8. [https://m3.material.io/components/badges/guidelines](https://m3.material.io/components/badges/guidelines)
+9. [https://www.delldesignsystem.com/components/badge/](https://www.delldesignsystem.com/components/badge/)
