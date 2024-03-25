@@ -153,10 +153,8 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${fieldId}_hint`, include: !!hint },
-            { id: `${fieldId}_invalid`, include: !invalid },
-        ],
+        hasHint: !!hint,
+        isValid: !invalid,
     });
 
     return (

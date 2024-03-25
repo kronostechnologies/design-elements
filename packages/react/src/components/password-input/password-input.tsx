@@ -1,6 +1,6 @@
 import { ChangeEvent, useState, VoidFunctionComponent, FocusEvent, useCallback } from 'react';
 import styled, { css } from 'styled-components';
-import { AriaLabelsProps } from '../../hooks/use-aria';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
@@ -95,6 +95,16 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        hasHint: !!hint,
+        isValid,
+    });
+
     const handleShowPassword = useCallback((): void => {
         setShowPassword(!showPassword);
     }, [showPassword]);
@@ -107,7 +117,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     return (
         <FieldContainer
             fieldId={fieldId}
-            label={label}
+            label={processedLabels.label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}
             valid={isValid}
@@ -115,10 +125,9 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
             <PasswordContainer>
                 <StyledTextInput
                     id={fieldId}
-                    inputId={fieldId}
-                    ariaLabel={ariaLabel}
-                    ariaLabelledBy={ariaLabelledBy}
-                    ariaDescribedBy={ariaDescribedBy}
+                    ariaLabel={processedLabels.ariaLabel}
+                    ariaLabelledBy={processedLabels.ariaLabelledBy}
+                    ariaDescribedBy={processedLabels.ariaDescribedBy}
                     disabled={disabled}
                     name={name ?? 'password'}
                     autoComplete={showPassword ? 'off' : 'current-password'}

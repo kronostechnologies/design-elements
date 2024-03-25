@@ -138,6 +138,7 @@ const optionPredicate: (option: DropdownListOption) => boolean = (option) => !op
 const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
 
 export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
+    id: providedId,
     label,
     ariaLabel,
     ariaLabelledBy,
@@ -147,7 +148,6 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     defaultValue,
     disabled,
     noMargin,
-    id: providedId,
     onChange,
     options,
     name,
@@ -161,7 +161,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
 }) => {
     const { t } = useTranslation('dropdown-list');
     const { device, isMobile } = useDeviceContext();
-    const id = useId(providedId);
+    const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
     const textboxRef = useRef<HTMLDivElement>(null);
@@ -359,22 +359,20 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     }
 
     const { processedLabels } = useAriaLabels({
-        inputId: id,
+        inputId: fieldId,
         label,
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${id}_hint`, include: !!hint },
-            { id: `${id}_invalid`, include: !valid },
-        ],
+        hasHint: !!hint,
+        isValid: valid,
     });
 
     return (
         <StyledFieldContainer
             className={className}
             noMargin={noMargin}
-            fieldId={id}
+            fieldId={fieldId}
             label={processedLabels.label}
             required={required}
             tooltip={tooltip}
@@ -383,16 +381,16 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
             hint={hint}
         >
             <Textbox
+                id={fieldId}
                 aria-label={processedLabels.ariaLabel || t('inputAriaLabel')}
                 aria-labelledby={processedLabels.ariaLabelledBy}
                 aria-describedby={processedLabels.ariaDescribedBy}
-                aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
-                aria-controls={`${id}_listbox`}
+                aria-activedescendant={open && focusedOption ? sanitizeId(`${fieldId}_${focusedOption.value}`) : undefined}
+                aria-controls={`${fieldId}_listbox`}
                 aria-expanded={open}
                 aria-invalid={!valid ? 'true' : 'false'}
                 aria-required={required ? 'true' : 'false'}
                 data-testid="textbox"
-                id={id}
                 $isMobile={isMobile}
                 $disabled={disabled}
                 onBlur={handleTextboxBlur}
@@ -426,12 +424,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
 
             {open && (
                 <StyledListbox
-                    ariaLabelledBy={`${id}_label`}
+                    ariaLabelledBy={`${fieldId}_label`}
                     ref={listboxRef}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
-                    id={`${id}_listbox`}
+                    id={`${fieldId}_listbox`}
                     onOptionClick={handleListboxOptionClick}
                     options={options}
                     value={[selectedOption?.value ?? '']}

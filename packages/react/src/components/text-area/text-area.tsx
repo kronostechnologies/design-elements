@@ -1,9 +1,9 @@
-import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, FocusEvent, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -28,6 +28,7 @@ const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
 `;
 
 export interface TextAreaProps extends AriaLabelsProps {
+    id?: string;
     className?: string;
     tooltip?: TooltipProps;
     defaultValue?: string;
@@ -64,6 +65,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
 }
 
 export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
+    id: providedId,
     className,
     noMargin,
     onBlur,
@@ -87,8 +89,8 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     const { t } = useTranslation('text-area');
     const [validity, setValidity] = useState(true);
     const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
-    const idTextArea = useMemo(uuid, []);
-    const idCounter = useMemo(uuid, []);
+    const idTextArea = useId(providedId);
+    const idCounter = `${idTextArea}_counter`;
     const dataAttributes = useDataAttributes(otherProps);
 
     function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
@@ -138,9 +140,9 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
+        hasHint: !!hint,
+        isValid: !validity && !!getValidationErrorMessage(),
         additionalAriaDescribedBy: [
-            { id: `${idTextArea}_hint`, include: !!hint },
-            { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
             { id: idCounter, include: !!maxLength },
         ],
     });

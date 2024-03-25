@@ -151,7 +151,12 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         <InputWrapper language={language}>
             <TextInput
                 id={fieldId}
-                inputId={fieldId}
+                label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
+                hint={hint}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 className={className}
                 required={required}
                 disabled={disabled}
@@ -159,16 +164,10 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
                 type="text"
                 inputMode="numeric"
                 value={displayValue}
-                label={label}
-                ariaLabel={ariaLabel}
-                ariaLabelledBy={ariaLabelledBy}
-                ariaDescribedBy={ariaDescribedBy}
                 placeholder="$"
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-                hint={hint}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </InputWrapper>

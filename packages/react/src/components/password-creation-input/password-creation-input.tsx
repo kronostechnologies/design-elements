@@ -1,5 +1,6 @@
-import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
+import { ChangeEvent, useState, VoidFunctionComponent } from 'react';
 import styled, { StyledProps } from 'styled-components';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
@@ -8,7 +9,6 @@ import { useTranslation } from '../../i18n/use-translation';
 import { getPasswordStrength } from './password-strength';
 import { PasswordRule } from './password-rule';
 import { getDefaultValidationConditions, ValidationCondition } from './validation-condition';
-import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip } from '../tooltip/tooltip';
@@ -82,9 +82,9 @@ const StyledIconButton = styled(IconButton)<{ isValid: boolean }>`
     width: 2rem;
 `;
 
-interface PasswordCreationInputProps {
-    name?: string;
+interface PasswordCreationInputProps extends AriaLabelsProps {
     id?: string;
+    name?: string;
     onChange(newPassword: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>): void;
     validations?: ValidationCondition[];
 }
@@ -95,6 +95,10 @@ function isPasswordValid(conditions: ValidationCondition[], value: string): bool
 
 export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputProps> = ({
     id: providedId,
+    label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     name,
     onChange,
     validations,
@@ -106,11 +110,24 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     const isEmpty = password.length === 0;
     const strength = getPasswordStrength(password);
     const conditions = validations ?? getDefaultValidationConditions(t);
-    const passwordStrengthId = useMemo(() => uuid(), []);
     const fieldId = useId(providedId);
-    const hintId = useMemo(() => uuid(), []);
+    const hintId = `${fieldId}_hint`;
+    const passwordStrengthId = `${fieldId}_password-strength`;
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
+
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label: label || t('create-password'),
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        hasHint: true,
+        isValid,
+        additionalAriaDescribedBy: [
+            { id: passwordStrengthId, include: true },
+        ],
+    });
 
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
@@ -126,7 +143,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     return (
         <StyledFieldContainer
             fieldId={fieldId}
-            label={t('create-password')}
+            label={processedLabels.label}
             validationErrorMessage=""
             noInvalidFieldIcon
             valid={isValid}
@@ -146,11 +163,10 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
             <PasswordContainer>
                 <StyledInput
                     id={fieldId}
-                    inputId={fieldId}
                     isValid={isValid || isEmpty}
                     name={name ?? 'password'}
                     autoComplete="new-password"
-                    ariaDescribedBy={`${hintId} ${passwordStrengthId}`}
+                    ariaDescribedBy={processedLabels.ariaDescribedBy}
                     ariaInvalid={!isValid}
                     onChange={handleChange}
                     data-testid="password-input"

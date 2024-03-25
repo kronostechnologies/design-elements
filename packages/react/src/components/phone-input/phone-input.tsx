@@ -224,7 +224,11 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
             </MaskContainer>
             <TextInput
                 id={fieldId}
-                inputId={fieldId}
+                label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
+                hint={hint}
                 data-testid="phone-text-input"
                 ref={inputRef}
                 type="tel"
@@ -232,11 +236,6 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 value={phoneInputValue}
                 required={required}
                 disabled={disabled}
-                hint={hint}
-                label={label}
-                ariaLabel={ariaLabel}
-                ariaLabelledBy={ariaLabelledBy}
-                ariaDescribedBy={ariaDescribedBy}
                 onChange={handleChange}
                 onMouseUp={handleMouseUp}
                 onKeyDown={handleKeyDown}

@@ -6,7 +6,7 @@ interface ConditionalId {
 }
 
 export interface AriaLabelsProps {
-    inputId: string;
+    inputId?: string;
     /** Mutually exclusive: label, aria-label, aria-labelledby */
     label?: string;
     /**
@@ -14,6 +14,8 @@ export interface AriaLabelsProps {
      */
     ariaLabel?: string;
     ariaLabelledBy?: string;
+    hasHint?: boolean;
+    isValid?: boolean;
     additonalAriaLabelledBy?: ConditionalId[];
     ariaDescribedBy?: string;
     additionalAriaDescribedBy?: ConditionalId[];
@@ -25,7 +27,15 @@ const processConditionalIds = (conditionalIds: ConditionalId[] = []): string | u
     .join(' ') || undefined;
 
 export const useAriaLabels = ({
-    inputId, label, ariaLabel, ariaLabelledBy, ariaDescribedBy, additonalAriaLabelledBy, additionalAriaDescribedBy,
+    inputId,
+    label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
+    additonalAriaLabelledBy,
+    additionalAriaDescribedBy,
+    hasHint,
+    isValid,
 }: AriaLabelsProps): {
     processedLabels: {
         label: string | undefined;
@@ -36,9 +46,9 @@ export const useAriaLabels = ({
 } => useMemo(() => {
     const labelCount = [!!label, !!ariaLabel, !!ariaLabelledBy].filter(Boolean).length;
     if (labelCount === 0) {
-        throw new Error('Component is missing a label, aria-label, or aria-labelledby.');
+        console.warn('Component is missing a label, aria-label, or aria-labelledby.');
     } if (labelCount > 1) {
-        throw new Error('Should not have more than one of label, aria-label, or aria-labelledby set.');
+        console.warn('Should not have more than one of label, aria-label, or aria-labelledby set.');
     }
 
     let processedLabel = label;
@@ -49,6 +59,8 @@ export const useAriaLabels = ({
         ...additonalAriaLabelledBy ?? [],
     ]);
     const processedAriaDescribedBy = processConditionalIds([
+        { id: `${inputId}_hint`, include: hasHint },
+        { id: `${inputId}_invalid`, include: !isValid },
         { id: ariaDescribedBy, include: !!ariaDescribedBy },
         ...additionalAriaDescribedBy ?? [],
     ]);
@@ -67,7 +79,16 @@ export const useAriaLabels = ({
             ariaDescribedBy: processedAriaDescribedBy,
         },
     };
-}, [label, ariaLabel, ariaLabelledBy, inputId, additonalAriaLabelledBy, ariaDescribedBy, additionalAriaDescribedBy]);
+}, [
+    label,
+    ariaLabel, ariaLabelledBy,
+    inputId,
+    additonalAriaLabelledBy,
+    hasHint,
+    isValid,
+    ariaDescribedBy,
+    additionalAriaDescribedBy,
+]);
 
 export function useAriaConditionalIds(conditionalIds: ConditionalId[]): string | undefined {
     return conditionalIds

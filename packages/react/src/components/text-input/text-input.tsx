@@ -102,10 +102,8 @@ export const TextInput = forwardRef(({
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${fieldId}_hint`, include: !!hint },
-            { id: `${fieldId}_invalid`, include: !validity },
-        ],
+        hasHint: !!hint,
+        isValid: valid,
     });
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {

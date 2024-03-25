@@ -3,15 +3,14 @@ import {
     DetailedHTMLProps,
     InputHTMLAttributes,
     RefObject,
-    useMemo,
     useRef,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
@@ -29,7 +28,7 @@ interface StyledInputProps {
 }
 
 const StyledInput = styled.input<StyledInputProps>`
-    ${responsiveInputsStyle}
+    ${responsiveInputsStyle};
 
     border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
     height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
@@ -73,10 +72,10 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
 }
 
 export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
+    id: providedId,
     defaultValue,
     disabled,
     hint,
-    id,
     label,
     ariaLabel,
     ariaLabelledBy,
@@ -96,7 +95,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const fieldId = useId(providedId);
 
     function handleIncrement(): void {
         const valueBefore = Number(inputRef.current?.value);
@@ -134,10 +133,8 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${fieldId}_hint`, include: !!hint },
-            { id: `${fieldId}_invalid`, include: !valid },
-        ],
+        hasHint: !!hint,
+        isValid: valid,
     });
 
     return (

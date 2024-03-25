@@ -1,12 +1,12 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
+import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -140,8 +140,8 @@ export interface SearchInputProps extends CommonSearchProps {
 }
 
 export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
-    defaultValue,
     id: providedId,
+    defaultValue,
     onChange,
     onReset,
     onSearch,
@@ -150,7 +150,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     ...props
 }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const id = useId(providedId);
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
@@ -200,6 +200,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                 )}
 
                 <Input
+                    id={id}
                     aria-label={processedLabels.ariaLabel}
                     aria-labelledby={processedLabels.ariaLabelledBy}
                     aria-describedby={processedLabels.ariaDescribedBy}
@@ -212,7 +213,6 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     hasButton={!!hasButton}
                     hasIcon={!!hasIcon}
                     hasReset={!!onReset}
-                    id={id}
                     placeholder={placeholder}
                     type="search"
                     defaultValue={defaultValue}

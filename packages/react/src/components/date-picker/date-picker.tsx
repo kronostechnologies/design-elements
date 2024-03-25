@@ -547,10 +547,8 @@ export const Datepicker = forwardRef(({
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${fieldId}_hint`, include: !!hint },
-            { id: `${fieldId}_invalid`, include: !valid },
-        ],
+        hasHint: !!hint,
+        isValid: valid,
     });
 
     return (

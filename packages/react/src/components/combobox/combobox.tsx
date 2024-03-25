@@ -153,13 +153,13 @@ interface ComboboxProps extends AriaLabelsProps {
 const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
 
 export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
+    id: providedId,
     autoComplete = 'none',
     className,
     defaultOpen = false,
     defaultValue,
     disabled,
     noMargin,
-    id: providedId,
     label,
     ariaLabel,
     ariaLabelledBy,
@@ -177,7 +177,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 }) => {
     const { t } = useTranslation('combobox');
     const { isMobile } = useDeviceContext();
-    const id = useId(providedId);
+    const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
     const hasAutoComplete: (mode: AutoCompleteMode) => boolean = useCallback(
@@ -447,22 +447,20 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     }, [inputValue.length, suggestedInputValue.length]);
 
     const { processedLabels } = useAriaLabels({
-        inputId: id,
+        inputId: fieldId,
         label,
         ariaLabel,
         ariaLabelledBy,
         ariaDescribedBy,
-        additionalAriaDescribedBy: [
-            { id: `${id}_hint`, include: !!hint },
-            { id: `${id}_invalid`, include: !valid },
-        ],
+        hasHint: !!hint,
+        isValid: valid,
     });
 
     return (
         <StyledFieldContainer
             className={className}
             noMargin={noMargin}
-            fieldId={id}
+            fieldId={fieldId}
             label={processedLabels.label}
             required={required}
             tooltip={tooltip}
@@ -475,14 +473,14 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     aria-label={processedLabels.ariaLabel || t('inputAriaLabel')}
                     aria-labelledby={processedLabels.ariaLabelledBy}
                     aria-describedby={processedLabels.ariaDescribedBy}
-                    aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
+                    aria-activedescendant={open && focusedOption ? sanitizeId(`${fieldId}_${focusedOption.value}`) : undefined}
                     aria-autocomplete={autoComplete}
-                    aria-controls={`${id}_listbox`}
+                    aria-controls={`${fieldId}_listbox`}
                     aria-expanded={open}
                     aria-invalid={!valid ? 'true' : 'false'}
                     aria-required={required ? 'true' : 'false'}
                     data-testid="textbox"
-                    id={id}
+                    id={fieldId}
                     $isMobile={isMobile}
                     $disabled={disabled}
                     name={name}
@@ -512,12 +510,12 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 
             {open && (
                 <StyledListbox
-                    ariaLabelledBy={`${id}_label`}
+                    ariaLabelledBy={`${fieldId}_label`}
                     ref={listboxRef}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
-                    id={`${id}_listbox`}
+                    id={`${fieldId}_listbox`}
                     onOptionClick={handleListboxOptionClick}
                     options={filteredOptions}
                     value={[selectedOption?.value ?? '']}
