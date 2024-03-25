@@ -340,6 +340,9 @@ input:valid + .c8 {
             </styled.label>
           </Label>
           <styled.input
+            aria-describedby="search-input_invalid"
+            aria-label="Search"
+            aria-labelledby="search-input_label"
             autoComplete="on"
             data-testid="search-input"
             disabled={true}
@@ -354,6 +357,9 @@ input:valid + .c8 {
             value="a value"
           >
             <input
+              aria-describedby="search-input_invalid"
+              aria-label="Search"
+              aria-labelledby="search-input_label"
               autoComplete="on"
               className="c6 c7"
               data-testid="search-input"

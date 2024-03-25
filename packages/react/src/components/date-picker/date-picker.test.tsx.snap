@@ -2328,7 +2328,6 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
                           aria-required="false"
                           class="c12"
                           data-testid="month-select"
@@ -2338,6 +2337,7 @@ label + .c3 {
                           value="october"
                         >
                           <input
+                            aria-label="Select a month"
                             data-testid="input"
                             type="hidden"
                             value="october"
@@ -2370,7 +2370,6 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
                           aria-required="false"
                           class="c12"
                           data-testid="year-select"
@@ -2380,6 +2379,7 @@ label + .c3 {
                           value="2010"
                         >
                           <input
+                            aria-label="Select a year"
                             data-testid="input"
                             type="hidden"
                             value="2010"
@@ -3546,7 +3546,6 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
                           aria-required="false"
                           class="c12"
                           data-testid="month-select"
@@ -3556,6 +3555,7 @@ label + .c3 {
                           value="october"
                         >
                           <input
+                            aria-label="Select a month"
                             data-testid="input"
                             type="hidden"
                             value="october"
@@ -3588,7 +3588,6 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
                           aria-required="false"
                           class="c12"
                           data-testid="year-select"
@@ -3598,6 +3597,7 @@ label + .c3 {
                           value="2010"
                         >
                           <input
+                            aria-label="Select a year"
                             data-testid="input"
                             type="hidden"
                             value="2010"
@@ -4683,7 +4683,6 @@ label + .c3 {
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a month"
-                            aria-labelledby="uuid2_label"
                             aria-required="false"
                             class="c12"
                             data-testid="month-select"
@@ -4693,6 +4692,7 @@ label + .c3 {
                             value="october"
                           >
                             <input
+                              aria-label="Select a month"
                               data-testid="input"
                               type="hidden"
                               value="october"
@@ -4725,7 +4725,6 @@ label + .c3 {
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a year"
-                            aria-labelledby="uuid3_label"
                             aria-required="false"
                             class="c12"
                             data-testid="year-select"
@@ -4735,6 +4734,7 @@ label + .c3 {
                             value="2010"
                           >
                             <input
+                              aria-label="Select a year"
                               data-testid="input"
                               type="hidden"
                               value="2010"

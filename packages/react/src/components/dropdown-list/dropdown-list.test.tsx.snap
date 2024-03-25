@@ -217,6 +217,7 @@ input + .c2 {
     aria-controls="uuid1_listbox"
     aria-expanded="true"
     aria-invalid="false"
+    aria-label="Select an option"
     aria-labelledby="uuid1_label"
     aria-required="false"
     class="c4"
@@ -227,6 +228,8 @@ input + .c2 {
     value="ab"
   >
     <input
+      aria-label="Select an option"
+      aria-labelledby="uuid1_label"
       data-testid="input"
       type="hidden"
       value="ab"
@@ -681,6 +684,7 @@ input + .c2 {
     aria-describedby="uuid1_invalid"
     aria-expanded="true"
     aria-invalid="true"
+    aria-label="Select an option"
     aria-labelledby="uuid1_label"
     aria-required="false"
     class="c6"
@@ -691,6 +695,9 @@ input + .c2 {
     value="ab"
   >
     <input
+      aria-describedby="uuid1_invalid"
+      aria-label="Select an option"
+      aria-labelledby="uuid1_label"
       data-testid="input"
       type="hidden"
       value="ab"
@@ -1074,7 +1081,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     aria-expanded="true"
     aria-invalid="false"
     aria-label="Select an option"
-    aria-labelledby="uuid1_label"
     aria-required="false"
     class="c2"
     data-testid="textbox"
@@ -1084,6 +1090,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     value="ab"
   >
     <input
+      aria-label="Select an option"
       data-testid="input"
       type="hidden"
       value="ab"
@@ -1514,6 +1521,7 @@ input + .c2 {
     aria-describedby="uuid1_hint"
     aria-expanded="true"
     aria-invalid="false"
+    aria-label="Select an option"
     aria-labelledby="uuid1_label"
     aria-required="false"
     class="c5"
@@ -1524,6 +1532,9 @@ input + .c2 {
     value="ab"
   >
     <input
+      aria-describedby="uuid1_hint"
+      aria-label="Select an option"
+      aria-labelledby="uuid1_label"
       data-testid="input"
       type="hidden"
       value="ab"
