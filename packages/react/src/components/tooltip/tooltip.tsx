@@ -254,6 +254,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         delayShow: delayed ? titleDelay : undefined,
     }, { modifiers });
 
+    useEffect(() => {
+        popperTooltip.update?.();
+    }, [currentLabel, popperTooltip]);
+
     const openTooltip = useCallback((): void => {
         if (delayed && !disabled) {
             setTooltipTimeout(() => setTimeout(() => setControlledTooltipOpen(true), titleDelay));
