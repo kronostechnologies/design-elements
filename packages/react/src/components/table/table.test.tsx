@@ -56,6 +56,31 @@ const columnsWithHeaderAriaLabel: TableColumn<TestData> = [
     },
 ];
 
+const columnsWithHeaderGroup: TableColumn<TestData> = [
+    {
+        header: 'Group 1',
+        columns: [
+            {
+                header: 'Column 1',
+                accessorKey: 'column1',
+            },
+            {
+                header: 'Column 2',
+                accessorKey: 'column2',
+            },
+        ],
+    },
+    {
+        header: 'Group 2',
+        columns: [
+            {
+                header: 'Column 3',
+                accessorKey: 'column3',
+            },
+        ],
+    },
+];
+
 const columns: TableColumn<TestData> = [
     {
         header: 'Column 1',
@@ -302,6 +327,17 @@ describe('Table', () => {
         const tree = renderWithProviders(
             <Table<TestData>
                 columns={columnsWithHeaderAriaLabel}
+                data={data}
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has header group columns', () => {
+        const tree = renderWithProviders(
+            <Table<TestData>
+                columns={columnsWithHeaderGroup}
                 data={data}
             />,
         );
