@@ -13,8 +13,8 @@ describe('useAriaLabels hook', () => {
         renderHook(() => useAriaLabels({}));
         shallow(<TextInput />);
 
-        expect(console.warn).toHaveBeenCalledWith('Component is missing a label, aria-label, or aria-labelledby.');
-        expect(console.warn).toHaveBeenCalledTimes(2);
+        expect(consoleSpy).toHaveBeenCalledWith('Component is missing a label, aria-label, or aria-labelledby.');
+        expect(consoleSpy).toHaveBeenCalledTimes(2);
         consoleSpy.mockRestore();
     });
 
@@ -22,10 +22,10 @@ describe('useAriaLabels hook', () => {
         renderHook(() => useAriaLabels({ label: 'Test Label', ariaLabel: 'Test Aria Label' }));
         shallow(<TextInput label="This is a label" ariaLabel="This is ariaLabel" />);
 
-        expect(console.warn).toHaveBeenCalledWith(
+        expect(consoleSpy).toHaveBeenCalledWith(
             'Should not have more than one of label, aria-label, or aria-labelledby set.',
         );
-        expect(console.warn).toHaveBeenCalledTimes(2);
+        expect(consoleSpy).toHaveBeenCalledTimes(2);
         consoleSpy.mockRestore();
     });
 
