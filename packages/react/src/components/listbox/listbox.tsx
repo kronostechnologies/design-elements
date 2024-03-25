@@ -176,7 +176,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected, multiselect }) => (!multiselect && $selected && css`
         &::before {
-            // TODO remplacer color token 
+            /* TODO remplacer color token */
             background-color: ${({ theme }) => theme.main['primary-1.1']};
             content: "";
             display: block;
