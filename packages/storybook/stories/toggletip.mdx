@@ -1,0 +1,55 @@
+import { Toggletip } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as ToggletipStories  from './toggletip.stories';
+
+<Meta title="Components/Toggletip/Doc" />
+
+# Toggletip
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+A Toggletip is a disclosure component used to display additional information about a target element, without the user losing the context of the page [2].
+<Canvas of={ToggletipStories.Default} />
+
+## Usage
+
+### When to use
+- Use sparingly and only when the information cannot be presented to the user in any other way (e.g. directly on the page)[7].
+- Provides additional information about a page element (feature, action, content, etc) [1].
+- Use to display instructions or tips that help the user interact with the user interface more effectively.
+- Use to provide brief, useful content.
+- Use for secondary information [4]. Use it when it is not essential for the user to act on the information or complete a task [2].
+- Use when you don‘t want to let the user lose context, but still want to provide additional useful unique information about referring elements. [2].
+- Highlight a new feature or important feature that extends or improves the user's experience on the page [8].
+
+### When not to use
+- Avoid using it as a workaround for poor user interface design, including confusing organization or presentation of information, inconsistent labeling, difficult-to-use or understand functions, or any other issue that makes the user interface hard to use or not user-friendly.
+- Do not use to present critical information.
+- Do not use to display important information that should be immediately visible and accessible to the user without requiring additional action.
+- Do not use to display information that can be explained directly on the page.
+- Do not use unnecessarily: If the text in the Toggletip is obvious or redundant, it won't provide value to the user. Only use a Toggletip when the content is genuinely useful and adds meaningful information.
+- Do not use to display hidden extra functionality, or for data entry (form).
+- Do not use if you want to display additional information to identify or add a small amount of information to an interactive (host) element when the user hovers over it. Use Tooltip instead.
+
+## Variants
+
+### Default
+<Canvas of={ToggletipStories.Default} />
+
+## Properties
+<ArgTypes of={Toggletip} />
+
+## References
+1.  [https://carbondesignsystem.com/components/popover/usage/](https://carbondesignsystem.com/components/popover/usage/)
+2.  [https://design.gitlab.com/components/popover](https://design.gitlab.com/components/popover)
+3.  [https://cultureamp.design/components/popover/](https://cultureamp.design/components/popover/)
+4.  [https://polaris.shopify.com/components/overlays/popover](https://polaris.shopify.com/components/overlays/popover)
+5.  [https://www.delldesignsystem.com/components/popover/?tab=Design](https://www.delldesignsystem.com/components/popover/?tab=Design)
+6.  [https://www.lightningdesignsystem.com/components/popovers/](https://www.lightningdesignsystem.com/components/popovers/)
+7.  [https://epsilon-blueprint.netlify.app/library/components/toggletip/overview](https://epsilon-blueprint.netlify.app/library/components/toggletip/overview)
+8.  [https://primer.style/design/ui-patterns/feature-onboarding](https://primer.style/design/ui-patterns/feature-onboarding)
