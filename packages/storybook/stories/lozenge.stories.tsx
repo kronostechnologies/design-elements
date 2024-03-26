@@ -76,4 +76,3 @@ export const Discovery: Story = () => (
         <Lozenge subtle icon="star" variant="discovery">discovery</Lozenge>
     </VariantsContainer>
 );
-
