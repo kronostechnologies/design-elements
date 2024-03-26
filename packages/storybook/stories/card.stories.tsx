@@ -2,7 +2,7 @@ import { Card } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 
 export default {
-    title: 'Components/Card',
+    title: 'Components/Card/Stories',
     component: Card,
 };
 
