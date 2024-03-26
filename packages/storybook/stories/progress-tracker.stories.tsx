@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Progress Tracker',
+    title: 'Components/Progress Tracker/Stories',
     component: ProgressTracker,
     parameters: rawCodeParameters,
 
@@ -18,7 +18,7 @@ function createSteps(count: number): ProgressTrackerStep[] {
     return steps;
 }
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <ProgressTracker steps={createSteps(3)} value={2} ariaLabel='Storybook progress' />
 );
 
