@@ -3,7 +3,7 @@ import { VoidFunctionComponent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Toast',
+    title: 'Components/Toast/Stories',
     component: useToast,
     parameters: rawCodeParameters,
 };
@@ -50,7 +50,20 @@ const warningCustomization: ThemeCustomization = {
     },
 };
 
-export const ShowToast: VoidFunctionComponent = () => {
+export const Default: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
+            <Button
+                label="Click here!"
+                buttonType="primary"
+                onClick={() => showToast('success', 'This is a confirmation toast')}
+            />
+        </>
+    );
+};
+
+export const Neutral: VoidFunctionComponent = () => {
     const { showToast } = useToast();
     return (
         <>
@@ -59,6 +72,14 @@ export const ShowToast: VoidFunctionComponent = () => {
                 buttonType="tertiary"
                 onClick={() => showToast('neutral', 'Document currently uploading...')}
             />
+        </>
+    );
+};
+
+export const Discovery: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
             <DesignSystem theme={discoveryCustomization}>
                 <Button
                     label="Discovery"
@@ -66,13 +87,29 @@ export const ShowToast: VoidFunctionComponent = () => {
                     onClick={() => showToast('discovery', 'A discovery message!')}
                 />
             </DesignSystem>
+        </>
+    );
+};
+
+export const Confirmation: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
             <DesignSystem theme={successCustomization}>
                 <Button
-                    label="Success"
+                    label="Confirmation"
                     buttonType="primary"
                     onClick={() => showToast('success', 'User profile updated')}
                 />
             </DesignSystem>
+        </>
+    );
+};
+
+export const Warning: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
             <DesignSystem theme={warningCustomization}>
                 <Button
                     label="Warning"
@@ -80,8 +117,16 @@ export const ShowToast: VoidFunctionComponent = () => {
                     onClick={() => showToast('warning', 'Your license is about to expire')}
                 />
             </DesignSystem>
+        </>
+    );
+};
+
+export const Error: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
             <Button
-                label="Alert"
+                label="Error"
                 buttonType="destructive"
                 onClick={() => showToast('alert', 'Unable to delete user')}
             />

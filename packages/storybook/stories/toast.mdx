@@ -1,0 +1,69 @@
+import { useToast } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as ToastStories  from './toast.stories';
+
+<Meta title="Components/Toast/Doc" />
+
+# Toast
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Toasts are time-based notifications that provide non-disruptive feedback about non-critical information. They are intended to be noticed without disrupting the user experience or requiring any action [1]. The content shown in these messages are helpful to the user but not as important to break the users current workflow and divert their complete attention to that message [8].
+<Canvas of={ToastStories.Default} />
+
+## Usage
+
+### When to use
+- Use when the system provides some information to the user on its own [9].
+- Use to notify a user of an action they have taken by providing visual feedback [9].
+- Use to display one or two-line non-critical messages that do not necessarily require user interaction.
+
+### When not to use
+- Do not use as the primary notification method, as it typically is time-bound [10].
+- Do not use when demanding a user response or input. Instead, opt for notifications that explicitly guide users on the necessary actions [11].
+- Do not use for batch updates or a collection of information. Too many toasts can quickly overwhelm users [11].
+
+## Variants
+
+### Neutral
+The Neutral toast includes an informational icon to help people with color vision impairment discern the tone of the message [1]. For toasts informing about an ongoing action, the use of an ellipsis at the end of each formulation is necessary. This addition allows the user to anticipate an upcoming update or event [4]. It is also possible to reveal general information with an informational toast.
+<Canvas of={ToastStories.Neutral} />
+
+### Confirmation
+The confirmation toast uses the positive semantic color (green) and has a check icon to help people with color vision impairment discern the tone of the message. It is used to inform a user of a successful action or completion of a task [1]. The confirmation messages that users see after completing an action are one of the most important responses they expect [2]. Above all, they should reassure. The message confirms to the user that the action was successful and that everything is in order [3].
+<Canvas of={ToastStories.Confirmation} />
+
+### Warning
+The warning toast uses the semantic color (yellow) and has a warning icon to help people with color vision impairment discern the tone of the message. It is used to indicate a warning.
+<Canvas of={ToastStories.Warning} />
+
+### Error
+The error toast uses the negative semantic color (red) and has an error icon to help people with color vision impairment discern the tone of the message. This is used to show an error or failure [1]. Error messages that are not properly worded can be the last straw that will cause users to give up, especially if the messages are confusing, intimidating, or make them feel uncomfortable [2]. The message should help the user achieve their goal in some way [3].
+> **Avoid using toast for error messages!**
+Although error toast is still available, we discourage its use. Toast messages are normally too short to adequately explain what went wrong and how to fix the problem. Because the toast component appears at the bottom of the screen and disappears after few seconds, it can easily be missed. Reserve toast for errors not caused by users, like a connection timed out [5]. 
+<Canvas of={ToastStories.Error} />
+
+### Discovery
+<Canvas of={ToastStories.Discovery} />
+
+## Properties
+<ArgTypes of={useToast} />
+
+
+## References
+1. [https://spectrum.adobe.com/page/toast/#Content-standards](https://spectrum.adobe.com/page/toast/#Content-standards)
+2. YIFRAH, K. (2020). « UX WRITING: Le guide de la microcopie » 
+3. PODMAJERSKY, T. (2023). UX writing : How To Use Words As A Design Power Tool », Interaction Design Foundation
+4. [https://www.grammarly.com/blog/ellipsis/?gclid=Cj0KCQiAn4SeBhCwARIsANeF9DLd99A5maEkfaISppalBDmQqPRdoRRcb3YMZs_RbOBfLq3sxbVAsJYaAlmVEALw_wcB&gclsrc=aw.ds](https://www.grammarly.com/blog/ellipsis/?gclid=Cj0KCQiAn4SeBhCwARIsANeF9DLd99A5maEkfaISppalBDmQqPRdoRRcb3YMZs_RbOBfLq3sxbVAsJYaAlmVEALw_wcB&gclsrc=aw.ds)
+5. [https://polaris.shopify.com/components/toast](https://polaris.shopify.com/components/toast)
+6. [https://m1.material.io/components/snackbars-toasts.html](https://m1.material.io/components/snackbars-toasts.html)
+7. [https://carbondesignsystem.com/patterns/notification-pattern/#:~:text=There are two major use cases for notifications%3A task-generated and system-generated](https://carbondesignsystem.com/patterns/notification-pattern/#:~:text=There%20are%20two%20major%20use%20cases%20for%20notifications%3A%20task%2Dgenerated%20and%20system%2Dgenerated)
+8. [https://ux.stackexchange.com/questions/91406/what-is-the-difference-between-alert-notification-banner-and-toast-message/91420#91420](https://ux.stackexchange.com/questions/91406/what-is-the-difference-between-alert-notification-banner-and-toast-message/91420#91420)
+9. [https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/](https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/)
+10. [https://bootcamp.uxdesign.cc/toast-notifications-how-to-make-it-efficient-400cab6026e9](https://bootcamp.uxdesign.cc/toast-notifications-how-to-make-it-efficient-400cab6026e9)
+11. [https://arounda.agency/blog/what-is-a-toast-notification](https://arounda.agency/blog/what-is-a-toast-notification)
