@@ -1,0 +1,95 @@
+import { Lozenge } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as LozengeStories  from './lozenge.stories';
+
+<Meta title="Components/Lozenge/Doc" />
+
+# Lozenge
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Lozenge is a notification component that allows users to easily identify and understand the status of items by using colour and emphasis.
+<Canvas of={LozengeStories.Default} />
+
+## Usage
+
+### When to use 
+- Use when you have to display a status. [2]
+
+### When not to use 
+- Do not use lozenges to categorize elements in a page; use the Tag component instead.
+- Do not use lozenges to show counts or numerical figures; use thee Badge instead [4].
+- Do not use lozenges as clickable elements.
+- Do not use multiple lozenge components for one element as it can confuse users and dilute their visual impact.
+
+## Variants
+
+### Neutral
+Use `neutral` lozenges to represent that no activity is ongoing yet.
+
+Examples:
+- To do
+- Unavailable
+- Not started
+<Canvas of={LozengeStories.Neutral} />
+
+### Informative
+Use `informative` lozenges to represent that an activity is ongoing.
+
+Examples:
+- Pending
+- In progress
+<Canvas of={LozengeStories.Informative} />
+
+### Success
+Use `success` lozenges to represent a constructive or favorable outcome.
+
+Examples:
+- Completed
+- Approved
+- Resolved
+<Canvas of={LozengeStories.Success} />
+
+### Warning
+Use `warning` lozenges to notify that users need to take notice or action.
+
+Examples:
+- Blocked
+- Missing
+- To update
+<Canvas of={LozengeStories.Warning} />
+
+### Alert
+Use `alert` lozenges to represent an unfavourable outcome.
+
+Examples:
+- Rejected
+- Deleted
+- Failed
+<Canvas of={LozengeStories.Alert} />
+
+### Discovery
+Use `discovery` lozenges to notify users about something new.
+
+- The duration for displaying the "new" or "beta" lozenge in the interface varies based on the update's importance and user adaptation, typically lasting a few days to weeks.
+
+Examples:
+- New
+- Beta
+<Canvas of={LozengeStories.Discovery} />
+
+## Properties
+<ArgTypes of={Lozenge} />
+
+## References
+1. [https://www.npmjs.com/package/@atlaskit/lozenge/v/3.4.1?activeTab=readme](https://www.npmjs.com/package/@atlaskit/lozenge/v/3.4.1?activeTab=readme)
+2. [https://atlassian.design/components/lozenge/usage](https://atlassian.design/components/lozenge/usage)
+3. [https://atlassian.design/components/lozenge/examples](https://atlassian.design/components/lozenge/examples)
+4. [https://axiom-design-docs.netlify.app/lozenges](https://axiom-design-docs.netlify.app/lozenges)
+
+
