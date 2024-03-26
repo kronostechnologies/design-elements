@@ -11,11 +11,11 @@ import { DesktopDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Toggletip',
+    title: 'Components/Toggletip/Stories',
     component: Toggletip,
 };
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <Toggletip desktopPlacement="left">Toggletip Content</Toggletip>
 );
 
