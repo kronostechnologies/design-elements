@@ -66,6 +66,7 @@ const StyledSortButtonIcon = styled(SortButtonIcon)`
 function getHeading<TData extends object, TValue>(
     header: CustomHeader<TData, TValue>,
 ): ReactElement {
+    const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
     const currentSort = header.column.getIsSorted();
     let sortState: SortState = 'none';
 
@@ -87,6 +88,7 @@ function getHeading<TData extends object, TValue>(
             <StyledHeader
                 aria-label={header.column.columnDef.headerAriaLabel}
                 aria-sort={sortState}
+                colSpan={colSpan}
                 key={header.id}
                 className={header.column.columnDef.className ?? ''}
                 scope="col"
@@ -113,6 +115,7 @@ function getHeading<TData extends object, TValue>(
     return (
         <StyledHeader
             aria-label={header.column.columnDef.headerAriaLabel}
+            colSpan={colSpan}
             key={header.id}
             className={header.column.columnDef.className ?? undefined}
             scope="col"
