@@ -329,15 +329,15 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-secondary-inverted-focus-text-color': 'color-alert-20',
     // Secondary destructive inverted disabled
     'button-destructive-secondary-inverted-disabled-background-color': 'transparent-100',
-    'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-70',
-    'button-destructive-secondary-inverted-disabled-text-color': 'color-alert-70',
+    'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-20',
+    'button-destructive-secondary-inverted-disabled-text-color': 'color-alert-20',
 
     // Tertiary destructive
     'button-destructive-tertiary-background-color': 'transparent-100',
     'button-destructive-tertiary-border-color': 'transparent-100',
     'button-destructive-tertiary-text-color': 'color-alert-50',
     // Tertiary destructive hover
-    'button-destructive-tertiary-hover-background-color': 'transparent-100',
+    'button-destructive-tertiary-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-hover-border-color': 'transparent-100',
     'button-destructive-tertiary-hover-text-color': 'color-alert-70',
     // Tertiary destructive focus
@@ -354,7 +354,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-inverted-border-color': 'transparent-100',
     'button-destructive-tertiary-inverted-text-color': 'color-alert-50',
     // Tertiairy destructive inverted hover
-    'button-destructive-tertiary-inverted-hover-background-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-destructive-tertiary-inverted-hover-text-color': 'color-alert-70',
     // Tertiairy destructive inverted focus
@@ -364,7 +364,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     // Tertiairy destructive inverted disabled
     'button-destructive-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-inverted-disabled-border-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-disabled-text-color': 'color-alert-70',
+    'button-destructive-tertiary-inverted-disabled-text-color': 'color-alert-20',
 
     // Search button
     'button-search-background-color': 'color-white',
