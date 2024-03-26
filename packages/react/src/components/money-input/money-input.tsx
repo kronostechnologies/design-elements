@@ -1,6 +1,8 @@
 import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps } from '../../hooks/use-aria';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput } from '../text-input/text-input';
@@ -24,7 +26,8 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-interface Props {
+interface MoneyInputProps extends AriaLabelsProps {
+    id?: string
     className?: string;
     disabled?: boolean;
     required?: boolean;
@@ -33,7 +36,6 @@ interface Props {
      * @default Invalid number.
      */
     validationErrorMessage?: string;
-    label?: string;
     value?: number | null;
     /**
      * Sets input locale and changes visual format accordingly
@@ -65,11 +67,15 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export const MoneyInput: VoidFunctionComponent<Props> = ({
+export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
+    id: providedId,
     className,
     required,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     onChange,
     precision = 2,
     value = null,
@@ -81,6 +87,7 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
 }) => {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
+    const fieldId = useId(providedId);
     const language: Language = locale.split('-')[0] as Language;
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
@@ -143,6 +150,13 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     return (
         <InputWrapper language={language}>
             <TextInput
+                id={fieldId}
+                label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
+                hint={hint}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 className={className}
                 required={required}
                 disabled={disabled}
@@ -150,13 +164,10 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
                 type="text"
                 inputMode="numeric"
                 value={displayValue}
-                label={label}
                 placeholder="$"
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-                hint={hint}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </InputWrapper>

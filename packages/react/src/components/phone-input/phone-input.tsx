@@ -10,7 +10,9 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps } from '../../hooks/use-aria';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { TextInput } from '../text-input/text-input';
 import {
@@ -21,12 +23,12 @@ import {
 import { formatFromPattern, removeDigitOnMaskCharRemoval, removeNonDigits } from './phone-input-value-formater';
 import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
 
-interface PhoneInputProps {
+interface PhoneInputProps extends AriaLabelsProps {
+    id?: string;
     pattern: string;
     defaultValue?: string;
     required?: boolean;
     disabled?: boolean;
-    label?: string;
     hint?: string;
     name?: string;
 }
@@ -68,16 +70,21 @@ function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMa
 }
 
 export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
+    id: providedId,
     pattern,
     defaultValue,
     required,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     hint,
     name,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
+    const fieldId = useId(providedId);
     const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
     const formattedDefaultValue = useMemo(
         () => formatDefaultValue(defaultValue ?? '', pattern, phoneNumberMaxLength),
@@ -216,6 +223,12 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 <span>{phoneInputMaskValue}</span>
             </MaskContainer>
             <TextInput
+                id={fieldId}
+                label={label}
+                ariaLabel={ariaLabel}
+                ariaLabelledBy={ariaLabelledBy}
+                ariaDescribedBy={ariaDescribedBy}
+                hint={hint}
                 data-testid="phone-text-input"
                 ref={inputRef}
                 type="tel"
@@ -223,8 +236,6 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 value={phoneInputValue}
                 required={required}
                 disabled={disabled}
-                hint={hint}
-                label={label}
                 onChange={handleChange}
                 onMouseUp={handleMouseUp}
                 onKeyDown={handleKeyDown}

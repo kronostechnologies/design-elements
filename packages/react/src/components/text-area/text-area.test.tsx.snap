@@ -117,7 +117,7 @@ input + .c1 {
 
 <div
   class="c0"
-  data-testid="container"
+  data-testid="field-container"
 >
   <label
     class="c1 c2"
@@ -127,6 +127,8 @@ input + .c1 {
     Comment (required)
   </label>
   <textarea
+    aria-label="Comment"
+    aria-labelledby="uuid1_label"
     class="c3"
     data-testid="textarea"
     disabled=""
@@ -256,7 +258,7 @@ input + .c1 {
 
 <div
   class="c0"
-  data-testid="container"
+  data-testid="field-container"
 >
   <label
     class="c1 c2"
@@ -266,6 +268,8 @@ input + .c1 {
     Comment (required)
   </label>
   <textarea
+    aria-label="Comment"
+    aria-labelledby="uuid1_label"
     class="c3"
     data-testid="some-data-testid"
     id="uuid1"

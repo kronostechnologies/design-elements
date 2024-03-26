@@ -355,6 +355,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
       %
     </span>
     <input
+      aria-describedby="uuid1_invalid"
       class="c5"
       data-testid="numeric-input"
       id="uuid1"

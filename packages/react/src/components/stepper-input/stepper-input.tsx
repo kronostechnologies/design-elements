@@ -3,14 +3,14 @@ import {
     DetailedHTMLProps,
     InputHTMLAttributes,
     RefObject,
-    useMemo,
     useRef,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
@@ -28,7 +28,7 @@ interface StyledInputProps {
 }
 
 const StyledInput = styled.input<StyledInputProps>`
-    ${responsiveInputsStyle}
+    ${responsiveInputsStyle};
 
     border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
     height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
@@ -51,17 +51,16 @@ type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLI
 
 type Value = undefined | number | null;
 
-interface StepperInputProps extends PartialStepperInputProps {
+interface StepperInputProps extends PartialStepperInputProps, AriaLabelsProps {
     defaultValue?: number;
     hint?: string;
+    valid?: boolean;
+    validationErrorMessage?: string;
     id?: string;
-    label?: string;
     max?: number;
     min?: number;
     noMargin?: boolean;
     tooltip?: TooltipProps;
-    valid?: boolean;
-    validationErrorMessage?: string;
     value?: Value;
 
     onChange?(value: Value): void
@@ -73,11 +72,14 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
 }
 
 export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
+    id: providedId,
     defaultValue,
     disabled,
     hint,
-    id,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     max,
     min,
     noMargin,
@@ -93,7 +95,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const fieldId = useId(providedId);
 
     function handleIncrement(): void {
         const valueBefore = Number(inputRef.current?.value);
@@ -125,11 +127,21 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         }
     };
 
+    const { processedLabels } = useAriaLabels({
+        inputId: fieldId,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        hasHint: !!hint,
+        isValid: valid,
+    });
+
     return (
         <FieldContainer
             fieldId={fieldId}
             hint={hint}
-            label={label}
+            label={processedLabels.label}
             tooltip={tooltip}
             noMargin={noMargin}
             valid={valid}
@@ -137,6 +149,9 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         >
             <Wrapper>
                 <StyledInput
+                    aria-label={processedLabels.ariaLabel}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     data-testid="stepper-input"
                     defaultValue={defaultValue}
                     device={device}

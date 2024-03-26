@@ -79,7 +79,7 @@ describe('TextArea', () => {
         getByTestId(wrapper, 'textarea')
             .simulate('change', { currentTarget: { value: 'This text is longer than input length' } });
 
-        const container = getByTestId(wrapper, 'container');
+        const container = getByTestId(wrapper, 'field-container');
         const charCounter = getByTestId(wrapper, 'char-counter');
         expect(container.prop('valid')).toBe(false);
         expect(charCounter.prop('valid')).toBe(false);

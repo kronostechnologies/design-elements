@@ -1,14 +1,14 @@
-import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, FocusEvent, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -27,9 +27,9 @@ const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
     line-height: 1.25rem;
 `;
 
-export interface TextAreaProps {
+export interface TextAreaProps extends AriaLabelsProps {
+    id?: string;
     className?: string;
-    label: string;
     tooltip?: TooltipProps;
     defaultValue?: string;
     disabled?: boolean;
@@ -65,6 +65,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
 }
 
 export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
+    id: providedId,
     className,
     noMargin,
     onBlur,
@@ -74,6 +75,9 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     defaultValue,
     disabled,
     label,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     placeholder,
     required,
     tooltip,
@@ -85,8 +89,8 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     const { t } = useTranslation('text-area');
     const [validity, setValidity] = useState(true);
     const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
-    const idTextArea = useMemo(uuid, []);
-    const idCounter = useMemo(uuid, []);
+    const idTextArea = useId(providedId);
+    const idCounter = `${idTextArea}_counter`;
     const dataAttributes = useDataAttributes(otherProps);
 
     function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
@@ -130,19 +134,26 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
-    const ariaDescribedBy = useAriaConditionalIds([
-        { id: `${idTextArea}_hint`, include: !!hint },
-        { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
-        { id: idCounter, include: !!maxLength },
-    ]);
+    const { processedLabels } = useAriaLabels({
+        inputId: idTextArea,
+        label,
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+        hasHint: !!hint,
+        isValid: validity && !!getValidationErrorMessage(),
+        additionalAriaDescribedBy: [
+            { id: idCounter, include: !!maxLength },
+        ],
+    });
 
     return (
         <FieldContainer
-            data-testid="container"
+            data-testid="field-container"
             className={className}
             noMargin={noMargin}
             fieldId={idTextArea}
-            label={label}
+            label={processedLabels.label}
             required={required}
             tooltip={tooltip}
             hint={hint}
@@ -150,11 +161,13 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             validationErrorMessage={getValidationErrorMessage()}
         >
             <StyledTextArea
+                aria-label={processedLabels.ariaLabel}
+                aria-labelledby={processedLabels.ariaLabelledBy}
+                aria-describedby={processedLabels.ariaDescribedBy}
                 data-testid="textarea"
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={ariaDescribedBy}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}

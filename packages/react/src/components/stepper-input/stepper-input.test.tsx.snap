@@ -243,6 +243,8 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-label="test"
+      aria-labelledby="uuid1_label"
       class="c4"
       data-testid="stepper-input"
       disabled=""
@@ -575,6 +577,9 @@ input + .c1 {
     class="c5"
   >
     <input
+      aria-describedby="uuid1_invalid"
+      aria-label="test"
+      aria-labelledby="uuid1_label"
       class="c6"
       data-testid="stepper-input"
       id="uuid1"
@@ -766,6 +771,8 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-label="test"
+      aria-labelledby="uuid1_label"
       class="c4"
       data-testid="stepper-input"
       id="uuid1"
@@ -1019,6 +1026,8 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-label="test"
+      aria-labelledby="uuid1_label"
       class="c4"
       data-testid="stepper-input"
       id="uuid1"

@@ -1,11 +1,12 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
+import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { AriaLabelsProps, useAriaLabels } from '../../hooks/use-aria';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -116,10 +117,9 @@ const SearchSubmit = styled(SearchButton)`
     }
 `;
 
-export interface CommonSearchProps {
+export interface CommonSearchProps extends AriaLabelsProps {
     id?: string;
     disabled?: boolean;
-    label?: string;
     className?: string;
     defaultValue?: string;
     value?: string;
@@ -140,8 +140,8 @@ export interface SearchInputProps extends CommonSearchProps {
 }
 
 export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
-    defaultValue,
     id: providedId,
+    defaultValue,
     onChange,
     onReset,
     onSearch,
@@ -150,7 +150,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     ...props
 }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const id = useId(providedId);
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
@@ -178,8 +178,16 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     }, [searchCurrentValue]);
 
     const {
-        className, disabled, hasButton, hasIcon, label, placeholder,
+        className, disabled, hasButton, hasIcon, label, ariaLabel, ariaLabelledBy, ariaDescribedBy, placeholder,
     } = props;
+
+    const { processedLabels } = useAriaLabels({
+        inputId: id,
+        label: label || t('label'),
+        ariaLabel,
+        ariaLabelledBy,
+        ariaDescribedBy,
+    });
 
     return (
         <SearchWrapper className={className}>
@@ -187,11 +195,15 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                 {hasIcon && (
                     <Label forId={id} data-testid="search-icon">
                         <IcoSearch disabled={disabled} />
-                        <VisuallyHidden>{label || t('label')}</VisuallyHidden>
+                        <VisuallyHidden>{processedLabels.label}</VisuallyHidden>
                     </Label>
                 )}
 
                 <Input
+                    id={id}
+                    aria-label={processedLabels.ariaLabel}
+                    aria-labelledby={processedLabels.ariaLabelledBy}
+                    aria-describedby={processedLabels.ariaDescribedBy}
                     ref={inputRef}
                     autoComplete="on"
                     disabled={disabled}
@@ -201,7 +213,6 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     hasButton={!!hasButton}
                     hasIcon={!!hasIcon}
                     hasReset={!!onReset}
-                    id={id}
                     placeholder={placeholder}
                     type="search"
                     defaultValue={defaultValue}
