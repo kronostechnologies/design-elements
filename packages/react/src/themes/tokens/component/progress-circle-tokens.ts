@@ -13,7 +13,7 @@ export type ProgressCircleTokenMap = {
 };
 
 export const defaultProgressCircleTokens: ProgressCircleTokenMap = {
-    'progress-circle-empty-track-color': 'color-empty-bg',
-    'progress-circle-label-text-color': 'color-text',
-    'progress-circle-result-text-color': 'color-text',
+    'progress-circle-empty-track-color': 'color-bg-empty',
+    'progress-circle-label-text-color': 'color-content',
+    'progress-circle-result-text-color': 'color-content',
 };

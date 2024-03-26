@@ -177,7 +177,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     const customStyles = {
         overlay: {
             alignItems: 'center',
-            backgroundColor: theme.tokens['modal-overlay-background-color'],
+            backgroundColor: theme.component['modal-blanket-background-color'],
             display: 'flex',
             justifyContent: 'center',
             zIndex: 10000,

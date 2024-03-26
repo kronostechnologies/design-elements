@@ -26,25 +26,25 @@ export type ProgressTrackerTokenMap = {
 };
 
 export const defaultProgressTrackerTokens: ProgressTrackerTokenMap = {
-    'progress-tracker-notification-badge-color': 'color-text-inverse',
-    'progress-tracker-notification-badge-fill-color': 'color-feedback-bg-alert',
+    'progress-tracker-notification-badge-color': 'color-content-inverse',
+    'progress-tracker-notification-badge-fill-color': 'color-feedback-bg-alert-bold',
 
-    'progress-tracker-bridge-empty-background-color': 'color-empty-bg',
-    'progress-tracker-bridge-filled-background-color': 'color-indicator-bg',
+    'progress-tracker-bridge-empty-background-color': 'color-bg-empty',
+    'progress-tracker-bridge-filled-background-color': 'color-bg-indicator',
     // TO-DO
-    'progress-tracker-step-todo-text-color': 'color-text',
+    'progress-tracker-step-todo-text-color': 'color-content',
     'progress-tracker-step-todo-background-color': 'color-bg',
     // Uncompleted
     'progress-tracker-step-uncompleted-border-color': 'color-neutral-30',
-    'progress-tracker-step-uncompleted-text-color': 'color-text',
-    'progress-tracker-step-uncompleted-label-text-color': 'color-text-alternate',
+    'progress-tracker-step-uncompleted-text-color': 'color-content',
+    'progress-tracker-step-uncompleted-label-text-color': 'color-content-subtle',
     // Active
-    'progress-tracker-step-active-border-color': 'color-indicator-bg',
-    'progress-tracker-step-active-text-color': 'color-text-selected',
-    'progress-tracker-step-active-label-text-color': 'color-text-selected',
+    'progress-tracker-step-active-border-color': 'color-bg-indicator',
+    'progress-tracker-step-active-text-color': 'color-content-selected',
+    'progress-tracker-step-active-label-text-color': 'color-content-selected',
     // Completed
-    'progress-tracker-step-completed-background-color': 'color-indicator-bg',
-    'progress-tracker-step-completed-border-color': 'color-indicator-bg',
-    'progress-tracker-step-completed-text-color': 'color-text-inverse',
+    'progress-tracker-step-completed-background-color': 'color-bg-indicator',
+    'progress-tracker-step-completed-border-color': 'color-bg-indicator',
+    'progress-tracker-step-completed-text-color': 'color-content-inverse',
     'progress-tracker-step-completed-label-text-color': 'color-brand-50',
 };

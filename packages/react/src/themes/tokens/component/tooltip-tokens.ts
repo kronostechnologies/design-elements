@@ -15,7 +15,7 @@ export type TooltipTokenMap = {
 
 export const defaultTooltipTokens: TooltipTokenMap = {
     'tooltip-popper-container-border-color': 'color-border-inverse',
-    'tooltip-popper-container-text-color': 'color-text-inverse',
-    'tooltip-popper-container-success-background-color': 'color-feedback-bg-success',
+    'tooltip-popper-container-text-color': 'color-content-inverse',
+    'tooltip-popper-container-success-background-color': 'color-feedback-bg-success-bold',
     'tooltip-popper-container-default-background-color': 'color-bg-inverse',
 };

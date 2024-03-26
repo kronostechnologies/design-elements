@@ -25,19 +25,19 @@ export type AccordionTokenMap = {
 };
 
 export const defaultAccordionTokens: AccordionTokenMap = {
-    'accordion-panel-background-color': 'color-bg-alternate-subtlest',
+    'accordion-panel-background-color': 'color-bg-isolated',
     'accordion-panel-border-color': 'color-border',
-    'accordion-panel-text-color': 'color-text',
+    'accordion-panel-text-color': 'color-content',
     'accordion-header-background-color': 'color-bg',
     'accordion-header-border-color': 'color-border',
-    'accordion-header-text-color': 'color-text',
+    'accordion-header-text-color': 'color-content',
     'accordion-header-hover-background-color': 'color-bg-hover',
-    'accordion-header-hover-border-color': 'color-interactive-border-hover',
-    'accordion-header-hover-text-color': 'color-text-hover',
+    'accordion-header-hover-border-color': 'color-border-hover',
+    'accordion-header-hover-text-color': 'color-content-hover',
     'accordion-header-disabled-background-color': 'color-bg-disabled',
     'accordion-header-disabled-border-color': 'color-border',
-    'accordion-header-disabled-text-color': 'color-text-disabled',
-    'accordion-header-disabled-svg-color': 'color-icon-disabled',
+    'accordion-header-disabled-text-color': 'color-content-disabled',
+    'accordion-header-disabled-svg-color': 'color-content-disabled',
     'accordion-header-focus-box-shadow-inset-color': 'color-brand-20',
     'accordion-header-focus-text-color': 'color-neutral-90',
 };

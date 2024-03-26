@@ -18,10 +18,10 @@ export type PaginationTokenMap = {
 
 export const defaultPaginationTokens: PaginationTokenMap = {
     'pagination-page-background-color': 'transparent-100',
-    'pagination-page-text-color': 'color-text-alternate',
+    'pagination-page-text-color': 'color-content-subtle',
     'pagination-page-hover-background-color': 'color-bg-hover',
     'pagination-page-selected-hover-background-color': 'color-bg-selected',
     'pagination-page-selected-background-color': 'color-bg-selected',
-    'pagination-page-selected-border-color': 'color-interactive-border-selected',
-    'pagination-page-selected-text-color': 'color-text-selected',
+    'pagination-page-selected-border-color': 'color-border-selected',
+    'pagination-page-selected-text-color': 'color-content-selected',
 };

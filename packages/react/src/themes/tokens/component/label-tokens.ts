@@ -11,5 +11,5 @@ export type LabelTokenMap = {
 };
 
 export const defaultLabelTokens: LabelTokenMap = {
-    'label-text-color': 'color-text',
+    'label-text-color': 'color-content',
 };

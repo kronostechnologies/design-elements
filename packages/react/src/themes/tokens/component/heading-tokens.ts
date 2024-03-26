@@ -12,6 +12,6 @@ export type HeadingTokenMap = {
 };
 
 export const defaultHeadingTokens: HeadingTokenMap = {
-    'heading-text-color': 'color-text',
-    'heading-subtitle-text-color': 'color-text-alternate',
+    'heading-text-color': 'color-content',
+    'heading-subtitle-text-color': 'color-content-subtle',
 };

@@ -17,11 +17,11 @@ export type LinkTokenMap = {
 };
 
 export const defaultLinkTokens: LinkTokenMap = {
-    'external-link-visited-text-color': 'color-link-text-visited',
-    'skip-link-text-color': 'color-link-text',
+    'external-link-visited-text-color': 'color-link-content-visited',
+    'skip-link-text-color': 'color-link-content',
     'skip-link-focus-background-color': 'color-bg',
-    'route-link-visited-text-color': 'color-link-text-visited',
-    'route-link-text-color': 'color-link-text',
-    'route-link-disabled-text-color': 'color-link-text-disabled',
-    'route-link-hover-text-color': 'color-link-text-hover',
+    'route-link-visited-text-color': 'color-link-content-visited',
+    'route-link-text-color': 'color-link-content',
+    'route-link-disabled-text-color': 'color-link-content-disabled',
+    'route-link-hover-text-color': 'color-link-content-hover',
 };

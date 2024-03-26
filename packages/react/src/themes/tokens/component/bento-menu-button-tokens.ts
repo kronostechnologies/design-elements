@@ -11,5 +11,5 @@ export type BentoMenuButtonTokenMap = {
 };
 
 export const defaultBentoMenuButtonTokens: BentoMenuButtonTokenMap = {
-    'bento-menu-seperator-color': 'color-separator',
+    'bento-menu-seperator-color': 'color-border',
 };
