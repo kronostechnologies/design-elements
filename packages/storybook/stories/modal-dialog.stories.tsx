@@ -6,13 +6,13 @@ import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 // eslint-disable-next-line import/no-default-export
 export default {
-    title: 'Components/Modal Dialog',
+    title: 'Components/Modal/Stories',
     component: ModalDialog,
 };
 
 type Story = StoryObj<typeof ModalDialog>;
 
-export const Normal: Story = {
+export const Default: Story = {
     render: () => {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
