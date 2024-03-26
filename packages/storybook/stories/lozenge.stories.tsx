@@ -42,10 +42,10 @@ export const Success: Story = () => (
 );
 
 export const Alert: Story = () => (
-     <VariantsContainer>
-         <Lozenge variant="alert">alert</Lozenge>
+    <VariantsContainer>
+        <Lozenge variant="alert">alert</Lozenge>
         <Lozenge subtle variant="alert">alert</Lozenge>
-         <Lozenge icon="alertOctagon" variant="alert">alert</Lozenge>
+        <Lozenge icon="alertOctagon" variant="alert">alert</Lozenge>
         <Lozenge subtle icon="alertOctagon" variant="alert">alert</Lozenge>
      </VariantsContainer>
 );
