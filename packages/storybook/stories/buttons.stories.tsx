@@ -24,6 +24,7 @@ export const Buttons: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" />
         <Button label="Destructive" buttonType="destructive" />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" />
+        <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" />
     </>
 );
 
@@ -34,6 +35,7 @@ export const Disabled: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" disabled />
         <Button label="Destructive" buttonType="destructive" disabled />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" disabled />
+        <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" disabled />
     </>
 );
 
@@ -44,6 +46,7 @@ export const Inverted: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" inverted />
         <Button label="Destructive" buttonType="destructive" inverted />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted />
+        <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" inverted />
     </InvertedBackground>
 );
 export const InvertedDisabled: Story = () => (
@@ -53,6 +56,7 @@ export const InvertedDisabled: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" inverted disabled />
         <Button label="Destructive" buttonType="destructive" inverted disabled />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted disabled />
+        <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" inverted disabled />
     </InvertedBackground>
 );
 
@@ -92,6 +96,11 @@ export const WithIcons: Story = () => (
             Destructive Secondary
             <ChevronDownIcon />
         </Button>
+        <Button buttonType="destructive-tertiary">
+            <PlusIcon />
+            Destructive Tertiary
+            <ChevronDownIcon />
+        </Button>
     </>
 );
 
@@ -102,5 +111,6 @@ export const Small: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" size="small" />
         <Button label="Destructive" buttonType="destructive" size="small" />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" size="small" />
+        <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" size="small" />
     </>
 );

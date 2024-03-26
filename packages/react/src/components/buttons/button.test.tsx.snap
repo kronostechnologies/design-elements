@@ -286,8 +286,8 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
 
 .c1:disabled {
   background-color: transparent;
-  border-color: #7B1A15;
-  color: #7B1A15;
+  border-color: #F99D99;
+  color: #F99D99;
 }
 
 <button
