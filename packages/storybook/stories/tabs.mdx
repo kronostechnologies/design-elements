@@ -1,0 +1,50 @@
+import { Tabs } from "@equisoft/design-elements-react";
+import { ArgTypes, Meta, Canvas, Stories } from '@storybook/blocks';
+import * as TabsStories from './tabs.stories';
+
+<Meta title="Components/Tabs/Doc" />
+
+# Tabs
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Tabs are a disclosure component that allows the user to alternate between different contents that are parts of the same context [1]. 
+<Canvas of={TabsStories.Global} />
+
+## Usage
+
+### When to use
+- Use tabs to alternate between views within the same context, not to navigate to different areas. This is the single most important point because staying in place while alternating views is the reason we have tabs in the first place [1].
+- Logically chunk the content behind the tabs so users can easily predict what they'll find when they select a given tab [1].
+- Use tab only when users don't need to see content from multiple tabs simultaneously [1].
+- Use tabs that are similar in nature, and that have the same hierarchy level. If the tabs are significantly dissimilar, users will interpret them as site navigation [1].
+
+### When not to use
+- Tabs should never be used for navigation [4].
+- Tabs should not be used to indicate progress. Use the progress indicator instead [4].
+- Tabs should not be used if the user is comparing information in two groups, as this would result in the user having to click back and forth to complete a task [4].
+
+## Variants
+
+### Global Tabs
+<Canvas of={TabsStories.Global} />
+
+### Section Tabs
+<Canvas of={TabsStories.Section} />
+
+
+## Properties
+<ArgTypes of={Tabs} />
+
+## References
+1. [https://www.nngroup.com/articles/tabs-used-right/](https://www.nngroup.com/articles/tabs-used-right/)
+2. [https://uxdworld.com/2022/10/05/tabs-navigation-design-best-practices/#:~:text=Tabs are UI controls used,same hierarchy in the application](https://uxdworld.com/2022/10/05/tabs-navigation-design-best-practices/#:~:text=Tabs%20are%20UI%20controls%20used,same%20hierarchy%20in%20the%20application)
+3. [https://polaris.shopify.com/components/navigation/tabs](https://polaris.shopify.com/components/navigation/tabs)
+4. [https://carbondesignsystem.com/components/tabs/usage/](https://carbondesignsystem.com/components/tabs/usage/)
+5. [https://m3.material.io/components/tabs/guidelines](https://m3.material.io/components/tabs/guidelines)
+6. [https://m2.material.io/components/tabs#behavior](https://m2.material.io/components/tabs#behavior)
