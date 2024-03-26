@@ -84,6 +84,7 @@ export type AliasTokens =
     | 'color-border'
     | 'color-border-alternate'
     | 'color-border-inverse'
+    | 'color-border-inverse-hover'
     | 'color-overlay-border'
     | 'color-interactive-border'
     | 'color-interactive-border-alternate'
@@ -111,8 +112,8 @@ export type AliasTokens =
     | 'color-content'
     | 'color-content-alternate'
     | 'color-content-inverse'
+    | 'color-content-inverse-hover'
     | 'color-content-disabled'
-    | 'color-content-brand'
     | 'color-content-hover'
     | 'color-content-selected'
     | 'color-content-error'
@@ -140,8 +141,8 @@ export type AliasTokens =
     | 'color-text'
     | 'color-text-alternate'
     | 'color-text-inverse'
+    | 'color-text-inverse-hover'
     | 'color-text-disabled'
-    | 'color-text-brand'
     | 'color-text-hover'
     | 'color-text-selected'
     | 'color-text-error'
@@ -164,8 +165,8 @@ export type AliasTokens =
     | 'color-icon'
     | 'color-icon-alternate'
     | 'color-icon-inverse'
+    | 'color-icon-inverse-hover'
     | 'color-icon-disabled'
-    | 'color-icon-brand'
     | 'color-icon-hover'
     | 'color-icon-selected'
     | 'color-icon-error'
@@ -251,8 +252,8 @@ export const defaultAliasTokens: AliasTokenMap = {
 
     'color-bg': 'color-white',
     'color-bg-disabled': 'color-neutral-05',
-    'color-bg-selected': 'color-brand-05',
     'color-bg-hover': 'color-neutral-15',
+    'color-bg-selected': 'color-brand-05',
     'color-bg-alternate-subtlest': 'color-neutral-02',
     'color-bg-alternate-subtle': 'color-neutral-05',
     'color-bg-alternate-disabled': 'color-neutral-15',
@@ -282,7 +283,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-border': 'color-neutral-15',
     'color-border-alternate': 'color-neutral-05',
     'color-border-inverse': 'color-white',
-    'color-overlay-border': 'color-neutral-50',
+    'color-border-inverse-hover': 'color-neutral-30',
     'color-interactive-border': 'color-neutral-65',
     'color-interactive-border-alternate': 'color-neutral-50',
     'color-interactive-border-hover': 'color-black',
@@ -291,6 +292,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-interactive-border-error': 'color-error',
 
     'color-separator': 'color-border',
+    'color-overlay-border': 'color-neutral-50',
     'color-border-focus-outside': 'color-brand-50',
     'color-border-focus-inside': 'color-brand-20',
     'color-border-focus-outside-inverse': 'color-border-focus-inside',
@@ -312,11 +314,11 @@ export const defaultAliasTokens: AliasTokenMap = {
 
     'color-content': 'color-neutral-90',
     'color-content-alternate': 'color-neutral-65',
-    'color-content-inverse': 'color-white',
     'color-content-hover': 'color-black',
     'color-content-disabled': 'color-neutral-30',
-    'color-content-brand': 'color-brand-70',
     'color-content-selected': 'color-brand-70',
+    'color-content-inverse': 'color-white',
+    'color-content-inverse-hover': 'color-neutral-30',
 
     'color-link-content': 'color-informative-50',
     'color-link-content-disabled': 'color-informative-20',
@@ -336,8 +338,8 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-text': 'color-content',
     'color-text-alternate': 'color-content-alternate',
     'color-text-inverse': 'color-content-inverse',
+    'color-text-inverse-hover': 'color-content-inverse-hover',
     'color-text-disabled': 'color-content-disabled',
-    'color-text-brand': 'color-content-brand',
     'color-text-hover': 'color-content-hover',
     'color-text-selected': 'color-content-selected',
     'color-text-error': 'color-content-error',
@@ -360,8 +362,8 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-icon': 'color-content',
     'color-icon-alternate': 'color-content-alternate',
     'color-icon-inverse': 'color-content-inverse',
+    'color-icon-inverse-hover': 'color-content-inverse-hover',
     'color-icon-disabled': 'color-content-disabled',
-    'color-icon-brand': 'color-content-brand',
     'color-icon-hover': 'color-content-hover',
     'color-icon-selected': 'color-content-selected',
     'color-icon-error': 'color-content-error',
