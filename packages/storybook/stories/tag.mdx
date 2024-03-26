@@ -1,0 +1,63 @@
+import { Tag } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as TagStories  from './tag.stories';
+
+
+<Meta title="Components/Tag/Doc" />
+
+# Tag
+
+## Table of contents
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Tags are components used to display categories or properties [1] AND to perform small actions like selecting, and filtering [4]. 
+<Canvas of={TagStories.Default} />
+
+## Usage
+
+### When to use 
+- Use to label, organize, or categorize objects [2].
+- Use to display counts [2].
+- Tags can also be used as a method of showing filtered data [3].
+- Use to quickly filter data.
+- Use to display more information, as a toggle-tip.
+
+### When not to use 
+- Do not use to display a status, use a Lozenge instead.
+- Do not use to display notifications, use a badge instead.
+- Do not use to display long text or long descriptions.
+
+## Variants
+
+### Default
+Default tags are the ones used to label and categorize objects. 
+<Canvas of={TagStories.Default} />
+
+### Removable
+Removable tags are often used to display selected filters or user inputs. 
+<Canvas of={TagStories.Removable} />
+
+### Clickable
+Clickable tags are generally used for quick filters [6]. 
+
+- Tapping on a clickable tag activates it and appends a leading checkmark icon to the starting edge of the tag label [6].
+- Write these tags with nouns that describe the category to **include** in the results. Avoid negative phrases like « Exclude configured » [6].
+<Canvas of={TagStories.Clickable} />
+
+### Expandable
+Coming soon!
+
+## Properties
+<ArgTypes of={Tag} />
+
+## References
+1. [https://ui-patterns.com/patterns/Tag](https://ui-patterns.com/patterns/Tag)
+2. [https://design.gs.com/components/tag](https://design.gs.com/components/tag)
+3. [https://carbondesignsystem.com/components/tag/usage/](https://carbondesignsystem.com/components/tag/usage/)
+4. [https://blog.prototypr.io/design-guide-classifying-items-db5b121985d](https://blog.prototypr.io/design-guide-classifying-items-db5b121985d)
+5. [https://ux.stackexchange.com/questions/103820/is-there-any-distinction-between-badges-labels-and-tags](https://ux.stackexchange.com/questions/103820/is-there-any-distinction-between-badges-labels-and-tags)
+6. [https://m3.material.io/components/chips/guidelines](https://m3.material.io/components/chips/guidelines)

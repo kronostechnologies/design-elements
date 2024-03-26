@@ -4,11 +4,11 @@ import { ReactElement, useRef, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Tag',
+    title: 'Components/Tag/Stories',
     component: Tag,
 };
 
-export const Normal: Story = (): ReactElement => {
+export const Default: Story = (): ReactElement => {
     const tags: TagValue[] = [
         { label: 'Tag 1', id: '1' },
         { label: 'Tag 2', id: '2' },
@@ -50,7 +50,7 @@ export const WithIcons: Story = (): ReactElement => {
     );
 };
 
-export const Deletable: Story = (): ReactElement => {
+export const Removable: Story = (): ReactElement => {
     const initialOptions: TagValue[] = [
         { label: 'Tag 1', id: 'tag1' },
         { label: 'Tag 2', id: 'tag2' },
