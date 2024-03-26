@@ -972,7 +972,6 @@ exports[`Table has header group columns 1`] = `
       </th>
       <th
         class="c3"
-        colspan="1"
         scope="col"
       >
         Group 2

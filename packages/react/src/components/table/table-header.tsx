@@ -64,15 +64,10 @@ const StyledSortButtonIcon = styled(SortButtonIcon)`
     margin-left: var(--spacing-1x);
 `;
 
-function isHeaderGroup<TData extends object, TValue>(header: CustomHeader<TData, TValue>): boolean {
-    const columns = header.column.columns;
-    return columns.length > 0;
-}
-
 function getHeading<TData extends object, TValue>(
     header: CustomHeader<TData, TValue>,
 ): ReactElement {
-    const colSpan = isHeaderGroup(header) ? header.colSpan : undefined;
+    const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
     const currentSort = header.column.getIsSorted();
     let sortState: SortState = 'none';
 
