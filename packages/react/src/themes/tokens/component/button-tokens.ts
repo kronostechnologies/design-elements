@@ -348,7 +348,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-disabled-border-color': 'transparent-100',
     'button-destructive-tertiary-disabled-text-color': 'color-alert-20',
-    
+
     // Tertiairy destructive inverted
     'button-destructive-tertiary-inverted-background-color': 'transparent-100',
     'button-destructive-tertiary-inverted-border-color': 'transparent-100',
