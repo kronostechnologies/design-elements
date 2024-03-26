@@ -86,11 +86,11 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
 AbstractButton.displayName = 'AbstractButton';
 
-export type ButtonType = 
+export type ButtonType =
     | 'primary'
     | 'secondary'
     | 'tertiary'
-    | 'destructive' 
+    | 'destructive'
     | 'destructive-secondary'
     | 'destructive-tertiary';
 
