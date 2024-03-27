@@ -254,25 +254,25 @@ const TodayButtonWrapper = styled.div`
 
 const CalendarButton = styled.button<CalendarButtonProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-background-color'] : theme.component['datepicker-calendar-button-background-color'])};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-border-color'] : theme.component['datepicker-calendar-button-border-color'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-background-color'] : theme.component['datepicker-calendar-toggle-button-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-border-color'] : theme.component['datepicker-calendar-toggle-button-border-color'])};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
-    color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-text-color'] : theme.component['datepicker-calendar-button-text-color'])};
+    color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-text-color'] : theme.component['datepicker-calendar-toggle-button-text-color'])};
     display: flex;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: center;
     width: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-background-color'] : theme.component['datepicker-calendar-button-hover-background-color'])};
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-border-color'] : theme.component['datepicker-calendar-button-hover-border-color'])};
-        color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-button-disabled-text-color'] : theme.component['datepicker-calendar-button-hover-text-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-background-color'] : theme.component['datepicker-calendar-toggle-button-hover-background-color'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-border-color'] : theme.component['datepicker-calendar-toggle-button-hover-border-color'])};
+        color: ${({ disabled, theme }) => (disabled ? theme.component['datepicker-calendar-toggle-button-disabled-text-color'] : theme.component['datepicker-calendar-toggle-button-hover-text-color'])};
     }
 
     ${focus};
     &:focus {
-        border: 1px solid ${({ theme }) => theme.component['datepicker-calendar-button-focus-border-color']};
+        border: 1px solid ${({ theme }) => theme.component['datepicker-calendar-toggle-button-focus-border-color']};
         z-index: 10;
     }
 

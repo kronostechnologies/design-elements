@@ -35,16 +35,16 @@ export type DatepickerTokens =
     | 'datepicker-input-disabled-border-color'
     | 'datepicker-input-disabled-text-color'
     | 'datepicker-input-focus-border-color'
-    | 'datepicker-calendar-button-background-color'
-    | 'datepicker-calendar-button-border-color'
-    | 'datepicker-calendar-button-text-color'
-    | 'datepicker-calendar-button-disabled-background-color'
-    | 'datepicker-calendar-button-disabled-border-color'
-    | 'datepicker-calendar-button-disabled-text-color'
-    | 'datepicker-calendar-button-hover-background-color'
-    | 'datepicker-calendar-button-hover-border-color'
-    | 'datepicker-calendar-button-hover-text-color'
-    | 'datepicker-calendar-button-focus-border-color';
+    | 'datepicker-calendar-toggle-button-background-color'
+    | 'datepicker-calendar-toggle-button-border-color'
+    | 'datepicker-calendar-toggle-button-text-color'
+    | 'datepicker-calendar-toggle-button-disabled-background-color'
+    | 'datepicker-calendar-toggle-button-disabled-border-color'
+    | 'datepicker-calendar-toggle-button-disabled-text-color'
+    | 'datepicker-calendar-toggle-button-hover-background-color'
+    | 'datepicker-calendar-toggle-button-hover-border-color'
+    | 'datepicker-calendar-toggle-button-hover-text-color'
+    | 'datepicker-calendar-toggle-button-focus-border-color';
 
 export type DatepickerTokenValue = AliasTokens | RefTokens;
 
@@ -86,14 +86,14 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-input-background-color': 'color-white',
     'datepicker-input-placeholder-disabled-text-color': 'color-neutral-30',
     'datepicker-input-disabled-text-color': 'color-neutral-30',
-    'datepicker-calendar-button-background-color': 'color-white',
-    'datepicker-calendar-button-border-color': 'color-neutral-65',
-    'datepicker-calendar-button-text-color': 'color-neutral-50',
-    'datepicker-calendar-button-disabled-background-color': 'color-neutral-05',
-    'datepicker-calendar-button-disabled-border-color': 'color-neutral-30',
-    'datepicker-calendar-button-disabled-text-color': 'color-neutral-30',
-    'datepicker-calendar-button-hover-background-color': 'color-neutral-15',
-    'datepicker-calendar-button-hover-border-color': 'color-neutral-90',
-    'datepicker-calendar-button-hover-text-color': 'color-neutral-90',
-    'datepicker-calendar-button-focus-border-color': 'color-brand-50',
+    'datepicker-calendar-toggle-button-background-color': 'color-white',
+    'datepicker-calendar-toggle-button-border-color': 'color-neutral-65',
+    'datepicker-calendar-toggle-button-text-color': 'color-neutral-50',
+    'datepicker-calendar-toggle-button-disabled-background-color': 'color-neutral-05',
+    'datepicker-calendar-toggle-button-disabled-border-color': 'color-neutral-30',
+    'datepicker-calendar-toggle-button-disabled-text-color': 'color-neutral-30',
+    'datepicker-calendar-toggle-button-hover-background-color': 'color-neutral-15',
+    'datepicker-calendar-toggle-button-hover-border-color': 'color-neutral-90',
+    'datepicker-calendar-toggle-button-hover-text-color': 'color-neutral-90',
+    'datepicker-calendar-toggle-button-focus-border-color': 'color-brand-50',
 };
