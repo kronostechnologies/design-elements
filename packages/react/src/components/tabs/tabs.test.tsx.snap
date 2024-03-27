@@ -101,7 +101,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 .c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -155,7 +155,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 .c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -544,7 +544,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 .c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -598,7 +598,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 .c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -994,7 +994,7 @@ exports[`Tabs matches snapshot 1`] = `
 .c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -1048,7 +1048,7 @@ exports[`Tabs matches snapshot 1`] = `
 .c10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c10:focus:not(:focus-visible) {

@@ -50,8 +50,8 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
         }
     `}
 
-    ${focus};
-    ${focusVisibleReset};
+    ${({ theme }) => focus({ theme }, false, undefined, true)};
+    ${({ theme }) => focusVisibleReset({ theme }, false)};
 `;
 
 const StyledButtonIcon = styled(Icon)`
