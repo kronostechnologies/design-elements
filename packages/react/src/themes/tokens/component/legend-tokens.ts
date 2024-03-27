@@ -12,6 +12,6 @@ export type LegendTokenMap = {
 };
 
 export const defaultLegendTokens: LegendTokenMap = {
-    'legend-item-bullet-color': 'color-brand-20',
+    'legend-item-bullet-color': 'color-bg-brand-subtle',
     'legend-item-description-text-color': 'color-content-subtle',
 };

@@ -94,7 +94,6 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
 
     &:focus {
         box-shadow: inset 0 0 0 2px ${({ theme }) => theme.component['accordion-header-focus-box-shadow-inset-color']};
-        color: ${({ theme }) => theme.component['accordion-header-focus-text-color']};
     }
 
     &:hover {
@@ -114,7 +113,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
         border-color: ${({ theme }) => theme.component['accordion-header-disabled-border-color']};
         color: ${({ theme }) => theme.component['accordion-header-disabled-text-color']};
         > svg {
-            color: ${({ theme }) => theme.component['accordion-header-disabled-svg-color']};
+            color: ${({ theme }) => theme.component['accordion-header-disabled-icon-color']};
         }
     }
 `;

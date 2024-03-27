@@ -25,18 +25,18 @@ export type TableTokenMap = {
 };
 
 export const defaultTableTokens: TableTokenMap = {
-    'table-text-color': 'color-content',
     'table-background-color': 'transparent-100',
     'table-header-background-color': 'color-bg',
     'table-body-background-color': 'transparent-100',
     'table-footer-background-color': 'color-bg',
+    'table-row-border-color': 'color-border',
     'table-cell-hover-background-color': 'color-bg-hover',
-    'table-cell-number-text-color': 'color-content-subtle',
+    'table-row-odd-background-color': 'color-bg-isolated',
     'table-row-selected-background-color': 'color-bg-selected',
     'table-row-error-background-color': 'color-feedback-bg-alert-subtle',
-    'table-row-border-color': 'color-border',
-    'table-row-odd-background-color': 'color-bg-isolated',
     'table-row-error-border-color': 'color-feedback-border-alert',
+    'table-text-color': 'color-content',
+    'table-cell-number-text-color': 'color-content-subtle',
     'table-sort-button-ascending-icon-color': 'color-content-subtle',
     'table-sort-button-descending-icon-color': 'color-content-subtle',
     'table-sort-button-default-icon-color': 'color-content-subtle',

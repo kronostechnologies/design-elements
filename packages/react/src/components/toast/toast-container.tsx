@@ -7,7 +7,6 @@ import styled, {
     ThemedStyledProps,
     ThemeProps,
 } from 'styled-components';
-import { useTheme } from '../../hooks/use-theme';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
@@ -22,6 +21,34 @@ interface ToastWrapperProps {
     position: ToastPosition;
     theme: ResolvedTheme;
     type: ToastType;
+}
+
+function getToastTextColor(
+    { theme, type }: ToastWrapperProps,
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
+    switch (type) {
+        case 'discovery':
+            return css`
+                color: ${theme.component['toast-discovery-text-color']};
+            `;
+        case 'success':
+            return css`
+                color: ${theme.component['toast-success-text-color']};
+            `;
+        case 'warning':
+            return css`
+                color: ${theme.component['toast-warning-text-color']};
+            `;
+        case 'alert':
+            return css`
+                color: ${theme.component['toast-alert-text-color']};
+            `;
+        case 'neutral':
+        default:
+            return css`
+                color: ${theme.component['toast-neutral-text-color']};
+            `;
+    }
 }
 
 function getToastContainerBackground(
@@ -105,10 +132,10 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
 
     ${getToastPosition}
     ${getToastContainerBackground}
+    ${getToastTextColor}
 `;
 
-const StyledMessage = styled.p<{ color: string, $isMobile: boolean }>`
-    color: ${({ color }) => color};
+const StyledMessage = styled.p<{ $isMobile: boolean }>`
     flex: 1;
     font-size: ${({ $isMobile }) => ($isMobile ? 1.125 : 1)}rem;
     line-height: ${({ $isMobile }) => ($isMobile ? 1.75 : 1.5)}rem;
@@ -116,38 +143,58 @@ const StyledMessage = styled.p<{ color: string, $isMobile: boolean }>`
 `;
 
 type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onClick'>, ResolvedTheme> & {
-    $color: string;
     $isMobile: boolean;
     $type: ToastType;
 };
 
-function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
+function getDismissColor({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
     switch ($type) {
         case 'discovery':
             return css`
-                background-color: ${theme.component['toast-discovery-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-discovery-dismiss-icon-hover-color']};
+                color: ${theme.component['toast-discovery-icon-color']};
             `;
         case 'success':
             return css`
-                background-color: ${theme.component['toast-success-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-success-dismiss-icon-hover-color']};
+                color: ${theme.component['toast-success-icon-color']};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.component['toast-warning-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-warning-dismiss-icon-hover-color']};
+                color: ${theme.component['toast-warning-icon-color']};
             `;
         case 'alert':
             return css`
-                background-color: ${theme.component['toast-alert-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-alert-dismiss-icon-hover-color']};
+                color: ${theme.component['toast-alert-icon-color']};
             `;
         case 'neutral':
         default:
             return css`
-                background-color: ${theme.component['toast-neutral-dismiss-icon-hover-background-color']};
-                color: ${theme.component['toast-neutral-dismiss-icon-hover-color']};
+                color: ${theme.component['toast-neutral-icon-color']};
+            `;
+    }
+}
+
+function getDismissHover({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
+    switch ($type) {
+        case 'discovery':
+            return css`
+                background: ${theme.component['toast-discovery-dismiss-icon-hover-background-color']};
+            `;
+        case 'success':
+            return css`
+                background: ${theme.component['toast-success-dismiss-icon-hover-background-color']};
+            `;
+        case 'warning':
+            return css`
+                background: ${theme.component['toast-warning-dismiss-icon-hover-background-color']};
+            `;
+        case 'alert':
+            return css`
+                background: ${theme.component['toast-alert-dismiss-icon-hover-background-color']};
+            `;
+        case 'neutral':
+        default:
+            return css`
+                background: ${theme.component['toast-neutral-dismiss-icon-hover-background-color']};
             `;
     }
 }
@@ -161,7 +208,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     iconName: 'x',
 })<DismissIconProps>`
     align-self: flex-start;
-    color: ${({ $color }) => $color};
+    ${getDismissColor};
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
@@ -169,7 +216,8 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     }
 
     &:hover {
-        ${getDismissHoverCss}
+        ${getDismissColor};
+        ${getDismissHover}
     }
 `;
 
@@ -216,22 +264,6 @@ function getToastIconName(type: ToastType): IconName {
     }
 }
 
-function getToastTextColor(type: ToastType, theme: ResolvedTheme): string {
-    switch (type) {
-        case 'discovery':
-            return theme.component['toast-discovery-text-color'];
-        case 'success':
-            return theme.component['toast-success-text-color'];
-        case 'warning':
-            return theme.component['toast-warning-text-color'];
-        case 'alert':
-            return theme.component['toast-alert-text-color'];
-        case 'neutral':
-        default:
-            return theme.component['toast-neutral-text-color'];
-    }
-}
-
 interface ToastContainerProps {
     id: string;
     className?: string;
@@ -249,8 +281,6 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
 }) => {
     const { t } = useTranslation('toast');
     const toastIconName = useMemo(() => getToastIconName(type), [type]);
-    const theme = useTheme();
-    const toastTextColor = useMemo(() => getToastTextColor(type, theme), [theme, type]);
     const { removeToast } = useToasts();
     const { isMobile } = useDeviceContext();
 
@@ -258,18 +288,16 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
         <ToastWrapper isMobile={isMobile} className={className} type={type} position={position} role="status">
             <MessageIcon
                 name={toastIconName}
-                color={toastTextColor}
                 size="16"
                 role="img"
                 type={type}
                 isMobile={isMobile}
             />
-            <StyledMessage color={toastTextColor} $isMobile={isMobile}>
+            <StyledMessage $isMobile={isMobile}>
                 {message}
             </StyledMessage>
             <DismissIcon
                 label={t('dismissButtonLabel')}
-                $color={toastTextColor}
                 $isMobile={isMobile}
                 $type={type}
                 onClick={() => removeToast(id)}

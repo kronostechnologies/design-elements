@@ -33,8 +33,8 @@ export type DropdownMenuTokenMap = {
 };
 
 export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
-    'dropdown-menu-border-color': 'color-neutral-65',
-    'dropdown-menu-background-color': 'color-bg',
+    'dropdown-menu-border-color': 'color-border-overlay',
+    'dropdown-menu-background-color': 'color-bg-overlay',
     'dropdown-menu-text-color': 'color-content',
     'dropdown-menu-list-item-text-color': 'color-content',
     'dropdown-menu-item-content-icon-background-color': 'color-bg-neutral-subtle',

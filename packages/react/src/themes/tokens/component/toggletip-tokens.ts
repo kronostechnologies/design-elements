@@ -13,7 +13,7 @@ export type ToggleTipTokenMap = {
 };
 
 export const defaultToggleTipTokens: ToggleTipTokenMap = {
-    'toggletip-popper-container-background-color': 'color-bg',
+    'toggletip-popper-container-background-color': 'color-bg-overlay',
     'toggletip-popper-container-border-color': 'color-border-overlay',
     'toggletip-popper-container-text-color': 'color-content',
 };

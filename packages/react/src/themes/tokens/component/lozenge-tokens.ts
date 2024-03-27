@@ -46,40 +46,81 @@ export type LozengeTokensMap = {
 };
 
 export const defaultLozengeTokens: LozengeTokensMap = {
-    'lozenge-neutral-background-color': 'color-bg-inverse',
-    'lozenge-neutral-border-color': 'color-bg-inverse',
+    /**
+     * neutral variant
+     */
+    'lozenge-neutral-background-color': 'color-bg-neutral-bold',
+    'lozenge-neutral-border-color': 'color-bg-neutral-bold',
     'lozenge-neutral-text-color': 'color-content-inverse',
+    /**
+     * neutral subtle variant
+     */
     'lozenge-neutral-subtle-background-color': 'color-bg-neutral-subtle',
     'lozenge-neutral-subtle-border-color': 'color-bg-neutral-subtle',
     'lozenge-neutral-subtle-text-color': 'color-content-subtle',
-    'lozenge-info-background-color': 'color-informative-50',
-    'lozenge-info-border-color': 'color-informative-50',
+
+    /**
+     * info variant
+     */
+    'lozenge-info-background-color': 'color-feedback-bg-informative-bold',
+    'lozenge-info-border-color': 'color-feedback-bg-informative-bold',
     'lozenge-info-text-color': 'color-content-inverse',
-    'lozenge-info-subtle-background-color': 'color-informative-05',
-    'lozenge-info-subtle-border-color': 'color-informative-05',
-    'lozenge-info-subtle-text-color': 'color-informative-70',
-    'lozenge-success-background-color': 'color-success-50',
-    'lozenge-success-border-color': 'color-success-50',
+    /**
+     * info subtle variant
+     */
+    'lozenge-info-subtle-background-color': 'color-feedback-bg-informative-subtle',
+    'lozenge-info-subtle-border-color': 'color-feedback-bg-informative-subtle',
+    'lozenge-info-subtle-text-color': 'color-feedback-content-informative',
+
+    /**
+     * success variant
+     */
+    'lozenge-success-background-color': 'color-feedback-bg-success-bold',
+    'lozenge-success-border-color': 'color-feedback-bg-success-bold',
     'lozenge-success-text-color': 'color-content-inverse',
-    'lozenge-success-subtle-background-color': 'color-success-05',
-    'lozenge-success-subtle-border-color': 'color-success-05',
-    'lozenge-success-subtle-text-color': 'color-success-70',
-    'lozenge-discovery-background-color': 'color-discovery-50',
-    'lozenge-discovery-border-color': 'color-discovery-50',
+    /**
+     * success subtle variant
+     */
+    'lozenge-success-subtle-background-color': 'color-feedback-bg-success-subtle',
+    'lozenge-success-subtle-border-color': 'color-feedback-bg-success-subtle',
+    'lozenge-success-subtle-text-color': 'color-feedback-content-success',
+
+    /**
+     * discovery variant
+     */
+    'lozenge-discovery-background-color': 'color-feedback-bg-discovery-bold',
+    'lozenge-discovery-border-color': 'color-feedback-bg-discovery-bold',
     'lozenge-discovery-text-color': 'color-content-inverse',
-    'lozenge-discovery-subtle-background-color': 'color-discovery-05',
-    'lozenge-discovery-subtle-border-color': 'color-discovery-05',
-    'lozenge-discovery-subtle-text-color': 'color-discovery-70',
-    'lozenge-alert-background-color': 'color-alert-50',
-    'lozenge-alert-border-color': 'color-alert-50',
+    /**
+     * discovery subtle variant
+     */
+    'lozenge-discovery-subtle-background-color': 'color-feedback-bg-discovery-subtle',
+    'lozenge-discovery-subtle-border-color': 'color-feedback-bg-discovery-subtle',
+    'lozenge-discovery-subtle-text-color': 'color-feedback-content-discovery',
+
+    /**
+     * alert variant
+     */
+    'lozenge-alert-background-color': 'color-feedback-bg-alert-bold',
+    'lozenge-alert-border-color': 'color-feedback-bg-alert-bold',
     'lozenge-alert-text-color': 'color-content-inverse',
-    'lozenge-alert-subtle-background-color': 'color-alert-05',
-    'lozenge-alert-subtle-border-color': 'color-alert-05',
-    'lozenge-alert-subtle-text-color': 'color-alert-50',
-    'lozenge-warning-background-color': 'color-warning-50',
-    'lozenge-warning-border-color': 'color-warning-50',
+    /**
+     * alert subtle variant
+     */
+    'lozenge-alert-subtle-background-color': 'color-feedback-bg-alert-subtle',
+    'lozenge-alert-subtle-border-color': 'color-feedback-bg-alert-subtle',
+    'lozenge-alert-subtle-text-color': 'color-feedback-content-alert',
+
+    /**
+     * warning variant
+     */
+    'lozenge-warning-background-color': 'color-feedback-bg-warning-bold',
+    'lozenge-warning-border-color': 'color-feedback-bg-warning-bold',
     'lozenge-warning-text-color': 'color-content',
-    'lozenge-warning-subtle-background-color': 'color-warning-05',
-    'lozenge-warning-subtle-border-color': 'color-warning-05',
-    'lozenge-warning-subtle-text-color': 'color-warning-80',
+    /**
+     * warning subtle variant
+     */
+    'lozenge-warning-subtle-background-color': 'color-feedback-bg-warning-subtle',
+    'lozenge-warning-subtle-border-color': 'color-feedback-bg-warning-subtle',
+    'lozenge-warning-subtle-text-color': 'color-feedback-content-warning',
 };
