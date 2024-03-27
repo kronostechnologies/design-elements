@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Components/Controls/Menu Button',
+    title: 'Components/Menu Button',
     component: MenuButton,
     decorators: [decorateWith(StyledDiv)],
 };

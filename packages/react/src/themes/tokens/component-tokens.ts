@@ -8,8 +8,11 @@ import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-toke
 import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
+import { CardTokens, defaultCardTokens } from './component/card-tokens';
+import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
 import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/external-link-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
+import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
 import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
@@ -35,7 +38,10 @@ import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/p
 import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
 import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
+import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
+import { defaultSortButtonTokens, SortButtonIconTokens } from './component/sort-button-icon-tokens';
+import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
@@ -100,6 +106,12 @@ export type ComponentTokens =
     | ModalTokens
     | TooltipTokens
     | ToggleTipTokens
+    | SideDrawerTokens
+    | GlobalHeaderTokens
+    | CardTokens
+    | SortButtonIconTokens
+    | TableTokens
+    | DropdownMenuTokens
     | TabTokens
     | LozengeTokens;
 
@@ -160,6 +172,12 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTooltipTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
+    ...defaultSideDrawerTokens,
+    ...defaultGlobalHeaderTokens,
+    ...defaultCardTokens,
+    ...defaultSortButtonTokens,
+    ...defaultTableTokens,
+    ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
 };
 
