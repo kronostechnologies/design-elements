@@ -22,10 +22,12 @@
   // var for border-radius
   --border-radius-half: calc(0.5 * var(--border-radius));
   --border-radius: 4px;
+  --border-radius-1halfx: calc(1.5 * var(--border-radius));
   --border-radius-2x: calc(2 * var(--border-radius));
+  --border-radius-2halfx: calc(2.5 * var(--border-radius));
   --border-radius-3x: calc(3 * var(--border-radius));
   --border-radius-4x: calc(4 * var(--border-radius));
-    // var for heights 
+    // var for heights
   --size-base: 1rem;
   --size-half: calc(0.5 * var(--size-base));
   --size-1x: var(--size-base);
