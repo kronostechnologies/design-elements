@@ -43,7 +43,7 @@ describe('Pagination', () => {
     describe('pages list', () => {
         test('should display pages', () => {
             const wrapper = shallow(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
-            const pages = findByTestId(wrapper, 'page-', '^');
+            const pages = findByTestId(wrapper, 'page-', { modifier: '^' });
 
             expect(pages).toHaveLength(5);
         });

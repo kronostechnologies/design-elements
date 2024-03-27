@@ -1,6 +1,7 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
+import { useMemo, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -95,7 +96,7 @@ export const Global: Story = () => {
     ];
 
     return (
-        <Tabs global tabs={tabs} />
+        <Tabs tabs={tabs} global />
     );
 };
 
@@ -124,6 +125,68 @@ export const WithIcons: Story = () => {
     );
 };
 
+let addTabCounter = 3;
+
+export const AddAndDeleteTabs: Story = () => {
+    const [tabs, setTabs] = useState<Tab[]>([
+        {
+            id: 'tab1',
+            title: 'First Button',
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
+        },
+        {
+            id: 'tab2',
+            title: 'Second Button',
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
+        },
+        {
+            id: 'tab3',
+            title: 'Third Button',
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
+        },
+    ]);
+
+    function handleDelete(tabId: string): void {
+        setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
+    }
+
+    const tabsWithDelete = useMemo(() => tabs.map((t) => ({ ...t, onRemove: handleDelete })), [tabs]);
+
+    return (
+        <Tabs
+            tabs={tabsWithDelete}
+            onAddTab={() => {
+                addTabCounter += 1;
+                setTabs([...tabs, {
+                    id: `tab${addTabCounter}`,
+                    title: 'New Tab',
+                    panelContent: <StyledDiv>New tab content</StyledDiv>,
+                },
+                ]);
+            }}
+        />
+    );
+};
+
+export const Scrollable: Story = () => {
+    const tabs: Tab[] = [...Array(15).keys()].map((i) => ({
+        title: `Tab ${i + 1}`,
+        panelContent: (
+            <StyledDiv>
+                Content
+                {i + 1}
+            </StyledDiv>
+        ),
+    }));
+
+    return (
+        <>
+            <Tabs tabs={tabs} />
+            <Tabs tabs={tabs} global />
+        </>
+    );
+};
+
 export const WithForceRenderTabPanels: Story = () => {
     const tabs: Tab[] = [
         {
@@ -142,27 +205,6 @@ export const WithForceRenderTabPanels: Story = () => {
 
     return (
         <Tabs tabs={tabs} forceRenderTabPanels />
-    );
-};
-
-export const Contained: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'First Button',
-            panelContent: <StyledDiv>First tab content</StyledDiv>,
-        },
-        {
-            title: 'Second Button',
-            panelContent: <StyledDiv>Second tab content</StyledDiv>,
-        },
-        {
-            title: 'Third Button',
-            panelContent: <StyledDiv>Third tab content</StyledDiv>,
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} contained />
     );
 };
 
@@ -189,6 +231,6 @@ export const UnloadTabCallback: Story = () => {
     ];
 
     return (
-        <Tabs tabs={tabs} contained />
+        <Tabs tabs={tabs} />
     );
 };

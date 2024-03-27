@@ -106,6 +106,10 @@ export const Translations = {
             'increment-button-aria-label': 'Increase number',
             'decrement-button-aria-label': 'Decrease number',
         },
+        tabs: {
+            addTab: 'Add Tabs',
+            removeTab: 'Remove {{label}} tab',
+        },
         'tag-medium': {
             deleteButtonAriaLabel: 'Remove tag {{label}}',
         },
@@ -233,6 +237,10 @@ export const Translations = {
         'stepper-buttons': {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
+        },
+        tabs: {
+            addTab: 'Ajouter des onglets',
+            removeTab: 'Fermer l\'onglet {{label}}',
         },
         'tag-medium': {
             deleteButtonAriaLabel: 'Retirer l\'étiquette {{label}}',

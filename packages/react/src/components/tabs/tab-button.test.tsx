@@ -73,7 +73,7 @@ describe('TabButton', () => {
             </TabButton>,
         );
 
-        getByTestId(wrapper, 'tab-button').simulate('click');
+        getByTestId(wrapper, 'tabs-tab-button').simulate('click');
 
         expect(expectedOnClickCall).toHaveBeenCalled();
     });
