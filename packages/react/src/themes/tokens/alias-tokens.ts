@@ -3,21 +3,31 @@ import { RefTokens } from './ref-tokens';
 
 export type AliasTokens =
 /**
+ * ACTION
+ */
+    | 'color-action'
+    | 'color-action-hover'
+    | 'color-action-disabled'
+    | 'color-action-destructive'
+    | 'color-action-destructive-hover'
+    | 'color-action-destructive-disabled'
+    | 'color-action-inverse'
+    | 'color-action-inverse-hover'
+    | 'color-action-inverse-disabled'
+/**
  * BACKGROUND
  */
     | 'color-bg'
     | 'color-bg-overlay'
     | 'color-bg-isolated'
     | 'color-bg-disabled'
+    | 'color-bg-empty'
     | 'color-bg-hover'
     | 'color-bg-selected'
     | 'color-bg-brand-subtle'
     | 'color-bg-brand'
     | 'color-bg-brand-bold'
-    | 'color-input-bg'
-    | 'color-blanket-bg'
     | 'color-bg-indicator'
-    | 'color-bg-empty'
     | 'color-bg-neutral-subtlest'
     | 'color-bg-neutral-subtle'
     | 'color-bg-neutral-bold'
@@ -36,28 +46,34 @@ export type AliasTokens =
     | 'color-feedback-bg-warning-bold'
     | 'color-feedback-bg-discovery-bold'
     | 'color-feedback-bg-informative-bold'
+    | 'color-input-bg'
+    | 'color-input-bg-hover'
+    | 'color-input-bg-disabled'
+    | 'color-blanket-bg'
 /**
  * BORDER
  */
     | 'color-border'
     | 'color-border-subtle'
     | 'color-border-bold'
+    | 'color-border-overlay'
     | 'color-border-hover'
     | 'color-border-disabled'
     | 'color-border-selected'
     | 'color-border-inverse'
-    | 'color-border-overlay'
     | 'color-border-brand'
-    | 'color-input-border'
-    | 'color-border-focus-outside'
-    | 'color-border-focus-inside'
-    | 'color-border-focus-outside-inverse'
-    | 'color-border-focus-inside-inverse'
     | 'color-feedback-border-success'
     | 'color-feedback-border-warning'
     | 'color-feedback-border-alert'
     | 'color-feedback-border-discovery'
     | 'color-feedback-border-informative'
+    | 'color-input-border'
+    | 'color-input-border-hover'
+    | 'color-input-border-disabled'
+    | 'color-border-focus-outside'
+    | 'color-border-focus-inside'
+    | 'color-border-focus-outside-inverse'
+    | 'color-border-focus-inside-inverse'
 /**
  * CONTENT (TEXT & ICONS)
  */
@@ -66,17 +82,21 @@ export type AliasTokens =
     | 'color-content-inverse'
     | 'color-content-disabled'
     | 'color-content-hover'
+    | 'color-content-subtle-hover'
     | 'color-content-selected'
-    | 'color-input-content-error'
-    | 'color-link-content'
-    | 'color-link-content-visited'
-    | 'color-link-content-disabled'
-    | 'color-link-content-hover'
     | 'color-feedback-content-success'
     | 'color-feedback-content-warning'
     | 'color-feedback-content-alert'
     | 'color-feedback-content-discovery'
     | 'color-feedback-content-informative'
+    | 'color-input-content'
+    | 'color-input-content-hover'
+    | 'color-input-content-disabled'
+    | 'color-input-content-error'
+    | 'color-link-content'
+    | 'color-link-content-visited'
+    | 'color-link-content-disabled'
+    | 'color-link-content-hover'
 /**
  * BOX-SHADOW
  */
@@ -87,6 +107,22 @@ export type AliasTokenMap = {
 }
 
 export const defaultAliasTokens: AliasTokenMap = {
+    /**
+     * ACTION
+     * Usage: Buttons.
+     * Equisoft theme has brand colors.
+     * Others themes might use accent colors.
+     */
+    'color-action': 'color-brand-50',
+    'color-action-hover': 'color-brand-70',
+    'color-action-disabled': 'color-brand-20',
+    'color-action-destructive': 'color-alert-50',
+    'color-action-destructive-hover': 'color-alert-70',
+    'color-action-destructive-disabled': 'color-alert-20',
+    'color-action-inverse': 'color-white',
+    'color-action-inverse-hover': 'color-brand-20',
+    'color-action-inverse-disabled': 'color-brand-50',
+
     /**
      * BACKGROUND
      */
@@ -142,16 +178,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-brand': 'color-brand-50',
     'color-bg-brand-bold': 'color-brand-80',
     'color-bg-indicator': 'color-bg-brand',
-
-    /**
-     * Use for background of form UI elements, such as inputs, checkboxes, and radio buttons.
-     * Use selected for the backgrounds of inputs in a selected state, such as checkboxes and radio buttons.
-     */
-    'color-input-bg': 'color-white',
-    // color-input-bg-hover?
-    // color-input-bg-disabled?
-    // color-input-bg-selected?
-    // color-input-bg-selected-hover?
 
     /**
      * Use for default background of neutral UI elements,
@@ -215,6 +241,16 @@ export const defaultAliasTokens: AliasTokenMap = {
     // 'color-feedback-bg-informative-disabled': 'color-informative-20',
 
     /**
+     * Use for background of form UI elements, such as inputs, checkboxes, and radio buttons.
+     * Use selected for the backgrounds of inputs in a selected state, such as checkboxes and radio buttons.
+     */
+    'color-input-bg': 'color-white',
+    'color-input-bg-hover': 'color-neutral-15',
+    'color-input-bg-disabled': 'color-neutral-05',
+    // color-input-bg-selected?
+    // color-input-bg-selected-hover?
+
+    /**
      * Use for the screen overlay that appears with modal dialogs
      */
     'color-blanket-bg': 'transparent-dark-75',
@@ -229,6 +265,10 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-border': 'color-neutral-15',
     'color-border-subtle': 'color-neutral-05',
     'color-border-bold': 'color-neutral-50',
+    /**
+     * Use for borders of overlaying elements, such as modals, menus, and toggletips.
+     */
+    'color-border-overlay': 'color-neutral-50',
     /**
      * Use for borders on bold backgrounds.
      */
@@ -247,11 +287,6 @@ export const defaultAliasTokens: AliasTokenMap = {
      */
     'color-border-selected': 'color-brand-50',
     // 'color-border-selected-hover' ?
-
-    /**
-     * Use for borders of overlaying elements, such as modals, menus, and toggletips.
-     */
-    'color-border-overlay': 'color-neutral-50',
 
     /**
      * Use for borders or visual indicators of elements that reinforce our brand,
@@ -284,8 +319,9 @@ export const defaultAliasTokens: AliasTokenMap = {
      * Use for borders of form UI elements, such as text fields, checkboxes, and radio buttons.
      */
     'color-input-border': 'color-neutral-65',
+    'color-input-border-hover': 'color-neutral-90',
+    'color-input-border-disabled': 'color-neutral-15',
     // color-input-border-error?
-    // color-input-border-disabled?
     // color-input-border-selected?
 
     /**
@@ -316,6 +352,7 @@ export const defaultAliasTokens: AliasTokenMap = {
      * Use for content in a hovered state.
      */
     'color-content-hover': 'color-black',
+    'color-content-subtle-hover': 'color-neutral-90',
     /**
      * Use for content in a disabled state.
      */
@@ -356,8 +393,10 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * Use for content of form UI elements, such as inputs.
      */
+    'color-input-content': 'color-neutral-65',
+    'color-input-content-hover': 'color-neutral-90',
+    'color-input-content-disabled': 'color-neutral-30',
     'color-input-content-error': 'color-alert-50',
-    // color-input-content-disabled?
     // color-input-content-selected?
     // color-input-content-placeholder?
 
