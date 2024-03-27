@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 export default {
-    title: 'Components/Tooltip',
+    title: 'Components/Tooltip/Stories',
     component: Tooltip,
 };
 
@@ -32,7 +32,7 @@ const DarkDiv = styled.div`
     width: 100%;
 `;
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <Tooltip label="Tooltip Content" />
 );
 
