@@ -109,7 +109,6 @@ export type ButtonTokenMap = {
 };
 
 export const defaultButtonTokens: ButtonTokenMap = {
-
     // Primary
     'button-primary-background-color': 'color-action',
     'button-primary-border-color': 'color-action',
@@ -128,24 +127,24 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-primary-inverted-border-color': 'color-action-inverse',
     'button-primary-inverted-text-color': 'color-action',
     // Primary inverted hover
-    'button-primary-inverted-hover-background-color': 'color-action-inverse',
-    'button-primary-inverted-hover-border-color': 'color-action-inverse',
+    'button-primary-inverted-hover-background-color': 'color-action-inverse-hover',
+    'button-primary-inverted-hover-border-color': 'color-action-inverse-hover',
     'button-primary-inverted-hover-text-color': 'color-action-hover',
     // Primary inverted disabled
-    'button-primary-inverted-disabled-background-color': 'color-action-inverse',
-    'button-primary-inverted-disabled-border-color': 'color-action-inverse',
+    'button-primary-inverted-disabled-background-color': 'color-action-inverse-disabled',
+    'button-primary-inverted-disabled-border-color': 'color-action-inverse-disabled',
     'button-primary-inverted-disabled-text-color': 'color-action-disabled',
 
     // Secondary
-    'button-secondary-background-color': 'transparent-100', // was color-white
+    'button-secondary-background-color': 'transparent-100',
     'button-secondary-border-color': 'color-action',
     'button-secondary-text-color': 'color-action',
     // Secondary hover
-    'button-secondary-hover-background-color': 'transparent-100', // was color-white
+    'button-secondary-hover-background-color': 'transparent-100',
     'button-secondary-hover-border-color': 'color-action-hover',
     'button-secondary-hover-text-color': 'color-action-hover',
     // Secondary disabled
-    'button-secondary-disabled-background-color': 'transparent-100', // was color-white
+    'button-secondary-disabled-background-color': 'transparent-100',
     'button-secondary-disabled-border-color': 'color-action-disabled',
     'button-secondary-disabled-text-color': 'color-action-disabled',
     // Secondary inverted
@@ -166,9 +165,9 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-border-color': 'transparent-100',
     'button-tertiary-text-color': 'color-content-subtle',
     // Tertiary hover
-    'button-tertiary-hover-background-color': 'transparent-dark-15', // was color-neutral-15
+    'button-tertiary-hover-background-color': 'transparent-dark-25',
     'button-tertiary-hover-border-color': 'transparent-100',
-    'button-tertiary-hover-text-color': 'color-content-subtle-hover',
+    'button-tertiary-hover-text-color': 'color-content-hover',
     // Tertiary disabled
     'button-tertiary-disabled-background-color': 'transparent-100',
     'button-tertiary-disabled-border-color': 'transparent-100',
@@ -177,15 +176,15 @@ export const defaultButtonTokens: ButtonTokenMap = {
     // Tertiary inverted
     'button-tertiary-inverted-background-color': 'transparent-100',
     'button-tertiary-inverted-border-color': 'transparent-100',
-    'button-tertiary-inverted-text-color': 'color-action-inverse', // or color-content-inverse?
+    'button-tertiary-inverted-text-color': 'color-action-inverse',
     // Tertiary inverted hover
-    'button-tertiary-inverted-hover-background-color': 'color-action-hover', // use transparent?
+    'button-tertiary-inverted-hover-background-color': 'transparent-dark-50',
     'button-tertiary-inverted-hover-border-color': 'transparent-100',
-    'button-tertiary-inverted-hover-text-color': 'color-action-inverse', // or color-content-inverse?
+    'button-tertiary-inverted-hover-text-color': 'color-action-inverse',
     // Tertiary inverted disabled
     'button-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-tertiary-inverted-disabled-border-color': 'transparent-100',
-    'button-tertiary-inverted-disabled-text-color': 'color-action-inverse-disabled', // or color-content-disabled?
+    'button-tertiary-inverted-disabled-text-color': 'color-action-inverse-disabled',
 
     // Destructive
     'button-destructive-background-color': 'color-action-destructive',
@@ -214,15 +213,15 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-inverted-disabled-text-color': 'color-action-destructive-disabled',
 
     // Secondary destructive
-    'button-destructive-secondary-background-color': 'transparent-100', // was color-white
+    'button-destructive-secondary-background-color': 'transparent-100',
     'button-destructive-secondary-border-color': 'color-action-destructive',
     'button-destructive-secondary-text-color': 'color-action-destructive',
     // Secondary destructive hover
-    'button-destructive-secondary-hover-background-color': 'transparent-100', // was color-white
+    'button-destructive-secondary-hover-background-color': 'transparent-100',
     'button-destructive-secondary-hover-border-color': 'color-action-destructive-hover',
     'button-destructive-secondary-hover-text-color': 'color-action-destructive-hover',
     // Secondary destructive disabled
-    'button-destructive-secondary-disabled-background-color': 'transparent-100', // was color-white
+    'button-destructive-secondary-disabled-background-color': 'transparent-100',
     'button-destructive-secondary-disabled-border-color': 'color-action-destructive-disabled',
     'button-destructive-secondary-disabled-text-color': 'color-action-destructive-disabled',
 

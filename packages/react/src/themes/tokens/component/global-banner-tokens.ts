@@ -100,5 +100,4 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     'global-banner-alert-action-button-border-color': 'color-border-inverse',
     'global-banner-alert-action-button-hover-border-color': 'transparent-light-50',
     'global-banner-alert-action-button-hover-text-color': 'transparent-light-50',
-
 };

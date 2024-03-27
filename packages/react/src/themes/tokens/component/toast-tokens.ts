@@ -5,24 +5,18 @@ export type ToastTokens =
     | 'toast-neutral-background-color'
     | 'toast-neutral-text-color'
     | 'toast-neutral-icon-color'
-    | 'toast-neutral-dismiss-icon-hover-background-color'
     | 'toast-discovery-background-color'
     | 'toast-discovery-text-color'
     | 'toast-discovery-icon-color'
-    | 'toast-discovery-dismiss-icon-hover-background-color'
     | 'toast-success-background-color'
     | 'toast-success-text-color'
     | 'toast-success-icon-color'
-    | 'toast-success-dismiss-icon-hover-background-color'
     | 'toast-warning-background-color'
     | 'toast-warning-text-color'
     | 'toast-warning-icon-color'
-    | 'toast-warning-dismiss-icon-hover-background-color'
     | 'toast-alert-background-color'
     | 'toast-alert-text-color'
-    | 'toast-alert-icon-color'
-    | 'toast-alert-dismiss-icon-hover-background-color'
-    | 'toast-dismiss-icon-focus-box-shadow';
+    | 'toast-alert-icon-color';
 
 export type ToastTokenValue = AliasTokens | RefTokens;
 
@@ -46,10 +40,4 @@ export const defaultToastTokens: ToastTokenMap = {
     'toast-warning-icon-color': 'color-content',
     'toast-alert-text-color': 'color-content-inverse',
     'toast-alert-icon-color': 'color-content-inverse',
-    'toast-neutral-dismiss-icon-hover-background-color': 'transparent-dark-50',
-    'toast-discovery-dismiss-icon-hover-background-color': 'transparent-dark-50',
-    'toast-success-dismiss-icon-hover-background-color': 'transparent-dark-50',
-    'toast-warning-dismiss-icon-hover-background-color': 'transparent-dark-30',
-    'toast-alert-dismiss-icon-hover-background-color': 'transparent-dark-50',
-    'toast-dismiss-icon-focus-box-shadow': 'color-brand-20',
 };

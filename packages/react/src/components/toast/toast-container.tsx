@@ -2,7 +2,6 @@ import { useMemo, VoidFunctionComponent } from 'react';
 import styled, {
     css,
     FlattenInterpolation,
-    FlattenSimpleInterpolation,
     keyframes,
     ThemedStyledProps,
     ThemeProps,
@@ -147,58 +146,6 @@ type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onCli
     $type: ToastType;
 };
 
-function getDismissColor({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
-    switch ($type) {
-        case 'discovery':
-            return css`
-                color: ${theme.component['toast-discovery-icon-color']};
-            `;
-        case 'success':
-            return css`
-                color: ${theme.component['toast-success-icon-color']};
-            `;
-        case 'warning':
-            return css`
-                color: ${theme.component['toast-warning-icon-color']};
-            `;
-        case 'alert':
-            return css`
-                color: ${theme.component['toast-alert-icon-color']};
-            `;
-        case 'neutral':
-        default:
-            return css`
-                color: ${theme.component['toast-neutral-icon-color']};
-            `;
-    }
-}
-
-function getDismissHover({ $type, theme }: DismissIconProps): FlattenSimpleInterpolation {
-    switch ($type) {
-        case 'discovery':
-            return css`
-                background: ${theme.component['toast-discovery-dismiss-icon-hover-background-color']};
-            `;
-        case 'success':
-            return css`
-                background: ${theme.component['toast-success-dismiss-icon-hover-background-color']};
-            `;
-        case 'warning':
-            return css`
-                background: ${theme.component['toast-warning-dismiss-icon-hover-background-color']};
-            `;
-        case 'alert':
-            return css`
-                background: ${theme.component['toast-alert-dismiss-icon-hover-background-color']};
-            `;
-        case 'neutral':
-        default:
-            return css`
-                background: ${theme.component['toast-neutral-dismiss-icon-hover-background-color']};
-            `;
-    }
-}
-
 function getDismissIconMarginTop({ $isMobile }: DismissIconProps): string {
     return $isMobile ? 'calc(-1 * var(--spacing-1x))' : 'calc(-1 * var(--spacing-half))';
 }
@@ -208,17 +155,10 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     iconName: 'x',
 })<DismissIconProps>`
     align-self: flex-start;
-    ${getDismissColor};
+    ${({ $type, theme }) => css`
+        color: ${theme.component[`toast-${$type}-icon-color`]};
+    `}
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
-
-    &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.component['toast-dismiss-icon-focus-box-shadow']};
-    }
-
-    &:hover {
-        ${getDismissColor};
-        ${getDismissHover}
-    }
 `;
 
 function getMessageLabel(type: ToastType): string {
@@ -301,6 +241,8 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
                 $isMobile={isMobile}
                 $type={type}
                 onClick={() => removeToast(id)}
+                buttonType="tertiary"
+                inverted={type !== 'warning'}
                 data-testid="dismiss"
                 type="button"
             />

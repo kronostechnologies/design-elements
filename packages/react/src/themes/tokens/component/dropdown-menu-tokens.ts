@@ -36,24 +36,31 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-border-color': 'color-border-overlay',
     'dropdown-menu-background-color': 'color-bg-overlay',
     'dropdown-menu-text-color': 'color-content',
-    'dropdown-menu-list-item-text-color': 'color-content',
+
     'dropdown-menu-item-content-icon-background-color': 'color-bg-neutral-subtle',
     'dropdown-menu-item-content-icon-border-color': 'color-border',
     'dropdown-menu-item-content-description-text-color': 'color-content-subtle',
-    'dropdown-menu-nav-item-text-color': 'color-content',
+
     'dropdown-menu-nav-item-hover-background-color': 'color-bg-hover',
+    'dropdown-menu-external-item-hover-background-color': 'color-bg-hover',
+
     'dropdown-menu-nav-item-hover-disabled-background-color': 'transparent-100',
-    'dropdown-menu-nav-item-disabled-text-color': 'color-content-disabled',
-    'dropdown-menu-nav-item-disabled-icon-color': 'color-content-disabled',
+
+    'dropdown-menu-list-item-text-color': 'color-content',
+    'dropdown-menu-nav-item-text-color': 'color-content',
     'dropdown-menu-nav-item-external-link-icon-color': 'color-content',
     'dropdown-menu-nav-item-external-link-text-color': 'color-content',
     'dropdown-menu-external-item-text-color': 'color-content',
-    'dropdown-menu-external-item-hover-background-color': 'color-bg-hover',
+
+    'dropdown-menu-nav-item-disabled-text-color': 'color-content-disabled',
+    'dropdown-menu-nav-item-disabled-icon-color': 'color-content-disabled',
+    'dropdown-menu-external-item-disabled-text-color': 'color-content-disabled',
+    'dropdown-menu-external-item-disabled-fill-color': 'color-content-disabled',
+
     'dropdown-menu-external-item-icon-visited-text-color': 'color-link-content-visited',
     'dropdown-menu-external-item-icon-visited-fill-color': 'color-link-content-visited',
     'dropdown-menu-external-item-visited-text-color': 'color-link-content-visited',
     'dropdown-menu-external-item-visited-fill-color': 'color-link-content-visited',
-    'dropdown-menu-external-item-disabled-text-color': 'color-content-disabled',
-    'dropdown-menu-external-item-disabled-fill-color': 'color-content-disabled',
+
     'dropdown-menu-group-border-color': 'color-border',
 };

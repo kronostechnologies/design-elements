@@ -35,7 +35,7 @@ export const defaultProgressTrackerTokens: ProgressTrackerTokenMap = {
     'progress-tracker-step-todo-text-color': 'color-content',
     'progress-tracker-step-todo-background-color': 'color-bg',
     // Uncompleted
-    'progress-tracker-step-uncompleted-border-color': 'color-neutral-30',
+    'progress-tracker-step-uncompleted-border-color': 'color-border-empty',
     'progress-tracker-step-uncompleted-text-color': 'color-content',
     'progress-tracker-step-uncompleted-label-text-color': 'color-content-subtle',
     // Active
@@ -46,5 +46,5 @@ export const defaultProgressTrackerTokens: ProgressTrackerTokenMap = {
     'progress-tracker-step-completed-background-color': 'color-bg-indicator',
     'progress-tracker-step-completed-border-color': 'color-bg-indicator',
     'progress-tracker-step-completed-text-color': 'color-content-inverse',
-    'progress-tracker-step-completed-label-text-color': 'color-brand-50',
+    'progress-tracker-step-completed-label-text-color': 'color-content-brand',
 };

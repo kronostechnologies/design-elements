@@ -34,7 +34,7 @@ export const defaultAccordionTokens: AccordionTokenMap = {
     'accordion-header-hover-border-color': 'color-border-hover',
     'accordion-header-hover-text-color': 'color-content-hover',
     'accordion-header-disabled-background-color': 'color-bg-disabled',
-    'accordion-header-disabled-border-color': 'color-border',
+    'accordion-header-disabled-border-color': 'color-border-disabled',
     'accordion-header-disabled-text-color': 'color-content-disabled',
     'accordion-header-disabled-icon-color': 'color-content-disabled',
     'accordion-header-focus-box-shadow-inset-color': 'color-brand-20',

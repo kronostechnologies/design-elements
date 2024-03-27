@@ -59,6 +59,7 @@ export type AliasTokens =
     | 'color-border-overlay'
     | 'color-border-hover'
     | 'color-border-disabled'
+    | 'color-border-empty'
     | 'color-border-selected'
     | 'color-border-inverse'
     | 'color-border-brand'
@@ -82,8 +83,8 @@ export type AliasTokens =
     | 'color-content-inverse'
     | 'color-content-disabled'
     | 'color-content-hover'
-    | 'color-content-subtle-hover'
     | 'color-content-selected'
+    | 'color-content-brand'
     | 'color-feedback-content-success'
     | 'color-feedback-content-warning'
     | 'color-feedback-content-alert'
@@ -280,7 +281,8 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * Use for borders of elements in a disabled state.
      */
-    'color-border-disabled': 'color-neutral-30',
+    'color-border-disabled': 'color-neutral-15',
+    'color-border-empty': 'color-neutral-30',
     /**
      * Use for borders or visual indicators of elements in a selected, opened or active state,
      * such as in tabs or menu items.
@@ -320,7 +322,7 @@ export const defaultAliasTokens: AliasTokenMap = {
      */
     'color-input-border': 'color-neutral-65',
     'color-input-border-hover': 'color-neutral-90',
-    'color-input-border-disabled': 'color-neutral-15',
+    'color-input-border-disabled': 'color-neutral-30',
     // color-input-border-error?
     // color-input-border-selected?
 
@@ -352,7 +354,6 @@ export const defaultAliasTokens: AliasTokenMap = {
      * Use for content in a hovered state.
      */
     'color-content-hover': 'color-black',
-    'color-content-subtle-hover': 'color-neutral-90',
     /**
      * Use for content in a disabled state.
      */
@@ -366,8 +367,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * Use for content of elements that reinforce our brand, such as logos or primary buttons.
      */
-    // color-content-brand?
-    // color-content-action?
+    'color-content-brand': 'color-brand-50',
 
     /**
      * Use for content to communicate a favorable outcome, such as input field success messaging.
