@@ -6,22 +6,8 @@ import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Tooltip } from '../tooltip/tooltip';
 import { focus } from '../../utils/css-state';
-
-const StyledTextInput = styled(TextInput)`
-    flex: 1;
-    margin-bottom: 0;
-
-    input {
-        &::-ms-reveal {
-            display: none;
-        }
-
-        border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-right-width: 0;
-    }
-`;
+import { Tooltip } from '../tooltip/tooltip';
 
 const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
@@ -53,6 +39,20 @@ const PasswordContainer = styled.div`
         ${StyledIconButton} {
             border-color: ${({ theme }) => theme.main['primary-1.1']};
         }
+    }
+`;
+
+const StyledTextInput = styled(TextInput)`
+    flex: 1;
+    margin-bottom: 0;
+
+    input {
+        &::-ms-reveal {
+            display: none;
+        }
+
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        border-right-width: 0;
     }
 `;
 

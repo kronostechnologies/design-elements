@@ -6,7 +6,8 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #84C6EA;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -119,6 +120,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -255,6 +257,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -389,6 +392,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -525,6 +529,7 @@ exports[`External Link matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;

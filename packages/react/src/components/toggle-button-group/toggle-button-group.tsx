@@ -22,26 +22,24 @@ interface ToggleButtonProps {
     isMobile: boolean;
 }
 
-const outOfThemeColor = '#e0f0f9'; // TODO: Eventually put somewhere in theme
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${(props) => (props.pressed ? outOfThemeColor : props.theme.greys.white)};
-    border: 1px solid;
-    border-color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
-    border-right: ${(props) => (props.pressed ? '1px solid' : 0)};
+    background-color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-background-color'] : theme.component['toggle-button-background-color'])};
+    border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-border-color'] : theme.component['toggle-button-border-color'])};
+    border-right: ${({ pressed }) => (pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['dark-grey'])};
-    font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
+    color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-text-color'] : theme.component['toggle-button-text-color'])};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     letter-spacing: 0.02875rem;
-    min-height: ${(props) => (props.isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
+    min-height: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-2x);
 
-    ${(props) => props.pressed && css`
+    ${({ pressed }) => pressed && css`
         & + button { border-left: 0; }
     `}
 
     &:last-child {
-        border-right: 1px solid ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
+        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-border-color'] : theme.component['toggle-button-border-color'])};
         margin: 0;
     }
 
@@ -51,14 +49,21 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
     ${(theme) => focus(theme, true)};
 
-    ${(props) => !props.pressed && css`
+    &:disabled,
+    &:disabled:hover {
+        background-color: ${({ theme }) => theme.component['toggle-button-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['toggle-button-disabled-border-color']};
+        color: ${({ theme }) => theme.component['toggle-button-disabled-text-color']};
+    }
+
+    ${({ theme, pressed }) => !pressed && css`
         &:hover {
-            background-color: ${props.theme.greys.grey};
-            border-color: ${props.theme.greys['dark-grey']};
-            color: ${props.theme.greys.black};
+            background-color: ${theme.component['toggle-button-hover-background-color']};
+            border-color: ${theme.component['toggle-button-hover-border-color']};
+            color: ${theme.component['toggle-button-hover-text-color']};
 
             & + button {
-                border-left-color: ${props.theme.greys['dark-grey']};
+                border-left-color: ${theme.component['toggle-button-hover-border-color']};
             }
         }
     `}
@@ -70,8 +75,9 @@ interface ToggleButtonGroupProps {
      */
     buttonGroup: {
         defaultPressed?: boolean;
+        disabled?: boolean;
         label: string;
-        value: string;
+        value: string
     }[];
     className?: string;
     /**
@@ -83,7 +89,10 @@ interface ToggleButtonGroupProps {
 }
 
 export const ToggleButtonGroup: VoidFunctionComponent<ToggleButtonGroupProps> = ({
-    buttonGroup, className, groupName, onClick,
+    buttonGroup,
+    className,
+    groupName,
+    onClick,
 }) => {
     const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
@@ -112,6 +121,7 @@ export const ToggleButtonGroup: VoidFunctionComponent<ToggleButtonGroupProps> = 
                     onClick={handleClick}
                     type="button"
                     value={button.value}
+                    disabled={button.disabled}
                 >
                     {button.label}
                 </ToggleButton>

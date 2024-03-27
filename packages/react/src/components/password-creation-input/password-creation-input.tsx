@@ -4,13 +4,13 @@ import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
+import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';
 import { PasswordRule } from './password-rule';
 import { getDefaultValidationConditions, ValidationCondition } from './validation-condition';
 import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Tooltip } from '../tooltip/tooltip';
 
 const StyledFieldContainer = styled(FieldContainer)`
     > :nth-child(2) {
@@ -33,7 +33,6 @@ const PasswordContainer = styled.div`
 
     > div:first-of-type:focus-within {
         border-radius: var(--border-radius);
-
         /* TODO change when updating thematization */
         box-shadow: 0 0 0 2px #84c6ea;
         outline: none;
@@ -48,10 +47,10 @@ const PasswordContainer = styled.div`
 
 export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolean; }>): string {
     if (isValid) {
-        return theme.greys['dark-grey'];
+        return theme.component['password-creation-input-border-color'];
     }
 
-    return theme.notifications['alert-2.1'];
+    return theme.component['password-creation-input-error-border-color'];
 }
 
 const StyledInput = styled(TextInput)`

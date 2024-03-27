@@ -88,6 +88,7 @@ input + .c1 {
 .c3:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c3:disabled,
@@ -222,6 +223,7 @@ input + .c1 {
 .c3:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c3:disabled,
@@ -356,6 +358,7 @@ input + .c1 {
 .c3:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c3:disabled,
