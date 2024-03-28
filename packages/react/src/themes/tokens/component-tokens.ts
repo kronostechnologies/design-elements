@@ -9,6 +9,7 @@ import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
+import { defaultProgressTokens, ProgressTokens } from './component/progress-tracker-tokens';
 import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
 import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
@@ -33,9 +34,6 @@ import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
-import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
-import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
-import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
 import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
@@ -63,9 +61,7 @@ export type ComponentTokens =
     | LegendTokens
     | NavListTokens
     | PaginationTokens
-    | ProgressCircleTokens
-    | ProgressIndicatorTokens
-    | ProgressTrackerTokens
+    | ProgressTokens
     | BadgeTokens
     | GlobalBannerTokens
     | SectionalBannerTokens
@@ -122,9 +118,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultLegendTokens,
     ...defaultNavListTokens,
     ...defaultPaginationTokens,
-    ...defaultProgressCircleTokens,
-    ...defaultProgressIndicatorTokens,
-    ...defaultProgressTrackerTokens,
+    ...defaultProgressTokens,
     ...defaultFocusTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,

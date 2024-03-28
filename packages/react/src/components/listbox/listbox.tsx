@@ -11,8 +11,8 @@ import {
 } from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
+import { Checkbox } from '../checkbox/checkbox';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
@@ -99,7 +99,7 @@ const Container = styled.div<ContainerProps>`
     padding: var(--spacing-half) 0;
     position: relative;
     z-index: 1000;
-  
+
     ${({ $focusable, theme }) => $focusable && focus({ theme })};
 `;
 
@@ -111,35 +111,6 @@ const List = styled.ul`
     width: 100%;
 `;
 
-const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
-    color: ${({ theme }) => theme.greys.white};
-    height: 100%;
-    width: 100%;
-`;
-
-const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
-    align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    display: flex;
-    height: var(--size-1x);
-    justify-content: center;
-    margin-right: var(--spacing-1x);
-    width: var(--size-1x);
-
-    &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
-    }
-  
-    ${({ checked }) => (!checked && css`
-        > ${CheckMarkIcon} {
-            display: none;
-        }
-    `)}
-`;
-
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
@@ -149,27 +120,20 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
-  
+
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
-    
+
     user-select: none;
 
     &:hover {
         background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
     }
-  
+
     ${({ focused, disabled, theme }) => (focused && css`
         outline: 2px solid ${disabled ? 'transparent' : theme.main['primary-1.1']};
         outline-offset: -2px;
-    `)}
-
-    ${({ selected }) => (selected && css`
-        & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
-            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
-        }
     `)}
 `;
 
@@ -483,13 +447,11 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         selected={isOptionSelected(option)}
                     >
                         {multiselect ? (
-                            <CustomCheckbox
+                            <Checkbox
                                 aria-hidden="true"
                                 disabled={option.disabled}
                                 checked={isOptionSelected(option)}
-                            >
-                                <CheckMarkIcon />
-                            </CustomCheckbox>
+                            />
                         ) : null}
                         <ListItemTextContainer>
                             {option.label || option.value}

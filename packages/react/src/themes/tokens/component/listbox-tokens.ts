@@ -6,15 +6,6 @@ export type ListboxTokens =
     | 'listbox-border-color'
     | 'listbox-box-shadow-frame-color'
     | 'listbox-box-shadow-depth-color'
-    | 'listbox-checkbox-background-color'
-    | 'listbox-checkbox-disabled-background-color'
-    | 'listbox-checkbox-border-color'
-    | 'listbox-checkbox-disabled-border-color'
-    | 'listbox-checkbox-hover-border-color'
-    | 'listbox-checkbox-disabled-hover-border-color'
-    | 'listbox-checkbox-checked-background-color'
-    | 'listbox-checkbox-checked-border-color'
-    | 'listbox-checkbox-checked-icon-color'
     | 'listbox-item-text-color'
     | 'listbox-item-disabled-text-color'
     | 'listbox-item-hover-background-color'
@@ -41,16 +32,6 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-item-hover-disabled-background-color': 'color-menu-item-bg',
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
     'listbox-item-caption-disabled-text-color': 'color-menu-item-content-disabled',
-
-    'listbox-checkbox-background-color': 'color-input-bg',
-    'listbox-checkbox-border-color': 'color-input-border',
-    'listbox-checkbox-hover-border-color': 'color-input-border-hover',
-    'listbox-checkbox-checked-background-color': 'color-input-bg-checked',
-    'listbox-checkbox-checked-border-color': 'color-input-border-checked',
-    'listbox-checkbox-checked-icon-color': 'color-input-content-checked',
-    'listbox-checkbox-disabled-background-color': 'color-input-bg-disabled',
-    'listbox-checkbox-disabled-border-color': 'color-input-border-disabled',
-    'listbox-checkbox-disabled-hover-border-color': 'color-input-border-disabled',
 
     'listbox-box-shadow-frame-color': 'color-neutral-15',
     'listbox-box-shadow-depth-color': 'color-box-shadow',
