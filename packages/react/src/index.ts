@@ -16,7 +16,6 @@ export { Datepicker, DatepickerHandles } from './components/date-picker/date-pic
 export { DropdownList, DropdownListOption } from './components/dropdown-list/dropdown-list';
 export { MoneyInput } from './components/money-input/money-input';
 export { NumericInput } from './components/numeric-input/numeric-input';
-export { OptionButton } from './components/option-button/option-button';
 export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
 export { PasswordInput } from './components/password-input/password-input';
 export { PhoneInput } from './components/phone-input/phone-input';

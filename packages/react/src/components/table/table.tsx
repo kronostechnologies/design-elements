@@ -82,9 +82,9 @@ interface StyledTableProps {
 }
 
 const StyledTable = styled.table<StyledTableProps>`
-    background: ${({ theme }) => theme.greys.white};
+    background: ${({ theme }) => theme.component['table-background-color']};
     border-collapse: collapse;
-    color: ${({ theme }) => theme.greys['neutral-90']};
+    color: ${({ theme }) => theme.component['table-text-color']};
     width: 100%;
 
     th {
@@ -115,7 +115,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
 const RowNumber = styled.span`
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['table-cell-number-text-color']};
     font-size: 0.75rem;
     margin-left: 50%;
     min-width: var(--size-2halfx);

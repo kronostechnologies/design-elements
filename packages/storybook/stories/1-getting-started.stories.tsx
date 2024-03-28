@@ -11,7 +11,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 const meta: Meta = {
-    title: 'Introduction',
+    title: 'Getting Started',
     component: DesignSystem,
 };
 

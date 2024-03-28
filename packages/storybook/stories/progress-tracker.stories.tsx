@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Data/Progress Tracker',
+    title: 'Components/Progress Tracker',
     component: ProgressTracker,
     parameters: rawCodeParameters,
 

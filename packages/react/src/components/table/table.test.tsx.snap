@@ -664,7 +664,7 @@ exports[`Table has desktop styles 1`] = `
 exports[`Table has error rows styles 1`] = `
 .c5 {
   position: relative;
-  background-color: #fcf8f9;
+  background-color: #FAEAE9;
 }
 
 .c5:not(:first-child) {
