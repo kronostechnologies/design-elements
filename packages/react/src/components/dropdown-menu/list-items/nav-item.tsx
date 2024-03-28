@@ -45,7 +45,7 @@ const NavItemStyle = css<LinkProps>`
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? theme.component['dropdown-menu-nav-item-hover-disabled-background-color'] : theme.component['dropdown-menu-nav-item-hover-background-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['dropdown-menu-nav-item-disabled-background-color'] : theme.component['dropdown-menu-nav-item-hover-background-color'])};
     }
 
     &[disabled],

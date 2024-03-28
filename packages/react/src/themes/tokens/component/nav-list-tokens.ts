@@ -5,9 +5,10 @@ export type NavListTokens =
     | 'nav-list-background-color'
     | 'nav-list-border-color'
     | 'nav-list-item-text-color'
-    | 'nav-list-item-icon-text-color'
+    | 'nav-list-item-icon-color'
     | 'nav-list-item-hover-background-color'
-    | 'nav-list-item-icon-hover-text-color'
+    | 'nav-list-item-text-hover-color'
+    | 'nav-list-item-icon-hover-color'
     | 'nav-list-item-disabled-text-color';
 
 export type NavListTokenValue = AliasTokens | RefTokens;
@@ -17,11 +18,12 @@ export type NavListTokenMap = {
 };
 
 export const defaultNavListTokens: NavListTokenMap = {
-    'nav-list-background-color': 'color-bg-overlay',
-    'nav-list-border-color': 'color-border-overlay',
-    'nav-list-item-hover-background-color': 'color-bg-hover',
-    'nav-list-item-text-color': 'color-content',
-    'nav-list-item-icon-text-color': 'color-content-subtle',
-    'nav-list-item-icon-hover-text-color': 'color-content-hover',
-    'nav-list-item-disabled-text-color': 'color-content-disabled',
+    'nav-list-background-color': 'color-menu-bg',
+    'nav-list-border-color': 'color-menu-border',
+    'nav-list-item-hover-background-color': 'color-menu-item-bg-hover',
+    'nav-list-item-text-color': 'color-menu-item-content',
+    'nav-list-item-text-hover-color': 'color-menu-item-content-hover',
+    'nav-list-item-icon-color': 'color-menu-item-content',
+    'nav-list-item-icon-hover-color': 'color-menu-item-content-hover',
+    'nav-list-item-disabled-text-color': 'color-menu-item-content-disabled',
 };

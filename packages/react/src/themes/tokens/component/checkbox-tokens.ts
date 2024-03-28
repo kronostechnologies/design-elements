@@ -24,7 +24,7 @@ export const defaultCheckboxTokens: CheckboxTokenMap = {
     'checkbox-unchecked-border-color': 'color-input-border',
     'checkbox-checked-icon-color': 'color-input-content-checked',
     'checkbox-checked-background-color': 'color-input-bg-checked',
-    'checkbox-checked-border-color': 'color-input-bg-checked',
+    'checkbox-checked-border-color': 'color-input-border-checked',
     'checkbox-disabled-background-color': 'color-input-bg-disabled',
     'checkbox-disabled-border-color': 'color-input-border-disabled',
     'checkbox-hover-border-color': 'color-input-border-hover',

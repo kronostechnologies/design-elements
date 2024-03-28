@@ -20,10 +20,10 @@ export type TextInputTokenMap = {
 export const defaultTextInputTokens: TextInputTokenMap = {
     'text-input-background-color': 'color-input-bg',
     'text-input-border-color': 'color-input-border',
-    'text-input-text-color': 'color-content', // was color-black
+    'text-input-text-color': 'color-content',
     'text-input-placeholder-text-color': 'color-input-content',
     'text-input-disabled-background-color': 'color-input-bg-disabled',
-    'text-input-disabled-border-color': 'color-input-border-disabled', // was neutral-15
-    'text-input-disabled-text-color': 'color-input-content-disabled', // was neutral-15
+    'text-input-disabled-border-color': 'color-input-border-disabled',
+    'text-input-disabled-text-color': 'color-input-content-disabled',
     'text-input-placeholder-disabled-text-color': 'color-input-content-disabled',
 };

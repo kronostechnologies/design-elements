@@ -66,6 +66,17 @@ export type AliasTokens =
     | 'color-input-content-checked'
     | 'color-input-content-selected'
 /**
+ * MENU
+ */
+    | 'color-menu-bg'
+    | 'color-menu-border'
+    | 'color-menu-item-bg'
+    | 'color-menu-item-bg-hover'
+    | 'color-menu-item-content'
+    | 'color-menu-item-subcontent'
+    | 'color-menu-item-content-hover'
+    | 'color-menu-item-content-disabled'
+/**
  * BRAND
  */
     | 'color-bg-brand-subtle'
@@ -158,6 +169,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * NEUTRAL
      *  Use for default background of neutral UI elements,
+     *  sometimes on a subtle background. Could also be named color-bg-inverse.
      */
     'color-bg-neutral-subtlest': 'color-neutral-02',
     'color-bg-neutral-subtle': 'color-neutral-05',
@@ -231,19 +243,31 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-input-bg-selected': 'color-brand-05',
 
     'color-input-border': 'color-neutral-65',
-    'color-input-border-hover': 'color-neutral-90',
+    'color-input-border-hover': 'color-black',
     'color-input-border-disabled': 'color-neutral-30',
     'color-input-border-selected': 'color-brand-50',
     'color-input-border-checked': 'color-brand-50',
     'color-input-border-error': 'color-alert-50',
 
     'color-input-content': 'color-neutral-65',
-    'color-input-content-hover': 'color-neutral-90',
+    'color-input-content-hover': 'color-black',
     'color-input-content-disabled': 'color-neutral-30',
     'color-input-content-error': 'color-alert-50',
     'color-input-content-checked': 'color-white',
     'color-input-content-selected': 'color-brand-70',
-    // color-input-content-placeholder?
+
+    /**
+     * MENU
+     * Used for menus, dropdown menus, listbox, navigation list and their items.
+     */
+    'color-menu-bg': 'color-bg-overlay',
+    'color-menu-border': 'color-border-overlay',
+    'color-menu-item-bg': 'transparent-100',
+    'color-menu-item-bg-hover': 'color-bg-hover', // should use transparency instead
+    'color-menu-item-content': 'color-content',
+    'color-menu-item-subcontent': 'color-content-subtle',
+    'color-menu-item-content-hover': 'color-content-hover',
+    'color-menu-item-content-disabled': 'color-content-disabled',
 
     /**
      * BRAND
@@ -276,7 +300,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg': 'color-white',
     /**
      * Use for the elevation surface background of elements that sit on top of other UI elements,
-     * such as modals, dropdown menus, listbox, nav-list, global navigation, toggletips, etc.
+     * such as modals, menus, datepicker calendar, global navigation, toggletips, etc.
      */
     'color-bg-overlay': 'color-white',
     /**
@@ -286,19 +310,14 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-isolated': 'color-neutral-02',
 
     /**
-     * Use for backgrounds of elements on a bold background, such as in the buttons on spotlight cards.
-     */
-    // 'color-bg-inverse': 'color-neutral-65',
-    // 'color-bg-inverse-hover': 'color-neutral-80',
-    /**
      * Use for the background of elements that appear to have no background in a resting state,
      * such as subtle buttons and menu items.
      */
-    // 'color-bg-subtle': 'transparent-50',
+    // 'color-bg-subtle': 'transparent-100',
 
     /**
      * Use for backgrounds of elements in a hovered state,
-     * such as menu items, navigation elements, accordion headers, card links, table cells, clickable tags, etc.
+     * such as navigation elements like accordion headers, card links, table cells, clickable tags, etc.
      */
     'color-bg-hover': 'color-neutral-15',
     /**

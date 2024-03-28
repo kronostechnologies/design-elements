@@ -29,7 +29,7 @@ export const defaultRadioCardTokens: RadioCardTokenMap = {
     'radio-card-selected-background-color': 'color-input-bg-selected',
     'radio-card-selected-border-color': 'color-input-border-selected',
     'radio-card-button-checked-background-color': 'color-input-bg-checked',
-    'radio-card-button-checked-border-color': 'color-input-bg-checked',
+    'radio-card-button-checked-border-color': 'color-input-border-checked',
     'radio-card-hover-background-color': 'color-input-bg-hover',
     'radio-card-hover-border-color': 'color-input-border-hover',
     'radio-card-hover-text-color': 'color-content-hover',

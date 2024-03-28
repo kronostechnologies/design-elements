@@ -27,5 +27,5 @@ export const defaultPasswordInputTokens: PasswordInputTokenMap = {
     'password-strength-meter-fair-color': 'color-warning-50',
     'password-strength-meter-good-color': 'color-success-20',
     'password-strength-meter-strong-color': 'color-success-50',
-    'password-strength-label-text-color': 'color-neutral-65',
+    'password-strength-label-text-color': 'color-content-subtle',
 };

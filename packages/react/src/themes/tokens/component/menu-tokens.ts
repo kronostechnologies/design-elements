@@ -21,18 +21,19 @@ export type MenuTokenMap = {
 };
 
 export const defaultMenuTokens: MenuTokenMap = {
-    'menu-background-color': 'color-bg-overlay',
-    'menu-border-color': 'color-border-overlay',
-    'menu-submenu-background-color': 'color-bg-overlay',
-    'menu-submenu-border-color': 'color-border-overlay',
+    'menu-background-color': 'color-menu-bg',
+    'menu-border-color': 'color-menu-border',
+    'menu-submenu-background-color': 'color-menu-bg',
+    'menu-submenu-border-color': 'color-menu-border',
 
-    'menu-group-text-color': 'color-content-subtle',
-    'menu-item-disabled-text-color': 'color-content-disabled',
-    'menu-item-hover-background-color': 'color-bg-hover',
-    'menu-item-text-color': 'color-content',
+    'menu-item-hover-background-color': 'color-menu-item-bg-hover',
+    'menu-group-text-color': 'color-menu-item-subcontent',
 
-    'menu-submenu-box-shadow-color': 'transparent-dark-10',
-    'menu-box-shadow-color': 'transparent-dark-10',
+    'menu-item-text-color': 'color-menu-item-content',
+    'menu-item-disabled-text-color': 'color-menu-item-content-disabled',
+
+    'menu-submenu-box-shadow-color': 'color-box-shadow',
+    'menu-box-shadow-color': 'color-box-shadow',
 
     'menu-item-focus-outline-color': 'color-brand-50',
 };
