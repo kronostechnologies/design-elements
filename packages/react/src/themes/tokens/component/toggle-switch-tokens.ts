@@ -23,11 +23,11 @@ export const defaultToggleSwitchTokens: ToggleSwitchTokenMap = {
     'toggle-switch-background-color': 'color-neutral-50',
     'toggle-switch-border-color': 'color-neutral-30',
     'toggle-switch-disabled-background-color': 'color-neutral-15',
-    'toggle-switch-disabled-border-color': 'color-neutral-15',
+    'toggle-switch-disabled-border-color': 'color-neutral-15', // same color as bg
     'toggle-switch-disabled-toggled-background-color': 'color-success-20',
-    'toggle-switch-disabled-toggled-border-color': 'color-success-20',
-    'toggle-switch-toggled-background-color': 'color-success-50',
-    'toggle-switch-toggled-border-color': 'color-success-50',
-    'toggle-switch-knob-background-color': 'color-white',
-    'toggle-switch-label-text-color': 'color-black',
+    'toggle-switch-disabled-toggled-border-color': 'color-success-20', // same color as bg
+    'toggle-switch-toggled-background-color': 'color-feedback-bg-success-bold',
+    'toggle-switch-toggled-border-color': 'color-feedback-bg-success-bold', // same color as bg
+    'toggle-switch-knob-background-color': 'color-input-bg', // was color-white
+    'toggle-switch-label-text-color': 'color-content',
 };

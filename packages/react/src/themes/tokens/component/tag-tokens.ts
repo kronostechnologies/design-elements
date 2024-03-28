@@ -2,6 +2,15 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type TagTokens =
+    | 'tag-box-shadow-color'
+    | 'tag-delete-button-icon-color'
+    | 'tag-delete-button-hover-background-color'
+    | 'tag-delete-icon-color'
+    | 'tag-clickable-hover-border-background-color'
+    | 'tag-clickable-hover-border-color'
+    | 'tag-clickable-hover-icon-color'
+    | 'tag-clickable-hover-background-color'
+// NEW
     | 'tag-background-color'
     | 'tag-border-color'
     | 'tag-text-color'
@@ -63,6 +72,15 @@ export type TagTokenMap = {
 };
 
 export const defaultTagTokens: TagTokenMap = {
+    'tag-box-shadow-color': 'color-neutral-50',
+    'tag-delete-button-icon-color': 'color-black',
+    'tag-delete-button-hover-background-color': 'color-neutral-15',
+    'tag-delete-icon-color': 'color-neutral-65',
+    'tag-clickable-hover-border-background-color': 'color-neutral-65',
+    'tag-clickable-hover-border-color': 'color-neutral-65',
+    'tag-clickable-hover-icon-color': 'color-black',
+    'tag-clickable-hover-background-color': 'color-neutral-15',
+    // NEW
     'tag-background-color': 'color-neutral-05',
     'tag-border-color': 'color-neutral-50',
     'tag-text-color': 'color-neutral-90',
