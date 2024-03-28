@@ -534,6 +534,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
+      aria-selected="true"
       class="c5"
       data-testid="listitem-optionB"
       id="uuid1_optionB"

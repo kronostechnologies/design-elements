@@ -261,6 +261,7 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c10"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
@@ -725,6 +726,7 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c12"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
@@ -1118,6 +1120,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c8"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
@@ -1558,6 +1561,7 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c11"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
