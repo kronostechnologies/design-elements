@@ -21,7 +21,7 @@ export type ToggleSwitchTokenMap = {
 
 export const defaultToggleSwitchTokens: ToggleSwitchTokenMap = {
     'toggle-switch-background-color': 'color-neutral-50',
-    'toggle-switch-border-color': 'color-neutral-30',
+    'toggle-switch-border-color': 'color-neutral-50', // same color as bg
     'toggle-switch-disabled-background-color': 'color-neutral-15',
     'toggle-switch-disabled-border-color': 'color-neutral-15', // same color as bg
     'toggle-switch-disabled-toggled-background-color': 'color-success-20',

@@ -81,13 +81,13 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-clickable-hover-icon-color': 'color-black',
     'tag-clickable-hover-background-color': 'color-neutral-15',
     // NEW
-    'tag-background-color': 'color-neutral-05',
-    'tag-border-color': 'color-neutral-50',
-    'tag-text-color': 'color-neutral-90',
-    'tag-icon-color': 'color-neutral-65',
-    'tag-hover-background-color': 'color-neutral-15',
-    'tag-hover-border-color': 'color-neutral-90',
-    'tag-hover-icon-color': 'color-neutral-90',
+    'tag-background-color': 'color-bg-neutral-subtle',
+    'tag-border-color': 'color-border-bold',
+    'tag-text-color': 'color-content',
+    'tag-icon-color': 'color-content-subtle',
+    'tag-hover-background-color': 'color-bg-hover',
+    'tag-hover-border-color': 'color-border-hover', // was neutral-90
+    'tag-hover-icon-color': 'color-content-hover', // was neutral-90
 
     'tag-selected-background-color': 'color-informative-05',
     'tag-selected-border-color': 'color-informative-70',
@@ -98,9 +98,9 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-selected-hover-icon-color': 'color-informative-70',
     'tag-selected-hover-text-color': 'color-informative-70',
 
-    'tag-remove-button-hover-background-color': 'color-neutral-15',
-    'tag-remove-button-hover-icon-color': 'color-neutral-90',
-    'tag-remove-button-icon-color': 'color-neutral-65',
+    'tag-remove-button-hover-background-color': 'color-bg-hover',
+    'tag-remove-button-hover-icon-color': 'color-content-hover', // was neutral-90
+    'tag-remove-button-icon-color': 'color-content-subtle',
     'tag-selected-remove-button-hover-background-color': 'color-informative-10',
     'tag-selected-remove-button-hover-icon-color': 'color-informative-70',
 

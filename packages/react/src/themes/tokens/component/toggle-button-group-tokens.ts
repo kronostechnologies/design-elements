@@ -22,16 +22,16 @@ export type ToggleButtonGroupTokenMap = {
 };
 
 export const defaultToggleButtonGroupTokens: ToggleButtonGroupTokenMap = {
-    'toggle-button-disabled-background-color': 'color-input-bg-disabled',
-    'toggle-button-disabled-border-color': 'color-input-border-disabled',
-    'toggle-button-disabled-text-color': 'color-input-content-disabled',
+    'toggle-button-background-color': 'color-input-bg',
     'toggle-button-border-color': 'color-input-border', // was neutral-50
+    'toggle-button-text-color': 'color-input-content',
     'toggle-button-hover-background-color': 'color-input-bg-hover',
     'toggle-button-hover-border-color': 'color-input-border-hover',
     'toggle-button-hover-text-color': 'color-input-content-hover', // was color-black
+    'toggle-button-disabled-background-color': 'color-input-bg-disabled', // was color-white
+    'toggle-button-disabled-border-color': 'color-input-border-disabled',
+    'toggle-button-disabled-text-color': 'color-input-content-disabled',
     'toggle-button-selected-background-color': 'color-input-bg-selected',
     'toggle-button-selected-border-color': 'color-input-border-selected', // was color-brand-80
     'toggle-button-selected-text-color': 'color-input-content-selected', // was color-brand-80
-    'toggle-button-text-color': 'color-input-content',
-    'toggle-button-background-color': 'color-input-bg',
 };

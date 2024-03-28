@@ -22,16 +22,16 @@ export type ChooserTokenMap = {
 };
 
 export const defaultChooserTokens: ChooserTokenMap = {
+    'chooser-background-color': 'color-input-bg',
+    'chooser-border-color': 'color-input-border',
+    'chooser-text-color': 'color-input-content',
     'chooser-selected-background-color': 'color-input-bg-selected',
     'chooser-selected-border-color': 'color-input-border-selected',
     'chooser-selected-text-color': 'color-input-content-selected',
-    'chooser-text-color': 'color-input-content',
-    'chooser-background-color': 'color-input-bg',
-    'chooser-border-color': 'color-input-border',
-    'chooser-disabled-background-color': 'color-input-bg-disabled',
-    'chooser-disabled-border-color': 'color-input-border-disabled',
-    'chooser-disabled-text-color': 'color-input-content-disabled',
     'chooser-hover-background-color': 'color-input-bg-hover',
     'chooser-hover-border-color': 'color-input-border-hover',
     'chooser-hover-text-color': 'color-input-content-hover',
+    'chooser-disabled-background-color': 'color-input-bg-disabled',
+    'chooser-disabled-border-color': 'color-input-border-disabled',
+    'chooser-disabled-text-color': 'color-input-content-disabled',
 };

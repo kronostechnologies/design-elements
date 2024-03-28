@@ -18,12 +18,12 @@ export type DropdownListTokenMap = {
 };
 
 export const defaultDropdownListTokens: DropdownListTokenMap = {
-    'dropdown-list-arrow-color': 'color-input-content',
-    'dropdown-list-arrow-disabled-color': 'color-input-content-disabled',
     'dropdown-list-input-background-color': 'color-input-bg',
     'dropdown-list-input-disabled-background-color': 'color-input-bg-disabled',
     'dropdown-list-input-border-color': 'color-input-border',
     'dropdown-list-input-disabled-border-color': 'color-input-border-disabled',
     'dropdown-list-input-error-border-color': 'color-input-border-error',
+    'dropdown-list-arrow-color': 'color-input-content',
+    'dropdown-list-arrow-disabled-color': 'color-input-content-disabled',
     'dropdown-list-input-disabled-text-color': 'color-input-content-disabled',
 };

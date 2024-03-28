@@ -33,11 +33,12 @@ export type ListboxTokenMap = {
 export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-background-color': 'color-bg-overlay',
     'listbox-border-color': 'color-border-overlay',
+
     'listbox-checkbox-background-color': 'color-input-bg',
-    'listbox-checkbox-disabled-background-color': 'color-input-bg-disabled',
     'listbox-checkbox-border-color': 'color-input-border',
-    'listbox-checkbox-disabled-border-color': 'color-input-border-disabled',
     'listbox-checkbox-hover-border-color': 'color-input-border-hover',
+    'listbox-checkbox-disabled-background-color': 'color-input-bg-disabled',
+    'listbox-checkbox-disabled-border-color': 'color-input-border-disabled',
     'listbox-checkbox-disabled-hover-border-color': 'color-input-border-disabled',
 
     'listbox-item-selected-background-color': 'color-input-bg-checked',
@@ -45,11 +46,11 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-item-selected-icon-color': 'color-input-content-checked',
 
     'listbox-item-text-color': 'color-content',
-    'listbox-item-disabled-text-color': 'color-content-disabled',
-    'listbox-item-caption-disabled-text-color': 'color-input-content-disabled', // was neutral-15
     'listbox-item-caption-text-color': 'color-content-subtle',
     'listbox-item-hover-background-color': 'color-bg-hover',
     'listbox-item-hover-disabled-background-color': 'color-bg-disabled',
+    'listbox-item-disabled-text-color': 'color-content-disabled',
+    'listbox-item-caption-disabled-text-color': 'color-input-content-disabled', // was neutral-15
 
     'listbox-box-shadow-frame-color': 'color-neutral-15',
     'listbox-box-shadow-depth-color': 'transparent-dark-20',
