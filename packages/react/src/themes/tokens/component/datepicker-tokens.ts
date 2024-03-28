@@ -54,7 +54,7 @@ export type DatepickerTokenMap = {
 
 export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-border-color': 'color-neutral-15',
-    'datepicker-box-shadow-color': 'transparent-20',
+    'datepicker-box-shadow-color': 'transparent-dark-20',
     'datepicker-day-border-color': 'transparent-100',
     'datepicker-day-hover-background-color': 'color-neutral-15',
     'datepicker-day-disabled-text-color': 'color-neutral-30',
@@ -76,7 +76,7 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-today-selected-text-color': 'color-brand-70',
     'datepicker-header-background-color': 'color-white',
     'datepicker-header-nav-button-background-color': 'color-white',
-    'datepicker-background-color': 'transparent-50',
+    'datepicker-background-color': 'transparent-dark-50',
     'datepicker-input-disabled-border-color': 'color-neutral-30',
     'datepicker-input-border-color': 'color-neutral-65',
     'datepicker-input-error-border-color': 'color-alert-50',

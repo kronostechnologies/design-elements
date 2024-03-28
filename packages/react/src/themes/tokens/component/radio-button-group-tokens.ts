@@ -19,13 +19,13 @@ export type RadioButtonGroupTokenMap = {
 };
 
 export const defaultRadioButtonGroupTokens: RadioButtonGroupTokenMap = {
-    'radio-button-background-color': 'color-white', // 'color-input-bg'
-    'radio-button-border-color': 'color-neutral-65', // 'color-input-border'
-    'radio-button-disabled-background-color': 'color-neutral-05', // 'color-input-bg-disabled'
-    'radio-button-disabled-border-color': 'color-neutral-15', // 'color-input-border-disabled'
-    'radio-button-hover-border-color': 'color-brand-50', // 'color-input-border-hover'
-    'radio-button-disabled-hover-border-color': 'color-neutral-15', // 'color-input-border-disabled'
-    'radio-button-checked-background-color': 'color-brand-50', // 'color-input-bg-checked'
-    'radio-button-checked-border-color': 'color-brand-50', // 'color-input-bg-checked'
-    'radio-button-group-legend-text-color': 'color-black', // 'color-content'
+    'radio-button-background-color': 'color-input-bg',
+    'radio-button-border-color': 'color-input-border',
+    'radio-button-disabled-background-color': 'color-input-bg-disabled',
+    'radio-button-disabled-border-color': 'color-input-border-disabled',
+    'radio-button-hover-border-color': 'color-input-border-hover',
+    'radio-button-disabled-hover-border-color': 'color-input-border-disabled',
+    'radio-button-checked-background-color': 'color-input-bg-checked',
+    'radio-button-checked-border-color': 'color-input-bg-checked',
+    'radio-button-group-legend-text-color': 'color-content',
 };

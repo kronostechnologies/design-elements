@@ -17,11 +17,11 @@ export type StepperTokenMap = {
 };
 
 export const defaultStepperTokens: StepperTokenMap = {
-    'stepper-button-border-color': 'color-neutral-65',
-    'stepper-button-disabled-background-color': 'color-neutral-05',
-    'stepper-button-disabled-border-color': 'color-neutral-15',
-    'stepper-button-disabled-text-color': 'color-neutral-30',
-    'stepper-button-hover-background-color': 'color-neutral-15',
-    'stepper-button-text-color': 'color-neutral-65',
-    'stepper-button-background-color': 'color-white',
+    'stepper-button-border-color': 'color-input-border',
+    'stepper-button-disabled-background-color': 'color-input-bg-disabled',
+    'stepper-button-disabled-border-color': 'color-input-border-disabled',
+    'stepper-button-disabled-text-color': 'color-input-content-disabled',
+    'stepper-button-hover-background-color': 'color-input-bg-hover',
+    'stepper-button-text-color': 'color-input-content',
+    'stepper-button-background-color': 'color-input-bg',
 };

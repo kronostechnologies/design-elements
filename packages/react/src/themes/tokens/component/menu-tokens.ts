@@ -21,18 +21,18 @@ export type MenuTokenMap = {
 };
 
 export const defaultMenuTokens: MenuTokenMap = {
-    'menu-background-color': 'color-white', // 'color-bg-overlay'
-    'menu-border-color': 'color-neutral-50', // 'color-border-overlay'
-    'menu-submenu-background-color': 'color-white', // 'color-bg-overlay'
-    'menu-submenu-border-color': 'color-neutral-50', // 'color-border-overlay'
+    'menu-background-color': 'color-bg-overlay',
+    'menu-border-color': 'color-border-overlay',
+    'menu-submenu-background-color': 'color-bg-overlay',
+    'menu-submenu-border-color': 'color-border-overlay',
 
-    'menu-group-text-color': 'color-neutral-65', // 'color-content-subtle'
-    'menu-item-disabled-text-color': 'color-neutral-30', // 'color-content-disabled'
-    'menu-item-hover-background-color': 'color-neutral-15', // 'color-bg-hover'
-    'menu-item-text-color': 'color-black', // 'color-content'
+    'menu-group-text-color': 'color-content-subtle',
+    'menu-item-disabled-text-color': 'color-content-disabled',
+    'menu-item-hover-background-color': 'color-bg-hover',
+    'menu-item-text-color': 'color-content',
 
-    'menu-submenu-box-shadow-color': 'transparent-10',
-    'menu-box-shadow-color': 'transparent-10',
+    'menu-submenu-box-shadow-color': 'transparent-dark-10',
+    'menu-box-shadow-color': 'transparent-dark-10',
 
     'menu-item-focus-outline-color': 'color-brand-50',
 };

@@ -31,28 +31,28 @@ export type ListboxTokenMap = {
 };
 
 export const defaultListboxTokens: ListboxTokenMap = {
-    'listbox-background-color': 'color-white', // 'color-bg-overlay'
-    'listbox-border-color': 'color-neutral-50', // 'color-border-overlay'
-    'listbox-checkbox-background-color': 'color-white', // 'color-input-bg'
-    'listbox-checkbox-disabled-background-color': 'color-neutral-05', // 'color-input-bg-disabled'
-    'listbox-checkbox-border-color': 'color-neutral-65', // 'color-input-border'
-    'listbox-checkbox-disabled-border-color': 'color-neutral-15', // 'color-input-border-disabled'
-    'listbox-checkbox-hover-border-color': 'color-brand-50', // 'color-input-border-hover'
-    'listbox-checkbox-disabled-hover-border-color': 'color-neutral-15', // 'color-input-border-hover-disabled'
+    'listbox-background-color': 'color-bg-overlay',
+    'listbox-border-color': 'color-border-overlay',
+    'listbox-checkbox-background-color': 'color-input-bg',
+    'listbox-checkbox-disabled-background-color': 'color-input-bg-disabled',
+    'listbox-checkbox-border-color': 'color-input-border',
+    'listbox-checkbox-disabled-border-color': 'color-input-border-disabled',
+    'listbox-checkbox-hover-border-color': 'color-input-border-hover',
+    'listbox-checkbox-disabled-hover-border-color': 'color-input-border-disabled',
 
-    'listbox-item-selected-background-color': 'color-brand-50', // 'color-input-bg-checked'??
-    'listbox-item-selected-border-color': 'color-brand-50', // 'color-input-bg-checked'??
-    'listbox-item-selected-icon-color': 'color-white', // 'color-input-content-checked'??
+    'listbox-item-selected-background-color': 'color-input-bg-checked',
+    'listbox-item-selected-border-color': 'color-input-bg-checked',
+    'listbox-item-selected-icon-color': 'color-input-content-checked',
 
-    'listbox-item-text-color': 'color-black', // 'color-content'
-    'listbox-item-disabled-text-color': 'color-neutral-30', // 'color-content-disabled'
-    'listbox-item-caption-disabled-text-color': 'color-neutral-15', // 'color-content-disabled-subtle'?
-    'listbox-item-caption-text-color': 'color-neutral-65', // 'color-content-subtle'
-    'listbox-item-hover-background-color': 'color-neutral-15', // 'color-bg-hover'
-    'listbox-item-hover-disabled-background-color': 'color-white', // 'color-bg-disabled'??
+    'listbox-item-text-color': 'color-content',
+    'listbox-item-disabled-text-color': 'color-content-disabled',
+    'listbox-item-caption-disabled-text-color': 'color-input-content-disabled', // was neutral-15
+    'listbox-item-caption-text-color': 'color-content-subtle',
+    'listbox-item-hover-background-color': 'color-bg-hover',
+    'listbox-item-hover-disabled-background-color': 'color-bg-disabled',
 
     'listbox-box-shadow-frame-color': 'color-neutral-15',
-    'listbox-box-shadow-depth-color': 'transparent-20',
+    'listbox-box-shadow-depth-color': 'transparent-dark-20',
 
     'listbox-item-disabled-focus-outline-color': 'transparent-100',
     'listbox-item-focus-outline-color': 'color-brand-50',

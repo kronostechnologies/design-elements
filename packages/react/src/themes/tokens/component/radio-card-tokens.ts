@@ -23,17 +23,17 @@ export type RadioCardTokenMap = {
 };
 
 export const defaultRadioCardTokens: RadioCardTokenMap = {
-    'radio-card-checked-background-color': 'color-brand-05', // 'color-input-bg-selected'
-    'radio-card-checked-border-color': 'color-brand-50', // 'color-input-border-selected'
-    'radio-card-button-checked-background-color': 'color-brand-50', // 'color-input-bg-checked'
-    'radio-card-button-checked-border-color': 'color-brand-50', // 'color-input-bg-checked'
-    'radio-card-border-color': 'color-black', // 'color-input-border'
-    'radio-card-disabled-background-color': 'color-neutral-05', // 'color-input-bg-disabled'
-    'radio-card-disabled-border-color': 'color-neutral-15', // 'color-input-border-disabled'
-    'radio-card-disabled-text-color': 'color-neutral-30', // 'color-input-content-disabled'
-    'radio-card-hover-background-color': 'color-neutral-15', // 'color-input-bg-hover'
-    'radio-card-hover-border-color': 'color-black', // 'color-input-border-hover'
+    'radio-card-checked-background-color': 'color-input-bg-selected',
+    'radio-card-checked-border-color': 'color-input-border-selected',
+    'radio-card-button-checked-background-color': 'color-input-bg-checked',
+    'radio-card-button-checked-border-color': 'color-input-bg-checked',
+    'radio-card-border-color': 'color-input-border',
+    'radio-card-disabled-background-color': 'color-input-bg-disabled',
+    'radio-card-disabled-border-color': 'color-input-border-disabled',
+    'radio-card-disabled-text-color': 'color-input-content-disabled',
+    'radio-card-hover-background-color': 'color-input-bg-hover',
+    'radio-card-hover-border-color': 'color-input-border-hover',
     'radio-card-hover-text-color': 'color-black', // 'color-content' FIX BOLD TEXT TITLE WHEN SELECTED
-    'radio-card-text-color': 'color-black', // 'color-content'
-    'radio-card-background-color': 'color-white', // 'color-input-bg'
+    'radio-card-text-color': 'color-black',
+    'radio-card-background-color': 'color-white',
 };

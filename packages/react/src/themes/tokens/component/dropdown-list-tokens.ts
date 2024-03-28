@@ -18,12 +18,12 @@ export type DropdownListTokenMap = {
 };
 
 export const defaultDropdownListTokens: DropdownListTokenMap = {
-    'dropdown-list-arrow-color': 'color-neutral-65', // 'color-input-content'
-    'dropdown-list-arrow-disabled-color': 'color-neutral-30', // 'color-input-content-disabled'
-    'dropdown-list-input-background-color': 'color-white', // 'color-input-bg'
-    'dropdown-list-input-disabled-background-color': 'color-neutral-05', // 'color-input-bg-disabled'
-    'dropdown-list-input-border-color': 'color-neutral-65', // 'color-input-border'
-    'dropdown-list-input-disabled-border-color': 'color-neutral-30', // 'color-input-border-disabled'
-    'dropdown-list-input-error-border-color': 'color-alert-50', // 'color-input-border-error'
-    'dropdown-list-input-disabled-text-color': 'color-neutral-30', // 'color-input-content-disabled'
+    'dropdown-list-arrow-color': 'color-input-content',
+    'dropdown-list-arrow-disabled-color': 'color-input-content-disabled',
+    'dropdown-list-input-background-color': 'color-input-bg',
+    'dropdown-list-input-disabled-background-color': 'color-input-bg-disabled',
+    'dropdown-list-input-border-color': 'color-input-border',
+    'dropdown-list-input-disabled-border-color': 'color-input-border-disabled',
+    'dropdown-list-input-error-border-color': 'color-input-border-error',
+    'dropdown-list-input-disabled-text-color': 'color-input-content-disabled',
 };

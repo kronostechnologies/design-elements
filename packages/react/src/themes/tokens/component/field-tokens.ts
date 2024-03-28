@@ -16,10 +16,10 @@ export type FieldTokenMap = {
 };
 
 export const defaultFieldTokens: FieldTokenMap = {
-    'field-hint-text-color': 'color-neutral-65', // 'color-content-subtle'
-    'field-input-border-color': 'color-neutral-65', // 'color-input-border'
+    'field-hint-text-color': 'color-content-subtle',
+    'field-input-border-color': 'color-input-border',
     'field-input-focus-border-color': 'color-brand-50',
     'field-input-error-focus-border-color': 'color-alert-50',
-    'field-input-error-border-color': 'color-alert-50', // 'color-input-border-error'
-    'field-error-text-color': 'color-alert-50', // 'color-feedback-content-alert'
+    'field-input-error-border-color': 'color-input-border-error',
+    'field-error-text-color': 'color-feedback-content-alert',
 };

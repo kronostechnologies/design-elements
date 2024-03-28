@@ -13,5 +13,5 @@ export type PhoneInputTokenMap = {
 
 export const defaultPhoneInputTokens: PhoneInputTokenMap = {
     'phone-input-background-color': 'transparent-100', // Remove??
-    'phone-input-mask-text-color': 'color-neutral-65', // 'color-input-content'
+    'phone-input-mask-text-color': 'color-input-content',
 };

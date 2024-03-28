@@ -21,13 +21,13 @@ export type CheckboxTokenMap = {
 
 export const defaultCheckboxTokens: CheckboxTokenMap = {
     'checkbox-unchecked-background-color': 'color-input-bg',
-    'checkbox-unchecked-border-color': 'color-neutral-65', // 'color-input-border'
-    'checkbox-checked-icon-color': 'color-white', // 'color-input-content-checked'
-    'checkbox-checked-background-color': 'color-brand-50', // 'color-input-bg-checked'
-    'checkbox-checked-border-color': 'color-brand-50', // 'color-input-bg-checked'
-    'checkbox-disabled-background-color': 'color-neutral-05', // 'color-input-bg-disabled'
-    'checkbox-disabled-border-color': 'color-neutral-15', // 'color-input-border-disabled'
-    'checkbox-hover-border-color': 'color-neutral-90', // 'color-input-border-hover'
-    'checkbox-hover-background-color': 'color-neutral-15', // 'color-input-bg-hover'
-    'checkbox-error-border-color': 'color-alert-50', // 'color-input-border-error'
+    'checkbox-unchecked-border-color': 'color-input-border',
+    'checkbox-checked-icon-color': 'color-input-content-checked',
+    'checkbox-checked-background-color': 'color-input-bg-checked',
+    'checkbox-checked-border-color': 'color-input-bg-checked',
+    'checkbox-disabled-background-color': 'color-input-bg-disabled',
+    'checkbox-disabled-border-color': 'color-input-border-disabled',
+    'checkbox-hover-border-color': 'color-input-border-hover',
+    'checkbox-hover-background-color': 'color-input-bg-hover',
+    'checkbox-error-border-color': 'color-input-border-error',
 };

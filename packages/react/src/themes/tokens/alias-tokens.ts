@@ -49,6 +49,8 @@ export type AliasTokens =
     | 'color-input-bg'
     | 'color-input-bg-hover'
     | 'color-input-bg-disabled'
+    | 'color-input-bg-checked'
+    | 'color-input-bg-selected'
     | 'color-blanket-bg'
 /**
  * BORDER
@@ -71,6 +73,9 @@ export type AliasTokens =
     | 'color-input-border'
     | 'color-input-border-hover'
     | 'color-input-border-disabled'
+    | 'color-input-border-selected'
+    | 'color-input-border-checked'
+    | 'color-input-border-error'
     | 'color-border-focus-outside'
     | 'color-border-focus-inside'
     | 'color-border-focus-outside-inverse'
@@ -94,6 +99,8 @@ export type AliasTokens =
     | 'color-input-content-hover'
     | 'color-input-content-disabled'
     | 'color-input-content-error'
+    | 'color-input-content-checked'
+    | 'color-input-content-selected'
     | 'color-link-content'
     | 'color-link-content-visited'
     | 'color-link-content-disabled'
@@ -248,8 +255,8 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-input-bg': 'color-white',
     'color-input-bg-hover': 'color-neutral-15',
     'color-input-bg-disabled': 'color-neutral-05',
-    // color-input-bg-selected?
-    // color-input-bg-selected-hover?
+    'color-input-bg-checked': 'color-brand-50',
+    'color-input-bg-selected': 'color-brand-05',
 
     /**
      * Use for the screen overlay that appears with modal dialogs
@@ -323,8 +330,9 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-input-border': 'color-neutral-65',
     'color-input-border-hover': 'color-neutral-90',
     'color-input-border-disabled': 'color-neutral-30',
-    // color-input-border-error?
-    // color-input-border-selected?
+    'color-input-border-selected': 'color-brand-50',
+    'color-input-border-checked': 'color-brand-50',
+    'color-input-border-error': 'color-alert-50',
 
     /**
      * Use for focus rings of elements in a focus state.
@@ -397,7 +405,8 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-input-content-hover': 'color-neutral-90',
     'color-input-content-disabled': 'color-neutral-30',
     'color-input-content-error': 'color-alert-50',
-    // color-input-content-selected?
+    'color-input-content-checked': 'color-white',
+    'color-input-content-selected': 'color-brand-70',
     // color-input-content-placeholder?
 
     /**
