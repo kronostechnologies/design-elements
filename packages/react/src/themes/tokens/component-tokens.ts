@@ -1,3 +1,22 @@
+import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
+import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
+import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
+import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
+import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
+import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
+import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
+import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
+import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
+import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
+import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
+import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
+import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
+import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
+import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
+import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
+import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
+import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
@@ -65,7 +84,26 @@ export type ComponentTokens =
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
-    | LozengeTokens;
+    | LozengeTokens
+    | PasswordInputTokens
+    | CheckboxTokens
+    | ChooserTokens
+    | DatepickerTokens
+    | DropdownListTokens
+    | ListboxTokens
+    | ComboboxTokens
+    | MenuTokens
+    | NumericInputTokens
+    | PhoneInputTokens
+    | SearchInputTokens
+    | StepperTokens
+    | TextAreaTokens
+    | FieldTokens
+    | RadioButtonGroupTokens
+    | ToggleButtonGroupTokens
+    | ToggleSwitchTokens
+    | TextInputTokens
+    | RadioCardTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -107,6 +145,25 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTableTokens,
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
+    ...defaultCheckboxTokens,
+    ...defaultChooserTokens,
+    ...defaultDatepickerTokens,
+    ...defaultDropdownListTokens,
+    ...defaultListboxTokens,
+    ...defaultComboboxTokens,
+    ...defaultMenuTokens,
+    ...defaultPasswordInputTokens,
+    ...defaultNumericInputTokens,
+    ...defaultPhoneInputTokens,
+    ...defaultSearchInputTokens,
+    ...defaultStepperTokens,
+    ...defaultTextAreaTokens,
+    ...defaultFieldTokens,
+    ...defaultRadioButtonGroupTokens,
+    ...defaultToggleButtonGroupTokens,
+    ...defaultToggleSwitchTokens,
+    ...defaultTextInputTokens,
+    ...defaultRadioCardTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
