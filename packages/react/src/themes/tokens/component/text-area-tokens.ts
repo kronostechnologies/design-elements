@@ -12,6 +12,6 @@ export type TextAreaTokenMap = {
 };
 
 export const defaultTextAreaTokens: TextAreaTokenMap = {
-    'text-area-counter-error-text-color': 'color-alert-50',
-    'text-area-counter-text-color': 'color-neutral-65',
+    'text-area-counter-error-text-color': 'color-input-content-error',
+    'text-area-counter-text-color': 'color-input-content',
 };

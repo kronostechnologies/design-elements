@@ -18,8 +18,8 @@ export type TextInputTokenMap = {
 };
 
 export const defaultTextInputTokens: TextInputTokenMap = {
-    'text-input-background-color': 'color-white',
-    'text-input-border-color': 'color-neutral-65',
+    'text-input-background-color': 'color-input-bg',
+    'text-input-border-color': 'color-input-border',
     'text-input-text-color': 'color-black',
     'text-input-placeholder-text-color': 'color-neutral-65',
     'text-input-disabled-background-color': 'color-neutral-05',
