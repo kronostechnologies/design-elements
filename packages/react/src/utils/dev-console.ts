@@ -7,11 +7,9 @@ const inDevMode = globalThis.__DS_DEV__;
 function noop(): void {}
 
 /* eslint-disable no-console */
-export function useDevConsole(): DevConsole {
-    return {
-        log: inDevMode ? console.log : noop,
-        info: inDevMode ? console.info : noop,
-        warn: inDevMode ? console.warn : noop,
-        error: inDevMode ? console.error : noop,
-    };
-}
+export const devConsole: DevConsole = {
+    log: inDevMode ? console.log : noop,
+    info: inDevMode ? console.info : noop,
+    warn: inDevMode ? console.warn : noop,
+    error: inDevMode ? console.error : noop,
+};
