@@ -1907,7 +1907,7 @@ __metadata:
     prop-types: "npm:^15.8.1"
     react: "npm:~17.0.2"
     react-datepicker: "npm:^6.0.0"
-    react-docgen-typescript-plugin: "npm:^1.0.5"
+    react-docgen-typescript-plugin: "npm:^1.0.6"
     react-dom: "npm:~17.0.2"
     react-is: "npm:~17.0.2"
     react-modal: "npm:^3.16.1"
@@ -13425,9 +13425,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript-plugin@npm:1.0.5":
-  version: 1.0.5
-  resolution: "react-docgen-typescript-plugin@npm:1.0.5"
+"react-docgen-typescript-plugin@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "react-docgen-typescript-plugin@npm:1.0.6"
   dependencies:
     debug: "npm:^4.1.1"
     endent: "npm:^2.0.1"
@@ -13435,29 +13435,11 @@ __metadata:
     flat-cache: "npm:^3.0.4"
     micromatch: "npm:^4.0.2"
     react-docgen-typescript: "npm:^2.2.2"
-    tslib: "npm:^2.0.0"
+    tslib: "npm:^2.6.2"
   peerDependencies:
     typescript: ">= 4.x"
     webpack: ">= 4"
-  checksum: 10c0/007a689f4ae5aae7b1a89b2b54b1e3806e4316677da24977516b794aa9252a16ee1a103fc0b254afb2961530909326df49052ade8dcaf96e6b6ea06adf34f6bd
-  languageName: node
-  linkType: hard
-
-"react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch::locator=root-workspace-0b6124%40workspace%3A.":
-  version: 1.0.5
-  resolution: "react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch::version=1.0.5&hash=c2a872&locator=root-workspace-0b6124%40workspace%3A."
-  dependencies:
-    debug: "npm:^4.1.1"
-    endent: "npm:^2.0.1"
-    find-cache-dir: "npm:^3.3.1"
-    flat-cache: "npm:^3.0.4"
-    micromatch: "npm:^4.0.2"
-    react-docgen-typescript: "npm:^2.2.2"
-    tslib: "npm:^2.0.0"
-  peerDependencies:
-    typescript: ">= 4.x"
-    webpack: ">= 4"
-  checksum: 10c0/8d5ceb0b0a31aadc88e441cda5e7999570f44a0964068a1eb4cc038b1095d1eb5074acad64f6804b2add20725fd79d0a771a8d315fa21d79e2573a17927c4825
+  checksum: 10c0/8dd7ad600f0aa64308fec9efaadef9faea7bd9febe48ff2334c8be73cc8ca4ee7bdee0155eebb95766ba8c174a448e434b088d269f7f9e2b4ab3b71c421f70a1
   languageName: node
   linkType: hard
 
@@ -15560,7 +15542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.4.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
