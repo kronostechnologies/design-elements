@@ -1484,7 +1484,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.8.4":
   version: 7.24.0
   resolution: "@babel/runtime@npm:7.24.0"
   dependencies:
@@ -1653,7 +1653,7 @@ __metadata:
     "@types/jest": "npm:^29.5.1"
     "@types/lodash": "npm:^4.14.186"
     "@types/react": "npm:~17.0.58"
-    "@types/react-datepicker": "npm:^4.11.2"
+    "@types/react-datepicker": "npm:^6.0.0"
     "@types/react-dom": "npm:~17.0.20"
     "@types/react-modal": "npm:^3.16.0"
     "@types/styled-components": "npm:^5.1.26"
@@ -2652,7 +2652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.5, @popperjs/core@npm:^2.9.2":
+"@popperjs/core@npm:^2.11.5":
   version: 2.11.8
   resolution: "@popperjs/core@npm:2.11.8"
   checksum: 10c0/4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
@@ -4818,15 +4818,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-datepicker@npm:^4.11.2":
-  version: 4.19.6
-  resolution: "@types/react-datepicker@npm:4.19.6"
+"@types/react-datepicker@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "@types/react-datepicker@npm:6.2.0"
   dependencies:
-    "@popperjs/core": "npm:^2.9.2"
+    "@floating-ui/react": "npm:^0.26.2"
     "@types/react": "npm:*"
-    date-fns: "npm:^2.0.1"
-    react-popper: "npm:^2.2.5"
-  checksum: 10c0/bd3f8266fb8b2f03e361857bc17c789083791ee4c79a812476d0f021d3551236d6581d48b9acd0063571835537eb3465f4029728446dd0b98ff7c1ad4395b628
+    date-fns: "npm:^3.3.1"
+  checksum: 10c0/40342f0a5e15bac6f2b35072a2f7041db20b924692123aface78f2cbf0e896c0c02c299a9173583e01e5b6dad38e3da86ad0e56e943e74e0c0dc7d5c60129bdf
   languageName: node
   linkType: hard
 
@@ -7358,15 +7357,6 @@ __metadata:
     whatwg-mimetype: "npm:^3.0.0"
     whatwg-url: "npm:^11.0.0"
   checksum: 10c0/051c3aaaf3e961904f136aab095fcf6dff4db23a7fc759dd8ba7b3e6ba03fc07ef608086caad8ab910d864bd3b5e57d0d2f544725653d77c96a2c971567045f4
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^2.0.1":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: 10c0/e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
   languageName: node
   linkType: hard
 
@@ -13356,7 +13346,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-popper@npm:^2.2.5, react-popper@npm:^2.3.0":
+"react-popper@npm:^2.3.0":
   version: 2.3.0
   resolution: "react-popper@npm:2.3.0"
   dependencies:
