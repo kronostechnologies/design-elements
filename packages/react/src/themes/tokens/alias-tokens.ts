@@ -175,8 +175,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-neutral-subtlest': 'color-neutral-02',
     'color-bg-neutral-subtle': 'color-neutral-05',
     'color-bg-neutral-bold': 'color-neutral-65',
-    // 'color-bg-neutral-hover': 'color-neutral-70',
-    // 'color-bg-neutral-disabled': 'color-neutral-20',
     /**
      * SUCCESS
      *  Use for UI elements communicating a favorable outcome and success messaging.
@@ -184,8 +182,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-success-subtlest': 'color-success-02',
     'color-feedback-bg-success-subtle': 'color-success-05',
     'color-feedback-bg-success-bold': 'color-success-50',
-    // 'color-feedback-bg-success-hover': 'color-success-70',
-    // 'color-feedback-bg-success-disabled': 'color-success-20',
     'color-feedback-border-success': 'color-success-50',
     'color-feedback-content-success': 'color-success-70',
     /**
@@ -195,8 +191,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-alert-subtlest': 'color-alert-02',
     'color-feedback-bg-alert-subtle': 'color-alert-05',
     'color-feedback-bg-alert-bold': 'color-alert-50',
-    // 'color-feedback-bg-alert-hover': 'color-alert-70',
-    // 'color-feedback-bg-alert-disabled': 'color-alert-20',
     'color-feedback-border-alert': 'color-alert-50',
     'color-feedback-content-alert': 'color-alert-70',
     /**
@@ -206,8 +200,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-warning-subtlest': 'color-warning-02',
     'color-feedback-bg-warning-subtle': 'color-warning-05',
     'color-feedback-bg-warning-bold': 'color-warning-50',
-    // 'color-feedback-bg-warning-hover': 'color-warning-70',
-    // 'color-feedback-bg-warning-disabled': 'color-warning-20',
     'color-feedback-border-warning': 'color-warning-50',
     'color-feedback-content-warning': 'color-warning-80',
     /**
@@ -217,8 +209,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-discovery-subtlest': 'color-discovery-02',
     'color-feedback-bg-discovery-subtle': 'color-discovery-05',
     'color-feedback-bg-discovery-bold': 'color-discovery-50',
-    // 'color-feedback-bg-discovery-hover': 'color-discovery-70',
-    // 'color-feedback-bg-discovery-disabled': 'color-discovery-20',
     'color-feedback-border-discovery': 'color-discovery-50',
     'color-feedback-content-discovery': 'color-discovery-70',
     /**
@@ -228,8 +218,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-informative-subtlest': 'color-informative-02',
     'color-feedback-bg-informative-subtle': 'color-informative-05',
     'color-feedback-bg-informative-bold': 'color-informative-50',
-    // 'color-feedback-bg-informative-hover': 'color-informative-70',
-    // 'color-feedback-bg-informative-disabled': 'color-informative-20',
     'color-feedback-border-informative': 'color-informative-50',
     'color-feedback-content-informative': 'color-informative-70',
 
