@@ -57,7 +57,7 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-background-color': 'color-neutral-05',
     'tag-border-color': 'color-neutral-50',
     'tag-text-color': 'color-neutral-90',
-    'tag-icon-color': 'color-neutral-65',
+    'tag-icon-color': 'color-neutral-90',
 
     'tag-hover-background-color': 'color-neutral-15',
     'tag-hover-border-color': 'color-neutral-90',
