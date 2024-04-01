@@ -19,20 +19,11 @@ export type TagTokens =
     | 'tag-hover-icon-color'
     | 'tag-hover-border-color'
     | 'tag-hover-background-color'
-    | 'tag-selected-icon-color'
-    | 'tag-selected-border-color'
     | 'tag-selected-background-color'
-    | 'tag-selected-text-color'
     | 'tag-selected-hover-background-color'
-    | 'tag-selected-hover-border-color'
-    | 'tag-selected-hover-text-color'
-    | 'tag-selected-hover-icon-color'
-
-    | 'tag-remove-button-hover-icon-color'
-    | 'tag-remove-button-hover-background-color'
-    | 'tag-remove-button-icon-color'
-    | 'tag-selected-remove-button-hover-icon-color'
-    | 'tag-selected-remove-button-hover-background-color'
+    | 'tag-selected-border-color'
+    | 'tag-selected-text-color'
+    | 'tag-selected-icon-color'
 
     | 'tag-decorative-01-background-color'
     | 'tag-decorative-01-border-color'
@@ -80,29 +71,22 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-clickable-hover-border-color': 'color-neutral-65',
     'tag-clickable-hover-icon-color': 'color-black',
     'tag-clickable-hover-background-color': 'color-neutral-15',
+
     // NEW
     'tag-background-color': 'color-bg-neutral-subtle',
     'tag-border-color': 'color-border-bold',
     'tag-text-color': 'color-content',
-    'tag-icon-color': 'color-content-subtle',
+    'tag-icon-color': 'color-content',
+
     'tag-hover-background-color': 'color-bg-hover',
-    'tag-hover-border-color': 'color-border-hover', // was neutral-90
-    'tag-hover-icon-color': 'color-content-hover', // was neutral-90
+    'tag-hover-border-color': 'color-border-hover',
+    'tag-hover-icon-color': 'color-content-hover',
 
-    'tag-selected-background-color': 'color-informative-05',
-    'tag-selected-border-color': 'color-informative-70',
-    'tag-selected-text-color': 'color-informative-70',
-    'tag-selected-icon-color': 'color-informative-70',
-    'tag-selected-hover-background-color': 'color-informative-10',
-    'tag-selected-hover-border-color': 'color-informative-70',
-    'tag-selected-hover-icon-color': 'color-informative-70',
-    'tag-selected-hover-text-color': 'color-informative-70',
-
-    'tag-remove-button-hover-background-color': 'color-bg-hover',
-    'tag-remove-button-hover-icon-color': 'color-content-hover', // was neutral-90
-    'tag-remove-button-icon-color': 'color-content-subtle',
-    'tag-selected-remove-button-hover-background-color': 'color-informative-10',
-    'tag-selected-remove-button-hover-icon-color': 'color-informative-70',
+    'tag-selected-background-color': 'color-bg-selected',
+    'tag-selected-hover-background-color': 'color-bg-selected-hover',
+    'tag-selected-border-color': 'color-border-selected',
+    'tag-selected-text-color': 'color-content-selected',
+    'tag-selected-icon-color': 'color-content-selected',
 
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',
