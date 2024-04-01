@@ -16,7 +16,7 @@ export type TabTokenMap = {
 };
 
 export const defaultTabTokens: TabTokenMap = {
-    'tab-background-color': 'color-bg', // should be transparent
+    'tab-background-color': 'color-bg',
     'tab-hover-background-color': 'color-bg-hover',
     'tab-global-indicator-background-color': 'color-bg-indicator',
     'tab-border-color': 'color-border-bold',

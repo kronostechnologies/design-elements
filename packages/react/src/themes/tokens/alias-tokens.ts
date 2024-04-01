@@ -20,6 +20,7 @@ export type AliasTokens =
     | 'color-bg-neutral-subtlest'
     | 'color-bg-neutral-subtle'
     | 'color-bg-neutral-bold'
+    | 'color-bg-neutral-bold-disabled'
     | 'color-feedback-bg-success-subtle'
     | 'color-feedback-bg-warning-subtle'
     | 'color-feedback-bg-alert-subtle'
@@ -31,6 +32,7 @@ export type AliasTokens =
     | 'color-feedback-bg-discovery-subtlest'
     | 'color-feedback-bg-informative-subtlest'
     | 'color-feedback-bg-success-bold'
+    | 'color-feedback-bg-success-bold-disabled'
     | 'color-feedback-bg-alert-bold'
     | 'color-feedback-bg-warning-bold'
     | 'color-feedback-bg-discovery-bold'
@@ -63,6 +65,7 @@ export type AliasTokens =
     | 'color-input-content-hover'
     | 'color-input-content-disabled'
     | 'color-input-content-error'
+    | 'color-input-content-success'
     | 'color-input-content-checked'
     | 'color-input-content-selected'
 /**
@@ -175,6 +178,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-neutral-subtlest': 'color-neutral-02',
     'color-bg-neutral-subtle': 'color-neutral-05',
     'color-bg-neutral-bold': 'color-neutral-65',
+    'color-bg-neutral-bold-disabled': 'color-neutral-30',
     /**
      * SUCCESS
      *  Use for UI elements communicating a favorable outcome and success messaging.
@@ -182,6 +186,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-bg-success-subtlest': 'color-success-02',
     'color-feedback-bg-success-subtle': 'color-success-05',
     'color-feedback-bg-success-bold': 'color-success-50',
+    'color-feedback-bg-success-bold-disabled': 'color-success-20',
     'color-feedback-border-success': 'color-success-50',
     'color-feedback-content-success': 'color-success-70',
     /**
@@ -242,6 +247,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-input-content-hover': 'color-black',
     'color-input-content-disabled': 'color-neutral-30',
     'color-input-content-error': 'color-alert-50',
+    'color-input-content-success': 'color-success-50',
     'color-input-content-checked': 'color-white',
     'color-input-content-selected': 'color-brand-70',
 
@@ -324,7 +330,7 @@ export const defaultAliasTokens: AliasTokenMap = {
      * such as naviaation elements like pagination pages or items like table rows.
      */
     'color-bg-selected': 'color-brand-05',
-    'color-bg-selected-hover': 'color-brand-10',
+    'color-bg-selected-hover': 'color-brand-10', // should use transparency instead
 
     /**
      * Use for the screen overlay that appears with modal dialogs
