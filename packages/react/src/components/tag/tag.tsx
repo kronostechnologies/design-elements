@@ -185,7 +185,7 @@ const TagLabel = styled.span<TagLabelProps>`
 const RemoveButton = styled(IconButton)<IconOrButtonProps>`
     align-items: center;
     border-radius: 50%;
-    color: ${({ theme }) => theme.component['tag-remove-button-icon-color']};
+    color: ${({ theme }) => theme.component['tag-icon-color']};
     display: inline-flex;
     height: auto;
     justify-content: center;
@@ -201,15 +201,15 @@ const RemoveButton = styled(IconButton)<IconOrButtonProps>`
     }
 
     ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-selected-remove-button-hover-icon-color']};
+        color: ${theme.component['tag-selected-hover-icon-color']};
     `}
 
     &:hover {
-        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-remove-button-hover-background-color'] : theme.component['tag-remove-button-hover-background-color'])};
-        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-remove-button-hover-icon-color'] : theme.component['tag-remove-button-hover-icon-color'])};
+        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
+        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-icon-color'] : theme.component['tag-hover-icon-color'])};
 
         ${DeleteIcon} {
-            color: ${({ theme }) => theme.component['tag-remove-button-hover-icon-color']};
+            color: ${({ theme }) => theme.component['tag-hover-icon-color']};
         }
     }
 

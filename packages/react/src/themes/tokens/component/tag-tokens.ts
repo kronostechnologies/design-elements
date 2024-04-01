@@ -19,12 +19,6 @@ export type TagTokens =
     | 'tag-selected-hover-text-color'
     | 'tag-selected-hover-icon-color'
 
-    | 'tag-remove-button-hover-icon-color'
-    | 'tag-remove-button-hover-background-color'
-    | 'tag-remove-button-icon-color'
-    | 'tag-selected-remove-button-hover-icon-color'
-    | 'tag-selected-remove-button-hover-background-color'
-
     | 'tag-decorative-01-background-color'
     | 'tag-decorative-01-border-color'
     | 'tag-decorative-01-text-color'
@@ -67,24 +61,20 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-border-color': 'color-neutral-50',
     'tag-text-color': 'color-neutral-90',
     'tag-icon-color': 'color-neutral-65',
+
     'tag-hover-background-color': 'color-neutral-15',
     'tag-hover-border-color': 'color-neutral-90',
     'tag-hover-icon-color': 'color-neutral-90',
 
-    'tag-selected-background-color': 'color-informative-05',
-    'tag-selected-border-color': 'color-informative-70',
-    'tag-selected-text-color': 'color-informative-70',
-    'tag-selected-icon-color': 'color-informative-70',
-    'tag-selected-hover-background-color': 'color-informative-10',
-    'tag-selected-hover-border-color': 'color-informative-70',
-    'tag-selected-hover-icon-color': 'color-informative-70',
-    'tag-selected-hover-text-color': 'color-informative-70',
+    'tag-selected-background-color': 'color-brand-05',
+    'tag-selected-border-color': 'color-brand-70',
+    'tag-selected-text-color': 'color-brand-70',
+    'tag-selected-icon-color': 'color-brand-70',
 
-    'tag-remove-button-hover-background-color': 'color-neutral-15',
-    'tag-remove-button-hover-icon-color': 'color-neutral-90',
-    'tag-remove-button-icon-color': 'color-neutral-65',
-    'tag-selected-remove-button-hover-background-color': 'color-informative-10',
-    'tag-selected-remove-button-hover-icon-color': 'color-informative-70',
+    'tag-selected-hover-background-color': 'color-brand-10',
+    'tag-selected-hover-border-color': 'color-brand-70',
+    'tag-selected-hover-icon-color': 'color-brand-70',
+    'tag-selected-hover-text-color': 'color-brand-70',
 
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',

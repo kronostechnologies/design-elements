@@ -1,5 +1,6 @@
 export type PaletteTokens =
     | 'color-brand-05'
+    | 'color-brand-10'
     | 'color-brand-20'
     | 'color-brand-50'
     | 'color-brand-70'
@@ -94,6 +95,7 @@ export type PaletteTokenMap = {
 
 export const defaultPaletteTokens: PaletteTokenMap = {
     'color-brand-05': '#E0F0F9',
+    'color-brand-10': '#C2E2F4',
     'color-brand-20': '#84C6EA',
     'color-brand-50': '#006296',
     'color-brand-70': '#003A5A',
