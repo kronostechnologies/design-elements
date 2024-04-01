@@ -57,18 +57,6 @@ export interface TagProps {
     /**
      *  if tag is clickable or removable or has an icon,
      *  the color will be forced to 'default'
-     *
-     *  default color mapping:
-     *     decorative-01 -> purple
-     *     decorative-02 -> gold
-     *     decorative-03 -> turquoise
-     *     decorative-04 -> red
-     *     decorative-05 -> lime
-     *     decorative-06 -> orange
-     *     decorative-07 -> blue
-     *     decorative-08 -> green-forest
-     *     decorative-09 -> magenta
-     *     decorative-10 -> violet
      */
     color?: TagColor;
 
@@ -102,7 +90,7 @@ function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
 }
 
-function isDefault(tagColor: TagColor): tagColor is 'default' {
+function hasDefaultColor(tagColor: TagColor): tagColor is 'default' {
     return tagColor === 'default';
 }
 
@@ -138,7 +126,7 @@ function getTagColors(
     { $tagColor, theme }: StyledProps<BaseTagStylingProps>,
     $colorProperty: ColorProperty,
 ): string {
-    if (isDefault($tagColor)) {
+    if (hasDefaultColor($tagColor)) {
         return theme.component[`tag-${$colorProperty}`];
     }
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
@@ -270,12 +258,11 @@ export const Tag = forwardRef(({
     const isClickable = !!onClick;
     const hasIcon = !!iconName;
     const currentColor = (isRemovable || isClickable || hasIcon) ? 'default' : color;
-    const [isSelected, setSelected] = useState(isDefault(currentColor) && selected);
+    const [isSelected, setSelected] = useState(hasDefaultColor(currentColor) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
-    const shortenedLabel = value.label.length > 20 ? `${value.label.slice(0, 17)}…` : value.label;
 
     useEffect(() => {
-        if (isRemovable || isClickable || hasIcon || isDefault(currentColor)) {
+        if (isRemovable || isClickable || hasIcon || hasDefaultColor(currentColor)) {
             setSelected(selected);
         } else {
             setSelected(false);
@@ -283,7 +270,7 @@ export const Tag = forwardRef(({
     }, [currentColor, hasIcon, isClickable, isRemovable, selected]);
 
     const handleClick: MouseEventHandler = useCallback(() => {
-        if (isDefault(currentColor) && onClick) {
+        if (hasDefaultColor(currentColor) && onClick) {
             setSelected(!isSelected);
             onClick?.(value);
         }
@@ -320,7 +307,7 @@ export const Tag = forwardRef(({
                     color={color}
                     $isMobile={isMobile}
                     $tagSize={size}
-                    focusable={undefined}
+                    focusable
                     $tagColor={currentColor}
                     $selected={isSelected}
                 />
@@ -332,7 +319,7 @@ export const Tag = forwardRef(({
                 $tagColor={currentColor}
                 $selected={isSelected}
             >
-                {shortenedLabel}
+                {value.label}
             </TagLabel>
 
             {isRemovable && (

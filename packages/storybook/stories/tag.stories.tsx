@@ -99,11 +99,11 @@ export const WithIcons: Story = {
     },
 };
 
-export const Deletable: Story = {
+export const Removable: Story = {
     ...Default,
     args: {
         ...Default.args,
-        onRemove: (tag: TagValue) => console.info(`Deleted ${tag.label}`),
+        onRemove: (tag: TagValue) => console.info(`Removed ${tag.label}`),
     },
 };
 
