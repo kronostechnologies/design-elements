@@ -205,7 +205,7 @@ const RemoveButton = styled(IconButton)<IconOrButtonProps>`
     `}
 
     &:hover {
-        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-background-color'] : theme.component['tag-hover-background-color'])};
+        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
         color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-icon-color'] : theme.component['tag-hover-icon-color'])};
 
         ${DeleteIcon} {

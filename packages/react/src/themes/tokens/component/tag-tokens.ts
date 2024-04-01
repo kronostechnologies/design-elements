@@ -14,6 +14,7 @@ export type TagTokens =
     | 'tag-selected-border-color'
     | 'tag-selected-background-color'
     | 'tag-selected-text-color'
+    | 'tag-selected-hover-background-color'
 
     | 'tag-decorative-01-background-color'
     | 'tag-decorative-01-border-color'
@@ -63,6 +64,7 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-hover-icon-color': 'color-neutral-90',
 
     'tag-selected-background-color': 'color-brand-05',
+    'tag-selected-hover-background-color': 'color-brand-10',
     'tag-selected-border-color': 'color-brand-70',
     'tag-selected-text-color': 'color-brand-70',
     'tag-selected-icon-color': 'color-brand-70',
