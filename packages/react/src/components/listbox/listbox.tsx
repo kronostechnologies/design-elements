@@ -83,10 +83,10 @@ interface ContainerProps {
 }
 
 interface ListItemProps {
-    disabled?: boolean;
-    isMobile: boolean;
-    selected: boolean;
-    focused: boolean;
+    $disabled?: boolean;
+    $isMobile: boolean;
+    $selected: boolean;
+    $focused: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -142,30 +142,30 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys.black)};
     display: flex;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    font-weight: ${({ $selected }) => ($selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
   
-    ${({ isMobile }) => (!isMobile && css`
+    ${({ $isMobile }) => (!$isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
     
     user-select: none;
 
     &:hover {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
+        background-color: ${({ theme, $disabled }) => ($disabled ? theme.greys.white : theme.greys.grey)};
     }
   
-    ${({ focused, disabled, theme }) => (focused && css`
-        outline: 2px solid ${disabled ? 'transparent' : theme.main['primary-1.1']};
+    ${({ $focused, $disabled, theme }) => ($focused && css`
+        outline: 2px solid ${$disabled ? 'transparent' : theme.main['primary-1.1']};
         outline-offset: -2px;
     `)}
 
-    ${({ selected }) => (selected && css`
+    ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
             background-color: ${({ theme }) => theme.main['primary-1.1']};
             border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
@@ -178,10 +178,10 @@ const ListItemTextContainer = styled.span`
     flex-direction: column;
 `;
 
-const ListItemCaption = styled.span<{ disabled?: boolean, isMobile: boolean }>`
-    color: ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
+    color: ${({ $disabled, theme }) => ($disabled ? theme.greys.grey : theme.greys['dark-grey'])};
     display: block;
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
 `;
 
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
@@ -464,10 +464,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         aria-disabled={option.disabled}
                         aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
                         data-testid={sanitizeId(`listitem-${option.value}`)}
-                        disabled={option.disabled}
-                        focused={isOptionFocused(option)}
+                        $disabled={option.disabled}
+                        $focused={isOptionFocused(option)}
                         id={sanitizeId(`${id}_${option.value}`)}
-                        isMobile={isMobile}
+                        $isMobile={isMobile}
                         key={option.value}
                         onClick={handleListItemClick(option)}
                         onMouseDown={handleListItemMouseDown}
@@ -480,7 +480,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                             }
                         }}
                         role="option"
-                        selected={isOptionSelected(option)}
+                        $selected={isOptionSelected(option)}
                     >
                         {multiselect ? (
                             <CustomCheckbox
@@ -495,8 +495,8 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                             {option.label || option.value}
                             {option.caption && (
                                 <ListItemCaption
-                                    disabled={option.disabled}
-                                    isMobile={isMobile}
+                                    $disabled={option.disabled}
+                                    $isMobile={isMobile}
                                 >
                                     {option.caption}
                                 </ListItemCaption>
