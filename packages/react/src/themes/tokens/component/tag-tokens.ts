@@ -14,10 +14,6 @@ export type TagTokens =
     | 'tag-selected-border-color'
     | 'tag-selected-background-color'
     | 'tag-selected-text-color'
-    | 'tag-selected-hover-background-color'
-    | 'tag-selected-hover-border-color'
-    | 'tag-selected-hover-text-color'
-    | 'tag-selected-hover-icon-color'
 
     | 'tag-decorative-01-background-color'
     | 'tag-decorative-01-border-color'
@@ -70,11 +66,6 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-selected-border-color': 'color-brand-70',
     'tag-selected-text-color': 'color-brand-70',
     'tag-selected-icon-color': 'color-brand-70',
-
-    'tag-selected-hover-background-color': 'color-brand-10',
-    'tag-selected-hover-border-color': 'color-brand-70',
-    'tag-selected-hover-icon-color': 'color-brand-70',
-    'tag-selected-hover-text-color': 'color-brand-70',
 
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',

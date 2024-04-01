@@ -157,7 +157,7 @@ const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
 
     ${({ $clickable, $selected, theme }) => $clickable && css`
         &:hover {
-            color: ${$selected ? theme.component['tag-selected-hover-icon-color'] : theme.component['tag-hover-icon-color']};
+            color: ${$selected ? theme.component['tag-selected-icon-color'] : theme.component['tag-hover-icon-color']};
         }
     `}
 `;
@@ -201,12 +201,12 @@ const RemoveButton = styled(IconButton)<IconOrButtonProps>`
     }
 
     ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-selected-hover-icon-color']};
+        color: ${theme.component['tag-selected-icon-color']};
     `}
 
     &:hover {
-        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
-        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-icon-color'] : theme.component['tag-hover-icon-color'])};
+        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-background-color'] : theme.component['tag-hover-background-color'])};
+        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-icon-color'] : theme.component['tag-hover-icon-color'])};
 
         ${DeleteIcon} {
             color: ${({ theme }) => theme.component['tag-hover-icon-color']};
@@ -225,8 +225,8 @@ function getClickableStyle(
         padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
 
         &:hover {
-            background-color: ${({ theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
-            border-color: ${({ theme }) => ($selected ? theme.component['tag-selected-hover-border-color'] : theme.component['tag-hover-border-color'])};
+            background-color: ${({ theme }) => ($selected ? theme.component['tag-selected-background-color'] : theme.component['tag-hover-background-color'])};
+            border-color: ${({ theme }) => ($selected ? theme.component['tag-selected-border-color'] : theme.component['tag-hover-border-color'])};
         }
 
         ${focus};
