@@ -22,7 +22,9 @@ export const defaultPasswordInputTokens: PasswordInputTokenMap = {
     'password-rule-empty-text-color': 'color-content-subtle',
     'password-rule-error-text-color': 'color-input-content-error',
     'password-rule-success-text-color': 'color-input-content-success',
+
     'password-strength-label-text-color': 'color-content-subtle',
+
     'password-strength-meter-empty-color': 'color-neutral-30',
     'password-strength-meter-weak-color': 'color-alert-50',
     'password-strength-meter-fair-color': 'color-warning-50',

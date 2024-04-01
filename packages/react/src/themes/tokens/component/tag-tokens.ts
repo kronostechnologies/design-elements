@@ -91,30 +91,39 @@ export const defaultTagTokens: TagTokenMap = {
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',
     'tag-decorative-01-text-color': 'color-decorative-01-70',
+
     'tag-decorative-02-background-color': 'color-decorative-02-05',
     'tag-decorative-02-border-color': 'color-decorative-02-50',
     'tag-decorative-02-text-color': 'color-decorative-02-70',
+
     'tag-decorative-03-background-color': 'color-decorative-03-05',
     'tag-decorative-03-border-color': 'color-decorative-03-50',
     'tag-decorative-03-text-color': 'color-decorative-03-70',
+
     'tag-decorative-04-background-color': 'color-decorative-04-05',
     'tag-decorative-04-border-color': 'color-decorative-04-50',
     'tag-decorative-04-text-color': 'color-decorative-04-70',
+
     'tag-decorative-05-background-color': 'color-decorative-05-05',
     'tag-decorative-05-border-color': 'color-decorative-05-50',
     'tag-decorative-05-text-color': 'color-decorative-05-70',
+
     'tag-decorative-06-background-color': 'color-decorative-06-05',
     'tag-decorative-06-border-color': 'color-decorative-06-50',
     'tag-decorative-06-text-color': 'color-decorative-06-70',
+
     'tag-decorative-07-background-color': 'color-decorative-07-05',
     'tag-decorative-07-border-color': 'color-decorative-07-50',
     'tag-decorative-07-text-color': 'color-decorative-07-70',
+
     'tag-decorative-08-background-color': 'color-decorative-08-05',
     'tag-decorative-08-border-color': 'color-decorative-08-50',
     'tag-decorative-08-text-color': 'color-decorative-08-70',
+
     'tag-decorative-09-background-color': 'color-decorative-09-05',
     'tag-decorative-09-border-color': 'color-decorative-09-50',
     'tag-decorative-09-text-color': 'color-decorative-09-70',
+
     'tag-decorative-10-background-color': 'color-decorative-10-05',
     'tag-decorative-10-border-color': 'color-decorative-10-50',
     'tag-decorative-10-text-color': 'color-decorative-10-70',

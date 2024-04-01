@@ -18,8 +18,9 @@ export type NumericInputTokenMap = {
 export const defaultNumericInputTokens: NumericInputTokenMap = {
     'numeric-input-background-color': 'color-input-bg',
     'numeric-input-border-color': 'color-input-border',
+    'numeric-input-error-border-color': 'color-input-border-error',
+
     'numeric-input-disabled-adornment-text-color': 'color-input-content-disabled',
     'numeric-input-disabled-background-color': 'color-input-bg-disabled',
     'numeric-input-disabled-border-color': 'color-input-border-disabled',
-    'numeric-input-error-border-color': 'color-input-border-error',
 };

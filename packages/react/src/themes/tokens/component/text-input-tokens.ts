@@ -22,6 +22,7 @@ export const defaultTextInputTokens: TextInputTokenMap = {
     'text-input-border-color': 'color-input-border',
     'text-input-text-color': 'color-content',
     'text-input-placeholder-text-color': 'color-input-content',
+
     'text-input-disabled-background-color': 'color-input-bg-disabled',
     'text-input-disabled-border-color': 'color-input-border-disabled',
     'text-input-disabled-text-color': 'color-input-content-disabled',
