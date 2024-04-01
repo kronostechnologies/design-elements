@@ -202,7 +202,6 @@ input + .c2 {
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #B7BBC2;
   font-size: 0.875rem;
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
@@ -263,7 +262,6 @@ input + .c2 {
       aria-required="false"
       class="c5"
       data-testid="textbox"
-      disabled=""
       id="uuid1"
       role="combobox"
       tabindex="0"

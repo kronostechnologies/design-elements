@@ -60,6 +60,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: 6px;
     position: absolute;
     width: 100%;
 `;
