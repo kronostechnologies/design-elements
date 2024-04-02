@@ -31,10 +31,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -486,10 +482,6 @@ input + .c2 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -911,10 +903,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -1329,10 +1317,6 @@ input + .c2 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(2) {

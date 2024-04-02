@@ -73,6 +73,7 @@ exports[`SearchInput should match the snapshot 1`] = `
 
 .c12:hover {
   background-color: #DBDEE1;
+  border-color: #000000;
   color: #000000;
 }
 

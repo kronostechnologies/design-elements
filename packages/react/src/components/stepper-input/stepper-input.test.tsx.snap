@@ -31,10 +31,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -383,10 +379,6 @@ input + .c1 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -722,10 +714,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -883,10 +871,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
