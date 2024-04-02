@@ -58,6 +58,25 @@ export type ComponentTokens =
     | FocusTokens
     | HeadingTokens
     | LabelTokens
+    | CheckboxTokens
+    | ChooserTokens
+    | DatepickerTokens
+    | DropdownListTokens
+    | ListboxTokens
+    | ComboboxTokens
+    | MenuTokens
+    | PasswordInputTokens
+    | NumericInputTokens
+    | PhoneInputTokens
+    | SearchInputTokens
+    | StepperTokens
+    | TextAreaTokens
+    | FieldTokens
+    | RadioButtonGroupTokens
+    | ToggleButtonGroupTokens
+    | ToggleSwitchTokens
+    | TextInputTokens
+    | RadioCardTokens
     | LegendTokens
     | NavListTokens
     | PaginationTokens
@@ -80,26 +99,7 @@ export type ComponentTokens =
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
-    | LozengeTokens
-    | PasswordInputTokens
-    | CheckboxTokens
-    | ChooserTokens
-    | DatepickerTokens
-    | DropdownListTokens
-    | ListboxTokens
-    | ComboboxTokens
-    | MenuTokens
-    | NumericInputTokens
-    | PhoneInputTokens
-    | SearchInputTokens
-    | StepperTokens
-    | TextAreaTokens
-    | FieldTokens
-    | RadioButtonGroupTokens
-    | ToggleButtonGroupTokens
-    | ToggleSwitchTokens
-    | TextInputTokens
-    | RadioCardTokens;
+    | LozengeTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -112,7 +112,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
     ...defaultLinkTokens,
-    ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultLegendTokens,
@@ -120,25 +119,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultPaginationTokens,
     ...defaultProgressTokens,
     ...defaultFocusTokens,
-    ...defaultBadgeTokens,
-    ...defaultGlobalBannerTokens,
-    ...defaultSectionalBannerTokens,
-    ...defaultSpinnerTokens,
-    ...defaultStatusTokens,
-    ...defaultTagTokens,
-    ...defaultToastTokens,
-    ...defaultAccordionTokens,
-    ...defaultCarouselTokens,
-    ...defaultModalTokens,
-    ...defaultTooltipTokens,
-    ...defaultToggleTipTokens,
-    ...defaultTabTokens,
-    ...defaultSideDrawerTokens,
-    ...defaultGlobalHeaderTokens,
-    ...defaultCardTokens,
-    ...defaultTableTokens,
-    ...defaultDropdownMenuTokens,
-    ...defaultLozengeTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
     ...defaultDatepickerTokens,
@@ -158,6 +138,25 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultToggleSwitchTokens,
     ...defaultTextInputTokens,
     ...defaultRadioCardTokens,
+    ...defaultBadgeTokens,
+    ...defaultGlobalBannerTokens,
+    ...defaultSectionalBannerTokens,
+    ...defaultSpinnerTokens,
+    ...defaultStatusTokens,
+    ...defaultTagTokens,
+    ...defaultToastTokens,
+    ...defaultAccordionTokens,
+    ...defaultCarouselTokens,
+    ...defaultModalTokens,
+    ...defaultTooltipTokens,
+    ...defaultToggleTipTokens,
+    ...defaultTabTokens,
+    ...defaultSideDrawerTokens,
+    ...defaultGlobalHeaderTokens,
+    ...defaultCardTokens,
+    ...defaultTableTokens,
+    ...defaultDropdownMenuTokens,
+    ...defaultLozengeTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

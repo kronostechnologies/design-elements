@@ -3,6 +3,8 @@ import { RefTokens } from '../ref-tokens';
 
 export type TagTokens =
     | 'tag-box-shadow-color'
+    | 'tag-background-color'
+    | 'tag-border-color'
     | 'tag-delete-button-icon-color'
     | 'tag-delete-button-hover-background-color'
     | 'tag-delete-icon-color'

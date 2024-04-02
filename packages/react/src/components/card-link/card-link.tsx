@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
         border-color: ${({ theme }) => theme.component['card-link-hover-border-color']};
     }
 
-    ${focus}
+    ${focus};
 `;
 
 interface CardLinkProps {
