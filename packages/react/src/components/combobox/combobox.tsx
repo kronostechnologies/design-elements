@@ -38,13 +38,13 @@ export interface ComboboxOption extends Omit<ListboxOption, 'label'> {}
 
 function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     if ($disabled) {
-        return theme.greys['mid-grey'];
+        return theme.component['combobox-disabled-border-color'];
     }
     if (!$valid) {
-        return theme.notifications['alert-2.1'];
+        return theme.component['combobox-error-border-color'];
     }
 
-    return theme.greys['dark-grey'];
+    return theme.component['combobox-border-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -60,38 +60,37 @@ const StyledContainer = styled.div`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: 6px;
     position: absolute;
     width: 100%;
 `;
 
 const Textbox = styled.input<TextboxProps>`
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.greys['mid-grey']}`};
+    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
     width: 100%;
-
     ${({ theme }) => focus({ theme }, true)};
 `;
 
 const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     align-items: center;
-    background-color: transparent;
+    background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
-    display: flex;
+    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};    display: flex;
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
     right: var(--spacing-half);
     width: var(--size-1x);
-    
+
     &:hover {
-        background-color: transparent;
+        background-color: ${({ theme }) => theme.component['combobox-arrow-button-hover-background-color']};
     }
 `;
 
