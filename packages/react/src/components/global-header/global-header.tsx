@@ -64,7 +64,6 @@ const StyledSpan = styled.span`
 `;
 
 const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMobile?: boolean }>`
-    background-color: ${({ theme }) => theme.component['global-header-skiplink-background-color']};
     transform: translateY(-50%);
     transition: top 0.2s cubic-bezier(0.5, 1, 0, 1);
 
