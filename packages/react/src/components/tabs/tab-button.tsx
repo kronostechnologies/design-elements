@@ -31,7 +31,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${({ theme }) => theme.component['tabs-tab-hover-background-color']};
     }
 
-    ${focus};
+    ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-visible' })};
 
     &:focus {
         z-index: 2;
