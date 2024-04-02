@@ -75,7 +75,13 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
 AbstractButton.displayName = 'AbstractButton';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'destructive-secondary';
+export type ButtonType =
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'destructive'
+    | 'destructive-secondary'
+    | 'destructive-tertiary';
 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
@@ -209,6 +215,34 @@ const getDestructiveSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenI
     }
 `;
 
+const getDestructiveTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    theme,
+}) => css`
+    background-color: transparent;
+    border-color: transparent;
+    color: ${theme.notifications['alert-2.1']};
+
+    &:hover,
+    &[aria-expanded='true'] {
+        /* TODO change colors when updating thematization */
+        background-color: #faeae9;
+        border-color: transparent;
+        color: #7b1a15;
+    }
+
+    &:disabled {
+        color: #f99d99;
+
+        &,
+        &:focus,
+        &:hover {
+            /* TODO change colors when updating thematization */
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+`;
+
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
     ${focus(props, true)};
     ${() => {
@@ -223,6 +257,8 @@ export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolat
                 return getDestructiveButtonStyles(props);
             case 'destructive-secondary':
                 return getDestructiveSecondaryButtonStyles(props);
+            case 'destructive-tertiary':
+                return getDestructiveTertiaryButtonStyles(props);
         }
     }}
 `;
