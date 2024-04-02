@@ -101,18 +101,12 @@ export type ButtonTokens =
     | 'button-destructive-tertiary-disabled-background-color'
     | 'button-destructive-tertiary-disabled-border-color'
     | 'button-destructive-tertiary-disabled-text-color'
-    | 'button-destructive-tertiary-focus-background-color'
-    | 'button-destructive-tertiary-focus-border-color'
-    | 'button-destructive-tertiary-focus-text-color'
     | 'button-destructive-tertiary-inverted-background-color'
     | 'button-destructive-tertiary-inverted-border-color'
     | 'button-destructive-tertiary-inverted-text-color'
     | 'button-destructive-tertiary-inverted-hover-background-color'
     | 'button-destructive-tertiary-inverted-hover-border-color'
     | 'button-destructive-tertiary-inverted-hover-text-color'
-    | 'button-destructive-tertiary-inverted-focus-background-color'
-    | 'button-destructive-tertiary-inverted-focus-border-color'
-    | 'button-destructive-tertiary-inverted-focus-text-color'
     | 'button-destructive-tertiary-inverted-disabled-background-color'
     | 'button-destructive-tertiary-inverted-disabled-border-color'
     | 'button-destructive-tertiary-inverted-disabled-text-color'
@@ -270,10 +264,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-hover-border-color': 'transparent-100',
     'button-destructive-tertiary-hover-text-color': 'color-alert-70',
-    // Tertiary destructive focus
-    'button-destructive-tertiary-focus-background-color': 'transparent-100',
-    'button-destructive-tertiary-focus-border-color': 'transparent-100',
-    'button-destructive-tertiary-focus-text-color': 'color-alert-50',
     // Tertiary destructive disabled
     'button-destructive-tertiary-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-disabled-border-color': 'transparent-100',
@@ -287,10 +277,6 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-inverted-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-destructive-tertiary-inverted-hover-text-color': 'color-alert-70',
-    // Tertiairy destructive inverted focus
-    'button-destructive-tertiary-inverted-focus-background-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-focus-border-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-focus-text-color': 'color-alert-20',
     // Tertiairy destructive inverted disabled
     'button-destructive-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-inverted-disabled-border-color': 'transparent-100',

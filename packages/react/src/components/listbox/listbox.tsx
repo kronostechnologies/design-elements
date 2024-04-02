@@ -162,7 +162,7 @@ const ListItem = styled.li<ListItemProps>`
     }
 
     ${({ focused, disabled, theme }) => (focused && css`
-        outline: 2px solid ${disabled ? theme.component['listbox-item-disabled-focus-outline-color'] : theme.component['listbox-item-focus-outline-color']};
+        outline: 2px solid ${disabled ? 'transparent' : theme.component['focus-outside-border-color']};
         outline-offset: -3px;
     `)}
 
