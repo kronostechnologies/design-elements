@@ -49,10 +49,10 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
         ${(theme) => focus(theme, { selector: '+ .radioInput' })}
 
         &:checked + .radioInput {
-            border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
+            border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};
 
             &::after {
-                background-color: ${({ theme }) => theme.main['primary-1.1']};
+                background-color: ${({ theme }) => theme.component['radio-button-checked-background-color']};
                 border-radius: 50%;
                 content: '';
                 height: var(--size-half);
