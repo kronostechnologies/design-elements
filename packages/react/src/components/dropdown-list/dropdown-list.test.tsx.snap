@@ -266,7 +266,6 @@ input + .c2 {
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c11"
@@ -731,7 +730,6 @@ input + .c2 {
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c13"
@@ -1125,7 +1123,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c9"
@@ -1566,7 +1563,6 @@ input + .c2 {
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c12"
