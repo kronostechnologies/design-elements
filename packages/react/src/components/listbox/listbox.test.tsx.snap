@@ -250,7 +250,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       data-testid="listitem-optionA"
       id="uuid1_optionA"
       role="option"
-      selected=""
     >
       <span
         aria-hidden="true"
@@ -306,7 +305,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       data-testid="listitem-optionC"
       id="uuid1_optionC"
       role="option"
-      selected=""
     >
       <span
         aria-hidden="true"
@@ -331,7 +329,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       aria-disabled="true"
       class="c11"
       data-testid="listitem-optionD"
-      disabled=""
       id="uuid1_optionD"
       role="option"
     >
@@ -550,7 +547,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
-      selected=""
     >
       <span
         class="c3"
@@ -574,7 +570,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-disabled="true"
       class="c6"
       data-testid="listitem-optionD"
-      disabled=""
       id="uuid1_optionD"
       role="option"
     >

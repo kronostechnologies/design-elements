@@ -83,10 +83,10 @@ interface ContainerProps {
 }
 
 interface ListItemProps {
-    disabled?: boolean;
-    isMobile: boolean;
-    selected: boolean;
-    focused: boolean;
+    $disabled?: boolean;
+    $isMobile: boolean;
+    $selected: boolean;
+    $focused: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -143,30 +143,30 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-item-disabled-text-color'] : theme.component['listbox-item-text-color'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-disabled-text-color'] : theme.component['listbox-item-text-color'])};
     display: flex;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    font-weight: ${({ $selected }) => ($selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
 
-    ${({ isMobile }) => (!isMobile && css`
+    ${({ $isMobile }) => (!$isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
 
     user-select: none;
 
     &:hover {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
+        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
     }
 
-    ${({ focused, disabled, theme }) => (focused && css`
-        outline: 2px solid ${disabled ? 'transparent' : theme.component['focus-outside-border-color']};
+    ${({ $focused, $disabled, theme }) => ($focused && css`
+        outline: 2px solid ${$disabled ? 'transparent' : theme.component['focus-outside-border-color']};
         outline-offset: -3px;
     `)}
 
-    ${({ selected }) => (selected && css`
+    ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
             background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
             border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
@@ -179,10 +179,10 @@ const ListItemTextContainer = styled.span`
     flex-direction: column;
 `;
 
-const ListItemCaption = styled.span<{ disabled?: boolean, isMobile: boolean }>`
-    color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-item-caption-disabled-text-color'] : theme.component['listbox-item-caption-text-color'])};
+const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-caption-disabled-text-color'] : theme.component['listbox-item-caption-text-color'])};
     display: block;
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
 `;
 
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
@@ -465,10 +465,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         aria-disabled={option.disabled}
                         aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
                         data-testid={sanitizeId(`listitem-${option.value}`)}
-                        disabled={option.disabled}
-                        focused={isOptionFocused(option)}
+                        $disabled={option.disabled}
+                        $focused={isOptionFocused(option)}
                         id={sanitizeId(`${id}_${option.value}`)}
-                        isMobile={isMobile}
+                        $isMobile={isMobile}
                         key={option.value}
                         onClick={handleListItemClick(option)}
                         onMouseDown={handleListItemMouseDown}
@@ -481,7 +481,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                             }
                         }}
                         role="option"
-                        selected={isOptionSelected(option)}
+                        $selected={isOptionSelected(option)}
                     >
                         {multiselect ? (
                             <CustomCheckbox
@@ -496,8 +496,8 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                             {option.label || option.value}
                             {option.caption && (
                                 <ListItemCaption
-                                    disabled={option.disabled}
-                                    isMobile={isMobile}
+                                    $disabled={option.disabled}
+                                    $isMobile={isMobile}
                                 >
                                     {option.caption}
                                 </ListItemCaption>

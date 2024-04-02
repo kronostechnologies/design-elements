@@ -103,8 +103,8 @@ describe('Combobox', () => {
 
             getByTestId(wrapper, 'arrow').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
         });
     });
 
@@ -123,8 +123,8 @@ describe('Combobox', () => {
             getByTestId(wrapper, 'listitem-Quebec').simulate('click');
             getByTestId(wrapper, 'textbox').simulate('focus');
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
         });
 
         test('the focused option is selected when clicking outside', () => {
