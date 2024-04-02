@@ -7,6 +7,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 const StyledLink = styled.a<{ isMobile: boolean }>`
     ${defaultButtonStyles}
 
+    background: ${({ theme }) => theme.component['skip-link-background-color']};
     color: ${({ theme }) => theme.component['skip-link-text-color']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);
@@ -23,7 +24,6 @@ const StyledLink = styled.a<{ isMobile: boolean }>`
     }
 
     &:focus {
-        background-color: ${({ theme }) => theme.component['skip-link-focus-background-color']};
         position: absolute;
     }
 `;
