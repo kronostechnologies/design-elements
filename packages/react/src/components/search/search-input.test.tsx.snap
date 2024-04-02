@@ -206,6 +206,7 @@ input + .c2 {
 .c7:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c7:disabled,

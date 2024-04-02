@@ -12,7 +12,7 @@ const StyledFieldset = styled.fieldset`
 `;
 
 const StyledLegend = styled.legend<{ isMobile: boolean }>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['radio-button-group-legend-text-color']};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
@@ -66,8 +66,8 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
     }
 
     .radioInput {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+        background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
+        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-border-color'])};
         border-radius: 50%;
         box-sizing: border-box;
         display: inline-block;
@@ -78,7 +78,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
     }
 
     &:hover .radioInput {
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
     }
 `;
 

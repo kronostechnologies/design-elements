@@ -5,13 +5,13 @@ import { IconButton } from '../buttons/icon-button';
 import { FieldContainer } from '../field-container/field-container';
 import { Input } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
+import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';
 import { PasswordRule } from './password-rule';
 import { getDefaultValidationConditions, ValidationCondition } from './validation-condition';
 import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Tooltip } from '../tooltip/tooltip';
 
 const StyledUl = styled.ul`
     font-size: 0.75rem;

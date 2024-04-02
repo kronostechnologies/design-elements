@@ -15,6 +15,7 @@ interface StyledButtonProps extends IsSelected {
 
 const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
+    border: 1px solid transparent;
     border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tabs-tab-border-bottom-color']}`)};
     border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
     bottom: -1px;

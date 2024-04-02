@@ -12,11 +12,11 @@ export const inputsStyle: (
     isMobile = false,
     isFocusable = true,
 ) => css`
-    background: ${theme.greys.white};
-    border: 1px solid ${theme.greys['dark-grey']};
+    background: ${theme.component['text-input-background-color']};
+    border: 1px solid ${theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.greys.black};
+    color: ${theme.component['text-input-text-color']};
     font-family: inherit;
     font-size: ${isMobile ? '1rem' : '0.875rem'};
     letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
@@ -28,16 +28,17 @@ export const inputsStyle: (
     width: 100%;
 
     &::placeholder {
-        color: ${theme.greys['dark-grey']};
+        color: ${theme.component['text-input-placeholder-text-color']};
     }
 
     &:disabled {
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.component['text-input-disabled-background-color']};
+        border-color: ${theme.component['text-input-disabled-border-color']};
+        color: ${theme.component['text-input-disabled-text-color']};
 
         &,
         &::placeholder {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.component['text-input-placeholder-disabled-text-color']};
         }
     }
 
@@ -50,11 +51,11 @@ interface ResponsiveInputsStyles {
 }
 
 export const responsiveInputsStyle = ({ theme, device: { isMobile } }: ResponsiveInputsStyles): FlattenSimpleInterpolation => css`
-    background: ${theme.greys.white};
-    border: 1px solid ${theme.greys['dark-grey']};
+    background: ${theme.component['text-input-background-color']};
+    border: 1px solid ${theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.greys.black};
+    color: ${theme.component['text-input-text-color']};
     font-family: inherit;
     font-size: ${isMobile ? 1 : 0.875}rem;
     letter-spacing: ${isMobile ? 0.02875 : 0.015}rem;
@@ -65,16 +66,17 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
     width: 100%;
 
     &::placeholder {
-        color: ${theme.greys['dark-grey']};
+        color: ${theme.component['text-input-placeholder-text-color']};
     }
 
     &:disabled {
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.component['text-input-disabled-background-color']};
+        border-color: ${theme.component['text-input-disabled-border-color']};
+        color: ${theme.component['text-input-disabled-text-color']};
 
         &,
         &::placeholder {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.component['text-input-placeholder-disabled-text-color']};
         }
     }
 

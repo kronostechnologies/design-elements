@@ -127,7 +127,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -848,7 +848,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -1577,7 +1577,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -2287,7 +2287,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;

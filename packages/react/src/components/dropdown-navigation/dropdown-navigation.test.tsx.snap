@@ -114,6 +114,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
+  margin: 2px;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -148,7 +149,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -387,6 +388,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
+  margin: 2px;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -421,7 +423,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -661,6 +663,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
+  margin: 2px;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -695,7 +698,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;

@@ -1,7 +1,7 @@
 import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
-export type ToastContainerTokens =
+export type ToastTokens =
     | 'toast-container-neutral-background-color'
     | 'toast-container-neutral-text-color'
     | 'toast-container-neutral-dismiss-icon-hover-background-color'
@@ -23,13 +23,13 @@ export type ToastContainerTokens =
     | 'toast-container-alert-dismiss-icon-hover-background-color'
     | 'toast-container-alert-dismiss-icon-hover-color';
 
-export type ToastContainerTokenValue = AliasTokens | RefTokens;
+export type ToastTokenValue = AliasTokens | RefTokens;
 
-export type ToastContainerTokenMap = {
-    [Token in ToastContainerTokens]: ToastContainerTokenValue;
+export type ToastTokenMap = {
+    [Token in ToastTokens]: ToastTokenValue;
 };
 
-export const defaultToastContainerTokens: ToastContainerTokenMap = {
+export const defaultToastTokens: ToastTokenMap = {
     'toast-container-alert-text-color': 'color-white',
     'toast-container-discovery-text-color': 'color-white',
     'toast-container-success-text-color': 'color-white',

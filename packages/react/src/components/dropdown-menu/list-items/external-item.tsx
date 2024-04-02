@@ -17,7 +17,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 }
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['dropdown-menu-external-item-text-color']};
     display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
@@ -29,22 +29,22 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['dropdown-menu-external-item-hover-background-color']};
     }
 
     &:visited {
-        color: ${({ theme }) => theme.greys.black};
-        fill: ${({ theme }) => theme.greys.black};
+        color: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-text-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-fill-color']};
 
         svg {
-            color: ${({ theme }) => theme.greys.black};
-            fill: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.component['dropdown-menu-external-item-icon-visited-text-color']};
+            fill: ${({ theme }) => theme.component['dropdown-menu-external-item-icon-visited-fill-color']};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.greys['mid-grey']};
-        fill: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-text-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-fill-color']};
         pointer-events: none;
     }
 `;

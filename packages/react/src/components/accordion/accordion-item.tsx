@@ -29,11 +29,11 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
+
     &[aria-expanded='true'] {
         border-width: 0 1px 1px 1px;
         max-height: 1000px;
         overflow-y: auto;
-        transform: translateZ(0);
         transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
     }
@@ -76,20 +76,14 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
-    transition-delay: 0.5s;
-    transition-duration: 0.2s;
-    transition-property: border-radius;
-    transition-timing-function: ease;
+    transition: border-radius 0.2s ease 0.5s;
     width: 100%;
 
     &[aria-expanded='true'] {
         background: ${({ theme }) => theme.component['accordion-header-expanded-background-color']};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: ${({ theme }) => theme.component['accordion-header-expanded-text-color']};
-        transition-delay: 0s;
-        transition-duration: 0.1s;
-        transition-property: border-radius;
-        transition-timing-function: ease;
+        transition: border-radius 0.1s ease;
     }
 
     ${focus};

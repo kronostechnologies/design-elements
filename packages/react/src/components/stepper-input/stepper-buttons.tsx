@@ -13,26 +13,22 @@ const Wrapper = styled.div`
 
 const buttonStyles = css`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.component['stepper-button-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['stepper-button-border-color']};
     border-left: none;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['stepper-button-text-color']};
     display: flex;
     justify-content: center;
     padding: 0 var(--spacing-half);
 
-    &:focus {
-        outline: none;
-    }
-
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['stepper-button-hover-background-color']};
     }
 
     &:disabled {
-        background-color: ${({ theme }) => theme.greys['light-grey']};
-        border-color: ${({ theme }) => theme.greys.grey};
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        background-color: ${({ theme }) => theme.component['stepper-button-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['stepper-button-disabled-border-color']};
+        color: ${({ theme }) => theme.component['stepper-button-disabled-text-color']};
     }
 
     ${focus};

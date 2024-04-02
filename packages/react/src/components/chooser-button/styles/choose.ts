@@ -5,11 +5,11 @@ export const Label = styled.label`
     --border-radius: 8px;
 
     align-items: center;
-    background: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background: ${({ theme }) => theme.component['chooser-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['chooser-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['chooser-text-color']};
     display: flex;
     font-size: 1rem;
     justify-content: center;
@@ -21,24 +21,25 @@ export const Label = styled.label`
     transition: all 0.25s ease-in-out;
 
     &:hover {
-        background: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys.grey};
+        background: ${({ theme }) => theme.component['chooser-hover-background-color']};
+        border-color: ${({ theme }) => theme.component['chooser-hover-border-color']};
+        color: ${({ theme }) => theme.component['chooser-hover-text-color']};
     }
 
-    input[type='checkbox']:checked + &,
-    input[type='radio']:checked + & {
-        background: ${({ theme }) => theme.main['primary-1.1']};
-        border-color: ${({ theme }) => theme.main['primary-1.1']};
-        color: ${({ theme }) => theme.greys.white};
+    input[type="checkbox"]:checked + &,
+    input[type="radio"]:checked + & {
+        background: ${({ theme }) => theme.component['chooser-selected-background-color']};
+        border-color: ${({ theme }) => theme.component['chooser-selected-border-color']};
+        color: ${({ theme }) => theme.component['chooser-selected-text-color']};
     }
 
     ${({ theme }) => focus({ theme }, { selector: ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &' })}
 
-    input[type='checkbox']:disabled + &,
-    input[type='radio']:disabled + & {
-        background: ${({ theme }) => theme.greys['light-grey']};
-        border-color: ${({ theme }) => theme.greys.grey};
-        color: ${({ theme }) => theme.greys['mid-grey']};
+    input[type="checkbox"]:disabled + &,
+    input[type="radio"]:disabled + & {
+        background: ${({ theme }) => theme.component['chooser-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['chooser-disabled-border-color']};
+        color: ${({ theme }) => theme.component['chooser-disabled-text-color']};
     }
 
     b {

@@ -49,8 +49,8 @@ interface StyledWrapperProps {
 }
 
 const Wrapper = styled.div<StyledWrapperProps>`
-    background: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background: ${({ theme }) => theme.component['numeric-input-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['numeric-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -59,15 +59,14 @@ const Wrapper = styled.div<StyledWrapperProps>`
     ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-within' })};
 
     ${({ $invalid, theme }) => $invalid && css`
-        border-color: ${theme.notifications['alert-2.1']};
-    `};
-
+        border-color: ${theme.component['numeric-input-error-border-color']};
+`};
     ${({ $disabled, theme }) => $disabled && css`
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.component['numeric-input-disabled-background-color']};
+        border-color: ${theme.component['numeric-input-disabled-border-color']};
 
         ${Adornment} {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.component['numeric-input-disabled-adornment-text-color']};
         }
     `};
 `;
