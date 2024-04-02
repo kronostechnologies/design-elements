@@ -39,14 +39,14 @@ exports[`DropdownMenu Is hidden 1`] = `
   color: #602FA0;
 }
 
-.c6:not(:focus) {
+.c6:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -462,14 +462,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   color: #602FA0;
 }
 
-.c6:not(:focus) {
+.c6:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;

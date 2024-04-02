@@ -113,8 +113,9 @@ input + .c2 {
 
 .c9 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -202,7 +203,6 @@ input + .c2 {
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #B7BBC2;
   font-size: 0.875rem;
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
@@ -603,8 +603,9 @@ input + .c2 {
 
 .c11 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1062,8 +1063,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1529,8 +1531,9 @@ input + .c2 {
 
 .c10 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

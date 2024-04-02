@@ -14,6 +14,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c0:not(:focus) {
@@ -395,6 +396,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c0:not(:focus) {

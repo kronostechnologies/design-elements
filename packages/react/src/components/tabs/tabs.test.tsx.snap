@@ -31,14 +31,14 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:not(:focus) {
+.c1:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -90,14 +90,14 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:not(:focus) {
+.c3:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -264,14 +264,14 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:not(:focus) {
+.c1:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -312,14 +312,14 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:not(:focus) {
+.c3:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -486,14 +486,14 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:not(:focus) {
+.c1:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -534,14 +534,14 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:not(:focus) {
+.c3:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;

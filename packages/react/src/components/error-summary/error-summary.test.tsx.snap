@@ -28,14 +28,14 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   color: #602FA0;
 }
 
-.c9:not(:focus) {
+.c9:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c9:focus {
+.c9:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;

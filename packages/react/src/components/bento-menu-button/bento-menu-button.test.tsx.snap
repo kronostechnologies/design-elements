@@ -107,7 +107,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -152,14 +152,14 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #602FA0;
 }
 
-.c18:not(:focus) {
+.c18:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c18:focus {
+.c18:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -173,7 +173,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -186,14 +186,14 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   text-decoration: underline;
 }
 
-.c24:not(:focus) {
+.c24:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c24:focus {
+.c24:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -957,7 +957,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -1002,14 +1002,14 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #602FA0;
 }
 
-.c18:not(:focus) {
+.c18:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c18:focus {
+.c18:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -1023,7 +1023,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1036,14 +1036,14 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   text-decoration: underline;
 }
 
-.c24:not(:focus) {
+.c24:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c24:focus {
+.c24:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -1719,7 +1719,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -1764,14 +1764,14 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #602FA0;
 }
 
-.c18:not(:focus) {
+.c18:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c18:focus {
+.c18:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -1785,7 +1785,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1798,14 +1798,14 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   text-decoration: underline;
 }
 
-.c24:not(:focus) {
+.c24:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c24:focus {
+.c24:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;

@@ -7,7 +7,7 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -20,14 +20,14 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -84,14 +84,14 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -157,14 +157,14 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -229,14 +229,14 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -274,7 +274,7 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-radius: var(--border-radius);
-  color: #84C6EA;
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -287,14 +287,14 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -351,14 +351,14 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -424,14 +424,14 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
@@ -496,14 +496,14 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus) {
+.c0:not(:focus-visible) {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
