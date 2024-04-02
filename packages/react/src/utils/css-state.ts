@@ -29,7 +29,6 @@ export const focusVisibleReset = (
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     &:focus:not(:focus-visible) {
         ${hasBorder && 'border-color: inherit;'}
-
         box-shadow: none;
     }
 `;
