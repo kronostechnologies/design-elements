@@ -24,7 +24,7 @@ import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
 
 export const Input = styled.input<{ isMobile: boolean; }>`
-    ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile })}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,

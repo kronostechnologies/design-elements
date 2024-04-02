@@ -22,7 +22,7 @@ interface StyledInputProps {
 }
 
 const StyledInput = styled.input<StyledInputProps>`
-    ${({ theme, device }) => inputsStyle(theme, device.isMobile, false)};
+    ${({ theme, device }) => inputsStyle({ theme, isMobile: device.isMobile, isFocusable: false })};
 
     border: 0;
     flex: 1 1 auto;

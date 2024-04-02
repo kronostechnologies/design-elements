@@ -3,17 +3,21 @@ import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export const inputsStyle: (
+export interface InputStyleOptions {
     theme: ResolvedTheme,
-    isMobile?: boolean,
-    isFocusable?: boolean
-) => FlattenSimpleInterpolation = (
-    theme: ResolvedTheme,
+    isMobile?: boolean;
+    isFocusable?: boolean;
+    isValid?: boolean;
+}
+
+export const inputsStyle = ({
+    theme,
     isMobile = false,
     isFocusable = true,
-) => css`
+    isValid = true,
+}: InputStyleOptions): FlattenSimpleInterpolation => css`
     background: ${theme.component['text-input-background-color']};
-    border: 1px solid ${theme.component['text-input-border-color']};
+    border: 1px solid ${isValid ? theme.component['text-input-border-color'] : theme.component['text-input-error-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: ${theme.component['text-input-text-color']};

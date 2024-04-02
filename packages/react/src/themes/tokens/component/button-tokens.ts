@@ -110,14 +110,15 @@ export type ButtonTokens =
     | 'button-destructive-tertiary-inverted-disabled-background-color'
     | 'button-destructive-tertiary-inverted-disabled-border-color'
     | 'button-destructive-tertiary-inverted-disabled-text-color'
-    | 'button-search-background-color'
-    | 'button-search-border-color'
-    | 'button-search-text-color'
-    | 'button-search-hover-background-color'
-    | 'button-search-hover-text-color'
-    | 'button-search-disabled-background-color'
-    | 'button-search-disabled-border-color'
-    | 'button-search-disabled-text-color';
+    | 'button-input-background-color'
+    | 'button-input-border-color'
+    | 'button-input-text-color'
+    | 'button-input-hover-background-color'
+    | 'button-input-hover-border-color'
+    | 'button-input-hover-text-color'
+    | 'button-input-disabled-background-color'
+    | 'button-input-disabled-border-color'
+    | 'button-input-disabled-text-color';
 
 export type ButtonTokenValue = AliasTokens | RefTokens;
 
@@ -282,15 +283,16 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-inverted-disabled-border-color': 'transparent-100',
     'button-destructive-tertiary-inverted-disabled-text-color': 'color-alert-20',
 
-    // Search button
-    'button-search-background-color': 'color-white',
-    'button-search-border-color': 'color-neutral-65',
-    'button-search-text-color': 'color-neutral-65',
-    // Search button hover
-    'button-search-hover-background-color': 'color-neutral-15',
-    'button-search-hover-text-color': 'color-black',
-    // Search button disabled
-    'button-search-disabled-background-color': 'color-neutral-05',
-    'button-search-disabled-border-color': 'color-neutral-15',
-    'button-search-disabled-text-color': 'color-neutral-30',
+    // input button
+    'button-input-background-color': 'color-white',
+    'button-input-border-color': 'color-neutral-65',
+    'button-input-text-color': 'color-neutral-65',
+    // input button hover
+    'button-input-hover-background-color': 'color-neutral-15',
+    'button-input-hover-border-color': 'color-black',
+    'button-input-hover-text-color': 'color-black',
+    // input button disabled
+    'button-input-disabled-background-color': 'color-neutral-05',
+    'button-input-disabled-border-color': 'color-neutral-15',
+    'button-input-disabled-text-color': 'color-neutral-30',
 };
