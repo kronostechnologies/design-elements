@@ -88,13 +88,13 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         line-height: 1.875rem;
         margin: 0;
         width: var(--size-2x);
+        
+        ${focus};
 
         &:hover {
-            border-radius: 50%;
             background-color: ${({ theme }) => theme.component['datepicker-day-hover-background-color']};
+            border-radius: 50%;
         }
-
-        ${focus};
     }
 
     .react-datepicker__day--disabled {
@@ -194,9 +194,9 @@ const CalendarButton = styled(AbstractButton)<CalendarButtonProps>`
     align-items: center;
     background: ${({ theme }) => theme.component['button-input-background-color']};
     border: 1px solid ${({ theme }) => theme.component['button-input-border-color']};
-    color: ${({ theme }) => theme.component['button-input-text-color']};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
+    color: ${({ theme }) => theme.component['button-input-text-color']};
     display: flex;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: center;

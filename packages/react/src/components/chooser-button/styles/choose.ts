@@ -26,8 +26,8 @@ export const Label = styled.label`
         color: ${({ theme }) => theme.component['chooser-hover-text-color']};
     }
 
-    input[type="checkbox"]:checked + &,
-    input[type="radio"]:checked + & {
+    input[type='checkbox']:checked + &,
+    input[type='radio']:checked + & {
         background: ${({ theme }) => theme.component['chooser-selected-background-color']};
         border-color: ${({ theme }) => theme.component['chooser-selected-border-color']};
         color: ${({ theme }) => theme.component['chooser-selected-text-color']};
@@ -35,8 +35,8 @@ export const Label = styled.label`
 
     ${({ theme }) => focus({ theme }, { selector: ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &' })}
 
-    input[type="checkbox"]:disabled + &,
-    input[type="radio"]:disabled + & {
+    input[type='checkbox']:disabled + &,
+    input[type='radio']:disabled + & {
         background: ${({ theme }) => theme.component['chooser-disabled-background-color']};
         border-color: ${({ theme }) => theme.component['chooser-disabled-border-color']};
         color: ${({ theme }) => theme.component['chooser-disabled-text-color']};
