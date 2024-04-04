@@ -146,7 +146,7 @@ export const Translations = {
             noResult: 'Aucun résultat',
             noResultForQuery: 'Aucun résultat pour "{{query}}"',
             showOptions: 'Afficher les options pour {{label}}',
-            validationErrorMessage: 'You must select an option',
+            validationErrorMessage: 'Vous devez sélectionner une option',
         },
         common: {
             opensInNewTab: 'ouvre dans un nouvel onglet',

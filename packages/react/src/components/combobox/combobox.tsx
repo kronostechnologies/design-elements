@@ -111,7 +111,7 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
     right: calc(var(--size-1x) + var(--spacing-1halfx));
     width: var(--size-1x);
     
-    &:after {
+    &::after {
         border-right: ${({ theme }) => `1px solid ${theme.greys['mid-grey']}`};
         content: '';
         height: calc(var(--size-2x) - var(--spacing-2x));
