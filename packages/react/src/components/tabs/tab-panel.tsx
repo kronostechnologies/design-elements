@@ -14,7 +14,7 @@ const StyledDiv = styled.div<{ $contained?: boolean }>`
     border: ${({ $contained, theme }) => ($contained ? `1px solid ${theme.component['tab-panel-border-color']}` : 'none')};
     border-top: none;
 
-    ${({ theme }) => focus({ theme }, { focusTypeSelector: 'focus-visible' })}
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-visible' })}
 `;
 
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({

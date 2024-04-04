@@ -4,7 +4,7 @@ type FocusType = 'focus' | 'focus-visible' | 'focus-within';
 
 export interface FocusOptions {
     selector?: string;
-    focusTypeSelector?: FocusType;
+    focusType?: FocusType;
     inverted?: boolean;
     insideOnly?: boolean;
 }
@@ -15,7 +15,7 @@ export const focus = (
 ): string => {
     const {
         selector,
-        focusTypeSelector = 'focus',
+        focusType = 'focus',
         inverted = false,
         insideOnly = false,
     } = options;
@@ -26,18 +26,18 @@ export const focus = (
     const insideFocusBorderWeight = '2px';
     const insideFocusBorderOffset = '-2px';
     const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
-    const transition = 'all .25s ease-in-out;';
-    const baseSelector = selector === undefined ? '' : `${selector}`;
+    const transition = 'all .25s ease-in-out';
+    const baseSelector = selector ?? '';
 
     const notFocusStyle = `
-        &:not(:${focusTypeSelector}) ${baseSelector} {
+        &:not(:${focusType}) ${baseSelector} {
             transition: ${transition};
             outline: ${insideFocusBorderWeight} solid transparent;
             outline-offset: ${insideFocusBorderOffset};
         }`;
 
     const focusStyle = `
-        &:${focusTypeSelector} ${baseSelector} {
+        &:${focusType} ${baseSelector} {
             transition: ${transition};
             box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
             outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
