@@ -1,0 +1,53 @@
+import { DesignSystem } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as GettingStartedStories from './1-getting-started.stories';
+
+<Meta of={GettingStartedStories} />
+
+# Equisoft's Design System
+## Getting Started
+
+#### Add the library to your project
+`yarn add @equisoft/design-elements-react`
+
+#### Add the DesignSystem provider to your app
+
+Simply add the provider in your App component. It should be something like this:
+```typescript jsx
+import { DesignSystem } from '@equisoft/design-elements-react';
+import { VoidFunctionComponent } from 'react';
+import { Router } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
+
+export const App: VoidFunctionComponent = () => (
+    <DesignSystem>
+        <Router>
+            <Switch>
+                <Route component={HomeComponent} />
+            </Switch>
+        </Router>
+    </DesignSystem>
+);
+```
+
+
+## Props
+
+<ArgTypes of={DesignSystem} />
+
+
+## Theming
+
+For most cases, you won't need to provide a theme, as the DesignSystem uses Equisoft's theme by default. However, it's
+possible to override the theme, or parts of the theme. For more details, take a look at the [Theme definition](https://github.com/kronostechnologies/design-elements/blob/master/packages/react/src/themes/theme.ts).
+
+<Canvas of={GettingStartedStories.Theming} />
+
+## Internationalization
+
+If your application supports multiple languages, you simply need to sync the selected language in your application with
+the `DesignSystem` provider's `language` prop. The default language is **english**.
+The following sample shows that the provider only translates the messages
+related to the design system. For a more complex example, take a look at the [webapp-boilerplate](https://github.com/kronostechnologies/webapp-boilerplate/tree/master/web/src/browser).
+
+<Canvas of={GettingStartedStories.Internationalization} />

@@ -97,8 +97,8 @@ describe('Combobox', () => {
 
             getByTestId(wrapper, 'arrow').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
         });
 
         test('setting the prop to an arbitrary value rejects the input', () => {
@@ -131,8 +131,8 @@ describe('Combobox', () => {
             getByTestId(wrapper, 'listitem-Quebec').simulate('click');
             getByTestId(wrapper, 'textbox').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
         });
 
         test('the focused option is selected when clicking outside', () => {
@@ -167,8 +167,8 @@ describe('Combobox', () => {
 
             getByTestId(wrapper, 'clear').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('focused')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(false);
         });
 
         test('typing an exact match selects the corresponding option', () => {
@@ -179,7 +179,7 @@ describe('Combobox', () => {
                 { target: { value: 'quebec' } },
             );
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
         });
     });
 

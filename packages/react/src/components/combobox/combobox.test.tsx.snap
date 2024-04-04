@@ -113,8 +113,9 @@ input + .c2 {
 
 .c9 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,7 +124,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c11 {
@@ -192,6 +192,7 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -618,8 +619,9 @@ input + .c2 {
 
 .c11 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -628,7 +630,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c13 {
@@ -697,6 +698,7 @@ input + .c2 {
 }
 
 .c12 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -1091,8 +1093,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1101,7 +1104,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c9 {
@@ -1169,6 +1171,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -1572,8 +1575,9 @@ input + .c2 {
 
 .c10 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1582,7 +1586,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c12 {
@@ -1651,6 +1654,7 @@ input + .c2 {
 }
 
 .c11 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }

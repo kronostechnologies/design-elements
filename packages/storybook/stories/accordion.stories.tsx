@@ -4,7 +4,7 @@ import { rawCodeParameters } from './utils/parameters';
 
 // eslint-disable-next-line import/no-default-export
 const accordionMeta: Meta<typeof Accordion> = {
-    title: 'Components/Disclosure/Accordion',
+    title: 'Components/Accordion',
     component: Accordion,
     parameters: rawCodeParameters,
     tags: ['autodocs'],

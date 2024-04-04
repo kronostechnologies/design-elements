@@ -4,7 +4,7 @@ import { InvertedBackground } from './utils/inverted-background';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Icon Button',
+    title: 'Components/Icon Button',
     component: IconButton,
 };
 
@@ -15,6 +15,7 @@ export const IconButtons: Story = () => (
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" />
         <IconButton label="Delete" buttonType="destructive" iconName="x" />
         <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" />
+        <IconButton label="Delete" buttonType="destructive-tertiary" iconName="x" />
     </>
 );
 
@@ -22,6 +23,7 @@ export const Inverted: Story = () => (
     <InvertedBackground>
         <IconButton label="Delete" buttonType="destructive" iconName="x" inverted />
         <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" inverted />
+        <IconButton label="Delete" buttonType="destructive-tertiary" iconName="x" inverted />
     </InvertedBackground>
 );
 
@@ -32,6 +34,7 @@ export const Disabled: Story = () => (
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" disabled />
         <IconButton label="Delete" buttonType="destructive" iconName="x" disabled />
         <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" disabled />
+        <IconButton label="Delete" buttonType="destructive-tertiary" iconName="x" disabled />
     </>
 );
 
@@ -52,5 +55,6 @@ export const Small: Story = () => (
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" size="small" />
         <IconButton label="Delete" buttonType="destructive" iconName="x" size="small" />
         <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" size="small" />
+        <IconButton label="Delete" buttonType="destructive-tertiary" iconName="x" size="small" />
     </>
 );

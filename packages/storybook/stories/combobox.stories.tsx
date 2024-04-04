@@ -27,7 +27,7 @@ const provinces = [
 ];
 
 export default {
-    title: 'Components/Controls/Combobox',
+    title: 'Components/Combobox',
     component: Combobox,
     decorators: [decorateWith(Container)],
 };
