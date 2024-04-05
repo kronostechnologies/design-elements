@@ -26,8 +26,18 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   width: var(--size-2halfx);
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
 .c0[aria-checked='false'] {
-  background: #B7BBC2;
+  background: #878F9A;
   border-color: #B7BBC2;
 }
 
@@ -50,16 +60,6 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 .c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <button
@@ -123,8 +123,18 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   width: var(--size-3x);
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
 .c0[aria-checked='false'] {
-  background: #B7BBC2;
+  background: #878F9A;
   border-color: #B7BBC2;
 }
 
@@ -147,16 +157,6 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 .c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <button
@@ -220,8 +220,18 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   width: var(--size-2halfx);
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
 .c0[aria-checked='false'] {
-  background: #B7BBC2;
+  background: #878F9A;
   border-color: #B7BBC2;
 }
 
@@ -244,16 +254,6 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 .c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <button

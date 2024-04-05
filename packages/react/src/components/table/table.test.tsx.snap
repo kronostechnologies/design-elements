@@ -1265,7 +1265,8 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c7:hover {
-  border: 1px solid #006296;
+  background-color: #DBDEE1;
+  border: 1px solid #1B1C1E;
 }
 
 .c5 {
