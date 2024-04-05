@@ -3,6 +3,7 @@ import {
     Toggletip,
     ToggletipPlacement,
     ExternalLink,
+    DropdownListOption,
 } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
@@ -61,7 +62,7 @@ export const DesktopPlacement: Story = () => {
                 defaultValue="right"
                 label="Desktop placement"
                 options={placements}
-                onChange={(option) => setPlacement(option.value as ToggletipPlacement)}
+                onChange={(option: DropdownListOption) => setPlacement(option.value as ToggletipPlacement)}
             />
             <Toggletip desktopPlacement={placement}>Toggletip Content</Toggletip>
         </StyledDiv>
