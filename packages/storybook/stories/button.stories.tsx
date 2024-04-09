@@ -1,19 +1,8 @@
-import { Button, Icon } from '@equisoft/design-elements-react';
+import { Button } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import styled from 'styled-components';
-import { InvertedBackground } from './utils/inverted-background';
-import { rawCodeParameters } from './utils/parameters';
-
-const PlusIcon = styled(Icon).attrs({ name: 'plusSign', size: '16' })`
-    margin-right: var(--spacing-1x);
-`;
-
-const ChevronDownIcon = styled(Icon).attrs({ name: 'chevronDown', size: '16' })`
-    margin-left: var(--spacing-1x);
-`;
 
 export default {
-    title: 'Components/Button/Stories',
+    title: 'Components/Button',
     component: Button,
 };
 
@@ -32,90 +21,13 @@ export const Tertiary: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" />
      </>
 );
-export const Destructive: Story = () => (
+export const DestructivePrimary: Story = () => (
     <>
-        <Button label="Destructive" buttonType="destructive" />
+        <Button label="Destructive Primary " buttonType="destructive" />
     </>
 );
 export const DestructiveSecondary: Story = () => (
      <>
-        <Button label="Destructive-Secondary" buttonType="destructive-secondary" />
-    </>
-);
-
-export const Disabled: Story = () => (
-    <>
-        <Button label="Primary" buttonType="primary" disabled />
-        <Button label="Secondary" buttonType="secondary" disabled />
-        <Button label="Tertiary" buttonType="tertiary" disabled />
-        <Button label="Destructive" buttonType="destructive" disabled />
-        <Button label="Destructive-Secondary" buttonType="destructive-secondary" disabled />
-    </>
-);
-export const Inverted: Story = () => (
-    <InvertedBackground>
-        <Button label="Primary" buttonType="primary" inverted />
-        <Button label="Secondary" buttonType="secondary" inverted />
-        <Button label="Tertiary" buttonType="tertiary" inverted />
-        <Button label="Destructive" buttonType="destructive" inverted />
-        <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted />
-    </InvertedBackground>
-);
-export const InvertedDisabled: Story = () => (
-    <InvertedBackground>
-        <Button label="Primary" buttonType="primary" inverted disabled />
-        <Button label="Secondary" buttonType="secondary" inverted disabled />
-        <Button label="Tertiary" buttonType="tertiary" inverted disabled />
-        <Button label="Destructive" buttonType="destructive" inverted disabled />
-        <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted disabled />
-    </InvertedBackground>
-);
-
-export const EventCallback: Story = () => (
-    <Button
-        label="See Console For Callback"
-        onClick={() => console.info('The button has been clicked!')}
-        buttonType="primary"
-    />
-);
-EventCallback.parameters = rawCodeParameters;
-
-export const WithIcons: Story = () => (
-    <>
-        <Button buttonType="primary">
-            <PlusIcon />
-            Primary
-            <ChevronDownIcon />
-        </Button>
-        <Button buttonType="secondary">
-            <PlusIcon />
-            Secondary
-            <ChevronDownIcon />
-        </Button>
-        <Button buttonType="tertiary">
-            <PlusIcon />
-            Tertiary
-            <ChevronDownIcon />
-        </Button>
-        <Button buttonType="destructive">
-            <PlusIcon />
-            Destructive
-            <ChevronDownIcon />
-        </Button>
-        <Button buttonType="destructive-secondary">
-            <PlusIcon />
-            Destructive Secondary
-            <ChevronDownIcon />
-        </Button>
-    </>
-);
-
-export const Small: Story = () => (
-    <>
-        <Button label="Primary" buttonType="primary" size="small" />
-        <Button label="Secondary" buttonType="secondary" size="small" />
-        <Button label="Tertiary" buttonType="tertiary" size="small" />
-        <Button label="Destructive" buttonType="destructive" size="small" />
-        <Button label="Destructive-Secondary" buttonType="destructive-secondary" size="small" />
+        <Button label="Destructive Secondary " buttonType="destructive-secondary" />
     </>
 );
