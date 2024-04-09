@@ -12,11 +12,11 @@ import * as AccordionStories  from './accordion.stories';
    3. [Variants](#variants)
    4. [Properties](#properties)
 
-<Meta title="Components/Accordion/Doc" />
+<Meta of={AccordionStories} />
 
 ## Definition
 Accordion are used to display or hide vertically stacked content.
-    <Canvas of={AccordionStories.Default} />
+<Canvas of={AccordionStories.SingleSelect} />
 
 ## Usage
 ### When to use
@@ -34,9 +34,15 @@ Accordion are used to display or hide vertically stacked content.
 - To display more information, revealing additional content that is initially hidden due to space constraints. Use a "View/Read/Show more" button instead [6].
 
 ## Variants
-### Default
+### Single-select
+- Single-select limits an accordion to expand **only one item** at a time [7].
+- If you select a second item, it'll automatically collapse the one that was previously expanded [7].
+<Canvas of={AccordionStories.SingleSelect} />
 
-<Canvas of={AccordionStories.Default} />
+### Multi-select
+- Multi-select allows to expand multiple accordions at a time to give users more control and flexibility [7].
+- Users can expand or collapse any accordions without affecting the others.
+<Canvas of={AccordionStories.MultiSelect} />
 
 ## Properties
 <ArgTypes of={Accordion} />

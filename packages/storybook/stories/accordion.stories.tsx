@@ -4,7 +4,7 @@ import { rawCodeParameters } from './utils/parameters';
 
 // eslint-disable-next-line import/no-default-export
 const accordionMeta: Meta<typeof Accordion> = {
-    title: 'Components/Accordion/Stories',
+    title: 'Components/Accordion',
     component: Accordion,
     parameters: rawCodeParameters,
     tags: ['autodocs'],
@@ -25,7 +25,7 @@ export default accordionMeta;
 
 type Story = StoryFn<typeof Accordion>;
 
-export const Default: Story = () => {
+export const SingleSelect: Story = () => {
     const items: ItemsProps[] = [
         {
             title: 'Panel Title 1',
@@ -41,10 +41,10 @@ export const Default: Story = () => {
         },
     ];
 
-    return <Accordion id="default" items={items} />;
+    return <Accordion id="singleselect" items={items} />;
 };
 
-export const MultiOpenToggle: Story = () => {
+export const MultiSelect: Story = () => {
     const items: ItemsProps[] = [
         {
             title: 'Panel Title 1',
@@ -60,68 +60,5 @@ export const MultiOpenToggle: Story = () => {
         },
     ];
 
-    return <Accordion mode="multi" id="multi" items={items} />;
-};
-
-export const DefaultExpanded: Story = () => {
-    const items: ItemsProps[] = [
-        {
-            title: 'Panel Title 1',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-            expanded: true,
-        },
-        {
-            title: 'Panel Title 2',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 3',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-    ];
-
-    return <Accordion id="expanded" items={items} />;
-};
-
-export const DefaultDisabled: Story = () => {
-    const items: ItemsProps[] = [
-        {
-            title: 'Panel Title 1',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 2',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-            disabled: true,
-        },
-        {
-            title: 'Panel Title 3',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-    ];
-
-    return <Accordion id="disabled" items={items} />;
-};
-
-export const OnToggle: Story = () => {
-    const onToggle = (itemId: string, expanded: boolean): void => {
-        // eslint-disable-next-line no-console
-        console.log(itemId, expanded);
-    };
-    const items: ItemsProps[] = [
-        {
-            title: 'Panel Title 1',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 2',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 3',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-    ];
-
-    return <Accordion id="handleToggle" items={items} onToggle={onToggle} />;
+    return <Accordion mode="multi" id="multiselect" items={items} />;
 };
