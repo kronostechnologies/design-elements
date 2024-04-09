@@ -33,22 +33,6 @@ describe('Combobox', () => {
             expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
         });
 
-        test('opens when the textbox receives the focus and the input has a value', () => {
-            const wrapper = shallow(<Combobox options={provinces} defaultValue="Quebec" />);
-
-            getByTestId(wrapper, 'textbox').simulate('focus');
-
-            expect(getByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
-
-        test('does not open when the textbox receives the focus and the input has no value', () => {
-            const wrapper = shallow(<Combobox options={provinces} />);
-
-            getByTestId(wrapper, 'textbox').simulate('focus');
-
-            expect(getByTestId(wrapper, 'listbox').length).toEqual(0);
-        });
-
         test('opens when clicking the arrow button', () => {
             const wrapper = shallow(<Combobox options={provinces} />);
 
@@ -63,6 +47,22 @@ describe('Combobox', () => {
             getByTestId(wrapper, 'arrow').simulate('click');
 
             expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+        });
+
+        test('opens when clicking the textbox', () => {
+            const wrapper = shallow(<Combobox options={provinces} />);
+
+            getByTestId(wrapper, 'textbox').simulate('click');
+
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(1);
+        });
+
+        test('closes when clicking the textbox', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen />);
+
+            getByTestId(wrapper, 'textbox').simulate('click');
+
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(0);
         });
 
         test('closes when clicking outside', () => {
@@ -92,12 +92,6 @@ describe('Combobox', () => {
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('Quebec');
         });
 
-        test('setting the prop to a arbitrary value assigns this value to the input', () => {
-            const wrapper = shallow(<Combobox options={provinces} defaultValue="Nowhere" />);
-
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('Nowhere');
-        });
-
         test('the corresponding option is selected and focused when expanding the listbox', () => {
             const wrapper = mountWithTheme(<Combobox options={provinces} defaultValue="Quebec" />);
 
@@ -105,6 +99,20 @@ describe('Combobox', () => {
 
             expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
             expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
+        });
+
+        test('setting the prop to an arbitrary value rejects the input', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultValue="Nowhere" />);
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
+        });
+
+        describe('when allowing a custom value', () => {
+            test('setting the prop to an arbitrary value assigns this value to the input', () => {
+                const wrapper = shallow(<Combobox options={provinces} allowCustomValue defaultValue="Nowhere" />);
+
+                expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('Nowhere');
+            });
         });
     });
 
@@ -121,7 +129,7 @@ describe('Combobox', () => {
             const wrapper = mountWithTheme(<Combobox options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'listitem-Quebec').simulate('click');
-            getByTestId(wrapper, 'textbox').simulate('focus');
+            getByTestId(wrapper, 'textbox').simulate('click');
 
             expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
             expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(true);
@@ -145,33 +153,62 @@ describe('Combobox', () => {
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('British Columbia');
         });
+
+        test('clearing the input removes the value from textbox', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultValue="Quebec" />);
+
+            getByTestId(wrapper, 'clear').simulate('click');
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
+        });
+
+        test('clearing the input deselects the corresponding option', () => {
+            const wrapper = mountWithTheme(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+
+            getByTestId(wrapper, 'clear').simulate('click');
+
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(false);
+        });
+
+        test('typing an exact match selects the corresponding option', () => {
+            const wrapper = mountWithTheme(<Combobox options={provinces} defaultOpen />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'quebec' } },
+            );
+
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+        });
     });
 
-    describe('list autocomplete', () => {
+    describe('list filtering', () => {
         test('typing a valid letter opens the listbox', () => {
-            const wrapper = shallow(<Combobox options={provinces} autoComplete="list" />);
+            const wrapper = shallow(<Combobox options={provinces} />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
                 { target: { value: 'q' } },
             );
 
-            expect(getByTestId(wrapper, 'listbox').length).toEqual(1);
+            expect(getByTestId(wrapper, 'listbox').length).toBeGreaterThan(0);
         });
 
-        test('typing an invalid letter does not open the listbox', () => {
-            const wrapper = shallow(<Combobox options={provinces} autoComplete="list" />);
+        test('typing an invalid letter opens the listbox with the no option placeholder', () => {
+            const wrapper = shallow(<Combobox options={provinces} />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
                 { target: { value: 'z' } },
             );
 
-            expect(getByTestId(wrapper, 'listbox').length).toEqual(0);
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(1);
+            expect(getByTestId(wrapper, 'listbox').prop('options')[0].disabled).toBeTruthy();
         });
 
         test('typing a letter filters the list', () => {
-            const wrapper = shallow(<Combobox options={provinces} autoComplete="list" defaultOpen />);
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
@@ -184,9 +221,7 @@ describe('Combobox', () => {
         });
 
         test('erasing characters updates the list to match the remaining input', () => {
-            const wrapper = shallow(
-                <Combobox options={provinces} autoComplete="list" defaultOpen defaultValue="New B" />,
-            );
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="New B" />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
@@ -203,11 +238,119 @@ describe('Combobox', () => {
                 { value: 'Newfoundland and Labrador' },
             ]);
         });
+
+        test('when a value is selected the list is not filtered', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+
+            expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual(provinces);
+        });
+
+        describe('disabled filtering', () => {
+            test('typing a letter does not filter the list', () => {
+                const wrapper = shallow(<Combobox options={provinces} disableListFiltering defaultOpen />);
+
+                getByTestId(wrapper, 'textbox').simulate(
+                    'change',
+                    { target: { value: 'q' } },
+                );
+
+                expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual(provinces);
+            });
+        });
+    });
+
+    describe('empty options list', () => {
+        test('the listbox contains the empty message', () => {
+            const emptyListMessage = 'The list is empty';
+            const wrapper = shallow(<Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen />);
+
+            expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual([{
+                disabled: true,
+                label: emptyListMessage,
+                value: '',
+            }]);
+        });
+
+        test('the empty message is not removed if custom values are not allowed', () => {
+            const emptyListMessage = 'The list is empty';
+            const wrapper = shallow(<Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'q' } },
+            );
+
+            expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual([{
+                disabled: true,
+                label: emptyListMessage,
+                value: '',
+            }]);
+        });
+
+        test('the empty message is removed if custom values are allowed', () => {
+            const emptyListMessage = 'The list is empty';
+            const wrapper = shallow(
+                <Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen allowCustomValue />,
+            );
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'q' } },
+            );
+
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(0);
+        });
+    });
+
+    describe('loading state', () => {
+        test('when active the listbox only contains the loading message', () => {
+            const wrapper = shallow(<Combobox options={provinces} isLoading defaultOpen />);
+
+            expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual([{
+                disabled: true,
+                label: 'Loading...',
+                value: '',
+            }]);
+        });
+    });
+
+    describe('value handling', () => {
+        test('clicking outside reverts to previous valid value', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultValue="Quebec" />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'z' } },
+            );
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'blur',
+                { relatedTarget: document.createElement('div') },
+            );
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('Quebec');
+        });
+
+        test('arbitrary value is kept when allowing custom values', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultValue="Quebec" allowCustomValue />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'change',
+                { target: { value: 'z' } },
+            );
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'blur',
+                { relatedTarget: document.createElement('div') },
+            );
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('z');
+        });
     });
 
     describe('inline autocomplete', () => {
         test('typing a valid letter opens the listbox', () => {
-            const wrapper = shallow(<Combobox options={provinces} autoComplete="inline" />);
+            const wrapper = shallow(<Combobox options={provinces} inlineAutoComplete />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
@@ -218,7 +361,7 @@ describe('Combobox', () => {
         });
 
         test('typing the first letter of an existing option autocompletes the input', () => {
-            const wrapper = shallow(<Combobox options={provinces} autoComplete="inline" />);
+            const wrapper = shallow(<Combobox options={provinces} inlineAutoComplete />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
@@ -229,7 +372,7 @@ describe('Combobox', () => {
         });
 
         test('the suggested part of the input is highlighted', async () => {
-            const wrapper = mountWithTheme(<Combobox options={provinces} autoComplete="inline" />);
+            const wrapper = mountWithTheme(<Combobox options={provinces} inlineAutoComplete />);
 
             await actAndWaitForEffects(wrapper, () => {
                 getByTestId(wrapper, 'textbox').simulate(
@@ -243,7 +386,7 @@ describe('Combobox', () => {
         });
 
         test('erasing characters removes the suggestion', async () => {
-            const wrapper = mountWithTheme(<Combobox options={provinces} autoComplete="inline" defaultValue="Que" />);
+            const wrapper = mountWithTheme(<Combobox options={provinces} inlineAutoComplete defaultValue="Que" />);
 
             await actAndWaitForEffects(wrapper, () => {
                 getByTestId(wrapper, 'textbox').simulate(
@@ -262,7 +405,7 @@ describe('Combobox', () => {
         });
 
         test('focusing an option with ArrowUp fills the input with its value', () => {
-            const wrapper = mountWithTheme(<Combobox options={provinces} autoComplete="inline" defaultOpen />);
+            const wrapper = mountWithTheme(<Combobox options={provinces} inlineAutoComplete defaultOpen />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'keydown',
@@ -273,7 +416,7 @@ describe('Combobox', () => {
         });
 
         test('focusing an option with ArrowDown fills the input with its value', () => {
-            const wrapper = mountWithTheme(<Combobox options={provinces} autoComplete="inline" defaultOpen />);
+            const wrapper = mountWithTheme(<Combobox options={provinces} inlineAutoComplete defaultOpen />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'keydown',
@@ -300,7 +443,7 @@ describe('Combobox', () => {
         });
 
         test('the input value is updated when the value prop changes to an arbitrary value', () => {
-            const wrapper = shallow(<Combobox options={provinces} value="Quebec" />);
+            const wrapper = shallow(<Combobox options={provinces} allowCustomValue value="Quebec" />);
 
             wrapper.setProps({ value: 'Nowhere' }).update();
 
@@ -376,7 +519,7 @@ describe('Combobox', () => {
         test('callback does not receive the suggestion when fired', () => {
             const callback = jest.fn();
             const wrapper = mountWithTheme(
-                <Combobox options={provinces} autoComplete="inline" onChange={callback} />,
+                <Combobox options={provinces} inlineAutoComplete onChange={callback} />,
             );
 
             getByTestId(wrapper, 'textbox').simulate(
@@ -447,7 +590,7 @@ describe('Combobox', () => {
         });
 
         test('Escape closes the listbox', () => {
-            const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="Test" />);
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'keydown',
@@ -455,7 +598,17 @@ describe('Combobox', () => {
             );
 
             expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toEqual('Test');
+        });
+
+        test('Escape does not clear the value when the listbox is open', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'keydown',
+                { key: 'Escape', preventDefault: jest.fn() },
+            );
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toEqual('Quebec');
         });
 
         test('Escape clears the textbox when the listbox is closed', () => {
@@ -482,6 +635,17 @@ describe('Combobox', () => {
             );
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('Saskatchewan');
+        });
+
+        test('Enter closes the listbox if custom values are allowed', () => {
+            const wrapper = shallow(<Combobox options={provinces} allowCustomValue defaultOpen defaultValue="New" />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'keydown',
+                { key: 'Enter', preventDefault: jest.fn() },
+            );
+
+            expect(getByTestId(wrapper, 'listbox').length).toEqual(0);
         });
     });
 
