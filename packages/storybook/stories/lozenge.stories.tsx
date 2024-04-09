@@ -47,7 +47,7 @@ export const Alert: Story = () => (
         <Lozenge subtle variant="alert">alert</Lozenge>
         <Lozenge icon="alertOctagon" variant="alert">alert</Lozenge>
         <Lozenge subtle icon="alertOctagon" variant="alert">alert</Lozenge>
-     </VariantsContainer>
+    </VariantsContainer>
 );
 
 export const Warning: Story = () => (
