@@ -1,25 +1,16 @@
 import {
-    GlobalHeader,
     IconButton,
-    DropdownNavigation,
-    NavListOption,
-    DropdownList,
     Tooltip,
-    TooltipPlacement,
 } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { useState } from 'react';
 import styled from 'styled-components';
-import { DesktopDecorator } from './utils/device-context-decorator';
-import { rawCodeParameters } from './utils/parameters';
-import { RouterDecorator } from './utils/router-decorator';
 
 const Container = styled.div`
     height: 100px;
 `;
 
 export default {
-    title: 'Components/Tooltip/Stories',
+    title: 'Components/Tooltip',
     component: Tooltip,
 };
 
@@ -36,106 +27,10 @@ export const Default: Story = () => (
     <Tooltip label="Tooltip Content" />
 );
 
-export const DefaultOpen: Story = () => (
-    <Tooltip defaultOpen label="Tooltip Content" />
-);
-
-export const Delayed: Story = () => (
-    <Tooltip label="Tooltip Content" delayed />
-);
-
-export const InvertedIcon: Story = () => (
-    <DarkDiv>
-        <Tooltip label="Tooltip Content" invertedIcon desktopPlacement="left" />
-    </DarkDiv>
-);
-
-export const WithChildElement: Story = () => (
-    <Container>
-        <Tooltip label="Go to settings page" desktopPlacement="bottom">
-            <IconButton buttonType="primary" label="settings" iconName="settings" />
-        </Tooltip>
-    </Container>
-);
-
-const DesktopPlacementContainer = styled.div`
-    height: 240px;
-    max-width: 200px;
-`;
-
-const DesktopPlacementTooltip = styled(Tooltip)`
-    margin-left: 120px;
-`;
-
-export const DesktopPlacement: Story = () => {
-    const [placement, setPlacement] = useState<TooltipPlacement>('right');
-
-    interface Placements {
-        value: TooltipPlacement;
-        label: TooltipPlacement;
-    }
-    const placements: Placements[] = [
-        { value: 'top', label: 'top' },
-        { value: 'right', label: 'right' },
-        { value: 'bottom', label: 'bottom' },
-        { value: 'left', label: 'left' },
-    ];
-
-    return (
-        <DesktopPlacementContainer>
-            <DropdownList
-                defaultValue="right"
-                label="Desktop placement"
-                options={placements}
-                onChange={(option) => setPlacement(option.value as TooltipPlacement)}
-            />
-            <DesktopPlacementTooltip desktopPlacement={placement} label="Tooltip Content" />
-        </DesktopPlacementContainer>
-    );
-};
-DesktopPlacement.decorators = [DesktopDecorator];
-DesktopPlacement.parameters = rawCodeParameters;
-
-const options: NavListOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testa',
-        isHtmlLink: true,
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testb',
-        isHtmlLink: true,
-    },
-];
-
-export const WithDropdownNavigation: Story = () => {
-    const [isDropdownexpanded, setDropdownExpanded] = useState(false);
-
-    return (
-        <Container>
-            <GlobalHeader>
-                <Tooltip label="Label" desktopPlacement="bottom" disabled={isDropdownexpanded} delayed>
-                    <DropdownNavigation
-                        iconOnly
-                        iconName="info"
-                        options={options}
-                        onDropdownVisibilityChanged={setDropdownExpanded}
-                    />
-                </Tooltip>
-            </GlobalHeader>
-        </Container>
-    );
-};
-
-WithDropdownNavigation.decorators = [RouterDecorator];
-
 const CodeContainer = styled.div`
     display: flex;
 `;
-export const WithConfirmation: Story = () => {
+export const Confirmation: Story = () => {
     const code = 'JBSW Y3DP EHPK 3PXP';
 
     return (
