@@ -4,4 +4,587 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog
 
-Coming soon
+## v6.1.2 <mark>Latest</mark>
+### Bug Fixes
+- **Datepicker**: call calendar open/close events in calendarbutton on mousedown callback (#725)
+
+**Full Changelog**: [v6.1.0...v6.1.2](https://github.com/kronostechnologies/design-elements/compare/v6.1.0...v6.1.2)
+
+
+## v6.1.0 (Jan 11, 2024)
+### Features
+* **Button:** add secondary-destructive variant ([#689](https://github.com/kronostechnologies/design-elements/issues/689)) ([1cbfe98](https://github.com/kronostechnologies/design-elements/commit/1cbfe988f258146dbebb58857c5cbd5767f0b17a))
+
+### Bug Fixes
+* **deps:** update dependency date-fns to v3 ([#692](https://github.com/kronostechnologies/design-elements/issues/692)) ([20591a2](https://github.com/kronostechnologies/design-elements/commit/20591a29d8bd69abb4b4fcfedf89fb75feeacb60))
+* **deps:** update dependency react-router-dom to v6.21.0 ([#691](https://github.com/kronostechnologies/design-elements/issues/691)) ([1fc0ea7](https://github.com/kronostechnologies/design-elements/commit/1fc0ea732843698bb740eb8ad5e5911b9cd9e8f3))
+* **DropdownList:** keep textbox focused when clicking on disabled options ([#690](https://github.com/kronostechnologies/design-elements/issues/690)) ([8952044](https://github.com/kronostechnologies/design-elements/commit/8952044212524817911bfe32961850e28b49475e))
+* **DropdownList:** prevent text overflow in textbox ([#697](https://github.com/kronostechnologies/design-elements/issues/697)) ([78d8dfb](https://github.com/kronostechnologies/design-elements/commit/78d8dfb14ff0e03eed7f4457c5ba5c3c675e4bde))
+
+**Full Changelog**: [v6.0.0...v6.0.1](https://github.com/kronostechnologies/design-elements/compare/v6.0.0...v6.0.1)
+
+
+## v6.0.0 (Dec 13, 2023)
+[Storybook for this release](https://ds.equisoft.io/6.0.0/?path=/docs/introduction--docs)
+
+### ⚠ BREAKING CHANGES
+* **Datepicker:** renamed startDate to defaultDate and added openToDate (#586)
+* **Dropdown:** update behaviors and use updated listbox (#666)
+* **Listbox:** new implementation (#663)
+* **MenuButton:** renamed menuDirection to menuPlacement groups and icons (#595)
+* **ModalDialog:** title is now required (#630)
+* **RadioCardGroup:** added RadioCardGroup component (#593)
+
+### ⚠ Component renames
+* **ChooserCard**: renamed to **RadioCard** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+* **EnsoSpinner**: renamed to **Spinner** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+* **NavMenu**: renamed to **NavList** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+* **NavMenuButton**: renamed to **DropdownNavigation** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+* **Select**: renamed to **DropdownList** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+* **ProgressBar**: renamed to **ProgressIndicator** ([#565](https://github.com/kronostechnologies/design-elements/issues/565)) ([52543f8](https://github.com/kronostechnologies/design-elements/commit/52543f83a710f9aebe791045699a0dabdf9c894f))
+
+### New components
+* **Accordion:** add new component ([#576](https://github.com/kronostechnologies/design-elements/issues/576)) ([b16692e](https://github.com/kronostechnologies/design-elements/commit/b16692ecdb7c0b8ac25119ae9c97426e20f683d8))
+* **NumericInput:** add new component ([#614](https://github.com/kronostechnologies/design-elements/issues/614)) ([9ec563f](https://github.com/kronostechnologies/design-elements/commit/9ec563f1794c91d0e140c1c495494a2831714168))
+* **PasswordInput:** add the component ([#566](https://github.com/kronostechnologies/design-elements/issues/566)) ([8edc003](https://github.com/kronostechnologies/design-elements/commit/8edc003b6d630602ef5a16b74920dea0f1c61944))
+
+### Features
+* **Dropdown:** update behaviors and use updated listbox ([#666](https://github.com/kronostechnologies/design-elements/issues/666)) ([0599381](https://github.com/kronostechnologies/design-elements/commit/0599381c8822bac0b4bfce37fb8d9327f887e0b7))
+* **Icons:** add new History and Link icons ([#704](https://github.com/kronostechnologies/design-elements/issues/704)) ([#638](https://github.com/kronostechnologies/design-elements/issues/638)) ([e752509](https://github.com/kronostechnologies/design-elements/commit/e752509242e0412783c2102798e94ac837d8e179))
+* **IconButton:** fix event propagation for buttons ([#648](https://github.com/kronostechnologies/design-elements/issues/648)) ([b075b40](https://github.com/kronostechnologies/design-elements/commit/b075b40cb323f1cae88514dad8b7ee287ece5cf5))
+* **Listbox:** new implementation ([#663](https://github.com/kronostechnologies/design-elements/issues/663)) ([0f238b8](https://github.com/kronostechnologies/design-elements/commit/0f238b8e33e60795afa4f137d3b8e6be2b9970df))
+* **MenuButton:** groups and icons ([#595](https://github.com/kronostechnologies/design-elements/issues/595)) ([2077213](https://github.com/kronostechnologies/design-elements/commit/2077213247c96bd150130cacc87a337a6a628780))
+* **ModalDialog:** title is now required ([#630](https://github.com/kronostechnologies/design-elements/issues/630)) ([d3da181](https://github.com/kronostechnologies/design-elements/commit/d3da1816e2a3cc83fe77f9aed689a612d62ddeae))
+* **NumericInput:** add constraints and validation ([#655](https://github.com/kronostechnologies/design-elements/issues/655)) ([641bc06](https://github.com/kronostechnologies/design-elements/commit/641bc0630adf7ab7919761a45c66b03d7203b692))
+* **Pagination:** update components styles and pagination labels ([#619](https://github.com/kronostechnologies/design-elements/issues/619)) ([40d840f](https://github.com/kronostechnologies/design-elements/commit/40d840f2d2cdd384df63e936d05608de009298fa))
+* **RadioButtonGroup:** added conditional content ([#578](https://github.com/kronostechnologies/design-elements/issues/578)) ([de3b426](https://github.com/kronostechnologies/design-elements/commit/de3b426b1b3f28624010e2ff3bc2d2d566a61da9))
+* **RadioCardGroup:** added RadioCardGroup component ([#593](https://github.com/kronostechnologies/design-elements/issues/593)) ([c102458](https://github.com/kronostechnologies/design-elements/commit/c1024585169fd71a62aee55b15472e92d8a4a4cd))
+* **SectionalBanner:** add neutral + discovery variant ([#678](https://github.com/kronostechnologies/design-elements/issues/678)) ([9fcf597](https://github.com/kronostechnologies/design-elements/commit/9fcf59739b638d8f67ef5e4f9c63c6e384865f6b))
+* **Select,TextArea,TextInput:** added required text label as default ([#577](https://github.com/kronostechnologies/design-elements/issues/577)) ([2d0a6d4](https://github.com/kronostechnologies/design-elements/commit/2d0a6d4667245a7a811c7f14e73cc36029a87e50))
+* **Table:** add Footer support ([#640](https://github.com/kronostechnologies/design-elements/issues/640)) ([071134e](https://github.com/kronostechnologies/design-elements/commit/071134ec76d3e67f81e967f24b291b9796cef9f6))
+* **TextInput:** add valid prop to TextInput ([#592](https://github.com/kronostechnologies/design-elements/issues/592)) ([cadc9d1](https://github.com/kronostechnologies/design-elements/commit/cadc9d1a9f5de8496c13e6a36e6ef43662bb18ea))
+* **TextInput:** added ariaDescribedBy for hint and validations ([#631](https://github.com/kronostechnologies/design-elements/issues/631)) ([4135d4f](https://github.com/kronostechnologies/design-elements/commit/4135d4f75dcb996d9b8c429cbe6616024dbb3f88))
+* **Tooltip:** add confirmation variant to tooltip ([#644](https://github.com/kronostechnologies/design-elements/issues/644)) ([e9f6e3f](https://github.com/kronostechnologies/design-elements/commit/e9f6e3f619139f27b20a09d52ba7daf7b2766b95))
+* **UserProfile:** add lozenge prop for nav items ([#621](https://github.com/kronostechnologies/design-elements/issues/621)) ([904b372](https://github.com/kronostechnologies/design-elements/commit/904b37263efabe47a8fc5abe79c6838b40a8b7f2))
+
+### Bug Fixes
+* **Button:** wrong style on hover on focused tertiary ([#676](https://github.com/kronostechnologies/design-elements/issues/676)) ([9e95011](https://github.com/kronostechnologies/design-elements/commit/9e950113449abafe347e79b1ee0a766ec0f0364d))
+* **Button:** remove cursor pointer  ([#675](https://github.com/kronostechnologies/design-elements/issues/675)) ([f5797a6](https://github.com/kronostechnologies/design-elements/commit/f5797a6691fb33b4ae9fc89b0076fe8e6cd8250f))
+* **Datepicker:** ensure one datepicker is open ([#618](https://github.com/kronostechnologies/design-elements/issues/618)) ([712e42e](https://github.com/kronostechnologies/design-elements/commit/712e42e891b7399b145c5f30f19f623b78c5420a))
+* **Datepicker:** changed startDate behavior and old behavior is now defaultDate ([#586](https://github.com/kronostechnologies/design-elements/issues/586)) ([9f06399](https://github.com/kronostechnologies/design-elements/commit/9f06399fdd79237e84852515248c43e05431d0cb))
+* **ErrorSummary,SectionalBanner:** fix spacing and border-radius ([#639](https://github.com/kronostechnologies/design-elements/issues/639)) ([9c678bd](https://github.com/kronostechnologies/design-elements/commit/9c678bda82a2a7ddee6228d8696c9c6f2f3156d1))
+* **ExternalLink:** display flex to inline-flex ([#681](https://github.com/kronostechnologies/design-elements/issues/681)) ([bc23ae3](https://github.com/kronostechnologies/design-elements/commit/bc23ae3c99a6637bc7c1f2f12ba0939e1e223018))
+* **GlobalBanner:** replace b tag for strong ([#679](https://github.com/kronostechnologies/design-elements/issues/679)) ([cc181ec](https://github.com/kronostechnologies/design-elements/commit/cc181ec5586fae7e4e09d4abda2123c116a21e48))
+* **Inputs:** replace error icon ([#601](https://github.com/kronostechnologies/design-elements/issues/601)) ([7df412b](https://github.com/kronostechnologies/design-elements/commit/7df412bea53daab3fd4c797ab3e894b0a0be17b1))
+* **Modal,ModalDialog:** close icon alignment ([#600](https://github.com/kronostechnologies/design-elements/issues/600)) ([57a317e](https://github.com/kronostechnologies/design-elements/commit/57a317e7f610a5ca135ef09b604d3a4de3aec4e4))
+* **Modal:** fix padding-top footer ([#677](https://github.com/kronostechnologies/design-elements/issues/677)) ([dc054dc](https://github.com/kronostechnologies/design-elements/commit/dc054dcc8635f71c2d139eb294218ad98725da95))
+* **RadioButtonGroup:** controlled radio should show content ([#636](https://github.com/kronostechnologies/design-elements/issues/636)) ([4e08b94](https://github.com/kronostechnologies/design-elements/commit/4e08b942851f13c0686ee77e8b8a839fe23c7f0a))
+* **RadioButtonGroup:** defaultCheck now show content ([#605](https://github.com/kronostechnologies/design-elements/issues/605)) ([ddf171e](https://github.com/kronostechnologies/design-elements/commit/ddf171e51587794f5b1afd534777c77380aaa1cd))
+* **RadioButtonGroup,RadioCardGroup** added className for radios ([#604](https://github.com/kronostechnologies/design-elements/issues/604)) ([2763ed8](https://github.com/kronostechnologies/design-elements/commit/2763ed8cd25275aaa1b3c342f198511c2cf4dca5))
+* **Table:** change sorting icon position ([#662](https://github.com/kronostechnologies/design-elements/pull/662)) ([12085d1](https://github.com/kronostechnologies/design-elements/commit/12085d1f0b6ad6000e050c96897e450ec567fb5b))
+* **Table:** typing error on props data ([#657](https://github.com/kronostechnologies/design-elements/issues/657)) ([eccf6d6](https://github.com/kronostechnologies/design-elements/commit/eccf6d6997a4693b350de836ba866b3786834912))
+* **TextArea:** better accessibility ([#623](https://github.com/kronostechnologies/design-elements/issues/623)) ([a7f95f1](https://github.com/kronostechnologies/design-elements/commit/a7f95f198efaec8af63c9064771f8df0e1f2ec7a))
+* **TextInput:** make sure that blur event doesn't break error message. ([#654](https://github.com/kronostechnologies/design-elements/issues/654)) ([d7178bb](https://github.com/kronostechnologies/design-elements/commit/d7178bb70cfd5da786277d5880159468573cbbb6))
+* **Toast:** ajouter role sur svg et remplacer type button ([#680](https://github.com/kronostechnologies/design-elements/issues/680)) ([f693d93](https://github.com/kronostechnologies/design-elements/commit/f693d9389bb58431a93489616f3f100138f830ca))
+
+### Dependencies
+* Update core-js from v3.32.1 to v3.34.0
+* Update i18next from v23.4.4 to v23.7.8
+* Update react-datepicker from v4.16.0 to v4.24.0
+* Update react-router-dom from v6.15.0 to v6.20.1
+
+### Docs
+* **Storybook:** add a11y addon + reorganise navigation ([#652](https://github.com/kronostechnologies/design-elements/issues/652)) ([3fe81d2](https://github.com/kronostechnologies/design-elements/commit/3fe81d22c7be9ee851d1f509332ba96d55e87fa2))
+* **Storybook:** sort arguments alphabetically ([#656](https://github.com/kronostechnologies/design-elements/issues/656)) ([895894a](https://github.com/kronostechnologies/design-elements/commit/895894a7e522d340b34dbc112c0f594fb1029d86))
+
+**Full Changelog**: [v5.6.0...v6.0.0](https://github.com/kronostechnologies/design-elements/compare/v5.6.0...v6.0.0)
+
+
+## v5.6.0 (Aug 24, 2023)
+### Features
+* **Toggletip, Tooltip:** add inverted icons support ([#558](https://github.com/kronostechnologies/design-elements/issues/558)) ([5038ddf](https://github.com/kronostechnologies/design-elements/commit/5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77))
+
+**Full Changelog**: [v5.5.1...v5.6.0](https://github.com/kronostechnologies/design-elements/compare/v5.5.1...v5.6.0)
+
+
+## v5.5.1 (Aug 15, 2023)
+### Bug Fixes
+* **Tooltip:** visual regression ([#564](https://github.com/kronostechnologies/design-elements/issues/564)) ([4a51f3b](https://github.com/kronostechnologies/design-elements/commit/4a51f3be17bccc74242c265e0e26b286d1b2bf4b))
+
+### Dependencies
+* update dependency react-router-dom to ~6.15.0 ([9712a68](https://github.com/kronostechnologies/design-elements/commit/9712a68f750431c9a9a0bcb672a5cccd02f245f2))
+
+**Full Changelog**: [v5.5.0...v5.5.1](https://github.com/kronostechnologies/design-elements/compare/v5.5.0...v5.5.1)
+
+
+## v5.5.0 (Aug 9, 2023)
+### Features
+* **ModalDialog:** adds destructive & information modal variant ([#549](https://github.com/kronostechnologies/design-elements/issues/549)) ([0fec16c](https://github.com/kronostechnologies/design-elements/commit/0fec16c9645b99dcce17908e034f3038dedf321a))
+* **Tooltip:** adjust style to fit doc ([#486](https://github.com/kronostechnologies/design-elements/issues/486)) ([606d0c3](https://github.com/kronostechnologies/design-elements/commit/606d0c307fa4d9053ef3467799eed7d9046f058b))
+
+### Bug Fixes
+* **ModalDialog:** rename modalType to dialogType ([#553](https://github.com/kronostechnologies/design-elements/issues/553)) ([2d2367a](https://github.com/kronostechnologies/design-elements/commit/2d2367a54e72c0bb3ef3c70fb6db12e42c020c18))
+
+**Full Changelog**: [v5.4.0...v5.5.0](https://github.com/kronostechnologies/design-elements/compare/v5.4.0...v5.5.0)
+
+
+## v5.4.0 (Jul 26, 2023)
+### Features
+* **ModalDialog:** move buttons to the right ([#542](https://github.com/kronostechnologies/design-elements/issues/542)) ([62bebe9](https://github.com/kronostechnologies/design-elements/commit/62bebe9275ea0320b2fc8494bc8448907ef376db))
+
+### Dependencies
+* **deps:** update dependency i18next to v23 ([#533](https://github.com/kronostechnologies/design-elements/issues/533)) ([72aceaf](https://github.com/kronostechnologies/design-elements/commit/72aceaf07b310087bf841d3080e58a31e6b6b1f6))
+* **deps:** update dependency node-sass to v9 ([#511](https://github.com/kronostechnologies/design-elements/issues/511)) ([2cd2d16](https://github.com/kronostechnologies/design-elements/commit/2cd2d161712a08af2695e59fa1948b7a72585e25))
+* **deps:** update dependency react-datepicker to v4.16.0 ([9ae9cd1](https://github.com/kronostechnologies/design-elements/commit/9ae9cd13c9b5f1f9c693403930597a1b84bedfb2))
+* **deps:** update dependency react-router-dom to ~6.14.0 ([#528](https://github.com/kronostechnologies/design-elements/issues/528)) ([2acc8c9](https://github.com/kronostechnologies/design-elements/commit/2acc8c9c925937cd7cfce34ac8e180943f74c47d))
+* **deps:** update yarn minors ([#541](https://github.com/kronostechnologies/design-elements/issues/541)) ([727607c](https://github.com/kronostechnologies/design-elements/commit/727607c485081864c8280e4a5ec86a1628429909))
+
+**Full Changelog**: [v5.3.3...v5.4.0](https://github.com/kronostechnologies/design-elements/compare/v5.3.3...v5.4.0)
+
+
+## v5.3.3 (Jul 13, 2023)
+### Features
+* **MenuButton:** add ability to choose menu display direction ([#535](https://github.com/kronostechnologies/design-elements/issues/535)) ([513d2f7](https://github.com/kronostechnologies/design-elements/commit/513d2f78e25aeac93b98587c5d47226d7b41be16))
+
+**Full Changelog**: [v5.3.2...v5.3.3](https://github.com/kronostechnologies/design-elements/compare/v5.3.2...v5.3.3)
+
+
+## v5.3.2 (Jul 11, 2023)
+### Features
+* added inverted props to bento & user profile ([#534](https://github.com/kronostechnologies/design-elements/issues/534)) ([91a1e4a](https://github.com/kronostechnologies/design-elements/commit/91a1e4aae8a3219f20214c41876619fcd9188d2a))
+
+### Dependencies
+* update dependency react-datepicker to v4.15.0 ([#527](https://github.com/kronostechnologies/design-elements/issues/527)) ([02ac4f5](https://github.com/kronostechnologies/design-elements/commit/02ac4f5ce368353ae3f3b05a6e72f9ce9e984451))
+
+**Full Changelog**: [v5.3.1...v5.3.2](https://github.com/kronostechnologies/design-elements/compare/v5.3.1...v5.3.2)
+
+
+## v5.3.1 (Jul 4, 2023)
+### Bug Fixes
+* **ErrorSummary:** update snapshot ([#529](https://github.com/kronostechnologies/design-elements/issues/529)) ([997c641](https://github.com/kronostechnologies/design-elements/commit/997c64168c7c46f96cc8624580474cc0bfb8df8f))
+
+**Full Changelog**: [v5.3.0...v5.3.1](https://github.com/kronostechnologies/design-elements/compare/v5.3.0...v5.3.1)
+
+
+## v5.3.0 (Jul 4, 2023)
+### Features
+* **ErrorSummary:** add component ([#488](https://github.com/kronostechnologies/design-elements/issues/488)) ([321a70b](https://github.com/kronostechnologies/design-elements/commit/321a70ba12a665d9858a349a011c9c8fa7d65b9f))
+
+### Bug Fixes
+* a11y zoom 200% all non-control components ([#487](https://github.com/kronostechnologies/design-elements/issues/487)) ([a708783](https://github.com/kronostechnologies/design-elements/commit/a708783e035c47d37bd01010fd9a0879076f5fcf))
+* **a11y:** zoom 200% pour les inputs ([#485](https://github.com/kronostechnologies/design-elements/issues/485)) ([5aa9e08](https://github.com/kronostechnologies/design-elements/commit/5aa9e089731cc66376d9220e852e8526cacb5865))
+* **MenuButton:** remove auto-focus from first menu item (ABF-6488) ([#492](https://github.com/kronostechnologies/design-elements/issues/492)) ([ebffdc7](https://github.com/kronostechnologies/design-elements/commit/ebffdc700c79d4bbaf22099880f5fbe44b19c43d))
+
+### Dependencies
+* update dependency react-datepicker to v4.14.0 ([#520](https://github.com/kronostechnologies/design-elements/issues/520)) ([17bb4a2](https://github.com/kronostechnologies/design-elements/commit/17bb4a2906f304ad0cf7d724fbf5239ce4e5543b))
+* update dependency react-datepicker to v4.14.1 ([#522](https://github.com/kronostechnologies/design-elements/issues/522)) ([5622229](https://github.com/kronostechnologies/design-elements/commit/56222292a99e3e054c9d9409aef2057f391b6e62))
+* update dependency react-router-dom to ~6.13.0 ([#514](https://github.com/kronostechnologies/design-elements/issues/514)) ([4c89b8e](https://github.com/kronostechnologies/design-elements/commit/4c89b8e9bde64fc7c823e769e5ffa4fd800d0321))
+* update yarn patches ([#509](https://github.com/kronostechnologies/design-elements/issues/509)) ([53f9fa5](https://github.com/kronostechnologies/design-elements/commit/53f9fa5187f259af7a656f02a03010a30b1bd8ec))
+* update yarn patches ([#518](https://github.com/kronostechnologies/design-elements/issues/518)) ([95da120](https://github.com/kronostechnologies/design-elements/commit/95da1207f2a4992a8c869282599f667ff1fc4b02))
+* update yarn patches ([#523](https://github.com/kronostechnologies/design-elements/issues/523)) ([fb71558](https://github.com/kronostechnologies/design-elements/commit/fb715581937944cdc1639fcef6bdd49c3b40042e))
+
+### Other
+* **Link:** removed unused attributes and duplicated code ([#498](https://github.com/kronostechnologies/design-elements/issues/498)) ([011e30a](https://github.com/kronostechnologies/design-elements/commit/011e30a311a3ed5e430dee3e2a73e9469d58b0bb))
+
+**Full Changelog**: [v5.2.4...v5.3.0](https://github.com/kronostechnologies/design-elements/compare/v5.2.4...v5.3.0)
+
+
+## v5.2.4 (Mar 1, 2023)
+### Bug Fixes
+* **MenuButton:** react-popper-tooltip removed, cause weird scroll ([#484](https://github.com/kronostechnologies/design-elements/issues/484)) ([915bf06](https://github.com/kronostechnologies/design-elements/commit/915bf062f67638fcc6762ee70989a83296e04bd2))
+
+**Full Changelog**: [v5.2.3...v5.2.4](https://github.com/kronostechnologies/design-elements/compare/v5.2.3...v5.2.4)
+
+
+## v5.2.3 (Feb 23, 2023)
+### Features
+* **MenuButton:** added onMenuVisibilityChange props ([#482](https://github.com/kronostechnologies/design-elements/issues/482)) ([53cf06e](https://github.com/kronostechnologies/design-elements/commit/53cf06e158fe33b1df394b7a4f7429029c4a3e0f))
+
+**Full Changelog**: [v5.2.2...v5.2.3](https://github.com/kronostechnologies/design-elements/compare/v5.2.2...v5.2.3)
+
+
+## v5.2.2 (Feb 20, 2023)
+## What's Changed
+* docs: fix Storybook update
+
+**Full Changelog**: [v5.2.1...v5.2.2](https://github.com/kronostechnologies/design-elements/compare/v5.2.1...v5.2.2)
+
+
+## v5.2.1 (Feb 17, 2023)
+### Bug Fixes
+* **Tooltip:** mouse flickering issue ([#476](https://github.com/kronostechnologies/design-elements/issues/476)) ([d41df08](https://github.com/kronostechnologies/design-elements/commit/d41df0837421774f1130c5f0420b6df017f2c696))
+
+**Full Changelog**: [v5.2.0...v5.2.1](https://github.com/kronostechnologies/design-elements/compare/v5.2.0...v5.2.1)
+
+
+## v5.2.0 (Feb 14, 2023)
+### Features
+* **MenuButton:** support inverted props ([#474](https://github.com/kronostechnologies/design-elements/issues/474)) ([a4ea482](https://github.com/kronostechnologies/design-elements/commit/a4ea482d4481652b45ad2fbecbcbbb9db4e26bd2))
+* **Toggletip:** Added Toggletip component ([#472](https://github.com/kronostechnologies/design-elements/issues/472)) ([afb6e06](https://github.com/kronostechnologies/design-elements/commit/afb6e0627aa431e9e02f889f4fd68a4a2820d712))
+
+**Full Changelog**: [v5.1.0...v5.2.0](https://github.com/kronostechnologies/design-elements/compare/v5.1.0...v5.2.0)
+
+
+## v5.1.0 (Feb 1, 2023)
+### Features
+* **Theme:** update theme properties to reflect new guide in Figma ([75c3d6f](https://github.com/kronostechnologies/design-elements/commit/75c3d6ff9378bbe304b207ce50c18f354afa389c))
+
+### Bug Fixes
+* **Breadcrump:** fix breadcrump overflow ([4d58a9c](https://github.com/kronostechnologies/design-elements/commit/4d58a9c46ba5a2062d90cfb2b52170f36d966344))
+
+**Full Changelog**: [v5.0.2...v5.1.0](https://github.com/kronostechnologies/design-elements/compare/v5.0.2...v5.1.0)
+
+
+## v5.0.2 (Jan 10, 2023)
+### Bug Fixes
+* **i18n:** language doesn't change ([6d96ded](https://github.com/kronostechnologies/design-elements/commit/6d96ded229fe200d710f2767b756f91ca21bec3b))
+
+**Full Changelog**: [v5.0.1...v5.0.2](https://github.com/kronostechnologies/design-elements/compare/v5.0.1...v5.0.2)
+
+
+## v5.0.1 (Nov 15, 2022)
+### Bug Fixes 
+* **Icon:** fix duplicate ids yielding wrong render ([16dcda4](https://github.com/kronostechnologies/design-elements/commit/16dcda4055a7378c11ad51ee58333bf6046b31de))
+
+**Full Changelog**: [v5.0.0...v5.0.1](https://github.com/kronostechnologies/design-elements/compare/v5.0.0...v5.0.1)
+
+
+## v5.0.0 (Nov 3, 2022)
+This major version brings *support* for React 18 with Typescript. This means that the library should work with React 17 and React 18 types.
+The support for React 18 introduces a breaking change : we bumped react-router from v5 to v6.
+
+### ⚠ BREAKING CHANGES
+* migrate to react router v6 ([3951648](https://github.com/kronostechnologies/design-elements/commit/3951648250b1c59b9472097284a21a7314b88bb4))
+* rename `exact` prop to `end` in NavMenu, GlobalNavigation, RouteLink, NavItem, NavMenuItem, and NavMenuOption to follow react-router v6 rename ([3951648](https://github.com/kronostechnologies/design-elements/commit/3951648250b1c59b9472097284a21a7314b88bb4))
+
+### Features
+* Support for React 18 with Typescript ([74e163f](https://github.com/kronostechnologies/design-elements/commit/74e163fe9571fed9d9d7946df7677469e5777320))
+* **Lozenge:** add default lozenge type in LozengeType enum ([74d2869](https://github.com/kronostechnologies/design-elements/commit/74d2869957a05e13ee5bbcc14196c2b59cc07fd0))
+* **Lozenge:** add lozenge types ([88c1569](https://github.com/kronostechnologies/design-elements/commit/88c1569f6c13e6f26366bea798e43a47b9ecf4cf))
+* **Modal:** add parentSelector ([1cb1ac5](https://github.com/kronostechnologies/design-elements/commit/1cb1ac57aca093aabecbf0ea4a9ceeeccc6668ce))
+* **RadioButtonGroup:** add tooltip to label ([1a329f5](https://github.com/kronostechnologies/design-elements/commit/1a329f5288cf2613b50e3e01064f8db7b99b553e))
+* **SectionalBanner:** allow custom children type ([c8ecf11](https://github.com/kronostechnologies/design-elements/commit/c8ecf11efabd15e626498172b83033488adc5ef1))
+* **Tag:** add forwardRef to Tag component ([adf9fb5](https://github.com/kronostechnologies/design-elements/commit/adf9fb55d3820988229d411f332fd074150d565f))
+
+### Bug Fixes
+* **Datepicker:** fix width on wrapper ([33dc9c0](https://github.com/kronostechnologies/design-elements/commit/33dc9c0c9dacbb4fdc44057857bfc23ee9bd24f0))
+* **DesignSystem:** styleSheetManager allows only one child ([7a3d31e](https://github.com/kronostechnologies/design-elements/commit/7a3d31efef13592df48f745a146778b773002fea))
+* **Lozenge:** set font weight to 400 ([71aad1f](https://github.com/kronostechnologies/design-elements/commit/71aad1f45884498f2ee42e39a1bf0a028993fdd0))
+
+### Libraries updates
+* Updated **date-fns** from v2.22 to v2.29
+* Updated **react-datepicker** from v4.1 to v4.8
+* Updated **react-modal** from v3.14 to v3.16
+* Updated **react-popper-tooltip** from v4.3 to v4.4
+* Updated **react-router** and **react-router-dom** from v5 to v6
+* Updated **react-swipeable** from v6.1 to v7.0
+* Updated **react-table** from v7.7 to v7.8.0
+
+**Full Changelog**: [v4.1.0...v5.0.0](https://github.com/kronostechnologies/design-elements/compare/v4.1.0...v5.0.0)
+
+
+## v4.1.0 (Jul 1, 2022)
+### Features
+* add controllable data-testid to inputs ([01ad6d5](https://github.com/kronostechnologies/design-elements/commit/01ad6d5d8897862173d17fcae126e856dd2ab303))
+* **Badge:** add badge component ([af928de](https://github.com/kronostechnologies/design-elements/commit/af928de587ff32a8e088535afbe6b6358f8ad211))
+* **Badge:** add offset props ([7e3aa78](https://github.com/kronostechnologies/design-elements/commit/7e3aa783ff3228131a105d2a8ec815c384dd32a3))
+* **BentoMenuButton:** add productGroups props ([bea770c](https://github.com/kronostechnologies/design-elements/commit/bea770c2004eea1b41611a1ba5bea16063300d54))
+* **Button:** set button default html type to button ([#441](https://github.com/kronostechnologies/design-elements/issues/441)) ([aad36a4](https://github.com/kronostechnologies/design-elements/commit/aad36a40fe39b675e84ce733cca1d4c4c0106611))
+* **GlobalBanner:** add onDismiss callback ([5e1b0d1](https://github.com/kronostechnologies/design-elements/commit/5e1b0d107f2e6cf4a2674536d986c1dee37d993e))
+* **Icon:** add alert circle icon ([14ac346](https://github.com/kronostechnologies/design-elements/commit/14ac346222f50b0a04115b15d4e7dd41066ab9c7))
+* **Icon:** add megaphone icon ([3182b69](https://github.com/kronostechnologies/design-elements/commit/3182b69f81cba242e1b100ee5e49e95b96f469e2))
+* **IconGallery:** use IconGallery to display icon components ([5ea3ca4](https://github.com/kronostechnologies/design-elements/commit/5ea3ca4b7fb3342504e393e19e869882dccf2e4a))
+* **PasswordCreationInput:** create password creation input component ([1e4215f](https://github.com/kronostechnologies/design-elements/commit/1e4215fe1c2874c88fe445784453f2e4c103e164))
+* **PhoneInput:** add controllable data-testid ([9a20ed6](https://github.com/kronostechnologies/design-elements/commit/9a20ed6dfcf06cd70229e1760fddca6e79193b07))
+* **RadioButtonGroup:** add controllable data-testid ([882a13d](https://github.com/kronostechnologies/design-elements/commit/882a13da2ea36e0ee0e8386ce4f4d2676c416ebd))
+* **Tabs:** add onBeforeUnload callback to tabs ([9874a4f](https://github.com/kronostechnologies/design-elements/commit/9874a4f74d37ec936c2be53ded93906812eb5a38))
+* **Tabs:** make onBeforeUnload async ([edd8d02](https://github.com/kronostechnologies/design-elements/commit/edd8d02a062c95c39088ccaa9827a36e7a568bdf))
+
+### Bug Fixes
+* **DatePicker:** day names appear over the first row of the calendar ([3c508f0](https://github.com/kronostechnologies/design-elements/commit/3c508f06b6fb96e9f9ca36b391ac562fa1817670))
+* **ListBox:** increase list box z-index ([2d74260](https://github.com/kronostechnologies/design-elements/commit/2d742607b1675ff5dd19fea1918da7b28d3b94db))
+* **Select:** fix select options when a value is already selected ([a2d096d](https://github.com/kronostechnologies/design-elements/commit/a2d096df7b2e3cc45970f7b8153367cda7d8963a))
+* **Storybook:** stories in the wrong order (migrate to SB v6.5) ([d16a669](https://github.com/kronostechnologies/design-elements/commit/d16a669aae8aaf82ec5d6e88dff6a770231a028e))
+* **Tabs:** allow Tabs to have a stable id ([2683dd2](https://github.com/kronostechnologies/design-elements/commit/2683dd2c8318d30cb865a082a68c3ecd3ad58b5b))
+
+
+## v4.0.0 (Jan 26, 2022)
+### ⚠ BREAKING CHANGES
+* **AddButton:** remove AddButton component
+* **ApplicationMenu:** rename to GlobalHeader
+* **Banner:** rename to GlobalBanner
+* **ChooserButtonGroup:** onChange receives option instead of event to match other components
+* **GlobalHeader:** add skipLink prop and remove skipLinkHref
+* **MenuButton:** remove label to use children prop instead
+* **SectionalBanner:** rename InlineMessage to SectionalBanner
+* **Tag:** add Clickable tag, update to match spec and remove Tags container
+* **Tooltip:** use children to add a tooltip to any element and add a label prop
+
+### Features
+* add autofocus prop to buttons ([7d86c7f](https://github.com/kronostechnologies/design-elements/commit/7d86c7f07d5f4bfe87e773d60e3c054060429cf0))
+* **BentoMenuButton:** expose onMenuVisibilityChanged prop ([1e6ace5](https://github.com/kronostechnologies/design-elements/commit/1e6ace539f03617a1bf94325faba2fa2e0d53265))
+* **Button:** add WithIcons story ([22e4af7](https://github.com/kronostechnologies/design-elements/commit/22e4af7d494fa62020d935db0d23263739b4427b))
+* **Button:** added inverted colors for buttons ([#281](https://github.com/kronostechnologies/design-elements/issues/281)) ([3c08f67](https://github.com/kronostechnologies/design-elements/commit/3c08f67033671cc28caa26953874a60156b61415))
+* **ChooserButtonGroup:** onChange receives option instead of event to match other components ([80e5fe1](https://github.com/kronostechnologies/design-elements/commit/80e5fe1e9e4e956ffc8bf27d3d9f0da2fb3e2024))
+* **Datepicker:** add tooltipLabel prop ([fd6f816](https://github.com/kronostechnologies/design-elements/commit/fd6f81689d152b5bf04da18d8dcf80985583b559))
+* **DeviceContextProvider:** export useDeviceContext ([a4440a7](https://github.com/kronostechnologies/design-elements/commit/a4440a789972a41e5d8d91cd7933345a3699345b))
+* **DropdownMenu:** added dropdown menu component, created bento menu and update user-profile ([#299](https://github.com/kronostechnologies/design-elements/issues/299)) ([5dfc261](https://github.com/kronostechnologies/design-elements/commit/5dfc2615decc4914190229a990f3cb8e11db6797))
+* **DropdownMenuButton:** add buttonAriaLabel prop ([a4104ae](https://github.com/kronostechnologies/design-elements/commit/a4104aeadf0924a43790bd35a9a25442cd2058b7))
+* **DropdownMenuButton:** handle tab on button ([65c8dbf](https://github.com/kronostechnologies/design-elements/commit/65c8dbf7e0faaee16e744aa226f7163bf311efb9))
+* **DropdownNav:** added disabled props for items in nav ([9979b81](https://github.com/kronostechnologies/design-elements/commit/9979b8173e7618bc046bf62c022313ce785055c9))
+* **ExternalLink:** add screen-reader text when link opens in new tab ([f7b108d](https://github.com/kronostechnologies/design-elements/commit/f7b108d039c12ce6f0c82dd3a7ecf30b39d40141))
+* **FieldContainer:** add tooltip next to label with tooltipLabel prop ([c7d924a](https://github.com/kronostechnologies/design-elements/commit/c7d924a0b1cd74544f0b765fe8239836fb77a559))
+* **GlobalBanner:** add forwardRef to GlobalBanner ([993c91b](https://github.com/kronostechnologies/design-elements/commit/993c91b01e904c1571bb5c6b934fdac25645e533))
+* **GlobalBanner:** use ReactElement | null for return type ([f66e49f](https://github.com/kronostechnologies/design-elements/commit/f66e49f2b9553c383ec2c77b11bf590bdec375c7))
+* **GlobalBanner:** use ReactElement for return type ([91445b1](https://github.com/kronostechnologies/design-elements/commit/91445b1fe6387a701a50414de3ba73f311fec42d))
+* **GlobalBanner:** add actionButton prop ([c138269](https://github.com/kronostechnologies/design-elements/commit/c13826921ca30948fae683b56e7762c2269e286b))
+* **GlobalBanner:** add default type ([155639a](https://github.com/kronostechnologies/design-elements/commit/155639ad6ece9fb11e5fbea90f68a38c4c750a88))
+* **GlobalBanner:** add isDismissable prop ([641a010](https://github.com/kronostechnologies/design-elements/commit/641a0106c6e4eb56fe112ab72f6e8d892c4bc009))
+* **GlobalBanner:** add secondary-action-button ([d0332b4](https://github.com/kronostechnologies/design-elements/commit/d0332b4242b649cc6f112b119e5577115278f03a))
+* **GlobalBanner:** export GlobalBannerType ([ed6c920](https://github.com/kronostechnologies/design-elements/commit/ed6c920990cd80d62986fd9c75ab9649085889d2))
+* **GlobalBanner:** set container position to relative to work with ApplicationMenu ([9ae5d73](https://github.com/kronostechnologies/design-elements/commit/9ae5d73238c1ad1d1320ed193ada5153d2315cdf))
+* **GlobalBanner:** update styles ([f883c71](https://github.com/kronostechnologies/design-elements/commit/f883c71251b05d9b2cf14c0c41fbd1c48bb5273b), [a7e5a1f](https://github.com/kronostechnologies/design-elements/commit/a7e5a1f945a981d7c7b10e38c8a6497986fb7556), [f10c97b](https://github.com/kronostechnologies/design-elements/commit/f10c97b4d5954a1aa0977f93530181e935b1a73e), [e5051cd](https://github.com/kronostechnologies/design-elements/commit/e5051cdf59df649029d1edec2ae06da2510c3cdb))
+* **GlobalHeader:** add appTitleDesktop prop ([51e7dbc](https://github.com/kronostechnologies/design-elements/commit/51e7dbcce4aeb3dbd4ebb2c1d71b87149630efc8))
+* **GlobalHeader:** add possibility to not use react-router ([ee61c35](https://github.com/kronostechnologies/design-elements/commit/ee61c3558d7b82618537319fc29dd994f18da59e))
+* **GlobalNavigation:** add onClick callback to navigation-items ([28e3411](https://github.com/kronostechnologies/design-elements/commit/28e3411d285851af51cb789444e5be29b3c3f3ce))
+* **Icon:** add alertFilled and warningFilled icons ([883a132](https://github.com/kronostechnologies/design-elements/commit/883a13217c2f4c0474d21eab8359dce4a5826ef2))
+* **Icon:** add organization icon ([b729c1b](https://github.com/kronostechnologies/design-elements/commit/b729c1bd1fcdff6878d5da3461fde3014d679b86))
+* **Icon:** add Bento and Settings icons ([ded9d31](https://github.com/kronostechnologies/design-elements/commit/ded9d31a480be96f888807093bf578d2ef7ccb1b))
+* **Icon:** add eye icon ([9c02aa7](https://github.com/kronostechnologies/design-elements/commit/9c02aa745d8048646d978826bc9f1d0ca0ef4221))
+* **Icon:** added bell & equisoft icons ([#288](https://github.com/kronostechnologies/design-elements/issues/288)) ([42ef55f](https://github.com/kronostechnologies/design-elements/commit/42ef55fff916345157af4a0eae31df78f0e75bdc))
+* **Icon:** added new icons ([#324](https://github.com/kronostechnologies/design-elements/issues/324)) ([082a15d](https://github.com/kronostechnologies/design-elements/commit/082a15dc0d9fa8ee38cd086ac27ba6470b1cb8ea))
+* **IconButton:** add title prop ([6ca18a6](https://github.com/kronostechnologies/design-elements/commit/6ca18a61fb1323fa9ed5aaa3e5697ba7a8d12d5b))
+* **Lozenge:** add icon prop ([8e951d6](https://github.com/kronostechnologies/design-elements/commit/8e951d662631c29268bbb5775e5371a0f2f1e144))
+* **Lozenge:** added basic lozenge component ([#301](https://github.com/kronostechnologies/design-elements/issues/301)) ([a8427a3](https://github.com/kronostechnologies/design-elements/commit/a8427a32ec17a877c02ef23a841aaf87eb5b5953))
+* **Menu:** add submenu ([36a3c1f](https://github.com/kronostechnologies/design-elements/commit/36a3c1ff4dfda02f3e2f90734d373e629ed27e21))
+* **MenuButton:** add className prop ([70fae8f](https://github.com/kronostechnologies/design-elements/commit/70fae8f2b5c273308cb954d7306df8484aaddeda))
+* **MenuButton:** add label prop ([8beec99](https://github.com/kronostechnologies/design-elements/commit/8beec9901b64544c63153df44384f3c067e4a934))
+* **MenuButton:** add MenuButton component ([83a692f](https://github.com/kronostechnologies/design-elements/commit/83a692fe9e8c892abad016c8ba8e007fad885242))
+* **MenuButton:** add option to use IconButton with iconName prop ([39b886c](https://github.com/kronostechnologies/design-elements/commit/39b886c4bf84e0b0999f89a556815b736574cebd))
+* **ModalDialog:** add shouldCloseOnOverlayClick prop ([6806b70](https://github.com/kronostechnologies/design-elements/commit/6806b70e2725b42872f367a1b0976af418fc2000))
+* **ModalDialog:** add titleIcon prop ([3135fb3](https://github.com/kronostechnologies/design-elements/commit/3135fb34f787d84bac58fca966b13b50313f376d))
+* **ModalDialog:** expose hasCloseButton prop ([432bf14](https://github.com/kronostechnologies/design-elements/commit/432bf14329c6fbc461f61d4f0937a1707eed1b64))
+* **NavigationMenu:** added icon support for nav-menu-button ([#280](https://github.com/kronostechnologies/design-elements/issues/280)) ([14a64be](https://github.com/kronostechnologies/design-elements/commit/14a64be400ee176c7c20b7c72b5c7462b47b1714))
+* **NavItem:** add screen-reader text when link opens in new tab ([f7b7d61](https://github.com/kronostechnologies/design-elements/commit/f7b7d619a65da45f42d55910afeb6167e2d04d83))
+* **NavItem, ExternalItem:** added target props ([#317](https://github.com/kronostechnologies/design-elements/issues/317)) ([c3130bb](https://github.com/kronostechnologies/design-elements/commit/c3130bb88b54aef8f04472bb9ed66f29b799a51e))
+* **NavMenu:** add screen-reader text when link opens in new tab ([425484b](https://github.com/kronostechnologies/design-elements/commit/425484b3b969fa3833b9c921f83fc7583a4b9287))
+* **NavMenu:** add target prop to NavMenuOption ([0a14b85](https://github.com/kronostechnologies/design-elements/commit/0a14b856de108562f4c0b09f27960eb1beef57e3))
+* **NavMenu:** add disabled options ([b9ef8de](https://github.com/kronostechnologies/design-elements/commit/b9ef8de2339bee055b01a4d0b02151134f8359c7))
+* **NavMenu:** add startIcon and endIcon props ([1538c30](https://github.com/kronostechnologies/design-elements/commit/1538c3097c4985b3241ef16c3930e9d05ba3da6c))
+* **NavMenu:** allow usage without react-router ([9d3b719](https://github.com/kronostechnologies/design-elements/commit/9d3b7192dd1780d665b95a07b57d532f01568710))
+* **NavMenuButton:** add onMenuVisibilityChange and onMenuOptionSelected callbacks ([52c6fe8](https://github.com/kronostechnologies/design-elements/commit/52c6fe8b3ad82311df284159293522911bb5e5f0))
+* **NavMenuButton:** add title prop ([b7cf1f7](https://github.com/kronostechnologies/design-elements/commit/b7cf1f7cdafafbd186ea240550e0cef493f42751))
+* **NavMenuButton:** use IconButton for iconOnly version ([c82b8b3](https://github.com/kronostechnologies/design-elements/commit/c82b8b3fc6381840abc3a2428cd10b803352987e))
+* **NavMenuButton:** add buttonAriaLabel prop ([6f6724c](https://github.com/kronostechnologies/design-elements/commit/6f6724c9f15273020b8990f63a1c8de7074901b2))
+* **NavMenuButton:** add tag prop ([a6fa4ee](https://github.com/kronostechnologies/design-elements/commit/a6fa4eed0e7c4cf514cadeade724fdd30670bfd5))
+* **RouteLink:** add onClick callback ([68d94a4](https://github.com/kronostechnologies/design-elements/commit/68d94a4d560bd46be43f62c4d33c8785d1085534))
+* **ScreenReaderOnlyText:** add ScreenReaderOnlyText component ([742501c](https://github.com/kronostechnologies/design-elements/commit/742501cf5b0044f3c715d55542c117c1c7f7f749))
+* **SectionalBanner:** add dismiss and action buttons ([deb91f2](https://github.com/kronostechnologies/design-elements/commit/deb91f2009c11d16d0f3253ca306086ad0013274))
+* **SectionalBanner:** export SectionalBannerTypes in public package ([487edcc](https://github.com/kronostechnologies/design-elements/commit/487edcc2c140b414b4e2cc6af3b567b6976d5e77))
+* **Select:** add tooltipLabel prop ([de4ee7f](https://github.com/kronostechnologies/design-elements/commit/de4ee7fcb4b2091af34a2aa03c2ae0942f70c559))
+* **SkipLink:** add onClick callback ([60dfa0e](https://github.com/kronostechnologies/design-elements/commit/60dfa0e003e53a18416cf61dd0970cc656a16cc3))
+* **Status:** export StatusTypes in public package ([e0d6f3f](https://github.com/kronostechnologies/design-elements/commit/e0d6f3fbdb45b181635c39c604968d77618d4d4e))
+* **StepperInput:** add tooltipLabel prop ([cc8126e](https://github.com/kronostechnologies/design-elements/commit/cc8126ed33522231f3de5607f2c0b78109b1fe46))
+* **Table:** sticky column/row ([6ccddf7](https://github.com/kronostechnologies/design-elements/commit/6ccddf7de95bfee22e8cb566c07ee7ceacf3a4aa))
+* **Tabs:** add :focus-visible selector to TabPanels ([7e89806](https://github.com/kronostechnologies/design-elements/commit/7e89806e9da5f4802e0f9cdb407a59dd5826abcf))
+* **Tabs:** add 'In Card' story ([9391a83](https://github.com/kronostechnologies/design-elements/commit/9391a83179b7bd09cba98eed0343ae885606d1eb))
+* **Tabs:** add contained variant ([3a31872](https://github.com/kronostechnologies/design-elements/commit/3a318729886e2bcd26d9ff5fbcee5a830ee81f57))
+* **Tabs:** add global styles ([931afe4](https://github.com/kronostechnologies/design-elements/commit/931afe4444c8784c04a76c996142626a73008bf7))
+* **Tabs:** add mobile styles ([a5758d0](https://github.com/kronostechnologies/design-elements/commit/a5758d093ef1b39254c827ce427296c055788dd6))
+* **Tabs:** set focus with focus-visible selector ([7a3f726](https://github.com/kronostechnologies/design-elements/commit/7a3f726e00880862d9328151ceafba6d8045abfa))
+* **Tag:** add Clickable tag, update to match spec and remove Tags container ([1cd3203](https://github.com/kronostechnologies/design-elements/commit/1cd3203b67efcaaf27d8a66fe8451fde49be5df7))
+* **TextArea:** add tooltipLabel prop ([2e2307b](https://github.com/kronostechnologies/design-elements/commit/2e2307ba948f9ca9b63d37154422002f51e166e1))
+* **TextInput:** add tooltipLabel prop ([331b481](https://github.com/kronostechnologies/design-elements/commit/331b4819635da5d041ac5eca44507eed1101eb5d))
+* **TextInput:** allow data-* attributes ([49fc14c](https://github.com/kronostechnologies/design-elements/commit/49fc14c9b02d4809908bc680c5cc8ccfac0627a1))
+* **Theme:** export theme type ([93f24e8](https://github.com/kronostechnologies/design-elements/commit/93f24e8dfe012e726c3291746977891e5cb59298))
+* **Theme:** expose useTheme hook ([b403adb](https://github.com/kronostechnologies/design-elements/commit/b403adbc3cec74efeea1e54753a590e10b1640cc))
+* **Toast:** add Toast as hook ([a6944a3](https://github.com/kronostechnologies/design-elements/commit/a6944a3f4833ddd9f271fc578b3aa3abac3d36cc))
+* **Tooltip:** add disabled prop ([d178e3e](https://github.com/kronostechnologies/design-elements/commit/d178e3e919f2c9c649cbeb7a9a8f7aff1cd34a2e))
+* **Tooltip:** add isTitle prop ([fe6331f](https://github.com/kronostechnologies/design-elements/commit/fe6331f68edf7072f973a32ca3a1fe570b3c3600))
+* **Tooltip:** use children to add a tooltip to any element and add a label prop ([3b83a7e](https://github.com/kronostechnologies/design-elements/commit/3b83a7ed25a1be287ebdc10c8de1ff19784d3d30))
+* **UserProfile:** add onMenuKeyDown, onMenuOptionSelected and onMenuVisibilityChanged callbacks ([bfd0535](https://github.com/kronostechnologies/design-elements/commit/bfd0535529e5921523c51950d3b9e9b5c5433575))
+
+### Bug Fixes
+* **Avatar:** fixes header user initials having diacritics ([94d8e74](https://github.com/kronostechnologies/design-elements/commit/94d8e7401aeaca9d6f6253da89d97d8e9d661e8a))
+* **BentoMenuButton:** fix overflow handling with lozenge ([74585d0](https://github.com/kronostechnologies/design-elements/commit/74585d0dc00c61dc411de6682d2fa64ae1debc4a))
+* **BentoMenuButton:** prevent section render when links arrays are empty ([9ba05ae](https://github.com/kronostechnologies/design-elements/commit/9ba05aea2db5f9121fd97db130fff37860eae9be))
+* **Button:** stop onClick propagation ([f8f7a9e](https://github.com/kronostechnologies/design-elements/commit/f8f7a9e2ac8a4152cf5d27afb598923dd2022fdc))
+* **DropdownMenuButton, NavMenuButton:** allow buttonType and inverted props to handle styles ([#322](https://github.com/kronostechnologies/design-elements/issues/322)) ([1e824a9](https://github.com/kronostechnologies/design-elements/commit/1e824a9619ecdbf1f5223a7fa138428f35425285))
+* **DropdownMenuButton, NavMenuButton:** first item focus on keydown only ([#334](https://github.com/kronostechnologies/design-elements/issues/334)) ([58ab4ef](https://github.com/kronostechnologies/design-elements/commit/58ab4ef3f91f00ab2703ca001a2019a41d9709ba))
+* **DropdownMenuButton, NavMenuButton:** use abstractButton:hover color for expanded buttons ([#325](https://github.com/kronostechnologies/design-elements/issues/325)) ([f1684a7](https://github.com/kronostechnologies/design-elements/commit/f1684a75360d7898693bf39964a5ca34e7d7124b))
+* **DropdownNav:** better ellipsis and code cleanup ([#314](https://github.com/kronostechnologies/design-elements/issues/314)) ([4cb1ec6](https://github.com/kronostechnologies/design-elements/commit/4cb1ec6bb3bb22d027ce54449f79016e23ba9f70))
+* **DropdownNav:** fixed a bug where onClick wasn't triggered in Bento and UserProfile ([#318](https://github.com/kronostechnologies/design-elements/issues/318)) ([750dd62](https://github.com/kronostechnologies/design-elements/commit/750dd629f5f9f6340db39eb5dc8c204dab5c3e46))
+* **ExternalItem:** fix to remove visited style on dropdown external item ([#330](https://github.com/kronostechnologies/design-elements/issues/330)) ([981908a](https://github.com/kronostechnologies/design-elements/commit/981908a4bb249163c4d58ce2af5ebbfb10b41f1e))
+* **ExternalLink:** translate icon aria-label ([6150171](https://github.com/kronostechnologies/design-elements/commit/61501718322772fbee464d91601d23e6c2317b00))
+* **GlobalBanner:** fix desktop styles ([7ca916c](https://github.com/kronostechnologies/design-elements/commit/7ca916cff35bf723692d603a0d9bc6962e236bd7))
+* **GlobalHeader:** child container takes all available width ([1f1f293](https://github.com/kronostechnologies/design-elements/commit/1f1f293895f7320bebef8beb21b901588bcb69b8))
+* **GlobalHeader:** remove webkitfontsmoothing antialiased ([c6991d5](https://github.com/kronostechnologies/design-elements/commit/c6991d5b584f46baf27eb3ca8eb160309f5270aa))
+* **Icon:** enable custom colors on organization icon ([8386ab3](https://github.com/kronostechnologies/design-elements/commit/8386ab360b9b229870dfbdc83919049fad190f4d))
+* **IconButton:** change mobile size to 24px ([791e493](https://github.com/kronostechnologies/design-elements/commit/791e49349156c4b743a3fa3ded5888de957bd766))
+* **Modal:** update visual to match specs ([2b65bab](https://github.com/kronostechnologies/design-elements/commit/2b65bab330e99c5faab3864f9c3771427f5154bd))
+* **SearchInput:** only show reset button when input value is not empty ([587d594](https://github.com/kronostechnologies/design-elements/commit/587d594aad391943ac39a43174f1b08ac0243e75))
+* **Select:** call onChange when skipOption is selected ([45cb392](https://github.com/kronostechnologies/design-elements/commit/45cb392be718a9d636c19256ed3a2a07ca0b5d76))
+* **Select:** skipOption cannot be selected by default when value is controlled ([856c275](https://github.com/kronostechnologies/design-elements/commit/856c27530b8184988dcc84699344bde8083952cd))
+* **Style:** removed antialiasing on font & reduced letter spacing ([#282](https://github.com/kronostechnologies/design-elements/issues/282)) ([4495273](https://github.com/kronostechnologies/design-elements/commit/44952735b5a6cf62a394e4f0030e2caa8b2e0f32))
+* **TextInput:** allow checking validity in form when untouched ([0bdc1d7](https://github.com/kronostechnologies/design-elements/commit/0bdc1d77bc973511387d48b0b431bfc2cac5c07e))
+* **Tooltip:** fix delay with disabled tooltips ([0fc9605](https://github.com/kronostechnologies/design-elements/commit/0fc9605e54da26a3ab2184afad4ef94d8c75dace))
+* **UserProfile:** prevent focusing the first item when disabled ([e0ef27d](https://github.com/kronostechnologies/design-elements/commit/e0ef27dc543ff539760846449a99ee41e798385d))
+* **UserProfile:** remove usernamePrefix on mobile version ([7a44906](https://github.com/kronostechnologies/design-elements/commit/7a44906ae02d7f54ed6e731cbbef9bd8ed18139d))
+
+### Docs
+* fix introduction and heading ([143ee89](https://github.com/kronostechnologies/design-elements/commit/143ee893d790b5e9f5829681c35c2149efab2d29))
+* changed configs to land on introduction page ([#343](https://github.com/kronostechnologies/design-elements/issues/343)) ([e6075ea](https://github.com/kronostechnologies/design-elements/commit/e6075ea196611e6ab1383194bb9b57c2085c9306))
+* changed configs to land on introduction page ([#344](https://github.com/kronostechnologies/design-elements/issues/344)) ([1d0a1fb](https://github.com/kronostechnologies/design-elements/commit/1d0a1fb97d3db73cfcc95920a80d8b7ea4825955))
+* improve components doc and samples' code ([caa57f7](https://github.com/kronostechnologies/design-elements/commit/caa57f741adb574db336b3c3fcff9d68eab2115e))
+* **Introduction:** remove useless props in stories ([3d082cd](https://github.com/kronostechnologies/design-elements/commit/3d082cdf8517fb8dc6b1efc5dfe9553714dd85cf))
+* **Storybook:** add favicon ([4a6ecd0](https://github.com/kronostechnologies/design-elements/commit/4a6ecd02baacba86eec16d163bc36820dcb4f572))
+* **Tabs:** adjust stories to better document component usage ([312e9a2](https://github.com/kronostechnologies/design-elements/commit/312e9a21f7c62032558eb520c8e885afe0db47d8))
+* **TextArea:** remove useless props in stories ([f047864](https://github.com/kronostechnologies/design-elements/commit/f047864dc8180bafe42cab97cad5d90d9cdab2ff))
+* **TextInput:** remove useless props in stories ([a84120f](https://github.com/kronostechnologies/design-elements/commit/a84120fbb43c00aa015206cce3d8fc75995c86d4))
+
+### Other
+* update focus color ([0adf35a](https://github.com/kronostechnologies/design-elements/commit/0adf35a050a3cc5ac3939ed352bf3f5e30374460))
+* use rem units for css attributes targeting fonts ([778c290](https://github.com/kronostechnologies/design-elements/commit/778c290b589baa68cab04ff7ee9f918907449f04))
+* **AddButton:** remove AddButton component ([5bd95e5](https://github.com/kronostechnologies/design-elements/commit/5bd95e5e13310b0055e8197d77183112f2bbcde0))
+* **ApplicationMenu:** rename to GlobalHeader ([8fb6251](https://github.com/kronostechnologies/design-elements/commit/8fb6251c62b3cf7f9cdef7eca9f1479ee9cf1f93))
+* **Banner:** rename to GlobalBanner ([f28a681](https://github.com/kronostechnologies/design-elements/commit/f28a68143cc49953f4a9a87f8876479095c3dd64))
+* **ChooserButtonGroup:** export ChooserButtonOption type ([88929ec](https://github.com/kronostechnologies/design-elements/commit/88929ec9e8bc9f17d5698e660d825d0b1fbea994))
+* **CSS:** add --font-family scss variable ([def426b](https://github.com/kronostechnologies/design-elements/commit/def426b8107822b683f07440aba606d2c6053797))
+* **FieldContainer:** change tooltipLabel prop for tooltip ([fb1ef96](https://github.com/kronostechnologies/design-elements/commit/fb1ef9683feeae684068ba66564e828a2fdf81e5))
+* **GlobalHeader:** add skipLink prop and remove skipLinkHref ([f030669](https://github.com/kronostechnologies/design-elements/commit/f030669e0adb1520bb76ce0116b613b1ba173663))
+* **MenuButton:** remove label to use children prop instead ([7991896](https://github.com/kronostechnologies/design-elements/commit/79918962f820b8a0b96714b9324a0a17b535f985))
+* **Table:** inverse sort icons ([a49552d](https://github.com/kronostechnologies/design-elements/commit/a49552dea6ceaafc8f15b6ea877bbecef2439356))
+* **Tooltip:** replace help icon to info icon ([f3f9c45](https://github.com/kronostechnologies/design-elements/commit/f3f9c45da74e5165ad5fd1ceafda747c0811e5d9))
+* **Tooltip:** use react-popper-tooltip controlled mode in desktop version ([dda1309](https://github.com/kronostechnologies/design-elements/commit/dda1309fc4c8f2e072863a463c1e405c2cd51115))
+
+
+## v3.5.0 (Jul 20, 2021)
+### Features
+* **Listbox:** add disabled options ([16838be](https://github.com/kronostechnologies/design-elements/commit/16838bea65d7d069fcf0aab09f1dd7398493a7a1))
+
+### Bug Fixes
+* **ApplicationMenu:** fix positioning of content ([617dfeb](https://github.com/kronostechnologies/design-elements/commit/617dfeb4f2dc98b173ca943116b4d5ef47c1ff6b))
+* **Pagination:** fix when number of digits is > 1 ([2839445](https://github.com/kronostechnologies/design-elements/commit/283944514b25dd2ebb2fa6e1c7d8947ffd345ae1))
+* **Tooltip:** fix layout order for assistive technologies ([052b565](https://github.com/kronostechnologies/design-elements/commit/052b565a1128aba95b63246e454c5701c142d533))
+
+### Other
+* **ChooserButton:** use useMemo for uuid ([abfccd2](https://github.com/kronostechnologies/design-elements/commit/abfccd2926912cb014728ff5752a2e337b8bda0f))
+
+
+## v3.4.0 (Jul 15, 2021)
+### Features
+* **ApplicationMenu:** add SkipLink ([775c522](https://github.com/kronostechnologies/design-elements/commit/775c52270ecff26db808c21b54ae46b3b8bab684))
+* **PhoneInput:** added the phone input base component ([deff1b6](https://github.com/kronostechnologies/design-elements/commit/deff1b638496ee056a8204685f5972a45bc953ff))
+* **Status:** add Status component ([#260](https://github.com/kronostechnologies/design-elements/issues/260)) ([5b80c9f](https://github.com/kronostechnologies/design-elements/commit/5b80c9fa6d244b19eb93583b7f4167b025c07356))
+* **Tabs:** mount all tabs panel by default and add a lazy mount feature to the tabs component ([b756e8d](https://github.com/kronostechnologies/design-elements/commit/b756e8d4a3ce301d74fee57ff9ae63c519d51432))
+
+### Bug Fixes
+* **Button:** change secondary button background-color to white ([efb1dbd](https://github.com/kronostechnologies/design-elements/commit/efb1dbd136816b5ec1e6f6b0917dce7757f21748))
+* **Storybook:** move checkbox to correct section ([8c3c371](https://github.com/kronostechnologies/design-elements/commit/8c3c371fcec1e681714017081df48d434603b476))
+
+### Other
+* **Status:** expose className prop ([#263](https://github.com/kronostechnologies/design-elements/issues/263)) ([b9c15ee](https://github.com/kronostechnologies/design-elements/commit/b9c15eee0c43890ba92f77408b2fe1bf3980a9ae))
+
+### Doc
+* **Storybook:** improve components hierarchy ([d659861](https://github.com/kronostechnologies/design-elements/commit/d659861e9cdb9460895094be1362b544a852ab12))
+
+
+## v3.3.0 (Jun 9, 2021)
+### Features
+* **ApplicationMenu** add custom logo prop to the application menu component ([005ee1e](https://github.com/kronostechnologies/design-elements/commit/005ee1e40e5fc9dd93bdd46e0ae4dcc342eb7703))
+* **Checkbox** add Checkbox component ([a9a4987](https://github.com/kronostechnologies/design-elements/commit/a9a4987333f1ae378341c6478085b28f79db14d0))
+* **Heading:** add subtitle type ([12dd133](https://github.com/kronostechnologies/design-elements/commit/12dd133c1a196245025f591d01ddcd7b6001a574))
+* **Table:** add default column sorting ([740bbdb](https://github.com/kronostechnologies/design-elements/commit/740bbdb266e3e042b17f8d54ca23ce70232d1ecc))
+* **Table:** add selectable rows ([01b786a](https://github.com/kronostechnologies/design-elements/commit/01b786ae45e88049133b2b300921de944ea0ab4e))
+* **Table:** expose SortByColumnOptions through TableColumn interface ([2d0a7f5](https://github.com/kronostechnologies/design-elements/commit/2d0a7f5224b8c10b22fcec969001d71f4f38c162))
+* **TextInput:** add autocomplete props to textinput ([fdafb51](https://github.com/kronostechnologies/design-elements/commit/fdafb51aa7a1b280f735adb96a66f77183993d78))
+
+### Other
+* **Breadcrumb:** expose className prop ([3792d63](https://github.com/kronostechnologies/design-elements/commit/3792d63683b933bd1c73243c48bd1dc54f547e14))
+* **Card:** update box-shadow ([71719d9](https://github.com/kronostechnologies/design-elements/commit/71719d927cdab25a1e2920ed65a16b7e58076fad))
+* **Links:** update focus styles ([90dabe3](https://github.com/kronostechnologies/design-elements/commit/90dabe37fc0563c08787e42e584d6b50d13d2837))
+* **RouteLink:** use transient props for isMobile ([8667e0a](https://github.com/kronostechnologies/design-elements/commit/8667e0a573f774c83a88bfd3d02f56d0ebaa7c2c))
+
+
+## v3.2.0 (May 10, 2021)
+### Features
+* **Modal:** add sticky header and footer on scroll ([86ca485](https://github.com/kronostechnologies/design-elements/commit/86ca485d34306d11097d11df1508debfcb763abf))
+* **SearchInput:** add onFocus ([#241](https://github.com/kronostechnologies/design-elements/issues/241)) ([87dd87b](https://github.com/kronostechnologies/design-elements/commit/87dd87bf308513568db1b33324c47b38a6eb61c3))
+* **GlobalNavigation:** add core button ([d1da84a](https://github.com/kronostechnologies/design-elements/commit/d1da84a1664005f43d688f2c31f39874e08e6450))
+* **GlobalNavigation:** add labels for menu elements ([d1da84a](https://github.com/kronostechnologies/design-elements/commit/d1da84a1664005f43d688f2c31f39874e08e6450))
+* **GlobalNavigation:** add footer separation ([d1da84a](https://github.com/kronostechnologies/design-elements/commit/d1da84a1664005f43d688f2c31f39874e08e6450))
+
+### Bug Fixes
+* **NavMenuButton:** fix keyboard navigation inside shadow dom ([825fa8f](https://github.com/kronostechnologies/design-elements/commit/825fa8fe0d58f79e9821d1ea9c807112521125ab))
+
+
+## v3.1.0 (Apr 21, 2021)
+### Features
+* **DesignSystem:** add DesignSystem provider ([#238](https://github.com/kronostechnologies/design-elements/issues/238)) ([ce73c5e](https://github.com/kronostechnologies/design-elements/commit/ce73c5eb31c1b470a7b96999448faac6eabe51a3))
+
+### Docs
+* add Intro page and improve Getting Started ([#239](https://github.com/kronostechnologies/design-elements/issues/239)) ([38bf874](https://github.com/kronostechnologies/design-elements/commit/38bf874a3d341e14d3945c7fa1b9bd497bd84505))
+* improve Storybook's props details generation ([80143c8](https://github.com/kronostechnologies/design-elements/commit/80143c8811acd28ed150be1aa7bc87e02f8289c3))
+
+
+## v3.0.0 (Apr 13, 2021)
+### Features
+* Add className prop to UI components ([f1e19c8](https://github.com/kronostechnologies/design-elements/commit/f1e19c8400d208945d680d5b43a0d4e388c0a1bf))
+* **Avatar:** Added basic Avatar with initials to DS ([d1ca624](https://github.com/kronostechnologies/design-elements/commit/d1ca624ccc8fad62cd8dae0e96b1ec79cb962023))
+* **Avatar:** Username optional with placeholder icon ([dcd0590](https://github.com/kronostechnologies/design-elements/commit/dcd05903eaac78047863254ca412f694ddce8ea8))
+* **Breadcrumb:** Added breadcrumb component ([1e4a02a](https://github.com/kronostechnologies/design-elements/commit/1e4a02ac724a0114a53756e70b8a52c7a7617a17))
+* **Buttons:** Add destructive styles ([21b4c70](https://github.com/kronostechnologies/design-elements/commit/21b4c7024f9770a3af9807dd12252bfdc92a54b8))
+* **CardLink:** Add CardLink component ([5634d6f](https://github.com/kronostechnologies/design-elements/commit/5634d6fa020f564916fb91fa8ff48ac80a8187af))
+* **ChooserCard:** Add ChooserCard component ([50f48cf](https://github.com/kronostechnologies/design-elements/commit/50f48cf053bd4e4b789639c18b4d3f63a569ab37))
+* **Datepicker:** Add reset() ref handle ([d83178f](https://github.com/kronostechnologies/design-elements/commit/d83178f110779ffa3e0e8c9c4de98ccdf7154a8b))
+* **Datepicker:** Add setDate() ref handle ([6557b98](https://github.com/kronostechnologies/design-elements/commit/6557b9828e5efff8ecfc8e35a0a96deea8d60696))
+* **ExternalLink:** Visual update ([#225](https://github.com/kronostechnologies/design-elements/issues/225)) ([d7200bd](https://github.com/kronostechnologies/design-elements/commit/d7200bdd289c95a422d1597bb1f141377f5fc226))
+* **Heading:** Add Heading component ([33b716a](https://github.com/kronostechnologies/design-elements/commit/33b716ab0323014f66754b53c517815f1af06019))
+* **Listbox:** Add multiselect feature ([ef51ac0](https://github.com/kronostechnologies/design-elements/commit/ef51ac054ed5eeb7036a52c3b21cb209e0fd0568))
+* **Modal:** Ajoute le component Modal et le component preset ModalDialog ([#146](https://github.com/kronostechnologies/design-elements/issues/146)) ([f8d16f3](https://github.com/kronostechnologies/design-elements/commit/f8d16f31003f6e02f90d45d9f0470d06bfc4fcd2))
+* **MoneyInput:** Ajoute un MoneyInput qui formate la valeur entrée en fonction de la langue ([#118](https://github.com/kronostechnologies/design-elements/issues/118)) ([f50a2af](https://github.com/kronostechnologies/design-elements/commit/f50a2af530454cfb55d8a94f29a1a0b6fb6efad3))
+* **NavMenu:** Add NavMenu component ([35f69c7](https://github.com/kronostechnologies/design-elements/commit/35f69c759308aa9cf4238fb25252d0e16d144ca1))
+* **NavMenu:** Add exact prop to links ([b541c65](https://github.com/kronostechnologies/design-elements/commit/b541c65df3338c1ab9b921c8782934f70d046c46))
+* **NavMenuButton:** Add NavMenuButton component ([9e6f2bf](https://github.com/kronostechnologies/design-elements/commit/9e6f2bfd94ae122f000fa1996b319a762e2347d3))
+* **Pagination:** Avoir une valeur props pour la page courante. ([#206](https://github.com/kronostechnologies/design-elements/issues/206)) ([f847e26](https://github.com/kronostechnologies/design-elements/commit/f847e26f6ee0881f97d4315f61e6554658a2c9d7))
+* **SearchGlobal:** Mettre à jour le visuel ([daf22ef](https://github.com/kronostechnologies/design-elements/commit/daf22ef6fdadddd4bb1e4f0561b2409410d8eeb0))
+* **Select:** Ajoute un component select dropdown avec une fonctionnalité de recherche ([#98](https://github.com/kronostechnologies/design-elements/issues/98)) ([0e0c7bb](https://github.com/kronostechnologies/design-elements/commit/0e0c7bb721403c0fd7d46b066b33f2ca1e4cf3d1))
+* **SkipLink:** Add SkipLink component ([ffab935](https://github.com/kronostechnologies/design-elements/commit/ffab9354f735b8f3205641e84cbfced0e915c2cf))
+* **SkipLink:** Add mobile styles ([3afac43](https://github.com/kronostechnologies/design-elements/commit/3afac437fdd3d55a167451e24de477c1827e3c22))
+* **StepperInput:** Add StepperInput component ([aa6c1c9](https://github.com/kronostechnologies/design-elements/commit/aa6c1c9a27c2e70f1d3566bb906fe6f7283cc8d2))
+* **Table:** Add column className documentation ([bf2f098](https://github.com/kronostechnologies/design-elements/commit/bf2f098c33fe7b7cb2b8f0f3c6298a5e043c87e4))
+* **Table:** Add error rows feature ([9c84934](https://github.com/kronostechnologies/design-elements/commit/9c849340c563e5d98d322bbe5613b4e6a9dbddf3))
+* **Table:** Add row numbers feature ([71511d8](https://github.com/kronostechnologies/design-elements/commit/71511d89471f8426c220fb632f445ad256041755))
+* **Table:** Add rowSize feature ([bd43601](https://github.com/kronostechnologies/design-elements/commit/bd43601215d6542c6ae34d4ae5e772b5ed0e6cca))
+* **Table:** Add striped rows feature ([42c0b9b](https://github.com/kronostechnologies/design-elements/commit/42c0b9b7d222bc5a92b64a800afc05bf87ea414a))
+* **Tabs:** Support ArrowLeft/ArrowRight tabs edge + Home/End support to Tabs ([c208d18](https://github.com/kronostechnologies/design-elements/commit/c208d18f86441aba2a7f19f41986680aeba6dee8))
+* **Tags:** Add Tags component ([6e58634](https://github.com/kronostechnologies/design-elements/commit/6e5863445bc97a88fa2c38e47681700f9de31573))
+* **TextArea:** Character counter and validation ([a784d99](https://github.com/kronostechnologies/design-elements/commit/a784d99dd2fd6015ec038318bf3512932b6b2ec6))
+* **TextInput:** Add id prop ([8d320d6](https://github.com/kronostechnologies/design-elements/commit/8d320d6e65eaacd7536bee51d14002a6122e45cd))
+* **TextInput:** Add name prop ([70af7d1](https://github.com/kronostechnologies/design-elements/commit/70af7d1409040a55711fdba92186099f1b5a70cf))
+* **Theme:** Changed new theme colors ([b1749bf](https://github.com/kronostechnologies/design-elements/commit/b1749bf1eabd53f1ab1e783488b02029909552df))
+* **ToggleSwitch:** Add ToggleSwitch component ([2ad8756](https://github.com/kronostechnologies/design-elements/commit/2ad87566873b1756f535fc037ade87b9355d5442))
+* **Tooltip:** Ajoute un component Tooltip avec positionnement dynamique ([#116](https://github.com/kronostechnologies/design-elements/issues/116)) ([fb96cbc](https://github.com/kronostechnologies/design-elements/commit/fb96cbc289abd0628860d6dfcf644dc6bbeaee90))
+* **UserProfile:** Add UserProfile component ([0300311](https://github.com/kronostechnologies/design-elements/commit/0300311d51ba23eeb409babfcd402cf5e5aa57ee))
+
+### Bug Fixes
+* Adjust min-height for accessibility when zooming ([#221](https://github.com/kronostechnologies/design-elements/issues/221)) ([ac68489](https://github.com/kronostechnologies/design-elements/commit/ac68489591cc3a7b0f7ce5cd92daf51c15e4ed2b))
+* Event handling for "click outside" when mounted in shadow dom ([122d15f](https://github.com/kronostechnologies/design-elements/commit/122d15fca56089ccbb14ae8ef60082157c6f22d7))
+* **Button:** Fix disabled styles ([72b0e96](https://github.com/kronostechnologies/design-elements/commit/72b0e9624d1b51e4c845fd787c6ffe999a62fead))
+* **Datepicker:** Fix keyboard navigation inside Shadow DOM ([a44ffc4](https://github.com/kronostechnologies/design-elements/commit/a44ffc44c020d136e124e0b00f88b373a8825db7))
+* **Datepicker:** Convert null values to undefined for minDate and maxDate props ([9ca7237](https://github.com/kronostechnologies/design-elements/commit/9ca72378e50759239a8b22c3fce52925945d6d79))
+* **NavMenuButton:** Add missing changes from previous PR ([e49c757](https://github.com/kronostechnologies/design-elements/commit/e49c757c2eb52fe452fb2c91200b6faeb655bb6c))
+* **Search:** Fix border right to appear in SearchContextual ([8789de9](https://github.com/kronostechnologies/design-elements/commit/8789de9e43efe032d27c7c635dd50559f51a7930))
+* **SideDrawer:** Add react state to stories ([169f5ab](https://github.com/kronostechnologies/design-elements/commit/169f5ab723e75e863e99a6c43d00fb66affe5ac4))
+* **Table:** Sortable column icon doesn't change ([fc0e443](https://github.com/kronostechnologies/design-elements/commit/fc0e4435095e9e69e6c73d02e59c5c6f74e0c85a))
+* **Tabs:** Tab key inputs on tabs messes with tabs selection ([263c114](https://github.com/kronostechnologies/design-elements/commit/263c114a6e1d3127d18a52201eed66728944ff6c))
+* **Tabs:** Tab key inputs should focus back to the active tab and focus to the panel if already on the active one ([fb1a3dd](https://github.com/kronostechnologies/design-elements/commit/fb1a3ddb10d377a994cb1d9b2c3b8948feb1da7b))
+* **Tabs:** Fix border colors ([444fc81](https://github.com/kronostechnologies/design-elements/commit/444fc81e8bc6aad10856d3fd3c754e405fa54523)) ([6f92075](https://github.com/kronostechnologies/design-elements/commit/6f92075c14ae49e937905357c813fba1fa019abf))
+* **ToggleButtonGroup:** Resize and color update ([#226](https://github.com/kronostechnologies/design-elements/issues/226)) ([31289ba](https://github.com/kronostechnologies/design-elements/commit/31289bab1a036b9ac79d39fd8f5f666f869929f5))
+* **ToggleButtonGroup:** Adjusted style ([fafb7cd](https://github.com/kronostechnologies/design-elements/commit/fafb7cd8b540bd45a06e2c2232cb74f457792800))
+* **ToggleButtonGroup:** Fix min-height for accessibility when zooming ([#222](https://github.com/kronostechnologies/design-elements/issues/222)) ([c77d44b](https://github.com/kronostechnologies/design-elements/commit/c77d44b991fbfc48ba14f27eb6d059d14fa866f6))
+
+### ⚠ BREAKING CHANGES
+* Rename Chooser component to ChooserButtonGroup ([faceb45](https://github.com/kronostechnologies/design-elements/commit/faceb45fbd92bf9b824072cf521fe9edd8cc50ae))
+
+
