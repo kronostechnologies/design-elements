@@ -1,0 +1,42 @@
+import { ToggleSwitch } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as ToggleSwitchStories  from './toggle-switch.stories';
+
+<Meta of={ToggleSwitchStories} />
+
+# Toggle Switch
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Defenition
+The toggle switch allows users to instantly change an option's state (on/off) [1].
+<Canvas of={ToggleSwitchStories.Default} />
+
+## Usage 
+### When to use
+- Use when users need to change the state of system functionalities and preferences [1].
+- Use when a single selection is required and you want to offer two options for **an on/off** type of decision [3].
+- Use when it has to **take immediate effect** and should not require the user to click Save or Submit to apply the new state [1].
+- Use when there is a default value [2].
+
+### When not to use
+- No dot use if more actions are needed before the validation, use checkbox instead.
+- Do not use if you want to change a contextual view, use a toggle button instead.
+- Do not use in a context where an action (save or submit) is required after toggling the button such as in a form. It may confuse the user because they won't know if their change will take immediate effect.
+
+## Variants
+### Default
+<Canvas of={ToggleSwitchStories.Default} />
+
+## Properties
+<ArgTypes of={ToggleSwitch} />
+
+## References
+1. [https://www.nngroup.com/articles/toggle-switch-guidelines/](https://www.nngroup.com/articles/toggle-switch-guidelines/)
+2. [https://uxplanet.org/toggle-switch-5-simple-design-tips-for-better-design-b4046eff4a2f](https://uxplanet.org/toggle-switch-5-simple-design-tips-for-better-design-b4046eff4a2f)
+3. [https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The toggle switch represents a,execution usually requires another control](https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The%20toggle%20switch%20represents%20a,execution%20usually%20requires%20another%20control).
+4. [https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8](https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8)
+5. [https://uxmovement.com/mobile/stop-misusing-toggle-switches/](https://uxmovement.com/mobile/stop-misusing-toggle-switches/)
