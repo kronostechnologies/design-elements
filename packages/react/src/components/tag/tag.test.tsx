@@ -2,23 +2,13 @@ import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { Tag, TagProps } from './tag';
+import { Tag } from './tag';
+import { TagProps } from './types';
 
 describe('Tag', () => {
     const tagSizes: TagProps['size'][] = ['small', 'medium'];
     tagSizes.forEach((size) => {
         describe(`Tag ${size}`, () => {
-            it('should call onClick callback when tag is clicked', () => {
-                const callback = jest.fn();
-                const wrapper = shallow(
-                    <Tag size={size} value={{ label: 'Test' }} onClick={callback} />,
-                );
-
-                wrapper.simulate('click');
-
-                expect(callback).toHaveBeenCalledTimes(1);
-            });
-
             it('should call onRemove callback when delete-button is clicked', () => {
                 const callback = jest.fn();
                 const stopPropagation = jest.fn();
@@ -76,7 +66,7 @@ describe('Tag', () => {
                     expect(tree).toMatchSnapshot();
                 });
 
-                it(`matches snapshot (${deviceType} deletable)`, () => {
+                it(`matches snapshot (${deviceType} removable)`, () => {
                     const tree = renderWithProviders(
                         <Tag
                             size={size}
@@ -87,13 +77,49 @@ describe('Tag', () => {
 
                     expect(tree).toMatchSnapshot();
                 });
+            });
+        });
+    });
+    const tagColors: TagProps['color'][] = [
+        'default',
+        'decorative-01',
+        'decorative-02',
+        'decorative-03',
+        'decorative-04',
+        'decorative-05',
+        'decorative-06',
+        'decorative-07',
+        'decorative-08',
+        'decorative-09',
+        'decorative-10',
+    ];
+    tagColors.forEach((color) => {
+        describe(`Tag ${color}`, () => {
+            (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
+                it(`matches snapshot (${deviceType})`, () => {
+                    const tree = renderWithProviders(<Tag color={color} value={{ label: 'Test' }} />, 'desktop');
 
-                it(`matches snapshot (${deviceType} clickable)`, () => {
+                    expect(tree).toMatchSnapshot();
+                });
+
+                it(`matches snapshot (${deviceType})`, () => {
+                    const tree = renderWithProviders(<Tag color={color} value={{ label: 'Test' }} />, 'mobile');
+
+                    expect(tree).toMatchSnapshot();
+                });
+
+                it(`matches snapshot (${deviceType} with icons)`, () => {
+                    const tree = renderWithProviders(<Tag color={color} iconName="home" value={{ label: 'Test' }} />);
+
+                    expect(tree).toMatchSnapshot();
+                });
+
+                it(`matches snapshot (${deviceType} removable)`, () => {
                     const tree = renderWithProviders(
                         <Tag
-                            size={size}
+                            color={color}
                             value={{ label: 'Test' }}
-                            onClick={jest.fn()}
+                            onRemove={jest.fn()}
                         />,
                     );
 

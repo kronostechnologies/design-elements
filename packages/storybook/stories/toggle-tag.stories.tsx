@@ -1,65 +1,59 @@
-import { Tag, TagValue } from '@equisoft/design-elements-react';
+import { TagValue, ToggleTag } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useRef } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
-const TagMeta: Meta<typeof Tag> = {
-    component: Tag,
-    title: 'Components/Tags/Tag',
+const ToggleTagMeta: Meta<typeof ToggleTag> = {
+    component: ToggleTag,
+    title: 'Components/Tags/ToggleTag',
     args: {
         value: {
-            label: 'Tag',
+            label: 'Toggle Tag',
         },
         size: 'medium',
         iconName: undefined,
-        color: 'default',
-        onRemove: undefined,
+        selected: undefined,
+        onClick: (tag: TagValue) => console.info(`Clicked on ${tag.label}`),
     },
     argTypes: {
+        size: {
+            control: {
+                type: 'select',
+            },
+            defaultValue: 'medium',
+        },
         value: {
             control: {
                 type: 'object',
             },
-        },
-        size: {
-            control: {
-                type: 'select',
-
-            },
-            defaultValue: 'medium',
         },
         iconName: {
             control: {
                 type: 'select',
             },
         },
-        color: {
-            control: {
-                type: 'select',
-            },
-        },
-        onRemove: {
+        selected: {
             control: {
                 type: 'boolean',
             },
         },
     },
     render: (args) => (
-        <Tag
+        <ToggleTag
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...args}
             value={{
-                label: args.value?.label || 'Tag',
+                label: args.value?.label || 'Toggle Tag',
             }}
         />
     ),
 };
 
-export default TagMeta;
-type Story = StoryObj<typeof Tag>;
+export default ToggleTagMeta;
+type Story = StoryObj<typeof ToggleTag>;
 
 export const Default: Story = {
-    ...TagMeta,
+    ...ToggleTagMeta,
 };
 
 export const Small: Story = {
@@ -83,25 +77,11 @@ export const WithIcons: Story = {
     },
 };
 
-export const Removable: Story = {
-    ...Default,
-    args: {
-        onRemove: (tag: TagValue) => console.info(`Removed ${tag.label}`),
-    },
-};
-
-export const Colored: Story = {
-    ...Default,
-    args: {
-        color: 'decorative-01',
-    },
-};
-
 export const WithRef: Story = () => {
     const ref = useRef(null);
 
     return (
-        <Tag ref={ref} key="small" iconName="copy" size="small" value={{ label: 'Tag 1' }} />
+        <ToggleTag ref={ref} key="small" iconName="copy" size="small" value={{ label: 'Tag 1' }} />
     );
 };
 

@@ -4,158 +4,29 @@ import {
     Ref,
     SVGProps,
     useCallback,
-    useEffect,
-    useState,
 } from 'react';
-import styled, {
-    css,
-    FlattenInterpolation,
-    StyledProps,
-    ThemeProps,
-} from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes/theme';
-import { focus } from '../../utils/css-state';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { Icon } from '../icon/icon';
+import { TagProps, TagStylingProps } from './types';
+import { getFontSize, getIconSize, getLineHeight, getPadding, getTagColors, isMedium } from './utils';
 
-export type TagColor =
-    | 'default'
-    | 'decorative-01'
-    | 'decorative-02'
-    | 'decorative-03'
-    | 'decorative-04'
-    | 'decorative-05'
-    | 'decorative-06'
-    | 'decorative-07'
-    | 'decorative-08'
-    | 'decorative-09'
-    | 'decorative-10';
+const TagContainer = styled.div<TagStylingProps>`
+    align-items: center;
+    background-color: ${(props) => getTagColors(props, 'background-color')};
+    border: 1px solid ${(props) => getTagColors(props, 'border-color')};
+    border-radius: ${({ $tagSize, $isMobile }) => ($isMobile || isMedium($tagSize) ? 'var(--border-radius-1halfx)' : 'var(--border-radius)')};
+    display: inline-flex;
+    padding: ${getPadding};
 
-export type TagSize =
-    | 'small'
-    | 'medium';
-
-export interface TagValue {
-    id?: string;
-    label: string;
-}
-
-export interface TagProps {
-    className?: string;
-    size?: TagSize;
-    value: TagValue;
-    iconName?: IconName;
-
-    /**
-     * Whether the tag is selected.
-     * Can manually set the selected state of the tag, without the need for a click event.
-     */
-    selected?: boolean;
-
-    /**
-     *  if tag is clickable or removable or has an icon,
-     *  the color will be forced to 'default'
-     */
-    color?: TagColor;
-
-    onClick?(tag: TagValue): void;
-    onRemove?(tag: TagValue): void;
-}
-
-interface BaseTagStylingProps {
-    $isMobile: boolean;
-    $tagSize: TagSize;
-    $tagColor: TagColor;
-    $selected?: boolean;
-    $clickable?: boolean;
-}
-
-interface TagContainerProps extends BaseTagStylingProps {
-    $clickable: boolean;
-    $removable: boolean;
-    $hasIcon: boolean;
-    type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-}
-
-type TagLabelProps = BaseTagStylingProps;
-type IconOrButtonProps = BaseTagStylingProps;
-
-function getFontSize({ $isMobile }: TagLabelProps): number {
-    return $isMobile ? 0.875 : 0.75;
-}
-
-function getIconSize(isMobile: boolean): string {
-    return isMobile ? '20' : '12';
-}
-
-function hasDefaultColor(tagColor: TagColor): tagColor is 'default' {
-    return tagColor === 'default';
-}
-
-function isMedium(tagSize: TagSize): tagSize is 'medium' {
-    return tagSize === 'medium';
-}
-
-function isSmall(tagSize: TagSize): tagSize is 'small' {
-    return tagSize === 'small';
-}
-
-function getPadding({ $isMobile, $tagSize }: IconOrButtonProps): string {
-    return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
-}
-
-function getLineHeight({ $isMobile, $tagSize }: TagLabelProps): number {
-    if ($isMobile) {
-        return isSmall($tagSize) ? 1.5 : 1.875;
+    & + & {
+        margin-left: var(--spacing-1x);
     }
-    return isSmall($tagSize) ? 1 : 1.5;
-}
-
-function getBorderRadius({ $clickable, $isMobile, $tagSize }: TagContainerProps): string {
-    if ($clickable) {
-        return isSmall($tagSize) ? 'var(--border-radius-2halfx)' : 'var(--border-radius-3x)';
-    }
-    return $isMobile || isMedium($tagSize) ? 'var(--border-radius-1halfx)' : 'var(--border-radius)';
-}
-
-type ColorProperty = 'background-color' | 'border-color' | 'text-color';
-
-function getTagColors(
-    { $tagColor, theme }: StyledProps<BaseTagStylingProps>,
-    $colorProperty: ColorProperty,
-): string {
-    if (hasDefaultColor($tagColor)) {
-        return theme.component[`tag-${$colorProperty}`];
-    }
-    return theme.component[`tag-${$tagColor}-${$colorProperty}`];
-}
-
-const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
-    color: ${({ theme }) => theme.component['tag-icon-color']};
-    height: var(--size-1x);
-    margin-right: var(--spacing-half);
-    vertical-align: text-bottom;
-    width: var(--size-1x);
-
-    ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-selected-icon-color']};
-    `}
-
-    ${({ $clickable, $selected, theme }) => $clickable && css`
-        &:hover {
-            color: ${$selected ? theme.component['tag-selected-icon-color'] : theme.component['tag-hover-icon-color']};
-        }
-    `}
 `;
 
-const DeleteIcon = styled(Icon).attrs({
-    'aria-hidden': 'true',
-    name: 'x',
-})``;
-
-const TagLabel = styled.span<TagLabelProps>`
+const TagLabel = styled.span<TagStylingProps>`
     color: ${(props) => getTagColors(props, 'text-color')};
     display: inline-block;
     font-size: ${getFontSize}rem;
@@ -164,16 +35,20 @@ const TagLabel = styled.span<TagLabelProps>`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-selected-text-color']};
-        font-weight: var(--font-semi-bold);
-    `}
 `;
 
-const RemoveButton = styled(IconButton)<IconOrButtonProps>`
+const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & TagStylingProps>`
+    color: ${(props) => getTagColors(props, 'icon-color')};
+    height: var(--size-1x);
+    margin-right: var(--spacing-half);
+    vertical-align: text-bottom;
+    width: var(--size-1x);
+`;
+
+const RemoveButton = styled(IconButton)<TagStylingProps>`
     align-items: center;
     border-radius: 50%;
-    color: ${({ theme }) => theme.component['tag-icon-color']};
+    color: ${(props) => getTagColors(props, 'icon-color')};
     display: inline-flex;
     height: auto;
     justify-content: center;
@@ -187,58 +62,6 @@ const RemoveButton = styled(IconButton)<IconOrButtonProps>`
         height: 1rem;
         width: 1rem;
     }
-
-    ${({ $selected, theme }) => $selected && css`
-        color: ${theme.component['tag-selected-icon-color']};
-    `}
-
-    &:hover {
-        background-color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-hover-background-color'] : theme.component['tag-hover-background-color'])};
-        color: ${({ $selected, theme }) => ($selected ? theme.component['tag-selected-icon-color'] : theme.component['tag-hover-icon-color'])};
-
-        ${DeleteIcon} {
-            color: ${({ theme }) => theme.component['tag-hover-icon-color']};
-        }
-    }
-
-    ${focus};
-`;
-
-function getClickableStyle(
-    { $clickable, $selected, $tagSize }: TagContainerProps,
-): FlattenInterpolation<ThemeProps<ResolvedTheme>> | false {
-    return $clickable && css`
-        font-family: var(--font-family);
-        padding-left: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
-        padding-right: ${isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)'};
-
-        &:hover {
-            background-color: ${({ theme }) => ($selected ? theme.component['tag-selected-background-color'] : theme.component['tag-hover-background-color'])};
-            border-color: ${({ theme }) => ($selected ? theme.component['tag-selected-border-color'] : theme.component['tag-hover-border-color'])};
-        }
-
-        ${focus};
-    `;
-}
-
-const TagContainer = styled.div<TagContainerProps>`
-    align-items: center;
-    background-color: ${(props) => getTagColors(props, 'background-color')};
-    border: 1px solid ${(props) => getTagColors(props, 'border-color')};
-    border-radius: ${getBorderRadius};
-    display: inline-flex;
-    padding: ${getPadding};
-
-    & + & {
-        margin-left: var(--spacing-1x);
-    }
-
-    ${({ $selected, theme }) => $selected && css`
-        background-color: ${theme.component['tag-selected-background-color']};
-        border: 1px solid ${theme.component['tag-selected-border-color']};
-    `}
-
-    ${getClickableStyle};
 `;
 
 export const Tag = forwardRef(({
@@ -246,35 +69,15 @@ export const Tag = forwardRef(({
     iconName,
     size = 'medium',
     color = 'default',
-    selected = false,
     value,
-    onClick,
     onRemove,
 }: TagProps, ref: Ref<HTMLElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
 
     const isRemovable = !!onRemove;
-    const isClickable = !!onClick;
     const hasIcon = !!iconName;
-    const currentColor = (isRemovable || isClickable || hasIcon) ? 'default' : color;
-    const [isSelected, setSelected] = useState(hasDefaultColor(currentColor) && selected);
     const hasIconLabel = !(value.label.toLowerCase() === iconName?.toLowerCase());
-
-    useEffect(() => {
-        if (isRemovable || isClickable || hasIcon || hasDefaultColor(currentColor)) {
-            setSelected(selected);
-        } else {
-            setSelected(false);
-        }
-    }, [currentColor, hasIcon, isClickable, isRemovable, selected]);
-
-    const handleClick: MouseEventHandler = useCallback(() => {
-        if (hasDefaultColor(currentColor) && onClick) {
-            setSelected(!isSelected);
-            onClick?.(value);
-        }
-    }, [currentColor, isSelected, onClick, value]);
 
     const handleDelete: MouseEventHandler = useCallback((e) => {
         e.stopPropagation();
@@ -284,17 +87,13 @@ export const Tag = forwardRef(({
     return (
         <TagContainer
             ref={ref}
-            as={onClick ? 'button' : 'span'}
+            as="span"
             className={className}
-            onClick={handleClick}
-            type={onClick ? 'button' : undefined}
             $isMobile={isMobile}
             $tagSize={size}
-            $clickable={isClickable}
             $removable={isRemovable}
             $hasIcon={hasIcon}
-            $tagColor={currentColor}
-            $selected={isSelected}
+            $tagColor={color}
         >
             {hasIcon && (
                 <StyledIcon
@@ -304,26 +103,28 @@ export const Tag = forwardRef(({
                     name={iconName}
                     size={getIconSize(isMobile)}
                     role="img"
-                    color={color}
+                    focusable
                     $isMobile={isMobile}
                     $tagSize={size}
-                    focusable
-                    $tagColor={currentColor}
-                    $selected={isSelected}
+                    $tagColor={color}
+                    $hasIcon={hasIcon}
+                    $removable={isRemovable}
                 />
             )}
 
             <TagLabel
                 $isMobile={isMobile}
                 $tagSize={size}
-                $tagColor={currentColor}
-                $selected={isSelected}
+                $tagColor={color}
+                $hasIcon={hasIcon}
+                $removable={isRemovable}
             >
                 {value.label}
             </TagLabel>
 
             {isRemovable && (
                 <RemoveButton
+                    aria-hidden="true"
                     data-testid={`${value.label}-remove-button`}
                     type="button"
                     buttonType="tertiary"
@@ -333,8 +134,9 @@ export const Tag = forwardRef(({
                     onClick={handleDelete}
                     $tagSize={size}
                     $isMobile={isMobile}
-                    $tagColor={currentColor}
-                    $selected={isSelected}
+                    $tagColor={color}
+                    $hasIcon={hasIcon}
+                    $removable={isRemovable}
                 />
             )}
         </TagContainer>
