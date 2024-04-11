@@ -11,7 +11,7 @@ import * as ModalDialogStories from './modal-dialog.stories';
     4. [Properties](#properties)
     5. [Accessibility](#accessibility)
 
-<Meta title="Components/Modal/Doc" />
+<Meta of={ModalDialogStories} />
 
 ## Definition
 A modal is an overlay that requires the user to interact with it and is designed to elicit a response from the user (dialog). Modals inform users about critical information and require users to make decisions. Within apps, on the web and even on mobile, modals are increasingly used to direct the user’s attention to a specific task, without taking them away from the context of the current screen [1]. 
@@ -36,7 +36,8 @@ A modal is an overlay that requires the user to interact with it and is design
 <Canvas of={ModalDialogStories.Default} />
 
 ### Alert
-<Canvas of={ModalDialogStories.AlertDialog} />
+The alert modal requires confirmation for an action that is highly destructive or irreversible. This modal use an icon, to help people with color vision impairment discern quickly the tone of the message. When there are significant consequences for an action, and you’re concerned users might skip the explanation, include an input to make sure the user confirm the action [3].
+<Canvas of={ModalDialogStories.AlertModal} />
 
 ## Properties
 <ArgTypes of={ModalDialog} />
