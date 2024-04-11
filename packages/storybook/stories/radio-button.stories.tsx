@@ -4,10 +4,9 @@ import { ChangeEvent, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Radio Button Group',
+    title: 'Components/Radio Button',
     component: RadioButtonGroup,
 };
-
 const buttons = [
     { label: 'Earth', value: 'earth' },
     { label: 'Mars', value: 'mars', defaultChecked: true },
@@ -15,7 +14,7 @@ const buttons = [
     { label: 'Saturn', value: 'saturn' },
 ];
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <RadioButtonGroup
         data-testid='radio-button-group-id'
         label="Planets"
@@ -24,13 +23,17 @@ export const Normal: Story = () => (
     />
 );
 
-export const Disabled: Story = () => (
-    <RadioButtonGroup groupName="cars-1" buttons={[{ label: 'Toyota', value: 'toyota', disabled: true }]} />
+export const WithConditionalField: Story = () => (
+    <RadioButtonGroup
+        label="Select radio button"
+        groupName="content"
+        buttons={[
+            { label: 'With Conditional Field', value: 'with', content: { element: <p>This is some content</p> } },
+            { label: 'Without Conditional Field', value: 'without' },
+        ]}
+    />
 );
-
-export const DefaultChecked: Story = () => (
-    <RadioButtonGroup groupName="cars-2" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]} />
-);
+WithConditionalField.parameters = rawCodeParameters;
 
 export const WithTooltip: Story = () => (
     <RadioButtonGroup
@@ -41,61 +44,6 @@ export const WithTooltip: Story = () => (
         buttons={buttons}
     />
 );
-
-export const WithContent: Story = () => (
-    <RadioButtonGroup
-        label="Content"
-        groupName="content"
-        buttons={[
-            { label: 'With content', value: 'with', content: { element: <p>This is some content</p> } },
-            { label: 'Without content', value: 'without' },
-        ]}
-    />
-);
-WithContent.parameters = rawCodeParameters;
-
-export const DefaultCheckedWithContent: Story = () => (
-    <RadioButtonGroup
-        label="Content"
-        groupName="content2"
-        buttons={[
-            {
-                defaultChecked: true,
-                label: 'With content',
-                value: 'with',
-                content: { element: <p>This is some content</p> },
-            },
-            { label: 'Without content', value: 'without' },
-        ]}
-    />
-);
-DefaultCheckedWithContent.parameters = rawCodeParameters;
-
-export const Controlled: Story = () => {
-    const [value, setValue] = useState('red');
-
-    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-        if (value !== event.target.value) {
-            setValue(event.target.value);
-        }
-    }
-
-    return (
-        <RadioButtonGroup
-            label="Colors"
-            groupName="colors"
-            checkedValue={value}
-            buttons={[
-                { label: 'Blue', value: 'blue' },
-                { label: 'Red', value: 'red' },
-                { label: 'Green', value: 'green', disabled: true },
-                { label: 'Yellow', value: 'yellow' },
-            ]}
-            onChange={handleChange}
-        />
-    );
-};
-Controlled.parameters = rawCodeParameters;
 
 export const ControlledContent: Story = () => {
     const [value, setValue] = useState('red');

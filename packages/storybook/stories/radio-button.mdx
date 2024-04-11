@@ -1,0 +1,43 @@
+import { RadioButtonGroup } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as RadioButtonStories  from './radio-button.stories';
+
+<Meta of={RadioButtonStories} />
+
+# Radio Button
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Radio buttons display mutually exclusive options from which a person selects exactly one [1]. 
+<Canvas of={RadioButtonStories.Default} />
+
+## Usage
+
+### When to use
+- When you only want the user to select one item [3].
+- Use when the user has to select only one option from a list between 2 to 6 choices [3].
+- Use it when validation is needed, such as a submit button [3].
+
+### When not to use
+- Radio buttons should not be used to perform actions [2].
+- Don't use it when there are more than 6 options, consider the dropdown-list instead [3].
+
+## Variants
+
+### Default
+<Canvas of={RadioButtonStories.Default} />
+
+### With conditional field
+<Canvas of={RadioButtonStories.WithConditionalField} />
+
+## Properties
+<ArgTypes of={RadioButtonGroup} />
+
+## References
+1. [https://www.nngroup.com/articles/radio-buttons-default-selection/](https://www.nngroup.com/articles/radio-buttons-default-selection/)
+2. [https://uxplanet.org/radio-buttons-ux-design-588e5c0a50dc](https://uxplanet.org/radio-buttons-ux-design-588e5c0a50dc)
+3. [https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e](https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e)
