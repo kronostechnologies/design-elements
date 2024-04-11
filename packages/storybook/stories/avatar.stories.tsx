@@ -1,19 +1,37 @@
 import { Avatar } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import AvatarImg from './assets/avatars.png';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
-export default {
+const meta: Meta<typeof Avatar> = {
     title: 'Components/Avatar',
     component: Avatar,
 };
 
+export default meta;
 
-export const TextAvatar: Story = () => <Avatar username="Patrick B" size="medium" />;
-TextAvatar.decorators = [DesktopDecorator];
+type Story = StoryObj<typeof Avatar>;
 
-export const ImageAvatar: Story = () => <Avatar username="John" size="medium" imgSrc={AvatarImg} />;
-ImageAvatar.decorators = [DesktopDecorator];
+export const TextAvatar: Story = {
+    args: {
+        size: 'medium',
+        username: 'Patrick B',
+    },
+    decorators: [DesktopDecorator],
+};
 
-export const IconAvatar: Story = () => <Avatar size="medium" />;
-IconAvatar.decorators = [MobileDecorator];
+export const ImageAvatar: Story = {
+    args: {
+        size: 'medium',
+        imgSrc: AvatarImg,
+        username: 'John',
+    },
+    decorators: [DesktopDecorator],
+};
+
+export const IconAvatar: Story = {
+    args: {
+        size: 'medium',
+    },
+    decorators: [MobileDecorator],
+};

@@ -1,21 +1,20 @@
 import { Avatar } from '@equisoft/design-elements-react';
-import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 import * as AvatarStories  from './avatar.stories';
-
 
 # Avatar
 ## Table of Contents
-    1. [Definition](#definition)
-    2. [Usage](#usage)
-    3. [Variants](#Variants)
-    4. [Properties](#Properties)
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#Variants)
+4. [Properties](#Properties)
 
 <Meta of={AvatarStories} />
 
 ## Definition
 
 Avatar is an atom that represents a user or an entity, that has the goal of **creating connections and humanizing online communities** [2][1].
-    <Canvas of={AvatarStories.TextAvatar} />
+<Canvas of={AvatarStories.TextAvatar} />
 
 ## Usage
 
@@ -31,18 +30,18 @@ Avatar is an atom that represents a user or an entity, that has the goal of **cr
 ### Initials
 - Text avatars display initials that represent the user's or entity's initial.
 - Text avatars always display 2 characters.
-- Available in xmall, small, medium or large
-<Canvas of={AvatarStories.TextAvatar} />
+- Available in xsmall, small, medium or large
+<Canvas  of={AvatarStories.TextAvatar} />
 
 ### Image
 - Image avatars are used when users can upload an image to replace the text avatar.
 - The image is centred in the container.
-- Available in xmall, small, medium or large
+- Available in xsmall, small, medium or large
 <Canvas of={AvatarStories.ImageAvatar} />
 
 ### Icon
-- Icons avatars can be used to display a user icon or an organization icon. 
-- Available in xmall, small, medium or large
+- Icons avatars can be used to display a user icon or an organization icon.
+- Available in xsmall, small, medium or large
 <Canvas of={AvatarStories.IconAvatar} />
 
 ## Properties
