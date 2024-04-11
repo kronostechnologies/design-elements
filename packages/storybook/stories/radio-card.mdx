@@ -1,0 +1,46 @@
+import { RadioCardGroup } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as RadioCardStories  from './radio-card.stories';
+
+<Meta of={RadioCardStories} />
+
+# Radio Cards
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Radio Cards are cards containers regrouping more information than a radio button, that allows users to select a single item from a list of related options [2]. 
+<Canvas of={RadioCardStories.Horizontal} />
+
+## Usage
+### When to use
+- The main difference between radio cards and radio buttons is that it is used when users need additional information on available options to make an informed decision [3].
+- Use to allow users to select a single option from a group of 2 to 6 Radio Cards [2].
+- Use when there is a submit button before applying the result [5].
+
+### When not to use
+- Do not use it as a static card, use a card instead [2].
+- Do not use when a user can select multiple options, use checkboxes instead [2].
+
+## Variants
+### Horizontal
+In most cases, use the horizontal layout to maximize the real estate available [2]. 
+<Canvas of={RadioCardStories.Horizontal} />
+
+### Vertical
+Use the vertical layout when limited horizontal space, or when needing to create a vertical options list [2].
+<Canvas of={RadioCardStories.Vertical} />
+
+## Properties
+<ArgTypes of={RadioCardGroup} />
+
+## References
+1. [https://www.nngroup.com/articles/radio-buttons-default-selection/](https://www.nngroup.com/articles/radio-buttons-default-selection/)
+2. [https://helios.hashicorp.design/components/form/radio-card](https://helios.hashicorp.design/components/form/radio-card)
+3. [https://docs.guidewire.com/jutro/documentation/6.2.0/radio-button-card/](https://docs.guidewire.com/jutro/documentation/6.2.0/radio-button-card/)
+4. [https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e](https://uxdesign.cc/ui-cheat-sheet-radio-buttons-checkboxes-and-other-selectors-bf56777ad59e)
+5. [https://uxdesign.cc/selection-controls-ui-component-series-3badc0bdb546](https://uxdesign.cc/selection-controls-ui-component-series-3badc0bdb546)
+

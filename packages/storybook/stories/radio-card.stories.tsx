@@ -1,33 +1,32 @@
 import { RadioCardGroup, RadioCard } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Radio Card Group',
+    title: 'Components/Radio Card',
     component: RadioCardGroup,
 };
 
-export const Normal: Story = () => (
-    <RadioCardGroup label="Card Group with a Label">
-        <RadioCard data-testid="some-data-testid" name="story1" label="Card 1" value="card1">
+export const Horizontal: Story = () => (
+    <RadioCardGroup orientation="horizontal" label="Select card">
+        <RadioCard data-testid="some-data-testid" name="horizontal" label="Card 1" value="card1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
-        <RadioCard name="story1" label="Card 2" value="card2">
+        <RadioCard name="horizontal" label="Card 2" value="card2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
     </RadioCardGroup>
 );
 
-export const Horizontal: Story = () => (
-    <RadioCardGroup orientation="horizontal" label="Card Group with a Label">
-        <RadioCard data-testid="some-data-testid" name="horizontal" label="Card 1" value="card1">
+export const Vertical: Story = () => (
+    <RadioCardGroup label="Select card">
+        <RadioCard data-testid="some-data-testid" name="story1" label="Card 1" value="card1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
-        <RadioCard name="horizontal" label="Card 2" value="card2">
+        <RadioCard name="story1" label="Card 2" value="card2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
@@ -41,49 +40,6 @@ export const DefaultChecked: Story = () => (
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
         <RadioCard name="story2" label="Card 2" value="card2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </RadioCard>
-    </RadioCardGroup>
-);
-
-export const Controlled: Story = () => {
-    const [value, setValue] = useState('');
-
-    return (
-        <RadioCardGroup>
-            <RadioCard
-                checked={value === 'card1'}
-                onChange={(event) => setValue(event.target.value)}
-                name="story3"
-                label="Card 1"
-                value="card1"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec commodo nulla sapien, at condimentum ipsum tristique id.
-            </RadioCard>
-            <RadioCard
-                checked={value === 'card2'}
-                onChange={(event) => setValue(event.target.value)}
-                name="story3"
-                label="Card 2"
-                value="card2"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec commodo nulla sapien, at condimentum ipsum tristique id.
-            </RadioCard>
-        </RadioCardGroup>
-    );
-};
-Controlled.parameters = rawCodeParameters;
-
-export const Disabled: Story = () => (
-    <RadioCardGroup>
-        <RadioCard name="story4" label="Card" value="card1" disabled>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </RadioCard>
-        <RadioCard name="story4" label="Card" value="card2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </RadioCard>
