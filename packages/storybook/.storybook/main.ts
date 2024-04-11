@@ -31,6 +31,7 @@ const config: StorybookConfig = {
         '@storybook/addon-docs',
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
+        '@storybook/addon-controls',
         '@storybook/addon-links',
         '@storybook/addon-controls',
     ],
