@@ -31,3 +31,8 @@ export const DestructiveSecondary: Story = () => (
         <Button label="Destructive Secondary " buttonType="destructive-secondary" />
     </>
 );
+export const DestructiveTertiary: Story = () => (
+    <>
+        <Button label="Destructive Tertiary " buttonType="destructive-tertiary" />
+    </>
+);

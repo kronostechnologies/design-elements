@@ -42,7 +42,6 @@ export interface IconButtonProps {
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
-
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 

@@ -15,7 +15,7 @@ interface LabelContainerStyledProps {
 }
 
 export const StyledListItem = styled.li<LabelContainerStyledProps>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['dropdown-menu-list-item-text-color']};
     display: block;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;

@@ -17,7 +17,7 @@ describe('Lozenge', () => {
     });
 
     test('default matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge variant={undefined}>default</Lozenge>);
+        const tree = renderWithTheme(<Lozenge>default</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });
