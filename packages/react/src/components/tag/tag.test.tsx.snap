@@ -151,21 +151,6 @@ exports[`Tag Tag decorative-01 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -175,6 +160,7 @@ exports[`Tag Tag decorative-01 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -237,7 +223,7 @@ exports[`Tag Tag decorative-01 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-01"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -487,21 +473,6 @@ exports[`Tag Tag decorative-01 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -511,6 +482,7 @@ exports[`Tag Tag decorative-01 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -573,7 +545,7 @@ exports[`Tag Tag decorative-01 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-01"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -823,21 +795,6 @@ exports[`Tag Tag decorative-02 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -847,6 +804,7 @@ exports[`Tag Tag decorative-02 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -909,7 +867,7 @@ exports[`Tag Tag decorative-02 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-02"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -1159,21 +1117,6 @@ exports[`Tag Tag decorative-02 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -1183,6 +1126,7 @@ exports[`Tag Tag decorative-02 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -1245,7 +1189,7 @@ exports[`Tag Tag decorative-02 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-02"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -1495,21 +1439,6 @@ exports[`Tag Tag decorative-03 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -1519,6 +1448,7 @@ exports[`Tag Tag decorative-03 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -1581,7 +1511,7 @@ exports[`Tag Tag decorative-03 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-03"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -1831,21 +1761,6 @@ exports[`Tag Tag decorative-03 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -1855,6 +1770,7 @@ exports[`Tag Tag decorative-03 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -1917,7 +1833,7 @@ exports[`Tag Tag decorative-03 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-03"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -2167,21 +2083,6 @@ exports[`Tag Tag decorative-04 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -2191,6 +2092,7 @@ exports[`Tag Tag decorative-04 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -2253,7 +2155,7 @@ exports[`Tag Tag decorative-04 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-04"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -2503,21 +2405,6 @@ exports[`Tag Tag decorative-04 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -2527,6 +2414,7 @@ exports[`Tag Tag decorative-04 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -2589,7 +2477,7 @@ exports[`Tag Tag decorative-04 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-04"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -2839,21 +2727,6 @@ exports[`Tag Tag decorative-05 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -2863,6 +2736,7 @@ exports[`Tag Tag decorative-05 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -2925,7 +2799,7 @@ exports[`Tag Tag decorative-05 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-05"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -3175,21 +3049,6 @@ exports[`Tag Tag decorative-05 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -3199,6 +3058,7 @@ exports[`Tag Tag decorative-05 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -3261,7 +3121,7 @@ exports[`Tag Tag decorative-05 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-05"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -3511,21 +3371,6 @@ exports[`Tag Tag decorative-06 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -3535,6 +3380,7 @@ exports[`Tag Tag decorative-06 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -3597,7 +3443,7 @@ exports[`Tag Tag decorative-06 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-06"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -3847,21 +3693,6 @@ exports[`Tag Tag decorative-06 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -3871,6 +3702,7 @@ exports[`Tag Tag decorative-06 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -3933,7 +3765,7 @@ exports[`Tag Tag decorative-06 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-06"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -4183,21 +4015,6 @@ exports[`Tag Tag decorative-07 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -4207,6 +4024,7 @@ exports[`Tag Tag decorative-07 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -4269,7 +4087,7 @@ exports[`Tag Tag decorative-07 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-07"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -4519,21 +4337,6 @@ exports[`Tag Tag decorative-07 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -4543,6 +4346,7 @@ exports[`Tag Tag decorative-07 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -4605,7 +4409,7 @@ exports[`Tag Tag decorative-07 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-07"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -4855,21 +4659,6 @@ exports[`Tag Tag decorative-08 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -4879,6 +4668,7 @@ exports[`Tag Tag decorative-08 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -4941,7 +4731,7 @@ exports[`Tag Tag decorative-08 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-08"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -5191,21 +4981,6 @@ exports[`Tag Tag decorative-08 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -5215,6 +4990,7 @@ exports[`Tag Tag decorative-08 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -5277,7 +5053,7 @@ exports[`Tag Tag decorative-08 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-08"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -5527,21 +5303,6 @@ exports[`Tag Tag decorative-09 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -5551,6 +5312,7 @@ exports[`Tag Tag decorative-09 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -5613,7 +5375,7 @@ exports[`Tag Tag decorative-09 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-09"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -5863,21 +5625,6 @@ exports[`Tag Tag decorative-09 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -5887,6 +5634,7 @@ exports[`Tag Tag decorative-09 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -5949,7 +5697,7 @@ exports[`Tag Tag decorative-09 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-09"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -6199,21 +5947,6 @@ exports[`Tag Tag decorative-10 matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -6223,6 +5956,7 @@ exports[`Tag Tag decorative-10 matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -6285,7 +6019,7 @@ exports[`Tag Tag decorative-10 matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-10"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -6535,21 +6269,6 @@ exports[`Tag Tag decorative-10 matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -6559,6 +6278,7 @@ exports[`Tag Tag decorative-10 matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -6621,7 +6341,7 @@ exports[`Tag Tag decorative-10 matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="decorative-10"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -6871,21 +6591,6 @@ exports[`Tag Tag default matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -6895,6 +6600,7 @@ exports[`Tag Tag default matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -6957,7 +6663,7 @@ exports[`Tag Tag default matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -7207,21 +6913,6 @@ exports[`Tag Tag default matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -7231,6 +6922,7 @@ exports[`Tag Tag default matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -7293,7 +6985,7 @@ exports[`Tag Tag default matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -7389,197 +7081,6 @@ exports[`Tag Tag default matches snapshot (mobile) 2`] = `
   >
     Test
   </span>
-</span>
-`;
-
-exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:disabled {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F1F2F2;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius-1halfx);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0 var(--spacing-1x);
-}
-
-.c0 + .c0 {
-  margin-left: var(--spacing-1x);
-}
-
-.c2 {
-  color: #1B1C1E;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
-  max-width: 312px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  color: #1B1C1E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: var(--spacing-half);
-  margin-right: calc(-1 * var(--spacing-half));
-  min-height: auto;
-  min-width: auto;
-  width: auto;
-}
-
-.c5 > svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-<span
-  class="c0 c1"
->
-  <span
-    class="c2"
-  >
-    Test
-  </span>
-  <button
-    aria-label="deleteButtonAriaLabel"
-    class="c3 c4 c5"
-    data-testid="Test-remove-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
 </span>
 `;
 
@@ -7734,21 +7235,6 @@ exports[`Tag Tag medium matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -7758,6 +7244,7 @@ exports[`Tag Tag medium matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -7820,7 +7307,7 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -7916,197 +7403,6 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
   >
     Test
   </span>
-</span>
-`;
-
-exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:disabled {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F1F2F2;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius-1halfx);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0 var(--spacing-1x);
-}
-
-.c0 + .c0 {
-  margin-left: var(--spacing-1x);
-}
-
-.c2 {
-  color: #1B1C1E;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
-  max-width: 312px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  color: #1B1C1E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: var(--spacing-half);
-  margin-right: calc(-1 * var(--spacing-half));
-  min-height: auto;
-  min-width: auto;
-  width: auto;
-}
-
-.c5 > svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-<span
-  class="c0 c1"
->
-  <span
-    class="c2"
-  >
-    Test
-  </span>
-  <button
-    aria-label="deleteButtonAriaLabel"
-    class="c3 c4 c5"
-    data-testid="Test-remove-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
 </span>
 `;
 
@@ -8261,21 +7557,6 @@ exports[`Tag Tag medium matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -8285,6 +7566,7 @@ exports[`Tag Tag medium matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -8347,7 +7629,7 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -8443,198 +7725,6 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
   >
     Test
   </span>
-</span>
-`;
-
-exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-1halfx);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-1halfx);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:disabled {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F1F2F2;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0 var(--spacing-half);
-}
-
-.c0 + .c0 {
-  margin-left: var(--spacing-1x);
-}
-
-.c2 {
-  color: #1B1C1E;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  max-width: 312px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  color: #1B1C1E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: var(--spacing-half);
-  margin-right: calc(-1 * var(--spacing-half));
-  min-height: auto;
-  min-width: auto;
-  width: auto;
-}
-
-.c5 > svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-<span
-  class="c0 c1"
->
-  <span
-    class="c2"
-  >
-    Test
-  </span>
-  <button
-    aria-label="deleteButtonAriaLabel"
-    class="c3 c4 c5"
-    data-testid="Test-remove-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
 </span>
 `;
 
@@ -8790,21 +7880,6 @@ exports[`Tag Tag small matches snapshot (desktop removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -8814,6 +7889,7 @@ exports[`Tag Tag small matches snapshot (desktop removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -8876,7 +7952,7 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -8972,198 +8048,6 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
   >
     Test
   </span>
-</span>
-`;
-
-exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-1halfx);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-1halfx);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:disabled {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F1F2F2;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0 var(--spacing-half);
-}
-
-.c0 + .c0 {
-  margin-left: var(--spacing-1x);
-}
-
-.c2 {
-  color: #1B1C1E;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  max-width: 312px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  color: #1B1C1E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: var(--spacing-half);
-  margin-right: calc(-1 * var(--spacing-half));
-  min-height: auto;
-  min-width: auto;
-  width: auto;
-}
-
-.c5 > svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-<span
-  class="c0 c1"
->
-  <span
-    class="c2"
-  >
-    Test
-  </span>
-  <button
-    aria-label="deleteButtonAriaLabel"
-    class="c3 c4 c5"
-    data-testid="Test-remove-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
 </span>
 `;
 
@@ -9319,21 +8203,6 @@ exports[`Tag Tag small matches snapshot (mobile removable) 1`] = `
   width: 1rem;
 }
 
-.c5:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
 <span
   class="c0 c1"
 >
@@ -9343,6 +8212,7 @@ exports[`Tag Tag small matches snapshot (mobile removable) 1`] = `
     Test
   </span>
   <button
+    aria-hidden="true"
     aria-label="deleteButtonAriaLabel"
     class="c3 c4 c5"
     data-testid="Test-remove-button"
@@ -9405,7 +8275,7 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"

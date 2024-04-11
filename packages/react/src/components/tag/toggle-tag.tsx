@@ -12,9 +12,9 @@ const TagContainer = styled.button<ToggleTagStylingProps>`
     border: 1px solid ${({ theme, $selected }) => ($selected ? theme.component['tag-selected-border-color'] : theme.component['tag-border-color'])};
     border-radius: ${({ $tagSize }) => (isSmall($tagSize) ? 'var(--border-radius-2halfx)' : 'var(--border-radius-3x)')};
     display: inline-flex;
-    padding: ${getPadding};
     font-family: var(--font-family);
     font-weight: ${({ $selected }) => ($selected ? '600' : '400')};
+    padding: ${getPadding};
     padding-left: ${({ $tagSize }) => (isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)')};
     padding-right: ${({ $tagSize }) => (isSmall($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-1halfx)')};
 

@@ -14,6 +14,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -78,6 +79,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -136,7 +138,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -165,6 +167,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -229,6 +232,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 2`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -293,6 +297,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -357,6 +362,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -415,7 +421,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -444,6 +450,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -508,6 +515,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 2`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1halfx);
   padding-right: var(--spacing-1halfx);
@@ -572,6 +580,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -636,6 +645,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -694,7 +704,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -723,6 +733,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -787,6 +798,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 2`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -851,6 +863,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile clickable) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -915,6 +928,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -973,7 +987,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
     aria-hidden="false"
     aria-label="home"
     class="c2"
-    color="default"
+    color="currentColor"
     data-testid="Test-icon"
     focusable="true"
     height="12"
@@ -1002,6 +1016,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-half);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
@@ -1066,6 +1081,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 2`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: var(--font-family);
+  font-weight: 400;
   padding: 0 var(--spacing-1x);
   padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
