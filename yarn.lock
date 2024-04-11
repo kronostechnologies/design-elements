@@ -1682,7 +1682,7 @@ __metadata:
     prop-types: "npm:^15.8.1"
     react: "npm:~17.0.2"
     react-datepicker: "npm:^6.0.0"
-    react-docgen-typescript-plugin: "npm:^1.0.5"
+    react-docgen-typescript-plugin: "npm:^1.0.6"
     react-dom: "npm:~17.0.2"
     react-is: "npm:~17.0.2"
     react-modal: "npm:^3.16.1"
@@ -1690,7 +1690,7 @@ __metadata:
     react-router-dom: "npm:~6.22.0"
     react-shadow: "npm:^20.0.0"
     react-swipeable: "npm:~7.0.0"
-    sass: "npm:~1.74.0"
+    sass: "npm:~1.72.0"
     sass-loader: "npm:~14.1.0"
     stream-browserify: "npm:^3.0.0"
     style-loader: "npm:^3.3.2"
@@ -1699,7 +1699,7 @@ __metadata:
     ts-jest: "npm:^29.1.0"
     ts-loader: "npm:^9.4.2"
     ts-mockito: "npm:^2.6.1"
-    typescript: "npm:~5.3.0"
+    typescript: "npm:~5.4.0"
     webpack: "npm:^5.81.0"
     webpack-cli: "npm:^5.0.2"
     webpack-merge: "npm:^5.8.0"
@@ -1768,7 +1768,7 @@ __metadata:
     styled-components: "npm:^5.3.10"
     stylelint: "npm:^16.2.1"
     ts-loader: "npm:^9.4.2"
-    typescript: "npm:~5.3.0"
+    typescript: "npm:~5.4.0"
     webpack: "npm:^5.81.0"
     yargs: "npm:^17.7.2"
   languageName: unknown
@@ -13233,9 +13233,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript-plugin@npm:1.0.5":
-  version: 1.0.5
-  resolution: "react-docgen-typescript-plugin@npm:1.0.5"
+"react-docgen-typescript-plugin@npm:1.0.6":
+  version: 1.0.6
+  resolution: "react-docgen-typescript-plugin@npm:1.0.6"
   dependencies:
     debug: "npm:^4.1.1"
     endent: "npm:^2.0.1"
@@ -13243,17 +13243,17 @@ __metadata:
     flat-cache: "npm:^3.0.4"
     micromatch: "npm:^4.0.2"
     react-docgen-typescript: "npm:^2.2.2"
-    tslib: "npm:^2.0.0"
+    tslib: "npm:^2.6.2"
   peerDependencies:
     typescript: ">= 4.x"
     webpack: ">= 4"
-  checksum: 10c0/007a689f4ae5aae7b1a89b2b54b1e3806e4316677da24977516b794aa9252a16ee1a103fc0b254afb2961530909326df49052ade8dcaf96e6b6ea06adf34f6bd
+  checksum: 10c0/8dd7ad600f0aa64308fec9efaadef9faea7bd9febe48ff2334c8be73cc8ca4ee7bdee0155eebb95766ba8c174a448e434b088d269f7f9e2b4ab3b71c421f70a1
   languageName: node
   linkType: hard
 
-"react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch::locator=root-workspace-0b6124%40workspace%3A.":
-  version: 1.0.5
-  resolution: "react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch::version=1.0.5&hash=c2a872&locator=root-workspace-0b6124%40workspace%3A."
+"react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch":
+  version: 1.0.6
+  resolution: "react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch::version=1.0.6&hash=f3804a"
   dependencies:
     debug: "npm:^4.1.1"
     endent: "npm:^2.0.1"
@@ -13261,11 +13261,11 @@ __metadata:
     flat-cache: "npm:^3.0.4"
     micromatch: "npm:^4.0.2"
     react-docgen-typescript: "npm:^2.2.2"
-    tslib: "npm:^2.0.0"
+    tslib: "npm:^2.6.2"
   peerDependencies:
     typescript: ">= 4.x"
     webpack: ">= 4"
-  checksum: 10c0/8d5ceb0b0a31aadc88e441cda5e7999570f44a0964068a1eb4cc038b1095d1eb5074acad64f6804b2add20725fd79d0a771a8d315fa21d79e2573a17927c4825
+  checksum: 10c0/051126a1675e0aa22a6b30b658b866e4fa176d161bd4373f6280443e32c871f6c0747ec5cc95803dff32da5b6490fcc0ae2ca443a154ed860cc00ba9052e3f25
   languageName: node
   linkType: hard
 
@@ -13995,7 +13995,7 @@ __metadata:
     postcss: "npm:^8.4.35"
     postcss-styled-syntax: "npm:^0.6.4"
     stylelint: "npm:^16.2.1"
-    typescript: "npm:~5.3.0"
+    typescript: "npm:~5.4.0"
     xmlbuilder: "npm:^15.1.1"
     yargs: "npm:^17.7.2"
   languageName: unknown
@@ -14103,16 +14103,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:~1.74.0":
-  version: 1.74.1
-  resolution: "sass@npm:1.74.1"
+"sass@npm:~1.72.0":
+  version: 1.72.0
+  resolution: "sass@npm:1.72.0"
   dependencies:
     chokidar: "npm:>=3.0.0 <4.0.0"
     immutable: "npm:^4.0.0"
     source-map-js: "npm:>=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 10c0/4610257ee27823276ce4998a534b4ee9f313e5a0b3d3899e70e0f87096feeae4cd8dd3c2f765b52f57dd87f5dab22370ef63f95a837a189fbb9401396d5ce717
+  checksum: 10c0/7df1bb470648edc4b528976b1b165c78d4c6731f680afac7cdc8324142f1ef4304598d317d98dac747a2ae8eee17271d760def90bba072021a8b19b459336ccd
   languageName: node
   linkType: hard
 
@@ -15373,7 +15373,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.4.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
@@ -15532,7 +15532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.3, typescript@npm:~5.3.0":
+"typescript@npm:^5.3.3":
   version: 5.3.3
   resolution: "typescript@npm:5.3.3"
   bin:
@@ -15542,13 +15542,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A~5.3.0#optional!builtin<compat/typescript>":
+"typescript@npm:~5.4.0":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/2954022ada340fd3d6a9e2b8e534f65d57c92d5f3989a263754a78aba549f7e6529acc1921913560a4b816c46dce7df4a4d29f9f11a3dc0d4213bb76d043251e
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
   version: 5.3.3
   resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A~5.4.0#optional!builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
   languageName: node
   linkType: hard
 
