@@ -1,11 +1,19 @@
 import { Card } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Card> = {
     title: 'Components/Card',
     component: Card,
 };
 
-export const NonClickable: Story = () => (
-    <Card>Hello, World!</Card>
-);
+export default meta;
+
+type Story = StoryObj<typeof Card>;
+
+export const NonClickable: Story = {
+    render: (args) => (
+        <Card {...args /* eslint-disable-line react/jsx-props-no-spreading */}>
+            Hello, world!
+        </Card>
+    ),
+};
