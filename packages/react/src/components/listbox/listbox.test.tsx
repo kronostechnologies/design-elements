@@ -16,7 +16,7 @@ describe('Listbox', () => {
         test('single value selects the corresponding option', () => {
             const wrapper = shallow(<Listbox options={options} defaultValue="optionB" />);
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toEqual(true);
         });
 
         test('array without multiselect only selects the option corresponding to the first value', () => {
@@ -24,8 +24,8 @@ describe('Listbox', () => {
                 <Listbox options={options} defaultValue={['optionA', 'optionB']} multiselect={false} />,
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toEqual(true);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toEqual(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toEqual(false);
         });
 
         test('array with multiselect selects all corresponding options', () => {
@@ -33,17 +33,17 @@ describe('Listbox', () => {
                 <Listbox options={options} defaultValue={['optionA', 'optionB']} multiselect />,
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toEqual(true);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toEqual(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toEqual(true);
         });
 
         test('no option is selected when no defaultValue is provided', () => {
             const wrapper = shallow(<Listbox options={options} />);
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
         });
     });
 
@@ -53,7 +53,7 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listitem-optionB').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toEqual(true);
         });
 
         test('multiple options can be selected with multiselect', () => {
@@ -61,8 +61,8 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
         });
 
         test('selected options can be unselected with multiselect', () => {
@@ -70,7 +70,7 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listitem-optionA').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(false);
         });
 
         test('disabled option is not selectable', () => {
@@ -78,7 +78,7 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listitem-optionD').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
         });
 
         test('the selected option is focused when the listbox gets the focus', () => {
@@ -86,7 +86,7 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listbox-container').simulate('focus');
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(true);
         });
 
         test('the focused option is not focused when the listbox looses the focus', () => {
@@ -94,7 +94,7 @@ describe('Listbox', () => {
 
             getByTestId(wrapper, 'listbox-container').simulate('blur');
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(false);
         });
     });
 
@@ -107,7 +107,7 @@ describe('Listbox', () => {
                 { key: 'ArrowDown', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(true);
         });
 
         test('ArrowUp focuses the previous option', () => {
@@ -118,7 +118,7 @@ describe('Listbox', () => {
                 { key: 'ArrowUp', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(true);
         });
 
         test('Home focuses the first option', () => {
@@ -129,7 +129,7 @@ describe('Listbox', () => {
                 { key: 'Home', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$focused')).toBe(true);
         });
 
         test('End focuses the last option', () => {
@@ -140,7 +140,7 @@ describe('Listbox', () => {
                 { key: 'End', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionE').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionE').prop('$focused')).toBe(true);
         });
 
         test('focused option gets selected', () => {
@@ -151,7 +151,7 @@ describe('Listbox', () => {
                 { key: 'ArrowDown', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
         });
 
         test('disabled options are skipped (ArrowDown)', () => {
@@ -164,8 +164,8 @@ describe('Listbox', () => {
                 { key: 'ArrowDown', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionE').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
         });
 
         test('disabled options are skipped (ArrowUp)', () => {
@@ -177,8 +177,8 @@ describe('Listbox', () => {
                 { key: 'ArrowUp', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
         });
 
         describe('with multiselect', () => {
@@ -190,14 +190,14 @@ describe('Listbox', () => {
                     { key: ' ', preventDefault: jest.fn() },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
 
                 getByTestId(wrapper, 'listbox-container').simulate(
                     'keydown',
                     { key: ' ', preventDefault: jest.fn() },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(false);
             });
 
             test('Ctrl+A selects all options except disabled', () => {
@@ -208,11 +208,11 @@ describe('Listbox', () => {
                     { key: 'a', ctrlKey: true, preventDefault: jest.fn() },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
-                expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
+                expect(getByTestId(wrapper, 'listitem-optionE').prop('$selected')).toBe(true);
             });
 
             test('Ctrl+A deselects all options when all options are selected', () => {
@@ -227,7 +227,7 @@ describe('Listbox', () => {
                 );
 
                 enabledOptionValues.forEach((value) => {
-                    expect(getByTestId(wrapper, `listitem-${value}`).prop('selected')).toBe(false);
+                    expect(getByTestId(wrapper, `listitem-${value}`).prop('$selected')).toBe(false);
                 });
             });
 
@@ -241,8 +241,8 @@ describe('Listbox', () => {
                     { key: 'ArrowUp', shiftKey: true, preventDefault: jest.fn() },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
             });
 
             test('Shift+ArrowDown selects the next option', () => {
@@ -255,8 +255,8 @@ describe('Listbox', () => {
                     { key: 'ArrowDown', shiftKey: true, preventDefault: jest.fn() },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
             });
 
             test('Ctrl+Shift+Home selects all options from the first to the focused option', () => {
@@ -274,9 +274,9 @@ describe('Listbox', () => {
                     },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
             });
 
             test('Ctrl+Shift+End selects all options from focused option to the last', () => {
@@ -294,9 +294,9 @@ describe('Listbox', () => {
                     },
                 );
 
-                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
-                expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
-                expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('$selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionD').prop('$selected')).toBe(false);
+                expect(getByTestId(wrapper, 'listitem-optionE').prop('$selected')).toBe(true);
             });
         });
     });
@@ -307,8 +307,8 @@ describe('Listbox', () => {
 
             wrapper.setProps({ value: 'optionB' }).update();
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(true);
         });
 
         test('selected option is deselected when the value prop is set to undefined', () => {
@@ -317,7 +317,7 @@ describe('Listbox', () => {
 
             wrapper.setProps({ value: undefined }).update();
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(false);
         });
 
         test('focused option is updated when the focusedValue prop is changed', () => {
@@ -325,8 +325,8 @@ describe('Listbox', () => {
 
             wrapper.setProps({ focusedValue: 'optionB' }).update();
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('focused')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$focused')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(true);
         });
 
         test('focused option looses focus when the focusedValue prop is set to undefined', () => {
@@ -335,7 +335,7 @@ describe('Listbox', () => {
 
             wrapper.setProps({ focusedValue: undefined }).update();
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('focused')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$focused')).toBe(false);
         });
 
         test('focused option is not automatically selected when the focusedValue prop is changed', () => {
@@ -343,10 +343,10 @@ describe('Listbox', () => {
 
             wrapper.setProps({ focusedValue: 'optionB' }).update();
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('focused')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$focused')).toBe(false);
+            expect(getByTestId(wrapper, 'listitem-optionA').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('$selected')).toBe(false);
         });
     });
 
