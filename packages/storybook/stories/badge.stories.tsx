@@ -1,20 +1,31 @@
 import { Badge, Icon } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
-import styled from 'styled-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Badge> = {
     title: 'Components/Badge',
     component: Badge,
+    argTypes: {
+        children: {
+            control: { type: null },
+        },
+    },
 };
 
-export const Default: Story = () => (
-    <Badge value={1}>
-        <Icon name="bell" />
-    </Badge>
-);
+export default meta;
 
-export const Dot: Story = () => (
-    <Badge value={1} showValue={false}>
-        <Icon name="bell" />
-    </Badge>
-);
+type Story = StoryObj<typeof Badge>;
+
+export const Default: Story = {
+    args: {
+        children: <Icon name="bell" />,
+        value: 1,
+    },
+};
+
+export const Dot: Story = {
+    args: {
+        children: <Icon name="bell" />,
+        showValue: false,
+        value: 1,
+    },
+};
