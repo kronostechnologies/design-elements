@@ -16,6 +16,7 @@ const preview: Preview = {
     decorators,
     parameters: {
         controls: {
+            exclude: ['key', 'ref'],
             expanded: true,
             sort: 'alpha',
         },

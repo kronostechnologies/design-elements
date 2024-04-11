@@ -9,6 +9,14 @@ const PlusIcon = styled(Icon).attrs({ name: 'plusSign', size: '16' })`
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
     component: Button,
+    argTypes: {
+        onClick: {
+            control: { type: null },
+        },
+        onKeyDown: {
+            control: { type: null },
+        },
+    },
 };
 
 export default meta;
