@@ -2,7 +2,7 @@ import { useToast } from '@equisoft/design-elements-react';
 import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
 import * as ToastStories  from './toast.stories';
 
-<Meta title="Components/Toast/Doc" />
+<Meta of={ToastStories} />
 
 # Toast
 
@@ -14,7 +14,7 @@ import * as ToastStories  from './toast.stories';
 
 ## Definition
 Toasts are time-based notifications that provide non-disruptive feedback about non-critical information. They are intended to be noticed without disrupting the user experience or requiring any action [1]. The content shown in these messages are helpful to the user but not as important to break the users current workflow and divert their complete attention to that message [8].
-<Canvas of={ToastStories.Default} />
+<Canvas of={ToastStories.Confirmation} />
 
 ## Usage
 
@@ -42,11 +42,11 @@ The confirmation toast uses the positive semantic color (green) and has a check 
 The warning toast uses the semantic color (yellow) and has a warning icon to help people with color vision impairment discern the tone of the message. It is used to indicate a warning.
 <Canvas of={ToastStories.Warning} />
 
-### Error
-The error toast uses the negative semantic color (red) and has an error icon to help people with color vision impairment discern the tone of the message. This is used to show an error or failure [1]. Error messages that are not properly worded can be the last straw that will cause users to give up, especially if the messages are confusing, intimidating, or make them feel uncomfortable [2]. The message should help the user achieve their goal in some way [3].
+### Alert
+The alert toast uses the negative semantic color (red) and has an error icon to help people with color vision impairment discern the tone of the message. This is used to show an error or failure [1]. Error messages that are not properly worded can be the last straw that will cause users to give up, especially if the messages are confusing, intimidating, or make them feel uncomfortable [2]. The message should help the user achieve their goal in some way [3].
 > **Avoid using toast for error messages!**
 Although error toast is still available, we discourage its use. Toast messages are normally too short to adequately explain what went wrong and how to fix the problem. Because the toast component appears at the bottom of the screen and disappears after few seconds, it can easily be missed. Reserve toast for errors not caused by users, like a connection timed out [5]. 
-<Canvas of={ToastStories.Error} />
+<Canvas of={ToastStories.Alert} />
 
 ### Discovery
 <Canvas of={ToastStories.Discovery} />

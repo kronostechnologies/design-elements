@@ -3,7 +3,7 @@ import { VoidFunctionComponent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Toast/Stories',
+    title: 'Components/Toast',
     component: useToast,
     parameters: rawCodeParameters,
 };
@@ -50,19 +50,6 @@ const warningCustomization: ThemeCustomization = {
     },
 };
 
-export const Default: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <Button
-                label="Click here!"
-                buttonType="primary"
-                onClick={() => showToast('success', 'This is a confirmation toast')}
-            />
-        </>
-    );
-};
-
 export const Neutral: VoidFunctionComponent = () => {
     const { showToast } = useToast();
     return (
@@ -72,21 +59,6 @@ export const Neutral: VoidFunctionComponent = () => {
                 buttonType="tertiary"
                 onClick={() => showToast('neutral', 'Document currently uploading...')}
             />
-        </>
-    );
-};
-
-export const Discovery: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <DesignSystem theme={discoveryCustomization}>
-                <Button
-                    label="Discovery"
-                    buttonType="primary"
-                    onClick={() => showToast('discovery', 'A discovery message!')}
-                />
-            </DesignSystem>
         </>
     );
 };
@@ -121,15 +93,30 @@ export const Warning: VoidFunctionComponent = () => {
     );
 };
 
-export const Error: VoidFunctionComponent = () => {
+export const Alert: VoidFunctionComponent = () => {
     const { showToast } = useToast();
     return (
         <>
             <Button
-                label="Error"
+                label="Alert"
                 buttonType="destructive"
                 onClick={() => showToast('alert', 'Unable to delete user')}
             />
+        </>
+    );
+};
+
+export const Discovery: VoidFunctionComponent = () => {
+    const { showToast } = useToast();
+    return (
+        <>
+            <DesignSystem theme={discoveryCustomization}>
+                <Button
+                    label="Discovery"
+                    buttonType="primary"
+                    onClick={() => showToast('discovery', 'A discovery message!')}
+                />
+            </DesignSystem>
         </>
     );
 };
