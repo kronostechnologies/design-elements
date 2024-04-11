@@ -6,7 +6,8 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #84C6EA;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -65,6 +66,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -141,6 +143,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -216,6 +219,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -285,7 +289,8 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #84C6EA;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -344,6 +349,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -420,6 +426,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -495,6 +502,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;

@@ -3,7 +3,7 @@ import { RefTokens } from '../ref-tokens';
 
 export type TagTokens =
     | 'tag-background-color'
-    | 'tag-box-shadow-color'
+    | 'tag-border-color'
     | 'tag-delete-button-icon-color'
     | 'tag-delete-button-hover-background-color'
     | 'tag-delete-icon-color'
@@ -20,7 +20,7 @@ export type TagTokenMap = {
 
 export const defaultTagTokens: TagTokenMap = {
     'tag-background-color': 'color-neutral-05',
-    'tag-box-shadow-color': 'color-neutral-50',
+    'tag-border-color': 'color-neutral-50',
     'tag-delete-button-icon-color': 'color-black',
     'tag-delete-button-hover-background-color': 'color-neutral-15',
     'tag-delete-icon-color': 'color-neutral-65',

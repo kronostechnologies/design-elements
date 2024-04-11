@@ -82,8 +82,8 @@ describe('Dropdown list', () => {
 
             getByTestId(wrapper, 'textbox').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-qc').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-qc').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-qc').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-qc').prop('$focused')).toBe(true);
         });
 
         test('defaultValue can select an empty value', () => {
@@ -111,8 +111,8 @@ describe('Dropdown list', () => {
             getByTestId(wrapper, 'listitem-qc').simulate('click');
             getByTestId(wrapper, 'textbox').simulate('click');
 
-            expect(getByTestId(wrapper, 'listitem-qc').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-qc').prop('focused')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-qc').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-qc').prop('$focused')).toBe(true);
         });
 
         test('the focused option is selected when clicking outside', () => {

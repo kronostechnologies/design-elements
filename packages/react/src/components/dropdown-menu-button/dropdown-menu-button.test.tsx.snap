@@ -62,6 +62,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -107,7 +108,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #84C6EA;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -397,7 +399,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -736,6 +738,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -781,7 +784,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #84C6EA;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1071,7 +1075,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
   color: #000000;
   list-style-type: none;
   position: absolute;
