@@ -1,38 +1,70 @@
-import { Button } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Button, Icon } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
+import styled from 'styled-components';
 
-export default {
+const PlusIcon = styled(Icon).attrs({ name: 'plusSign', size: '16' })`
+    margin-right: var(--spacing-1x);
+`;
+
+const meta: Meta<typeof Button> = {
     title: 'Components/Button',
     component: Button,
 };
 
-export const Primary: Story = () => (
-    <>
-        <Button label="Primary" buttonType="primary" />
-    </>
-);
-export const Secondary: Story = () => (
-    <>
-        <Button label="Secondary" buttonType="secondary" />
-     </>
-);
-export const Tertiary: Story = () => (
-     <>
-        <Button label="Tertiary" buttonType="tertiary" />
-     </>
-);
-export const DestructivePrimary: Story = () => (
-    <>
-        <Button label="Destructive Primary " buttonType="destructive" />
-    </>
-);
-export const DestructiveSecondary: Story = () => (
-     <>
-        <Button label="Destructive Secondary " buttonType="destructive-secondary" />
-    </>
-);
-export const DestructiveTertiary: Story = () => (
-    <>
-        <Button label="Destructive Tertiary " buttonType="destructive-tertiary" />
-    </>
-);
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+    args: {
+        buttonType: 'primary',
+        label: 'Primary',
+    },
+};
+
+export const Secondary: Story = {
+    args: {
+        buttonType: 'secondary',
+        label: 'Secondary',
+    },
+};
+
+export const Tertiary: Story = {
+    args: {
+        buttonType: 'tertiary',
+        label: 'Tertiary',
+    },
+};
+
+export const DestructivePrimary: Story = {
+    args: {
+        buttonType: 'destructive',
+        label: 'Destructive Primary',
+    },
+};
+
+export const DestructiveSecondary: Story = {
+    args: {
+        buttonType: 'destructive-secondary',
+        label: 'Destructive Secondary',
+    },
+};
+
+export const DestructiveTertiary: Story = {
+    args: {
+        buttonType: 'destructive-tertiary',
+        label: 'Destructive Tertiary',
+    },
+};
+
+export const PrimaryWithIcon: Story = {
+    args: {
+        buttonType: 'primary',
+    },
+    render: (args) => (
+        <Button {...args /* eslint-disable-line react/jsx-props-no-spreading */}>
+            <PlusIcon />
+            Add
+        </Button>
+    ),
+};

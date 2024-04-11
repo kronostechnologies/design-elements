@@ -1,48 +1,18 @@
-import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
+import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
-import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
+import { AbstractButton, getButtonTypeStyles } from './abstract-button';
+import { ButtonProps, Size } from './button';
 
-type Size = 'small' | 'medium';
-
-type Type = 'submit' | 'button' | 'reset';
-
-export interface IconButtonProps {
-    autofocus?: boolean;
+export interface IconButtonProps extends ButtonProps {
     children?: ReactElement<IconProps | AvatarProps>;
-    /**
-     * Visual style
-     * @default primary
-     */
-    buttonType: ButtonType;
-    className?: string;
-    disabled?: boolean;
-    /**
-     * @default true
-     */
-    focusable?: boolean;
-    inverted?: boolean;
     /**
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
-    /**
-     * Sets aria-label
-     */
-    label?: string;
-    /**
-     * Size variant
-     * @default medium
-     */
-    size?: Size;
-    title?: string;
-    type?: Type;
-
-    onClick?(event: MouseEvent<HTMLButtonElement>): void;
-    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
 const getButtonSizeStyles = (
