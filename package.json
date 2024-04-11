@@ -28,7 +28,7 @@
     "react-docgen-typescript": "^2.0.0",
     "@types/react-router-dom": "5.3.3",
     "webpack": "^5",
-    "react-docgen-typescript-plugin@^1.0.5": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch"
+    "react-docgen-typescript-plugin@^1.0.6": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch"
   },
   "packageManager": "yarn@4.1.1"
 }
