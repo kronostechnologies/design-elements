@@ -1,21 +1,15 @@
 import { Lozenge } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
-import { MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Components/Lozenge/Stories',
+    title: 'Components/Lozenge',
     component: Lozenge,
 };
 
 export const Default: Story = () => (
-    <Lozenge>This is to highlight some text</Lozenge>
+    <Lozenge>status</Lozenge>
 );
-
-export const Mobile: Story = () => (
-    <Lozenge>This is to highlight some text</Lozenge>
-);
-Mobile.decorators = [MobileDecorator];
 
 const VariantsContainer = styled.div`
     display: flex;
