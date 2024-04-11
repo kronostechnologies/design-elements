@@ -5,6 +5,7 @@ import {
     PropsWithChildren,
     useCallback,
     useEffect,
+    useRef,
     useMemo,
     useState,
 } from 'react';
@@ -234,6 +235,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [isClicked, setIsClicked] = useState<boolean>(false);
     const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
     const tooltipVariant = (mode === 'confirm' && isClicked) ? 'success' : 'normal';
+    const prevLabel = useRef(currentLabel);
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -253,6 +255,11 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
     }, { modifiers });
+
+    if (prevLabel.current !== currentLabel) {
+        prevLabel.current = currentLabel;
+        popperTooltip?.update?.();
+    }
 
     const openTooltip = useCallback((): void => {
         if (delayed && !disabled) {
