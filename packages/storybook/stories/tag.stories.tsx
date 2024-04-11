@@ -4,7 +4,7 @@ import { ReactElement, useRef, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Tag/Stories',
+    title: 'Components/Tag',
     component: Tag,
 };
 
@@ -25,28 +25,6 @@ export const Default: Story = (): ReactElement => {
                 {tags.map((tag) => <Tag key={tag.id} value={tag} size="medium" />)}
             </div>
         </>
-    );
-};
-
-export const Small: Story = (): ReactElement => (
-    <Tag value={{ label: 'Tag' }} size="small" />
-);
-
-export const Medium: Story = (): ReactElement => (
-    <Tag value={{ label: 'Tag' }} size="medium" />
-);
-
-export const WithIcons: Story = (): ReactElement => {
-    const options: TagProps[] = [
-        { value: { label: 'Tag 1', id: 'tag1' }, iconName: 'calendar' },
-        { value: { label: 'Tag 2', id: 'tag2' }, iconName: 'home' },
-        { value: { label: 'Tag 3', id: 'tag3' }, iconName: 'info' },
-    ];
-
-    return (
-        <div>
-            {options.map(({ iconName, value }) => <Tag key={value.id} iconName={iconName} value={value} />)}
-        </div>
     );
 };
 
@@ -82,13 +60,3 @@ export const Clickable: Story = () => {
         </>
     );
 };
-
-export const WithRef: Story = () => {
-    const ref = useRef(null);
-
-    return (
-        <Tag ref={ref} key="small" iconName="copy" size="small" value={{ label: 'Tag 1' }} />
-    );
-};
-
-WithRef.parameters = rawCodeParameters;
