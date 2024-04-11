@@ -1,64 +1,58 @@
-import { Accordion, ItemsProps } from '@equisoft/design-elements-react';
-import { Meta, StoryFn } from '@storybook/react';
-import { rawCodeParameters } from './utils/parameters';
+import { Accordion } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 
-// eslint-disable-next-line import/no-default-export
-const accordionMeta: Meta<typeof Accordion> = {
+const meta: Meta<typeof Accordion> = {
     title: 'Components/Accordion',
     component: Accordion,
-    parameters: rawCodeParameters,
-    tags: ['autodocs'],
     argTypes: {
-        id: {
-            table: { disable: false },
-        },
         items: {
-            table: { disable: false },
+            control: { type: null },
         },
-        mode: {
-            table: { disable: false },
+        onToggle: {
+            control: { type: null },
         },
     },
 };
 
-export default accordionMeta;
+export default meta;
 
-type Story = StoryFn<typeof Accordion>;
+type Story = StoryObj<typeof Accordion>;
 
-export const SingleSelect: Story = () => {
-    const items: ItemsProps[] = [
-        {
-            title: 'Panel Title 1',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 2',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 3',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-    ];
-
-    return <Accordion id="singleselect" items={items} />;
+export const SingleSelect: Story = {
+    args: {
+        items: [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ],
+    },
 };
 
-export const MultiSelect: Story = () => {
-    const items: ItemsProps[] = [
-        {
-            title: 'Panel Title 1',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 2',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-        {
-            title: 'Panel Title 3',
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
-        },
-    ];
-
-    return <Accordion mode="multi" id="multiselect" items={items} />;
+export const MultiSelect: Story = {
+    args: {
+        items: [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ],
+        mode: 'multi',
+    },
 };
