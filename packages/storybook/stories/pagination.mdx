@@ -1,0 +1,54 @@
+import { Pagination } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as PaginationStories  from './pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Pagination allows users to browse through content displayed on multiple pages.
+<Canvas of={PaginationStories.Default} />
+
+
+## Usage
+### When to use
+- Pagination is commonly used for things like table listings, search results, and directories.
+- Divide large quantities of data or content into chunks.
+- Make user comprehension of data/content less overwhelming.
+- Enable all users to navigate through pages or locate a specific page number.
+- Show how many pages of content there are and how many results have been returned.
+
+### When not to use
+- Do not use pagination for a transactional service or a form, use the progress tracker instead.
+- Do not use when your DB is too heavy to upload everything upfront.
+
+## Variants
+### Default
+<Canvas of={PaginationStories.Default} />
+
+### With truncation
+Coming soon!
+
+## Properties
+<ArgTypes of={Pagination} />
+
+## References
+1. [https://www.smashingmagazine.com/2007/11/pagination-gallery-examples-and-good-practices/](https://www.smashingmagazine.com/2007/11/pagination-gallery-examples-and-good-practices/)
+2. [https://medium.com/uxness/best-practices-for-designing-pagination-in-web-1c33140f31b](https://medium.com/uxness/best-practices-for-designing-pagination-in-web-1c33140f31b)
+3. [https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1](https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1)
+4. [https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination](https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination)
+5. [https://atlassian.design/components/pagination/examples#truncation](https://atlassian.design/components/pagination/examples#truncation)
+6. [https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=131#location](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=131#location)
+7. [https://atlassian.design/components/pagination/usage](https://atlassian.design/components/pagination/usage)
+8. [https://www.carbondesignsystem.com/components/pagination/usage/](https://www.carbondesignsystem.com/components/pagination/usage/)
+9. [https://agentestudio.com/blog/pagination-design-examples-and-best-practices](https://agentestudio.com/blog/pagination-design-examples-and-best-practices)
+10. [https://canvas.workday.com/components/navigation/pagination/](https://canvas.workday.com/components/navigation/pagination/)
+11. [https://pharos.jstor.org/components/pagination](https://pharos.jstor.org/components/pagination)
+
+

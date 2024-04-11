@@ -10,7 +10,7 @@ export default {
     decorators: [DeviceContextDecorator],
 };
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <>
         <Pagination resultsPerPage={10} numberOfResults={30} />
         <Pagination resultsPerPage={50} numberOfResults={100} />
@@ -31,11 +31,3 @@ export const ControlledPagination: Story = () => {
     );
 };
 ControlledPagination.parameters = rawCodeParameters;
-
-export const WithoutResults: Story = () => (
-    <Pagination resultsPerPage={11} />
-);
-
-export const With4DigitsNumberOfPages: Story = () => (
-    <Pagination resultsPerPage={2} numberOfResults={2000} />
-);
