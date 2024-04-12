@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect, Fragment } from 'react';
 import styled from 'styled-components';
 import {
     HeaderContext,
@@ -15,22 +15,17 @@ import {
     TableOptions,
     RowSelectionState,
 } from '@tanstack/react-table';
+import { TFunction } from 'i18next';
+import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { CustomColumnDef } from './types';
+import { TableData, TableColumn } from './types';
 
 type RowSize = 'small' | 'medium';
-
-export type TableColumn<T extends object> = CustomColumnDef<T>[];
-export type TableRow<T> = T & { error?: boolean };
-
-interface CustomRowProps {
-    error?: boolean;
-}
 
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     if (rowSize === 'small') {
@@ -135,11 +130,16 @@ const StyledTFoot = styled.tfoot`
     background: inherit;
 `;
 
-const StyledSubRowCell = styled.td`
-    border-top: 1px solid ${({ theme }) => theme.greys.grey};
+const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
+    transform: rotate(${({ $expanded }) => ($expanded ? 90 : 0)}deg);
+    transition: transform 0.2s ease-in-out;
+
+    &[aria-expanded='true'] {
+        background-color: transparent;
+    }
 `;
 
-function getUtilityColumn<T extends object>(type: string): CustomColumnDef<T> {
+function getUtilityColumn<T extends object>(type: string, t: TFunction<'translation'>): TableColumn<T> {
     return {
         id: type,
         className: utilColumnClassName,
@@ -178,20 +178,22 @@ function getUtilityColumn<T extends object>(type: string): CustomColumnDef<T> {
             }
 
             if (type === 'expand' && row.getCanExpand()) {
-                return row.getIsExpanded()
-                    ? (
-                        <IconButton
-                            buttonType='tertiary'
-                            iconName='caretDown'
-                            onClick={row.getToggleExpandedHandler()}
-                        />
-                    ) : (
-                        <IconButton
-                            buttonType='tertiary'
-                            iconName='caretRight'
-                            onClick={row.getToggleExpandedHandler()}
-                        />
-                    );
+                const isExpanded = row.getIsExpanded();
+                return (
+                    <ExpandButton
+                        type="button"
+                        buttonType="tertiary"
+                        iconName="caretRight"
+                        onClick={row.getToggleExpandedHandler()}
+                        aria-expanded={isExpanded}
+                        $expanded={isExpanded}
+                        aria-label={
+                            row.subRows.length > 0
+                                ? t('subrowsAriaLabel', { count: row.subRows.length })
+                                : undefined
+                        }
+                    />
+                );
             }
 
             return null;
@@ -202,10 +204,8 @@ function getUtilityColumn<T extends object>(type: string): CustomColumnDef<T> {
 export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
-    columns: CustomColumnDef<T>[];
+    columns: TableColumn<T>[];
     expandableRows?: boolean;
-    renderExpandedRow?: (props: { row: Row<T> }) => React.ReactNode;
-    rowCanExpand?: (row: Row<T>) => boolean;
     singleExpand?: boolean;
     /**
      * Adds row numbers
@@ -238,8 +238,6 @@ export const Table = <T extends object>({
     defaultSort,
     columns: providedColumns,
     expandableRows,
-    renderExpandedRow,
-    rowCanExpand,
     singleExpand,
     stickyHeader = false,
     stickyFooter = false,
@@ -252,6 +250,7 @@ export const Table = <T extends object>({
     onSelectedRowsChange,
     onSort,
 }: TableProps<T>): ReactElement => {
+    const { t } = useTranslation('table');
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
@@ -263,15 +262,15 @@ export const Table = <T extends object>({
         const cols = [...providedColumns];
 
         if (selectableRows) {
-            cols.unshift(getUtilityColumn<T>('selection'));
+            cols.unshift(getUtilityColumn<T>('selection', t));
         } else if (expandableRows) {
-            cols.unshift(getUtilityColumn<T>('expand'));
+            cols.unshift(getUtilityColumn<T>('expand', t));
         } else if (rowNumbers) {
-            cols.unshift(getUtilityColumn<T>('numbers'));
+            cols.unshift(getUtilityColumn<T>('numbers', t));
         }
 
         return cols;
-    }, [selectableRows, expandableRows, rowNumbers, providedColumns]);
+    }, [selectableRows, expandableRows, rowNumbers, providedColumns, t]);
 
     const tableOptions: TableOptions<T> = {
         data,
@@ -285,8 +284,13 @@ export const Table = <T extends object>({
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        getSubRows: ((row) => (row as any).subRows),
         getExpandedRowModel: getExpandedRowModel(),
-        getRowCanExpand: expandableRows ? (rowCanExpand ?? (() => true)) : undefined,
+        getRowCanExpand:
+            expandableRows
+                ? ((row) => row.subRows.length > 0 || !!(row.original as TableData<T>).subContent)
+                : undefined,
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
             setSorting(newValue);
@@ -331,35 +335,33 @@ export const Table = <T extends object>({
             <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>
+                        key={headerGroup.id}
                         headerGroup={headerGroup}
                         sticky={stickyHeader}
                     />
                 ))}
             </StyledTHead>
             <StyledTBody>
-                {table.getRowModel().rows.map((row) => (
-                    <>
-                        <TableRow<T>
-                            striped={striped}
-                            error={!!(row.original as CustomRowProps).error}
-                            row={row}
-                            onClick={onRowClick}
-                        />
-                        {row.getIsExpanded() && (
-                            <tr>
-                                <td />
-                                <StyledSubRowCell colSpan={999}>
-                                    {renderExpandedRow?.({ row })}
-                                </StyledSubRowCell>
-                            </tr>
-                        )}
-                    </>
-                ))}
+                {table.getRowModel().rows.map((row) => {
+                    const rowOriginal = row.original as TableData<T>;
+                    return (
+                        <Fragment key={row.id}>
+                            <TableRow<T>
+                                striped={striped}
+                                error={!!rowOriginal.error}
+                                row={row}
+                                onClick={onRowClick}
+                            />
+                            {rowOriginal.subContent !== undefined && row.getIsExpanded() && rowOriginal.subContent}
+                        </Fragment>
+                    );
+                })}
             </StyledTBody>
             {hasFooter && (
                 <StyledTFoot>
                     {table.getFooterGroups().map((footerGroup) => (
                         <TableFooter<T>
+                            key={footerGroup.id}
                             footerGroup={footerGroup}
                             sticky={stickyFooter}
                         />

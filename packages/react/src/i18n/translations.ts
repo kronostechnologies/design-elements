@@ -109,6 +109,9 @@ export const Translations = {
         'tag-medium': {
             deleteButtonAriaLabel: 'Remove tag {{label}}',
         },
+        table: {
+            subrowsAriaLabel: '{{count}} subrows for this item',
+        },
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
             maxLengthValidationErrorMessage:
@@ -233,6 +236,9 @@ export const Translations = {
         'stepper-buttons': {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
+        },
+        table: {
+            subrowsAriaLabel: '{{count}} sous-éléments pour cet élément',
         },
         'tag-medium': {
             deleteButtonAriaLabel: 'Retirer l\'étiquette {{label}}',

@@ -19,7 +19,7 @@ interface Data {
 }
 
 export const Normal: Story = () => {
-    const contactTableColumns: TableColumn<Data> = [
+    const contactTableColumns: TableColumn<Data>[] = [
         {
             header: 'First Name',
             accessorKey: 'column1',
