@@ -90,7 +90,7 @@ export type ButtonType =
     | 'primary'
     | 'secondary'
     | 'tertiary'
-    | 'destructive'
+    | 'destructive-primary'
     | 'destructive-secondary'
     | 'destructive-tertiary';
 
@@ -125,7 +125,7 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
             background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-background-color`]};
             border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
             color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-text-color`]};
-            ${buttonType === 'destructive' && css`
+            ${buttonType === 'destructive-primary' && css`
                 &,
                 ${focusable !== false && '&:focus,'}
                 &:hover {
