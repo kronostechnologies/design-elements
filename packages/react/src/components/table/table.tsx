@@ -130,7 +130,7 @@ const StyledTFoot = styled.tfoot`
     background: inherit;
 `;
 
-const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
+const ExpandButton = styled(IconButton)<{ $expanded: boolean }>`
     transform: rotate(${({ $expanded }) => ($expanded ? 90 : 0)}deg);
     transition: transform 0.2s ease-in-out;
 
