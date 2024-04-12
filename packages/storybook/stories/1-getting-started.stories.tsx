@@ -148,28 +148,28 @@ export const Theming: Story = {
                             <Button label="Primary" buttonType="primary" />
                             <Button label="Secondary" buttonType="secondary" />
                             <Button label="Tertiary" buttonType="tertiary" />
-                            <Button label="Destructive" buttonType="destructive" />
+                            <Button label="Destructive Primary" buttonType="destructive-primary" />
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" />
                         </div>
                         <div style={{ padding: '1rem' }}>
                             <Button label="Primary" buttonType="primary" disabled />
                             <Button label="Secondary" buttonType="secondary" disabled />
                             <Button label="Tertiary" buttonType="tertiary" disabled />
-                            <Button label="Destructive" buttonType="destructive" disabled />
+                            <Button label="Destructive Primary" buttonType="destructive-primary" disabled />
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" disabled />
                         </div>
                         <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
                             <Button label="Primary" buttonType="primary" inverted />
                             <Button label="Secondary" buttonType="secondary" inverted />
                             <Button label="Tertiary" buttonType="tertiary" inverted />
-                            <Button label="Destructive" buttonType="destructive" inverted />
+                            <Button label="Destructive Primary" buttonType="destructive-primary" inverted />
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" inverted />
                         </div>
                         <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
                             <Button label="Primary" buttonType="primary" inverted disabled />
                             <Button label="Secondary" buttonType="secondary" inverted disabled />
                             <Button label="Tertiary" buttonType="tertiary" inverted disabled />
-                            <Button label="Destructive" buttonType="destructive" inverted disabled />
+                            <Button label="Destructive Primary" buttonType="destructive-primary" inverted disabled />
                             <Button
                                 label="Destructive Secondary"
                                 buttonType="destructive-secondary"
