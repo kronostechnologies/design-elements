@@ -2,6 +2,11 @@ import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
+import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
+import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
+import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
+import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
+import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
@@ -9,7 +14,21 @@ import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/exter
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
+import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
+import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
+import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
+import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
+import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
+import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
+import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
+import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
+import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
+import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
+import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
+import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
+import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
@@ -30,7 +49,7 @@ import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
 import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
-import { defaultToastContainerTokens, ToastContainerTokens } from './component/toast-container-tokens';
+import { defaultToastTokens, ToastTokens } from './component/toast-container-tokens';
 import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
 import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
 import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
@@ -47,6 +66,25 @@ export type ComponentTokens =
     | FocusTokens
     | HeadingTokens
     | LabelTokens
+    | CheckboxTokens
+    | ChooserTokens
+    | DatepickerTokens
+    | DropdownListTokens
+    | ListboxTokens
+    | ComboboxTokens
+    | MenuTokens
+    | PasswordInputTokens
+    | NumericInputTokens
+    | PhoneInputTokens
+    | SearchInputTokens
+    | StepperTokens
+    | TextAreaTokens
+    | FieldTokens
+    | RadioButtonGroupTokens
+    | ToggleButtonGroupTokens
+    | ToggleSwitchTokens
+    | TextInputTokens
+    | RadioCardTokens
     | LegendTokens
     | NavListTokens
     | NavListItemTokens
@@ -62,7 +100,7 @@ export type ComponentTokens =
     | SpinnerTokens
     | StatusTokens
     | TagTokens
-    | ToastContainerTokens
+    | ToastTokens
     | AccordionTokens
     | CarouselTokens
     | ModalTokens
@@ -102,13 +140,32 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
     ...defaultFocusTokens,
+    ...defaultCheckboxTokens,
+    ...defaultChooserTokens,
+    ...defaultDatepickerTokens,
+    ...defaultDropdownListTokens,
+    ...defaultListboxTokens,
+    ...defaultComboboxTokens,
+    ...defaultMenuTokens,
+    ...defaultPasswordInputTokens,
+    ...defaultNumericInputTokens,
+    ...defaultPhoneInputTokens,
+    ...defaultSearchInputTokens,
+    ...defaultStepperTokens,
+    ...defaultTextAreaTokens,
+    ...defaultFieldTokens,
+    ...defaultRadioButtonGroupTokens,
+    ...defaultToggleButtonGroupTokens,
+    ...defaultToggleSwitchTokens,
+    ...defaultTextInputTokens,
+    ...defaultRadioCardTokens,
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,
     ...defaultSpinnerTokens,
     ...defaultStatusTokens,
     ...defaultTagTokens,
-    ...defaultToastContainerTokens,
+    ...defaultToastTokens,
     ...defaultAccordionTokens,
     ...defaultCarouselTokens,
     ...defaultModalTokens,

@@ -38,13 +38,13 @@ export interface DropdownListOption extends ListboxOption {
 
 function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     if ($disabled) {
-        return theme.greys['mid-grey'];
+        return theme.component['dropdown-list-input-disabled-border-color'];
     }
     if (!$valid) {
-        return theme.notifications['alert-2.1'];
+        return theme.component['dropdown-list-input-error-border-color'];
     }
 
-    return theme.greys['dark-grey'];
+    return theme.component['dropdown-list-input-border-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -52,17 +52,18 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: 6px;
     position: absolute;
     width: 100%;
 `;
 
 const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-input-disabled-background-color'] : theme.component['dropdown-list-input-background-color'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.greys['mid-grey']}`};
+    color: ${({ $disabled, theme }) => $disabled && theme.component['dropdown-list-input-disabled-text-color']};
     display: flex;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
@@ -83,7 +84,7 @@ const TextWrapper = styled.span`
 
 const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     align-items: center;
-    color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
     display: flex;
     flex: none;
     height: var(--size-1x);

@@ -74,7 +74,7 @@ describe('SectionalBanner', () => {
             const buttonWrapper = getByTestId(wrapper, `${device}-button`);
             const button = getByTestId(buttonWrapper, 'button');
 
-            expect(button.prop('buttonType')).toBe('destructive');
+            expect(button.prop('buttonType')).toBe('destructive-primary');
         });
 
         it(`should call callback when dismiss button is clicked (${device})`, () => {

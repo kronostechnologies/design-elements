@@ -39,6 +39,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: #FFFFFF;
   color: #006296;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -76,7 +77,6 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 }
 
 .c0:focus {
-  background-color: #FFFFFF;
   position: absolute;
 }
 
@@ -127,6 +127,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: #FFFFFF;
   color: #006296;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -164,7 +165,6 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
 }
 
 .c0:focus {
-  background-color: #FFFFFF;
   position: absolute;
 }
 

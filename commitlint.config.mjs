@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     extends: ['@commitlint/config-conventional'],
     ignores: [(message) => /^chore\([a-z-]+\): bump [^ ]+( from [^ ]+ to [^ ]+)?$/m.test(message)],
     rules: {
