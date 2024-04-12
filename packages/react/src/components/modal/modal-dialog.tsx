@@ -158,7 +158,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     function getFooter(): ReactElement {
-        const confirmButtonType = dialogType === 'alert' ? 'destructive' : 'primary';
+        const confirmButtonType = dialogType === 'alert' ? 'destructive-primary' : 'primary';
 
         return (
             <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>

@@ -3,8 +3,9 @@
 exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 .c0 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13,7 +14,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c0:focus {
@@ -141,6 +141,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -172,6 +173,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -198,6 +200,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -244,7 +247,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       data-testid="listitem-optionA"
       id="uuid1_optionA"
       role="option"
-      selected=""
     >
       <span
         aria-hidden="true"
@@ -300,7 +302,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       data-testid="listitem-optionC"
       id="uuid1_optionC"
       role="option"
-      selected=""
     >
       <span
         aria-hidden="true"
@@ -325,7 +326,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       aria-disabled="true"
       class="c11"
       data-testid="listitem-optionD"
-      disabled=""
       id="uuid1_optionD"
       role="option"
     >
@@ -379,8 +379,9 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 exports[`Listbox Matches the snapshot 1`] = `
 .c0 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -389,7 +390,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c0:focus {
@@ -425,6 +425,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -451,6 +452,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -460,6 +462,16 @@ exports[`Listbox Matches the snapshot 1`] = `
 
 .c5:hover {
   background-color: #DBDEE1;
+}
+
+.c5::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c6 {
@@ -477,6 +489,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -534,11 +547,11 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
+      aria-selected="true"
       class="c5"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
-      selected=""
     >
       <span
         class="c3"
@@ -562,7 +575,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-disabled="true"
       class="c6"
       data-testid="listitem-optionD"
-      disabled=""
       id="uuid1_optionD"
       role="option"
     >

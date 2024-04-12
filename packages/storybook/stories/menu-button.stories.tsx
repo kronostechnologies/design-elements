@@ -131,7 +131,7 @@ export const Normal: Story = () => (
         <MenuButton options={options} buttonType="primary" inverted>Button</MenuButton>
         <MenuButton options={options} buttonType="secondary">Button</MenuButton>
         <MenuButton options={options} buttonType="tertiary">Button</MenuButton>
-        <MenuButton options={options} buttonType="destructive">Button</MenuButton>
+        <MenuButton options={options} buttonType="destructive-primary">Button</MenuButton>
     </>
 );
 
