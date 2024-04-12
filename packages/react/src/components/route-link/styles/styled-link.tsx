@@ -15,6 +15,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
     align-items: center;
+    border-radius: var(--border-radius);
     color: ${({ disabled, theme }) => theme.component[`route-link${getDisabledSuffix(disabled)}-text-color`]};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;

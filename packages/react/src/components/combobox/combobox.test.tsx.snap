@@ -113,8 +113,9 @@ input + .c2 {
 
 .c9 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,7 +124,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c11 {
@@ -149,6 +149,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -192,6 +193,7 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -218,6 +220,26 @@ input + .c2 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c5::-webkit-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c5::-moz-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c5:-ms-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c5::placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -233,7 +255,7 @@ input + .c2 {
   height: var(--size-1x);
   padding: var(--spacing-half);
   position: absolute;
-  right: var(--spacing-half);
+  right: 0;
   width: var(--size-1x);
 }
 
@@ -255,13 +277,14 @@ input + .c2 {
     class="c4"
   >
     <input
-      aria-autocomplete="none"
+      aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-expanded="true"
       aria-invalid="false"
       aria-required="false"
       class="c5"
       data-testid="textbox"
+      disabled=""
       id="uuid1"
       role="combobox"
       tabindex="0"
@@ -597,8 +620,9 @@ input + .c2 {
 
 .c11 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -607,7 +631,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c13 {
@@ -633,6 +656,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -676,6 +700,7 @@ input + .c2 {
 }
 
 .c12 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -701,6 +726,26 @@ input + .c2 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c7::-webkit-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c7::-moz-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c7:-ms-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c7::placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
 .c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -716,7 +761,7 @@ input + .c2 {
   height: var(--size-1x);
   padding: var(--spacing-half);
   position: absolute;
-  right: var(--spacing-half);
+  right: 0;
   width: var(--size-1x);
 }
 
@@ -748,13 +793,13 @@ input + .c2 {
       height="16"
       width="16"
     />
-    validationErrorMessage
+    You must select an option
   </span>
   <div
     class="c6"
   >
     <input
-      aria-autocomplete="none"
+      aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-describedby="uuid1_invalid"
       aria-expanded="true"
@@ -1050,8 +1095,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1060,7 +1106,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c9 {
@@ -1086,6 +1131,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1128,6 +1174,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -1153,6 +1200,26 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c3::-webkit-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c3::-moz-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c3:-ms-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c3::placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
 .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1168,7 +1235,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   height: var(--size-1x);
   padding: var(--spacing-half);
   position: absolute;
-  right: var(--spacing-half);
+  right: 0;
   width: var(--size-1x);
 }
 
@@ -1183,7 +1250,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
     class="c2"
   >
     <input
-      aria-autocomplete="none"
+      aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-expanded="true"
       aria-invalid="false"
@@ -1511,8 +1578,9 @@ input + .c2 {
 
 .c10 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1521,7 +1589,6 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
-  z-index: 1000;
 }
 
 .c12 {
@@ -1547,6 +1614,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1590,6 +1658,7 @@ input + .c2 {
 }
 
 .c11 {
+  margin-top: 6px;
   position: absolute;
   width: 100%;
 }
@@ -1615,6 +1684,26 @@ input + .c2 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c6::-webkit-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c6::-moz-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c6:-ms-input-placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
+.c6::placeholder {
+  color: #B7BBC2;
+  font-style: italic;
+}
+
 .c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1630,7 +1719,7 @@ input + .c2 {
   height: var(--size-1x);
   padding: var(--spacing-half);
   position: absolute;
-  right: var(--spacing-half);
+  right: 0;
   width: var(--size-1x);
 }
 
@@ -1658,7 +1747,7 @@ input + .c2 {
     class="c5"
   >
     <input
-      aria-autocomplete="none"
+      aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-describedby="uuid1_hint"
       aria-expanded="true"

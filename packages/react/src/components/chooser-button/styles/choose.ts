@@ -7,11 +7,11 @@ export const Label = styled.label`
             --border-radius: 8px;
 
             align-items: center;
-            background: ${theme.greys.white};
-            border: 1px solid ${theme.greys['dark-grey']};
+            background: ${theme.component['chooser-background-color']};
+            border: 1px solid ${theme.component['chooser-border-color']};
             border-radius: var(--border-radius);
             box-sizing: border-box;
-            color: ${theme.greys['dark-grey']};
+            color: ${theme.component['chooser-text-color']};
             display: flex;
             font-size: 1rem;
             justify-content: center;
@@ -23,24 +23,25 @@ export const Label = styled.label`
             transition: all 0.25s ease-in-out;
 
             &:hover {
-                background: ${theme.greys.grey};
-                border-color: ${theme.greys.grey};
+                background: ${theme.component['chooser-hover-background-color']};
+                border-color: ${theme.component['chooser-hover-border-color']};
+                color: ${theme.component['chooser-hover-text-color']};
             }
 
             input[type="checkbox"]:checked + &,
             input[type="radio"]:checked + & {
-                background: ${theme.main['primary-1.1']};
-                border-color: ${theme.main['primary-1.1']};
-                color: ${theme.greys.white};
+                background: ${theme.component['chooser-selected-background-color']};
+                border-color: ${theme.component['chooser-selected-border-color']};
+                color: ${theme.component['chooser-selected-text-color']};
             }
 
             ${focus({ theme }, true, 'input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
 
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {
-                background: ${theme.greys['light-grey']};
-                border-color: ${theme.greys.grey};
-                color: ${theme.greys['mid-grey']};
+                background: ${theme.component['chooser-disabled-background-color']};
+                border-color: ${theme.component['chooser-disabled-border-color']};
+                color: ${theme.component['chooser-disabled-text-color']};
             }
 
             b {

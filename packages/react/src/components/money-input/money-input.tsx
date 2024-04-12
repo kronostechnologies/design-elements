@@ -10,7 +10,6 @@ type Language = 'en' | 'fr';
 const InputWrapper = styled.div<{ language: Language }>`
     input {
         text-align: ${({ language }) => (language === 'en' ? 'left' : 'right')};
-        transition: width 300ms;
         width: 132px;
     }
 `;

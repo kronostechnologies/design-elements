@@ -150,6 +150,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -844,6 +845,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -1536,6 +1538,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -2229,6 +2232,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
