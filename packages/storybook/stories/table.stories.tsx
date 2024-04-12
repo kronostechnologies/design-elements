@@ -666,7 +666,6 @@ export const ExpandableSubContent: Story = () => {
             name: 'AAA',
             subContent: (
                 <tr>
-                    <td />
                     <td colSpan={99}>
                         Sub content of AAA
                     </td>
@@ -678,7 +677,6 @@ export const ExpandableSubContent: Story = () => {
             name: 'BBB',
             subContent: (
                 <tr>
-                    <td />
                     <td colSpan={99}>
                         Sub content of BBB
                     </td>
