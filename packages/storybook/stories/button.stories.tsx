@@ -46,7 +46,7 @@ export const Tertiary: Story = {
 
 export const DestructivePrimary: Story = {
     args: {
-        buttonType: 'destructive',
+        buttonType: 'destructive-primary',
         label: 'Destructive Primary',
     },
 };

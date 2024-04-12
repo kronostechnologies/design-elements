@@ -149,6 +149,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -655,6 +656,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1129,6 +1131,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1611,6 +1614,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
