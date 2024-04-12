@@ -37,7 +37,7 @@ export const AlertModal: Story = {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
             <>
-                <Button label="Open Modal" buttonType="destructive" onClick={openModal} />
+                <Button label="Open Modal" buttonType="destructive-primary" onClick={openModal} />
                 <ModalDialog
                     appElement="#storybook-root"
                     ariaDescribedby="story-description"

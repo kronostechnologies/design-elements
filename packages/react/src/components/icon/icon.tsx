@@ -41,6 +41,8 @@ import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import { VoidFunctionComponent } from 'react';
 import AlertFilled from '../../icons/alert-filled.svg';
+import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
+import ArrowUpCircle from '../../icons/arrow-up-circle.svg';
 import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
 import Files from '../../icons/files.svg';
@@ -55,6 +57,7 @@ import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import CaretDown from '../../icons/caret-down.svg';
 import CaretRight from '../../icons/caret-right.svg';
+import Unlink from '../../icons/unlink.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
@@ -65,6 +68,8 @@ const iconMapping = {
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
     arrowUp: ArrowUp,
+    arrowDownCircle: ArrowDownCircle,
+    arrowUpCircle: ArrowUpCircle,
     bell: Bell,
     bento: Bento,
     calendar: Calendar,
@@ -109,6 +114,7 @@ const iconMapping = {
     star: Star,
     transfer: Transfer,
     trash: Trash,
+    unlink: Unlink,
     user: User,
     users: Users,
     warningFilled: WarningFilled,
