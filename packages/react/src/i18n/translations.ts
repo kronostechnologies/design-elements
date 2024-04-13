@@ -8,7 +8,12 @@ export const Translations = {
             externalsLabel: 'Resources',
         },
         combobox: {
+            clearInput: 'Clear input',
+            loading: 'Loading...',
+            noResult: 'No result',
+            noResultForQuery: 'No result for "{{query}}"',
             showOptions: 'Show {{label}} options',
+            validationErrorMessage: 'You must select an option',
         },
         common: {
             opensInNewTab: 'opens in a new tab',
@@ -136,7 +141,12 @@ export const Translations = {
             externalsLabel: 'Ressources',
         },
         combobox: {
+            clearInput: 'Vider le champ',
+            loading: 'Chargement...',
+            noResult: 'Aucun résultat',
+            noResultForQuery: 'Aucun résultat pour "{{query}}"',
             showOptions: 'Afficher les options pour {{label}}',
+            validationErrorMessage: 'Vous devez sélectionner une option',
         },
         common: {
             opensInNewTab: 'ouvre dans un nouvel onglet',

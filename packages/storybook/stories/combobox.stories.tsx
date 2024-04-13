@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Combobox } from '@equisoft/design-elements-react';
+import { Button, Combobox, ComboboxOption } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -38,33 +38,25 @@ export const Normal: Story = () => (
         label="Select an option"
         hint="Hint"
         options={provinces}
+        placeholder="Select the best province"
     />
 );
 
-export const ListAutocomplete: Story = () => (
+export const WithInlineAutocomplete: Story = () => (
     <Combobox
         label="Select an option"
         hint="Hint"
+        inlineAutoComplete
         options={provinces}
-        autoComplete="list"
     />
 );
 
-export const InlineAutocomplete: Story = () => (
+export const AllowCustomValue: Story = () => (
     <Combobox
+        allowCustomValue
         label="Select an option"
         hint="Hint"
         options={provinces}
-        autoComplete="inline"
-    />
-);
-
-export const BothAutocompletes: Story = () => (
-    <Combobox
-        label="Select an option"
-        hint="Hint"
-        options={provinces}
-        autoComplete="both"
     />
 );
 
@@ -86,21 +78,41 @@ export const Disabled: Story = () => (
     <Combobox label="Select an option" options={provinces} disabled />
 );
 
-export const Invalid: Story = () => (
-    <Combobox label="Select an option" options={provinces} valid={false} />
-);
+export const RequiredWithValidationError: Story = () => {
+    const [value, setValue] = useState<string | undefined>(undefined);
+    const [valid, setValid] = useState(true);
 
-export const Required: Story = () => (
-    <Combobox required label="Select an option" options={provinces} />
-);
+    return (
+        <>
+            <Combobox
+                label="Select an option"
+                options={provinces}
+                onChange={(newValue) => { setValid(true); setValue(newValue); }}
+                required
+                valid={valid}
+            />
+            <Button buttonType="primary" onClick={() => setValid(!!value)}>Submit</Button>
+        </>
+    );
+};
 
-export const WithCallback: Story = () => (
-    <Combobox
-        label="Select an option"
-        options={provinces}
-        onChange={(newValue) => console.info(`Value: ${newValue}`)}
-    />
-);
+export const WithCallback: Story = () => {
+    const [output, setOutput] = useState('');
+
+    return (
+        <>
+            <Combobox
+                label="Select an option"
+                options={provinces}
+                onChange={setOutput}
+            />
+
+            <div style={{ marginTop: '40px' }}>
+                {`Value: ${output}`}
+            </div>
+        </>
+    );
+};
 WithCallback.parameters = rawCodeParameters;
 
 export const WithDefaultValue: Story = () => (
@@ -121,7 +133,6 @@ export const WithControlledValue: Story = () => {
                 options={provinces}
                 onChange={handleChange}
                 value={value}
-                autoComplete="both"
             />
             <Button buttonType="primary" onClick={() => setValue('Quebec')}>Set value to Quebec</Button>
         </>
@@ -137,4 +148,25 @@ export const WithDisabledOptions: Story = () => {
     ];
 
     return <Combobox label="Select an option" options={disabledOptions} />;
+};
+
+export const UsingAsyncDataSource: Story = () => {
+    const [options, setOptions] = useState<ComboboxOption[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    function handleChange(newValue: string): void {
+        if (newValue === '') {
+            setOptions([]);
+            return;
+        }
+
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setOptions(provinces.filter(({ value }) => value.toLowerCase().startsWith(newValue.toLowerCase())));
+            setIsLoading(false);
+        }, 500);
+    }
+
+    return <Combobox label="Select an option" isLoading={isLoading} options={options} onChange={handleChange} />;
 };

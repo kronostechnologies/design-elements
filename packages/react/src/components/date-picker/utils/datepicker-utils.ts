@@ -1,7 +1,10 @@
 import type { Locale } from 'date-fns';
 import { enCA } from 'date-fns/locale';
+import { Month } from 'date-fns/types';
 import { range } from '../../../utils/range';
 import { DropdownListOption } from '../../dropdown-list/dropdown-list';
+
+const monthNumbers: Month[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -12,12 +15,7 @@ export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): 
 }
 
 export function getLocaleMonthsShort(locale: Locale): string[] {
-    const months: string[] = [];
-    for (let i = 0; i < 12; i++) {
-        months.push(locale.localize?.month(i, { width: 'abbreviated' }));
-    }
-
-    return months;
+    return monthNumbers.map((m: Month) => locale.localize?.month(m, { width: 'abbreviated' }));
 }
 
 export function getLocaleDateFormat(locale: Locale = enCA): string {
@@ -44,15 +42,10 @@ export function getLocaleDatePlaceholder(locale?: Locale): string {
 }
 
 export function getLocaleMonthsOptions(locale: Locale): DropdownListOption[] {
-    const monthsOptions: DropdownListOption[] = [];
-    for (let i = 0; i < 12; i++) {
-        monthsOptions.push({
-            value: locale.localize?.month(i).toLowerCase(),
-            label: locale.localize?.month(i, { width: 'abbreviated' }),
-        });
-    }
-
-    return monthsOptions;
+    return monthNumbers.map((m: Month) => ({
+        value: locale.localize?.month(m).toLowerCase(),
+        label: locale.localize?.month(m, { width: 'abbreviated' }),
+    }));
 }
 
 export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): DropdownListOption[] {
