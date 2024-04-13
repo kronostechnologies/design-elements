@@ -87,6 +87,7 @@ interface ListItemProps {
     $isMobile: boolean;
     $selected: boolean;
     $focused: boolean;
+    $multiselect: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -149,6 +150,7 @@ const ListItem = styled.li<ListItemProps>`
     line-height: var(--size-1halfx);
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
+    position: relative;
 
     ${({ $isMobile }) => (!$isMobile && css`
         padding-right: var(--spacing-1x);
@@ -169,6 +171,18 @@ const ListItem = styled.li<ListItemProps>`
         & ${CustomCheckbox} {
             background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
             border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
+        }
+    `)}
+
+    ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
+        &::before {
+            background-color: ${({ theme }) => theme.component['listbox-item-selected-border-color']};
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: 4px;
         }
     `)}
 `;
@@ -481,6 +495,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         }}
                         role="option"
                         $selected={isOptionSelected(option)}
+                        $multiselect={multiselect}
                     >
                         {multiselect ? (
                             <CustomCheckbox
