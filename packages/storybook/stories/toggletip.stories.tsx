@@ -1,11 +1,22 @@
 import { Toggletip } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Toggletip> = {
     title: 'Components/Toggletip',
     component: Toggletip,
 };
 
-export const Default: Story = () => (
-    <Toggletip defaultOpen>Toggletip Content</Toggletip>
-);
+export default meta;
+
+type Story = StoryObj<typeof Toggletip>;
+
+export const Default: Story = {
+    args: {
+        defaultOpen: true,
+    },
+    render: (args) => (
+        <Toggletip {...args /* eslint-disable-line react/jsx-props-no-spreading */}>
+            Toggletip content
+        </Toggletip>
+    ),
+};
