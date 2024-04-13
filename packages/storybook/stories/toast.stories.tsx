@@ -1,122 +1,59 @@
-import { Button, DesignSystem, ThemeCustomization, useToast } from '@equisoft/design-elements-react';
-import { VoidFunctionComponent } from 'react';
-import { rawCodeParameters } from './utils/parameters';
+import { Button, ToastType, useToast } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta = {
     title: 'Components/Toast',
-    component: useToast,
-    parameters: rawCodeParameters,
-};
-
-const discoveryCustomization: ThemeCustomization = {
-    component: {
-        'button-primary-background-color': 'color-discovery-50',
-        'button-primary-border-color': 'color-discovery-50',
-        'button-primary-text-color': 'color-white',
-        'button-primary-hover-background-color': 'color-discovery-70',
-        'button-primary-hover-border-color': 'color-discovery-70',
-        'button-primary-hover-text-color': 'color-white',
-        'button-primary-focus-background-color': 'color-discovery-50',
-        'button-primary-focus-border-color': 'color-discovery-50',
-        'button-primary-focus-text-color': 'color-white',
+    parameters: {
+        controls: {
+            disable: true,
+        },
     },
 };
 
-const successCustomization: ThemeCustomization = {
-    component: {
-        'button-primary-background-color': 'color-success-50',
-        'button-primary-border-color': 'color-success-50',
-        'button-primary-text-color': 'color-white',
-        'button-primary-hover-background-color': 'color-success-70',
-        'button-primary-hover-border-color': 'color-success-70',
-        'button-primary-hover-text-color': 'color-white',
-        'button-primary-focus-background-color': 'color-success-50',
-        'button-primary-focus-border-color': 'color-success-50',
-        'button-primary-focus-text-color': 'color-white',
-    },
-};
+export default meta;
 
-const warningCustomization: ThemeCustomization = {
-    component: {
-        'button-primary-background-color': 'color-warning-50',
-        'button-primary-border-color': 'color-warning-50',
-        'button-primary-text-color': 'color-neutral-90',
-        'button-primary-hover-background-color': 'color-warning-60',
-        'button-primary-hover-border-color': 'color-warning-60',
-        'button-primary-hover-text-color': 'color-neutral-90',
-        'button-primary-focus-background-color': 'color-warning-50',
-        'button-primary-focus-border-color': 'color-warning-50',
-        'button-primary-focus-text-color': 'color-neutral-90',
-    },
-};
+function createStory(toastType: ToastType, toastMessage: string): StoryObj {
+    const label = `Show ${toastType === 'success' ? 'confirmation' : toastType} toast`;
 
-export const Neutral: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <Button
-                label="Neutral"
-                buttonType="tertiary"
-                onClick={() => showToast('neutral', 'Document currently uploading...')}
-            />
-        </>
-    );
-};
-
-export const Confirmation: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <DesignSystem theme={successCustomization}>
+    return {
+        render: () => {
+            const { showToast } = useToast();
+            return (
                 <Button
-                    label="Confirmation"
+                    label={label}
                     buttonType="primary"
-                    onClick={() => showToast('success', 'User profile updated')}
+                    onClick={() => showToast(toastType, toastMessage)}
                 />
-            </DesignSystem>
-        </>
-    );
-};
+            );
+        },
+        parameters: {
+            docs: {
+                source: {
+                    // In order to show only the relevant code in the story, the `dynamic` source type is
+                    // used. However, the code shown in the `onClick` prop gets truncated so the complete
+                    // source has to be provided here as an override.
+                    code: `
+const { showToast } = useToast();
+return (
+    <Button
+        label="${label}"
+        buttonType="primary"
+        onClick={() => showToast('${toastType}', '${toastMessage}')}
+    />
+);
+                    `,
+                },
+            },
+        },
+    };
+}
 
-export const Warning: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <DesignSystem theme={warningCustomization}>
-                <Button
-                    label="Warning"
-                    buttonType="primary"
-                    onClick={() => showToast('warning', 'Your license is about to expire')}
-                />
-            </DesignSystem>
-        </>
-    );
-};
+export const Neutral = createStory('neutral', 'Document currently uploading...');
 
-export const Alert: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <Button
-                label="Alert"
-                buttonType="destructive-primary"
-                onClick={() => showToast('alert', 'Unable to delete user')}
-            />
-        </>
-    );
-};
+export const Confirmation = createStory('success', 'User profile updated');
 
-export const Discovery: VoidFunctionComponent = () => {
-    const { showToast } = useToast();
-    return (
-        <>
-            <DesignSystem theme={discoveryCustomization}>
-                <Button
-                    label="Discovery"
-                    buttonType="primary"
-                    onClick={() => showToast('discovery', 'A discovery message!')}
-                />
-            </DesignSystem>
-        </>
-    );
-};
+export const Warning = createStory('warning', 'Your license is about to expire');
+
+export const Alert = createStory('alert', 'Unable to delete user');
+
+export const Discovery = createStory('discovery', 'A discovery message!');
