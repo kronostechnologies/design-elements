@@ -77,6 +77,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -88,6 +89,16 @@ input + .c2 {
 
 .c10:hover {
   background-color: #DBDEE1;
+}
+
+.c10::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c12 {
@@ -105,6 +116,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -526,6 +538,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -537,6 +550,16 @@ input + .c2 {
 
 .c12:hover {
   background-color: #DBDEE1;
+}
+
+.c12::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c14 {
@@ -554,6 +577,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -945,6 +969,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -955,6 +980,16 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 .c8:hover {
   background-color: #DBDEE1;
+}
+
+.c8::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c10 {
@@ -972,6 +1007,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1371,6 +1407,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1382,6 +1419,16 @@ input + .c2 {
 
 .c11:hover {
   background-color: #DBDEE1;
+}
+
+.c11::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c13 {
@@ -1399,6 +1446,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
