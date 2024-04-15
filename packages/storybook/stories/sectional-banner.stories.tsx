@@ -26,107 +26,79 @@ interface DismissState {
     alert: boolean;
 }
 
-export const AllMessageTypes: Story = () => {
-    const [state, setState] = useState<DismissState>({
-        neutral: true,
-        info: true,
-        discovery: true,
-        success: true,
-        warning: true,
-        alert: true,
-    });
+export const Neutral: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
 
-    function handleDismiss(type: keyof DismissState): void {
-        setState({ ...state, [type]: false });
-    }
-
-    return (
-        <>
-            {state.neutral && (
-                <SectionalBanner type="neutral" onDismiss={() => handleDismiss('neutral')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-
-            {state.info && (
-                <SectionalBanner type="info" onDismiss={() => handleDismiss('info')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-
-            {state.discovery && (
-                <SectionalBanner type="discovery" onDismiss={() => handleDismiss('discovery')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-
-            {state.success && (
-                <SectionalBanner type="success" onDismiss={() => handleDismiss('success')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-
-            {state.warning && (
-                <SectionalBanner type="warning" onDismiss={() => handleDismiss('warning')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-
-            {state.alert && (
-                <SectionalBanner type="alert" onDismiss={() => handleDismiss('alert')}>
-                    Here&apos;s a contextual notice with an icon and title.
-                </SectionalBanner>
-            )}
-        </>
+    return !dismissed ? (
+        <SectionalBanner type="neutral" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
     );
 };
 
-export const MobileAllMessageTypes = AllMessageTypes.bind({});
-MobileAllMessageTypes.decorators = [MobileDecorator];
+export const Informative: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
 
-export const WithButton: Story = () => {
-    function handleClick(type: string): void {
-        console.info(`Clicked on ${type}`);
-    }
-
-    return (
-        <>
-            <SectionalBanner type="neutral" buttonLabel="Click me" onButtonClicked={() => handleClick('neutral')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-
-            <SectionalBanner type="info" buttonLabel="Click me" onButtonClicked={() => handleClick('info')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-
-            <SectionalBanner type="discovery" buttonLabel="Click me" onButtonClicked={() => handleClick('discovery')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-
-            <SectionalBanner type="success" buttonLabel="Click me" onButtonClicked={() => handleClick('success')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-
-            <SectionalBanner type="warning" buttonLabel="Click me" onButtonClicked={() => handleClick('warning')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-
-            <SectionalBanner type="alert" buttonLabel="Click me" onButtonClicked={() => handleClick('alert')}>
-                Here&apos;s a contextual notice with an icon and title.
-            </SectionalBanner>
-        </>
+    return !dismissed ? (
+        <SectionalBanner type="info" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
     );
 };
 
-export const WithCustomMessage: Story = () => (
-    <SectionalBanner type="alert" title="Some title">
-        <p>Some sub title</p>
-        <ul>
-            <li>Some bullet points</li>
-            <li>Some bullet points</li>
-        </ul>
-    </SectionalBanner>
-);
+export const Success: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
 
-export const MobileWithButton = WithButton.bind({});
-MobileWithButton.decorators = [MobileDecorator];
+    return !dismissed ? (
+        <SectionalBanner type="success" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+    );
+};
+
+export const Warning: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
+
+    return !dismissed ? (
+        <SectionalBanner type="warning" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+    );
+};
+
+export const Alert: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
+
+    return !dismissed ? (
+        <SectionalBanner type="alert" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+                <p>Some sub title</p>
+                        <ul>
+                            <li>Some bullet points</li>
+                            <li>Some bullet points</li>
+                        </ul>
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+    );
+};
+
+export const Discovery: Story = () => {
+    const [dismissed, setDismissed] = useState<boolean>(false);
+
+    return !dismissed ? (
+        <SectionalBanner type="discovery" onDismiss={() => setDismissed(true)}>
+            Here&apos;s a contextual notice with an icon and title.
+        </SectionalBanner>
+    ) : (
+        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+    );
+};
