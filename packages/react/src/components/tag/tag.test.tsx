@@ -24,7 +24,7 @@ describe('Tag', () => {
                 });
 
                 it(
-                    'should have aria-hidden="false" and an aria-label on icon when the label is not the same as iconName',
+                    'should have aria-hidden="false" and an icon aria-label when label is not the same as iconName',
                     () => {
                         const wrapper = shallow(
                             <Tag size={size} color={color} iconName="home" value={{ label: 'Test' }} />,
