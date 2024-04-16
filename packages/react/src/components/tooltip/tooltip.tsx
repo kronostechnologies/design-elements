@@ -358,7 +358,9 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     <Icon
                         name="info"
                         size={isMobile ? '24' : '16'}
-                        color={invertedIcon ? Theme.greys.white : Theme.greys['dark-grey']}
+                        color={invertedIcon
+                            ? Theme.component['tooltip-inverted-icon-color']
+                            : Theme.component['tooltip-icon-color']}
                     />
                 )}
             </StyledSpan>

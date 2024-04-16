@@ -2,6 +2,8 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type TooltipTokens =
+    | 'tooltip-icon-color'
+    | 'tooltip-inverted-icon-color'
     | 'tooltip-popper-container-border-color'
     | 'tooltip-popper-container-text-color'
     | 'tooltip-popper-container-success-background-color'
@@ -14,6 +16,8 @@ export type TooltipTokenMap = {
 };
 
 export const defaultTooltipTokens: TooltipTokenMap = {
+    'tooltip-icon-color': 'color-content',
+    'tooltip-inverted-icon-color': 'color-content-inverse',
     'tooltip-popper-container-border-color': 'color-border-inverse',
     'tooltip-popper-container-text-color': 'color-content-inverse',
     'tooltip-popper-container-default-background-color': 'color-bg-neutral-bold',

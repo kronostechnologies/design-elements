@@ -9,7 +9,8 @@ export type NavListTokens =
     | 'nav-list-item-hover-background-color'
     | 'nav-list-item-text-hover-color'
     | 'nav-list-item-icon-hover-color'
-    | 'nav-list-item-disabled-text-color';
+    | 'nav-list-item-disabled-text-color'
+    | 'nav-list-box-shadow-color';
 
 export type NavListTokenValue = AliasTokens | RefTokens;
 
@@ -29,4 +30,6 @@ export const defaultNavListTokens: NavListTokenMap = {
     'nav-list-item-icon-hover-color': 'color-menu-item-content-hover',
 
     'nav-list-item-disabled-text-color': 'color-menu-item-content-disabled',
+
+    'nav-list-box-shadow-color': 'color-box-shadow',
 };

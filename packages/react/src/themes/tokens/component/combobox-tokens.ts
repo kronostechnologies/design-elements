@@ -8,6 +8,10 @@ export type ComboboxTokens =
     | 'combobox-disabled-border-color'
     | 'combobox-error-border-color'
     | 'combobox-disabled-text-color'
+    | 'combobox-placeholder-text-color'
+    | 'combobox-clear-button-icon-color'
+    | 'combobox-clear-button-disabled-icon-color'
+    | 'combobox-clear-button-border-right-color'
     | 'combobox-arrow-button-background-color'
     | 'combobox-arrow-button-hover-background-color'
     | 'combobox-arrow-button-icon-color'
@@ -20,6 +24,9 @@ export type ComboboxTokenMap = {
 };
 
 export const defaultComboboxTokens: ComboboxTokenMap = {
+    'combobox-clear-button-border-right-color': 'color-input-content',
+    'combobox-clear-button-disabled-icon-color': 'color-input-content-disabled',
+    'combobox-clear-button-icon-color': 'color-input-content',
     'combobox-arrow-button-background-color': 'transparent-100',
     'combobox-arrow-button-hover-background-color': 'transparent-100',
     'combobox-arrow-button-disabled-icon-color': 'color-input-content-disabled',
@@ -30,4 +37,5 @@ export const defaultComboboxTokens: ComboboxTokenMap = {
     'combobox-disabled-text-color': 'color-input-content-disabled',
     'combobox-error-border-color': 'color-input-border-error',
     'combobox-background-color': 'color-input-bg',
+    'combobox-placeholder-text-color': 'color-input-content',
 };

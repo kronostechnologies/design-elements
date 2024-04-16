@@ -114,7 +114,7 @@ const List = styled.ul`
 `;
 
 const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.component['checkbox-checked-icon-color']};
     height: 100%;
     width: 100%;
 `;
@@ -171,14 +171,13 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
-            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+            background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
+            border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
         }
     `)}
 
     ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
         &::before {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-border-color']};
             content: '';
             display: block;
             height: 100%;
