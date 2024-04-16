@@ -21,17 +21,5 @@ export default {
 };
 
 export const Default: Story = () => (
-    <Breadcrumb history={routeMap(15)} />
-);
-
-export const ThreeElements: Story = () => (
-    <Breadcrumb history={routeMap(3)} />
-);
-
-export const Root: Story = () => (
-    <Breadcrumb history={routeMap(1)} />
-);
-
-export const NoDropdown: Story = () => (
-    <Breadcrumb history={routeMap(2)} />
+    <Breadcrumb history={routeMap(5)} />
 );

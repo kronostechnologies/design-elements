@@ -1,0 +1,40 @@
+import { Breadcrumb } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as BreadcrumbStories  from './breadcrumb.stories';
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Breadcrumb supports wayfinding — making users aware of their current location within the hierarchical structure of a website [1].
+<Canvas of={BreadcrumbStories.Default} />
+
+## Usage
+### When to use
+- Use when you want to illustrate where a user currently is in the intricate hierarchy of the platform [2].
+- Use when you have plenty of pages and sub-categories and nested navigation levels, or your navigation grows to three, four or even more levels [2].
+
+### When not to use
+- Do not use when you have only 1 or 2 levels deep [1]. Then, indicating what category a given page belongs to, or the tags associated with the page, is perfectly sufficient [2].
+- Do not use when users explore data, filter tables, manage accounts or use search [2], since breadcrumbs should not reflect the user’s journey to the page [4].
+
+## Variants
+### Default
+<Canvas of={BreadcrumbStories.Default} />
+
+
+## Properties
+<ArgTypes of={Breadcrumb} />
+
+## References
+1. [https://www.nngroup.com/articles/breadcrumbs/](https://www.nngroup.com/articles/breadcrumbs/)
+2. [https://www.smashingmagazine.com/2022/04/breadcrumbs-ux-design/](https://www.smashingmagazine.com/2022/04/breadcrumbs-ux-design/)
+3. [https://pencilandpaper.io/articles/breadcrumbs-ux/](https://pencilandpaper.io/articles/breadcrumbs-ux/)
+4. [https://www.semrush.com/blog/breadcrumbs-for-websites/](https://www.semrush.com/blog/breadcrumbs-for-websites/)
+5. [https://uxdesign.cc/breadcrumbs-for-desktop-ux-design-youre-doing-them-wrong-70fe62e6180e](https://uxdesign.cc/breadcrumbs-for-desktop-ux-design-youre-doing-them-wrong-70fe62e6180e)
