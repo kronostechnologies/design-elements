@@ -6,13 +6,9 @@ import { eventIsInside } from '../../utils/events';
 import { IconButton, IconButtonProps } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
 
-/* TODO change when updating thematization */
-const lightBlue = '#E0F0F9';
-const lightGrey = '#D9DDE2';
-
 const Wrapper = styled.div`
-    background-color: ${({ theme }) => theme.greys.white};
-    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    background-color: ${({ theme }) => theme.component['global-navigation-background-color']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['global-navigation-box-shadow-color']};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -32,7 +28,7 @@ const NavList = styled.ul`
 `;
 
 const MenuLink = styled(NavLink)`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['global-navigation-item-text-color']};
     display: flex;
     flex-grow: 1;
     line-height: 1.5rem;
@@ -43,18 +39,20 @@ const MenuLink = styled(NavLink)`
     ${focus};
 
     &:hover {
-        background-color: ${(props) => props.theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['global-navigation-item-hover-background-color']};
     }
 
     &.active {
         font-weight: var(--font-bold);
+        background-color: ${({ theme }) => theme.component['global-navigation-item-selected-background-color']};
+        color: ${({ theme }) => theme.component['global-navigation-item-selected-text-color']};
     }
 `;
 
 const ShowMoreMenu = styled.ul<{ open?: boolean }>`
-    background-color: ${(props) => props.theme.greys.white};
+    background-color: ${({ theme }) => theme.component['global-navigation-background-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['global-navigation-box-shadow-color']};
     display: ${({ open }) => (open ? 'flex' : 'none')};
     flex-wrap: wrap;
     left: 4.5rem;
@@ -80,9 +78,8 @@ const ShowMoreMenu = styled.ul<{ open?: boolean }>`
 
 const ShowMore = styled.button<{ active?: boolean }>`
     align-items: center;
-    background-color: ${({ active, theme }) => (active ? theme.greys.grey : 'transparent')};
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.component['global-navigation-item-text-color']};
     display: flex;
     justify-content: center;
     min-height: var(--size-3halfx);
@@ -92,8 +89,8 @@ const ShowMore = styled.button<{ active?: boolean }>`
     ${focus};
 
     &:hover {
-        background-color: ${(props) => props.theme.greys.grey};
-        color: ${(props) => props.theme.greys.black};
+        background-color: ${({ theme }) => theme.component['global-navigation-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['global-navigation-item-hover-text-color']};
     }
 `;
 
@@ -115,8 +112,9 @@ const ItemLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     text-decoration: none;
 
     &.active {
-        background-color: ${lightBlue};
-        color: ${(props) => props.theme.greys.black};
+        font-weight: var(--font-bold);
+        background-color: ${({ theme }) => theme.component['global-navigation-item-selected-background-color']};
+        color: ${({ theme }) => theme.component['global-navigation-item-selected-text-color']};
     }
 `;
 
@@ -136,7 +134,7 @@ const ItemSpan = styled.span`
 const separatorHeight = 17;
 const separatorMargins = 16;
 const Separator = styled.hr`
-    background-color: ${lightGrey};
+    background-color: ${({ theme }) => theme.component['global-navigation-separator-border-color']};
     border: 0;
     height: ${separatorHeight - separatorMargins}px;
     margin: var(--spacing-1x) auto;

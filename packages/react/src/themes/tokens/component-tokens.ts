@@ -4,6 +4,7 @@ import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-toke
 import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
 import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
@@ -99,7 +100,8 @@ export type ComponentTokens =
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
-    | LozengeTokens;
+    | LozengeTokens
+    | GlobalNavigationTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -157,6 +159,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTableTokens,
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
+    ...defaultGlobalNavigationTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

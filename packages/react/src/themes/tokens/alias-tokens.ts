@@ -342,7 +342,7 @@ export const defaultAliasTokens: AliasTokenMap = {
      */
 
     /**
-     * Use to visually group or separate UI elements, such as flat cards, side panel dividers and seperators.
+     * Use to visually group or separate UI elements, such as flat cards, side panel dividers and separators.
      */
     'color-border': 'color-neutral-15',
     'color-border-subtle': 'color-neutral-05',
