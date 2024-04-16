@@ -8,7 +8,7 @@ export type PasswordInputTokens =
     | 'password-input-show-password-button-disabled-border-color'
     | 'password-input-show-password-button-error-border-color'
     | 'password-input-show-password-button-focus-within-border-color'
-    
+
     | 'password-creation-input-focus-within-shadow-color'
     | 'password-creation-input-focus-within-border-color'
     | 'password-creation-input-border-color'

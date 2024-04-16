@@ -37,8 +37,8 @@ exports[`NavList Is hidden 1`] = `
 }
 
 .c1:hover {
-  color: #000000;
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c1[disabled] {
@@ -169,8 +169,8 @@ exports[`NavList Matches the snapshot 1`] = `
 }
 
 .c1:hover {
-  color: #000000;
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c1[disabled] {

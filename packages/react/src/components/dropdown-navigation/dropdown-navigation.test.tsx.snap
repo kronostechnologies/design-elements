@@ -122,8 +122,8 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c7:hover {
-  color: #000000;
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {
@@ -382,8 +382,8 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c7:hover {
-  color: #000000;
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {
@@ -643,8 +643,8 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 }
 
 .c7:hover {
-  color: #000000;
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {

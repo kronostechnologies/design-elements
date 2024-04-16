@@ -68,8 +68,8 @@ const linkStyles = css<LinkProps>`
     ${(props) => focus(props, undefined, undefined, true)};
 
     :hover {
-        color: ${({ theme }) => theme.component['nav-list-item-text-hover-color']};
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['nav-list-item-text-hover-color']};
 
         ${BaseIcon} {
             color: ${({ theme }) => theme.component['nav-list-item-icon-hover-color']};

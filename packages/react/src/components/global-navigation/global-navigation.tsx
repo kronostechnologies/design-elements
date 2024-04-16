@@ -43,9 +43,9 @@ const MenuLink = styled(NavLink)`
     }
 
     &.active {
-        font-weight: var(--font-bold);
         background-color: ${({ theme }) => theme.component['global-navigation-item-selected-background-color']};
         color: ${({ theme }) => theme.component['global-navigation-item-selected-text-color']};
+        font-weight: var(--font-bold);
     }
 `;
 
@@ -112,9 +112,9 @@ const ItemLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     text-decoration: none;
 
     &.active {
-        font-weight: var(--font-bold);
         background-color: ${({ theme }) => theme.component['global-navigation-item-selected-background-color']};
         color: ${({ theme }) => theme.component['global-navigation-item-selected-text-color']};
+        font-weight: var(--font-bold);
     }
 `;
 

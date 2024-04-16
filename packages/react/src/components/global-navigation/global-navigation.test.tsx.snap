@@ -182,9 +182,9 @@ exports[`Global Navigation matches snapshot 1`] = `
 }
 
 .c8.active {
-  font-weight: var(--font-bold);
   background-color: #E0F0F9;
   color: #003A5A;
+  font-weight: var(--font-bold);
 }
 
 .c1 {

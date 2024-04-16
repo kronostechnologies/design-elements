@@ -37,8 +37,8 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-    padding: 0 var(--spacing-1x);
     outline: ${({ isSelected, theme }) => (isSelected ? `1px solid ${theme.component['pagination-page-selected-border-color']}` : 'none')};
+    padding: 0 var(--spacing-1x);
     text-align: center;
 
     ${focus};
