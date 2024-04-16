@@ -1,18 +1,17 @@
 import { RadioButtonGroup } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 import * as RadioButtonStories  from './radio-button.stories';
 
 <Meta of={RadioButtonStories} />
 
 # Radio Button
-
 1. [Definition](#definition)
 2. [Usage](#usage)
 3. [Variants](#variants)
 4. [Properties](#properties)
 
 ## Definition
-Radio buttons display mutually exclusive options from which a person selects exactly one [1]. 
+Radio buttons display mutually exclusive options from which a person selects exactly one [1].
 <Canvas of={RadioButtonStories.Default} />
 
 ## Usage
@@ -31,8 +30,8 @@ Radio buttons display mutually exclusive options from which a person selects exa
 ### Default
 <Canvas of={RadioButtonStories.Default} />
 
-### With conditional field
-<Canvas of={RadioButtonStories.WithConditionalField} />
+### With content
+<Canvas of={RadioButtonStories.WithContent} />
 
 ## Properties
 <ArgTypes of={RadioButtonGroup} />
