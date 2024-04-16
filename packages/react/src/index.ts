@@ -70,11 +70,12 @@ export * from './components/toggletip/toggletip';
 export { Table, TableColumn, TableRow } from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
-export { Tag } from './components/tag/tag';
-export { ToggleTag } from './components/tag/toggle-tag';
 export {
-    TagValue, TagColor, TagSize, TagProps, ToggleTagProps,
-} from './components/tag/types';
+    Tag, TagValue, TagColor, TagSize, TagProps,
+} from './components/tag/tag';
+export {
+    ToggleTag, ToggleTagValue, ToggleTagSize, ToggleTagProps,
+} from './components/tag/toggle-tag';
 export { Lozenge } from './components/lozenge/lozenge';
 export { RadioCard } from './components/radio-card-group/radio-card';
 export { RadioCardGroup } from './components/radio-card-group/radio-card-group';

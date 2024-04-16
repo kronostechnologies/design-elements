@@ -1,4 +1,4 @@
-import { TagValue, ToggleTag } from '@equisoft/design-elements-react';
+import { ToggleTagValue, ToggleTag } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useRef } from 'react';
 import { rawCodeParameters } from './utils/parameters';
@@ -13,7 +13,7 @@ const ToggleTagMeta: Meta<typeof ToggleTag> = {
         size: 'medium',
         iconName: undefined,
         selected: undefined,
-        onClick: (tag: TagValue) => console.info(`Clicked on ${tag.label}`),
+        onClick: (tag: ToggleTagValue) => console.info(`Clicked on ${tag.label}`),
     },
     argTypes: {
         size: {

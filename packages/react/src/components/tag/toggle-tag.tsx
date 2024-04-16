@@ -4,30 +4,30 @@ import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-export type TagSize =
+export type ToggleTagSize =
     | 'small'
     | 'medium';
 
-export interface TagValue {
+export interface ToggleTagValue {
     id?: string;
     label: string;
 }
 
 export interface BaseTagProps {
     className?: string;
-    size?: TagSize;
-    value: TagValue;
+    size?: ToggleTagSize;
+    value: ToggleTagValue;
     iconName?: IconName;
 }
 
 export interface BaseTagStylingProps {
     $isMobile: boolean;
-    $tagSize: TagSize;
+    $tagSize: ToggleTagSize;
     $hasIcon: boolean;
 }
 
 export interface ToggleTagProps extends BaseTagProps {
-    onClick?(tag: TagValue): void;
+    onClick?(tag: ToggleTagValue): void;
     /**
      * Whether the tag is selected.
      * Can manually set the selected state of the tag, without the need for a click event.
@@ -47,11 +47,11 @@ export function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
 }
 
-export function isMedium(tagSize: TagSize): tagSize is 'medium' {
+export function isMedium(tagSize: ToggleTagSize): tagSize is 'medium' {
     return tagSize === 'medium';
 }
 
-export function isSmall(tagSize: TagSize): tagSize is 'small' {
+export function isSmall(tagSize: ToggleTagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 

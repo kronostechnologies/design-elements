@@ -1,4 +1,4 @@
-import { Tag, TagValue } from '@equisoft/design-elements-react';
+import { Tag, ToggleTagValue } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useRef } from 'react';
 import { rawCodeParameters } from './utils/parameters';
@@ -86,7 +86,7 @@ export const WithIcons: Story = {
 export const Removable: Story = {
     ...Default,
     args: {
-        onRemove: (tag: TagValue) => console.info(`Removed ${tag.label}`),
+        onRemove: (tag: ToggleTagValue) => console.info(`Removed ${tag.label}`),
     },
 };
 
