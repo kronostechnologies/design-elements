@@ -8,7 +8,7 @@ export default {
     component: TextArea,
 };
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <TextArea
         data-testid="some-data-test-id"
         label="Text area label"
@@ -16,11 +16,11 @@ export const Normal: Story = () => (
     />
 );
 
-export const WithTooltip: Story = () => (
+export const MaxLength: Story = () => (
     <TextArea
         label="Text area label"
-        tooltip={{ label: 'Tooltip text content' }}
         hint="Hint"
+        maxLength={25}
     />
 );
 
@@ -46,32 +46,3 @@ export const EventCallbacks: Story = () => {
     );
 };
 EventCallbacks.parameters = rawCodeParameters;
-
-export const Required: Story = () => (
-    <TextArea
-        label="Text area label"
-        required
-    />
-);
-
-export const DefaultValue: Story = () => (
-    <TextArea
-        label="Text area label"
-        defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis,
-         est dui fermentum leo, quis tempor ligula erat quis odio."
-    />
-);
-export const Disabled: Story = () => (
-    <TextArea
-        label="A label for the disabled text area"
-        disabled
-    />
-);
-
-export const MaxLength: Story = () => (
-    <TextArea
-        label="Text area label"
-        required
-        maxLength={25}
-    />
-);
