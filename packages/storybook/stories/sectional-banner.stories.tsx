@@ -1,9 +1,8 @@
-import { SectionalBanner } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Button, SectionalBanner } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
-import { MobileDecorator } from './utils/device-context-decorator';
 
 const Container = styled.div`
     > * + * {
@@ -11,94 +10,145 @@ const Container = styled.div`
     }
 `;
 
-export default {
+const meta: Meta<typeof SectionalBanner> = {
     title: 'Components/Sectional Banner',
     component: SectionalBanner,
     decorators: [decorateWith(Container)],
+    argTypes: {
+        onButtonClicked: {
+            control: { type: null },
+        },
+        onDismiss: {
+            control: { type: null },
+        },
+    },
 };
 
-interface DismissState {
-    neutral: boolean;
-    info: boolean;
-    discovery: boolean;
-    success: boolean;
-    warning: boolean;
-    alert: boolean;
-}
+export default meta;
 
-export const Neutral: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+type Story = StoryObj<typeof SectionalBanner>;
 
-    return !dismissed ? (
-        <SectionalBanner type="neutral" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+export const Neutral: Story = {
+    args: {
+        type: 'neutral',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
+
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
 
-export const Informative: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+export const Informative: Story = {
+    args: {
+        type: 'info',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-    return !dismissed ? (
-        <SectionalBanner type="info" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
 
-export const Success: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+export const Success: Story = {
+    args: {
+        type: 'success',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-    return !dismissed ? (
-        <SectionalBanner type="success" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
 
-export const Warning: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+export const Warning: Story = {
+    args: {
+        type: 'warning',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-    return !dismissed ? (
-        <SectionalBanner type="warning" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
 
-export const Alert: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+export const Alert: Story = {
+    args: {
+        type: 'alert',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-    return !dismissed ? (
-        <SectionalBanner type="alert" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
                 <p>Some sub title</p>
-                        <ul>
-                            <li>Some bullet points</li>
-                            <li>Some bullet points</li>
-                        </ul>
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+                <ul>
+                    <li>Some bullet points</li>
+                    <li>Some bullet points</li>
+                </ul>
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
 
-export const Discovery: Story = () => {
-    const [dismissed, setDismissed] = useState<boolean>(false);
+export const Discovery: Story = {
+    args: {
+        type: 'discovery',
+    },
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-    return !dismissed ? (
-        <SectionalBanner type="discovery" onDismiss={() => setDismissed(true)}>
-            Here&apos;s a contextual notice with an icon and title.
-        </SectionalBanner>
-    ) : (
-        <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
-    );
+        return !dismissed ? (
+            <SectionalBanner
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onDismiss={() => setDismissed(true)}
+            >
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+        ) : (
+            <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
+        );
+    },
 };
