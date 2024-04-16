@@ -14,11 +14,7 @@
   },
   "dependencies": {
     "@equisoft/design-elements-react": "workspace:*",
-    "@storybook/addon-a11y": "^7.5.3",
-    "@storybook/addon-actions": "^7.5.3",
-    "@storybook/addon-controls": "^7.0.8",
     "@storybook/addon-docs": "^7.0.8",
-    "@storybook/addon-links": "^7.5.3",
     "@storybook/blocks": "^7.0.8",
     "@storybook/preview": "^7.0.8",
     "@storybook/react": "^7.0.8",
