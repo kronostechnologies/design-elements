@@ -73,7 +73,7 @@ export const ShowToast: VoidFunctionComponent = () => {
             </DesignSystem>
             <Button
                 label="Alert"
-                buttonType="destructive"
+                buttonType="destructive-primary"
                 onClick={() => showToast('alert', 'Unable to delete user')}
             />
         </>
