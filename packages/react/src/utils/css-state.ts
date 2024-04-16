@@ -1,3 +1,4 @@
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 import { ResolvedTheme } from '../themes/theme';
 
 type FocusType = 'focus' | 'focus-visible' | 'focus-within';
@@ -12,7 +13,7 @@ export interface FocusOptions {
 export const focus = (
     { theme }: { theme: ResolvedTheme },
     options: FocusOptions = {},
-): string => {
+): FlattenSimpleInterpolation => {
     const {
         selector,
         focusType = 'focus',
@@ -26,23 +27,20 @@ export const focus = (
     const insideFocusBorderWeight = '2px';
     const insideFocusBorderOffset = '-2px';
     const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
-    const transition = 'all .25s ease-in-out';
+    const transition = 'outline .25s ease-in-out, box-shadow .25s ease-in-out';
     const baseSelector = selector ?? '';
 
-    const notFocusStyle = `
-        &:not(:${focusType}) ${baseSelector} {
-            transition: ${transition};
+    return css`
+        ${baseSelector} {
             outline: ${insideFocusBorderWeight} solid transparent;
             outline-offset: ${insideFocusBorderOffset};
-        }`;
-
-    const focusStyle = `
-        &:${focusType} ${baseSelector} {
             transition: ${transition};
+        };
+
+        &:${focusType} ${baseSelector} {
             box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
             outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
             outline-offset: ${insideFocusBorderOffset};
+            transition: ${transition};
         }`;
-
-    return notFocusStyle + focusStyle;
 };

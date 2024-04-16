@@ -65,19 +65,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c9:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c9 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9 > svg {
@@ -126,19 +126,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c13:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13 > svg {
@@ -156,19 +156,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover,
@@ -203,19 +203,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:hover,
@@ -237,19 +237,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:hover,
@@ -492,19 +492,19 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   user-select: none;
 }
 
-.c7:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c7 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7 > svg {
@@ -522,19 +522,19 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c8:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c8 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:hover,
@@ -744,19 +744,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c9:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c9 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9 > svg {
@@ -805,19 +805,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c13:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13 > svg {
@@ -835,19 +835,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover,
@@ -882,19 +882,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:hover,
@@ -916,19 +916,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:hover,
@@ -1171,19 +1171,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c9:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c9 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9 > svg {
@@ -1232,19 +1232,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c13:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13 > svg {
@@ -1262,19 +1262,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c14:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover,
@@ -1309,19 +1309,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:hover,
@@ -1343,19 +1343,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:hover,
@@ -1598,19 +1598,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c9:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c9 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9 > svg {
@@ -1627,19 +1627,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c13:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:hover,
@@ -1674,19 +1674,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #60666E;
 }
 
-.c10:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c10:hover,
@@ -1708,19 +1708,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c11:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c11:hover,

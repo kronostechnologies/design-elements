@@ -15,24 +15,25 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4 {
@@ -125,7 +126,8 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -138,19 +140,19 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5 {
@@ -258,7 +260,8 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -271,19 +274,19 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5 {
@@ -389,7 +392,8 @@ exports[`External Link matches snapshot (without href) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -402,19 +406,19 @@ exports[`External Link matches snapshot (without href) 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5 {
@@ -522,7 +526,8 @@ exports[`External Link matches snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -535,19 +540,19 @@ exports[`External Link matches snapshot 1`] = `
   color: #602FA0;
 }
 
-.c0:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4 {

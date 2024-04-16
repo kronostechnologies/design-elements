@@ -88,7 +88,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
         line-height: 1.875rem;
         margin: 0;
         width: var(--size-2x);
-        
+
         ${focus};
 
         &:hover {

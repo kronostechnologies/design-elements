@@ -173,19 +173,19 @@ input + .c2 {
   width: 100%;
 }
 
-.c4:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c4 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5 {
@@ -635,19 +635,19 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c6 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c6:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7 {
@@ -1066,19 +1066,19 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c2:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 {
@@ -1508,19 +1508,19 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c5 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c6 {

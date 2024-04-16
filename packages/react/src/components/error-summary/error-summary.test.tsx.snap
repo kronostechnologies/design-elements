@@ -15,7 +15,8 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -28,19 +29,19 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   color: #602FA0;
 }
 
-.c9:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c9 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c9:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2 {
@@ -63,19 +64,19 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: flex;
 }
 
-.c0:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c0 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c0 .c1 {

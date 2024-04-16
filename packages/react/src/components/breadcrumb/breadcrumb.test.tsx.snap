@@ -25,7 +25,8 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -38,19 +39,19 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 svg {
@@ -146,7 +147,8 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -159,19 +161,19 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 svg {
@@ -326,7 +328,8 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -339,19 +342,19 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 svg {
@@ -436,7 +439,8 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -449,19 +453,19 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:not(:focus-visible) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus-visible {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 svg {

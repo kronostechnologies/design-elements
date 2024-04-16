@@ -47,19 +47,20 @@ const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
     letter-spacing: 0.015rem;
     line-height: 1.7;
     padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
+
     > *:first-child {
-        margin-top: 0px;
-        padding-top: 0px;
+        margin-top: 0;
+        padding-top: 0;
     }
+
     > *:last-child {
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 `;
 
 const HeadingStyled = styled(Heading)`
     position: relative;
-    z-index: 1;
 `;
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`

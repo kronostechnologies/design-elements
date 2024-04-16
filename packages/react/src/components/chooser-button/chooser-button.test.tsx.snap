@@ -66,23 +66,23 @@ input[type='radio']:checked + .c1 {
   color: #003A5A;
 }
 
-.c1:not(:focus),
+.c1,
 input[type="checkbox"]:focus + .c1,
 input[type="radio"]:focus + .c1 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus,
 input[type="checkbox"]:focus + .c1,
 input[type="radio"]:focus + .c1 {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 input[type='checkbox']:disabled + .c0,

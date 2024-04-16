@@ -207,38 +207,38 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c5 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -715,38 +715,38 @@ input + .c2 {
   width: 100%;
 }
 
-.c7:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c7 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1191,38 +1191,38 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c3:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1677,38 +1677,38 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:not(:focus) {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+.c6 {
   outline: 2px solid transparent;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c6:focus {
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
+  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 

@@ -8,6 +8,7 @@ export type ComboboxTokens =
     | 'combobox-disabled-border-color'
     | 'combobox-error-border-color'
     | 'combobox-disabled-text-color'
+    | 'combobox-placeholder-text-color'
     | 'combobox-arrow-button-background-color'
     | 'combobox-arrow-button-hover-background-color'
     | 'combobox-arrow-button-icon-color'
@@ -20,6 +21,7 @@ export type ComboboxTokenMap = {
 };
 
 export const defaultComboboxTokens: ComboboxTokenMap = {
+    'combobox-placeholder-text-color': 'color-neutral-65',
     'combobox-arrow-button-background-color': 'transparent-100',
     'combobox-arrow-button-hover-background-color': 'transparent-100',
     'combobox-arrow-button-disabled-icon-color': 'color-neutral-30',
