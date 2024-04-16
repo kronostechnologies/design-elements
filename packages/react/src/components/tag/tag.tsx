@@ -5,15 +5,101 @@ import {
     SVGProps,
     useCallback,
 } from 'react';
-import styled from 'styled-components';
+import styled, { StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { TagProps, TagStylingProps } from './types';
-import { getFontSize, getIconSize, getLineHeight, getPadding, getTagColors, isMedium } from './utils';
+import { Icon, IconName } from '../icon/icon';
 
-const TagContainer = styled.div<TagStylingProps>`
+export type TagColor =
+    | 'default'
+    | 'decorative-01'
+    | 'decorative-02'
+    | 'decorative-03'
+    | 'decorative-04'
+    | 'decorative-05'
+    | 'decorative-06'
+    | 'decorative-07'
+    | 'decorative-08'
+    | 'decorative-09'
+    | 'decorative-10';
+
+export type TagSize =
+    | 'small'
+    | 'medium';
+
+export interface TagValue {
+    id?: string;
+    label: string;
+}
+
+export interface BaseTagProps {
+    className?: string;
+    size?: TagSize;
+    value: TagValue;
+    iconName?: IconName;
+}
+
+export interface BaseTagStylingProps {
+    $isMobile: boolean;
+    $tagSize: TagSize;
+    $hasIcon: boolean;
+}
+
+export interface TagProps extends BaseTagProps {
+    color?: TagColor;
+    onRemove?(tag: TagValue): void;
+}
+
+export interface TagStylingProps extends BaseTagStylingProps {
+    $tagColor: TagColor;
+    $removable: boolean;
+}
+
+export function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+    return $isMobile ? 0.875 : 0.75;
+}
+
+export function getIconSize(isMobile: boolean): string {
+    return isMobile ? '20' : '12';
+}
+
+export function isDefaultColor(tagColor: TagColor): tagColor is 'default' {
+    return tagColor === 'default';
+}
+
+export function isMedium(tagSize: TagSize): tagSize is 'medium' {
+    return tagSize === 'medium';
+}
+
+export function isSmall(tagSize: TagSize): tagSize is 'small' {
+    return tagSize === 'small';
+}
+
+export function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+    return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
+}
+
+export function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+    if ($isMobile) {
+        return isSmall($tagSize) ? 1.5 : 1.875;
+    }
+    return isSmall($tagSize) ? 1 : 1.5;
+}
+
+type ColorProperty = 'background-color' | 'border-color' | 'text-color' | 'icon-color';
+
+export function getTagColors(
+    { $tagColor, theme }: StyledProps<TagStylingProps>,
+    $colorProperty: ColorProperty,
+): string {
+    if (isDefaultColor($tagColor)) {
+        return theme.component[`tag-${$colorProperty}`];
+    }
+    return theme.component[`tag-${$tagColor}-${$colorProperty}`];
+}
+
+const TagContainer = styled.span<TagStylingProps>`
     align-items: center;
     background-color: ${(props) => getTagColors(props, 'background-color')};
     border: 1px solid ${(props) => getTagColors(props, 'border-color')};
@@ -87,7 +173,6 @@ export const Tag = forwardRef(({
     return (
         <TagContainer
             ref={ref}
-            as="span"
             className={className}
             $isMobile={isMobile}
             $tagSize={size}

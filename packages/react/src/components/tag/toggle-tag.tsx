@@ -2,9 +2,69 @@ import { forwardRef, MouseEventHandler, Ref, SVGProps, useCallback, useState } f
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { ToggleTagProps, ToggleTagStylingProps } from './types';
-import { getFontSize, getIconSize, getLineHeight, getPadding, isSmall } from './utils';
+import { Icon, IconName } from '../icon/icon';
+
+export type TagSize =
+    | 'small'
+    | 'medium';
+
+export interface TagValue {
+    id?: string;
+    label: string;
+}
+
+export interface BaseTagProps {
+    className?: string;
+    size?: TagSize;
+    value: TagValue;
+    iconName?: IconName;
+}
+
+export interface BaseTagStylingProps {
+    $isMobile: boolean;
+    $tagSize: TagSize;
+    $hasIcon: boolean;
+}
+
+export interface ToggleTagProps extends BaseTagProps {
+    onClick?(tag: TagValue): void;
+    /**
+     * Whether the tag is selected.
+     * Can manually set the selected state of the tag, without the need for a click event.
+     */
+    selected?: boolean;
+}
+
+export interface ToggleTagStylingProps extends BaseTagStylingProps {
+    $selected?: boolean;
+}
+
+export function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+    return $isMobile ? 0.875 : 0.75;
+}
+
+export function getIconSize(isMobile: boolean): string {
+    return isMobile ? '20' : '12';
+}
+
+export function isMedium(tagSize: TagSize): tagSize is 'medium' {
+    return tagSize === 'medium';
+}
+
+export function isSmall(tagSize: TagSize): tagSize is 'small' {
+    return tagSize === 'small';
+}
+
+export function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+    return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
+}
+
+export function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+    if ($isMobile) {
+        return isSmall($tagSize) ? 1.5 : 1.875;
+    }
+    return isSmall($tagSize) ? 1 : 1.5;
+}
 
 const TagContainer = styled.button<ToggleTagStylingProps>`
     align-items: center;

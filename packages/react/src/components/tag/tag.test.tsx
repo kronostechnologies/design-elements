@@ -2,8 +2,7 @@ import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { Tag } from './tag';
-import { TagProps } from './types';
+import { Tag, TagProps } from './tag';
 
 describe('Tag', () => {
     const tagSizes: TagProps['size'][] = ['small', 'medium'];

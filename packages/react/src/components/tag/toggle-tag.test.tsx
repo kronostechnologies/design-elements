@@ -2,8 +2,7 @@ import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ToggleTag } from './toggle-tag';
-import { ToggleTagProps } from './types';
+import { ToggleTag, ToggleTagProps } from './toggle-tag';
 
 describe('ToggleTag', () => {
     const tagSizes: ToggleTagProps['size'][] = ['small', 'medium'];
