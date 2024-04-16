@@ -8,12 +8,8 @@ export default {
     component: SearchContextual,
 };
 
-export const Contextual: Story = () => (
+export const Default: Story = () => (
     <SearchContextual />
-);
-
-export const Disabled: Story = () => (
-    <SearchContextual disabled />
 );
 
 export const EventCallbacks: Story = () => (
@@ -25,15 +21,3 @@ export const EventCallbacks: Story = () => (
 );
 EventCallbacks.parameters = rawCodeParameters;
 
-export const WithReset: Story = () => {
-    const [value, setValue] = useState('');
-
-    return (
-        <SearchContextual
-            value={value}
-            onChange={setValue}
-            onReset={() => setValue('')}
-        />
-    );
-};
-WithReset.parameters = rawCodeParameters;
