@@ -166,7 +166,7 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
     onClick,
 }) => (
     <StyledActionButton
-        buttonType={isAlertType ? 'destructive' : 'primary'}
+        buttonType={isAlertType ? 'destructive-primary' : 'primary'}
         data-testid="button"
         label={label}
         type="button"
