@@ -22,7 +22,7 @@ export const Buttons: Story = () => (
         <Button label="Primary" buttonType="primary" />
         <Button label="Secondary" buttonType="secondary" />
         <Button label="Tertiary" buttonType="tertiary" />
-        <Button label="Destructive" buttonType="destructive" />
+        <Button label="Destructive-Primary" buttonType="destructive-primary" />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" />
         <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" />
     </>
@@ -33,7 +33,7 @@ export const Disabled: Story = () => (
         <Button label="Primary" buttonType="primary" disabled />
         <Button label="Secondary" buttonType="secondary" disabled />
         <Button label="Tertiary" buttonType="tertiary" disabled />
-        <Button label="Destructive" buttonType="destructive" disabled />
+        <Button label="Destructive-Primary" buttonType="destructive-primary" disabled />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" disabled />
         <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" disabled />
     </>
@@ -44,7 +44,7 @@ export const Inverted: Story = () => (
         <Button label="Primary" buttonType="primary" inverted />
         <Button label="Secondary" buttonType="secondary" inverted />
         <Button label="Tertiary" buttonType="tertiary" inverted />
-        <Button label="Destructive" buttonType="destructive" inverted />
+        <Button label="Destructive-Primary" buttonType="destructive-primary" inverted />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted />
         <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" inverted />
     </InvertedBackground>
@@ -54,7 +54,7 @@ export const InvertedDisabled: Story = () => (
         <Button label="Primary" buttonType="primary" inverted disabled />
         <Button label="Secondary" buttonType="secondary" inverted disabled />
         <Button label="Tertiary" buttonType="tertiary" inverted disabled />
-        <Button label="Destructive" buttonType="destructive" inverted disabled />
+        <Button label="Destructive-Primary" buttonType="destructive-primary" inverted disabled />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted disabled />
         <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" inverted disabled />
     </InvertedBackground>
@@ -86,9 +86,9 @@ export const WithIcons: Story = () => (
             Tertiary
             <ChevronDownIcon />
         </Button>
-        <Button buttonType="destructive">
+        <Button buttonType="destructive-primary">
             <PlusIcon />
-            Destructive
+            Destructive Primary
             <ChevronDownIcon />
         </Button>
         <Button buttonType="destructive-secondary">
@@ -109,7 +109,7 @@ export const Small: Story = () => (
         <Button label="Primary" buttonType="primary" size="small" />
         <Button label="Secondary" buttonType="secondary" size="small" />
         <Button label="Tertiary" buttonType="tertiary" size="small" />
-        <Button label="Destructive" buttonType="destructive" size="small" />
+        <Button label="Destructive-Primary" buttonType="destructive-primary" size="small" />
         <Button label="Destructive-Secondary" buttonType="destructive-secondary" size="small" />
         <Button label="Destructive-Tertiary" buttonType="destructive-tertiary" size="small" />
     </>
