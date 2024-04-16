@@ -201,12 +201,12 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="16"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="16"
           width="16"
@@ -473,12 +473,12 @@ exports[`Tooltip Has default desktop styles 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="16"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="16"
           width="16"
@@ -749,12 +749,12 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="24"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="24"
           width="24"
@@ -1021,12 +1021,12 @@ exports[`Tooltip Has mobile styles 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="24"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="24"
           width="24"

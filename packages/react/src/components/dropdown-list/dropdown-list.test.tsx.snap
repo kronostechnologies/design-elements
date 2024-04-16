@@ -2,7 +2,7 @@
 
 exports[`Dropdown list matches the snapshot (disabled) 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -52,6 +52,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c9 {
@@ -67,7 +68,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,7 +93,6 @@ input + .c2 {
 }
 
 .c10::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -106,7 +106,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -463,7 +463,7 @@ exports[`Dropdown list matches the snapshot (invalid) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -513,6 +513,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c11 {
@@ -528,7 +529,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -553,7 +554,6 @@ input + .c2 {
 }
 
 .c12::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -567,7 +567,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -944,6 +944,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c7 {
@@ -959,7 +960,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -983,7 +984,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c8::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -997,7 +997,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1320,7 +1320,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 exports[`Dropdown list matches the snapshot 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1382,6 +1382,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c10 {
@@ -1397,7 +1398,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1422,7 +1423,6 @@ input + .c2 {
 }
 
 .c11::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -1436,7 +1436,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

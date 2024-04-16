@@ -186,8 +186,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 }
 
 .c9:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -341,7 +341,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -452,8 +452,8 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 }
 
 .c9:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 .c11 {
@@ -462,7 +462,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 }
 
 .c11:hover {
-  background-color: #3A1C60;
+  background-color: rgb(0 0 0 / 0.5);
   color: #FFFFFF;
 }
 
@@ -624,7 +624,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -735,8 +735,8 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 }
 
 .c9:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 .c11 {
@@ -745,7 +745,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 }
 
 .c11:hover {
-  background-color: #36393D;
+  background-color: rgb(0 0 0 / 0.5);
   color: #FFFFFF;
 }
 
@@ -907,7 +907,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1018,8 +1018,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c9:hover {
-  border-color: #9E6900;
-  color: #9E6900;
+  border-color: rgb(0 0 0 / 0.6);
+  color: rgb(0 0 0 / 0.6);
 }
 
 .c11 {
@@ -1028,7 +1028,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #C78500;
+  background-color: rgb(0 0 0 / 0.3);
   color: #1B1C1E;
 }
 
@@ -1275,8 +1275,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 }
 
 .c9:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -1430,7 +1430,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1544,8 +1544,8 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 }
 
 .c9:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 .c11 {
@@ -1554,7 +1554,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 }
 
 .c11:hover {
-  background-color: #3A1C60;
+  background-color: rgb(0 0 0 / 0.5);
   color: #FFFFFF;
 }
 
@@ -1716,7 +1716,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1830,8 +1830,8 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 }
 
 .c9:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 .c11 {
@@ -1840,7 +1840,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 }
 
 .c11:hover {
-  background-color: #36393D;
+  background-color: rgb(0 0 0 / 0.5);
   color: #FFFFFF;
 }
 
@@ -2002,7 +2002,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -2116,8 +2116,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c9:hover {
-  border-color: #9E6900;
-  color: #9E6900;
+  border-color: rgb(0 0 0 / 0.6);
+  color: rgb(0 0 0 / 0.6);
 }
 
 .c11 {
@@ -2126,7 +2126,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #C78500;
+  background-color: rgb(0 0 0 / 0.3);
   color: #1B1C1E;
 }
 

@@ -158,9 +158,9 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c14:hover,
 .c14[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c14:disabled {
@@ -200,9 +200,9 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c10:disabled {
@@ -241,7 +241,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -250,7 +250,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -510,9 +509,9 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c8:disabled {
@@ -535,7 +534,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -544,7 +543,6 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -814,9 +812,9 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c14:hover,
 .c14[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c14:disabled {
@@ -856,9 +854,9 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c10:disabled {
@@ -897,7 +895,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -906,7 +904,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -1222,9 +1219,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c14:hover,
 .c14[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c14:disabled {
@@ -1264,9 +1261,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c10:disabled {
@@ -1305,7 +1302,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -1314,7 +1311,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -1573,9 +1569,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c13:hover,
 .c13[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c13:disabled {
@@ -1615,9 +1611,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c10:disabled {
@@ -1656,7 +1652,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -1665,7 +1661,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;

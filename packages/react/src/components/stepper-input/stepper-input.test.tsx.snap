@@ -2,7 +2,7 @@
 
 exports[`Stepper input matches snapshot (disabled) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -80,7 +80,7 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -118,7 +118,7 @@ input + .c1 {
 
 .c7:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -142,7 +142,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -178,8 +178,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -311,7 +311,7 @@ exports[`Stepper input matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -389,7 +389,7 @@ input + .c1 {
 
 .c8:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -427,7 +427,7 @@ input + .c1 {
 
 .c9:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -451,7 +451,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -487,8 +487,8 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c6:disabled,
@@ -607,7 +607,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot (mobile) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -659,7 +659,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
@@ -695,8 +695,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -765,7 +765,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -843,7 +843,7 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -881,7 +881,7 @@ input + .c1 {
 
 .c7:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -905,7 +905,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -941,8 +941,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,

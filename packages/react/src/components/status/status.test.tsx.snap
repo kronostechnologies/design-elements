@@ -59,12 +59,12 @@ exports[`Status matches snapshot (disabled) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: #60666E;
+  color: #B7BBC2;
 }
 
 .c1 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
   border-radius: 50%;
   box-sizing: border-box;
   height: 0.625rem;

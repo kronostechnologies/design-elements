@@ -49,7 +49,7 @@ exports[`Progress Component Snapshots linear 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #006296;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -75,7 +75,7 @@ exports[`Progress Component Snapshots linear 1`] = `
   border: 0.125rem solid;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #1b1c1e;
+  color: #1B1C1E;
   content: counter(step);
   counter-increment: step;
   display: -webkit-box;
@@ -255,7 +255,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #006296;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -281,7 +281,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
   border: 0.125rem solid;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #1b1c1e;
+  color: #1B1C1E;
   content: counter(step);
   counter-increment: step;
   display: -webkit-box;

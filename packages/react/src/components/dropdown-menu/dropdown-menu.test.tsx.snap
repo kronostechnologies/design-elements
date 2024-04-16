@@ -3,10 +3,10 @@
 exports[`DropdownMenu Is hidden 1`] = `
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
-  color: #000000;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -105,7 +105,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c8 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -134,13 +134,13 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c8:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c8:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c8[disabled] {
@@ -206,7 +206,7 @@ exports[`DropdownMenu Is hidden 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -420,10 +420,10 @@ exports[`DropdownMenu Is hidden 1`] = `
 exports[`DropdownMenu Matches the snapshot 1`] = `
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
-  color: #000000;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -522,7 +522,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c8 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -551,13 +551,13 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c8:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c8:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c8[disabled] {
@@ -623,7 +623,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

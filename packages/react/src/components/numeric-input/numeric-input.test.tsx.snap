@@ -24,7 +24,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -73,8 +73,8 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -125,7 +125,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   display: flex;
   height: var(--size-2x);
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
 }
 
 .c1 .c2 {
@@ -216,7 +216,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -265,8 +265,8 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 
 .c5:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5:disabled,
@@ -392,7 +392,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -441,8 +441,8 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
 
 .c2:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c2:disabled,
@@ -551,7 +551,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -600,8 +600,8 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 
 .c3:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3:disabled,

@@ -57,10 +57,10 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 
 .c3 {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -224,10 +224,10 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 
 .c3 {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -390,10 +390,10 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 
 .c3 {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -502,7 +502,7 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 .c10 {
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -556,7 +556,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 
 .c3 {
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   color: #B7BBC2;
@@ -727,10 +727,10 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 
 .c3 {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -895,10 +895,10 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
 
 .c3 {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }

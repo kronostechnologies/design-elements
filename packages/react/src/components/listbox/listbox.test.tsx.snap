@@ -14,6 +14,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c0:focus {
@@ -63,7 +64,8 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 }
 
 .c4:hover {
-  border: 1px solid #006296;
+  background-color: #DBDEE1;
+  border: 1px solid #000000;
 }
 
 .c10 {
@@ -89,7 +91,8 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 }
 
 .c10:hover {
-  border: 1px solid #006296;
+  background-color: #DBDEE1;
+  border: 1px solid #000000;
 }
 
 .c10 > .c5 {
@@ -102,7 +105,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: -webkit-box;
@@ -119,7 +122,8 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 }
 
 .c12:hover {
-  border: 1px solid #DBDEE1;
+  background-color: #F1F2F2;
+  border: 1px solid #B7BBC2;
 }
 
 .c12 > .c5 {
@@ -131,7 +135,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -163,7 +167,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,7 +213,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 }
 
 .c11:hover {
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
 
 .c7 {
@@ -390,6 +394,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c0:focus {
@@ -415,7 +420,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -442,7 +447,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -465,7 +470,6 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c5::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -498,7 +502,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c6:hover {
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
 
 .c3 {

@@ -83,7 +83,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c0 .c1 {
-  color: #CD2C23;
+  color: #7B1A15;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;

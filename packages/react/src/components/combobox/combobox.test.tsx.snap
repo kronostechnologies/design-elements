@@ -57,9 +57,9 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 
 .c7:hover,
 .c7[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c7:disabled {
@@ -74,7 +74,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -124,6 +124,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c11 {
@@ -139,7 +140,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,22 +222,22 @@ input + .c2 {
 }
 
 .c5::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -538,9 +539,9 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 
 .c9:hover,
 .c9[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c9:disabled {
@@ -581,7 +582,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -631,6 +632,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c13 {
@@ -646,7 +648,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -727,22 +729,22 @@ input + .c2 {
 }
 
 .c7::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1059,9 +1061,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c5:hover,
 .c5[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c5:disabled {
@@ -1106,6 +1108,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c9 {
@@ -1121,7 +1124,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1201,22 +1204,22 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1510,9 +1513,9 @@ exports[`Combobox matches the snapshot 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c8:disabled {
@@ -1527,7 +1530,7 @@ exports[`Combobox matches the snapshot 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1589,6 +1592,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c12 {
@@ -1604,7 +1608,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1685,22 +1689,22 @@ input + .c2 {
 }
 
 .c6::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 

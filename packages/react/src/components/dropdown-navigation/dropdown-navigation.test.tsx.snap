@@ -75,7 +75,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -97,7 +97,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,6 +122,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c7:hover {
+  color: #000000;
   background-color: #DBDEE1;
 }
 
@@ -132,9 +133,9 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -334,7 +335,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -356,7 +357,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -381,6 +382,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c7:hover {
+  color: #000000;
   background-color: #DBDEE1;
 }
 
@@ -391,9 +393,9 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -594,7 +596,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -616,7 +618,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -641,6 +643,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 }
 
 .c7:hover {
+  color: #000000;
   background-color: #DBDEE1;
 }
 
@@ -651,9 +654,9 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
