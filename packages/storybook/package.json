@@ -22,8 +22,6 @@
     "@storybook/blocks": "^7.0.8",
     "@storybook/preview": "^7.0.8",
     "@storybook/react": "^7.0.8",
-    "@storybook/react-webpack5": "^7.0.8",
-    "@storybook/theming": "^7.0.8",
     "core-js": "^3.30.1",
     "css-loader": "^7.0.0",
     "i18next": "^23.0.0",
