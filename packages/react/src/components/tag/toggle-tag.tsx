@@ -13,17 +13,11 @@ export interface ToggleTagValue {
     label: string;
 }
 
-export interface BaseTagProps {
+interface BaseTagProps {
     className?: string;
     size?: ToggleTagSize;
     value: ToggleTagValue;
     iconName?: IconName;
-}
-
-export interface BaseTagStylingProps {
-    $isMobile: boolean;
-    $tagSize: ToggleTagSize;
-    $hasIcon: boolean;
 }
 
 export interface ToggleTagProps extends BaseTagProps {
@@ -35,31 +29,37 @@ export interface ToggleTagProps extends BaseTagProps {
     selected?: boolean;
 }
 
-export interface ToggleTagStylingProps extends BaseTagStylingProps {
+interface BaseTagStylingProps {
+    $isMobile: boolean;
+    $tagSize: ToggleTagSize;
+    $hasIcon: boolean;
+}
+
+interface ToggleTagStylingProps extends BaseTagStylingProps {
     $selected?: boolean;
 }
 
-export function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+function getFontSize({ $isMobile }: BaseTagStylingProps): number {
     return $isMobile ? 0.875 : 0.75;
 }
 
-export function getIconSize(isMobile: boolean): string {
+function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
 }
 
-export function isMedium(tagSize: ToggleTagSize): tagSize is 'medium' {
+function isMedium(tagSize: ToggleTagSize): tagSize is 'medium' {
     return tagSize === 'medium';
 }
 
-export function isSmall(tagSize: ToggleTagSize): tagSize is 'small' {
+function isSmall(tagSize: ToggleTagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-export function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
     return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
 }
 
-export function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
     if ($isMobile) {
         return isSmall($tagSize) ? 1.5 : 1.875;
     }

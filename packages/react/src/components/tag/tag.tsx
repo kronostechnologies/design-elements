@@ -33,17 +33,11 @@ export interface TagValue {
     label: string;
 }
 
-export interface BaseTagProps {
+interface BaseTagProps {
     className?: string;
     size?: TagSize;
     value: TagValue;
     iconName?: IconName;
-}
-
-export interface BaseTagStylingProps {
-    $isMobile: boolean;
-    $tagSize: TagSize;
-    $hasIcon: boolean;
 }
 
 export interface TagProps extends BaseTagProps {
@@ -51,36 +45,42 @@ export interface TagProps extends BaseTagProps {
     onRemove?(tag: TagValue): void;
 }
 
-export interface TagStylingProps extends BaseTagStylingProps {
+interface BaseTagStylingProps {
+    $isMobile: boolean;
+    $tagSize: TagSize;
+    $hasIcon: boolean;
+}
+
+interface TagStylingProps extends BaseTagStylingProps {
     $tagColor: TagColor;
     $removable: boolean;
 }
 
-export function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+function getFontSize({ $isMobile }: BaseTagStylingProps): number {
     return $isMobile ? 0.875 : 0.75;
 }
 
-export function getIconSize(isMobile: boolean): string {
+function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
 }
 
-export function isDefaultColor(tagColor: TagColor): tagColor is 'default' {
+function isDefaultColor(tagColor: TagColor): tagColor is 'default' {
     return tagColor === 'default';
 }
 
-export function isMedium(tagSize: TagSize): tagSize is 'medium' {
+function isMedium(tagSize: TagSize): tagSize is 'medium' {
     return tagSize === 'medium';
 }
 
-export function isSmall(tagSize: TagSize): tagSize is 'small' {
+function isSmall(tagSize: TagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-export function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
     return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
 }
 
-export function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
     if ($isMobile) {
         return isSmall($tagSize) ? 1.5 : 1.875;
     }
@@ -89,7 +89,7 @@ export function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): num
 
 type ColorProperty = 'background-color' | 'border-color' | 'text-color' | 'icon-color';
 
-export function getTagColors(
+function getTagColors(
     { $tagColor, theme }: StyledProps<TagStylingProps>,
     $colorProperty: ColorProperty,
 ): string {
