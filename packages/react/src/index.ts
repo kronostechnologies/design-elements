@@ -53,9 +53,13 @@ export { ErrorSummary, ErrorMessage } from './components/error-summary/error-sum
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { GlobalHeader } from './components/global-header/global-header';
+export { Dropdown } from './components/dropdown/dropdown';
+export { DropdownMenu } from './components/dropdown-menu/dropdown-menu';
 export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
-export { ExternalItemProps } from './components/dropdown-menu/list-items/external-item';
-export { NavItemProps } from './components/dropdown-menu/list-items/nav-item';
+export { GroupItem } from './components/dropdown-menu/list-items/group-item';
+export { ExternalItemProps, ExternalItem } from './components/dropdown-menu/list-items/external-item';
+export { NavItemProps, NavItem } from './components/dropdown-menu/list-items/nav-item';
+export { NavList } from './components/nav-list/nav-list';
 export { Icon } from './components/icon/icon';
 export { SectionalBanner, SectionalBannerType } from './components/sectional-banner/sectional-banner';
 export * from './components/progress-tracker/progress-tracker';
