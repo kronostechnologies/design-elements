@@ -1,23 +1,24 @@
-import { RadioCardGroup } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import {RadioCard, RadioCardGroup} from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 import * as RadioCardStories  from './radio-card.stories';
 
 <Meta of={RadioCardStories} />
 
 # Radio Cards
-
 1. [Definition](#definition)
 2. [Usage](#usage)
 3. [Variants](#variants)
 4. [Properties](#properties)
 
 ## Definition
-Radio Cards are cards containers regrouping more information than a radio button, that allows users to select a single item from a list of related options [2]. 
+Radio Cards are cards containers regrouping more information than a radio button, that allows users to select a
+single item from a list of related options [2].
 <Canvas of={RadioCardStories.Horizontal} />
 
 ## Usage
 ### When to use
-- The main difference between radio cards and radio buttons is that it is used when users need additional information on available options to make an informed decision [3].
+- The main difference between radio cards and radio buttons is that it is used when users need additional information
+  on available options to make an informed decision [3].
 - Use to allow users to select a single option from a group of 2 to 6 Radio Cards [2].
 - Use when there is a submit button before applying the result [5].
 
@@ -27,7 +28,7 @@ Radio Cards are cards containers regrouping more information than a radio button
 
 ## Variants
 ### Horizontal
-In most cases, use the horizontal layout to maximize the real estate available [2]. 
+In most cases, use the horizontal layout to maximize the real estate available [2].
 <Canvas of={RadioCardStories.Horizontal} />
 
 ### Vertical
@@ -35,7 +36,11 @@ Use the vertical layout when limited horizontal space, or when needing to create
 <Canvas of={RadioCardStories.Vertical} />
 
 ## Properties
+### RadioCardGroup
 <ArgTypes of={RadioCardGroup} />
+
+### RadioCard
+<ArgTypes of={RadioCard} />
 
 ## References
 1. [https://www.nngroup.com/articles/radio-buttons-default-selection/](https://www.nngroup.com/articles/radio-buttons-default-selection/)
