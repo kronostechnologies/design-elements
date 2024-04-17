@@ -57,6 +57,16 @@ export interface ThemeCustomization {
     component?: Partial<ComponentTokenMap>;
 }
 
+export interface MergedTheme {
+    main: LegacyTheme['main'];
+    greys: LegacyTheme['greys'];
+    notifications: LegacyTheme['notifications'];
+    tokens: LegacyTheme['tokens'];
+    ref: RefTokenMap;
+    alias: AliasTokenMap;
+    component: ComponentTokenMap;
+}
+
 export interface ResolvedTheme {
     main: LegacyTheme['main'];
     greys: LegacyTheme['greys'];

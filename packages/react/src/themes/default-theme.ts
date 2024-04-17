@@ -1,8 +1,11 @@
+import { buildTheme } from './build-theme';
 import { defaultComponentTokens, defaultAliasTokens, defaultRefTokens } from './tokens';
-import { ThemeCustomization } from './theme';
+import { ResolvedTheme, ThemeCustomization } from './theme';
 
-export const defaultTheme: ThemeCustomization = {
+export const defaultThemeCustomization: ThemeCustomization = {
     ref: defaultRefTokens,
     alias: defaultAliasTokens,
     component: defaultComponentTokens,
 };
+
+export const defaultTheme: ResolvedTheme = buildTheme(defaultThemeCustomization);

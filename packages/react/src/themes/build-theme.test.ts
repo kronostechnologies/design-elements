@@ -4,7 +4,7 @@ import {
     defaultNotifications,
     defaultTokens,
 } from './tokens/legacy-tokens';
-import { mergeTheme } from './merge-theme';
+import { buildTheme } from './build-theme';
 import { ThemeCustomization } from './theme';
 import { defaultRefTokens, defaultComponentTokens, defaultAliasTokens } from './tokens';
 
@@ -100,51 +100,51 @@ const expectedTheme = {
     },
 };
 
-describe('mergeTheme', () => {
-    it('should merge the defaultRefTokens theme with the customization provided', () => {
-        const mergedTheme = mergeTheme(customization);
+describe('buildTheme', () => {
+    it('should build the defaultRefTokens theme with the customization provided', () => {
+        const buildedTheme = buildTheme(customization);
 
-        expect(mergedTheme.ref).toEqual(expectedTheme.ref);
+        expect(buildedTheme.ref).toEqual(expectedTheme.ref);
     });
-    it('should merge the defaultAliasTokens theme with the customization provided', () => {
-        const mergedTheme = mergeTheme(customization);
+    it('should build the defaultAliasTokens theme with the customization provided', () => {
+        const buildedTheme = buildTheme(customization);
 
-        expect(mergedTheme.alias).toEqual(expectedTheme.alias);
+        expect(buildedTheme.alias).toEqual(expectedTheme.alias);
     });
-    it('should merge the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
-        const mergedTheme = mergeTheme(customization);
+    it('should build the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
+        const buildedTheme = buildTheme(customization);
 
         expect(
-            mergedTheme.component['button-primary-background-color'],
+            buildedTheme.component['button-primary-background-color'],
         ).toEqual(
             expectedTheme.component['button-primary-background-color'],
         );
     });
-    it('should merge the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
-        const mergedTheme = mergeTheme(customization);
+    it('should build the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
+        const buildedTheme = buildTheme(customization);
 
         expect(
-            mergedTheme.component['button-primary-inverted-background-color'],
+            buildedTheme.component['button-primary-inverted-background-color'],
         ).toEqual(
             expectedTheme.component['button-primary-inverted-background-color'],
         );
     });
-    it('should merge the defaultComponentTokens with a partial customization', () => {
-        const mergedTheme = mergeTheme(customization);
+    it('should build the defaultComponentTokens with a partial customization', () => {
+        const buildedTheme = buildTheme(customization);
 
         expect(
-            mergedTheme.component['button-primary-border-color'],
+            buildedTheme.component['button-primary-border-color'],
         ).toEqual(
             expectedTheme.component['button-primary-border-color'],
         );
     });
-    it('should merge the default legacy theme with a legacy customization provided', () => {
-        const mergedTheme = mergeTheme(legacyThemeCustomization);
+    it('should build the default legacy theme with a legacy customization provided', () => {
+        const buildedTheme = buildTheme(legacyThemeCustomization);
 
-        expect(mergedTheme.main).toEqual(expectedLegacyTheme.main);
-        expect(mergedTheme.greys).toEqual(expectedLegacyTheme.greys);
-        expect(mergedTheme.notifications).toEqual(expectedLegacyTheme.notifications);
-        expect(mergedTheme.tokens).toEqual(expectedLegacyTheme.tokens);
+        expect(buildedTheme.main).toEqual(expectedLegacyTheme.main);
+        expect(buildedTheme.greys).toEqual(expectedLegacyTheme.greys);
+        expect(buildedTheme.notifications).toEqual(expectedLegacyTheme.notifications);
+        expect(buildedTheme.tokens).toEqual(expectedLegacyTheme.tokens);
     });
     it('should log an error for for an unresolved token', () => {
         const consoleSpy = jest.spyOn(console, 'error');
@@ -158,7 +158,7 @@ describe('mergeTheme', () => {
             },
         };
 
-        mergeTheme(invalidCustomizationWithUnresolvedToken);
+        buildTheme(invalidCustomizationWithUnresolvedToken);
 
         expect(consoleSpy).toHaveBeenCalledWith(`Token '${token}' not found in RefTokens or AliasTokens`);
         consoleSpy.mockRestore();
@@ -178,7 +178,7 @@ describe('mergeTheme', () => {
             },
         };
 
-        mergeTheme(invalidCustomizationWithSelfReferenced);
+        buildTheme(invalidCustomizationWithSelfReferenced);
 
         expect(consoleSpy).toHaveBeenCalledWith(`Self-referencing AliasToken detected: '${token}'`);
         consoleSpy.mockRestore();
