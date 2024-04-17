@@ -1,0 +1,31 @@
+import { NumericInput } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as NumericInputStories from './numeric-input.stories';
+
+<Meta of={NumericInputStories} />
+
+# Numeric Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Numeric input allows users to enter numeric values.
+<Canvas of={NumericInputStories.Default} />
+
+## Usage
+### When to use
+- Use for numeric values only.
+
+### When not to use
+- Do not use for currencies, use money input instead.
+- Do not use for phone number, use phone input instead.
+- Do not use if you want to incrementally increase or decrease the value, use stepper input instead.
+
+## Variants
+### Default
+
+
+## Properties
+<ArgTypes of={NumericInput} />
