@@ -1,0 +1,44 @@
+import { RouteLink } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as RouteLinkStories from './link.stories';
+
+<Meta of={RouteLinkStories} />
+
+# Accordion
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Links are a combination of a web address (URL) and a clickable element (often a word or phrase, sometimes an image), that brings the user somewhere and that doesn’t affect the back or front-end [1][2]. 
+<Canvas of={RouteLinkStories.Default} />
+
+## Usage
+### When to use
+- Use when you have to bring the user somewhere else into or outside the application.
+- AND use when it won’t affect the application back and front-end [3].
+
+### When not to use
+- Do not use if the action of clicking the link doesn’t bring the user somewhere else.
+- Do not use when the action of clicking on the link will change the application state (either front or back end) [2].
+
+## Variants
+### Route Link
+Route link redirects users somewhere else inside the application. 
+- This variant can use an icon or not
+- An image can also be used as a route link
+<Canvas of={RouteLinkStories.Default} />
+
+### External Link
+External links redirect users outside the current page by opening a new tab or opening a new window for old browsers.
+- External links should always have an icon at the end, representing the external link.
+
+## Properties
+<ArgTypes of={RouteLink} />
+
+## References
+1. [https://www.smashingmagazine.com/2021/12/designing-better-links-websites-emails-guideline/](https://www.smashingmagazine.com/2021/12/designing-better-links-websites-emails-guideline/)
+2. [https://medium.com/@h_locke/links-vs-buttons-e8b523660fb3](https://medium.com/@h_locke/links-vs-buttons-e8b523660fb3)
+3. [https://uxmovement.com/buttons/when-to-use-a-button-or-link/](https://uxmovement.com/buttons/when-to-use-a-button-or-link/)
+4. [https://balsamiq.com/learn/articles/buttons-links/](https://balsamiq.com/learn/articles/buttons-links/)
