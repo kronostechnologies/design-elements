@@ -48,6 +48,7 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
 
 .c2:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c2[disabled],
@@ -210,6 +211,7 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 
 .c1:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c1[disabled],
@@ -221,6 +223,14 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 }
 
 .c2 {
+  color: #1B1C1E;
+}
+
+.c2:hover {
+  color: #000000;
+}
+
+.c3 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -245,13 +255,14 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="#60666E"
+      class="c2"
+      color="currentColor"
       focusable="false"
       height="1rem"
       width="1rem"
     />
     <span
-      class="c2"
+      class="c3"
     >
       Option 1
     </span>
@@ -265,13 +276,14 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="#60666E"
+      class="c2"
+      color="currentColor"
       focusable="false"
       height="1rem"
       width="1rem"
     />
     <span
-      class="c2"
+      class="c3"
     >
       Option 2
     </span>
