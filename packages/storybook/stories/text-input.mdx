@@ -1,0 +1,38 @@
+import { TextInput } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as TextInputStories  from './text-input.stories';
+
+<Meta of={TextInputStories} />
+
+# Text Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Text input allows users to enter a single line of text into a form. 
+<Canvas of={TextInputStories.Default} />
+
+## Usage
+### When to use 
+- Use to enter a short text (usually one or two words) [1].
+    - E.g. Name, Last Name, Role, Organization, etc.
+- Use for input that needs unique information that cannot be predicted with a preset of options [2]
+- Use to input data that can be entered more quickly in a free-hand format versus a more complex control [2].
+
+### When not to use 
+- Do not use for numeric inputs, date input, passwords or long text strings.
+    - For long text strings, consider using the text area component.
+- Do not use if a user can only enter an option from a predefined list then avoid using a free-form text input as it is likely to result in an error. Consider using a control component such as a dropdown, select, or radio button group instead [2].
+
+## Variants 
+### Default
+<Canvas of={TextInputStories.Default} />
+
+## Properties
+<ArgTypes of={TextInput} />
+
+## References
+1. [https://uxdesign.cc/text-fields-forms-design-ui-components-series-2b32b2beebd0](https://uxdesign.cc/text-fields-forms-design-ui-components-series-2b32b2beebd0)
+2. [https://carbondesignsystem.com/components/text-input/usage/](https://carbondesignsystem.com/components/text-input/usage/)
