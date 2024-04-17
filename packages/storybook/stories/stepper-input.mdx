@@ -1,0 +1,42 @@
+import { StepperInput } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as StepperInputStories  from './stepper-input.stories';
+
+<Meta of={StepperInputStories} />
+
+# Stepper Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Stepper input is a control element that allows users to enter a numeric value and incrementally increase or decrease the value with a two-segment buttons [2].
+<Canvas of={StepperInputStories.Default} />
+
+## Usage
+### When to use 
+- To quickly set and specify values [2].
+- To adjust small values when increasing or decreasing them requires only a few clicks [1-2].
+- When users may not know exact values and only want to change the values that are relative to their current state [2].
+
+### When not to use 
+- If it’s likely that the user will deviate from the default amount. Use the numeric input instead.
+- If the user does not need to know what the limits are. Use the numeric input instead.
+- If there is a wide range of numeric options. Use the slider instead.
+- If the user needs to be able to see the minimum and the maximum numbers. Use the slider instead.
+- For continuous variables such as prices, distances, lengths, or human heights where specifying an exact value within a broad range is crucial, opt for numeric input or money input instead [1-2].
+
+## Variants
+### Default
+By default a stepper input allows users to enter and modify a numeric value without thresholds. Use this variant when any value within the range of the numeric input is valid for your use case [3].
+<Canvas of={StepperInputStories.Default} />
+
+## Properties
+<ArgTypes of={StepperInput} />
+
+## References
+1. [https://www.nngroup.com/articles/input-steppers/](https://www.nngroup.com/articles/input-steppers/)
+2. [https://carbondesignsystem.com/components/number-input/usage/](https://carbondesignsystem.com/components/number-input/usage/)
+3. [https://www.patternfly.org/components/number-input/design-guidelines](https://www.patternfly.org/components/number-input/design-guidelines)
+
