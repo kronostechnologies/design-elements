@@ -90,8 +90,8 @@ function getSortState(currentSort: false | SortDirection): SortState {
 
 function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TValue>): ReactElement {
     const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
-    const sortState: SortState = getSortState(header.column.getIsSorted());
     const hasRightBorder = isAGroupColumn(header.column) || isColumnIsLastInAGroup(header.column);
+    const sortState: SortState = getSortState(header.column.getIsSorted());
 
     if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
         devConsole.warn(

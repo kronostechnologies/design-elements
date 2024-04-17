@@ -334,6 +334,277 @@ exports[`Table has clickable rows styles 1`] = `
 </table>
 `;
 
+exports[`Table has column with headers grouped 1`] = `
+.c8 {
+  background-color: inherit;
+}
+
+.c8:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c8 td {
+  background-color: inherit;
+}
+
+.c9 {
+  background-color: inherit;
+}
+
+.c10 {
+  background-color: inherit;
+  border-right: 1px solid #DBDEE1;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font: inherit;
+  text-align: left;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+  border-right: 1px solid #DBDEE1;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c4 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c4:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c6 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  background: #FFFFFF;
+  border-collapse: collapse;
+  color: #1B1C1E;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  margin-left: 50%;
+  min-width: var(--size-2halfx);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: var(--size-2halfx);
+}
+
+.c1 {
+  background: inherit;
+}
+
+.c7 {
+  background: inherit;
+}
+
+<table
+  class="c0"
+>
+  <thead
+    class="c1"
+  >
+    <tr
+      class="c2"
+    >
+      <th
+        class="c3"
+        colspan="2"
+        scope="col"
+      >
+        Group 1
+      </th>
+      <th
+        class="c3"
+        scope="col"
+      >
+        Group 2
+      </th>
+    </tr>
+    <tr
+      class="c2"
+    >
+      <th
+        aria-sort="none"
+        class="c4"
+        scope="col"
+      >
+        <button
+          class="c5"
+        >
+          Column 1
+          <svg
+            class="c6"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+      <th
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c5"
+        >
+          Column 2
+          <svg
+            class="c6"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+      <th
+        aria-sort="none"
+        class="c3"
+        scope="col"
+      >
+        <button
+          class="c5"
+        >
+          Column 3
+          <svg
+            class="c6"
+            color="#60666E"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="c7"
+  >
+    <tr
+      class="c8"
+      data-testid="table-row-0"
+    >
+      <td
+        class="c9"
+      >
+        Hello
+      </td>
+      <td
+        class="c10"
+      >
+        World
+      </td>
+      <td
+        class="c10"
+      />
+    </tr>
+    <tr
+      class="c8"
+      data-testid="table-row-1"
+    >
+      <td
+        class="c9"
+      >
+        Hello
+      </td>
+      <td
+        class="c10"
+      >
+        Planet
+      </td>
+      <td
+        class="c10"
+      />
+    </tr>
+    <tr
+      class="c8"
+      data-testid="table-row-2"
+    >
+      <td
+        class="c9"
+      >
+        Hello
+      </td>
+      <td
+        class="c10"
+      >
+        Galaxy
+      </td>
+      <td
+        class="c10"
+      />
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Table has custom text alignment 1`] = `
 .c6 {
   background-color: inherit;
@@ -842,277 +1113,6 @@ exports[`Table has error rows styles 1`] = `
       >
         World
       </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`Table has header group columns 1`] = `
-.c8 {
-  background-color: inherit;
-}
-
-.c8:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c8 td {
-  background-color: inherit;
-}
-
-.c9 {
-  background-color: inherit;
-}
-
-.c10 {
-  background-color: inherit;
-  border-right: 1px solid #DBDEE1;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font: inherit;
-  text-align: left;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c3 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-  border-right: 1px solid #DBDEE1;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c4 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c4:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c2 {
-  background-color: inherit;
-}
-
-.c6 {
-  margin-left: var(--spacing-1x);
-}
-
-.c0 {
-  background: #FFFFFF;
-  border-collapse: collapse;
-  color: #1B1C1E;
-  width: 100%;
-}
-
-.c0 th {
-  font-weight: var(--font-semi-bold);
-  padding: var(--spacing-1x) var(--spacing-2x);
-}
-
-.c0 td {
-  padding: var(--spacing-2x);
-}
-
-.c0 th,
-.c0 td {
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin: 0;
-  text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
-}
-
-.c0 .eq-table__util-column {
-  box-sizing: border-box;
-  color: #60666E;
-  font-size: 0.75rem;
-  margin-left: 50%;
-  min-width: var(--size-2halfx);
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: var(--size-2halfx);
-}
-
-.c1 {
-  background: inherit;
-}
-
-.c7 {
-  background: inherit;
-}
-
-<table
-  class="c0"
->
-  <thead
-    class="c1"
-  >
-    <tr
-      class="c2"
-    >
-      <th
-        class="c3"
-        colspan="2"
-        scope="col"
-      >
-        Group 1
-      </th>
-      <th
-        class="c3"
-        scope="col"
-      >
-        Group 2
-      </th>
-    </tr>
-    <tr
-      class="c2"
-    >
-      <th
-        aria-sort="none"
-        class="c4"
-        scope="col"
-      >
-        <button
-          class="c5"
-        >
-          Column 1
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </th>
-      <th
-        aria-sort="none"
-        class="c3"
-        scope="col"
-      >
-        <button
-          class="c5"
-        >
-          Column 2
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </th>
-      <th
-        aria-sort="none"
-        class="c3"
-        scope="col"
-      >
-        <button
-          class="c5"
-        >
-          Column 3
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    class="c7"
-  >
-    <tr
-      class="c8"
-      data-testid="table-row-0"
-    >
-      <td
-        class="c9"
-      >
-        Hello
-      </td>
-      <td
-        class="c10"
-      >
-        World
-      </td>
-      <td
-        class="c10"
-      />
-    </tr>
-    <tr
-      class="c8"
-      data-testid="table-row-1"
-    >
-      <td
-        class="c9"
-      >
-        Hello
-      </td>
-      <td
-        class="c10"
-      >
-        Planet
-      </td>
-      <td
-        class="c10"
-      />
-    </tr>
-    <tr
-      class="c8"
-      data-testid="table-row-2"
-    >
-      <td
-        class="c9"
-      >
-        Hello
-      </td>
-      <td
-        class="c10"
-      >
-        Galaxy
-      </td>
-      <td
-        class="c10"
-      />
     </tr>
   </tbody>
 </table>

@@ -57,7 +57,7 @@ const columnsWithHeaderAriaLabel: TableColumn<TestData>[] = [
     },
 ];
 
-const columnsWithHeaderGroup: TableColumn<TestData>[] = [
+const columnsWithHeadersGrouped: TableColumn<TestData>[] = [
     {
         header: 'Group 1',
         columns: [
@@ -337,10 +337,10 @@ describe('Table', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has header group columns', () => {
+    test('has column with headers grouped', () => {
         const tree = renderWithProviders(
             <Table<TestData>
-                columns={columnsWithHeaderGroup}
+                columns={columnsWithHeadersGrouped}
                 data={data}
             />,
         );

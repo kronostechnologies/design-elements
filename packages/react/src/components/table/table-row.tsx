@@ -152,14 +152,13 @@ const StyledCell = styled.td<StyledCellProps>`
 `;
 
 function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {
-    const hasRightBorder = isColumnIsLastInAGroup(cell.column);
     return (
         <StyledCell
             $sticky={cell.column.columnDef.sticky || false}
             $textAlign={cell.column.columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
-            hasRightBorder={hasRightBorder}
+            hasRightBorder={isColumnIsLastInAGroup(cell.column)}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
         </StyledCell>
