@@ -1,0 +1,48 @@
+import { DropdownNavigation } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as DropdownNavigationStories  from './dropdown-navigation.stories';
+
+<Meta of={DropdownNavigationStories} />
+
+# Dropdown Navigation
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Dropdown navigation allows users to navigate from a menu that opens with a list of internal or external URLs.
+<Canvas of={DropdownNavigationStories.Desktop} />
+
+## Usage
+### When to use 
+- Use for URL links, whether internal to the application or external.
+- Use when there are between 2 - 9 items that need a hierarchical navigation structure [1].
+- Use when you need to group related navigation elements under categories for more efficient organization and simplified navigation.
+- Use when you need a hierarchical navigation structure.
+
+### When not to use 
+- Do not use for actions, use menu button instead.
+- Do not use when you have only one link to display [1].
+- Do not use when you have enough space to display all the links upfront.
+
+## Variants
+### Desktop
+#### Default
+<Canvas of={DropdownNavigationStories.Desktop} />
+
+#### Icon only
+<Canvas of={DropdownNavigationStories.DesktopIconOnly} />
+
+### Mobile
+#### Default
+<Canvas of={DropdownNavigationStories.Mobile} />
+
+#### Icon only
+<Canvas of={DropdownNavigationStories.MobileIconOnly} />
+
+## Properties
+<ArgTypes of={DropdownNavigation} />
+
+## References
+1. [https://ui-patterns.com/patterns/VerticalDropdownMenu](https://ui-patterns.com/patterns/VerticalDropdownMenu)
