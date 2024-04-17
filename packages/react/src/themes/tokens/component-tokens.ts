@@ -10,7 +10,7 @@ import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
-import { defaultProgressTokens, ProgressTokens } from './component/progress-tracker-tokens';
+import { defaultProgressTokens, ProgressTokens } from './component/progress-tokens';
 import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
 import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
