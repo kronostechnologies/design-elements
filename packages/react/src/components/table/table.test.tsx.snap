@@ -848,23 +848,28 @@ exports[`Table has error rows styles 1`] = `
 `;
 
 exports[`Table has header group columns 1`] = `
-.c7 {
-  background-color: inherit;
-}
-
-.c7:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c7 td {
-  background-color: inherit;
-}
-
 .c8 {
   background-color: inherit;
 }
 
-.c4 {
+.c8:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c8 td {
+  background-color: inherit;
+}
+
+.c9 {
+  background-color: inherit;
+}
+
+.c10 {
+  background-color: inherit;
+  border-right: 1px solid #DBDEE1;
+}
+
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -878,7 +883,7 @@ exports[`Table has header group columns 1`] = `
   text-align: left;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
 }
 
@@ -886,9 +891,25 @@ exports[`Table has header group columns 1`] = `
   background-color: inherit;
   box-sizing: border-box;
   position: relative;
+  border-right: 1px solid #DBDEE1;
 }
 
 .c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c4 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c4:before {
   border-bottom: 1px solid #DBDEE1;
   bottom: 0;
   content: '';
@@ -901,7 +922,7 @@ exports[`Table has header group columns 1`] = `
   background-color: inherit;
 }
 
-.c5 {
+.c6 {
   margin-left: var(--spacing-1x);
 }
 
@@ -950,7 +971,7 @@ exports[`Table has header group columns 1`] = `
   background: inherit;
 }
 
-.c6 {
+.c7 {
   background: inherit;
 }
 
@@ -982,15 +1003,15 @@ exports[`Table has header group columns 1`] = `
     >
       <th
         aria-sort="none"
-        class="c3"
+        class="c4"
         scope="col"
       >
         <button
-          class="c4"
+          class="c5"
         >
           Column 1
           <svg
-            class="c5"
+            class="c6"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1004,11 +1025,11 @@ exports[`Table has header group columns 1`] = `
         scope="col"
       >
         <button
-          class="c4"
+          class="c5"
         >
           Column 2
           <svg
-            class="c5"
+            class="c6"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1022,11 +1043,11 @@ exports[`Table has header group columns 1`] = `
         scope="col"
       >
         <button
-          class="c4"
+          class="c5"
         >
           Column 3
           <svg
-            class="c5"
+            class="c6"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1037,60 +1058,60 @@ exports[`Table has header group columns 1`] = `
     </tr>
   </thead>
   <tbody
-    class="c6"
+    class="c7"
   >
     <tr
-      class="c7"
+      class="c8"
       data-testid="table-row-0"
     >
       <td
-        class="c8"
+        class="c9"
       >
         Hello
       </td>
       <td
-        class="c8"
+        class="c10"
       >
         World
       </td>
       <td
-        class="c8"
+        class="c10"
       />
     </tr>
     <tr
-      class="c7"
+      class="c8"
       data-testid="table-row-1"
     >
       <td
-        class="c8"
+        class="c9"
       >
         Hello
       </td>
       <td
-        class="c8"
+        class="c10"
       >
         Planet
       </td>
       <td
-        class="c8"
+        class="c10"
       />
     </tr>
     <tr
-      class="c7"
+      class="c8"
       data-testid="table-row-2"
     >
       <td
-        class="c8"
+        class="c9"
       >
         Hello
       </td>
       <td
-        class="c8"
+        class="c10"
       >
         Galaxy
       </td>
       <td
-        class="c8"
+        class="c10"
       />
     </tr>
   </tbody>

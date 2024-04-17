@@ -9,6 +9,7 @@ import {
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
+import { isColumnIsLastInAGroup } from './utils/table-utils';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
@@ -21,6 +22,13 @@ interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData
     column: Column<TData, TValue> & {
         columnDef: TableColumn<TData, TValue>;
     };
+}
+
+interface StyledCellProps {
+    hasRightBorder: boolean;
+    $sticky?: boolean,
+    $startOffset: number;
+    $textAlign: CSSProperties['textAlign']
 }
 
 function getRowBackgroundColor({
@@ -128,7 +136,7 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
     ${getCellBackgroundCss}
 `;
 
-const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
+const StyledCell = styled.td<StyledCellProps>`
     background-color: inherit;
     text-align: ${({ $textAlign }) => $textAlign};
 
@@ -137,15 +145,21 @@ const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAli
         position: sticky;
         z-index: 2;
     `}
+
+    ${({ hasRightBorder }) => hasRightBorder && css`
+        border-right: 1px solid ${({ theme }) => theme.greys.grey};
+    `}
 `;
 
 function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {
+    const hasRightBorder = isColumnIsLastInAGroup(cell.column);
     return (
         <StyledCell
             $sticky={cell.column.columnDef.sticky || false}
             $textAlign={cell.column.columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
+            hasRightBorder={hasRightBorder}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
         </StyledCell>

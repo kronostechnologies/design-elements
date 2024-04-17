@@ -1264,7 +1264,7 @@ export const HeaderAriaLabel: Story = () => {
     );
 };
 
-export const HeaderGroupColumns: Story = () => {
+export const GroupedHeaders: Story = () => {
     const columns: TableColumn<Data> = [
         {
             header: 'Group 1',
