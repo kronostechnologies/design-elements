@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Components/Bento Menu',
+    title: 'Core/Bento Menu',
     component: BentoMenuButton,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
@@ -75,30 +75,3 @@ export const Mobile: Story = () => (
     </GlobalHeader>
 );
 Mobile.decorators = [MobileDecorator];
-
-export const WithNavContainer: Story = () => (
-    <GlobalHeader>
-        <BentoMenuButton tag="nav" productLinks={products} externalLinks={resources} />
-    </GlobalHeader>
-);
-
-export const WithCustomProductGroups: Story = () => (
-    <GlobalHeader>
-        <BentoMenuButton
-            tag="nav"
-            productGroups={[
-                {
-                    name: 'groupA',
-                    label: 'Label Group A',
-                    productLinks: [products[0], products[1]],
-                },
-                {
-                    name: 'groupB',
-                    label: 'Label Group B',
-                    productLinks: [products[2], products[3]],
-                },
-            ]}
-            externalLinks={resources}
-        />
-    </GlobalHeader>
-);
