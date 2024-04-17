@@ -1,0 +1,38 @@
+import { MoneyInput } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as MoneyInputStories from './money-input.stories';
+
+<Meta of={MoneyInputStories} />
+
+# Money Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Money input is a control element that allows the user to enter numeric values that represent an amount of money in a particular currency.
+<Canvas of={MoneyInputStories.FrenchLocale} />
+
+## Usage
+### When to use
+- Use when you have to enter or edit money values.
+
+### When not to use
+- Do not use for anything else than a money value. 
+
+## Variants
+### French Currency Display
+When the component displays a CAD or USD currency in French, the currency symbol is on the right.
+<Canvas of={MoneyInputStories.FrenchLocale} />
+
+### English Currency display
+When the component displays a CAD or USD currency in English, the currency symbol is on the left.
+<Canvas of={MoneyInputStories.EnglishLocale} />
+
+## Properties
+<ArgTypes of={MoneyInput} />
+
+## References
+1. [https://carbondesignsystem.com/components/number-input/code/](https://carbondesignsystem.com/components/number-input/code/)
+2. [https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/?fbclid=IwAR0bHd65BZ9TFxzqEAwzqajDWaPccLr9pBHj-6EutI0AXXvWRpROi0-XjAo](https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/?fbclid=IwAR0bHd65BZ9TFxzqEAwzqajDWaPccLr9pBHj-6EutI0AXXvWRpROi0-XjAo)
