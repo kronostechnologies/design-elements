@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Components/Dropdown Navigation',
+    title: 'Core/Dropdown Navigation',
     component: DropdownNavigation,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
