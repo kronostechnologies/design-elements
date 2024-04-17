@@ -1,0 +1,40 @@
+import { PhoneInput } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as PhoneInputStories from './phone-input.stories';
+
+<Meta of={PhoneInputStories} />
+
+# Phone Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The phone input allows users to type a phone number in the appropriate regional format.
+<Canvas of={PhoneInputStories.Default} />
+
+## Usage
+### When to use
+- Use for phone number only.
+- Use when there is a validation after.
+
+### When not to use
+- Do not use for anything else than a phone number.
+- Do not use if there is no validation afterwards.
+
+## Variants
+### Default
+The Phone Input Default allows users to enter a phone number in a Canadian or US format.
+<Canvas of={PhoneInputStories.Default} />
+
+### Mobile
+<Canvas of={PhoneInputStories.Mobile} />
+
+## Properties
+<ArgTypes of={PhoneInput} />
+
+## References
+1. [https://uxplanet.org/phone-number-field-design-best-practices-23957cbd86d5](https://uxplanet.org/phone-number-field-design-best-practices-23957cbd86d5)
+2. [https://stackoverflow.com/questions/723587/whats-the-longest-possible-worldwide-phone-number-i-should-consider-in-sql-varc](https://stackoverflow.com/questions/723587/whats-the-longest-possible-worldwide-phone-number-i-should-consider-in-sql-varc)
+3. [https://www.nngroup.com/articles/international-sites-requirements/](https://www.nngroup.com/articles/international-sites-requirements/)
