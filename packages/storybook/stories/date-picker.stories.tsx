@@ -1,10 +1,8 @@
-import { Button, Datepicker, DatepickerHandles } from '@equisoft/design-elements-react';
+import { Datepicker } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { FormEvent, useRef } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
-import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
     height: 400px;
@@ -21,72 +19,8 @@ export default {
     parameters: rawCodeParameters,
 };
 
-export const Normal: Story<typeof Datepicker> = () => (
+export const Default: Story<typeof Datepicker> = () => (
     <Datepicker label="Date" data-testid="a-data-test-id" hint="Hint" />
-);
-
-export const WithTooltip: Story = () => (
-    <Datepicker label="Date" tooltip={{ label: 'Tooltip text content' }} hint="Hint" />
-);
-
-export const InsideShadowDom: Story = () => (
-    <Datepicker label="Date" hint="Hint" />
-);
-InsideShadowDom.decorators = [ShadowDomDecorator];
-
-export const WithTodayButton: Story = () => (
-    <Datepicker label="Date" hasTodayButton />
-);
-
-export const Disabled: Story = () => (
-    <Datepicker label="Date" disabled />
-);
-
-export const CustomDateFormat: Story = () => (
-    <Datepicker label="Date" dateFormat="dd/MM" />
-);
-
-export const CustomPlaceholder: Story = () => (
-    <Datepicker label="Date" placeholder="Hello World" />
-);
-
-export const Invalid: Story = () => (
-    <Datepicker label="Date" valid={false} />
-);
-
-export const MaxDate: Story = () => (
-    <Datepicker label="Date" maxDate={upcomingDate} />
-);
-
-export const MinDate: Story = () => (
-    <Datepicker label="Date" minDate={currentDate} />
-);
-
-export const ReadOnly: Story = () => (
-    <Datepicker label="Date" value="2002-02-02" readOnly />
-);
-
-export const Required: Story = () => (
-    <form onSubmit={(event: FormEvent) => event.preventDefault()}>
-        <Datepicker label="Date" required />
-        <button type="submit">Submit</button>
-    </form>
-);
-
-export const StartOpen: Story = () => (
-    <Datepicker label="Date" startOpen />
-);
-
-export const DefaultDate: Story = () => (
-    <Datepicker label="Date" defaultDate={new Date('1995-05-05')} />
-);
-
-export const OpenToDate: Story = () => (
-    <Datepicker label="Date" openToDate={new Date('1995-05-05')} />
-);
-
-export const CustomLocale: Story = () => (
-    <Datepicker label="Date" locale="fr-CA" />
 );
 
 export const WithOnChangeCallback: Story = () => (
@@ -100,33 +34,3 @@ export const WithOnBlurCallback: Story = () => (
 export const WithOnFocusCallback: Story = () => (
     <Datepicker label="Date" onFocus={(event) => console.info(`[onFocus] Value: ${event.target.value}`)} />
 );
-
-export const WithDatepickerResetHandle: Story = () => {
-    const datepickerRef = useRef<DatepickerHandles>(null);
-
-    function handleClick(): void {
-        datepickerRef.current?.reset();
-    }
-
-    return (
-        <>
-            <Datepicker ref={datepickerRef} />
-            <Button buttonType="primary" label="reset" onClick={handleClick} />
-        </>
-    );
-};
-
-export const WithDatepickerSetDateHandle: Story = () => {
-    const datepickerRef = useRef<DatepickerHandles>(null);
-
-    function handleClick(): void {
-        datepickerRef.current?.setDate(new Date());
-    }
-
-    return (
-        <>
-            <Datepicker ref={datepickerRef} />
-            <Button buttonType="primary" label="Set to today" onClick={handleClick} />
-        </>
-    );
-};
