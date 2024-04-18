@@ -25,20 +25,15 @@ const disabledGroup = [
 ];
 
 export default {
-    title: 'Components/Toggle Button Group',
+    title: 'Components/Segmented Control',
     component: ToggleButtonGroup,
     tags: ['autodocs'],
 };
 
-export const ButtonGroup: Story = () => (
-    <ToggleButtonGroup groupName="Story1" buttonGroup={buttonGroup} />
-);
-export const DefaultChecked: Story = () => (
+export const Default: Story = () => (
     <ToggleButtonGroup groupName="Story2" buttonGroup={defaultCheckedGroup} />
 );
-export const Disabled: Story = () => (
-    <ToggleButtonGroup groupName="Story3" buttonGroup={disabledGroup} />
-);
+
 export const WithCallback: Story = () => (
     <ToggleButtonGroup
         groupName="Test5"
