@@ -7,7 +7,6 @@ import {
     equisoftTheme,
     defaultTheme,
     ThemeCustomization,
-    ResolvedTheme,
     buildTheme,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
@@ -70,7 +69,7 @@ const warioThemeCustomization: ThemeCustomization = {
     },
 };
 
-const warioTheme: ResolvedTheme = buildTheme(warioThemeCustomization);
+const warioTheme = buildTheme(warioThemeCustomization);
 
 export const Theming: Story = {
     render() {

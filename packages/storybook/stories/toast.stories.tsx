@@ -1,7 +1,6 @@
 import {
     Button,
     DesignSystem,
-    ResolvedTheme,
     ThemeCustomization,
     useToast,
     buildTheme,
@@ -26,7 +25,7 @@ const discoveryCustomization: ThemeCustomization = {
     },
 };
 
-const discoveryTheme: ResolvedTheme = buildTheme(discoveryCustomization);
+const discoveryTheme = buildTheme(discoveryCustomization);
 
 const successCustomization: ThemeCustomization = {
     component: {
@@ -39,7 +38,7 @@ const successCustomization: ThemeCustomization = {
     },
 };
 
-const successTheme: ResolvedTheme = buildTheme(successCustomization);
+const successTheme = buildTheme(successCustomization);
 
 const warningCustomization: ThemeCustomization = {
     component: {
@@ -52,7 +51,7 @@ const warningCustomization: ThemeCustomization = {
     },
 };
 
-const warningTheme: ResolvedTheme = buildTheme(warningCustomization);
+const warningTheme = buildTheme(warningCustomization);
 
 export const ShowToast: VoidFunctionComponent = () => {
     const { showToast } = useToast();

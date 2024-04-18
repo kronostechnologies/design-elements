@@ -1,5 +1,5 @@
 import { buildTheme } from './build-theme';
-import { ResolvedTheme, ThemeCustomization } from './theme';
+import { ThemeCustomization } from './theme';
 import { defaultAliasTokens, defaultComponentTokens, defaultRefTokens } from './tokens';
 
 export const equisoftThemeCustomization: ThemeCustomization = {
@@ -8,4 +8,4 @@ export const equisoftThemeCustomization: ThemeCustomization = {
     component: defaultComponentTokens,
 };
 
-export const equisoftTheme: ResolvedTheme = buildTheme(equisoftThemeCustomization);
+export const equisoftTheme = buildTheme(equisoftThemeCustomization);
