@@ -1,4 +1,4 @@
-import { GlobalHeader, UserProfile } from '@equisoft/design-elements-react';
+import { GlobalHeader } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { ReactElement, VoidFunctionComponent } from 'react';
 import CustomLogoSvg from './assets/customLogo.svg';
