@@ -1,110 +1,80 @@
-import { Button, Modal, useModal } from '@equisoft/design-elements-react';
-import { StoryFn, StoryObj } from '@storybook/react';
+import { Button, ModalDialog, useModal } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 
-// eslint-disable-next-line import/no-default-export
-export default {
-    title: 'Core/Modal (core)',
-    component: Modal,
-};
-
-type Story = StoryFn<typeof Modal>;
-
-export const Normal: Story = () => {
-    const { isModalOpen, closeModal, openModal } = useModal();
-    return (
-        <>
-            <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-            <Modal
-                appElement="#storybook-root"
-                ariaLabel="Modal label"
-                ariaDescribedby="story-description"
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
-            >
-                <span id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </Modal>
-        </>
-    );
-};
-
-export const PaddingDisabled: StoryObj<typeof Modal> = {
-    parameters: {
-        docs: {
-            description: {
-                story: 'The prop `noPadding` removes padding to give you a blank modal to work with.',
-            },
+const meta: Meta<typeof ModalDialog> = {
+    title: 'Components/Modal',
+    component: ModalDialog,
+    argTypes: {
+        appElement: {
+            control: { type: null },
+        },
+        isOpen: {
+            control: { type: null },
+        },
+        onRequestClose: {
+            control: { type: null },
+        },
+        parentSelector: {
+            control: { type: null },
         },
     },
-    render: () => {
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ModalDialog>;
+
+export const Default: Story = {
+    args: {
+        ariaDescribedby: 'story-description',
+        title: 'Heading 5',
+        subtitle: 'Subtitle 1',
+    },
+    render: (args) => {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
             <>
                 <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-                <Modal
+                <ModalDialog
+                    {...args /* eslint-disable-line react/jsx-props-no-spreading */}
                     appElement="#storybook-root"
-                    ariaLabel="Modal label"
-                    ariaDescribedby="story-description"
-                    noPadding
                     isOpen={isModalOpen}
                     onRequestClose={closeModal}
                 >
-                    <span id="story-description">A modal without padding</span>
-                </Modal>
+                    <p style={{ margin: 0 }} id="story-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Vivamus fringilla tellus nec auctor gravida.
+                    </p>
+                </ModalDialog>
             </>
         );
     },
 };
 
-export const WithoutCloseButton: Story = () => {
-    const { isModalOpen, closeModal, openModal } = useModal();
-    return (
-        <>
-            <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-            <Modal
-                appElement="#storybook-root"
-                ariaLabel="Modal label"
-                hasCloseButton={false}
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
-            />
-        </>
-    );
-};
-
-export const WithHeader: Story = () => {
-    const { isModalOpen, closeModal, openModal } = useModal();
-    return (
-        <>
-            <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-            <Modal
-                appElement="#storybook-root"
-                ariaLabel="Modal label"
-                ariaDescribedby="story-description"
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
-                modalHeader={<b>Header content</b>}
-            >
-                <span id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </Modal>
-        </>
-    );
-};
-
-export const WithFooter: Story = () => {
-    const { isModalOpen, closeModal, openModal } = useModal();
-    return (
-        <>
-            <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-            <Modal
-                appElement="#storybook-root"
-                ariaLabel="Modal label"
-                ariaDescribedby="story-description"
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
-                modalFooter={<b>Footer content</b>}
-            >
-                <span id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </Modal>
-        </>
-    );
+export const AlertModal: Story = {
+    args: {
+        ariaDescribedby: 'story-description',
+        dialogType: 'alert',
+        confirmButton: { label: 'Delete' },
+        title: 'Alert Modal',
+        subtitle: 'Subtitle 1',
+    },
+    render: (args) => {
+        const { isModalOpen, closeModal, openModal } = useModal();
+        return (
+            <>
+                <Button label="Open Modal" buttonType="destructive-primary" onClick={openModal} />
+                <ModalDialog
+                    {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                    appElement="#storybook-root"
+                    isOpen={isModalOpen}
+                    onRequestClose={closeModal}
+                >
+                    <p style={{ margin: 0 }} id="story-description">
+                        This modal has a destructive button. It is used to alert the user of something.
+                    </p>
+                </ModalDialog>
+            </>
+        );
+    },
 };
