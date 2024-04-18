@@ -16,7 +16,7 @@ Toasts are time-based notifications that provide non-disruptive feedback about n
 intended to be noticed without disrupting the user experience or requiring any action [1]. The content shown in
 these messages are helpful to the user but not as important to break the users current workflow and divert their
 complete attention to that message [8].
-<Canvas of={ToastStories.Confirmation} />
+<Canvas of={ToastStories.Success} />
 
 ## Usage
 
@@ -40,13 +40,13 @@ necessary. This addition allows the user to anticipate an upcoming update or eve
 general information with an informational toast.
 <Canvas of={ToastStories.Neutral} />
 
-### Confirmation
-The confirmation toast uses the positive semantic color (green) and has a check icon to help people with color vision
+### Success
+The success toast uses the positive semantic color (green) and has a check icon to help people with color vision
 impairment discern the tone of the message. It is used to inform a user of a successful action or completion of a
-task [1]. The confirmation messages that users see after completing an action are one of the most important responses
+task [1]. The success messages that users see after completing an action are one of the most important responses
 they expect [2]. Above all, they should reassure. The message confirms to the user that the action was successful and
 that everything is in order [3].
-<Canvas of={ToastStories.Confirmation} />
+<Canvas of={ToastStories.Success} />
 
 ### Warning
 The warning toast uses the semantic color (yellow) and has a warning icon to help people with color vision impairment
@@ -66,6 +66,7 @@ connection timed out [5].
 <Canvas of={ToastStories.Alert} />
 
 ### Discovery
+The Discovery toast includes a discovery icon to help people with color vision impairment discern the tone of the message. It is used fo informing users of an update or a new feature within the product.
 <Canvas of={ToastStories.Discovery} />
 
 ## References

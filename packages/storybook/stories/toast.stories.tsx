@@ -50,7 +50,7 @@ return (
 
 export const Neutral = createStory('neutral', 'Document currently uploading...');
 
-export const Confirmation = createStory('success', 'User profile updated');
+export const Success = createStory('success', 'User profile updated');
 
 export const Warning = createStory('warning', 'Your license is about to expire');
 
