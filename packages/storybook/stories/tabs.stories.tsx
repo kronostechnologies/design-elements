@@ -110,10 +110,11 @@ export const Scrollable: Story = () => {
     }));
 
     return (
-        <>
+        <div style={{ maxWidth: '600px' }}>
             <Tabs tabs={tabs} />
+            <br />
             <Tabs tabs={tabs} global />
-        </>
+        </div>
     );
 };
 
