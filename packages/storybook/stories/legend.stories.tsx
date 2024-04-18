@@ -19,7 +19,7 @@ const legendItems: LegendItem[] = [
 ];
 
 export default {
-    title: 'Components/Legend',
+    title: 'Deprecated/Legend (deprecated)',
     component: Legend,
 };
 
