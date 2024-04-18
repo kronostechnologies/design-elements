@@ -90,10 +90,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c7::after {
-  background-color: #006296;
-}
-
 .c7:focus {
   outline: none;
 }
@@ -106,6 +102,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
 
 .c7:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c7::after {
+  background-color: #006296;
 }
 
 .c10 {
@@ -139,15 +139,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c10:active {
-  color: #1B1C1E;
-  font-weight: var(--font-semi-bold);
-}
-
-.c10:active::after {
-  background-color: #003A5A !important;
-}
-
 .c10:focus {
   outline: none;
 }
@@ -160,6 +151,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
 
 .c10:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c10:active {
+  color: #1B1C1E;
+  font-weight: var(--font-semi-bold);
+}
+
+.c10:active::after {
+  background-color: #003A5A !important;
 }
 
 .c5 {
@@ -533,10 +533,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c7::after {
-  background-color: #006296;
-}
-
 .c7:focus {
   outline: none;
 }
@@ -549,6 +545,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c7:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c7::after {
+  background-color: #006296;
 }
 
 .c10 {
@@ -582,15 +582,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c10:active {
-  color: #1B1C1E;
-  font-weight: var(--font-semi-bold);
-}
-
-.c10:active::after {
-  background-color: #003A5A !important;
-}
-
 .c10:focus {
   outline: none;
 }
@@ -603,6 +594,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c10:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c10:active {
+  color: #1B1C1E;
+  font-weight: var(--font-semi-bold);
+}
+
+.c10:active::after {
+  background-color: #003A5A !important;
 }
 
 .c5 {
@@ -983,10 +983,6 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c7::after {
-  background-color: #006296;
-}
-
 .c7:focus {
   outline: none;
 }
@@ -999,6 +995,10 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c7:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c7::after {
+  background-color: #006296;
 }
 
 .c10 {
@@ -1032,15 +1032,6 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c10:active {
-  color: #1B1C1E;
-  font-weight: var(--font-semi-bold);
-}
-
-.c10:active::after {
-  background-color: #003A5A !important;
-}
-
 .c10:focus {
   outline: none;
 }
@@ -1053,6 +1044,15 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c10:focus:not(:focus-visible) {
   box-shadow: none;
+}
+
+.c10:active {
+  color: #1B1C1E;
+  font-weight: var(--font-semi-bold);
+}
+
+.c10:active::after {
+  background-color: #003A5A !important;
 }
 
 .c5 {

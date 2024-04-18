@@ -76,16 +76,14 @@ describe('Tabs', () => {
                 id: 'tab1',
                 title: 'Tab 1',
                 panelContent: <div>content</div>,
-                onRemove: () => undefined,
             },
             {
                 id: 'tab2',
                 title: 'Tab 2',
                 panelContent: <div>content</div>,
-                onRemove: () => undefined,
             },
         ];
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} onRemove={() => undefined} />);
 
         getActionButton(wrapper, 2).simulate('click');
 

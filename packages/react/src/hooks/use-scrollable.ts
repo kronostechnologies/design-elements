@@ -1,14 +1,19 @@
-import { RefObject, useEffect } from 'react';
+import { RefObject, useCallback, useEffect, useMemo } from 'react';
+
+interface OnScrollParams {
+    atStartX: boolean;
+    atEndX: boolean;
+}
 
 interface UseScrollableOptions {
     scrollableElement: RefObject<HTMLElement>;
     scrollByPercent: number;
-    onScroll: (params: { atStartX: boolean; atEndX: boolean; }) => void;
+    onScroll(params: OnScrollParams): void;
 }
 
 interface UseScrollableReturns {
-    scrollToLeft: () => void;
-    scrollToRight: () => void;
+    scrollToLeft(): void;
+    scrollToRight(): void;
 }
 
 /**
@@ -42,13 +47,14 @@ export function useScrollable({
         const resizeObserver = new ResizeObserver(handleScroll);
         resizeObserver.observe(scrollArea);
         scrollArea.addEventListener('scroll', handleScroll);
+
         return () => {
             resizeObserver.unobserve(scrollArea);
             scrollArea.removeEventListener('scroll', handleScroll);
         };
     }, [scrollableElement, onScroll]);
 
-    const handleScroll = (dir: 'left' | 'right') => () => {
+    const handleScroll = useCallback((dir: 'left' | 'right') => () => {
         if (!scrollableElement.current) {
             return;
         }
@@ -59,10 +65,10 @@ export function useScrollable({
         const newPosX = dir === 'left' ? currentPosX - moveBy : currentPosX + moveBy;
 
         scrollableElement.current.scrollTo({ left: newPosX, behavior: 'smooth' });
-    };
+    }, [scrollableElement, scrollByPercent]);
 
-    return {
+    return useMemo(() => ({
         scrollToLeft: handleScroll('left'),
         scrollToRight: handleScroll('right'),
-    };
+    }), [handleScroll]);
 }

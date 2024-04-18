@@ -1,7 +1,7 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -146,15 +146,14 @@ export const AddAndDeleteTabs: Story = () => {
         },
     ]);
 
-    function handleDelete(tabId: string): void {
+    function handleRemove(tabId: string): void {
         setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
     }
 
-    const tabsWithDelete = useMemo(() => tabs.map((t) => ({ ...t, onRemove: handleDelete })), [tabs]);
-
     return (
         <Tabs
-            tabs={tabsWithDelete}
+            tabs={tabs}
+            onRemove={handleRemove}
             onAddTab={() => {
                 addTabCounter += 1;
                 setTabs([...tabs, {

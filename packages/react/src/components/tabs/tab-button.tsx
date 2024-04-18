@@ -8,9 +8,9 @@ import { Icon, IconName } from '../icon/icon';
 
 const selectedIndicatorPosition = (global: boolean | undefined): string => (global ? 'bottom: 0' : 'top: 0');
 
-const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $removable?: boolean; }>`
+const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.component['tabs-tab-selected-text-color'] : theme.component['tabs-tab-text-color'])};
+    color: ${({ $selected, theme }) => ($selected ? theme.component['tabs-tab-selected-text-color'] : theme.component['tabs-tab-text-color'])};
     display: flex;
     font-family: var(--font-family);
     font-size: 0.875rem;
@@ -30,7 +30,10 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
         ${({ $global }) => selectedIndicatorPosition($global)};
     }
 
-    ${({ $isSelected, theme }) => !$isSelected && css`
+    ${({ theme }) => focus({ theme }, false, undefined, true)};
+    ${({ theme }) => focusVisibleReset({ theme }, false)};
+
+    ${({ $selected, theme }) => !$selected && css`
         &:active {
             color: ${theme.component['tabs-tab-active-text-color']};
             font-weight: var(--font-semi-bold);
@@ -41,7 +44,7 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
         }
     `}
 
-    ${({ $isSelected, theme }) => $isSelected && css`
+    ${({ $selected, theme }) => $selected && css`
         background: ${theme.greys.white};
         font-weight: var(--font-semi-bold);
 
@@ -49,9 +52,6 @@ const StyledButton = styled.button<{ $global?: boolean; $isSelected?: boolean; $
             background-color: ${theme.component['tabs-tab-selected-indicator-color']};
         }
     `}
-
-    ${({ theme }) => focus({ theme }, false, undefined, true)};
-    ${({ theme }) => focusVisibleReset({ theme }, false)};
 `;
 
 const StyledButtonIcon = styled(Icon)`
@@ -59,11 +59,11 @@ const StyledButtonIcon = styled(Icon)`
     vertical-align: middle;
 `;
 
-const StyledTab = styled.div<{ $isSelected: boolean; }>`
+const StyledTab = styled.div<{ $selected: boolean; }>`
     display: flex;
     position: relative;
 
-    ${({ $isSelected, theme }) => !$isSelected && css`
+    ${({ $selected, theme }) => !$selected && css`
         &:hover {
             ${StyledButton} {
                 &::after {
@@ -106,7 +106,7 @@ interface TabButtonProps {
     rightIcon?: IconName;
     isSelected: boolean;
     onClick(): void;
-    onRemove?(tabId: string): void;
+    onRemove?(): void;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
@@ -129,7 +129,7 @@ export const TabButton = forwardRef(({
     const hasRemove = !!onRemove;
 
     return (
-        <StyledTab $isSelected={isSelected} data-testid={dataTestId}>
+        <StyledTab $selected={isSelected} data-testid={dataTestId}>
             <StyledButton
                 type="button"
                 id={id}
@@ -142,7 +142,7 @@ export const TabButton = forwardRef(({
                 onClick={onClick}
                 onKeyDown={onKeyDown}
                 $removable={hasRemove}
-                $isSelected={isSelected}
+                $selected={isSelected}
                 $global={global}
             >
                 {leftIcon && (
@@ -168,7 +168,7 @@ export const TabButton = forwardRef(({
             {hasRemove && (
                 <DeleteButton
                     buttonType="tertiary"
-                    onClick={() => onRemove(id)}
+                    onClick={() => onRemove()}
                     data-testid={`${dataTestId}-delete`}
                     aria-label={t('dismissTab', { label: children })}
                     iconName='x'

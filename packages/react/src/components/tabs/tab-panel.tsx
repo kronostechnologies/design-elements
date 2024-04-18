@@ -28,9 +28,9 @@ const StyledDiv = styled.div<{ $isGlobal?: boolean; }>`
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
     buttonId,
     children,
+    global = false,
     hidden,
     id,
-    global,
 }) => (
     <StyledDiv
         $isGlobal={global}

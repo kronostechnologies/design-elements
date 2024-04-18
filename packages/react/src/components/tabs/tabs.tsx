@@ -102,7 +102,6 @@ export interface Tab {
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
-    onRemove?(tabId: string): void;
     onBeforeUnload?(): Promise<boolean>;
 }
 
@@ -119,10 +118,11 @@ interface Props {
     global?: boolean;
     tabs: Tab[];
     onAddTab?(): void;
+    onRemove?(tabId: string): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
-    className, global, forceRenderTabPanels, tabs, onAddTab,
+    className, global, forceRenderTabPanels, tabs, onAddTab, onRemove,
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
@@ -242,7 +242,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             isSelected={isTabSelected(tabItem.id)}
                             ref={tabItem.buttonRef}
                             onClick={() => handleTabSelected(tabItem)}
-                            onRemove={tabItem.onRemove}
+                            onRemove={onRemove ? () => onRemove(tabItem.id) : undefined}
                             onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                         >
                             {tabItem.title}
