@@ -27,7 +27,7 @@ export const Default: Story = {
     },
 };
 
-export const WithContent: Story = {
+export const WithConditionalContent: Story = {
     args: {
         label: 'Select an option',
         groupName: 'content',
