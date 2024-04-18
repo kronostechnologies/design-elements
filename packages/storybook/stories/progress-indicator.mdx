@@ -1,0 +1,51 @@
+import { Spinner } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as SpinnerStories  from './progress-indicator.stories';
+
+<Meta of={SpinnerStories} />
+
+# Progress Indicator (Spinner)
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The progress indicator represents the progress status of an ongoing process. It provides immediate feedback to users, signaling that the application or a specific element of the page is processing an action and requires some time to complete.
+<Canvas of={SpinnerStories.Default} />
+
+## Usage
+### When to use
+- When you want to inform users about the status of a process that takes time.
+- For processes requiring more than 1 second.
+- Use to integrate into a button or other components to express a connection between an interaction and a specific item.
+
+### When not to use
+- For durations less than 1 second.
+- Don’t use inline loading for full page loads, use skeleton states instead [2].
+- Don’t use in combination with a skeleton. Choose one or the other, depending on which best fits the use case.
+- Don’t trigger inline loading on more than one item or action at a time, unless on initial page load or refresh [2]. If a larger section of content is loading, consider using a larger size spinner instead of multiple smaller ones or a "skeleton” instead [8].
+- Don’t use when you know what the populated data is going to look like (even if it results in an empty state). use instead the "skeleton." [10].
+
+## Variants
+
+### Spinner
+- Use when the duration or progress of a process is unknown, variable, or of short duration.
+- Use for short durations, ranging from **1 to 9 seconds**, but preferably for very short wait times **(1 to 3 seconds)** [7-9].
+- Use when you don't know what the data you've filled in might look like. For example, if you're loading a form (because they're not all structured in the same way) [10].
+<Canvas of={SpinnerStories.Default} />
+
+## Properties
+<ArgTypes of={Spinner} />
+
+## References
+1. [https://m2.material.io/components/progress-indicators#usage](https://m2.material.io/components/progress-indicators#usage)
+2. [https://carbondesignsystem.com/components/inline-loading/usage/](https://carbondesignsystem.com/components/inline-loading/usage/)
+3. [https://www.smashingmagazine.com/2016/12/best-practices-for-animated-progress-indicators/](https://www.smashingmagazine.com/2016/12/best-practices-for-animated-progress-indicators/)
+4. [https://uxdesign.cc/loading-progress-indicators-ui-components-series-f4b1fc35339a](https://uxdesign.cc/loading-progress-indicators-ui-components-series-f4b1fc35339a)
+5. [https://carbondesignsystem.com/components/progress-bar/usage/](https://carbondesignsystem.com/components/progress-bar/usage/)
+6. [https://uxplanet.org/progress-indicators-4-common-styles-91a12b86060c](https://uxplanet.org/progress-indicators-4-common-styles-91a12b86060c)
+7. [https://www.nngroup.com/articles/progress-indicators/](https://www.nngroup.com/articles/progress-indicators/)
+8. [https://design.gitlab.com/components/spinner](https://design.gitlab.com/components/spinner)
+9. [https://uxmovement.com/navigation/progress-bars-vs-spinners-when-to-use-which/](https://uxmovement.com/navigation/progress-bars-vs-spinners-when-to-use-which/)
+10. [https://www.patternfly.org/components/spinner/design-guidelines/](https://www.patternfly.org/components/spinner/design-guidelines/)
