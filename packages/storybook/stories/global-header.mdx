@@ -1,0 +1,33 @@
+import { GlobalHeader } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as GlobalHeaderStories  from './global-header.stories';
+
+<Meta of={GlobalHeaderStories} />
+
+# Global Header
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Global header is a navigation component that provides the core information about the digital product so that users can scan it in seconds [1]. 
+<Canvas of={GlobalHeaderStories.Desktop} />
+
+## Usage
+The global header is essential for all Equisoft products since it is the main navigation element. 
+It houses the navigation and actions required to offer users the best experience. 
+
+## Variants
+### Default
+<Canvas of={GlobalHeaderStories.Desktop} />
+
+### Mobile
+<Canvas of={GlobalHeaderStories.Mobile} />
+
+## Properties
+<ArgTypes of={GlobalHeader} />
+
+## References
+1. [https://uxplanet.org/best-practices-for-website-header-design-e0d55bf5f1e2](https://uxplanet.org/best-practices-for-website-header-design-e0d55bf5f1e2)
+2. [https://www.nngroup.com/articles/utility-navigation/](https://www.nngroup.com/articles/utility-navigation/)

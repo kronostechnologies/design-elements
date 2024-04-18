@@ -22,14 +22,8 @@ const drawerContent: ReactElement = (
     </div>
 );
 
-export const Normal: Story = () => (
+export const Desktop: Story = () => (
     <GlobalHeader>
-        <p>Hello world</p>
-    </GlobalHeader>
-);
-
-export const WithAppName: Story = () => (
-    <GlobalHeader appName="analyze">
         <p>Hello world</p>
     </GlobalHeader>
 );
@@ -42,41 +36,9 @@ export const WithCustomLogo: Story = () => (
     </GlobalHeader>
 );
 
-export const WithAppTitleDesktop: Story = () => (
-    <GlobalHeader appTitleDesktop="App title">
-        <p>Hello world</p>
-    </GlobalHeader>
-);
-
-export const WithMobileDrawer: Story = () => (
+export const Mobile: Story = () => (
     <GlobalHeader mobileDrawerContent={drawerContent}>
         <p>Hello world</p>
     </GlobalHeader>
 );
-WithMobileDrawer.decorators = [MobileDecorator];
-
-export const WithSkipLink: Story = () => (
-    <GlobalHeader skipLink={{ href: '#' }}>
-        <p>Hello world</p>
-    </GlobalHeader>
-);
-
-export const WithSkipLinkAndUserProfile: Story = () => (
-    <GlobalHeader skipLink={{ href: '#' }}>
-        <p>Hello world</p>
-        <UserProfile
-            username="Mon user"
-            options={[{
-                value: 'Something',
-                href: '#',
-            },
-            ]}
-        />
-    </GlobalHeader>
-);
-
-export const WithoutReactRouter: Story = () => (
-    <GlobalHeader usesReactRouter={false} logoHref="https://www.google.com/">
-        <p>Hello world</p>
-    </GlobalHeader>
-);
+Mobile.decorators = [MobileDecorator];
