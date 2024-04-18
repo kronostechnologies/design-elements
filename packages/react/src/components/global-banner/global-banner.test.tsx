@@ -7,7 +7,7 @@ const defaultActionButton: ActionButton = {
     onClick: jest.fn(),
 };
 
-const bannerTypesArray: GlobalBannerType[] = ['alert', 'warning', 'info', 'default'];
+const bannerTypesArray: GlobalBannerType[] = ['alert', 'warning', 'discovery', 'neutral'];
 
 describe('GlobalBanner', () => {
     bannerTypesArray.forEach((type) => {

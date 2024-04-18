@@ -1,49 +1,94 @@
 export type PaletteTokens =
     | 'color-brand-05'
+    | 'color-brand-10'
     | 'color-brand-20'
+    | 'color-brand-30'
+    | 'color-brand-40'
     | 'color-brand-50'
+    | 'color-brand-60'
     | 'color-brand-70'
     | 'color-brand-80'
+    | 'color-brand-90'
+    | 'color-accent-05'
+    | 'color-accent-10'
     | 'color-accent-20'
+    | 'color-accent-30'
+    | 'color-accent-40'
     | 'color-accent-50'
+    | 'color-accent-60'
     | 'color-accent-70'
+    | 'color-accent-80'
+    | 'color-accent-90'
     | 'color-white'
     | 'color-black'
     | 'color-neutral-02'
     | 'color-neutral-05'
+    | 'color-neutral-10'
     | 'color-neutral-15'
+    | 'color-neutral-20'
     | 'color-neutral-30'
+    | 'color-neutral-40'
     | 'color-neutral-50'
+    | 'color-neutral-60'
     | 'color-neutral-65'
+    | 'color-neutral-70'
     | 'color-neutral-80'
     | 'color-neutral-90'
-    | 'color-alert-02'
-    | 'color-alert-05'
-    | 'color-alert-20'
-    | 'color-alert-50'
-    | 'color-alert-70'
-    | 'color-informative-02'
-    | 'color-informative-05'
-    | 'color-informative-20'
-    | 'color-informative-50'
-    | 'color-informative-70'
     | 'color-success-02'
     | 'color-success-05'
+    | 'color-success-10'
     | 'color-success-20'
+    | 'color-success-30'
+    | 'color-success-40'
     | 'color-success-50'
+    | 'color-success-60'
     | 'color-success-70'
+    | 'color-success-80'
+    | 'color-success-90'
+    | 'color-alert-02'
+    | 'color-alert-05'
+    | 'color-alert-10'
+    | 'color-alert-20'
+    | 'color-alert-30'
+    | 'color-alert-40'
+    | 'color-alert-50'
+    | 'color-alert-60'
+    | 'color-alert-70'
+    | 'color-alert-80'
+    | 'color-alert-90'
     | 'color-warning-02'
     | 'color-warning-05'
+    | 'color-warning-10'
     | 'color-warning-20'
+    | 'color-warning-30'
+    | 'color-warning-40'
     | 'color-warning-50'
     | 'color-warning-60'
     | 'color-warning-70'
     | 'color-warning-80'
+    | 'color-warning-90'
+    | 'color-informative-02'
+    | 'color-informative-05'
+    | 'color-informative-10'
+    | 'color-informative-20'
+    | 'color-informative-30'
+    | 'color-informative-40'
+    | 'color-informative-50'
+    | 'color-informative-60'
+    | 'color-informative-70'
+    | 'color-informative-80'
+    | 'color-informative-90'
     | 'color-discovery-02'
     | 'color-discovery-05'
+    | 'color-discovery-10'
     | 'color-discovery-20'
+    | 'color-discovery-30'
+    | 'color-discovery-40'
     | 'color-discovery-50'
-    | 'color-discovery-70';
+    | 'color-discovery-60'
+    | 'color-discovery-70'
+    | 'color-discovery-80'
+    | 'color-discovery-90';
 
 export type PaletteValue = string;
 
@@ -53,48 +98,93 @@ export type PaletteTokenMap = {
 
 export const defaultPaletteTokens: PaletteTokenMap = {
     'color-brand-05': '#E0F0F9',
+    'color-brand-10': '#C2E2F4',
     'color-brand-20': '#84C6EA',
+    'color-brand-30': '#3F9DD1',
+    'color-brand-40': '#1582BD',
     'color-brand-50': '#006296',
+    'color-brand-60': '#004E78',
     'color-brand-70': '#003A5A',
     'color-brand-80': '#012639',
-    'color-accent-20': '#F9B6B2',
-    'color-accent-50': '#EF483E',
-    'color-accent-70': '#D41F14',
+    'color-brand-90': '#00131E',
+    'color-accent-05': '#FFECEB',
+    'color-accent-10': '#FFD9D7',
+    'color-accent-20': '#FFB3AF',
+    'color-accent-30': '#FF8D88',
+    'color-accent-40': '#FF6760',
+    'color-accent-50': '#FF4138',
+    'color-accent-60': '#CC342D',
+    'color-accent-70': '#992722',
+    'color-accent-80': '#661A16',
+    'color-accent-90': '#330D0B',
     'color-white': '#FFFFFF',
-    'color-black': '#000000',
     'color-neutral-02': '#FAFAFA',
     'color-neutral-05': '#F1F2F2',
+    'color-neutral-10': '#E7E8EA',
     'color-neutral-15': '#DBDEE1',
+    'color-neutral-20': '#CFD2D6',
     'color-neutral-30': '#B7BBC2',
+    'color-neutral-40': '#9FA5AE',
     'color-neutral-50': '#878F9A',
+    'color-neutral-60': '#6C727B',
     'color-neutral-65': '#60666E',
+    'color-neutral-70': '#51555C',
     'color-neutral-80': '#36393D',
     'color-neutral-90': '#1B1C1E',
-    'color-alert-02': '#FDF7F6',
-    'color-alert-05': '#FAEAE9',
-    'color-alert-20': '#F99D99',
-    'color-alert-50': '#CD2C23',
-    'color-alert-70': '#7B1A15',
-    'color-informative-02': '#F3F9FD',
-    'color-informative-05': '#E0F0F9',
-    'color-informative-20': '#84C6EA',
-    'color-informative-50': '#006296',
-    'color-informative-70': '#003A5A',
+    'color-black': '#000000',
     'color-success-02': '#F6FBF8',
     'color-success-05': '#E1F7EA',
+    'color-success-10': '#C4EED5',
     'color-success-20': '#8ADDA9',
+    'color-success-30': '#50CB7F',
+    'color-success-40': '#1AB655',
     'color-success-50': '#008533',
+    'color-success-60': '#00661E',
     'color-success-70': '#004F1E',
+    'color-success-80': '#003514',
+    'color-success-90': '#001A0A',
+    'color-alert-02': '#FDF7F6',
+    'color-alert-05': '#FAEAE9',
+    'color-alert-10': '#FCCDCC',
+    'color-alert-20': '#F99D99',
+    'color-alert-30': '#F76C65',
+    'color-alert-40': '#F43C32',
+    'color-alert-50': '#CD2C23',
+    'color-alert-60': '#A4231C',
+    'color-alert-70': '#7B1A15',
+    'color-alert-80': '#52110E',
+    'color-alert-90': '#290807',
     'color-warning-02': '#FFFBF5',
     'color-warning-05': '#FFF7E5',
+    'color-warning-10': '#FFEECC',
     'color-warning-20': '#FFDD99',
+    'color-warning-30': '#FFCB66',
+    'color-warning-40': '#FFBA33',
     'color-warning-50': '#F5A200',
     'color-warning-60': '#C78500',
     'color-warning-70': '#9E6900',
     'color-warning-80': '#664400',
+    'color-warning-90': '#332200',
+    'color-informative-02': '#F3F9FD',
+    'color-informative-05': '#E0F0F9',
+    'color-informative-10': '#C2E2F4',
+    'color-informative-20': '#8FCEF0',
+    'color-informative-30': '#4EADE1',
+    'color-informative-40': '#2286BC',
+    'color-informative-50': '#006296',
+    'color-informative-60': '#004E78',
+    'color-informative-70': '#003A5A',
+    'color-informative-80': '#012639',
+    'color-informative-90': '#00131E',
     'color-discovery-02': '#F9F7FB',
-    'color-discovery-05': '#EFEAF6',
+    'color-discovery-05': '#EFEAF5',
+    'color-discovery-10': '#DFD5EC',
     'color-discovery-20': '#CFC1E3',
+    'color-discovery-30': '#B097D0',
+    'color-discovery-40': '#8059B3',
     'color-discovery-50': '#602FA0',
+    'color-discovery-60': '#4D2680',
     'color-discovery-70': '#3A1C60',
+    'color-discovery-80': '#261340',
+    'color-discovery-90': '#130920',
 };

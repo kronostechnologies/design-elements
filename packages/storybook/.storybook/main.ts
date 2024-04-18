@@ -25,13 +25,13 @@ const config: StorybookConfig = {
         },
     },
     stories: [
-        '../stories/0-intro.mdx',
         '../stories/**/*.@(stories.tsx|mdx)',
     ],
     addons: [
         '@storybook/addon-docs',
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
+        '@storybook/addon-controls',
         '@storybook/addon-links',
     ],
     webpackFinal: async (config) => ({
@@ -61,9 +61,11 @@ const config: StorybookConfig = {
     }),
     docs: {
         autodocs: true,
+        defaultName: 'Doc'
     },
     core: {
         disableTelemetry: true,
+        defaultName: 'Doc'
     },
 };
 

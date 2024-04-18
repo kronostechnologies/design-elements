@@ -1,11 +1,11 @@
-import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
+import { Tab, Tabs } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Disclosure/Tabs',
+    title: 'Components/Tabs',
     component: Tabs,
     parameters: rawCodeParameters,
 };
@@ -14,83 +14,18 @@ const StyledDiv = styled.div`
     padding: var(--spacing-2x);
 `;
 
-interface Data {
-    column1: string;
-    column2: string;
-}
-
-export const Normal: Story = () => {
-    const contactTableColumns: TableColumn<Data> = [
-        {
-            header: 'First Name',
-            accessorKey: 'column1',
-        },
-        {
-            header: 'Last Name',
-            accessorKey: 'column2',
-        },
-    ];
-
-    const contactTableData: Data[] = [
-        {
-            column1: 'First Name 1',
-            column2: 'First Name 2',
-        },
-        {
-            column1: 'Last Name 1',
-            column2: 'Last Name 2',
-        },
-    ];
-
-    const tabs: Tab[] = [
-        {
-            title: 'Contact',
-            panelContent: (
-                <StyledDiv>
-                    <Table columns={contactTableColumns} data={contactTableData} />
-                </StyledDiv>
-            ),
-        },
-        {
-            title: 'Calendar',
-            panelContent: (
-                <StyledDiv>
-                    <Card>Monday : Doing something meaningful</Card>
-                    <Card>Tuesday : Doing something else</Card>
-                </StyledDiv>
-            ),
-        },
-        {
-            title: 'Note',
-            panelContent: (
-                <StyledDiv>
-                    <TextArea label="Notes" />
-                </StyledDiv>
-            ),
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} />
-    );
-};
-
 export const Global: Story = () => {
     const tabs: Tab[] = [
         {
-            title: 'First Button',
-            leftIcon: 'chevronUp',
+            title: 'Contact',
             panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
-            title: 'Second Button',
-            leftIcon: 'chevronLeft',
-            rightIcon: 'chevronRight',
+            title: 'Calendar',
             panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
-            title: 'Third Button',
-            rightIcon: 'chevronDown',
+            title: 'Note',
             panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
@@ -100,22 +35,18 @@ export const Global: Story = () => {
     );
 };
 
-export const WithIcons: Story = () => {
+export const Section: Story = () => {
     const tabs: Tab[] = [
         {
-            title: 'First Button',
-            leftIcon: 'chevronUp',
+            title: 'Contact',
             panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
-            title: 'Second Button',
-            leftIcon: 'chevronLeft',
-            rightIcon: 'chevronRight',
+            title: 'Calendar',
             panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
-            title: 'Third Button',
-            rightIcon: 'chevronDown',
+            title: 'Note',
             panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];

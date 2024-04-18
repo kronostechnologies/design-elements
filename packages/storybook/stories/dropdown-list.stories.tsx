@@ -27,7 +27,7 @@ const provinces = [
 ];
 
 export default {
-    title: 'Components/Controls/Dropdown List',
+    title: 'Components/Dropdown List',
     component: DropdownList,
     decorators: [decorateWith(Container)],
 };

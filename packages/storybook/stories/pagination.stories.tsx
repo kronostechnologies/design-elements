@@ -5,7 +5,7 @@ import { DeviceContextDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Navigation/Pagination',
+    title: 'Components/Pagination',
     component: Pagination,
     decorators: [DeviceContextDecorator],
 };

@@ -15,7 +15,7 @@ const upcomingDate = new Date();
 upcomingDate.setDate(upcomingDate.getDate() + 5);
 
 export default {
-    title: 'Components/Controls/Date picker',
+    title: 'Components/Date picker',
     component: Datepicker,
     decorators: [decorateWith(Container)],
     parameters: rawCodeParameters,

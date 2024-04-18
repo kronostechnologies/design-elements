@@ -3,7 +3,7 @@ import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Components/Navigation/Skip Link',
+    title: 'Components/Skip Link',
     component: SkipLink,
 };
 

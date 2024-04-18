@@ -10,13 +10,13 @@ import {
     useCallback,
     useState,
 } from 'react';
-import styled, { css, SimpleInterpolation, StyledProps } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation, SimpleInterpolation, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
+export type GlobalBannerType = 'neutral' | 'discovery' | 'warning' | 'alert';
 
 interface ContainerProps {
     bannerType: GlobalBannerType;
@@ -27,48 +27,18 @@ interface IsMobileProps {
     $isMobile: boolean;
 }
 
-function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
-    switch (bannerType) {
-        case 'alert':
-            return theme.component['global-banner-alert-background-color'];
-        case 'warning':
-            return theme.component['global-banner-warning-background-color'];
-        case 'info':
-            return theme.component['global-banner-info-background-color'];
-        case 'default':
-            return theme.component['global-banner-default-background-color'];
-    }
+function getGlobalBannerContainerColors(
+    { bannerType, theme }: StyledProps<ContainerProps>,
+): FlattenSimpleInterpolation {
+    return css`
+        background-color: ${theme.component[`global-banner-${bannerType}-background-color`]};
+        color: ${theme.component[`global-banner-${bannerType}-text-color`]};
+    `;
 }
-
-function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): string {
-    switch (bannerType) {
-        case 'alert':
-        case 'info':
-        case 'default':
-            return theme.component['global-banner-default-color'];
-        case 'warning':
-            return theme.component['global-banner-warning-color'];
-    }
-}
-
-const Label = styled.strong<{ isMobile: boolean }>`
-    display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
-    font-weight: var(--font-semi-bold);
-    ${({ isMobile }) => (isMobile ? css`
-        margin-bottom: var(--spacing-half);
-    ` : css`
-        margin-right: var(--spacing-1x);
-    `)}
-`;
-
-const Message = styled.span`
-    display: inline-block;
-`;
 
 const Container = styled.section<ContainerProps>`
     align-items: center;
-    background-color: ${getContainerBackgroundColor};
-    color: ${getContainerColor};
+    ${getGlobalBannerContainerColors};
     display: flex;
     flex-flow: ${({ isMobile }) => (isMobile ? 'column nowrap' : 'row rap')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
@@ -79,19 +49,19 @@ const Container = styled.section<ContainerProps>`
     position: relative;
 `;
 
-const Content = styled.div<{ isMobile: boolean }>`
+const Content = styled.div<IsMobileProps>`
     align-items: center;
-    align-self: ${({ isMobile }) => (isMobile ? 'flex-start' : null)};
+    align-self: ${({ $isMobile }) => ($isMobile ? 'flex-start' : null)};
     display: flex;
-    justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
+    justify-content: ${({ $isMobile }) => ($isMobile ? 'unset' : 'center')};
     padding-left: var(--spacing-4x);
     position: relative;
 
     > svg {
         flex-shrink: 0;
-        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
         margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     }
 `;
 
@@ -116,92 +86,15 @@ const Text = styled.span`
     margin: 0;
 `;
 
-interface ButtonProps {
-    bannerType: GlobalBannerType;
-}
-
-function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
-    /* TODO change colors when updating thematization */
-    switch (bannerType) {
-        case 'alert':
-            return theme.component['global-banner-action-button-alert-hover-color'];
-        case 'warning':
-            return theme.component['global-banner-action-button-warning-hover-color'];
-        case 'info':
-            return theme.component['global-banner-action-button-info-hover-color'];
-        case 'default':
-            return theme.component['global-banner-action-button-default-hover-color'];
-    }
-}
-
-const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ bannerType, theme }) => (bannerType === 'warning') && css`
-        border-color: ${theme.component['global-banner-action-button-warning-background-color']};
-        color: ${theme.component['global-banner-action-button-warning-color']};
-    `};
-
-    &:hover {
-        border-color: ${getActionButtonHoverColor};
-        color: ${getActionButtonHoverColor};
-    }
-
-    &:focus {
-        background-color: ${getContainerBackgroundColor};
-        ${({ bannerType, theme }) => bannerType === 'warning' && css`
-            color: ${theme.component['global-banner-action-button-warning-color']};
-        `}
-    }
+const Label = styled.strong<IsMobileProps>`
+    display: ${({ $isMobile }) => ($isMobile ? 'block' : 'inline')};
+    font-weight: var(--font-semi-bold);
+    margin-bottom: ${({ $isMobile }) => $isMobile && 'var(--spacing-half)'};
+    margin-right: ${({ $isMobile }) => !$isMobile && 'var(--spacing-1x)'};
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
-    /* TODO change colors when updating thematization */
-    switch (bannerType) {
-        case 'alert':
-            return theme.component['global-banner-tertiary-button-alert-hover-background-color'];
-        case 'warning':
-            return theme.component['global-banner-tertiary-button-warning-hover-background-color'];
-        case 'info':
-            return theme.component['global-banner-tertiary-button-info-hover-background-color'];
-        case 'default':
-            return theme.component['global-banner-tertiary-button-default-hover-background-color'];
-    }
-}
-
-function getTertiaryButtonColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-color'] : null;
-}
-
-function getTertiaryButtonFocusColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-focus-color'] : null;
-}
-
-function getTertiaryButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string | null {
-    return bannerType === 'warning' ? theme.component['global-banner-tertiary-button-hover-color'] : null;
-}
-
-const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${(getTertiaryButtonColor)};
-
-    &:focus {
-        background-color: ${getContainerBackgroundColor};
-        color: ${getTertiaryButtonFocusColor};
-    }
-
-    &:hover {
-        background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${getTertiaryButtonHoverColor};
-    }
-`;
-
-const ButtonContainer = styled.div<{ isMobile: boolean }>`
-    display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
-
-    > button {
-        margin-left: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
-        margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : '0')};
-    }
+const Message = styled.span`
+    display: inline-block;
 `;
 
 const getIconName = (bannerType: GlobalBannerType): IconName => {
@@ -209,12 +102,31 @@ const getIconName = (bannerType: GlobalBannerType): IconName => {
         case 'alert':
             return 'alertOctagon';
         case 'warning':
-        case 'default':
             return 'alertTriangle';
-        case 'info':
+        case 'discovery':
+            return 'lightbulb';
+        case 'neutral':
+        default:
             return 'info';
     }
 };
+
+const ButtonContainer = styled.div<IsMobileProps>`
+    display: flex;
+    flex-direction: ${({ $isMobile }) => ($isMobile ? 'column' : 'row')};
+    width: ${({ $isMobile }) => ($isMobile ? '100%' : 'unset')};
+
+    > button {
+        margin-left: ${({ $isMobile }) => ($isMobile ? '0' : 'var(--spacing-1x)')};
+        margin-top: ${({ $isMobile }) => ($isMobile ? 'var(--spacing-1x)' : '0')};
+    }
+`;
+
+type GlobalBannerButtonState = 'default' | 'hover';
+
+interface ActionButtonProps {
+    bannerType: GlobalBannerType;
+}
 
 export interface ActionButton {
     label: string;
@@ -222,7 +134,56 @@ export interface ActionButton {
     onClick(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-interface Props {
+function getActionButtonColors(
+    { bannerType, theme }: StyledProps<ActionButtonProps>,
+    state: GlobalBannerButtonState,
+): FlattenSimpleInterpolation {
+    const statePrefix = state === 'hover' ? '-hover' : '';
+    return css`
+        border-color: ${theme.component[`global-banner-${bannerType}-action-button${statePrefix}-border-color`]};
+        color: ${theme.component[`global-banner-${bannerType}-action-button${statePrefix}-text-color`]};
+    `;
+}
+
+const ActionButton = styled(Button).attrs(
+    { buttonType: 'secondary', inverted: true },
+)<ActionButtonProps>`
+    ${(props) => getActionButtonColors(props, 'default')};
+
+    &:hover {
+        ${(props) => getActionButtonColors(props, 'hover')};
+    }
+`;
+
+interface DismissButtonProps {
+    bannerType: Exclude<GlobalBannerType, 'alert'>;
+}
+
+function getDismissButtonColors(
+    { bannerType, theme }: StyledProps<ActionButtonProps>,
+    state: GlobalBannerButtonState,
+): FlattenSimpleInterpolation | null {
+    const statePrefix = state === 'hover' ? '-hover' : '';
+    if (bannerType !== 'alert') {
+        return css`
+            background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
+            color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
+        `;
+    }
+    return null;
+}
+
+const DismissButton = styled(Button).attrs(
+    { buttonType: 'tertiary', inverted: true },
+)<PropsWithChildren<DismissButtonProps>>`
+    ${(props) => getDismissButtonColors(props, 'default')};
+
+    &:hover {
+        ${(props) => getDismissButtonColors(props, 'hover')};
+    }
+`;
+
+interface GlobalBannerProps {
     actionButton?: ActionButton;
     secondaryActionButton?: ActionButton;
     className?: string;
@@ -246,8 +207,8 @@ export const GlobalBanner = forwardRef(({
     label,
     onDismiss,
     secondaryActionButton,
-    type = 'default',
-}: Props, ref: Ref<HTMLElement>): ReactElement | null => {
+    type = 'neutral',
+}: GlobalBannerProps, ref: Ref<HTMLElement>): ReactElement | null => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
@@ -270,7 +231,7 @@ export const GlobalBanner = forwardRef(({
             bannerType={type}
             role="status"
         >
-            <Content isMobile={isMobile}>
+            <Content $isMobile={isMobile}>
                 <StyledIcon
                     aria-label={type}
                     focusable={undefined}
@@ -280,44 +241,44 @@ export const GlobalBanner = forwardRef(({
                     size={isMobile ? '24' : '16'}
                 />
                 <Text>
-                    <Label isMobile={isMobile}>{label}</Label>
+                    <Label $isMobile={isMobile}>{label}</Label>
                     <Message>{children}</Message>
                 </Text>
             </Content>
 
             {hasButtons && (
-                <ButtonContainer isMobile={isMobile}>
+                <ButtonContainer $isMobile={isMobile}>
                     {actionButton && (
-                        <ActionButtonComponent
+                        <ActionButton
                             data-testid="action-button"
                             bannerType={type}
                             onClick={actionButton.onClick}
                             type="button"
                         >
                             {actionButton.label}
-                        </ActionButtonComponent>
+                        </ActionButton>
                     )}
 
-                    {secondaryActionButton && (
-                        <TertiaryButton
+                    {secondaryActionButton && type !== 'alert' && (
+                        <DismissButton
                             data-testid="secondary-action-button"
                             bannerType={type}
                             onClick={secondaryActionButton.onClick}
                             type="button"
                         >
                             {secondaryActionButton.label}
-                        </TertiaryButton>
+                        </DismissButton>
                     )}
 
                     {hasDismissButton && (
-                        <TertiaryButton
+                        <DismissButton
                             data-testid="dismiss-button"
                             bannerType={type}
                             onClick={handleDismiss}
                             type="button"
                         >
                             {t('ignore')}
-                        </TertiaryButton>
+                        </DismissButton>
                     )}
                 </ButtonContainer>
             )}

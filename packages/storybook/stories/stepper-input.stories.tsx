@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Controls/Stepper input',
+    title: 'Components/Stepper input',
     component: StepperInput,
 };
 

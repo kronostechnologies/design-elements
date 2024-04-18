@@ -1,5 +1,10 @@
+// eslint-disable-next-line no-underscore-dangle, no-var, vars-on-top
+declare global { var __DS_DEV__: boolean; }
+// eslint-disable-next-line no-underscore-dangle
+global.__DS_DEV__ = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
+
 // Buttons
-export { Button } from './components/buttons/button';
+export { Button, ButtonProps } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
 export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';

@@ -98,7 +98,7 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
 exports[`Global Header Matches the snapshot (mobile) 1`] = `
 .c4 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 56px);
   right: 0;
   overflow-x: hidden;
@@ -236,7 +236,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
 exports[`Global Header mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
 .c4 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 56px);
   right: 0;
   overflow-x: hidden;

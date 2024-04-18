@@ -6,7 +6,7 @@ import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 // eslint-disable-next-line import/no-default-export
 export default {
-    title: 'Components/Disclosure/Modal Dialog',
+    title: 'Components/Modal Dialog',
     component: ModalDialog,
 };
 
@@ -312,7 +312,7 @@ export const AlertDialog: Story = {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
             <>
-                <Button label="Open Modal" buttonType="destructive" onClick={openModal} />
+                <Button label="Open Modal" buttonType="destructive-primary" onClick={openModal} />
                 <ModalDialog
                     appElement="#storybook-root"
                     ariaDescribedby="story-description"

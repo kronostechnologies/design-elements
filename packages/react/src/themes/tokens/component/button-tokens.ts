@@ -74,30 +74,30 @@ export type ButtonTokens =
     | 'button-tertiary-inverted-disabled-background-color'
     | 'button-tertiary-inverted-disabled-border-color'
     | 'button-tertiary-inverted-disabled-text-color'
-    | 'button-destructive-background-color'
-    | 'button-destructive-border-color'
-    | 'button-destructive-text-color'
-    | 'button-destructive-hover-background-color'
-    | 'button-destructive-hover-border-color'
-    | 'button-destructive-hover-text-color'
-    | 'button-destructive-disabled-background-color'
-    | 'button-destructive-disabled-border-color'
-    | 'button-destructive-disabled-text-color'
-    | 'button-destructive-focus-background-color'
-    | 'button-destructive-focus-border-color'
-    | 'button-destructive-focus-text-color'
-    | 'button-destructive-inverted-background-color'
-    | 'button-destructive-inverted-border-color'
-    | 'button-destructive-inverted-text-color'
-    | 'button-destructive-inverted-hover-background-color'
-    | 'button-destructive-inverted-hover-border-color'
-    | 'button-destructive-inverted-hover-text-color'
-    | 'button-destructive-inverted-focus-background-color'
-    | 'button-destructive-inverted-focus-border-color'
-    | 'button-destructive-inverted-focus-text-color'
-    | 'button-destructive-inverted-disabled-background-color'
-    | 'button-destructive-inverted-disabled-border-color'
-    | 'button-destructive-inverted-disabled-text-color'
+    | 'button-destructive-primary-background-color'
+    | 'button-destructive-primary-border-color'
+    | 'button-destructive-primary-text-color'
+    | 'button-destructive-primary-hover-background-color'
+    | 'button-destructive-primary-hover-border-color'
+    | 'button-destructive-primary-hover-text-color'
+    | 'button-destructive-primary-disabled-background-color'
+    | 'button-destructive-primary-disabled-border-color'
+    | 'button-destructive-primary-disabled-text-color'
+    | 'button-destructive-primary-focus-background-color'
+    | 'button-destructive-primary-focus-border-color'
+    | 'button-destructive-primary-focus-text-color'
+    | 'button-destructive-primary-inverted-background-color'
+    | 'button-destructive-primary-inverted-border-color'
+    | 'button-destructive-primary-inverted-text-color'
+    | 'button-destructive-primary-inverted-hover-background-color'
+    | 'button-destructive-primary-inverted-hover-border-color'
+    | 'button-destructive-primary-inverted-hover-text-color'
+    | 'button-destructive-primary-inverted-focus-background-color'
+    | 'button-destructive-primary-inverted-focus-border-color'
+    | 'button-destructive-primary-inverted-focus-text-color'
+    | 'button-destructive-primary-inverted-disabled-background-color'
+    | 'button-destructive-primary-inverted-disabled-border-color'
+    | 'button-destructive-primary-inverted-disabled-text-color'
     | 'button-destructive-secondary-background-color'
     | 'button-destructive-secondary-border-color'
     | 'button-destructive-secondary-text-color'
@@ -122,6 +122,30 @@ export type ButtonTokens =
     | 'button-destructive-secondary-inverted-disabled-background-color'
     | 'button-destructive-secondary-inverted-disabled-border-color'
     | 'button-destructive-secondary-inverted-disabled-text-color'
+    | 'button-destructive-tertiary-background-color'
+    | 'button-destructive-tertiary-border-color'
+    | 'button-destructive-tertiary-text-color'
+    | 'button-destructive-tertiary-hover-background-color'
+    | 'button-destructive-tertiary-hover-border-color'
+    | 'button-destructive-tertiary-hover-text-color'
+    | 'button-destructive-tertiary-disabled-background-color'
+    | 'button-destructive-tertiary-disabled-border-color'
+    | 'button-destructive-tertiary-disabled-text-color'
+    | 'button-destructive-tertiary-focus-background-color'
+    | 'button-destructive-tertiary-focus-border-color'
+    | 'button-destructive-tertiary-focus-text-color'
+    | 'button-destructive-tertiary-inverted-background-color'
+    | 'button-destructive-tertiary-inverted-border-color'
+    | 'button-destructive-tertiary-inverted-text-color'
+    | 'button-destructive-tertiary-inverted-hover-background-color'
+    | 'button-destructive-tertiary-inverted-hover-border-color'
+    | 'button-destructive-tertiary-inverted-hover-text-color'
+    | 'button-destructive-tertiary-inverted-focus-background-color'
+    | 'button-destructive-tertiary-inverted-focus-border-color'
+    | 'button-destructive-tertiary-inverted-focus-text-color'
+    | 'button-destructive-tertiary-inverted-disabled-background-color'
+    | 'button-destructive-tertiary-inverted-disabled-border-color'
+    | 'button-destructive-tertiary-inverted-disabled-text-color'
     | 'button-search-background-color'
     | 'button-search-border-color'
     | 'button-search-text-color'
@@ -241,38 +265,38 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-inverted-disabled-text-color': 'color-brand-50',
 
     // Destructive
-    'button-destructive-background-color': 'color-alert-50',
-    'button-destructive-border-color': 'color-alert-50',
-    'button-destructive-text-color': 'color-white',
+    'button-destructive-primary-background-color': 'color-alert-50',
+    'button-destructive-primary-border-color': 'color-alert-50',
+    'button-destructive-primary-text-color': 'color-white',
     // Destructive hover
-    'button-destructive-hover-background-color': 'color-alert-70',
-    'button-destructive-hover-border-color': 'color-alert-70',
-    'button-destructive-hover-text-color': 'color-white',
+    'button-destructive-primary-hover-background-color': 'color-alert-70',
+    'button-destructive-primary-hover-border-color': 'color-alert-70',
+    'button-destructive-primary-hover-text-color': 'color-white',
     // Destructive focus
-    'button-destructive-focus-background-color': 'color-alert-50',
-    'button-destructive-focus-border-color': 'color-alert-20',
-    'button-destructive-focus-text-color': 'color-white',
+    'button-destructive-primary-focus-background-color': 'color-alert-50',
+    'button-destructive-primary-focus-border-color': 'color-alert-20',
+    'button-destructive-primary-focus-text-color': 'color-white',
     // Destructive disabled
-    'button-destructive-disabled-background-color': 'color-alert-20',
-    'button-destructive-disabled-border-color': 'color-alert-20',
-    'button-destructive-disabled-text-color': 'color-white',
+    'button-destructive-primary-disabled-background-color': 'color-alert-20',
+    'button-destructive-primary-disabled-border-color': 'color-alert-20',
+    'button-destructive-primary-disabled-text-color': 'color-white',
 
     // Destructive inverted
-    'button-destructive-inverted-background-color': 'color-white',
-    'button-destructive-inverted-border-color': 'color-white',
-    'button-destructive-inverted-text-color': 'color-alert-50',
+    'button-destructive-primary-inverted-background-color': 'color-white',
+    'button-destructive-primary-inverted-border-color': 'color-white',
+    'button-destructive-primary-inverted-text-color': 'color-alert-50',
     // Destructive inverted hover
-    'button-destructive-inverted-hover-background-color': 'color-white',
-    'button-destructive-inverted-hover-border-color': 'color-white',
-    'button-destructive-inverted-hover-text-color': 'color-alert-70',
+    'button-destructive-primary-inverted-hover-background-color': 'color-white',
+    'button-destructive-primary-inverted-hover-border-color': 'color-white',
+    'button-destructive-primary-inverted-hover-text-color': 'color-alert-70',
     // Destructive inverted focus
-    'button-destructive-inverted-focus-background-color': 'color-white',
-    'button-destructive-inverted-focus-border-color': 'color-white',
-    'button-destructive-inverted-focus-text-color': 'color-alert-20',
+    'button-destructive-primary-inverted-focus-background-color': 'color-white',
+    'button-destructive-primary-inverted-focus-border-color': 'color-white',
+    'button-destructive-primary-inverted-focus-text-color': 'color-alert-20',
     // Destructive inverted disabled
-    'button-destructive-inverted-disabled-background-color': 'color-white',
-    'button-destructive-inverted-disabled-border-color': 'color-white',
-    'button-destructive-inverted-disabled-text-color': 'color-alert-20',
+    'button-destructive-primary-inverted-disabled-background-color': 'color-white',
+    'button-destructive-primary-inverted-disabled-border-color': 'color-white',
+    'button-destructive-primary-inverted-disabled-text-color': 'color-alert-20',
 
     // Secondary destructive
     'button-destructive-secondary-background-color': 'color-white',
@@ -305,8 +329,42 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-secondary-inverted-focus-text-color': 'color-alert-20',
     // Secondary destructive inverted disabled
     'button-destructive-secondary-inverted-disabled-background-color': 'transparent-100',
-    'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-70',
-    'button-destructive-secondary-inverted-disabled-text-color': 'color-alert-70',
+    'button-destructive-secondary-inverted-disabled-border-color': 'color-alert-20',
+    'button-destructive-secondary-inverted-disabled-text-color': 'color-alert-20',
+
+    // Tertiary destructive
+    'button-destructive-tertiary-background-color': 'transparent-100',
+    'button-destructive-tertiary-border-color': 'transparent-100',
+    'button-destructive-tertiary-text-color': 'color-alert-50',
+    // Tertiary destructive hover
+    'button-destructive-tertiary-hover-background-color': 'color-alert-05',
+    'button-destructive-tertiary-hover-border-color': 'transparent-100',
+    'button-destructive-tertiary-hover-text-color': 'color-alert-70',
+    // Tertiary destructive focus
+    'button-destructive-tertiary-focus-background-color': 'transparent-100',
+    'button-destructive-tertiary-focus-border-color': 'transparent-100',
+    'button-destructive-tertiary-focus-text-color': 'color-alert-50',
+    // Tertiary destructive disabled
+    'button-destructive-tertiary-disabled-background-color': 'transparent-100',
+    'button-destructive-tertiary-disabled-border-color': 'transparent-100',
+    'button-destructive-tertiary-disabled-text-color': 'color-alert-20',
+
+    // Tertiairy destructive inverted
+    'button-destructive-tertiary-inverted-background-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-border-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-text-color': 'color-alert-50',
+    // Tertiairy destructive inverted hover
+    'button-destructive-tertiary-inverted-hover-background-color': 'color-alert-05',
+    'button-destructive-tertiary-inverted-hover-border-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-hover-text-color': 'color-alert-70',
+    // Tertiairy destructive inverted focus
+    'button-destructive-tertiary-inverted-focus-background-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-focus-border-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-focus-text-color': 'color-alert-20',
+    // Tertiairy destructive inverted disabled
+    'button-destructive-tertiary-inverted-disabled-background-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-disabled-border-color': 'transparent-100',
+    'button-destructive-tertiary-inverted-disabled-text-color': 'color-alert-20',
 
     // Search button
     'button-search-background-color': 'color-white',
