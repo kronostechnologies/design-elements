@@ -1,0 +1,30 @@
+import { SkipLink } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as SkipLinkStories  from './skip-link.stories';
+
+<Meta of={SkipLinkStories} />
+
+# Skip Link
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Skip link is a link that provides a quick way for assistive technologies and keyboard users to move to the main content of a page.
+<Canvas of={SkipLinkStories.Default} />
+
+## Usage
+### When to use
+Use the skip link component to help keyboard-only users skip to the main content on a page [1]. 
+
+## Variants
+
+### Default
+<Canvas of={SkipLinkStories.Default} />
+
+## Properties
+<ArgTypes of={SkipLink} />
+
+## References
+1. [https://design-system.service.gov.uk/components/skip-link/](https://design-system.service.gov.uk/components/skip-link/)

@@ -28,7 +28,7 @@ const Main = styled.main`
     width: 100%;
 `;
 
-export const Normal: VoidFunctionComponent = () => (
+export const Default: VoidFunctionComponent = () => (
     <>
         <SkipLink href="#main" />
         <Navigation>
