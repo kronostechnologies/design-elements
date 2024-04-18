@@ -19,7 +19,7 @@ const StyledFormContainer = styled.div`
     margin-top: var(--spacing-2x);
 `;
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <>
         <ErrorSummary messages={errorMessages} />
 
