@@ -15,7 +15,7 @@ export default {
     decorators: [LanguageSwitchDecorator],
 };
 
-export const Normal: Story = () => (
+export const Default: Story = () => (
     <PasswordCreationInput onChange={(password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
         console.info(password);
         console.info(event);
@@ -23,33 +23,3 @@ export const Normal: Story = () => (
     }}
     />
 );
-
-export const CustomValidations: Story = () => (
-    <PasswordCreationInput
-        validations={[
-            {
-                label: 'Minimum 1 number.',
-                isValid: (password) => /\d/.test(password),
-            },
-            {
-                label: 'Minimum 8 characters.',
-                isValid: isLongEnough(8),
-            },
-            {
-                label: 'Minimum one uppercase letter.',
-                isValid: hasAnUpperCaseLetter,
-            },
-            {
-                label: 'Minimum one lowercase letter.',
-                isValid: hasALowerCaseLetter,
-            },
-        ]}
-        onChange={(password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
-            console.info(password);
-            console.info(event);
-            console.info(isValid);
-        }}
-    />
-);
-
-CustomValidations.parameters = rawCodeParameters;
