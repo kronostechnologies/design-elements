@@ -2,37 +2,35 @@ import { Badge } from '@equisoft/design-elements-react';
 import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
 import * as BadgeStories  from './badge.stories';
 
-# Badge
+<Meta of={BadgeStories} />
 
-## Table of contents
+# Badge
 1. [Definition](#definition)
 2. [Usage](#usage)
 3. [Variants](#variants)
 4. [Properties](#properties)
 
-<Meta of={BadgeStories} />
-
 ## Definition
-A badge is a small notification component that appears on an element and indicates an unseen update.
+A badge appears on an element and indicates an unseen update.
 <Canvas of={BadgeStories.Default} />
 
 ## Usage
 ### When to use
 - Use the badge to notify the user of a change or update, close to the relevant item [4].
-    - Use the default badge to display numbers within a container and/or to indicate a quantifiable status change [7].
-    - Use the dot badge to notify the user that something is new or updated without showing a count [4].
 - Use the badge when you need read-only status indicators or labels that are not interactive [9].
 
 ### When not tu use
-- Notification badges should not be used for critical alerts.
+- Do not use for critical alerts.
 - If you need a text label, use tags or lozenge instead.
 
 ## Variants
 
 ### Default
+- Use the default badge to display numbers within a container and/or to indicate a quantifiable status change [7].
 <Canvas of={BadgeStories.Default} />
 
 ### Dot
+- Use the dot badge to notify the user that something is new or updated without showing a count [4].
 <Canvas of={BadgeStories.Dot} />
 
 ## Properties
