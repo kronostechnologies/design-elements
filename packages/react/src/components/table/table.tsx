@@ -27,6 +27,8 @@ import { TableData, TableColumn } from './types';
 
 type RowSize = 'small' | 'medium';
 
+type UtilityColumnType = 'selection' | 'numbers' | 'expand';
+
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     if (rowSize === 'small') {
         switch (device) {
@@ -139,7 +141,7 @@ const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
     }
 `;
 
-function getUtilityColumn<T extends object>(type: string, t: TFunction<'translation'>): TableColumn<T> {
+function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunction<'translation'>): TableColumn<T> {
     return {
         id: type,
         className: utilColumnClassName,
