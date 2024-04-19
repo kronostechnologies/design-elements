@@ -77,19 +77,15 @@ export const Normal: Story = () => {
 export const Global: Story = () => {
     const tabs: Tab[] = [
         {
-            title: 'First Button',
-            leftIcon: 'chevronUp',
+            title: 'Contact',
             panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
-            title: 'Second Button',
-            leftIcon: 'chevronLeft',
-            rightIcon: 'chevronRight',
+            title: 'Calendar',
             panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
-            title: 'Third Button',
-            rightIcon: 'chevronDown',
+            title: 'Note',
             panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
@@ -99,96 +95,23 @@ export const Global: Story = () => {
     );
 };
 
-export const WithIcons: Story = () => {
+export const Section: Story = () => {
     const tabs: Tab[] = [
         {
-            title: 'First Button',
-            leftIcon: 'chevronUp',
+            title: 'Contact',
             panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
-            title: 'Second Button',
-            leftIcon: 'chevronLeft',
-            rightIcon: 'chevronRight',
+            title: 'Calendar',
             panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
-            title: 'Third Button',
-            rightIcon: 'chevronDown',
+            title: 'Note',
             panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
     return (
         <Tabs tabs={tabs} />
-    );
-};
-
-export const WithForceRenderTabPanels: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'First Button',
-            panelContent: <StyledDiv>First tab content</StyledDiv>,
-        },
-        {
-            title: 'Second Button',
-            panelContent: <StyledDiv>Second tab content</StyledDiv>,
-        },
-        {
-            title: 'Third Button',
-            panelContent: <StyledDiv>Third tab content</StyledDiv>,
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} forceRenderTabPanels />
-    );
-};
-
-export const Contained: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'First Button',
-            panelContent: <StyledDiv>First tab content</StyledDiv>,
-        },
-        {
-            title: 'Second Button',
-            panelContent: <StyledDiv>Second tab content</StyledDiv>,
-        },
-        {
-            title: 'Third Button',
-            panelContent: <StyledDiv>Third tab content</StyledDiv>,
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} contained />
-    );
-};
-
-export const UnloadTabCallback: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'Tab that cannot change because onBeforeUnload resolves to false',
-            panelContent: <StyledDiv>First tab content</StyledDiv>,
-            onBeforeUnload: () => {
-                console.info('cannot change tab because onBeforeUnload promise resolves to false here');
-                return Promise.resolve(false);
-            },
-        },
-        {
-            title: 'Second Button',
-            panelContent: <StyledDiv>Second tab content</StyledDiv>,
-            onBeforeUnload: () => Promise.resolve(true),
-        },
-        {
-            title: 'Third Button',
-            panelContent: <StyledDiv>Third tab content</StyledDiv>,
-            onBeforeUnload: () => Promise.resolve(true),
-        },
-    ];
-
-    return (
-        <Tabs tabs={tabs} contained />
     );
 };
