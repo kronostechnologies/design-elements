@@ -44,16 +44,12 @@ const options: NavItemProps[] = [
         disabled: true,
     },
     {
-        label: 'Google',
-        value: 'google',
+        label: 'My Account',
+        value: 'My Account',
         href: 'https://www.google.ca',
         isExternalLink: true,
     },
 ];
-
-export const Normal: Story = () => (
-    <UserProfile options={options} username="John Doe" />
-);
 
 export const Desktop: Story = () => (
     <UserProfile options={options} username="John Doe" userEmail="John.doe@gmail.com" />
@@ -64,11 +60,3 @@ export const Mobile: Story = () => (
     <UserProfile options={options} username="John Doe" userEmail="John.doe@gmail.com" />
 );
 Mobile.decorators = [MobileDecorator];
-
-export const WithNavContainer: Story = () => (
-    <UserProfile tag="nav" options={options} username="John Doe" />
-);
-
-export const DefaultOpen: Story = () => (
-    <UserProfile options={options} username="Jonh Doe" defaultOpen />
-);

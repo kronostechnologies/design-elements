@@ -1,0 +1,35 @@
+import { UserProfile } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as UserProfileStories  from './user-profile.stories';
+
+<Meta of={UserProfileStories} />
+
+# User Profile
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+User profile is a high-level navigation menu regrouping user settings and personal details [1]. 
+<Canvas of={UserProfileStories.Desktop} />
+
+## Usage
+### When to use
+- Use to display information like user profile (name, etc.), login and security (username, password, pin), language and currency settings, appearance (light/dark theme, accessibility, font size), other settings and log out [1]. 
+
+### When not to use
+- Do not display options unrelated to the user’s settings or details. 
+
+## Variants
+### Desktop
+<Canvas of={UserProfileStories.Desktop} />
+
+### Mobile
+<Canvas of={UserProfileStories.Mobile} />
+
+## Properties
+<ArgTypes of={UserProfile} />
+
+## References
+1. [https://bootcamp.uxdesign.cc/designing-profile-account-and-setting-pages-for-better-ux-345ef4ca1490](https://bootcamp.uxdesign.cc/designing-profile-account-and-setting-pages-for-better-ux-345ef4ca1490)
