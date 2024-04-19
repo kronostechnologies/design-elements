@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Table',
+    title: 'Components/Data Table',
     component: Table,
     parameters: rawCodeParameters,
 };
@@ -16,7 +16,7 @@ interface Data {
     column3: string;
 }
 
-export const Normal: Story = () => {
+export const Default: Story = () => {
     const columns: TableColumn<Data> = [
         {
             header: 'Column 1',
