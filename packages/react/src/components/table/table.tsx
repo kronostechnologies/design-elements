@@ -18,7 +18,7 @@ import {
 import { TFunction } from 'i18next';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
-import { TableRow } from './table-row';
+import { StyledTableRow, TableRow } from './table-row';
 import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
@@ -130,7 +130,7 @@ const StyledTFoot = styled.tfoot`
     background: inherit;
 `;
 
-const ExpandButton = styled(IconButton)<{ $expanded: boolean }>`
+const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
     transform: rotate(${({ $expanded }) => ($expanded ? 90 : 0)}deg);
     transition: transform 0.2s ease-in-out;
 
@@ -205,8 +205,7 @@ export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
     columns: TableColumn<T>[];
-    expandableRows?: boolean;
-    singleExpand?: boolean;
+    expandableRows?: 'single' | 'multiple';
     /**
      * Adds row numbers
      * @default false
@@ -238,7 +237,6 @@ export const Table = <T extends object>({
     defaultSort,
     columns: providedColumns,
     expandableRows,
-    singleExpand,
     stickyHeader = false,
     stickyFooter = false,
     rowNumbers = false,
@@ -300,7 +298,7 @@ export const Table = <T extends object>({
             let newValue = functionalUpdate(updater, expanded);
 
             // Hackish because onExpandedChange doesn't provide the currently expanded/collapsed row
-            if (singleExpand && Object.keys(newValue).length > 1) {
+            if (expandableRows === 'single' && Object.keys(newValue).length > 1) {
                 newValue = functionalUpdate(updater, {});
             }
 
@@ -352,7 +350,14 @@ export const Table = <T extends object>({
                                 row={row}
                                 onClick={onRowClick}
                             />
-                            {rowOriginal.subContent !== undefined && row.getIsExpanded() && rowOriginal.subContent}
+                            {rowOriginal.subContent && row.getIsExpanded() && (
+                                <StyledTableRow>
+                                    <td />
+                                    <td colSpan={99}>
+                                        {rowOriginal.subContent}
+                                    </td>
+                                </StyledTableRow>
+                            )}
                         </Fragment>
                     );
                 })}

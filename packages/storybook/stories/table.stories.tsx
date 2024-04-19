@@ -593,7 +593,7 @@ export const ExpandableSubrowsMultiple: Story = () => {
         <Table
             columns={columns}
             data={data}
-            expandableRows
+            expandableRows='multiple'
         />
     );
 };
@@ -637,8 +637,7 @@ export const ExpandableSubrowsSingle: Story = () => {
         <Table
             columns={columns}
             data={data}
-            expandableRows
-            singleExpand
+            expandableRows='single'
         />
     );
 };
@@ -664,31 +663,26 @@ export const ExpandableSubContent: Story = () => {
         {
             id: '1',
             name: 'AAA',
-            subContent: (
-                <tr>
-                    <td colSpan={99}>
-                        Sub content of AAA
-                    </td>
-                </tr>
-            ),
+            subContent: 'Sub content in plain text',
         },
         {
             id: '2',
             name: 'BBB',
             subContent: (
-                <tr>
-                    <td colSpan={99}>
-                        Sub content of BBB
-                    </td>
-                </tr>
+                <>
+                    Sub content with HTML
+                    <br />
+                    <b>BBB</b>
+                </>
             ),
         },
     ];
+
     return (
         <Table
             columns={columns}
             data={data}
-            expandableRows
+            expandableRows='single'
         />
     );
 };

@@ -11,10 +11,10 @@ import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
 
 interface StyledTableRowProps {
-    $clickable: boolean;
-    $error: boolean;
-    $selected: boolean;
-    $striped: boolean;
+    $clickable?: boolean;
+    $error?: boolean;
+    $selected?: boolean;
+    $striped?: boolean;
 }
 
 interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
@@ -66,7 +66,7 @@ function getCellBackgroundCss({
     `;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps>`
+export const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.component['table-row-border-color']};
     }
