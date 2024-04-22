@@ -21,8 +21,6 @@ export const StyledLink = styled.a<ContainerProps>`
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     line-height: 1.5rem;
-    padding-left: 4px;
-    padding-right: 4px;
     text-decoration: underline;
 
     &:hover {

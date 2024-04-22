@@ -15,8 +15,6 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -126,8 +124,6 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -260,8 +256,6 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -392,8 +386,6 @@ exports[`External Link matches snapshot (without href) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -526,8 +518,6 @@ exports[`External Link matches snapshot 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }

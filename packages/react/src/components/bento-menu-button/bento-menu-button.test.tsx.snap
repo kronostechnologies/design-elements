@@ -139,8 +139,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -182,8 +180,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -991,8 +987,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1034,8 +1028,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1755,8 +1747,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1798,8 +1788,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }

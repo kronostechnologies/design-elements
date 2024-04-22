@@ -15,8 +15,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -72,8 +70,6 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -146,8 +142,6 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -219,8 +213,6 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -286,8 +278,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -343,8 +333,6 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -417,8 +405,6 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -490,8 +476,6 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   display: inline-flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  padding-left: 4px;
-  padding-right: 4px;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
