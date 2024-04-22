@@ -7,7 +7,6 @@ import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens'
 import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
 import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
-import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
 import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/external-link-tokens';
@@ -61,7 +60,6 @@ export type ComponentTokens =
     | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
-    | CardLinkTokens
     | ExternalLinkTokens
     | FocusTokens
     | HeadingTokens
@@ -125,7 +123,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultAvatarTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
-    ...defaultCardLinkTokens,
     ...defaultExternalLinkTokens,
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
