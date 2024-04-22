@@ -1,7 +1,6 @@
 import { ReactElement, useRef, useState, useMemo, useEffect, Fragment } from 'react';
 import styled from 'styled-components';
 import {
-    HeaderContext,
     Row,
     getCoreRowModel,
     getSortedRowModel,
@@ -142,45 +141,42 @@ const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
 `;
 
 function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunction<'translation'>): TableColumn<T> {
-    return {
+    const column: TableColumn<T> = {
         id: type,
         className: utilColumnClassName,
-        header(props: HeaderContext<T, unknown>) {
-            if (type === 'selection') {
-                const { table } = props;
-                return (
-                    <Checkbox
-                        data-testid="row-checkbox-all"
-                        checked={table.getIsAllRowsSelected()}
-                        indeterminate={table.getIsSomeRowsSelected()}
-                        onChange={table.getToggleAllRowsSelectedHandler()}
-                    />
-                );
-            }
-            // For 'numbers' type or any other type, return null or an empty header
-            return null;
-        },
-        cell({ row }) {
-            if (type === 'selection') {
-                return (
-                    <Checkbox
-                        data-testid={`row-checkbox-${row.index}`}
-                        checked={row.getIsSelected()}
-                        disabled={!row.getCanSelect()}
-                        indeterminate={row.getIsSomeSelected()}
-                        onChange={row.getToggleSelectedHandler()}
-                    />
-                );
-            }
+    };
 
-            if (type === 'numbers') {
-                return (
-                    <RowNumber>{row.index + 1}</RowNumber>
-                );
-            }
+    switch (type) {
+        case 'selection':
+            column.header = ({ table }) => (
+                <Checkbox
+                    data-testid="row-checkbox-all"
+                    checked={table.getIsAllRowsSelected()}
+                    indeterminate={table.getIsSomeRowsSelected()}
+                    onChange={table.getToggleAllRowsSelectedHandler()}
+                />
+            );
+            column.cell = ({ row }) => (
+                <Checkbox
+                    data-testid={`row-checkbox-${row.index}`}
+                    checked={row.getIsSelected()}
+                    disabled={!row.getCanSelect()}
+                    indeterminate={row.getIsSomeSelected()}
+                    onChange={row.getToggleSelectedHandler()}
+                />
+            );
+            break;
 
-            if (type === 'expand' && row.getCanExpand()) {
+        case 'numbers':
+            column.cell = ({ row }) => <RowNumber>{row.index + 1}</RowNumber>;
+            break;
+
+        case 'expand':
+            column.cell = ({ row }) => {
                 const isExpanded = row.getIsExpanded();
+                if (!row.getCanExpand()) {
+                    return null;
+                }
                 return (
                     <ExpandButton
                         type="button"
@@ -196,11 +192,11 @@ function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunctio
                         }
                     />
                 );
-            }
+            };
+            break;
+    }
 
-            return null;
-        },
-    };
+    return column;
 }
 
 export interface TableProps<T extends object> {
