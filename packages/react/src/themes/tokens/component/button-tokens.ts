@@ -235,7 +235,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-border-color': 'transparent-100',
     'button-tertiary-text-color': 'color-neutral-65',
     // Tertiary hover
-    'button-tertiary-hover-background-color': 'transparent-50',
+    'button-tertiary-hover-background-color': 'transparent-25',
     'button-tertiary-hover-border-color': 'transparent-100',
     'button-tertiary-hover-text-color': 'color-neutral-90',
     // Tertiary focus

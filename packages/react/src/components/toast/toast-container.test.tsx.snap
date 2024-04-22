@@ -60,7 +60,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
 .c4 {
   background-color: transparent;
   border-color: transparent;
-  color: #60666E;
+  color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
 }
@@ -77,15 +77,15 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #FFFFFF;
 }
 
 .c4:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #B7BBC2;
+  color: #006296;
 }
 
 .c4 > svg {
@@ -112,10 +112,10 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
   background: #CD2C23;
+  color: #FFFFFF;
 }
 
 .c2 {
-  color: #FFFFFF;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -130,15 +130,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   align-self: flex-start;
   color: #FFFFFF;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:hover {
-  background-color: #7B1A15;
-  color: #FFFFFF;
 }
 
 .c1 {
@@ -168,7 +159,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
       type="alert"
     >
       <Styled(Icon)
-        color="#FFFFFF"
         isMobile={false}
         name="alertOctagon"
         role="img"
@@ -178,7 +168,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
         <Icon
           aria-label="alert"
           className="c1"
-          color="#FFFFFF"
+          color="currentColor"
           focusable={true}
           isMobile={false}
           name="alertOctagon"
@@ -189,7 +179,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
           <svg
             aria-label="alert"
             className="c1"
-            color="#FFFFFF"
+            color="currentColor"
             focusable={true}
             height="16"
             isMobile={false}
@@ -201,20 +191,19 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#FFFFFF"
       >
         <p
           className="c2"
-          color="#FFFFFF"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#FFFFFF"
         $isMobile={false}
         $type="alert"
+        buttonType="tertiary"
         data-testid="dismiss"
+        inverted={true}
         label="Dismiss notification"
         onClick={[Function]}
         type="button"
@@ -224,6 +213,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={true}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -234,6 +224,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -244,6 +235,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -254,6 +246,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={true}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"
@@ -350,7 +343,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
 .c4 {
   background-color: transparent;
   border-color: transparent;
-  color: #60666E;
+  color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
 }
@@ -367,15 +360,15 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #FFFFFF;
 }
 
 .c4:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #B7BBC2;
+  color: #006296;
 }
 
 .c4 > svg {
@@ -402,10 +395,10 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
   background: #602FA0;
+  color: #FFFFFF;
 }
 
 .c2 {
-  color: #FFFFFF;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -420,15 +413,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   align-self: flex-start;
   color: #FFFFFF;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:hover {
-  background-color: #3A1C60;
-  color: #FFFFFF;
 }
 
 .c1 {
@@ -458,7 +442,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
       type="discovery"
     >
       <Styled(Icon)
-        color="#FFFFFF"
         isMobile={false}
         name="lightbulb"
         role="img"
@@ -468,7 +451,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
         <Icon
           aria-label="discovery"
           className="c1"
-          color="#FFFFFF"
+          color="currentColor"
           focusable={true}
           isMobile={false}
           name="lightbulb"
@@ -479,7 +462,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
           <svg
             aria-label="discovery"
             className="c1"
-            color="#FFFFFF"
+            color="currentColor"
             focusable={true}
             height="16"
             isMobile={false}
@@ -491,20 +474,19 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#FFFFFF"
       >
         <p
           className="c2"
-          color="#FFFFFF"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#FFFFFF"
         $isMobile={false}
         $type="discovery"
+        buttonType="tertiary"
         data-testid="dismiss"
+        inverted={true}
         label="Dismiss notification"
         onClick={[Function]}
         type="button"
@@ -514,6 +496,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={true}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -524,6 +507,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -534,6 +518,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -544,6 +529,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={true}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"
@@ -640,7 +626,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
 .c4 {
   background-color: transparent;
   border-color: transparent;
-  color: #60666E;
+  color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
 }
@@ -657,15 +643,15 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #FFFFFF;
 }
 
 .c4:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #B7BBC2;
+  color: #006296;
 }
 
 .c4 > svg {
@@ -692,10 +678,10 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
   background: #60666E;
+  color: #FFFFFF;
 }
 
 .c2 {
-  color: #FFFFFF;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -710,15 +696,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   align-self: flex-start;
   color: #FFFFFF;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:hover {
-  background-color: #36393D;
-  color: #FFFFFF;
 }
 
 .c1 {
@@ -748,7 +725,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
       type="neutral"
     >
       <Styled(Icon)
-        color="#FFFFFF"
         isMobile={false}
         name="info"
         role="img"
@@ -758,7 +734,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
         <Icon
           aria-label="information"
           className="c1"
-          color="#FFFFFF"
+          color="currentColor"
           focusable={true}
           isMobile={false}
           name="info"
@@ -769,7 +745,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
           <svg
             aria-label="information"
             className="c1"
-            color="#FFFFFF"
+            color="currentColor"
             focusable={true}
             height="16"
             isMobile={false}
@@ -781,20 +757,19 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#FFFFFF"
       >
         <p
           className="c2"
-          color="#FFFFFF"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#FFFFFF"
         $isMobile={false}
         $type="neutral"
+        buttonType="tertiary"
         data-testid="dismiss"
+        inverted={true}
         label="Dismiss notification"
         onClick={[Function]}
         type="button"
@@ -804,6 +779,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={true}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -814,6 +790,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -824,6 +801,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -834,6 +812,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={true}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"
@@ -930,7 +909,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 .c4 {
   background-color: transparent;
   border-color: transparent;
-  color: #60666E;
+  color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
 }
@@ -947,15 +926,15 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #FFFFFF;
 }
 
 .c4:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #B7BBC2;
+  color: #006296;
 }
 
 .c4 > svg {
@@ -982,10 +961,10 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
   background: #008533;
+  color: #FFFFFF;
 }
 
 .c2 {
-  color: #FFFFFF;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1000,15 +979,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   align-self: flex-start;
   color: #FFFFFF;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:hover {
-  background-color: #004F1E;
-  color: #FFFFFF;
 }
 
 .c1 {
@@ -1038,7 +1008,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
       type="success"
     >
       <Styled(Icon)
-        color="#FFFFFF"
         isMobile={false}
         name="check"
         role="img"
@@ -1048,7 +1017,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
         <Icon
           aria-label="success"
           className="c1"
-          color="#FFFFFF"
+          color="currentColor"
           focusable={true}
           isMobile={false}
           name="check"
@@ -1059,7 +1028,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           <svg
             aria-label="success"
             className="c1"
-            color="#FFFFFF"
+            color="currentColor"
             focusable={true}
             height="16"
             isMobile={false}
@@ -1071,20 +1040,19 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#FFFFFF"
       >
         <p
           className="c2"
-          color="#FFFFFF"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#FFFFFF"
         $isMobile={false}
         $type="success"
+        buttonType="tertiary"
         data-testid="dismiss"
+        inverted={true}
         label="Dismiss notification"
         onClick={[Function]}
         type="button"
@@ -1094,6 +1062,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={true}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -1104,6 +1073,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={true}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -1114,6 +1084,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={true}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -1124,6 +1095,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={true}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"
@@ -1237,7 +1209,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.25);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -1272,10 +1244,10 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -webkit-animation: dlEaXy 0.25s ease-out;
   animation: dlEaXy 0.25s ease-out;
   background: #F5A200;
+  color: #1B1C1E;
 }
 
 .c2 {
-  color: #1B1C1E;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1290,15 +1262,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   align-self: flex-start;
   color: #1B1C1E;
   margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:hover {
-  background-color: #C78500;
-  color: #000000;
 }
 
 .c1 {
@@ -1328,7 +1291,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
       type="warning"
     >
       <Styled(Icon)
-        color="#1B1C1E"
         isMobile={false}
         name="alertTriangle"
         role="img"
@@ -1338,7 +1300,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         <Icon
           aria-label="warning"
           className="c1"
-          color="#1B1C1E"
+          color="currentColor"
           focusable={true}
           isMobile={false}
           name="alertTriangle"
@@ -1349,7 +1311,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           <svg
             aria-label="warning"
             className="c1"
-            color="#1B1C1E"
+            color="currentColor"
             focusable={true}
             height="16"
             isMobile={false}
@@ -1361,20 +1323,19 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
       </Styled(Icon)>
       <styled.p
         $isMobile={false}
-        color="#1B1C1E"
       >
         <p
           className="c2"
-          color="#1B1C1E"
         >
           a message
         </p>
       </styled.p>
       <Styled(IconButton)
-        $color="#1B1C1E"
         $isMobile={false}
         $type="warning"
+        buttonType="tertiary"
         data-testid="dismiss"
+        inverted={false}
         label="Dismiss notification"
         onClick={[Function]}
         type="button"
@@ -1384,6 +1345,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           className="c3"
           data-testid="dismiss"
           iconName="x"
+          inverted={false}
           label="Dismiss notification"
           onClick={[Function]}
           type="button"
@@ -1394,6 +1356,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             className="c3"
             data-testid="dismiss"
             focusable={true}
+            inverted={false}
             isMobile={false}
             onClick={[Function]}
             type="button"
@@ -1404,6 +1367,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
               className="c4 c3"
               data-testid="dismiss"
               focusable={true}
+              inverted={false}
               isMobile={false}
               onClick={[Function]}
               type="button"
@@ -1414,6 +1378,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
+                inverted={false}
                 isMobile={false}
                 onClick={[Function]}
                 type="button"

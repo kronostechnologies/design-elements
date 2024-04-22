@@ -96,7 +96,99 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
 `;
 
 exports[`Global Header Matches the snapshot (mobile) 1`] = `
-.c4 {
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-3x);
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c6 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 56px);
@@ -115,29 +207,14 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   z-index: 100;
 }
 
-.c3 > .c3 {
+.c5 > .c5 {
   height: 100%;
   top: 0;
 }
 
-.c2 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid transparent;
+.c4 {
   margin: 0;
   padding: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0 {
@@ -209,11 +286,12 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2"
+    class="c2 c3 c4"
     type="button"
   >
     <svg
-      color="#FFFFFF"
+      aria-hidden="true"
+      color="currentColor"
       focusable="false"
       height="24"
       width="24"
@@ -221,7 +299,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   </button>
   <div
     aria-hidden="true"
-    class="c3 c4"
+    class="c5 c6"
     id="menu-drawer"
     origin="right"
     width="100%"
@@ -234,7 +312,99 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
 `;
 
 exports[`Global Header mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
-.c4 {
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-3x);
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c6 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.1);
   height: calc(100vh - 56px);
@@ -253,29 +423,14 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   z-index: 100;
 }
 
-.c3 > .c3 {
+.c5 > .c5 {
   height: 100%;
   top: 0;
 }
 
-.c2 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid transparent;
+.c4 {
   margin: 0;
   padding: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0 {
@@ -347,11 +502,12 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2"
+    class="c2 c3 c4"
     type="button"
   >
     <svg
-      color="#FFFFFF"
+      aria-hidden="true"
+      color="currentColor"
       focusable="false"
       height="24"
       width="24"
@@ -359,7 +515,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   </button>
   <div
     aria-hidden="true"
-    class="c3 c4"
+    class="c5 c6"
     id="menu-drawer"
     origin="right"
     width="100%"
