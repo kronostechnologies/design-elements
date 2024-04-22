@@ -419,10 +419,10 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     function handleTagRemove(tag: TagValue): void {
-        const removedOption = [...selectedOptions ?? []].filter((option) => option.value === tag.id);
+        const removedOption = selectedOptions?.find((option) => option.value === tag.id);
 
-        if (removedOption[0] !== undefined) {
-            toggleOptionSelection(removedOption[0]);
+        if (removedOption !== undefined) {
+            toggleOptionSelection(removedOption);
         }
     }
 
