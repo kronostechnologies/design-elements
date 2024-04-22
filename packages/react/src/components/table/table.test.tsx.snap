@@ -100,11 +100,11 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -331,11 +331,11 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -584,11 +584,11 @@ exports[`Table has custom text alignment 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c8 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -790,11 +790,11 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1030,11 +1030,11 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1236,11 +1236,11 @@ exports[`Table has mobile styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1442,11 +1442,11 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1770,11 +1770,11 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c14 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2101,11 +2101,11 @@ exports[`Table has small rowSize styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2307,11 +2307,11 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2567,11 +2567,11 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c8 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2810,11 +2810,11 @@ exports[`Table has sticky header styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -3020,11 +3020,11 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -3226,11 +3226,11 @@ exports[`Table has tablet styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table

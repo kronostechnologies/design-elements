@@ -35,7 +35,6 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -131,7 +130,6 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -320,7 +318,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -529,7 +526,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -737,7 +733,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;

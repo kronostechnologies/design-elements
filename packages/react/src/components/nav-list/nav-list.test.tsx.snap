@@ -12,7 +12,7 @@ exports[`NavList Is hidden 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,6 +38,7 @@ exports[`NavList Is hidden 1`] = `
 
 .c1:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c1[disabled] {
@@ -143,7 +144,7 @@ exports[`NavList Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -169,6 +170,7 @@ exports[`NavList Matches the snapshot 1`] = `
 
 .c1:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c1[disabled] {

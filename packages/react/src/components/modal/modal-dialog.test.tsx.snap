@@ -250,7 +250,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -544,7 +543,6 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -906,7 +904,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -1314,7 +1311,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
@@ -1665,7 +1661,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;

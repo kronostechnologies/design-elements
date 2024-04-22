@@ -221,22 +221,22 @@ input + .c2 {
 }
 
 .c5::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -727,22 +727,22 @@ input + .c2 {
 }
 
 .c7::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1201,22 +1201,22 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1685,22 +1685,22 @@ input + .c2 {
 }
 
 .c6::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
