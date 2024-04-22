@@ -4,11 +4,11 @@ import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
-type Size = 'small' | 'medium';
+export type Size = 'small' | 'medium';
 
-type Type = 'submit' | 'button' | 'reset';
+export type Type = 'submit' | 'button' | 'reset';
 
-interface ButtonProps {
+export interface ButtonProps {
     id?: string;
     autofocus?: boolean;
     /**
