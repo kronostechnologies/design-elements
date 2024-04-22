@@ -18,6 +18,7 @@ import { useListCursor } from '../../hooks/use-list-cursor';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { unique } from '../../utils/array';
+import { findOptionsByValue } from './listbox-option';
 
 type Value = string | string[];
 
@@ -209,15 +210,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
-    const findOptionsByValue: (searchValue?: Value | string) => ListboxOption[] = useCallback(
-        (searchValue) => options.filter(
-            (option) => (Array.isArray(searchValue)
-                ? searchValue.includes(option.value)
-                : option.value === searchValue),
-        ),
-        [options],
-    );
-
     const {
         selectedElement: focusedOption,
         setSelectedElement: setFocusedOption,
@@ -227,12 +219,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         selectLast: focusLastOption,
     } = useListCursor({
         elements: options,
-        initialElement: findOptionsByValue(focusedValue)[0],
+        initialElement: findOptionsByValue(options, focusedValue)[0],
         predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(value ?? defaultValue),
+        () => findOptionsByValue(options, value ?? defaultValue),
     );
 
     function isOptionSelected(option: ListboxOption): boolean {
@@ -295,17 +287,17 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [focusedOption, options, scrollToOption]);
 
     useLayoutEffect(() => {
-        const initialOption = findOptionsByValue(focusedValue ?? defaultValue);
+        const initialOption = findOptionsByValue(options, focusedValue ?? defaultValue);
 
         if (initialOption.length > 0) {
             scrollToOption(initialOption[0], true);
         }
-    }, [defaultValue, focusedValue, findOptionsByValue, scrollToOption]);
+    }, [defaultValue, focusedValue, scrollToOption, options]);
 
     const [previousFocusedValue, setPreviousFocusedValue] = useState<string | undefined>(focusedValue);
 
     if (focusedValue !== previousFocusedValue) {
-        const targetOption = findOptionsByValue(focusedValue)[0];
+        const targetOption = findOptionsByValue(options, focusedValue)[0];
         setFocusedOption(targetOption);
         setPreviousFocusedValue(focusedValue);
     }
@@ -313,7 +305,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        setSelectedOptions(findOptionsByValue(value));
+        setSelectedOptions(findOptionsByValue(options, value));
         setPreviousValue(value);
     }
 
