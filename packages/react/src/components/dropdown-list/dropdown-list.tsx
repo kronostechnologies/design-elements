@@ -72,7 +72,7 @@ const Textbox = styled.div<TextboxProps>`
     display: flex;
     justify-content: space-between;
     min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: ${({ $isMultiselect }) => ($isMultiselect ? '0 var(--spacing-1x) 0 2px' : '0 var(--spacing-1x)')};
+    padding: ${({ $isMultiselect }) => ($isMultiselect ? '0 var(--spacing-1x) 0 0' : '0 var(--spacing-1x)')};
     text-wrap: none;
     user-select: none;
     width: 100%;
