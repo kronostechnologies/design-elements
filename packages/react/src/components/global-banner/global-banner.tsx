@@ -67,9 +67,6 @@ const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
     width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
-const TextContainer = styled.span<IsMobileProps>`
-`;
-
 const Title = styled.strong<IsMobileProps>`
     display: block;
     font-size: 1rem;
@@ -184,7 +181,7 @@ export const GlobalBanner = forwardRef(({
     children,
     className,
     hidden,
-    id,
+    id: providedId,
     dismissable = false,
     label,
     onDismiss,
@@ -196,13 +193,13 @@ export const GlobalBanner = forwardRef(({
     const { t } = useTranslation('global-banner');
     const hasDismissButton = type !== 'alert' && dismissable;
     const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
+    const id = useId(providedId);
+    const titleId = `${id}_title`;
 
     const handleDismiss: MouseEventHandler = useCallback(() => {
         onDismiss?.();
         setVisible(false);
     }, [onDismiss]);
-
-    const titleId = useId(id);
 
     return visible ? (
         <Container
@@ -225,10 +222,10 @@ export const GlobalBanner = forwardRef(({
                     role="img"
                     size={isMobile ? '24' : '16'}
                 />
-                <TextContainer $isMobile={isMobile}>
+                <span>
                     <Title $isMobile={isMobile} id={titleId}>{label}</Title>
                     {children}
-                </TextContainer>
+                </span>
             </Content>
 
             {hasButtons && (
