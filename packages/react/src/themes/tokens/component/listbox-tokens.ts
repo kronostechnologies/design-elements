@@ -34,7 +34,7 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-background-color': 'color-white',
     'listbox-border-color': 'color-neutral-50',
     'listbox-box-shadow-frame-color': 'color-neutral-15',
-    'listbox-box-shadow-depth-color': 'transparent-20',
+    'listbox-box-shadow-depth-color': 'transparent-dark-20',
     'listbox-checkbox-background-color': 'color-white',
     'listbox-checkbox-disabled-background-color': 'color-neutral-05',
     'listbox-checkbox-border-color': 'color-neutral-65',

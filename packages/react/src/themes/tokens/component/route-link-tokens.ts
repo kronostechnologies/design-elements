@@ -17,5 +17,5 @@ export const defaultRouteLinkTokens: RouteLinkTokenMap = {
     'route-link-text-color': 'color-informative-50',
     'route-link-disabled-text-color': 'color-informative-20',
     'route-link-hover-text-color': 'color-informative-70',
-    'route-link-visited-text-color': 'visited-link-color',
+    'route-link-visited-text-color': 'color-link-content-visited',
 };

@@ -28,8 +28,8 @@ export const defaultMenuTokens: MenuTokenMap = {
     'menu-item-focus-outline-color': 'color-brand-50',
     'menu-item-hover-background-color': 'color-neutral-15',
     'menu-item-text-color': 'color-black',
-    'menu-box-shadow-color': 'transparent-10',
+    'menu-box-shadow-color': 'transparent-dark-10',
     'menu-submenu-background-color': 'color-white',
     'menu-submenu-border-color': 'color-neutral-50',
-    'menu-submenu-box-shadow-color': 'transparent-10',
+    'menu-submenu-box-shadow-color': 'transparent-dark-10',
 };

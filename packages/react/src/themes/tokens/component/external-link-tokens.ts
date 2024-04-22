@@ -11,5 +11,5 @@ export type ExternalLinkTokenMap = {
 };
 
 export const defaultExternalLinkTokens: ExternalLinkTokenMap = {
-    'external-link-visited-text-color': 'visited-link-color',
+    'external-link-visited-text-color': 'color-link-content-visited',
 };

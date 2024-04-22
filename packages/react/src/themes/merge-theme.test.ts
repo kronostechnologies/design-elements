@@ -66,13 +66,13 @@ const customization : ThemeCustomization = {
         'color-neutral-02': 'blue',
     },
     alias: {
-        'default-text-color': 'color-brand-05',
-        'alternate-text-color': 'color-brand-20',
+        'color-content': 'color-brand-05',
+        'color-content-subtle': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'color-neutral-02',
         'button-primary-inverted-background-color': 'color-brand-20',
-        'focus-border-color': 'alternate-text-color',
+        'focus-border-color': 'color-content-subtle',
     },
 };
 
@@ -89,8 +89,8 @@ const expectedTheme = {
     },
     alias: {
         ...defaultAliasTokens,
-        'default-text-color': 'color-brand-05',
-        'alternate-text-color': 'color-brand-20',
+        'color-content': 'color-brand-05',
+        'color-content-subtle': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'blue',
@@ -167,14 +167,14 @@ describe('mergeTheme', () => {
         const consoleSpy = jest.spyOn(console, 'error');
         consoleSpy.mockImplementation(() => {});
 
-        const token = 'default-text-color';
+        const token = 'color-content';
         const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
             alias: {
                 // @ts-ignore-self-referenced-token-test-purpose
-                'default-text-color': 'default-text-color',
+                'color-content': 'color-content',
             },
             component: {
-                'button-primary-background-color': 'default-text-color',
+                'button-primary-background-color': 'color-content',
             },
         };
 
