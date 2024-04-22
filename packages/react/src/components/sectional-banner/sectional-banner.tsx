@@ -55,12 +55,12 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 
 function abstractContainer(
     bgColor: keyof ResolvedTheme['component'],
-    color?: keyof ResolvedTheme['component'],
-    iconColor: keyof ResolvedTheme['component'] | undefined = color,
+    borderColor: keyof ResolvedTheme['component'],
+    iconColor: keyof ResolvedTheme['component'],
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${(props) => props.theme.component[bgColor]};
-        border: 1px solid ${(props) => props.theme.component[color || 'sectional-banner-border-color']};
+        border: 1px solid ${(props) => props.theme.component[borderColor]};
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
@@ -75,7 +75,7 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            color: ${(props) => (props.theme.component[iconColor || 'sectional-banner-icon-color'])};
+            color: ${(props) => (props.theme.component[iconColor])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;
@@ -86,18 +86,22 @@ function abstractContainer(
 const NeutralContainer = abstractContainer(
     'sectional-banner-neutral-background-color',
     'sectional-banner-neutral-border-color',
+    'sectional-banner-neutral-icon-color',
 );
 const InfoContainer = abstractContainer(
     'sectional-banner-info-background-color',
     'sectional-banner-info-border-color',
+    'sectional-banner-info-icon-color',
 );
 const DiscoveryContainer = abstractContainer(
     'sectional-banner-discovery-background-color',
     'sectional-banner-discovery-border-color',
+    'sectional-banner-discovery-icon-color',
 );
 const SuccessContainer = abstractContainer(
     'sectional-banner-success-background-color',
     'sectional-banner-success-border-color',
+    'sectional-banner-success-icon-color',
 );
 const WarningContainer = abstractContainer(
     'sectional-banner-warning-background-color',
@@ -107,6 +111,7 @@ const WarningContainer = abstractContainer(
 const AlertContainer = abstractContainer(
     'sectional-banner-alert-background-color',
     'sectional-banner-alert-border-color',
+    'sectional-banner-alert-icon-color',
 );
 
 const Message = styled.p<MobileDeviceContext>`
