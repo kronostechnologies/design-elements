@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
     background-color: ${({ theme }) => theme.component['card-background-color']};
     border: 1px solid ${(props) => props.theme.component['card-link-border-color']};
     border-radius: var(--border-radius-2x);
-    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.component['card-link-box-shadow-inset-color']}, 0 1px 4px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 1px 4px 0 ${(props) => props.theme.component['card-box-shadow-color']};
     box-sizing: border-box;
     color: ${({ theme }) => theme.component['card-text-color']};
     display: block;
@@ -35,7 +35,7 @@ const StyledLink = styled(Link)`
 
     &:hover {
         background-color: ${({ theme }) => theme.component['card-link-hover-background-color']};
-        box-shadow: inset 0 0 0 1px ${({ theme }) => theme.component['card-link-hover-box-shadow-inset-color']}, 0 1px 4px 0 rgb(0 0 0 / 20%);
+        border-color: ${({ theme }) => theme.component['card-link-hover-border-color']};
     }
 
     ${focus};
