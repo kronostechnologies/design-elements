@@ -132,7 +132,8 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-hover-background-color'])};
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-hover-border-color'])};    }
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-hover-border-color'])};
+    }
 
     ${({ checked }) => (!checked && css`
         > ${CheckMarkIcon} {

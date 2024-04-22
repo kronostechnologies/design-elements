@@ -38,7 +38,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 
     &:last-child {
-        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-border-color'] : theme.component['toggle-button-border-color'])};        margin: 0;
+        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-border-color'] : theme.component['toggle-button-border-color'])};
+        margin: 0;
     }
 
     &:focus {
