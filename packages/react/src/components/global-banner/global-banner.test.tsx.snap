@@ -177,7 +177,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -194,12 +194,10 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         alert
       </strong>
@@ -436,7 +434,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -453,12 +451,10 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         discovery
       </strong>
@@ -702,7 +698,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -719,12 +715,10 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         neutral
       </strong>
@@ -968,7 +962,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -985,12 +979,10 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         warning
       </strong>
@@ -1199,7 +1191,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1216,12 +1208,10 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         alert
       </strong>
@@ -1462,7 +1452,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1479,12 +1469,10 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         discovery
       </strong>
@@ -1732,7 +1720,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1749,12 +1737,10 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         neutral
       </strong>
@@ -2002,7 +1988,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 <section
   aria-atomic="true"
-  aria-labelledby="uuid1"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -2019,12 +2005,10 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class=""
-    >
+    <span>
       <strong
         class="c3"
-        id="uuid1"
+        id="uuid1_title"
       >
         warning
       </strong>
