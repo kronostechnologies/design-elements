@@ -31,8 +31,8 @@ const ThemeCustomization1: ThemeCustomization = {
         'color-accent-70': '#3F474C',
     },
     alias: {
-        'default-text-color': 'color-brand-05',
-        'alternate-text-color': 'color-brand-20',
+        'color-content': 'color-brand-05',
+        'color-content-subtle': 'color-brand-20',
     },
     component: {
         'button-primary-background-color': 'color-brand-50',
