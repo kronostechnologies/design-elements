@@ -41,7 +41,7 @@ const StyledHeader = styled.th<{ $sticky: boolean, $startOffset: number; $textAl
     `}
 
     &:before {
-        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        border-bottom: 1px solid ${({ theme }) => theme.component['table-header-border-color']};
         bottom: 0;
         content: '';
         position: absolute;
