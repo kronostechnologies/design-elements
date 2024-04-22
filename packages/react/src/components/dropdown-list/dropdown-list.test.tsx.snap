@@ -2,7 +2,7 @@
 
 exports[`Dropdown list matches the snapshot (disabled) 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -463,7 +463,7 @@ exports[`Dropdown list matches the snapshot (invalid) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1320,7 +1320,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 exports[`Dropdown list matches the snapshot 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
