@@ -235,7 +235,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-border-color': 'transparent-100',
     'button-tertiary-text-color': 'color-neutral-65',
     // Tertiary hover
-    'button-tertiary-hover-background-color': 'color-neutral-15',
+    'button-tertiary-hover-background-color': 'transparent-50',
     'button-tertiary-hover-border-color': 'transparent-100',
     'button-tertiary-hover-text-color': 'color-neutral-90',
     // Tertiary focus
@@ -252,7 +252,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-inverted-border-color': 'transparent-100',
     'button-tertiary-inverted-text-color': 'color-white',
     // Tertiary inverted hover
-    'button-tertiary-inverted-hover-background-color': 'color-brand-70',
+    'button-tertiary-inverted-hover-background-color': 'transparent-50',
     'button-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-tertiary-inverted-hover-text-color': 'color-white',
     // Tertiary inverted focus
