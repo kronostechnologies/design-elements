@@ -14,6 +14,7 @@ import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultProgressTokens, ProgressTokens } from './component/progress-tokens';
 import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
@@ -33,9 +34,6 @@ import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens'
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
-import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
-import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
-import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
 import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
 import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
@@ -87,9 +85,7 @@ export type ComponentTokens =
     | NavListTokens
     | NavListItemTokens
     | PaginationTokens
-    | ProgressCircleTokens
-    | ProgressIndicatorTokens
-    | ProgressTrackerTokens
+    | ProgressTokens
     | RouteLinkTokens
     | SkipLinkTokens
     | BadgeTokens
@@ -131,9 +127,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNavListTokens,
     ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
-    ...defaultProgressCircleTokens,
-    ...defaultProgressIndicatorTokens,
-    ...defaultProgressTrackerTokens,
+    ...defaultProgressTokens,
     ...defaultRouteLinkTokens,
     ...defaultSkipLinkTokens,
     ...defaultFocusTokens,
