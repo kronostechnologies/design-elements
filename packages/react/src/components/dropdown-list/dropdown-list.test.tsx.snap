@@ -1461,7 +1461,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   min-height: var(--size-2x);
-  padding: 0 var(--spacing-1x) 0 2px;
+  padding: 0 var(--spacing-1x) 0 0;
   text-wrap: none;
   -webkit-user-select: none;
   -moz-user-select: none;
