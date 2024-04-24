@@ -86,7 +86,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                         ariaLabel={t('monthSelectLabel')}
                         data-testid="month-select"
                         options={monthsOptions}
-                        onChange={(options) => {
+                        onChange={(options: DropdownListOption) => {
                             changeMonth(months.indexOf(options.label));
                         }}
                         value={monthsOptions[getMonth(date)].value}
@@ -97,7 +97,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                         ariaLabel={t('yearSelectLabel')}
                         data-testid="year-select"
                         options={yearsOptions}
-                        onChange={(options) => {
+                        onChange={(options: DropdownListOption) => {
                             changeYear(parseInt(options.value, 10));
                         }}
                         value={getYear(date).toString()}

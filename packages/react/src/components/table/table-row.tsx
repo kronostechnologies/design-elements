@@ -8,19 +8,18 @@ import {
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
-import { CustomColumnDef } from './types';
-import { focus } from '../../utils/css-state';
+import { TableColumn } from './types';
 
 interface StyledTableRowProps {
-    $clickable: boolean;
-    $error: boolean;
-    $selected: boolean;
+    $clickable?: boolean;
+    $error?: boolean;
+    $selected?: boolean;
     $striped?: boolean;
 }
 
 interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
     column: Column<TData, TValue> & {
-        columnDef: CustomColumnDef<TData, TValue>;
+        columnDef: TableColumn<TData, TValue>;
     };
 }
 
@@ -67,7 +66,7 @@ function getCellBackgroundCss({
     `;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps>`
+export const StyledTableRow = styled.tr<StyledTableRowProps>`
     &:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.component['table-row-border-color']};
     }
@@ -167,14 +166,13 @@ export const TableRow = <T extends object>({
 }: TableRowProps<T>): ReactElement => (
     <StyledTableRow
         $clickable={!!onClick}
-        data-testid={`table-row-${row.index}`}
         $error={error}
-        key={row.id}
         $striped={striped}
         $selected={row.getIsSelected()}
         onClick={() => onClick && onClick(row)}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
+        data-testid={`table-row-${row.id}`}
     >
         {row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
     </StyledTableRow>
