@@ -17,7 +17,7 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -138,10 +138,10 @@ export const TextInput = forwardRef(({
     }, [valid]);
 
     return (
-        <FieldContainer
+        <FormFieldContainer
             className={className}
             noMargin={noMargin}
-            fieldId={fieldId}
+            id={fieldId}
             label={label}
             required={required}
             tooltip={tooltip}
@@ -176,7 +176,7 @@ export const TextInput = forwardRef(({
                 value={value}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
-        </FieldContainer>
+        </FormFieldContainer>
     );
 });
 

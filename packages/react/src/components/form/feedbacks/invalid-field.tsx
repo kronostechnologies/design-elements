@@ -1,7 +1,7 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../../device-context-provider/device-context-provider';
+import { Icon } from '../../icon/icon';
 
 const Field = styled.span<{ isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-error-text-color']};
@@ -19,7 +19,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 interface InvalidFieldProps {
-    controlId: string;
+    controlId?: string;
     feedbackMsg: string;
     noIcon?: boolean;
 }
@@ -31,7 +31,7 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
         <Field
             data-testid="invalid-field"
             aria-live="polite"
-            id={`${controlId}_invalid`}
+            id={controlId}
             isMobile={isMobile}
             role="alert"
         >

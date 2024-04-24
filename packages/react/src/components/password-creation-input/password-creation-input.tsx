@@ -1,6 +1,6 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
 import styled, { StyledProps } from 'styled-components';
-import { FieldContainer } from '../field-container/field-container';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
@@ -12,7 +12,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
-const StyledFieldContainer = styled(FieldContainer)`
+const StyledFieldContainer = styled(FormFieldContainer)`
     > :nth-child(2) {
         margin-bottom: 0;
     }
@@ -123,7 +123,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
 
     return (
         <StyledFieldContainer
-            fieldId={id}
+            id={id}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon

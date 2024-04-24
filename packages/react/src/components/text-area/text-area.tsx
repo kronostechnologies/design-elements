@@ -4,7 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { v4 as uuid } from '../../utils/uuid';
-import { FieldContainer } from '../field-container/field-container';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
@@ -137,11 +137,11 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     ]);
 
     return (
-        <FieldContainer
+        <FormFieldContainer
             data-testid="container"
             className={className}
             noMargin={noMargin}
-            fieldId={idTextArea}
+            id={idTextArea}
             label={label}
             required={required}
             tooltip={tooltip}
@@ -176,6 +176,6 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                     <span aria-hidden="true">{t('characters', { length: inputValueLength, max: maxLength })}</span>
                 </Counter>
             )}
-        </FieldContainer>
+        </FormFieldContainer>
     );
 };

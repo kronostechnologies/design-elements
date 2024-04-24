@@ -1,7 +1,10 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { DetailedHTMLProps, forwardRef, InputHTMLAttributes, ReactElement, Ref } from 'react';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import { useId } from '../../../hooks/use-id';
 import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
-import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
+import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
+import { FormFieldControlProps, useFormFieldContext } from '../../form/form-field-context';
 
 export const inputsStyle: (theme: ResolvedTheme, isMobile?: boolean) => FlattenSimpleInterpolation = (
     theme: ResolvedTheme,
@@ -77,3 +80,80 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
 
     ${focus({ theme }, true)}
 `;
+
+const StyledInput = styled.input<{ isMobile: boolean; }>`
+    ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
+`;
+
+type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    | 'id'
+    | 'className'
+    | 'type'
+    | 'name'
+    | 'value'
+    | 'defaultValue'
+    | 'placeholder'
+    | 'disabled'
+    | 'required'
+    | 'pattern'
+    | 'onBlur'
+    | 'onChange'
+    | 'onClick'
+    | 'onFocus'
+    | 'onKeyUp'
+    | 'onKeyDown'
+    | 'onMouseUp'
+    | 'onInvalid'
+    | 'inputMode'
+    | 'autoComplete'
+>;
+
+type PartialFormFieldProps = Pick<FormFieldControlProps,
+    | 'ariaLabel'
+    | 'ariaLabelledby'
+    | 'ariaDescribedby'
+    | 'valid'
+>;
+
+export type InputProps = PartialInputProps & PartialFormFieldProps;
+
+export const Input = forwardRef(({
+    id: providedId,
+    valid: providedValid = true,
+    required: providedRequired = false,
+    disabled: providedDisabled = false,
+    ...otherProps
+}: InputProps, ref: Ref<HTMLInputElement>): ReactElement => {
+    const { isMobile } = useDeviceContext();
+    const inputId = useId(providedId);
+
+    const {
+        formId,
+        ariaLabel,
+        ariaLabelledby,
+        ariaDescribedby,
+        valid = providedValid,
+        required = providedRequired,
+        disabled = providedDisabled,
+    } = useFormFieldContext(otherProps);
+
+    return (
+        <StyledInput
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
+            aria-describedby={ariaDescribedby}
+            aria-disabled={disabled ? 'true' : 'false'}
+            aria-required={required ? 'true' : 'false'}
+            aria-invalid={valid ? 'false' : 'true'}
+            data-testid="input"
+            id={formId || inputId}
+            disabled={disabled}
+            required={required}
+            isMobile={isMobile}
+            ref={ref}
+            {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
+    );
+});
+
+Input.displayName = 'Input';

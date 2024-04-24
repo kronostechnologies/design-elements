@@ -1,6 +1,6 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo, FocusEvent, useCallback } from 'react';
 import styled, { css } from 'styled-components';
-import { FieldContainer } from '../field-container/field-container';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
 import { IconButton } from '../buttons/icon-button';
 import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
@@ -102,8 +102,8 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     }, [onChange]);
 
     return (
-        <FieldContainer
-            fieldId={id}
+        <FormFieldContainer
+            id={id}
             label={label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}
@@ -140,6 +140,6 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     />
                 </Tooltip>
             </PasswordContainer>
-        </FieldContainer>
+        </FormFieldContainer>
     );
 };
