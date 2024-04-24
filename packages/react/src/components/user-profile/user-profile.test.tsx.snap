@@ -44,16 +44,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1 > svg {
@@ -98,16 +94,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:hover,
@@ -184,16 +176,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18 {
@@ -347,16 +335,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover {
@@ -393,16 +377,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c16 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:hover {
@@ -439,16 +419,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:hover {
@@ -486,16 +462,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 .c21 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:hover {
@@ -764,16 +736,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1 > svg {
@@ -818,16 +786,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:hover,
@@ -904,16 +868,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18 {
@@ -1067,16 +1027,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover {
@@ -1113,16 +1069,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c16 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:hover {
@@ -1159,16 +1111,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:hover {
@@ -1206,16 +1154,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 .c21 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:hover {
@@ -1485,16 +1429,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2 > svg {
@@ -1514,16 +1454,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover,
@@ -1622,16 +1558,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c18 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17 {
@@ -1785,16 +1717,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:hover {
@@ -1831,16 +1759,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:hover {
@@ -1877,16 +1801,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c16 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:hover {
@@ -1924,16 +1844,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 .c20 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c20:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c20:hover {
@@ -2201,16 +2117,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1 > svg {
@@ -2255,16 +2167,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:hover,
@@ -2341,16 +2249,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18 {
@@ -2504,16 +2408,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c14 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c14:hover {
@@ -2550,16 +2450,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c16 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c16:hover {
@@ -2596,16 +2492,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c17:hover {
@@ -2643,16 +2535,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c21 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c21:hover {

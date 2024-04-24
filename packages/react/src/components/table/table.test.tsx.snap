@@ -219,16 +219,12 @@ exports[`Table has clickable rows styles 1`] = `
 .c7 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c7:focus {
@@ -1717,16 +1713,12 @@ exports[`Table has selectable rows styles 1`] = `
 .c5 + .c6 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c5:focus + .c6 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4 {

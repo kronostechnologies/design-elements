@@ -248,16 +248,12 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 > svg {
@@ -278,16 +274,12 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 .c4 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:hover,
@@ -461,16 +453,12 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 > svg {
@@ -491,16 +479,12 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c4 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:hover,
@@ -674,16 +658,12 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3 > svg {
@@ -703,16 +683,12 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c4 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c4:hover,

@@ -44,16 +44,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1 > svg {
@@ -91,16 +87,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19 {
@@ -124,16 +116,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18 {
@@ -200,16 +188,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:hover {
@@ -306,16 +290,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c8 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:hover {
@@ -352,16 +332,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c12 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c12:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c12:hover {
@@ -385,16 +361,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:hover,
@@ -735,16 +707,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c1 > svg {
@@ -782,16 +750,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c13 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19 {
@@ -815,16 +779,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c18 {
@@ -891,16 +851,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c15:hover {
@@ -997,16 +953,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c8 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c8:hover {
@@ -1043,16 +995,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c12 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c12:focus {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c12:hover {
@@ -1076,16 +1024,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:focus {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c2:hover,

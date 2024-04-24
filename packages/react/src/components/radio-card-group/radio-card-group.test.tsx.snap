@@ -68,16 +68,12 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {
@@ -244,16 +240,12 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {
@@ -419,16 +411,12 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {
@@ -594,16 +582,12 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {
@@ -774,16 +758,12 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {
@@ -951,16 +931,12 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-  -webkit-transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
-  transition: outline .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
 .c3:hover:not([disabled]) {

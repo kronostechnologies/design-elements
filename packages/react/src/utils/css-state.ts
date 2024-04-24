@@ -27,20 +27,17 @@ export const focus = (
     const insideFocusBorderWeight = '2px';
     const insideFocusBorderOffset = '-2px';
     const outsideFocusBorderWeight = insideOnly ? '0' : '2px';
-    const transition = 'outline .25s ease-in-out, box-shadow .25s ease-in-out';
     const baseSelector = selector ?? '';
 
     return css`
         ${baseSelector} {
             outline: ${insideFocusBorderWeight} solid transparent;
             outline-offset: ${insideFocusBorderOffset};
-            transition: ${transition};
         };
 
         &:${focusType} ${baseSelector} {
             box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
             outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
             outline-offset: ${insideFocusBorderOffset};
-            transition: ${transition};
         }`;
 };
