@@ -1,7 +1,8 @@
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { Table, TableColumn, TableProps } from './table';
+import { Table, TableProps } from './table';
+import { TableColumn } from './types';
 
 interface TestData {
     column1: string;
@@ -33,17 +34,17 @@ const data: TestData[] = [
 ];
 
 function renderTable(
-    columnsArray: TableColumn<TestData>,
+    columnsArray: TableColumn<TestData>[],
     currentDevice?: DeviceType,
     props?: TablePropsLite,
 ): cheerio.Cheerio {
     return renderWithProviders(
-        <Table<TestData> columns={columnsArray} data={data} {...props} />,
+        <Table columns={columnsArray} data={data} {...props} />,
         currentDevice,
     );
 }
 
-const columnsWithHeaderAriaLabel: TableColumn<TestData> = [
+const columnsWithHeaderAriaLabel: TableColumn<TestData>[] = [
     {
         header: 'Column 1',
         headerAriaLabel: 'column 1 aria label',
@@ -56,7 +57,7 @@ const columnsWithHeaderAriaLabel: TableColumn<TestData> = [
     },
 ];
 
-const columns: TableColumn<TestData> = [
+const columns: TableColumn<TestData>[] = [
     {
         header: 'Column 1',
         accessorKey: 'column1',
@@ -67,7 +68,7 @@ const columns: TableColumn<TestData> = [
     },
 ];
 
-const columnsTextAligned: TableColumn<TestData> = [
+const columnsTextAligned: TableColumn<TestData>[] = [
     {
         header: 'Column 1',
         accessorKey: 'column1',
@@ -80,7 +81,7 @@ const columnsTextAligned: TableColumn<TestData> = [
     },
 ];
 
-const columnsSorted: TableColumn<TestData> = [
+const columnsSorted: TableColumn<TestData>[] = [
     {
         header: 'Column 1',
         accessorKey: 'column1',
@@ -93,7 +94,7 @@ const columnsSorted: TableColumn<TestData> = [
     },
 ];
 
-const columnsSticky: TableColumn<TestData3Columns> = [
+const columnsSticky: TableColumn<TestData3Columns>[] = [
     {
         header: 'Column 1',
         accessorKey: 'column1',
@@ -147,11 +148,13 @@ const stickyColumnsData: TestData3Columns[] = [
 
 describe('Table', () => {
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
-        const wrapper = mountWithProviders(<Table
-            columns={columnsSorted}
-            data={data}
-            defaultSort={{ id: 'column1', desc: false }}
-        />);
+        const wrapper = mountWithProviders(
+            <Table
+                columns={columnsSorted}
+                data={data}
+                defaultSort={{ id: 'column1', desc: false }}
+            />,
+        );
 
         expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
     });
@@ -159,7 +162,7 @@ describe('Table', () => {
     test('onRowClick callback is called when a row is clicked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table<TestData>
+            <Table
                 selectableRows
                 columns={columns}
                 data={data}
@@ -176,7 +179,7 @@ describe('Table', () => {
         const callback = jest.fn();
 
         mountWithTheme(
-            <Table<TestData>
+            <Table
                 selectableRows
                 columns={columns}
                 data={data}
@@ -191,7 +194,7 @@ describe('Table', () => {
     test('onSelectedRowsChange callback is called when row-checkbox is checked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table<TestData>
+            <Table
                 selectableRows
                 columns={columns}
                 data={data}
@@ -207,7 +210,7 @@ describe('Table', () => {
     test('onSelectedRowsChange callback is called with all rows when row-checkbox-all is checked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table<TestData>
+            <Table
                 selectableRows
                 columns={columns}
                 data={data}
@@ -275,32 +278,32 @@ describe('Table', () => {
     });
 
     test('has error rows styles', () => {
-        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} />);
+        const tree = renderWithProviders(<Table columns={columns} data={errorData} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has selectable rows styles', () => {
-        const tree = renderWithProviders(<Table<TestData> selectableRows columns={columns} data={data} />);
+        const tree = renderWithProviders(<Table selectableRows columns={columns} data={data} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky header styles', () => {
-        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} />);
+        const tree = renderWithProviders(<Table stickyHeader columns={columns} data={data} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky column styles', () => {
-        const tree = renderWithProviders(<Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} />);
+        const tree = renderWithProviders(<Table columns={columnsSticky} data={stickyColumnsData} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has aria-label on header columns', () => {
         const tree = renderWithProviders(
-            <Table<TestData>
+            <Table
                 columns={columnsWithHeaderAriaLabel}
                 data={data}
             />,

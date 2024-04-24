@@ -7,12 +7,13 @@ import {
     flexRender,
     RowData,
 } from '@tanstack/react-table';
+import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
-import { CustomColumnDef } from './types';
+import { TableColumn } from './types';
 
 interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
-        columnDef: CustomColumnDef<TData, TValue>;
+        columnDef: TableColumn<TData, TValue>;
     };
 }
 
@@ -77,12 +78,12 @@ function getHeading<TData extends object, TValue>(
     }
 
     if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
-        console.warn(
+        devConsole.warn(
             `aria-label missing for column ${header.id} without text. please add headerAriaLabel to column.`,
         );
     }
 
-    if (header.column.getCanSort()) {
+    if (header.column.columnDef.sortable) {
         return (
             <StyledHeader
                 aria-label={header.column.columnDef.headerAriaLabel}
@@ -137,7 +138,7 @@ export const TableHeader = <T extends object>({
     headerGroup,
     sticky,
 }: TableHeaderProps<T>): ReactElement => (
-    <StyleHeaderRow key={headerGroup.id} $sticky={sticky}>
+    <StyleHeaderRow $sticky={sticky}>
         {headerGroup.headers.map((header) => getHeading(header as CustomHeader<T>))}
     </StyleHeaderRow>
 );
