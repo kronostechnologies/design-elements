@@ -9,6 +9,7 @@ import {
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
+import { focus } from '../../utils/css-state';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
