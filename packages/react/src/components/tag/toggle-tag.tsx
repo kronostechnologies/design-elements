@@ -13,14 +13,12 @@ export interface ToggleTagValue {
     label: string;
 }
 
-interface BaseTagProps {
+export interface ToggleTagProps {
     className?: string;
     size?: ToggleTagSize;
     value: ToggleTagValue;
     iconName?: IconName;
-}
 
-export interface ToggleTagProps extends BaseTagProps {
     onClick?(tag: ToggleTagValue): void;
     /**
      * Whether the tag is selected.
@@ -29,17 +27,14 @@ export interface ToggleTagProps extends BaseTagProps {
     selected?: boolean;
 }
 
-interface BaseTagStylingProps {
+interface ToggleTagStylingProps {
     $isMobile: boolean;
     $tagSize: ToggleTagSize;
     $hasIcon: boolean;
-}
-
-interface ToggleTagStylingProps extends BaseTagStylingProps {
     $selected?: boolean;
 }
 
-function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+function getFontSize({ $isMobile }: ToggleTagStylingProps): number {
     return $isMobile ? 0.875 : 0.75;
 }
 
@@ -55,11 +50,11 @@ function isSmall(tagSize: ToggleTagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+function getPadding({ $isMobile, $tagSize }: ToggleTagStylingProps): string {
     return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
 }
 
-function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+function getLineHeight({ $isMobile, $tagSize }: ToggleTagStylingProps): number {
     if ($isMobile) {
         return isSmall($tagSize) ? 1.5 : 1.875;
     }

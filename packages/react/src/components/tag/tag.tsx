@@ -33,30 +33,25 @@ export interface TagValue {
     label: string;
 }
 
-interface BaseTagProps {
+export interface TagProps {
     className?: string;
     size?: TagSize;
     value: TagValue;
     iconName?: IconName;
-}
 
-export interface TagProps extends BaseTagProps {
     color?: TagColor;
     onRemove?(tag: TagValue): void;
 }
 
-interface BaseTagStylingProps {
+interface TagStylingProps {
     $isMobile: boolean;
     $tagSize: TagSize;
     $hasIcon: boolean;
-}
-
-interface TagStylingProps extends BaseTagStylingProps {
     $tagColor: TagColor;
     $removable: boolean;
 }
 
-function getFontSize({ $isMobile }: BaseTagStylingProps): number {
+function getFontSize({ $isMobile }: TagStylingProps): number {
     return $isMobile ? 0.875 : 0.75;
 }
 
@@ -76,11 +71,11 @@ function isSmall(tagSize: TagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-function getPadding({ $isMobile, $tagSize }: BaseTagStylingProps): string {
+function getPadding({ $isMobile, $tagSize }: TagStylingProps): string {
     return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
 }
 
-function getLineHeight({ $isMobile, $tagSize }: BaseTagStylingProps): number {
+function getLineHeight({ $isMobile, $tagSize }: TagStylingProps): number {
     if ($isMobile) {
         return isSmall($tagSize) ? 1.5 : 1.875;
     }
