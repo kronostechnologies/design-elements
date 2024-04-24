@@ -71,7 +71,12 @@ export { Table } from './components/table/table';
 export { TableColumn, TableData } from './components/table/types';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
-export { Tag, TagProps, TagValue } from './components/tag/tag';
+export {
+    Tag, TagValue, TagColor, TagSize, TagProps,
+} from './components/tag/tag';
+export {
+    ToggleTag, ToggleTagValue, ToggleTagSize, ToggleTagProps,
+} from './components/tag/toggle-tag';
 export { Lozenge } from './components/lozenge/lozenge';
 export { RadioCard } from './components/radio-card-group/radio-card';
 export { RadioCardGroup } from './components/radio-card-group/radio-card-group';

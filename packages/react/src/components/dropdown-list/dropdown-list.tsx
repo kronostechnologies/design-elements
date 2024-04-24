@@ -95,7 +95,7 @@ const TagWrapper = styled.div`
 
 const ListBoxTag = styled(Tag)`
     margin: 2px;
-    
+
     & + & {
         margin-left: 2px;
     }
@@ -431,7 +431,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             aria-hidden="true"
             data-testid={`listboxtag-${option.value}`}
             key={option.value}
-            onDelete={handleTagRemove}
+            onRemove={handleTagRemove}
             value={{ id: option.value, label: option.label }}
         />
     ));
