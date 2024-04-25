@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,46 +41,46 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c6:focus {
   outline: none;
 }
 
-.c8:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover,
-.c8[aria-expanded='true'] {
+.c6:hover,
+.c6[aria-expanded='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c8:disabled {
+.c6:disabled {
   background-color: transparent;
   border-color: #006296;
   color: #006296;
@@ -110,7 +110,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-1halfx) var(--spacing-2x);
   position: relative;
 }
 
@@ -131,40 +131,25 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
+.c2 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
   width: var(--size-1x);
 }
 
-.c2 {
-  -webkit-align-self: initial;
-  -ms-flex-item-align: initial;
-  align-self: initial;
-}
-
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
 }
 
 .c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -175,23 +160,24 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   width: unset;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #F99D99;
   color: #F99D99;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -208,26 +194,21 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         alert
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
@@ -238,7 +219,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -278,25 +259,54 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -312,41 +322,12 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -376,7 +357,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-1halfx) var(--spacing-2x);
   position: relative;
 }
 
@@ -397,40 +378,25 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
+.c2 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
   width: var(--size-1x);
 }
 
-.c2 {
-  -webkit-align-self: initial;
-  -ms-flex-item-align: initial;
-  align-self: initial;
-}
-
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
 }
 
 .c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -441,33 +407,34 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   width: unset;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #CFC1E3;
   color: #CFC1E3;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #FFFFFF;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #3A1C60;
   color: #FFFFFF;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -484,33 +451,28 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         discovery
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >
@@ -521,7 +483,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -561,25 +523,54 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -595,41 +586,12 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -659,7 +621,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-1halfx) var(--spacing-2x);
   position: relative;
 }
 
@@ -680,40 +642,25 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
+.c2 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
   width: var(--size-1x);
 }
 
-.c2 {
-  -webkit-align-self: initial;
-  -ms-flex-item-align: initial;
-  align-self: initial;
-}
-
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
 }
 
 .c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -724,33 +671,34 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   width: unset;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #FFFFFF;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #36393D;
   color: #FFFFFF;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -767,33 +715,28 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         neutral
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >
@@ -804,7 +747,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -844,25 +787,54 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -878,41 +850,12 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -942,7 +885,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-1halfx) var(--spacing-2x);
   position: relative;
 }
 
@@ -963,40 +906,25 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
+.c2 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
   width: var(--size-1x);
 }
 
-.c2 {
-  -webkit-align-self: initial;
-  -ms-flex-item-align: initial;
-  align-self: initial;
-}
-
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
 }
 
 .c4 {
-  display: inline;
-  font-weight: var(--font-semi-bold);
-  margin-right: var(--spacing-1x);
-}
-
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1007,33 +935,34 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   width: unset;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: var(--spacing-1x);
   margin-top: 0;
 }
 
-.c9 {
+.c7 {
   border-color: #1B1C1E;
   color: #1B1C1E;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #9E6900;
   color: #9E6900;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #1B1C1E;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #C78500;
   color: #1B1C1E;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1050,33 +979,28 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
       role="img"
       width="16"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         warning
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >
@@ -1087,7 +1011,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1127,46 +1051,46 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c6:focus {
   outline: none;
 }
 
-.c8:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover,
-.c8[aria-expanded='true'] {
+.c6:hover,
+.c6[aria-expanded='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c8:disabled {
+.c6:disabled {
   background-color: transparent;
   border-color: #006296;
   color: #006296;
@@ -1220,40 +1144,26 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: var(--size-1halfx);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-  width: var(--size-1halfx);
-}
-
 .c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1halfx);
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
 }
 
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
-.c4 {
   display: block;
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1264,23 +1174,24 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   width: 100%;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #F99D99;
   color: #F99D99;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1297,26 +1208,21 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         alert
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
@@ -1327,7 +1233,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1367,25 +1273,54 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -1401,41 +1336,12 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -1489,40 +1395,26 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: var(--size-1halfx);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-  width: var(--size-1halfx);
-}
-
 .c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1halfx);
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
 }
 
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
-.c4 {
   display: block;
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1533,33 +1425,34 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   width: 100%;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #CFC1E3;
   color: #CFC1E3;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #FFFFFF;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #3A1C60;
   color: #FFFFFF;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1576,33 +1469,28 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         discovery
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >
@@ -1613,7 +1501,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1653,25 +1541,54 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -1687,41 +1604,12 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -1775,40 +1663,26 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: var(--size-1halfx);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-  width: var(--size-1halfx);
-}
-
 .c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1halfx);
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
 }
 
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
-.c4 {
   display: block;
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1819,33 +1693,34 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   width: 100%;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
+.c7 {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #FFFFFF;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #36393D;
   color: #FFFFFF;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -1862,33 +1737,28 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         neutral
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >
@@ -1899,7 +1769,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 `;
 
 exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
-.c7 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1939,25 +1809,54 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
 }
 
-.c7:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 > svg {
+.c5 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c8 {
+.c6 {
   background-color: transparent;
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c6:disabled {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
   color: #FFFFFF;
 }
 
@@ -1973,41 +1872,12 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c10:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -2061,40 +1931,26 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   position: relative;
 }
 
-.c1 > svg {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: var(--size-1halfx);
-  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-  width: var(--size-1halfx);
-}
-
 .c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1halfx);
+  margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
 }
 
 .c3 {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
-.c4 {
   display: block;
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
-  display: inline-block;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2105,33 +1961,34 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   width: 100%;
 }
 
-.c6 > button {
+.c4 > button {
   margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
+.c7 {
   border-color: #1B1C1E;
   color: #1B1C1E;
 }
 
-.c9:hover {
+.c7:hover {
   border-color: #9E6900;
   color: #9E6900;
 }
 
-.c11 {
+.c9 {
   background-color: transparent;
   color: #1B1C1E;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: #C78500;
   color: #1B1C1E;
 }
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1_title"
   aria-live="polite"
   class="c0"
   data-testid="container"
@@ -2148,33 +2005,28 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
       role="img"
       width="24"
     />
-    <span
-      class="c3"
-    >
+    <span>
       <strong
-        class="c4"
+        class="c3"
+        id="uuid1_title"
       >
         warning
       </strong>
-      <span
-        class="c5"
-      >
-        Test content
-      </span>
+      Test content
     </span>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <button
-      class="c7 c8 c9"
+      class="c5 c6 c7"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c7 c10 c11"
+      class="c5 c8 c9"
       data-testid="dismiss-button"
       type="button"
     >

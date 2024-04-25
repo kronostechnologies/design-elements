@@ -95,7 +95,7 @@ export const Theming: Story = {
                         <h3>{label}</h3>
                         <div style={{ width: '200px' }}>
                             <DropdownList
-                                onChange={(option) => setCustomTheme(option)}
+                                onChange={(option: DropdownListOption) => setCustomTheme(option)}
                                 defaultValue="equisoftTheme"
                                 options={[
                                     {
