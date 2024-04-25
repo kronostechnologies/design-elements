@@ -30,8 +30,6 @@ exports[`Chooser Button GroupItem Matches the snapshot 1`] = `
   min-height: 3rem;
   padding: var(--spacing-1x);
   text-align: center;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .c3:hover {
@@ -163,8 +161,6 @@ input[type='radio']:disabled + .c3 {
   min-height: 3rem;
   padding: var(--spacing-1x);
   text-align: center;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .c3:hover {

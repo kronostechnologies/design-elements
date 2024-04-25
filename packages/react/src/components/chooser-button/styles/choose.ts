@@ -18,7 +18,6 @@ export const Label = styled.label`
     min-height: 3rem;
     padding: var(--spacing-1x);
     text-align: center;
-    transition: all 0.25s ease-in-out;
 
     &:hover {
         background: ${({ theme }) => theme.component['chooser-hover-background-color']};

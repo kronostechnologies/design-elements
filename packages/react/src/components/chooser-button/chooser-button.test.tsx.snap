@@ -49,8 +49,6 @@ exports[`Chooser Button Matches the snapshot 1`] = `
   min-height: 3rem;
   padding: var(--spacing-1x);
   text-align: center;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .c1:hover {
