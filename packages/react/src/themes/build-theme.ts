@@ -9,25 +9,17 @@ import {
     defaultComponentTokens,
     isRefToken,
     isAliasToken,
-    isComponentToken, RefTokenMap, AliasTokenMap, ComponentTokenMap,
+    isComponentToken,
+    RefTokenMap,
+    AliasTokenMap,
+    ComponentTokenMap,
 } from './tokens';
 import {
-    defaultGreys,
-    defaultMain,
-    defaultNotifications,
-    defaultTokens,
-} from './tokens/legacy-tokens';
-import {
-    LegacyTheme,
     ResolvedTheme,
     ThemeCustomization,
 } from './theme';
 
 interface MergedTheme {
-    main: LegacyTheme['main'];
-    greys: LegacyTheme['greys'];
-    notifications: LegacyTheme['notifications'];
-    tokens: LegacyTheme['tokens'];
     ref: RefTokenMap;
     alias: AliasTokenMap;
     component: ComponentTokenMap;
@@ -36,10 +28,6 @@ interface MergedTheme {
 function mergeTheme(customization: ThemeCustomization): MergedTheme {
     // Merge the default theme with the customization provided
     return {
-        main: { ...defaultMain, ...customization.main },
-        greys: { ...defaultGreys, ...customization.greys },
-        notifications: { ...defaultNotifications, ...customization.notifications },
-        tokens: { ...defaultTokens, ...customization.tokens },
         ref: { ...defaultRefTokens, ...customization.ref },
         alias: { ...defaultAliasTokens, ...customization.alias },
         component: { ...defaultComponentTokens, ...customization.component },

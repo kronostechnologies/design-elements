@@ -1,64 +1,7 @@
 import { devConsole } from '../utils/dev-console';
-import {
-    defaultMain,
-    defaultGreys,
-    defaultNotifications,
-    defaultTokens,
-} from './tokens/legacy-tokens';
 import { buildTheme } from './build-theme';
 import { ThemeCustomization } from './theme';
-import { defaultRefTokens, defaultComponentTokens, defaultAliasTokens } from './tokens';
-
-const legacyThemeCustomization: ThemeCustomization = {
-    main: {
-        'primary-1.1': '#013F78',
-        'primary-1.2': '#D5E8FA',
-        'primary-1.3': '#2D3145',
-        'primary-1.4': '#E4ECF4',
-        'primary-2': '#013F78',
-        'secondary-4.1': '#CBA239',
-        'secondary-4.2': '#8D6705',
-        'secondary-4.3': '#3F474C',
-    },
-    greys: {
-        white: '#FFF',
-        'colored-white': '#FAFAFA',
-        'light-grey': '#F1F2F2',
-        grey: '#D9DDE2',
-        'mid-grey': '#9CA7B4',
-        'dark-grey': '#57666E',
-        black: '#000',
-    },
-};
-
-const expectedLegacyTheme = {
-    main: {
-        ...defaultMain,
-        'primary-1.1': '#013F78',
-        'primary-1.2': '#D5E8FA',
-        'primary-1.3': '#2D3145',
-        'primary-1.4': '#E4ECF4',
-        'primary-2': '#013F78',
-        'secondary-4.1': '#CBA239',
-        'secondary-4.2': '#8D6705',
-        'secondary-4.3': '#3F474C',
-    },
-    greys: {
-        ...defaultGreys,
-        white: '#FFF',
-        'colored-white': '#FAFAFA',
-        'light-grey': '#F1F2F2',
-        grey: '#D9DDE2',
-        'mid-grey': '#9CA7B4',
-        'dark-grey': '#57666E',
-        black: '#000',
-    },
-    notifications: defaultNotifications,
-    tokens: defaultTokens,
-    ref: defaultRefTokens,
-    alias: defaultAliasTokens,
-    component: defaultComponentTokens,
-};
+import { defaultRefTokens, defaultAliasTokens } from './tokens';
 
 const customization : ThemeCustomization = {
     ref: {
@@ -78,10 +21,6 @@ const customization : ThemeCustomization = {
 };
 
 const expectedTheme = {
-    main: defaultMain,
-    greys: defaultGreys,
-    notifications: defaultNotifications,
-    tokens: defaultTokens,
     ref: {
         ...defaultRefTokens,
         'color-brand-05': 'red',
@@ -138,14 +77,6 @@ describe('buildTheme', () => {
         ).toEqual(
             expectedTheme.component['button-primary-border-color'],
         );
-    });
-    it('should build the default legacy theme with a legacy customization provided', () => {
-        const builtTheme = buildTheme(legacyThemeCustomization);
-
-        expect(builtTheme.main).toEqual(expectedLegacyTheme.main);
-        expect(builtTheme.greys).toEqual(expectedLegacyTheme.greys);
-        expect(builtTheme.notifications).toEqual(expectedLegacyTheme.notifications);
-        expect(builtTheme.tokens).toEqual(expectedLegacyTheme.tokens);
     });
     it('should log an error for for an unresolved token', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
