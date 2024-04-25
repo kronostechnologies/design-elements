@@ -6,10 +6,12 @@ import {
     Column,
     flexRender,
     RowData,
+    SortDirection,
 } from '@tanstack/react-table';
 import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
 import { TableColumn } from './types';
+import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
 
 interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
@@ -29,7 +31,14 @@ const SortButton = styled.button<{ $textAlign: string }>`
     }
 `;
 
-const StyledHeader = styled.th<{ $sticky: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
+interface StyledHeaderProps {
+    hasRightBorder: boolean;
+    $sticky: boolean;
+    $startOffset: number;
+    $textAlign: CSSProperties['textAlign'];
+}
+
+const StyledHeader = styled.th<StyledHeaderProps>`
     background-color: inherit;
     box-sizing: border-box;
     position: relative;
@@ -39,6 +48,10 @@ const StyledHeader = styled.th<{ $sticky: boolean, $startOffset: number; $textAl
         left: ${$startOffset / 2}px;
         position: sticky;
         z-index: 5;
+    `}
+
+    ${({ hasRightBorder }) => hasRightBorder && css`
+        border-right: 1px solid ${({ theme }) => theme.greys.grey};
     `}
 
     &:before {
@@ -64,18 +77,21 @@ const StyledSortButtonIcon = styled(SortButtonIcon)`
     margin-left: var(--spacing-1x);
 `;
 
-function getHeading<TData extends object, TValue>(
-    header: CustomHeader<TData, TValue>,
-): ReactElement {
-    const currentSort = header.column.getIsSorted();
-    let sortState: SortState = 'none';
+function getSortState(currentSort: false | SortDirection): SortState {
+    switch (currentSort) {
+        case 'asc':
+            return 'ascending';
+        case 'desc':
+            return 'descending';
+        default:
+            return 'none';
+    }
+}
 
-    if (currentSort === 'asc') {
-        sortState = 'ascending';
-    }
-    if (currentSort === 'desc') {
-        sortState = 'descending';
-    }
+function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TValue>): ReactElement {
+    const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
+    const hasRightBorder = isAGroupColumn(header.column) || isLastColumnInAGroup(header.column);
+    const sortState: SortState = getSortState(header.column.getIsSorted());
 
     if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
         devConsole.warn(
@@ -88,12 +104,14 @@ function getHeading<TData extends object, TValue>(
             <StyledHeader
                 aria-label={header.column.columnDef.headerAriaLabel}
                 aria-sort={sortState}
-                key={header.id}
                 className={header.column.columnDef.className ?? ''}
+                colSpan={colSpan}
+                hasRightBorder={hasRightBorder}
+                key={header.id}
                 scope="col"
-                $textAlign={header.column.columnDef.textAlign}
                 $startOffset={header.getStart()}
                 $sticky={header.column.columnDef.sticky ?? false}
+                $textAlign={header.column.columnDef.textAlign}
             >
                 {header.isPlaceholder ? null : (
                     <SortButton
@@ -114,12 +132,14 @@ function getHeading<TData extends object, TValue>(
     return (
         <StyledHeader
             aria-label={header.column.columnDef.headerAriaLabel}
-            key={header.id}
             className={header.column.columnDef.className ?? undefined}
+            colSpan={colSpan}
+            hasRightBorder={hasRightBorder}
+            key={header.id}
             scope="col"
-            $textAlign={header.column.columnDef.textAlign}
             $startOffset={header.getStart()}
             $sticky={header.column.columnDef.sticky ?? false}
+            $textAlign={header.column.columnDef.textAlign}
         >
             {!header.isPlaceholder && flexRender(
                 header.column.columnDef.header,
