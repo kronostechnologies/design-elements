@@ -11,7 +11,7 @@ import {
 import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
 import { TableColumn } from './types';
-import { isAGroupColumn, isColumnIsLastInAGroup } from './utils/table-utils';
+import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
 
 interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
@@ -78,19 +78,19 @@ const StyledSortButtonIcon = styled(SortButtonIcon)`
 `;
 
 function getSortState(currentSort: false | SortDirection): SortState {
-    if (!currentSort) {
-        return 'none';
+    switch (currentSort) {
+        case 'asc':
+            return 'ascending';
+        case 'desc':
+            return 'descending';
+        default:
+            return 'none';
     }
-
-    return {
-        asc: 'ascending',
-        desc: 'descending',
-    }[currentSort] as SortState;
 }
 
 function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TValue>): ReactElement {
     const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
-    const hasRightBorder = isAGroupColumn(header.column) || isColumnIsLastInAGroup(header.column);
+    const hasRightBorder = isAGroupColumn(header.column) || isLastColumnInAGroup(header.column);
     const sortState: SortState = getSortState(header.column.getIsSorted());
 
     if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {

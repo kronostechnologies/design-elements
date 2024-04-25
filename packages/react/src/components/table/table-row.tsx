@@ -9,7 +9,7 @@ import {
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
-import { isColumnIsLastInAGroup } from './utils/table-utils';
+import { isLastColumnInAGroup } from './utils/table-utils';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
@@ -158,7 +158,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
             $textAlign={cell.column.columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
-            hasRightBorder={isColumnIsLastInAGroup(cell.column)}
+            hasRightBorder={isLastColumnInAGroup(cell.column)}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
         </StyledCell>

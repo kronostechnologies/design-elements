@@ -1265,7 +1265,7 @@ export const HeaderAriaLabel: Story = () => {
 };
 
 export const GroupedHeaders: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Group 1',
             columns: [
@@ -1290,7 +1290,7 @@ export const GroupedHeaders: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',

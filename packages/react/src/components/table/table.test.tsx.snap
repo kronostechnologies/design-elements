@@ -335,43 +335,25 @@ exports[`Table has clickable rows styles 1`] = `
 `;
 
 exports[`Table has column with headers grouped 1`] = `
-.c8 {
+.c6 {
   background-color: inherit;
 }
 
-.c8:not(:first-child) {
+.c6:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c8 td {
+.c6 td {
   background-color: inherit;
 }
 
-.c9 {
+.c7 {
   background-color: inherit;
 }
 
-.c10 {
+.c8 {
   background-color: inherit;
   border-right: 1px solid #DBDEE1;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font: inherit;
-  text-align: left;
-}
-
-.c5:focus {
-  outline: none;
 }
 
 .c3 {
@@ -409,10 +391,6 @@ exports[`Table has column with headers grouped 1`] = `
   background-color: inherit;
 }
 
-.c6 {
-  margin-left: var(--spacing-1x);
-}
-
 .c0 {
   background: #FFFFFF;
   border-collapse: collapse;
@@ -443,22 +421,14 @@ exports[`Table has column with headers grouped 1`] = `
 }
 
 .c0 .eq-table__util-column {
-  box-sizing: border-box;
-  color: #60666E;
-  font-size: 0.75rem;
-  margin-left: 50%;
-  min-width: var(--size-2halfx);
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: var(--size-2halfx);
+  width: 1px;
 }
 
 .c1 {
   background: inherit;
 }
 
-.c7 {
+.c5 {
   background: inherit;
 }
 
@@ -489,116 +459,80 @@ exports[`Table has column with headers grouped 1`] = `
       class="c2"
     >
       <th
-        aria-sort="none"
         class="c4"
         scope="col"
       >
-        <button
-          class="c5"
-        >
-          Column 1
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
+        Column 1
       </th>
       <th
-        aria-sort="none"
         class="c3"
         scope="col"
       >
-        <button
-          class="c5"
-        >
-          Column 2
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
+        Column 2
       </th>
       <th
-        aria-sort="none"
         class="c3"
         scope="col"
       >
-        <button
-          class="c5"
-        >
-          Column 3
-          <svg
-            class="c6"
-            color="#60666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
+        Column 3
       </th>
     </tr>
   </thead>
   <tbody
-    class="c7"
+    class="c5"
   >
     <tr
-      class="c8"
+      class="c6"
       data-testid="table-row-0"
     >
       <td
-        class="c9"
+        class="c7"
       >
         Hello
       </td>
       <td
-        class="c10"
+        class="c8"
       >
         World
       </td>
       <td
-        class="c10"
+        class="c8"
       />
     </tr>
     <tr
-      class="c8"
+      class="c6"
       data-testid="table-row-1"
     >
       <td
-        class="c9"
+        class="c7"
       >
         Hello
       </td>
       <td
-        class="c10"
+        class="c8"
       >
         Planet
       </td>
       <td
-        class="c10"
+        class="c8"
       />
     </tr>
     <tr
-      class="c8"
+      class="c6"
       data-testid="table-row-2"
     >
       <td
-        class="c9"
+        class="c7"
       >
         Hello
       </td>
       <td
-        class="c10"
+        class="c8"
       >
         Galaxy
       </td>
       <td
-        class="c10"
+        class="c8"
       />
     </tr>
   </tbody>

@@ -71,7 +71,7 @@ export function isAGroupColumn<TData, TValue>(column: Column <TData, TValue>): b
     return column.columns.length > 0;
 }
 
-export function isColumnIsLastInAGroup<TData, TValue>(column: Column <TData, TValue>): boolean {
+export function isLastColumnInAGroup<TData, TValue>(column: Column <TData, TValue>): boolean {
     if (!column.parent) {
         return false;
     }
