@@ -101,8 +101,9 @@ const Container = styled.div<ContainerProps>`
     overflow-y: auto;
     padding: var(--spacing-half) 0;
     position: relative;
+    z-index: 1000;
 
-    ${({ $focusable, theme }) => $focusable && focus({ theme })};
+    ${({ $focusable }) => $focusable && focus};
 `;
 
 const List = styled.ul`
@@ -164,8 +165,8 @@ const ListItem = styled.li<ListItemProps>`
     }
 
     ${({ $focused, $disabled, theme }) => ($focused && css`
-        outline: 2px solid ${$disabled ? theme.component['listbox-item-disabled-focus-outline-color'] : theme.component['listbox-item-focus-outline-color']};
-        outline-offset: -2px;
+        outline: 2px solid ${$disabled ? 'transparent' : theme.component['focus-outside-border-color']};
+        outline-offset: -3px;
     `)}
 
     ${({ $selected }) => ($selected && css`

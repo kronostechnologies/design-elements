@@ -41,14 +41,15 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -65,14 +66,15 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   width: var(--size-2x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -321,14 +323,15 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -345,14 +348,15 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -601,14 +605,15 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -625,14 +630,15 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   width: var(--size-2x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -881,14 +887,15 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -905,14 +912,15 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -1161,14 +1169,15 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -1185,14 +1194,15 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   width: var(--size-2x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -1441,14 +1451,15 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -1465,14 +1476,15 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -1721,14 +1733,15 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -1746,14 +1759,15 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   width: var(--size-1halfx);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -2002,14 +2016,15 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -2026,14 +2041,15 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -2282,14 +2298,15 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -2307,14 +2324,15 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   width: var(--size-1halfx);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -2563,14 +2581,15 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -2587,14 +2606,15 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -2843,14 +2863,15 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -2868,14 +2889,15 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   width: var(--size-1halfx);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,
@@ -3124,14 +3146,15 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   user-select: none;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 > svg {
@@ -3148,14 +3171,15 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   width: var(--size-3x);
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4:hover,

@@ -103,10 +103,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -124,6 +120,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c11 {
@@ -193,7 +190,7 @@ input + .c2 {
 }
 
 .c10 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -210,14 +207,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -610,10 +608,6 @@ input + .c2 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -631,6 +625,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c13 {
@@ -700,7 +695,7 @@ input + .c2 {
 }
 
 .c12 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -716,14 +711,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7::-webkit-input-placeholder {
@@ -1085,10 +1081,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -1106,6 +1098,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c9 {
@@ -1174,7 +1167,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1190,14 +1183,15 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1556,10 +1550,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -1589,6 +1579,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c12 {
@@ -1658,7 +1649,7 @@ input + .c2 {
 }
 
 .c11 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1674,14 +1665,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6::-webkit-input-placeholder {

@@ -13,7 +13,6 @@ export type MenuTokens =
     | 'menu-item-icon-color'
     | 'menu-item-hover-icon-color'
     | 'menu-item-hover-background-color'
-    | 'menu-item-focus-outline-color'
     | 'menu-item-disabled-text-color'
     | 'menu-group-text-color';
 
@@ -28,7 +27,6 @@ export const defaultMenuTokens: MenuTokenMap = {
     'menu-border-color': 'color-neutral-50',
     'menu-group-text-color': 'color-neutral-65',
     'menu-item-disabled-text-color': 'color-neutral-30',
-    'menu-item-focus-outline-color': 'color-brand-50',
     'menu-item-hover-background-color': 'color-neutral-15',
     'menu-item-text-color': 'color-neutral-90',
     'menu-item-hover-text-color': 'color-black',

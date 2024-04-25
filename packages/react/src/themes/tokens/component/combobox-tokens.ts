@@ -27,6 +27,7 @@ export const defaultComboboxTokens: ComboboxTokenMap = {
     'combobox-clear-button-border-right-color': 'color-neutral-65',
     'combobox-clear-button-disabled-icon-color': 'color-neutral-30',
     'combobox-clear-button-icon-color': 'color-neutral-65',
+    'combobox-placeholder-text-color': 'color-neutral-65',
     'combobox-arrow-button-background-color': 'transparent-100',
     'combobox-arrow-button-hover-background-color': 'transparent-100',
     'combobox-arrow-button-disabled-icon-color': 'color-neutral-30',
@@ -37,5 +38,4 @@ export const defaultComboboxTokens: ComboboxTokenMap = {
     'combobox-disabled-text-color': 'color-neutral-30',
     'combobox-error-border-color': 'color-alert-50',
     'combobox-background-color': 'color-white',
-    'combobox-placeholder-text-color': 'color-neutral-65',
 };
