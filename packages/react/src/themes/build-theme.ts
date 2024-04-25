@@ -19,14 +19,13 @@ import {
     ThemeCustomization,
 } from './theme';
 
-interface MergedTheme {
+interface CustomizedTheme {
     ref: RefTokenMap;
     alias: AliasTokenMap;
     component: ComponentTokenMap;
 }
 
-function mergeTheme(customization: ThemeCustomization): MergedTheme {
-    // Merge the default theme with the customization provided
+function customizeTheme(customization: ThemeCustomization): CustomizedTheme {
     return {
         ref: { ...defaultRefTokens, ...customization.ref },
         alias: { ...defaultAliasTokens, ...customization.alias },
@@ -35,21 +34,20 @@ function mergeTheme(customization: ThemeCustomization): MergedTheme {
 }
 
 export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
-    // Merge the default theme with the customization provided
-    const mergedTheme: MergedTheme = mergeTheme(customization);
+    const customizedTheme = customizeTheme(customization);
 
     const resolvedTheme: ResolvedTheme = {
-        ...mergedTheme,
+        ...customizedTheme,
         component: {} as ResolvedComponentTokens,
     };
 
     function resolveToken(token: AliasTokens | RefTokens): RefTokenValue {
         if (isRefToken(token)) {
-            return mergedTheme.ref[token];
+            return customizedTheme.ref[token];
         }
 
         if (isAliasToken(token)) {
-            const aliasToken = mergedTheme.alias[token];
+            const aliasToken = customizedTheme.alias[token];
 
             if (aliasToken === token) {
                 devConsole.error(`Self-referencing AliasToken detected: '${token}'`);
@@ -64,9 +62,9 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
     }
 
     // Resolve component tokens
-    Object.keys(mergedTheme.component).forEach((token) => {
+    Object.keys(customizedTheme.component).forEach((token) => {
         if (isComponentToken(token)) {
-            const tokenToResolve = mergedTheme.component[token];
+            const tokenToResolve = customizedTheme.component[token];
             const resolvedToken = tokenToResolve ? resolveToken(tokenToResolve)
                 : devConsole.error('Token is undefined.');
             resolvedTheme.component[token] = resolvedToken || '';

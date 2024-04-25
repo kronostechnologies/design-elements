@@ -102,7 +102,7 @@ export { Pagination } from './components/pagination/pagination';
 // Themes
 export { equisoftTheme, buildTheme } from './themes';
 export { injectMainCss } from './styles';
-export { ResolvedTheme, ThemeCustomization, ThemeCustomization as Theme } from './themes/theme';
+export { ResolvedTheme as Theme, ThemeCustomization } from './themes/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';
