@@ -1,3 +1,4 @@
+import { devConsole } from '../utils/dev-console';
 import {
     defaultMain,
     defaultGreys,
@@ -102,52 +103,52 @@ const expectedTheme = {
 
 describe('buildTheme', () => {
     it('should build the defaultRefTokens theme with the customization provided', () => {
-        const buildedTheme = buildTheme(customization);
+        const builtTheme = buildTheme(customization);
 
-        expect(buildedTheme.ref).toEqual(expectedTheme.ref);
+        expect(builtTheme.ref).toEqual(expectedTheme.ref);
     });
     it('should build the defaultAliasTokens theme with the customization provided', () => {
-        const buildedTheme = buildTheme(customization);
+        const builtTheme = buildTheme(customization);
 
-        expect(buildedTheme.alias).toEqual(expectedTheme.alias);
+        expect(builtTheme.alias).toEqual(expectedTheme.alias);
     });
     it('should build the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
-        const buildedTheme = buildTheme(customization);
+        const builtTheme = buildTheme(customization);
 
         expect(
-            buildedTheme.component['button-primary-background-color'],
+            builtTheme.component['button-primary-background-color'],
         ).toEqual(
             expectedTheme.component['button-primary-background-color'],
         );
     });
     it('should build the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
-        const buildedTheme = buildTheme(customization);
+        const builtTheme = buildTheme(customization);
 
         expect(
-            buildedTheme.component['button-primary-inverted-background-color'],
+            builtTheme.component['button-primary-inverted-background-color'],
         ).toEqual(
             expectedTheme.component['button-primary-inverted-background-color'],
         );
     });
     it('should build the defaultComponentTokens with a partial customization', () => {
-        const buildedTheme = buildTheme(customization);
+        const builtTheme = buildTheme(customization);
 
         expect(
-            buildedTheme.component['button-primary-border-color'],
+            builtTheme.component['button-primary-border-color'],
         ).toEqual(
             expectedTheme.component['button-primary-border-color'],
         );
     });
     it('should build the default legacy theme with a legacy customization provided', () => {
-        const buildedTheme = buildTheme(legacyThemeCustomization);
+        const builtTheme = buildTheme(legacyThemeCustomization);
 
-        expect(buildedTheme.main).toEqual(expectedLegacyTheme.main);
-        expect(buildedTheme.greys).toEqual(expectedLegacyTheme.greys);
-        expect(buildedTheme.notifications).toEqual(expectedLegacyTheme.notifications);
-        expect(buildedTheme.tokens).toEqual(expectedLegacyTheme.tokens);
+        expect(builtTheme.main).toEqual(expectedLegacyTheme.main);
+        expect(builtTheme.greys).toEqual(expectedLegacyTheme.greys);
+        expect(builtTheme.notifications).toEqual(expectedLegacyTheme.notifications);
+        expect(builtTheme.tokens).toEqual(expectedLegacyTheme.tokens);
     });
     it('should log an error for for an unresolved token', () => {
-        const consoleSpy = jest.spyOn(console, 'error');
+        const consoleSpy = jest.spyOn(devConsole, 'error');
         consoleSpy.mockImplementation(() => {});
 
         const token = 'invalid-token';
@@ -164,7 +165,7 @@ describe('buildTheme', () => {
         consoleSpy.mockRestore();
     });
     it('should log an error for self-referencing AliasToken', () => {
-        const consoleSpy = jest.spyOn(console, 'error');
+        const consoleSpy = jest.spyOn(devConsole, 'error');
         consoleSpy.mockImplementation(() => {});
 
         const token = 'default-text-color';

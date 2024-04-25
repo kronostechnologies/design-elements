@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
-import { defaultTheme } from '../../themes';
+import { equisoftTheme } from '../../theme';
 import { ResolvedTheme } from '../../themes/theme';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
@@ -20,7 +20,7 @@ export interface ThemeWrapperProps {
 export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps>> = ({
     children,
     isolateStyles = false,
-    theme = defaultTheme,
+    theme = equisoftTheme,
 }) => {
     let content: ReactNode;
     if (isolateStyles) {

@@ -5,7 +5,6 @@ import {
     DropdownList,
     DropdownListOption,
     equisoftTheme,
-    defaultTheme,
     ThemeCustomization,
     buildTheme,
 } from '@equisoft/design-elements-react';
@@ -21,7 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof DesignSystem>;
 
-const warioThemeCustomization: ThemeCustomization = {
+const flowerThemeCustomization: ThemeCustomization = {
     ref: {
         'color-brand-05': '#e9e0f9',
         'color-brand-20': '#ad84ea',
@@ -69,25 +68,23 @@ const warioThemeCustomization: ThemeCustomization = {
     },
 };
 
-const warioTheme = buildTheme(warioThemeCustomization);
+const flowerTheme = buildTheme(flowerThemeCustomization);
 
 export const Theming: Story = {
     render() {
         const [theme, setTheme] = useState(equisoftTheme);
-        const [label, setLabel] = useState('Equisoft\'s Theme');
+        const [label, setLabel] = useState('Equisoft Theme');
 
         function setCustomTheme(newSelectedTheme: DropdownListOption): void {
             setLabel(newSelectedTheme.label);
             switch (newSelectedTheme.value) {
-                case 'warioTheme':
-                    setTheme(warioTheme);
+                case 'flowerTheme':
+                    setTheme(flowerTheme);
                     break;
                 case 'equisoftTheme':
+                default:
                     setTheme(equisoftTheme);
                     break;
-                case 'defaultTheme':
-                default:
-                    setTheme(defaultTheme);
             }
         }
 
@@ -102,16 +99,12 @@ export const Theming: Story = {
                                 defaultValue="equisoftTheme"
                                 options={[
                                     {
-                                        label: 'Equisoft\'s Theme',
+                                        label: 'Equisoft Theme',
                                         value: 'equisoftTheme',
                                     },
                                     {
-                                        label: 'Default\'s Theme',
-                                        value: 'defaultTheme',
-                                    },
-                                    {
-                                        label: 'Wario\'s Theme',
-                                        value: 'warioTheme',
+                                        label: 'Flower Theme',
+                                        value: 'flowerTheme',
                                     },
                                 ]}
                             />

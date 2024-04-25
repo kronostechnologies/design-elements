@@ -1,3 +1,4 @@
+import { devConsole } from '../utils/dev-console';
 import {
     AliasTokens,
     ResolvedComponentTokens,
@@ -8,7 +9,7 @@ import {
     defaultComponentTokens,
     isRefToken,
     isAliasToken,
-    isComponentToken,
+    isComponentToken, RefTokenMap, AliasTokenMap, ComponentTokenMap,
 } from './tokens';
 import {
     defaultGreys,
@@ -17,10 +18,20 @@ import {
     defaultTokens,
 } from './tokens/legacy-tokens';
 import {
-    MergedTheme,
+    LegacyTheme,
     ResolvedTheme,
     ThemeCustomization,
 } from './theme';
+
+interface MergedTheme {
+    main: LegacyTheme['main'];
+    greys: LegacyTheme['greys'];
+    notifications: LegacyTheme['notifications'];
+    tokens: LegacyTheme['tokens'];
+    ref: RefTokenMap;
+    alias: AliasTokenMap;
+    component: ComponentTokenMap;
+}
 
 function mergeTheme(customization: ThemeCustomization): MergedTheme {
     // Merge the default theme with the customization provided
@@ -45,27 +56,22 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
     };
 
     function resolveToken(token: AliasTokens | RefTokens): RefTokenValue {
-        if (!token) {
-            console.error('Token is undefined.');
-            return '';
-        }
-
-        if (token && isRefToken(token)) {
+        if (isRefToken(token)) {
             return mergedTheme.ref[token];
         }
 
-        if (token && isAliasToken(token)) {
+        if (isAliasToken(token)) {
             const aliasToken = mergedTheme.alias[token];
 
             if (aliasToken === token) {
-                console.error(`Self-referencing AliasToken detected: '${token}'`);
+                devConsole.error(`Self-referencing AliasToken detected: '${token}'`);
                 return '';
             }
 
             return resolveToken(aliasToken);
         }
 
-        console.error(`Token '${token}' not found in RefTokens or AliasTokens`);
+        devConsole.error(`Token '${token}' not found in RefTokens or AliasTokens`);
         return '';
     }
 
@@ -73,7 +79,9 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
     Object.keys(mergedTheme.component).forEach((token) => {
         if (isComponentToken(token)) {
             const tokenToResolve = mergedTheme.component[token];
-            resolvedTheme.component[token] = resolveToken(tokenToResolve);
+            const resolvedToken = tokenToResolve ? resolveToken(tokenToResolve)
+                : devConsole.error('Token is undefined.');
+            resolvedTheme.component[token] = resolvedToken || '';
         }
     });
 
