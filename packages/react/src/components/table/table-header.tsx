@@ -51,7 +51,7 @@ const StyledHeader = styled.th<StyledHeaderProps>`
     `}
 
     ${({ hasRightBorder }) => hasRightBorder && css`
-        border-right: 1px solid ${({ theme }) => theme.greys.grey};
+        border-right: 1px solid ${({ theme }) => theme.component['table-group-border-color']};
     `}
 
     &:before {
