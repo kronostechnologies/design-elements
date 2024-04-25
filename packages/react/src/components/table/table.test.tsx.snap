@@ -70,11 +70,11 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -161,20 +161,29 @@ exports[`Table has clickable rows styles 1`] = `
   border-top: 1px solid #DBDEE1;
 }
 
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c5:focus {
   position: relative;
+  z-index: 3;
 }
 
 .c5:focus::after {
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
   content: '';
   height: calc(100% + 3px);
   left: 0;
-  outline: none;
   position: absolute;
   top: -2px;
   width: 100%;
-  z-index: 3;
 }
 
 .c5:hover {
@@ -246,11 +255,11 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -329,6 +338,211 @@ exports[`Table has clickable rows styles 1`] = `
       >
         Galaxy
       </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has column with headers grouped 1`] = `
+.c6 {
+  background-color: inherit;
+}
+
+.c6:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c6 td {
+  background-color: inherit;
+}
+
+.c7 {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+  border-right: 1px solid #DBDEE1;
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+  border-right: 1px solid #DBDEE1;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c4 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c4:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c0 {
+  background: #FFFFFF;
+  border-collapse: collapse;
+  color: #1B1C1E;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  width: 1px;
+}
+
+.c1 {
+  background: #FFFFFF;
+}
+
+.c5 {
+  background: transparent;
+}
+
+<table
+  class="c0"
+>
+  <thead
+    class="c1"
+  >
+    <tr
+      class="c2"
+    >
+      <th
+        class="c3"
+        colspan="2"
+        scope="col"
+      >
+        Group 1
+      </th>
+      <th
+        class="c3"
+        scope="col"
+      >
+        Group 2
+      </th>
+    </tr>
+    <tr
+      class="c2"
+    >
+      <th
+        class="c4"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        class="c3"
+        scope="col"
+      >
+        Column 2
+      </th>
+      <th
+        class="c3"
+        scope="col"
+      >
+        Column 3
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="c5"
+  >
+    <tr
+      class="c6"
+      data-testid="table-row-0"
+    >
+      <td
+        class="c7"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        World
+      </td>
+      <td
+        class="c8"
+      />
+    </tr>
+    <tr
+      class="c6"
+      data-testid="table-row-1"
+    >
+      <td
+        class="c7"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Planet
+      </td>
+      <td
+        class="c8"
+      />
+    </tr>
+    <tr
+      class="c6"
+      data-testid="table-row-2"
+    >
+      <td
+        class="c7"
+      >
+        Hello
+      </td>
+      <td
+        class="c8"
+      >
+        Galaxy
+      </td>
+      <td
+        class="c8"
+      />
     </tr>
   </tbody>
 </table>
@@ -427,11 +641,11 @@ exports[`Table has custom text alignment 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c5 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -579,11 +793,11 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -765,11 +979,11 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -917,11 +1131,11 @@ exports[`Table has mobile styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1081,11 +1295,11 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1294,10 +1508,15 @@ exports[`Table has selectable rows styles 1`] = `
   display: block;
 }
 
+.c5 + .c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c5:focus + .c6 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 {
@@ -1355,11 +1574,11 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c12 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1632,11 +1851,11 @@ exports[`Table has small rowSize styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -1806,11 +2025,11 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2036,11 +2255,11 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c6 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2213,11 +2432,11 @@ exports[`Table has sticky header styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2369,11 +2588,11 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table
@@ -2521,11 +2740,11 @@ exports[`Table has tablet styles 1`] = `
 }
 
 .c1 {
-  background: inherit;
+  background: #FFFFFF;
 }
 
 .c4 {
-  background: inherit;
+  background: transparent;
 }
 
 <table

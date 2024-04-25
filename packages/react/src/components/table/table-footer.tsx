@@ -23,7 +23,7 @@ const StyledFooter = styled.td<{ $sticky: boolean }>`
         position: sticky;
     `}
     &:before {
-        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        border-bottom: 1px solid ${({ theme }) => theme.component['table-footer-border-color']};
         content: '';
         height: 1px;
         position: absolute;

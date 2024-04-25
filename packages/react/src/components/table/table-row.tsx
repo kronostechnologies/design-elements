@@ -9,6 +9,8 @@ import {
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
+import { focus } from '../../utils/css-state';
+import { isLastColumnInAGroup } from './utils/table-utils';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
@@ -21,6 +23,13 @@ interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData
     column: Column<TData, TValue> & {
         columnDef: TableColumn<TData, TValue>;
     };
+}
+
+interface StyledCellProps {
+    hasRightBorder: boolean;
+    $sticky?: boolean,
+    $startOffset: number;
+    $textAlign: CSSProperties['textAlign']
 }
 
 function getRowBackgroundColor({
@@ -78,19 +87,18 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
     `}
 
     ${({ $clickable, theme }) => $clickable && css`
+        ${focus({ theme }, { focusType: 'focus-visible' })};
         &:focus {
             position: relative;
+            z-index: 3;
 
             &::after {
-                box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
                 content: '';
                 height: calc(100% + 3px);
                 left: 0;
-                outline: none;
                 position: absolute;
                 top: -2px;
                 width: 100%;
-                z-index: 3;
             }
         }
 
@@ -128,7 +136,7 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
     ${getCellBackgroundCss}
 `;
 
-const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAlign: CSSProperties['textAlign'] }>`
+const StyledCell = styled.td<StyledCellProps>`
     background-color: inherit;
     text-align: ${({ $textAlign }) => $textAlign};
 
@@ -136,6 +144,10 @@ const StyledCell = styled.td<{ $sticky?: boolean, $startOffset: number; $textAli
         left: ${$startOffset / 2}px;
         position: sticky;
         z-index: 2;
+    `}
+
+    ${({ hasRightBorder }) => hasRightBorder && css`
+        border-right: 1px solid ${({ theme }) => theme.component['table-group-border-color']};
     `}
 `;
 
@@ -146,6 +158,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
             $textAlign={cell.column.columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
+            hasRightBorder={isLastColumnInAGroup(cell.column)}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
         </StyledCell>

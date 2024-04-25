@@ -24,14 +24,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -89,14 +90,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -177,14 +179,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -242,14 +245,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -307,14 +311,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -372,14 +377,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -460,14 +466,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -525,14 +532,15 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -590,14 +598,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -655,14 +664,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -743,14 +753,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -808,14 +819,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -873,14 +885,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -938,14 +951,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -1026,14 +1040,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {
@@ -1091,14 +1106,15 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:hover {

@@ -120,15 +120,15 @@ const RowNumber = styled.span`
 `;
 
 const StyledTHead = styled.thead`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-header-background-color']};
 `;
 
 const StyledTBody = styled.tbody`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-body-background-color']};
 `;
 
 const StyledTFoot = styled.tfoot`
-    background: inherit;
+    background: ${({ theme }) => theme.component['table-footer-background-color']};
 `;
 
 const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
