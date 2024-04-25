@@ -80,7 +80,8 @@ interface HeaderProps extends ContentProps {
     isTopScrolled?: boolean;
 }
 const Header = styled.header<HeaderProps>`
-    border-bottom: 1px solid ${({ isTopScrolled, theme }) => (isTopScrolled ? theme.component['modal-border-color'] : 'transparent')};    padding: ${getTopPadding} ${getPadding} var(--spacing-2x);
+    border-bottom: 1px solid ${({ isTopScrolled, theme }) => (isTopScrolled ? theme.component['modal-border-color'] : 'transparent')};
+    padding: ${getTopPadding} ${getPadding} var(--spacing-2x);
 
     & + ${Main} {
         padding-top: 0;
@@ -97,7 +98,8 @@ interface FooterProps extends ContentProps {
     isBottomScrolled?: boolean;
 }
 const Footer = styled.footer<FooterProps>`
-    border-top: 1px solid ${({ isBottomScrolled, theme }) => (isBottomScrolled ? theme.component['modal-border-color'] : 'transparent')};    padding: var(--spacing-4x) ${getPadding} 0;
+    border-top: 1px solid ${({ isBottomScrolled, theme }) => (isBottomScrolled ? theme.component['modal-border-color'] : 'transparent')};
+    padding: var(--spacing-4x) ${getPadding} 0;
 `;
 
 export interface ModalProps {
@@ -175,7 +177,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     const customStyles = {
         overlay: {
             alignItems: 'center',
-            backgroundColor: theme.component['modal-blanket-background-color'],
+            backgroundColor: theme.component['modal-overlay-background-color'],
             display: 'flex',
             justifyContent: 'center',
             zIndex: 10000,
