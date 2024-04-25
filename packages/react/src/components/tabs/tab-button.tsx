@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -17,6 +17,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
     border: 1px solid transparent;
     border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.component['tabs-tab-border-bottom-color']}`)};
+    border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
     bottom: -1px;
     color: ${({ $isGlobal, theme }) => ($isGlobal ? `${theme.component['tabs-tab-global-text-color']}` : `${theme.component['tabs-tab-text-color']}`)};
     display: flex;
@@ -31,9 +32,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${({ theme }) => theme.component['tabs-tab-hover-background-color']};
     }
 
-    ${focus};
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')};
-    ${focusVisibleReset};
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-visible' })};
 
     &:focus {
         z-index: 2;

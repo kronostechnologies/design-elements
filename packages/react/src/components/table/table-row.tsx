@@ -9,6 +9,7 @@ import {
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
+import { focus } from '../../utils/css-state';
 import { isLastColumnInAGroup } from './utils/table-utils';
 
 interface StyledTableRowProps {
@@ -86,19 +87,18 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
     `}
 
     ${({ $clickable, theme }) => $clickable && css`
+        ${focus({ theme }, { focusType: 'focus-visible' })};
         &:focus {
             position: relative;
+            z-index: 3;
 
             &::after {
-                box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
                 content: '';
                 height: calc(100% + 3px);
                 left: 0;
-                outline: none;
                 position: absolute;
                 top: -2px;
                 width: 100%;
-                z-index: 3;
             }
         }
 

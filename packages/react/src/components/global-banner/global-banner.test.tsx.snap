@@ -41,14 +41,15 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -63,14 +64,15 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -259,14 +261,15 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -281,14 +284,15 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -310,14 +314,15 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -523,14 +528,15 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -545,14 +551,15 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -574,14 +581,15 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -787,14 +795,15 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -809,14 +818,15 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -838,14 +848,15 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -1051,14 +1062,15 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -1073,14 +1085,15 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -1273,14 +1286,15 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -1295,14 +1309,15 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -1324,14 +1339,15 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -1541,14 +1557,15 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -1563,14 +1580,15 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -1592,14 +1610,15 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,
@@ -1809,14 +1828,15 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 > svg {
@@ -1831,14 +1851,15 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c6:hover,
@@ -1860,14 +1881,15 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover,

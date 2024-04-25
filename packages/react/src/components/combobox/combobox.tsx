@@ -59,7 +59,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledListbox = styled(Listbox)`
-    margin-top: 6px;
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
 `;
@@ -74,10 +74,11 @@ const Textbox = styled.input<TextboxProps>`
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
     width: 100%;
-    ${({ theme }) => focus({ theme }, true)};
+
+    ${focus};
     
     &::placeholder {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
     }
 `;

@@ -23,10 +23,6 @@ const StyledDiv = styled.div<StyledDivProps>`
         border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
     }
 
-    &:focus {
-        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-focus-border-color'] : theme.component['field-input-error-focus-border-color'])};
-    }
-
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
         margin-bottom: var(--spacing-half);
     }
