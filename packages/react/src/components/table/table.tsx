@@ -1,7 +1,6 @@
-import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect, Fragment } from 'react';
 import styled from 'styled-components';
 import {
-    HeaderContext,
     Row,
     getCoreRowModel,
     getSortedRowModel,
@@ -10,22 +9,24 @@ import {
     ColumnSort,
     Updater,
     functionalUpdate,
+    getExpandedRowModel,
+    ExpandedState,
+    TableOptions,
+    RowSelectionState,
 } from '@tanstack/react-table';
-import { TableRow } from './table-row';
+import { TFunction } from 'i18next';
+import { useTranslation } from '../../i18n/use-translation';
+import { IconButton } from '../buttons/icon-button';
+import { StyledTableRow, TableRow } from './table-row';
 import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { CustomColumnDef } from './types';
+import { TableData, TableColumn } from './types';
 
 type RowSize = 'small' | 'medium';
 
-export type TableColumn<T extends object> = CustomColumnDef<T>[];
-export type TableRow<T> = T & { error?: boolean };
-
-interface CustomRowProps {
-    error?: boolean;
-}
+type UtilityColumnType = 'selection' | 'numbers' | 'expand';
 
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     if (rowSize === 'small') {
@@ -69,50 +70,6 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
 
 const utilColumnClassName = 'eq-table__util-column';
 
-function getCustomColumn<T extends object>(type: string): CustomColumnDef<T> {
-    return {
-        id: type,
-        header(props: HeaderContext<T, unknown>) {
-            if (type === 'selection') {
-                const { table } = props;
-                return (
-                    <Checkbox
-                        data-testid="row-checkbox-all"
-                        checked={table.getIsAllRowsSelected()}
-                        indeterminate={table.getIsSomeRowsSelected()}
-                        onChange={table.getToggleAllRowsSelectedHandler()}
-                    />
-                );
-            }
-            // For 'numbers' type or any other type, return null or an empty header
-            return null;
-        },
-        cell({ row }) {
-            if (type === 'selection') {
-                return (
-                    <Checkbox
-                        data-testid={`row-checkbox-${row.index}`}
-                        checked={row.getIsSelected()}
-                        disabled={!row.getCanSelect()}
-                        indeterminate={row.getIsSomeSelected()}
-                        onChange={row.getToggleSelectedHandler()}
-                    />
-                );
-            }
-
-            if (type === 'numbers') {
-                return (
-                    <span className={utilColumnClassName}>
-                        {row.index + 1}
-                    </span>
-                );
-            }
-
-            return null;
-        },
-    };
-}
-
 interface StyledTableProps {
     $clickableRows: boolean;
     $device: DeviceType;
@@ -148,14 +105,18 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 
     .${utilColumnClassName} {
-        box-sizing: border-box;
-        color: ${({ theme }) => theme.component['table-cell-number-text-color']};
-        font-size: 0.75rem;
-        margin-left: 50%;
-        min-width: var(--size-2halfx);
-        transform: translateX(-50%);
-        width: var(--size-2halfx);
+        width: 1px;
     }
+`;
+
+const RowNumber = styled.span`
+    box-sizing: border-box;
+    color: ${({ theme }) => theme.component['table-cell-number-text-color']};
+    font-size: 0.75rem;
+    margin-left: 50%;
+    min-width: var(--size-2halfx);
+    transform: translateX(-50%);
+    width: var(--size-2halfx);
 `;
 
 const StyledTHead = styled.thead`
@@ -170,10 +131,79 @@ const StyledTFoot = styled.tfoot`
     background: ${({ theme }) => theme.component['table-footer-background-color']};
 `;
 
+const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
+    transform: rotate(${({ $expanded }) => ($expanded ? 90 : 0)}deg);
+    transition: transform 0.2s ease-in-out;
+
+    &[aria-expanded='true'] {
+        background-color: transparent;
+    }
+`;
+
+function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunction<'translation'>): TableColumn<T> {
+    const column: TableColumn<T> = {
+        id: type,
+        className: utilColumnClassName,
+    };
+
+    switch (type) {
+        case 'selection':
+            column.header = ({ table }) => (
+                <Checkbox
+                    data-testid="row-checkbox-all"
+                    checked={table.getIsAllRowsSelected()}
+                    indeterminate={table.getIsSomeRowsSelected()}
+                    onChange={table.getToggleAllRowsSelectedHandler()}
+                />
+            );
+            column.cell = ({ row }) => (
+                <Checkbox
+                    data-testid={`row-checkbox-${row.index}`}
+                    checked={row.getIsSelected()}
+                    disabled={!row.getCanSelect()}
+                    indeterminate={row.getIsSomeSelected()}
+                    onChange={row.getToggleSelectedHandler()}
+                />
+            );
+            break;
+
+        case 'numbers':
+            column.cell = ({ row }) => <RowNumber>{row.index + 1}</RowNumber>;
+            break;
+
+        case 'expand':
+            column.cell = ({ row }) => {
+                const isExpanded = row.getIsExpanded();
+                if (!row.getCanExpand()) {
+                    return null;
+                }
+                return (
+                    <ExpandButton
+                        type="button"
+                        buttonType="tertiary"
+                        iconName="caretRight"
+                        onClick={row.getToggleExpandedHandler()}
+                        aria-expanded={isExpanded}
+                        $expanded={isExpanded}
+                        aria-label={
+                            row.subRows.length > 0
+                                ? t('subrowsAriaLabel', { count: row.subRows.length })
+                                : undefined
+                        }
+                    />
+                );
+            };
+            break;
+    }
+
+    return column;
+}
+
 export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
-    columns: CustomColumnDef<T>[];
+    columns: TableColumn<T>[];
+    expandableRows?: 'single' | 'multiple';
     /**
      * Adds row numbers
      * @default false
@@ -203,7 +233,8 @@ export const Table = <T extends object>({
     className,
     data,
     defaultSort,
-    columns: defaultColumns,
+    columns: providedColumns,
+    expandableRows,
     stickyHeader = false,
     stickyFooter = false,
     rowNumbers = false,
@@ -215,37 +246,61 @@ export const Table = <T extends object>({
     onSelectedRowsChange,
     onSort,
 }: TableProps<T>): ReactElement => {
+    const { t } = useTranslation('table');
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
-    const [rowSelection, setRowSelection] = useState({});
+    const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+    const [expanded, setExpanded] = useState<ExpandedState>({});
 
-    // Add custom columns for row numbers and row selection
+    // Add utility columns for row numbers and row selection
     const columns = useMemo(() => {
-        const cols = [...defaultColumns];
-        if (selectableRows) {
-            cols.unshift(getCustomColumn<T>('selection'));
-        } else if (rowNumbers) {
-            cols.unshift(getCustomColumn<T>('numbers'));
-        }
-        return cols;
-    }, [selectableRows, rowNumbers, defaultColumns]);
+        const cols = [...providedColumns];
 
-    const tableOptions = {
+        if (selectableRows) {
+            cols.unshift(getUtilityColumn<T>('selection', t));
+        } else if (expandableRows) {
+            cols.unshift(getUtilityColumn<T>('expand', t));
+        } else if (rowNumbers) {
+            cols.unshift(getUtilityColumn<T>('numbers', t));
+        }
+
+        return cols;
+    }, [selectableRows, expandableRows, rowNumbers, providedColumns, t]);
+
+    const tableOptions: TableOptions<T> = {
         data,
         columns,
         state: {
             sorting,
             rowSelection,
+            expanded,
         },
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        getSubRows: ((row) => (row as any).subRows),
+        getExpandedRowModel: getExpandedRowModel(),
+        getRowCanExpand:
+            expandableRows
+                ? ((row) => row.subRows.length > 0 || !!(row.original as TableData<T>).subContent)
+                : undefined,
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
             setSorting(newValue);
             onSort?.(newValue[0] ?? null);
+        },
+        onExpandedChange: (updater: Updater<ExpandedState>) => {
+            let newValue = functionalUpdate(updater, expanded);
+
+            // Hackish because onExpandedChange doesn't provide the currently expanded/collapsed row
+            if (expandableRows === 'single' && Object.keys(newValue).length > 1) {
+                newValue = functionalUpdate(updater, {});
+            }
+
+            setExpanded(newValue);
         },
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
@@ -260,7 +315,6 @@ export const Table = <T extends object>({
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
             const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
-
             onSelectedRowsChange(selectedRows);
         }
     }, [selectableRows, currentRowSelection, onSelectedRowsChange, data]);
@@ -277,25 +331,40 @@ export const Table = <T extends object>({
             <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>
+                        key={headerGroup.id}
                         headerGroup={headerGroup}
                         sticky={stickyHeader}
                     />
                 ))}
             </StyledTHead>
             <StyledTBody>
-                {table.getRowModel().rows.map((row) => (
-                    <TableRow<T>
-                        striped={striped}
-                        error={!!(row.original as CustomRowProps).error}
-                        row={row}
-                        onClick={onRowClick}
-                    />
-                ))}
+                {table.getRowModel().rows.map((row) => {
+                    const rowOriginal = row.original as TableData<T>;
+                    return (
+                        <Fragment key={row.id}>
+                            <TableRow<T>
+                                striped={striped}
+                                error={!!rowOriginal.error}
+                                row={row}
+                                onClick={onRowClick}
+                            />
+                            {rowOriginal.subContent && row.getIsExpanded() && (
+                                <StyledTableRow>
+                                    <td />
+                                    <td colSpan={99}>
+                                        {rowOriginal.subContent}
+                                    </td>
+                                </StyledTableRow>
+                            )}
+                        </Fragment>
+                    );
+                })}
             </StyledTBody>
             {hasFooter && (
                 <StyledTFoot>
                     {table.getFooterGroups().map((footerGroup) => (
                         <TableFooter<T>
+                            key={footerGroup.id}
                             footerGroup={footerGroup}
                             sticky={stickyFooter}
                         />
