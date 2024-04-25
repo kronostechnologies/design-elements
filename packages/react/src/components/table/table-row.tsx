@@ -147,7 +147,7 @@ const StyledCell = styled.td<StyledCellProps>`
     `}
 
     ${({ hasRightBorder }) => hasRightBorder && css`
-        border-right: 1px solid ${({ theme }) => theme.greys.grey};
+        border-right: 1px solid ${({ theme }) => theme.component['table-group-border-color']};
     `}
 `;
 

@@ -37,7 +37,7 @@ const Label = styled.span`
 
 const iconSize = '16';
 const BaseIcon = styled(Icon).attrs({ size: iconSize })`
-    color: ${({ theme }) => theme.component['nav-list-item-icon-text-color']};
+    color: ${({ theme }) => theme.component['nav-list-item-icon-color']};
     min-width: ${iconSize}px;
 `;
 
@@ -69,9 +69,10 @@ const linkStyles = css<LinkProps>`
 
     :hover {
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['nav-list-item-text-hover-color']};
 
         ${BaseIcon} {
-            color: ${({ theme }) => theme.component['nav-list-item-icon-hover-text-color']};
+            color: ${({ theme }) => theme.component['nav-list-item-icon-hover-color']};
         }
     }
 

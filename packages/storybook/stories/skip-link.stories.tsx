@@ -9,9 +9,9 @@ export default {
 
 const Navigation = styled.nav`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys.black};
+    background-color: ${({ theme }) => theme.ref['color-black']};
     border-radius: var(--border-radius) var(--border-radius) 0 0;
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.ref['color-white']};
     display: flex;
     height: 56px;
     justify-content: center;
@@ -20,7 +20,7 @@ const Navigation = styled.nav`
 
 const Main = styled.main`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys.grey};
+    background-color: ${({ theme }) => theme.ref['color-neutral-15']};
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     display: flex;
     height: 150px;

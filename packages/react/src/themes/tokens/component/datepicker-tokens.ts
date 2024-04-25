@@ -29,7 +29,7 @@ export type DatepickerTokenMap = {
 export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-background-color': 'color-white',
     'datepicker-border-color': 'color-neutral-15',
-    'datepicker-box-shadow-color': 'transparent-20',
+    'datepicker-box-shadow-color': 'transparent-dark-20',
 
     'datepicker-header-background-color': 'transparent-100',
 

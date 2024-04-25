@@ -91,6 +91,7 @@ const Button = styled.button<ButtonProps>`
 
     &:hover {
         background-color: ${({ theme }) => theme.component['menu-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['menu-item-hover-text-color']};
     }
 
     &[disabled],
@@ -99,6 +100,13 @@ const Button = styled.button<ButtonProps>`
         cursor: default;
         fill: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         pointer-events: none;
+    }
+`;
+
+const StyledIcon = styled(Icon)`
+    color: ${({ theme }) => theme.component['menu-item-icon-color']};
+    &:hover {
+        color: ${({ theme }) => theme.component['menu-item-hover-icon-color']};
     }
 `;
 
@@ -361,12 +369,11 @@ export const Menu = forwardRef(({
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
                             {opt.iconName && (
-                                <Icon
+                                <StyledIcon
                                     focusable={false}
                                     aria-hidden
                                     name={opt.iconName}
                                     size="1rem"
-                                    color='#60666E'
                                 />
                             )}
                             <Label>{opt.label}</Label>
