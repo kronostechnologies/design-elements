@@ -11,10 +11,6 @@ exports[`Form Field Container Styling match noMargin snapshot 1`] = `
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -82,10 +78,6 @@ exports[`Form Field Container Styling matches invalid snapshot 1`] = `
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #CD2C23;
-}
-
-.c0:focus {
   border-color: #CD2C23;
 }
 
