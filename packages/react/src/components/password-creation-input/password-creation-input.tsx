@@ -1,8 +1,9 @@
 import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
-import styled, { StyledProps } from 'styled-components';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
-import { TextInput } from '../text-input/text-input';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { Input } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';
@@ -12,72 +13,21 @@ import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
-const StyledFieldContainer = styled(FormFieldContainer)`
-    > :nth-child(2) {
-        margin-bottom: 0;
-    }
-`;
-
 const StyledUl = styled.ul`
     font-size: 0.75rem;
     margin: 0 0 var(--spacing-half) 0;
     padding: 0;
 `;
 
-const PasswordContainer = styled.div`
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+const PasswordInputContainer = styled.div`
     display: flex;
-    flex-direction: row;
-    margin-bottom: calc(var(--spacing-1x) * 1.5);
+    margin-bottom: var(--spacing-1x);
     position: relative;
-
-    > div:first-of-type:focus-within {
-        border-radius: var(--border-radius);
-        /* TODO change when updating thematization */
-        box-shadow: 0 0 0 2px #84c6ea;
-        outline: none;
-
-        input,
-        + span > button {
-            /* TODO change when updating thematization */
-            border-color: #006296;
-        }
-    }
 `;
 
-export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolean; }>): string {
-    if (isValid) {
-        return theme.component['password-creation-input-border-color'];
-    }
-
-    return theme.component['password-creation-input-error-border-color'];
-}
-
-const StyledInput = styled(TextInput)`
-    flex: 1;
-    margin-bottom: 0;
-
-    input {
-        ::-ms-reveal {
-            display: none;
-        }
-
-        border-color: ${getBorderColor};
-        border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-width: 1px 0 1px 1px;
-        width: calc(100% - 2rem);
-    }
-`;
-
-const StyledIconButton = styled(IconButton)<{ isValid: boolean }>`
-    background-color: white;
-    border-color: ${getBorderColor};
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    border-width: 1px 1px 1px 0;
-    min-height: 2rem;
+const ShowPasswordButton = styled.div`
     position: absolute;
-    transform: translateX(-2rem);
-    width: 2rem;
+    right: 0;
 `;
 
 interface PasswordCreationInputProps {
@@ -99,6 +49,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     ...otherProps
 }) => {
     const { t } = useTranslation('password-creation-input');
+    const { isMobile } = useDeviceContext();
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
     const isEmpty = password.length === 0;
@@ -122,12 +73,12 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     };
 
     return (
-        <StyledFieldContainer
+        <FormFieldContainer
             id={id}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon
-            valid={isValid}
+            valid={isValid || isEmpty}
         >
             <div id={hintId} aria-live="assertive" aria-hidden="true" aria-atomic="true">
                 <StyledUl>
@@ -141,36 +92,37 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                     ))}
                 </StyledUl>
             </div>
-            <PasswordContainer>
-                <StyledInput
+            <PasswordInputContainer>
+                <Input
                     id={id}
-                    isValid={isValid || isEmpty}
                     name={name ?? 'password'}
                     autoComplete="new-password"
-                    ariaDescribedBy={`${hintId} ${passwordStrengthId}`}
-                    ariaInvalid={!isValid}
+                    aria-describedby={`${hintId} ${passwordStrengthId}`}
+                    aria-invalid={!isValid}
                     onChange={handleChange}
                     data-testid="password-input"
                     type={showPassword ? 'text' : 'password'}
+                    isMobile={isMobile}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                <Tooltip
-                    desktopPlacement="top"
-                    label={showPassword ? t('hide-password') : t('show-password')}
-                >
-                    <StyledIconButton
-                        isValid={isValid || isEmpty}
-                        buttonType="tertiary"
-                        aria-label={t('show-password')}
-                        iconName={showPassword ? 'eyeOff' : 'eye'}
-                        aria-pressed={showPassword}
-                        data-testid="show-password-button"
-                        type="button"
-                        onClick={handleShowPassword}
-                    />
-                </Tooltip>
-            </PasswordContainer>
+                <ShowPasswordButton>
+                    <Tooltip
+                        desktopPlacement="top"
+                        label={showPassword ? t('hide-password') : t('show-password')}
+                    >
+                        <IconButton
+                            buttonType="tertiary"
+                            aria-label={t('show-password')}
+                            iconName={showPassword ? 'eyeOff' : 'eye'}
+                            aria-pressed={showPassword}
+                            data-testid="show-password-button"
+                            type="button"
+                            onClick={handleShowPassword}
+                        />
+                    </Tooltip>
+                </ShowPasswordButton>
+            </PasswordInputContainer>
             <PasswordStrengthContainer strength={strength} id={passwordStrengthId} />
-        </StyledFieldContainer>
+        </FormFieldContainer>
     );
 };

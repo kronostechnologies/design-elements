@@ -8,6 +8,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: none;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #1B1C1E;
   display: -webkit-box;
@@ -30,24 +31,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -72,6 +64,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: none;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #1B1C1E;
   display: -webkit-box;
@@ -93,24 +86,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -138,24 +122,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   border-top: none;
 }
 
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -249,6 +224,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
@@ -276,24 +252,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -307,6 +274,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
@@ -328,24 +296,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -373,24 +332,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-top: none;
 }
 
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -484,6 +434,7 @@ exports[`Tabs matches snapshot 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
@@ -511,24 +462,15 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c1:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1:focus {
@@ -542,6 +484,7 @@ exports[`Tabs matches snapshot 1`] = `
   align-items: center;
   border: 1px solid transparent;
   border-bottom: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   bottom: -1px;
   color: #878F9A;
   display: -webkit-box;
@@ -563,24 +506,15 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c3:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:focus {
@@ -608,24 +542,15 @@ exports[`Tabs matches snapshot 1`] = `
   border-top: none;
 }
 
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5:focus:not(:focus-visible) {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {

@@ -17,6 +17,7 @@ import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
+import { focus } from '../../utils/css-state';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
@@ -86,13 +87,11 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     width: 100%;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
         background-color: ${({ theme }) => theme.component['menu-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['menu-item-hover-text-color']};
     }
 
     &[disabled],
@@ -101,6 +100,13 @@ const Button = styled.button<ButtonProps>`
         cursor: default;
         fill: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         pointer-events: none;
+    }
+`;
+
+const StyledIcon = styled(Icon)`
+    color: ${({ theme }) => theme.component['menu-item-icon-color']};
+    &:hover {
+        color: ${({ theme }) => theme.component['menu-item-hover-icon-color']};
     }
 `;
 
@@ -363,12 +369,11 @@ export const Menu = forwardRef(({
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
                             {opt.iconName && (
-                                <Icon
+                                <StyledIcon
                                     focusable={false}
                                     aria-hidden
                                     name={opt.iconName}
                                     size="1rem"
-                                    color='#60666E'
                                 />
                             )}
                             <Label>{opt.label}</Label>

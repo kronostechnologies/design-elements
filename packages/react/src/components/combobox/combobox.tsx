@@ -59,7 +59,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledListbox = styled(Listbox)`
-    margin-top: 6px;
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
 `;
@@ -74,10 +74,11 @@ const Textbox = styled.input<TextboxProps>`
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
     width: 100%;
-    ${({ theme }) => focus({ theme }, true)};
 
+    ${focus};
+    
     &::placeholder {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
     }
 `;
@@ -102,8 +103,7 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
     align-items: center;
     background-color: transparent;
     border: 0;
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
-    display: flex;
+color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};    display: flex;
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
@@ -111,7 +111,7 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
     width: var(--size-1x);
 
     &::after {
-        border-right: ${({ theme }) => `1px solid ${theme.greys['mid-grey']}`};
+        border-right: ${({ theme }) => `1px solid ${theme.component['combobox-clear-button-border-right-color']}`};
         content: '';
         height: calc(var(--size-2x) - var(--spacing-2x));
         margin-left: var(--spacing-1x);
