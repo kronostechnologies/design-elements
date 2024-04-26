@@ -91,7 +91,7 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
 `;
 
 const StyledInput = styled.input<{ isMobile: boolean; }>`
-    ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile })}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
