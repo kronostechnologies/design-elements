@@ -57,7 +57,7 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 const StyledListbox = styled(Listbox)`
-    margin-top: 6px;
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
 `;
@@ -77,7 +77,7 @@ const Textbox = styled.div<TextboxProps>`
     user-select: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, true)};
+    ${focus};
 `;
 
 const TextWrapper = styled.span`
@@ -95,7 +95,7 @@ const TagWrapper = styled.div`
 
 const ListBoxTag = styled(Tag)`
     margin: 2px;
-    
+
     & + & {
         margin-left: 2px;
     }
@@ -431,7 +431,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             aria-hidden="true"
             data-testid={`listboxtag-${option.value}`}
             key={option.value}
-            onDelete={handleTagRemove}
+            onRemove={handleTagRemove}
             value={{ id: option.value, label: option.label }}
         />
     ));

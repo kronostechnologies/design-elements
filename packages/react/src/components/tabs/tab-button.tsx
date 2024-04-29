@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { focus, focusVisibleReset } from '../../utils/css-state';
+import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
 const selectedIndicatorPosition = (global: boolean | undefined): string => (global ? 'bottom: 0' : 'top: 0');
@@ -30,8 +30,7 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
         ${({ $global }) => selectedIndicatorPosition($global)};
     }
 
-    ${({ theme }) => focus({ theme }, false, undefined, true)};
-    ${({ theme }) => focusVisibleReset({ theme }, false)};
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-visible', insideOnly: true })};
 
     ${({ $selected, theme }) => !$selected && css`
         &:active {

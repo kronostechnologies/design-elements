@@ -41,14 +41,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -90,18 +91,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c7:focus:not(:focus-visible) {
-  box-shadow: none;
+.c7:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7::after {
@@ -139,18 +137,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   bottom: 0;
 }
 
-.c10:focus {
-  outline: none;
+.c10 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c10:focus:not(:focus-visible) {
-  box-shadow: none;
+.c10:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c10:active {
@@ -195,23 +190,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   border-top: none;
 }
 
-.c12:focus {
-  outline: none;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c12:focus:not(:focus-visible) {
-  box-shadow: none;
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus-visible {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 {
@@ -220,14 +207,15 @@ exports[`Tabs matches snapshot (global) 1`] = `
   color: #60666E;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2:hover,
@@ -484,14 +472,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -533,18 +522,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c7:focus:not(:focus-visible) {
-  box-shadow: none;
+.c7:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7::after {
@@ -582,18 +568,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   top: 0;
 }
 
-.c10:focus {
-  outline: none;
+.c10 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c10:focus:not(:focus-visible) {
-  box-shadow: none;
+.c10:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c10:active {
@@ -641,23 +624,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-top: none;
 }
 
-.c12:focus {
-  outline: none;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c12:focus:not(:focus-visible) {
-  box-shadow: none;
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus-visible {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 {
@@ -666,14 +641,15 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   color: #60666E;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2:hover,
@@ -934,14 +910,15 @@ exports[`Tabs matches snapshot 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -983,18 +960,15 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c7:focus:not(:focus-visible) {
-  box-shadow: none;
+.c7:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7::after {
@@ -1032,18 +1006,15 @@ exports[`Tabs matches snapshot 1`] = `
   top: 0;
 }
 
-.c10:focus {
-  outline: none;
+.c10 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
-}
-
-.c10:focus:not(:focus-visible) {
-  box-shadow: none;
+.c10:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c10:active {
@@ -1091,23 +1062,15 @@ exports[`Tabs matches snapshot 1`] = `
   border-top: none;
 }
 
-.c12:focus {
-  outline: none;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c12:focus:not(:focus-visible) {
-  box-shadow: none;
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus-visible {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 {
@@ -1116,14 +1079,15 @@ exports[`Tabs matches snapshot 1`] = `
   color: #60666E;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2:hover,

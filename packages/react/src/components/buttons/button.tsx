@@ -1,4 +1,4 @@
-import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
+import { FocusEventHandler, forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -33,6 +33,8 @@ export interface ButtonProps {
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
+    onFocus?: FocusEventHandler<HTMLButtonElement>;
+    onBlur?: FocusEventHandler<HTMLButtonElement>;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
@@ -49,6 +51,8 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     focusable = true,
     label,
     onClick,
+    onFocus,
+    onBlur,
     onKeyDown,
     title,
     type = 'button',
@@ -68,6 +72,8 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             disabled={disabled}
             focusable={focusable}
             onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
