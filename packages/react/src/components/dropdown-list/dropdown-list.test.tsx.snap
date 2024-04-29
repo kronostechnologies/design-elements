@@ -1377,7 +1377,8 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 }
 
 .c9:hover {
-  border: 1px solid #006296;
+  background-color: #DBDEE1;
+  border: 1px solid #1B1C1E;
 }
 
 .c9 > .c10 {
