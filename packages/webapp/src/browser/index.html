@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title><%= PROJECT_DISPLAY_NAME %></title>
+        <link rel="shortcut icon" href="./favicon.ico">
+    </head>
+
+    <body>
+        <div id="<%= ROOT_ELEMENT_ID %>"></div>
+
+        <script>
+            window.APP_CONFIG = <%= JSON.stringify(htmlWebpackPlugin.options.templateParameters) %>;
+        </script>
+    </body>
+</html>

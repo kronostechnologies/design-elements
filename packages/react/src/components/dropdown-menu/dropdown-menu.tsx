@@ -8,7 +8,7 @@ const List = styled.div`
     background-color: ${({ theme }) => theme.component['dropdown-menu-background-color']};
     border: 1px solid ${({ theme }) => theme.component['dropdown-menu-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['dropdown-menu-box-shadow-color']};
     color: ${({ theme }) => theme.component['dropdown-menu-text-color']};
     list-style-type: none;
     position: absolute;

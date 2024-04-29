@@ -16,9 +16,6 @@ const discoveryCustomization: ThemeCustomization = {
         'button-primary-hover-background-color': 'color-discovery-70',
         'button-primary-hover-border-color': 'color-discovery-70',
         'button-primary-hover-text-color': 'color-white',
-        'button-primary-focus-background-color': 'color-discovery-50',
-        'button-primary-focus-border-color': 'color-discovery-50',
-        'button-primary-focus-text-color': 'color-white',
     },
 };
 
@@ -30,9 +27,6 @@ const successCustomization: ThemeCustomization = {
         'button-primary-hover-background-color': 'color-success-70',
         'button-primary-hover-border-color': 'color-success-70',
         'button-primary-hover-text-color': 'color-white',
-        'button-primary-focus-background-color': 'color-success-50',
-        'button-primary-focus-border-color': 'color-success-50',
-        'button-primary-focus-text-color': 'color-white',
     },
 };
 
@@ -44,9 +38,6 @@ const warningCustomization: ThemeCustomization = {
         'button-primary-hover-background-color': 'color-warning-60',
         'button-primary-hover-border-color': 'color-warning-60',
         'button-primary-hover-text-color': 'color-neutral-90',
-        'button-primary-focus-background-color': 'color-warning-50',
-        'button-primary-focus-border-color': 'color-warning-50',
-        'button-primary-focus-text-color': 'color-neutral-90',
     },
 };
 
