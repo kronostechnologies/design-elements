@@ -184,7 +184,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-border-color': 'transparent-100',
     'button-tertiary-text-color': 'color-neutral-65',
     // Tertiary hover
-    'button-tertiary-hover-background-color': 'transparent-25',
+    'button-tertiary-hover-background-color': 'transparent-dark-25',
     'button-tertiary-hover-border-color': 'transparent-100',
     'button-tertiary-hover-text-color': 'color-neutral-90',
     // Tertiary disabled
@@ -197,7 +197,7 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-tertiary-inverted-border-color': 'transparent-100',
     'button-tertiary-inverted-text-color': 'color-white',
     // Tertiary inverted hover
-    'button-tertiary-inverted-hover-background-color': 'transparent-50',
+    'button-tertiary-inverted-hover-background-color': 'transparent-dark-50',
     'button-tertiary-inverted-hover-border-color': 'transparent-100',
     'button-tertiary-inverted-hover-text-color': 'color-white',
     // Tertiary inverted disabled
