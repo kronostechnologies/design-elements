@@ -12,9 +12,7 @@ export type RadioCardTokens =
     | 'radio-card-hover-text-color'
     | 'radio-card-disabled-background-color'
     | 'radio-card-disabled-border-color'
-    | 'radio-card-disabled-text-color'
-    | 'radio-card-button-checked-background-color'
-    | 'radio-card-button-checked-border-color';
+    | 'radio-card-disabled-text-color';
 
 export type RadioCardTokenValue = AliasTokens | RefTokens;
 
@@ -37,7 +35,4 @@ export const defaultRadioCardTokens: RadioCardTokenMap = {
 
     'radio-card-selected-background-color': 'color-brand-05',
     'radio-card-selected-border-color': 'color-brand-50',
-
-    'radio-card-button-checked-background-color': 'color-brand-50',
-    'radio-card-button-checked-border-color': 'color-brand-50',
 };
