@@ -11,7 +11,7 @@ import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
-import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation';
+import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
 import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
