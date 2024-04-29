@@ -153,6 +153,7 @@ function getDismissIconMarginTop({ $isMobile }: DismissIconProps): string {
 const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButtonProps>>({
     buttonType: 'tertiary',
     iconName: 'x',
+    inverted: true,
 })<DismissIconProps>`
     align-self: flex-start;
     ${({ $type, theme }) => css`
