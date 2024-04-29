@@ -29,7 +29,7 @@ function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string):
 }
 
 function getActionButton<W extends ReactWrapper>(wrapper: W, index: number): W {
-    return getByTestId(wrapper, `tabs-tab-${index}-button`, { htmlNodesOnly: true });
+    return getByTestId(wrapper, `tab-${index}-button`, { htmlNodesOnly: true });
 }
 
 describe('Tabs', () => {
@@ -87,7 +87,7 @@ describe('Tabs', () => {
 
         getActionButton(wrapper, 2).simulate('click');
 
-        expect(getByTestId(wrapper, 'tabs-tab-', { modifier: '^', htmlNodesOnly: true }).length).toBe(1);
+        expect(getByTestId(wrapper, 'tab-', { modifier: '^', htmlNodesOnly: true }).length).toBe(1);
     });
 
     test('tab panel should unmount when another tab is selected', () => {

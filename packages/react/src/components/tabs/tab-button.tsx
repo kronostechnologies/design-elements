@@ -10,7 +10,7 @@ const selectedIndicatorPosition = (global: boolean | undefined): string => (glob
 
 const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
-    color: ${({ $selected, theme }) => ($selected ? theme.component['tabs-tab-selected-text-color'] : theme.component['tabs-tab-text-color'])};
+    color: ${({ $selected, theme }) => ($selected ? theme.component['tab-selected-text-color'] : theme.component['tab-text-color'])};
     display: flex;
     font-family: var(--font-family);
     font-size: 0.875rem;
@@ -35,11 +35,11 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
 
     ${({ $selected, theme }) => !$selected && css`
         &:active {
-            color: ${theme.component['tabs-tab-active-text-color']};
+            color: ${theme.component['tab-active-text-color']};
             font-weight: var(--font-semi-bold);
 
             &::after {
-                background-color: ${theme.component['tabs-tab-active-indicator-color']} !important;
+                background-color: ${theme.component['tab-active-indicator-color']} !important;
             }
         }
     `}
@@ -49,13 +49,13 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
         font-weight: var(--font-semi-bold);
 
         &::after {
-            background-color: ${theme.component['tabs-tab-selected-indicator-color']};
+            background-color: ${theme.component['tab-selected-indicator-color']};
         }
     `}
 `;
 
 const StyledButtonIcon = styled(Icon)`
-    color: ${({ theme }) => theme.component['tabs-tab-icon-color']};
+    color: ${({ theme }) => theme.component['tab-icon-color']};
     vertical-align: middle;
 `;
 
@@ -67,8 +67,8 @@ const StyledTab = styled.div<{ $selected: boolean; }>`
         &:hover {
             ${StyledButton} {
                 &::after {
-                    background-color: ${theme.component['tabs-tab-hover-indicator-color']};
-                    color: ${theme.component['tabs-tab-hover-text-color']};
+                    background-color: ${theme.component['tab-hover-indicator-color']};
+                    color: ${theme.component['tab-hover-text-color']};
                 }
             }
         }
@@ -76,14 +76,10 @@ const StyledTab = styled.div<{ $selected: boolean; }>`
 `;
 
 const DeleteButton = styled(IconButton)`
-    min-height: var(--size-1x);
-    min-width: var(--size-1x);
-    padding: 0;
     position: absolute;
-    right: var(--spacing-1halfx);
+    right: var(--spacing-1x);
     top: 50%;
     transform: translateY(-50%);
-    width: var(--size-1x);
 `;
 
 const ButtonLabel = styled.span`
@@ -107,7 +103,7 @@ interface TabButtonProps {
     isSelected: boolean;
     onClick(): void;
     onRemove?(): void;
-    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
+    onKeyDown?(event: KeyboardEvent<HTMLDivElement>): void;
 }
 
 export const TabButton = forwardRef(({
@@ -125,11 +121,15 @@ export const TabButton = forwardRef(({
 }: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { t } = useTranslation('tabs');
     const dataAttributes = useDataAttributes(rest);
-    const dataTestId = dataAttributes['data-testid'] ?? 'tabs-tab';
+    const dataTestId = dataAttributes['data-testid'] ?? 'tab';
     const hasRemove = !!onRemove;
 
     return (
-        <StyledTab $selected={isSelected} data-testid={dataTestId}>
+        <StyledTab
+            $selected={isSelected}
+            data-testid={dataTestId}
+            onKeyDown={onKeyDown}
+        >
             <StyledButton
                 type="button"
                 id={id}
@@ -140,7 +140,6 @@ export const TabButton = forwardRef(({
                 data-testid={`${dataTestId}-button`}
                 tabIndex={isSelected ? undefined : -1}
                 onClick={onClick}
-                onKeyDown={onKeyDown}
                 $removable={hasRemove}
                 $selected={isSelected}
                 $global={global}
@@ -173,6 +172,7 @@ export const TabButton = forwardRef(({
                     aria-label={t('dismissTab', { label: children })}
                     iconName='x'
                     focusable={isSelected}
+                    size="small"
                 />
             )}
         </StyledTab>

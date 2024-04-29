@@ -3,6 +3,7 @@ import {
     KeyboardEvent,
     ReactNode,
     RefObject,
+    useCallback,
     useMemo,
     useState,
     VoidFunctionComponent,
@@ -19,7 +20,7 @@ import { Button } from '../buttons/button';
 
 const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ theme, $global }) => ($global ? theme.component['tabs-global-background-color'] : theme.component['tabs-background-color'])};
+    background: ${({ theme, $global }) => ($global ? theme.component['tab-global-background-color'] : theme.component['tab-background-color'])};
     border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
     box-sizing: content-box;
     height: var(--size-2halfx);
@@ -27,7 +28,7 @@ const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     position: relative;
 
     &::before {
-        border-bottom: 1px solid ${({ theme }) => theme.component['tabs-tab-border-bottom-color']};
+        border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
         bottom: 0;
         content: '';
         display: block;
@@ -51,8 +52,8 @@ const TabButtonsList = styled.div<{ $global?: boolean; }>`
 
 const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right' }>`
     align-items: center;
-    background: ${({ $global, theme }) => ($global ? theme.component['tabs-global-background-color'] : theme.component['tabs-background-color'])};
-    border-bottom: 1px solid ${({ theme }) => theme.component['tabs-tab-border-bottom-color']};
+    background: ${({ $global, theme }) => ($global ? theme.component['tab-global-background-color'] : theme.component['tab-background-color'])};
+    border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
     display: inline-flex;
@@ -146,7 +147,26 @@ export const Tabs: VoidFunctionComponent<Props> = ({
             buttonRef: createRef<HTMLButtonElement>(),
         }),
     ), [tabs]);
+
     const [selectedTab, setSelectedTab] = useState(tabItems[0]);
+
+    function isTabSelected(tabId: string): boolean {
+        return selectedTab.id === tabId;
+    }
+
+    const handleRemoveTab = useCallback((tabId: string) => {
+        if (selectedTab?.id === tabId) {
+            const tabIndex = tabItems.findIndex((tab) => tab.id === tabId);
+            const nextSelectedTab = tabItems[tabIndex + 1] ?? tabItems[tabIndex - 1];
+
+            if (nextSelectedTab) {
+                nextSelectedTab.buttonRef.current?.focus();
+                setSelectedTab(nextSelectedTab);
+            }
+        }
+
+        onRemove?.(tabId);
+    }, [onRemove, tabItems, selectedTab]);
 
     async function handleTabSelected(tabItem: TabItem): Promise<void> {
         if (selectedTab?.onBeforeUnload) {
@@ -159,11 +179,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }
     }
 
-    function isTabSelected(tabId: string): boolean {
-        return selectedTab.id === tabId;
-    }
-
-    function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>, currentlyFocusedTab: TabItem): void {
+    function handleButtonKeyDown(event: KeyboardEvent<HTMLDivElement>, currentlyFocusedTab: TabItem): void {
         const currentlyFocusedTabIndex = tabItems.findIndex((tab) => tab.id === currentlyFocusedTab.id);
 
         switch (event.key) {
@@ -236,13 +252,13 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             id={tabItem.id}
                             panelId={tabItem.panelId}
                             key={tabItem.panelId}
-                            data-testid={`tabs-tab-${i + 1}`}
+                            data-testid={`tab-${i + 1}`}
                             leftIcon={tabItem.leftIcon}
                             rightIcon={tabItem.rightIcon}
                             isSelected={isTabSelected(tabItem.id)}
                             ref={tabItem.buttonRef}
                             onClick={() => handleTabSelected(tabItem)}
-                            onRemove={onRemove ? () => onRemove(tabItem.id) : undefined}
+                            onRemove={onRemove ? () => handleRemoveTab(tabItem.id) : undefined}
                             onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                         >
                             {tabItem.title}
