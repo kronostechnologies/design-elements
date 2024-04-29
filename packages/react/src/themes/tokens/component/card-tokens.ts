@@ -23,5 +23,5 @@ export const defaultCardTokens : CardTokensMap = {
     'card-link-border-color': 'color-neutral-50',
     'card-link-hover-border-color': 'color-black',
     'card-link-hover-background-color': 'color-neutral-15',
-    'card-box-shadow-color': 'transparent-20',
+    'card-box-shadow-color': 'transparent-dark-20',
 };

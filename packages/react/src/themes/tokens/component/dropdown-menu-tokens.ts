@@ -24,7 +24,8 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-group-border-color'
     | 'dropdown-menu-item-content-icon-background-color'
     | 'dropdown-menu-item-content-icon-border-color'
-    | 'dropdown-menu-item-content-description-text-color';
+    | 'dropdown-menu-item-content-description-text-color'
+    | 'dropdown-menu-box-shadow-color';
 
 export type DropdownMenuTokenValue = AliasTokens | RefTokens;
 
@@ -56,4 +57,5 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-item-content-icon-background-color': 'color-neutral-05',
     'dropdown-menu-item-content-icon-border-color': 'color-neutral-15',
     'dropdown-menu-item-content-description-text-color': 'color-neutral-65',
+    'dropdown-menu-box-shadow-color': 'transparent-dark-20',
 };

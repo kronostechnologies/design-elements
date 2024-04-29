@@ -11,6 +11,7 @@ import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
+import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
 import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
@@ -99,7 +100,8 @@ export type ComponentTokens =
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
-    | LozengeTokens;
+    | LozengeTokens
+    | GlobalNavigationTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -158,6 +160,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTableTokens,
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
+    ...defaultGlobalNavigationTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
