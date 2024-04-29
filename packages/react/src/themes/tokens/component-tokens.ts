@@ -32,10 +32,8 @@ import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggl
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
-import { defaultNavListItemTokens, NavListItemTokens } from './component/nav-list-item-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
-import { defaultSortButtonTokens, SortButtonIconTokens } from './component/sort-button-icon-tokens';
 import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
@@ -80,7 +78,6 @@ export type ComponentTokens =
     | RadioCardTokens
     | LegendTokens
     | NavListTokens
-    | NavListItemTokens
     | PaginationTokens
     | ProgressTokens
     | LinkTokens
@@ -99,7 +96,6 @@ export type ComponentTokens =
     | SideDrawerTokens
     | GlobalHeaderTokens
     | CardTokens
-    | SortButtonIconTokens
     | TableTokens
     | DropdownMenuTokens
     | TabTokens
@@ -120,7 +116,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultLabelTokens,
     ...defaultLegendTokens,
     ...defaultNavListTokens,
-    ...defaultNavListItemTokens,
     ...defaultPaginationTokens,
     ...defaultProgressTokens,
     ...defaultLinkTokens,
@@ -160,7 +155,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultSideDrawerTokens,
     ...defaultGlobalHeaderTokens,
     ...defaultCardTokens,
-    ...defaultSortButtonTokens,
     ...defaultTableTokens,
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
