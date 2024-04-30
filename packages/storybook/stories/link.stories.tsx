@@ -10,7 +10,5 @@ export default {
 };
 
 export const Default: Story = () => (
-    <>
         <RouteLink routerLink={NavLink} href="/story1" label="Route Link" />
-    </>
 );
