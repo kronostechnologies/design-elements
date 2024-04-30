@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Core/Dropdown Navigation',
+    title: 'Components/Dropdown Navigation',
     component: DropdownNavigation,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
@@ -53,7 +53,6 @@ export const DesktopIconOnly: Story = () => (
     </StyledDiv>
 );
 DesktopIconOnly.decorators = [DesktopDecorator];
-
 
 export const Mobile: Story = () => (
     <GlobalHeader>
