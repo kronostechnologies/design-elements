@@ -1,10 +1,8 @@
-import { useState } from 'react';
-import { Button, DropdownList, DropdownListOption } from '@equisoft/design-elements-react';
+import { DropdownList, DropdownListOption } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
-import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
     height: 260px;
