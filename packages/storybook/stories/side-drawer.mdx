@@ -1,0 +1,39 @@
+import { SideDrawer } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as SideDrawerStories  from './side-drawer.stories';
+
+<Meta of={SideDrawerStories} />
+
+# Side Drawer
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#Variants)
+4. [Properties](#Properties)
+
+## Definition
+Side panel is a component that slides over the main content displaying additional information or action.
+<Canvas of={SideDrawerStories.Default} />
+
+## Usage
+
+### When to use
+- Use to display actions that affect the content or a section on the page.
+- Use to display additional information or features.
+
+### When not to use
+- Do not use if supplemental content isn't suited for small areas or is part of a flow, consider loading a new page instead [3].
+- Do not use to confirm an action, use a toast or a modal instead [3].
+
+## Variants
+### Default
+<Canvas of={SideDrawerStories.Default} />
+
+## Properties
+<ArgTypes of={SideDrawer} />
+
+## References
+1. [https://material.io/components/sheets-side#usage](https://material.io/components/sheets-side#usage)
+2. [https://ux.stackexchange.com/questions/91215/side-panel-overlay-or-shift-page](https://ux.stackexchange.com/questions/91215/side-panel-overlay-or-shift-page)
+3. [https://design.gitlab.com/components/drawer](https://design.gitlab.com/components/drawer)
+3. [https://cultureamp.design/components/drawer/](https://cultureamp.design/components/drawer/)
+4. [https://m3.material.io/components/side-sheets/guidelines](https://m3.material.io/components/side-sheets/guidelines)
