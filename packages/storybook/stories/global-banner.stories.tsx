@@ -14,52 +14,44 @@ const actionButton = {
 };
 
 export const Neutral: Story = () => (
-    <>
-        <GlobalBanner
-            actionButton={actionButton}
-            label="Neutral."
-            type="neutral"
-            dismissable
-        >
-            Neutral global banner.
-        </GlobalBanner>
-    </>
+    <GlobalBanner
+        actionButton={actionButton}
+        label="Neutral."
+        type="neutral"
+        dismissable
+    >
+        Neutral global banner.
+    </GlobalBanner>
 );
 
 export const Warning: Story = () => (
-    <>
-        <GlobalBanner
-            actionButton={actionButton}
-            label="Warning."
-            type="warning"
-            dismissable
-        >
-            Warning message.
-        </GlobalBanner>
-    </>
+    <GlobalBanner
+        actionButton={actionButton}
+        label="Warning."
+        type="warning"
+        dismissable
+    >
+        Warning message.
+    </GlobalBanner>
 );
 
 export const Alert: Story = () => (
-    <>
-        <GlobalBanner
-            actionButton={actionButton}
-            label="Alert."
-            type="alert"
-        >
-            Alert message.
-        </GlobalBanner>
-    </>
+    <GlobalBanner
+        actionButton={actionButton}
+        label="Alert."
+        type="alert"
+    >
+        Alert message.
+    </GlobalBanner>
 );
 
 export const Discovery: Story = () => (
-    <>
-        <GlobalBanner
-            actionButton={actionButton}
-            label="Discovery."
-            type="discovery"
-            dismissable
-        >
-            Info message.
-        </GlobalBanner>
-    </>
+    <GlobalBanner
+        actionButton={actionButton}
+        label="Discovery."
+        type="discovery"
+        dismissable
+    >
+        Info message.
+    </GlobalBanner>
 );
