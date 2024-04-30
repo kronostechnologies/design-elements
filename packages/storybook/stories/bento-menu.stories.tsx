@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Core/Bento Menu',
+    title: 'Components/Bento Menu',
     component: BentoMenuButton,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
