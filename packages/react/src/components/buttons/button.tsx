@@ -1,5 +1,18 @@
-import { FocusEventHandler, forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
+import {
+    FocusEventHandler,
+    forwardRef,
+    KeyboardEvent,
+    MouseEvent,
+    PropsWithChildren,
+    ReactElement,
+    ReactNode,
+    Ref,
+} from 'react';
 import styled from 'styled-components';
+import {
+    Icon,
+    IconName,
+} from '../icon/icon';
 import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
@@ -38,11 +51,24 @@ export interface ButtonProps {
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
-const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
+export interface NormalButtonProps extends ButtonProps {
+    leftIconName?: IconName;
+    rightIconName?: IconName;
+}
+
+const LeftIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
+
+const RightIcon = styled(Icon)`
+    margin-left: var(--spacing-1x);
+`;
+
+const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & NormalButtonProps>`
     ${getButtonTypeStyles}
 `;
 
-export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
+export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<NormalButtonProps>>(({
     autofocus,
     buttonType,
     children,
@@ -55,10 +81,27 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     onBlur,
     onKeyDown,
     title,
+    leftIconName,
+    rightIconName,
     type = 'button',
     ...props
-}: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
+}: PropsWithChildren<NormalButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
+
+    function renderIcon(iconName: IconName, displayToTheRight?: boolean | undefined): ReactNode {
+        const args = {
+            'aria-hidden': 'true',
+            name: iconName,
+            size: props?.size === 'small' && !isMobile ? '16' : '24',
+            'data-testid': !displayToTheRight ? 'left-icon' : 'right-icon',
+        };
+
+        if (!displayToTheRight) {
+            return <LeftIcon {...args /* eslint-disable-line react/jsx-props-no-spreading */} />;
+        }
+
+        return <RightIcon {...args /* eslint-disable-line react/jsx-props-no-spreading */} />;
+    }
 
     return (
         <StyledButton
@@ -78,7 +121,9 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}
+            {leftIconName && renderIcon(leftIconName)}
             {label}
+            {rightIconName && renderIcon(rightIconName, true)}
         </StyledButton>
     );
 });
