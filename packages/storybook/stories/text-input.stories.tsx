@@ -12,7 +12,7 @@ export const Default: Story = () => (
         label="First Name"
         type="text"
         validationErrorMessage="Error message"
-         hint="Hint"
+        hint="Hint"
     />
 );
 
