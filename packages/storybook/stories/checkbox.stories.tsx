@@ -7,7 +7,5 @@ export default {
 };
 
 export const Default: Story = () => (
-    <>
-        <Checkbox label="Send by email" name="checkbox2" value="normal" />
-    </>
+    <Checkbox label="Send by email" name="checkbox2" value="normal" />
 );
