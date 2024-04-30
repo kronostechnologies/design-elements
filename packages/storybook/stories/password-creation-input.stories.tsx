@@ -1,13 +1,7 @@
 import { ChangeEvent } from 'react';
 import { StoryFn as Story } from '@storybook/react';
-import {
-    PasswordCreationInput,
-    isLongEnough,
-    hasAnUpperCaseLetter,
-    hasALowerCaseLetter,
-} from '@equisoft/design-elements-react';
+import { PasswordCreationInput } from '@equisoft/design-elements-react';
 import { LanguageSwitchDecorator } from './utils/decorator';
-import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Components/Password Creation Input',
