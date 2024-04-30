@@ -11,7 +11,7 @@ import * as SearchContextualStories  from './search-contextual.stories';
 4. [Properties](#properties)
 
 ## Definition
-Live search allows users to filter elements below the component directly by typing into the field. The variant does not have a popup list that appears since users don’t have to make a selection to filter the options. 
+Live search allows users to filter elements below the component directly by typing into the field. 
 <Canvas of={SearchContextualStories.Default} />
 
 ## Usage
@@ -22,9 +22,11 @@ Live search allows users to filter elements below the component directly by typi
 
 ### When not to use 
 - Do not use when there is small or limited amounts of data [2]. 
+- Do not use if you need to have a popup list that appears, since users don’t have to make a selection to filter the options.
 
 ## Variants
 ### Default
+<Canvas of={SearchContextualStories.Default} />
 
 ## Properties
 <ArgTypes of={SearchContextual} />
