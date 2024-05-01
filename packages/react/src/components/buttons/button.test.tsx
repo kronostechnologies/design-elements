@@ -206,7 +206,7 @@ describe('Button', () => {
         expect(getByTestId(wrapper, 'right-icon')).toHaveLength(1);
     });
 
-    test('icons can be placed on one side of the SNAP', () => {
+    test('has left and right icons', () => {
         const tree = renderWithProviders(
             <Button
                 buttonType="primary"
