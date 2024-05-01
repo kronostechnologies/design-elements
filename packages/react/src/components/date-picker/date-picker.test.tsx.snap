@@ -2981,7 +2981,7 @@ label + .c3 {
                     aria-label="Go to previous month"
                     class="c7 c8 c9"
                     data-testid="month-previous"
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -3085,7 +3085,7 @@ label + .c3 {
                     class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -4274,7 +4274,7 @@ label + .c3 {
                     aria-label="Go to previous month"
                     class="c7 c8 c9"
                     data-testid="month-previous"
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -4378,7 +4378,7 @@ label + .c3 {
                     class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -5539,7 +5539,7 @@ label + .c3 {
                       aria-label="Go to previous month"
                       class="c7 c8 c9"
                       data-testid="month-previous"
-                      type="submit"
+                      type="button"
                     >
                       <svg
                         aria-hidden="true"
@@ -5643,7 +5643,7 @@ label + .c3 {
                       class="c7 c8 c9"
                       data-testid="month-next"
                       disabled=""
-                      type="submit"
+                      type="button"
                     >
                       <svg
                         aria-hidden="true"
