@@ -1,0 +1,35 @@
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as ToggleTag  from './toggle-tag.stories';
+
+
+<Meta of={ToggleTag} />
+
+# Tag
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Clickable tags are generally used for quick filters [1].
+- Write these tags with nouns that describe the category to **include** in the results. Avoid negative phrases like « Exclude configured » [1].
+<Canvas of={ToggleTag.Default} />
+
+## Usage
+
+### When to use 
+...
+
+### When not to use 
+...
+
+## Variants
+
+### Default
+<Canvas of={ToggleTag.Default} />
+
+## Properties
+<ArgTypes of={ToggleTag} />
+
+## References
+1. [https://m3.material.io/components/chips/guidelines](https://m3.material.io/components/chips/guidelines)
