@@ -11,7 +11,7 @@ import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnl
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 
 const StyledTextArea = styled.textarea`
-    ${(props) => inputsStyle(props.theme)};
+    ${inputsStyle};
 
     min-height: 6.5rem;
     min-width: 100%;
@@ -21,7 +21,7 @@ const StyledTextArea = styled.textarea`
 `;
 
 const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
-    color: ${({ valid, theme }) => (valid ? `${theme.greys['dark-grey']}` : `${theme.notifications['alert-2.1']}`)};
+    color: ${({ valid, theme }) => (valid ? `${theme.component['text-area-counter-text-color']}` : `${theme.component['text-area-counter-error-text-color']}`)};
     font-size: 0.75rem;
     letter-spacing: 0.02rem;
     line-height: 1.25rem;

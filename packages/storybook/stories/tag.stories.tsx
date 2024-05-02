@@ -1,61 +1,96 @@
 import { Tag, TagValue } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
-import { ReactElement, useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
-    title: 'Components/Tag',
+const TagMeta: Meta<typeof Tag> = {
     component: Tag,
+    title: 'Components/Tags/Tag',
+    args: {
+        value: {
+            label: 'Tag',
+        },
+        size: 'medium',
+        iconName: undefined,
+        color: 'default',
+        onRemove: undefined,
+    },
+    argTypes: {
+        value: {
+            control: {
+                type: 'object',
+            },
+        },
+        size: {
+            control: {
+                type: 'select',
+
+            },
+            defaultValue: 'medium',
+        },
+        iconName: {
+            control: {
+                type: 'select',
+            },
+        },
+        color: {
+            control: {
+                type: 'select',
+            },
+        },
+        onRemove: {
+            control: {
+                type: 'boolean',
+            },
+        },
+    },
+    render: (args) => (
+        <Tag
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            value={{
+                label: args.value?.label || 'Tag',
+            }}
+        />
+    ),
 };
 
-export const Default: Story = (): ReactElement => {
-    const tags: TagValue[] = [
-        { label: 'Tag 1', id: '1' },
-        { label: 'Tag 2', id: '2' },
-        { label: 'Tag 3', id: '3' },
-    ];
+export default TagMeta;
+type Story = StoryObj<typeof Tag>;
 
-    return (
-        <>
-            <div>
-                {tags.map((tag) => <Tag key={tag.id} value={tag} size="small" />)}
-            </div>
-            <br />
-            <div>
-                {tags.map((tag) => <Tag key={tag.id} value={tag} size="medium" />)}
-            </div>
-        </>
-    );
+export const Default: Story = {
+    ...TagMeta,
 };
 
-export const Removable: Story = (): ReactElement => {
-    const initialOptions: TagValue[] = [
-        { label: 'Tag 1', id: 'tag1' },
-        { label: 'Tag 2', id: 'tag2' },
-        { label: 'Tag 3', id: 'tag3' },
-    ];
-    const [options, setOptions] = useState(initialOptions);
-
-    function handleDelete(tag: TagValue): void {
-        const filteredOptionsArray = [...options].filter(({ id }) => id !== tag.id);
-        setOptions(filteredOptionsArray);
-    }
-
-    return (
-        <div>
-            {options.map((tag) => <Tag key={tag.id} value={tag} onDelete={handleDelete} />)}
-        </div>
-    );
+export const Small: Story = {
+    ...Default,
+    args: {
+        size: 'small',
+    },
 };
 
-export const Clickable: Story = () => {
-    function handleClick(tag: TagValue): void {
-        console.info(`Clicked on ${tag.label}`);
-    }
+export const Medium: Story = {
+    ...Default,
+    args: {
+        size: 'medium',
+    },
+};
 
-    return (
-        <>
-            <Tag key="small" iconName="copy" size="small" onClick={handleClick} value={{ label: 'Tag 1' }} />
-            <Tag key="medium" iconName="mail" size="medium" onClick={handleClick} value={{ label: 'Tag 2' }} />
-        </>
-    );
+export const WithIcons: Story = {
+    ...Default,
+    args: {
+        iconName: 'copy',
+    },
+};
+
+export const Removable: Story = {
+    ...Default,
+    args: {
+        onRemove: (tag: TagValue) => console.info(`Removed ${tag.label}`),
+    },
+};
+
+export const Colored: Story = {
+    ...Default,
+    args: {
+        color: 'decorative-01',
+    },
 };

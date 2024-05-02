@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "@equisoft/eslint-config-typescript-react",
+    "plugin:import/typescript"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "ignorePatterns": "src/scripts/**/*",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "/*.js",
+          "src/test/**/*",
+          "**/*.test.{js,jsx,ts,tsx}",
+          "**/*.spec.{js,jsx,ts,tsx}"
+        ]
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/test/**/*"],
+      "rules": {
+        "import/no-unresolved": [
+          "error",
+          {
+            "ignore": [
+              "^~/",
+              "@equisoft/react-test-utils/" // https://github.com/import-js/eslint-plugin-import/issues/1810
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/scripts/**/*"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "no-console": "off"
+      }
+    }
+  ]
+}

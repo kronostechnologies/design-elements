@@ -31,6 +31,7 @@ const config: StorybookConfig = {
         '@storybook/addon-docs',
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
+        '@storybook/addon-controls',
         '@storybook/addon-links',
     ],
     webpackFinal: async (config) => ({
@@ -64,6 +65,7 @@ const config: StorybookConfig = {
     },
     core: {
         disableTelemetry: true,
+        defaultName: 'Doc'
     },
 };
 

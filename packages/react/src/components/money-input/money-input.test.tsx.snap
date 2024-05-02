@@ -11,10 +11,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   border-color: #60666E;
 }
 
-.c1:focus {
-  border-color: #006296;
-}
-
 .c1 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -39,16 +35,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -68,6 +54,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
@@ -90,10 +77,19 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   color: #B7BBC2;
 }
 
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c0 input {
   text-align: left;
-  -webkit-transition: width 300ms;
-  transition: width 300ms;
   width: 132px;
 }
 
@@ -128,10 +124,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   border-color: #60666E;
 }
 
-.c1:focus {
-  border-color: #006296;
-}
-
 .c1 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -156,16 +148,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -185,6 +167,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
@@ -207,10 +190,19 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   color: #B7BBC2;
 }
 
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c0 input {
   text-align: left;
-  -webkit-transition: width 300ms;
-  transition: width 300ms;
   width: 132px;
 }
 
@@ -245,10 +237,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   border-color: #60666E;
 }
 
-.c1:focus {
-  border-color: #006296;
-}
-
 .c1 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -273,16 +261,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c2::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -302,6 +280,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
+  color: #DBDEE1;
 }
 
 .c2:disabled,
@@ -324,10 +303,19 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   color: #B7BBC2;
 }
 
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c0 input {
   text-align: right;
-  -webkit-transition: width 300ms;
-  transition: width 300ms;
   width: 132px;
 }
 

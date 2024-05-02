@@ -5,6 +5,7 @@ import {
     PropsWithChildren,
     useCallback,
     useEffect,
+    useRef,
     useMemo,
     useState,
 } from 'react';
@@ -58,12 +59,12 @@ interface TooltipColorProps {
 
 const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     if (variant === 'success') {
-        return theme.component['tooltip-success-background-color'];
+        return theme.component['tooltip-popper-container-success-background-color'];
     }
-    return theme.component['tooltip-default-background-color'];
+    return theme.component['tooltip-popper-container-default-background-color'];
 }}`;
 
-const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.component['tooltip-border-color']}`;
+const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.component['tooltip-popper-container-border-color']}`;
 
 const TooltipContainer = styled.div<TooltipContainerProps>`
     background-color: ${tooltipColor};
@@ -71,7 +72,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.component['tooltip-text-color']};
+    color: ${({ theme }) => theme.component['tooltip-popper-container-text-color']};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
@@ -234,6 +235,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [isClicked, setIsClicked] = useState<boolean>(false);
     const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
     const tooltipVariant = (mode === 'confirm' && isClicked) ? 'success' : 'normal';
+    const prevLabel = useRef(currentLabel);
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -253,6 +255,11 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
     }, { modifiers });
+
+    if (prevLabel.current !== currentLabel) {
+        prevLabel.current = currentLabel;
+        popperTooltip?.update?.();
+    }
 
     const openTooltip = useCallback((): void => {
         if (delayed && !disabled) {
@@ -351,7 +358,9 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     <Icon
                         name="info"
                         size={isMobile ? '24' : '16'}
-                        color={invertedIcon ? Theme.greys.white : Theme.greys['dark-grey']}
+                        color={invertedIcon
+                            ? Theme.component['tooltip-inverted-icon-color']
+                            : Theme.component['tooltip-icon-color']}
                     />
                 )}
             </StyledSpan>

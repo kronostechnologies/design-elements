@@ -1,6 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Datepicker has openToDate 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -31,10 +88,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -55,8 +108,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -66,12 +120,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -79,30 +147,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -123,33 +185,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-1x);
   padding: 0;
@@ -161,7 +203,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -181,48 +223,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 1rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -236,22 +319,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2halfx);
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c6:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7:disabled,
+.c7:disabled:focus,
+.c7:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c7:focus {
   z-index: 10;
 }
 
-.c6 > svg {
+.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -285,7 +375,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c6"
+      class="c6 c7"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -302,6 +392,63 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (data-testid) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -332,10 +479,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -356,8 +499,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -367,12 +511,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -380,28 +538,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--keyboard-selected:focus {
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -422,33 +576,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -460,7 +594,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -480,48 +614,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -535,22 +710,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c6:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7:disabled,
+.c7:disabled:focus,
+.c7:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c7:focus {
   z-index: 10;
 }
 
-.c6 > svg {
+.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -586,7 +768,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c6"
+      class="c6 c7"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -603,6 +785,63 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (desktop) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -633,10 +872,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -657,8 +892,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -668,12 +904,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -681,28 +931,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--keyboard-selected:focus {
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -723,33 +969,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -761,7 +987,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -781,48 +1007,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -836,22 +1103,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c6:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7:disabled,
+.c7:disabled:focus,
+.c7:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c7:focus {
   z-index: 10;
 }
 
-.c6 > svg {
+.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -887,7 +1161,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c6"
+      class="c6 c7"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -904,6 +1178,63 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (disabled) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -934,10 +1265,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -958,8 +1285,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -969,12 +1297,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -982,28 +1324,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--keyboard-selected:focus {
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -1024,33 +1362,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -1062,7 +1380,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -1082,50 +1400,93 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
 .c5.datePickerInput::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
 }
 
 .c5.datePickerInput::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
 }
 
 .c5.datePickerInput:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
 }
 
 .c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
 }
 
-.c6 {
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5.datePickerInput:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  background: #FFFFFF;
+  border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
-  color: #B7BBC2;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1135,22 +1496,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c6:hover {
-  background-color: none;
+.c7:hover {
+  background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c6:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7:disabled,
+.c7:disabled:focus,
+.c7:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c7:focus {
   z-index: 10;
 }
 
-.c6 > svg {
+.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1187,7 +1555,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c6"
+      class="c6 c7"
       data-testid="calendar-button"
       disabled=""
       tabindex="0"
@@ -1205,6 +1573,63 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (invalid) 1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c3 {
   color: #CD2C23;
   display: -webkit-box;
@@ -1261,10 +1686,6 @@ input + .c1 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -1285,8 +1706,9 @@ input + .c1 {
 }
 
 .c6 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -1296,12 +1718,26 @@ input + .c1 {
 }
 
 .c6 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c6 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6 .react-datepicker__day:hover {
@@ -1309,28 +1745,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c6 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c6 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c6 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c6 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c6 .react-datepicker__day--keyboard-selected:focus {
+.c6 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c6 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c6 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c6 .react-datepicker__day-names {
@@ -1351,33 +1783,13 @@ input + .c1 {
 }
 
 .c6 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c6 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c6 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c6 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c6 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c6 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c6 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -1389,7 +1801,7 @@ input + .c1 {
 }
 
 .c6 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c6 .react-datepicker__portal .react-datepicker__day-name {
@@ -1409,48 +1821,89 @@ label + .c5 {
 }
 
 .c7.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #CD2C23;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
-.c7.datePickerInput:focus {
-  border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c7.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c7.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c7.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c7.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c7.datePickerInput:disabled,
+.c7.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c7.datePickerInput:disabled,
+.c7.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c7.datePickerInput:disabled,
+.c7.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c7.datePickerInput:disabled,
+.c7.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c7.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7.datePickerInput:focus {
-  border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c7.datePickerInput:focus {
-  border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c7.datePickerInput:focus {
-  border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -1464,22 +1917,29 @@ label + .c5 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c8:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c9:disabled,
+.c9:disabled:focus,
+.c9:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c9:focus {
   z-index: 10;
 }
 
-.c8 > svg {
+.c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1531,7 +1991,7 @@ label + .c5 {
     </div>
     <button
       aria-label="Choose date"
-      class="c8"
+      class="c8 c9"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -1548,6 +2008,63 @@ label + .c5 {
 `;
 
 exports[`Datepicker matches snapshot (mobile) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -1578,10 +2095,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -1602,8 +2115,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -1613,12 +2127,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -1626,30 +2154,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -1670,33 +2192,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-1x);
   padding: 0;
@@ -1708,7 +2210,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -1728,48 +2230,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 1rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -1783,22 +2326,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2halfx);
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c6:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c7:disabled,
+.c7:disabled:focus,
+.c7:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c7:focus {
   z-index: 10;
 }
 
-.c6 > svg {
+.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1832,7 +2382,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c6"
+      class="c6 c7"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -1849,6 +2399,100 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (open, desktop) 1`] = `
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8:hover,
+.c8[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c8:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -1879,37 +2523,29 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
 
-.c10 {
+.c12 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c10 input,
-.c10 select,
-.c10 textarea {
+.c12 input,
+.c12 select,
+.c12 textarea {
   border-color: #60666E;
 }
 
-.c10:focus {
-  border-color: #006296;
-}
-
-.c10 > :nth-child(0) {
+.c12 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
-.c11 {
+.c13 {
   position: relative;
 }
 
-.c12 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1922,11 +2558,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -1936,17 +2572,18 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c14:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c13 {
+.c15 {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-user-select: none;
@@ -1956,7 +2593,7 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1992,10 +2629,7 @@ input + .c1 {
 }
 
 .c6 > button {
-  background-color: #FFFFFF;
-  border: none;
   height: var(--size-2x);
-  padding: 0;
   width: var(--size-2x);
 }
 
@@ -2003,19 +2637,22 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
+.c9 {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8 {
+.c9:focus {
+  z-index: 10;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c9 {
+.c11 {
   height: 2rem;
   width: 5rem;
 }
@@ -2036,8 +2673,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -2047,12 +2685,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -2060,28 +2712,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--keyboard-selected:focus {
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -2102,33 +2750,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -2140,7 +2768,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -2160,48 +2788,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c15 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -2215,22 +2884,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c15:hover {
+.c17:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c15:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c17:disabled,
+.c17:disabled:focus,
+.c17:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c17:focus {
   z-index: 10;
 }
 
-.c15 > svg {
+.c17 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -2303,10 +2979,12 @@ label + .c3 {
                 >
                   <button
                     aria-label="Go to previous month"
-                    class="c7"
+                    class="c7 c8 c9"
                     data-testid="month-previous"
+                    type="button"
                   >
                     <svg
+                      aria-hidden="true"
                       color="currentColor"
                       focusable="false"
                       height="16"
@@ -2314,23 +2992,23 @@ label + .c3 {
                     />
                   </button>
                   <div
-                    class="c8"
+                    class="c10"
                   >
                     <div
-                      class="c9"
+                      class="c11"
                       style="margin-right:8px"
                     >
                       <div
-                        class="c10 c11"
+                        class="c12 c13"
                       >
                         <div
                           aria-controls="uuid2_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
-                          class="c12"
+                          class="c14"
                           data-testid="month-select"
                           id="uuid2"
                           role="combobox"
@@ -2343,13 +3021,13 @@ label + .c3 {
                             value="october"
                           />
                           <span
-                            class="c13"
+                            class="c15"
                           >
                             Oct
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c14"
+                            class="c16"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -2360,19 +3038,19 @@ label + .c3 {
                       </div>
                     </div>
                     <div
-                      class="c9"
+                      class="c11"
                     >
                       <div
-                        class="c10 c11"
+                        class="c12 c13"
                       >
                         <div
                           aria-controls="uuid3_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
-                          class="c12"
+                          class="c14"
                           data-testid="year-select"
                           id="uuid3"
                           role="combobox"
@@ -2385,13 +3063,13 @@ label + .c3 {
                             value="2010"
                           />
                           <span
-                            class="c13"
+                            class="c15"
                           >
                             2010
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c14"
+                            class="c16"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -2404,11 +3082,13 @@ label + .c3 {
                   </div>
                   <button
                     aria-label="Go to next month"
-                    class="c7"
+                    class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
+                    type="button"
                   >
                     <svg
+                      aria-hidden="true"
                       color="currentColor"
                       focusable="false"
                       height="16"
@@ -2959,7 +3639,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c7 c17"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -2976,7 +3656,7 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
-.c16 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3016,46 +3696,85 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   user-select: none;
 }
 
-.c16:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c16:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c16 > svg {
+.c7 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c17 {
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8:hover,
+.c8[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c8:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c18 {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #006296;
 }
 
-.c17:focus {
-  outline: none;
+.c18 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c17:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c18:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c17:hover,
-.c17[aria-expanded='true'] {
+.c18:hover,
+.c18[aria-expanded='true'] {
   background-color: #FFFFFF;
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c17:disabled {
+.c18:disabled {
   background-color: #FFFFFF;
   border-color: #84C6EA;
   color: #84C6EA;
@@ -3091,37 +3810,29 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
 
-.c10 {
+.c12 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c10 input,
-.c10 select,
-.c10 textarea {
+.c12 input,
+.c12 select,
+.c12 textarea {
   border-color: #60666E;
 }
 
-.c10:focus {
-  border-color: #006296;
-}
-
-.c10 > :nth-child(0) {
+.c12 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
-.c11 {
+.c13 {
   position: relative;
 }
 
-.c12 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3134,11 +3845,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -3148,17 +3859,18 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c14:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c13 {
+.c15 {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-user-select: none;
@@ -3168,7 +3880,7 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3204,10 +3916,7 @@ input + .c1 {
 }
 
 .c6 > button {
-  background-color: #FFFFFF;
-  border: none;
   height: var(--size-2x);
-  padding: 0;
   width: var(--size-2x);
 }
 
@@ -3215,19 +3924,22 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
+.c9 {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8 {
+.c9:focus {
+  z-index: 10;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c9 {
+.c11 {
   height: 2rem;
   width: 5rem;
 }
@@ -3248,8 +3960,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -3259,12 +3972,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -3272,28 +3999,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--keyboard-selected:focus {
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -3314,33 +4037,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
@@ -3352,7 +4055,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -3372,54 +4075,95 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 6.8rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c15 {
+.c17 {
   clear: both;
   padding-top: var(--spacing-1x);
   text-align: center;
 }
 
-.c18 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -3433,22 +4177,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2x);
 }
 
-.c18:hover {
+.c19:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c18:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c19:disabled,
+.c19:disabled:focus,
+.c19:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c19:focus {
   z-index: 10;
 }
 
-.c18 > svg {
+.c19 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -3521,10 +4272,12 @@ label + .c3 {
                 >
                   <button
                     aria-label="Go to previous month"
-                    class="c7"
+                    class="c7 c8 c9"
                     data-testid="month-previous"
+                    type="button"
                   >
                     <svg
+                      aria-hidden="true"
                       color="currentColor"
                       focusable="false"
                       height="16"
@@ -3532,23 +4285,23 @@ label + .c3 {
                     />
                   </button>
                   <div
-                    class="c8"
+                    class="c10"
                   >
                     <div
-                      class="c9"
+                      class="c11"
                       style="margin-right:8px"
                     >
                       <div
-                        class="c10 c11"
+                        class="c12 c13"
                       >
                         <div
                           aria-controls="uuid2_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
-                          class="c12"
+                          class="c14"
                           data-testid="month-select"
                           id="uuid2"
                           role="combobox"
@@ -3561,13 +4314,13 @@ label + .c3 {
                             value="october"
                           />
                           <span
-                            class="c13"
+                            class="c15"
                           >
                             Oct
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c14"
+                            class="c16"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -3578,19 +4331,19 @@ label + .c3 {
                       </div>
                     </div>
                     <div
-                      class="c9"
+                      class="c11"
                     >
                       <div
-                        class="c10 c11"
+                        class="c12 c13"
                       >
                         <div
                           aria-controls="uuid3_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
-                          class="c12"
+                          class="c14"
                           data-testid="year-select"
                           id="uuid3"
                           role="combobox"
@@ -3603,13 +4356,13 @@ label + .c3 {
                             value="2010"
                           />
                           <span
-                            class="c13"
+                            class="c15"
                           >
                             2010
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c14"
+                            class="c16"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -3622,11 +4375,13 @@ label + .c3 {
                   </div>
                   <button
                     aria-label="Go to next month"
-                    class="c7"
+                    class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
+                    type="button"
                   >
                     <svg
+                      aria-hidden="true"
                       color="currentColor"
                       focusable="false"
                       height="16"
@@ -4168,11 +4923,11 @@ label + .c3 {
               </div>
             </div>
             <div
-              class="c15"
+              class="c17"
             >
               <button
                 aria-label="Choose today's date"
-                class="c16 c17"
+                class="c7 c18"
                 data-testid="today-button"
                 type="button"
               >
@@ -4189,7 +4944,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c18"
+      class="c7 c19"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -4206,6 +4961,100 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (open, mobile) 1`] = `
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-3x);
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8:hover,
+.c8[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c8:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+}
+
+.c8 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -4236,37 +5085,29 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
 
-.c10 {
+.c12 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c10 input,
-.c10 select,
-.c10 textarea {
+.c12 input,
+.c12 select,
+.c12 textarea {
   border-color: #60666E;
 }
 
-.c10:focus {
-  border-color: #006296;
-}
-
-.c10 > :nth-child(0) {
+.c12 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
-.c11 {
+.c13 {
   position: relative;
 }
 
-.c12 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4279,11 +5120,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2halfx);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2halfx);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -4293,17 +5134,18 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-.c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c14:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c13 {
+.c15 {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-user-select: none;
@@ -4313,7 +5155,7 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4349,10 +5191,7 @@ input + .c1 {
 }
 
 .c6 > button {
-  background-color: #FFFFFF;
-  border: none;
   height: var(--size-2x);
-  padding: 0;
   width: var(--size-2x);
 }
 
@@ -4360,19 +5199,22 @@ input + .c1 {
   outline: none;
 }
 
-.c7:focus {
+.c9 {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8 {
+.c9:focus {
+  z-index: 10;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c9 {
+.c11 {
   height: 2.5rem;
   width: 5.5rem;
 }
@@ -4393,8 +5235,9 @@ input + .c1 {
 }
 
 .c4 .react-datepicker {
+  background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
@@ -4404,12 +5247,26 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day {
+  background-color: transparent;
   border: 1px solid transparent;
+  border-radius: 50%;
   box-sizing: border-box;
+  color: #000000;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
   width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4 .react-datepicker__day:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4 .react-datepicker__day:hover {
@@ -4417,30 +5274,24 @@ input + .c1 {
   border-radius: 50%;
 }
 
-.c4 .react-datepicker__day:focus {
-  outline: none;
-}
-
 .c4 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c4 .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
+.c4 .react-datepicker__day--selected {
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #000000;
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today {
+  color: #003A5A;
+  font-weight: var(--font-semi-bold);
 }
 
-.c4 .react-datepicker__day--keyboard-selected:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__day-names {
@@ -4461,33 +5312,13 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c4 .react-datepicker__day--selected {
-  background-color: #006296;
-  border-radius: 50%;
-}
-
-.c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .react-datepicker__day--selected:hover {
-  color: #000000;
-}
-
-.c4 .react-datepicker__day--today {
-  color: #006296;
-  font-weight: var(--font-normal);
-}
-
-.c4 .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  color: #003A5A;
 }
 
 .c4 .react-datepicker__header {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: none;
   margin-bottom: var(--spacing-1x);
   padding: 0;
@@ -4499,7 +5330,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #FFFFFF;
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -4519,48 +5350,89 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  border-right: 0;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #000000;
   font-family: inherit;
   font-size: 1rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
   width: 7rem;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #60666E;
+}
+
+.c5.datePickerInput:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #DBDEE1;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:disabled,
+.c5.datePickerInput:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c5.datePickerInput:focus {
-  border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
-}
-
-.c15 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
@@ -4574,22 +5446,29 @@ label + .c3 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 0 var(--spacing-1x);
   width: var(--size-2halfx);
 }
 
-.c15:hover {
+.c17:hover {
   background-color: #DBDEE1;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
-.c15:focus {
-  border: 1px solid #006296;
-  border-left: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: none;
+.c17:disabled,
+.c17:disabled:focus,
+.c17:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c17:focus {
   z-index: 10;
 }
 
-.c15 > svg {
+.c17 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -4658,34 +5537,36 @@ label + .c3 {
                   >
                     <button
                       aria-label="Go to previous month"
-                      class="c7"
+                      class="c7 c8 c9"
                       data-testid="month-previous"
+                      type="button"
                     >
                       <svg
+                        aria-hidden="true"
                         color="currentColor"
                         focusable="false"
-                        height="26"
-                        width="26"
+                        height="24"
+                        width="24"
                       />
                     </button>
                     <div
-                      class="c8"
+                      class="c10"
                     >
                       <div
-                        class="c9"
+                        class="c11"
                         style="margin-right:8px"
                       >
                         <div
-                          class="c10 c11"
+                          class="c12 c13"
                         >
                           <div
                             aria-controls="uuid2_listbox"
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a month"
-                            aria-labelledby="uuid2_label"
+                            aria-labelledby="uuid2_label uuid2_listbox_october_label"
                             aria-required="false"
-                            class="c12"
+                            class="c14"
                             data-testid="month-select"
                             id="uuid2"
                             role="combobox"
@@ -4698,13 +5579,13 @@ label + .c3 {
                               value="october"
                             />
                             <span
-                              class="c13"
+                              class="c15"
                             >
                               Oct
                             </span>
                             <svg
                               aria-hidden="true"
-                              class="c14"
+                              class="c16"
                               color="currentColor"
                               data-testid="arrow"
                               focusable="false"
@@ -4715,19 +5596,19 @@ label + .c3 {
                         </div>
                       </div>
                       <div
-                        class="c9"
+                        class="c11"
                       >
                         <div
-                          class="c10 c11"
+                          class="c12 c13"
                         >
                           <div
                             aria-controls="uuid3_listbox"
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a year"
-                            aria-labelledby="uuid3_label"
+                            aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                             aria-required="false"
-                            class="c12"
+                            class="c14"
                             data-testid="year-select"
                             id="uuid3"
                             role="combobox"
@@ -4740,13 +5621,13 @@ label + .c3 {
                               value="2010"
                             />
                             <span
-                              class="c13"
+                              class="c15"
                             >
                               2010
                             </span>
                             <svg
                               aria-hidden="true"
-                              class="c14"
+                              class="c16"
                               color="currentColor"
                               data-testid="arrow"
                               focusable="false"
@@ -4759,11 +5640,13 @@ label + .c3 {
                     </div>
                     <button
                       aria-label="Go to next month"
-                      class="c7"
+                      class="c7 c8 c9"
                       data-testid="month-next"
                       disabled=""
+                      type="button"
                     >
                       <svg
+                        aria-hidden="true"
                         color="currentColor"
                         focusable="false"
                         height="24"
@@ -5315,7 +6198,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c7 c17"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
