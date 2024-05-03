@@ -1,30 +1,30 @@
 import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
-import * as ToggleTag  from './toggle-tag.stories';
+import * as ToggleTag  from './tag-toggle.stories';
 
 
 <Meta of={ToggleTag} />
 
-# Tag
+# Tag (Toggle)
     1. [Definition](#definition)
     2. [Usage](#usage)
     3. [Variants](#variants)
     4. [Properties](#properties)
 
 ## Definition
-Clickable tags are generally used for quick filters [1].
-- Write these tags with nouns that describe the category to **include** in the results. Avoid negative phrases like « Exclude configured » [1].
+Tag (Toggle) allows users to perform small actions like selecting, and filtering [2]. 
 <Canvas of={ToggleTag.Default} />
 
 ## Usage
-
 ### When to use 
-...
+- Use select options [2]. 
+- Use to quickly filter data.
 
 ### When not to use 
-...
+- Do not use to display a status, use a Lozenge instead.
+- Do not use to display notifications, use a badge instead.
+- Do not use to display long text or long descriptions.
 
 ## Variants
-
 ### Default
 <Canvas of={ToggleTag.Default} />
 
@@ -33,3 +33,4 @@ Clickable tags are generally used for quick filters [1].
 
 ## References
 1. [https://m3.material.io/components/chips/guidelines](https://m3.material.io/components/chips/guidelines)
+2. [https://blog.prototypr.io/design-guide-classifying-items-db5b121985d](https://blog.prototypr.io/design-guide-classifying-items-db5b121985d)

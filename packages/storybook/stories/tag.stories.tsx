@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const TagMeta: Meta<typeof Tag> = {
     component: Tag,
-    title: 'Components/Tags/Tag',
+    title: 'Components/Tag',
     args: {
         value: {
             label: 'Tag',
@@ -61,27 +61,6 @@ export const Default: Story = {
     ...TagMeta,
 };
 
-export const Small: Story = {
-    ...Default,
-    args: {
-        size: 'small',
-    },
-};
-
-export const Medium: Story = {
-    ...Default,
-    args: {
-        size: 'medium',
-    },
-};
-
-export const WithIcons: Story = {
-    ...Default,
-    args: {
-        iconName: 'copy',
-    },
-};
-
 export const Removable: Story = {
     ...Default,
     args: {
@@ -101,9 +80,3 @@ export const Removable: Story = {
     },
 };
 
-export const Colored: Story = {
-    ...Default,
-    args: {
-        color: 'decorative-01',
-    },
-};

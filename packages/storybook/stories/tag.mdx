@@ -12,7 +12,7 @@ import * as TagStories  from './tag.stories';
     4. [Properties](#properties)
 
 ## Definition
-Tags are used to display categories or properties [1] AND to perform small actions like selecting, and filtering [4]. 
+Tags allow users to quickly identify categories or properties [1].
 <Canvas of={TagStories.Default} />
 
 ## Usage
@@ -20,9 +20,7 @@ Tags are used to display categories or properties [1] AND to perform small actio
 ### When to use 
 - Use to label, organize, or categorize objects [2].
 - Use to display counts [2].
-- Use as a method of showing filtered data [3].
-- Use to quickly filter data.
-- Use to display more information, as a toggle-tip.
+- Use to display selected filters.
 
 ### When not to use 
 - Do not use to display a status, use a Lozenge instead.
@@ -38,9 +36,6 @@ Default tags are the ones used to label and categorize objects.
 ### Removable
 Removable tags are often used to display selected filters or user inputs. 
 <Canvas of={TagStories.Removable} />
-
-### Expandable
-Coming soon!
 
 ## Properties
 <ArgTypes of={Tag} />
