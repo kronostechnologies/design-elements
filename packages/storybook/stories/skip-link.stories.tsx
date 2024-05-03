@@ -1,11 +1,6 @@
 import { SkipLink } from '@equisoft/design-elements-react';
-import { VoidFunctionComponent } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
-
-export default {
-    title: 'Components/Skip Link',
-    component: SkipLink,
-};
 
 const Navigation = styled.nav`
     align-items: center;
@@ -28,14 +23,34 @@ const Main = styled.main`
     width: 100%;
 `;
 
-export const Default: VoidFunctionComponent = () => (
-    <>
-        <SkipLink href="#main" />
-        <Navigation>
-            <p tabIndex={0}>Navigation</p>
-        </Navigation>
-        <Main id="main">
-            <p tabIndex={0}>Main content</p>
-        </Main>
-    </>
-);
+const SkipLinkMeta: Meta<typeof SkipLink> = {
+    title: 'Components/Skip Link',
+    component: SkipLink,
+    argTypes: {
+        onClick: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <>
+            <SkipLink
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...args}
+                href="#main"
+            />
+            <Navigation>
+                <p tabIndex={0}>Navigation</p>
+            </Navigation>
+            <Main id="main">
+                <p tabIndex={0}>Main content</p>
+            </Main>
+        </>
+    ),
+};
+
+export default SkipLinkMeta;
+type Story = StoryObj<typeof SkipLink>;
+
+export const Default: Story = {
+    ...SkipLinkMeta,
+};
