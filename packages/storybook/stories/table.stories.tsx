@@ -1,5 +1,5 @@
 import { ReactElement, useMemo, useRef, useState } from 'react';
-import { Button, Pagination, Table, TableColumn, TableRow, TextInput, Tooltip } from '@equisoft/design-elements-react';
+import { Button, Pagination, Table, TableColumn, TableData, TextInput, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
@@ -17,7 +17,7 @@ interface Data {
 }
 
 export const Normal: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -32,7 +32,7 @@ export const Normal: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -69,7 +69,7 @@ const StyledTable = styled(
 `;
 
 export const WithColumnClassnames: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -87,7 +87,7 @@ export const WithColumnClassnames: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -116,7 +116,7 @@ interface FooterData {
 }
 
 export const WithFooter: Story = () => {
-    const data: TableRow<FooterData>[] = [
+    const data: TableData<FooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -146,7 +146,7 @@ export const WithFooter: Story = () => {
     };
 
     // Calculate the total sum of 'numbers'
-    const columns: TableColumn<FooterData> = [
+    const columns: TableColumn<FooterData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -172,7 +172,7 @@ export const WithFooter: Story = () => {
 };
 
 export const ErrorRows: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -187,7 +187,7 @@ export const ErrorRows: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -212,7 +212,7 @@ export const ErrorRows: Story = () => {
 };
 
 export const Striped: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -227,7 +227,7 @@ export const Striped: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -250,7 +250,7 @@ export const Striped: Story = () => {
 };
 
 export const RowNumbers: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -265,7 +265,7 @@ export const RowNumbers: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -288,7 +288,7 @@ export const RowNumbers: Story = () => {
 };
 
 export const SmallRows: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -303,7 +303,7 @@ export const SmallRows: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -333,7 +333,7 @@ export const RowClickCallback: Story = () => {
         href: string;
     }
 
-    const columns: TableColumn<DataWithHref> = [
+    const columns: TableColumn<DataWithHref>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -348,7 +348,7 @@ export const RowClickCallback: Story = () => {
         },
     ];
 
-    const data: TableRow<DataWithHref>[] = [
+    const data: TableData<DataWithHref>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -376,7 +376,7 @@ export const RowClickCallback: Story = () => {
 };
 
 export const CustomTextAlignment: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -393,7 +393,7 @@ export const CustomTextAlignment: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'Hello',
             column2: 'World',
@@ -454,7 +454,7 @@ export const CustomColumns: Story = () => {
         },
     ];
 
-    const columns: TableColumn<ComplexData> = [
+    const columns: TableColumn<ComplexData>[] = [
         {
             header: 'Category',
             accessorKey: 'category',
@@ -470,7 +470,7 @@ export const CustomColumns: Story = () => {
     ];
 
     return (
-        <Table<ComplexData> columns={columns} data={data} />
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -481,7 +481,7 @@ export const SortableRows: Story = () => {
         column3: number;
     }
 
-    const columns: TableColumn<SortableData> = [
+    const columns: TableColumn<SortableData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -498,7 +498,7 @@ export const SortableRows: Story = () => {
         },
     ];
 
-    const data: TableRow<SortableData>[] = [
+    const data: TableData<SortableData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -511,7 +511,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
+        <Table columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
     );
 };
 
@@ -522,7 +522,7 @@ export const SelectableRows: Story = () => {
         column3: number;
     }
 
-    const columns: TableColumn<SelectableData> = [
+    const columns: TableColumn<SelectableData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -537,7 +537,7 @@ export const SelectableRows: Story = () => {
         },
     ];
 
-    const data: TableRow<SelectableData>[] = [
+    const data: TableData<SelectableData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -550,7 +550,140 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+    );
+};
+
+export const ExpandableSubrowsMultiple: Story = () => {
+    interface ExpandableData {
+        id: string;
+        name: string;
+    }
+
+    const columns: TableColumn<ExpandableData>[] = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableData<ExpandableData>[] = [
+        {
+            id: '1',
+            name: 'AAA',
+            subRows: [
+                { id: '1.A', name: 'AAA-1' },
+                { id: '1.B', name: 'AAA-2' },
+            ],
+        },
+        {
+            id: '2',
+            name: 'BBB',
+            subRows: [
+                { id: '2.A', name: 'BBB-1' },
+                { id: '2.B', name: 'BBB-2' },
+            ],
+        },
+    ];
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            expandableRows='multiple'
+        />
+    );
+};
+
+export const ExpandableSubrowsSingle: Story = () => {
+    interface ExpandableData {
+        id: string;
+        name: string;
+    }
+
+    const columns: TableColumn<ExpandableData>[] = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableData<ExpandableData>[] = [
+        {
+            id: '1',
+            name: 'AAA',
+            subRows: [
+                { id: '1.1', name: 'AAA-1' },
+                { id: '1.2', name: 'AAA-2' },
+            ],
+        },
+        {
+            id: '2',
+            name: 'BBB',
+            subRows: [
+                { id: '2.1', name: 'BBB-1' },
+                { id: '2.2', name: 'BBB-2' },
+            ],
+        },
+    ];
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            expandableRows='single'
+        />
+    );
+};
+
+export const ExpandableSubContent: Story = () => {
+    interface ExpandableData {
+        id: string;
+        name: string;
+    }
+
+    const columns: TableColumn<ExpandableData>[] = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableData<ExpandableData>[] = [
+        {
+            id: '1',
+            name: 'AAA',
+            subContent: 'Sub content in plain text',
+        },
+        {
+            id: '2',
+            name: 'BBB',
+            subContent: (
+                <>
+                    Sub content with HTML
+                    <br />
+                    <b>BBB</b>
+                </>
+            ),
+        },
+    ];
+
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            expandableRows='single'
+        />
     );
 };
 
@@ -569,7 +702,7 @@ interface StickyData {
     column12: string;
     column13: string;
     column14: string;
-    column15: string,
+    column15: string;
 }
 
 const ScrollableWrap = styled.div`
@@ -578,7 +711,7 @@ const ScrollableWrap = styled.div`
 `;
 
 export const Sticky: Story = () => {
-    const columns: TableColumn<StickyData> = [
+    const columns: TableColumn<StickyData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -643,7 +776,7 @@ export const Sticky: Story = () => {
         },
     ];
 
-    const data: TableRow<StickyData>[] = [
+    const data: TableData<StickyData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -815,7 +948,7 @@ interface StickyHeaderFooterData {
 }
 
 export const StickyFooter: Story = () => {
-    const columns: TableColumn<StickyHeaderFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -838,7 +971,7 @@ export const StickyFooter: Story = () => {
         },
     ];
 
-    const data: TableRow<StickyHeaderFooterData>[] = [
+    const data: TableData<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -903,7 +1036,7 @@ export const StickyFooter: Story = () => {
 };
 
 export const StickyHeaderAndFooter: Story = () => {
-    const columns: TableColumn<StickyHeaderFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -926,7 +1059,7 @@ export const StickyHeaderAndFooter: Story = () => {
         },
     ];
 
-    const data: TableRow<StickyHeaderFooterData>[] = [
+    const data: TableData<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -1001,7 +1134,7 @@ const StyledTableWithBackground = styled(Table<StickyHeaderFooterData>)`
 `;
 
 export const WithBackgroundColor: Story = () => {
-    const columns: TableColumn<StickyHeaderFooterData> = [
+    const columns: TableColumn<StickyHeaderFooterData>[] = [
         {
             header: 'Column 1',
             accessorKey: 'column1',
@@ -1024,7 +1157,7 @@ export const WithBackgroundColor: Story = () => {
         },
     ];
 
-    const data: TableRow<StickyHeaderFooterData>[] = [
+    const data: TableData<StickyHeaderFooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -1096,7 +1229,7 @@ export const WithBackgroundColor: Story = () => {
 };
 
 export const HeaderAriaLabel: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<Data>[] = [
         {
             header: 'Column with text',
             headerAriaLabel: '',
@@ -1114,7 +1247,7 @@ export const HeaderAriaLabel: Story = () => {
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableData<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -1126,6 +1259,50 @@ export const HeaderAriaLabel: Story = () => {
             column3: 'b',
         },
     ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
+export const GroupedHeaders: Story = () => {
+    const columns: TableColumn<Data>[] = [
+        {
+            header: 'Group 1',
+            columns: [
+                {
+                    header: 'Column 1',
+                    accessorKey: 'column1',
+                },
+                {
+                    header: 'Column 2',
+                    accessorKey: 'column2',
+                },
+            ],
+        },
+        {
+            header: 'Group 2',
+            columns: [
+                {
+                    header: 'Column 3',
+                    accessorKey: 'column3',
+                },
+            ],
+        },
+    ];
+
+    const data: TableData<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+    ];
+
     return (
         <Table columns={columns} data={data} />
     );
@@ -1166,7 +1343,7 @@ export const Optimization: Story = () => {
     const allowEditingRef = useRef<boolean>();
     allowEditingRef.current = allowEditing;
 
-    const columns: TableColumn<OptimizationData> = useMemo(() => [
+    const columns: TableColumn<OptimizationData>[] = useMemo(() => [
         {
             header: 'ID',
             accessorKey: 'id',
@@ -1214,7 +1391,7 @@ interface TablePaginationData {
     country: string;
 }
 
-function makeData(): TableRow<TablePaginationData>[] {
+function makeData(): TableData<TablePaginationData>[] {
     const countries = ['Canada', 'United States', 'France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Japan'];
     return [...Array(35).keys()].map((i) => ({
         id: i + 1,
@@ -1243,10 +1420,10 @@ export const TableWithPagination: Story = () => {
 
     const ITEMS_PER_PAGE = 10;
 
-    const [data, setData] = useState<TableRow<TablePaginationData>[]>(makeData());
+    const [data, setData] = useState<TableData<TablePaginationData>[]>(makeData());
     const [currentPage, setCurrentPage] = useState(1);
 
-    const columns: TableColumn<TablePaginationData> = useMemo(() => [
+    const columns: TableColumn<TablePaginationData>[] = useMemo(() => [
         {
             header: 'ID',
             accessorKey: 'id',

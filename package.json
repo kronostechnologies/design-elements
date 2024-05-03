@@ -11,8 +11,8 @@
   },
   "devDependencies": {
     "@equisoft/stylelint-config": "^4.0.0",
-    "@types/eslint": "^8.37.0",
-    "@types/yargs": "^17.0.24",
+    "@types/eslint": "^8.56.10",
+    "@types/yargs": "^17.0.32",
     "conventional-changelog-cli": "^4.0.0",
     "conventional-changelog-conventionalcommits": "^7.0.0",
     "eslint": "^8.39.0",
