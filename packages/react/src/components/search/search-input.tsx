@@ -63,7 +63,7 @@ interface InputProps {
 
 const Input = styled.input<InputProps>`
     /* Must be the first rule */
-    ${({ theme }) => inputsStyle(theme)}
+    ${inputsStyle};
 
     border-radius: ${({ hasButton }) => (hasButton ? 'var(--border-radius) 0 0 var(--border-radius)' : '')};
     border-right: ${({ hasButton }) => (hasButton ? '0' : '')};

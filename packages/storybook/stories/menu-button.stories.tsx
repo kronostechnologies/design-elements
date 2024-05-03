@@ -89,6 +89,11 @@ const optionsWithIcons: MenuButtonProps['options'] = [
         iconName: 'settings',
         onClick: () => console.info('Option 3 clicked'),
     },
+    {
+        label: 'Option 4',
+        iconName: 'menu',
+        disabled: true,
+    },
 ];
 
 const optionsWithIconsAndSubmenu: MenuButtonProps['options'] = [
