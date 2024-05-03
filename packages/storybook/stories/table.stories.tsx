@@ -480,7 +480,6 @@ export const SortableRows: Story = () => {
         column2: string;
         column3: number;
         column4: string;
-        [key: string]: string | number
     }
 
     const columns: TableColumn<SortableData>[] = [
@@ -502,9 +501,9 @@ export const SortableRows: Story = () => {
             header: 'Custom sort by length',
             accessorKey: 'column4',
             sortable: true,
-            sortingFn: (rowA, rowB, columnId: string) => {
-                const a = rowA.original[columnId] as string;
-                const b = rowB.original[columnId] as string;
+            sortingFn: (rowA, rowB) => {
+                const a = rowA.original.column4;
+                const b = rowB.original.column4;
 
                 if (a.length === b.length) {
                     return 0;
