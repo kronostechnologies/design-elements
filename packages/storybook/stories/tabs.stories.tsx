@@ -70,6 +70,9 @@ const TabsMeta: Meta<typeof Tabs> = {
     title: 'Components/Tabs',
     component: Tabs,
     parameters: rawCodeParameters,
+    argTypes: {
+        tabs: { control: { type: null } },
+    },
     render: (args) => (
         <Tabs
             // eslint-disable-next-line react/jsx-props-no-spreading
