@@ -11,25 +11,26 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    background: ${({ theme }) => theme.component['button-search-background-color']};
-    border-color: ${({ theme }) => theme.component['button-search-border-color']};
-    color: ${({ theme }) => theme.component['button-search-text-color']};
+    background: ${({ theme }) => theme.component['button-input-background-color']};
+    border-color: ${({ theme }) => theme.component['button-input-border-color']};
+    color: ${({ theme }) => theme.component['button-input-text-color']};
     height: 2rem;
     padding: 0 var(--spacing-1x);
     width: 2rem;
 
     &:hover {
-        background-color: ${({ theme }) => theme.component['button-search-hover-background-color']};
-        color: ${({ theme }) => theme.component['button-search-hover-text-color']};
+        background-color: ${({ theme }) => theme.component['button-input-hover-background-color']};
+        border-color: ${({ theme }) => theme.component['button-input-hover-border-color']};
+        color: ${({ theme }) => theme.component['button-input-hover-text-color']};
     }
 
     &:disabled {
         &,
         &:focus,
         &:hover {
-            background-color: ${({ theme }) => theme.component['button-search-disabled-background-color']};
-            border-color: ${({ theme }) => theme.component['button-search-disabled-border-color']};
-            color: ${({ theme }) => theme.component['button-search-disabled-text-color']};
+            background-color: ${({ theme }) => theme.component['button-input-disabled-background-color']};
+            border-color: ${({ theme }) => theme.component['button-input-disabled-border-color']};
+            color: ${({ theme }) => theme.component['button-input-disabled-text-color']};
         }
     }
 `;
