@@ -17,6 +17,7 @@ import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
+import { focus } from '../../utils/css-state';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
@@ -26,12 +27,11 @@ function getMaxHeight(numberOfVisibleItems: number): string {
 }
 
 const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.component['menu-background-color']};
 
-    /* TODO update with next thematization */
-    border: 1px solid #878f9a;
+    border: 1px solid ${({ theme }) => theme.component['menu-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-box-shadow-color']};
     box-sizing: border-box;
     flex-direction: column;
     margin: 0;
@@ -49,12 +49,11 @@ interface SubMenuProps {
 }
 
 const SubMenu = styled.div<SubMenuProps>`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.component['menu-submenu-background-color']};
 
-    /* TODO update with next thematization */
-    border: 1px solid #878f9a;
+    border: 1px solid ${({ theme }) => theme.component['menu-submenu-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-submenu-box-shadow-color']};
     flex-direction: column;
     left: ${({ left }) => left}px !important;
     margin: 0;
@@ -76,7 +75,7 @@ interface ButtonProps {
 
 const Button = styled.button<ButtonProps>`
     align-items: center;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.component['menu-item-text-color']};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     gap: var(--spacing-1x);
@@ -88,26 +87,31 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     width: 100%;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.component['menu-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['menu-item-hover-text-color']};
     }
 
     &[disabled],
     &[disabled] * {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         cursor: default;
-        fill: ${({ theme }) => theme.greys['mid-grey']};
+        fill: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         pointer-events: none;
     }
 `;
 
+const StyledIcon = styled(Icon)`
+    color: ${({ theme }) => theme.component['menu-item-icon-color']};
+    &:hover {
+        color: ${({ theme }) => theme.component['menu-item-hover-icon-color']};
+    }
+`;
+
 const GroupLabel = styled.span<{ $device: DeviceContextProps }>`
-    color: #60666e; /* TODO: replace by token neutral/65 */
+    color: ${({ theme }) => theme.component['menu-group-text-color']};
     display: block;
     font-size: 0.75rem;
     line-height: 1.25rem;
@@ -365,12 +369,11 @@ export const Menu = forwardRef(({
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
                             {opt.iconName && (
-                                <Icon
+                                <StyledIcon
                                     focusable={false}
                                     aria-hidden
                                     name={opt.iconName}
                                     size="1rem"
-                                    color='#60666E'
                                 />
                             )}
                             <Label>{opt.label}</Label>

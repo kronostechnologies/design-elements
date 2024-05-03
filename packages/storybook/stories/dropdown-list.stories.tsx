@@ -71,7 +71,7 @@ export const WithCallback: Story = () => (
     <DropdownList
         label="Select an option"
         options={provinces}
-        onChange={(option) => console.info(`Label: ${option.label} | Value: ${option.value}`)}
+        onChange={(option: DropdownListOption) => console.info(`Label: ${option.label} | Value: ${option.value}`)}
     />
 );
 WithCallback.parameters = rawCodeParameters;
@@ -143,3 +143,12 @@ export const WithOverflowingText: Story = () => {
 
     return <DropdownList label="Select an option" options={options} defaultValue="option1" />;
 };
+
+export const WithMultiselect: Story = () => (
+    <DropdownList
+        label="Select one or more options"
+        hint="Hint"
+        options={provinces}
+        multiselect
+    />
+);

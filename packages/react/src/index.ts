@@ -1,5 +1,10 @@
+// eslint-disable-next-line no-underscore-dangle, no-var, vars-on-top
+declare global { var __DS_DEV__: boolean; }
+// eslint-disable-next-line no-underscore-dangle
+global.__DS_DEV__ = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
+
 // Buttons
-export { Button } from './components/buttons/button';
+export { Button, ButtonProps } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
 export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
@@ -62,10 +67,16 @@ export { SideDrawer } from './components/side-drawer/side-drawer';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
-export { Table, TableColumn, TableRow } from './components/table/table';
+export { Table } from './components/table/table';
+export { TableColumn, TableData } from './components/table/types';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
-export { Tag, TagProps, TagValue } from './components/tag/tag';
+export {
+    Tag, TagValue, TagColor, TagSize, TagProps,
+} from './components/tag/tag';
+export {
+    ToggleTag, ToggleTagValue, ToggleTagSize, ToggleTagProps,
+} from './components/tag/toggle-tag';
 export { Lozenge } from './components/lozenge/lozenge';
 export { RadioCard } from './components/radio-card-group/radio-card';
 export { RadioCardGroup } from './components/radio-card-group/radio-card-group';

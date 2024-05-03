@@ -1,5 +1,5 @@
 diff --git a/dist/generateDocgenCodeBlock.js b/dist/generateDocgenCodeBlock.js
-index eec1a0abf7d3ef31984c288ae89a353121d4ead8..a19eb1291d0fb78c3c9dd735f99b5e572c9d6626 100644
+index 03477dda70177ba884a3f8b494a0cc8783bf9ca0..2742e82f042bac9a18fcbeeb37ea11f884a78da1 100644
 --- a/dist/generateDocgenCodeBlock.js
 +++ b/dist/generateDocgenCodeBlock.js
 @@ -35,7 +35,7 @@ function insertTsIgnoreBeforeStatement(statement) {
@@ -11,7 +11,7 @@ index eec1a0abf7d3ef31984c288ae89a353121d4ead8..a19eb1291d0fb78c3c9dd735f99b5e57
  }
  /**
   * Set a component prop description.
-@@ -169,7 +169,7 @@ function createPropDefinition(propName, prop, options) {
+@@ -175,7 +175,7 @@ function createPropDefinition(propName, prop, options) {
   */
  function insertDocgenIntoGlobalCollection(d, docgenCollectionName, relativeFilename) {
      return insertTsIgnoreBeforeStatement(typescript_1.default.factory.createIfStatement(typescript_1.default.factory.createBinaryExpression(typescript_1.default.factory.createTypeOfExpression(typescript_1.default.factory.createIdentifier(docgenCollectionName)), typescript_1.default.SyntaxKind.ExclamationEqualsEqualsToken, typescript_1.default.factory.createStringLiteral("undefined")), insertTsIgnoreBeforeStatement(typescript_1.default.factory.createExpressionStatement(typescript_1.default.factory.createBinaryExpression(typescript_1.default.factory.createElementAccessExpression(typescript_1.default.factory.createIdentifier(docgenCollectionName), typescript_1.default.factory.createStringLiteral(`${relativeFilename}#${d.displayName}`)), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
@@ -20,12 +20,12 @@ index eec1a0abf7d3ef31984c288ae89a353121d4ead8..a19eb1291d0fb78c3c9dd735f99b5e57
          typescript_1.default.factory.createPropertyAssignment(typescript_1.default.factory.createIdentifier("name"), typescript_1.default.factory.createStringLiteral(d.displayName)),
          typescript_1.default.factory.createPropertyAssignment(typescript_1.default.factory.createIdentifier("path"), typescript_1.default.factory.createStringLiteral(`${relativeFilename}#${d.displayName}`)),
      ]))))));
-@@ -193,7 +193,7 @@ function setComponentDocGen(d, options) {
+@@ -199,7 +199,7 @@ function setComponentDocGen(d, options) {
      var _a;
      return insertTsIgnoreBeforeStatement(typescript_1.default.factory.createExpressionStatement(typescript_1.default.factory.createBinaryExpression(
      // SimpleComponent.__docgenInfo
 -    typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier(((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
-+    typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier("exports."+(((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName)), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
++        typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier("exports."+(((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName)), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
          // SimpleComponent.__docgenInfo.description
          typescript_1.default.factory.createPropertyAssignment(typescript_1.default.factory.createStringLiteral("description"), typescript_1.default.factory.createStringLiteral(d.description)),
          // SimpleComponent.__docgenInfo.displayName

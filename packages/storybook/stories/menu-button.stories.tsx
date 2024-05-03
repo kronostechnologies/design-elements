@@ -89,6 +89,11 @@ const optionsWithIcons: MenuButtonProps['options'] = [
         iconName: 'settings',
         onClick: () => console.info('Option 3 clicked'),
     },
+    {
+        label: 'Option 4',
+        iconName: 'menu',
+        disabled: true,
+    },
 ];
 
 const optionsWithIconsAndSubmenu: MenuButtonProps['options'] = [
@@ -131,7 +136,7 @@ export const Normal: Story = () => (
         <MenuButton options={options} buttonType="primary" inverted>Button</MenuButton>
         <MenuButton options={options} buttonType="secondary">Button</MenuButton>
         <MenuButton options={options} buttonType="tertiary">Button</MenuButton>
-        <MenuButton options={options} buttonType="destructive">Button</MenuButton>
+        <MenuButton options={options} buttonType="destructive-primary">Button</MenuButton>
     </>
 );
 

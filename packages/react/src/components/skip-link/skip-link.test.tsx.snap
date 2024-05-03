@@ -39,6 +39,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: #FFFFFF;
   color: #006296;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -52,14 +53,15 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -76,7 +78,6 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 }
 
 .c0:focus {
-  background-color: #FFFFFF;
   position: absolute;
 }
 
@@ -127,6 +128,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: #FFFFFF;
   color: #006296;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -140,14 +142,15 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 > svg {
@@ -164,7 +167,6 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
 }
 
 .c0:focus {
-  background-color: #FFFFFF;
   position: absolute;
 }
 

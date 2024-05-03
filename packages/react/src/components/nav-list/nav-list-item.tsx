@@ -11,11 +11,11 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { focus } from '../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { NavListOption } from './nav-list-option';
+import { focus } from '../../utils/css-state';
 
 type DisabledSuffix = '-disabled' | '';
 
@@ -37,7 +37,7 @@ const Label = styled.span`
 
 const iconSize = '16';
 const BaseIcon = styled(Icon).attrs({ size: iconSize })`
-    color: ${({ theme }) => theme.component['nav-list-item-icon-text-color']};
+    color: ${({ theme }) => theme.component['nav-list-item-icon-color']};
     min-width: ${iconSize}px;
 `;
 
@@ -60,17 +60,19 @@ const linkStyles = css<LinkProps>`
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
+    margin: 2px;
     overflow: hidden;
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    ${(props) => focus(props, undefined, undefined, true)};
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     :hover {
         background-color: ${({ theme }) => theme.component['nav-list-item-hover-background-color']};
+        color: ${({ theme }) => theme.component['nav-list-item-text-hover-color']};
 
         ${BaseIcon} {
-            color: ${({ theme }) => theme.component['nav-list-item-icon-hover-text-color']};
+            color: ${({ theme }) => theme.component['nav-list-item-icon-hover-color']};
         }
     }
 

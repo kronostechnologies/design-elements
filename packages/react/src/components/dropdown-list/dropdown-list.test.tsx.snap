@@ -31,18 +31,15 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
 
 .c7 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,17 +74,28 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .c10:hover {
   background-color: #DBDEE1;
+}
+
+.c10::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c12 {
@@ -105,6 +113,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -131,6 +140,7 @@ input + .c2 {
 }
 
 .c8 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -149,11 +159,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -163,14 +173,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5 {
@@ -217,7 +228,7 @@ input + .c2 {
     aria-controls="uuid1_listbox"
     aria-expanded="true"
     aria-invalid="false"
-    aria-labelledby="uuid1_label"
+    aria-labelledby="uuid1_label uuid1_listbox_ab_label"
     aria-required="false"
     class="c4"
     data-testid="textbox"
@@ -261,11 +272,11 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c10"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c11"
@@ -479,18 +490,15 @@ input + .c2 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
 
 .c9 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -525,17 +533,28 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .c12:hover {
   background-color: #DBDEE1;
+}
+
+.c12::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c14 {
@@ -553,6 +572,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -579,6 +599,7 @@ input + .c2 {
 }
 
 .c10 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -596,11 +617,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -610,14 +631,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7 {
@@ -681,7 +703,7 @@ input + .c2 {
     aria-describedby="uuid1_invalid"
     aria-expanded="true"
     aria-invalid="true"
-    aria-labelledby="uuid1_label"
+    aria-labelledby="uuid1_label uuid1_listbox_ab_label"
     aria-required="false"
     class="c6"
     data-testid="textbox"
@@ -725,11 +747,11 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c12"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c13"
@@ -897,18 +919,15 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
 .c5 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -943,16 +962,27 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .c8:hover {
   background-color: #DBDEE1;
+}
+
+.c8::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c10 {
@@ -970,6 +1000,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -995,6 +1026,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c6 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1012,11 +1044,11 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2halfx);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2halfx);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -1026,14 +1058,15 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 {
@@ -1074,7 +1107,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     aria-expanded="true"
     aria-invalid="false"
     aria-label="Select an option"
-    aria-labelledby="uuid1_label"
+    aria-labelledby="uuid1_label uuid1_listbox_ab_label"
     aria-required="false"
     class="c2"
     data-testid="textbox"
@@ -1118,11 +1151,11 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c8"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c9"
@@ -1279,6 +1312,566 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 </div>
 `;
 
+exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c7 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c11 {
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: var(--spacing-1x);
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  border: 1px solid #006296;
+}
+
+.c9 > .c10 {
+  display: none;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8:hover {
+  background-color: #DBDEE1;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c6 {
+  margin-top: var(--spacing-half);
+  position: absolute;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: var(--size-2x);
+  padding: 0 var(--spacing-1x) 0 0;
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <div
+    aria-controls="uuid1_listbox"
+    aria-expanded="true"
+    aria-invalid="false"
+    aria-label="Select an option"
+    aria-labelledby="uuid1_label"
+    aria-required="false"
+    class="c2"
+    data-testid="textbox"
+    id="uuid1"
+    role="combobox"
+    tabindex="0"
+    value=""
+  >
+    <input
+      data-testid="input"
+      type="hidden"
+      value=""
+    />
+    <div
+      class="c3"
+      data-testid="tag-wrapper"
+    />
+    <svg
+      aria-hidden="true"
+      class="c4"
+      color="currentColor"
+      data-testid="arrow"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </div>
+  <div
+    aria-labelledby="uuid1_label"
+    aria-multiselectable="true"
+    class="c5 c6"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c7"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        class="c8"
+        data-testid="listitem-ab"
+        id="uuid1_listbox_ab"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-bc"
+        id="uuid1_listbox_bc"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-mb"
+        id="uuid1_listbox_mb"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-nb"
+        id="uuid1_listbox_nb"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-nl"
+        id="uuid1_listbox_nl"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-nt"
+        id="uuid1_listbox_nt"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-ns"
+        id="uuid1_listbox_ns"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-nu"
+        id="uuid1_listbox_nu"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-on"
+        id="uuid1_listbox_on"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-pe"
+        id="uuid1_listbox_pe"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-qc"
+        id="uuid1_listbox_qc"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-sk"
+        id="uuid1_listbox_sk"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c8"
+        data-testid="listitem-yt"
+        id="uuid1_listbox_yt"
+        role="option"
+      >
+        <span
+          aria-hidden="true"
+          class="c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
+        <span
+          class="c12"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Dropdown list matches the snapshot 1`] = `
 .c3 {
   color: #000000;
@@ -1310,10 +1903,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -1332,8 +1921,9 @@ input + .c2 {
 
 .c8 {
   background-color: #FFFFFF;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1368,17 +1958,28 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -2px;
+  outline-offset: -3px;
 }
 
 .c11:hover {
   background-color: #DBDEE1;
+}
+
+.c11::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
 }
 
 .c13 {
@@ -1396,6 +1997,7 @@ input + .c2 {
   line-height: var(--size-1halfx);
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
   padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1422,6 +2024,7 @@ input + .c2 {
 }
 
 .c9 {
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1439,11 +2042,11 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -1453,14 +2056,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6 {
@@ -1514,7 +2118,7 @@ input + .c2 {
     aria-describedby="uuid1_hint"
     aria-expanded="true"
     aria-invalid="false"
-    aria-labelledby="uuid1_label"
+    aria-labelledby="uuid1_label uuid1_listbox_ab_label"
     aria-required="false"
     class="c5"
     data-testid="textbox"
@@ -1558,11 +2162,11 @@ input + .c2 {
       role="presentation"
     >
       <li
+        aria-selected="true"
         class="c11"
         data-testid="listitem-ab"
         id="uuid1_listbox_ab"
         role="option"
-        selected=""
       >
         <span
           class="c12"
