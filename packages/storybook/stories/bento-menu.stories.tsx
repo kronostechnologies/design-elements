@@ -61,11 +61,11 @@ const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
     component: BentoMenuButton,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
     argTypes: {
-        inverted: {
-            control: {
-                type: 'boolean',
-            },
-        },
+        inverted: { control: { type: 'boolean' } },
+        onMenuVisibilityChanged: { control: { type: null } },
+        externalLinks: { control: { type: null } },
+        productLinks: { control: { type: null } },
+        productGroups: { control: { type: null } },
     },
     render: (args) => (
         <GlobalHeader>
