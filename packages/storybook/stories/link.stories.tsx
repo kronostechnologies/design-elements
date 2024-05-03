@@ -4,15 +4,17 @@ import { NavLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 
 const RouteLinkMeta: Meta<typeof RouteLink> = {
-    title: 'Components/Links/Route Link',
+    title: 'Components/Route Link',
     component: RouteLink,
+    args: {
+        label: 'Route Link',
+        href: '/story1',
+    },
     render: (args) => (
         <RouteLink
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...args}
             routerLink={NavLink}
-            href="/story1"
-            label="Route Link"
         />
     ),
 };
