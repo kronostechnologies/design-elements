@@ -10,9 +10,10 @@ import {
     useCallback,
     useState,
 } from 'react';
-import styled, { css, FlattenSimpleInterpolation, SimpleInterpolation, StyledProps } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Button } from '../buttons/button';
+import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -45,7 +46,7 @@ const Container = styled.section<ContainerProps>`
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
-    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-1halfx)' : 'var(--spacing-1x) var(--spacing-2x)')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-1halfx)' : 'var(--spacing-1halfx) var(--spacing-2x)')};
     position: relative;
 `;
 
@@ -56,45 +57,21 @@ const Content = styled.div<IsMobileProps>`
     justify-content: ${({ $isMobile }) => ($isMobile ? 'unset' : 'center')};
     padding-left: var(--spacing-4x);
     position: relative;
-
-    > svg {
-        flex-shrink: 0;
-        height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-        margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
-        width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-    }
 `;
-
-function getIconPosition(props: IsMobileProps): SimpleInterpolation {
-    if (props.$isMobile) {
-        return css`
-            align-self: flex-start;
-        `;
-    }
-
-    return css`
-        align-self: initial;
-    `;
-}
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
-    ${getIconPosition};
+    align-self: flex-start;
+    flex-shrink: 0;
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    margin: var(--spacing-half) var(--spacing-1halfx) 0 calc(-1 * var(--spacing-4x));
+    width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
-const Text = styled.span`
-    letter-spacing: 0.015rem;
-    margin: 0;
-`;
-
-const Label = styled.strong<IsMobileProps>`
-    display: ${({ $isMobile }) => ($isMobile ? 'block' : 'inline')};
+const Title = styled.strong<IsMobileProps>`
+    display: block;
+    font-size: 1rem;
     font-weight: var(--font-semi-bold);
     margin-bottom: ${({ $isMobile }) => $isMobile && 'var(--spacing-half)'};
-    margin-right: ${({ $isMobile }) => !$isMobile && 'var(--spacing-1x)'};
-`;
-
-const Message = styled.span`
-    display: inline-block;
 `;
 
 const getIconName = (bannerType: GlobalBannerType): IconName => {
@@ -188,6 +165,7 @@ interface GlobalBannerProps {
     secondaryActionButton?: ActionButton;
     className?: string;
     children: ReactNode;
+    id?: string;
     hidden?: boolean;
     /**
      * Adds an ignore-button. Note that alert type banners are not dismissable.
@@ -203,6 +181,7 @@ export const GlobalBanner = forwardRef(({
     children,
     className,
     hidden,
+    id: providedId,
     dismissable = false,
     label,
     onDismiss,
@@ -214,6 +193,8 @@ export const GlobalBanner = forwardRef(({
     const { t } = useTranslation('global-banner');
     const hasDismissButton = type !== 'alert' && dismissable;
     const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
+    const id = useId(providedId);
+    const titleId = `${id}_title`;
 
     const handleDismiss: MouseEventHandler = useCallback(() => {
         onDismiss?.();
@@ -224,6 +205,7 @@ export const GlobalBanner = forwardRef(({
         <Container
             ref={ref}
             aria-atomic="true"
+            aria-labelledby={titleId}
             aria-live="polite"
             className={className}
             data-testid="container"
@@ -240,10 +222,10 @@ export const GlobalBanner = forwardRef(({
                     role="img"
                     size={isMobile ? '24' : '16'}
                 />
-                <Text>
-                    <Label $isMobile={isMobile}>{label}</Label>
-                    <Message>{children}</Message>
-                </Text>
+                <span>
+                    <Title $isMobile={isMobile} id={titleId}>{label}</Title>
+                    {children}
+                </span>
             </Content>
 
             {hasButtons && (
