@@ -520,8 +520,7 @@ export const SortableRows: Story = () => {
             header: 'Column 4',
             accessorKey: 'column4',
             sortable: true,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            sortingFn: (rowA: any, rowB: any, columnId: string) => compareEmojiNumber(
+            sortingFn: (rowA, rowB, columnId: string) => compareEmojiNumber(
                 rowA.getValue(columnId) as EmojiNumber,
                 rowB.getValue(columnId) as EmojiNumber,
             ),
