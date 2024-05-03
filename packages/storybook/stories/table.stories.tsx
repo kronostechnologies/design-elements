@@ -475,30 +475,12 @@ export const CustomColumns: Story = () => {
 };
 
 export const SortableRows: Story = () => {
-    type EmojiNumber = '1️⃣' | '2️⃣' | '3️⃣';
-
-    enum EmojiNumberMap {
-        '1️⃣' = 1,
-        '2️⃣' = 2,
-        '3️⃣' = 3,
-    }
-
-    function compareEmojiNumber(rowAValue: EmojiNumber, rowBValue: EmojiNumber): number {
-        const rowAValueNumber: number = EmojiNumberMap[rowAValue];
-        const rowBValueNumber: number = EmojiNumberMap[rowBValue];
-
-        if (rowAValueNumber === rowBValueNumber) {
-            return 0;
-        }
-
-        return rowAValueNumber > rowBValueNumber ? 1 : -1;
-    }
-
     interface SortableData {
         column1: string;
         column2: string;
         column3: number;
-        column4: EmojiNumber;
+        column4: string;
+        [key: string]: string | number
     }
 
     const columns: TableColumn<SortableData>[] = [
@@ -517,13 +499,19 @@ export const SortableRows: Story = () => {
             sortable: true,
         },
         {
-            header: 'Column 4',
+            header: 'Custom sort by length',
             accessorKey: 'column4',
             sortable: true,
-            sortingFn: (rowA, rowB, columnId: string) => compareEmojiNumber(
-                rowA.getValue(columnId) as EmojiNumber,
-                rowB.getValue(columnId) as EmojiNumber,
-            ),
+            sortingFn: (rowA, rowB, columnId: string) => {
+                const a = rowA.original[columnId] as string;
+                const b = rowB.original[columnId] as string;
+
+                if (a.length === b.length) {
+                    return 0;
+                }
+
+                return a.length > b.length ? 1 : -1;
+            },
         },
     ];
 
@@ -532,13 +520,13 @@ export const SortableRows: Story = () => {
             column1: 'a',
             column2: 'a',
             column3: 10,
-            column4: '1️⃣',
+            column4: 'short',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 20,
-            column4: '3️⃣',
+            column4: 'loooooong',
         },
     ];
     return (
