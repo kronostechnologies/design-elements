@@ -1,33 +1,50 @@
 import { Pagination } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const PaginationMeta: Meta<typeof Pagination> = {
     title: 'Components/Pagination',
     component: Pagination,
     decorators: [DeviceContextDecorator],
+    args: {
+        resultsPerPage: 10,
+        numberOfResults: 30,
+    },
+    argTypes: {
+        onPageChange: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <Pagination
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        />
+    ),
 };
 
-export const Default: Story = () => (
-    <>
-        <Pagination resultsPerPage={10} numberOfResults={30} />
-        <Pagination resultsPerPage={50} numberOfResults={100} />
-        <Pagination resultsPerPage={75} numberOfResults={1530} />
-    </>
-);
+export default PaginationMeta;
+type Story = StoryObj<typeof Pagination>;
 
-export const ControlledPagination: Story = () => {
-    const [currentPage, setCurrentPage] = useState(18);
+export const Default: Story = {
+    ...PaginationMeta,
+};
 
-    return (
-        <Pagination
-            resultsPerPage={5}
-            numberOfResults={100}
-            onPageChange={setCurrentPage}
-            activePage={currentPage}
-        />
-    );
+export const ControlledPagination: Story = {
+    ...PaginationMeta,
+    render: () => {
+        const [currentPage, setCurrentPage] = useState(18);
+
+        return (
+            <Pagination
+                resultsPerPage={5}
+                numberOfResults={100}
+                onPageChange={setCurrentPage}
+                activePage={currentPage}
+            />
+        );
+    },
 };
 ControlledPagination.parameters = rawCodeParameters;
