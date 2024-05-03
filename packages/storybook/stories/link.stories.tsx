@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 
 const RouteLinkMeta: Meta<typeof RouteLink> = {
-    title: 'Components/Route Link',
+    title: 'Components/Link',
     component: RouteLink,
     args: {
         label: 'Route Link',
