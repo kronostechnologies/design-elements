@@ -15,5 +15,5 @@ export type CardTokensMap = {
 export const defaultCardTokens : CardTokensMap = {
     'card-background-color': 'color-white',
     'card-border-color': 'color-neutral-05',
-    'card-box-shadow-color': 'transparent-20',
+    'card-box-shadow-color': 'transparent-dark-20',
 };
