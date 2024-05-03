@@ -1,5 +1,5 @@
 import { MenuButton } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 
@@ -9,12 +9,6 @@ const StyledDiv = styled.div`
     justify-content: center;
     width: 100%;
 `;
-
-export default {
-    title: 'Components/Menu Button',
-    component: MenuButton,
-    decorators: [decorateWith(StyledDiv)],
-};
 
 const options = [
     {
@@ -31,32 +25,73 @@ const options = [
     },
 ];
 
-export const Primary: Story = () => (
-    <>
-        <MenuButton options={options} buttonType="primary">Button</MenuButton>
-    </>
-);
+const MenuButtonMeta: Meta<typeof MenuButton> = {
+    title: 'Components/Menu Button',
+    component: MenuButton,
+    decorators: [decorateWith(StyledDiv)],
+    args: {
+        buttonType: 'primary',
+    },
+    argTypes: {
+        options: {
+            control: { type: null },
+        },
+        onMenuVisibilityChanged: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <MenuButton
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            options={options}
+        >
+            Menu
+        </MenuButton>
+    ),
+};
 
-export const Secondary: Story = () => (
-    <>
-        <MenuButton options={options} buttonType="secondary">Button</MenuButton>
-    </>
-);
+export default MenuButtonMeta;
+type Story = StoryObj<typeof MenuButton>;
 
-export const Tertiary: Story = () => (
-    <>
-        <MenuButton options={options} buttonType="tertiary">Button</MenuButton>
-    </>
-);
+export const Primary: Story = {
+    ...MenuButtonMeta,
+};
 
-export const IconPrimary: Story = () => (
-    <MenuButton iconName="moreVertical" options={options} buttonType="primary" />
-);
+export const Secondary: Story = {
+    ...MenuButtonMeta,
+    args: {
+        buttonType: 'secondary',
+    },
+};
 
-export const IconSecondary: Story = () => (
-    <MenuButton iconName="moreVertical" options={options} buttonType="secondary" />
-);
+export const Tertiary: Story = {
+    ...MenuButtonMeta,
+    args: {
+        buttonType: 'tertiary',
+    },
+};
 
-export const IconTertiary: Story = () => (
-    <MenuButton iconName="moreVertical" options={options} buttonType="tertiary" />
-);
+export const IconPrimary: Story = {
+    ...MenuButtonMeta,
+    args: {
+        iconName: 'moreVertical',
+        buttonType: 'tertiary',
+    },
+};
+
+export const IconSecondary: Story = {
+    ...MenuButtonMeta,
+    args: {
+        iconName: 'moreVertical',
+        buttonType: 'secondary',
+    },
+};
+
+export const IconTertiary: Story = {
+    ...MenuButtonMeta,
+    args: {
+        iconName: 'moreVertical',
+        buttonType: 'tertiary',
+    },
+};
