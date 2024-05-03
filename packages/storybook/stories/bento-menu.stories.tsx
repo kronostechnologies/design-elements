@@ -1,5 +1,5 @@
 import { BentoMenuButton, ExternalItemProps, GlobalHeader, NavItemProps } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
@@ -8,12 +8,6 @@ import { RouterDecorator } from './utils/router-decorator';
 const StyledDiv = styled.div`
     height: 540px;
 `;
-
-export default {
-    title: 'Components/Bento Menu',
-    component: BentoMenuButton,
-    decorators: [RouterDecorator, decorateWith(StyledDiv)],
-};
 
 const products: NavItemProps[] = [
     {
@@ -62,16 +56,39 @@ const resources: ExternalItemProps[] = [
     },
 ];
 
-export const Desktop: Story = () => (
-    <GlobalHeader>
-        <BentoMenuButton data-testid="some-bento-data-testid" productLinks={products} externalLinks={resources} />
-    </GlobalHeader>
-);
+const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
+    title: 'Components/Bento Menu',
+    component: BentoMenuButton,
+    decorators: [RouterDecorator, decorateWith(StyledDiv)],
+    argTypes: {
+        inverted: {
+            control: {
+                type: 'boolean',
+            },
+        },
+    },
+    render: (args) => (
+        <GlobalHeader>
+            <BentoMenuButton
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                data-testid="some-bento-data-testid"
+                productLinks={products}
+                externalLinks={resources}
+            />
+        </GlobalHeader>
+        ),
+};
+
+export default BentoMenuMeta;
+type Story = StoryObj<typeof BentoMenuButton>;
+
+export const Desktop: Story = {
+    decorators: [DesktopDecorator],
+    ...BentoMenuMeta,
+};
 Desktop.decorators = [DesktopDecorator];
 
-export const Mobile: Story = () => (
-    <GlobalHeader>
-        <BentoMenuButton productLinks={products} externalLinks={resources} />
-    </GlobalHeader>
-);
+export const Mobile: Story = {
+    ...BentoMenuMeta,
+};
 Mobile.decorators = [MobileDecorator];
