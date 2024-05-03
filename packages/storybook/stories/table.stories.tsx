@@ -475,10 +475,30 @@ export const CustomColumns: Story = () => {
 };
 
 export const SortableRows: Story = () => {
+    type EmojiNumber = '1️⃣' | '2️⃣' | '3️⃣';
+
+    enum EmojiNumberMap {
+        '1️⃣' = 1,
+        '2️⃣' = 2,
+        '3️⃣' = 3,
+    }
+
+    function compareEmojiNumber(rowAValue: EmojiNumber, rowBValue: EmojiNumber): number {
+        const rowAValueNumber: number = EmojiNumberMap[rowAValue];
+        const rowBValueNumber: number = EmojiNumberMap[rowBValue];
+
+        if (rowAValueNumber === rowBValueNumber) {
+            return 0;
+        }
+
+        return rowAValueNumber > rowBValueNumber ? 1 : -1;
+    }
+
     interface SortableData {
         column1: string;
         column2: string;
         column3: number;
+        column4: EmojiNumber;
     }
 
     const columns: TableColumn<SortableData>[] = [
@@ -496,6 +516,16 @@ export const SortableRows: Story = () => {
             accessorKey: 'column3',
             sortable: true,
         },
+        {
+            header: 'Column 4',
+            accessorKey: 'column4',
+            sortable: true,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            sortingFn: (rowA: any, rowB: any, columnId: string) => compareEmojiNumber(
+                rowA.getValue(columnId) as EmojiNumber,
+                rowB.getValue(columnId) as EmojiNumber,
+            ),
+        },
     ];
 
     const data: TableData<SortableData>[] = [
@@ -503,11 +533,13 @@ export const SortableRows: Story = () => {
             column1: 'a',
             column2: 'a',
             column3: 10,
+            column4: '1️⃣',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 20,
+            column4: '3️⃣',
         },
     ];
     return (
