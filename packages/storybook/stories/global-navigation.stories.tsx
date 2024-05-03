@@ -6,7 +6,7 @@ import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 export default {
-    title: 'Components/Global Navigation',
+    title: 'Deprecated/Global Navigation (deprecated)',
     component: GlobalNavigation,
     decorators: [RouterDecorator],
 };
