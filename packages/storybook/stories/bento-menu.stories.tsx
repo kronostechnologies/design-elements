@@ -57,7 +57,7 @@ const resources: ExternalItemProps[] = [
 ];
 
 const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
-    title: 'Core/Bento Menu',
+    title: 'Components/Bento Menu',
     component: BentoMenuButton,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
     argTypes: {
