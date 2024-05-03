@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbElement } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { RouterDecorator } from './utils/router-decorator';
 
 const routeMap = (length: number): BreadcrumbElement[] => {
@@ -14,12 +14,35 @@ const routeMap = (length: number): BreadcrumbElement[] => {
     return routes;
 };
 
-export default {
+const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
     title: 'Components/Breadcrumb',
     component: Breadcrumb,
-    decorators: [RouterDecorator],
+    argTypes: {
+        history: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <Breadcrumb
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            history={routeMap(5)}
+        />
+        ),
 };
 
-export const Default: Story = () => (
-    <Breadcrumb history={routeMap(5)} />
-);
+export default BreadcrumbMeta;
+type Story = StoryObj<typeof Breadcrumb>;
+
+export const Default: Story = {
+    ...BreadcrumbMeta,
+};
+Default.decorators = [RouterDecorator];
+
+export const WithMany: Story = {
+    ...BreadcrumbMeta,
+    render: () => (
+        <Breadcrumb history={routeMap(15)} />
+    ),
+};
+WithMany.decorators = [RouterDecorator];
