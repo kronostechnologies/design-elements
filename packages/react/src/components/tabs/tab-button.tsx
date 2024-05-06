@@ -42,15 +42,6 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
             }
         }
     `}
-
-    ${({ $selected, theme }) => $selected && css`
-        background: ${theme.greys.white};
-        font-weight: var(--font-semi-bold);
-
-        &::after {
-            background-color: ${theme.component['tab-selected-indicator-color']};
-        }
-    `}
 `;
 
 const StyledButtonIcon = styled(Icon)`
