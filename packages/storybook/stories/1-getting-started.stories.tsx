@@ -3,9 +3,10 @@ import {
     DesignSystem,
     SectionalBanner,
     DropdownList,
-    equisoftTheme,
     DropdownListOption,
+    equisoftTheme,
     ThemeCustomization,
+    buildTheme,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
@@ -19,32 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof DesignSystem>;
 
-const ThemeCustomization1: ThemeCustomization = {
-    ref: {
-        'color-brand-50': '#00874E',
-        'color-brand-20': '#9EDBC1',
-        'color-brand-70': '#0B5E37',
-        'color-brand-05': '#E5F3ED',
-        'color-brand-80': '#00874E',
-        'color-accent-50': '#00874E',
-        'color-accent-20': '#CC9B0B',
-        'color-accent-70': '#3F474C',
-    },
-    alias: {
-        'default-text-color': 'color-brand-05',
-        'alternate-text-color': 'color-brand-20',
-    },
-    component: {
-        'button-primary-background-color': 'color-brand-50',
-        'button-primary-inverted-background-color': 'color-white',
-        'button-primary-border-color': 'color-brand-50',
-        'button-primary-inverted-border-color': 'color-white',
-        'button-primary-text-color': 'color-white',
-        'button-primary-inverted-text-color': 'color-brand-50',
-    },
-};
-
-const ThemeCustomization2: ThemeCustomization = {
+const flowerThemeCustomization: ThemeCustomization = {
     ref: {
         'color-brand-05': '#e9e0f9',
         'color-brand-20': '#ad84ea',
@@ -92,25 +68,23 @@ const ThemeCustomization2: ThemeCustomization = {
     },
 };
 
+const flowerTheme = buildTheme(flowerThemeCustomization);
+
 export const Theming: Story = {
     render() {
         const [theme, setTheme] = useState(equisoftTheme);
-        const [label, setLabel] = useState('Default Equisoft Theme');
+        const [label, setLabel] = useState('Equisoft Theme');
 
         function setCustomTheme(newSelectedTheme: DropdownListOption): void {
             setLabel(newSelectedTheme.label);
             switch (newSelectedTheme.value) {
-                case 'customTheme1':
-                    setTheme(ThemeCustomization1);
-                    break;
-                case 'customTheme2':
-                    setTheme(ThemeCustomization2);
+                case 'flowerTheme':
+                    setTheme(flowerTheme);
                     break;
                 case 'equisoftTheme':
-                    setTheme(equisoftTheme);
-                    break;
                 default:
                     setTheme(equisoftTheme);
+                    break;
             }
         }
 
@@ -125,16 +99,12 @@ export const Theming: Story = {
                                 defaultValue="equisoftTheme"
                                 options={[
                                     {
-                                        label: 'Default Equisoft Theme',
+                                        label: 'Equisoft Theme',
                                         value: 'equisoftTheme',
                                     },
                                     {
-                                        label: 'Custom theme 1',
-                                        value: 'customTheme1',
-                                    },
-                                    {
-                                        label: 'Custom Theme 2',
-                                        value: 'customTheme2',
+                                        label: 'Flower Theme',
+                                        value: 'flowerTheme',
                                     },
                                 ]}
                             />
@@ -158,14 +128,22 @@ export const Theming: Story = {
                             <Button label="Destructive Primary" buttonType="destructive-primary" disabled />
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" disabled />
                         </div>
-                        <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
+                        <div style={{
+                            backgroundColor: theme.component['global-header-background-color'],
+                            padding: '1rem',
+                        }}
+                        >
                             <Button label="Primary" buttonType="primary" inverted />
                             <Button label="Secondary" buttonType="secondary" inverted />
                             <Button label="Tertiary" buttonType="tertiary" inverted />
                             <Button label="Destructive Primary" buttonType="destructive-primary" inverted />
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" inverted />
                         </div>
-                        <div style={{ backgroundColor: '#012639', padding: '1rem' }}>
+                        <div style={{
+                            backgroundColor: theme.component['global-header-background-color'],
+                            padding: '1rem',
+                        }}
+                        >
                             <Button label="Primary" buttonType="primary" inverted disabled />
                             <Button label="Secondary" buttonType="secondary" inverted disabled />
                             <Button label="Tertiary" buttonType="tertiary" inverted disabled />

@@ -21,3 +21,7 @@ export const defaultRefTokens: RefTokenMap = {
     ...defaultColorUtilityTokens,
     ...defaultTextAttributeTokens,
 };
+
+export function isRefToken(token: string): token is RefTokens {
+    return token in defaultRefTokens;
+}

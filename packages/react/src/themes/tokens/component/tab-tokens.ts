@@ -12,6 +12,7 @@ export type TabTokens =
     | 'tab-active-indicator-color'
     | 'tab-active-text-color'
     | 'tab-selected-indicator-color'
+    | 'tab-selected-background-color'
     | 'tab-selected-text-color'
     | 'tab-panel-border-color'
     | 'tab-panel-background-color';
@@ -33,6 +34,7 @@ export const defaultTabTokens: TabTokenMap = {
     'tab-active-indicator-color': 'color-brand-70',
     'tab-active-text-color': 'color-neutral-90',
     'tab-selected-indicator-color': 'color-brand-50',
+    'tab-selected-background-color': 'color-white',
     'tab-selected-text-color': 'color-neutral-90',
     'tab-panel-border-color': 'color-neutral-05',
     'tab-panel-background-color': 'color-white',
