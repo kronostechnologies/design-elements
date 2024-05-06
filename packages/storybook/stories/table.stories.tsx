@@ -479,6 +479,7 @@ export const SortableRows: Story = () => {
         column1: string;
         column2: string;
         column3: number;
+        column4: string;
     }
 
     const columns: TableColumn<SortableData>[] = [
@@ -496,6 +497,21 @@ export const SortableRows: Story = () => {
             accessorKey: 'column3',
             sortable: true,
         },
+        {
+            header: 'Custom sort by length',
+            accessorKey: 'column4',
+            sortable: true,
+            sortingFn: (rowA, rowB) => {
+                const a = rowA.original.column4;
+                const b = rowB.original.column4;
+
+                if (a.length === b.length) {
+                    return 0;
+                }
+
+                return a.length > b.length ? 1 : -1;
+            },
+        },
     ];
 
     const data: TableData<SortableData>[] = [
@@ -503,11 +519,13 @@ export const SortableRows: Story = () => {
             column1: 'a',
             column2: 'a',
             column3: 10,
+            column4: 'short',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 20,
+            column4: 'loooooong',
         },
     ];
     return (
