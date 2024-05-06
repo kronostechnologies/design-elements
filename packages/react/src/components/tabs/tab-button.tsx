@@ -44,7 +44,7 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
     `}
 
     ${({ $selected, theme }) => $selected && css`
-        background: ${theme.greys.white};
+        background: ${theme.component['tab-selected-background-color']};
         font-weight: var(--font-semi-bold);
 
         &::after {
