@@ -46,11 +46,13 @@ describe('buildTheme', () => {
 
         expect(builtTheme.ref).toEqual(expectedTheme.ref);
     });
+
     it('should build the defaultAliasTokens theme with the customization provided', () => {
         const builtTheme = buildTheme(customization);
 
         expect(builtTheme.alias).toEqual(expectedTheme.alias);
     });
+
     it('should build the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
         const builtTheme = buildTheme(customization);
 
@@ -60,6 +62,7 @@ describe('buildTheme', () => {
             expectedTheme.component['button-primary-background-color'],
         );
     });
+
     it('should build the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
         const builtTheme = buildTheme(customization);
 
@@ -69,6 +72,7 @@ describe('buildTheme', () => {
             expectedTheme.component['button-primary-inverted-background-color'],
         );
     });
+
     it('should build the defaultComponentTokens with a partial customization', () => {
         const builtTheme = buildTheme(customization);
 
@@ -78,6 +82,7 @@ describe('buildTheme', () => {
             expectedTheme.component['button-primary-border-color'],
         );
     });
+
     it('should log an error for for an unresolved token', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
         consoleSpy.mockImplementation(() => {});
@@ -85,7 +90,7 @@ describe('buildTheme', () => {
         const token = 'invalid-token';
         const invalidCustomizationWithUnresolvedToken : ThemeCustomization = {
             component: {
-                // @ts-ignore-unresolved-token-test-purpose
+                // @ts-expect-error-unresolved-token-test-purpose
                 'button-primary-background-color': 'invalid-token',
             },
         };
@@ -93,8 +98,8 @@ describe('buildTheme', () => {
         buildTheme(invalidCustomizationWithUnresolvedToken);
 
         expect(consoleSpy).toHaveBeenCalledWith(`Token '${token}' not found in RefTokens or AliasTokens`);
-        consoleSpy.mockRestore();
     });
+
     it('should log an error for self-referencing AliasToken', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
         consoleSpy.mockImplementation(() => {});
@@ -102,7 +107,7 @@ describe('buildTheme', () => {
         const token = 'default-text-color';
         const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
             alias: {
-                // @ts-ignore-self-referenced-token-test-purpose
+                // @ts-expect-error-self-referenced-token-test-purpose
                 'default-text-color': 'default-text-color',
             },
             component: {
@@ -113,6 +118,5 @@ describe('buildTheme', () => {
         buildTheme(invalidCustomizationWithSelfReferenced);
 
         expect(consoleSpy).toHaveBeenCalledWith(`Self-referencing AliasToken detected: '${token}'`);
-        consoleSpy.mockRestore();
     });
 });

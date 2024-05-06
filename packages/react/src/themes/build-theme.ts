@@ -65,9 +65,11 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
     Object.keys(customizedTheme.component).forEach((token) => {
         if (isComponentToken(token)) {
             const tokenToResolve = customizedTheme.component[token];
-            const resolvedToken = tokenToResolve ? resolveToken(tokenToResolve)
-                : devConsole.error('Token is undefined.');
-            resolvedTheme.component[token] = resolvedToken || '';
+            if (tokenToResolve) {
+                resolvedTheme.component[token] = resolveToken(tokenToResolve);
+            } else {
+                devConsole.error(`Token "${token}" is undefined.`);
+            }
         }
     });
 
