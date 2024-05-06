@@ -547,6 +547,7 @@ export const Datepicker = forwardRef(({
                         selected={selectedDate}
                         showPopperArrow={false}
                         startOpen={startOpen}
+                        required={required}
                         valid={valid}
                         withPortal={isMobile}
                         {...props /* eslint-disable-line react/jsx-props-no-spreading */}
