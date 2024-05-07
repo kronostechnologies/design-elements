@@ -25,57 +25,17 @@ interface ToastWrapperProps {
 function getToastTextColor(
     { theme, type }: ToastWrapperProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
-    switch (type) {
-        case 'discovery':
-            return css`
-                color: ${theme.component['toast-discovery-text-color']};
-            `;
-        case 'success':
-            return css`
-                color: ${theme.component['toast-success-text-color']};
-            `;
-        case 'warning':
-            return css`
-                color: ${theme.component['toast-warning-text-color']};
-            `;
-        case 'alert':
-            return css`
-                color: ${theme.component['toast-alert-text-color']};
-            `;
-        case 'neutral':
-        default:
-            return css`
-                color: ${theme.component['toast-neutral-text-color']};
-            `;
-    }
+    return css`
+        color: ${theme.component[`toast-${type ?? 'neutral'}-text-color`]};
+    `;
 }
 
 function getToastContainerBackground(
     { theme, type }: ToastWrapperProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
-    switch (type) {
-        case 'discovery':
-            return css`
-                background: ${theme.component['toast-discovery-background-color']};
-            `;
-        case 'success':
-            return css`
-                background: ${theme.component['toast-success-background-color']};
-            `;
-        case 'warning':
-            return css`
-                background: ${theme.component['toast-warning-background-color']};
-            `;
-        case 'alert':
-            return css`
-                background: ${theme.component['toast-alert-background-color']};
-            `;
-        case 'neutral':
-        default:
-            return css`
-                background: ${theme.component['toast-neutral-background-color']};
-            `;
-    }
+    return css`
+        background: ${theme.component[`toast-${type ?? 'neutral'}-background-color`]};
+    `;
 }
 
 const toastInLeft = keyframes`
@@ -129,9 +89,9 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
     transition: 0.3s ease;
     width: ${({ isMobile }) => (isMobile ? '100vw' : '400px')};
 
-    ${getToastPosition}
-    ${getToastContainerBackground}
-    ${getToastTextColor}
+    ${getToastPosition};
+    ${getToastContainerBackground};
+    ${getToastTextColor};
 `;
 
 const StyledMessage = styled.p<{ $isMobile: boolean }>`
@@ -156,9 +116,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     inverted: true,
 })<DismissIconProps>`
     align-self: flex-start;
-    ${({ $type, theme }) => css`
-        color: ${theme.component[`toast-${$type}-icon-color`]};
-    `}
+    color: ${({ theme, $type }) => theme.component[`toast-${$type}-icon-color`]};
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 `;
 
