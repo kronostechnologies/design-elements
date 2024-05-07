@@ -76,3 +76,16 @@ export const PrimaryWithIcon: Story = {
         </Button>
     ),
 };
+
+export const PrimaryWithIconsOnBothSides: Story = {
+    args: {
+        buttonType: 'primary',
+        label: 'Icons on both sides',
+        size: 'medium',
+        leftIconName: 'chevronLeft',
+        rightIconName: 'chevronRight',
+    },
+    render: (args) => (
+        <Button {...args /* eslint-disable-line react/jsx-props-no-spreading */} />
+    ),
+};

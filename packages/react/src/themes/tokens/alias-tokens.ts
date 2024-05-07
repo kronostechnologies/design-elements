@@ -17,3 +17,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'separator-color': 'color-neutral-15',
     'visited-link-color': 'color-discovery-50',
 };
+
+export function isAliasToken(token: string): token is AliasTokens {
+    return token in defaultAliasTokens;
+}
