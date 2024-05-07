@@ -28,7 +28,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-border-color'] : theme.component['toggle-button-border-color'])};
     border-right: ${({ pressed }) => (pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-text-color'] : theme.component['toggle-button-text-color'])};    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-text-color'] : theme.component['toggle-button-text-color'])};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     letter-spacing: 0.02875rem;
     min-height: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-2x);

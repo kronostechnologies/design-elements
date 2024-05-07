@@ -121,7 +121,6 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultPaginationTokens,
     ...defaultProgressTokens,
     ...defaultLinkTokens,
-    ...defaultFocusTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
     ...defaultDatepickerTokens,
