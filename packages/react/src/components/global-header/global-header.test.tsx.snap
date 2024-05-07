@@ -175,7 +175,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -394,7 +394,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
