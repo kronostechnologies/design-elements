@@ -79,6 +79,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                 disabled={prevMonthButtonDisabled}
                 buttonType="tertiary"
                 iconName="chevronLeft"
+                type="button"
             />
             <FlexContainer>
                 <DropdownListWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
@@ -111,6 +112,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                 disabled={nextMonthButtonDisabled}
                 buttonType="tertiary"
                 iconName="chevronRight"
+                type="button"
             />
         </Wrapper>
     );

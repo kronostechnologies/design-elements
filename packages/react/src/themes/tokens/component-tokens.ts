@@ -167,3 +167,7 @@ export type ResolvedComponentTokenValue = RefTokenValue;
 export type ResolvedComponentTokens = {
     [Token in ComponentTokens]: ResolvedComponentTokenValue;
 }
+
+export function isComponentToken(token: string): token is ComponentTokens {
+    return token in defaultComponentTokens;
+}
