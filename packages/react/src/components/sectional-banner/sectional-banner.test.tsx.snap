@@ -33,7 +33,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 }
 
 .c0 .c1 {
-  color: #006296;
+  color: #003A5A;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -132,7 +132,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 }
 
 .c0 .c1 {
-  color: #006296;
+  color: #003A5A;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -223,7 +223,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 }
 
 .c0 .c1 {
-  color: #006296;
+  color: #003A5A;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;

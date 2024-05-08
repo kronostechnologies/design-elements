@@ -46,7 +46,6 @@ export const defaultTableTokens: TableTokenMap = {
     'table-row-selected-background-color': 'color-brand-05',
     'table-row-error-background-color': 'color-alert-05',
     'table-row-error-border-color': 'color-alert-50',
-
     'table-sort-button-ascending-icon-color': 'color-neutral-65',
     'table-sort-button-descending-icon-color': 'color-neutral-65',
     'table-sort-button-default-icon-color': 'color-neutral-65',

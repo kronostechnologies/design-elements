@@ -24,11 +24,11 @@ interface ToggleButtonProps {
 
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-background-color'] : theme.component['toggle-button-background-color'])};
-    border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-border-color'] : theme.component['toggle-button-border-color'])};
+    background-color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-background-color'] : theme.component['toggle-button-background-color'])};
+    border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-border-color'] : theme.component['toggle-button-border-color'])};
     border-right: ${({ pressed }) => (pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-text-color'] : theme.component['toggle-button-text-color'])};
+    color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-text-color'] : theme.component['toggle-button-text-color'])};
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     letter-spacing: 0.02875rem;
     min-height: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
@@ -39,7 +39,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 
     &:last-child {
-        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-border-color'] : theme.component['toggle-button-border-color'])};
+        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-selected-border-color'] : theme.component['toggle-button-border-color'])};
         margin: 0;
     }
 
