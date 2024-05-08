@@ -371,7 +371,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1034,7 +1034,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }

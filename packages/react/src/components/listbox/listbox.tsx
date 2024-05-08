@@ -115,15 +115,15 @@ const List = styled.ul`
 `;
 
 const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
-    color: ${({ theme }) => theme.component['listbox-item-selected-icon-color']};
+    color: ${({ theme }) => theme.component['checkbox-checked-icon-color']};
     height: 100%;
     width: 100%;
 `;
 
 const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-background-color'] : theme.component['listbox-checkbox-background-color'])};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-border-color'] : theme.component['listbox-checkbox-border-color'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-unchecked-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-unchecked-border-color'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -133,7 +133,8 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     width: var(--size-1x);
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-hover-border-color'] : theme.component['listbox-checkbox-hover-border-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-hover-background-color'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-hover-border-color'])};
     }
 
     ${({ checked }) => (!checked && css`
@@ -161,7 +162,7 @@ const ListItem = styled.li<ListItemProps>`
     user-select: none;
 
     &:hover {
-        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
+        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
     }
 
     ${({ $focused, $disabled, theme }) => ($focused && css`
@@ -171,14 +172,13 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
-            border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
+            background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
+            border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
         }
     `)}
 
     ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
         &::before {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-border-color']};
             content: '';
             display: block;
             height: 100%;

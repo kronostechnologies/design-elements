@@ -79,7 +79,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -899,7 +899,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1631,7 +1631,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }

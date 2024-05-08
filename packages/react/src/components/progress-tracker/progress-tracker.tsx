@@ -66,7 +66,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 
     &::after {
-        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-todo-background-color']};
+        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-empty-background-color']};
         content: '';
         height: 0.25rem;
         left: calc(-50% - 0.5rem);
@@ -91,7 +91,7 @@ const CompletedStep = styled(StyledStep)`
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-completed-color']};
+            background-color: ${theme.component['progress-tracker-bridge-filled-background-color']};
         `}
     }
 
@@ -113,7 +113,7 @@ const ActiveStep = styled(StyledStep)`
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-active-background-color']};
+            background-color: ${theme.component['progress-tracker-bridge-filled-background-color']};
         `}
     }
 
