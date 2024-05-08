@@ -2,9 +2,9 @@ import { NoSelfReference } from '../../utility-types';
 import { RefTokens } from './ref-tokens';
 
 export type AliasTokens =
-/**
- * ACTION
- */
+    /**
+     * ACTION
+     */
     | 'color-action'
     | 'color-action-hover'
     | 'color-action-disabled'
