@@ -424,3 +424,7 @@ export const defaultAliasTokens: AliasTokenMap = {
      */
     'color-box-shadow': 'transparent-dark-20',
 };
+
+export function isAliasToken(token: string): token is AliasTokens {
+    return token in defaultAliasTokens;
+}
