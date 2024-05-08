@@ -57,7 +57,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 
 .c7:hover,
 .c7[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -536,7 +536,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 
 .c9:hover,
 .c9[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -1055,7 +1055,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c5:hover,
 .c5[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -1504,7 +1504,7 @@ exports[`Combobox matches the snapshot 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
