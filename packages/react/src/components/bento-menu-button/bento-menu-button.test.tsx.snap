@@ -276,7 +276,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c7 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
@@ -1096,7 +1096,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c7 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
@@ -1828,7 +1828,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c7 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;

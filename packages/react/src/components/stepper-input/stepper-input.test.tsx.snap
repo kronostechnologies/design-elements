@@ -2,7 +2,7 @@
 
 exports[`Stepper input matches snapshot (disabled) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -338,7 +338,7 @@ exports[`Stepper input matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -661,7 +661,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot (mobile) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -816,7 +816,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);

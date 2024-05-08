@@ -2,7 +2,7 @@
 
 exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -134,7 +134,7 @@ input + .c1 {
 
 exports[`TextInput Matches the snapshot [required = true] 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -266,7 +266,7 @@ input + .c1 {
 
 exports[`TextInput Matches the snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);

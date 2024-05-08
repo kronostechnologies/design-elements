@@ -87,7 +87,7 @@ exports[`SearchInput should match the snapshot 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);

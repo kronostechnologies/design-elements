@@ -17,12 +17,12 @@ export type LinkTokenMap = {
 };
 
 export const defaultLinkTokens: LinkTokenMap = {
-    'external-link-visited-text-color': 'visited-link-color',
+    'external-link-visited-text-color': 'color-link-content-visited',
 
     'route-link-text-color': 'color-informative-50',
     'route-link-disabled-text-color': 'color-informative-20',
     'route-link-hover-text-color': 'color-informative-70',
-    'route-link-visited-text-color': 'visited-link-color',
+    'route-link-visited-text-color': 'color-link-content-visited',
 
     'skip-link-background-color': 'color-white',
     'skip-link-text-color': 'color-informative-50',
