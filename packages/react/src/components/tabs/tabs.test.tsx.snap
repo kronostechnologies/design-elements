@@ -77,7 +77,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #FFFFFF;
+  background: transparent;
   font-weight: var(--font-semi-bold);
 }
 
@@ -232,7 +232,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   box-sizing: content-box;
   height: var(--size-2halfx);
   padding-top: var(--spacing-2x);
@@ -317,7 +317,9 @@ exports[`Tabs matches snapshot (global) 1`] = `
   display: none;
 }
 
-<div>
+<div
+  class=""
+>
   <div
     class="c0"
   >
@@ -432,7 +434,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 `;
 
 exports[`Tabs matches snapshot (mobile) 1`] = `
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -472,175 +474,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c1 > svg {
-  color: inherit;
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: var(--font-family);
-  font-size: 0.875rem;
-  gap: var(--spacing-half);
-  padding: 0 var(--spacing-2x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: #FFFFFF;
-  font-weight: var(--font-semi-bold);
-}
-
-.c7::after {
-  content: '';
-  display: block;
-  height: 4px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c7::after {
-  background-color: #006296;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: var(--font-family);
-  font-size: 0.875rem;
-  gap: var(--spacing-half);
-  padding: 0 var(--spacing-2x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c10::after {
-  content: '';
-  display: block;
-  height: 4px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c10:active {
-  color: #1B1C1E;
-  font-weight: var(--font-semi-bold);
-}
-
-.c10:active::after {
-  background-color: #003A5A !important;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.c9:hover .c6::after {
-  background-color: #DBDEE1;
-  color: #60666E;
-}
-
-.c8::after {
-  content: attr(data-content);
-  display: block;
-  font-weight: var(--font-semi-bold);
-  height: 0;
-  visibility: hidden;
-}
-
-.c12 {
-  background: #FFFFFF;
-  border: 1px solid #F1F2F2;
-  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
-  border-top: none;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
@@ -652,20 +485,193 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:hover,
-.c2[aria-expanded='true'] {
+.c2 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #FFFFFF;
+  font-weight: var(--font-semi-bold);
+}
+
+.c8::after {
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c8::after {
+  background-color: #006296;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11::after {
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c11 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c11:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c11:active {
+  color: #1B1C1E;
+  font-weight: var(--font-semi-bold);
+}
+
+.c11:active::after {
+  background-color: #003A5A !important;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c10:hover .c7::after {
+  background-color: #DBDEE1;
+  color: #60666E;
+}
+
+.c9::after {
+  content: attr(data-content);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  visibility: hidden;
+}
+
+.c13 {
+  border-top: none;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
 }
 
 .c0 {
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.2);
+}
+
+.c1 {
   background: #F1F2F2;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   box-sizing: content-box;
@@ -673,7 +679,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   position: relative;
 }
 
-.c0::before {
+.c1::before {
   border-bottom: 1px solid #DBDEE1;
   bottom: 0;
   content: '';
@@ -683,7 +689,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c4 {
+.c5 {
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -701,12 +707,12 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c3 {
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F1F2F2;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -724,16 +730,16 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-radius: var(--border-radius-2x) 0 0 0;
 }
 
-.c3.hidden {
+.c4.hidden {
   display: none;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F1F2F2;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -751,17 +757,19 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-radius: 0 var(--border-radius-2x) 0 0;
 }
 
-.c11.hidden {
+.c12.hidden {
   display: none;
 }
 
-<div>
+<div
+  class="c0"
+>
   <div
-    class="c0"
+    class="c1"
   >
     <button
       aria-hidden="true"
-      class="c1 c2 c3 hidden"
+      class="c2 c3 c4 hidden"
       type="button"
     >
       <svg
@@ -774,24 +782,24 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     </button>
     <div
       aria-label="tabs label"
-      class="c4"
+      class="c5"
       role="tablist"
     >
       <div
-        class="c5"
+        class="c6"
         data-testid="tab-1"
       >
         <button
           aria-controls="uuid1"
           aria-selected="true"
-          class="c6 c7"
+          class="c7 c8"
           data-testid="tab-1-button"
           id="tab-1"
           role="tab"
           type="button"
         >
           <span
-            class="c8"
+            class="c9"
             data-content="button 1"
             data-testid="tab-1-text"
           >
@@ -800,13 +808,13 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
         </button>
       </div>
       <div
-        class="c9"
+        class="c10"
         data-testid="tab-2"
       >
         <button
           aria-controls="uuid2"
           aria-selected="false"
-          class="c6 c10"
+          class="c7 c11"
           data-testid="tab-2-button"
           id="tab-2"
           role="tab"
@@ -814,7 +822,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
           type="button"
         >
           <span
-            class="c8"
+            class="c9"
             data-content="button 2"
             data-testid="tab-2-text"
           >
@@ -825,7 +833,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     </div>
     <button
       aria-hidden="true"
-      class="c1 c2 c11 hidden"
+      class="c2 c3 c12 hidden"
       type="button"
     >
       <svg
@@ -840,7 +848,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   <div
     aria-hidden="false"
     aria-labelledby="tab-1"
-    class="c12"
+    class="c13"
     id="uuid1"
     role="tabpanel"
     tabindex="0"
@@ -854,7 +862,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   <div
     aria-hidden="true"
     aria-labelledby="tab-2"
-    class="c12"
+    class="c13"
     hidden=""
     id="uuid2"
     role="tabpanel"
@@ -870,7 +878,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 `;
 
 exports[`Tabs matches snapshot 1`] = `
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -910,175 +918,6 @@ exports[`Tabs matches snapshot 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c1 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: var(--font-family);
-  font-size: 0.875rem;
-  gap: var(--spacing-half);
-  padding: 0 var(--spacing-2x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: #FFFFFF;
-  font-weight: var(--font-semi-bold);
-}
-
-.c7::after {
-  content: '';
-  display: block;
-  height: 4px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c7::after {
-  background-color: #006296;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: var(--font-family);
-  font-size: 0.875rem;
-  gap: var(--spacing-half);
-  padding: 0 var(--spacing-2x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c10::after {
-  content: '';
-  display: block;
-  height: 4px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c10:active {
-  color: #1B1C1E;
-  font-weight: var(--font-semi-bold);
-}
-
-.c10:active::after {
-  background-color: #003A5A !important;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.c9:hover .c6::after {
-  background-color: #DBDEE1;
-  color: #60666E;
-}
-
-.c8::after {
-  content: attr(data-content);
-  display: block;
-  font-weight: var(--font-semi-bold);
-  height: 0;
-  visibility: hidden;
-}
-
-.c12 {
-  background: #FFFFFF;
-  border: 1px solid #F1F2F2;
-  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
-  border-top: none;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
 .c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
@@ -1090,20 +929,193 @@ exports[`Tabs matches snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c2:hover,
-.c2[aria-expanded='true'] {
+.c2 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #FFFFFF;
+  font-weight: var(--font-semi-bold);
+}
+
+.c8::after {
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c8::after {
+  background-color: #006296;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11::after {
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c11 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c11:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c11:active {
+  color: #1B1C1E;
+  font-weight: var(--font-semi-bold);
+}
+
+.c11:active::after {
+  background-color: #003A5A !important;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c10:hover .c7::after {
+  background-color: #DBDEE1;
+  color: #60666E;
+}
+
+.c9::after {
+  content: attr(data-content);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  visibility: hidden;
+}
+
+.c13 {
+  border-top: none;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
 }
 
 .c0 {
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.2);
+}
+
+.c1 {
   background: #F1F2F2;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   box-sizing: content-box;
@@ -1111,7 +1123,7 @@ exports[`Tabs matches snapshot 1`] = `
   position: relative;
 }
 
-.c0::before {
+.c1::before {
   border-bottom: 1px solid #DBDEE1;
   bottom: 0;
   content: '';
@@ -1121,7 +1133,7 @@ exports[`Tabs matches snapshot 1`] = `
   width: 100%;
 }
 
-.c4 {
+.c5 {
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1139,12 +1151,12 @@ exports[`Tabs matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c3 {
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F1F2F2;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1162,16 +1174,16 @@ exports[`Tabs matches snapshot 1`] = `
   border-radius: var(--border-radius-2x) 0 0 0;
 }
 
-.c3.hidden {
+.c4.hidden {
   display: none;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F1F2F2;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1189,17 +1201,19 @@ exports[`Tabs matches snapshot 1`] = `
   border-radius: 0 var(--border-radius-2x) 0 0;
 }
 
-.c11.hidden {
+.c12.hidden {
   display: none;
 }
 
-<div>
+<div
+  class="c0"
+>
   <div
-    class="c0"
+    class="c1"
   >
     <button
       aria-hidden="true"
-      class="c1 c2 c3 hidden"
+      class="c2 c3 c4 hidden"
       type="button"
     >
       <svg
@@ -1212,24 +1226,24 @@ exports[`Tabs matches snapshot 1`] = `
     </button>
     <div
       aria-label="tabs label"
-      class="c4"
+      class="c5"
       role="tablist"
     >
       <div
-        class="c5"
+        class="c6"
         data-testid="tab-1"
       >
         <button
           aria-controls="uuid1"
           aria-selected="true"
-          class="c6 c7"
+          class="c7 c8"
           data-testid="tab-1-button"
           id="tab-1"
           role="tab"
           type="button"
         >
           <span
-            class="c8"
+            class="c9"
             data-content="button 1"
             data-testid="tab-1-text"
           >
@@ -1238,13 +1252,13 @@ exports[`Tabs matches snapshot 1`] = `
         </button>
       </div>
       <div
-        class="c9"
+        class="c10"
         data-testid="tab-2"
       >
         <button
           aria-controls="uuid2"
           aria-selected="false"
-          class="c6 c10"
+          class="c7 c11"
           data-testid="tab-2-button"
           id="tab-2"
           role="tab"
@@ -1252,7 +1266,7 @@ exports[`Tabs matches snapshot 1`] = `
           type="button"
         >
           <span
-            class="c8"
+            class="c9"
             data-content="button 2"
             data-testid="tab-2-text"
           >
@@ -1263,7 +1277,7 @@ exports[`Tabs matches snapshot 1`] = `
     </div>
     <button
       aria-hidden="true"
-      class="c1 c2 c11 hidden"
+      class="c2 c3 c12 hidden"
       type="button"
     >
       <svg
@@ -1278,7 +1292,7 @@ exports[`Tabs matches snapshot 1`] = `
   <div
     aria-hidden="false"
     aria-labelledby="tab-1"
-    class="c12"
+    class="c13"
     id="uuid1"
     role="tabpanel"
     tabindex="0"
@@ -1292,7 +1306,7 @@ exports[`Tabs matches snapshot 1`] = `
   <div
     aria-hidden="true"
     aria-labelledby="tab-2"
-    class="c12"
+    class="c13"
     hidden=""
     id="uuid2"
     role="tabpanel"

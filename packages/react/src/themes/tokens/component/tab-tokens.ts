@@ -2,8 +2,12 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type TabTokens =
-    | 'tab-button-section-background-color'
-    | 'tab-button-global-background-color'
+    | 'tab-section-border-color'
+    | 'tab-section-box-shadow-color'
+    | 'tab-global-list-background-color'
+    | 'tab-section-list-background-color'
+    | 'tab-section-button-background-color'
+    | 'tab-global-button-background-color'
     | 'tab-button-icon-color'
     | 'tab-button-text-color'
     | 'tab-button-indicator-hover-background-color'
@@ -11,11 +15,11 @@ export type TabTokens =
     | 'tab-button-indicator-active-background-color'
     | 'tab-button-active-text-color'
     | 'tab-button-indicator-selected-background-color'
-    | 'tab-button-selected-background-color'
+    | 'tab-global-button-selected-background-color'
+    | 'tab-section-button-selected-background-color'
     | 'tab-button-selected-text-color'
-    | 'tab-border-bottom-color'
-    | 'tab-panel-border-color'
-    | 'tab-panel-background-color';
+    | 'tab-section-background-color'
+    | 'tab-border-bottom-color';
 
 export type TabTokenValue = AliasTokens | RefTokens;
 
@@ -25,29 +29,37 @@ export type TabTokenMap = {
 
 export const defaultTabTokens: TabTokenMap = {
     /**
+     * tabs global
+     */
+    'tab-global-button-background-color': 'color-bg',
+    'tab-global-list-background-color': 'transparent-100',
+    'tab-global-button-selected-background-color': 'transparent-100',
+
+    /**
+     * tabs section
+     */
+    'tab-section-border-color': 'color-border',
+    'tab-section-box-shadow-color': 'color-box-shadow',
+    'tab-section-button-background-color': 'color-bg',
+    'tab-section-button-selected-background-color': 'color-bg',
+    'tab-section-list-background-color': 'color-bg-neutral-subtle',
+    'tab-section-background-color': 'color-bg',
+
+    /**
      * tab button
      */
-    'tab-button-global-background-color': 'color-bg',
-    'tab-button-section-background-color': 'color-bg-neutral-subtle', // color-bg-isolated? neutral-02 or neutral-05?
-    'tab-button-selected-background-color': 'color-bg',
-
     'tab-button-icon-color': 'color-content-subtle',
     'tab-button-text-color': 'color-content-subtle',
     'tab-button-hover-text-color': 'color-neutral-65',
     'tab-button-active-text-color': 'color-neutral-90',
     'tab-button-selected-text-color': 'color-neutral-90',
 
+    'tab-border-bottom-color': 'color-border',
+
     /**
      * tab button indicator
      */
     'tab-button-indicator-hover-background-color': 'color-bg-hover',
-    'tab-button-indicator-active-background-color': 'color-bg-indicator-active', // not sure about this one
+    'tab-button-indicator-active-background-color': 'color-bg-indicator-active',
     'tab-button-indicator-selected-background-color': 'color-bg-indicator',
-
-    /**
-     * tab panel
-     */
-    'tab-border-bottom-color': 'color-neutral-15',
-    'tab-panel-border-color': 'color-neutral-05', // should be the same as 'tab-border-bottom-color'?
-    'tab-panel-background-color': 'color-bg',
 };

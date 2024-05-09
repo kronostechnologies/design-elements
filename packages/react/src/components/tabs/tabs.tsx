@@ -18,9 +18,18 @@ import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 import { Button } from '../buttons/button';
 
+const TabsWrapper = styled.div<{ $global?: boolean; }>`
+    ${({ theme, $global }) => !$global && css`
+        background: ${theme.component['tab-section-background-color']};
+        border: 1px solid ${theme.component['tab-section-border-color']};
+        border-radius: var(--border-radius-2x);
+        box-shadow: 0 1px 4px 0 ${theme.component['tab-section-box-shadow-color']};
+    `};
+`;
+
 const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ theme, $global }) => ($global ? theme.component['tab-button-global-background-color'] : theme.component['tab-button-section-background-color'])};
+    background: ${({ theme, $global }) => ($global ? theme.component['tab-global-list-background-color'] : theme.component['tab-section-list-background-color'])};
     border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
     box-sizing: content-box;
     height: var(--size-2halfx);
@@ -52,7 +61,7 @@ const TabButtonsList = styled.div<{ $global?: boolean; }>`
 
 const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right' }>`
     align-items: center;
-    background: ${({ $global, theme }) => ($global ? theme.component['tab-button-global-background-color'] : theme.component['tab-button-section-background-color'])};
+    background: ${({ $global, theme }) => ($global ? theme.component['tab-global-button-background-color'] : theme.component['tab-section-button-background-color'])};
     border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
@@ -226,7 +235,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     }
 
     return (
-        <div className={className}>
+        <TabsWrapper $global={global} className={className}>
             <TabButtonsContainer $global={global}>
                 <ScrollButton
                     className="hidden"
@@ -300,6 +309,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                 }
                 return null;
             })}
-        </div>
+        </TabsWrapper>
     );
 };
