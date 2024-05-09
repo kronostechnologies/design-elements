@@ -4,7 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type ModalTokens =
     | 'modal-background-color'
     | 'modal-border-color'
-    | 'modal-overlay-background-color';
+    | 'modal-backdrop-background-color';
 
 export type ModalTokenValue = AliasTokens | RefTokens;
 
@@ -15,5 +15,5 @@ export type ModalTokenMap = {
 export const defaultModalTokens: ModalTokenMap = {
     'modal-background-color': 'color-bg-overlay',
     'modal-border-color': 'color-border-overlay',
-    'modal-overlay-background-color': 'color-blanket-bg',
+    'modal-backdrop-background-color': 'color-backdrop-bg',
 };

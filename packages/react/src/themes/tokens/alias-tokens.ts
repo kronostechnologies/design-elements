@@ -99,7 +99,7 @@ export type AliasTokens =
     | 'color-bg-hover'
     | 'color-bg-selected'
     | 'color-bg-selected-hover'
-    | 'color-blanket-bg'
+    | 'color-backdrop-bg'
     /**
      * BORDER
      */
@@ -335,7 +335,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * Use for the screen overlay that appears with modal dialogs
      */
-    'color-blanket-bg': 'transparent-dark-75',
+    'color-backdrop-bg': 'transparent-dark-75',
 
     /**
      * BORDER
