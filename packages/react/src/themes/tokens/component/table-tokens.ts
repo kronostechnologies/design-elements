@@ -37,6 +37,8 @@ export const defaultTableTokens: TableTokenMap = {
     'table-footer-background-color': 'color-bg',
     'table-footer-border-color': 'color-border',
 
+    'table-group-border-color': 'color-border',
+
     'table-cell-hover-background-color': 'color-bg-hover',
     'table-cell-number-text-color': 'color-content-subtle',
 
@@ -49,6 +51,4 @@ export const defaultTableTokens: TableTokenMap = {
     'table-sort-button-ascending-icon-color': 'color-content-subtle',
     'table-sort-button-descending-icon-color': 'color-content-subtle',
     'table-sort-button-default-icon-color': 'color-content-subtle',
-
-    'table-group-border-color': 'color-neutral-15',
 };
