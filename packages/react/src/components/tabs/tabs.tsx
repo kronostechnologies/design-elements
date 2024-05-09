@@ -20,7 +20,7 @@ import { Button } from '../buttons/button';
 
 const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ theme, $global }) => ($global ? theme.component['tab-global-background-color'] : theme.component['tab-background-color'])};
+    background: ${({ theme, $global }) => ($global ? theme.component['tab-button-global-background-color'] : theme.component['tab-button-section-background-color'])};
     border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
     box-sizing: content-box;
     height: var(--size-2halfx);
@@ -52,7 +52,7 @@ const TabButtonsList = styled.div<{ $global?: boolean; }>`
 
 const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right' }>`
     align-items: center;
-    background: ${({ $global, theme }) => ($global ? theme.component['tab-global-background-color'] : theme.component['tab-background-color'])};
+    background: ${({ $global, theme }) => ($global ? theme.component['tab-button-global-background-color'] : theme.component['tab-button-section-background-color'])};
     border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;

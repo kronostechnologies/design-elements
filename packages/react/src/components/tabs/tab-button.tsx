@@ -10,7 +10,7 @@ const selectedIndicatorPosition = (global: boolean | undefined): string => (glob
 
 const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
-    color: ${({ $selected, theme }) => ($selected ? theme.component['tab-selected-text-color'] : theme.component['tab-text-color'])};
+    color: ${({ $selected, theme }) => ($selected ? theme.component['tab-button-selected-text-color'] : theme.component['tab-button-text-color'])};
     display: flex;
     font-family: var(--font-family);
     font-size: 0.875rem;
@@ -34,27 +34,27 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
 
     ${({ $selected, theme }) => !$selected && css`
         &:active {
-            color: ${theme.component['tab-active-text-color']};
+            color: ${theme.component['tab-button-active-text-color']};
             font-weight: var(--font-semi-bold);
 
             &::after {
-                background-color: ${theme.component['tab-active-indicator-color']} !important;
+                background-color: ${theme.component['tab-button-indicator-active-background-color']} !important;
             }
         }
     `}
 
     ${({ $selected, theme }) => $selected && css`
-        background: ${theme.component['tab-selected-background-color']};
+        background: ${theme.component['tab-button-selected-background-color']};
         font-weight: var(--font-semi-bold);
 
         &::after {
-            background-color: ${theme.component['tab-selected-indicator-color']};
+            background-color: ${theme.component['tab-button-indicator-selected-background-color']};
         }
     `}
 `;
 
 const StyledButtonIcon = styled(Icon)`
-    color: ${({ theme }) => theme.component['tab-icon-color']};
+    color: ${({ theme }) => theme.component['tab-button-icon-color']};
     vertical-align: middle;
 `;
 
@@ -66,8 +66,8 @@ const StyledTab = styled.div<{ $selected: boolean; }>`
         &:hover {
             ${StyledButton} {
                 &::after {
-                    background-color: ${theme.component['tab-hover-indicator-color']};
-                    color: ${theme.component['tab-hover-text-color']};
+                    background-color: ${theme.component['tab-button-indicator-hover-background-color']};
+                    color: ${theme.component['tab-button-hover-text-color']};
                 }
             }
         }
