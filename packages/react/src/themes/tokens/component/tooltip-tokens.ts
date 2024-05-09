@@ -16,10 +16,10 @@ export type TooltipTokenMap = {
 };
 
 export const defaultTooltipTokens: TooltipTokenMap = {
-    'tooltip-icon-color': 'color-neutral-90',
-    'tooltip-inverted-icon-color': 'color-white',
-    'tooltip-popper-container-border-color': 'color-white',
-    'tooltip-popper-container-text-color': 'color-white',
-    'tooltip-popper-container-success-background-color': 'color-success-50',
-    'tooltip-popper-container-default-background-color': 'color-neutral-65',
+    'tooltip-icon-color': 'color-content',
+    'tooltip-inverted-icon-color': 'color-content-inverse',
+    'tooltip-popper-container-border-color': 'color-border-inverse',
+    'tooltip-popper-container-text-color': 'color-content-inverse',
+    'tooltip-popper-container-default-background-color': 'color-bg-neutral-bold',
+    'tooltip-popper-container-success-background-color': 'color-feedback-bg-success-bold',
 };
