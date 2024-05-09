@@ -8,9 +8,6 @@ export type ListboxTokens =
     | 'listbox-item-disabled-background-color'
     | 'listbox-item-disabled-text-color'
     | 'listbox-item-hover-background-color'
-    | 'listbox-item-selected-background-color'
-    | 'listbox-item-selected-border-color'
-    | 'listbox-item-selected-icon-color'
     | 'listbox-item-caption-text-color'
     | 'listbox-item-caption-disabled-text-color'
     | 'listbox-box-shadow-frame-color'
@@ -23,20 +20,17 @@ export type ListboxTokenMap = {
 };
 
 export const defaultListboxTokens: ListboxTokenMap = {
-    'listbox-background-color': 'color-white',
-    'listbox-border-color': 'color-neutral-50',
-    'listbox-item-text-color': 'color-black',
-    'listbox-item-caption-text-color': 'color-neutral-65',
-    'listbox-item-hover-background-color': 'color-neutral-15',
+    'listbox-background-color': 'color-menu-bg',
+    'listbox-border-color': 'color-menu-border',
 
-    'listbox-item-disabled-background-color': 'color-white',
-    'listbox-item-disabled-text-color': 'color-neutral-30',
-    'listbox-item-caption-disabled-text-color': 'color-neutral-15',
+    'listbox-item-text-color': 'color-menu-item-content',
+    'listbox-item-caption-text-color': 'color-menu-item-subcontent',
+    'listbox-item-hover-background-color': 'color-menu-item-bg-hover',
 
-    'listbox-item-selected-background-color': 'color-brand-50',
-    'listbox-item-selected-border-color': 'color-brand-50',
-    'listbox-item-selected-icon-color': 'color-white',
+    'listbox-item-disabled-background-color': 'color-menu-item-bg',
+    'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
+    'listbox-item-caption-disabled-text-color': 'color-menu-item-content-disabled',
 
     'listbox-box-shadow-frame-color': 'color-neutral-15',
-    'listbox-box-shadow-depth-color': 'transparent-dark-20',
+    'listbox-box-shadow-depth-color': 'color-box-shadow',
 };
