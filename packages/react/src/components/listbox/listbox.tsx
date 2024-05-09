@@ -95,7 +95,7 @@ const Container = styled.div<ContainerProps>`
     background-color: ${({ theme }) => theme.component['listbox-background-color']};
     border: 1px solid ${({ theme }) => theme.component['listbox-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.component['listbox-box-shadow-frame-color']}, 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-depth-color']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-depth-color']};
     display: flex;
     max-height: 160px;
     overflow-y: auto;

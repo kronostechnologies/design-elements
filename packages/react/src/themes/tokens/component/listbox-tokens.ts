@@ -10,7 +10,6 @@ export type ListboxTokens =
     | 'listbox-item-hover-background-color'
     | 'listbox-item-caption-text-color'
     | 'listbox-item-caption-disabled-text-color'
-    | 'listbox-box-shadow-frame-color'
     | 'listbox-box-shadow-depth-color';
 
 export type ListboxTokenValue = AliasTokens | RefTokens;
@@ -31,6 +30,5 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
     'listbox-item-caption-disabled-text-color': 'color-menu-item-content-disabled',
 
-    'listbox-box-shadow-frame-color': 'color-neutral-15',
     'listbox-box-shadow-depth-color': 'color-box-shadow',
 };
