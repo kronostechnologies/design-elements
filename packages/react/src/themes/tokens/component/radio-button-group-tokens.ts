@@ -19,13 +19,15 @@ export type RadioButtonGroupTokenMap = {
 };
 
 export const defaultRadioButtonGroupTokens: RadioButtonGroupTokenMap = {
-    'radio-button-background-color': 'color-white',
-    'radio-button-border-color': 'color-neutral-65',
-    'radio-button-disabled-background-color': 'color-neutral-05',
-    'radio-button-disabled-border-color': 'color-neutral-15',
-    'radio-button-hover-border-color': 'color-brand-50',
-    'radio-button-disabled-hover-border-color': 'color-neutral-15',
-    'radio-button-checked-background-color': 'color-brand-50',
-    'radio-button-checked-border-color': 'color-brand-50',
-    'radio-button-group-legend-text-color': 'color-black',
+    'radio-button-background-color': 'color-input-bg',
+    'radio-button-border-color': 'color-input-border',
+    'radio-button-group-legend-text-color': 'color-content',
+    'radio-button-hover-border-color': 'color-input-border-hover',
+
+    'radio-button-disabled-background-color': 'color-input-bg-disabled',
+    'radio-button-disabled-border-color': 'color-input-border-disabled',
+    'radio-button-disabled-hover-border-color': 'color-input-border-disabled',
+
+    'radio-button-checked-background-color': 'color-input-bg-checked',
+    'radio-button-checked-border-color': 'color-input-border-checked',
 };
