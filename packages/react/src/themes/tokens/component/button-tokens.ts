@@ -260,28 +260,28 @@ export const defaultButtonTokens: ButtonTokenMap = {
     // Tertiary destructive
     'button-destructive-tertiary-background-color': 'transparent-100',
     'button-destructive-tertiary-border-color': 'transparent-100',
-    'button-destructive-tertiary-text-color': 'color-alert-50',
+    'button-destructive-tertiary-text-color': 'color-action-destructive',
     // Tertiary destructive hover
     'button-destructive-tertiary-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-hover-border-color': 'transparent-100',
-    'button-destructive-tertiary-hover-text-color': 'color-alert-70',
+    'button-destructive-tertiary-hover-text-color': 'color-action-destructive-hover',
     // Tertiary destructive disabled
     'button-destructive-tertiary-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-disabled-border-color': 'transparent-100',
-    'button-destructive-tertiary-disabled-text-color': 'color-alert-20',
+    'button-destructive-tertiary-disabled-text-color': 'color-action-destructive-disabled',
 
     // Tertiairy destructive inverted
     'button-destructive-tertiary-inverted-background-color': 'transparent-100',
     'button-destructive-tertiary-inverted-border-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-text-color': 'color-alert-50',
+    'button-destructive-tertiary-inverted-text-color': 'color-action-destructive',
     // Tertiairy destructive inverted hover
     'button-destructive-tertiary-inverted-hover-background-color': 'color-alert-05',
     'button-destructive-tertiary-inverted-hover-border-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-hover-text-color': 'color-alert-70',
+    'button-destructive-tertiary-inverted-hover-text-color': 'color-action-destructive-hover',
     // Tertiairy destructive inverted disabled
     'button-destructive-tertiary-inverted-disabled-background-color': 'transparent-100',
     'button-destructive-tertiary-inverted-disabled-border-color': 'transparent-100',
-    'button-destructive-tertiary-inverted-disabled-text-color': 'color-alert-20',
+    'button-destructive-tertiary-inverted-disabled-text-color': 'color-action-destructive-disabled',
 
     // Input button
     'button-input-background-color': 'color-input-bg',
