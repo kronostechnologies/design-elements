@@ -22,19 +22,19 @@ export type ToggleButtonGroupTokenMap = {
 };
 
 export const defaultToggleButtonGroupTokens: ToggleButtonGroupTokenMap = {
-    'toggle-button-background-color': 'color-white',
-    'toggle-button-text-color': 'color-neutral-65',
-    'toggle-button-border-color': 'color-neutral-50',
+    'toggle-button-background-color': 'color-input-bg',
+    'toggle-button-border-color': 'color-input-border',
+    'toggle-button-text-color': 'color-input-content',
 
-    'toggle-button-hover-background-color': 'color-neutral-15',
-    'toggle-button-hover-border-color': 'color-neutral-65',
-    'toggle-button-hover-text-color': 'color-black',
+    'toggle-button-hover-background-color': 'color-input-bg-hover',
+    'toggle-button-hover-border-color': 'color-input-border-hover',
+    'toggle-button-hover-text-color': 'color-input-content-hover',
 
-    'toggle-button-disabled-background-color': 'color-white',
-    'toggle-button-disabled-border-color': 'color-neutral-30',
-    'toggle-button-disabled-text-color': 'color-neutral-30',
+    'toggle-button-disabled-background-color': 'color-input-bg-disabled',
+    'toggle-button-disabled-border-color': 'color-input-border-disabled',
+    'toggle-button-disabled-text-color': 'color-input-content-disabled',
 
-    'toggle-button-selected-background-color': 'color-brand-05',
-    'toggle-button-selected-border-color': 'color-brand-80',
-    'toggle-button-selected-text-color': 'color-brand-80',
+    'toggle-button-selected-background-color': 'color-input-bg-selected',
+    'toggle-button-selected-border-color': 'color-input-border-selected',
+    'toggle-button-selected-text-color': 'color-input-content-selected',
 };
