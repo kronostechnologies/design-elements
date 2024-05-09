@@ -59,7 +59,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #CD2C23;
   color: #CD2C23;
   padding: 0;
@@ -79,13 +79,13 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #7B1A15;
   color: #7B1A15;
 }
 
 .c1:disabled {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #F99D99;
   color: #F99D99;
 }
@@ -500,7 +500,7 @@ exports[`Icon Button Has secondary styles 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #006296;
   color: #006296;
   padding: 0;
@@ -520,13 +520,13 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -743,7 +743,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c1:disabled {

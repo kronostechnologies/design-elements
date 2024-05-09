@@ -8,7 +8,7 @@ exports[`Radio button Matches the snapshot 1`] = `
 }
 
 .c1 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,7 +97,7 @@ exports[`Radio button Matches the snapshot 1`] = `
 }
 
 .c2:hover .radioInput {
-  border: 1px solid #006296;
+  border: 1px solid #000000;
 }
 
 .c3 {
@@ -159,7 +159,7 @@ exports[`Radio button Matches the snapshot 1`] = `
 
 .c3 .radioInput {
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -170,7 +170,7 @@ exports[`Radio button Matches the snapshot 1`] = `
 }
 
 .c3:hover .radioInput {
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
 }
 
 <fieldset

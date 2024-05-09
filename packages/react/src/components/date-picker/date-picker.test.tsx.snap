@@ -109,7 +109,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -124,7 +124,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -227,7 +227,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
@@ -265,8 +265,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -333,7 +333,7 @@ label + .c3 {
 .c7:disabled:focus,
 .c7:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -500,7 +500,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -515,7 +515,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -618,7 +618,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -656,8 +656,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -724,7 +724,7 @@ label + .c3 {
 .c7:disabled:focus,
 .c7:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -893,7 +893,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -908,7 +908,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -1011,7 +1011,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -1049,8 +1049,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -1117,7 +1117,7 @@ label + .c3 {
 .c7:disabled:focus,
 .c7:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -1286,7 +1286,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -1301,7 +1301,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -1404,7 +1404,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -1442,8 +1442,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -1510,7 +1510,7 @@ label + .c3 {
 .c7:disabled:focus,
 .c7:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -1707,7 +1707,7 @@ input + .c1 {
 
 .c6 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -1722,7 +1722,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -1825,7 +1825,7 @@ label + .c5 {
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -1863,8 +1863,8 @@ label + .c5 {
 
 .c7.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c7.datePickerInput:disabled,
@@ -1931,7 +1931,7 @@ label + .c5 {
 .c9:disabled:focus,
 .c9:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -2116,7 +2116,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -2131,7 +2131,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -2234,7 +2234,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
@@ -2272,8 +2272,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -2340,7 +2340,7 @@ label + .c3 {
 .c7:disabled:focus,
 .c7:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -2479,7 +2479,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
 .c8[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c8:disabled {
@@ -2674,7 +2674,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -2689,7 +2689,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -2792,7 +2792,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -2830,8 +2830,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -2898,7 +2898,7 @@ label + .c3 {
 .c17:disabled:focus,
 .c17:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -3736,7 +3736,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 .c8[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c8:disabled {
@@ -3751,7 +3751,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c18 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #006296;
   color: #006296;
 }
@@ -3769,13 +3769,13 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 
 .c18:hover,
 .c18[aria-expanded='true'] {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
 .c18:disabled {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -3961,7 +3961,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -3976,7 +3976,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -4079,7 +4079,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -4117,8 +4117,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -4191,7 +4191,7 @@ label + .c3 {
 .c19:disabled:focus,
 .c19:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
@@ -5041,7 +5041,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
 .c8[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c8:disabled {
@@ -5236,7 +5236,7 @@ input + .c1 {
 
 .c4 .react-datepicker {
   background-color: #FFFFFF;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #878F9A;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -5251,7 +5251,7 @@ input + .c1 {
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   height: var(--size-2x);
   line-height: 1.875rem;
   margin: 0;
@@ -5354,7 +5354,7 @@ label + .c3 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
@@ -5392,8 +5392,8 @@ label + .c3 {
 
 .c5.datePickerInput:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c5.datePickerInput:disabled,
@@ -5460,7 +5460,7 @@ label + .c3 {
 .c17:disabled:focus,
 .c17:disabled:hover {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
