@@ -28,25 +28,27 @@ export type TableTokenMap = {
 };
 
 export const defaultTableTokens: TableTokenMap = {
-    'table-text-color': 'color-neutral-90',
-    'table-background-color': 'color-white',
+    'table-background-color': 'transparent-100',
+    'table-text-color': 'color-content',
 
-    'table-header-background-color': 'color-white',
-    'table-header-border-color': 'color-neutral-15',
+    'table-header-background-color': 'color-bg',
+    'table-header-border-color': 'color-border',
     'table-body-background-color': 'transparent-100',
-    'table-footer-border-color': 'color-neutral-15',
-    'table-footer-background-color': 'color-white',
+    'table-footer-background-color': 'color-bg',
+    'table-footer-border-color': 'color-border',
 
-    'table-cell-hover-background-color': 'color-neutral-15',
-    'table-cell-number-text-color': 'color-neutral-65',
+    'table-cell-hover-background-color': 'color-bg-hover',
+    'table-cell-number-text-color': 'color-content-subtle',
+
+    'table-row-border-color': 'color-border',
+    'table-row-odd-background-color': 'color-bg-isolated',
+    'table-row-selected-background-color': 'color-bg-selected',
+    'table-row-error-background-color': 'color-feedback-bg-alert-subtle',
+    'table-row-error-border-color': 'color-feedback-border-alert',
+
+    'table-sort-button-ascending-icon-color': 'color-content-subtle',
+    'table-sort-button-descending-icon-color': 'color-content-subtle',
+    'table-sort-button-default-icon-color': 'color-content-subtle',
 
     'table-group-border-color': 'color-neutral-15',
-    'table-row-border-color': 'color-neutral-15',
-    'table-row-odd-background-color': 'color-neutral-02',
-    'table-row-selected-background-color': 'color-brand-05',
-    'table-row-error-background-color': 'color-alert-05',
-    'table-row-error-border-color': 'color-alert-50',
-    'table-sort-button-ascending-icon-color': 'color-neutral-65',
-    'table-sort-button-descending-icon-color': 'color-neutral-65',
-    'table-sort-button-default-icon-color': 'color-neutral-65',
 };
