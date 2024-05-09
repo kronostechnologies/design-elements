@@ -28,7 +28,7 @@ import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
 import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
 import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
-import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
+import { defaultSegmentedControlTokens, SegmentedControlTokens } from './component/segmented-control-tokens';
 import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
@@ -73,7 +73,7 @@ export type ComponentTokens =
     | TextAreaTokens
     | FieldTokens
     | RadioButtonGroupTokens
-    | ToggleButtonGroupTokens
+    | SegmentedControlTokens
     | ToggleSwitchTokens
     | TextInputTokens
     | RadioCardTokens
@@ -136,7 +136,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTextAreaTokens,
     ...defaultFieldTokens,
     ...defaultRadioButtonGroupTokens,
-    ...defaultToggleButtonGroupTokens,
+    ...defaultSegmentedControlTokens,
     ...defaultToggleSwitchTokens,
     ...defaultTextInputTokens,
     ...defaultRadioCardTokens,

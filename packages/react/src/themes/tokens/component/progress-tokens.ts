@@ -31,18 +31,18 @@ export type ProgressTokenMap = {
 };
 
 export const defaultProgressTokens: ProgressTokenMap = {
+    'progress-circle-empty-track-color': 'color-bg-empty',
+    'progress-circle-label-text-color': 'color-content',
+    'progress-circle-result-text-color': 'color-content',
+
+    'progress-indicator-label-text-color': 'color-content',
+    'progress-indicator-empty-track-color': 'color-bg-empty',
+
     'progress-tracker-notification-badge-color': 'color-content-inverse',
     'progress-tracker-notification-badge-fill-color': 'color-feedback-bg-alert-bold',
 
-    'progress-circle-empty-track-color': 'color-bg-empty',
-    'progress-indicator-empty-track-color': 'color-bg-empty',
     'progress-tracker-bridge-empty-background-color': 'color-bg-empty',
     'progress-tracker-bridge-filled-background-color': 'color-bg-indicator',
-
-    'progress-circle-label-text-color': 'color-content',
-    'progress-circle-result-text-color': 'color-content',
-    'progress-indicator-label-text-color': 'color-content',
-
     // TO-DO
     'progress-tracker-step-todo-text-color': 'color-content',
     'progress-tracker-step-todo-background-color': 'color-bg',
