@@ -2,7 +2,6 @@ import {
     forwardRef,
     MouseEvent,
     MouseEventHandler,
-    PropsWithChildren,
     ReactElement,
     ReactNode,
     Ref,
@@ -132,32 +131,10 @@ const ActionButton = styled(Button).attrs(
     }
 `;
 
-interface DismissButtonProps {
-    bannerType: Exclude<GlobalBannerType, 'alert'>;
-}
-
-function getDismissButtonColors(
-    { bannerType, theme }: StyledProps<ActionButtonProps>,
-    state: GlobalBannerButtonState,
-): FlattenSimpleInterpolation | null {
-    const statePrefix = state === 'hover' ? '-hover' : '';
-    if (bannerType !== 'alert') {
-        return css`
-            background-color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-background-color`]};
-            color: ${theme.component[`global-banner-${bannerType}-dismiss-button${statePrefix}-text-color`]};
-        `;
-    }
-    return null;
-}
-
-const DismissButton = styled(Button).attrs(
-    { buttonType: 'tertiary', inverted: true },
-)<PropsWithChildren<DismissButtonProps>>`
-    ${(props) => getDismissButtonColors(props, 'default')};
-
-    &:hover {
-        ${(props) => getDismissButtonColors(props, 'hover')};
-    }
+const StyledButton = styled(Button)<{ bannerType: GlobalBannerType }>`
+    ${({ bannerType, theme }) => (
+        bannerType === 'warning' ? `color: ${theme.component['global-banner-warning-action-button-text-color']};` : ''
+    )};
 `;
 
 interface GlobalBannerProps {
@@ -242,25 +219,29 @@ export const GlobalBanner = forwardRef(({
                     )}
 
                     {secondaryActionButton && type !== 'alert' && (
-                        <DismissButton
+                        <StyledButton
                             data-testid="secondary-action-button"
+                            buttonType="tertiary"
                             bannerType={type}
+                            inverted={type !== 'warning'}
                             onClick={secondaryActionButton.onClick}
                             type="button"
                         >
                             {secondaryActionButton.label}
-                        </DismissButton>
+                        </StyledButton>
                     )}
 
                     {hasDismissButton && (
-                        <DismissButton
+                        <StyledButton
                             data-testid="dismiss-button"
+                            buttonType="tertiary"
                             bannerType={type}
+                            inverted={type !== 'warning'}
                             onClick={handleDismiss}
                             type="button"
                         >
                             {t('ignore')}
-                        </DismissButton>
+                        </StyledButton>
                     )}
                 </ButtonContainer>
             )}
