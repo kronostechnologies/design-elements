@@ -11,5 +11,5 @@ export type SpinnerTokenMap = {
 };
 
 export const defaultSpinnerTokens: SpinnerTokenMap = {
-    'spinner-fill-color': 'color-brand-50',
+    'spinner-fill-color': 'color-bg-indicator',
 };
