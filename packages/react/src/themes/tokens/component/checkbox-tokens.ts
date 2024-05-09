@@ -20,14 +20,14 @@ export type CheckboxTokenMap = {
 };
 
 export const defaultCheckboxTokens: CheckboxTokenMap = {
-    'checkbox-unchecked-background-color': 'color-white',
-    'checkbox-unchecked-border-color': 'color-neutral-65',
-    'checkbox-checked-icon-color': 'color-white',
-    'checkbox-checked-background-color': 'color-brand-50',
-    'checkbox-checked-border-color': 'color-brand-50',
-    'checkbox-disabled-background-color': 'color-neutral-05',
-    'checkbox-disabled-border-color': 'color-neutral-15',
-    'checkbox-hover-border-color': 'color-neutral-90',
-    'checkbox-hover-background-color': 'color-neutral-15',
-    'checkbox-error-border-color': 'color-alert-50',
+    'checkbox-unchecked-background-color': 'color-input-bg',
+    'checkbox-unchecked-border-color': 'color-input-border',
+    'checkbox-checked-icon-color': 'color-input-content-checked',
+    'checkbox-checked-background-color': 'color-input-bg-checked',
+    'checkbox-checked-border-color': 'color-input-border-checked',
+    'checkbox-disabled-background-color': 'color-input-bg-disabled',
+    'checkbox-disabled-border-color': 'color-input-border-disabled',
+    'checkbox-hover-border-color': 'color-input-border-hover',
+    'checkbox-hover-background-color': 'color-input-bg-hover',
+    'checkbox-error-border-color': 'color-input-border-error',
 };
