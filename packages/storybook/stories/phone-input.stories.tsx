@@ -1,21 +1,33 @@
 import { PhoneInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
-export default {
+const PhoneInputMeta: Meta<typeof PhoneInput> = {
     title: 'Components/Phone Input',
     component: PhoneInput,
+    args: {
+        pattern: '(___) ___-____',
+        hint: 'Hint',
+        label: 'Label',
+    },
 };
 
-export const Default: Story = () => (
-    <PhoneInput
-        data-testid='custom-data-test-id'
-        pattern='(___) ___-____'
-        hint='Hint'
-        label='Label'
-    />
-);
-Default.decorators = [DesktopDecorator];
+export default PhoneInputMeta;
+type Story = StoryObj<typeof PhoneInput>;
 
-export const Mobile: Story = () => <PhoneInput pattern='(___) ___-____' />;
-Mobile.decorators = [MobileDecorator];
+export const Default: Story = {
+    ...PhoneInputMeta,
+    decorators: [DesktopDecorator],
+    render: (args) => (
+        <PhoneInput
+            data-testid='custom-data-test-id'
+            /* eslint-disable-next-line react/jsx-props-no-spreading */
+            {...args}
+        />
+    ),
+};
+
+export const Mobile: Story = {
+    ...PhoneInputMeta,
+    decorators: [MobileDecorator],
+};
