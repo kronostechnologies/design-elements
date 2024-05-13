@@ -59,7 +59,7 @@ interface DotProps {
 }
 
 const Dot = styled.button<DotProps>`
-    background-color: ${({ active, theme }) => (active ? theme.component['carousel-dot-active-background-color'] : theme.component['carousel-dot-inactive-background-color'])};
+    background-color: ${({ active, theme }) => (active ? theme.component['carousel-dot-selected-background-color'] : theme.component['carousel-dot-unselected-background-color'])};
     border: 1px solid  ${({ theme }) => theme.component['carousel-dot-border-color']};
     border-radius: 50%;
     box-sizing: border-box;

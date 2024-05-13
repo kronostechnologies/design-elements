@@ -20,6 +20,10 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
     position: relative;
     user-select: none;
 
+    &:hover {
+        color: ${({ theme }) => theme.component['tab-button-hover-text-color']};
+    }
+
     &::after {
         content: '';
         display: block;
