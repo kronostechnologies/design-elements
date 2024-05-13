@@ -1,35 +1,64 @@
 import { TextInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const TextInputMeta: Meta<typeof TextInput> = {
     title: 'Components/Text Input',
     component: TextInput,
+    args: {
+        type: 'text',
+    },
+    argTypes: {
+        onBlur: {
+            control: { type: null },
+        },
+        onChange: {
+            control: { type: null },
+        },
+        onFocus: {
+            control: { type: null },
+        },
+        onKeyDown: {
+            control: { type: null },
+        },
+        onKeyUp: {
+            control: { type: null },
+        },
+        onMouseUp: {
+            control: { type: null },
+        },
+        value: {
+            control: { type: 'text' },
+        },
+    },
 };
 
-export const Default: Story = () => (
-    <TextInput
-        label="First Name"
-        type="text"
-        validationErrorMessage="Error message"
-        hint="Hint"
-    />
-);
+export default TextInputMeta;
+type Story = StoryObj<typeof TextInput>;
 
-export const EventCallbacks: Story = () => (
-    <TextInput
-        required
-        label="See console for callbacks"
-        type="text"
-        onChange={(event) => {
-            console.info(`Custom function called on change. Current value: ${event.currentTarget.value}`);
-        }}
-        onBlur={(event) => {
+export const Default: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        validationErrorMessage: 'Error message',
+        hint: 'Hint',
+    },
+};
+
+export const EventCallbacks: Story = {
+    ...TextInputMeta,
+    parameters: rawCodeParameters,
+    args: {
+        required: true,
+        label: 'See console for callbacks',
+        onBlur: (event) => {
             console.info(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
-        }}
-        onFocus={(event) => {
+        },
+        onChange: (event) => {
+            console.info(`Custom function called on change. Current value: ${event.currentTarget.value}`);
+        },
+        onFocus: (event) => {
             console.info(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
-        }}
-    />
-);
-EventCallbacks.parameters = rawCodeParameters;
+        },
+    },
+};
