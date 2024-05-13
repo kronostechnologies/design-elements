@@ -1,17 +1,44 @@
 import { StepperInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const StepperInputMeta: Meta<typeof StepperInput> = {
     title: 'Components/Stepper input',
     component: StepperInput,
+    args: {
+        label: 'Stepper input',
+    },
+    argTypes: {
+        onBlur: {
+            control: { type: null },
+        },
+        onChange: {
+            control: { type: null },
+        },
+        onFocus: {
+            control: { type: null },
+        },
+        step: {
+            control: {
+                type: 'number',
+                min: 0,
+            },
+        },
+        value: {
+            control: { type: 'number' },
+        },
+    },
 };
 
-export const Default: Story = () => (
-    <StepperInput label="Stepper input" />
-);
+export default StepperInputMeta;
+type Story = StoryObj<typeof StepperInput>;
 
-export const WithOnChangeCallback: Story = () => (
-    <StepperInput label="Stepper input" onChange={(value) => console.info(value)} />
-);
-WithOnChangeCallback.parameters = rawCodeParameters;
+export const Default: Story = { ...StepperInputMeta };
+
+export const WithOnChangeCallback: Story = {
+    ...StepperInputMeta,
+    parameters: rawCodeParameters,
+    args: {
+        onChange: (value: number) => console.info(value),
+    },
+};
