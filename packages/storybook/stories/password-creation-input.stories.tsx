@@ -1,19 +1,27 @@
 import { ChangeEvent } from 'react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { PasswordCreationInput } from '@equisoft/design-elements-react';
 import { LanguageSwitchDecorator } from './utils/decorator';
 
-export default {
+const PasswordCreationInputMeta: Meta<typeof PasswordCreationInput> = {
     title: 'Components/Password Creation Input',
     component: PasswordCreationInput,
     decorators: [LanguageSwitchDecorator],
+    args: {
+        onChange: (password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
+            console.info(password);
+            console.info(event);
+            console.info(isValid);
+        },
+    },
+    argTypes: {
+        onChange: {
+            control: { type: null },
+        },
+    },
 };
 
-export const Default: Story = () => (
-    <PasswordCreationInput onChange={(password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
-        console.info(password);
-        console.info(event);
-        console.info(isValid);
-    }}
-    />
-);
+export default PasswordCreationInputMeta;
+type Story = StoryObj<typeof PasswordCreationInput>;
+
+export const Default: Story = { ...PasswordCreationInputMeta };
