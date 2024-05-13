@@ -81,6 +81,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
+.c7:hover {
+  color: #000000;
+}
+
 .c7::after {
   content: '';
   display: block;
@@ -127,6 +131,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
   user-select: none;
 }
 
+.c10:hover {
+  color: #000000;
+}
+
 .c10::after {
   content: '';
   display: block;
@@ -154,7 +162,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c10:active::after {
-  background-color: #003A5A !important;
+  background-color: #012639 !important;
 }
 
 .c5 {
@@ -175,7 +183,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 
 .c9:hover .c6::after {
   background-color: #DBDEE1;
-  color: #60666E;
+  color: #000000;
 }
 
 .c8::after {
@@ -270,7 +278,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -296,7 +303,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -514,6 +520,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
+.c8:hover {
+  color: #000000;
+}
+
 .c8::after {
   content: '';
   display: block;
@@ -560,6 +570,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   user-select: none;
 }
 
+.c11:hover {
+  color: #000000;
+}
+
 .c11::after {
   content: '';
   display: block;
@@ -587,7 +601,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 }
 
 .c11:active::after {
-  background-color: #003A5A !important;
+  background-color: #012639 !important;
 }
 
 .c6 {
@@ -608,7 +622,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c10:hover .c7::after {
   background-color: #DBDEE1;
-  color: #60666E;
+  color: #000000;
 }
 
 .c9::after {
@@ -712,7 +726,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -739,7 +752,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -958,6 +970,10 @@ exports[`Tabs matches snapshot 1`] = `
   font-weight: var(--font-semi-bold);
 }
 
+.c8:hover {
+  color: #000000;
+}
+
 .c8::after {
   content: '';
   display: block;
@@ -1004,6 +1020,10 @@ exports[`Tabs matches snapshot 1`] = `
   user-select: none;
 }
 
+.c11:hover {
+  color: #000000;
+}
+
 .c11::after {
   content: '';
   display: block;
@@ -1031,7 +1051,7 @@ exports[`Tabs matches snapshot 1`] = `
 }
 
 .c11:active::after {
-  background-color: #003A5A !important;
+  background-color: #012639 !important;
 }
 
 .c6 {
@@ -1052,7 +1072,7 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c10:hover .c7::after {
   background-color: #DBDEE1;
-  color: #60666E;
+  color: #000000;
 }
 
 .c9::after {
@@ -1156,7 +1176,6 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1183,7 +1202,6 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
