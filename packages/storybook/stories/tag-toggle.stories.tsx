@@ -5,7 +5,7 @@ import { rawCodeParameters } from './utils/parameters';
 
 const ToggleTagMeta: Meta<typeof ToggleTag> = {
     component: ToggleTag,
-    title: 'Components/Tags/ToggleTag',
+    title: 'Components/Tag (Toggle)',
     args: {
         value: {
             label: 'Toggle Tag',
@@ -54,27 +54,6 @@ type Story = StoryObj<typeof ToggleTag>;
 
 export const Default: Story = {
     ...ToggleTagMeta,
-};
-
-export const Small: Story = {
-    ...Default,
-    args: {
-        size: 'small',
-    },
-};
-
-export const Medium: Story = {
-    ...Default,
-    args: {
-        size: 'medium',
-    },
-};
-
-export const WithIcons: Story = {
-    ...Default,
-    args: {
-        iconName: 'copy',
-    },
 };
 
 export const WithRef: Story = () => {
