@@ -1,48 +1,71 @@
 import { TextArea } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { SyntheticEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const TextAreaMeta: Meta<typeof TextArea> = {
     title: 'Components/Text Area',
     component: TextArea,
+    args: {
+        label: 'Text area label',
+    },
+    argTypes: {
+        onBlur: {
+            control: { type: null },
+        },
+        onChange: {
+            control: { type: null },
+        },
+        onFocus: {
+            control: { type: null },
+        },
+    },
 };
 
-export const Default: Story = () => (
-    <TextArea
-        data-testid="some-data-test-id"
-        label="Text area label"
-        hint="Hint"
-    />
-);
+export default TextAreaMeta;
+type Story = StoryObj<typeof TextArea>;
 
-export const MaxLength: Story = () => (
-    <TextArea
-        label="Text area label"
-        hint="Hint"
-        maxLength={25}
-    />
-);
-
-export const ControlledValue: Story = () => (
-    <TextArea
-        label="Text area label"
-        value="This is the value"
-    />
-);
-
-export const EventCallbacks: Story = () => {
-    function handleEvent(event: SyntheticEvent<HTMLTextAreaElement>): void {
-        console.info(`Custom function called on ${event.type}. Current value: ${event.currentTarget.value}`);
-    }
-
-    return (
+export const Default: Story = {
+    args: {
+        hint: 'Hint',
+    },
+    render: (args) => (
         <TextArea
-            label="Text area label"
-            onChange={handleEvent}
-            onBlur={handleEvent}
-            onFocus={handleEvent}
+            // eslint-disable-next-line
+            {...args}
+            data-testid="some-data-test-id"
         />
-    );
+    ),
 };
-EventCallbacks.parameters = rawCodeParameters;
+
+export const MaxLength: Story = {
+    args: {
+      maxLength: 25,
+      hint: 'Hint',
+    },
+};
+
+export const ControlledValue: Story = {
+    args: {
+      value: 'This is the value',
+    },
+};
+
+export const EventCallbacks: Story = {
+    parameters: rawCodeParameters,
+    render: (args) => {
+        function handleEvent(event: SyntheticEvent<HTMLTextAreaElement>): void {
+            console.info(`Custom function called on ${event.type}. Current value: ${event.currentTarget.value}`);
+        }
+
+        return (
+            <TextArea
+                // eslint-disable-next-line
+                {...args}
+                onChange={handleEvent}
+                onBlur={handleEvent}
+                onFocus={handleEvent}
+            />
+        );
+    },
+};
