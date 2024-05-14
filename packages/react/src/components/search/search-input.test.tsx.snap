@@ -41,14 +41,15 @@ exports[`SearchInput should match the snapshot 1`] = `
   user-select: none;
 }
 
-.c13:focus {
-  outline: none;
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c13 > svg {
@@ -68,6 +69,7 @@ exports[`SearchInput should match the snapshot 1`] = `
 
 .c12:hover {
   background-color: #DBDEE1;
+  border-color: #000000;
   color: #000000;
 }
 
@@ -85,7 +87,7 @@ exports[`SearchInput should match the snapshot 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -182,16 +184,6 @@ input + .c2 {
   padding-top: var(--spacing-half);
 }
 
-.c7:focus {
-  outline: none;
-}
-
-.c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
 .c7::-webkit-input-placeholder {
   color: #60666E;
 }
@@ -234,6 +226,17 @@ input + .c2 {
   color: #B7BBC2;
 }
 
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 label + .c6 {
   margin-top: 0;
 }
@@ -262,14 +265,15 @@ label + .c6 {
   width: 1.25rem;
 }
 
-.c9:focus {
-  outline: none;
+.c9 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c9:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 input:valid + .c8 {

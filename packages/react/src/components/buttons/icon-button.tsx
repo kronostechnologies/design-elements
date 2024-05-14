@@ -57,6 +57,8 @@ export const IconButton = forwardRef(({
     focusable = true,
     title,
     onClick,
+    onFocus,
+    onBlur,
     onKeyDown,
     ...props
 }: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
@@ -75,6 +77,8 @@ export const IconButton = forwardRef(({
             disabled={disabled}
             focusable={focusable}
             onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
