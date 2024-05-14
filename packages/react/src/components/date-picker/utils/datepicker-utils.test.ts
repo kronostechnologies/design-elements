@@ -5,6 +5,7 @@ import {
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
+    getSimplifiedInputDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
 } from './datepicker-utils';
@@ -106,5 +107,34 @@ describe('Datepicker utils', () => {
 
             expect(enCA.options?.weekStartsOn).toEqual(4);
         });
+    });
+
+    describe('get format for the quick input', () => {
+        const tests = [
+            {
+                format: 'yyyy-MM-dd',
+                result: 'yyyyMMdd',
+            },
+            {
+                format: 'yyyy/d/M',
+                result: 'yyyyddMM',
+            },
+            {
+                format: 'yy-MM-dd',
+                result: 'yyMMdd',
+            },
+            {
+                format: 'invalid',
+                result: undefined,
+            },
+        ];
+
+        test.each(tests)(
+            'should return $result with format $format',
+            (item) => {
+                const result = getSimplifiedInputDateFormat(item.format);
+                expect(result).toBe(item.result);
+            },
+        );
     });
 });

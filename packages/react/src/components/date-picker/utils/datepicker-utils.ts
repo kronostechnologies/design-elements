@@ -65,3 +65,17 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
     const optionsOverride: Locale['options'] = { weekStartsOn: dayOfWeek };
     Object.assign(locale.options || {}, optionsOverride);
 }
+
+/**
+ * The shorter version of format without symbols. Month and Day always use 2 digits.
+ */
+export function getSimplifiedInputDateFormat(dateFormat: string): string | void {
+    if (/[^yMd/\-,. ]/g.test(dateFormat)) {
+        return;
+    }
+
+    return dateFormat
+        .replace(/[^yMd]/g, '')
+        .replace(/M+/g, 'MM')
+        .replace(/d+/g, 'dd');
+}
