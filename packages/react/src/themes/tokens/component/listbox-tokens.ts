@@ -4,25 +4,17 @@ import { RefTokens } from '../ref-tokens';
 export type ListboxTokens =
     | 'listbox-background-color'
     | 'listbox-border-color'
-    | 'listbox-box-shadow-frame-color'
-    | 'listbox-box-shadow-depth-color'
-    | 'listbox-checkbox-background-color'
-    | 'listbox-checkbox-disabled-background-color'
-    | 'listbox-checkbox-border-color'
-    | 'listbox-checkbox-disabled-border-color'
-    | 'listbox-checkbox-hover-border-color'
-    | 'listbox-checkbox-disabled-hover-border-color'
     | 'listbox-item-text-color'
+    | 'listbox-item-disabled-background-color'
     | 'listbox-item-disabled-text-color'
     | 'listbox-item-hover-background-color'
-    | 'listbox-item-hover-disabled-background-color'
-    | 'listbox-item-focus-outline-color'
-    | 'listbox-item-disabled-focus-outline-color'
     | 'listbox-item-selected-background-color'
     | 'listbox-item-selected-border-color'
     | 'listbox-item-selected-icon-color'
     | 'listbox-item-caption-text-color'
-    | 'listbox-item-caption-disabled-text-color';
+    | 'listbox-item-caption-disabled-text-color'
+    | 'listbox-box-shadow-frame-color'
+    | 'listbox-box-shadow-depth-color';
 
 export type ListboxTokenValue = AliasTokens | RefTokens;
 
@@ -33,23 +25,18 @@ export type ListboxTokenMap = {
 export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-background-color': 'color-white',
     'listbox-border-color': 'color-neutral-50',
-    'listbox-box-shadow-frame-color': 'color-neutral-15',
-    'listbox-box-shadow-depth-color': 'transparent-20',
-    'listbox-checkbox-background-color': 'color-white',
-    'listbox-checkbox-disabled-background-color': 'color-neutral-05',
-    'listbox-checkbox-border-color': 'color-neutral-65',
-    'listbox-checkbox-disabled-border-color': 'color-neutral-15',
-    'listbox-checkbox-hover-border-color': 'color-brand-50',
-    'listbox-checkbox-disabled-hover-border-color': 'color-neutral-15',
     'listbox-item-text-color': 'color-black',
+    'listbox-item-caption-text-color': 'color-neutral-65',
+    'listbox-item-hover-background-color': 'color-neutral-15',
+
+    'listbox-item-disabled-background-color': 'color-white',
     'listbox-item-disabled-text-color': 'color-neutral-30',
     'listbox-item-caption-disabled-text-color': 'color-neutral-15',
-    'listbox-item-caption-text-color': 'color-neutral-65',
-    'listbox-item-disabled-focus-outline-color': 'transparent-100',
-    'listbox-item-focus-outline-color': 'color-brand-50',
-    'listbox-item-hover-background-color': 'color-neutral-15',
-    'listbox-item-hover-disabled-background-color': 'color-white',
+
     'listbox-item-selected-background-color': 'color-brand-50',
     'listbox-item-selected-border-color': 'color-brand-50',
     'listbox-item-selected-icon-color': 'color-white',
+
+    'listbox-box-shadow-frame-color': 'color-neutral-15',
+    'listbox-box-shadow-depth-color': 'transparent-dark-20',
 };

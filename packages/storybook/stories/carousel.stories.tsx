@@ -1,22 +1,17 @@
 import { Carousel } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ReactNodeArray } from 'react';
 import styled from 'styled-components';
 
-export default {
-    title: 'Components/Carousel',
-    component: Carousel,
-};
+const Header = styled.h1`
+    text-align: center;
+`;
 
 const Slide = styled.div`
     align-items: center;
     display: flex;
     height: 100px;
     justify-content: center;
-`;
-
-const Header = styled.h1`
-    text-align: center;
 `;
 
 function slides(): ReactNodeArray {
@@ -27,38 +22,67 @@ function slides(): ReactNodeArray {
     ];
 }
 
-export const Base: Story = () => (
-    <Carousel aria-label="A carousel">
-        {slides()}
-    </Carousel>
-);
+const CarouselMeta: Meta<typeof Carousel> = {
+    title: 'Components/Carousel',
+    component: Carousel,
+    argTypes: {
+        children: {
+            control: { type: null },
+        },
+        header: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <Carousel
+            {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+            aria-label="A carousel"
+        >
+            {slides()}
+        </Carousel>
+    ),
+};
 
-export const Loop: Story = () => (
-    <Carousel aria-label="A carousel" loop>
-        {slides()}
-    </Carousel>
-);
+export default CarouselMeta;
+type Story = StoryObj<typeof Carousel>;
 
-export const WithoutArrows: Story = () => (
-    <Carousel aria-label="A carousel" withArrows={false}>
-        {slides()}
-    </Carousel>
-);
+export const Default: Story = {
+    ...CarouselMeta,
+};
 
-export const WithHeader: Story = () => (
-    <Carousel aria-label="A carousel" header={<Header>Header</Header>}>
-        {slides()}
-    </Carousel>
-);
+export const Loop: Story = {
+    args: {
+        loop: true,
+        autoTransitionDelay: 0,
+    },
+    ...CarouselMeta,
+};
 
-export const WithInitialSlide: Story = () => (
-    <Carousel aria-label="A carousel" initialSlide={1}>
-        {slides()}
-    </Carousel>
-);
+export const WithAutomaticTransition: Story = {
+    args: {
+        loop: true,
+        autoTransitionDelay: 1000,
+    },
+    ...CarouselMeta,
+};
 
-export const WithAutomaticTransition: Story = () => (
-    <Carousel aria-label="A carousel" autoTransitionDelay={1000} loop>
-        {slides()}
-    </Carousel>
-);
+export const WithoutArrows: Story = {
+    args: {
+        withArrows: false,
+    },
+    ...CarouselMeta,
+};
+
+export const WithHeader: Story = {
+    args: {
+        header: <Header>Header</Header>,
+    },
+    ...CarouselMeta,
+};
+
+export const WithInitialSlide: Story = {
+    args: {
+        initialSlide: 1,
+    },
+    ...CarouselMeta,
+};
