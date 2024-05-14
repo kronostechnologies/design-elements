@@ -1,6 +1,8 @@
+import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Button } from './button';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 describe('Button', () => {
     test('onClick callback is called when clicked', () => {
@@ -175,5 +177,46 @@ describe('Button', () => {
         expect(wrapper).not.toHaveStyleRule('outline', 'none', {
             modifier: ':focus',
         });
+    });
+
+    test('icons can be placed left and right of the button', () => {
+        const wrapper = shallow(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                leftIconName="chevronLeft"
+                rightIconName="chevronRight"
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'left-icon')).toHaveLength(1);
+        expect(getByTestId(wrapper, 'right-icon')).toHaveLength(1);
+    });
+
+    test('icons can be placed on one side of the button', () => {
+        const wrapper = shallow(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                rightIconName="chevronRight"
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'left-icon')).toHaveLength(0);
+        expect(getByTestId(wrapper, 'right-icon')).toHaveLength(1);
+    });
+
+    test('has left and right icons', () => {
+        const tree = renderWithProviders(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                leftIconName="chevronLeft"
+                rightIconName="chevronRight"
+
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
     });
 });

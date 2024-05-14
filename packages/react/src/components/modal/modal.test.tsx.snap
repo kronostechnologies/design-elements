@@ -282,7 +282,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -486,7 +486,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -689,7 +689,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 
 .c4:hover,
 .c4[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }

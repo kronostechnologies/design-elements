@@ -31,7 +31,7 @@ export const Circle: VoidFunctionComponent<CircleProps> = ({
     return (
         <Svg height="100%" width="100%" viewBox={`0 0 ${diameter} ${diameter}`}>
             <BackgroundCircle
-                stroke={theme.component['progress-circle-empty-stroke-color']}
+                stroke={theme.component['progress-circle-empty-track-color']}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeLinecap="round"
