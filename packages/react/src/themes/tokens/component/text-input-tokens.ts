@@ -4,6 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type TextInputTokens =
     | 'text-input-background-color'
     | 'text-input-border-color'
+    | 'text-input-error-border-color'
     | 'text-input-text-color'
     | 'text-input-placeholder-text-color'
     | 'text-input-disabled-background-color'
@@ -20,6 +21,7 @@ export type TextInputTokenMap = {
 export const defaultTextInputTokens: TextInputTokenMap = {
     'text-input-background-color': 'color-white',
     'text-input-border-color': 'color-neutral-65',
+    'text-input-error-border-color': 'color-alert-50',
     'text-input-text-color': 'color-black',
     'text-input-placeholder-text-color': 'color-neutral-65',
     'text-input-disabled-background-color': 'color-neutral-05',

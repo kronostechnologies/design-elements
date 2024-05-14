@@ -159,14 +159,15 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -201,12 +202,12 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="16"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="16"
           width="16"
@@ -432,14 +433,15 @@ exports[`Tooltip Has default desktop styles 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -473,12 +475,12 @@ exports[`Tooltip Has default desktop styles 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="16"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="16"
           width="16"
@@ -707,14 +709,15 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -749,12 +752,12 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="24"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="24"
           width="24"
@@ -980,14 +983,15 @@ exports[`Tooltip Has mobile styles 1`] = `
   width: fit-content;
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <Tooltip
@@ -1021,12 +1025,12 @@ exports[`Tooltip Has mobile styles 1`] = `
       tabIndex={0}
     >
       <Icon
-        color="#60666E"
+        color="#1B1C1E"
         name="info"
         size="24"
       >
         <svg
-          color="#60666E"
+          color="#1B1C1E"
           focusable={false}
           height="24"
           width="24"

@@ -49,8 +49,6 @@ exports[`Chooser Button Matches the snapshot 1`] = `
   min-height: 3rem;
   padding: var(--spacing-1x);
   text-align: center;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .c1:hover {
@@ -59,22 +57,30 @@ exports[`Chooser Button Matches the snapshot 1`] = `
   color: #1B1C1E;
 }
 
-input[type="checkbox"]:checked + .c0,
-input[type="radio"]:checked + .c1 {
+input[type='checkbox']:checked + .c0,
+input[type='radio']:checked + .c1 {
   background: #E0F0F9;
   border-color: #006296;
   color: #003A5A;
 }
 
-input[type="checkbox"]:focus + .c0,
+.c1,
+input[type="checkbox"]:focus + .c1,
 input[type="radio"]:focus + .c1 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
-input[type="checkbox"]:disabled + .c0,
-input[type="radio"]:disabled + .c1 {
+.c1:focus,
+input[type="checkbox"]:focus + .c1,
+input[type="radio"]:focus + .c1 {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+input[type='checkbox']:disabled + .c0,
+input[type='radio']:disabled + .c1 {
   background: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
