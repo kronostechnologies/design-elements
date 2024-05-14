@@ -1,57 +1,86 @@
 import { GlobalBanner } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 
-export default {
+const GlobalBannerMeta: Meta<typeof GlobalBanner> = {
     title: 'Components/Global Banner',
     component: GlobalBanner,
     decorators: [DeviceContextDecorator],
+    args: {
+        actionButton: {
+            label: 'Action',
+            onClick: () => console.info('Action button clicked.'),
+        },
+    },
+    argTypes: {
+        onDismiss: {
+            control: { type: null },
+        },
+    },
 };
 
-const actionButton = {
-    label: 'Action',
-    onClick: () => console.info('Action button clicked.'),
+export default GlobalBannerMeta;
+type Story = StoryObj<typeof GlobalBanner>;
+
+export const Neutral: Story = {
+    args: {
+        label: 'Neutral.',
+        type: 'neutral',
+        dismissable: true,
+    },
+    render: (args) => (
+        <GlobalBanner
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        >
+            Neutral global banner.
+        </GlobalBanner>
+    ),
 };
 
-export const Neutral: Story = () => (
-    <GlobalBanner
-        actionButton={actionButton}
-        label="Neutral."
-        type="neutral"
-        dismissable
-    >
-        Neutral global banner.
-    </GlobalBanner>
-);
+export const Warning: Story = {
+    args: {
+        label: 'Warning.',
+        type: 'warning',
+        dismissable: true,
+    },
+    render: (args) => (
+        <GlobalBanner
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        >
+            Warning message.
+        </GlobalBanner>
+    ),
+};
 
-export const Warning: Story = () => (
-    <GlobalBanner
-        actionButton={actionButton}
-        label="Warning."
-        type="warning"
-        dismissable
-    >
-        Warning message.
-    </GlobalBanner>
-);
+export const Alert: Story = {
+    args: {
+        label: 'Alert.',
+        type: 'alert',
+    },
+    render: (args) => (
+        <GlobalBanner
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        >
+            Alert message.
+        </GlobalBanner>
+    ),
+};
 
-export const Alert: Story = () => (
-    <GlobalBanner
-        actionButton={actionButton}
-        label="Alert."
-        type="alert"
-    >
-        Alert message.
-    </GlobalBanner>
-);
-
-export const Discovery: Story = () => (
-    <GlobalBanner
-        actionButton={actionButton}
-        label="Discovery."
-        type="discovery"
-        dismissable
-    >
-        Info message.
-    </GlobalBanner>
-);
+export const Discovery: Story = {
+    args: {
+        label: 'Discovery.',
+        type: 'discovery',
+        dismissable: true,
+    },
+    render: (args) => (
+        <GlobalBanner
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        >
+            Info message.
+        </GlobalBanner>
+    ),
+};
