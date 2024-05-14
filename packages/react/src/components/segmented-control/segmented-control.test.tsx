@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { ToggleButtonGroup } from './toggle-button-group';
+import { SegmentedControl } from './segmented-control';
 
 const buttonGroup = [
     { label: 'Option 1', value: 'option1' },
@@ -10,24 +10,24 @@ const buttonGroup = [
     { label: 'Option 4', value: 'option4' },
 ];
 
-describe('ToggleButtonGroup', () => {
+describe('SegmentedControl', () => {
     test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
-        const wrapper = shallow(<ToggleButtonGroup onClick={callback} buttonGroup={buttonGroup} groupName="Test1" />);
+        const wrapper = shallow(<SegmentedControl onClick={callback} buttonGroup={buttonGroup} groupName="Test1" />);
 
         getByTestId(wrapper, 'test-toggle-button-2').simulate('click', { currentTarget: { value: 'test' } });
         expect(callback).toHaveBeenCalled();
     });
 
     test('Is default pressed', () => {
-        const wrapper = shallow(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />);
+        const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test2" />);
 
         expect(getByTestId(wrapper, 'test-toggle-button-1').prop('pressed')).toBe(true);
     });
 
     test('Matches snapshot (desktop)', () => {
         const tree = renderWithProviders(
-            <ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />,
+            <SegmentedControl buttonGroup={buttonGroup} groupName="Test4" />,
             'desktop',
         );
 
@@ -36,7 +36,7 @@ describe('ToggleButtonGroup', () => {
 
     test('Matches snapshot (mobile)', () => {
         const tree = renderWithProviders(
-            <ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />,
+            <SegmentedControl buttonGroup={buttonGroup} groupName="Test4" />,
             'mobile',
         );
 
