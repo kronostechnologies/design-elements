@@ -11,7 +11,7 @@ import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnl
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 
 const StyledTextArea = styled.textarea`
-    ${(props) => inputsStyle(props.theme)};
+    ${inputsStyle};
 
     min-height: 6.5rem;
     min-width: 100%;

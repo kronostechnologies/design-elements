@@ -2,7 +2,7 @@
 
 exports[`TextArea Is disabled 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -29,10 +29,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -62,16 +58,6 @@ input + .c1 {
   outline: none;
   overflow: auto;
   resize: vertical;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -114,6 +100,17 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -142,7 +139,7 @@ input + .c1 {
 
 exports[`TextArea Matches the snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -169,10 +166,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -202,16 +195,6 @@ input + .c1 {
   outline: none;
   overflow: auto;
   resize: vertical;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -254,6 +237,17 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div

@@ -47,7 +47,7 @@ function getLabelBackgroundColor({ disabled, isChecked, theme }: CardProps): str
         return theme.component['radio-card-disabled-background-color'];
     }
     if (isChecked) {
-        return theme.component['radio-card-checked-background-color'];
+        return theme.component['radio-card-selected-background-color'];
     }
     return theme.component['radio-card-background-color'];
 }
@@ -57,7 +57,7 @@ function getLabelBorderColor({ disabled, isChecked, theme }: CardProps): string 
         return theme.component['radio-card-disabled-border-color'];
     }
     if (isChecked) {
-        return theme.component['radio-card-checked-border-color'];
+        return theme.component['radio-card-selected-border-color'];
     }
     return theme.component['radio-card-border-color'];
 }
@@ -97,9 +97,7 @@ export const Card = styled.div<CardProps>`
     padding: var(--spacing-2x) var(--spacing-3x);
     width: 100%;
 
-    &:focus-within {
-        ${({ theme }) => focus({ theme }, false, '&')}
-    }
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
 
     &:hover:not([disabled]) {
         background-color: ${({ theme }) => theme.component['radio-card-hover-background-color']};

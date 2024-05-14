@@ -26,14 +26,15 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   width: var(--size-2halfx);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {
@@ -123,14 +124,15 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {
@@ -220,14 +222,15 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   width: var(--size-2halfx);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {

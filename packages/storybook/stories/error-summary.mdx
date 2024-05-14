@@ -1,0 +1,35 @@
+import { ErrorSummary } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as ErrorSummaryStories  from './error-summary.stories';
+
+<Meta of={ErrorSummaryStories} />
+
+# Error Summary
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The error summary is a notification component that lists all the errors from a form.
+<Canvas of={ErrorSummaryStories.Default} />
+
+## Usage
+### When to use
+- Use to help users understand what went wrong in their form submission.
+- Use to help users fix the problem and recover from the error. 
+
+### When not to use
+- Do not use for other alerts than an error summary.
+
+## Variants
+
+### Default
+<Canvas of={ErrorSummaryStories.Default} />
+
+## Properties
+<ArgTypes of={ErrorSummary} />
+
+## References
+1. [https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/](https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/)
+2. [https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-identified.html](https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-identified.html)
