@@ -41,14 +41,15 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -63,19 +64,20 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -97,7 +99,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,18 +113,20 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {
@@ -134,7 +138,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -300,14 +304,15 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -322,19 +327,20 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -356,7 +362,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -370,18 +376,20 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {
@@ -393,7 +401,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;
@@ -560,14 +568,15 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -582,19 +591,20 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -616,7 +626,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -630,18 +640,20 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   text-decoration: none;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c7:hover {
   background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c7[disabled] {
@@ -653,7 +665,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
   margin: 0;
   overflow-y: auto;

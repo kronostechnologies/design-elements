@@ -1,69 +1,51 @@
-import { Button, MoneyInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
-import { useState } from 'react';
+import { MoneyInput } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const MoneyInputMeta: Meta<typeof MoneyInput> = {
     title: 'Components/Money Input',
     component: MoneyInput,
+    args: {
+        label: 'Entrez un montant',
+        hint: 'Hint',
+        locale: 'fr-CA',
+    },
+    argTypes: {
+        onChange: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <MoneyInput
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            data-testid='some-data-testid'
+        />
+    ),
 };
 
-export const Normal: Story = () => (
-    <>
-        <MoneyInput data-testid='some-data-testid' hint="Hint" label="Entrez un montant" />
-        <MoneyInput hint="Hint" label="Choose a number" locale="en-CA" />
-    </>
-);
+export default MoneyInputMeta;
+type Story = StoryObj<typeof MoneyInput>;
 
-export const EnglishLocale: Story = () => (
-    <MoneyInput label="Choose a number" locale="en-CA" />
-);
-
-export const NoLabel: Story = () => (
-    <MoneyInput />
-);
-
-export const Disabled: Story = () => (
-    <MoneyInput disabled label="Entrez un montant" />
-);
-
-export const WithCurrency: Story = () => (
-    <MoneyInput label="Entrez un montant" currency="USD" />
-);
-
-export const WithPrecision: Story = () => (
-    <MoneyInput label="Entrez un montant" precision={0} />
-);
-
-export const ControlledWithValue: Story = () => {
-    const [value, setValue] = useState<number | null>(350);
-
-    return (
-        <MoneyInput label="Entrez un montant" value={value} onChange={setValue} />
-    );
+export const FrenchLocale: Story = {
+    ...MoneyInputMeta,
 };
-ControlledWithValue.parameters = rawCodeParameters;
 
-export const Required: Story = () => (
-    <form onSubmit={(event) => event.preventDefault()}>
-        <MoneyInput required label="Entrez un montant" />
-        <Button buttonType="primary" type="submit">Soumettre</Button>
-    </form>
-);
+export const EnglishLocale: Story = {
+    ...MoneyInputMeta,
+    args: {
+        label: 'Choose a number',
+        locale: 'en-CA',
+    },
+};
 
-export const CustomErrorMessage: Story = () => (
-    <form onSubmit={(event) => event.preventDefault()}>
-        <MoneyInput required label="Entrez un montant" validationErrorMessage="Custom error message." />
-    </form>
-);
-
-export const OnChangeCallback: Story = () => (
-    <MoneyInput
-        label="Entrez un montant"
-        onChange={(value, formattedValue) => {
+export const OnChangeCallback: Story = {
+    ...MoneyInputMeta,
+    args: {
+        onChange: (value, formattedValue) => {
             console.info('value:', value);
             console.info('formattedValue: ', formattedValue);
-        }}
-    />
-);
+        },
+    },
+};
 OnChangeCallback.parameters = rawCodeParameters;

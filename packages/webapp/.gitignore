@@ -1,0 +1,12 @@
+.env.local
+.env.*.local
+
+.pnp.*
+**/.yarn/*
+!**/.yarn/releases
+!**/.yarn/plugins
+!**/.yarn/sdks
+
+.vscode/
+build/
+dist/

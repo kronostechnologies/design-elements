@@ -1,0 +1,48 @@
+import { Tag } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as TagStories  from './tag.stories';
+
+
+<Meta of={TagStories} />
+
+# Tag
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Tags allow users to quickly identify categories or properties [1].
+<Canvas of={TagStories.Default} />
+
+## Usage
+
+### When to use 
+- Use to label, organize, or categorize objects [2].
+- Use to display counts [2].
+- Use to display selected filters.
+
+### When not to use 
+- Do not use to display a status, use a Lozenge instead.
+- Do not use to display notifications, use a badge instead.
+- Do not use to display long text or long descriptions.
+
+## Variants
+
+### Default
+Default tags are the ones used to label and categorize objects. 
+<Canvas of={TagStories.Default} />
+
+### Removable
+Removable tags are often used to display selected filters or user inputs. 
+<Canvas of={TagStories.Removable} />
+
+## Properties
+<ArgTypes of={Tag} />
+
+## References
+1. [https://ui-patterns.com/patterns/Tag](https://ui-patterns.com/patterns/Tag)
+2. [https://design.gs.com/components/tag](https://design.gs.com/components/tag)
+3. [https://carbondesignsystem.com/components/tag/usage/](https://carbondesignsystem.com/components/tag/usage/)
+4. [https://blog.prototypr.io/design-guide-classifying-items-db5b121985d](https://blog.prototypr.io/design-guide-classifying-items-db5b121985d)
+5. [https://ux.stackexchange.com/questions/103820/is-there-any-distinction-between-badges-labels-and-tags](https://ux.stackexchange.com/questions/103820/is-there-any-distinction-between-badges-labels-and-tags)
