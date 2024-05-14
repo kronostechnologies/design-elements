@@ -41,14 +41,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -90,19 +91,20 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -117,7 +119,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -171,24 +173,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #602FA0;
 }
 
-.c19:focus {
-  outline: none;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c19:focus:not(:focus-visible) {
-  box-shadow: none;
+.c19 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c19:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18 {
@@ -339,14 +332,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c14:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c14:hover {
@@ -380,14 +374,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
-  outline: none;
+.c16 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c16:hover {
@@ -421,14 +416,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {
@@ -463,14 +459,15 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21:focus {
-  outline: none;
+.c21 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c21:hover {
@@ -736,14 +733,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -785,19 +783,20 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -812,7 +811,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -866,24 +865,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #602FA0;
 }
 
-.c19:focus {
-  outline: none;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c19:focus:not(:focus-visible) {
-  box-shadow: none;
+.c19 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c19:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18 {
@@ -1034,14 +1024,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c14:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c14:hover {
@@ -1075,14 +1066,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
-  outline: none;
+.c16 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c16:hover {
@@ -1116,14 +1108,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {
@@ -1158,14 +1151,15 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21:focus {
-  outline: none;
+.c21 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c21:hover {
@@ -1432,14 +1426,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 > svg {
@@ -1456,19 +1451,20 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3:hover,
 .c3[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -1515,7 +1511,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -1559,24 +1555,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   color: #602FA0;
 }
 
-.c18:focus {
-  outline: none;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c18:focus:not(:focus-visible) {
-  box-shadow: none;
+.c18 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c18:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c17 {
@@ -1727,14 +1714,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c13:focus {
-  outline: none;
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c13:hover {
@@ -1768,14 +1756,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c15:focus {
-  outline: none;
+.c15 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c15:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c15:hover {
@@ -1809,14 +1798,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
-  outline: none;
+.c16 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c16:hover {
@@ -1851,14 +1841,15 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c20:focus {
-  outline: none;
+.c20 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c20:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c20:hover {
@@ -2123,14 +2114,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -2172,19 +2164,20 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
@@ -2199,7 +2192,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   color: #000000;
   list-style-type: none;
   position: absolute;
@@ -2253,24 +2246,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #602FA0;
 }
 
-.c19:focus {
-  outline: none;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c19:focus:not(:focus-visible) {
-  box-shadow: none;
+.c19 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c19:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18 {
@@ -2421,14 +2405,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c14:focus {
-  outline: none;
+.c14 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c14:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c14:hover {
@@ -2462,14 +2447,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
-  outline: none;
+.c16 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c16:hover {
@@ -2503,14 +2489,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c17:focus {
-  outline: none;
+.c17 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c17:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c17:hover {
@@ -2545,14 +2532,15 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21:focus {
-  outline: none;
+.c21 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c21:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c21:hover {

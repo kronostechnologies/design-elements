@@ -1,61 +1,31 @@
 import { Badge, Icon } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
-import styled from 'styled-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Badge> = {
     title: 'Components/Badge',
     component: Badge,
+    argTypes: {
+        children: {
+            control: { type: null },
+        },
+    },
 };
 
-export const Normal: Story = () => (
-    <Badge value={1}>
-        <Icon name="bell" />
-    </Badge>
-);
+export default meta;
 
-export const Dot: Story = () => (
-    <Badge value={1} showValue={false}>
-        <Icon name="bell" />
-    </Badge>
-);
+type Story = StoryObj<typeof Badge>;
 
-export const Overflow: Story = () => (
-    <Badge value={10} maxValue={9}>
-        <Icon name="bell" />
-    </Badge>
-);
+export const Default: Story = {
+    args: {
+        children: <Icon name="bell" />,
+        value: 1,
+    },
+};
 
-const Spacer = styled.span`
-    margin-right: 4rem;
-`;
-
-export const Positions: Story = () => (
-    <>
-        <Spacer>
-            <Badge value={1} position="top-right">
-                <Icon name="bell" />
-            </Badge>
-        </Spacer>
-        <Spacer>
-            <Badge value={1} position="bottom-right">
-                <Icon name="bell" />
-            </Badge>
-        </Spacer>
-        <Spacer>
-            <Badge value={1} position="top-left">
-                <Icon name="bell" />
-            </Badge>
-        </Spacer>
-        <Spacer>
-            <Badge value={1} position="bottom-left">
-                <Icon name="bell" />
-            </Badge>
-        </Spacer>
-    </>
-);
-
-export const Animated: Story = () => (
-    <Badge value={1} animate>
-        <Icon name="bell" />
-    </Badge>
-);
+export const Dot: Story = {
+    args: {
+        children: <Icon name="bell" />,
+        showValue: false,
+        value: 1,
+    },
+};
