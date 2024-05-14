@@ -174,7 +174,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
     }
 `;
 
-const StyledDatePicker = styled(DatePicker) <StyledDatePickerProps>`
+const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePickerInput {
         ${({ theme, isMobile, valid }) => inputsStyle({ theme, isMobile, isValid: valid })};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -191,7 +191,7 @@ const TodayButtonWrapper = styled.div`
     text-align: center;
 `;
 
-const CalendarButton = styled(AbstractButton) <CalendarButtonProps>`
+const CalendarButton = styled(AbstractButton)<CalendarButtonProps>`
     align-items: center;
     background: ${({ theme }) => theme.component['button-input-background-color']};
     border: 1px solid ${({ theme }) => theme.component['button-input-border-color']};
