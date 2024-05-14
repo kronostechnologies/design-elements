@@ -2,8 +2,8 @@ import { getMonth, getYear } from 'date-fns';
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { DropdownList, DropdownListOption } from '../dropdown-list/dropdown-list';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
@@ -13,10 +13,7 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)')};
 
     > button {
-        background-color: ${({ theme }) => theme.component['datepicker-header-nav-button-background-color']};
-        border: none;
         height: var(--size-2x);
-        padding: 0;
         width: var(--size-2x);
 
         &:focus {
@@ -25,10 +22,10 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled(IconButton)`
+    border-radius: var(--border-radius);
     &:focus {
-        border-radius: var(--border-radius);
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+        z-index: 10;
     }
 `;
 
@@ -80,16 +77,17 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                 data-testid="month-previous"
                 onClick={decreaseMonth}
                 disabled={prevMonthButtonDisabled}
-            >
-                <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
-            </StyledButton>
+                buttonType="tertiary"
+                iconName="chevronLeft"
+                type="button"
+            />
             <FlexContainer>
                 <DropdownListWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
                     <DropdownList
                         ariaLabel={t('monthSelectLabel')}
                         data-testid="month-select"
                         options={monthsOptions}
-                        onChange={(options) => {
+                        onChange={(options: DropdownListOption) => {
                             changeMonth(months.indexOf(options.label));
                         }}
                         value={monthsOptions[getMonth(date)].value}
@@ -100,7 +98,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                         ariaLabel={t('yearSelectLabel')}
                         data-testid="year-select"
                         options={yearsOptions}
-                        onChange={(options) => {
+                        onChange={(options: DropdownListOption) => {
                             changeYear(parseInt(options.value, 10));
                         }}
                         value={getYear(date).toString()}
@@ -112,9 +110,10 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                 data-testid="month-next"
                 onClick={increaseMonth}
                 disabled={nextMonthButtonDisabled}
-            >
-                <Icon name="chevronRight" size={isMobile ? '24' : '16'} />
-            </StyledButton>
+                buttonType="tertiary"
+                iconName="chevronRight"
+                type="button"
+            />
         </Wrapper>
     );
 };

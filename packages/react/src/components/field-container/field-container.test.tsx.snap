@@ -2,7 +2,7 @@
 
 exports[`Field Container matches snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -29,10 +29,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -81,7 +77,7 @@ exports[`Field Container should have invalid styles given valid prop is set to f
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -107,10 +103,6 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #CD2C23;
-}
-
-.c0:focus {
   border-color: #CD2C23;
 }
 
@@ -150,7 +142,7 @@ input + .c1 {
 
 exports[`Field Container should not have margins given noMargin prop is set to true 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -177,10 +169,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
