@@ -1,6 +1,7 @@
 import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
+import { BreadcrumbTokens, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
@@ -55,6 +56,7 @@ export type ComponentTokens =
     | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
+    | BreadcrumbTokens
     | FocusTokens
     | HeadingTokens
     | LabelTokens
@@ -160,6 +162,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
     ...defaultGlobalNavigationTokens,
+    ...defaultBreadcrumbTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;
