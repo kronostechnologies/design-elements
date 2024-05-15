@@ -5,7 +5,7 @@ import {
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
-    getSimplifiedInputDateFormat,
+    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
 } from './datepicker-utils';
@@ -109,7 +109,7 @@ describe('Datepicker utils', () => {
         });
     });
 
-    describe('get format for the quick input', () => {
+    describe('get format as numbers only', () => {
         const tests = [
             {
                 format: 'yyyy-MM-dd',
@@ -132,7 +132,7 @@ describe('Datepicker utils', () => {
         test.each(tests)(
             'should return $result with format $format',
             (item) => {
-                const result = getSimplifiedInputDateFormat(item.format);
+                const result = getNumericalDateFormat(item.format);
                 expect(result).toBe(item.result);
             },
         );

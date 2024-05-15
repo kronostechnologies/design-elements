@@ -67,9 +67,10 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
 }
 
 /**
- * The shorter version of format without symbols. Month and Day always use 2 digits.
+ * The version of format as only numbers (ex: "yyyy-MM-dd" would become "yyyyMMdd").
+ * Note that Month and Day are always converted to the 2 digits format.
  */
-export function getSimplifiedInputDateFormat(dateFormat: string): string | void {
+export function getNumericalDateFormat(dateFormat: string): string | void {
     if (/[^yMd/\-,. ]/g.test(dateFormat)) {
         return;
     }

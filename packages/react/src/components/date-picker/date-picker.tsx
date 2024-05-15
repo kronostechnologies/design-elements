@@ -16,6 +16,7 @@ import {
     useState,
 } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
+import { parse } from 'date-fns';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -37,7 +38,7 @@ import {
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
-    getSimplifiedInputDateFormat,
+    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
     SupportedLocale,
@@ -174,7 +175,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
     }
 `;
 
-const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
+const StyledDatePicker = styled(DatePicker) <StyledDatePickerProps>`
     &.datePickerInput {
         ${({ theme, isMobile, valid }) => inputsStyle({ theme, isMobile, isValid: valid })};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -191,7 +192,7 @@ const TodayButtonWrapper = styled.div`
     text-align: center;
 `;
 
-const CalendarButton = styled(AbstractButton)<CalendarButtonProps>`
+const CalendarButton = styled(AbstractButton) <CalendarButtonProps>`
     align-items: center;
     background: ${({ theme }) => theme.component['button-input-background-color']};
     border: 1px solid ${({ theme }) => theme.component['button-input-border-color']};
@@ -306,7 +307,7 @@ const localeArray = [enUS, enCA, frCA];
 export const Datepicker = forwardRef(({
     className,
     defaultDate,
-    dateFormat,
+    dateFormat: providedDateFormat,
     disabled,
     firstDayOfWeek,
     hasTodayButton,
@@ -460,11 +461,11 @@ export const Datepicker = forwardRef(({
         if (placeholder) {
             return placeholder;
         }
-        if (dateFormat) {
-            return dateFormat.toUpperCase();
+        if (providedDateFormat) {
+            return providedDateFormat.toUpperCase();
         }
         return getLocaleDatePlaceholder(currentLocale);
-    }, [currentLocale, placeholder, dateFormat]);
+    }, [currentLocale, placeholder, providedDateFormat]);
 
     // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components
     const CalendarContainer: FunctionComponent<PropsWithChildren<{}>> = useMemo(() => ({ children }) => (
@@ -492,12 +493,18 @@ export const Datepicker = forwardRef(({
         </div>
     ), [handleTodayButtonClick, hasTodayButton, locale, selectedDate, t]);
 
-    const dateFormats: string | string[] = useMemo(() => {
-        const mainFormat = dateFormat || getLocaleDateFormat(currentLocale);
-        const simpleFormat = getSimplifiedInputDateFormat(mainFormat);
+    const dateFormat = providedDateFormat || getLocaleDateFormat(currentLocale);
 
-        return simpleFormat ? [mainFormat, simpleFormat] : mainFormat;
-    }, [currentLocale, dateFormat]);
+    // react-datepicker has also an option to support multiple input formats, but it behave differently than
+    // the single format. So we do this workaround instead.
+    const handleInputChangeRaw = useCallback((event: FocusEvent<HTMLInputElement>): void => {
+        const value = event.target.value;
+        const numericalFormat = getNumericalDateFormat(dateFormat);
+        if (numericalFormat && /^\d+$/.test(value) && value.length === numericalFormat.length) {
+            const date = parse(value, numericalFormat, new Date());
+            setSelectedDate(date);
+        }
+    }, [dateFormat]);
 
     return (
         <>
@@ -534,12 +541,13 @@ export const Datepicker = forwardRef(({
                         )}
                         calendarContainer={CalendarContainer}
                         className="datePickerInput"
-                        dateFormat={dateFormats}
+                        dateFormat={dateFormat}
                         disabled={disabled}
                         locale={locale}
                         maxDate={maxDate || undefined}
                         minDate={minDate || undefined}
                         onChange={handleInputChange}
+                        onChangeRaw={handleInputChangeRaw}
                         onSelect={handleCalendarSelect}
                         onBlur={handleInputBlur}
                         onFocus={onFocus}
