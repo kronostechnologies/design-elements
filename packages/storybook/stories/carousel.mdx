@@ -1,0 +1,37 @@
+import { Carousel } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as CarouselStories  from './carousel.stories';
+
+<Meta of={CarouselStories} />
+
+# Carousel
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Carousel allows multiple pieces of content to occupy a single, coveted space [1]. 
+<Canvas of={CarouselStories.Default} />
+
+## Usage
+### When to use 
+- Use to enable more than one piece of content to occupy the same piece of prime real estate [1].
+- Use when users are exploring options. E.g. when they explore content details such as cards on mobile, swiping left and right [3].
+- Use for previewing content or if you provide additional content within a specific, and relevant context [3].
+
+### When not to use 
+- Do not use if all the content is equally important and critical since research has shown that many users may not interact with the carousel beyond the first slide, meaning that some content may go unnoticed [2].
+- Do not use if you can’t provide any contextual and relevant context to the carousel content [3].
+
+## Variants
+### Default 
+<Canvas of={CarouselStories.Default} />
+
+## Properties
+<ArgTypes of={Carousel} />
+
+## References
+1. [https://www.nngroup.com/articles/designing-effective-carousels/](https://www.nngroup.com/articles/designing-effective-carousels/)
+2. [https://uxplanet.org/the-truth-about-using-carousels-in-ux-design-28c8497c14bd](https://uxplanet.org/the-truth-about-using-carousels-in-ux-design-28c8497c14bd)
+3. [https://www.linkedin.com/pulse/usability-guidelines-better-carousels-ux-vitaly-friedman/](https://www.linkedin.com/pulse/usability-guidelines-better-carousels-ux-vitaly-friedman/)
