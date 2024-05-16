@@ -70,9 +70,9 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
  * The version of format as only numbers (ex: "yyyy-MM-dd" would become "yyyyMMdd").
  * Note that Month and Day are always converted to the 2 digits format.
  */
-export function getNumericalDateFormat(dateFormat: string): string | void {
+export function getNumericalDateFormat(dateFormat: string): string | null {
     if (/[^yMd/\-,. ]/g.test(dateFormat)) {
-        return;
+        return null;
     }
 
     return dateFormat

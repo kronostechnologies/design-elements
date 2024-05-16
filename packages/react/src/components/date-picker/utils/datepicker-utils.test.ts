@@ -120,12 +120,16 @@ describe('Datepicker utils', () => {
                 result: 'yyyyddMM',
             },
             {
+                format: 'dd/MM/yyyy',
+                result: 'ddMMyyyy',
+            },
+            {
                 format: 'yy-MM-dd',
                 result: 'yyMMdd',
             },
             {
                 format: 'invalid',
-                result: undefined,
+                result: null,
             },
         ];
 
