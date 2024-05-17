@@ -1,0 +1,44 @@
+import { SearchGlobal } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as SearchGlobalStories  from './search-global.stories';
+
+<Meta of={SearchGlobalStories} />
+
+# Search Global (Main Search)
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The main search serves as the main search component, enabling users to input their query and trigger a popup display. Interactions with the search bar do not impact the content of the page until users either press `Enter` or click on the search button.
+<Canvas of={SearchGlobalStories.Default} />
+
+## Usage
+### When to use 
+- Use to help users find data more efficiently within a complex or large data set [2].
+- Use to help users search in the entire app (global header) [5].
+- Use to help users search for more specific data (section).  
+
+### When not to use 
+- Do not use when there is small or limited amounts of data [2]. 
+
+## Variants
+### Default
+<Canvas of={SearchGlobalStories.Default} />
+
+## Properties
+<ArgTypes of={SearchGlobal} />
+
+## References
+1. [https://www.luigisbox.com/blog/search-bar-design/#:~:text=A search bar is a,button to initiate the search](https://www.luigisbox.com/blog/search-bar-design/#:~:text=A%20search%20bar%20is%20a,button%20to%20initiate%20the%20search)
+2. [https://carbondesignsystem.com/components/search/usage](https://carbondesignsystem.com/components/search/usage)
+3. [https://uxplanet.org/design-a-perfect-search-box-b6baaf9599c](https://uxplanet.org/design-a-perfect-search-box-b6baaf9599c)
+4. [https://www.coveo.com/blog/search-box-ux-examples/](https://www.coveo.com/blog/search-box-ux-examples/)
+5. [https://uxbooth.com/articles/best-practices-for-search/](https://uxbooth.com/articles/best-practices-for-search/)
+6. [https://blog.hubspot.com/website/search-bar-design](https://blog.hubspot.com/website/search-bar-design)
+7. [https://pencilandpaper.io/articles/search-ux/](https://pencilandpaper.io/articles/search-ux/)
+8. [https://uxplanet.org/best-practices-for-search-results-1bbed9d7a311](https://uxplanet.org/best-practices-for-search-results-1bbed9d7a311)
+9. [https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448](https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448)
+10. [https://www.algolia.com/blog/ux/web-content-accessibility-guidelines-wcag-how-to-make-site-search-work-for-people-with-disabilities/](https://www.algolia.com/blog/ux/web-content-accessibility-guidelines-wcag-how-to-make-site-search-work-for-people-with-disabilities/)
+11. [https://www.a11ymatters.com/pattern/accessible-search/](https://www.a11ymatters.com/pattern/accessible-search/)
