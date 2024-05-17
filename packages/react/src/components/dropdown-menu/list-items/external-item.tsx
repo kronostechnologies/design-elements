@@ -34,17 +34,17 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
 
     &:visited {
         color: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-text-color']};
-        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-fill-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-icon-color']};
 
         svg {
             color: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-icon-color']};
-            fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-fill-color']};
+            fill: ${({ theme }) => theme.component['dropdown-menu-external-item-visited-icon-color']};
         }
     }
 
     &[disabled] {
         color: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-text-color']};
-        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-fill-color']};
+        fill: ${({ theme }) => theme.component['dropdown-menu-external-item-disabled-text-color']};
         pointer-events: none;
     }
 `;

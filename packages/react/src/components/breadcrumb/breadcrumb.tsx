@@ -178,8 +178,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
                         <StyledSeparatorIcon name="chevronRight" size="20" />
                     </StyledLi>
                 )}
-                {showLastRoute
-                    && (
+                {showLastRoute && (
                     <StyledLi>
                         <StyledActiveLink>
                             {truncateLabel(lastRoute.label ?? '')}

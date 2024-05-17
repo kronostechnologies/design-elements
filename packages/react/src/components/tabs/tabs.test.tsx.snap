@@ -278,6 +278,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -294,6 +295,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
   padding: 0 var(--spacing-1x) 0 var(--spacing-2x);
 }
 
+.c3:hover {
+  background: #DBDEE1;
+}
+
 .c3.hidden {
   display: none;
 }
@@ -303,6 +308,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -317,6 +323,10 @@ exports[`Tabs matches snapshot (global) 1`] = `
   box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
   padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
   right: 0;
+}
+
+.c11:hover {
+  background: #DBDEE1;
 }
 
 .c11.hidden {
@@ -726,6 +736,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -743,6 +754,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border-radius: var(--border-radius-2x) 0 0 0;
 }
 
+.c4:hover {
+  background: #DBDEE1;
+}
+
 .c4.hidden {
   display: none;
 }
@@ -752,6 +767,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -767,6 +783,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
   right: 0;
   border-radius: 0 var(--border-radius-2x) 0 0;
+}
+
+.c12:hover {
+  background: #DBDEE1;
 }
 
 .c12.hidden {
@@ -1176,6 +1196,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1193,6 +1214,10 @@ exports[`Tabs matches snapshot 1`] = `
   border-radius: var(--border-radius-2x) 0 0 0;
 }
 
+.c4:hover {
+  background: #DBDEE1;
+}
+
 .c4.hidden {
   display: none;
 }
@@ -1202,6 +1227,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #FFFFFF;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1217,6 +1243,10 @@ exports[`Tabs matches snapshot 1`] = `
   padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
   right: 0;
   border-radius: 0 var(--border-radius-2x) 0 0;
+}
+
+.c12:hover {
+  background: #DBDEE1;
 }
 
 .c12.hidden {

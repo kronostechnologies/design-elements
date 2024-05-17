@@ -61,6 +61,7 @@ const TabButtonsList = styled.div<{ $global?: boolean; }>`
 
 const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right'; }>`
     align-items: center;
+    background: ${({ theme }) => theme.component['tab-scroll-button-background-color']};
     border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
@@ -69,6 +70,10 @@ const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'r
     min-height: auto;
     position: absolute;
     z-index: 1;
+
+    &:hover {
+        background: ${({ theme }) => theme.component['tab-scroll-button-hover-background-color']};
+    }
 
     ${({ $position, $global }) => $position === 'left' && css`
         box-shadow: 3px 0px 3px -2px rgba(0, 0, 0, 0.1);

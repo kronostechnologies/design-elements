@@ -16,10 +16,8 @@ export type DropdownMenuTokens =
     | 'dropdown-menu-external-item-text-color'
     | 'dropdown-menu-external-item-hover-background-color'
     | 'dropdown-menu-external-item-visited-text-color'
-    | 'dropdown-menu-external-item-visited-fill-color'
     | 'dropdown-menu-external-item-visited-icon-color'
     | 'dropdown-menu-external-item-disabled-text-color'
-    | 'dropdown-menu-external-item-disabled-fill-color'
     | 'dropdown-menu-group-border-color'
     | 'dropdown-menu-item-content-icon-background-color'
     | 'dropdown-menu-item-content-icon-border-color'
@@ -55,11 +53,9 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-nav-item-disabled-text-color': 'color-menu-item-content-disabled',
     'dropdown-menu-nav-item-disabled-icon-color': 'color-menu-item-content-disabled',
     'dropdown-menu-external-item-disabled-text-color': 'color-menu-item-content-disabled',
-    'dropdown-menu-external-item-disabled-fill-color': 'color-menu-item-content-disabled',
 
     'dropdown-menu-external-item-visited-icon-color': 'color-link-content-visited',
     'dropdown-menu-external-item-visited-text-color': 'color-link-content-visited',
-    'dropdown-menu-external-item-visited-fill-color': 'color-link-content-visited',
 
     'dropdown-menu-box-shadow-color': 'color-box-shadow',
 };

@@ -19,6 +19,8 @@ export type TabTokens =
     | 'tab-section-button-selected-background-color'
     | 'tab-button-selected-text-color'
     | 'tab-section-background-color'
+    | 'tab-scroll-button-background-color'
+    | 'tab-scroll-button-hover-background-color'
     | 'tab-border-bottom-color';
 
 export type TabTokenValue = AliasTokens | RefTokens;
@@ -53,6 +55,9 @@ export const defaultTabTokens: TabTokenMap = {
     'tab-button-hover-text-color': 'color-content-hover',
     'tab-button-active-text-color': 'color-content',
     'tab-button-selected-text-color': 'color-content',
+
+    'tab-scroll-button-background-color': 'color-bg',
+    'tab-scroll-button-hover-background-color': 'color-neutral-15',
 
     'tab-border-bottom-color': 'color-border',
 
