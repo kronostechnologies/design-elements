@@ -1,18 +1,28 @@
-import { Checkbox } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Checkbox, CheckboxProps } from '@equisoft/design-elements-react';
+import { Meta } from '@storybook/react';
+import { FunctionComponent } from 'react';
 
-export default {
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const Default: FunctionComponent<CheckboxProps> = (props) => <Checkbox {...props} />;
+
+const CheckboxMeta: Meta<typeof Default> = {
     title: 'Components/Checkbox',
-    component: Checkbox,
+    component: Default,
+    args: {
+        label: 'Send by email',
+    },
+    argTypes: {
+        onChange: {
+            control: { type: null },
+        },
+    },
+    render: (args) => (
+        <Default
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            data-testid="some-checkbox-data-testid"
+        />
+    ),
 };
 
-export const Normal: Story = () => (
-    <>
-        <Checkbox data-testid="some-checkbox-data-testid" name="checkbox1" value="no label" />
-        <Checkbox label="Normal" name="checkbox2" value="normal" />
-        <Checkbox label="Disabled" name="checkbox3" value="disabled" disabled />
-        <Checkbox label="Checked" name="checkbox4" value="checked" checked />
-        <Checkbox label="Default checked" name="checkbox5" value="defaultChecked" defaultChecked />
-        <Checkbox label="Indeterminate" name="checkbox6" value="indeterminate" indeterminate />
-    </>
-);
+export default CheckboxMeta;
