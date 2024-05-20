@@ -24,7 +24,7 @@ const SearchContextualMeta: Meta<typeof SearchContextual> = {
 export default SearchContextualMeta;
 type Story = StoryObj<typeof SearchContextual>;
 
-export const Default: Story = { ...SearchContextualMeta };
+export const Default: Story = {};
 
 export const EventCallbacks: Story = {
     parameters: rawCodeParameters,
