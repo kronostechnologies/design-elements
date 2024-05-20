@@ -33,10 +33,9 @@ const StepperInputMeta: Meta<typeof StepperInput> = {
 export default StepperInputMeta;
 type Story = StoryObj<typeof StepperInput>;
 
-export const Default: Story = { ...StepperInputMeta };
+export const Default: Story = {};
 
 export const WithOnChangeCallback: Story = {
-    ...StepperInputMeta,
     parameters: rawCodeParameters,
     args: {
         onChange: (value: number) => console.info(value),
