@@ -1,0 +1,57 @@
+import { GlobalBanner } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as GlobalBannerStories  from './global-banner.stories';
+
+<Meta of={GlobalBannerStories} />
+
+# Global Banner
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+A global banner is located under the top header of the application, displaying a general message for the product or system, which has an impact on the entire application [1].
+<Canvas of={GlobalBannerStories.Neutral} />
+
+## Usage
+### When to use
+- Use to communicate important information affecting the entire application or system [1].
+- Use to display messages initiated by the application or system, independently of user action [2].
+
+### When not to use
+- Do not use to display notifications concerning specific pages [1].
+- Do not use in response to user action during a specific task. [2].
+
+## Variants
+### Neutral
+Neutral global banners are used to deliver supplementary information on a global level. This variant is used to inform users of an element that may assist or affect their experience without grabbing full attention.
+- Can be dismissed by the user or the application, depending on the content.
+- Does not necessarily require an action.
+<Canvas of={GlobalBannerStories.Neutral} />
+
+### Warning
+Warning global banners are used to display information that needs the user's attention or that requires the user's action to avoid potentially dangerous actions or errors.
+- Can be dismissed by the user by clicking on the "ignore" button.
+- Does not necessarily require an action.
+<Canvas of={GlobalBannerStories.Warning} />
+
+### Alert
+Alert global banners are used to communicate specific problems or situations that the application might be going through, that may affect the user's journey or require a specific action from the user.
+- Can't be dismissed by the user.
+- Dismisses automatically once the error is resolved.
+- Can block the user from proceeding until the issue has been resolved.
+<Canvas of={GlobalBannerStories.Alert} />
+
+### Discovery
+Discovery global banners are used to inform the user about something new affecting the whole application that may enhance their experience.
+- Can be dismissed by the user or the application, depending on the content.
+- Does not require immediate action.
+<Canvas of={GlobalBannerStories.Discovery} />
+
+## Properties
+<ArgTypes of={GlobalBanner} />
+
+## References
+1. [https://carbondesignsystem.com/components/notification/usage/](https://carbondesignsystem.com/components/notification/usage/)
+2. [https://carbondesignsystem.com/patterns/notification-pattern/](https://carbondesignsystem.com/patterns/notification-pattern/)
