@@ -10,7 +10,7 @@ const ExternalLinkMeta: Meta<typeof ExternalLink> = {
     },
     argTypes: {
         onClick: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (
@@ -20,6 +20,7 @@ const ExternalLinkMeta: Meta<typeof ExternalLink> = {
             {...args}
         />
     ),
+    tags: ['autodocs'],
 };
 
 export default ExternalLinkMeta;

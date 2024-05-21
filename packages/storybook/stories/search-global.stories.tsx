@@ -12,13 +12,13 @@ const SearchGlobalMeta: Meta<typeof SearchGlobal> = {
     },
     argTypes: {
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onSearch: {
-            control: { type: null },
+            control: { disable: true },
         },
         onInputFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

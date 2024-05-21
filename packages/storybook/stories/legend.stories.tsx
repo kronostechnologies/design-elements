@@ -21,6 +21,7 @@ const legendItems: LegendItem[] = [
 export default {
     title: 'Deprecated/Legend (deprecated)',
     component: Legend,
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

@@ -6,6 +6,7 @@ import { MobileDecorator } from './utils/device-context-decorator';
 export default {
     title: 'Components/Lozenge',
     component: Lozenge,
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

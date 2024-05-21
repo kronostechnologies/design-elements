@@ -34,10 +34,10 @@ const MenuButtonMeta: Meta<typeof MenuButton> = {
     },
     argTypes: {
         options: {
-            control: { type: null },
+            control: { disable: true },
         },
         onMenuVisibilityChanged: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

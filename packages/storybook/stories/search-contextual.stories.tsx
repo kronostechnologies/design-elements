@@ -7,16 +7,16 @@ const SearchContextualMeta: Meta<typeof SearchContextual> = {
     component: SearchContextual,
     argTypes: {
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onInputFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
         onReset: {
-            control: { type: null },
+            control: { disable: true },
         },
         onSearch: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

@@ -14,7 +14,7 @@ const GlobalBannerMeta: Meta<typeof GlobalBanner> = {
     },
     argTypes: {
         onDismiss: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

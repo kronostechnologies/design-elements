@@ -27,6 +27,7 @@ const disabledGroup = [
 export default {
     title: 'Components/Toggle Button Group',
     component: ToggleButtonGroup,
+    tags: ['autodocs'],
 };
 
 export const ButtonGroup: Story = () => (

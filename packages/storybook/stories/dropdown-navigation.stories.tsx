@@ -38,13 +38,13 @@ const DropdownNavigationMeta: Meta<typeof DropdownNavigation> = {
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
     argTypes: {
         onDropdownVisibilityChanged: {
-            control: { type: null },
+            control: { disable: true },
         },
         onLinkSelected: {
-            control: { type: null },
+            control: { disable: true },
         },
         options: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

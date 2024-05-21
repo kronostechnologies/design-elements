@@ -19,7 +19,7 @@ const ErrorSummaryMeta: Meta<typeof ErrorSummary> = {
     component: ErrorSummary,
     argTypes: {
         messages: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

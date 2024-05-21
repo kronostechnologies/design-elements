@@ -6,6 +6,7 @@ import { rawCodeParameters } from './utils/parameters';
 export default {
     title: 'Components/Icon Button',
     component: IconButton,
+    tags: ['autodocs'],
 };
 
 export const IconButtons: Story = () => (

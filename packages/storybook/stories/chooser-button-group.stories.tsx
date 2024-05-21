@@ -25,6 +25,7 @@ const skipOption: ChooserButtonOption = {
 export default {
     title: 'Components/Chooser Button Group',
     component: ChooserButtonGroup,
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

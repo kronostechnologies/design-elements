@@ -9,6 +9,7 @@ export default {
     title: 'Deprecated/Global Navigation (deprecated)',
     component: GlobalNavigation,
     decorators: [RouterDecorator],
+    tags: ['autodocs'],
 };
 
 const items: GlobalNavigationItem[] = [

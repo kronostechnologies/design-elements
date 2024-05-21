@@ -71,7 +71,7 @@ const TabsMeta: Meta<typeof Tabs> = {
     component: Tabs,
     parameters: rawCodeParameters,
     argTypes: {
-        tabs: { control: { type: null } },
+        tabs: { control: { disable: true } },
     },
     render: (args) => (
         <Tabs

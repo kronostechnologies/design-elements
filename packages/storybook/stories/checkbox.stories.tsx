@@ -13,7 +13,7 @@ const CheckboxMeta: Meta<typeof Default> = {
     },
     argTypes: {
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

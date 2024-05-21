@@ -8,6 +8,7 @@ export default {
     title: 'Components/Table',
     component: Table,
     parameters: rawCodeParameters,
+    tags: ['autodocs'],
 };
 
 interface Data {

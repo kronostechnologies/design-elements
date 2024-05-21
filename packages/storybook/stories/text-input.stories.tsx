@@ -10,22 +10,22 @@ const TextInputMeta: Meta<typeof TextInput> = {
     },
     argTypes: {
         onBlur: {
-            control: { type: null },
+            control: { disable: true },
         },
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
         onKeyDown: {
-            control: { type: null },
+            control: { disable: true },
         },
         onKeyUp: {
-            control: { type: null },
+            control: { disable: true },
         },
         onMouseUp: {
-            control: { type: null },
+            control: { disable: true },
         },
         value: {
             control: { type: 'text' },

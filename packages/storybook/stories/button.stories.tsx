@@ -11,10 +11,10 @@ const meta: Meta<typeof Button> = {
     component: Button,
     argTypes: {
         onClick: {
-            control: { type: null },
+            control: { disable: true },
         },
         onKeyDown: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

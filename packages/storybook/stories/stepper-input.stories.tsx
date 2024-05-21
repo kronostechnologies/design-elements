@@ -10,13 +10,13 @@ const StepperInputMeta: Meta<typeof StepperInput> = {
     },
     argTypes: {
         onBlur: {
-            control: { type: null },
+            control: { disable: true },
         },
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
         step: {
             control: {
