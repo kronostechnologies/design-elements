@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Combobox, ComboboxOption } from '@equisoft/design-elements-react';
+import { Combobox, ComboboxOption } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
