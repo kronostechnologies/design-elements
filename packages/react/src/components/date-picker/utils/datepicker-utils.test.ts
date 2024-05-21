@@ -5,6 +5,7 @@ import {
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
+    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
 } from './datepicker-utils';
@@ -106,5 +107,38 @@ describe('Datepicker utils', () => {
 
             expect(enCA.options?.weekStartsOn).toEqual(4);
         });
+    });
+
+    describe('get format as numbers only', () => {
+        const tests = [
+            {
+                format: 'yyyy-MM-dd',
+                result: 'yyyyMMdd',
+            },
+            {
+                format: 'yyyy/d/M',
+                result: 'yyyyddMM',
+            },
+            {
+                format: 'dd/MM/yyyy',
+                result: 'ddMMyyyy',
+            },
+            {
+                format: 'yy-MM-dd',
+                result: 'yyMMdd',
+            },
+            {
+                format: 'invalid',
+                result: null,
+            },
+        ];
+
+        test.each(tests)(
+            'should return $result with format $format',
+            (item) => {
+                const result = getNumericalDateFormat(item.format);
+                expect(result).toBe(item.result);
+            },
+        );
     });
 });
