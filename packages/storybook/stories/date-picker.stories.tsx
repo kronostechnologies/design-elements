@@ -8,7 +8,6 @@ const Container = styled.div`
     height: 400px;
 `;
 
-const currentDate = new Date();
 const upcomingDate = new Date();
 upcomingDate.setDate(upcomingDate.getDate() + 5);
 
