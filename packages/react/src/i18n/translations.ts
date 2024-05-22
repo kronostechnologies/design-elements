@@ -118,7 +118,7 @@ export const Translations = {
             addTab: 'Add Tabs',
             dismissTab: 'Dismiss {{label}} tab',
         },
-        'tag-medium': {
+        'tag': {
             deleteButtonAriaLabel: 'Remove tag {{label}}',
         },
         'text-area': {
@@ -258,7 +258,7 @@ export const Translations = {
             addTab: 'Ajouter des onglets',
             dismissTab: 'Fermer l\'onglet {{label}}',
         },
-        'tag-medium': {
+        'tag': {
             deleteButtonAriaLabel: 'Retirer l\'étiquette {{label}}',
         },
         'text-area': {
