@@ -200,8 +200,7 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
                     aria-controls={carouselId}
                     type="button"
                     iconName="arrowLeft"
-                >
-                </NavigationButton>
+                />
             )}
 
             <Content>
@@ -222,8 +221,7 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
                     aria-controls={carouselId}
                     type="button"
                     iconName="arrowRight"
-                >
-                </NavigationButton>
+                />
             )}
         </Main>
     );
