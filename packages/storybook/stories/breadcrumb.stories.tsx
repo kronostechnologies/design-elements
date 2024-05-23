@@ -19,7 +19,7 @@ const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
     component: Breadcrumb,
     argTypes: {
         history: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

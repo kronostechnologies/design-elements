@@ -4,6 +4,7 @@ import { StoryFn as Story } from '@storybook/react';
 export default {
     component: Status,
     title: 'Deprecated/Status (deprecated)',
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

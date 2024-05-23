@@ -13,16 +13,16 @@ const NumericInputMeta: Meta<typeof NumericInput> = {
     },
     argTypes: {
         adornment: {
-            control: { type: null },
+            control: { disable: true },
         },
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onBlur: {
-            control: { type: null },
+            control: { disable: true },
         },
         onFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 

@@ -27,10 +27,10 @@ const CarouselMeta: Meta<typeof Carousel> = {
     component: Carousel,
     argTypes: {
         children: {
-            control: { type: null },
+            control: { disable: true },
         },
         header: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

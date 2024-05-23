@@ -6,6 +6,7 @@ export default {
     title: 'Components/Toast',
     component: useToast,
     parameters: rawCodeParameters,
+    tags: ['autodocs'],
 };
 
 export const ShowToast: VoidFunctionComponent = () => {

@@ -12,7 +12,7 @@ const MoneyInputMeta: Meta<typeof MoneyInput> = {
     },
     argTypes: {
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

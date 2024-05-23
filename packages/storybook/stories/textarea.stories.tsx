@@ -11,13 +11,13 @@ const TextAreaMeta: Meta<typeof TextArea> = {
     },
     argTypes: {
         onBlur: {
-            control: { type: null },
+            control: { disable: true },
         },
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         onFocus: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export default {
     title: 'Deprecated/Progress Circle (deprecated)',
     component: ProgressCircle,
+    tags: ['autodocs'],
 };
 
 const SmallContainer = styled.div`

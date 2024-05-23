@@ -47,13 +47,13 @@ const DropdownListMeta: Meta<typeof DropdownList> = {
     },
     argTypes: {
         options: {
-            control: { type: null },
+            control: { disable: true },
         },
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
         tooltip: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

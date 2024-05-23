@@ -10,13 +10,13 @@ const GlobalHeaderMeta: Meta<typeof GlobalHeader> = {
     component: GlobalHeader,
     argTypes: {
         customLogo: {
-            control: { type: null },
+            control: { disable: true },
         },
         mobileDrawerContent: {
-            control: { type: null },
+            control: { disable: true },
         },
         skipLink: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

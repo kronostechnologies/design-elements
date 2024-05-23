@@ -16,7 +16,7 @@ const PasswordCreationInputMeta: Meta<typeof PasswordCreationInput> = {
     },
     argTypes: {
         onChange: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };
