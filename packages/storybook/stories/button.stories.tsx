@@ -11,10 +11,10 @@ const meta: Meta<typeof Button> = {
     component: Button,
     argTypes: {
         onClick: {
-            control: { type: null },
+            control: { disable: true },
         },
         onKeyDown: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };
@@ -74,5 +74,18 @@ export const PrimaryWithIcon: Story = {
             <PlusIcon />
             Add
         </Button>
+    ),
+};
+
+export const PrimaryWithIconsOnBothSides: Story = {
+    args: {
+        buttonType: 'primary',
+        label: 'Icons on both sides',
+        size: 'medium',
+        leftIconName: 'chevronLeft',
+        rightIconName: 'chevronRight',
+    },
+    render: (args) => (
+        <Button {...args /* eslint-disable-line react/jsx-props-no-spreading */} />
     ),
 };

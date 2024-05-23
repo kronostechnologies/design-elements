@@ -1,11 +1,10 @@
-import { Tag, TagValue } from '@equisoft/design-elements-react';
+import { IconButton, Tag, TagValue } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import { useRef } from 'react';
-import { rawCodeParameters } from './utils/parameters';
+import { useState } from 'react';
 
 const TagMeta: Meta<typeof Tag> = {
     component: Tag,
-    title: 'Components/Tags/Tag',
+    title: 'Components/Tag',
     args: {
         value: {
             label: 'Tag',
@@ -62,47 +61,21 @@ export const Default: Story = {
     ...TagMeta,
 };
 
-export const Small: Story = {
-    ...Default,
-    args: {
-        size: 'small',
-    },
-};
-
-export const Medium: Story = {
-    ...Default,
-    args: {
-        size: 'medium',
-    },
-};
-
-export const WithIcons: Story = {
-    ...Default,
-    args: {
-        iconName: 'copy',
-    },
-};
-
 export const Removable: Story = {
     ...Default,
     args: {
         onRemove: (tag: TagValue) => console.info(`Removed ${tag.label}`),
     },
-};
+    render: (args) => {
+        const [dismissed, setDismissed] = useState<boolean>(false);
 
-export const Colored: Story = {
-    ...Default,
-    args: {
-        color: 'decorative-01',
+        return !dismissed ? (
+            <Tag
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                onRemove={() => setDismissed(true)}
+            />
+        ) : (
+            <IconButton iconName="history" buttonType="tertiary" onClick={() => setDismissed(false)} />
+        );
     },
 };
-
-export const WithRef: Story = () => {
-    const ref = useRef(null);
-
-    return (
-        <Tag ref={ref} key="small" iconName="copy" size="small" value={{ label: 'Tag 1' }} />
-    );
-};
-
-WithRef.parameters = rawCodeParameters;

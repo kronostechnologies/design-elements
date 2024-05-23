@@ -6,7 +6,7 @@ const meta: Meta<typeof Badge> = {
     component: Badge,
     argTypes: {
         children: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

@@ -7,15 +7,15 @@ import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens'
 import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
 import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
-import { CardLinkTokens, defaultCardLinkTokens } from './component/card-link-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
-import { defaultExternalLinkTokens, ExternalLinkTokens } from './component/external-link-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
-import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation';
+import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation-tokens';
 import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
 import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
+import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
+import { defaultProgressTokens, ProgressTokens } from './component/progress-tokens';
 import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
 import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
 import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
@@ -34,12 +34,7 @@ import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
 import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
 import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
-import { defaultProgressCircleTokens, ProgressCircleTokens } from './component/progress-circle-tokens';
-import { defaultProgressIndicatorTokens, ProgressIndicatorTokens } from './component/progress-indicator-tokens';
-import { defaultProgressTrackerTokens, ProgressTrackerTokens } from './component/progress-tracker-tokens';
-import { defaultRouteLinkTokens, RouteLinkTokens } from './component/route-link-tokens';
 import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
-import { defaultSkipLinkTokens, SkipLinkTokens } from './component/skip-link-tokens';
 import { defaultTableTokens, TableTokens } from './component/table-tokens';
 import { RefTokens, RefTokenValue } from './ref-tokens';
 import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
@@ -48,7 +43,7 @@ import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component
 import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
 import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
 import { defaultTagTokens, TagTokens } from './component/tag-tokens';
-import { defaultToastTokens, ToastTokens } from './component/toast-container-tokens';
+import { defaultToastTokens, ToastTokens } from './component/toast-tokens';
 import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
 import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
 import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
@@ -60,8 +55,6 @@ export type ComponentTokens =
     | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
-    | CardLinkTokens
-    | ExternalLinkTokens
     | FocusTokens
     | HeadingTokens
     | LabelTokens
@@ -87,11 +80,8 @@ export type ComponentTokens =
     | LegendTokens
     | NavListTokens
     | PaginationTokens
-    | ProgressCircleTokens
-    | ProgressIndicatorTokens
-    | ProgressTrackerTokens
-    | RouteLinkTokens
-    | SkipLinkTokens
+    | ProgressTokens
+    | LinkTokens
     | BadgeTokens
     | GlobalBannerTokens
     | SectionalBannerTokens
@@ -123,20 +113,14 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultAvatarTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
-    ...defaultCardLinkTokens,
-    ...defaultExternalLinkTokens,
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultLegendTokens,
     ...defaultNavListTokens,
     ...defaultPaginationTokens,
-    ...defaultProgressCircleTokens,
-    ...defaultProgressIndicatorTokens,
-    ...defaultProgressTrackerTokens,
-    ...defaultRouteLinkTokens,
-    ...defaultSkipLinkTokens,
-    ...defaultFocusTokens,
+    ...defaultProgressTokens,
+    ...defaultLinkTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
     ...defaultDatepickerTokens,
@@ -182,4 +166,8 @@ export type ResolvedComponentTokenValue = RefTokenValue;
 
 export type ResolvedComponentTokens = {
     [Token in ComponentTokens]: ResolvedComponentTokenValue;
+}
+
+export function isComponentToken(token: string): token is ComponentTokens {
+    return token in defaultComponentTokens;
 }

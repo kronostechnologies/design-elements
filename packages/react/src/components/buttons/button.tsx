@@ -1,5 +1,17 @@
-import { FocusEventHandler, forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
+import {
+    FocusEventHandler,
+    forwardRef,
+    KeyboardEvent,
+    MouseEvent,
+    PropsWithChildren,
+    ReactElement,
+    Ref,
+} from 'react';
 import styled from 'styled-components';
+import {
+    Icon,
+    IconName,
+} from '../icon/icon';
 import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
@@ -32,11 +44,22 @@ export interface ButtonProps {
     title?: string;
     type?: Type;
 
+    leftIconName?: IconName;
+    rightIconName?: IconName;
+
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
     onFocus?: FocusEventHandler<HTMLButtonElement>;
     onBlur?: FocusEventHandler<HTMLButtonElement>;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
+
+const LeftIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
+
+const RightIcon = styled(Icon)`
+    margin-left: var(--spacing-1x);
+`;
 
 const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
     ${getButtonTypeStyles}
@@ -55,10 +78,13 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     onBlur,
     onKeyDown,
     title,
+    leftIconName,
+    rightIconName,
     type = 'button',
     ...props
 }: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
+    const iconSize = props?.size === 'small' && !isMobile ? '16' : '24';
 
     return (
         <StyledButton
@@ -78,7 +104,23 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}
+            {leftIconName && (
+                <LeftIcon
+                    aria-hidden="true"
+                    data-testid="left-icon"
+                    name={leftIconName}
+                    size={iconSize}
+                />
+            )}
             {label}
+            {rightIconName && (
+                <RightIcon
+                    aria-hidden="true"
+                    data-testid="right-icon"
+                    name={rightIconName}
+                    size={iconSize}
+                />
+            )}
         </StyledButton>
     );
 });

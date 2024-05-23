@@ -6,10 +6,10 @@ const meta: Meta<typeof Accordion> = {
     component: Accordion,
     argTypes: {
         items: {
-            control: { type: null },
+            control: { disable: true },
         },
         onToggle: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

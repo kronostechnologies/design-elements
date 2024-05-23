@@ -15,11 +15,12 @@ const StyledIcon = styled(Icon)`
 `;
 
 const StyledLink = styled(Link)`
-    background-color: ${({ theme }) => theme.component['card-link-background-color']};
+    background-color: ${({ theme }) => theme.component['card-background-color']};
     border: 1px solid ${({ theme }) => theme.component['card-link-border-color']};
     border-radius: var(--border-radius-2x);
+    box-shadow: 0 1px 4px 0 ${({ theme }) => theme.component['card-box-shadow-color']};
     box-sizing: border-box;
-    color: ${({ theme }) => theme.component['card-link-text-color']};
+    color: ${({ theme }) => theme.component['card-text-color']};
     display: block;
     font-size: 1rem;
     font-weight: var(--font-semi-bold);

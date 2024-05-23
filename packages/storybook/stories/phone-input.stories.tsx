@@ -1,30 +1,35 @@
 import { PhoneInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
-export default {
+const PhoneInputMeta: Meta<typeof PhoneInput> = {
     title: 'Components/Phone Input',
     component: PhoneInput,
+    args: {
+        pattern: '(___) ___-____',
+    },
 };
 
-export const Normal: Story = () => (
-    <PhoneInput
-        data-testid='custom-data-test-id'
-        pattern='(___) ___-____'
-        hint='Hint'
-        label='Label'
-    />
-);
-Normal.decorators = [DesktopDecorator];
+export default PhoneInputMeta;
+type Story = StoryObj<typeof PhoneInput>;
 
-export const Mobile: Story = () => <PhoneInput pattern='(___) ___-____' />;
-Mobile.decorators = [MobileDecorator];
+export const Default: Story = {
+    ...PhoneInputMeta,
+    args: {
+        hint: 'Hint',
+        label: 'Label',
+    },
+    decorators: [DesktopDecorator],
+    render: (args) => (
+        <PhoneInput
+            data-testid='custom-data-test-id'
+            /* eslint-disable-next-line react/jsx-props-no-spreading */
+            {...args}
+        />
+    ),
+};
 
-export const WithDefaultValue: Story = () => <PhoneInput pattern='(___) ___-____' defaultValue='1234567890' />;
-WithDefaultValue.decorators = [DesktopDecorator];
-
-export const Required: Story = () => <PhoneInput pattern='(___) ___-____' required />;
-Required.decorators = [DesktopDecorator];
-
-export const Disabled: Story = () => <PhoneInput pattern='(___) ___-____' disabled />;
-Disabled.decorators = [DesktopDecorator];
+export const Mobile: Story = {
+    ...PhoneInputMeta,
+    decorators: [MobileDecorator],
+};

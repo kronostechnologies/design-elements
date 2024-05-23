@@ -2,7 +2,7 @@
 
 exports[`Dropdown list matches the snapshot (disabled) 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -89,7 +89,6 @@ input + .c2 {
 }
 
 .c10::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -461,7 +460,7 @@ exports[`Dropdown list matches the snapshot (invalid) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -548,7 +547,6 @@ input + .c2 {
 }
 
 .c12::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -976,7 +974,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c8::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -1380,7 +1377,8 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 }
 
 .c9:hover {
-  border: 1px solid #006296;
+  background-color: #DBDEE1;
+  border: 1px solid #1B1C1E;
 }
 
 .c9 > .c10 {
@@ -1874,7 +1872,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 
 exports[`Dropdown list matches the snapshot 1`] = `
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1973,7 +1971,6 @@ input + .c2 {
 }
 
 .c11::before {
-  background-color: #006296;
   content: '';
   display: block;
   height: 100%;

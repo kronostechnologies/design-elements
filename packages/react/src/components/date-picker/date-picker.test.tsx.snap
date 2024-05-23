@@ -59,7 +59,7 @@ exports[`Datepicker has openToDate 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -450,7 +450,7 @@ exports[`Datepicker matches snapshot (data-testid) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -843,7 +843,7 @@ exports[`Datepicker matches snapshot (desktop) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1236,7 +1236,7 @@ exports[`Datepicker matches snapshot (disabled) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1657,7 +1657,7 @@ exports[`Datepicker matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -2066,7 +2066,7 @@ exports[`Datepicker matches snapshot (mobile) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -2477,7 +2477,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -2494,7 +2494,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -2981,7 +2981,7 @@ label + .c3 {
                     aria-label="Go to previous month"
                     class="c7 c8 c9"
                     data-testid="month-previous"
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -3085,7 +3085,7 @@ label + .c3 {
                     class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -3741,7 +3741,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -3788,7 +3788,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -4281,7 +4281,7 @@ label + .c3 {
                     aria-label="Go to previous month"
                     class="c7 c8 c9"
                     data-testid="month-previous"
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -4385,7 +4385,7 @@ label + .c3 {
                     class="c7 c8 c9"
                     data-testid="month-next"
                     disabled=""
-                    type="submit"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -5053,7 +5053,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #1B1C1E;
 }
@@ -5070,7 +5070,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -5553,7 +5553,7 @@ label + .c3 {
                       aria-label="Go to previous month"
                       class="c7 c8 c9"
                       data-testid="month-previous"
-                      type="submit"
+                      type="button"
                     >
                       <svg
                         aria-hidden="true"
@@ -5657,7 +5657,7 @@ label + .c3 {
                       class="c7 c8 c9"
                       data-testid="month-next"
                       disabled=""
-                      type="submit"
+                      type="button"
                     >
                       <svg
                         aria-hidden="true"

@@ -16,10 +16,10 @@ const meta: Meta<typeof SectionalBanner> = {
     decorators: [decorateWith(Container)],
     argTypes: {
         onButtonClicked: {
-            control: { type: null },
+            control: { disable: true },
         },
         onDismiss: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };
