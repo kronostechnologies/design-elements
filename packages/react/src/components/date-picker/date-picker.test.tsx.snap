@@ -3100,36 +3100,43 @@ label + .c3 {
                   class="react-datepicker__day-names"
                 >
                   <div
+                    aria-label="Sunday"
                     class="react-datepicker__day-name"
                   >
                     Su
                   </div>
                   <div
+                    aria-label="Monday"
                     class="react-datepicker__day-name"
                   >
                     Mo
                   </div>
                   <div
+                    aria-label="Tuesday"
                     class="react-datepicker__day-name"
                   >
                     Tu
                   </div>
                   <div
+                    aria-label="Wednesday"
                     class="react-datepicker__day-name"
                   >
                     We
                   </div>
                   <div
+                    aria-label="Thursday"
                     class="react-datepicker__day-name"
                   >
                     Th
                   </div>
                   <div
+                    aria-label="Friday"
                     class="react-datepicker__day-name"
                   >
                     Fr
                   </div>
                   <div
+                    aria-label="Saturday"
                     class="react-datepicker__day-name"
                   >
                     Sa
@@ -4393,36 +4400,43 @@ label + .c3 {
                   class="react-datepicker__day-names"
                 >
                   <div
+                    aria-label="Sunday"
                     class="react-datepicker__day-name"
                   >
                     Su
                   </div>
                   <div
+                    aria-label="Monday"
                     class="react-datepicker__day-name"
                   >
                     Mo
                   </div>
                   <div
+                    aria-label="Tuesday"
                     class="react-datepicker__day-name"
                   >
                     Tu
                   </div>
                   <div
+                    aria-label="Wednesday"
                     class="react-datepicker__day-name"
                   >
                     We
                   </div>
                   <div
+                    aria-label="Thursday"
                     class="react-datepicker__day-name"
                   >
                     Th
                   </div>
                   <div
+                    aria-label="Friday"
                     class="react-datepicker__day-name"
                   >
                     Fr
                   </div>
                   <div
+                    aria-label="Saturday"
                     class="react-datepicker__day-name"
                   >
                     Sa
@@ -5658,36 +5672,43 @@ label + .c3 {
                     class="react-datepicker__day-names"
                   >
                     <div
+                      aria-label="Sunday"
                       class="react-datepicker__day-name"
                     >
                       Su
                     </div>
                     <div
+                      aria-label="Monday"
                       class="react-datepicker__day-name"
                     >
                       Mo
                     </div>
                     <div
+                      aria-label="Tuesday"
                       class="react-datepicker__day-name"
                     >
                       Tu
                     </div>
                     <div
+                      aria-label="Wednesday"
                       class="react-datepicker__day-name"
                     >
                       We
                     </div>
                     <div
+                      aria-label="Thursday"
                       class="react-datepicker__day-name"
                     >
                       Th
                     </div>
                     <div
+                      aria-label="Friday"
                       class="react-datepicker__day-name"
                     >
                       Fr
                     </div>
                     <div
+                      aria-label="Saturday"
                       class="react-datepicker__day-name"
                     >
                       Sa

@@ -4,6 +4,7 @@ import { VoidFunctionComponent } from 'react';
 export default {
     title: 'Foundations/Typography/Heading',
     component: Heading,
+    tags: ['autodocs'],
 };
 
 export const Normal: VoidFunctionComponent = () => (

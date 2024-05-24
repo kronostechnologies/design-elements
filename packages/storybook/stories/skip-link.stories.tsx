@@ -28,7 +28,7 @@ const SkipLinkMeta: Meta<typeof SkipLink> = {
     component: SkipLink,
     argTypes: {
         onClick: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (

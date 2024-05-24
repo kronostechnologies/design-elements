@@ -7,10 +7,10 @@ const meta: Meta<typeof ToggleSwitch> = {
     component: ToggleSwitch,
     argTypes: {
         onToggle: {
-            control: { type: null },
+            control: { disable: true },
         },
         toggled: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
 };

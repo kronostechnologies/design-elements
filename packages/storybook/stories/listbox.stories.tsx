@@ -6,6 +6,7 @@ import styled from 'styled-components';
 export default {
     title: 'Core/Listbox',
     component: Listbox,
+    tags: ['autodocs'],
 };
 
 const options = [

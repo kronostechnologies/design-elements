@@ -14,7 +14,7 @@ const PaginationMeta: Meta<typeof Pagination> = {
     },
     argTypes: {
         onPageChange: {
-            control: { type: null },
+            control: { disable: true },
         },
     },
     render: (args) => (
