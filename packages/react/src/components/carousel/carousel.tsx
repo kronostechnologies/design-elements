@@ -4,13 +4,11 @@ import {
     PropsWithChildren,
     ReactElement,
     ReactNode,
-    VoidFunctionComponent,
 } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { useTheme } from '../../hooks/use-theme';
 import { focus } from '../../utils/css-state';
-import { Icon } from '../icon/icon';
+import { IconButton } from '../buttons/icon-button';
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`
@@ -79,24 +77,11 @@ interface NavigationButtonProps {
     disabled?: boolean;
 }
 
-const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
-    border: 1px solid ${({ theme }) => theme.component['carousel-nav-button-border-color']};
-    height: 34px;
+const NavigationButton = styled(IconButton)<NavigationButtonProps>`
     visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
-    width: 34px;
 
     ${focus};
 `;
-
-const LeftArrowIcon: VoidFunctionComponent = (): ReactElement => {
-    const theme = useTheme();
-    return <Icon name="arrowLeft" size="100%" color={theme.component['carousel-arrow-icon-color']} />;
-};
-
-const RightArrowIcon: VoidFunctionComponent = (): ReactElement => {
-    const theme = useTheme();
-    return <Icon name="arrowRight" size="100%" color={theme.component['carousel-arrow-icon-color']} />;
-};
 
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
     autoTransitionDelay?: number;
@@ -207,14 +192,15 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
         <Main className={className} aria-label={props['aria-label']} aria-roledescription="carousel">
             {withArrows && (
                 <NavigationButton
+                    buttonType="tertiary"
                     onClick={!disablePrevious ? handlers.onPrevious : undefined}
                     disabled={disablePrevious}
                     data-testid="carousel-previous"
                     aria-label="previous"
                     aria-controls={carouselId}
-                >
-                    <LeftArrowIcon />
-                </NavigationButton>
+                    type="button"
+                    iconName="arrowLeft"
+                />
             )}
 
             <Content>
@@ -227,14 +213,15 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
 
             {withArrows && (
                 <NavigationButton
+                    buttonType="tertiary"
                     onClick={!disableNext ? handlers.onNext : undefined}
                     disabled={disableNext}
                     data-testid="carousel-next"
                     aria-label="next"
                     aria-controls={carouselId}
-                >
-                    <RightArrowIcon />
-                </NavigationButton>
+                    type="button"
+                    iconName="arrowRight"
+                />
             )}
         </Main>
     );
