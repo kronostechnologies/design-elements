@@ -19,14 +19,14 @@ export type ListboxTokenMap = {
 };
 
 export const defaultListboxTokens: ListboxTokenMap = {
-    'listbox-background-color': 'color-menu-bg',
+    'listbox-background-color': 'color-menu-background',
     'listbox-border-color': 'color-menu-border',
 
     'listbox-item-text-color': 'color-menu-item-content',
     'listbox-item-caption-text-color': 'color-menu-item-subcontent',
-    'listbox-item-hover-background-color': 'color-menu-item-bg-hover',
+    'listbox-item-hover-background-color': 'color-menu-item-background-hover',
 
-    'listbox-item-disabled-background-color': 'color-menu-item-bg',
+    'listbox-item-disabled-background-color': 'color-menu-item-background',
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
     'listbox-item-caption-disabled-text-color': 'color-menu-item-content-disabled',
 

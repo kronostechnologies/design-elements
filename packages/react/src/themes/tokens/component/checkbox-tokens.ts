@@ -20,14 +20,14 @@ export type CheckboxTokenMap = {
 };
 
 export const defaultCheckboxTokens: CheckboxTokenMap = {
-    'checkbox-unchecked-background-color': 'color-input-bg',
+    'checkbox-unchecked-background-color': 'color-input-background',
     'checkbox-unchecked-border-color': 'color-input-border',
     'checkbox-checked-icon-color': 'color-input-content-checked',
-    'checkbox-checked-background-color': 'color-input-bg-checked',
+    'checkbox-checked-background-color': 'color-input-background-checked',
     'checkbox-checked-border-color': 'color-input-border-checked',
-    'checkbox-disabled-background-color': 'color-input-bg-disabled',
+    'checkbox-disabled-background-color': 'color-input-background-disabled',
     'checkbox-disabled-border-color': 'color-input-border-disabled',
     'checkbox-hover-border-color': 'color-input-border-hover',
-    'checkbox-hover-background-color': 'color-input-bg-hover',
+    'checkbox-hover-background-color': 'color-input-background-hover',
     'checkbox-error-border-color': 'color-input-border-error',
 };

@@ -27,7 +27,7 @@ export type DatepickerTokenMap = {
 };
 
 export const defaultDatepickerTokens: DatepickerTokenMap = {
-    'datepicker-background-color': 'color-bg-overlay',
+    'datepicker-background-color': 'color-background-overlay',
     'datepicker-border-color': 'color-border-overlay',
     'datepicker-box-shadow-color': 'color-box-shadow',
 
@@ -37,14 +37,14 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-border-color': 'transparent-100',
     'datepicker-day-text-color': 'color-content',
 
-    'datepicker-day-hover-background-color': 'color-bg-hover',
+    'datepicker-day-hover-background-color': 'color-background-hover',
     'datepicker-day-disabled-text-color': 'color-content-disabled',
 
     'datepicker-day-outside-month-text-color': 'color-content-subtle',
-    'datepicker-day-selected-outside-month-background-color': 'color-bg-selected',
+    'datepicker-day-selected-outside-month-background-color': 'color-background-selected',
     'datepicker-day-selected-outside-month-border-color': 'color-border-selected',
     'datepicker-day-selected-outside-month-text-color': 'color-content-selected',
-    'datepicker-day-selected-background-color': 'color-bg-selected',
+    'datepicker-day-selected-background-color': 'color-background-selected',
     'datepicker-day-selected-border-color': 'color-border-selected',
     'datepicker-day-selected-text-color': 'color-content-selected',
 

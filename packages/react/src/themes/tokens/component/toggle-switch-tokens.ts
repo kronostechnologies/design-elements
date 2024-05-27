@@ -20,16 +20,16 @@ export type ToggleSwitchTokenMap = {
 };
 
 export const defaultToggleSwitchTokens: ToggleSwitchTokenMap = {
-    'toggle-switch-background-color': 'color-bg-neutral-bold',
-    'toggle-switch-border-color': 'color-bg-neutral-bold',
-    'toggle-switch-toggled-background-color': 'color-feedback-bg-success-bold',
-    'toggle-switch-toggled-border-color': 'color-feedback-bg-success-bold',
+    'toggle-switch-background-color': 'color-background-neutral-bold',
+    'toggle-switch-border-color': 'color-background-neutral-bold',
+    'toggle-switch-toggled-background-color': 'color-feedback-background-success-bold',
+    'toggle-switch-toggled-border-color': 'color-feedback-background-success-bold',
 
-    'toggle-switch-disabled-background-color': 'color-bg-neutral-bold-disabled',
-    'toggle-switch-disabled-border-color': 'color-bg-neutral-bold-disabled',
-    'toggle-switch-disabled-toggled-background-color': 'color-feedback-bg-success-bold-disabled',
-    'toggle-switch-disabled-toggled-border-color': 'color-feedback-bg-success-bold-disabled',
+    'toggle-switch-disabled-background-color': 'color-background-neutral-bold-disabled',
+    'toggle-switch-disabled-border-color': 'color-background-neutral-bold-disabled',
+    'toggle-switch-disabled-toggled-background-color': 'color-feedback-background-success-bold-disabled',
+    'toggle-switch-disabled-toggled-border-color': 'color-feedback-background-success-bold-disabled',
 
     'toggle-switch-label-text-color': 'color-content',
-    'toggle-switch-knob-background-color': 'color-input-bg',
+    'toggle-switch-knob-background-color': 'color-input-background',
 };

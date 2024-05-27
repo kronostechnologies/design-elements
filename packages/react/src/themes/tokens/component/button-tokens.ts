@@ -284,15 +284,15 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-inverted-disabled-text-color': 'color-action-destructive-disabled',
 
     // Input button
-    'button-input-background-color': 'color-input-bg',
+    'button-input-background-color': 'color-input-background',
     'button-input-border-color': 'color-input-border',
     'button-input-text-color': 'color-input-content',
     // Input button hover
-    'button-input-hover-background-color': 'color-input-bg-hover',
+    'button-input-hover-background-color': 'color-input-background-hover',
     'button-input-hover-border-color': 'color-input-border-hover',
     'button-input-hover-text-color': 'color-input-content-hover',
     // Input button disabled
-    'button-input-disabled-background-color': 'color-input-bg-disabled',
+    'button-input-disabled-background-color': 'color-input-background-disabled',
     'button-input-disabled-border-color': 'color-input-border-disabled',
     'button-input-disabled-text-color': 'color-input-content-disabled',
 };

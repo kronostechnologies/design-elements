@@ -62,17 +62,17 @@ export type TagTokenMap = {
 };
 
 export const defaultTagTokens: TagTokenMap = {
-    'tag-background-color': 'color-bg-neutral-subtle',
+    'tag-background-color': 'color-background-neutral-subtle',
     'tag-border-color': 'color-border-bold',
     'tag-text-color': 'color-content',
     'tag-icon-color': 'color-content',
 
-    'tag-hover-background-color': 'color-bg-hover',
+    'tag-hover-background-color': 'color-background-hover',
     'tag-hover-border-color': 'color-border-hover',
     'tag-hover-icon-color': 'color-content-hover',
     'tag-hover-text-color': 'color-content-hover',
 
-    'tag-selected-background-color': 'color-bg-selected',
+    'tag-selected-background-color': 'color-background-selected',
     'tag-selected-border-color': 'color-border-selected',
     'tag-selected-text-color': 'color-content-selected',
     'tag-selected-icon-color': 'color-content-selected',

@@ -33,18 +33,18 @@ export const defaultTabTokens: TabTokenMap = {
      * tabs global
      */
     'tab-global-button-background-color': 'transparent-100',
-    'tab-global-list-background-color': 'color-bg',
+    'tab-global-list-background-color': 'color-background',
     'tab-global-button-selected-background-color': 'transparent-100',
 
     /**
      * tabs section
      */
-    'tab-section-background-color': 'color-bg',
+    'tab-section-background-color': 'color-background',
     'tab-section-border-color': 'color-border',
     'tab-section-box-shadow-color': 'color-box-shadow',
-    'tab-section-list-background-color': 'color-bg-neutral-subtle',
-    'tab-section-button-background-color': 'color-bg',
-    'tab-section-button-selected-background-color': 'color-bg',
+    'tab-section-list-background-color': 'color-background-neutral-subtle',
+    'tab-section-button-background-color': 'color-background',
+    'tab-section-button-selected-background-color': 'color-background',
 
     /**
      * tab button
@@ -62,7 +62,7 @@ export const defaultTabTokens: TabTokenMap = {
     /**
      * tab button indicator
      */
-    'tab-button-indicator-hover-background-color': 'color-bg-hover',
-    'tab-button-indicator-active-background-color': 'color-bg-indicator-active',
-    'tab-button-indicator-selected-background-color': 'color-bg-indicator-selected',
+    'tab-button-indicator-hover-background-color': 'color-background-hover',
+    'tab-button-indicator-active-background-color': 'color-background-indicator-active',
+    'tab-button-indicator-selected-background-color': 'color-background-indicator-selected',
 };

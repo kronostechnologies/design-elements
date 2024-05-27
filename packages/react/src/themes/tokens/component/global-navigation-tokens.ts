@@ -18,12 +18,12 @@ export type GlobalNavigationTokenMap = {
 };
 
 export const defaultGlobalNavigationTokens: GlobalNavigationTokenMap = {
-    'global-navigation-background-color': 'color-bg-overlay',
+    'global-navigation-background-color': 'color-background-overlay',
     'global-navigation-box-shadow-color': 'color-box-shadow',
-    'global-navigation-item-hover-background-color': 'color-bg-hover',
+    'global-navigation-item-hover-background-color': 'color-background-hover',
     'global-navigation-item-hover-text-color': 'color-content-hover',
     'global-navigation-item-text-color': 'color-content-subtle',
-    'global-navigation-item-selected-background-color': 'color-bg-selected',
+    'global-navigation-item-selected-background-color': 'color-background-selected',
     'global-navigation-item-selected-text-color': 'color-content-selected',
     'global-navigation-separator-border-color': 'color-border',
 };

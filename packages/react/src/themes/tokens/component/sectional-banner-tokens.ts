@@ -28,27 +28,27 @@ export type SectionalBannerTokenMap = {
 };
 
 export const defaultSectionalBannerTokens: SectionalBannerTokenMap = {
-    'sectional-banner-neutral-background-color': 'color-bg-neutral-subtlest',
+    'sectional-banner-neutral-background-color': 'color-background-neutral-subtlest',
     'sectional-banner-neutral-border-color': 'color-border-bold',
     'sectional-banner-neutral-icon-color': 'color-content-subtle',
 
-    'sectional-banner-info-background-color': 'color-feedback-bg-informative-subtlest',
+    'sectional-banner-info-background-color': 'color-feedback-background-informative-subtlest',
     'sectional-banner-info-border-color': 'color-feedback-border-informative',
     'sectional-banner-info-icon-color': 'color-feedback-content-informative',
 
-    'sectional-banner-discovery-background-color': 'color-feedback-bg-discovery-subtlest',
+    'sectional-banner-discovery-background-color': 'color-feedback-background-discovery-subtlest',
     'sectional-banner-discovery-border-color': 'color-feedback-border-discovery',
     'sectional-banner-discovery-icon-color': 'color-feedback-content-discovery',
 
-    'sectional-banner-success-background-color': 'color-feedback-bg-success-subtlest',
+    'sectional-banner-success-background-color': 'color-feedback-background-success-subtlest',
     'sectional-banner-success-border-color': 'color-feedback-border-success',
     'sectional-banner-success-icon-color': 'color-feedback-content-success',
 
-    'sectional-banner-warning-background-color': 'color-feedback-bg-warning-subtlest',
+    'sectional-banner-warning-background-color': 'color-feedback-background-warning-subtlest',
     'sectional-banner-warning-border-color': 'color-feedback-border-warning',
     'sectional-banner-warning-icon-color': 'color-feedback-content-warning',
 
-    'sectional-banner-alert-background-color': 'color-feedback-bg-alert-subtlest',
+    'sectional-banner-alert-background-color': 'color-feedback-background-alert-subtlest',
     'sectional-banner-alert-border-color': 'color-feedback-border-alert',
     'sectional-banner-alert-icon-color': 'color-feedback-content-alert',
 };

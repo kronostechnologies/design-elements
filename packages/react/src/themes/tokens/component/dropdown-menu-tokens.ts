@@ -31,16 +31,16 @@ export type DropdownMenuTokenMap = {
 };
 
 export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
-    'dropdown-menu-background-color': 'color-menu-bg',
+    'dropdown-menu-background-color': 'color-menu-background',
     'dropdown-menu-border-color': 'color-menu-border',
     'dropdown-menu-text-color': 'color-menu-item-content',
 
-    'dropdown-menu-item-content-icon-background-color': 'color-bg-neutral-subtle',
+    'dropdown-menu-item-content-icon-background-color': 'color-background-neutral-subtle',
     'dropdown-menu-item-content-icon-border-color': 'color-border',
     'dropdown-menu-group-border-color': 'color-border',
 
-    'dropdown-menu-nav-item-hover-background-color': 'color-menu-item-bg-hover',
-    'dropdown-menu-external-item-hover-background-color': 'color-menu-item-bg-hover',
+    'dropdown-menu-nav-item-hover-background-color': 'color-menu-item-background-hover',
+    'dropdown-menu-external-item-hover-background-color': 'color-menu-item-background-hover',
 
     'dropdown-menu-list-item-text-color': 'color-menu-item-content',
     'dropdown-menu-nav-item-text-color': 'color-menu-item-content',
@@ -49,7 +49,7 @@ export const defaultDropdownMenuTokens: DropdownMenuTokenMap = {
     'dropdown-menu-external-item-text-color': 'color-menu-item-content',
     'dropdown-menu-item-content-description-text-color': 'color-menu-item-subcontent',
 
-    'dropdown-menu-nav-item-disabled-background-color': 'color-menu-item-bg',
+    'dropdown-menu-nav-item-disabled-background-color': 'color-menu-item-background',
     'dropdown-menu-nav-item-disabled-text-color': 'color-menu-item-content-disabled',
     'dropdown-menu-nav-item-disabled-icon-color': 'color-menu-item-content-disabled',
     'dropdown-menu-external-item-disabled-text-color': 'color-menu-item-content-disabled',

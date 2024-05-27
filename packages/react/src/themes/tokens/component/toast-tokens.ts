@@ -25,23 +25,23 @@ export type ToastTokenMap = {
 };
 
 export const defaultToastTokens: ToastTokenMap = {
-    'toast-neutral-background-color': 'color-bg-neutral-bold',
+    'toast-neutral-background-color': 'color-background-neutral-bold',
     'toast-neutral-text-color': 'color-content-inverse',
     'toast-neutral-icon-color': 'color-content-inverse',
 
-    'toast-discovery-background-color': 'color-feedback-bg-discovery-bold',
+    'toast-discovery-background-color': 'color-feedback-background-discovery-bold',
     'toast-discovery-text-color': 'color-content-inverse',
     'toast-discovery-icon-color': 'color-content-inverse',
 
-    'toast-success-background-color': 'color-feedback-bg-success-bold',
+    'toast-success-background-color': 'color-feedback-background-success-bold',
     'toast-success-text-color': 'color-content-inverse',
     'toast-success-icon-color': 'color-content-inverse',
 
-    'toast-warning-background-color': 'color-feedback-bg-warning-bold',
+    'toast-warning-background-color': 'color-feedback-background-warning-bold',
     'toast-warning-text-color': 'color-content',
     'toast-warning-icon-color': 'color-content',
 
-    'toast-alert-background-color': 'color-feedback-bg-alert-bold',
+    'toast-alert-background-color': 'color-feedback-background-alert-bold',
     'toast-alert-text-color': 'color-content-inverse',
     'toast-alert-icon-color': 'color-content-inverse',
 };

@@ -12,6 +12,6 @@ export type BadgeTokenMap = {
 };
 
 export const defaultBadgeTokens: BadgeTokenMap = {
-    'badge-background-color': 'color-feedback-bg-alert-bold',
+    'badge-background-color': 'color-feedback-background-alert-bold',
     'badge-text-color': 'color-content-inverse',
 };

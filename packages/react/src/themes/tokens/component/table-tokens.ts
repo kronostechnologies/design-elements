@@ -31,21 +31,21 @@ export const defaultTableTokens: TableTokenMap = {
     'table-background-color': 'transparent-100',
     'table-text-color': 'color-content',
 
-    'table-header-background-color': 'color-bg',
+    'table-header-background-color': 'color-background',
     'table-header-border-color': 'color-border',
     'table-body-background-color': 'transparent-100',
-    'table-footer-background-color': 'color-bg',
+    'table-footer-background-color': 'color-background',
     'table-footer-border-color': 'color-border',
 
     'table-group-border-color': 'color-border',
 
-    'table-cell-hover-background-color': 'color-bg-hover',
+    'table-cell-hover-background-color': 'color-background-hover',
     'table-cell-number-text-color': 'color-content-subtle',
 
     'table-row-border-color': 'color-border',
-    'table-row-odd-background-color': 'color-bg-isolated',
-    'table-row-selected-background-color': 'color-bg-selected',
-    'table-row-error-background-color': 'color-feedback-bg-alert-subtle',
+    'table-row-odd-background-color': 'color-background-isolated',
+    'table-row-selected-background-color': 'color-background-selected',
+    'table-row-error-background-color': 'color-feedback-background-alert-subtle',
     'table-row-error-border-color': 'color-feedback-border-alert',
 
     'table-sort-button-ascending-icon-color': 'color-content-subtle',

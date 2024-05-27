@@ -20,6 +20,6 @@ export const defaultTooltipTokens: TooltipTokenMap = {
     'tooltip-inverted-icon-color': 'color-content-inverse',
     'tooltip-popper-container-border-color': 'color-border-inverse',
     'tooltip-popper-container-text-color': 'color-content-inverse',
-    'tooltip-popper-container-default-background-color': 'color-bg-neutral-bold',
-    'tooltip-popper-container-success-background-color': 'color-feedback-bg-success-bold',
+    'tooltip-popper-container-default-background-color': 'color-background-neutral-bold',
+    'tooltip-popper-container-success-background-color': 'color-feedback-background-success-bold',
 };

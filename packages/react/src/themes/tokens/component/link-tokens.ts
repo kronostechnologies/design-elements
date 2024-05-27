@@ -25,5 +25,5 @@ export const defaultLinkTokens: LinkTokenMap = {
     'route-link-hover-text-color': 'color-link-content-hover',
 
     'skip-link-text-color': 'color-link-content',
-    'skip-link-background-color': 'color-bg',
+    'skip-link-background-color': 'color-background',
 };

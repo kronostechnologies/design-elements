@@ -49,78 +49,78 @@ export const defaultLozengeTokens: LozengeTokensMap = {
     /**
      * neutral
      */
-    'lozenge-neutral-background-color': 'color-bg-neutral-bold',
-    'lozenge-neutral-border-color': 'color-bg-neutral-bold',
+    'lozenge-neutral-background-color': 'color-background-neutral-bold',
+    'lozenge-neutral-border-color': 'color-background-neutral-bold',
     'lozenge-neutral-text-color': 'color-content-inverse',
     /**
      * neutral subtle
      */
-    'lozenge-neutral-subtle-background-color': 'color-bg-neutral-subtle',
-    'lozenge-neutral-subtle-border-color': 'color-bg-neutral-subtle',
+    'lozenge-neutral-subtle-background-color': 'color-background-neutral-subtle',
+    'lozenge-neutral-subtle-border-color': 'color-background-neutral-subtle',
     'lozenge-neutral-subtle-text-color': 'color-content-subtle',
 
     /**
      * info
      */
-    'lozenge-info-background-color': 'color-feedback-bg-informative-bold',
-    'lozenge-info-border-color': 'color-feedback-bg-informative-bold',
+    'lozenge-info-background-color': 'color-feedback-background-informative-bold',
+    'lozenge-info-border-color': 'color-feedback-background-informative-bold',
     'lozenge-info-text-color': 'color-content-inverse',
     /**
      * info subtle
      */
-    'lozenge-info-subtle-background-color': 'color-feedback-bg-informative-subtle',
-    'lozenge-info-subtle-border-color': 'color-feedback-bg-informative-subtle',
+    'lozenge-info-subtle-background-color': 'color-feedback-background-informative-subtle',
+    'lozenge-info-subtle-border-color': 'color-feedback-background-informative-subtle',
     'lozenge-info-subtle-text-color': 'color-feedback-content-informative',
 
     /**
      * success
      */
-    'lozenge-success-background-color': 'color-feedback-bg-success-bold',
-    'lozenge-success-border-color': 'color-feedback-bg-success-bold',
+    'lozenge-success-background-color': 'color-feedback-background-success-bold',
+    'lozenge-success-border-color': 'color-feedback-background-success-bold',
     'lozenge-success-text-color': 'color-content-inverse',
     /**
      * success subtle
      */
-    'lozenge-success-subtle-background-color': 'color-feedback-bg-success-subtle',
-    'lozenge-success-subtle-border-color': 'color-feedback-bg-success-subtle',
+    'lozenge-success-subtle-background-color': 'color-feedback-background-success-subtle',
+    'lozenge-success-subtle-border-color': 'color-feedback-background-success-subtle',
     'lozenge-success-subtle-text-color': 'color-feedback-content-success',
 
     /**
      * discovery
      */
-    'lozenge-discovery-background-color': 'color-feedback-bg-discovery-bold',
-    'lozenge-discovery-border-color': 'color-feedback-bg-discovery-bold',
+    'lozenge-discovery-background-color': 'color-feedback-background-discovery-bold',
+    'lozenge-discovery-border-color': 'color-feedback-background-discovery-bold',
     'lozenge-discovery-text-color': 'color-content-inverse',
     /**
      * discovery subtle
      */
-    'lozenge-discovery-subtle-background-color': 'color-feedback-bg-discovery-subtle',
-    'lozenge-discovery-subtle-border-color': 'color-feedback-bg-discovery-subtle',
+    'lozenge-discovery-subtle-background-color': 'color-feedback-background-discovery-subtle',
+    'lozenge-discovery-subtle-border-color': 'color-feedback-background-discovery-subtle',
     'lozenge-discovery-subtle-text-color': 'color-feedback-content-discovery',
 
     /**
      * alert
      */
-    'lozenge-alert-background-color': 'color-feedback-bg-alert-bold',
-    'lozenge-alert-border-color': 'color-feedback-bg-alert-bold',
+    'lozenge-alert-background-color': 'color-feedback-background-alert-bold',
+    'lozenge-alert-border-color': 'color-feedback-background-alert-bold',
     'lozenge-alert-text-color': 'color-content-inverse',
     /**
      * alert subtle
      */
-    'lozenge-alert-subtle-background-color': 'color-feedback-bg-alert-subtle',
-    'lozenge-alert-subtle-border-color': 'color-feedback-bg-alert-subtle',
+    'lozenge-alert-subtle-background-color': 'color-feedback-background-alert-subtle',
+    'lozenge-alert-subtle-border-color': 'color-feedback-background-alert-subtle',
     'lozenge-alert-subtle-text-color': 'color-feedback-content-alert',
 
     /**
      * warning
      */
-    'lozenge-warning-background-color': 'color-feedback-bg-warning-bold',
-    'lozenge-warning-border-color': 'color-feedback-bg-warning-bold',
+    'lozenge-warning-background-color': 'color-feedback-background-warning-bold',
+    'lozenge-warning-border-color': 'color-feedback-background-warning-bold',
     'lozenge-warning-text-color': 'color-content',
     /**
      * warning subtle
      */
-    'lozenge-warning-subtle-background-color': 'color-feedback-bg-warning-subtle',
-    'lozenge-warning-subtle-border-color': 'color-feedback-bg-warning-subtle',
+    'lozenge-warning-subtle-background-color': 'color-feedback-background-warning-subtle',
+    'lozenge-warning-subtle-border-color': 'color-feedback-background-warning-subtle',
     'lozenge-warning-subtle-text-color': 'color-feedback-content-warning',
 };

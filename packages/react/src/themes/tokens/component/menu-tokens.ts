@@ -23,9 +23,9 @@ export type MenuTokenMap = {
 };
 
 export const defaultMenuTokens: MenuTokenMap = {
-    'menu-background-color': 'color-menu-bg',
+    'menu-background-color': 'color-menu-background',
     'menu-border-color': 'color-menu-border',
-    'menu-submenu-background-color': 'color-menu-bg',
+    'menu-submenu-background-color': 'color-menu-background',
     'menu-submenu-border-color': 'color-menu-border',
 
     'menu-group-text-color': 'color-menu-item-subcontent',
@@ -35,7 +35,7 @@ export const defaultMenuTokens: MenuTokenMap = {
     'menu-item-icon-color': 'color-menu-item-content',
     'menu-item-hover-icon-color': 'color-menu-item-content-hover',
     'menu-item-disabled-text-color': 'color-menu-item-content-disabled',
-    'menu-item-hover-background-color': 'color-menu-item-bg-hover',
+    'menu-item-hover-background-color': 'color-menu-item-background-hover',
 
     'menu-submenu-box-shadow-color': 'color-box-shadow',
     'menu-box-shadow-color': 'color-box-shadow',

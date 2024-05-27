@@ -32,10 +32,10 @@ export const defaultComboboxTokens: ComboboxTokenMap = {
     'combobox-arrow-button-disabled-icon-color': 'color-input-content-disabled',
     'combobox-arrow-button-icon-color': 'color-input-content',
     'combobox-border-color': 'color-input-border',
-    'combobox-disabled-background-color': 'color-input-bg-disabled',
+    'combobox-disabled-background-color': 'color-input-background-disabled',
     'combobox-disabled-border-color': 'color-input-border-disabled',
     'combobox-disabled-text-color': 'color-input-content-disabled',
     'combobox-error-border-color': 'color-input-border-error',
-    'combobox-background-color': 'color-input-bg',
+    'combobox-background-color': 'color-input-background',
     'combobox-placeholder-text-color': 'color-input-content',
 };

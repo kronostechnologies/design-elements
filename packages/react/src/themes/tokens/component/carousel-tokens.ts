@@ -13,7 +13,7 @@ export type CarouselTokenMap = {
 };
 
 export const defaultCarouselTokens: CarouselTokenMap = {
-    'carousel-dot-selected-background-color': 'color-bg-indicator-selected',
-    'carousel-dot-unselected-background-color': 'color-bg-empty',
+    'carousel-dot-selected-background-color': 'color-background-indicator-selected',
+    'carousel-dot-unselected-background-color': 'color-background-empty',
     'carousel-dot-border-color': 'transparent-100',
 };

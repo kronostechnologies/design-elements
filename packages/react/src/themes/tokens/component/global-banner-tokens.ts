@@ -37,7 +37,7 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     /**
      * neutral
      */
-    'global-banner-neutral-background-color': 'color-bg-neutral-bold',
+    'global-banner-neutral-background-color': 'color-background-neutral-bold',
     'global-banner-neutral-text-color': 'color-content-inverse',
     'global-banner-neutral-action-button-text-color': 'color-content-inverse',
     'global-banner-neutral-action-button-border-color': 'color-border-inverse',
@@ -47,7 +47,7 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     /**
      * discovery
      */
-    'global-banner-discovery-background-color': 'color-feedback-bg-discovery-bold',
+    'global-banner-discovery-background-color': 'color-feedback-background-discovery-bold',
     'global-banner-discovery-text-color': 'color-content-inverse',
     'global-banner-discovery-action-button-text-color': 'color-content-inverse',
     'global-banner-discovery-action-button-border-color': 'color-border-inverse',
@@ -57,7 +57,7 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     /**
      * warning
      */
-    'global-banner-warning-background-color': 'color-feedback-bg-warning-bold',
+    'global-banner-warning-background-color': 'color-feedback-background-warning-bold',
     'global-banner-warning-text-color': 'color-content',
     'global-banner-warning-action-button-text-color': 'color-content',
     'global-banner-warning-action-button-border-color': 'color-content',
@@ -67,7 +67,7 @@ export const defaultGlobalBannerTokens: GlobalBannerTokenMap = {
     /**
      * alert
      */
-    'global-banner-alert-background-color': 'color-feedback-bg-alert-bold',
+    'global-banner-alert-background-color': 'color-feedback-background-alert-bold',
     'global-banner-alert-text-color': 'color-content-inverse',
     'global-banner-alert-action-button-text-color': 'color-content-inverse',
     'global-banner-alert-action-button-border-color': 'color-border-inverse',
