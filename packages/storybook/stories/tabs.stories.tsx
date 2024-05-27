@@ -48,6 +48,7 @@ const tabs: Tab[] = [
     {
         id: 'tab2',
         title: 'Calendar',
+        defaultSelected: true,
         panelContent: (
             <StyledDiv>
                 <Card>Monday : Doing something meaningful</Card>
@@ -86,7 +87,11 @@ export default TabsMeta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
-    ...TabsMeta,
+    args: {
+        global: false
+    },
+
+    ...TabsMeta
 };
 
 export const Global: Story = {

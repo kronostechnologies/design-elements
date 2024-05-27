@@ -100,6 +100,7 @@ const AddIcon = styled(Icon)`
 export interface Tab {
     id?: string;
     title: string;
+    defaultSelected?: boolean;
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
@@ -148,7 +149,8 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
 
-    const [selectedTab, setSelectedTab] = useState(tabItems[0]);
+    const defaultSelectedTab = tabItems.find((tab) => tab.defaultSelected === true);
+    const [selectedTab, setSelectedTab] = useState(defaultSelectedTab ?? tabItems[0]);
 
     function isTabSelected(tabId: string): boolean {
         return selectedTab.id === tabId;
