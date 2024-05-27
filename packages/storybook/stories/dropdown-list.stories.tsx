@@ -81,6 +81,14 @@ export const MultiSelect: Story = {
     },
 };
 
+export const WithIcon: Story = {
+    ...DropdownListMeta,
+    args: {
+        label: 'Select multiple options',
+        iconName: 'home',
+    },
+};
+
 export const WithCallback: Story = {
     ...DropdownListMeta,
     args: {

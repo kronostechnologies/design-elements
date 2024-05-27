@@ -432,6 +432,470 @@ input + .c2 {
 </div>
 `;
 
+exports[`Dropdown list matches the snapshot (icon) 1`] = `
+.c3 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c9 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c11 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 2px solid #006296;
+  outline-offset: -3px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12::before {
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 4px;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14:hover {
+  background-color: #DBDEE1;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c10 {
+  margin-top: var(--spacing-half);
+  position: absolute;
+  width: 100%;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c6 {
+  color: #60666E;
+  margin-right: var(--spacing-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <span
+    class="c4"
+    id="uuid1_hint"
+  >
+    Hint
+  </span>
+  <div
+    aria-activedescendant="uuid1_ab"
+    aria-controls="uuid1_listbox"
+    aria-describedby="uuid1_hint"
+    aria-expanded="true"
+    aria-invalid="false"
+    aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-required="false"
+    class="c5"
+    data-testid="textbox"
+    id="uuid1"
+    role="combobox"
+    tabindex="0"
+    value="ab"
+  >
+    <svg
+      aria-hidden="true"
+      class="c6"
+      color="currentColor"
+      data-testid="textbox-icon"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    <input
+      data-testid="input"
+      type="hidden"
+      value="ab"
+    />
+    <span
+      class="c7"
+    >
+      Alberta
+    </span>
+    <svg
+      aria-hidden="true"
+      class="c8"
+      color="currentColor"
+      data-testid="arrow"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </div>
+  <div
+    aria-activedescendant="uuid1_listbox_ab"
+    aria-labelledby="uuid1_label"
+    class="c9 c10"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c11"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        aria-selected="true"
+        class="c12"
+        data-testid="listitem-ab"
+        id="uuid1_listbox_ab"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-bc"
+        id="uuid1_listbox_bc"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-mb"
+        id="uuid1_listbox_mb"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-nb"
+        id="uuid1_listbox_nb"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-nl"
+        id="uuid1_listbox_nl"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-nt"
+        id="uuid1_listbox_nt"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-ns"
+        id="uuid1_listbox_ns"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-nu"
+        id="uuid1_listbox_nu"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-on"
+        id="uuid1_listbox_on"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-pe"
+        id="uuid1_listbox_pe"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-qc"
+        id="uuid1_listbox_qc"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-sk"
+        id="uuid1_listbox_sk"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-yt"
+        id="uuid1_listbox_yt"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Dropdown list matches the snapshot (invalid) 1`] = `
 .c4 {
   color: #CD2C23;
