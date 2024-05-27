@@ -16,11 +16,11 @@ export type NumericInputTokenMap = {
 };
 
 export const defaultNumericInputTokens: NumericInputTokenMap = {
-    'numeric-input-background-color': 'color-input-background',
-    'numeric-input-border-color': 'color-input-border',
-    'numeric-input-error-border-color': 'color-input-border-error',
+    'numeric-input-background-color': 'color-control-background',
+    'numeric-input-border-color': 'color-control-border',
+    'numeric-input-error-border-color': 'color-control-border-error',
 
-    'numeric-input-disabled-adornment-text-color': 'color-input-content-disabled',
-    'numeric-input-disabled-background-color': 'color-input-background-disabled',
-    'numeric-input-disabled-border-color': 'color-input-border-disabled',
+    'numeric-input-disabled-adornment-text-color': 'color-control-content-disabled',
+    'numeric-input-disabled-background-color': 'color-control-background-disabled',
+    'numeric-input-disabled-border-color': 'color-control-border-disabled',
 };

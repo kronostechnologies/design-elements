@@ -31,5 +31,5 @@ export const defaultToggleSwitchTokens: ToggleSwitchTokenMap = {
     'toggle-switch-disabled-toggled-border-color': 'color-feedback-background-success-bold-disabled',
 
     'toggle-switch-label-text-color': 'color-content',
-    'toggle-switch-knob-background-color': 'color-input-background',
+    'toggle-switch-knob-background-color': 'color-control-background',
 };

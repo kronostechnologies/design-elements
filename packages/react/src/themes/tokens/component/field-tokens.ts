@@ -15,8 +15,8 @@ export type FieldTokenMap = {
 
 export const defaultFieldTokens: FieldTokenMap = {
     'field-hint-text-color': 'color-content-subtle',
-    'field-error-text-color': 'color-input-content-error',
+    'field-error-text-color': 'color-control-content-error',
 
-    'field-input-border-color': 'color-input-border',
-    'field-input-error-border-color': 'color-input-border-error',
+    'field-input-border-color': 'color-control-border',
+    'field-input-error-border-color': 'color-control-border-error',
 };

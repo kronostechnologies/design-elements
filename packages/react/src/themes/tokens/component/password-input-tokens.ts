@@ -20,8 +20,8 @@ export type PasswordInputTokenMap = {
 
 export const defaultPasswordInputTokens: PasswordInputTokenMap = {
     'password-rule-empty-text-color': 'color-content-subtle',
-    'password-rule-error-text-color': 'color-input-content-error',
-    'password-rule-success-text-color': 'color-input-content-success',
+    'password-rule-error-text-color': 'color-control-content-error',
+    'password-rule-success-text-color': 'color-control-content-success',
 
     'password-strength-label-text-color': 'color-content-subtle',
 

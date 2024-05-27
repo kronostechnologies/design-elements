@@ -284,15 +284,15 @@ export const defaultButtonTokens: ButtonTokenMap = {
     'button-destructive-tertiary-inverted-disabled-text-color': 'color-action-destructive-disabled',
 
     // Input button
-    'button-input-background-color': 'color-input-background',
-    'button-input-border-color': 'color-input-border',
-    'button-input-text-color': 'color-input-content',
+    'button-input-background-color': 'color-control-background',
+    'button-input-border-color': 'color-control-border',
+    'button-input-text-color': 'color-control-content',
     // Input button hover
-    'button-input-hover-background-color': 'color-input-background-hover',
-    'button-input-hover-border-color': 'color-input-border-hover',
-    'button-input-hover-text-color': 'color-input-content-hover',
+    'button-input-hover-background-color': 'color-control-background-hover',
+    'button-input-hover-border-color': 'color-control-border-hover',
+    'button-input-hover-text-color': 'color-control-content-hover',
     // Input button disabled
-    'button-input-disabled-background-color': 'color-input-background-disabled',
-    'button-input-disabled-border-color': 'color-input-border-disabled',
-    'button-input-disabled-text-color': 'color-input-content-disabled',
+    'button-input-disabled-background-color': 'color-control-background-disabled',
+    'button-input-disabled-border-color': 'color-control-border-disabled',
+    'button-input-disabled-text-color': 'color-control-content-disabled',
 };

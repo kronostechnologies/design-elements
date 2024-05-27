@@ -48,26 +48,26 @@ export type AliasTokens =
     | 'color-feedback-content-discovery'
     | 'color-feedback-content-informative'
     /**
-     * INPUT
+     * CONTROL
      */
-    | 'color-input-background'
-    | 'color-input-background-hover'
-    | 'color-input-background-disabled'
-    | 'color-input-background-checked'
-    | 'color-input-background-selected'
-    | 'color-input-border'
-    | 'color-input-border-hover'
-    | 'color-input-border-disabled'
-    | 'color-input-border-selected'
-    | 'color-input-border-checked'
-    | 'color-input-border-error'
-    | 'color-input-content'
-    | 'color-input-content-hover'
-    | 'color-input-content-disabled'
-    | 'color-input-content-error'
-    | 'color-input-content-success'
-    | 'color-input-content-checked'
-    | 'color-input-content-selected'
+    | 'color-control-background'
+    | 'color-control-background-hover'
+    | 'color-control-background-disabled'
+    | 'color-control-background-checked'
+    | 'color-control-background-selected'
+    | 'color-control-border'
+    | 'color-control-border-hover'
+    | 'color-control-border-disabled'
+    | 'color-control-border-selected'
+    | 'color-control-border-checked'
+    | 'color-control-border-error'
+    | 'color-control-content'
+    | 'color-control-content-hover'
+    | 'color-control-content-disabled'
+    | 'color-control-content-error'
+    | 'color-control-content-success'
+    | 'color-control-content-checked'
+    | 'color-control-content-selected'
     /**
      * MENU
      */
@@ -228,29 +228,29 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-feedback-content-informative': 'color-informative-70',
 
     /**
-     * INPUT
-     *  Use for form UI elements, such as inputs, checkboxes, radio buttons, etc.
+     * CONTROL
+     *  Use for form UI elements, such as inputs, checkboxes, radio buttons, choosers, segmented controls, etc.
      */
-    'color-input-background': 'color-white',
-    'color-input-background-hover': 'color-neutral-15',
-    'color-input-background-disabled': 'color-neutral-05',
-    'color-input-background-checked': 'color-brand-50',
-    'color-input-background-selected': 'color-brand-05',
+    'color-control-background': 'color-white',
+    'color-control-background-hover': 'color-neutral-15',
+    'color-control-background-disabled': 'color-neutral-05',
+    'color-control-background-checked': 'color-brand-50',
+    'color-control-background-selected': 'color-brand-05',
 
-    'color-input-border': 'color-neutral-65',
-    'color-input-border-hover': 'color-black',
-    'color-input-border-disabled': 'color-neutral-30',
-    'color-input-border-selected': 'color-brand-50',
-    'color-input-border-checked': 'color-brand-50',
-    'color-input-border-error': 'color-alert-50',
+    'color-control-border': 'color-neutral-65',
+    'color-control-border-hover': 'color-black',
+    'color-control-border-disabled': 'color-neutral-30',
+    'color-control-border-selected': 'color-brand-50',
+    'color-control-border-checked': 'color-brand-50',
+    'color-control-border-error': 'color-alert-50',
 
-    'color-input-content': 'color-neutral-65',
-    'color-input-content-hover': 'color-black',
-    'color-input-content-disabled': 'color-neutral-30',
-    'color-input-content-error': 'color-alert-50',
-    'color-input-content-success': 'color-success-50',
-    'color-input-content-checked': 'color-white',
-    'color-input-content-selected': 'color-brand-70',
+    'color-control-content': 'color-neutral-65',
+    'color-control-content-hover': 'color-black',
+    'color-control-content-disabled': 'color-neutral-30',
+    'color-control-content-error': 'color-alert-50',
+    'color-control-content-success': 'color-success-50',
+    'color-control-content-checked': 'color-white',
+    'color-control-content-selected': 'color-brand-70',
 
     /**
      * MENU

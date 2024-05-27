@@ -20,14 +20,14 @@ export type CheckboxTokenMap = {
 };
 
 export const defaultCheckboxTokens: CheckboxTokenMap = {
-    'checkbox-unchecked-background-color': 'color-input-background',
-    'checkbox-unchecked-border-color': 'color-input-border',
-    'checkbox-checked-icon-color': 'color-input-content-checked',
-    'checkbox-checked-background-color': 'color-input-background-checked',
-    'checkbox-checked-border-color': 'color-input-border-checked',
-    'checkbox-disabled-background-color': 'color-input-background-disabled',
-    'checkbox-disabled-border-color': 'color-input-border-disabled',
-    'checkbox-hover-border-color': 'color-input-border-hover',
-    'checkbox-hover-background-color': 'color-input-background-hover',
-    'checkbox-error-border-color': 'color-input-border-error',
+    'checkbox-unchecked-background-color': 'color-control-background',
+    'checkbox-unchecked-border-color': 'color-control-border',
+    'checkbox-checked-icon-color': 'color-control-content-checked',
+    'checkbox-checked-background-color': 'color-control-background-checked',
+    'checkbox-checked-border-color': 'color-control-border-checked',
+    'checkbox-disabled-background-color': 'color-control-background-disabled',
+    'checkbox-disabled-border-color': 'color-control-border-disabled',
+    'checkbox-hover-border-color': 'color-control-border-hover',
+    'checkbox-hover-background-color': 'color-control-background-hover',
+    'checkbox-error-border-color': 'color-control-border-error',
 };
