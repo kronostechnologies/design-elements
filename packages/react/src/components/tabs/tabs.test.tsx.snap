@@ -240,7 +240,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c0 {
-  background: transparent;
+  background: #FFFFFF;
   box-sizing: content-box;
   height: var(--size-2halfx);
   padding-top: var(--spacing-2x);
@@ -736,7 +736,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
+  background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -767,7 +767,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
+  background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1196,7 +1196,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
+  background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;
@@ -1227,7 +1227,7 @@ exports[`Tabs matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF;
+  background: #F1F2F2;
   border-bottom: 1px solid #DBDEE1;
   border-radius: 0;
   bottom: 0;

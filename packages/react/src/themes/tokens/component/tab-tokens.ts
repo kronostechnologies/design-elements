@@ -19,7 +19,6 @@ export type TabTokens =
     | 'tab-section-button-selected-background-color'
     | 'tab-button-selected-text-color'
     | 'tab-section-background-color'
-    | 'tab-scroll-button-background-color'
     | 'tab-scroll-button-hover-background-color'
     | 'tab-border-bottom-color';
 
@@ -34,7 +33,7 @@ export const defaultTabTokens: TabTokenMap = {
      * tabs global
      */
     'tab-global-button-background-color': 'transparent-100',
-    'tab-global-list-background-color': 'transparent-100',
+    'tab-global-list-background-color': 'color-bg',
     'tab-global-button-selected-background-color': 'transparent-100',
 
     /**
@@ -56,7 +55,6 @@ export const defaultTabTokens: TabTokenMap = {
     'tab-button-active-text-color': 'color-content',
     'tab-button-selected-text-color': 'color-content',
 
-    'tab-scroll-button-background-color': 'color-bg',
     'tab-scroll-button-hover-background-color': 'color-neutral-15',
 
     'tab-border-bottom-color': 'color-border',
