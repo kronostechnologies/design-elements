@@ -1921,11 +1921,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -2327,7 +2327,7 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
                           class="c12"
                           data-testid="month-select"
@@ -2369,7 +2369,7 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
                           class="c12"
                           data-testid="year-select"
@@ -3131,11 +3131,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2x);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -3543,7 +3543,7 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid2_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
                           class="c12"
                           data-testid="month-select"
@@ -3585,7 +3585,7 @@ label + .c3 {
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid3_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
                           class="c12"
                           data-testid="year-select"
@@ -4276,11 +4276,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: var(--size-2halfx);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: var(--size-2halfx);
   padding: 0 var(--spacing-1x);
   text-wrap: none;
   -webkit-user-select: none;
@@ -4680,7 +4680,7 @@ label + .c3 {
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a month"
-                            aria-labelledby="uuid2_label"
+                            aria-labelledby="uuid2_label uuid2_listbox_october_label"
                             aria-required="false"
                             class="c12"
                             data-testid="month-select"
@@ -4722,7 +4722,7 @@ label + .c3 {
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a year"
-                            aria-labelledby="uuid3_label"
+                            aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                             aria-required="false"
                             class="c12"
                             data-testid="year-select"

@@ -5,7 +5,7 @@ import {
     NavListOption,
     DropdownList,
     Tooltip,
-    TooltipPlacement,
+    TooltipPlacement, DropdownListOption,
 } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
@@ -87,7 +87,7 @@ export const DesktopPlacement: Story = () => {
                 defaultValue="right"
                 label="Desktop placement"
                 options={placements}
-                onChange={(option) => setPlacement(option.value as TooltipPlacement)}
+                onChange={(option: DropdownListOption) => setPlacement(option.value as TooltipPlacement)}
             />
             <DesktopPlacementTooltip desktopPlacement={placement} label="Tooltip Content" />
         </DesktopPlacementContainer>
