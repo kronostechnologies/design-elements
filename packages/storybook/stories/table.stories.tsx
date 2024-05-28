@@ -569,7 +569,7 @@ export const MultipleSelectableRows: Story = () => {
         },
     ];
     return (
-        <Table selectionMode={'multiple'} columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table selectionMode="multiple" columns={columns} data={data} onSelectedRowsChange={console.info} />
     );
 };
 
@@ -608,7 +608,7 @@ export const SingleSelectableRows: Story = () => {
         },
     ];
     return (
-        <Table selectionMode={'single'} columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table selectionMode="single" columns={columns} data={data} onSelectedRowsChange={console.info} />
     );
 };
 
@@ -1275,7 +1275,7 @@ export const WithBackgroundColor: Story = () => {
     return (
         <ScrollableWrap>
             <StyledTableWithBackground
-                selectionMode={'multiple'}
+                selectionMode="multiple"
                 stickyHeader
                 stickyFooter
                 columns={columns}
