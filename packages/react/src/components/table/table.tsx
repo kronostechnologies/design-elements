@@ -28,6 +28,8 @@ type RowSize = 'small' | 'medium';
 
 type UtilityColumnType = 'selection' | 'numbers' | 'expand';
 
+type SelectionMode = 'single' | 'multiple';
+
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     if (rowSize === 'small') {
         switch (device) {
@@ -140,7 +142,16 @@ const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
     }
 `;
 
-function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunction<'translation'>): TableColumn<T> {
+const RadioButton = styled.input`
+    margin: 3px 3px 3px 5px;
+    vertical-align: inherit;
+`;
+
+function getUtilityColumn<T extends object>(
+    type: UtilityColumnType,
+    t: TFunction<'translation'>,
+    selectionMode?: SelectionMode,
+): TableColumn<T> {
     const column: TableColumn<T> = {
         id: type,
         className: utilColumnClassName,
@@ -148,23 +159,38 @@ function getUtilityColumn<T extends object>(type: UtilityColumnType, t: TFunctio
 
     switch (type) {
         case 'selection':
-            column.header = ({ table }) => (
-                <Checkbox
-                    data-testid="row-checkbox-all"
-                    checked={table.getIsAllRowsSelected()}
-                    indeterminate={table.getIsSomeRowsSelected()}
-                    onChange={table.getToggleAllRowsSelectedHandler()}
-                />
-            );
-            column.cell = ({ row }) => (
-                <Checkbox
-                    data-testid={`row-checkbox-${row.index}`}
-                    checked={row.getIsSelected()}
-                    disabled={!row.getCanSelect()}
-                    indeterminate={row.getIsSomeSelected()}
-                    onChange={row.getToggleSelectedHandler()}
-                />
-            );
+            if (selectionMode === 'multiple') {
+                column.header = ({ table }) => (
+                    <Checkbox
+                        data-testid="row-checkbox-all"
+                        checked={table.getIsAllRowsSelected()}
+                        indeterminate={table.getIsSomeRowsSelected()}
+                        onChange={table.getToggleAllRowsSelectedHandler()}
+                    />
+                );
+                column.cell = ({ row }) => (
+                    <Checkbox
+                        data-testid={`row-checkbox-${row.index}`}
+                        checked={row.getIsSelected()}
+                        disabled={!row.getCanSelect()}
+                        indeterminate={row.getIsSomeSelected()}
+                        onChange={row.getToggleSelectedHandler()}
+                    />
+                );
+            } else if (selectionMode === 'single') {
+                column.cell = ({ table, row }) => (
+                    <RadioButton
+                        data-testid={`row-radiobutton-${row.index}`}
+                        type="radio"
+                        checked={row.getIsSelected()}
+                        disabled={!row.getCanSelect()}
+                        onChange={row.getToggleSelectedHandler()}
+                        onClick={() => {
+                            table.toggleAllRowsSelected(false);
+                        }}
+                    />
+                );
+            }
             break;
 
         case 'numbers':
@@ -214,7 +240,7 @@ export interface TableProps<T extends object> {
      * @default medium
      */
     rowSize?: RowSize;
-    selectableRows?: boolean;
+    selectionMode?: SelectionMode;
     /**
      * Adds striped rows
      * @default false
@@ -239,7 +265,7 @@ export const Table = <T extends object>({
     stickyFooter = false,
     rowNumbers = false,
     rowSize = 'medium',
-    selectableRows,
+    selectionMode,
     striped = false,
     manualSort = false,
     onRowClick,
@@ -257,8 +283,8 @@ export const Table = <T extends object>({
     const columns = useMemo(() => {
         const cols = [...providedColumns];
 
-        if (selectableRows) {
-            cols.unshift(getUtilityColumn<T>('selection', t));
+        if (selectionMode) {
+            cols.unshift(getUtilityColumn<T>('selection', t, selectionMode));
         } else if (expandableRows) {
             cols.unshift(getUtilityColumn<T>('expand', t));
         } else if (rowNumbers) {
@@ -266,7 +292,7 @@ export const Table = <T extends object>({
         }
 
         return cols;
-    }, [selectableRows, expandableRows, rowNumbers, providedColumns, t]);
+    }, [selectionMode, expandableRows, rowNumbers, providedColumns, t]);
 
     const tableOptions: TableOptions<T> = {
         data,
@@ -311,13 +337,13 @@ export const Table = <T extends object>({
     const currentRowSelection = table.getState().rowSelection;
 
     useEffect(() => {
-        if (selectableRows && onSelectedRowsChange) {
+        if (selectionMode && onSelectedRowsChange) {
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
             const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
             onSelectedRowsChange(selectedRows);
         }
-    }, [selectableRows, currentRowSelection, onSelectedRowsChange, data]);
+    }, [selectionMode, currentRowSelection, onSelectedRowsChange, data]);
 
     return (
         <StyledTable

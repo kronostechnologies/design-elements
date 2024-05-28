@@ -188,7 +188,7 @@ describe('Table', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table
-                selectableRows
+                selectionMode="multiple"
                 columns={columns}
                 data={data}
                 onRowClick={callback}
@@ -205,7 +205,7 @@ describe('Table', () => {
 
         mountWithTheme(
             <Table
-                selectableRows
+                selectionMode="multiple"
                 columns={columns}
                 data={data}
                 onSelectedRowsChange={callback}
@@ -220,7 +220,7 @@ describe('Table', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table
-                selectableRows
+                selectionMode="multiple"
                 columns={columns}
                 data={data}
                 onSelectedRowsChange={callback}
@@ -236,7 +236,7 @@ describe('Table', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table
-                selectableRows
+                selectionMode="multiple"
                 columns={columns}
                 data={data}
                 onSelectedRowsChange={callback}
@@ -309,7 +309,7 @@ describe('Table', () => {
     });
 
     test('has selectable rows styles', () => {
-        const tree = renderWithProviders(<Table selectableRows columns={columns} data={data} />);
+        const tree = renderWithProviders(<Table selectionMode="multiple" columns={columns} data={data} />);
 
         expect(tree).toMatchSnapshot();
     });
@@ -346,5 +346,21 @@ describe('Table', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('has radio buttons in single selection mode', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table
+                selectionMode="single"
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'row-radiobutton-0')
+            .find('input')
+            .prop('type')).toBe('radio');
     });
 });
