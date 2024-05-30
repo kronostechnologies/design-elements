@@ -48,7 +48,6 @@ const tabs: Tab[] = [
     {
         id: 'tab2',
         title: 'Calendar',
-        defaultSelected: true,
         panelContent: (
             <StyledDiv>
                 <Card>Monday : Doing something meaningful</Card>
@@ -132,6 +131,7 @@ export const Scrollable: Story = {
     ...TabsMeta,
     render: () => {
         const customTabs: Tab[] = [...Array(15).keys()].map((i) => ({
+            id: `tab${i + 1}`,
             title: `Tab ${i + 1}`,
             panelContent: (
                 <StyledDiv>
@@ -163,6 +163,7 @@ export const UnloadTabCallback: Story = {
     render: () => {
         const customTabs: Tab[] = [
             {
+                id: 'tab1',
                 title: 'Tab that cannot change because onBeforeUnload resolves to false',
                 panelContent: <StyledDiv>First tab content</StyledDiv>,
                 onBeforeUnload: () => {
@@ -171,11 +172,13 @@ export const UnloadTabCallback: Story = {
                 },
             },
             {
+                id: 'tab2',
                 title: 'Second Button',
                 panelContent: <StyledDiv>Second tab content</StyledDiv>,
                 onBeforeUnload: () => Promise.resolve(true),
             },
             {
+                id: 'tab2',
                 title: 'Third Button',
                 panelContent: <StyledDiv>Third tab content</StyledDiv>,
                 onBeforeUnload: () => Promise.resolve(true),
@@ -184,6 +187,33 @@ export const UnloadTabCallback: Story = {
 
         return (
             <Tabs tabs={customTabs} />
+        );
+    },
+};
+
+export const DefaultSelectedTab: Story = {
+    ...TabsMeta,
+    render: () => {
+        const customTabs: Tab[] = [
+            {
+                id: 'tab1',
+                title: 'First Button',
+                panelContent: <StyledDiv>First tab content</StyledDiv>,
+            },
+            {
+                id: 'tab2',
+                title: 'Second Button',
+                panelContent: <StyledDiv>Second tab content</StyledDiv>,
+            },
+            {
+                id: 'tab3',
+                title: 'Third Button',
+                panelContent: <StyledDiv>Third tab content</StyledDiv>,
+            },
+        ];
+
+        return (
+            <Tabs tabs={customTabs} defaultSelectedId='tab2' />
         );
     },
 };

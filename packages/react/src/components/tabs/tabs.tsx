@@ -98,9 +98,8 @@ const AddIcon = styled(Icon)`
 `;
 
 export interface Tab {
-    id?: string;
+    id: string;
     title: string;
-    defaultSelected?: boolean;
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
@@ -119,12 +118,19 @@ interface Props {
     forceRenderTabPanels?: boolean;
     global?: boolean;
     tabs: Tab[];
+    defaultSelectedId?: string;
     onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
-    className, global, forceRenderTabPanels, tabs, onAddTab, onRemove,
+    className,
+    global,
+    forceRenderTabPanels,
+    tabs,
+    defaultSelectedId,
+    onAddTab,
+    onRemove,
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
@@ -141,15 +147,15 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     });
 
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
-        (tab, i) => ({
+        (tab) => ({
             ...tab,
-            id: tab.id ?? `${i}`,
+            id: tab.id,
             panelId: uuid(),
             buttonRef: createRef<HTMLButtonElement>(),
         }),
     ), [tabs]);
 
-    const defaultSelectedTab = tabItems.find((tab) => tab.defaultSelected === true);
+    const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
     const [selectedTab, setSelectedTab] = useState(defaultSelectedTab ?? tabItems[0]);
 
     function isTabSelected(tabId: string): boolean {
