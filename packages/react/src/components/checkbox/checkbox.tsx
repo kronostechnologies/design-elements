@@ -95,7 +95,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
     }
 `;
 
-interface Props {
+export interface CheckboxProps {
     checked?: boolean;
     className?: string;
     defaultChecked?: boolean,
@@ -109,7 +109,7 @@ interface Props {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const Checkbox: FunctionComponent<PropsWithChildren<Props>> = forwardRef(({
+export const Checkbox: FunctionComponent<PropsWithChildren<CheckboxProps>> = forwardRef(({
     checked,
     className,
     defaultChecked,
