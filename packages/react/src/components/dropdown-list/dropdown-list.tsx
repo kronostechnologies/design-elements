@@ -516,7 +516,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 <input type="hidden" name={name} value={getValues()} data-testid="input" />
                 {multiselect
                     ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
-                    : <TextWrapper>{selectedOptions?.[0].label ?? ''}</TextWrapper>}
+                    : <TextWrapper>{selectedOptions?.[0]?.label ?? ''}</TextWrapper>}
                 <Arrow
                     aria-hidden="true"
                     data-testid="arrow"
