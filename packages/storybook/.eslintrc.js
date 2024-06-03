@@ -20,6 +20,7 @@ module.exports = {
         },
     ],
     rules: {
+        'import/no-extraneous-dependencies': ['error', { devDependencies: ['stories/**/*.@(stories.tsx|mdx)'] }],
         'linebreak-style': 'off',
         'react/jsx-no-bind': 'off',
         'react/jsx-uses-react': 'off',

@@ -1,5 +1,5 @@
 import { GlobalHeader, NavItemProps, UserProfile } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ComponentType } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
@@ -8,22 +8,6 @@ import { DesktopDecorator, MobileDecorator } from './utils/device-context-decora
 const StyledDiv = styled.div`
     height: 200px;
 `;
-
-export default {
-    title: 'Components/User Profile',
-    component: UserProfile,
-    decorators: [
-        (StoryComponent: ComponentType) => (
-            <Router>
-                <StyledDiv>
-                    <GlobalHeader>
-                        <StoryComponent />
-                    </GlobalHeader>
-                </StyledDiv>
-            </Router>
-        ),
-    ],
-};
 
 const options: NavItemProps[] = [
     {
@@ -44,31 +28,41 @@ const options: NavItemProps[] = [
         disabled: true,
     },
     {
-        label: 'Google',
-        value: 'google',
+        label: 'My Account',
+        value: 'My Account',
         href: 'https://www.google.ca',
         isExternalLink: true,
     },
 ];
 
-export const Normal: Story = () => (
-    <UserProfile options={options} username="John Doe" />
-);
+const UserProfileMeta: Meta<typeof UserProfile> = {
+    title: 'Components/User Profile',
+    component: UserProfile,
+    decorators: [
+        (StoryComponent: ComponentType) => (
+            <Router>
+                <StyledDiv>
+                    <GlobalHeader>
+                        <StoryComponent />
+                    </GlobalHeader>
+                </StyledDiv>
+            </Router>
+        ),
+    ],
+    args: {
+        options,
+        username: 'John Doe',
+        userEmail: 'John.doe@gmail.com',
+    },
+};
 
-export const Desktop: Story = () => (
-    <UserProfile options={options} username="John Doe" userEmail="John.doe@gmail.com" />
-);
-Desktop.decorators = [DesktopDecorator];
+export default UserProfileMeta;
+type Story = StoryObj<typeof UserProfile>;
 
-export const Mobile: Story = () => (
-    <UserProfile options={options} username="John Doe" userEmail="John.doe@gmail.com" />
-);
-Mobile.decorators = [MobileDecorator];
+export const Desktop: Story = {
+    decorators: [DesktopDecorator],
+};
 
-export const WithNavContainer: Story = () => (
-    <UserProfile tag="nav" options={options} username="John Doe" />
-);
-
-export const DefaultOpen: Story = () => (
-    <UserProfile options={options} username="Jonh Doe" defaultOpen />
-);
+export const Mobile: Story = {
+    decorators: [MobileDecorator],
+};

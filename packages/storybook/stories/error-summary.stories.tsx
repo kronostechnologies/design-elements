@@ -1,12 +1,7 @@
 import { ErrorMessage, ErrorSummary, TextInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { createRef } from 'react';
 import styled from 'styled-components';
-
-export default {
-    title: 'Components/Error Summary',
-    component: ErrorSummary,
-};
 
 const postalCodeInput = createRef<HTMLInputElement>();
 
@@ -19,13 +14,33 @@ const StyledFormContainer = styled.div`
     margin-top: var(--spacing-2x);
 `;
 
-export const Normal: Story = () => (
-    <>
-        <ErrorSummary messages={errorMessages} />
+const ErrorSummaryMeta: Meta<typeof ErrorSummary> = {
+    title: 'Components/Error Summary',
+    component: ErrorSummary,
+    argTypes: {
+        messages: {
+            control: { disable: true },
+        },
+    },
+    render: (args) => (
+        <>
+            <ErrorSummary
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...args}
+                messages={errorMessages}
+            />
 
-        <StyledFormContainer>
-            <TextInput id="es-first-name" label="First name" />
-            <TextInput id="es-postal-code" label="Postal code" value="G1H" ref={postalCodeInput} />
-        </StyledFormContainer>
-    </>
-);
+            <StyledFormContainer>
+                <TextInput id="es-first-name" label="First name" />
+                <TextInput id="es-postal-code" label="Postal code" value="G1H" ref={postalCodeInput} />
+            </StyledFormContainer>
+        </>
+    ),
+};
+
+export default ErrorSummaryMeta;
+type Story = StoryObj<typeof ErrorSummary>;
+
+export const Default: Story = {
+    ...ErrorSummaryMeta,
+};

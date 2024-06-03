@@ -1,7 +1,13 @@
 import { ColumnDef, RowData } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
-export type CustomColumnDef<TData extends RowData, TValue = unknown> = ColumnDef<TData, TValue> & {
+export type TableData<TData extends object> = TData & {
+    error?: boolean;
+    subRows?: TableData<TData>[];
+    subContent?: React.ReactNode;
+};
+
+export type TableColumn<TData extends RowData, TValue = unknown> = ColumnDef<TData, TValue> & {
     className?: string;
     footerColSpan?: number;
     headerAriaLabel?: string;

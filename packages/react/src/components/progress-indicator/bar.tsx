@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-    background-color: ${({ theme }) => theme.component['progress-indicator-track-color']};
+    background-color: ${({ theme }) => theme.component['progress-indicator-empty-track-color']};
     border-radius: var(--border-radius);
     height: 0.5rem;
     margin-bottom: var(--spacing-half);

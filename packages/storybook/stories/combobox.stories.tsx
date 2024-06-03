@@ -30,6 +30,7 @@ export default {
     title: 'Components/Combobox',
     component: Combobox,
     decorators: [decorateWith(Container)],
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

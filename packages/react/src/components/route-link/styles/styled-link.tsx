@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { focus, focusVisibleReset } from '../../../utils/css-state';
+import { focus } from '../../../utils/css-state';
 
 type DisabledSuffix = '-disabled' | '';
 
@@ -35,9 +35,5 @@ export const StyledLink = styled.a<ContainerProps>`
         `}
     }
 
-    ${focus};
-
-    ${focusVisibleReset};
-
-    ${({ theme }) => focus({ theme }, false, '&:focus-visible')}
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-visible' })};
 `;
