@@ -25,7 +25,6 @@ const provinces = [
     { value: 'Yukon' },
 ];
 
-
 const comboboxMeta: Meta<typeof Combobox> = {
     title: 'Components/Combobox',
     component: Combobox,
@@ -57,9 +56,9 @@ export const CustomValue: Story = {
 export const WithCallback: Story = {
     ...comboboxMeta,
     args: {
-        onChange: (value: string) => console.log(value),
+        onChange: (value: string) => console.log(value), /* eslint-disable-line no-console */
     },
-    parameters: rawCodeParameters
+    parameters: rawCodeParameters,
 };
 
 export const UsingAsyncDataSource: Story = {
@@ -82,11 +81,13 @@ export const UsingAsyncDataSource: Story = {
             }, 500);
         }
 
-        return <Combobox
-            {...args /* eslint-disable-line react/jsx-props-no-spreading */}
-            isLoading={isLoading}
-            options={options}
-            onChange={handleChange}
-        />;
+        return (
+            <Combobox
+                {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                isLoading={isLoading}
+                options={options}
+                onChange={handleChange}
+            />
+        );
     },
 };
