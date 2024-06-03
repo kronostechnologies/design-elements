@@ -11,7 +11,8 @@ import * as ComboboxStories  from './combobox.stories';
 4. [Properties](#Properties)
 
 ## Definition
-Combobox allows users to make a selection from a predefined list of options or when users may input any arbitrary value [3][6][7]. 
+Combobox allows users to make a selection from a predefined list of options or when users may input any arbitrary
+value [3][6][7].
 <Canvas of={ComboboxStories.Default} />
 
 ## Usage
@@ -19,21 +20,25 @@ Combobox allows users to make a selection from a predefined list of options or w
 ### When to use
 - Use when users need to search or enter arbitrary values in a form component.
 - Use when users need to choose a value from more than 15 options [6][7][10].
-    - Use if you have less than 15 items and you consider whether your list of selections is complex enough to merit searching and filtering.
+- Use if you have less than 15 items and you consider whether your list of selections is complex enough to require
+searching and filtering.
 - Use when users want to filter a very large list of options [11].
 - Use when users want to create any arbitrary value [7].
 
 ### When not to use
-- Do not use when you have 15 or fewer items, and you don’t need search and filtering. If it's not complex enough for a combobox, you can use a dropdown list [3][11]. 
+- Do not use when you have 15 or fewer items, and you don’t need search and filtering. If it's not complex enough for a
+combobox, you can use a dropdown list [3][11].
 
 ## Variants
 
 ### Default
-Default combobox is referred to as select-only, meaning the only way users can set its value is by typing in the text input or expanding the listbox, and then selecting a value in the popup [7]. 
+Default combobox is referred to as select-only, meaning the only way users can set its value is by typing in the text
+input or expanding the listbox, and then selecting a value in the popup [7].
 <Canvas of={ComboboxStories.Default} />
 
 ### Custom Value
-A Custom Value combobox may either allow users to input any arbitrary value, OR select from a set of allowed values [7]. The custom values are not going to appear in the list.
+A Custom Value combobox may either allow users to input any arbitrary value, OR select from a set of allowed values [7].
+The custom values are not going to appear in the list.
 <Canvas of={ComboboxStories.CustomValue} />
 
 ## Properties

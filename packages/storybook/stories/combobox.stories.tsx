@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Combobox, ComboboxOption } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
@@ -25,68 +25,68 @@ const provinces = [
     { value: 'Yukon' },
 ];
 
-export default {
+
+const comboboxMeta: Meta<typeof Combobox> = {
     title: 'Components/Combobox',
     component: Combobox,
     decorators: [decorateWith(Container)],
-    tags: ['autodocs'],
+    args: {
+        label: 'Select an option',
+        hint: 'Hint',
+        options: provinces,
+    },
 };
 
-export const Default: Story = () => (
-    <Combobox
-        data-testid="some-data-test-id"
-        label="Select an option"
-        hint="Hint"
-        options={provinces}
-        placeholder="Select the best province"
-    />
-);
+export default comboboxMeta;
+type Story = StoryObj<typeof Combobox>;
 
-export const CustomValue: Story = () => (
-    <Combobox
-        allowCustomValue
-        label="Select an option"
-        hint="Hint"
-        options={provinces}
-    />
-);
-
-export const WithCallback: Story = () => {
-    const [output, setOutput] = useState('');
-
-    return (
-        <>
-            <Combobox
-                label="Select an option"
-                options={provinces}
-                onChange={setOutput}
-            />
-
-            <div style={{ marginTop: '40px' }}>
-                {`Value: ${output}`}
-            </div>
-        </>
-    );
+export const Default: Story = {
+    ...comboboxMeta,
+    args: {
+        placeholder: 'Select the best province',
+    },
 };
-WithCallback.parameters = rawCodeParameters;
 
-export const UsingAsyncDataSource: Story = () => {
-    const [options, setOptions] = useState<ComboboxOption[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+export const CustomValue: Story = {
+    ...comboboxMeta,
+    args: {
+        allowCustomValue: true,
+    },
+};
 
-    function handleChange(newValue: string): void {
-        if (newValue === '') {
-            setOptions([]);
-            return;
+export const WithCallback: Story = {
+    ...comboboxMeta,
+    args: {
+        onChange: (value: string) => console.log(value),
+    },
+    parameters: rawCodeParameters
+};
+
+export const UsingAsyncDataSource: Story = {
+    ...comboboxMeta,
+    render: (args) => {
+        const [options, setOptions] = useState<ComboboxOption[]>([]);
+        const [isLoading, setIsLoading] = useState(false);
+
+        function handleChange(newValue: string): void {
+            if (newValue === '') {
+                setOptions([]);
+                return;
+            }
+
+            setIsLoading(true);
+
+            setTimeout(() => {
+                setOptions(provinces.filter(({ value }) => value.toLowerCase().startsWith(newValue.toLowerCase())));
+                setIsLoading(false);
+            }, 500);
         }
 
-        setIsLoading(true);
-
-        setTimeout(() => {
-            setOptions(provinces.filter(({ value }) => value.toLowerCase().startsWith(newValue.toLowerCase())));
-            setIsLoading(false);
-        }, 500);
-    }
-
-    return <Combobox label="Select an option" isLoading={isLoading} options={options} onChange={handleChange} />;
+        return <Combobox
+            {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+            isLoading={isLoading}
+            options={options}
+            onChange={handleChange}
+        />;
+    },
 };
