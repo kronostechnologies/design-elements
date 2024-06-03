@@ -1,45 +1,37 @@
 import { Avatar } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import AvatarImg from './assets/avatars.png';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
-export default {
+const meta: Meta<typeof Avatar> = {
     title: 'Components/Avatar',
     component: Avatar,
 };
 
-export const Desktop: Story = () => <Avatar username="Patrick B" />;
-Desktop.decorators = [DesktopDecorator];
+export default meta;
 
-export const SmallSizeAvatar: Story = () => <Avatar username="Patrick B" size="small" />;
-SmallSizeAvatar.decorators = [DesktopDecorator];
+type Story = StoryObj<typeof Avatar>;
 
-export const MediumSizeAvatar: Story = () => <Avatar username="Patrick B" size="medium" />;
-MediumSizeAvatar.decorators = [DesktopDecorator];
+export const TextAvatar: Story = {
+    args: {
+        size: 'medium',
+        username: 'Patrick B',
+    },
+    decorators: [DesktopDecorator],
+};
 
-export const LargeSizeAvatar: Story = () => <Avatar username="Patrick B" size="large" />;
-LargeSizeAvatar.decorators = [DesktopDecorator];
+export const ImageAvatar: Story = {
+    args: {
+        size: 'medium',
+        imgSrc: AvatarImg,
+        username: 'John',
+    },
+    decorators: [DesktopDecorator],
+};
 
-export const Mobile: Story = () => <Avatar username="John" />;
-Mobile.decorators = [MobileDecorator];
-
-export const SmallSizeMobileAvatar: Story = () => <Avatar username="John" size="small" />;
-SmallSizeMobileAvatar.decorators = [MobileDecorator];
-
-export const MediumSizeMobileAvatar: Story = () => <Avatar username="John" size="medium" />;
-MediumSizeMobileAvatar.decorators = [MobileDecorator];
-
-export const LargeSizeMobileAvatar: Story = () => <Avatar username="John" size="large" />;
-LargeSizeMobileAvatar.decorators = [MobileDecorator];
-
-export const AvatarWithSpecificColor: Story = () => <Avatar username="John" size="medium" bgColor="#fcdf03" />;
-AvatarWithSpecificColor.decorators = [DesktopDecorator];
-
-export const AvatarWithImage: Story = () => <Avatar username="John" size="large" imgSrc={AvatarImg} />;
-AvatarWithImage.decorators = [DesktopDecorator];
-
-export const EmptyUsername: Story = () => <Avatar username="" />;
-EmptyUsername.decorators = [DesktopDecorator];
-
-export const WithoutUsernameMobile: Story = () => <Avatar />;
-WithoutUsernameMobile.decorators = [MobileDecorator];
+export const IconAvatar: Story = {
+    args: {
+        size: 'medium',
+    },
+    decorators: [MobileDecorator],
+};

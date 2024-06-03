@@ -47,7 +47,7 @@ export const defaultButtonStyles = css<{ $focusable?: boolean, isMobile: boolean
     text-transform: uppercase;
     user-select: none;
 
-    ${(props) => props.$focusable !== false && focus(props, true)};
+    ${(props) => props.$focusable !== false && focus};
 
     > svg {
         color: inherit;
@@ -86,7 +86,13 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
 AbstractButton.displayName = 'AbstractButton';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'destructive-secondary';
+export type ButtonType =
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'destructive-primary'
+    | 'destructive-secondary'
+    | 'destructive-tertiary';
 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
@@ -119,7 +125,7 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
             background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-background-color`]};
             border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
             color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-text-color`]};
-            ${buttonType === 'destructive' && css`
+            ${buttonType === 'destructive-primary' && css`
                 &,
                 ${focusable !== false && '&:focus,'}
                 &:hover {
@@ -133,6 +139,6 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
 };
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = (props) => css`
-    ${props.focusable !== false && focus(props, true)};
+    ${props.focusable !== false && focus(props, { inverted: props.inverted })};
     ${getButtonStyles(props)};
 `;

@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof Lozenge> = {
     title: 'Components/Lozenge',
     component: Lozenge,
+    tags: ['autodocs'],
 };
 
 export default meta;

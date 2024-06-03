@@ -1,0 +1,39 @@
+import { BentoMenu } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as BentoMenuStories  from './bento-menu.stories';
+
+<Meta of={BentoMenuStories} />
+
+# Bento Menu
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The bento menu is a navigation component that represents items in a grid layout [2].
+<Canvas of={BentoMenuStories.Desktop} />
+
+## Usage
+### When to use 
+- Use to organize different products found in the same product family [1].
+- Use to open a menu with different applications, solutions or functions within the same product [2].
+- Use to quickly switch between apps, solutions, or functions within the same product family [2].
+
+### When not to use 
+- Do not use when you have limited options: using a bento menu may be unnecessary and could introduce unnecessary complexity [3]. 
+
+## Variants
+### Desktop
+<Canvas of={BentoMenuStories.Desktop} />
+
+### Mobile
+<Canvas of={BentoMenuStories.Mobile} />
+
+## Properties
+<ArgTypes of={BentoMenuStories} />
+
+## References
+1. [https://blog.logrocket.com/ux-design/every-common-ui-menu-icon/](https://blog.logrocket.com/ux-design/every-common-ui-menu-icon/)
+2. [https://uxplanet.org/choose-correct-menu-icon-for-your-navigation-7ffc22df80ac](https://uxplanet.org/choose-correct-menu-icon-for-your-navigation-7ffc22df80ac)
+3. Chat GPT

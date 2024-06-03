@@ -4,6 +4,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
+import { focus } from '../../utils/css-state';
 
 export interface AccordionItemProps {
     title: string;
@@ -28,11 +29,11 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
+
     &[aria-expanded='true'] {
         border-width: 0 1px 1px 1px;
         max-height: 1000px;
         overflow-y: auto;
-        transform: translateZ(0);
         transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
     }
@@ -46,13 +47,15 @@ const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
     letter-spacing: 0.015rem;
     line-height: 1.7;
     padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
+
     > *:first-child {
-        margin-top: 0px;
-        padding-top: 0px;
+        margin-top: 0;
+        padding-top: 0;
     }
+
     > *:last-child {
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 `;
 
@@ -62,6 +65,7 @@ const HeadingStyled = styled(Heading)`
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     align-items: flex-start;
+    background: ${({ theme }) => theme.component['accordion-header-background-color']};
     border: 1px solid ${({ theme }) => theme.component['accordion-header-border-color']};
     border-radius: var(--border-radius-2x);
     color: ${({ theme }) => theme.component['accordion-header-text-color']};
@@ -74,31 +78,23 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
-    transition-delay: 0.5s;
-    transition-duration: 0.2s;
-    transition-property: border-radius;
-    transition-timing-function: ease;
+    transition: border-radius 0.2s ease 0.5s;
     width: 100%;
 
     &[aria-expanded='true'] {
-        background: ${({ theme }) => theme.component['accordion-header-expanded-background-color']};
+        background: ${({ theme }) => theme.component['accordion-header-background-color']};
+        border: 1px solid ${({ theme }) => theme.component['accordion-header-border-color']};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: ${({ theme }) => theme.component['accordion-header-expanded-text-color']};
-        transition-delay: 0s;
-        transition-duration: 0.1s;
-        transition-property: border-radius;
-        transition-timing-function: ease;
+        color: ${({ theme }) => theme.component['accordion-header-text-color']};
+        transition: border-radius 0.1s ease;
     }
 
-    &:focus {
-        box-shadow: inset 0 0 0 2px ${({ theme }) => theme.component['accordion-header-focus-box-shadow-inset-color']};
-        color: ${({ theme }) => theme.component['accordion-header-focus-text-color']};
-    }
+    ${focus};
 
     &:hover {
         background: ${({ theme }) => theme.component['accordion-header-hover-background-color']};
         border-color: ${({ theme }) => theme.component['accordion-header-hover-border-color']};
-        color: ${({ theme }) => theme.component['accordion-header-hover-color']};
+        color: ${({ theme }) => theme.component['accordion-header-hover-text-color']};
     }
 
     > svg {
@@ -110,11 +106,11 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
     &:disabled {
         background-color: ${({ theme }) => theme.component['accordion-header-disabled-background-color']};
         &:hover {
-            border-color: ${({ theme }) => theme.component['accordion-header-disabled-hover-border-color']};
-            color: ${({ theme }) => theme.component['accordion-header-disabled-hover-text-color']};
+            border-color: ${({ theme }) => theme.component['accordion-header-disabled-border-color']};
+            color: ${({ theme }) => theme.component['accordion-header-disabled-text-color']};
         }
         > svg {
-            color: ${({ theme }) => theme.component['accordion-header-disabled-svg-color']};
+            color: ${({ theme }) => theme.component['accordion-header-disabled-icon-color']};
         }
     }
 `;

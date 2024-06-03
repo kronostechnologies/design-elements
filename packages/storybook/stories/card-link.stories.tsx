@@ -6,6 +6,7 @@ export default {
     title: 'Components/Card Link',
     component: CardLink,
     decorators: [RouterDecorator],
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

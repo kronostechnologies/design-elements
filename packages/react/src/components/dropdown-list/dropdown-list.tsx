@@ -5,6 +5,7 @@ import {
     useRef,
     useState,
     VoidFunctionComponent,
+    ReactNode,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -14,7 +15,7 @@ import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
-import { Icon } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -23,10 +24,14 @@ import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useListSearch } from '../../hooks/use-list-search';
 import { sanitizeId } from '../../utils/dom';
+import { unique } from '../../utils/array';
+import { Tag } from '../tag/tag';
+import { findOptionsByValue } from '../listbox/listbox-option';
 
 interface TextboxProps {
     $disabled?: boolean;
     $isMobile: boolean;
+    $isMultiselect?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
     value: string;
@@ -38,13 +43,13 @@ export interface DropdownListOption extends ListboxOption {
 
 function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     if ($disabled) {
-        return theme.greys['mid-grey'];
+        return theme.component['dropdown-list-input-disabled-border-color'];
     }
     if (!$valid) {
-        return theme.notifications['alert-2.1'];
+        return theme.component['dropdown-list-input-error-border-color'];
     }
 
-    return theme.greys['dark-grey'];
+    return theme.component['dropdown-list-input-border-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -52,26 +57,27 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 const StyledListbox = styled(Listbox)`
+    margin-top: var(--spacing-half);
     position: absolute;
     width: 100%;
 `;
 
 const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-input-disabled-background-color'] : theme.component['dropdown-list-input-background-color'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    ${({ $disabled, theme }) => $disabled && `color: ${theme.greys['mid-grey']}`};
+    color: ${({ $disabled, theme }) => $disabled && theme.component['dropdown-list-input-disabled-text-color']};
     display: flex;
-    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
-    padding: 0 var(--spacing-1x);
+    min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    padding: ${({ $isMultiselect }) => ($isMultiselect ? '0 var(--spacing-1x) 0 0' : '0 var(--spacing-1x)')};
     text-wrap: none;
     user-select: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, true)};
+    ${focus};
 `;
 
 const TextWrapper = styled.span`
@@ -81,9 +87,23 @@ const TextWrapper = styled.span`
     white-space: nowrap;
 `;
 
+const TagWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+`;
+
+const ListBoxTag = styled(Tag)`
+    margin: 2px;
+
+    & + & {
+        margin-left: 2px;
+    }
+`;
+
 const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     align-items: center;
-    color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
     display: flex;
     flex: none;
     height: var(--size-1x);
@@ -92,7 +112,19 @@ const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     width: var(--size-1x);
 `;
 
-export interface DropdownListProps {
+const TextIcon = styled(Icon)`
+    color: ${({ theme }) => (theme.component['dropdown-list-input-icon-color'])};
+    margin-right: var(--spacing-1x);
+`;
+
+type Value = string | string[];
+
+export interface TagValue {
+    id?: string;
+    label: string;
+}
+
+export interface DropdownListProps<M extends boolean | undefined> {
     /**
      * Aria label for the input (used when no visual label is present)
      */
@@ -105,7 +137,7 @@ export interface DropdownListProps {
     /**
      * The default selected option
      */
-    defaultValue?: string;
+    defaultValue?: Value;
     /**
      * Disables input
      */
@@ -130,19 +162,25 @@ export interface DropdownListProps {
     /**
      * Set the selected value
      */
-    value?: string;
+    value?: Value;
     hint?: string;
+    multiselect?: M;
 
     /**
-     * OnChange callback function, invoked when an option is selected
+     * Display an icon inside the Dropdown control
      */
-    onChange?(option: DropdownListOption): void;
+    iconName?: IconName;
+
+    /**
+     * OnChange callback function, invoked when options are selected
+     */
+    onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
 const optionPredicate: (option: DropdownListOption) => boolean = (option) => !option.disabled;
 const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
 
-export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
+export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
     defaultOpen = false,
@@ -160,6 +198,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     validationErrorMessage,
     value,
     hint,
+    multiselect,
+    iconName,
     ...otherProps
 }) => {
     const { t } = useTranslation('dropdown-list');
@@ -172,27 +212,43 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
 
     const [open, setOpen] = useState(defaultOpen);
 
-    function findOptionByValue(searchValue?: string): DropdownListOption | undefined {
-        return options.find((option) => option.value === searchValue);
-    }
-
-    function getDefaultOption(): DropdownListOption | undefined {
-        let defaultOption: DropdownListOption | undefined;
+    function getDefaultOptions(): DropdownListOption[] | undefined {
+        let defaultOptions: DropdownListOption[] | undefined;
 
         if (value !== undefined || defaultValue !== undefined) {
-            defaultOption = findOptionByValue(value ?? defaultValue);
+            defaultOptions = findOptionsByValue(options, value ?? defaultValue);
         }
 
-        if (defaultOption === undefined) {
-            defaultOption = options.find(optionPredicate);
+        if (defaultOptions === undefined && !multiselect) {
+            defaultOptions = [options.find(optionPredicate) ?? { value: '', label: '' }];
         }
 
-        return defaultOption;
+        return defaultOptions;
     }
 
-    const [selectedOption, setSelectedOption] = useState<DropdownListOption | undefined>(
-        () => getDefaultOption(),
+    const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
+        () => getDefaultOptions(),
     );
+
+    function toggleOptionSelection(option: DropdownListOption, forceSelected?: boolean): void {
+        const newSelectedOptions = !selectedOptions?.includes(option) || forceSelected
+            ? unique([...selectedOptions ?? [], option])
+            : selectedOptions?.filter((opt) => opt !== option);
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(newSelectedOptions);
+    }
+
+    function getLastSelectedOption(
+        optionsList: DropdownListOption[] | undefined,
+    ): DropdownListOption | undefined {
+        const last = (optionsList?.length ?? 0) - 1;
+
+        if (last < 0) {
+            return undefined;
+        }
+
+        return optionsList?.[last];
+    }
 
     const {
         selectedElement: focusedOption,
@@ -203,16 +259,16 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
         selectLast: focusLastOption,
     } = useListCursor({
         elements: options,
-        initialElement: selectedOption,
+        initialElement: getLastSelectedOption(selectedOptions),
         predicate: optionPredicate,
     });
 
-    const [previousValue, setPreviousValue] = useState<string | undefined>(value);
+    const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        const newOption = findOptionByValue(value);
-        setSelectedOption(newOption);
-        setFocusedOption(newOption);
+        const newOptions = findOptionsByValue(options, value);
+        setSelectedOptions(newOptions);
+        setFocusedOption(newOptions[0]);
         setPreviousValue(value);
     }
 
@@ -221,10 +277,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
             return;
         }
 
-        if (!focusedOption && selectedOption) {
-            setFocusedOption(selectedOption);
-        }
-
+        setFocusedOption(getLastSelectedOption(selectedOptions));
         setOpen(true);
     }
 
@@ -233,24 +286,24 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     }, []);
 
     const selectOption: (option: DropdownListOption) => void = useCallback((option) => {
-        setSelectedOption(option);
+        setSelectedOptions([option]);
         onChange?.(option);
-    }, [onChange, setSelectedOption]);
+    }, [onChange, setSelectedOptions]);
 
     const handleClickOutside: () => void = useCallback(() => {
         if (open) {
-            if (focusedOption && focusedOption !== selectedOption) {
+            if (focusedOption && focusedOption !== selectedOptions?.[0] && !multiselect) {
                 selectOption(focusedOption);
             }
             closeListbox();
         }
-    }, [closeListbox, focusedOption, open, selectOption, selectedOption]);
+    }, [closeListbox, focusedOption, open, selectedOptions, multiselect, selectOption]);
 
     useClickOutside([textboxRef, listboxRef], handleClickOutside);
 
     function handleTextboxBlur(event: FocusEvent): void {
         if (open && event.relatedTarget !== listboxRef.current) {
-            if (focusedOption && focusedOption !== selectedOption) {
+            if (focusedOption && focusedOption !== selectedOptions?.[0] && !multiselect) {
                 selectOption(focusedOption);
             }
             closeListbox();
@@ -267,23 +320,25 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
 
     function handleListboxOptionClick(option: DropdownListOption): void {
         if (optionPredicate(option)) {
-            if (option !== focusedOption) {
-                setFocusedOption(option);
-            }
+            if (multiselect) {
+                toggleOptionSelection(option);
+            } else {
+                if (option !== selectedOptions?.[0]) {
+                    selectOption(option);
+                }
 
-            if (option !== selectedOption) {
-                selectOption(option);
+                closeListbox();
             }
-
-            closeListbox();
         }
     }
 
     const handleFoundOption: (option?: DropdownListOption) => void = useCallback((option) => {
-        if (option) {
+        if (multiselect) {
+            setFocusedOption(getLastSelectedOption(selectedOptions));
+        } else if (option) {
             setFocusedOption(option);
         }
-    }, [setFocusedOption]);
+    }, [setFocusedOption, multiselect, selectedOptions]);
 
     const {
         handleSearchInput,
@@ -328,18 +383,31 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                 focusLastOption();
                 break;
             case 'Enter':
-                event.preventDefault();
+                if (!multiselect) {
+                    event.preventDefault();
+                }
+
                 if (!open) {
                     openListbox();
                 } else {
-                    if (focusedOption && focusedOption !== selectedOption) {
-                        selectOption(focusedOption);
+                    if (focusedOption && focusedOption !== selectedOptions?.[0]) {
+                        if (multiselect) {
+                            toggleOptionSelection(focusedOption);
+                        } else {
+                            selectOption(focusedOption);
+                        }
                     }
-                    closeListbox();
+
+                    if (!multiselect) {
+                        closeListbox();
+                    }
                 }
                 break;
             case ' ':
-                event.preventDefault();
+                if (!multiselect) {
+                    event.preventDefault();
+                }
+
                 if (!open) {
                     openListbox();
                 }
@@ -361,10 +429,47 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
         }
     }
 
+    function handleTagRemove(tag: TagValue): void {
+        const removedOption = selectedOptions?.find((option) => option.value === tag.id);
+
+        if (removedOption !== undefined) {
+            toggleOptionSelection(removedOption);
+        }
+    }
+
+    const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: DropdownListOption) => (
+        <ListBoxTag
+            aria-hidden="true"
+            data-testid={`listboxtag-${option.value}`}
+            key={option.value}
+            onRemove={handleTagRemove}
+            value={{ id: option.value, label: option.label }}
+        />
+    ));
+
+    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
+        (option) => option.value ?? '',
+    );
+
+    function getValues(): string {
+        return getListboxSelectedOptionValues()?.join('|') ?? '';
+    }
+
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
         { id: `${id}_invalid`, include: !valid },
     ]);
+
+    const ariaLabelledBy = useAriaConditionalIds(
+        [
+            { id: `${id}_label` },
+            ...selectedOptions?.map(
+                (option) => ({ id: `${id}_listbox_${option.value}_label` }),
+            ) ?? [],
+        ],
+    );
+
+    const firstSelectedOption = selectedOptions?.[0];
 
     return (
         <StyledFieldContainer
@@ -385,11 +490,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                 aria-describedby={ariaDescribedBy}
                 aria-expanded={open}
                 aria-invalid={!valid ? 'true' : 'false'}
-                aria-labelledby={`${id}_label`}
+                aria-labelledby={ariaLabelledBy}
                 aria-required={required ? 'true' : 'false'}
                 data-testid="textbox"
                 id={id}
                 $isMobile={isMobile}
+                $isMultiselect={multiselect}
                 $disabled={disabled}
                 onBlur={handleTextboxBlur}
                 onClick={handleTextboxClick}
@@ -398,11 +504,21 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                 role="combobox"
                 tabIndex={0}
                 $valid={valid}
-                value={selectedOption?.value ?? ''}
+                value={getValues()}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
-                <input type="hidden" name={name} value={selectedOption?.value} data-testid="input" />
-                <TextWrapper>{selectedOption?.label ?? ''}</TextWrapper>
+                {iconName && (
+                    <TextIcon
+                        aria-hidden="true"
+                        name={iconName}
+                        size={isMobile ? '24' : '16'}
+                        data-testid="textbox-icon"
+                    />
+                )}
+                <input type="hidden" name={name} value={getValues()} data-testid="input" />
+                {multiselect
+                    ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
+                    : <TextWrapper>{firstSelectedOption?.label ?? ''}</TextWrapper>}
                 <Arrow
                     aria-hidden="true"
                     data-testid="arrow"
@@ -422,7 +538,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                     id={`${id}_listbox`}
                     onOptionClick={handleListboxOptionClick}
                     options={options}
-                    value={[selectedOption?.value ?? '']}
+                    value={getListboxSelectedOptionValues()}
+                    multiselect={multiselect}
                 />
             )}
         </StyledFieldContainer>

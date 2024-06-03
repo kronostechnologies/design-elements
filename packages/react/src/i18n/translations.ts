@@ -8,7 +8,12 @@ export const Translations = {
             externalsLabel: 'Resources',
         },
         combobox: {
+            clearInput: 'Clear input',
+            loading: 'Loading...',
+            noResult: 'No result',
+            noResultForQuery: 'No result for "{{query}}"',
             showOptions: 'Show {{label}} options',
+            validationErrorMessage: 'You must select an option',
         },
         common: {
             opensInNewTab: 'opens in a new tab',
@@ -106,6 +111,13 @@ export const Translations = {
             'increment-button-aria-label': 'Increase number',
             'decrement-button-aria-label': 'Decrease number',
         },
+        table: {
+            subrowsAriaLabel: '{{count}} subrows for this item',
+        },
+        tabs: {
+            addTab: 'Add Tabs',
+            dismissTab: 'Dismiss {{label}} tab',
+        },
         'tag-medium': {
             deleteButtonAriaLabel: 'Remove tag {{label}}',
         },
@@ -136,7 +148,12 @@ export const Translations = {
             externalsLabel: 'Ressources',
         },
         combobox: {
+            clearInput: 'Vider le champ',
+            loading: 'Chargement...',
+            noResult: 'Aucun résultat',
+            noResultForQuery: 'Aucun résultat pour "{{query}}"',
             showOptions: 'Afficher les options pour {{label}}',
+            validationErrorMessage: 'Vous devez sélectionner une option',
         },
         common: {
             opensInNewTab: 'ouvre dans un nouvel onglet',
@@ -233,6 +250,13 @@ export const Translations = {
         'stepper-buttons': {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
+        },
+        table: {
+            subrowsAriaLabel: '{{count}} sous-éléments pour cet élément',
+        },
+        tabs: {
+            addTab: 'Ajouter des onglets',
+            dismissTab: 'Fermer l\'onglet {{label}}',
         },
         'tag-medium': {
             deleteButtonAriaLabel: 'Retirer l\'étiquette {{label}}',

@@ -3,11 +3,8 @@ import * as path from 'path';
 
 const config: StorybookConfig = {
     framework: {
-        name: '@storybook/react-webpack5',
+        name: getAbsolutePath('@storybook/react-webpack5'),
         options: {},
-    },
-    features: {
-        storyStoreV7: true,
     },
     staticDirs: ['../public'],
     typescript: {
@@ -28,15 +25,22 @@ const config: StorybookConfig = {
         '../stories/**/*.@(stories.tsx|mdx)',
     ],
     addons: [
-        '@storybook/addon-docs',
-        '@storybook/addon-a11y',
-        '@storybook/addon-actions',
-        '@storybook/addon-links',
+        getAbsolutePath('@storybook/addon-docs'),
+        getAbsolutePath('@storybook/addon-a11y'),
+        getAbsolutePath('@storybook/addon-actions'),
+        getAbsolutePath('@storybook/addon-controls'),
+        getAbsolutePath('@storybook/addon-links'),
+        getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
     ],
     webpackFinal: async (config) => ({
         ...config,
         resolve: {
             ...config.resolve,
+            alias: {
+                ...config.resolve?.alias,
+                // https://github.com/storybookjs/storybook/issues/12016#issuecomment-2040576735
+                '@storybook/theming': path.dirname(require.resolve('@storybook/theming/package.json')),
+            },
             fallback: {
                 ...config.resolve?.fallback,
                 assert: require.resolve('assert/'),
@@ -46,7 +50,6 @@ const config: StorybookConfig = {
     babel: (options) => ({
         ...options,
         presets: [
-            ...options.presets,
             [
                 '@babel/preset-react',
                 {
@@ -59,8 +62,7 @@ const config: StorybookConfig = {
         ],
     }),
     docs: {
-        autodocs: true,
-        defaultName: 'Doc'
+        defaultName: 'Doc',
     },
     core: {
         disableTelemetry: true,
@@ -68,3 +70,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+    return path.dirname(require.resolve(path.join(value, 'package.json')));
+}
