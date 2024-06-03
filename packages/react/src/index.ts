@@ -64,6 +64,7 @@ export { Icon } from './components/icon/icon';
 export { SectionalBanner, SectionalBannerType } from './components/sectional-banner/sectional-banner';
 export * from './components/progress-tracker/progress-tracker';
 export { SideDrawer } from './components/side-drawer/side-drawer';
+export { Slider } from './components/slider/slider';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';

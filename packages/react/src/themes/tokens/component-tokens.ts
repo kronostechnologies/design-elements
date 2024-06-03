@@ -50,6 +50,7 @@ import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
 import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
 import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
 import { defaultTabTokens, TabTokens } from './component/tab-tokens';
+import { defaultSliderTokens, SliderTokens } from './component/slider-tokens';
 
 export type ComponentTokens =
     | AvatarTokens
@@ -85,6 +86,7 @@ export type ComponentTokens =
     | BadgeTokens
     | GlobalBannerTokens
     | SectionalBannerTokens
+    | SliderTokens
     | SpinnerTokens
     | StatusTokens
     | TagTokens
@@ -143,6 +145,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,
+    ...defaultSliderTokens,
     ...defaultSpinnerTokens,
     ...defaultStatusTokens,
     ...defaultTagTokens,
