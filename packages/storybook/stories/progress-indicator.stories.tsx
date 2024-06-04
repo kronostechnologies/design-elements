@@ -1,11 +1,13 @@
 import { Spinner } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const progressIndicatorMeta: Meta<typeof Spinner> = {
     title: 'Components/Progress Indicator',
     component: Spinner,
 };
 
-export const Default: Story = () => (
-    <Spinner />
-);
+export default progressIndicatorMeta;
+
+type Story = StoryObj<typeof Spinner>;
+
+export const Default: Story = {};

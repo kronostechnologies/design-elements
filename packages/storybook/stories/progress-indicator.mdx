@@ -11,7 +11,9 @@ import * as SpinnerStories  from './progress-indicator.stories';
 4. [Properties](#properties)
 
 ## Definition
-The progress indicator represents the progress status of an ongoing process. It provides immediate feedback to users, signaling that the application or a specific element of the page is processing an action and requires some time to complete.
+The progress indicator represents the progress status of an ongoing process. It provides immediate feedback to users,
+signaling that the application or a specific element of the page is processing an action and requires some time to
+complete.
 <Canvas of={SpinnerStories.Default} />
 
 ## Usage
@@ -22,17 +24,22 @@ The progress indicator represents the progress status of an ongoing process. It 
 
 ### When not to use
 - For durations less than 1 second.
-- Don’t use inline loading for full page loads, use skeleton states instead [2].
+- Don’t use for full page loads, use skeleton states instead [2].
 - Don’t use in combination with a skeleton. Choose one or the other, depending on which best fits the use case.
-- Don’t trigger inline loading on more than one item or action at a time, unless on initial page load or refresh [2]. If a larger section of content is loading, consider using a larger size spinner instead of multiple smaller ones or a "skeleton” instead [8].
-- Don’t use when you know what the populated data is going to look like (even if it results in an empty state). use instead the "skeleton." [10].
+- Don’t trigger on more than one item or action at a time, unless on initial page load or refresh [2]. If a larger
+  section of content is loading, consider using a larger size spinner instead of multiple smaller ones or a
+  _skeleton_ [8].
+- Don’t use when you know what the populated data is going to look like (even if it results in an empty state).
+  Use the _skeleton_ instead. [10].
 
 ## Variants
 
 ### Spinner
 - Use when the duration or progress of a process is unknown, variable, or of short duration.
-- Use for short durations, ranging from **1 to 9 seconds**, but preferably for very short wait times **(1 to 3 seconds)** [7-9].
-- Use when you don't know what the data you've filled in might look like. For example, if you're loading a form (because they're not all structured in the same way) [10].
+- Use for short durations, ranging from **1 to 9 seconds**, but preferably for very short wait times
+  **(1 to 3 seconds)** [7-9].
+- Use when you don't know what the data you've filled in might look like. For example, if you're loading a form
+  (because they're not all structured in the same way) [10].
 <Canvas of={SpinnerStories.Default} />
 
 ## Properties
