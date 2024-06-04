@@ -66,7 +66,7 @@ const StyledInput = styled.input`
         }
     }
 
-    :indeterminate + ${CustomCheckbox} {
+    &:indeterminate + ${CustomCheckbox} {
         background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
         border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
 
@@ -75,7 +75,7 @@ const StyledInput = styled.input`
         }
     }
 
-    ${(props) => focus(props, true, `&:focus + ${CustomCheckbox}`)}
+    ${({ theme }) => focus({ theme }, { selector: `+ ${CustomCheckbox}` })};
 `;
 
 interface StyledLabelProps {
@@ -95,7 +95,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
     }
 `;
 
-interface Props {
+export interface CheckboxProps {
     checked?: boolean;
     className?: string;
     defaultChecked?: boolean,
@@ -109,7 +109,7 @@ interface Props {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const Checkbox: FunctionComponent<PropsWithChildren<Props>> = forwardRef(({
+export const Checkbox: FunctionComponent<PropsWithChildren<CheckboxProps>> = forwardRef(({
     checked,
     className,
     defaultChecked,

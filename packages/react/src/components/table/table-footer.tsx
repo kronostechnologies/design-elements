@@ -7,11 +7,11 @@ import {
     flexRender,
     RowData,
 } from '@tanstack/react-table';
-import { CustomColumnDef } from './types';
+import { TableColumn } from './types';
 
 interface CustomFooter<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
-        columnDef: CustomColumnDef<TData, TValue>;
+        columnDef: TableColumn<TData, TValue>;
     };
 }
 
@@ -23,7 +23,7 @@ const StyledFooter = styled.td<{ $sticky: boolean }>`
         position: sticky;
     `}
     &:before {
-        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        border-bottom: 1px solid ${({ theme }) => theme.component['table-footer-border-color']};
         content: '';
         height: 1px;
         position: absolute;
@@ -73,7 +73,7 @@ export const TableFooter = <T extends object>({
     footerGroup,
     sticky,
 }: TableFooterProps<T>): ReactElement => (
-    <StyleFooterRow key={footerGroup.id} $sticky={sticky}>
+    <StyleFooterRow $sticky={sticky}>
         {footerGroup.headers.map((footer) => getFooter(footer as CustomFooter<T>, sticky))}
     </StyleFooterRow>
 );

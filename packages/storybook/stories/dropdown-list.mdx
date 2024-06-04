@@ -1,0 +1,49 @@
+import { DropdownList } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as DropdownListStories  from './dropdown-list.stories';
+
+<Meta of={DropdownListStories} />
+
+# Dropdown List
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Dropdown list allows users to select one or multiple options displayed inside a listbox.
+<Canvas of={DropdownListStories.Default} />
+
+## Usage
+### When to use
+- Use for form filling.
+- Use when there are between 5 and 15 options [3].
+- Use when the options aren’t something that a user would know straight away [3].
+
+### When not to use
+- Do not use if you have fewer than five options, it is probably easier to use radio buttons, checkboxes, or other similar components, instead of using the extra click to get to all the list options [3].
+- Do not use when typing may be faster. Typical situations include lists of states or countries [1]. Use combobox instead.
+- Do not use if there are more than 15 options in a list, let the user search for their option with a combobox [3].
+
+## Variants
+
+### Default
+<Canvas of={DropdownListStories.Default} />
+
+### Multi-Select
+<Canvas of={DropdownListStories.MultiSelect} />
+
+### With Icon
+<Canvas of={DropdownListStories.WithIcon} />
+
+## Properties
+<ArgTypes of={DropdownList} />
+
+## References
+1. [https://www.nngroup.com/articles/drop-down-menus/](https://www.nngroup.com/articles/drop-down-menus/)
+2. [https://www.nngroup.com/articles/listbox-dropdown/](https://www.nngroup.com/articles/listbox-dropdown/)
+3. [https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432](https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432)
+4. [https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037](https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037)
+5. [https://medium.com/@yulianaz/dropdowns-design-guidelines-33987c551371](https://medium.com/@yulianaz/dropdowns-design-guidelines-33987c551371)
+6. [https://setproduct.com/blog/dropdown-ui-design](https://setproduct.com/blog/dropdown-ui-design)
+

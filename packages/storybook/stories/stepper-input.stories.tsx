@@ -1,56 +1,43 @@
 import { StepperInput } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
-import { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const StepperInputMeta: Meta<typeof StepperInput> = {
     title: 'Components/Stepper input',
     component: StepperInput,
+    args: {
+        label: 'Stepper input',
+    },
+    argTypes: {
+        onBlur: {
+            control: { disable: true },
+        },
+        onChange: {
+            control: { disable: true },
+        },
+        onFocus: {
+            control: { disable: true },
+        },
+        step: {
+            control: {
+                type: 'number',
+                min: 0,
+            },
+        },
+        value: {
+            control: { type: 'number' },
+        },
+    },
 };
 
-export const Normal: Story = () => (
-    <StepperInput label="Stepper input" />
-);
+export default StepperInputMeta;
+type Story = StoryObj<typeof StepperInput>;
 
-export const WithTooltip: Story = () => (
-    <StepperInput label="Stepper input" tooltip={{ label: 'Tooltip text content' }} />
-);
+export const Default: Story = {};
 
-type Value = number | undefined | null;
-export const Controlled: Story = () => {
-    const [inputValue, setInputValue] = useState<Value>(null);
-
-    return (
-        <StepperInput label="Stepper input" onChange={setInputValue} value={inputValue} />
-    );
+export const WithOnChangeCallback: Story = {
+    parameters: rawCodeParameters,
+    args: {
+        onChange: (value: number) => console.info(value),
+    },
 };
-Controlled.parameters = rawCodeParameters;
-
-export const WithDefaultValue: Story = () => (
-    <StepperInput label="Stepper input" defaultValue={0} />
-);
-
-export const WithCustomStep: Story = () => (
-    <StepperInput label="Stepper input" step={5} />
-);
-
-export const WithMaxValue: Story = () => (
-    <StepperInput label="Stepper input" max={5} />
-);
-
-export const WithMinValue: Story = () => (
-    <StepperInput label="Stepper input" min={0} />
-);
-
-export const Invalid: Story = () => (
-    <StepperInput valid={false} label="Stepper input" />
-);
-
-export const Disabled: Story = () => (
-    <StepperInput label="Stepper input" disabled />
-);
-
-export const WithOnChangeCallback: Story = () => (
-    <StepperInput label="Stepper input" onChange={(value) => console.info(value)} />
-);
-WithOnChangeCallback.parameters = rawCodeParameters;
