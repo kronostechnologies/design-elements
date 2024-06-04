@@ -16,6 +16,7 @@ export default {
     component: Datepicker,
     decorators: [decorateWith(Container)],
     parameters: rawCodeParameters,
+    tags: ['autodocs'],
 };
 
 export const Default: Story<typeof Datepicker> = () => (

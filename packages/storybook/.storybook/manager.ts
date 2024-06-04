@@ -4,8 +4,8 @@ import { create } from '@storybook/theming';
 addons.setConfig({
     theme: create({
         base: "light",
-        bandTitle: "Equisoft Design System",
-        BrandUrl: "https://equisoft.com",
+        brandTitle: "Equisoft Design System",
+        brandUrl: "https://equisoft.com",
         brandImage: "./logo-equisoft.svg", // using publicly served /public directory
         brandTarget: '_self',
         colorPrimary: '#006296',
@@ -16,5 +16,5 @@ addons.setConfig({
         barTextColor: '#006296',
         barSelectedColor: '#006296',
         barBg: '#FAFAFA',
-    })
-})
+    }),
+});

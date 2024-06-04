@@ -1,0 +1,36 @@
+import { ArgTypes, Meta, Canvas, Stories, Story } from '@storybook/blocks';
+import * as ToggleTag  from './tag-toggle.stories';
+
+
+<Meta of={ToggleTag} />
+
+# Tag (Toggle)
+    1. [Definition](#definition)
+    2. [Usage](#usage)
+    3. [Variants](#variants)
+    4. [Properties](#properties)
+
+## Definition
+Tag (Toggle) allows users to perform small actions like selecting, and filtering [2]. 
+<Canvas of={ToggleTag.Default} />
+
+## Usage
+### When to use 
+- Use select options [2]. 
+- Use to quickly filter data.
+
+### When not to use 
+- Do not use to display a status, use a Lozenge instead.
+- Do not use to display notifications, use a badge instead.
+- Do not use to display long text or long descriptions.
+
+## Variants
+### Default
+<Canvas of={ToggleTag.Default} />
+
+## Properties
+<ArgTypes of={ToggleTag} />
+
+## References
+1. [https://m3.material.io/components/chips/guidelines](https://m3.material.io/components/chips/guidelines)
+2. [https://blog.prototypr.io/design-guide-classifying-items-db5b121985d](https://blog.prototypr.io/design-guide-classifying-items-db5b121985d)

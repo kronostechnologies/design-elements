@@ -1,19 +1,55 @@
 import { Accordion } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
-import * as AccordionStories  from './accordion.stories';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as AccordionStories from './accordion.stories';
 
+# Accordion
 
-# Accordion Component
+## Table of Contents
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
 <Meta of={AccordionStories} />
-The Accordion component offers a robust Accessibility implementation, along with lots of flexibility on content and controls.<br />
-Accordion controls whether multiple panels can remain open concurrently, or if the behavior restricts expansion to only one panel at a time.<br />
-Each AccordionItem has the capacity to accommodate a diverse range of content – spanning from basic text to intricate HTML elements.<br />
-Also, controls disable and collapse by default options implemented per item.<br />
 
+## Definition
+Accordion are used to display or hide vertically stacked content.
+<Canvas of={AccordionStories.SingleSelect} />
 
-## Accordion Props
+## Usage
+### When to use
+- When users only need a small amount of information on the page, and the content is not critical: Hiding most of the page content helps users to spend their time more efficiently, concentrating on the few topics that matter [6].
+- When the information contained in each section is independent, and users are unlikely to need simultaneous access to several sections [6].
+- When content is long and window size is small: Prioritizes content display and reduces page length. Relevant on mobile devices and Side Panel [6].
+- When the main task is a logical step-by-step process: Guide users through the process by presenting information relevant to the current step and hiding irrelevant details that may distract or overwhelm users [6].
+
+### When not to use
+- When the user needs most or all of the page content: Easy access to essential information is more important than reducing page length [6].
+- When there is little content on the page: The absence of content can give the illusion that there is no valuable information on the page [6].
+- When the content has a deep hierarchy with multiple sublevels: it may be too complex to be displayed in a flat hierarchy format like accordions. Instead, consider alternatives such as Tabs [6].
+- When content is scattered and difficult to summarize: it becomes difficult to break it down and come up with representative headings that effectively convey the essence of the information [6].
+- When users are likely to be immersed in a continuous stream of reading: the use of accordions could disrupt the experience by fragmenting information and hindering users' ability to understand the full context [6].
+- To display more information, revealing additional content that is initially hidden due to space constraints. Use a "View/Read/Show more" button instead [6].
+
+## Variants
+### Single-select
+- Single-select limits an accordion to expand **only one item** at a time [7].
+- If you select a second item, it'll automatically collapse the one that was previously expanded [7].
+<Canvas of={AccordionStories.SingleSelect} />
+
+### Multi-select
+- Multi-select allows to expand multiple accordions at a time to give users more control and flexibility [7].
+- Users can expand or collapse any accordions without affecting the others.
+<Canvas of={AccordionStories.MultiSelect} />
+
+## Properties
 <ArgTypes of={Accordion} />
-## Accordion Item Props
-<ArgTypes of={AccordionStories} />
 
-<Stories of={AccordionStories} />
+## References
+1. [https://carbondesignsystem.com/components/accordion/usage/](https://carbondesignsystem.com/components/accordion/usage/)
+2. [https://design.gitlab.com/components/accordion](https://design.gitlab.com/components/accordion)
+3. [https://design-system.service.gov.uk/components/accordion/](https://design-system.service.gov.uk/components/accordion/)
+4. [https://cedar.rei.com/components/accordion](https://cedar.rei.com/components/accordion)
+5. [https://digitalnsw.github.io/nsw-design-system/components/accordion/index.html](https://digitalnsw.github.io/nsw-design-system/components/accordion/index.html)
+6. [https://www.nngroup.com/articles/accordions-on-desktop/](https://www.nngroup.com/articles/accordions-on-desktop/)
+7. [https://zeroheight.com/6d2425e9f/p/83c5d1-accordion/b/46994b](https://zeroheight.com/6d2425e9f/p/83c5d1-accordion/b/46994b)

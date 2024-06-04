@@ -1,0 +1,38 @@
+import { TextArea } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import * as TextAreaStories  from './textarea.stories';
+
+<Meta of={TextAreaStories} />
+
+# Text area
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Text Area allows users to input a multi-line text [1]. 
+<Canvas of={TextAreaStories.Default} />
+
+## Usage
+### When to use 
+- Use when users have to enter free multi-line text.
+
+### When not to use 
+- Do not use when users have to enter one line of text.
+    - E.g. Name, Last Name, Organization, etc.
+
+## Variants
+### Default
+<Canvas of={TextAreaStories.Default} />
+
+### Max length
+<Canvas of={TextAreaStories.MaxLength} />
+
+
+## Properties
+<ArgTypes of={TextArea} />
+
+## References
+1. [https://primer.style/components/textarea](https://primer.style/components/textarea)
+
