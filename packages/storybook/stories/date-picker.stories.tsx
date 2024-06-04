@@ -1,5 +1,6 @@
+import { FocusEvent } from 'react';
 import { Datepicker } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
@@ -8,29 +9,41 @@ const Container = styled.div`
     height: 400px;
 `;
 
-const upcomingDate = new Date();
-upcomingDate.setDate(upcomingDate.getDate() + 5);
-
-export default {
+const datepickerMeta: Meta<typeof Datepicker> = {
     title: 'Components/Date picker',
     component: Datepicker,
     decorators: [decorateWith(Container)],
     parameters: rawCodeParameters,
-    tags: ['autodocs'],
 };
 
-export const Default: Story<typeof Datepicker> = () => (
-    <Datepicker label="Date" data-testid="a-data-test-id" hint="Hint" />
-);
+export default datepickerMeta;
 
-export const WithOnChangeCallback: Story = () => (
-    <Datepicker label="Date" onChange={(date) => console.info(`[onChange] Date: ${date}`)} />
-);
+type Story = StoryObj<typeof Datepicker>;
 
-export const WithOnBlurCallback: Story = () => (
-    <Datepicker label="Date" onBlur={(event) => console.info(`[onBlur] Value: ${event.target.value}`)} />
-);
+export const Default: Story = {
+    args: {
+        label: 'Date',
+        hint: 'Hint',
+    },
+};
 
-export const WithOnFocusCallback: Story = () => (
-    <Datepicker label="Date" onFocus={(event) => console.info(`[onFocus] Value: ${event.target.value}`)} />
-);
+export const WithOnChangeCallback: Story = {
+    args: {
+        label: 'Date',
+        onChange: (date: Date) => console.info(`[onChange] Date: ${date}`),
+    },
+};
+
+export const WithOnBlurCallback: Story = {
+    args: {
+        label: 'Date',
+        onBlur: (event: FocusEvent<HTMLInputElement>) => console.info(`[onBlur] Value: ${event.target.value}`),
+    },
+};
+
+export const WithOnFocusCallback: Story = {
+    args: {
+        label: 'Date',
+        onFocus: (event: FocusEvent<HTMLInputElement>) => console.info(`[onFocus] Value: ${event.target.value}`),
+    },
+};
