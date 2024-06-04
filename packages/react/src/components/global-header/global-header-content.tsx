@@ -1,18 +1,12 @@
 import { FunctionComponent, PropsWithChildren, ReactNode, useState } from 'react';
-import styled, { useTheme } from 'styled-components';
-import { focus } from '../../utils/css-state';
+import styled from 'styled-components';
+import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { SideDrawer } from '../side-drawer/side-drawer';
 
-const BurgerButton = styled.button`
-    appearance: none;
-    background-color: transparent;
-    border: 1px solid transparent;
+const BurgerButton = styled(IconButton)`
     margin: 0;
     padding: 0;
-
-    ${focus};
 `;
 
 const Container = styled.div`
@@ -34,7 +28,6 @@ interface Props {
 export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children, mobileDrawerContent }) => {
     const { isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const theme = useTheme();
 
     if (isMobile && mobileDrawerContent) {
         return (
@@ -44,10 +37,11 @@ export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children,
                     aria-controls="menu-drawer"
                     aria-label="Navigation"
                     type="button"
+                    buttonType="tertiary"
+                    inverted
+                    iconName="menu"
                     onClick={() => setDrawerOpen(!drawerOpen)}
-                >
-                    <Icon name="menu" color={theme.greys.white} />
-                </BurgerButton>
+                />
                 <SideDrawer id="menu-drawer" open={drawerOpen}>
                     {mobileDrawerContent}
                 </SideDrawer>

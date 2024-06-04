@@ -31,7 +31,7 @@ const RadioWrapper = styled.div``;
 
 const StyledLabel = styled.label<{ disabled?: boolean }>`
     align-items: center;
-    display: flex;
+    display: inline-flex;
     font-size: 0.875rem;
     line-height: 1.5rem;
     margin-top: var(--spacing-1x);
@@ -46,7 +46,7 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
         position: absolute;
         width: var(--size-1x);
 
-        ${(props) => focus(props, true, '&:focus + .radioInput')}
+        ${(theme) => focus(theme, { selector: '+ .radioInput' })}
 
         &:checked + .radioInput {
             border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};

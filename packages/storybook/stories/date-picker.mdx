@@ -1,0 +1,33 @@
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as DatePickerStories  from './date-picker.stories';
+
+<Meta of={DatePickerStories} />
+
+# Date Picker
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+Date picker allows users to select dates through textual input or interaction with a calendar popup [1].
+<Canvas of={DatePickerStories.Default} />
+
+## Usage
+### When to use
+- Use when users have to select dates.
+
+### When not to use
+- Do not use for anything else than a date.
+
+## Variants
+### Default
+<Canvas of={DatePickerStories.Default} />
+
+## Properties
+<ArgTypes of={DatePickerStories} />
+
+## References
+1. [https://uxplanet.org/date-picker-design-best-practices-41bd522f10a5](https://uxplanet.org/date-picker-design-best-practices-41bd522f10a5)
+2. [https://www.nngroup.com/articles/date-input/](https://www.nngroup.com/articles/date-input/)
+3. [https://adrianroselli.com/2019/07/maybe-you-dont-need-a-date-picker.html](https://adrianroselli.com/2019/07/maybe-you-dont-need-a-date-picker.html)

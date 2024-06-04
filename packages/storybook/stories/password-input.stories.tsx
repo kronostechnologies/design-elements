@@ -1,58 +1,31 @@
-import { useState } from 'react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { PasswordInput } from '@equisoft/design-elements-react';
-import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const PasswordInputMeta: Meta<typeof PasswordInput> = {
     title: 'Components/Password Input',
     component: PasswordInput,
+    args: {
+        label: 'Password Label',
+        defaultValue: 'Pass123',
+        onChange: (password, event) => {
+            console.info(password);
+            console.info(event);
+        },
+    },
+    argTypes: {
+        onBlur: {
+            control: { disable: true },
+        },
+        onFocus: {
+            control: { disable: true },
+        },
+        onChange: {
+            control: { disable: true },
+        },
+    },
 };
 
-export const Normal: Story = () => (
-    <PasswordInput
-        label="Password Label"
-        defaultValue="Pass123"
-        onChange={(password, event) => {
-            console.info(password);
-            console.info(event);
-        }}
-    />
-);
+export default PasswordInputMeta;
+type Story = StoryObj<typeof PasswordInput>;
 
-export const WithControlledValue: Story = () => {
-    const [value, setValue] = useState('Pass123');
-
-    return (
-        <PasswordInput
-            label="Password Label"
-            value={value}
-            onChange={(password) => setValue(password)}
-        />
-    );
-};
-
-WithControlledValue.parameters = rawCodeParameters;
-
-export const WithErrorMessage: Story = () => (
-    <PasswordInput
-        label="Password Label"
-        defaultValue="Pass123"
-        validationErrorMessage="This is an error message"
-        onChange={(password, event) => {
-            console.info(password);
-            console.info(event);
-        }}
-    />
-);
-
-export const Disabled: Story = () => (
-    <PasswordInput
-        disabled
-        label="Password Label"
-        defaultValue="Pass123"
-        onChange={(password, event) => {
-            console.info(password);
-            console.info(event);
-        }}
-    />
-);
+export const Default: Story = { ...PasswordInputMeta };

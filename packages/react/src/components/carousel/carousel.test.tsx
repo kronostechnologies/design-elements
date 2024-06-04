@@ -46,7 +46,7 @@ describe('Carousel', () => {
         it('should add padding slides so looping does not jump', () => {
             const wrapper = shallow(<Carousel>{slides}</Carousel>);
 
-            const renderedSlides = getByTestId(wrapper, 'carousel-slides', '$');
+            const renderedSlides = getByTestId(wrapper, 'carousel-slides', { modifier: '$' });
 
             expect(renderedSlides.children().length).toBe(numberOfSlides + 2);
         });
@@ -131,7 +131,7 @@ describe('Carousel', () => {
         it('should display one dot per slide', () => {
             const wrapper = shallow(<Carousel>{slides}</Carousel>);
 
-            const dots = findByTestId(wrapper, 'carousel-dot-', '^');
+            const dots = findByTestId(wrapper, 'carousel-dot-', { modifier: '^' });
 
             expect(dots.length).toBe(5);
         });

@@ -1,31 +1,60 @@
 import { ExternalLink } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const ExternalLinkMeta: Meta<typeof ExternalLink> = {
     title: 'Components/External Link',
     component: ExternalLink,
+    args: {
+        label: 'External Link',
+    },
+    argTypes: {
+        onClick: {
+            control: { disable: true },
+        },
+    },
+    render: (args) => (
+        <ExternalLink
+            href="/story1"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+        />
+    ),
+    tags: ['autodocs'],
 };
 
-export const Normal: Story = () => (
-    <ExternalLink label="External Link" />
-);
+export default ExternalLinkMeta;
+type Story = StoryObj<typeof ExternalLink>;
 
-export const WithIcon: Story = () => (
-    <ExternalLink label="External Link" iconName="mail" />
-);
-export const OnlyIcon: Story = () => (
-    <ExternalLink iconName="mail" />
-);
-export const Disabled: Story = () => (
-    <>
-        <ExternalLink label="External Link" iconName="mail" disabled />
-        <br />
-        <ExternalLink label="External Link" disabled />
-        <br />
-    </>
-);
-export const WithCallback: Story = () => (
-    <ExternalLink label="External Link" onClick={() => console.info('Link clicked')} />
-);
+export const Default: Story = {
+    ...ExternalLinkMeta,
+};
+
+export const WithIcon: Story = {
+    ...ExternalLinkMeta,
+    args: {
+        iconName: 'mail',
+    },
+};
+
+export const OnlyIcon: Story = {
+    ...ExternalLinkMeta,
+    args: {
+        label: undefined,
+    },
+};
+
+export const Disabled: Story = {
+    ...ExternalLinkMeta,
+    args: {
+        disabled: true,
+    },
+};
+
+export const WithCallback: Story = {
+    ...ExternalLinkMeta,
+    args: {
+        onClick: () => console.info('Link clicked'),
+    },
+};
 WithCallback.parameters = rawCodeParameters;
