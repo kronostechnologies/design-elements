@@ -86,7 +86,6 @@ export type AliasTokens =
     | 'color-bg-brand'
     | 'color-bg-brand-bold'
     | 'color-bg-indicator'
-    | 'color-bg-indicator-disabled'
     | 'color-border-brand'
     | 'color-content-brand'
     /**
@@ -130,11 +129,6 @@ export type AliasTokens =
     | 'color-link-content-visited'
     | 'color-link-content-disabled'
     | 'color-link-content-hover'
-    /**
-     * CONTROL
-     */
-    | 'color-control-background'
-    | 'color-control-border-disabled'
     /**
      * BOX-SHADOW
      */
@@ -271,13 +265,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-menu-item-content-disabled': 'color-content-disabled',
 
     /**
-     * CONTROL
-     * Other interactive elements, slider.
-     */
-    'color-control-background': 'color-white',
-    'color-control-border-disabled': 'color-neutral-30',
-
-    /**
      * BRAND
      * Use for UI elements, like visual indicators to reinforce our brand, that need to stand out a lot.
      *
@@ -295,7 +282,6 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-bg-brand': 'color-brand-50',
     'color-bg-brand-bold': 'color-brand-80',
     'color-bg-indicator': 'color-brand-50',
-    'color-bg-indicator-disabled': 'color-neutral-30',
     'color-border-brand': 'color-brand-70',
     'color-content-brand': 'color-brand-50',
 

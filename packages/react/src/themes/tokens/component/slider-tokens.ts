@@ -24,12 +24,12 @@ export const defaultSliderTokens: SliderTokenMap = {
     'slider-rail-background-color': 'color-bg-empty',
     'slider-rail-disabled-background-color': 'color-bg-neutral-subtle',
     'slider-rail-mark-background-color': 'color-bg-neutral-bold',
-    'slider-rail-mark-disabled-background-color': 'color-bg-indicator-disabled',
+    'slider-rail-mark-disabled-background-color': 'color-neutral-30', // color-background-indicator-disabled
     'slider-track-background-color': 'color-bg-brand',
     'slider-track-disabled-background-color': 'color-bg-neutral-bold-disabled',
-    'slider-track-mark-background-color': 'color-control-background',
-    'slider-track-mark-disabled-background-color': 'color-control-background',
-    'slider-thumb-background-color': 'color-control-background',
+    'slider-track-mark-background-color': 'color-white', // color-control-background
+    'slider-track-mark-disabled-background-color': 'color-white', // color-control-background
+    'slider-thumb-background-color': 'color-white', // color-control-background
     'slider-thumb-border-color': 'color-border-brand',
-    'slider-thumb-disabled-border-color': 'color-control-border-disabled',
+    'slider-thumb-disabled-border-color': 'color-neutral-30', // color-control-border-disabled
 };
