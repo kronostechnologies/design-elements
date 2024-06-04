@@ -1,0 +1,60 @@
+import { Combobox } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as ComboboxStories  from './combobox.stories';
+
+<Meta of={ComboboxStories} />
+
+# Combobox
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#Variants)
+4. [Properties](#Properties)
+
+## Definition
+Combobox allows users to make a selection from a predefined list of options or when users may input any arbitrary
+value [3][6][7].
+<Canvas of={ComboboxStories.Default} />
+
+## Usage
+
+### When to use
+- Use when users need to search or enter arbitrary values in a form component.
+- Use when users need to choose a value from more than 15 options [6][7][10].
+- Use if you have less than 15 items and you consider whether your list of selections is complex enough to require
+searching and filtering.
+- Use when users want to filter a very large list of options [11].
+- Use when users want to create any arbitrary value [7].
+
+### When not to use
+- Do not use when you have 15 or fewer items, and you don’t need search and filtering. If it's not complex enough for a
+combobox, you can use a dropdown list [3][11].
+
+## Variants
+
+### Default
+Default combobox is referred to as select-only, meaning the only way users can set its value is by typing in the text
+input or expanding the listbox, and then selecting a value in the popup [7].
+<Canvas of={ComboboxStories.Default} />
+
+### Custom Value
+A Custom Value combobox may either allow users to input any arbitrary value, OR select from a set of allowed values [7].
+The custom values are not going to appear in the list.
+<Canvas of={ComboboxStories.CustomValue} />
+
+## Properties
+<ArgTypes of={Combobox} />
+
+## References
+1. [https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432](https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432)
+2. [https://www.nngroup.com/articles/listbox-dropdown/](https://www.nngroup.com/articles/listbox-dropdown/)
+3. [https://spectrum.adobe.com/page/combo-box/](https://spectrum.adobe.com/page/combo-box/)
+4. [https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037](https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037)
+5. [https://balsamiq.com/learn/ui-control-guidelines/dropdown-menus/](https://balsamiq.com/learn/ui-control-guidelines/dropdown-menus/)
+6. [https://carbondesignsystem.com/components/dropdown/usage/#combo-box](https://carbondesignsystem.com/components/dropdown/usage/#combo-box)
+7. [https://www.w3.org/WAI/ARIA/apg/patterns/combobox/](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/)
+8. [https://ux.stackexchange.com/questions/106696/when-to-use-combo-box-vs-dropdown](https://ux.stackexchange.com/questions/106696/when-to-use-combo-box-vs-dropdown)
+9. [https://uxplanet.org/design-a-better-text-field-39727cd6ff21](https://uxplanet.org/design-a-better-text-field-39727cd6ff21)
+10. [https://designsystem.digital.gov/components/combo-box/](https://designsystem.digital.gov/components/combo-box/)
+11. [https://experience.sap.com/webide-guidelines/article/combo-box/](https://experience.sap.com/webide-guidelines/article/combo-box/)
+12. [https://developer.apple.com/design/human-interface-guidelines/combo-boxes](https://developer.apple.com/design/human-interface-guidelines/combo-boxes)
+13. [https://uxmovement.com/forms/search-combo-box-displaying-popular-keywords/](https://uxmovement.com/forms/search-combo-box-displaying-popular-keywords/)

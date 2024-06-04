@@ -9,7 +9,7 @@ const List = styled.ul`
     background-color: ${({ theme }) => theme.component['nav-list-background-color']};
     border: 1px solid ${({ theme }) => theme.component['nav-list-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['nav-list-box-shadow-color']};
     list-style-type: none;
     margin: 0;
     overflow-y: auto;

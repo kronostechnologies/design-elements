@@ -1,0 +1,34 @@
+import { GlobalHeader } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as GlobalHeaderStories  from './global-header.stories';
+
+<Meta of={GlobalHeaderStories} />
+
+# Global Header
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The global header sits at the top of the application interface, consistently visible across all screens, serving as a hub for the application's branding and name. Additionally, it houses essential tools like navigation, search, notifications, and user settings.
+<Canvas of={GlobalHeaderStories.Desktop} />
+
+## Usage
+- Use to prominently display the company's logo, name, or other branding elements to reinforce brand identity.
+- Use to give users quick access to the navigation links that help them move between different sections or features of your application.
+- Use to provide easy access to user settings, account information, or profile management features.
+
+## Variants
+### Default
+<Canvas of={GlobalHeaderStories.Desktop} />
+
+### Mobile
+<Canvas of={GlobalHeaderStories.Mobile} />
+
+## Properties
+<ArgTypes of={GlobalHeader} />
+
+## References
+1. [https://uxplanet.org/best-practices-for-website-header-design-e0d55bf5f1e2](https://uxplanet.org/best-practices-for-website-header-design-e0d55bf5f1e2)
+2. [https://www.nngroup.com/articles/utility-navigation/](https://www.nngroup.com/articles/utility-navigation/)

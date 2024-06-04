@@ -1,39 +1,39 @@
 import { Checkbox } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 import * as CheckboxStories  from './checkbox.stories';
+import {Default} from "./checkbox.stories";
 
 
 # Checkbox
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
 
-## Table of Contents
-    1. [Definition](#definition)
-    2. [Usage](#usage)
-    3. [Variants](#variants)
-    4. [Properties](#properties)
-
-<Meta title="Components/Checkbox/Doc" />
+<Meta of={CheckboxStories} />
 
 ## Definition
-    Checkboxes are a control component that allows the user to select any number of choices, including zero, one, or several [2].
- 
+Checkboxes allow users to select any number of choices from a list of options, including zero, one, or several [2].
+<Canvas of={CheckboxStories.Default} />
 
 ## Usage
-    ### When to use
-        - Use when users have to choose between 0 to 6 options.
-        - Use it when you have multiple non-exclusive options [2].
-        - Use it when a validation is needed [4].
-        - Use when a single binary yes/no choice is provided [1].
+### When to use
+- Use when users have to choose between 0 to 6 options.
+- Use it when you have multiple non-exclusive options [2].
+- Use it when a validation is needed [4].
+- Use when a single binary yes/no choice is provided [1].
 
-    ### When not to use
-        - Do not use it if only one option from a list can be selected, use the radio button instead [2].
-        - Do not use it if it will perform a direct action, use the toggle switch instead.
+### When not to use
+- Do not use it if only one option from a list can be selected, use the radio button instead [2].
+- Do not use it if it will perform a direct action, use the toggle switch instead.
+- Do not use if you have more than 6 options, use dropdown list or combobox instead.
 
 ## Variants
-    ### Default
-        <Story of={CheckboxStories.Normal} />
+### Default
+<Canvas of={CheckboxStories.Default} />
 
 ## Properties
-    <ArgTypes of={Checkbox} />
+<ArgTypes of={Default} />
 
 ## References
 1. [https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The%20toggle%20switch%20represents%20a,execution%20usually%20requires%20another%20control](https://uxdworld.com/2018/08/13/checkbox-vs-toggle-switch-7-use-cases-of-forms-design/#:~:text=The%20toggle%20switch%20represents%20a,execution%20usually%20requires%20another%20control)
