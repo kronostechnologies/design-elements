@@ -8,8 +8,8 @@ export type ListboxTokens =
     | 'listbox-item-disabled-background-color'
     | 'listbox-item-disabled-text-color'
     | 'listbox-item-hover-background-color'
-    | 'listbox-item-caption-text-color'
-    | 'listbox-item-caption-disabled-text-color'
+    | 'listbox-item-subcontent-text-color'
+    | 'listbox-item-subcontent-disabled-text-color'
     | 'listbox-box-shadow-depth-color';
 
 export type ListboxTokenValue = AliasTokens | RefTokens;
@@ -23,12 +23,12 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-border-color': 'color-menu-border',
 
     'listbox-item-text-color': 'color-menu-item-content',
-    'listbox-item-caption-text-color': 'color-menu-item-subcontent',
+    'listbox-item-subcontent-text-color': 'color-menu-item-subcontent',
     'listbox-item-hover-background-color': 'color-menu-item-background-hover',
 
     'listbox-item-disabled-background-color': 'color-menu-item-background',
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
-    'listbox-item-caption-disabled-text-color': 'color-menu-item-content-disabled',
+    'listbox-item-subcontent-disabled-text-color': 'color-menu-item-content-disabled',
 
     'listbox-box-shadow-depth-color': 'color-box-shadow',
 };

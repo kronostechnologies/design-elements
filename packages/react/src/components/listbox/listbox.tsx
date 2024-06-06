@@ -195,7 +195,7 @@ const ListItemTextContainer = styled.span`
 `;
 
 const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
-    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-caption-disabled-text-color'] : theme.component['listbox-item-caption-text-color'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-subcontent-disabled-text-color'] : theme.component['listbox-item-subcontent-text-color'])};
     display: block;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
 `;
