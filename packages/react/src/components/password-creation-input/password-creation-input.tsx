@@ -78,7 +78,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon
-            valid={isValid || isEmpty}
+            invalid={!isValid && !isEmpty}
         >
             <div id={hintId} aria-live="assertive" aria-hidden="true" aria-atomic="true">
                 <StyledUl>

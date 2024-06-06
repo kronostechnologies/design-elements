@@ -28,7 +28,7 @@ interface StyledInputProps {
 }
 
 const StyledInput = styled.input<StyledInputProps>`
-    ${responsiveInputsStyle}
+    ${responsiveInputsStyle};
 
     border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
     height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
@@ -132,7 +132,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={valid}
+            invalid={!valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <Wrapper>

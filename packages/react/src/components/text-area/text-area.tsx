@@ -146,7 +146,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             required={required}
             tooltip={tooltip}
             hint={hint}
-            valid={validity}
+            invalid={!validity}
             validationErrorMessage={getValidationErrorMessage()}
         >
             <StyledTextArea

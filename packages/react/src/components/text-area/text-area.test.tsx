@@ -81,7 +81,7 @@ describe('TextArea', () => {
 
         const container = getByTestId(wrapper, 'container');
         const charCounter = getByTestId(wrapper, 'char-counter');
-        expect(container.prop('valid')).toBe(false);
+        expect(container.prop('invalid')).toBe(true);
         expect(charCounter.prop('valid')).toBe(false);
     });
 

@@ -76,7 +76,7 @@ const Textbox = styled.input<TextboxProps>`
     width: 100%;
 
     ${focus};
-    
+
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
@@ -597,7 +597,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             label={label}
             required={required}
             tooltip={tooltip}
-            valid={valid}
+            invalid={!valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >

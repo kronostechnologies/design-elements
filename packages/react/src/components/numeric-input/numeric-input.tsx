@@ -148,7 +148,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={!numericInput.invalid}
+            invalid={numericInput.invalid}
             noInvalidFieldIcon={!numericInput.validationErrorMessage}
             validationErrorMessage={numericInput.validationErrorMessage ?? ''}
         >

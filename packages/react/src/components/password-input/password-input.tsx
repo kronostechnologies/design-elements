@@ -79,7 +79,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     return (
         <FormFieldContainer
             id={id}
-            valid={isValid}
+            invalid={!isValid}
             label={label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}

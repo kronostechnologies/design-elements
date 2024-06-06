@@ -479,7 +479,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             label={label}
             required={required}
             tooltip={tooltip}
-            valid={valid}
+            invalid={!valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >

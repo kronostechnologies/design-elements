@@ -517,7 +517,7 @@ export const Datepicker = forwardRef(({
                 required={required}
                 tooltip={tooltip}
                 hint={hint}
-                valid={valid}
+                invalid={!valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             >
                 <Container isMobile={isMobile}>
