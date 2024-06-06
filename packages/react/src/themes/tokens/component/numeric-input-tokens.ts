@@ -20,7 +20,7 @@ export const defaultNumericInputTokens: NumericInputTokenMap = {
     'numeric-input-border-color': 'color-control-border',
     'numeric-input-error-border-color': 'color-control-border-error',
 
-    'numeric-input-disabled-adornment-text-color': 'color-control-content-disabled',
+    'numeric-input-disabled-adornment-text-color': 'color-control-auxiliary-disabled',
     'numeric-input-disabled-background-color': 'color-control-background-disabled',
     'numeric-input-disabled-border-color': 'color-control-border-disabled',
 };

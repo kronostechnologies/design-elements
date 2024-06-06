@@ -22,7 +22,7 @@ export type CheckboxTokenMap = {
 export const defaultCheckboxTokens: CheckboxTokenMap = {
     'checkbox-unchecked-background-color': 'color-control-background',
     'checkbox-unchecked-border-color': 'color-control-border',
-    'checkbox-checked-icon-color': 'color-control-content-checked',
+    'checkbox-checked-icon-color': 'color-control-auxiliary-checked',
     'checkbox-checked-background-color': 'color-control-background-checked',
     'checkbox-checked-border-color': 'color-control-border-checked',
     'checkbox-disabled-background-color': 'color-control-background-disabled',

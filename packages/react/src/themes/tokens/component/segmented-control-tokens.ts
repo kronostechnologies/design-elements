@@ -24,17 +24,17 @@ export type SegmentedControlTokenMap = {
 export const defaultSegmentedControlTokens: SegmentedControlTokenMap = {
     'segmented-control-background-color': 'color-control-background',
     'segmented-control-border-color': 'color-control-border',
-    'segmented-control-text-color': 'color-control-content',
+    'segmented-control-text-color': 'color-control-auxiliary',
 
     'segmented-control-hover-background-color': 'color-control-background-hover',
     'segmented-control-hover-border-color': 'color-control-border-hover',
-    'segmented-control-hover-text-color': 'color-control-content-hover',
+    'segmented-control-hover-text-color': 'color-control-auxiliary-hover',
 
     'segmented-control-disabled-background-color': 'color-control-background-disabled',
     'segmented-control-disabled-border-color': 'color-control-border-disabled',
-    'segmented-control-disabled-text-color': 'color-control-content-disabled',
+    'segmented-control-disabled-text-color': 'color-control-auxiliary-disabled',
 
     'segmented-control-pressed-background-color': 'color-control-background-selected',
     'segmented-control-pressed-border-color': 'color-control-border-selected',
-    'segmented-control-pressed-text-color': 'color-control-content-selected',
+    'segmented-control-pressed-text-color': 'color-control-auxiliary-selected',
 };

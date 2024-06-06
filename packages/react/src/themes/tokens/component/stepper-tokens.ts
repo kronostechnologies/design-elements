@@ -19,9 +19,9 @@ export type StepperTokenMap = {
 export const defaultStepperTokens: StepperTokenMap = {
     'stepper-button-background-color': 'color-control-background',
     'stepper-button-border-color': 'color-control-border',
-    'stepper-button-text-color': 'color-control-content',
+    'stepper-button-text-color': 'color-control-auxiliary',
     'stepper-button-hover-background-color': 'color-control-background-hover',
     'stepper-button-disabled-background-color': 'color-control-background-disabled',
     'stepper-button-disabled-border-color': 'color-control-border-disabled',
-    'stepper-button-disabled-text-color': 'color-control-content-disabled',
+    'stepper-button-disabled-text-color': 'color-control-auxiliary-disabled',
 };

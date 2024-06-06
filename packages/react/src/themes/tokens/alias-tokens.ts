@@ -61,13 +61,16 @@ export type AliasTokens =
     | 'color-control-border-selected'
     | 'color-control-border-checked'
     | 'color-control-border-error'
-    | 'color-control-content'
-    | 'color-control-content-hover'
-    | 'color-control-content-disabled'
-    | 'color-control-content-error'
-    | 'color-control-content-success'
-    | 'color-control-content-checked'
-    | 'color-control-content-selected'
+    | 'color-control-value'
+    | 'color-control-value-hover'
+    | 'color-control-value-disabled'
+    | 'color-control-auxiliary'
+    | 'color-control-auxiliary-hover'
+    | 'color-control-auxiliary-disabled'
+    | 'color-control-auxiliary-error'
+    | 'color-control-auxiliary-success'
+    | 'color-control-auxiliary-checked'
+    | 'color-control-auxiliary-selected'
     /**
      * MENU
      */
@@ -244,13 +247,16 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-control-border-checked': 'color-brand-50',
     'color-control-border-error': 'color-alert-50',
 
-    'color-control-content': 'color-neutral-65',
-    'color-control-content-hover': 'color-black',
-    'color-control-content-disabled': 'color-neutral-30',
-    'color-control-content-error': 'color-alert-50',
-    'color-control-content-success': 'color-success-50',
-    'color-control-content-checked': 'color-white',
-    'color-control-content-selected': 'color-brand-70',
+    'color-control-value': 'color-content',
+    'color-control-value-hover': 'color-content-hover',
+    'color-control-value-disabled': 'color-content-disabled',
+    'color-control-auxiliary': 'color-neutral-65',
+    'color-control-auxiliary-hover': 'color-black',
+    'color-control-auxiliary-disabled': 'color-neutral-30',
+    'color-control-auxiliary-error': 'color-alert-50',
+    'color-control-auxiliary-success': 'color-success-50',
+    'color-control-auxiliary-checked': 'color-white',
+    'color-control-auxiliary-selected': 'color-brand-70',
 
     /**
      * MENU

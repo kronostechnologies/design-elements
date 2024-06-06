@@ -286,13 +286,13 @@ export const defaultButtonTokens: ButtonTokenMap = {
     // Input button
     'button-input-background-color': 'color-control-background',
     'button-input-border-color': 'color-control-border',
-    'button-input-text-color': 'color-control-content',
+    'button-input-text-color': 'color-control-auxiliary',
     // Input button hover
     'button-input-hover-background-color': 'color-control-background-hover',
     'button-input-hover-border-color': 'color-control-border-hover',
-    'button-input-hover-text-color': 'color-control-content-hover',
+    'button-input-hover-text-color': 'color-control-auxiliary-hover',
     // Input button disabled
     'button-input-disabled-background-color': 'color-control-background-disabled',
     'button-input-disabled-border-color': 'color-control-border-disabled',
-    'button-input-disabled-text-color': 'color-control-content-disabled',
+    'button-input-disabled-text-color': 'color-control-auxiliary-disabled',
 };

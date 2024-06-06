@@ -24,18 +24,18 @@ export type ComboboxTokenMap = {
 };
 
 export const defaultComboboxTokens: ComboboxTokenMap = {
-    'combobox-clear-button-border-right-color': 'color-control-content',
-    'combobox-clear-button-disabled-icon-color': 'color-control-content-disabled',
-    'combobox-clear-button-icon-color': 'color-control-content',
+    'combobox-clear-button-border-right-color': 'color-control-auxiliary',
+    'combobox-clear-button-disabled-icon-color': 'color-control-auxiliary-disabled',
+    'combobox-clear-button-icon-color': 'color-control-auxiliary',
     'combobox-arrow-button-background-color': 'transparent-100',
     'combobox-arrow-button-hover-background-color': 'transparent-100',
-    'combobox-arrow-button-disabled-icon-color': 'color-control-content-disabled',
-    'combobox-arrow-button-icon-color': 'color-control-content',
+    'combobox-arrow-button-disabled-icon-color': 'color-control-auxiliary-disabled',
+    'combobox-arrow-button-icon-color': 'color-control-auxiliary',
     'combobox-border-color': 'color-control-border',
     'combobox-disabled-background-color': 'color-control-background-disabled',
     'combobox-disabled-border-color': 'color-control-border-disabled',
-    'combobox-disabled-text-color': 'color-control-content-disabled',
+    'combobox-disabled-text-color': 'color-control-auxiliary-disabled',
     'combobox-error-border-color': 'color-control-border-error',
     'combobox-background-color': 'color-control-background',
-    'combobox-placeholder-text-color': 'color-control-content',
+    'combobox-placeholder-text-color': 'color-control-auxiliary',
 };

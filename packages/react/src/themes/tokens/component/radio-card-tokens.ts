@@ -23,15 +23,15 @@ export type RadioCardTokenMap = {
 export const defaultRadioCardTokens: RadioCardTokenMap = {
     'radio-card-background-color': 'color-control-background',
     'radio-card-border-color': 'color-control-border',
-    'radio-card-text-color': 'color-content',
+    'radio-card-text-color': 'color-control-value',
 
     'radio-card-hover-background-color': 'color-control-background-hover',
     'radio-card-hover-border-color': 'color-control-border-hover',
-    'radio-card-hover-text-color': 'color-content-hover',
+    'radio-card-hover-text-color': 'color-control-value-hover',
 
     'radio-card-disabled-background-color': 'color-control-background-disabled',
     'radio-card-disabled-border-color': 'color-control-border-disabled',
-    'radio-card-disabled-text-color': 'color-control-content-disabled',
+    'radio-card-disabled-text-color': 'color-control-auxiliary-disabled',
 
     'radio-card-selected-background-color': 'color-control-background-selected',
     'radio-card-selected-border-color': 'color-control-border-selected',
