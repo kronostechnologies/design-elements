@@ -182,6 +182,21 @@ describe('Dropdown list', () => {
         });
     });
 
+    describe('icon is handled', () => {
+        test('the icon is set according to the iconName prop', () => {
+            const wrapper = shallow(<DropdownList options={provinces} iconName="menu" />);
+
+            expect(getByTestId(wrapper, 'textbox-icon').prop('name')).toBe('menu');
+        });
+
+        test('the icon is not set when the iconName prop is undefined', () => {
+            const wrapper = shallow(<DropdownList options={provinces} />);
+
+            const iconComponent = getByTestId(wrapper, 'textbox-icon');
+            expect(iconComponent.exists()).toBe(false);
+        });
+    });
+
     describe('onChange callback', () => {
         test('callback is fired when an option is selected', () => {
             const callback = jest.fn();
@@ -473,6 +488,20 @@ describe('Dropdown list', () => {
                 defaultOpen
                 options={provinces}
                 multiselect
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot (icon)', () => {
+        const tree = renderWithProviders(
+            <DropdownList
+                defaultOpen
+                label="Select an option"
+                hint="Hint"
+                options={provinces}
+                iconName="menu"
             />,
         );
 
