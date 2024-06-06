@@ -1,4 +1,6 @@
+import { ReactNode } from 'react';
 import { devConsole } from '../../utils/dev-console';
+import { joinStrings } from '../../utils/string';
 
 interface FormFieldIds {
     label?: string;
@@ -6,24 +8,20 @@ interface FormFieldIds {
     invalid?: string;
 }
 
-function makeSlotId(prop: React.ReactNode, formFieldId: string, propName: string): string | undefined {
-    if (!prop) {
-        return undefined;
-    }
-
-    return `${formFieldId}_${propName}`;
+export function getSlotId(prop: ReactNode, formFieldId: string, propName: string): string | undefined {
+    return prop ? `${formFieldId}_${propName}` : undefined;
 }
 
 export function getSlotIds(
     formFieldId: string,
-    label?: React.ReactNode,
-    hint?: React.ReactNode,
-    invalid?: React.ReactNode,
+    label?: ReactNode,
+    hint?: ReactNode,
+    invalid?: ReactNode,
 ): FormFieldIds {
     return {
-        label: makeSlotId(label, formFieldId, 'label'),
-        hint: makeSlotId(hint, formFieldId, 'hint'),
-        invalid: makeSlotId(invalid, formFieldId, 'invalid'),
+        label: getSlotId(label, formFieldId, 'label'),
+        hint: getSlotId(hint, formFieldId, 'hint'),
+        invalid: getSlotId(invalid, formFieldId, 'invalid'),
     };
 }
 
@@ -43,11 +41,6 @@ export const validateAriaLabels = (
     return true;
 };
 
-export function joinStrings(...strings: Array<string | undefined>): string | undefined {
-    const filteredStrings = strings.filter(Boolean);
-    return filteredStrings.length > 0 ? filteredStrings.join(' ') : undefined;
-}
-
 export function getAriaLabel(
     label?: string,
     ariaLabel?: string,
@@ -56,16 +49,16 @@ export function getAriaLabel(
     return validateAriaLabels(label, ariaLabel, ariaLabelledby) ? ariaLabel : undefined;
 }
 
-export function getAriaLabelledBy(
+export function getAriaLabelledby(
     { label }: FormFieldIds,
-    additionalLabelledBy?: string,
+    additionalLabelledby?: string,
 ): string | undefined {
-    return joinStrings(label, additionalLabelledBy);
+    return joinStrings(label, additionalLabelledby);
 }
 
-export function getAriaDescribedBy(
+export function getAriaDescribedby(
     { invalid, hint }: FormFieldIds,
-    additionalDescribedBy?: string,
+    additionalDescribedby?: string,
 ): string | undefined {
-    return joinStrings(invalid, hint, additionalDescribedBy);
+    return joinStrings(invalid, hint, additionalDescribedby);
 }

@@ -121,14 +121,14 @@ type PartialFormFieldProps = Pick<FormFieldControlProps,
     | 'ariaLabel'
     | 'ariaLabelledby'
     | 'ariaDescribedby'
-    | 'valid'
+    | 'invalid'
 >;
 
 export type InputProps = PartialInputProps & PartialFormFieldProps;
 
 export const Input = forwardRef(({
     id: providedId,
-    valid: providedValid = true,
+    invalid: providedInvalid = true,
     required: providedRequired = false,
     disabled: providedDisabled = false,
     ...otherProps
@@ -141,7 +141,7 @@ export const Input = forwardRef(({
         ariaLabel,
         ariaLabelledby,
         ariaDescribedby,
-        valid = providedValid,
+        invalid = providedInvalid,
         required = providedRequired,
         disabled = providedDisabled,
     } = useFormFieldContext(otherProps);
@@ -151,9 +151,9 @@ export const Input = forwardRef(({
             aria-label={ariaLabel}
             aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
             aria-describedby={ariaDescribedby}
-            aria-disabled={disabled ? 'true' : 'false'}
-            aria-required={required ? 'true' : 'false'}
-            aria-invalid={valid ? 'false' : 'true'}
+            aria-disabled={disabled}
+            aria-required={required}
+            aria-invalid={invalid}
             data-testid="input"
             id={formId || inputId}
             disabled={disabled}

@@ -1,32 +1,30 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../../hooks/use-id';
-import { ResolvedTheme } from '../../../themes/theme';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../../label/label';
 import { TooltipProps } from '../../tooltip/tooltip';
 import { FormFieldContext, FormFieldControlProps } from '../form-field-context';
-import { getAriaDescribedBy, getAriaLabel, getAriaLabelledBy, getSlotIds } from '../utils';
+import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from '../utils';
 
 interface StyledDivProps {
-    theme: ResolvedTheme;
-    hasLabel: boolean;
-    hasHint: boolean;
-    valid: boolean;
-    noMargin?: boolean;
+    $hasLabel: boolean;
+    $hasHint: boolean;
+    $invalid: boolean;
+    $noMargin?: boolean;
 }
 
 const StyledDiv = styled.div<StyledDivProps>`
-    margin: ${({ noMargin }) => (noMargin ? '0' : '0 0 var(--spacing-3x)')};
+    margin: ${({ $noMargin }) => ($noMargin ? '0' : '0 0 var(--spacing-3x)')};
 
     input,
     select,
     textarea {
-        border-color: ${({ theme, valid }) => (valid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
+        border-color: ${({ theme, $invalid }) => (!$invalid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
     }
 
-    > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
+    > :nth-child(${({ $hasLabel, $hasHint, $invalid }) => ($hasLabel ? 1 : 0) + ($hasHint ? 1 : 0) + ($invalid ? 1 : 0)}) {
         margin-bottom: var(--spacing-half);
     }
 `;
@@ -65,64 +63,64 @@ export const FormFieldContainer: FunctionComponent<PropsWithChildren<FormFieldCo
     noMargin,
     required = false,
     tooltip,
-    valid = true,
+    invalid = false,
     validationErrorMessage,
     ...props
 }) => {
     const { isMobile } = useDeviceContext();
     const formId = useId(providedId);
-    const slotIds = getSlotIds(formId, label, hint, (validationErrorMessage && !valid));
 
+    const slotIds = getSlotIds(formId, label, hint, (validationErrorMessage && invalid));
     const ariaLabel = getAriaLabel(label, providedAriaLabel, providedAriaLabelledby);
-    const ariaLabelledby = getAriaLabelledBy(slotIds, providedAriaLabelledby);
-    const ariaDescribedby = getAriaDescribedBy(slotIds, providedAriaDescribedby);
+    const ariaLabelledby = getAriaLabelledby(slotIds, providedAriaLabelledby);
+    const ariaDescribedby = getAriaDescribedby(slotIds, providedAriaDescribedby);
 
     const contextValues = useMemo(() => ({
         formId,
         ariaLabel,
         ariaLabelledby,
         ariaDescribedby,
-        valid,
+        invalid,
         hint,
         required,
         disabled,
-    }), [formId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled]);
+    }), [formId, ariaLabel, ariaLabelledby, ariaDescribedby, invalid, hint, required, disabled]);
 
     return (
         <FormFieldContext.Provider value={contextValues}>
             <StyledDiv
                 className={className}
-                noMargin={noMargin}
-                hasLabel={!!label}
-                hasHint={!!hint}
-                valid={valid}
+                $noMargin={noMargin}
+                $hasLabel={!!label}
+                $hasHint={!!hint}
+                $invalid={invalid}
                 {...props /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {label && (
-                <Label
-                    id={slotIds.label}
-                    forId={formId}
-                    tooltip={tooltip}
-                    required={required}
-                >
-                    {label}
-                </Label>
-            )}
+                    <Label
+                        id={slotIds.label}
+                        forId={formId}
+                        tooltip={tooltip}
+                        required={required}
+                    >
+                        {label}
+                    </Label>
+                )}
                 {hint && (
-                <StyledHint
-                    id={slotIds.hint}
-                    isMobile={isMobile}
-                >
-                    {hint}
-                </StyledHint>
-            )}
-                {!valid && (
-                <InvalidField
-                    controlId={slotIds.invalid}
-                    feedbackMsg={validationErrorMessage}
-                    noIcon={noInvalidFieldIcon}
-                />
-            )}
+                    <StyledHint
+                        id={slotIds.hint}
+                        isMobile={isMobile}
+                    >
+                        {hint}
+                    </StyledHint>
+                )}
+                {invalid && (
+                    <InvalidField
+                        controlId={slotIds.invalid}
+                        feedbackMsg={validationErrorMessage}
+                        noIcon={noInvalidFieldIcon}
+                    />
+                )}
                 {children}
             </StyledDiv>
         </FormFieldContext.Provider>
