@@ -21,7 +21,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     input,
     select,
     textarea {
-        border-color: ${({ theme, $invalid }) => (!$invalid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
+        border-color: ${({ theme, $invalid }) => ($invalid ? theme.component['field-input-error-border-color'] : theme.component['field-input-border-color'])};
     }
 
     > :nth-child(${({ $hasLabel, $hasHint, $invalid }) => ($hasLabel ? 1 : 0) + ($hasHint ? 1 : 0) + ($invalid ? 1 : 0)}) {
