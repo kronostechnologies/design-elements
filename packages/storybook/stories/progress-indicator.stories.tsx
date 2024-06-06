@@ -1,25 +1,13 @@
-import { ProgressIndicator } from '@equisoft/design-elements-react';
-import { StoryFn as Story } from '@storybook/react';
+import { Spinner } from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
 
-export default {
-    title: 'Deprecated/Progress Line (deprecated)',
-    component: ProgressIndicator,
-    tags: ['autodocs'],
+const progressIndicatorMeta: Meta<typeof Spinner> = {
+    title: 'Components/Progress Indicator',
+    component: Spinner,
 };
 
-export const Normal: Story = () => (
-    <>
-        <ProgressIndicator
-            descriptionLabel="You"
-            resultLabel="50k - 100k $"
-            percent={60}
-            color="#0080A5"
-        />
-        <ProgressIndicator
-            descriptionLabel="Equisoft"
-            resultLabel="150k - 250k $"
-            percent={100}
-            color="#012639"
-        />
-    </>
-);
+export default progressIndicatorMeta;
+
+type Story = StoryObj<typeof Spinner>;
+
+export const Default: Story = {};
