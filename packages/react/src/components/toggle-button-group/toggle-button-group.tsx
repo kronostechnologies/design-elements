@@ -24,11 +24,11 @@ interface ToggleButtonProps {
 
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-selected-background-color'] : theme.component['segmented-control-background-color'])};
-    border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-selected-border-color'] : theme.component['segmented-control-border-color'])};
+    background-color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-background-color'] : theme.component['segmented-control-background-color'])};
+    border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-border-color'] : theme.component['segmented-control-border-color'])};
     border-right: ${({ pressed }) => (pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-selected-text-color'] : theme.component['segmented-control-text-color'])};
+    color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-text-color'] : theme.component['segmented-control-text-color'])};
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     letter-spacing: 0.02875rem;
     min-height: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
@@ -39,7 +39,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 
     &:last-child {
-        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-selected-border-color'] : theme.component['segmented-control-border-color'])};
+        border-right: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-border-color'] : theme.component['segmented-control-border-color'])};
         margin: 0;
     }
 

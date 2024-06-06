@@ -3,15 +3,15 @@ import { RefTokens } from '../ref-tokens';
 
 export type SegmentedControlTokens =
     | 'segmented-control-background-color'
-    | 'segmented-control-selected-background-color'
+    | 'segmented-control-pressed-background-color'
     | 'segmented-control-hover-background-color'
     | 'segmented-control-disabled-background-color'
     | 'segmented-control-border-color'
-    | 'segmented-control-selected-border-color'
+    | 'segmented-control-pressed-border-color'
     | 'segmented-control-hover-border-color'
     | 'segmented-control-disabled-border-color'
     | 'segmented-control-text-color'
-    | 'segmented-control-selected-text-color'
+    | 'segmented-control-pressed-text-color'
     | 'segmented-control-hover-text-color'
     | 'segmented-control-disabled-text-color';
 
@@ -34,7 +34,7 @@ export const defaultSegmentedControlTokens: SegmentedControlTokenMap = {
     'segmented-control-disabled-border-color': 'color-control-border-disabled',
     'segmented-control-disabled-text-color': 'color-control-content-disabled',
 
-    'segmented-control-selected-background-color': 'color-control-background-selected',
-    'segmented-control-selected-border-color': 'color-control-border-selected',
-    'segmented-control-selected-text-color': 'color-control-content-selected',
+    'segmented-control-pressed-background-color': 'color-control-background-selected',
+    'segmented-control-pressed-border-color': 'color-control-border-selected',
+    'segmented-control-pressed-text-color': 'color-control-content-selected',
 };
