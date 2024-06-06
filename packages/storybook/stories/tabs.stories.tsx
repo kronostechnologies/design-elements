@@ -86,9 +86,6 @@ export default TabsMeta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
-    args: {
-        global: false,
-    },
     ...TabsMeta,
 };
 

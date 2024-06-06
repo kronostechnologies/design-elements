@@ -125,7 +125,7 @@ interface Props {
 
 export const Tabs: VoidFunctionComponent<Props> = ({
     className,
-    global,
+    global = false,
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
