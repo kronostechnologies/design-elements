@@ -8,6 +8,7 @@ export type DropdownListTokens =
     | 'dropdown-list-input-disabled-border-color'
     | 'dropdown-list-input-error-border-color'
     | 'dropdown-list-input-disabled-text-color'
+    | 'dropdown-list-input-icon-color'
     | 'dropdown-list-arrow-color'
     | 'dropdown-list-arrow-disabled-color';
 
@@ -26,4 +27,5 @@ export const defaultDropdownListTokens: DropdownListTokenMap = {
     'dropdown-list-input-disabled-border-color': 'color-neutral-30',
     'dropdown-list-input-error-border-color': 'color-alert-50',
     'dropdown-list-input-disabled-text-color': 'color-neutral-30',
+    'dropdown-list-input-icon-color': 'color-content-subtle',
 };

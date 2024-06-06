@@ -47,7 +47,7 @@ function getLabelBackgroundColor({ disabled, isChecked, theme }: CardProps): str
         return theme.component['radio-card-disabled-background-color'];
     }
     if (isChecked) {
-        return theme.component['radio-card-checked-background-color'];
+        return theme.component['radio-card-selected-background-color'];
     }
     return theme.component['radio-card-background-color'];
 }
@@ -57,7 +57,7 @@ function getLabelBorderColor({ disabled, isChecked, theme }: CardProps): string 
         return theme.component['radio-card-disabled-border-color'];
     }
     if (isChecked) {
-        return theme.component['radio-card-checked-border-color'];
+        return theme.component['radio-card-selected-border-color'];
     }
     return theme.component['radio-card-border-color'];
 }

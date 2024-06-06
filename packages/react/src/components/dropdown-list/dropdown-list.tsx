@@ -15,7 +15,7 @@ import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FormFieldContainer } from '../form/form-container/form-field-container';
-import { Icon } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -112,6 +112,11 @@ const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     width: var(--size-1x);
 `;
 
+const TextIcon = styled(Icon)`
+    color: ${({ theme }) => (theme.component['dropdown-list-input-icon-color'])};
+    margin-right: var(--spacing-1x);
+`;
+
 type Value = string | string[];
 
 export interface TagValue {
@@ -162,6 +167,11 @@ export interface DropdownListProps<M extends boolean | undefined> {
     multiselect?: M;
 
     /**
+     * Display an icon inside the Dropdown control
+     */
+    iconName?: IconName;
+
+    /**
      * OnChange callback function, invoked when options are selected
      */
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
@@ -189,6 +199,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     value,
     hint,
     multiselect,
+    iconName,
     ...otherProps
 }) => {
     const { t } = useTranslation('dropdown-list');
@@ -458,6 +469,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         ],
     );
 
+    const firstSelectedOption = selectedOptions?.[0];
+
     return (
         <StyledFieldContainer
             className={className}
@@ -494,10 +507,18 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 value={getValues()}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
+                {iconName && (
+                    <TextIcon
+                        aria-hidden="true"
+                        name={iconName}
+                        size={isMobile ? '24' : '16'}
+                        data-testid="textbox-icon"
+                    />
+                )}
                 <input type="hidden" name={name} value={getValues()} data-testid="input" />
                 {multiselect
                     ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
-                    : <TextWrapper>{selectedOptions?.[0].label ?? ''}</TextWrapper>}
+                    : <TextWrapper>{firstSelectedOption?.label ?? ''}</TextWrapper>}
                 <Arrow
                     aria-hidden="true"
                     data-testid="arrow"

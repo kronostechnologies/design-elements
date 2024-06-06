@@ -1,5 +1,4 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
-import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import { Decorator, Preview } from '@storybook/react';
 
 injectMainCss();
@@ -21,8 +20,6 @@ const preview: Preview = {
             sort: 'alpha',
         },
         docs: {
-            container: DocsContainer,
-            page: DocsPage,
             source: {
                 type: 'dynamic',
                 excludeDecorators: true,

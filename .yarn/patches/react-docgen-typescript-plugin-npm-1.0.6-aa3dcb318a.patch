@@ -1,5 +1,5 @@
 diff --git a/dist/generateDocgenCodeBlock.js b/dist/generateDocgenCodeBlock.js
-index 03477dda70177ba884a3f8b494a0cc8783bf9ca0..2742e82f042bac9a18fcbeeb37ea11f884a78da1 100644
+index 03477dda70177ba884a3f8b494a0cc8783bf9ca0..34e354e8d319478c28553e4aacca6555bd64a93c 100644
 --- a/dist/generateDocgenCodeBlock.js
 +++ b/dist/generateDocgenCodeBlock.js
 @@ -35,7 +35,7 @@ function insertTsIgnoreBeforeStatement(statement) {
@@ -25,7 +25,7 @@ index 03477dda70177ba884a3f8b494a0cc8783bf9ca0..2742e82f042bac9a18fcbeeb37ea11f8
      return insertTsIgnoreBeforeStatement(typescript_1.default.factory.createExpressionStatement(typescript_1.default.factory.createBinaryExpression(
      // SimpleComponent.__docgenInfo
 -    typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier(((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
-+        typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier("exports."+(((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName)), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
++    typescript_1.default.factory.createPropertyAccessExpression(typescript_1.default.factory.createIdentifier("exports."+((_a = d.expression) === null || _a === void 0 ? void 0 : _a.getName()) || d.displayName), typescript_1.default.factory.createIdentifier("__docgenInfo")), typescript_1.default.SyntaxKind.EqualsToken, typescript_1.default.factory.createObjectLiteralExpression([
          // SimpleComponent.__docgenInfo.description
          typescript_1.default.factory.createPropertyAssignment(typescript_1.default.factory.createStringLiteral("description"), typescript_1.default.factory.createStringLiteral(d.description)),
          // SimpleComponent.__docgenInfo.displayName

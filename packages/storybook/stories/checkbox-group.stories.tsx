@@ -1,12 +1,15 @@
 import { CheckboxGroup } from '@equisoft/design-elements-react';
-import { forceReRender, Story } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import { ChangeEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Components/Checkbox Group',
     component: CheckboxGroup,
+    tags: ['autodocs'],
 };
+
+type Story = StoryFn;
 
 const Checkboxes = [
     { label: 'Boat', name: 'vehicule1', value: 'boat' },
@@ -31,10 +34,8 @@ let checkedValues = ['blue', 'yellow'];
 function handleChange(event: ChangeEvent<HTMLInputElement>): void {
     if (checkedValues.includes(event.target.value)) {
         checkedValues = checkedValues.filter((value) => value !== event.target.value);
-        forceReRender();
     } else {
         checkedValues.push(event.target.value);
-        forceReRender();
     }
 }
 

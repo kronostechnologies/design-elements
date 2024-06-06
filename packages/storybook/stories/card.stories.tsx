@@ -4,6 +4,7 @@ import { StoryFn as Story } from '@storybook/react';
 export default {
     title: 'Components/Card',
     component: Card,
+    tags: ['autodocs'],
 };
 
 export const Normal: Story = () => (

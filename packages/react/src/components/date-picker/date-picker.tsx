@@ -16,6 +16,7 @@ import {
     useState,
 } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
+import { parse } from 'date-fns';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -37,6 +38,7 @@ import {
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
+    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
     SupportedLocale,
@@ -305,7 +307,7 @@ const localeArray = [enUS, enCA, frCA];
 export const Datepicker = forwardRef(({
     className,
     defaultDate,
-    dateFormat,
+    dateFormat: providedDateFormat,
     disabled,
     firstDayOfWeek,
     hasTodayButton,
@@ -459,11 +461,11 @@ export const Datepicker = forwardRef(({
         if (placeholder) {
             return placeholder;
         }
-        if (dateFormat) {
-            return dateFormat.toUpperCase();
+        if (providedDateFormat) {
+            return providedDateFormat.toUpperCase();
         }
         return getLocaleDatePlaceholder(currentLocale);
-    }, [currentLocale, placeholder, dateFormat]);
+    }, [currentLocale, placeholder, providedDateFormat]);
 
     // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components
     const CalendarContainer: FunctionComponent<PropsWithChildren<{}>> = useMemo(() => ({ children }) => (
@@ -490,6 +492,19 @@ export const Datepicker = forwardRef(({
             )}
         </div>
     ), [handleTodayButtonClick, hasTodayButton, locale, selectedDate, t]);
+
+    const dateFormat = providedDateFormat || getLocaleDateFormat(currentLocale);
+
+    // react-datepicker has also an option to support multiple input formats, but it behave differently than
+    // the single format. So we do this workaround instead.
+    const handleInputChangeRaw = useCallback((event: FocusEvent<HTMLInputElement>): void => {
+        const value = event.target.value;
+        const numericalFormat = getNumericalDateFormat(dateFormat);
+        if (numericalFormat && /^\d+$/.test(value) && value.length === numericalFormat.length) {
+            const date = parse(value, numericalFormat, new Date());
+            setSelectedDate(date);
+        }
+    }, [dateFormat]);
 
     return (
         <>
@@ -526,12 +541,13 @@ export const Datepicker = forwardRef(({
                         )}
                         calendarContainer={CalendarContainer}
                         className="datePickerInput"
-                        dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
+                        dateFormat={dateFormat}
                         disabled={disabled}
                         locale={locale}
                         maxDate={maxDate || undefined}
                         minDate={minDate || undefined}
                         onChange={handleInputChange}
+                        onChangeRaw={handleInputChangeRaw}
                         onSelect={handleCalendarSelect}
                         onBlur={handleInputBlur}
                         onFocus={onFocus}
@@ -547,6 +563,7 @@ export const Datepicker = forwardRef(({
                         selected={selectedDate}
                         showPopperArrow={false}
                         startOpen={startOpen}
+                        required={required}
                         valid={valid}
                         withPortal={isMobile}
                         {...props /* eslint-disable-line react/jsx-props-no-spreading */}

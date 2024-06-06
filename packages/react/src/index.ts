@@ -14,7 +14,7 @@ export { ToggleButtonGroup } from './components/toggle-button-group/toggle-butto
 
 // Form Elements
 export { Avatar } from './components/avatar/avatar';
-export { Checkbox } from './components/checkbox/checkbox';
+export { Checkbox, CheckboxProps } from './components/checkbox/checkbox';
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
 export { Combobox, ComboboxOption } from './components/combobox/combobox';
 export { Datepicker, DatepickerHandles } from './components/date-picker/date-picker';
@@ -100,9 +100,9 @@ export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';
 
 // Themes
-export { equisoftTheme } from './themes/equisoft';
+export { equisoftTheme, buildTheme } from './themes';
 export { injectMainCss } from './styles';
-export { ResolvedTheme, ThemeCustomization, ThemeCustomization as Theme } from './themes/theme';
+export { ResolvedTheme as Theme, ThemeCustomization } from './themes/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';
