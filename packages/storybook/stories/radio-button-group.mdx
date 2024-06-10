@@ -1,8 +1,8 @@
-import * as RadioButtonStories from './radio-button.stories';
-import { RadioButton } from '@equisoft/design-elements-react';
-import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
+import { RadioButtonGroup } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as RadioButtonGroupStories  from './radio-button-group.stories';
 
-<Meta of={RadioButtonStories} />
+<Meta of={RadioButtonGroupStories} />
 
 # Radio Button
 1. [Definition](#definition)
@@ -12,7 +12,7 @@ import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 
 ## Definition
 Radio buttons display mutually exclusive options from which a user selects exactly one [1].
-<Canvas of={RadioButtonStories.Default} />
+<Canvas of={RadioButtonGroupStories.Default} />
 
 ## Usage
 
@@ -28,19 +28,13 @@ Radio buttons display mutually exclusive options from which a user selects exact
 ## Variants
 
 ### Default
-<Canvas of={RadioButtonStories.Default} />
+<Canvas of={RadioButtonGroupStories.Default} />
 
-### Checked
-<Canvas of={RadioButtonStories.Checked}/>
-
-### Disabled
-<Canvas of={RadioButtonStories.Disabled}/>
-
-### Checked and disabled
-<Canvas of={RadioButtonStories.CheckedAndDisabled}/>
+### With conditional content
+<Canvas of={RadioButtonGroupStories.WithConditionalContent} />
 
 ## Properties
-<ArgTypes of={RadioButton} />
+<ArgTypes of={RadioButtonGroup} />
 
 ## References
 1. [https://www.nngroup.com/articles/radio-buttons-default-selection/](https://www.nngroup.com/articles/radio-buttons-default-selection/)
