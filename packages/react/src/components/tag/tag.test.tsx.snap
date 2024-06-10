@@ -81,7 +81,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -362,7 +362,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -643,7 +643,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -924,7 +924,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -1205,7 +1205,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -1486,7 +1486,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -1768,7 +1768,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -2049,7 +2049,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -2331,7 +2331,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -2612,7 +2612,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -2894,7 +2894,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
@@ -3175,7 +3175,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
 .c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c4:disabled {
