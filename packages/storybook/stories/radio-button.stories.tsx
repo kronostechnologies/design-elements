@@ -27,6 +27,63 @@ export const Default: Story = {
     },
 };
 
+// For PR testing, TO BE REMOVED
+const testDataPR = [
+    { label: 'Earth', value: 'earth' },
+    { label: 'Mars', value: 'mars', defaultChecked: true },
+    {
+        label: 'Pluto',
+        value: 'pluto',
+        disabled: true,
+        content: {
+            element: (
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                    <input onFocus={() => {
+                        // eslint-disable-next-line no-console
+                        console.log('Pluto');
+                    }}
+                    />
+                </div>
+            ),
+        },
+    },
+    {
+        label: 'Saturn',
+        value: 'saturn',
+        content: {
+            element: (
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                    <input onFocus={() => {
+                        // eslint-disable-next-line no-console
+                        console.log('Saturn');
+                    }}
+                    />
+                </div>
+            ),
+        },
+    },
+];
+
+export const TestPR: StoryFn = () => (
+    <RadioButtonGroup
+        groupName="controlled-planets"
+        buttons={testDataPR}
+    />
+);
+// End PR testing
+
 export const WithConditionalContent: Story = {
     args: {
         label: 'Select an option',

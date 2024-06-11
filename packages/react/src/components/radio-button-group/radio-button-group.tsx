@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { focus } from '../../utils/css-state';
@@ -85,7 +85,11 @@ const StyledLabel = styled.label<{ disabled?: boolean }>`
 const ContentWrapper = styled.div<{ isExpanded: boolean, maxHeight?: number }>(({ isExpanded, maxHeight = 500 }) => `
     overflow: hidden;
     max-height: ${isExpanded ? `${maxHeight}px` : '0'};
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease-in-out;
+`);
+
+const InnerContent = styled.div<{ isExpanded: boolean, transitionStarted: boolean }>(({ isExpanded, transitionStarted }) => `
+    display: ${isExpanded || transitionStarted ? 'block' : 'none'};
 `);
 
 interface RadioButtonProps {
@@ -128,6 +132,8 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
             checkedValue !== undefined ? checkedValue === button.value : button.defaultChecked
         ))?.value,
     );
+    const lastChecked = useRef(currentChecked);
+    const [transitionStarted, setTransitionStarted] = useState(false);
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
 
@@ -139,8 +145,20 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     useEffect(() => {
         if (checkedValue !== undefined) {
             setCurrentChecked(checkedValue);
+            lastChecked.current = checkedValue;
         }
     }, [checkedValue]);
+
+    if (currentChecked !== lastChecked.current) {
+        if (buttons.find((b) => b.value === currentChecked)?.content) {
+            setTransitionStarted(true);
+        }
+        lastChecked.current = currentChecked;
+    }
+
+    const handleTransitionEnd = useCallback(() => {
+        setTransitionStarted(false);
+    }, []);
 
     return (
         <StyledFieldset className={className}>
@@ -151,34 +169,43 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     {tooltip && <StyledTooltip {...tooltip} />}
                 </StyledLegend>
             )}
-            {buttons.map((button) => (
-                <RadioWrapper key={`${groupName}-${button.value}`}>
-                    <StyledLabel disabled={button.disabled}>
-                        {' '}
-                        <input
-                            data-testid={`${dataTestId}-${button.value}`}
-                            type="radio"
-                            name={groupName}
-                            value={button.value}
-                            checked={checkedValue ? checkedValue === button.value : undefined}
-                            defaultChecked={button.defaultChecked}
-                            disabled={button.disabled}
-                            onChange={handleChange}
-                        />
-                        <span className="radioInput" />
-                        {button.label}
-                    </StyledLabel>
-                    {button.content && (
-                        <ContentWrapper
-                            data-testid="content-wrapper"
-                            maxHeight={button.content.maxHeight}
-                            isExpanded={currentChecked === button.value}
-                        >
-                            {button.content.element}
-                        </ContentWrapper>
-                    )}
-                </RadioWrapper>
-            ))}
+            {buttons.map((button) => {
+                const isExpanded = currentChecked === button.value;
+                return (
+                    <RadioWrapper key={`${groupName}-${button.value}`}>
+                        <StyledLabel disabled={button.disabled}>
+                            {' '}
+                            <input
+                                data-testid={`${dataTestId}-${button.value}`}
+                                type="radio"
+                                name={groupName}
+                                value={button.value}
+                                checked={checkedValue ? checkedValue === button.value : undefined}
+                                defaultChecked={button.defaultChecked}
+                                disabled={button.disabled}
+                                onChange={handleChange}
+                            />
+                            <span className="radioInput" />
+                            {button.label}
+                        </StyledLabel>
+                        {button.content && (
+                            <ContentWrapper
+                                data-testid="content-wrapper"
+                                maxHeight={button.content.maxHeight}
+                                isExpanded={isExpanded}
+                                onTransitionEnd={handleTransitionEnd}
+                            >
+                                <InnerContent
+                                    isExpanded={isExpanded}
+                                    transitionStarted={transitionStarted}
+                                >
+                                    {button.content.element}
+                                </InnerContent>
+                            </ContentWrapper>
+                        )}
+                    </RadioWrapper>
+                );
+            })}
         </StyledFieldset>
     );
 };
