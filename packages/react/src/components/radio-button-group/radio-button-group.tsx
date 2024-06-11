@@ -150,7 +150,10 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     }, [checkedValue]);
 
     if (currentChecked !== lastChecked.current) {
-        if (buttons.find((b) => b.value === currentChecked)?.content) {
+        const hasAnyCollapse = buttons.find((b) => b.value === lastChecked.current)?.content
+            || buttons.find((b) => b.value === currentChecked)?.content;
+
+        if (hasAnyCollapse) {
             setTransitionStarted(true);
         }
         lastChecked.current = currentChecked;
