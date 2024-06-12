@@ -4,7 +4,7 @@ import {
     InputHTMLAttributes,
     RefObject,
     useMemo,
-    useRef,
+    useRef, useState,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
@@ -94,10 +94,12 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
+    const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
 
     function handleIncrement(): void {
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepUp();
+        setIntervalId(setInterval(() => inputRef.current?.stepUp(), 200));
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
@@ -108,10 +110,18 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     function handleDecrement(): void {
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepDown();
+        setIntervalId(setInterval(() => inputRef.current?.stepDown(), 200));
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
             triggerChangeEventOnRef(inputRef);
+        }
+    }
+
+    function handleStop(): void {
+        if (intervalId) {
+            clearInterval(intervalId);
+            setIntervalId(undefined);
         }
     }
 
@@ -158,6 +168,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
                         disabled={disabled}
                         onDecrement={handleDecrement}
                         onIncrement={handleIncrement}
+                        onStop={handleStop}
                     />
                 )}
             </Wrapper>

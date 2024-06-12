@@ -67,9 +67,15 @@ interface StepperButtonsProps {
     disabled?: boolean;
     onIncrement?(): void;
     onDecrement?(): void;
+    onStop?(): void;
 }
 
-export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({ disabled, onIncrement, onDecrement }) => {
+export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
+   disabled,
+   onIncrement,
+   onDecrement,
+   onStop,
+}) => {
     const { t } = useTranslation('stepper-buttons');
 
     return (
@@ -79,8 +85,10 @@ export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({ dis
                 data-testid="stepper-button-increment"
                 tabIndex={-1}
                 type="button"
-                onClick={onIncrement}
                 disabled={disabled}
+                onMouseDown={onIncrement}
+                onMouseUp={onStop}
+                onMouseLeave={onStop}
             >
                 <Icon aria-hidden="true" name="chevronUp" size="16" />
             </IncrementButton>
@@ -89,8 +97,10 @@ export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({ dis
                 data-testid="stepper-button-decrement"
                 tabIndex={-1}
                 type="button"
-                onClick={onDecrement}
                 disabled={disabled}
+                onMouseDown={onDecrement}
+                onMouseUp={onStop}
+                onMouseLeave={onStop}
             >
                 <Icon aria-hidden="true" name="chevronDown" size="16" />
             </DecrementButton>
