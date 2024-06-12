@@ -125,6 +125,13 @@ export const WithTooltip: Story = {
     },
 };
 
+const controlledButtons = [
+    { label: 'Earth', value: 'earth' },
+    { label: 'Mars', value: 'mars' },
+    { label: 'Pluto', value: 'pluto', disabled: true },
+    { label: 'Saturn', value: 'saturn' },
+];
+
 export const Controlled: StoryFn = () => {
     const [value, setValue] = useState('mars');
 
@@ -140,7 +147,7 @@ export const Controlled: StoryFn = () => {
             <RadioButtonGroup
                 groupName="controlled-planets"
                 checkedValue={value}
-                buttons={buttons}
+                buttons={controlledButtons}
                 onChange={handleChange}
             />
         </>
