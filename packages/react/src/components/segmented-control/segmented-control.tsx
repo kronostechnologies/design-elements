@@ -69,7 +69,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 `;
 
-interface ToggleButtonGroupProps {
+interface SegmentedControlProps {
     /**
      * Takes an array of objects containing all the buttons needed
      */
@@ -88,7 +88,7 @@ interface ToggleButtonGroupProps {
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export const ToggleButtonGroup: VoidFunctionComponent<ToggleButtonGroupProps> = ({
+export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     buttonGroup,
     className,
     groupName,
