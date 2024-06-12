@@ -10,7 +10,7 @@ export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
 export { DropdownNavigation } from './components/dropdown-navigation/dropdown-navigation';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
-export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
+export { SegmentedControl } from './components/segmented-control/segmented-control';
 
 // Form Elements
 export { Avatar } from './components/avatar/avatar';
