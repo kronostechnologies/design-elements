@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
+exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -170,7 +170,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
+exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
