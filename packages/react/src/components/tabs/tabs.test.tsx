@@ -10,13 +10,13 @@ import {
 } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
-function givenTabs(amount: number): Tab[] {
+function givenTabs(amount: number, tabPrefix: string = 'tab'): Tab[] {
     const tabs: Tab[] = [];
     for (let i = 1; i <= amount; i++) {
         tabs.push({
-            id: `tab-${i}`,
+            id: `${tabPrefix}-${i}`,
             title: `button ${i}`,
-            panelContent: <div data-testid={`tab-panel-${i}`}>content</div>,
+            panelContent: <div data-testid={`${tabPrefix}-panel-${i}`}>content</div>,
         });
     }
 
@@ -47,6 +47,37 @@ describe('Tabs', () => {
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         const tabPanel = getByTestId(wrapper, 'tab-panel-1');
+
+        expect(tabPanel.prop('children')).toBe(expectedTabPanel);
+    });
+
+    test('should display the first tab panel by default when tabs change', () => {
+        const expectedTabPanel = 'content';
+        const tabs: Tab[] = givenTabs(1);
+        const newTabs: Tab[] = givenTabs(1, 'new-tab');
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+
+        wrapper.setProps({ tabs: newTabs });
+        wrapper.update();
+        const tabPanel = getByTestId(wrapper, 'new-tab-panel-1');
+
+        expect(tabPanel.prop('children')).toBe(expectedTabPanel);
+    });
+
+    test('should display the default selected tab panel when tabs change', () => {
+        const expectedTabPanel = 'content';
+        const tabs: Tab[] = givenTabs(2);
+        const newTabs: Tab[] = givenTabs(2, 'new-tab');
+        const wrapper = mountWithProviders(
+            <Tabs
+                defaultSelectedId='tab-2'
+                tabs={tabs}
+            />,
+        );
+
+        wrapper.setProps({ tabs: newTabs, defaultSelectedId: 'new-tab-2' });
+        wrapper.update();
+        const tabPanel = getByTestId(wrapper, 'new-tab-panel-2');
 
         expect(tabPanel.prop('children')).toBe(expectedTabPanel);
     });

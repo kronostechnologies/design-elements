@@ -6,6 +6,7 @@ import {
     useCallback,
     useMemo,
     useState,
+    useEffect,
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
@@ -136,6 +137,11 @@ interface Props {
     onRemove?(tabId: string): void;
 }
 
+function getDefaultSelectedTab(tabItems: TabItem[], defaultSelectedId?: string): TabItem {
+    const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
+    return defaultSelectedTab ?? tabItems[0];
+}
+
 export const Tabs: VoidFunctionComponent<Props> = ({
     className,
     global,
@@ -168,8 +174,12 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
 
-    const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
-    const [selectedTab, setSelectedTab] = useState(defaultSelectedTab ?? tabItems[0]);
+    const initialSelectedTab = getDefaultSelectedTab(tabItems, defaultSelectedId);
+    const [selectedTab, setSelectedTab] = useState(initialSelectedTab);
+
+    useEffect(() => {
+        setSelectedTab(getDefaultSelectedTab(tabItems, defaultSelectedId));
+    }, [tabItems, defaultSelectedId]);
 
     function isTabSelected(tabId: string): boolean {
         return selectedTab.id === tabId;
