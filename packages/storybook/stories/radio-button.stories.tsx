@@ -19,21 +19,21 @@ export const Default: Story = {
 export const WithExternalLabel: Story = {
     args: {
         label: 'Merge contact: ',
-        externalLabelId: 'idPotato'
+        externalLabelId: 'idPotato',
     },
 };
 
 export const Checked: Story = {
     args: {
         label: 'Merge contact',
-        checked: true
+        checked: true,
     },
 };
 
 export const Disabled: Story = {
     args: {
         label: 'Merge contact',
-        disabled: true
+        disabled: true,
     },
 };
 
@@ -41,6 +41,6 @@ export const CheckedAndDisabled: Story = {
     args: {
         label: 'Merge contact',
         checked: true,
-        disabled: true
+        disabled: true,
     },
 };
