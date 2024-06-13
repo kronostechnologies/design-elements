@@ -2,13 +2,14 @@ import { ChangeEvent, FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
+import { useId } from '../../hooks/use-id';
 
 const StyledInput = styled.input<{ disabled?: boolean }>`
     appearance: none;
     background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
     border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-border-color'])};
     border-radius: 50%;
-    color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};;
+    color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
     display: inline-block;
     height: var(--size-1x);
     margin: 0;
@@ -60,7 +61,7 @@ interface RadioButtonProps {
     ariaLabel?: string;
     ariaLabelledBy?: string[];
     checked?: boolean;
-    className?: string
+    className?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
     externalLabelId?: string;
@@ -88,14 +89,16 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
     visuallyHidden,
     onChange,
 }) => {
+    const generatedId = useId();
+    const inputId = id || generatedId;
     const externalLabel = externalLabelId ? document.getElementById(externalLabelId)?.innerText : '';
     const inputLabel = externalLabelId ? `${label} ${externalLabel}` ?? '' : label;
 
     return (
         <StyledContainer>
             <StyledInput
-                data-testid={`radiobutton-${id}`}
-                id={id}
+                data-testid={`radiobutton-${inputId}`}
+                id={inputId}
                 type="radio"
                 name={name}
                 className={className}
@@ -104,22 +107,24 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
                 checked={checked}
                 disabled={disabled}
                 onChange={onChange}
-            />
-            <StyledLabel
-                data-testid={`radiobutton-${id}_label`}
-                hasLabel={!!label}
-                htmlFor={id}
-                className={`${className}_label`}
-                disabled={disabled}
                 aria-label={ariaLabel}
                 aria-labelledby={ariaLabelledBy?.join(' ')}
+            />
+            {label && (
+            <StyledLabel
+                data-testid={`radiobutton-${inputId}_label`}
+                hasLabel={!!label}
+                htmlFor={inputId}
+                className={`${className}_label`}
+                disabled={disabled}
             >
                 {
-                    visuallyHidden
-                        ? <VisuallyHidden>{inputLabel}</VisuallyHidden>
-                        : inputLabel
-                }
+                        visuallyHidden
+                            ? <VisuallyHidden>{inputLabel}</VisuallyHidden>
+                            : inputLabel
+                    }
             </StyledLabel>
+            )}
         </StyledContainer>
     );
 };

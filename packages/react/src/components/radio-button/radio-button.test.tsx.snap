@@ -69,30 +69,38 @@ exports[`Radio button matches snapshot 1`] = `
   position: relative;
 }
 
-<RadioButton>
+<RadioButton
+  label="This is a label"
+>
   <styled.div>
     <div
       className="c0"
     >
       <styled.input
-        data-testid="radiobutton-undefined"
+        data-testid="radiobutton-uuid1"
+        id="uuid1"
         type="radio"
       >
         <input
           className="c1"
-          data-testid="radiobutton-undefined"
+          data-testid="radiobutton-uuid1"
+          id="uuid1"
           type="radio"
         />
       </styled.input>
       <styled.label
         className="undefined_label"
-        data-testid="radiobutton-undefined_label"
-        hasLabel={false}
+        data-testid="radiobutton-uuid1_label"
+        hasLabel={true}
+        htmlFor="uuid1"
       >
         <label
           className="c2 undefined_label"
-          data-testid="radiobutton-undefined_label"
-        />
+          data-testid="radiobutton-uuid1_label"
+          htmlFor="uuid1"
+        >
+          This is a label
+        </label>
       </styled.label>
     </div>
   </styled.div>

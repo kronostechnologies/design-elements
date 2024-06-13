@@ -41,7 +41,7 @@ describe('Radio button', () => {
     });
 
     test('matches snapshot', () => {
-        const tree = mountWithTheme(<RadioButton />);
+        const tree = mountWithTheme(<RadioButton label="This is a label" />);
 
         expect(tree).toMatchSnapshot();
     });
