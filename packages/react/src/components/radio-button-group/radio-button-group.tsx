@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
@@ -30,10 +30,10 @@ const StyledTooltip = styled(Tooltip)`
 
 const RadioWrapper = styled.div``;
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<{ disabled?: boolean }>`
     ${(props: { theme: Theme, disabled?: boolean }) => `
             align-items: center;
-            display: flex;
+            display: inline-flex;
             font-size: 0.875rem;
             line-height: 1.5rem;
             margin-top: var(--spacing-1x);
@@ -85,10 +85,14 @@ const StyledLabel = styled.label`
             `}
 `;
 
-const ContentWrapper = styled.div<{ isExpanded: boolean, maxHeight?: number }>(({ isExpanded, maxHeight = 500 }) => `
+const ContentWrapper = styled.div<{ $isExpanded: boolean, $maxHeight?: number, $transitionDuration: number }>(({ $isExpanded, $maxHeight = 500, $transitionDuration }) => `
     overflow: hidden;
-    max-height: ${isExpanded ? `${maxHeight}px` : '0'};
-    transition: ${isExpanded ? 'max-height 1s ease-in' : 'max-height .5s ease-out'};
+    max-height: ${$isExpanded ? `${$maxHeight}px` : '0'};
+    transition: max-height ${$transitionDuration}ms ease-in-out;
+`);
+
+const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: boolean }>(({ $isExpanded, $transitionStarted }) => `
+    display: ${$isExpanded || $transitionStarted ? 'block' : 'none'};
 `);
 
 interface RadioButtonProps {
@@ -111,6 +115,8 @@ interface RadioButtonGroupProps {
     groupName: string;
     checkedValue?: string;
     buttons: RadioButtonProps[];
+    /** Duration in milliseconds */
+    transitionDuration?: number;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
@@ -122,6 +128,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     label,
     tooltip,
     onChange,
+    transitionDuration = 500,
     checkedValue,
     ...otherProps
 }) => {
@@ -131,6 +138,8 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
             checkedValue !== undefined ? checkedValue === button.value : button.defaultChecked
         ))?.value,
     );
+    const prevChecked = useRef(currentChecked);
+    const [transitionStarted, setTransitionStarted] = useState(false);
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
 
@@ -139,11 +148,24 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         onChange?.(event);
     }, [onChange, setCurrentChecked]);
 
-    useEffect(() => {
-        if (checkedValue !== undefined) {
-            setCurrentChecked(checkedValue);
+    if (checkedValue !== undefined && checkedValue !== prevChecked.current) {
+        setCurrentChecked(checkedValue);
+        prevChecked.current = checkedValue;
+    }
+
+    if (currentChecked !== prevChecked.current) {
+        const willHaveTransition = buttons.find((b) => b.value === prevChecked.current)?.content
+            || buttons.find((b) => b.value === currentChecked)?.content;
+
+        if (willHaveTransition) {
+            setTransitionStarted(true);
         }
-    }, [checkedValue]);
+        prevChecked.current = currentChecked;
+    }
+
+    const handleTransitionEnd = useCallback(() => {
+        setTransitionStarted(false);
+    }, []);
 
     return (
         <StyledFieldset className={className}>
@@ -154,34 +176,45 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     {tooltip && <StyledTooltip {...tooltip} />}
                 </StyledLegend>
             )}
-            {buttons.map((button) => (
-                <RadioWrapper key={`${groupName}-${button.value}`}>
-                    <StyledLabel disabled={button.disabled}>
-                        {' '}
-                        <input
-                            data-testid={`${dataTestId}-${button.value}`}
-                            type="radio"
-                            name={groupName}
-                            value={button.value}
-                            checked={checkedValue ? checkedValue === button.value : undefined}
-                            defaultChecked={button.defaultChecked}
-                            disabled={button.disabled}
-                            onChange={handleChange}
-                        />
-                        <span className="radioInput" />
-                        {button.label}
-                    </StyledLabel>
-                    {button.content && (
-                        <ContentWrapper
-                            data-testid="content-wrapper"
-                            maxHeight={button.content.maxHeight}
-                            isExpanded={currentChecked === button.value}
-                        >
-                            {button.content.element}
-                        </ContentWrapper>
-                    )}
-                </RadioWrapper>
-            ))}
+            {buttons.map((button) => {
+                const isExpanded = currentChecked === button.value;
+
+                return (
+                    <RadioWrapper key={`${groupName}-${button.value}`}>
+                        <StyledLabel disabled={button.disabled}>
+                            {' '}
+                            <input
+                                data-testid={`${dataTestId}-${button.value}`}
+                                type="radio"
+                                name={groupName}
+                                value={button.value}
+                                checked={checkedValue ? checkedValue === button.value : undefined}
+                                defaultChecked={button.defaultChecked}
+                                disabled={button.disabled}
+                                onChange={handleChange}
+                            />
+                            <span className="radioInput" />
+                            {button.label}
+                        </StyledLabel>
+                        {button.content && (
+                            <ContentWrapper
+                                data-testid="content-wrapper"
+                                $maxHeight={button.content.maxHeight}
+                                $isExpanded={isExpanded}
+                                $transitionDuration={transitionDuration}
+                                onTransitionEnd={handleTransitionEnd}
+                            >
+                                <InnerContent
+                                    $isExpanded={isExpanded}
+                                    $transitionStarted={transitionStarted}
+                                >
+                                    {button.content.element}
+                                </InnerContent>
+                            </ContentWrapper>
+                        )}
+                    </RadioWrapper>
+                );
+            })}
         </StyledFieldset>
     );
 };

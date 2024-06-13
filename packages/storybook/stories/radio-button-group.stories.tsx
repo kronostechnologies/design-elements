@@ -49,6 +49,7 @@ export const WithContent: Story = () => (
         buttons={[
             { label: 'With content', value: 'with', content: { element: <p>This is some content</p> } },
             { label: 'Without content', value: 'without' },
+            { label: 'This options has form content', value: 'form', content: { element: <input type="text" /> } },
         ]}
     />
 );
