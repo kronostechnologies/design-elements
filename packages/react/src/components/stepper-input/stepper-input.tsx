@@ -4,7 +4,7 @@ import {
     InputHTMLAttributes,
     RefObject,
     useMemo,
-    useRef, useState,
+    useRef,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
@@ -94,12 +94,15 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
-    const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
+    const intervalId = useRef<NodeJS.Timeout>();
+    const timeoutId = useRef<NodeJS.Timeout>();
 
     function handleIncrement(): void {
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepUp();
-        setIntervalId(setInterval(() => inputRef.current?.stepUp(), 200));
+        timeoutId.current = setTimeout(() => {
+            intervalId.current = setInterval(() => inputRef.current?.stepUp(), 5);
+        }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
@@ -110,7 +113,9 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     function handleDecrement(): void {
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepDown();
-        setIntervalId(setInterval(() => inputRef.current?.stepDown(), 200));
+        timeoutId.current = setTimeout(() => {
+            intervalId.current = setInterval(() => inputRef.current?.stepDown(), 5);
+        }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
@@ -119,9 +124,13 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     }
 
     function handleStop(): void {
-        if (intervalId) {
-            clearInterval(intervalId);
-            setIntervalId(undefined);
+        if (timeoutId.current) {
+            clearTimeout(timeoutId.current);
+            timeoutId.current = undefined;
+        }
+        if (intervalId.current) {
+            clearInterval(intervalId.current);
+            intervalId.current = undefined;
         }
     }
 
