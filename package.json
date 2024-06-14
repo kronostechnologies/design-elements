@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "g:stylelint": "stylelint --config .stylelintrc.js --custom-formatter @equisoft/stylelint-config/formatter",
-    "changelog": "conventional-changelog --config ./.conventional-changelog.config.js -i CHANGELOG.md -s -r 1",
+    "changelog": "conventional-changelog --config ./.conventional-changelog.config.mjs -i CHANGELOG.md -s -r 1",
     "checkLicense": "yarn licenses audit --config=licenses.config.js --output-file=./build/license/license.xml --summary"
   },
   "devDependencies": {
