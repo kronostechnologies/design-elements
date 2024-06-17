@@ -1,4 +1,4 @@
-import {
+import React, {
     ChangeEvent,
     DetailedHTMLProps,
     InputHTMLAttributes,
@@ -97,7 +97,8 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const intervalId = useRef<NodeJS.Timeout>();
     const timeoutId = useRef<NodeJS.Timeout>();
 
-    function handleIncrement(): void {
+    function handleIncrement(event: React.MouseEvent<HTMLButtonElement>): void {
+        if (event.button !== 0) return;
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepUp();
         timeoutId.current = setTimeout(() => {
@@ -110,7 +111,8 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         }
     }
 
-    function handleDecrement(): void {
+    function handleDecrement(event: React.MouseEvent<HTMLButtonElement>): void {
+        if (event.button !== 0) return;
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepDown();
         timeoutId.current = setTimeout(() => {

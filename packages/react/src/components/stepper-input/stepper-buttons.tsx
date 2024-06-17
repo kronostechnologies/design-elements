@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useTranslation } from '../../i18n/use-translation';
@@ -65,8 +65,8 @@ const DecrementButton = styled.button`
 
 interface StepperButtonsProps {
     disabled?: boolean;
-    onIncrement?(): void;
-    onDecrement?(): void;
+    onIncrement?(event: React.MouseEvent<HTMLButtonElement>): void;
+    onDecrement?(event: React.MouseEvent<HTMLButtonElement>): void;
     onStop?(): void;
 }
 
