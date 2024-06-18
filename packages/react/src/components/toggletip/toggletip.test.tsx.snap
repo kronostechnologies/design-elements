@@ -123,7 +123,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #1B1C1E;
@@ -141,9 +141,9 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   justify-content: center;
   line-height: 1.25rem;
   margin: 0;
-  max-width: 327px;
+  max-width: 22rem;
   min-height: 2rem;
-  padding: var(--spacing-1x) var(--spacing-1halfx);
+  padding: var(--spacing-2x) var(--spacing-3x);
   -webkit-transition: opacity 300ms;
   transition: opacity 300ms;
   z-index: 1000;
@@ -159,14 +159,15 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="bottom"] > .c3::before {
   border-color: transparent transparent #878F9A transparent;
-  border-width: 0 0.5rem 0.4rem;
+  border-width: 0 0.5rem 0.6rem;
   position: absolute;
-  top: -1px;
+  top: -0.25rem;
 }
 
 .c2[data-popper-placement*="bottom"] > .c3::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem;
+  border-width: 0 0.5rem 0.6rem;
+  top: -0.15rem;
 }
 
 .c2[data-popper-placement*="top"] > .c3 {
@@ -179,14 +180,16 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="top"] > .c3::before {
   border-color: #878F9A transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.45rem 0;
   position: absolute;
-  top: 1px;
+  top: 0.05rem;
 }
 
 .c2[data-popper-placement*="top"] > .c3::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: -0.02rem;
 }
 
 .c2[data-popper-placement*="right"] > .c3 {
@@ -198,14 +201,15 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="right"] > .c3::before {
   border-color: transparent #878F9A transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.15rem;
+  position: absolute;
 }
 
 .c2[data-popper-placement*="right"] > .c3::after {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-  left: 0.375rem;
-  top: 0;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.23rem;
 }
 
 .c2[data-popper-placement*="left"] > .c3 {
@@ -217,14 +221,15 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="left"] > .c3::before {
   border-color: transparent transparent transparent #878F9A;
-  border-width: 0.5rem 0 0.5rem 0.4rem;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.33rem;
+  position: absolute;
 }
 
 .c2[data-popper-placement*="left"] > .c3::after {
   border-color: transparent transparent transparent #FFFFFF;
-  border-width: 0.5rem 0 0.5rem 0.4rem;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.25rem;
-  top: 0;
 }
 
 <Toggletip
@@ -239,6 +244,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
     inverted={false}
     label="info"
     onClick={[Function]}
+    size="medium"
     type="button"
   >
     <Styled(AbstractButton)
@@ -251,6 +257,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       inverted={false}
       isMobile={false}
       onClick={[Function]}
+      size="medium"
       type="button"
     >
       <AbstractButton
@@ -264,6 +271,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
         inverted={false}
         isMobile={false}
         onClick={[Function]}
+        size="medium"
         type="button"
       >
         <styled.button
@@ -277,6 +285,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
           inverted={false}
           isMobile={false}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -286,6 +295,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -312,6 +322,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     id="uuid1"
     isMobile={false}
+    maxWidth="22rem"
     style={
       {
         "left": "0",
@@ -462,6 +473,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
     inverted={false}
     label="info"
     onClick={[Function]}
+    size="medium"
     type="button"
   >
     <Styled(AbstractButton)
@@ -474,6 +486,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
       inverted={false}
       isMobile={false}
       onClick={[Function]}
+      size="medium"
       type="button"
     >
       <AbstractButton
@@ -487,6 +500,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
         inverted={false}
         isMobile={false}
         onClick={[Function]}
+        size="medium"
         type="button"
       >
         <styled.button
@@ -500,6 +514,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
           inverted={false}
           isMobile={false}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -509,6 +524,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -656,7 +672,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #1B1C1E;
@@ -674,7 +690,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   justify-content: center;
   line-height: 1.5rem;
   margin: 0;
-  max-width: 327px;
+  max-width: 22rem;
   min-height: 4.5rem;
   padding: var(--spacing-3x);
   -webkit-transition: opacity 300ms;
@@ -692,14 +708,15 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="bottom"] > .c3::before {
   border-color: transparent transparent #878F9A transparent;
-  border-width: 0 0.5rem 0.4rem;
+  border-width: 0 0.5rem 0.6rem;
   position: absolute;
-  top: -1px;
+  top: -0.25rem;
 }
 
 .c2[data-popper-placement*="bottom"] > .c3::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem;
+  border-width: 0 0.5rem 0.6rem;
+  top: -0.15rem;
 }
 
 .c2[data-popper-placement*="top"] > .c3 {
@@ -712,14 +729,16 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="top"] > .c3::before {
   border-color: #878F9A transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.45rem 0;
   position: absolute;
-  top: 1px;
+  top: 0.05rem;
 }
 
 .c2[data-popper-placement*="top"] > .c3::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: -0.02rem;
 }
 
 .c2[data-popper-placement*="right"] > .c3 {
@@ -731,14 +750,15 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="right"] > .c3::before {
   border-color: transparent #878F9A transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.15rem;
+  position: absolute;
 }
 
 .c2[data-popper-placement*="right"] > .c3::after {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-  left: 0.375rem;
-  top: 0;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.23rem;
 }
 
 .c2[data-popper-placement*="left"] > .c3 {
@@ -750,14 +770,15 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c2[data-popper-placement*="left"] > .c3::before {
   border-color: transparent transparent transparent #878F9A;
-  border-width: 0.5rem 0 0.5rem 0.4rem;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.33rem;
+  position: absolute;
 }
 
 .c2[data-popper-placement*="left"] > .c3::after {
   border-color: transparent transparent transparent #FFFFFF;
-  border-width: 0.5rem 0 0.5rem 0.4rem;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.25rem;
-  top: 0;
 }
 
 <Toggletip
@@ -772,6 +793,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
     inverted={false}
     label="info"
     onClick={[Function]}
+    size="medium"
     type="button"
   >
     <Styled(AbstractButton)
@@ -784,6 +806,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       inverted={false}
       isMobile={true}
       onClick={[Function]}
+      size="medium"
       type="button"
     >
       <AbstractButton
@@ -797,6 +820,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
         inverted={false}
         isMobile={true}
         onClick={[Function]}
+        size="medium"
         type="button"
       >
         <styled.button
@@ -810,6 +834,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
           inverted={false}
           isMobile={true}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -819,6 +844,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -845,6 +871,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     id="uuid1"
     isMobile={true}
+    maxWidth="22rem"
     style={
       {
         "left": "0",
@@ -995,6 +1022,7 @@ exports[`Toggletip Has mobile styles 1`] = `
     inverted={false}
     label="info"
     onClick={[Function]}
+    size="medium"
     type="button"
   >
     <Styled(AbstractButton)
@@ -1007,6 +1035,7 @@ exports[`Toggletip Has mobile styles 1`] = `
       inverted={false}
       isMobile={true}
       onClick={[Function]}
+      size="medium"
       type="button"
     >
       <AbstractButton
@@ -1020,6 +1049,7 @@ exports[`Toggletip Has mobile styles 1`] = `
         inverted={false}
         isMobile={true}
         onClick={[Function]}
+        size="medium"
         type="button"
       >
         <styled.button
@@ -1033,6 +1063,7 @@ exports[`Toggletip Has mobile styles 1`] = `
           inverted={false}
           isMobile={true}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -1042,6 +1073,7 @@ exports[`Toggletip Has mobile styles 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
