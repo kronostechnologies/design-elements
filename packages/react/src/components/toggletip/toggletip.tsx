@@ -10,7 +10,20 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { IconButton } from '../buttons/icon-button';
 import { IconName } from '../icon/icon';
 
-type Size = 'small' | 'medium';
+type ButtonSize = 'small' | 'medium';
+type MaxWidth = 'small' | 'medium' | 'large';
+
+const getToggletipMaxWidthStyles = ({ maxWidth }: { maxWidth?: MaxWidth }): string => {
+    switch (maxWidth) {
+        case 'small':
+            return '18rem';
+        case 'medium':
+        default:
+            return '22rem';
+        case 'large':
+            return '26rem';
+    }
+};
 
 const ToggletipArrow = styled.div`
     height: 1rem;
@@ -37,7 +50,7 @@ const ToggletipArrow = styled.div`
     }
 `;
 
-const ToggletipContainer = styled.div<{ isMobile?: boolean; maxWidth?: '18rem' | '22rem' | '26rem' }>`
+const ToggletipContainer = styled.div<{ isMobile?: boolean; maxWidth?: MaxWidth }>`
     background-color: ${({ theme }) => theme.component['toggletip-popper-container-background-color']};
     border: 1px solid ${({ theme }) => theme.component['toggletip-popper-container-border-color']};
     border-radius: var(--border-radius-2x);
@@ -50,7 +63,7 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean; maxWidth?: '18rem' |
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
     margin: 0;
-    max-width: ${({ maxWidth }) => maxWidth || '22rem'};
+    max-width: ${getToggletipMaxWidthStyles};
     min-height: ${({ isMobile }) => (isMobile ? '4.5rem' : '2rem')};
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-2x) var(--spacing-3x)')};
     transition: opacity 300ms;
@@ -156,8 +169,8 @@ export interface ToggletipProps {
     desktopPlacement?: ToggletipPlacement;
     disabled?: boolean;
     invertedIcon?: boolean;
-    size?: Size;
-    maxWidth?: '18rem' | '22rem' | '26rem';
+    buttonSize?: ButtonSize;
+    maxWidth?: MaxWidth;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -178,8 +191,8 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
     disabled,
     desktopPlacement = 'right',
     invertedIcon = false,
-    size = 'medium',
-    maxWidth = '22rem',
+    buttonSize = 'medium',
+    maxWidth = 'medium',
 }) => {
     const { isMobile } = useDeviceContext();
     const [isVisible, setVisible] = useState(defaultOpen);
@@ -214,7 +227,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
                 onClick={() => setVisible(!isVisible)}
                 ref={setTriggerRef}
                 inverted={invertedIcon}
-                size={size}
+                size={buttonSize}
             />
 
             {isVisible && (

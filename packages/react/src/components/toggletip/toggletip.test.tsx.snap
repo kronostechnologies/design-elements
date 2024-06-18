@@ -322,7 +322,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     id="uuid1"
     isMobile={false}
-    maxWidth="22rem"
+    maxWidth="medium"
     style={
       {
         "left": "0",
@@ -871,7 +871,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     id="uuid1"
     isMobile={true}
-    maxWidth="22rem"
+    maxWidth="medium"
     style={
       {
         "left": "0",

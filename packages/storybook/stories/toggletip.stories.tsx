@@ -5,7 +5,7 @@ const meta: Meta<typeof Toggletip> = {
     title: 'Components/Toggletip',
     component: Toggletip,
     argTypes: {
-        size: {
+        buttonSize: {
             control: {
                 type: 'select',
                 options: ['small', 'medium'],
@@ -13,7 +13,7 @@ const meta: Meta<typeof Toggletip> = {
         },
         maxWidth: {
             control: 'select',
-            options: ['18rem', '22rem', '26rem'],
+            options: ['small', 'medium', 'large'],
         },
     },
 };
@@ -25,7 +25,8 @@ type Story = StoryObj<typeof Toggletip>;
 export const Default: Story = {
     args: {
         defaultOpen: true,
-        size: 'medium',
+        buttonSize: 'medium',
+        maxWidth: 'medium',
     },
     render: (args) => (
         <Toggletip {...args /* eslint-disable-line react/jsx-props-no-spreading */}>
