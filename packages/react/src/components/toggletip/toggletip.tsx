@@ -17,11 +17,11 @@ const getToggletipMaxWidthStyles = ({ maxWidth }: { maxWidth?: MaxWidth }): stri
     switch (maxWidth) {
         case 'small':
             return '18rem';
+        case 'large':
+            return '26rem';
         case 'medium':
         default:
             return '22rem';
-        case 'large':
-            return '26rem';
     }
 };
 
