@@ -102,7 +102,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepUp();
         timeoutId.current = setTimeout(() => {
-            intervalId.current = setInterval(() => inputRef.current?.stepUp(), 5);
+            intervalId.current = setInterval(() => inputRef.current?.stepUp(), 50);
         }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
@@ -116,7 +116,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepDown();
         timeoutId.current = setTimeout(() => {
-            intervalId.current = setInterval(() => inputRef.current?.stepDown(), 5);
+            intervalId.current = setInterval(() => inputRef.current?.stepDown(), 50);
         }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
