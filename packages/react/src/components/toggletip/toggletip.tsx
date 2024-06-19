@@ -10,7 +10,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { IconButton } from '../buttons/icon-button';
 import { IconName } from '../icon/icon';
 
-type ButtonSize = 'small' | 'medium';
+type Size = 'small' | 'medium';
 type MaxWidth = 'small' | 'medium' | 'large';
 
 const getToggletipMaxWidthStyles = ({ maxWidth }: { maxWidth?: MaxWidth }): string => {
@@ -169,7 +169,7 @@ export interface ToggletipProps {
     desktopPlacement?: ToggletipPlacement;
     disabled?: boolean;
     invertedIcon?: boolean;
-    buttonSize?: ButtonSize;
+    size?: Size;
     maxWidth?: MaxWidth;
 }
 
@@ -191,7 +191,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
     disabled,
     desktopPlacement = 'right',
     invertedIcon = false,
-    buttonSize = 'medium',
+    size = 'medium',
     maxWidth = 'medium',
 }) => {
     const { isMobile } = useDeviceContext();
@@ -227,7 +227,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
                 onClick={() => setVisible(!isVisible)}
                 ref={setTriggerRef}
                 inverted={invertedIcon}
-                size={buttonSize}
+                size={size}
             />
 
             {isVisible && (
