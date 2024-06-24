@@ -4436,11 +4436,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^20.12.7":
-  version: 20.14.4
-  resolution: "@types/node@npm:20.14.4"
+  version: 20.14.8
+  resolution: "@types/node@npm:20.14.8"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/2244be2e66e19377a491bfc279b52bc3f598c2e31d683d2388f4a16dbf6e81ad0032fde01770c4babcc73a31609e23fa0e5864dffc5830e9f457db250bd08b33
+  checksum: 10c0/06d4643fa3b179b41fe19f9c75c240278ca1f7a313b3b837bc36ea119499c7ad77f06bbe72694ac04aa91ec77fe747baa09b889f4c435450c1724a26bd55f160
   languageName: node
   linkType: hard
 
@@ -4454,11 +4454,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^18.0.0":
-  version: 18.19.36
-  resolution: "@types/node@npm:18.19.36"
+  version: 18.19.39
+  resolution: "@types/node@npm:18.19.39"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/ae46848ea54e7672d556ed616f104dfb2500f6e5cca9fb8107897f74ef3d4fef0e9a4cc0ebc4c5d3a04fca775f917f829af7a8718f4aafc9a3532999bc130082
+  checksum: 10c0/a9eb33bc093beba6bd5d4e839de7d1d1f496cd7e741c2f6c7161318dba0f37227bb25d8306907194992488d6c59a7363a419d72298549483d33402227a2d435b
   languageName: node
   linkType: hard
 
@@ -13532,15 +13532,15 @@ __metadata:
   linkType: hard
 
 "react-shadow@npm:^20.0.0":
-  version: 20.4.0
-  resolution: "react-shadow@npm:20.4.0"
+  version: 20.5.0
+  resolution: "react-shadow@npm:20.5.0"
   dependencies:
     humps: "npm:^2.0.1"
   peerDependencies:
     prop-types: ^15.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/953c4c9bc7c198ff9517bcb149a8ea3f69c25a0301d58f9970593456ee2fd32ab6aa1be11bd1cc6e78f128264b363ca817ac9e849d083ecc725cd4aeed4ba08d
+  checksum: 10c0/662c98518b2ba5a76534f8fdfcbb44414535cd92f4cb2f1e76142672ac1f29ddc0f730d2bf846972aeb1205e4c7ff8c978832d7cecce8faba82b7a60e2844d45
   languageName: node
   linkType: hard
 
@@ -16258,8 +16258,8 @@ __metadata:
   linkType: hard
 
 "webpack@npm:^5":
-  version: 5.92.0
-  resolution: "webpack@npm:5.92.0"
+  version: 5.92.1
+  resolution: "webpack@npm:5.92.1"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.3"
     "@types/estree": "npm:^1.0.5"
@@ -16290,7 +16290,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/588de5ce6f1e8fb4fec7300c2c36a8fc844fe71f4c871b06aca1a68553bea8f6479697615abb53cbbeb2e3859fc1b982f2f48ff23dd0e60024f69bb3d46d0712
+  checksum: 10c0/43ca7c76b9c1005bd85f05303d048f918bac10276a209e3ef5e359353fbfef4e5fcee876265e6bc305bf5ef326576e02df63bc7e5af878fb7f06d7e1795b811a
   languageName: node
   linkType: hard
 
