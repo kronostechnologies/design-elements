@@ -1,8 +1,8 @@
-import { GlobalHeader } from '@equisoft/design-elements-react';
 import { FunctionComponent, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router';
 import styled from 'styled-components';
+import { Header } from './Header.component';
 import { Menu } from './Menu.component';
 import { UnexpectedErrorBoundary } from './UnexpectedErrorBoundary.component';
 
@@ -22,9 +22,13 @@ const HeaderArea = styled.div`
 const SidebarArea = styled.div`
     grid-area: sidebar;
 `;
-const ContentArea = styled.div`
+const ContentArea = styled.main`
     grid-area: content;
-    margin: 0.5rem;
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
 `;
 
 const PageLoading: FunctionComponent = () => {
@@ -38,7 +42,7 @@ const PageLoading: FunctionComponent = () => {
 export const AppLayout: FunctionComponent = () => (
     <Screen>
         <HeaderArea>
-            <GlobalHeader>&nbsp;</GlobalHeader>
+            <Header />
         </HeaderArea>
 
         <SidebarArea>
