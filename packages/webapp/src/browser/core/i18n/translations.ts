@@ -20,6 +20,7 @@ export const translations = {
             cancel: 'Cancel',
             deleteUser: 'Delete "{{user}}"',
             deleteUserMessage: 'Are you sure you want to delete this user?',
+            deleteUserSuccess: 'User "{{user}}" has been deleted!',
         },
     },
     fr: {
@@ -43,6 +44,7 @@ export const translations = {
             cancel: 'Annuler',
             deleteUser: 'Supprimer "{{user}}"',
             deleteUserMessage: 'Êtes-vous sûr de vouloir supprimer cet utilisateur?',
+            deleteUserSuccess: 'L\'utilisateur "{{user}}" a été supprimé!',
         },
     },
 };

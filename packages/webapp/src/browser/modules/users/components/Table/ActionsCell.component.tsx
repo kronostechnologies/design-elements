@@ -1,4 +1,4 @@
-import { IconButton, ModalDialog, useModal } from '@equisoft/design-elements-react';
+import { IconButton, ModalDialog, useModal, useToast } from '@equisoft/design-elements-react';
 import { FunctionComponent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
@@ -23,6 +23,7 @@ export const ActionsCell: FunctionComponent<ActionCellsProps> = (
     const user = users.find((u) => u.id === id);
     const dispatch = useUsersActions();
     const { openModal, closeModal, isModalOpen } = useModal();
+    const { showToast } = useToast();
 
     const removeUserConfirm = useCallback(() => {
         dispatch({
@@ -30,7 +31,8 @@ export const ActionsCell: FunctionComponent<ActionCellsProps> = (
             type: ActionTypes.DELETE_USER,
         });
         closeModal();
-    }, [closeModal, dispatch, id]);
+        showToast('success', t('deleteUserSuccess', { user: user?.name }));
+    }, [closeModal, dispatch, id, showToast, t, user?.name]);
 
     const removeUser = useCallback(() => {
         openModal();
