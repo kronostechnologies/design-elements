@@ -15,10 +15,10 @@ import { ToolBar as TableToolBar } from './ToolBar.component';
 const TableContainer = styled.div`
     align-items: flex-start;
     align-self: stretch;
-    background: #FFFFFF;
-    border: 1px solid #F1F2F2;
+    background: #ffffff;
+    border: 1px solid #f1f2f2;
     border-radius: 8px;
-    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
