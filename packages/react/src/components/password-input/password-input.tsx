@@ -12,7 +12,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FormFieldContainer } from '../form/form-container/form-field-container';
 import { Input } from '../text-input/text-input';
 import { Tooltip } from '../tooltip/tooltip';
 
@@ -78,9 +78,9 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     }, [onChange]);
 
     return (
-        <FieldContainer
-            fieldId={id}
-            valid={isValid}
+        <FormFieldContainer
+            id={id}
+            invalid={!isValid}
             label={label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}
@@ -122,6 +122,6 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     </Tooltip>
                 </ShowPasswordButton>
             </PasswordInputContainer>
-        </FieldContainer>
+        </FormFieldContainer>
     );
 };
