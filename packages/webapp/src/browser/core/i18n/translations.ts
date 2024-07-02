@@ -4,7 +4,7 @@ export const translations = {
             helloWorld: 'Hello World!',
         },
         nav: {
-            changeLanguageFor: 'Change language to {{nextLanguage}} ({{lng}})',
+            changeLanguageTo: 'Change language to {{nextLanguage}} ({{lng}})',
             changeLanguage: 'Change language',
             Home: 'Home',
             Users: 'Users',
@@ -18,7 +18,7 @@ export const translations = {
             helloWorld: 'Bonjour le monde!',
         },
         nav: {
-            changeLanguageFor: 'Changer la langue pour {{nextLanguage}} ({{lng}})',
+            changeLanguageTo: 'Changer la langue pour {{nextLanguage}} ({{lng}})',
             changeLanguage: 'Changer la langue',
             Home: 'Accueil',
             Users: 'Utilisateurs',
