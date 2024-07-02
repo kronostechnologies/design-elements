@@ -7,12 +7,12 @@ import { ActionType, UserView } from '../../types';
 import { useUsersActions } from '../../UsersProvider.component';
 
 const ToolBarContainer = styled.div`
+    align-items: center;
+    align-self: stretch;
     border-radius: 8px;
     display: flex;
-    padding: 8px 8px;
-    align-items: center;
     justify-content: space-between;
-    align-self: stretch;
+    padding: 8px 8px;
 `;
 
 const StyledSearchBar = styled(SearchContextual)`

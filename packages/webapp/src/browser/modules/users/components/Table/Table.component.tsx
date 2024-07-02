@@ -13,17 +13,17 @@ import { NameCell } from './NameCell.component';
 import { ToolBar as TableToolBar } from './ToolBar.component';
 
 const TableContainer = styled.div`
-    display: flex;
-    padding: 16px 32px;
-    flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    flex-shrink: 0;
     align-self: stretch;
-    border-radius: 8px;
-    border: 1px solid #F1F2F2;
     background: #FFFFFF;
+    border: 1px solid #F1F2F2;
+    border-radius: 8px;
     box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 8px;
+    padding: 16px 32px;
 
     .action-column {
         box-sizing: border-box;

@@ -24,7 +24,7 @@ export function generateUsersData(dataNumber: number = 35): TableData<TableDataT
     const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'black', 'white', 'gray', 'brown'];
 
     return Array.from(Array(dataNumber).keys()).map(() => {
-        const id = `id_${Date.now().toString(36)}_${Math.random().toString(36).substr(2, 5)}`
+        const id = `id_${Date.now().toString(36)}_${Math.random().toString(36).substr(2, 5)}`;
         const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
         const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
         const name = `${firstName} ${lastName}`;

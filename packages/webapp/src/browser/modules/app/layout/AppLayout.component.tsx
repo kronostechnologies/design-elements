@@ -19,16 +19,18 @@ const Screen = styled.div`
 const HeaderArea = styled.div`
     grid-area: header;
 `;
+
 const SidebarArea = styled.div`
     grid-area: sidebar;
 `;
+
 const ContentArea = styled.main`
-    grid-area: content;
-    display: flex;
-    padding: 32px;
-    flex-direction: column;
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
+    grid-area: content;
+    padding: 32px;
 `;
 
 const PageLoading: FunctionComponent = () => {
