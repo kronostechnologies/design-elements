@@ -46,7 +46,7 @@ exports[`Radio button matches snapshot 1`] = `
   width: var(--size-half);
 }
 
-.c1:hover [type="radio"] {
+.c1:hover [type='radio'] {
   border: 1px solid #000000;
 }
 

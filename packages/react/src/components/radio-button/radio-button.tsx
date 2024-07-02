@@ -34,7 +34,7 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
         }
     }
         
-    &:hover [type="radio"] {
+    &:hover [type='radio'] {
         border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
     }
 `;
