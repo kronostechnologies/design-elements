@@ -14,7 +14,7 @@ export const HomePage: FunctionComponent = () => {
                 {t('helloWorld')}
             </SectionalBanner>
             <Button buttonType="primary" onClick={rotateLanguage}>
-                {t('nav:changeLanguage', { lng: language, nextLanguage })}
+                {t('nav:changeLanguageFor', { lng: language, nextLanguage })}
             </Button>
         </>
     );
