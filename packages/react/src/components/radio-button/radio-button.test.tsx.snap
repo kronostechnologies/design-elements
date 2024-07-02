@@ -46,7 +46,7 @@ exports[`Radio button matches snapshot 1`] = `
   width: var(--size-half);
 }
 
-.c1:hover {
+.c1:hover [type="radio"] {
   border: 1px solid #000000;
 }
 
@@ -91,7 +91,6 @@ exports[`Radio button matches snapshot 1`] = `
       <styled.label
         className="undefined_label"
         data-testid="radiobutton-uuid1_label"
-        hasLabel={true}
         htmlFor="uuid1"
       >
         <label
