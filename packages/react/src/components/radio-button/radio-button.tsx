@@ -34,14 +34,13 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
         }
     }
         
-    &:hover {
+    &:hover [type="radio"] {
         border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
     }
 `;
 
 interface StyledLabelProps {
     disabled?: boolean;
-    hasLabel: boolean;
 }
 
 const StyledLabel = styled.label<StyledLabelProps>`
@@ -110,21 +109,22 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
                 aria-label={ariaLabel}
                 aria-labelledby={ariaLabelledBy?.join(' ')}
             />
-            {label && (
-            <StyledLabel
-                data-testid={`radiobutton-${inputId}_label`}
-                hasLabel={!!label}
-                htmlFor={inputId}
-                className={`${className}_label`}
-                disabled={disabled}
-            >
-                {
-                        visuallyHidden
-                            ? <VisuallyHidden>{inputLabel}</VisuallyHidden>
-                            : inputLabel
-                    }
-            </StyledLabel>
-            )}
+            {
+                label && (
+                    <StyledLabel
+                        data-testid={`radiobutton-${inputId}_label`}
+                        htmlFor={inputId}
+                        className={`${className}_label`}
+                        disabled={disabled}
+                    >
+                        {
+                            visuallyHidden
+                                ? <VisuallyHidden>{inputLabel}</VisuallyHidden>
+                                : inputLabel
+                        }
+                    </StyledLabel>
+                )
+            }
         </StyledContainer>
     );
 };

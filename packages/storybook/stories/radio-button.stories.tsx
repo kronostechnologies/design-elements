@@ -1,5 +1,5 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {RadioButton} from "@equisoft/design-elements-react";
+import { Meta, StoryObj } from '@storybook/react';
+import { RadioButton } from '@equisoft/design-elements-react';
 
 const meta: Meta<typeof RadioButton> = {
     title: 'Components/Radio Button',
