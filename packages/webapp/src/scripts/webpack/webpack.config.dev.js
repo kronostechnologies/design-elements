@@ -13,5 +13,6 @@ module.exports = merge(common('dev'), {
             directory: 'public',
             watch: true,
         },
+        historyApiFallback: true,
     },
 });
