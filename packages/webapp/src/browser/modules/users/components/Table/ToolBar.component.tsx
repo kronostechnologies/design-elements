@@ -2,7 +2,8 @@ import { Button, SearchContextual } from '@equisoft/design-elements-react';
 import { FunctionComponent, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { ActionTypes } from '../../types';
+import { useNavigate } from 'react-router';
+import { ActionType, UserView } from '../../types';
 import { useUsersActions } from '../../UsersProvider.component';
 
 const ToolBarContainer = styled.div`
@@ -21,13 +22,14 @@ const StyledSearchBar = styled(SearchContextual)`
 export const ToolBar: FunctionComponent = () => {
     const { t } = useTranslation('users');
     const dispatch = useUsersActions();
+    const navigate = useNavigate();
     const [currentValue, setCurrentValue] = useState('');
 
     const handleSearchChange = (search: string): void => {
         setCurrentValue(search);
         dispatch({
             payload: search,
-            type: ActionTypes.SEARCH_USER,
+            type: ActionType.SEARCH_USER,
         });
     };
 
@@ -35,15 +37,13 @@ export const ToolBar: FunctionComponent = () => {
         setCurrentValue('');
         dispatch({
             payload: '',
-            type: ActionTypes.SEARCH_USER,
+            type: ActionType.SEARCH_USER,
         });
     };
 
     const handleCreateUser = useCallback(() => {
-        dispatch({
-            type: ActionTypes.CREATE_USER,
-        });
-    }, [dispatch]);
+        navigate(`/user/${UserView.CREATE}`);
+    }, [navigate]);
 
     return (
         <ToolBarContainer>

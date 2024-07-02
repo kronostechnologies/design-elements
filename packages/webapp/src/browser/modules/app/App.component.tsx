@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import { Configuration, ConfigurationProvider, createRouter, initializeConfiguration } from '../../core';
+import { UsersProvider } from '../users/UsersProvider.component';
 import { AppLayout, AppLoader, UnexpectedErrorBoundary } from './layout';
 import { ROUTER_ROUTES } from './routes';
 
@@ -21,6 +22,14 @@ const router = createRouter([
     basename: appConfig.publicPath,
 });
 
+export const AppProviders: FunctionComponent = (
+    { children },
+) => (
+    <UsersProvider>
+        {children}
+    </UsersProvider>
+);
+
 export const App: FunctionComponent<AppProps> = ({
     configuration,
 }) => {
@@ -30,9 +39,11 @@ export const App: FunctionComponent<AppProps> = ({
         <ConfigurationProvider configuration={configuration}>
             <UnexpectedErrorBoundary>
                 <DesignSystem language={i18n.language}>
-                    <AppLoader>
-                        <RouterProvider router={router} />
-                    </AppLoader>
+                    <AppProviders>
+                        <AppLoader>
+                            <RouterProvider router={router} />
+                        </AppLoader>
+                    </AppProviders>
                 </DesignSystem>
             </UnexpectedErrorBoundary>
         </ConfigurationProvider>

@@ -1,9 +1,10 @@
 import { IconButton, ModalDialog, useModal, useToast } from '@equisoft/design-elements-react';
 import { FunctionComponent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import { ActionTypes, TableDataType } from '../../types';
-import { useUsersActions, useUsersContext } from '../../UsersProvider.component';
+import { ActionType, TableDataType, UserView } from '../../types';
+import { useUserContext, useUsersActions } from '../../UsersProvider.component';
 
 const ActionCellContainer = styled.div`
     display: flex;
@@ -19,8 +20,8 @@ export const ActionsCell: FunctionComponent<ActionCellsProps> = (
     { id },
 ) => {
     const { t } = useTranslation('users');
-    const { users } = useUsersContext();
-    const user = users.find((u) => u.id === id);
+    const user = useUserContext(id);
+    const navigate = useNavigate();
     const dispatch = useUsersActions();
     const { openModal, closeModal, isModalOpen } = useModal();
     const { showToast } = useToast();
@@ -28,7 +29,7 @@ export const ActionsCell: FunctionComponent<ActionCellsProps> = (
     const removeUserConfirm = useCallback(() => {
         dispatch({
             payload: id,
-            type: ActionTypes.DELETE_USER,
+            type: ActionType.DELETE_USER,
         });
         closeModal();
         showToast('success', t('deleteUserSuccess', { user: user?.name }));
@@ -39,8 +40,8 @@ export const ActionsCell: FunctionComponent<ActionCellsProps> = (
     }, [openModal]);
 
     const editUser = useCallback(() => {
-        console.log('Edit user...');
-    }, []);
+        navigate(`/user/${UserView.EDIT}/${id}`);
+    }, [id, navigate]);
 
     return (
         <ActionCellContainer>

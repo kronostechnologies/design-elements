@@ -22,6 +22,11 @@ export const translations = {
             deleteUserMessage: 'Are you sure you want to delete this user?',
             deleteUserSuccess: 'User "{{user}}" has been deleted!',
         },
+        user: {
+            title: 'User information',
+            editTitle: 'Edit user',
+            createTitle: 'Create user',
+        },
     },
     fr: {
         core: {
@@ -45,6 +50,11 @@ export const translations = {
             deleteUser: 'Supprimer "{{user}}"',
             deleteUserMessage: 'Êtes-vous sûr de vouloir supprimer cet utilisateur?',
             deleteUserSuccess: 'L\'utilisateur "{{user}}" a été supprimé!',
+        },
+        user: {
+            title: 'Information sur l\'utilisateur',
+            editTitle: 'Modifier l\'utilisateur',
+            createTitle: 'Créer un utilisateur',
         },
     },
 };

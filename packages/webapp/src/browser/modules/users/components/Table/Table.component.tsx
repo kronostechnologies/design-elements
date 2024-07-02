@@ -9,6 +9,7 @@ import { TableDataType } from '../../types';
 import { useUsersContext } from '../../UsersProvider.component';
 import { ActionsCell } from './ActionsCell.component';
 import { Footer as TableFooter } from './Footer.component';
+import { NameCell } from './NameCell.component';
 import { ToolBar as TableToolBar } from './ToolBar.component';
 
 const TableContainer = styled.div`
@@ -46,25 +47,33 @@ export const Table: FunctionComponent = () => {
 
     const columns: TableColumn<TableDataType>[] = useMemo(() => [
         {
+            id: 'name',
             header: t('name'),
-            accessorKey: 'name',
+            accessorKey: 'id',
             className: 'data-column',
             sortable: true,
             sortDescFirst: false,
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => (
+                <NameCell id={props.cell.getValue() as TableDataType['id']} />
+            ),
         },
         {
+            id: 'email',
             header: t('email'),
             accessorKey: 'email',
             className: 'data-column',
             sortable: true,
         },
         {
+            id: 'phone',
             header: t('phone'),
             accessorKey: 'phone',
             className: 'data-column',
             sortable: true,
         },
         {
+            id: 'birthDate',
             header: '',
             accessorKey: 'id',
             className: 'action-column',
