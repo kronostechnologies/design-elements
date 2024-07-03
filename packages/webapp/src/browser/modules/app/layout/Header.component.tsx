@@ -36,7 +36,6 @@ export const Header: FC = () => {
 
     return (
         <GlobalHeader>
-            &nbsp;
             <Tooltip
                 desktopPlacement="bottom"
                 label={t('nav:changeLanguage')}
