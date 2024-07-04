@@ -88,6 +88,7 @@ export type AliasTokens =
     | 'color-background-brand-subtle'
     | 'color-background-brand'
     | 'color-background-brand-bold'
+    | 'color-background-indicator-disabled'
     | 'color-background-indicator-selected'
     | 'color-background-indicator-active'
     | 'color-border-brand'
@@ -288,6 +289,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-background-brand-subtle': 'color-brand-20',
     'color-background-brand': 'color-brand-50',
     'color-background-brand-bold': 'color-brand-80',
+    'color-background-indicator-disabled': 'color-neutral-30',
     'color-background-indicator-selected': 'color-brand-50',
     'color-background-indicator-active': 'color-brand-80',
     'color-border-brand': 'color-brand-70',
