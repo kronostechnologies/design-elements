@@ -11,6 +11,12 @@ export const translations = {
         },
         users: {
             title: 'Users list',
+            name: 'Name',
+            email: 'Email',
+            phone: 'Phone',
+        },
+        user: {
+            title: 'User information',
         },
     },
     fr: {
@@ -25,6 +31,12 @@ export const translations = {
         },
         users: {
             title: 'Liste d\'utilisateurs',
+            name: 'Nom',
+            email: 'Courriel',
+            phone: 'Téléphone',
+        },
+        user: {
+            title: 'Information sur l\'utilisateur',
         },
     },
 };
