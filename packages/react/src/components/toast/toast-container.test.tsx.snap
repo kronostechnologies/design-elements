@@ -229,6 +229,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
             inverted={true}
             isMobile={false}
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <AbstractButton
@@ -240,6 +241,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
               inverted={true}
               isMobile={false}
               onClick={[Function]}
+              size="medium"
               type="button"
             >
               <styled.button
@@ -251,6 +253,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                 inverted={true}
                 isMobile={false}
                 onClick={[Function]}
+                size="medium"
                 type="button"
               >
                 <button
@@ -258,6 +261,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -514,6 +518,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             inverted={true}
             isMobile={false}
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <AbstractButton
@@ -525,6 +530,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
               inverted={true}
               isMobile={false}
               onClick={[Function]}
+              size="medium"
               type="button"
             >
               <styled.button
@@ -536,6 +542,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                 inverted={true}
                 isMobile={false}
                 onClick={[Function]}
+                size="medium"
                 type="button"
               >
                 <button
@@ -543,6 +550,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -799,6 +807,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
             inverted={true}
             isMobile={false}
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <AbstractButton
@@ -810,6 +819,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
               inverted={true}
               isMobile={false}
               onClick={[Function]}
+              size="medium"
               type="button"
             >
               <styled.button
@@ -821,6 +831,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                 inverted={true}
                 isMobile={false}
                 onClick={[Function]}
+                size="medium"
                 type="button"
               >
                 <button
@@ -828,6 +839,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -1084,6 +1096,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             inverted={true}
             isMobile={false}
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <AbstractButton
@@ -1095,6 +1108,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
               inverted={true}
               isMobile={false}
               onClick={[Function]}
+              size="medium"
               type="button"
             >
               <styled.button
@@ -1106,6 +1120,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                 inverted={true}
                 isMobile={false}
                 onClick={[Function]}
+                size="medium"
                 type="button"
               >
                 <button
@@ -1113,6 +1128,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -1369,6 +1385,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             inverted={true}
             isMobile={false}
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <AbstractButton
@@ -1380,6 +1397,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
               inverted={true}
               isMobile={false}
               onClick={[Function]}
+              size="medium"
               type="button"
             >
               <styled.button
@@ -1391,6 +1409,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                 inverted={true}
                 isMobile={false}
                 onClick={[Function]}
+                size="medium"
                 type="button"
               >
                 <button
@@ -1398,6 +1417,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <Icon

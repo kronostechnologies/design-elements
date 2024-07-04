@@ -136,7 +136,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
@@ -399,7 +399,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;
@@ -663,7 +663,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   list-style-type: none;

@@ -34,6 +34,7 @@ export const WithConditionalContent: Story = {
         buttons: [
             { label: 'This options has content', value: 'with', content: { element: <p>This is some content</p> } },
             { label: 'This one does not', value: 'without' },
+            { label: 'This options has form content', value: 'form', content: { element: <input type="text" /> } },
         ],
     },
 };
@@ -46,6 +47,13 @@ export const WithTooltip: Story = {
         buttons,
     },
 };
+
+const controlledButtons = [
+    { label: 'Earth', value: 'earth' },
+    { label: 'Mars', value: 'mars' },
+    { label: 'Pluto', value: 'pluto', disabled: true },
+    { label: 'Saturn', value: 'saturn' },
+];
 
 export const Controlled: StoryFn = () => {
     const [value, setValue] = useState('mars');
@@ -62,7 +70,7 @@ export const Controlled: StoryFn = () => {
             <RadioButtonGroup
                 groupName="controlled-planets"
                 checkedValue={value}
-                buttons={buttons}
+                buttons={controlledButtons}
                 onChange={handleChange}
             />
         </>

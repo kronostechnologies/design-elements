@@ -38,8 +38,8 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -54,8 +54,8 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -78,7 +78,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-left: var(--spacing-1x);
@@ -136,8 +136,8 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -152,8 +152,8 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -176,7 +176,7 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   line-height: 2rem;
   margin-left: var(--spacing-1x);
@@ -234,8 +234,8 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -250,8 +250,8 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -275,7 +275,7 @@ exports[`ToggleSwitch has disabled styles 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-left: var(--spacing-1x);

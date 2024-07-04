@@ -37,7 +37,7 @@ exports[`Checkbox matches snapshot 1`] = `
 
 .c3:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c1 {

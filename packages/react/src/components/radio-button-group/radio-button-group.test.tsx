@@ -68,7 +68,7 @@ describe('Radio button', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'content-wrapper').prop('isExpanded')).toBe(true);
+        expect(getByTestId(wrapper, 'content-wrapper').prop('$isExpanded')).toBe(true);
     });
 
     test('should show content from radio button with checkedValue', () => {
@@ -86,7 +86,7 @@ describe('Radio button', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'content-wrapper').prop('isExpanded')).toBe(true);
+        expect(getByTestId(wrapper, 'content-wrapper').prop('$isExpanded')).toBe(true);
     });
 
     test('Matches the snapshot', () => {

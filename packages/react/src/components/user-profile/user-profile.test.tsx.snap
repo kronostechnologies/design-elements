@@ -117,10 +117,10 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -302,7 +302,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c10 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   line-height: 2rem;
@@ -318,7 +318,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -360,7 +360,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -402,7 +402,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,7 +444,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -483,11 +483,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c21:visited svg {
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c21 span {
-  color: #000000;
+  color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
@@ -809,10 +809,10 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -994,7 +994,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c10 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   line-height: 2rem;
@@ -1010,7 +1010,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1052,7 +1052,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1094,7 +1094,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1136,7 +1136,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1175,11 +1175,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c21:visited svg {
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c21 span {
-  color: #000000;
+  color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
@@ -1509,10 +1509,10 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c6 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -1684,7 +1684,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c9 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 1rem;
   line-height: 2.5rem;
@@ -1700,7 +1700,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1742,7 +1742,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1784,7 +1784,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1826,7 +1826,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1865,11 +1865,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c20:visited svg {
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c20 span {
-  color: #000000;
+  color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
@@ -2190,10 +2190,10 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -2375,7 +2375,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c10 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   line-height: 2rem;
@@ -2391,7 +2391,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2433,7 +2433,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2475,7 +2475,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2517,7 +2517,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2556,11 +2556,11 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c21:visited svg {
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c21 span {
-  color: #000000;
+  color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 

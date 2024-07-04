@@ -102,9 +102,9 @@ const CompletedStep = styled(StyledStep)`
 
 const ActiveStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.component['progress-tracker-step-active-border-color']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-current-border-color']};
         border-width: 0.25rem;
-        color: ${({ theme }) => theme.component['progress-tracker-step-active-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-current-text-color']};
         font-weight: var(--font-semi-bold);
         height: var(--size-2x);
         margin: -0.25rem auto 0;
@@ -118,7 +118,7 @@ const ActiveStep = styled(StyledStep)`
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-active-label-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-current-label-text-color']};
         font-weight: var(--font-semi-bold);
     }
 `;

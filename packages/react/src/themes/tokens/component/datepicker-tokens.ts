@@ -27,26 +27,26 @@ export type DatepickerTokenMap = {
 };
 
 export const defaultDatepickerTokens: DatepickerTokenMap = {
-    'datepicker-background-color': 'color-white',
-    'datepicker-border-color': 'color-neutral-15',
-    'datepicker-box-shadow-color': 'transparent-dark-20',
+    'datepicker-background-color': 'color-background-overlay',
+    'datepicker-border-color': 'color-border-overlay',
+    'datepicker-box-shadow-color': 'color-box-shadow',
 
     'datepicker-header-background-color': 'transparent-100',
 
     'datepicker-day-background-color': 'transparent-100',
     'datepicker-day-border-color': 'transparent-100',
-    'datepicker-day-text-color': 'color-black',
+    'datepicker-day-text-color': 'color-content',
 
-    'datepicker-day-hover-background-color': 'color-neutral-15',
-    'datepicker-day-disabled-text-color': 'color-neutral-30',
+    'datepicker-day-hover-background-color': 'color-background-hover',
+    'datepicker-day-disabled-text-color': 'color-content-disabled',
 
-    'datepicker-day-outside-month-text-color': 'color-neutral-65',
-    'datepicker-day-selected-outside-month-background-color': 'color-brand-05',
-    'datepicker-day-selected-outside-month-border-color': 'color-brand-50',
-    'datepicker-day-selected-outside-month-text-color': 'color-brand-70',
-    'datepicker-day-selected-background-color': 'color-brand-05',
-    'datepicker-day-selected-border-color': 'color-brand-50',
-    'datepicker-day-selected-text-color': 'color-brand-70',
+    'datepicker-day-outside-month-text-color': 'color-content-subtle',
+    'datepicker-day-selected-outside-month-background-color': 'color-background-selected',
+    'datepicker-day-selected-outside-month-border-color': 'color-border-selected',
+    'datepicker-day-selected-outside-month-text-color': 'color-content-selected',
+    'datepicker-day-selected-background-color': 'color-background-selected',
+    'datepicker-day-selected-border-color': 'color-border-selected',
+    'datepicker-day-selected-text-color': 'color-content-selected',
 
-    'datepicker-day-today-text-color': 'color-brand-70',
+    'datepicker-day-today-text-color': 'color-content-selected',
 };

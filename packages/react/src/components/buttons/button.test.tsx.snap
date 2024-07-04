@@ -800,14 +800,14 @@ exports[`Button has primary styles (inverted) 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
   color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #006296;
+  border-color: #006296;
   color: #84C6EA;
 }
 
@@ -1070,7 +1070,7 @@ exports[`Button has secondary styles 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #006296;
   color: #006296;
 }
@@ -1088,13 +1088,13 @@ exports[`Button has secondary styles 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -1474,7 +1474,7 @@ exports[`Button has tertiary styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
 .c1:disabled {

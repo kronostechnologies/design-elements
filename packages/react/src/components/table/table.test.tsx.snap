@@ -37,7 +37,7 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -222,7 +222,7 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -401,7 +401,7 @@ exports[`Table has column with headers grouped 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -608,7 +608,7 @@ exports[`Table has custom text alignment 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -760,7 +760,7 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -946,7 +946,7 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1098,7 +1098,7 @@ exports[`Table has mobile styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1250,7 +1250,7 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1480,7 +1480,7 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c7:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c5 {
@@ -1541,7 +1541,7 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1818,7 +1818,7 @@ exports[`Table has small rowSize styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1992,7 +1992,7 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2222,7 +2222,7 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2399,7 +2399,7 @@ exports[`Table has sticky header styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2555,7 +2555,7 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2707,7 +2707,7 @@ exports[`Table has tablet styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;

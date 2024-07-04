@@ -173,8 +173,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 }
 
 .c7:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -423,18 +423,8 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
 }
 
 .c7:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
-}
-
-.c9 {
-  background-color: transparent;
-  color: #FFFFFF;
-}
-
-.c9:hover {
-  background-color: #3A1C60;
-  color: #FFFFFF;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -477,7 +467,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
       Test button
     </button>
     <button
-      class="c5 c8 c9"
+      class="c5 c8 "
       data-testid="dismiss-button"
       type="button"
     >
@@ -690,18 +680,8 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
 }
 
 .c7:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c9 {
-  background-color: transparent;
-  color: #FFFFFF;
-}
-
-.c9:hover {
-  background-color: #36393D;
-  color: #FFFFFF;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -744,7 +724,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
       Test button
     </button>
     <button
-      class="c5 c8 c9"
+      class="c5 c8 "
       data-testid="dismiss-button"
       type="button"
     >
@@ -845,7 +825,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c8 {
   background-color: transparent;
   border-color: transparent;
-  color: #FFFFFF;
+  color: #60666E;
 }
 
 .c8 {
@@ -854,22 +834,22 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c8:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #006296;
+  color: #B7BBC2;
 }
 
 .c0 {
@@ -957,17 +937,11 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c7:hover {
-  border-color: #9E6900;
-  color: #9E6900;
+  border-color: rgb(0 0 0 / 0.6);
+  color: rgb(0 0 0 / 0.6);
 }
 
 .c9 {
-  background-color: transparent;
-  color: #1B1C1E;
-}
-
-.c9:hover {
-  background-color: #C78500;
   color: #1B1C1E;
 }
 
@@ -1198,8 +1172,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 }
 
 .c7:hover {
-  border-color: #F99D99;
-  color: #F99D99;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -1452,18 +1426,8 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
 }
 
 .c7:hover {
-  border-color: #CFC1E3;
-  color: #CFC1E3;
-}
-
-.c9 {
-  background-color: transparent;
-  color: #FFFFFF;
-}
-
-.c9:hover {
-  background-color: #3A1C60;
-  color: #FFFFFF;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -1506,7 +1470,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
       Test button
     </button>
     <button
-      class="c5 c8 c9"
+      class="c5 c8 "
       data-testid="dismiss-button"
       type="button"
     >
@@ -1723,18 +1687,8 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
 }
 
 .c7:hover {
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c9 {
-  background-color: transparent;
-  color: #FFFFFF;
-}
-
-.c9:hover {
-  background-color: #36393D;
-  color: #FFFFFF;
+  border-color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.5);
 }
 
 <section
@@ -1777,7 +1731,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
       Test button
     </button>
     <button
-      class="c5 c8 c9"
+      class="c5 c8 "
       data-testid="dismiss-button"
       type="button"
     >
@@ -1878,7 +1832,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c8 {
   background-color: transparent;
   border-color: transparent;
-  color: #FFFFFF;
+  color: #60666E;
 }
 
 .c8 {
@@ -1887,22 +1841,22 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c8:disabled {
   background-color: transparent;
   border-color: transparent;
-  color: #006296;
+  color: #B7BBC2;
 }
 
 .c0 {
@@ -1994,17 +1948,11 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c7:hover {
-  border-color: #9E6900;
-  color: #9E6900;
+  border-color: rgb(0 0 0 / 0.6);
+  color: rgb(0 0 0 / 0.6);
 }
 
 .c9 {
-  background-color: transparent;
-  color: #1B1C1E;
-}
-
-.c9:hover {
-  background-color: #C78500;
   color: #1B1C1E;
 }
 
