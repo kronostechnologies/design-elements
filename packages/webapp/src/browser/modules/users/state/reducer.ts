@@ -1,25 +1,24 @@
 import { UsersAction, UsersActionProps, UsersContextProps } from '../types';
-import { getCurrentPageUsers } from '../utils';
+import { getCurrentPageUsers, sortUsers } from '../utils';
 
 export const usersReducer = (state: UsersContextProps, action: UsersActionProps): UsersContextProps => {
     switch (action.type) {
         case UsersAction.SORT: {
-            const defaultUsers = [...state.users];
-            const sortedUsers = action.sortedUsers ?? defaultUsers;
-            const currentPageUsers = getCurrentPageUsers(sortedUsers, state.currentPage, state.itemsPerPage);
+            const sortedUsers = action.sortProps
+                ? sortUsers([...state.processedUsers], action.sortProps.id, action.sortProps.desc)
+                : [...state.users];
             return {
                 ...state,
                 processedUsers: sortedUsers,
-                currentPageUsers,
+                currentPageUsers: getCurrentPageUsers(sortedUsers, state.currentPage, state.itemsPerPage),
             };
         }
         case UsersAction.UPDATE_CURRENT_PAGE: {
             const currentPage = action.currentPage ?? state.currentPage;
             const itemsPerPage = action.itemsPerPage ?? state.itemsPerPage;
-            const currentPageUsers = getCurrentPageUsers([...state.processedUsers], currentPage, itemsPerPage);
             return {
                 ...state,
-                currentPageUsers,
+                currentPageUsers: getCurrentPageUsers([...state.processedUsers], currentPage, itemsPerPage),
                 currentPage,
                 itemsPerPage,
             };

@@ -9,5 +9,5 @@ export interface UsersActionProps {
     type: string,
     currentPage?: number,
     itemsPerPage?: number,
-    sortedUsers?: User[],
+    sortProps?: { id: keyof User, desc: boolean },
 }

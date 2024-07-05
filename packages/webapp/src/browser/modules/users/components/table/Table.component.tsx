@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useUsersActions, useUsersContext } from '../../state';
 import { User, UsersAction } from '../../types';
-import { sortUsers } from '../../utils';
 import { Footer as TableFooter } from './Footer.component';
 import { Name as NameCell } from './cells/Name.component';
 
@@ -37,7 +36,7 @@ const TableContainer = styled.div`
 
 export const Table: FunctionComponent = () => {
     const { t } = useTranslation('users');
-    const { processedUsers, currentPageUsers } = useUsersContext();
+    const { currentPageUsers } = useUsersContext();
     const dispatch = useUsersActions();
 
     const columns: TableColumn<User>[] = useMemo(() => [
@@ -83,17 +82,10 @@ export const Table: FunctionComponent = () => {
                 columns={columns}
                 data={currentPageUsers}
                 defaultSort={{ id: 'id', desc: false }}
-                onSort={(sort) => {
-                    let sortedUsers;
-                    if (sort) {
-                        const key = sort.id as keyof User;
-                        sortedUsers = [...sortUsers(processedUsers, key, sort.desc)];
-                    }
-                    dispatch({
-                        type: UsersAction.SORT,
-                        sortedUsers,
-                    });
-                }}
+                onSort={(sort) => dispatch({
+                    type: UsersAction.SORT,
+                    sortProps: sort ? { id: sort.id as keyof User, desc: sort.desc } : undefined,
+                })}
                 manualSort
             />
             <TableFooter />
