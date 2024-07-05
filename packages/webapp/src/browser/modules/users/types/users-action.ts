@@ -8,6 +8,6 @@ export enum UsersAction {
 export interface UsersActionProps {
     type: string,
     currentPage?: number,
-    itemsPerPage?: number,
+    usersPerPage?: number,
     sortProps?: { id: keyof User, desc: boolean },
 }
