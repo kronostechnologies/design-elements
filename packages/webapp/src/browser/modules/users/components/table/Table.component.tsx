@@ -1,15 +1,15 @@
 import {
     TableColumn,
-    Table as DataTable, TableData,
+    Table as DataTable,
 } from '@equisoft/design-elements-react';
-import { FunctionComponent, useCallback, useMemo, useState } from 'react';
+import { FunctionComponent, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { User } from '../../types';
-import { useUsersContext } from '../../Provider.component';
-import { sortFn } from '../../utils';
+import { useUsersActions, useUsersContext } from '../../state';
+import { User, UsersAction } from '../../types';
+import { sortUsers } from '../../utils';
 import { Footer as TableFooter } from './Footer.component';
-import { NameCell } from './cells/NameCell.component';
+import { Name as NameCell } from './cells/Name.component';
 
 const TableContainer = styled.div`
     align-items: flex-start;
@@ -27,31 +27,18 @@ const TableContainer = styled.div`
     .action-column {
         box-sizing: border-box;
         width: auto;
-
-        :focus {
-            border-color: #007bff;
-        }
     }
 
     .data-column {
         box-sizing: border-box;
         width: 35%;
-
-        :focus {
-            border-color: #007bff;
-        }
     }
 `;
 
-const DEFAULT_ITEMS_PER_PAGE = 10;
-
 export const Table: FunctionComponent = () => {
     const { t } = useTranslation('users');
-    const { users } = useUsersContext();
-    const [processedUsers, setProcessedUsers] = useState<TableData<User>[]>([...users]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(DEFAULT_ITEMS_PER_PAGE);
-    const currentPageData = processedUsers.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    const { processedUsers, currentPageUsers } = useUsersContext();
+    const dispatch = useUsersActions();
 
     const columns: TableColumn<User>[] = useMemo(() => [
         {
@@ -89,35 +76,27 @@ export const Table: FunctionComponent = () => {
         },
     ], [t]);
 
-    const updatePageData = useCallback((newCurrentPage: number, newItemsPerPage?: number) => {
-        setCurrentPage(newCurrentPage);
-        setItemsPerPage(newItemsPerPage ?? itemsPerPage);
-    }, [itemsPerPage]);
-
     return (
         <TableContainer>
             <DataTable
                 rowSize="small"
                 columns={columns}
-                data={currentPageData}
+                data={currentPageUsers}
                 defaultSort={{ id: 'id', desc: false }}
                 onSort={(sort) => {
+                    let sortedUsers;
                     if (sort) {
                         const key = sort.id as keyof User;
-                        const sortedUsers = [...sortFn(processedUsers, key, sort.desc)];
-                        setProcessedUsers(sortedUsers);
-                    } else {
-                        setProcessedUsers([...users]);
+                        sortedUsers = [...sortUsers(processedUsers, key, sort.desc)];
                     }
+                    dispatch({
+                        type: UsersAction.SORT,
+                        sortedUsers,
+                    });
                 }}
                 manualSort
             />
-            <TableFooter
-                currentPage={currentPage}
-                itemsPerPage={itemsPerPage}
-                numberOfResults={processedUsers.length}
-                updatePageData={updatePageData}
-            />
+            <TableFooter />
         </TableContainer>
     );
 };

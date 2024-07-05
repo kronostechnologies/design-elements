@@ -1,6 +1,8 @@
 import { Pagination } from '@equisoft/design-elements-react';
 import { FunctionComponent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
+import { useUsersActions, useUsersContext } from '../../state';
+import { UsersAction } from '../../types';
 
 const FooterPaginationWrapper = styled.nav`
     align-items: center;
@@ -11,27 +13,24 @@ const FooterPaginationWrapper = styled.nav`
     justify-content: space-between;
 `;
 
-export interface TableFooterPaginationProps {
-    currentPage: number,
-    itemsPerPage: number,
-    numberOfResults: number,
-    updatePageData: (itemsPerPage: number, currentPage?: number) => void
-}
+export const Footer: FunctionComponent = () => {
+    const { users, currentPage, itemsPerPage } = useUsersContext();
+    const dispatch = useUsersActions();
 
-export const Footer: FunctionComponent<TableFooterPaginationProps> = (
-    {
-        currentPage, itemsPerPage, numberOfResults, updatePageData,
-    },
-) => {
     const renderPagination = useCallback((): ReactElement => (
         <Pagination
             resultsPerPage={itemsPerPage}
-            numberOfResults={numberOfResults}
+            numberOfResults={users.length}
             activePage={currentPage}
-            onPageChange={(page) => updatePageData(page)}
+            onPageChange={(page) => {
+                dispatch({
+                    type: UsersAction.UPDATE_CURRENT_PAGE,
+                    currentPage: page,
+                });
+            }}
             pagesShown={3}
         />
-    ), [itemsPerPage, numberOfResults, currentPage, updatePageData]);
+    ), [itemsPerPage, users.length, currentPage, dispatch]);
 
     return (
         <FooterPaginationWrapper aria-label="table's pagination">

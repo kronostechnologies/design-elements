@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import { Configuration, ConfigurationProvider, createRouter, initializeConfiguration } from '../../core';
-import { Provider as UsersProvider } from '../users/Provider.component';
+import { Provider as UsersProvider } from '../users/components/Provider.component';
 import { AppLayout, AppLoader, UnexpectedErrorBoundary } from './layout';
 import { ROUTER_ROUTES } from './routes';
 

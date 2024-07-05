@@ -1,14 +1,14 @@
 import { RouteLink } from '@equisoft/design-elements-react';
 import { FunctionComponent } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useUserContext } from '../../../state';
 import { User } from '../../../types';
-import { useUserContext } from '../../../Provider.component';
 
-export interface ActionCellsProps {
+interface NameCellProps {
     id: User['id'];
 }
 
-export const NameCell: FunctionComponent<ActionCellsProps> = (
+export const Name: FunctionComponent<NameCellProps> = (
     { id },
 ) => {
     const user = useUserContext(id);

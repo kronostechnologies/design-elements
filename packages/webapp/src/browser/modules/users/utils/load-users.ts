@@ -1,5 +1,5 @@
-import usersData from '../../core/data/users-data.json';
-import { User } from './types';
+import usersData from '../data/users.json';
+import { User } from '../types';
 
 export function loadUsers(): User[] {
     return usersData.map((userData) => ({
@@ -28,23 +28,4 @@ export function loadUsers(): User[] {
         frequency: userData.frequency,
         rate: userData.rate,
     }));
-}
-
-export function sortFn<T extends User>(
-    array: T[],
-    key: keyof User,
-    isDescending: boolean = false,
-): T[] {
-    return array.sort((a, b) => {
-        let valueA = a[key] || '';
-        let valueB = b[key] || '';
-
-        // For case-insensitive comparison
-        valueA = typeof valueA === 'string' ? valueA.toLowerCase() : valueA.toString();
-        valueB = typeof valueB === 'string' ? valueB.toLowerCase() : valueB.toString();
-
-        if (valueA < valueB) return isDescending ? 1 : -1;
-        if (valueA > valueB) return isDescending ? -1 : 1;
-        return 0;
-    });
 }
