@@ -439,9 +439,7 @@ input:valid + .c8 {
                   <Styled(Icon)>
                     <Icon
                       className="c14"
-                      color="currentColor"
                       name="search"
-                      size="24"
                     >
                       <svg
                         className="c14"

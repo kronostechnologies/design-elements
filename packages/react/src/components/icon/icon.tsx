@@ -144,8 +144,8 @@ export interface IconProps {
 export const Icon: VoidFunctionComponent<IconProps> = ({
     className,
     name,
-    size,
-    color,
+    size = '24',
+    color = 'currentColor',
     role,
     ...props
 }: IconProps) => {
@@ -166,9 +166,4 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );
-};
-
-Icon.defaultProps = {
-    size: '24',
-    color: 'currentColor',
 };
