@@ -155,7 +155,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
     }
 
     .react-datepicker__portal {
-        background-color: ${({ theme }) => theme.component['datepicker-background-color']};
+        background-color: ${({ theme }) => theme.component['datepicker-backdrop-color']};
 
         .react-datepicker__day-name {
             font-size: 1rem;
