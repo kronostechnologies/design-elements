@@ -203,7 +203,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -594,7 +594,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -987,7 +987,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -1380,7 +1380,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -1801,7 +1801,7 @@ input + .c1 {
 }
 
 .c6 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c6 .react-datepicker__portal .react-datepicker__day-name {
@@ -2210,7 +2210,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -2768,7 +2768,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -4062,7 +4062,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
@@ -5344,7 +5344,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal {
-  background-color: #FFFFFF;
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {

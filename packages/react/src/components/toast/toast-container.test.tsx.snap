@@ -170,7 +170,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
         <Icon
           aria-label="alert"
           className="c1"
-          color="currentColor"
           focusable={true}
           isMobile={false}
           name="alertOctagon"
@@ -266,7 +265,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                 >
                   <Icon
                     aria-hidden="true"
-                    color="currentColor"
                     name="x"
                     size="16"
                   >
@@ -459,7 +457,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
         <Icon
           aria-label="discovery"
           className="c1"
-          color="currentColor"
           focusable={true}
           isMobile={false}
           name="lightbulb"
@@ -555,7 +552,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                 >
                   <Icon
                     aria-hidden="true"
-                    color="currentColor"
                     name="x"
                     size="16"
                   >
@@ -748,7 +744,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
         <Icon
           aria-label="information"
           className="c1"
-          color="currentColor"
           focusable={true}
           isMobile={false}
           name="info"
@@ -844,7 +839,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                 >
                   <Icon
                     aria-hidden="true"
-                    color="currentColor"
                     name="x"
                     size="16"
                   >
@@ -1037,7 +1031,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
         <Icon
           aria-label="success"
           className="c1"
-          color="currentColor"
           focusable={true}
           isMobile={false}
           name="check"
@@ -1133,7 +1126,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                 >
                   <Icon
                     aria-hidden="true"
-                    color="currentColor"
                     name="x"
                     size="16"
                   >
@@ -1326,7 +1318,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         <Icon
           aria-label="warning"
           className="c1"
-          color="currentColor"
           focusable={true}
           isMobile={false}
           name="alertTriangle"
@@ -1422,7 +1413,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                 >
                   <Icon
                     aria-hidden="true"
-                    color="currentColor"
                     name="x"
                     size="16"
                   >
