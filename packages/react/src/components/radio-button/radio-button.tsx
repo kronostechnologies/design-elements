@@ -10,12 +10,12 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
     border-radius: 50%;
     color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
     display: inline-block;
+    flex-shrink: 0;
     height: var(--size-1x);
     margin: 0;
+    margin-top: var(--spacing-half);
     position: relative;
     width: var(--size-1x);
-    flex-shrink: 0;
-    margin-top: var(--spacing-half);
     
     ${(theme) => focus(theme, { selector: '+' })}
      
