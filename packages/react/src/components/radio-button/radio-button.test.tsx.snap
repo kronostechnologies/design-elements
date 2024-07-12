@@ -10,14 +10,14 @@ exports[`Radio button matches snapshot 1`] = `
   border-radius: 50%;
   color: #FFFFFF;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
   margin: 0;
   margin-top: var(--spacing-half);
   position: relative;
   width: var(--size-1x);
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
 }
 
 .c1 + {
