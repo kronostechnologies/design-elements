@@ -27,9 +27,9 @@ export const Container = styled.div<{ $expanded: boolean; }>`
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['disclosure-box-shadow-color']};
     color: ${({ theme }) => theme.component['disclosure-text-color']};
+    display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
     list-style-type: none;
     position: absolute;
-    display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
     width: 100%;
     z-index: 700;
 `;
