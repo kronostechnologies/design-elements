@@ -29,3 +29,14 @@ export const Default: Story = {
         idContent: 'someContentId',
     },
 };
+
+export const IconButton: Story = {
+    args: {
+        children: 'content to display',
+        buttonProps: {
+            iconName: 'home',
+            buttonType: 'primary',
+        },
+        idContent: 'someContentId',
+    },
+};
