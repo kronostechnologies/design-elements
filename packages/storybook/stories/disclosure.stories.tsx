@@ -24,7 +24,7 @@ export const Default: Story = {
         children: 'content to display',
         buttonProps: {
             label: 'Display content',
-            buttonType: 'primary',
+            buttonType: 'tertiary',
         },
         idContent: 'someContentId',
     },
