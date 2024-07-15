@@ -1,9 +1,14 @@
 import { FunctionComponent, PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { Button, ButtonProps } from '../buttons/button';
+import { Button, ButtonProps, Size } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
+import { IconName } from '../icon/icon';
 
-type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'>;
+export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
+    iconName?: IconName;
+    size?: Size;
+}
 
 interface DisclosureWidgetProps {
     idContent?: string;
@@ -43,12 +48,23 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
 
     return (
         <DisclosureContainer>
-            <Button
-                {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                onClick={() => setExpanded(!expanded)}
-                aria-expanded={expanded}
-                aria-controls={idContent}
-            />
+            {!buttonProps.iconName && (
+                <Button
+                    {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    onClick={() => setExpanded(!expanded)}
+                    aria-expanded={expanded}
+                    aria-controls={idContent}
+                />
+            )}
+            {buttonProps.iconName && (
+                <IconButton
+                    {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    iconName={buttonProps.iconName}
+                    onClick={() => setExpanded(!expanded)}
+                    aria-expanded={expanded}
+                    aria-controls={idContent}
+                />
+            )}
             <Container $expanded={expanded} id={idContent}>
                 {children}
             </Container>
