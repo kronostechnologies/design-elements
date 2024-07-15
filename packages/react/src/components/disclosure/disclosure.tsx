@@ -11,9 +11,15 @@ interface DisclosureWidgetProps {
     buttonProps: ButtonPropsWithoutOnClick;
 }
 
-const Container = styled.div`
+export const Container = styled.div<{ $expanded: boolean; }>`
     background-color: ${({ theme }) => theme.component['dropdown-menu-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['dropdown-menu-border-color']};
+    border:
+        ${({
+            $expanded,
+            theme,
+        }) => (
+            $expanded ? `1px solid ${theme.component['dropdown-menu-border-color']}` : 0
+        )};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['dropdown-menu-box-shadow-color']};
     color: ${({ theme }) => theme.component['dropdown-menu-text-color']};
@@ -23,7 +29,7 @@ const Container = styled.div`
     z-index: 700;
 `;
 
-const StyledButton = styled(Button)<{ isMobile: boolean }>`
+export const StyledButton = styled(Button)<{ isMobile: boolean }>`
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     text-transform: unset;
@@ -54,7 +60,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
                 aria-expanded={expanded}
                 aria-controls={idContent}
             />
-            <Container id={idContent}>
+            <Container $expanded={expanded} id={idContent}>
                 {expanded && children}
             </Container>
         </DisclosureContainer>
