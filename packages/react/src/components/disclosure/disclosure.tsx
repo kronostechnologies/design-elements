@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren, useState, useCallback } from 'react';
+import { FunctionComponent, PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { Button, ButtonProps } from '../buttons/button';
@@ -40,15 +40,12 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
 }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
     const idContent = useId(providedIdContent);
-    const handleOnButtonClick = useCallback(() => {
-        setExpanded(!expanded);
-    }, [expanded, setExpanded]);
 
     return (
         <DisclosureContainer>
             <Button
                 {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                onClick={handleOnButtonClick}
+                onClick={() => setExpanded(!expanded)}
                 aria-expanded={expanded}
                 aria-controls={idContent}
             />

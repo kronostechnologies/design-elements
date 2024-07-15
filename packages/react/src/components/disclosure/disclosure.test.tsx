@@ -63,17 +63,45 @@ describe('Disclosure', () => {
         expect(wrapper.find(Button).prop('aria-expanded')).toBe(false);
     });
 
-    it('does not render children when button has not been clicked yet', () => {
+    it('renders content container when button has not been clicked yet', () => {
         const childrenContent = <p>Test Content</p>;
 
         const wrapper = shallow(<Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>);
 
         expect(wrapper.find(Container).exists()).toBe(true);
+    });
+
+    it('renders children content when button has not been clicked yet', () => {
+        const childrenContent = <p>Test Content</p>;
+
+        const wrapper = shallow(<Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>);
+
         expect(wrapper.find(Container).contains(childrenContent)).toBe(true);
+    });
+
+    it('sets content container expanded to false when button has not been clicked yet', () => {
+        const childrenContent = <p>Test Content</p>;
+
+        const wrapper = shallow(
+            <Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>,
+        );
+
         expect(wrapper.find(Container).prop('$expanded')).toBe(false);
     });
 
-    it('renders children correctly after button is clicked', () => {
+    it('sets container expanded to true after button is clicked', () => {
+        const childrenContent = <p>Test Content</p>;
+        const wrapper = mountWithProviders(
+            <Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>,
+        );
+        const button = wrapper.find(Button);
+
+        button.simulate('click');
+
+        expect(wrapper.find(Container).prop('$expanded')).toBe(true);
+    });
+
+    it('renders content container after button is clicked', () => {
         const childrenContent = <p>Test Content</p>;
         const wrapper = mountWithProviders(
             <Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>,
@@ -83,6 +111,17 @@ describe('Disclosure', () => {
         button.simulate('click');
 
         expect(wrapper.find(Container).exists()).toBe(true);
-        expect(wrapper.find(Container).prop('$expanded')).toBe(true);
+    });
+
+    it('renders children content after button is clicked', () => {
+        const childrenContent = <p>Test Content</p>;
+        const wrapper = mountWithProviders(
+            <Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>,
+        );
+        const button = wrapper.find(Button);
+
+        button.simulate('click');
+
+        expect(wrapper.find(Container).contains(childrenContent)).toBe(true);
     });
 });
