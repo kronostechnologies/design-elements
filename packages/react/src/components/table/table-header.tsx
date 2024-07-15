@@ -12,6 +12,7 @@ import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
 import { TableColumn } from './types';
 import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
+import { focus } from '../../utils/css-state';
 
 interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
@@ -21,14 +22,13 @@ interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<T
 
 const SortButton = styled.button<{ $textAlign: string }>`
     align-items: center;
+    border-radius: var(--border-radius);
     cursor: pointer;
     display: flex;
     font: inherit;
     text-align: ${({ $textAlign }) => $textAlign};
 
-    &:focus {
-        outline: none;
-    }
+    ${focus}
 `;
 
 interface StyledHeaderProps {
