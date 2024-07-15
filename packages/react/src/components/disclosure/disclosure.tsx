@@ -19,10 +19,10 @@ export const Container = styled.div<{ $expanded: boolean; }>`
         }) => (
             $expanded ? `1px solid ${theme.component['disclosure-border-color']}` : 0
         )};
-    height: ${({ $expanded }) => ($expanded ? 'auto' : '0')};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['disclosure-box-shadow-color']};
     color: ${({ theme }) => theme.component['disclosure-text-color']};
+    height: ${({ $expanded }) => ($expanded ? 'auto' : '0')};
     list-style-type: none;
     position: absolute;
     width: 100%;
