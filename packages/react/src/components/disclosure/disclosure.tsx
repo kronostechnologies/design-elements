@@ -12,17 +12,17 @@ interface DisclosureWidgetProps {
 }
 
 export const Container = styled.div<{ $expanded: boolean; }>`
-    background-color: ${({ theme }) => theme.component['dropdown-menu-background-color']};
+    background-color: ${({ theme }) => theme.component['disclosure-background-color']};
     border:
         ${({
             $expanded,
             theme,
         }) => (
-            $expanded ? `1px solid ${theme.component['dropdown-menu-border-color']}` : 0
+            $expanded ? `1px solid ${theme.component['disclosure-border-color']}` : 0
         )};
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['dropdown-menu-box-shadow-color']};
-    color: ${({ theme }) => theme.component['dropdown-menu-text-color']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['disclosure-box-shadow-color']};
+    color: ${({ theme }) => theme.component['disclosure-text-color']};
     list-style-type: none;
     position: absolute;
     width: 100%;
