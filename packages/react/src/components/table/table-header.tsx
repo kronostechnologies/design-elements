@@ -28,7 +28,7 @@ const SortButton = styled.button<{ $textAlign: string }>`
     font: inherit;
     text-align: ${({ $textAlign }) => $textAlign};
 
-    ${focus}
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-visible', insideOnly: true })};
 `;
 
 interface StyledHeaderProps {
