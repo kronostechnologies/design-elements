@@ -29,7 +29,7 @@ export const Container = styled.div<{ $expanded: boolean; }>`
     color: ${({ theme }) => theme.component['disclosure-text-color']};
     list-style-type: none;
     position: absolute;
-    visibility: ${({ $expanded }) => ($expanded ? 'visible' : 'hidden')};
+    display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
     width: 100%;
     z-index: 700;
 `;
