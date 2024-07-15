@@ -28,9 +28,7 @@ export const Container = styled.div<{ $expanded: boolean; }>`
     box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['disclosure-box-shadow-color']};
     color: ${({ theme }) => theme.component['disclosure-text-color']};
     display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
-    list-style-type: none;
     position: absolute;
-    width: 100%;
     z-index: 700;
 `;
 
