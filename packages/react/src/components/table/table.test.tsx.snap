@@ -1955,6 +1955,7 @@ exports[`Table has sorting styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1964,8 +1965,15 @@ exports[`Table has sorting styles 1`] = `
   text-align: left;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3 {
