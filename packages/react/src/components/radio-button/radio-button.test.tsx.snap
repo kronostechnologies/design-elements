@@ -54,7 +54,11 @@ exports[`Radio button matches snapshot 1`] = `
   color: #B7BBC2;
 }
 
-.c1:hover {
+.c1:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c1:hover:not(:checked) {
   border: 1px solid #000000;
 }
 

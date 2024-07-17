@@ -42,7 +42,13 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
     }
         
     &:hover {
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
+        &:checked:not(:disabled) {
+            border: 1px solid ${({ theme }) => theme.component['radio-button-hover-border-color']};
+        }
+        
+        &:not(:checked) {
+            border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
+        }
     }
 `;
 
