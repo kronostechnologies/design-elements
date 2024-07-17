@@ -40,6 +40,24 @@ describe('Disclosure', () => {
         component: ButtonComponent,
     }) => {
         describe(describeName, () => {
+            test('matches the snapshot when collapsed', () => {
+                const tree = mountWithProviders(
+                    <Disclosure buttonProps={buttonProps}>{content}</Disclosure>,
+                );
+
+                expect(tree).toMatchSnapshot();
+            });
+
+            test('matches the snapshot when expanded', () => {
+                const tree = mountWithProviders(
+                    <Disclosure buttonProps={buttonProps}>{content}</Disclosure>,
+                );
+                const button = tree.find(ButtonComponent);
+                button.simulate('click');
+
+                expect(tree).toMatchSnapshot();
+            });
+
             it('renders a button and a div', () => {
                 const wrapper = mountWithProviders(
                     <Disclosure buttonProps={buttonProps}>{content}</Disclosure>,
