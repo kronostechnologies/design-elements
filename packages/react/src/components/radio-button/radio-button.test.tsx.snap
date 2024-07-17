@@ -51,7 +51,6 @@ exports[`Radio button matches snapshot 1`] = `
 }
 
 .c1:hover {
-  background-color: #DBDEE1;
   border: 1px solid #000000;
 }
 
