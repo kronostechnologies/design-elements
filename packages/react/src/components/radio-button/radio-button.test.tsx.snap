@@ -50,6 +50,10 @@ exports[`Radio button matches snapshot 1`] = `
   width: var(--size-half);
 }
 
+.c1:disabled + label {
+  color: #B7BBC2;
+}
+
 .c1:hover {
   border: 1px solid #000000;
 }
