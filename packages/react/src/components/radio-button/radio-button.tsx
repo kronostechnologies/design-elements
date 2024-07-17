@@ -35,7 +35,8 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
         }
     }
         
-    &:hover [type='radio'] {
+    &:hover {
+        background-color: ${({ theme }) => theme.component['radio-button-hover-background-color']};
         border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
     }
 `;
@@ -81,8 +82,7 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
     value,
     onChange,
 }) => {
-    const generatedId = useId();
-    const inputId = id || generatedId;
+    const inputId = useId(id);
 
     return (
         <StyledContainer>
