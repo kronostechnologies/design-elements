@@ -131,6 +131,19 @@ describe('Disclosure', () => {
                 expect(wrapper.find(Container).prop('$expanded')).toBe(true);
             });
 
+            it('sets container expanded back to false when button loses focus', () => {
+                const childrenContent = <p>Test Content</p>;
+                const wrapper = mountWithProviders(
+                    <Disclosure buttonProps={buttonProps}>{childrenContent}</Disclosure>,
+                );
+                const button = wrapper.find(ButtonComponent);
+
+                button.simulate('click');
+                button.simulate('blur');
+
+                expect(wrapper.find(Container).prop('$expanded')).toBe(false);
+            });
+
             it('renders content container after button is clicked', () => {
                 const childrenContent = <p>Test Content</p>;
                 const wrapper = mountWithProviders(

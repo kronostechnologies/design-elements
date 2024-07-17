@@ -50,6 +50,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
                 <Button
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
                     onClick={() => setExpanded(!expanded)}
+                    onBlur={() => setExpanded(false)}
                     aria-expanded={expanded}
                     aria-controls={idContent}
                 />
@@ -59,6 +60,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
                     iconName={buttonProps.iconName}
                     onClick={() => setExpanded(!expanded)}
+                    onBlur={() => setExpanded(false)}
                     aria-expanded={expanded}
                     aria-controls={idContent}
                 />
