@@ -360,7 +360,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         aria-describedby="modal-description"
         aria-labelledby="uuid1"
         aria-modal="true"
-        class="ReactModal__Content c1 "
+        class="ReactModal__Content c1"
         role="dialog"
         tabindex="-1"
       >
@@ -623,7 +623,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
         aria-describedby="modal-description"
         aria-labelledby="uuid1"
         aria-modal="true"
-        class="ReactModal__Content c1 "
+        class="ReactModal__Content c1"
         role="dialog"
         tabindex="-1"
       >
@@ -1009,7 +1009,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         aria-describedby="modal-description"
         aria-labelledby="uuid1"
         aria-modal="true"
-        class="ReactModal__Content c1 "
+        class="ReactModal__Content c1"
         role="dialog"
         tabindex="-1"
       >
@@ -1415,7 +1415,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         aria-describedby="modal-description"
         aria-labelledby="uuid1"
         aria-modal="true"
-        class="ReactModal__Content c1 "
+        class="ReactModal__Content c1"
         role="dialog"
         tabindex="-1"
       >
@@ -1763,7 +1763,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         aria-describedby="modal-description"
         aria-labelledby="uuid1"
         aria-modal="true"
-        class="ReactModal__Content c1 "
+        class="ReactModal__Content c1"
         role="dialog"
         tabindex="-1"
       >

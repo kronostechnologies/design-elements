@@ -21,12 +21,6 @@ const ModalRoles: Record<DialogType, string> = {
     alert: 'alertdialog',
 };
 
-const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
-    ${({ $hasTitleIcon }) => $hasTitleIcon && css`
-        padding-left: var(--spacing-4x);
-    `}
-`;
-
 const Subtitle = styled.h3<MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-normal);
@@ -62,7 +56,6 @@ const TitleIcon = styled(Icon)`
 const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
     align-items: center;
     display: flex;
-    margin-left: calc(-1 * var(--spacing-4x));
 `;
 
 export interface ModalDialogProps {
@@ -182,7 +175,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     return (
-        <StyledModal
+        <Modal
             ariaDescribedby={ariaDescribedby}
             ariaHideApp={ariaHideApp}
             ariaLabelledBy={titleId}
@@ -197,9 +190,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             isOpen={isOpen}
             appElement={appElement}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-            $hasTitleIcon={hasTitleIcon}
         >
             {children}
-        </StyledModal>
+        </Modal>
     );
 };
