@@ -1,5 +1,5 @@
 import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
@@ -32,10 +32,6 @@ const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: b
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
     justify-content: end;
-
-    ${({ isMobile, $hasTitleIcon }) => (isMobile && $hasTitleIcon) && css`
-        margin-left: calc(var(--spacing-4x) * -1);
-    `}
 `;
 
 const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
