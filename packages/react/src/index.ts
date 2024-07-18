@@ -27,6 +27,7 @@ export { PhoneInput } from './components/phone-input/phone-input';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
+export { RadioButton } from './components/radio-button/radio-button';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { TextArea } from './components/text-area/text-area';

@@ -698,11 +698,12 @@ jobs:
       - storybook_compile
       - storybook_deploy
       - webapp_deploy
-    if: needs.setup.outputs.deploy == 'true'
+    if: always() && needs.setup.outputs.deploy == 'true'
 
     steps:
       - name: Post workflow status
-        uses: equisoft-actions/notify-workflow-status@v1
+        uses: equisoft-actions/notify-workflow-status@v2
         with:
           needs: ${{ toJSON(needs) }}
-          slack-webhook-url: ${{ secrets.OPS_CI_WEBHOOK_URL }}
+          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+          slack-channel: ${{ github.event.repository.custom_properties.ci_slack_channel }}

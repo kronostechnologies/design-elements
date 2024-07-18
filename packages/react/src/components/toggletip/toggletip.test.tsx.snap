@@ -300,7 +300,6 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
           >
             <Icon
               aria-hidden="true"
-              color="currentColor"
               name="info"
               size="16"
             >
@@ -529,7 +528,6 @@ exports[`Toggletip Has default desktop styles 1`] = `
           >
             <Icon
               aria-hidden="true"
-              color="currentColor"
               name="info"
               size="16"
             >
@@ -849,7 +847,6 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
           >
             <Icon
               aria-hidden="true"
-              color="currentColor"
               name="info"
               size="24"
             >
@@ -1078,7 +1075,6 @@ exports[`Toggletip Has mobile styles 1`] = `
           >
             <Icon
               aria-hidden="true"
-              color="currentColor"
               name="info"
               size="24"
             >
