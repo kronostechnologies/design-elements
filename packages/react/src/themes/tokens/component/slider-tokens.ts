@@ -4,6 +4,7 @@ import { RefTokens } from '../ref-tokens';
 export type SliderTokens =
     | 'slider-rail-background-color'
     | 'slider-rail-disabled-background-color'
+    | 'slider-rail-label-text-color'
     | 'slider-rail-mark-background-color'
     | 'slider-rail-mark-disabled-background-color'
     | 'slider-track-background-color'
@@ -23,6 +24,7 @@ export type SliderTokenMap = {
 export const defaultSliderTokens: SliderTokenMap = {
     'slider-rail-background-color': 'color-background-empty',
     'slider-rail-disabled-background-color': 'color-background-neutral-subtle',
+    'slider-rail-label-text-color': 'color-content-subtle',
     'slider-rail-mark-background-color': 'color-background-neutral-bold',
     'slider-rail-mark-disabled-background-color': 'color-background-indicator-disabled',
     'slider-track-background-color': 'color-background-brand',

@@ -15,7 +15,7 @@ export const ValueTooltip = styled.div`
     font-size: 0.75rem;
     padding: var(--spacing-half) var(--spacing-1x);
     position: absolute;
-    top: 41px;
+    top: 2.5rem;
     transform: scale(0);
     transform-origin: 50% -0.49rem;
     transition: transform 0.12s;
@@ -35,8 +35,11 @@ export const ValueTooltip = styled.div`
 `;
 
 const Labels = styled.div`
+    color: ${({ theme }) => theme.component['slider-rail-label-text-color']};
     display: flex;
+    font-size: 0.75rem;
     justify-content: space-between;
+    margin-top: 2px;
 `;
 
 const SliderContainer = styled.div`
@@ -46,7 +49,7 @@ const SliderContainer = styled.div`
 const StyledSlider = styled(BaseSlider)`
     align-items: center;
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     height: 8px;
     padding: 8px 0;
     position: relative;
@@ -123,7 +126,7 @@ const StyledSlider = styled(BaseSlider)`
             }
         }
 
-        &.${sliderClasses.active},
+        &.${sliderClasses.focusVisible},
         &:hover {
             ${ValueTooltip} {
                 transform: scale(1);
@@ -234,7 +237,6 @@ export const Slider = <TValue extends number | number[]>({
             <SliderContainer>
                 <StyledSlider
                     data-testid="slider"
-                    id={id}
                     min={min}
                     max={max}
                     value={value}
@@ -243,8 +245,13 @@ export const Slider = <TValue extends number | number[]>({
                     step={step}
                     marks={step ? true : undefined}
                     slots={{ valueLabel: SliderValueTooltip }}
+                    slotProps={{
+                        input: { id },
+                    }}
                     onChange={onChange}
+
                 />
+                {/* <BaseSlider slotProps={{ valueLabel: }}> */}
             </SliderContainer>
             <Labels>
                 <span>{min}</span>
