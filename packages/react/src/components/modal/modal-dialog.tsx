@@ -28,7 +28,7 @@ const Subtitle = styled.h3<MobileDeviceContextProps>`
     margin: var(--spacing-3x) 0 0;
 `;
 
-const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
+const ButtonContainer = styled.div<MobileDeviceContextProps>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
     justify-content: end;
@@ -150,7 +150,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         const confirmButtonType = dialogType === 'alert' ? 'destructive-primary' : 'primary';
 
         return (
-            <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>
+            <ButtonContainer isMobile={isMobile}>
                 {dialogType !== 'information' && (
                     <CancelButton
                         data-testid="cancel-button"
