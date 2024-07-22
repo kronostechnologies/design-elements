@@ -84,10 +84,11 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   color: #FFFFFF;
 }
 
-.c4:disabled {
+.c4[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -371,10 +372,11 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   color: #FFFFFF;
 }
 
-.c4:disabled {
+.c4[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -658,10 +660,11 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   color: #FFFFFF;
 }
 
-.c4:disabled {
+.c4[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -945,10 +948,11 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   color: #FFFFFF;
 }
 
-.c4:disabled {
+.c4[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -1232,10 +1236,11 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   color: #FFFFFF;
 }
 
-.c4:disabled {
+.c4[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c4 > svg {

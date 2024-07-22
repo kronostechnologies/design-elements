@@ -82,10 +82,11 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c3 {
@@ -267,10 +268,11 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c3 {
@@ -454,10 +456,11 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c1 > svg {
@@ -668,10 +671,11 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c1 > svg {

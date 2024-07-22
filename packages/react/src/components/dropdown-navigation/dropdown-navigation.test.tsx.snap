@@ -82,10 +82,11 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c8 {
@@ -345,10 +346,11 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c8 {
@@ -609,10 +611,11 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c8 {

@@ -95,12 +95,12 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             type={type}
             buttonType={buttonType}
             className={className}
-            disabled={disabled}
+            aria-disabled={disabled ? 'true' : undefined}
             focusable={focusable}
-            onClick={onClick}
+            onClick={disabled ? undefined : onClick}
             onFocus={onFocus}
             onBlur={onBlur}
-            onKeyDown={onKeyDown}
+            onKeyDown={disabled ? undefined : onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}

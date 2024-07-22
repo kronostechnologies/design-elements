@@ -82,10 +82,11 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -176,10 +177,11 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled="true"] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button

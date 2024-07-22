@@ -109,10 +109,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c7 {
@@ -801,10 +802,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c7 {
@@ -1469,10 +1471,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -2182,10 +2185,11 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled="true"] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c7 {
