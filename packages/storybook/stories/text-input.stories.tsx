@@ -1,4 +1,4 @@
-import { TextInput } from '@equisoft/design-elements-react';
+import {Icon, TextInput} from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -7,8 +7,12 @@ const TextInputMeta: Meta<typeof TextInput> = {
     component: TextInput,
     args: {
         type: 'text',
+        adornment: '%',
     },
     argTypes: {
+        adornment: {
+            control: { disable: true },
+        },
         onBlur: {
             control: { disable: true },
         },
@@ -41,6 +45,16 @@ export const Default: Story = {
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
+        hint: 'Hint',
+    },
+};
+
+export const IconAsAdornment: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        validationErrorMessage: 'Error message',
+        adornment: <Icon name="user" />,
         hint: 'Hint',
     },
 };

@@ -4,6 +4,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
+import { Icon } from '../icon/icon';
 
 describe('TextInput', () => {
     const initialProps = {
@@ -180,6 +181,55 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches the snapshot adornment text', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                adornment='#'
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches the snapshot adornment icon', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                adornment={<Icon name='phone' />}
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot (Normal - Adornment at end)', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                adornment='#'
+                adornmentPosition='end'
             />,
         );
 
