@@ -79,6 +79,7 @@ This is deprecated and won't work in Storybook 8 anymore.
 
         It is not recommended to use methods directly on the Story Store anyway, in Storybook 9 we will
         remove access to the store entirely`})}};Pe(im,"StoryStoreAccessedBeforeInitializationError");var sm=im,lm=class extends Me{constructor(t){super({category:"PREVIEW_API",code:12,message:De`
+      Incorrect use of mount in the play function.
       
       To use mount in the play function, you must satisfy the following two requirements: 
       
