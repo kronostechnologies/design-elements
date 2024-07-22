@@ -121,7 +121,7 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
             color: ${theme.component[`button-${buttonType}${inversionSuffix}-hover-text-color`]};
         }
 
-        &[aria-disabled="true"] {
+        &[aria-disabled='true'] {
             background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-background-color`]};
             border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
             color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-text-color`]};

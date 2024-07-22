@@ -180,7 +180,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -400,7 +400,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;

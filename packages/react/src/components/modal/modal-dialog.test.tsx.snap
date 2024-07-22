@@ -166,7 +166,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #000000;
 }
 
-.c14[aria-disabled="true"] {
+.c14[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -210,7 +210,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #000000;
 }
 
-.c10[aria-disabled="true"] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -241,7 +241,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #FFFFFF;
 }
 
-.c11[aria-disabled="true"] {
+.c11[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -518,7 +518,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   color: #000000;
 }
 
-.c8[aria-disabled="true"] {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -819,7 +819,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #000000;
 }
 
-.c14[aria-disabled="true"] {
+.c14[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -863,7 +863,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #000000;
 }
 
-.c10[aria-disabled="true"] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -894,7 +894,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #FFFFFF;
 }
 
-.c11[aria-disabled="true"] {
+.c11[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -1228,7 +1228,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #000000;
 }
 
-.c14[aria-disabled="true"] {
+.c14[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1272,7 +1272,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #000000;
 }
 
-.c10[aria-disabled="true"] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1303,7 +1303,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c11[aria-disabled="true"] {
+.c11[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -1579,7 +1579,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #000000;
 }
 
-.c13[aria-disabled="true"] {
+.c13[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1623,7 +1623,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #000000;
 }
 
-.c10[aria-disabled="true"] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1654,7 +1654,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c11[aria-disabled="true"] {
+.c11[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;

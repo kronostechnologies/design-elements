@@ -84,7 +84,7 @@ exports[`Carousel should match snapshot 1`] = `
   color: #000000;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;

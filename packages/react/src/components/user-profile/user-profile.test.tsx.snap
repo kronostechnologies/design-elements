@@ -109,7 +109,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -802,7 +802,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -1471,7 +1471,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -2185,7 +2185,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;

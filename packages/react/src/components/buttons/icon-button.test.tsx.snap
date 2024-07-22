@@ -84,7 +84,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
   color: #7B1A15;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: #F99D99;
   color: #F99D99;
@@ -195,7 +195,7 @@ exports[`Icon Button Has disabled styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -307,7 +307,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -418,7 +418,7 @@ exports[`Icon Button Has primary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -529,7 +529,7 @@ exports[`Icon Button Has secondary styles 1`] = `
   color: #003A5A;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
@@ -641,7 +641,7 @@ exports[`Icon Button Has small styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -752,7 +752,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   color: #000000;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;

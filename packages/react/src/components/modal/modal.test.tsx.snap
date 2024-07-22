@@ -287,7 +287,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   color: #000000;
 }
 
-.c4[aria-disabled="true"] {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -492,7 +492,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   color: #000000;
 }
 
-.c4[aria-disabled="true"] {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -696,7 +696,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   color: #000000;
 }
 
-.c4[aria-disabled="true"] {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;

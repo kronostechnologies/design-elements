@@ -82,7 +82,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -268,7 +268,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -456,7 +456,7 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -671,7 +671,7 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   color: #FFFFFF;
 }
 
-.c1[aria-disabled="true"] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;

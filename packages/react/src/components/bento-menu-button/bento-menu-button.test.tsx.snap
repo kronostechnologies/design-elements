@@ -84,7 +84,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -905,7 +905,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -1638,7 +1638,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c3[aria-disabled="true"] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;

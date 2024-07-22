@@ -376,7 +376,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -1040,7 +1040,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2[aria-disabled="true"] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
