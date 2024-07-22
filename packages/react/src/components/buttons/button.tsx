@@ -86,6 +86,24 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     const { isMobile } = useDeviceContext();
     const iconSize = props?.size === 'small' && !isMobile ? '16' : '24';
 
+    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+        if (disabled) {
+            event.preventDefault();
+            event.stopPropagation();
+        } else if (onClick) {
+            onClick(event);
+        }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+        if (disabled) {
+            event.preventDefault();
+            event.stopPropagation();
+        } else if (onKeyDown) {
+            onKeyDown(event);
+        }
+    };
+
     return (
         <StyledButton
             autoFocus={autofocus}
@@ -97,10 +115,10 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             className={className}
             aria-disabled={disabled ? 'true' : undefined}
             focusable={focusable}
-            onClick={disabled ? undefined : onClick}
+            onClick={handleClick}
             onFocus={onFocus}
             onBlur={onBlur}
-            onKeyDown={disabled ? undefined : onKeyDown}
+            onKeyDown={handleKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}

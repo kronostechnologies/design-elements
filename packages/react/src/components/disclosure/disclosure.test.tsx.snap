@@ -132,6 +132,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
           isMobile={false}
           onBlur={[Function]}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <AbstractButton
@@ -143,6 +144,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
             isMobile={false}
             onBlur={[Function]}
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <styled.button
@@ -154,6 +156,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
               isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
+              onKeyDown={[Function]}
               type="button"
             >
               <button
@@ -162,6 +165,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
                 className="c2 c1"
                 onBlur={[Function]}
                 onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 disclose content
@@ -318,6 +322,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
           isMobile={false}
           onBlur={[Function]}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <AbstractButton
@@ -329,6 +334,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
             isMobile={false}
             onBlur={[Function]}
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <styled.button
@@ -340,6 +346,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
               isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
+              onKeyDown={[Function]}
               type="button"
             >
               <button
@@ -348,6 +355,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
                 className="c2 c1"
                 onBlur={[Function]}
                 onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 disclose content
