@@ -86,7 +86,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     const { isMobile } = useDeviceContext();
     const iconSize = props?.size === 'small' && !isMobile ? '16' : '24';
 
-    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
         if (disabled) {
             event.preventDefault();
             event.stopPropagation();
@@ -95,7 +95,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
         }
     };
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>): void => {
         if (disabled) {
             event.preventDefault();
             event.stopPropagation();
