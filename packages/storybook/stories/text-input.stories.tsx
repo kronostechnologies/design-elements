@@ -1,4 +1,4 @@
-import {Icon, TextInput} from '@equisoft/design-elements-react';
+import { Icon, TextInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
