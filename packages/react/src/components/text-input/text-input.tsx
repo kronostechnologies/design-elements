@@ -11,8 +11,10 @@ import {
     ReactNode,
     Ref,
     useCallback,
-    useEffect, useImperativeHandle,
-    useMemo, useRef,
+    useEffect,
+    useImperativeHandle,
+    useMemo,
+    useRef,
     useState,
 } from 'react';
 import styled, { css } from 'styled-components';
@@ -53,12 +55,12 @@ const Adornment = styled.span<{ $position: 'start' | 'end' }>`
 
 interface StyledWrapperProps {
     $disabled?: boolean;
-    $invalid?: boolean;
+    $valid?: boolean;
 }
 
 const Wrapper = styled.div<StyledWrapperProps>`
-    background: ${({ theme }) => theme.component['numeric-input-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['numeric-input-border-color']};
+    background: ${({ theme }) => theme.component['text-input-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -66,15 +68,15 @@ const Wrapper = styled.div<StyledWrapperProps>`
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
 
-    ${({ $invalid, theme }) => $invalid && css`
-        border-color: ${theme.component['numeric-input-error-border-color']};
+    ${({ $valid, theme }) => !$valid && css`
+        border-color: ${theme.component['text-input-error-border-color']};
 `};
     ${({ $disabled, theme }) => $disabled && css`
-        background-color: ${theme.component['numeric-input-disabled-background-color']};
-        border-color: ${theme.component['numeric-input-disabled-border-color']};
+        background-color: ${theme.component['text-input-disabled-background-color']};
+        border-color: ${theme.component['text-input-disabled-border-color']};
 
         ${Adornment} {
-            color: ${theme.component['numeric-input-disabled-adornment-text-color']};
+            color: ${theme.component['text-input-disabled-adornment-text-color']};
         }
     `};
 `;
@@ -160,11 +162,6 @@ export const TextInput = forwardRef(({
         { id: `${fieldId}_hint`, include: !!hint },
     ]);
 
-    useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
-    const handleAdornmentClick = (): void => {
-        inputRef.current?.focus();
-    };
-
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
             setValidity({ validity: event.currentTarget.checkValidity() });
@@ -192,6 +189,11 @@ export const TextInput = forwardRef(({
             onFocus(event);
         }
     }, [onFocus]);
+
+    useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
+    const handleAdornmentClick = (): void => {
+        inputRef.current?.focus();
+    };
 
     const adornmentContent = useMemo(() => (
         adornment ? (
@@ -223,7 +225,7 @@ export const TextInput = forwardRef(({
             hint={hint}
             data-testid="field-container"
         >
-            <Wrapper $disabled={disabled} $invalid={validity}>
+            <Wrapper $disabled={disabled} $valid={validity}>
                 {(adornment && adornmentPosition === 'start') && adornmentContent}
                 <StyleInput
                     $textAlign={adornmentPosition === 'end' ? 'right' : 'left'}
