@@ -62,10 +62,11 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   color: #000000;
 }
 
-.c7:disabled {
+.c7[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c7 > svg {
@@ -541,10 +542,11 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   color: #000000;
 }
 
-.c9:disabled {
+.c9[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c9 > svg {
@@ -1060,10 +1062,11 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   color: #000000;
 }
 
-.c5:disabled {
+.c5[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c5 > svg {
@@ -1509,10 +1512,11 @@ exports[`Combobox matches the snapshot 1`] = `
   color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {
