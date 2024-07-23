@@ -96,7 +96,7 @@ export * from './components/global-navigation/global-navigation';
 export { RouteLink } from './components/route-link/route-link';
 
 // Results
-export * from './components/legend/legend';
+export * from './components/fieldset';
 export { ProgressIndicator } from './components/progress-indicator/progress-indicator';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';
