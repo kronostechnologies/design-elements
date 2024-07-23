@@ -8,7 +8,7 @@ export const Legend: FC<LegendProps> = ({ children, ...props }) => {
 
     return (
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <StyledLegend {...props} isMobile={isMobile}>
+        <StyledLegend datatest-id='legend' {...props} isMobile={isMobile}>
             {children}
         </StyledLegend>
     );

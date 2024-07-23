@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Card } from '../radio-card-group/styled-components';
 import { FieldsetProps, LegendProps } from './types';
 
 const getFontSize = (size: 'small' | 'medium' | 'large' | undefined, isMobile: boolean): string => {
@@ -46,9 +45,6 @@ export const StyledFieldset = styled.fieldset<FieldsetProps>`
 
     border: none;
     display: flex;
+    gap: var(--spacing-1x);
     flex-direction: ${({ orientation }) => (orientation === 'horizontal' ? 'row' : 'column')};
-
-    ${Card}:not(:last-child) {
-        ${({ orientation }) => (orientation === 'horizontal' ? 'margin-right: var(--spacing-1x)' : 'margin-bottom: var(--spacing-1x)')};
-    }
 `;
