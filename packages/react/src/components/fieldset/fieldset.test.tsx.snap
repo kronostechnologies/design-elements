@@ -3,19 +3,19 @@
 exports[`Fieldset Component Styling matches default 1`] = `
 .c0 {
   border: 0;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
-  min-inline-size: 0;
   border: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--spacing-1x);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
 }
 
 <ForwardRef>
@@ -41,19 +41,19 @@ exports[`Fieldset Component Styling matches default 1`] = `
 exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
 .c0 {
   border: 0;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
-  min-inline-size: 0;
   border: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--spacing-1x);
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
 }
 
 <ForwardRef
@@ -81,19 +81,19 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
 exports[`Fieldset Component Styling matches vertical orientation 1`] = `
 .c0 {
   border: 0;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
-  min-inline-size: 0;
   border: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--spacing-1x);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
 }
 
 <ForwardRef
@@ -120,8 +120,8 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
 
 exports[`Fieldset Component Styling matches with legend 1`] = `
 .c1 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -129,19 +129,19 @@ exports[`Fieldset Component Styling matches with legend 1`] = `
 
 .c0 {
   border: 0;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
-  min-inline-size: 0;
   border: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--spacing-1x);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
 }
 
 <ForwardRef

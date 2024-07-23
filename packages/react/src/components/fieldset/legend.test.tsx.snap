@@ -2,8 +2,8 @@
 
 exports[`Legend Component Device: desktop renders with all combinations of props 1`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.625rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -34,8 +34,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 2`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.625rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -66,8 +66,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 3`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.625rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -98,8 +98,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 4`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.625rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -130,8 +130,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 5`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -162,8 +162,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 6`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -194,8 +194,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 7`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -226,8 +226,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 8`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -258,8 +258,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 9`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -290,8 +290,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 10`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -322,8 +322,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 11`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -354,8 +354,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with all combinations of props 12`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -386,8 +386,8 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 
 exports[`Legend Component Device: desktop renders with bold false 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -412,8 +412,8 @@ exports[`Legend Component Device: desktop renders with bold false 1`] = `
 
 exports[`Legend Component Device: desktop renders with bold true 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -438,8 +438,8 @@ exports[`Legend Component Device: desktop renders with bold true 1`] = `
 
 exports[`Legend Component Device: desktop renders with disabled false 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -465,8 +465,8 @@ exports[`Legend Component Device: desktop renders with disabled false 1`] = `
 
 exports[`Legend Component Device: desktop renders with disabled true 1`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -492,8 +492,8 @@ exports[`Legend Component Device: desktop renders with disabled true 1`] = `
 
 exports[`Legend Component Device: desktop renders with size large 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -519,8 +519,8 @@ exports[`Legend Component Device: desktop renders with size large 1`] = `
 
 exports[`Legend Component Device: desktop renders with size medium 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -546,8 +546,8 @@ exports[`Legend Component Device: desktop renders with size medium 1`] = `
 
 exports[`Legend Component Device: desktop renders with size small 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.625rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -573,8 +573,8 @@ exports[`Legend Component Device: desktop renders with size small 1`] = `
 
 exports[`Legend Component Device: mobile renders with all combinations of props 1`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -605,8 +605,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 2`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -637,8 +637,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 3`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -669,8 +669,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 4`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -701,8 +701,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 5`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -733,8 +733,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 6`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -765,8 +765,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 7`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -797,8 +797,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 8`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -829,8 +829,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 9`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -861,8 +861,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 10`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -893,8 +893,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 11`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -925,8 +925,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with all combinations of props 12`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -957,8 +957,8 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 
 exports[`Legend Component Device: mobile renders with bold false 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -983,8 +983,8 @@ exports[`Legend Component Device: mobile renders with bold false 1`] = `
 
 exports[`Legend Component Device: mobile renders with bold true 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -1009,8 +1009,8 @@ exports[`Legend Component Device: mobile renders with bold true 1`] = `
 
 exports[`Legend Component Device: mobile renders with disabled false 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -1036,8 +1036,8 @@ exports[`Legend Component Device: mobile renders with disabled false 1`] = `
 
 exports[`Legend Component Device: mobile renders with disabled true 1`] = `
 .c0 {
-  display: table;
   color: #B7BBC2;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -1063,8 +1063,8 @@ exports[`Legend Component Device: mobile renders with disabled true 1`] = `
 
 exports[`Legend Component Device: mobile renders with size large 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -1090,8 +1090,8 @@ exports[`Legend Component Device: mobile renders with size large 1`] = `
 
 exports[`Legend Component Device: mobile renders with size medium 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
@@ -1117,8 +1117,8 @@ exports[`Legend Component Device: mobile renders with size medium 1`] = `
 
 exports[`Legend Component Device: mobile renders with size small 1`] = `
 .c0 {
-  display: table;
   color: #1B1C1E;
+  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
