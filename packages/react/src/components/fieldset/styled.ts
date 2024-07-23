@@ -29,8 +29,8 @@ const getFontSize = (size: 'small' | 'medium' | 'large' | undefined, isMobile: b
 };
 
 export const StyledLegend = styled.legend<LegendProps & { isMobile: boolean }>`
-    display: table;
     color: ${({ disabled, theme }) => (disabled ? theme.component['legend-disabled-text-color'] : theme.component['legend-text-color'])};
+    display: table;
     font-size: ${({ isMobile, size }) => getFontSize(size, isMobile)};
     font-weight: ${({ bold }) => (bold ? 'var(--font-bold)' : 'var(--font-normal)')};
     margin: 0 0 var(--spacing-1x);
@@ -38,13 +38,12 @@ export const StyledLegend = styled.legend<LegendProps & { isMobile: boolean }>`
 
 export const StyledFieldset = styled.fieldset<FieldsetProps>`
     border: 0;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
-    min-inline-size: 0;
-
     border: none;
     display: flex;
-    gap: var(--spacing-1x);
     flex-direction: ${({ orientation }) => (orientation === 'horizontal' ? 'row' : 'column')};
+    gap: var(--spacing-1x);
+    margin: 0;
+    min-inline-size: 0;
+    min-width: 0;
+    padding: 0;
 `;
