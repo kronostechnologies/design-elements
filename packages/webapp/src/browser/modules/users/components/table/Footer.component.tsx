@@ -14,23 +14,24 @@ const FooterPaginationWrapper = styled.nav`
 `;
 
 export const Footer: FunctionComponent = () => {
-    const { users, currentPage, usersPerPage } = useUsersContext();
+    const { table } = useUsersContext();
     const dispatch = useUsersActions();
 
     const renderPagination = useCallback((): ReactElement => (
         <Pagination
-            resultsPerPage={usersPerPage}
-            numberOfResults={users.length}
-            activePage={currentPage}
+            resultsPerPage={table.usersPerPage}
+            numberOfResults={table.totalCount}
+            activePage={table.currentPage}
             onPageChange={(page) => {
                 dispatch({
-                    type: UsersAction.UPDATE_CURRENT_PAGE,
-                    currentPage: page,
+                    type: UsersAction.UPDATE_TABLE,
+                    key: 'currentPage',
+                    value: page,
                 });
             }}
             pagesShown={3}
         />
-    ), [usersPerPage, users.length, currentPage, dispatch]);
+    ), [table.usersPerPage, table.totalCount, table.currentPage, dispatch]);
 
     return (
         <FooterPaginationWrapper aria-label="table's pagination">

@@ -6,7 +6,7 @@ import { FunctionComponent, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useUsersActions, useUsersContext } from '../../state';
-import { User, UsersAction } from '../../types';
+import { User, UserKeys, UsersAction } from '../../types';
 import { Footer as TableFooter } from './Footer.component';
 import { Name as NameCell } from './cells/Name.component';
 
@@ -36,7 +36,7 @@ const TableContainer = styled.div`
 
 export const Table: FunctionComponent = () => {
     const { t } = useTranslation('users');
-    const { currentPageUsers } = useUsersContext();
+    const { table } = useUsersContext();
     const dispatch = useUsersActions();
 
     const columns: TableColumn<User>[] = useMemo(() => [
@@ -69,6 +69,7 @@ export const Table: FunctionComponent = () => {
         },
         {
             id: 'actions',
+            headerAriaLabel: 'actions',
             header: '',
             className: 'action-column',
             sortable: false,
@@ -80,13 +81,16 @@ export const Table: FunctionComponent = () => {
             <DataTable
                 rowSize="small"
                 columns={columns}
-                data={currentPageUsers}
-                defaultSort={{ id: 'id', desc: false }}
-                onSort={(sort) => dispatch({
-                    type: UsersAction.SORT,
-                    sortProps: sort ? { id: sort.id as keyof User, desc: sort.desc } : undefined,
-                })}
+                data={table.currentPageUsers}
                 manualSort
+                onSort={(sort) => dispatch({
+                    type: UsersAction.UPDATE_TABLE,
+                    key: 'sortBy',
+                    value: sort ? {
+                        key: sort.id as UserKeys,
+                        desc: sort.desc,
+                    } : undefined,
+                })}
             />
             <TableFooter />
         </TableContainer>

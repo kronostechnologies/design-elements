@@ -24,3 +24,5 @@ export interface User {
     frequency?: string;
     rate?: number | string;
 }
+
+export type UserKeys = keyof User;

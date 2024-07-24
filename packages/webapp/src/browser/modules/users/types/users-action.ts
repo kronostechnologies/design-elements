@@ -1,13 +1,14 @@
 import { User } from './user';
+import { TableContextKeys, TableContextProps } from './users-context';
 
 export enum UsersAction {
-    SORT = 'SORT',
-    UPDATE_CURRENT_PAGE = 'UPDATE_CURRENT_PAGE',
+    LOAD_USERS = 'LOAD_USERS',
+    UPDATE_TABLE = 'UPDATE_TABLE',
 }
 
 export interface UsersActionProps {
     type: string,
-    currentPage?: number,
-    usersPerPage?: number,
-    sortProps?: { id: keyof User, desc: boolean },
+    users?: User[],
+    key?: TableContextKeys,
+    value?: TableContextProps[TableContextKeys],
 }
