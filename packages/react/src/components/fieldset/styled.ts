@@ -36,11 +36,11 @@ export const StyledLegend = styled.legend<LegendProps & { isMobile: boolean }>`
     margin: 0 0 var(--spacing-1x);
 `;
 
-export const StyledFieldset = styled.fieldset<FieldsetProps>`
+export const StyledFieldset = styled.fieldset<{ $orientation: FieldsetProps['orientation'] }>`
     border: 0;
     border: none;
     display: flex;
-    flex-direction: ${({ orientation }) => (orientation === 'horizontal' ? 'row' : 'column')};
+    flex-direction: ${({ $orientation }) => ($orientation === 'horizontal' ? 'row' : 'column')};
     gap: var(--spacing-1x);
     margin: 0;
     min-inline-size: 0;

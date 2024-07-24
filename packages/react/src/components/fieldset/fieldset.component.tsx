@@ -17,8 +17,8 @@ export const Fieldset = forwardRef(({
         <StyledFieldset
             data-testid='fieldset'
             id={id}
-            orientation={orientation}
-            aria-orientation={orientation}
+            $orientation={orientation}
+            data-orientation={orientation}
             aria-disabled={disabled}
             ref={ref}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}

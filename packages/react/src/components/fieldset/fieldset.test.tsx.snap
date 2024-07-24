@@ -20,17 +20,16 @@ exports[`Fieldset Component Styling matches default 1`] = `
 
 <ForwardRef>
   <styled.fieldset
-    aria-orientation="vertical"
+    $orientation="vertical"
+    data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
-    orientation="vertical"
   >
     <fieldset
-      aria-orientation="vertical"
       className="c0"
+      data-orientation="vertical"
       data-testid="fieldset"
       id="uuid1"
-      orientation="vertical"
     >
       Test Content
     </fieldset>
@@ -60,17 +59,16 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
   orientation="horizontal"
 >
   <styled.fieldset
-    aria-orientation="horizontal"
+    $orientation="horizontal"
+    data-orientation="horizontal"
     data-testid="fieldset"
     id="uuid1"
-    orientation="horizontal"
   >
     <fieldset
-      aria-orientation="horizontal"
       className="c0"
+      data-orientation="horizontal"
       data-testid="fieldset"
       id="uuid1"
-      orientation="horizontal"
     >
       Test Content
     </fieldset>
@@ -100,17 +98,16 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
   orientation="vertical"
 >
   <styled.fieldset
-    aria-orientation="vertical"
+    $orientation="vertical"
+    data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
-    orientation="vertical"
   >
     <fieldset
-      aria-orientation="vertical"
       className="c0"
+      data-orientation="vertical"
       data-testid="fieldset"
       id="uuid1"
-      orientation="vertical"
     >
       Test Content
     </fieldset>
@@ -153,17 +150,16 @@ exports[`Fieldset Component Styling matches with legend 1`] = `
   }
 >
   <styled.fieldset
-    aria-orientation="vertical"
+    $orientation="vertical"
+    data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
-    orientation="vertical"
   >
     <fieldset
-      aria-orientation="vertical"
       className="c0"
+      data-orientation="vertical"
       data-testid="fieldset"
       id="uuid1"
-      orientation="vertical"
     >
       <Legend
         bold={true}

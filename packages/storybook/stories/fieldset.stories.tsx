@@ -36,6 +36,14 @@ const withTextInputs = (
     </>
 );
 
+const withRadioCards = (
+    <>
+        <RadioCard label='Radio Card 1!' name='radio-card-1' value='radio-1' />
+        <RadioCard label='Radio Card 2!' name='radio-card-2' value='radio-2' />
+        <RadioCard label='Radio Card 3!' name='radio-card-3' value='radio-3' />
+    </>
+);
+
 export const Default: Story = {
     args: {
         children: withCheckboxes,
@@ -52,7 +60,7 @@ export const Legend: Story = {
 export const Disabled: Story = {
     args: {
         disabled: true,
-        legend: { children: 'This is disabled!', bold: true, size: 'large' },
+        legend: { children: 'This is disabled!', size: 'large' },
         children: withCheckboxes,
     },
 };
@@ -60,29 +68,21 @@ export const Disabled: Story = {
 export const Horizontal: Story = {
     args: {
         orientation: 'horizontal',
-        legend: { children: 'This is horizontal with text inputs!', bold: true, size: 'large' },
+        legend: { children: 'This is horizontal with text inputs!', size: 'large' },
         children: withTextInputs,
     },
 };
 
 export const WithRadioButtons: Story = {
     args: {
-        legend: { children: 'With Radio Buttons!', bold: true, size: 'large' },
+        legend: { children: 'With Radio Buttons!', size: 'large' },
         children: withRadioButtons,
     },
 };
 
-const withRadioCards = (
-    <>
-        <RadioCard label='Radio Card 1!' name='radio-card-1' value='radio-1' />
-        <RadioCard label='Radio Card 2!' name='radio-card-2' value='radio-2' />
-        <RadioCard label='Radio Card 3!' name='radio-card-3' value='radio-3' />
-    </>
-);
-
 export const WithRadioCards: Story = {
     args: {
-        legend: { children: 'With Radio Buttons!', bold: true, size: 'large' },
+        legend: { children: 'With Radio Buttons!', size: 'large' },
         children: withRadioCards,
     },
 };

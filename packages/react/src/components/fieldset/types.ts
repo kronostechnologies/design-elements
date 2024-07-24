@@ -12,7 +12,7 @@ export interface LegendProps extends HTMLAttributes<HTMLLegendElement> {
 export type FieldsetOrientation = 'horizontal' | 'vertical';
 
 type BaseFieldsetProps = Pick<FieldsetHTMLAttributes<HTMLFieldSetElement>,
-    'disabled' | 'id' | 'aria-disabled' | 'aria-orientation' | 'aria-label'
+    'disabled' | 'id' | 'aria-disabled' | 'aria-label' | 'role'
 >;
 
 export interface FieldsetProps extends BaseFieldsetProps {

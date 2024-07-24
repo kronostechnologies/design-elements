@@ -95,6 +95,8 @@ describe('Fieldset Component', () => {
                 </Fieldset>,
             );
             expect(tree).toMatchSnapshot();
+            const fieldset = tree.find('fieldset');
+            expect(fieldset.props()).toHaveProperty('data-orientation', 'vertical');
         });
 
         it('matches horizontal orientation', () => {
@@ -104,6 +106,8 @@ describe('Fieldset Component', () => {
                 </Fieldset>,
             );
             expect(tree).toMatchSnapshot();
+            const fieldset = tree.find('fieldset');
+            expect(fieldset.props()).toHaveProperty('data-orientation', 'horizontal');
         });
     });
 
@@ -124,24 +128,14 @@ describe('Fieldset Component', () => {
             expect(fieldset.props()).toHaveProperty('aria-disabled', true);
         });
 
-        it('applies aria-orientation to specified vertical orientation', () => {
+        it('applies role to specified group role', () => {
             const tree = mountWithProviders(
-                <Fieldset orientation='vertical'>
+                <Fieldset role='group'>
                     Test Content
                 </Fieldset>,
             );
             const fieldset = tree.find('fieldset');
-            expect(fieldset.props()).toHaveProperty('aria-orientation', 'vertical');
-        });
-
-        it('applies aria-orientation to specified horizontal orientation', () => {
-            const tree = mountWithProviders(
-                <Fieldset orientation='horizontal'>
-                    Test Content
-                </Fieldset>,
-            );
-            const fieldset = tree.find('fieldset');
-            expect(fieldset.props()).toHaveProperty('aria-orientation', 'horizontal');
+            expect(fieldset.props()).toHaveProperty('role', 'group');
         });
     });
 });
