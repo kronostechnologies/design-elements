@@ -218,7 +218,7 @@ export const GlobalBanner = forwardRef(({
                         </ActionButton>
                     )}
 
-                    {secondaryActionButton && type !== 'alert' && (
+                    {secondaryActionButton && (
                         <StyledButton
                             data-testid="secondary-action-button"
                             buttonType="tertiary"

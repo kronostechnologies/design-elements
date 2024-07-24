@@ -10,7 +10,8 @@ export type RadioButtonGroupTokens =
     | 'radio-button-disabled-background-color'
     | 'radio-button-disabled-border-color'
     | 'radio-button-hover-border-color'
-    | 'radio-button-disabled-hover-border-color';
+    | 'radio-button-disabled-hover-border-color'
+    | 'radio-button-disabled-label-color';
 
 export type RadioButtonGroupTokenValue = AliasTokens | RefTokens;
 
@@ -27,6 +28,7 @@ export const defaultRadioButtonGroupTokens: RadioButtonGroupTokenMap = {
     'radio-button-disabled-background-color': 'color-control-background-disabled',
     'radio-button-disabled-border-color': 'color-control-border-disabled',
     'radio-button-disabled-hover-border-color': 'color-control-border-disabled',
+    'radio-button-disabled-label-color': 'color-content-disabled',
 
     'radio-button-checked-background-color': 'color-control-background-checked',
     'radio-button-checked-border-color': 'color-control-border-checked',
