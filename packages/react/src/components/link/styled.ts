@@ -23,32 +23,31 @@ export const getLinkStyles = ({
     text-decoration: underline;
 
     svg {
-        color: ${!$disabled && theme.component['link-visited-icon-color']};
+        color: ${ !$disabled && theme.component['link-visited-icon-color']};
         height: 1rem;
         width: 1rem;
     }
 
     &:hover {
-        color: ${!$disabled && theme.component['link-hover-text-color']};
+        color: ${ !$disabled && theme.component['link-hover-text-color']};
+        text-decoration-color: ${ !$disabled && theme.component['link-hover-text-color']};
         svg {
-            color: ${!$disabled && theme.component['link-hover-icon-color']};
+            color: ${ !$disabled && theme.component['link-hover-icon-color']};
         }
-        text-decoration-color: ${!$disabled && theme.component['link-hover-text-color']};
     }
 
     &:visited {
-        color: ${!$disabled && theme.component['link-visited-text-color']};
+        color: ${ !$disabled && theme.component['link-visited-text-color']};
+        text-decoration-color: ${ !$disabled && theme.component['link-visited-text-color']};
         svg {
-            color: ${!$disabled && theme.component['link-visited-icon-color']};
+            color: ${ !$disabled && theme.component['link-visited-icon-color']};
         }
-        text-decoration-color: ${!$disabled && theme.component['link-visited-text-color']};
     }
 
     &[disabled] {
         cursor: not-allowed;
         pointer-events: none;
     }
-
     ${focus({ theme }, { focusType: 'focus-visible' })};
 `;
 
