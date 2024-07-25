@@ -39,6 +39,7 @@ function getThPadding(device: DeviceType, rowSize?: RowSize): string {
                 case 'mobile':
                     return 'var(--spacing-2x) var(--spacing-1x)';
             }
+            break;
         case 'large':
             switch (device) {
                 case 'desktop':
@@ -48,6 +49,7 @@ function getThPadding(device: DeviceType, rowSize?: RowSize): string {
                 case 'mobile':
                     return 'var(--spacing-3x) var(--spacing-1x)';
             }
+            break;
         default:
             switch (device) {
                 case 'desktop':
@@ -71,6 +73,7 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
                 case 'mobile':
                     return 'var(--spacing-2x) var(--spacing-1x)';
             }
+            break;
         case 'large':
             switch (device) {
                 case 'desktop':
@@ -80,6 +83,7 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
                 case 'mobile':
                     return 'var(--spacing-3x) var(--spacing-1x)';
             }
+            break;
         default:
             switch (device) {
                 case 'desktop':
