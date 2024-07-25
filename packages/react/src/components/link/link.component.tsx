@@ -21,7 +21,7 @@ export const Link: FC<LinkProps> = ({
     target = '_blank',
     onClick,
     routerLink,
-    rel,
+    rel = 'noopener noreferrer',
     ...linkProps
 }): ReactElement => {
     const id = useId(providedId);
@@ -39,8 +39,23 @@ export const Link: FC<LinkProps> = ({
         }
     };
 
-    const renderContent = (): ReactElement => (
-        <>
+    const renderLink = (): ReactElement => (
+        <StyledLink
+            as={external ? 'a' : routerLink}
+            to={external ? undefined : href}
+            data-testid="link"
+            aria-disabled={disabled ? 'true' : 'false'}
+            id={id}
+            href={disabled ? undefined : href}
+            onClick={handleClick}
+            target={external ? target : undefined}
+            tabIndex={disabled ? -1 : 0}
+            rel={external ? rel : undefined}
+            $buttonProps={buttonProps}
+            $isMobile={isMobile}
+            $disabled={disabled}
+            {...linkProps /* eslint-disable-line react/jsx-props-no-spreading */}
+        >
             {iconName && (
                 <Icon
                     data-testid="link-icon"
@@ -65,27 +80,6 @@ export const Link: FC<LinkProps> = ({
                     label={t('opensInNewTabScreenReader')}
                 />
             )}
-        </>
-    );
-
-    const renderLink = (): ReactElement => (
-        <StyledLink
-            as={external ? 'a' : routerLink}
-            to={external ? undefined : href}
-            data-testid="link"
-            aria-disabled={disabled ? 'true' : 'false'}
-            id={id}
-            href={disabled ? undefined : href}
-            onClick={handleClick}
-            target={external ? target : undefined}
-            tabIndex={disabled ? -1 : 0}
-            rel={external ? (rel ?? 'noopener noreferrer') : undefined}
-            $buttonProps={buttonProps}
-            $isMobile={isMobile}
-            $disabled={disabled}
-            {...linkProps /* eslint-disable-line react/jsx-props-no-spreading */}
-        >
-            {renderContent()}
         </StyledLink>
     );
 

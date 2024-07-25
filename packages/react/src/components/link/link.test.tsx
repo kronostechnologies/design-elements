@@ -1,31 +1,67 @@
+import { act } from 'react-dom/test-utils';
 import { Link as RouteLink, NavLink } from 'react-router-dom';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Link } from './link.component';
 
 describe('Link Component', () => {
     describe('Features', () => {
-        it('internal link changes location without reloading the page', () => {
-            const internalLinkWrapper = mountWithProviders(<Link routerLink={NavLink} href="/internal-page" />);
-            expect(internalLinkWrapper.find(NavLink).prop('to')).toBe('/internal-page');
-        });
-
-        it('internal link navigates correctly when routerLink is undefined', () => {
-            const internalLinkWrapper = mountWithProviders(<Link href="/internal-page" />);
+        it('internal link is valid and updates dynamically ', () => {
+            const wrapper = mountWithProviders(<Link href="/internal-page" />);
             // Verify that an <a> tag is rendered with the correct href attribute
-            expect(internalLinkWrapper.find('a').prop('href')).toBe('/internal-page');
+            expect(wrapper.find('a').prop('href')).toBe('/internal-page');
+
+            act(() => {
+                wrapper.setProps({ href: '/updated-page' });
+            });
+
+            expect(wrapper.find('a').prop('href')).toBe('/updated-page');
         });
 
-        it('external link opens in a new tab', () => {
-            const externalLinkWrapper = mountWithProviders(<Link external href="https://example.com" />);
-            expect(externalLinkWrapper.find('a').prop('target')).toBe('_blank');
-            expect(externalLinkWrapper.find('a').prop('rel')).toContain('noopener noreferrer');
+        it('internal link with routerLink is valid', () => {
+            const wrapper = mountWithProviders(<Link routerLink={NavLink} href="/internal-page" />);
+            expect(wrapper.find(NavLink).prop('to')).toBe('/internal-page');
         });
 
-        it('prevents click when disabled', () => {
+        it('external link is valid and updates dynamically', () => {
+            const wrapper = mountWithProviders(<Link external href="https://example.com" />);
+            expect(wrapper.find('a').prop('href')).toBe('https://example.com');
+            expect(wrapper.find('a').prop('target')).toBe('_blank');
+            expect(wrapper.find('a').prop('rel')).toContain('noopener noreferrer');
+
+            act(() => {
+                wrapper.setProps({ href: 'https://google.com' });
+            });
+
+            expect(wrapper.find('a').prop('href')).toBe('https://google.com');
+        });
+
+        it('calls or prevent onClick callback when clicked based on disabled state', () => {
             const onClickMock = jest.fn();
-            const disabledLinkWrapper = mountWithProviders(<Link disabled onClick={onClickMock} />);
-            disabledLinkWrapper.find('a').simulate('click');
-            expect(onClickMock).not.toHaveBeenCalled();
+            const wrapper = mountWithProviders(<Link href="/test" onClick={onClickMock} />);
+
+            // Initially, the link is clickable
+            wrapper.find('a').simulate('click');
+            expect(wrapper.find('a').prop('href')).toBeDefined();
+            expect(onClickMock).toHaveBeenCalledTimes(1);
+
+            act(() => {
+                wrapper.setProps({ disabled: true });
+            });
+
+            wrapper.find('a').simulate('click');
+            expect(wrapper.find('a').prop('href')).toBeUndefined();
+            expect(onClickMock).toHaveBeenCalledTimes(1);
+        });
+
+        it('renders icon and updates dynamically', () => {
+            const wrapper = mountWithProviders(<Link iconName="mail" />);
+            expect(wrapper.find('Icon').prop('name')).toBe('mail');
+
+            act(() => {
+                wrapper.setProps({ iconName: 'bell' });
+            });
+
+            expect(wrapper.find('Icon').prop('name')).toBe('bell');
         });
 
         it('renders tooltip when isIconOnly and label is provided', () => {
@@ -39,10 +75,17 @@ describe('Link Component', () => {
             expect(childrenWrapper.contains(<div className="test-child">Child Content</div>)).toBe(true);
         });
 
-        it('overrides children when label provided', () => {
-            const overrideWrapper = mountWithProviders(<Link label="Label Content"><div>Child Content</div></Link>);
-            expect(overrideWrapper.text()).toContain('Label Content');
-            expect(overrideWrapper.contains(<div>Child Content</div>)).toBe(false);
+        it('overrides children when label provided and updates dynamically', () => {
+            const wrapper = mountWithProviders(<Link label="Label Content"><div>Child Content</div></Link>);
+            expect(wrapper.text()).toContain('Label Content');
+            expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
+
+            act(() => {
+                wrapper.setProps({ label: 'Updated Label' });
+            });
+
+            expect(wrapper.text()).toContain('Updated Label');
+            expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
         });
 
         it('renders RouteLink when routerLink prop is RouteLink', () => {
@@ -50,22 +93,6 @@ describe('Link Component', () => {
             expect(routeLinkWrapper.find(RouteLink).exists()).toBe(true);
             expect(routeLinkWrapper.find(NavLink).exists()).toBe(false);
             expect(routeLinkWrapper.find(RouteLink).prop('to')).toBe('/internal-route');
-        });
-
-        it('calls onClick callback when clicked', () => {
-            const callback = jest.fn();
-            const wrapper = mountWithProviders(
-                <Link
-                    routerLink={NavLink}
-                    href="/test"
-                    label="Navigation Link"
-                    onClick={callback}
-                />,
-            );
-
-            wrapper.simulate('click');
-
-            expect(callback).toHaveBeenCalledTimes(1);
         });
     });
 
