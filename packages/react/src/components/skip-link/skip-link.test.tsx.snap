@@ -18,10 +18,6 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: var(--spacing-1x);
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
@@ -111,10 +107,6 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: var(--spacing-1x);
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: var(--font-bold);

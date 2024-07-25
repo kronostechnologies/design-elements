@@ -41,8 +41,6 @@ export const getBaseButtonStyles = ({
     box-sizing: border-box;
     color: inherit;
     display: inline-flex;
-    flex-direction: row;
-    gap: var(--spacing-1x);
     font-family: inherit;
     font-size: ${$isMobile ? 0.875 : 0.75}rem;
     font-weight: var(--font-bold);
@@ -65,37 +63,6 @@ export const getBaseButtonStyles = ({
     }
 `;
 
-export const baseButtonStyles = css<BaseButtonStyles>`
-    align-items: center;
-    appearance: none;
-    background: inherit;
-    border: 1px solid;
-    border-radius: 1.5rem;
-    box-sizing: border-box;
-    color: inherit;
-    display: inline-flex;
-    font-family: inherit;
-    font-size: ${({ $isMobile }) => ($isMobile ? 0.875 : 0.75)}rem;
-    font-weight: var(--font-bold);
-    justify-content: center;
-    letter-spacing: ${({ $isMobile }) => ($isMobile ? 0.033125 : 0.025)}rem;
-    line-height: ${({ $isMobile }) => ($isMobile ? 1.5 : 1)}rem;
-    min-height: ${getButtonMinHeight};
-    min-width: 2rem;
-    outline: none;
-    padding: ${getButtonPadding};
-    text-transform: uppercase;
-    user-select: none;
-
-    ${(props) => props.$focusable !== false && focus};
-
-    > svg {
-        color: inherit;
-        height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-        width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-    }
-`;
-
 export const StyledAbstractButton = styled.button<BaseButtonStyles>`
-    ${baseButtonStyles}
+    ${getBaseButtonStyles}
 `;

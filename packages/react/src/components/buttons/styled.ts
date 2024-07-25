@@ -53,66 +53,6 @@ export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolat
     `;
 };
 
-// export const getButtonStyles = ({
-//     buttonType, inverted, focusable, size,
-// }: ButtonProps, $isMobile: boolean, theme: ResolvedTheme): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
-//     align-items: center;
-//     appearance: none;
-//     border: 1px solid;
-//     border-radius: 1.5rem;
-//     box-sizing: border-box;
-//     display: inline-flex;
-//     flex-direction: row;
-//     gap: var(--spacing-1x);
-//     font-family: inherit;
-//     font-size: ${$isMobile ? 0.875 : 0.75}rem;
-//     font-weight: var(--font-bold);
-//     justify-content: center;
-//     letter-spacing: ${$isMobile ? 0.033125 : 0.025}rem;
-//     line-height: ${$isMobile ? 1.5 : 1}rem;
-//     min-height: ${getButtonMinHeight({ $isMobile, size })};
-//     min-width: 2rem;
-//     outline: none;
-//     padding: ${getButtonPadding({ $isMobile, size })};
-//     text-transform: uppercase;
-//     user-select: none;
-//
-//     > svg {
-//         color: inherit;
-//         height: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
-//         width: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
-//     }
-//
-//     ${focusable !== false && focus({ theme }, { inverted })};
-//
-//     background-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-background-color`]};
-//     border-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-border-color`]};
-//     color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-text-color`]};
-//
-//     &:hover,
-//     &[aria-expanded='true'] {
-//         background-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-hover-background-color`]};
-//         border-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-hover-border-color`]};
-//         color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-hover-text-color`]};
-//     }
-//
-//     &[aria-disabled='true'] {
-//         background-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-background-color`]};
-//         border-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-border-color`]};
-//         color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-text-color`]};
-//         cursor: not-allowed;
-//         ${buttonType === 'destructive-primary' && css`
-//             &,
-//             ${focusable !== false && '&:focus,'}
-//             &:hover {
-//                 background-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-background-color`]};
-//                 border-color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-border-color`]};
-//                 color: ${theme.component[`button-${buttonType}${inverted ? '-inverted' : ''}-disabled-text-color`]};
-//             }
-//         `}
-//     }
-// `;
-
 export const getButtonStyles = ({
     buttonType, inverted, focusable, size,
 }: ButtonProps, $isMobile: boolean, theme: ResolvedTheme): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
@@ -122,6 +62,9 @@ export const getButtonStyles = ({
         $focusable: focusable,
         $inverted: inverted,
     })};
+
+    flex-direction: row;
+    gap: var(--spacing-1x);
 
     ${getButtonTypeStyles({
         buttonType, inverted, focusable, theme,
