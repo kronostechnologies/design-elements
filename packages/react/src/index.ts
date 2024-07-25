@@ -95,7 +95,7 @@ export { useToast } from './hooks/use-toast';
 export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';
 export * from './components/global-navigation/global-navigation';
 export { RouteLink } from './components/route-link/route-link';
-export { Link } from './components/link/link.component';
+export { Link } from './components/link';
 
 // Results
 export * from './components/legend/legend';

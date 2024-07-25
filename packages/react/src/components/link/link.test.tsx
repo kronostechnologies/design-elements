@@ -1,7 +1,7 @@
 import { act } from 'react-dom/test-utils';
 import { Link as RouteLink, NavLink } from 'react-router-dom';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { Link } from './link.component';
+import { Link } from './link';
 
 describe('Link Component', () => {
     describe('Features', () => {
