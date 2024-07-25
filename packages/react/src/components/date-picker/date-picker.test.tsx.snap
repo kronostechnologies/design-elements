@@ -3721,37 +3721,6 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   width: var(--size-1x);
 }
 
-.c18 {
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-}
-
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c18:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c18:hover,
-.c18[aria-expanded='true'] {
-  background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
-}
-
-.c18[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
-  cursor: not-allowed;
-}
-
 .c8 {
   background-color: transparent;
   border-color: transparent;
@@ -3788,6 +3757,37 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 .c8 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
+}
+
+.c18 {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c18 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c18:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c18:hover,
+.c18[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c18[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+  cursor: not-allowed;
 }
 
 .c2 {

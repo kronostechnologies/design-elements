@@ -6,9 +6,16 @@ import {
     ReactElement,
     Ref,
 } from 'react';
+import styled from 'styled-components';
+import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { LeftIcon, RightIcon, StyledButton } from './styled';
+import { AbstractButton } from './abstract/abstract-button';
+import { getButtonTypeStyles, LeftIcon, RightIcon } from './styled';
 import { ButtonProps } from './types';
+
+export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
+    ${getButtonTypeStyles}
+`;
 
 export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
     autofocus,

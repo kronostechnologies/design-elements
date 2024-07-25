@@ -1,7 +1,6 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { Icon } from '../icon/icon';
-import { AbstractButton } from './abstract/abstract-button';
 import { getBaseButtonStyles } from './abstract/styled';
 import { ButtonProps, ButtonType } from './types';
 import { focus } from '../../utils/css-state';
@@ -74,8 +73,4 @@ export const LeftIcon = styled(Icon)`
 
 export const RightIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
-`;
-
-export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
-    ${getButtonTypeStyles}
 `;
