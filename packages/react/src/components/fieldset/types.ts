@@ -16,7 +16,7 @@ type BaseFieldsetProps = Pick<FieldsetHTMLAttributes<HTMLFieldSetElement>,
 >;
 
 export interface FieldsetProps extends BaseFieldsetProps {
-    legend?: LegendProps;
+    legend?: string | LegendProps;
     orientation?: FieldsetOrientation;
     children: ReactNode;
 }

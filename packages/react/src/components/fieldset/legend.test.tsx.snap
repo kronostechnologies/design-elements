@@ -15,16 +15,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="small"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -47,16 +45,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="small"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -79,16 +75,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="small"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -111,16 +105,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="small"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -143,16 +135,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="medium"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -175,16 +165,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="medium"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -207,16 +195,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="medium"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -239,16 +225,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="medium"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -271,16 +255,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="large"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -303,16 +285,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="large"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -335,16 +315,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="large"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -367,16 +345,14 @@ exports[`Legend Component Device: desktop renders with all combinations of props
   size="large"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -397,9 +373,9 @@ exports[`Legend Component Device: desktop renders with bold false 1`] = `
   bold={false}
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $isMobile={false}
     datatest-id="legend"
-    isMobile={false}
   >
     <legend
       className="c0"
@@ -423,9 +399,9 @@ exports[`Legend Component Device: desktop renders with bold true 1`] = `
   bold={true}
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $isMobile={false}
     datatest-id="legend"
-    isMobile={false}
   >
     <legend
       className="c0"
@@ -449,13 +425,12 @@ exports[`Legend Component Device: desktop renders with disabled false 1`] = `
   disabled={false}
 >
   <styled.legend
+    $disabled={false}
+    $isMobile={false}
     datatest-id="legend"
-    disabled={false}
-    isMobile={false}
   >
     <legend
       className="c0"
-      disabled={false}
     >
       Sample Legend
     </legend>
@@ -476,13 +451,12 @@ exports[`Legend Component Device: desktop renders with disabled true 1`] = `
   disabled={true}
 >
   <styled.legend
+    $disabled={true}
+    $isMobile={false}
     datatest-id="legend"
-    disabled={true}
-    isMobile={false}
   >
     <legend
       className="c0"
-      disabled={true}
     >
       Sample Legend
     </legend>
@@ -503,13 +477,12 @@ exports[`Legend Component Device: desktop renders with size large 1`] = `
   size="large"
 >
   <styled.legend
+    $isMobile={false}
+    $size="large"
     datatest-id="legend"
-    isMobile={false}
-    size="large"
   >
     <legend
       className="c0"
-      size="large"
     >
       Sample Legend
     </legend>
@@ -530,13 +503,12 @@ exports[`Legend Component Device: desktop renders with size medium 1`] = `
   size="medium"
 >
   <styled.legend
+    $isMobile={false}
+    $size="medium"
     datatest-id="legend"
-    isMobile={false}
-    size="medium"
   >
     <legend
       className="c0"
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -557,13 +529,12 @@ exports[`Legend Component Device: desktop renders with size small 1`] = `
   size="small"
 >
   <styled.legend
+    $isMobile={false}
+    $size="small"
     datatest-id="legend"
-    isMobile={false}
-    size="small"
   >
     <legend
       className="c0"
-      size="small"
     >
       Sample Legend
     </legend>
@@ -586,16 +557,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="small"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -618,16 +587,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="small"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -650,16 +617,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="small"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -682,16 +647,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="small"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="small"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="small"
     >
       Sample Legend
     </legend>
@@ -714,16 +677,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="medium"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -746,16 +707,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="medium"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -778,16 +737,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="medium"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -810,16 +767,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="medium"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="medium"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -842,16 +797,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="large"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -874,16 +827,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="large"
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -906,16 +857,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="large"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={true}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -938,16 +887,14 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
   size="large"
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
-    size="large"
   >
     <legend
       className="c0"
-      disabled={false}
-      size="large"
     >
       Sample Legend
     </legend>
@@ -968,9 +915,9 @@ exports[`Legend Component Device: mobile renders with bold false 1`] = `
   bold={false}
 >
   <styled.legend
-    bold={false}
+    $bold={false}
+    $isMobile={true}
     datatest-id="legend"
-    isMobile={true}
   >
     <legend
       className="c0"
@@ -994,9 +941,9 @@ exports[`Legend Component Device: mobile renders with bold true 1`] = `
   bold={true}
 >
   <styled.legend
-    bold={true}
+    $bold={true}
+    $isMobile={true}
     datatest-id="legend"
-    isMobile={true}
   >
     <legend
       className="c0"
@@ -1020,13 +967,12 @@ exports[`Legend Component Device: mobile renders with disabled false 1`] = `
   disabled={false}
 >
   <styled.legend
+    $disabled={false}
+    $isMobile={true}
     datatest-id="legend"
-    disabled={false}
-    isMobile={true}
   >
     <legend
       className="c0"
-      disabled={false}
     >
       Sample Legend
     </legend>
@@ -1047,13 +993,12 @@ exports[`Legend Component Device: mobile renders with disabled true 1`] = `
   disabled={true}
 >
   <styled.legend
+    $disabled={true}
+    $isMobile={true}
     datatest-id="legend"
-    disabled={true}
-    isMobile={true}
   >
     <legend
       className="c0"
-      disabled={true}
     >
       Sample Legend
     </legend>
@@ -1074,13 +1019,12 @@ exports[`Legend Component Device: mobile renders with size large 1`] = `
   size="large"
 >
   <styled.legend
+    $isMobile={true}
+    $size="large"
     datatest-id="legend"
-    isMobile={true}
-    size="large"
   >
     <legend
       className="c0"
-      size="large"
     >
       Sample Legend
     </legend>
@@ -1101,13 +1045,12 @@ exports[`Legend Component Device: mobile renders with size medium 1`] = `
   size="medium"
 >
   <styled.legend
+    $isMobile={true}
+    $size="medium"
     datatest-id="legend"
-    isMobile={true}
-    size="medium"
   >
     <legend
       className="c0"
-      size="medium"
     >
       Sample Legend
     </legend>
@@ -1128,13 +1071,12 @@ exports[`Legend Component Device: mobile renders with size small 1`] = `
   size="small"
 >
   <styled.legend
+    $isMobile={true}
+    $size="small"
     datatest-id="legend"
-    isMobile={true}
-    size="small"
   >
     <legend
       className="c0"
-      size="small"
     >
       Sample Legend
     </legend>

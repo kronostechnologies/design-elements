@@ -1,3 +1,3 @@
-export * from './fieldset.component';
-export * from './legend.component';
+export * from './fieldset';
+export * from './legend';
 export * from './types';

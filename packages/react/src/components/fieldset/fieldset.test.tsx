@@ -1,6 +1,6 @@
 import { mountWithProviders } from '../../test-utils/renderer';
-import { Fieldset } from './fieldset.component';
-import { Legend } from './legend.component';
+import { Fieldset } from './fieldset';
+import { Legend } from './legend';
 
 describe('Fieldset Component', () => {
     describe('Features', () => {
@@ -37,13 +37,25 @@ describe('Fieldset Component', () => {
             expect(legend.exists()).toBeFalsy();
         });
 
-        it('renders a legend when provided', () => {
+        it('renders a legend when provided as string', () => {
+            const tree = mountWithProviders(
+                <Fieldset legend='Legend text'>
+                    Test Content
+                </Fieldset>,
+            );
+            const legend = tree.find(Legend);
+            expect(legend.prop('children')).toBe('Legend text');
+            expect(legend.exists()).toBeTruthy();
+        });
+
+        it('renders a legend when provided as legend props', () => {
             const tree = mountWithProviders(
                 <Fieldset legend={{ children: 'Legend text' }}>
                     Test Content
                 </Fieldset>,
             );
             const legend = tree.find(Legend);
+            expect(legend.prop('children')).toBe('Legend text');
             expect(legend.exists()).toBeTruthy();
         });
 

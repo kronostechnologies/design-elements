@@ -166,10 +166,10 @@ exports[`Fieldset Component Styling matches with legend 1`] = `
         id="uuid1-legend"
       >
         <styled.legend
-          bold={true}
+          $bold={true}
+          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
-          isMobile={false}
         >
           <legend
             className="c1"

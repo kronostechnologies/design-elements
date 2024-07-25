@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { FieldsetProps, LegendProps } from './types';
 
-const getFontSize = (size: 'small' | 'medium' | 'large' | undefined, isMobile: boolean): string => {
-    const effectiveSize = size || 'medium';
-    if (isMobile) {
+const getFontSize = ({ $isMobile, $size }: { $isMobile: boolean, $size?: LegendProps['size'] }): string => {
+    const effectiveSize = $size || 'medium';
+    if ($isMobile) {
         switch (effectiveSize) {
             case 'small':
                 return '0.75rem';
@@ -28,15 +28,22 @@ const getFontSize = (size: 'small' | 'medium' | 'large' | undefined, isMobile: b
     }
 };
 
-export const StyledLegend = styled.legend<LegendProps & { isMobile: boolean }>`
-    color: ${({ disabled, theme }) => (disabled ? theme.component['legend-disabled-text-color'] : theme.component['legend-text-color'])};
+export const StyledLegend = styled.legend<{
+    $size: LegendProps['size'],
+    $disabled: LegendProps['disabled'],
+    $bold: LegendProps['bold'],
+    $isMobile: boolean,
+}>`
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['legend-disabled-text-color'] : theme.component['legend-text-color'])};
     display: table;
-    font-size: ${({ isMobile, size }) => getFontSize(size, isMobile)};
-    font-weight: ${({ bold }) => (bold ? 'var(--font-bold)' : 'var(--font-normal)')};
+    font-size: ${getFontSize};
+    font-weight: ${({ $bold }) => ($bold ? 'var(--font-bold)' : 'var(--font-normal)')};
     margin: 0 0 var(--spacing-1x);
 `;
 
-export const StyledFieldset = styled.fieldset<{ $orientation: FieldsetProps['orientation'] }>`
+export const StyledFieldset = styled.fieldset<{
+    $orientation: FieldsetProps['orientation'],
+}>`
     border: 0;
     border: none;
     display: flex;
