@@ -326,6 +326,44 @@ export const SmallRows: Story = () => {
     );
 };
 
+export const LargeRows: Story = () => {
+    const columns: TableColumn<Data>[] = [
+        {
+            header: 'Column 1',
+            accessorKey: 'column1',
+        },
+        {
+            header: 'Column 2',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableData<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+    ];
+    return (
+        <Table rowSize="large" columns={columns} data={data} />
+    );
+};
+
 export const RowClickCallback: Story = () => {
     interface DataWithHref {
         column1: string;

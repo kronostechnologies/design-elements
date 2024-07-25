@@ -24,47 +24,71 @@ import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { TableData, TableColumn } from './types';
 
-type RowSize = 'small' | 'medium';
+type RowSize = 'small' | 'medium' | 'large';
 
 type UtilityColumnType = 'selection' | 'numbers' | 'expand';
 
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
-    if (rowSize === 'small') {
-        switch (device) {
-            case 'desktop':
-            case 'tablet':
-                return 'var(--spacing-half) var(--spacing-1x)';
-            case 'mobile':
-                return 'var(--spacing-1x)';
-        }
-    }
-    switch (device) {
-        case 'desktop':
-            return 'var(--spacing-1x) var(--spacing-2x)';
-        case 'tablet':
-            return 'var(--spacing-2x) var(--spacing-1x)';
-        case 'mobile':
-            return 'var(--spacing-2x) 0';
+    switch (rowSize) {
+        case 'small':
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-half) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-1x)';
+                case 'mobile':
+                    return 'var(--spacing-2x) var(--spacing-1x)';
+            }
+        case 'large':
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-2x) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-3x) var(--spacing-2x)';
+                case 'mobile':
+                    return 'var(--spacing-3x) var(--spacing-1x)';
+            }
+        default:
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-1x) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-3x) var(--spacing-1x)';
+                case 'mobile':
+                    return 'var(--spacing-3x) 0';
+            }
     }
 }
 
 function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
-    if (rowSize === 'small') {
-        switch (device) {
-            case 'desktop':
-            case 'tablet':
-                return 'var(--spacing-1x)';
-            case 'mobile':
-                return 'var(--spacing-2x) var(--spacing-1x)';
-        }
-    }
-    switch (device) {
-        case 'desktop':
-            return 'var(--spacing-2x)';
-        case 'tablet':
-            return 'var(--spacing-3x) var(--spacing-1x)';
-        case 'mobile':
-            return 'var(--spacing-3x) 0';
+    switch (rowSize) {
+        case 'small':
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-half) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-1x)';
+                case 'mobile':
+                    return 'var(--spacing-2x) var(--spacing-1x)';
+            }
+        case 'large':
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-2x) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-3x) var(--spacing-2x)';
+                case 'mobile':
+                    return 'var(--spacing-3x) var(--spacing-1x)';
+            }
+        default:
+            switch (device) {
+                case 'desktop':
+                    return 'var(--spacing-1x) var(--spacing-2x)';
+                case 'tablet':
+                    return 'var(--spacing-3x) var(--spacing-1x)';
+                case 'mobile':
+                    return 'var(--spacing-3x) 0';
+            }
     }
 }
 
