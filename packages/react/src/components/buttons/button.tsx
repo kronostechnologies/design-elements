@@ -13,7 +13,7 @@ import { AbstractButton } from './abstract/abstract-button';
 import { getButtonTypeStyles, LeftIcon, RightIcon } from './styled';
 import { ButtonProps } from './types';
 
-export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
+const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
     ${getButtonTypeStyles}
 `;
 
