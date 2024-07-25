@@ -6,14 +6,10 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
     children,
     onClick,
     focusable,
-    size,
-    isMobile,
     ...props
 }: AbstractButtonProps, ref: Ref<HTMLButtonElement>) => (
     <StyledAbstractButton
         $focusable={focusable}
-        $size={size}
-        $isMobile={isMobile}
         onClick={onClick}
         ref={ref}
         tabIndex={focusable === false ? -1 : undefined}

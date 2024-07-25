@@ -277,8 +277,6 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       >
         <styled.button
           $focusable={true}
-          $isMobile={false}
-          $size="medium"
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -286,7 +284,9 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
           className="c0"
           data-testid="toggletip"
           inverted={false}
+          isMobile={false}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -296,6 +296,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -505,8 +506,6 @@ exports[`Toggletip Has default desktop styles 1`] = `
       >
         <styled.button
           $focusable={true}
-          $isMobile={false}
-          $size="medium"
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
@@ -514,7 +513,9 @@ exports[`Toggletip Has default desktop styles 1`] = `
           className="c0"
           data-testid="toggletip"
           inverted={false}
+          isMobile={false}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -524,6 +525,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -824,8 +826,6 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       >
         <styled.button
           $focusable={true}
-          $isMobile={true}
-          $size="medium"
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -833,7 +833,9 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
           className="c0"
           data-testid="toggletip"
           inverted={false}
+          isMobile={true}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -843,6 +845,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon
@@ -1052,8 +1055,6 @@ exports[`Toggletip Has mobile styles 1`] = `
       >
         <styled.button
           $focusable={true}
-          $isMobile={true}
-          $size="medium"
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
@@ -1061,7 +1062,9 @@ exports[`Toggletip Has mobile styles 1`] = `
           className="c0"
           data-testid="toggletip"
           inverted={false}
+          isMobile={true}
           onClick={[Function]}
+          size="medium"
           type="button"
         >
           <button
@@ -1071,6 +1074,7 @@ exports[`Toggletip Has mobile styles 1`] = `
             className="c1 c0"
             data-testid="toggletip"
             onClick={[Function]}
+            size="medium"
             type="button"
           >
             <Icon

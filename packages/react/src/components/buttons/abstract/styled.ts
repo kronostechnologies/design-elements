@@ -63,6 +63,6 @@ export const getBaseButtonStyles = ({
     }
 `;
 
-export const StyledAbstractButton = styled.button<BaseButtonStyles>`
-    ${getBaseButtonStyles}
+export const StyledAbstractButton = styled.button<{ $focusable?: boolean; isMobile: boolean; size?: Size }>`
+    ${({ $focusable, size, isMobile }) => getBaseButtonStyles({ $size: size, $focusable, $isMobile: isMobile })};
 `;
