@@ -12,42 +12,51 @@ export const getLinkStyles = ({
 }, theme: ResolvedTheme): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     align-items: center;
     border-radius: var(--border-radius);
-    color: ${$disabled ? theme.component['link-disabled-text-color'] : theme.component['link-text-color']};
-    cursor: ${$disabled ? 'default' : 'pointer'};
-    display: inline-flex;
-    flex-direction: row;
+    color: ${theme.component['link-text-color']};
+    cursor: pointer;
     font-size: ${$isMobile ? '1rem' : '0.875rem'};
-    gap: var(--spacing-half);
-    line-height: 1.5rem;
+    font-style: normal;
+    font-weight: var(--font-normal);
+    letter-spacing: 0.2px;
+    line-height: 20px;
     padding: 0 4px;
-    text-decoration: underline;
 
     svg {
-        color: ${ !$disabled && theme.component['link-visited-icon-color']};
+        color: ${theme.component['link-icon-color']};
         height: 1rem;
         width: 1rem;
     }
 
-    &:hover {
-        color: ${ !$disabled && theme.component['link-hover-text-color']};
-        text-decoration-color: ${ !$disabled && theme.component['link-hover-text-color']};
-        svg {
-            color: ${ !$disabled && theme.component['link-hover-icon-color']};
-        }
-    }
-
+    &[visited],
     &:visited {
-        color: ${ !$disabled && theme.component['link-visited-text-color']};
-        text-decoration-color: ${ !$disabled && theme.component['link-visited-text-color']};
+        color: ${theme.component['link-visited-text-color']};
+        text-decoration-color: ${theme.component['link-visited-text-color']};
         svg {
-            color: ${ !$disabled && theme.component['link-visited-icon-color']};
+            color: ${theme.component['link-visited-icon-color']};
         }
     }
 
-    &[disabled] {
+    &[hover],
+    &:hover {
+        color: ${theme.component['link-hover-text-color']};
+        text-decoration-color: ${theme.component['link-hover-text-color']};
+        svg {
+            color: ${theme.component['link-hover-icon-color']};
+        }
+    }
+
+    &[disabled],
+    &[aria-disabled='true'],
+    &:disabled {
+        color: ${$disabled && theme.component['link-disabled-text-color']};
         cursor: not-allowed;
         pointer-events: none;
+        text-decoration-color: ${$disabled && theme.component['link-disabled-text-color']};
+        svg {
+            color: ${$disabled && theme.component['link-disabled-icon-color']};
+        }
     }
+
     ${focus({ theme }, { focusType: 'focus-visible' })};
 `;
 
@@ -63,4 +72,9 @@ export const StyledLink = styled.a<{
             ? getButtonStyles($buttonProps, $isMobile, theme)
             : getLinkStyles({ $disabled, $isMobile }, theme))
 };
+
+    display: inline-flex;
+    flex-direction: row;
+    gap: ${({ $buttonProps }) => ($buttonProps ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
+    text-decoration: underline;
 `;

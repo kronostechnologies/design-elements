@@ -63,9 +63,6 @@ export const getButtonStyles = ({
         $inverted: inverted,
     })};
 
-    flex-direction: row;
-    gap: var(--spacing-1x);
-
     ${getButtonTypeStyles({
         buttonType, inverted, focusable, theme,
     })};

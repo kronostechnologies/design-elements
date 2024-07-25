@@ -1,5 +1,6 @@
 import { Link } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import { Link as RouteLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -95,3 +96,12 @@ export const WithCallback: Story = {
     },
 };
 WithCallback.parameters = rawCodeParameters;
+
+export const WithRouteLink: Story = {
+    args: {
+        label: 'Router Link',
+        href: '/storybook',
+        routerLink: RouteLink,
+    },
+};
+WithRouteLink.decorators = [RouterDecorator];
