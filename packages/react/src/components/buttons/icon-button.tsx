@@ -4,8 +4,9 @@ import { ResolvedTheme } from '../../themes/theme';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
-import { AbstractButton, getButtonTypeStyles } from './abstract-button';
-import { ButtonProps, Size } from './button';
+import { AbstractButton } from './abstract/abstract-button';
+import { getButtonTypeStyles } from './styled';
+import { ButtonProps, Size } from './types';
 
 export interface IconButtonProps extends ButtonProps {
     children?: ReactElement<IconProps | AvatarProps>;
