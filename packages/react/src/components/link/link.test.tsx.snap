@@ -1,0 +1,1232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Component Styling matches NavLink snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c0:hover svg {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c0:visited svg {
+  color: #602FA0;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<Link
+  href="/test"
+  label="Navigation Link"
+  routerLink={
+    {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+>
+  <styled.a
+    $disabled={false}
+    $isMobile={false}
+    aria-disabled="false"
+    as={
+      {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      }
+    }
+    data-testid="link"
+    href="/test"
+    id="uuid1"
+    onClick={[Function]}
+    tabIndex={0}
+    to="/test"
+  >
+    <NavLink
+      aria-disabled="false"
+      className="c0"
+      data-testid="link"
+      href="/test"
+      id="uuid1"
+      onClick={[Function]}
+      tabIndex={0}
+      to="/test"
+    >
+      <Link
+        aria-disabled="false"
+        className="c0"
+        data-testid="link"
+        href="/test"
+        id="uuid1"
+        onClick={[Function]}
+        tabIndex={0}
+        to="/test"
+      >
+        <a
+          aria-disabled="false"
+          className="c0"
+          data-testid="link"
+          href="/test"
+          id="uuid1"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Navigation Link
+          <ScreenReaderOnlyText
+            data-testid="screen-reader-text"
+            label="(opens in a new tab)"
+          >
+            <styled.span
+              data-testid="screen-reader-text"
+            >
+              <span
+                className="c1"
+                data-testid="screen-reader-text"
+              >
+                (opens in a new tab)
+              </span>
+            </styled.span>
+          </ScreenReaderOnlyText>
+        </a>
+      </Link>
+    </NavLink>
+  </styled.a>
+</Link>
+`;
+
+exports[`Link Component Styling matches RouteLink snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c0:hover svg {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c0:visited svg {
+  color: #602FA0;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<Link
+  href="/test"
+  label="Navigation Link"
+  routerLink={
+    {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+>
+  <styled.a
+    $disabled={false}
+    $isMobile={false}
+    aria-disabled="false"
+    as={
+      {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      }
+    }
+    data-testid="link"
+    href="/test"
+    id="uuid1"
+    onClick={[Function]}
+    tabIndex={0}
+    to="/test"
+  >
+    <Link
+      aria-disabled="false"
+      className="c0"
+      data-testid="link"
+      href="/test"
+      id="uuid1"
+      onClick={[Function]}
+      tabIndex={0}
+      to="/test"
+    >
+      <a
+        aria-disabled="false"
+        className="c0"
+        data-testid="link"
+        href="/test"
+        id="uuid1"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        Navigation Link
+        <ScreenReaderOnlyText
+          data-testid="screen-reader-text"
+          label="(opens in a new tab)"
+        >
+          <styled.span
+            data-testid="screen-reader-text"
+          >
+            <span
+              className="c1"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </styled.span>
+        </ScreenReaderOnlyText>
+      </a>
+    </Link>
+  </styled.a>
+</Link>
+`;
+
+exports[`Link Component Styling matches button link snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0:hover,
+.c0[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c0[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+  cursor: not-allowed;
+}
+
+<a
+  aria-disabled="true"
+  class="c0"
+  data-testid="link"
+  href="/test"
+  id="uuid1"
+  tabindex="-1"
+>
+  Navigation Link
+  <span
+    class="c1"
+    data-testid="screen-reader-text"
+  >
+    (opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`Link Component Styling matches default snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c0:hover svg {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c0:visited svg {
+  color: #602FA0;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<Link>
+  <styled.a
+    $disabled={false}
+    $isMobile={false}
+    aria-disabled="false"
+    data-testid="link"
+    href="#"
+    id="uuid1"
+    onClick={[Function]}
+    tabIndex={0}
+    to="#"
+  >
+    <a
+      aria-disabled="false"
+      className="c0"
+      data-testid="link"
+      href="#"
+      id="uuid1"
+      onClick={[Function]}
+      tabIndex={0}
+      to="#"
+    >
+      <ScreenReaderOnlyText
+        data-testid="screen-reader-text"
+        label="(opens in a new tab)"
+      >
+        <styled.span
+          data-testid="screen-reader-text"
+        >
+          <span
+            className="c1"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
+        </styled.span>
+      </ScreenReaderOnlyText>
+    </a>
+  </styled.a>
+</Link>
+`;
+
+exports[`Link Component Styling matches disabled snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
+  cursor: default;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<a
+  aria-disabled="true"
+  class="c0"
+  data-testid="link"
+  id="uuid1"
+  tabindex="-1"
+  to="/test"
+>
+  Navigation Link
+  <span
+    class="c1"
+    data-testid="screen-reader-text"
+  >
+    (opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`Link Component Styling matches external link snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #8FCEF0;
+  cursor: default;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<a
+  aria-disabled="true"
+  class="c0"
+  data-testid="link"
+  id="uuid1"
+  rel="noopener noreferrer"
+  tabindex="-1"
+  target="_blank"
+>
+  Navigation Link
+  <svg
+    aria-label="opens in a new tab"
+    color="currentColor"
+    data-testid="external-link-icon"
+    focusable="false"
+    height="16"
+    role="img"
+    width="16"
+  />
+  <span
+    class="c1"
+    data-testid="screen-reader-text"
+  >
+    (opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`Link Component Styling matches icon and label snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c0:hover svg {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c0:visited svg {
+  color: #602FA0;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<a
+  aria-disabled="false"
+  class="c0"
+  data-testid="link"
+  href="/test"
+  id="uuid1"
+  tabindex="0"
+  to="/test"
+>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+  Navigation Link
+  <span
+    class="c1"
+    data-testid="screen-reader-text"
+  >
+    (opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`Link Component Styling matches icon only snapshot 1`] = `
+[
+  .c2 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c1:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c1:hover svg {
+  color: #003A5A;
+}
+
+.c1:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c1:visited svg {
+  color: #602FA0;
+}
+
+.c1[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<span
+    aria-describedby="uuid2"
+    class="c0"
+    data-testid="tooltip"
+    id="tooltip-trigger-uuid2"
+    tabindex="-1"
+  >
+    <a
+      aria-disabled="false"
+      class="c1"
+      data-testid="link"
+      href="#"
+      id="uuid1"
+      tabindex="0"
+      to="#"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        data-testid="link-icon"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+      <span
+        class="c2"
+        data-testid="screen-reader-text"
+      >
+        (opens in a new tab)
+      </span>
+    </a>
+  </span>,
+  .c2 {
+  height: 1.25rem;
+  position: absolute;
+  width: 1rem;
+}
+
+.c2::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.c2::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.c0 {
+  background-color: #60666E;
+  border: 1px solid #FFFFFF;
+  border-radius: var(--border-radius-half);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.25rem;
+  margin: 0;
+  max-width: 327px;
+  min-height: 24px;
+  padding: 1px var(--spacing-1x);
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  z-index: 1000;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-top: -0.375rem;
+  top: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::before {
+  border-color: transparent transparent #FFFFFF transparent;
+  border-width: 0 0.5rem 0.5rem;
+  position: absolute;
+  top: -2px;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::after {
+  border-color: transparent transparent #60666E transparent;
+  border-width: 0 0.5rem 0.5rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1 {
+  bottom: 0;
+  height: 0;
+  left: 0;
+  margin-bottom: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1::before {
+  border-color: #FFFFFF transparent transparent transparent;
+  border-width: 0.5rem 0.5rem 0;
+  position: absolute;
+  top: 0;
+}
+
+.c0[data-popper-placement*="top"] > .c1::after {
+  border-color: #60666E transparent transparent transparent;
+  border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-left: -0.8rem;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1::before {
+  border-color: transparent #FFFFFF transparent transparent;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.c0[data-popper-placement*="right"] > .c1::after {
+  border-color: transparent #60666E transparent transparent;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  left: 0.375rem;
+  top: 0;
+}
+
+.c0[data-popper-placement*="left"] > .c1 {
+  height: 1rem;
+  margin-right: -0.7rem;
+  right: -1px;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1::before {
+  border-color: transparent transparent transparent #FFFFFF;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1::after {
+  border-color: transparent transparent transparent #60666E;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  left: 0.17rem;
+  top: 0;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+    aria-hidden="true"
+    class="c0"
+    data-popper-interactive="false"
+    data-testid="tooltip-content-container"
+    id="uuid2"
+    role="tooltip"
+    style="position:absolute;left:0;top:0"
+  >
+    <div
+      class="c1 c2"
+      data-popper-arrow="true"
+      style="position:absolute"
+    />
+    <div
+      class="c3"
+    >
+      Navigation Link
+    </div>
+  </div>,
+]
+`;
+
+exports[`Link Component Styling matches with children snapshot 1`] = `
+.c1 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: var(--spacing-half);
+  line-height: 1.5rem;
+  padding: 0 4px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 svg {
+  color: #602FA0;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0:hover {
+  color: #003A5A;
+  -webkit-text-decoration-color: #003A5A;
+  text-decoration-color: #003A5A;
+}
+
+.c0:hover svg {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #602FA0;
+  -webkit-text-decoration-color: #602FA0;
+  text-decoration-color: #602FA0;
+}
+
+.c0:visited svg {
+  color: #602FA0;
+}
+
+.c0[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<Link>
+  <styled.a
+    $disabled={false}
+    $isMobile={false}
+    aria-disabled="false"
+    data-testid="link"
+    href="#"
+    id="uuid1"
+    onClick={[Function]}
+    tabIndex={0}
+    to="#"
+  >
+    <a
+      aria-disabled="false"
+      className="c0"
+      data-testid="link"
+      href="#"
+      id="uuid1"
+      onClick={[Function]}
+      tabIndex={0}
+      to="#"
+    >
+      <span>
+        Test
+      </span>
+      <ScreenReaderOnlyText
+        data-testid="screen-reader-text"
+        label="(opens in a new tab)"
+      >
+        <styled.span
+          data-testid="screen-reader-text"
+        >
+          <span
+            className="c1"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
+        </styled.span>
+      </ScreenReaderOnlyText>
+    </a>
+  </styled.a>
+</Link>
+`;

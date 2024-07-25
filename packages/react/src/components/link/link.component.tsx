@@ -21,13 +21,14 @@ export const Link: FC<LinkProps> = ({
     target = '_blank',
     onClick,
     routerLink,
+    rel,
     ...linkProps
 }): ReactElement => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('common');
     const opensInNewTab = target === '_blank';
-    const isIconOnly = iconOnly && (iconName || external) && label;
+    const isIconOnly = iconOnly && (iconName || external);
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (disabled) {
@@ -78,6 +79,7 @@ export const Link: FC<LinkProps> = ({
             onClick={handleClick}
             target={external ? target : undefined}
             tabIndex={disabled ? -1 : 0}
+            rel={external ? (rel ?? 'noopener noreferrer') : undefined}
             $buttonProps={buttonProps}
             $isMobile={isMobile}
             $disabled={disabled}
@@ -90,7 +92,7 @@ export const Link: FC<LinkProps> = ({
     return isIconOnly ? (
         <Tooltip
             aria-describedby={`${id}-tooltip`}
-            label={label}
+            label={label ?? href}
         >
             {renderLink()}
         </Tooltip>
