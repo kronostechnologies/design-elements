@@ -246,14 +246,14 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
+                $size="medium"
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
                 inverted={true}
-                isMobile={false}
                 onClick={[Function]}
-                size="medium"
                 type="button"
               >
                 <button
@@ -261,7 +261,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -534,14 +533,14 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
+                $size="medium"
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
                 inverted={true}
-                isMobile={false}
                 onClick={[Function]}
-                size="medium"
                 type="button"
               >
                 <button
@@ -549,7 +548,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -822,14 +820,14 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
+                $size="medium"
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
                 inverted={true}
-                isMobile={false}
                 onClick={[Function]}
-                size="medium"
                 type="button"
               >
                 <button
@@ -837,7 +835,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -1110,14 +1107,14 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
+                $size="medium"
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
                 inverted={true}
-                isMobile={false}
                 onClick={[Function]}
-                size="medium"
                 type="button"
               >
                 <button
@@ -1125,7 +1122,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  size="medium"
                   type="button"
                 >
                   <Icon
@@ -1398,14 +1394,14 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
+                $size="medium"
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
                 data-testid="dismiss"
                 inverted={true}
-                isMobile={false}
                 onClick={[Function]}
-                size="medium"
                 type="button"
               >
                 <button
@@ -1413,7 +1409,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  size="medium"
                   type="button"
                 >
                   <Icon
