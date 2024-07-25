@@ -20,6 +20,7 @@ export const Link: FC<LinkProps> = ({
     label,
     target = '_blank',
     onClick,
+    routerLink,
     ...linkProps
 }): ReactElement => {
     const id = useId(providedId);
@@ -27,7 +28,6 @@ export const Link: FC<LinkProps> = ({
     const { t } = useTranslation('common');
     const opensInNewTab = target === '_blank';
     const isIconOnly = iconOnly && (iconName || external) && label;
-    // const isButton = !!buttonProps && !isIconOnly;
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (disabled) {
@@ -69,6 +69,8 @@ export const Link: FC<LinkProps> = ({
 
     const renderLink = (): ReactElement => (
         <StyledLink
+            as={external ? 'a' : routerLink}
+            to={external ? undefined : href}
             data-testid="link"
             aria-disabled={disabled ? 'true' : 'false'}
             id={id}
@@ -79,19 +81,8 @@ export const Link: FC<LinkProps> = ({
             $buttonProps={buttonProps}
             $isMobile={isMobile}
             $disabled={disabled}
-            // $isButton={isButton}
             {...linkProps /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {/* {isButton ? ( */}
-            {/*    <Button */}
-            {/*        data-testid="link-button" */}
-            {/*        disabled={disabled} */}
-            {/*        id={`${id}-button`} */}
-            {/*        {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading *!/ */}
-            {/*    > */}
-            {/*        {renderContent()} */}
-            {/*    </Button> */}
-            {/* ) : renderContent()} */}
             {renderContent()}
         </StyledLink>
     );
