@@ -1702,7 +1702,7 @@ __metadata:
     react-shadow: "npm:^20.0.0"
     react-swipeable: "npm:~7.0.0"
     sass: "npm:~1.77.0"
-    sass-loader: "npm:~14.2.0"
+    sass-loader: "npm:~16.0.0"
     stream-browserify: "npm:^3.0.0"
     style-loader: "npm:^4.0.0"
     styled-components: "npm:^5.3.10"
@@ -1775,7 +1775,7 @@ __metadata:
     react-is: "npm:~17.0.2"
     react-router-dom: "npm:~6.25.0"
     sass: "npm:^1.71.1"
-    sass-loader: "npm:^14.0.0"
+    sass-loader: "npm:^16.0.0"
     storybook: "npm:^8.1.2"
     style-loader: "npm:^4.0.0"
     styled-components: "npm:^5.3.10"
@@ -13007,9 +13007,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^14.0.0, sass-loader@npm:~14.2.0":
-  version: 14.2.1
-  resolution: "sass-loader@npm:14.2.1"
+"sass-loader@npm:^16.0.0, sass-loader@npm:~16.0.0":
+  version: 16.0.0
+  resolution: "sass-loader@npm:16.0.0"
   dependencies:
     neo-async: "npm:^2.6.2"
   peerDependencies:
@@ -13029,7 +13029,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 10c0/9a48d454584d96d6c562eb323bb9e3c6808e930eeaaa916975b97d45831e0b87936a8655cdb3a4512a25abc9587dea65a9616e42396be0d7e7c507a4795a8146
+  checksum: 10c0/0d2c2ee89a380ae19f1d024008c241afb747c254cf8e2163b281533c803a1cb3933236f0cfbb59a296fce864e4274e32a80c30dadd5b98618a362f0be8bac20f
   languageName: node
   linkType: hard
 
