@@ -41,14 +41,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -83,24 +84,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #602FA0;
 }
 
-.c13:focus {
-  outline: none;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c13:focus:not(:focus-visible) {
-  box-shadow: none;
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c19 {
@@ -121,24 +113,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c19:focus {
-  outline: none;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c19:focus:not(:focus-visible) {
-  box-shadow: none;
+.c19 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c19:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18 {
@@ -188,7 +171,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c15 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -202,14 +185,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c15:focus {
-  outline: none;
+.c15 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c15:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c15:hover {
@@ -217,13 +201,13 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c15:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c15:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c15[disabled] {
@@ -289,7 +273,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -303,14 +287,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover {
@@ -330,7 +315,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,14 +329,15 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c12:focus {
-  outline: none;
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c12:hover {
@@ -372,35 +358,37 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
-  color: #000000;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -717,14 +705,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   user-select: none;
 }
 
-.c1:focus {
-  outline: none;
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c1:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c1 > svg {
@@ -759,24 +748,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #602FA0;
 }
 
-.c13:focus {
-  outline: none;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c13:focus:not(:focus-visible) {
-  box-shadow: none;
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c13:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c19 {
@@ -797,24 +777,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c19:focus {
-  outline: none;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c19:focus:not(:focus-visible) {
-  box-shadow: none;
+.c19 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c19:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c18 {
@@ -864,7 +835,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c15 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -878,14 +849,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c15:focus {
-  outline: none;
+.c15 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c15:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c15:hover {
@@ -893,13 +865,13 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c15:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c15:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c15[disabled] {
@@ -965,7 +937,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -979,14 +951,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c8:focus {
-  outline: none;
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c8:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c8:hover {
@@ -1006,7 +979,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1020,14 +993,15 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c12:focus {
-  outline: none;
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c12:hover {
@@ -1048,35 +1022,37 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
-  background-color: #003A5A;
+  background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c2:disabled {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.19);
-  color: #000000;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;

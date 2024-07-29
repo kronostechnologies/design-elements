@@ -41,14 +41,15 @@ exports[`Global Navigation matches snapshot 1`] = `
   user-select: none;
 }
 
-.c2:focus {
-  outline: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c2 > svg {
@@ -65,14 +66,15 @@ exports[`Global Navigation matches snapshot 1`] = `
   width: var(--size-2x);
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3:hover,
@@ -82,10 +84,11 @@ exports[`Global Navigation matches snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -95,7 +98,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 
 .c0 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -127,7 +130,6 @@ exports[`Global Navigation matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: transparent;
   box-sizing: border-box;
   color: #60666E;
   display: -webkit-box;
@@ -143,14 +145,15 @@ exports[`Global Navigation matches snapshot 1`] = `
   width: var(--size-4halfx);
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7:hover {
@@ -184,7 +187,8 @@ exports[`Global Navigation matches snapshot 1`] = `
 
 .c8.active {
   background-color: #E0F0F9;
-  color: #000000;
+  color: #003A5A;
+  font-weight: var(--font-bold);
 }
 
 .c1 {
@@ -209,7 +213,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 }
 
 .c10 {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   border: 0;
   height: 1px;
   margin: var(--spacing-1x) auto;

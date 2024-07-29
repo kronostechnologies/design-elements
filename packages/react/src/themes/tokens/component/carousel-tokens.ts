@@ -2,11 +2,9 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type CarouselTokens =
-    | 'carousel-dot-active-background-color'
-    | 'carousel-dot-inactive-background-color'
-    | 'carousel-dot-border-color'
-    | 'carousel-nav-button-border-color'
-    | 'carousel-arrow-icon-color';
+    | 'carousel-dot-selected-background-color'
+    | 'carousel-dot-unselected-background-color'
+    | 'carousel-dot-border-color';
 
 export type CarouselTokenValue = AliasTokens | RefTokens;
 
@@ -15,9 +13,7 @@ export type CarouselTokenMap = {
 };
 
 export const defaultCarouselTokens: CarouselTokenMap = {
-    'carousel-dot-active-background-color': 'color-brand-50',
-    'carousel-dot-inactive-background-color': 'color-neutral-15',
+    'carousel-dot-selected-background-color': 'color-background-indicator-selected',
+    'carousel-dot-unselected-background-color': 'color-background-empty',
     'carousel-dot-border-color': 'transparent-100',
-    'carousel-nav-button-border-color': 'transparent-100',
-    'carousel-arrow-icon-color': 'color-neutral-65',
 };

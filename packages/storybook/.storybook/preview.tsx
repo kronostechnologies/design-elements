@@ -1,6 +1,6 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
-import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import { Decorator, Preview } from '@storybook/react';
+import { DocsContainer } from "@storybook/blocks";
 
 injectMainCss();
 
@@ -16,12 +16,16 @@ const preview: Preview = {
     decorators,
     parameters: {
         controls: {
+            exclude: ['key', 'ref'],
             expanded: true,
             sort: 'alpha',
         },
         docs: {
+            /*
+             * The default container is set explicitly to prevent a bug that causes the "Show code/Hide code"
+             * button of stories in the .mdx file to do nothing. It can be removed once the bug is fixed.
+             */
             container: DocsContainer,
-            page: DocsPage,
             source: {
                 type: 'dynamic',
                 excludeDecorators: true,

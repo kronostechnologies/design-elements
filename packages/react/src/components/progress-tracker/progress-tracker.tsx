@@ -66,7 +66,7 @@ const StyledStep = styled.li<{ $linear: boolean }>`
     }
 
     &::after {
-        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-todo-background-color']};
+        background-color: ${({ theme }) => theme.component['progress-tracker-bridge-empty-background-color']};
         content: '';
         height: 0.25rem;
         left: calc(-50% - 0.5rem);
@@ -91,7 +91,7 @@ const CompletedStep = styled(StyledStep)`
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-completed-color']};
+            background-color: ${theme.component['progress-tracker-bridge-filled-background-color']};
         `}
     }
 
@@ -102,9 +102,9 @@ const CompletedStep = styled(StyledStep)`
 
 const ActiveStep = styled(StyledStep)`
     &::before {
-        border-color: ${({ theme }) => theme.component['progress-tracker-step-active-border-color']};
+        border-color: ${({ theme }) => theme.component['progress-tracker-step-current-border-color']};
         border-width: 0.25rem;
-        color: ${({ theme }) => theme.component['progress-tracker-step-active-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-current-text-color']};
         font-weight: var(--font-semi-bold);
         height: var(--size-2x);
         margin: -0.25rem auto 0;
@@ -113,12 +113,12 @@ const ActiveStep = styled(StyledStep)`
 
     &::after {
         ${({ $linear, theme }) => $linear && css`
-            background-color: ${theme.component['progress-tracker-bridge-active-background-color']};
+            background-color: ${theme.component['progress-tracker-bridge-filled-background-color']};
         `}
     }
 
     ${Label} {
-        color: ${({ theme }) => theme.component['progress-tracker-step-active-label-text-color']};
+        color: ${({ theme }) => theme.component['progress-tracker-step-current-label-text-color']};
         font-weight: var(--font-semi-bold);
     }
 `;

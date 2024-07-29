@@ -2,7 +2,7 @@
 
 exports[`Stepper input matches snapshot (disabled) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -29,10 +29,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -80,8 +76,23 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  z-index: 1000;
 }
 
 .c6 > svg {
@@ -118,8 +129,23 @@ input + .c1 {
 
 .c7:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  z-index: 1000;
 }
 
 .c7 > svg {
@@ -142,7 +168,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -178,8 +204,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -202,14 +228,15 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -311,7 +338,7 @@ exports[`Stepper input matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -337,10 +364,6 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #CD2C23;
-}
-
-.c0:focus {
   border-color: #CD2C23;
 }
 
@@ -389,8 +412,23 @@ input + .c1 {
 
 .c8:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c8 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8:focus {
+  z-index: 1000;
 }
 
 .c8 > svg {
@@ -427,8 +465,23 @@ input + .c1 {
 
 .c9:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c9 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c9:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c9:focus {
+  z-index: 1000;
 }
 
 .c9 > svg {
@@ -451,7 +504,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -487,8 +540,8 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c6:disabled,
@@ -511,14 +564,15 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -607,7 +661,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot (mobile) 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -636,10 +690,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -659,7 +709,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
@@ -695,8 +745,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -719,14 +769,15 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -765,7 +816,7 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -792,10 +843,6 @@ input + .c1 {
 .c0 select,
 .c0 textarea {
   border-color: #60666E;
-}
-
-.c0:focus {
-  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -843,8 +890,23 @@ input + .c1 {
 
 .c6:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  z-index: 1000;
 }
 
 .c6 > svg {
@@ -881,8 +943,23 @@ input + .c1 {
 
 .c7:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
+  border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  z-index: 1000;
 }
 
 .c7 > svg {
@@ -905,7 +982,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -941,8 +1018,8 @@ input + .c1 {
 
 .c4:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c4:disabled,
@@ -965,14 +1042,15 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c4::-webkit-outer-spin-button,

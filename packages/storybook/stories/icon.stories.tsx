@@ -4,6 +4,7 @@ import { StoryFn as Story } from '@storybook/react';
 export default {
     title: 'Foundations/Icons/Icon',
     component: Icon,
+    tags: ['autodocs'],
 };
 
 export const BasicIcon: Story = () => (

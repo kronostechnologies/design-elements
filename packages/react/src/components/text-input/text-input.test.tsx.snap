@@ -2,7 +2,7 @@
 
 exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -31,10 +31,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -44,7 +40,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -57,16 +53,6 @@ input + .c1 {
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -87,8 +73,8 @@ input + .c1 {
 
 .c3:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3:disabled,
@@ -109,6 +95,17 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -137,7 +134,7 @@ input + .c1 {
 
 exports[`TextInput Matches the snapshot [required = true] 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -166,10 +163,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -179,7 +172,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -192,16 +185,6 @@ input + .c1 {
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -222,8 +205,8 @@ input + .c1 {
 
 .c3:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3:disabled,
@@ -244,6 +227,17 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div
@@ -272,7 +266,7 @@ input + .c1 {
 
 exports[`TextInput Matches the snapshot 1`] = `
 .c2 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -301,10 +295,6 @@ input + .c1 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -314,7 +304,7 @@ input + .c1 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
-  color: #000000;
+  color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.015rem;
@@ -327,16 +317,6 @@ input + .c1 {
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -357,8 +337,8 @@ input + .c1 {
 
 .c3:disabled {
   background-color: #F1F2F2;
-  border-color: #DBDEE1;
-  color: #DBDEE1;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c3:disabled,
@@ -379,6 +359,17 @@ input + .c1 {
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <div

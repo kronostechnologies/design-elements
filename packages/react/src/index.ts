@@ -4,17 +4,17 @@ declare global { var __DS_DEV__: boolean; }
 global.__DS_DEV__ = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
 // Buttons
-export { Button } from './components/buttons/button';
+export { Button, ButtonProps } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
 export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
 export { DropdownNavigation } from './components/dropdown-navigation/dropdown-navigation';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
-export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
+export { SegmentedControl } from './components/segmented-control/segmented-control';
 
 // Form Elements
 export { Avatar } from './components/avatar/avatar';
-export { Checkbox } from './components/checkbox/checkbox';
+export { Checkbox, CheckboxProps } from './components/checkbox/checkbox';
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
 export { Combobox, ComboboxOption } from './components/combobox/combobox';
 export { Datepicker, DatepickerHandles } from './components/date-picker/date-picker';
@@ -27,6 +27,7 @@ export { PhoneInput } from './components/phone-input/phone-input';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
+export { RadioButton } from './components/radio-button/radio-button';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { TextArea } from './components/text-area/text-area';
@@ -58,6 +59,7 @@ export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { GlobalHeader } from './components/global-header/global-header';
 export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
+export { Disclosure } from './components/disclosure/disclosure';
 export { ExternalItemProps } from './components/dropdown-menu/list-items/external-item';
 export { NavItemProps } from './components/dropdown-menu/list-items/nav-item';
 export { Icon } from './components/icon/icon';
@@ -67,10 +69,16 @@ export { SideDrawer } from './components/side-drawer/side-drawer';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
-export { Table, TableColumn, TableRow } from './components/table/table';
+export { Table } from './components/table/table';
+export { TableColumn, TableData } from './components/table/types';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
-export { Tag, TagProps, TagValue } from './components/tag/tag';
+export {
+    Tag, TagValue, TagColor, TagSize, TagProps,
+} from './components/tag/tag';
+export {
+    ToggleTag, ToggleTagValue, ToggleTagSize, ToggleTagProps,
+} from './components/tag/toggle-tag';
 export { Lozenge } from './components/lozenge/lozenge';
 export { RadioCard } from './components/radio-card-group/radio-card';
 export { RadioCardGroup } from './components/radio-card-group/radio-card-group';
@@ -94,9 +102,9 @@ export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';
 
 // Themes
-export { equisoftTheme } from './themes/equisoft';
+export { equisoftTheme, buildTheme } from './themes';
 export { injectMainCss } from './styles';
-export { ResolvedTheme, ThemeCustomization, ThemeCustomization as Theme } from './themes/theme';
+export { ResolvedTheme as Theme, ThemeCustomization } from './themes/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';

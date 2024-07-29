@@ -42,10 +42,10 @@ const NavItemStyle = css<LinkProps>`
     text-decoration: none;
     white-space: nowrap;
 
-    ${(props) => focus(props, undefined, undefined, true)};
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? theme.component['dropdown-menu-nav-item-hover-disabled-background-color'] : theme.component['dropdown-menu-nav-item-hover-background-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['dropdown-menu-nav-item-disabled-background-color'] : theme.component['dropdown-menu-nav-item-hover-background-color'])};
     }
 
     &[disabled],

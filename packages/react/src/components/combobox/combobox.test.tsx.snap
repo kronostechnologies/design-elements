@@ -57,15 +57,16 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 
 .c7:hover,
 .c7[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c7:disabled {
+.c7[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c7 > svg {
@@ -74,7 +75,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -103,10 +104,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
 }
@@ -115,7 +112,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,6 +121,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c11 {
@@ -139,7 +137,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -193,7 +191,7 @@ input + .c2 {
 }
 
 .c10 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -210,33 +208,34 @@ input + .c2 {
   width: 100%;
 }
 
-.c5:focus {
-  outline: none;
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c5::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c5::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -538,15 +537,16 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 
 .c9:hover,
 .c9[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c9:disabled {
+.c9[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c9 > svg {
@@ -581,7 +581,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -610,10 +610,6 @@ input + .c2 {
   border-color: #CD2C23;
 }
 
-.c0:focus {
-  border-color: #CD2C23;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -622,7 +618,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -631,6 +627,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c13 {
@@ -646,7 +643,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -700,7 +697,7 @@ input + .c2 {
 }
 
 .c12 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -716,33 +713,34 @@ input + .c2 {
   width: 100%;
 }
 
-.c7:focus {
-  outline: none;
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c7::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1059,15 +1057,16 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c5:hover,
 .c5[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c5:disabled {
+.c5[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c5 > svg {
@@ -1085,10 +1084,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
@@ -1097,7 +1092,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1106,6 +1101,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c9 {
@@ -1121,7 +1117,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1174,7 +1170,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1190,33 +1186,34 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c3:focus {
-  outline: none;
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c3::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
@@ -1510,15 +1507,16 @@ exports[`Combobox matches the snapshot 1`] = `
 
 .c8:hover,
 .c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
+  background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {
@@ -1527,7 +1525,7 @@ exports[`Combobox matches the snapshot 1`] = `
 }
 
 .c3 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -1556,10 +1554,6 @@ input + .c2 {
   border-color: #60666E;
 }
 
-.c0:focus {
-  border-color: #006296;
-}
-
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
 }
@@ -1580,7 +1574,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1589,6 +1583,7 @@ input + .c2 {
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   position: relative;
+  z-index: 1000;
 }
 
 .c12 {
@@ -1604,7 +1599,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1658,7 +1653,7 @@ input + .c2 {
 }
 
 .c11 {
-  margin-top: 6px;
+  margin-top: var(--spacing-half);
   position: absolute;
   width: 100%;
 }
@@ -1674,33 +1669,34 @@ input + .c2 {
   width: 100%;
 }
 
-.c6:focus {
-  outline: none;
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::-moz-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6:-ms-input-placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 
 .c6::placeholder {
-  color: #B7BBC2;
+  color: #60666E;
   font-style: italic;
 }
 

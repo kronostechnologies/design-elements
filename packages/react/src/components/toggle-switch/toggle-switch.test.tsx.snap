@@ -26,19 +26,20 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   width: var(--size-2halfx);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -53,8 +54,8 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -77,7 +78,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-left: var(--spacing-1x);
@@ -123,19 +124,20 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -150,8 +152,8 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -174,7 +176,7 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   line-height: 2rem;
   margin-left: var(--spacing-1x);
@@ -220,19 +222,20 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   width: var(--size-2halfx);
 }
 
-.c0:focus {
-  outline: none;
+.c0 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0[aria-checked='false'] {
-  background: #878F9A;
-  border-color: #B7BBC2;
+  background: #60666E;
+  border-color: #60666E;
 }
 
 .c0[aria-checked='false'] .c1 {
@@ -247,8 +250,8 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 }
 
 .c0:disabled {
-  background: #DBDEE1;
-  border-color: #DBDEE1;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0:disabled[aria-checked='true'] {
@@ -272,7 +275,7 @@ exports[`ToggleSwitch has disabled styles 1`] = `
     />
   </button>,
   .c0 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-left: var(--spacing-1x);

@@ -5,9 +5,7 @@ export type FieldTokens =
     | 'field-error-text-color'
     | 'field-hint-text-color'
     | 'field-input-border-color'
-    | 'field-input-focus-border-color'
-    | 'field-input-error-border-color'
-    | 'field-input-error-focus-border-color';
+    | 'field-input-error-border-color';
 
 export type FieldTokenValue = AliasTokens | RefTokens;
 
@@ -16,10 +14,9 @@ export type FieldTokenMap = {
 };
 
 export const defaultFieldTokens: FieldTokenMap = {
-    'field-hint-text-color': 'color-neutral-65',
-    'field-input-border-color': 'color-neutral-65',
-    'field-input-focus-border-color': 'color-brand-50',
-    'field-input-error-focus-border-color': 'color-alert-50',
-    'field-input-error-border-color': 'color-alert-50',
-    'field-error-text-color': 'color-alert-50',
+    'field-hint-text-color': 'color-control-auxiliary',
+    'field-error-text-color': 'color-control-auxiliary-error',
+
+    'field-input-border-color': 'color-control-border',
+    'field-input-error-border-color': 'color-control-border-error',
 };

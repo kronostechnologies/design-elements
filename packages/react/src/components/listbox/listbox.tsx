@@ -19,6 +19,7 @@ import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { unique } from '../../utils/array';
 import { sanitizeId } from '../../utils/dom';
+import { findOptionsByValue } from './listbox-option';
 
 type Value = string | string[];
 
@@ -94,14 +95,15 @@ const Container = styled.div<ContainerProps>`
     background-color: ${({ theme }) => theme.component['listbox-background-color']};
     border: 1px solid ${({ theme }) => theme.component['listbox-border-color']};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.component['listbox-box-shadow-frame-color']}, 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-depth-color']};
+    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['listbox-box-shadow-depth-color']};
     display: flex;
     max-height: 160px;
     overflow-y: auto;
     padding: var(--spacing-half) 0;
     position: relative;
+    z-index: 1000;
 
-    ${({ $focusable, theme }) => $focusable && focus({ theme })};
+    ${({ $focusable }) => $focusable && focus};
 `;
 
 const List = styled.ul`
@@ -113,15 +115,15 @@ const List = styled.ul`
 `;
 
 const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
-    color: ${({ theme }) => theme.component['listbox-item-selected-icon-color']};
+    color: ${({ theme }) => theme.component['checkbox-checked-icon-color']};
     height: 100%;
     width: 100%;
 `;
 
 const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-background-color'] : theme.component['listbox-checkbox-background-color'])};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-border-color'] : theme.component['listbox-checkbox-border-color'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-unchecked-background-color'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-unchecked-border-color'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -131,7 +133,8 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     width: var(--size-1x);
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['listbox-checkbox-disabled-hover-border-color'] : theme.component['listbox-checkbox-hover-border-color'])};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-hover-background-color'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-hover-border-color'])};
     }
 
     ${({ checked }) => (!checked && css`
@@ -159,24 +162,23 @@ const ListItem = styled.li<ListItemProps>`
     user-select: none;
 
     &:hover {
-        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-hover-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
+        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
     }
 
     ${({ $focused, $disabled, theme }) => ($focused && css`
-        outline: 2px solid ${$disabled ? theme.component['listbox-item-disabled-focus-outline-color'] : theme.component['listbox-item-focus-outline-color']};
-        outline-offset: -2px;
+        outline: 2px solid ${$disabled ? 'transparent' : theme.component['focus-outside-border-color']};
+        outline-offset: -3px;
     `)}
 
     ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-background-color']};
-            border: 1px solid ${({ theme }) => theme.component['listbox-item-selected-border-color']};
+            background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
+            border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
         }
     `)}
 
     ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
         &::before {
-            background-color: ${({ theme }) => theme.component['listbox-item-selected-border-color']};
             content: '';
             display: block;
             height: 100%;
@@ -193,7 +195,7 @@ const ListItemTextContainer = styled.span`
 `;
 
 const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
-    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-caption-disabled-text-color'] : theme.component['listbox-item-caption-text-color'])};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-subcontent-disabled-text-color'] : theme.component['listbox-item-subcontent-text-color'])};
     display: block;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
 `;
@@ -221,15 +223,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
-    const findOptionsByValue: (searchValue?: Value | string) => ListboxOption[] = useCallback(
-        (searchValue) => options.filter(
-            (option) => (Array.isArray(searchValue)
-                ? searchValue.includes(option.value)
-                : option.value === searchValue),
-        ),
-        [options],
-    );
-
     const {
         selectedElement: focusedOption,
         setSelectedElement: setFocusedOption,
@@ -239,12 +232,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         selectLast: focusLastOption,
     } = useListCursor({
         elements: options,
-        initialElement: findOptionsByValue(focusedValue)[0],
+        initialElement: findOptionsByValue(options, focusedValue)[0],
         predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(value ?? defaultValue),
+        () => findOptionsByValue(options, value ?? defaultValue),
     );
 
     function isOptionSelected(option: ListboxOption): boolean {
@@ -307,17 +300,17 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [focusedOption, options, scrollToOption]);
 
     useLayoutEffect(() => {
-        const initialOption = findOptionsByValue(focusedValue ?? defaultValue);
+        const initialOption = findOptionsByValue(options, focusedValue ?? defaultValue);
 
         if (initialOption.length > 0) {
             scrollToOption(initialOption[0], true);
         }
-    }, [defaultValue, focusedValue, findOptionsByValue, scrollToOption]);
+    }, [defaultValue, focusedValue, scrollToOption, options]);
 
     const [previousFocusedValue, setPreviousFocusedValue] = useState<string | undefined>(focusedValue);
 
     if (focusedValue !== previousFocusedValue) {
-        const targetOption = findOptionsByValue(focusedValue)[0];
+        const targetOption = findOptionsByValue(options, focusedValue)[0];
         setFocusedOption(targetOption);
         setPreviousFocusedValue(focusedValue);
     }
@@ -325,7 +318,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        setSelectedOptions(findOptionsByValue(value));
+        setSelectedOptions(findOptionsByValue(options, value));
         setPreviousValue(value);
     }
 

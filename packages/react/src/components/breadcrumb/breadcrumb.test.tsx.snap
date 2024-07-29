@@ -3,7 +3,7 @@
 exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": .c4 {
+  "baseElement": .c7 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -37,24 +37,15 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c2:focus:not(:focus-visible) {
-  box-shadow: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 svg {
@@ -72,25 +63,63 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c4 {
+  color: #60666E;
+}
+
+.c4:hover {
+  color: #000000;
+}
+
+.c4[disabled] {
+  color: #B7BBC2;
+}
+
+.c6 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <body>
@@ -105,34 +134,52 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
             class="c1"
           >
             <a
-              class="c2 c3"
+              class="c2 c3 c4"
               href="/index"
               tabindex="0"
             >
               HOME
             </a>
+            <svg
+              class="c5"
+              color="currentColor"
+              focusable="false"
+              height="20"
+              width="20"
+            />
           </li>
           <li
             class="c1"
           >
             <a
-              class="c2 c3"
+              class="c2 c3 c4"
               href="/route"
               tabindex="0"
             >
               ROUTE
             </a>
+            <svg
+              class="c5"
+              color="currentColor"
+              focusable="false"
+              height="20"
+              width="20"
+            />
           </li>
           <li
             class="c1"
           >
-            THREE
+            <span
+              class="c6"
+            >
+              THREE
+            </span>
           </li>
         </ol>
       </nav>
     </div>
     <div
-      class="c4"
+      class="c7"
       data-testid="toasts"
     />
   </body>,
@@ -162,24 +209,15 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c2:focus:not(:focus-visible) {
-  box-shadow: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 svg {
@@ -197,25 +235,63 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c4 {
+  color: #60666E;
+}
+
+.c4:hover {
+  color: #000000;
+}
+
+.c4[disabled] {
+  color: #B7BBC2;
+}
+
+.c6 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <div>
@@ -229,28 +305,46 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
           class="c1"
         >
           <a
-            class="c2 c3"
+            class="c2 c3 c4"
             href="/index"
             tabindex="0"
           >
             HOME
           </a>
+          <svg
+            class="c5"
+            color="currentColor"
+            focusable="false"
+            height="20"
+            width="20"
+          />
         </li>
         <li
           class="c1"
         >
           <a
-            class="c2 c3"
+            class="c2 c3 c4"
             href="/route"
             tabindex="0"
           >
             ROUTE
           </a>
+          <svg
+            class="c5"
+            color="currentColor"
+            focusable="false"
+            height="20"
+            width="20"
+          />
         </li>
         <li
           class="c1"
         >
-          THREE
+          <span
+            class="c6"
+          >
+            THREE
+          </span>
         </li>
       </ol>
     </nav>
@@ -312,7 +406,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": .c4 {
+  "baseElement": .c7 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -346,24 +440,15 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c2:focus:not(:focus-visible) {
-  box-shadow: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 svg {
@@ -381,25 +466,63 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c4 {
+  color: #60666E;
+}
+
+.c4:hover {
+  color: #000000;
+}
+
+.c4[disabled] {
+  color: #B7BBC2;
+}
+
+.c6 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <body>
@@ -414,23 +537,34 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
             class="c1"
           >
             <a
-              class="c2 c3"
+              class="c2 c3 c4"
               href="/index"
               tabindex="0"
             >
               HOME
             </a>
+            <svg
+              class="c5"
+              color="currentColor"
+              focusable="false"
+              height="20"
+              width="20"
+            />
           </li>
           <li
             class="c1"
           >
-            ROUTE
+            <span
+              class="c6"
+            >
+              ROUTE
+            </span>
           </li>
         </ol>
       </nav>
     </div>
     <div
-      class="c4"
+      class="c7"
       data-testid="toasts"
     />
   </body>,
@@ -460,24 +594,15 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   color: #602FA0;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c2:focus:not(:focus-visible) {
-  box-shadow: none;
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .c2:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 svg {
@@ -495,25 +620,63 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c4 {
+  color: #60666E;
+}
+
+.c4:hover {
+  color: #000000;
+}
+
+.c4[disabled] {
+  color: #B7BBC2;
+}
+
+.c6 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <div>
@@ -527,17 +690,28 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
           class="c1"
         >
           <a
-            class="c2 c3"
+            class="c2 c3 c4"
             href="/index"
             tabindex="0"
           >
             HOME
           </a>
+          <svg
+            class="c5"
+            color="currentColor"
+            focusable="false"
+            height="20"
+            width="20"
+          />
         </li>
         <li
           class="c1"
         >
-          ROUTE
+          <span
+            class="c6"
+          >
+            ROUTE
+          </span>
         </li>
       </ol>
     </nav>
@@ -599,7 +773,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": .c2 {
+  "baseElement": .c3 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -608,25 +782,43 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c2 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <body>
@@ -640,36 +832,58 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
           <li
             class="c1"
           >
-            HOME
+            <span
+              class="c2"
+            >
+              HOME
+            </span>
           </li>
         </ol>
       </nav>
     </div>
     <div
-      class="c2"
+      class="c3"
       data-testid="toasts"
     />
   </body>,
   "container": .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: nowrap;
 }
 
+.c2 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #1B1C1E;
+  margin: 0 var(--spacing-1x);
+}
+
 .c1 {
-  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
 }
 
 .c1 > a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c1:not(:last-child)::after {
-  content: '/';
-  margin: 0 var(--spacing-1x);
 }
 
 <div>
@@ -682,7 +896,11 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
         <li
           class="c1"
         >
-          HOME
+          <span
+            class="c2"
+          >
+            HOME
+          </span>
         </li>
       </ol>
     </nav>

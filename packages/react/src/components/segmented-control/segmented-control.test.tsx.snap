@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 button:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.c0 button:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-right: 0;
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  min-height: var(--size-2x);
+  padding: 0 var(--spacing-2x);
+}
+
+.c1:last-child {
+  border-right: 1px solid #60666E;
+  margin: 0;
+}
+
+.c1:focus {
+  z-index: 1;
+}
+
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:disabled,
+.c1:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c1:hover + button {
+  border-left-color: #000000;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  border-right: 1px solid #006296;
+  box-sizing: border-box;
+  color: #003A5A;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  min-height: var(--size-2x);
+  padding: 0 var(--spacing-2x);
+}
+
+.c2 + button {
+  border-left: 0;
+}
+
+.c2:last-child {
+  border-right: 1px solid #006296;
+  margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2:disabled,
+.c2:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
+}
+
+<div
+  aria-label="Test4"
+  class="c0"
+  role="group"
+>
+  <button
+    aria-label="Option 1"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-0"
+    type="button"
+    value="option1"
+  >
+    Option 1
+  </button>
+  <button
+    aria-label="Option 2"
+    aria-pressed="true"
+    class="c2"
+    data-testid="test-toggle-button-1"
+    type="button"
+    value="option2"
+  >
+    Option 2
+  </button>
+  <button
+    aria-label="Option 3"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-2"
+    type="button"
+    value="option3"
+  >
+    Option 3
+  </button>
+  <button
+    aria-label="Option 4"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-3"
+    type="button"
+    value="option4"
+  >
+    Option 4
+  </button>
+</div>
+`;
+
+exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 button:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.c0 button:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-right: 0;
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  min-height: var(--size-3x);
+  padding: 0 var(--spacing-2x);
+}
+
+.c1:last-child {
+  border-right: 1px solid #60666E;
+  margin: 0;
+}
+
+.c1:focus {
+  z-index: 1;
+}
+
+.c1 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:disabled,
+.c1:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c1:hover + button {
+  border-left-color: #000000;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
+  border-right: 1px solid #006296;
+  box-sizing: border-box;
+  color: #003A5A;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  min-height: var(--size-3x);
+  padding: 0 var(--spacing-2x);
+}
+
+.c2 + button {
+  border-left: 0;
+}
+
+.c2:last-child {
+  border-right: 1px solid #006296;
+  margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2:disabled,
+.c2:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
+}
+
+<div
+  aria-label="Test4"
+  class="c0"
+  role="group"
+>
+  <button
+    aria-label="Option 1"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-0"
+    type="button"
+    value="option1"
+  >
+    Option 1
+  </button>
+  <button
+    aria-label="Option 2"
+    aria-pressed="true"
+    class="c2"
+    data-testid="test-toggle-button-1"
+    type="button"
+    value="option2"
+  >
+    Option 2
+  </button>
+  <button
+    aria-label="Option 3"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-2"
+    type="button"
+    value="option3"
+  >
+    Option 3
+  </button>
+  <button
+    aria-label="Option 4"
+    aria-pressed="false"
+    class="c1"
+    data-testid="test-toggle-button-3"
+    type="button"
+    value="option4"
+  >
+    Option 4
+  </button>
+</div>
+`;

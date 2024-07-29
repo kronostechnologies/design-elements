@@ -91,6 +91,21 @@ describe('Dropdown list', () => {
             const wrapper = shallow(<DropdownList options={options} defaultValue="" />);
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
+        });
+
+        test('the specified defaultValues are independently displayed when list is multiselect', () => {
+            const wrapper = shallow(<DropdownList options={provinces} defaultValue={['nl', 'qc']} multiselect />);
+
+            expect(getByTestId(wrapper, 'listboxtag-qc').exists()).toBe(true);
+            expect(getByTestId(wrapper, 'listboxtag-nl').exists()).toBe(true);
+            expect(getByTestId(wrapper, 'tag-wrapper').children()).toHaveLength(2);
+            expect(getByTestId(wrapper, 'input').prop('value')).toBe('nl|qc');
+        });
+
+        test('no defaultValues are displayed when not specified and list is multiselect', () => {
+            const wrapper = shallow(<DropdownList options={provinces} multiselect />);
+
+            expect(getByTestId(wrapper, 'tag-wrapper').children()).toHaveLength(0);
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('');
         });
     });
@@ -129,6 +144,16 @@ describe('Dropdown list', () => {
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('bc');
         });
+
+        test('clicking an option selects it and adds it to the input values when list is multiselect', () => {
+            const wrapper = mountWithTheme(<DropdownList options={provinces} defaultOpen multiselect />);
+
+            getByTestId(wrapper, 'listitem-nl').simulate('click');
+            getByTestId(wrapper, 'listitem-qc').simulate('click');
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('nl|qc');
+            expect(getByTestId(wrapper, 'input').prop('value')).toBe('nl|qc');
+        });
     });
 
     describe('component is controlled', () => {
@@ -154,6 +179,21 @@ describe('Dropdown list', () => {
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('');
+        });
+    });
+
+    describe('icon is handled', () => {
+        test('the icon is set according to the iconName prop', () => {
+            const wrapper = shallow(<DropdownList options={provinces} iconName="menu" />);
+
+            expect(getByTestId(wrapper, 'textbox-icon').prop('name')).toBe('menu');
+        });
+
+        test('the icon is not set when the iconName prop is undefined', () => {
+            const wrapper = shallow(<DropdownList options={provinces} />);
+
+            const iconComponent = getByTestId(wrapper, 'textbox-icon');
+            expect(iconComponent.exists()).toBe(false);
         });
     });
 
@@ -313,6 +353,20 @@ describe('Dropdown list', () => {
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('sk');
         });
 
+        test('Enter removes the focused Tag when list is multiselect', () => {
+            const wrapper = mountWithTheme(
+                <DropdownList options={provinces} defaultValue={['ab', 'bc']} defaultOpen multiselect />,
+            );
+
+            getByTestId(wrapper, 'listboxtag-bc').simulate(
+                'keydown',
+                { key: 'Enter', preventDefault: jest.fn() },
+            );
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('ab');
+            expect(getByTestId(wrapper, 'input').prop('value')).toBe('ab');
+        });
+
         describe('when typing printable characters', () => {
             test('listbox opens when typing printable characters', () => {
                 const wrapper = shallow(<DropdownList options={provinces} />);
@@ -423,6 +477,32 @@ describe('Dropdown list', () => {
                 options={provinces}
             />,
             'mobile',
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot (multiselect)', () => {
+        const tree = renderWithProviders(
+            <DropdownList
+                defaultOpen
+                options={provinces}
+                multiselect
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot (icon)', () => {
+        const tree = renderWithProviders(
+            <DropdownList
+                defaultOpen
+                label="Select an option"
+                hint="Hint"
+                options={provinces}
+                iconName="menu"
+            />,
         );
 
         expect(tree).toMatchSnapshot();

@@ -48,14 +48,14 @@ exports[`ProgressCircle Matches the snapshot 1`] = `
 }
 
 .c4 p {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
 .c5 {
-  color: #000000;
+  color: #1B1C1E;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
   -moz-letter-spacing: 0.02875rem;

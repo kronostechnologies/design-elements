@@ -8,6 +8,10 @@ export type ComboboxTokens =
     | 'combobox-disabled-border-color'
     | 'combobox-error-border-color'
     | 'combobox-disabled-text-color'
+    | 'combobox-placeholder-text-color'
+    | 'combobox-clear-button-icon-color'
+    | 'combobox-clear-button-disabled-icon-color'
+    | 'combobox-clear-button-border-right-color'
     | 'combobox-arrow-button-background-color'
     | 'combobox-arrow-button-hover-background-color'
     | 'combobox-arrow-button-icon-color'
@@ -20,14 +24,18 @@ export type ComboboxTokenMap = {
 };
 
 export const defaultComboboxTokens: ComboboxTokenMap = {
+    'combobox-clear-button-border-right-color': 'color-control-auxiliary',
+    'combobox-clear-button-disabled-icon-color': 'color-control-auxiliary-disabled',
+    'combobox-clear-button-icon-color': 'color-control-auxiliary',
     'combobox-arrow-button-background-color': 'transparent-100',
     'combobox-arrow-button-hover-background-color': 'transparent-100',
-    'combobox-arrow-button-disabled-icon-color': 'color-neutral-30',
-    'combobox-arrow-button-icon-color': 'color-neutral-65',
-    'combobox-border-color': 'color-neutral-65',
-    'combobox-disabled-background-color': 'color-neutral-05',
-    'combobox-disabled-border-color': 'color-neutral-30',
-    'combobox-disabled-text-color': 'color-neutral-30',
-    'combobox-error-border-color': 'color-alert-50',
-    'combobox-background-color': 'color-white',
+    'combobox-arrow-button-disabled-icon-color': 'color-control-auxiliary-disabled',
+    'combobox-arrow-button-icon-color': 'color-control-auxiliary',
+    'combobox-border-color': 'color-control-border',
+    'combobox-disabled-background-color': 'color-control-background-disabled',
+    'combobox-disabled-border-color': 'color-control-border-disabled',
+    'combobox-disabled-text-color': 'color-control-auxiliary-disabled',
+    'combobox-error-border-color': 'color-control-border-error',
+    'combobox-background-color': 'color-control-background',
+    'combobox-placeholder-text-color': 'color-control-auxiliary',
 };

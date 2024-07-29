@@ -50,7 +50,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c3:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -78,10 +78,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
+.c1 + .c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c1:focus + .c2 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -171,7 +176,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c3:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -199,10 +204,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
+.c1 + .c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c1:focus + .c2 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -280,7 +290,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
@@ -293,7 +303,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c3:hover {
   background-color: #F1F2F2;
-  border: 1px solid #DBDEE1;
+  border: 1px solid #B7BBC2;
 }
 
 .c1 {
@@ -321,10 +331,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
+.c1 + .c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c1:focus + .c2 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -417,7 +432,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c3:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -445,10 +460,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
+.c1 + .c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c1:focus + .c2 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {

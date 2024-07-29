@@ -3,8 +3,9 @@ import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Components/Progress Circle',
+    title: 'Deprecated/Progress Circle (deprecated)',
     component: ProgressCircle,
+    tags: ['autodocs'],
 };
 
 const SmallContainer = styled.div`

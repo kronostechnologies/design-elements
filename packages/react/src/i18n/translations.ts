@@ -111,7 +111,14 @@ export const Translations = {
             'increment-button-aria-label': 'Increase number',
             'decrement-button-aria-label': 'Decrease number',
         },
-        'tag-medium': {
+        table: {
+            subrowsAriaLabel: '{{count}} subrows for this item',
+        },
+        tabs: {
+            addTab: 'Add Tabs',
+            dismissTab: 'Dismiss {{label}} tab',
+        },
+        tag: {
             deleteButtonAriaLabel: 'Remove tag {{label}}',
         },
         'text-area': {
@@ -244,7 +251,14 @@ export const Translations = {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
         },
-        'tag-medium': {
+        table: {
+            subrowsAriaLabel: '{{count}} sous-éléments pour cet élément',
+        },
+        tabs: {
+            addTab: 'Ajouter des onglets',
+            dismissTab: 'Fermer l\'onglet {{label}}',
+        },
+        tag: {
             deleteButtonAriaLabel: 'Retirer l\'étiquette {{label}}',
         },
         'text-area': {

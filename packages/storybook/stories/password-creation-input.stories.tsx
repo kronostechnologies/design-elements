@@ -1,55 +1,27 @@
 import { ChangeEvent } from 'react';
-import { StoryFn as Story } from '@storybook/react';
-import {
-    PasswordCreationInput,
-    isLongEnough,
-    hasAnUpperCaseLetter,
-    hasALowerCaseLetter,
-} from '@equisoft/design-elements-react';
+import { Meta, StoryObj } from '@storybook/react';
+import { PasswordCreationInput } from '@equisoft/design-elements-react';
 import { LanguageSwitchDecorator } from './utils/decorator';
-import { rawCodeParameters } from './utils/parameters';
 
-export default {
+const PasswordCreationInputMeta: Meta<typeof PasswordCreationInput> = {
     title: 'Components/Password Creation Input',
     component: PasswordCreationInput,
     decorators: [LanguageSwitchDecorator],
-};
-
-export const Normal: Story = () => (
-    <PasswordCreationInput onChange={(password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
-        console.info(password);
-        console.info(event);
-        console.info(isValid);
-    }}
-    />
-);
-
-export const CustomValidations: Story = () => (
-    <PasswordCreationInput
-        validations={[
-            {
-                label: 'Minimum 1 number.',
-                isValid: (password) => /\d/.test(password),
-            },
-            {
-                label: 'Minimum 8 characters.',
-                isValid: isLongEnough(8),
-            },
-            {
-                label: 'Minimum one uppercase letter.',
-                isValid: hasAnUpperCaseLetter,
-            },
-            {
-                label: 'Minimum one lowercase letter.',
-                isValid: hasALowerCaseLetter,
-            },
-        ]}
-        onChange={(password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
+    args: {
+        onChange: (password: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>) => {
             console.info(password);
             console.info(event);
             console.info(isValid);
-        }}
-    />
-);
+        },
+    },
+    argTypes: {
+        onChange: {
+            control: { disable: true },
+        },
+    },
+};
 
-CustomValidations.parameters = rawCodeParameters;
+export default PasswordCreationInputMeta;
+type Story = StoryObj<typeof PasswordCreationInput>;
+
+export const Default: Story = {};

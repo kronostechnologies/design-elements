@@ -37,7 +37,7 @@ exports[`Checkbox matches snapshot 1`] = `
 
 .c3:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -65,10 +65,15 @@ exports[`Checkbox matches snapshot 1`] = `
   display: block;
 }
 
+.c1 + .c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
 .c1:focus + .c2 {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c0 {
@@ -123,9 +128,7 @@ exports[`Checkbox matches snapshot 1`] = `
           <Styled(Icon)>
             <Icon
               className="c4 c5"
-              color="currentColor"
               name="check"
-              size="24"
             >
               <svg
                 className="c4 c5"
@@ -139,9 +142,7 @@ exports[`Checkbox matches snapshot 1`] = `
           <Styled(Icon)>
             <Icon
               className="c6 c7"
-              color="currentColor"
               name="minus"
-              size="24"
             >
               <svg
                 className="c6 c7"

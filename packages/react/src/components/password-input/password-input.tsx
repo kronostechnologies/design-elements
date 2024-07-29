@@ -1,60 +1,20 @@
-import { ChangeEvent, useState, VoidFunctionComponent, useMemo, FocusEvent, useCallback } from 'react';
-import styled, { css } from 'styled-components';
-import { FieldContainer } from '../field-container/field-container';
+import {
+    ChangeEvent,
+    useState,
+    VoidFunctionComponent,
+    useMemo,
+    FocusEvent,
+    useCallback,
+} from 'react';
+import styled from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
-import { TextInput } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { focus } from '../../utils/css-state';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { FieldContainer } from '../field-container/field-container';
+import { Input } from '../text-input/text-input';
 import { Tooltip } from '../tooltip/tooltip';
-
-const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border-color: ${({ theme }) => theme.greys['dark-grey']};
-    border-left-width: 0;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    min-height: 2rem;
-    width: 2rem;
-
-    ${(props) => !props.$isValid && css`
-        border-color: ${props.theme.notifications['alert-2.1']};
-    `}
-
-    &:disabled {
-        background-color: ${({ theme }) => theme.greys['light-grey']};
-        border-color: ${({ theme }) => theme.greys.grey};
-    }
-`;
-
-const PasswordContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-
-    &:focus-within {
-        border-radius: var(--border-radius);
-        ${({ theme }) => focus({ theme }, true, '&')}
-
-        input,
-        ${StyledIconButton} {
-            border-color: ${({ theme }) => theme.main['primary-1.1']};
-        }
-    }
-`;
-
-const StyledTextInput = styled(TextInput)`
-    flex: 1;
-    margin-bottom: 0;
-
-    input {
-        &::-ms-reveal {
-            display: none;
-        }
-
-        border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-right-width: 0;
-    }
-`;
 
 interface PasswordInputProps {
     id?: string;
@@ -70,6 +30,21 @@ interface PasswordInputProps {
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
+
+const PasswordInputContainer = styled.div`
+    align-items: center;
+    display: flex;
+    position: relative;
+`;
+
+const StyledInput = styled(Input)`
+    padding-right: var(--size-2x);
+`;
+
+export const ShowPasswordButton = styled.div`
+    position: absolute;
+    right: 0.25rem;
+`;
 
 export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     id: providedId,
@@ -87,6 +62,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     ...otherProps
 }) => {
     const { t } = useTranslation('password-input');
+    const { isMobile } = useDeviceContext();
     const [showPassword, setShowPassword] = useState(false);
     const isValid = validationErrorMessage === undefined || validationErrorMessage === '';
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -104,18 +80,18 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     return (
         <FieldContainer
             fieldId={id}
+            valid={isValid}
             label={label}
             hint={hint}
             validationErrorMessage={validationErrorMessage ?? ''}
-            valid={isValid}
         >
-            <PasswordContainer>
-                <StyledTextInput
+            <PasswordInputContainer>
+                <StyledInput
                     id={id}
                     disabled={disabled}
                     name={name ?? 'password'}
                     autoComplete={showPassword ? 'off' : 'current-password'}
-                    ariaInvalid={!isValid}
+                    aria-invalid={!isValid}
                     onBlur={onBlur}
                     onChange={handleChange}
                     onFocus={onFocus}
@@ -124,22 +100,28 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     type={showPassword ? 'text' : 'password'}
                     defaultValue={defaultValue}
                     value={value}
+                    isMobile={isMobile}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                <Tooltip desktopPlacement="top" label={showPassword ? t('hide-password') : t('show-password')}>
-                    <StyledIconButton
-                        $isValid={isValid}
-                        disabled={disabled}
-                        buttonType="tertiary"
-                        aria-label={t('show-password')}
-                        iconName={showPassword ? 'eyeOff' : 'eye'}
-                        aria-pressed={showPassword}
-                        data-testid="show-password-button"
-                        type="button"
-                        onClick={handleShowPassword}
-                    />
-                </Tooltip>
-            </PasswordContainer>
+                <ShowPasswordButton>
+                    <Tooltip
+                        desktopPlacement="top"
+                        label={showPassword ? t('hide-password') : t('show-password')}
+                    >
+                        <IconButton
+                            disabled={disabled}
+                            buttonType="tertiary"
+                            aria-label={t('show-password')}
+                            iconName={showPassword ? 'eyeOff' : 'eye'}
+                            aria-pressed={showPassword}
+                            data-testid="show-password-button"
+                            type="button"
+                            onClick={handleShowPassword}
+                            size="small"
+                        />
+                    </Tooltip>
+                </ShowPasswordButton>
+            </PasswordInputContainer>
         </FieldContainer>
     );
 };
