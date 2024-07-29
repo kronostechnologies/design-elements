@@ -11,9 +11,6 @@ interface TabPanelProps {
 }
 
 const StyledDiv = styled.div<{ $isGlobal?: boolean; }>`
-    background: ${({ $isGlobal, theme }) => !$isGlobal && theme.component['tab-panel-background-color']};
-    border: ${({ $isGlobal, theme }) => !$isGlobal && `1px solid ${theme.component['tab-panel-border-color']}`};
-    border-radius: ${({ $isGlobal }) => !$isGlobal && '0 0 var(--border-radius-2x) var(--border-radius-2x)'};
     border-top: none;
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-visible' })}

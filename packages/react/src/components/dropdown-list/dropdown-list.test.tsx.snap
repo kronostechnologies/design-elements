@@ -39,7 +39,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,7 +64,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -102,7 +102,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -483,7 +483,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -508,7 +508,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -546,7 +546,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -961,7 +961,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -986,7 +986,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1024,7 +1024,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1389,7 +1389,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1414,7 +1414,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1451,7 +1451,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1792,7 +1792,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1842,7 +1842,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 
 .c9:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c9 > .c10 {
@@ -1854,7 +1854,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2385,7 +2385,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2410,7 +2410,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2448,7 +2448,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

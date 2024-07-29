@@ -1,11 +1,13 @@
 import { AliasTokens } from './alias-tokens';
 import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
 import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
+import { BreadcrumbTokens, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
 import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
 import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
 import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
 import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
+import { defaultDisclosureTokens, DisclosureTokens } from './component/disclosure-tokens';
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
@@ -28,7 +30,7 @@ import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
 import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
 import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
-import { defaultToggleButtonGroupTokens, ToggleButtonGroupTokens } from './component/toggle-button-group-tokens';
+import { defaultSegmentedControlTokens, SegmentedControlTokens } from './component/segmented-control-tokens';
 import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
 import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
 import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
@@ -55,6 +57,8 @@ export type ComponentTokens =
     | AvatarTokens
     | BentoMenuButtonTokens
     | ButtonTokens
+    | BreadcrumbTokens
+    | DisclosureTokens
     | FocusTokens
     | HeadingTokens
     | LabelTokens
@@ -73,7 +77,7 @@ export type ComponentTokens =
     | TextAreaTokens
     | FieldTokens
     | RadioButtonGroupTokens
-    | ToggleButtonGroupTokens
+    | SegmentedControlTokens
     | ToggleSwitchTokens
     | TextInputTokens
     | RadioCardTokens
@@ -113,6 +117,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultAvatarTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultButtonTokens,
+    ...defaultDisclosureTokens,
     ...defaultFocusTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
@@ -136,7 +141,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultTextAreaTokens,
     ...defaultFieldTokens,
     ...defaultRadioButtonGroupTokens,
-    ...defaultToggleButtonGroupTokens,
+    ...defaultSegmentedControlTokens,
     ...defaultToggleSwitchTokens,
     ...defaultTextInputTokens,
     ...defaultRadioCardTokens,
@@ -160,6 +165,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultDropdownMenuTokens,
     ...defaultLozengeTokens,
     ...defaultGlobalNavigationTokens,
+    ...defaultBreadcrumbTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

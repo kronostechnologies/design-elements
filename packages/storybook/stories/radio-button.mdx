@@ -1,6 +1,6 @@
-import { RadioButtonGroup } from '@equisoft/design-elements-react';
-import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
-import * as RadioButtonStories  from './radio-button.stories';
+import * as RadioButtonStories from './radio-button.stories';
+import { RadioButton } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta, Stories, Story } from '@storybook/blocks';
 
 <Meta of={RadioButtonStories} />
 
@@ -30,11 +30,17 @@ Radio buttons display mutually exclusive options from which a user selects exact
 ### Default
 <Canvas of={RadioButtonStories.Default} />
 
-### With conditional content
-<Canvas of={RadioButtonStories.WithConditionalContent} />
+### Checked
+<Canvas of={RadioButtonStories.Checked}/>
+
+### Disabled
+<Canvas of={RadioButtonStories.Disabled}/>
+
+### Checked and disabled
+<Canvas of={RadioButtonStories.CheckedAndDisabled}/>
 
 ## Properties
-<ArgTypes of={RadioButtonGroup} />
+<ArgTypes of={RadioButton} />
 
 ## References
 1. [https://www.nngroup.com/articles/radio-buttons-default-selection/](https://www.nngroup.com/articles/radio-buttons-default-selection/)

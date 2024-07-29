@@ -17,26 +17,26 @@ export type AliasTokens =
     /**
      * FEEDBACK
      */
-    | 'color-bg-neutral-subtlest'
-    | 'color-bg-neutral-subtle'
-    | 'color-bg-neutral-bold'
-    | 'color-bg-neutral-bold-disabled'
-    | 'color-feedback-bg-success-subtle'
-    | 'color-feedback-bg-warning-subtle'
-    | 'color-feedback-bg-alert-subtle'
-    | 'color-feedback-bg-discovery-subtle'
-    | 'color-feedback-bg-informative-subtle'
-    | 'color-feedback-bg-success-subtlest'
-    | 'color-feedback-bg-warning-subtlest'
-    | 'color-feedback-bg-alert-subtlest'
-    | 'color-feedback-bg-discovery-subtlest'
-    | 'color-feedback-bg-informative-subtlest'
-    | 'color-feedback-bg-success-bold'
-    | 'color-feedback-bg-success-bold-disabled'
-    | 'color-feedback-bg-alert-bold'
-    | 'color-feedback-bg-warning-bold'
-    | 'color-feedback-bg-discovery-bold'
-    | 'color-feedback-bg-informative-bold'
+    | 'color-background-neutral-subtlest'
+    | 'color-background-neutral-subtle'
+    | 'color-background-neutral-bold'
+    | 'color-background-neutral-bold-disabled'
+    | 'color-feedback-background-success-subtle'
+    | 'color-feedback-background-warning-subtle'
+    | 'color-feedback-background-alert-subtle'
+    | 'color-feedback-background-discovery-subtle'
+    | 'color-feedback-background-informative-subtle'
+    | 'color-feedback-background-success-subtlest'
+    | 'color-feedback-background-warning-subtlest'
+    | 'color-feedback-background-alert-subtlest'
+    | 'color-feedback-background-discovery-subtlest'
+    | 'color-feedback-background-informative-subtlest'
+    | 'color-feedback-background-success-bold'
+    | 'color-feedback-background-success-bold-disabled'
+    | 'color-feedback-background-alert-bold'
+    | 'color-feedback-background-warning-bold'
+    | 'color-feedback-background-discovery-bold'
+    | 'color-feedback-background-informative-bold'
     | 'color-feedback-border-success'
     | 'color-feedback-border-warning'
     | 'color-feedback-border-alert'
@@ -48,33 +48,36 @@ export type AliasTokens =
     | 'color-feedback-content-discovery'
     | 'color-feedback-content-informative'
     /**
-     * INPUT
+     * CONTROL
      */
-    | 'color-input-bg'
-    | 'color-input-bg-hover'
-    | 'color-input-bg-disabled'
-    | 'color-input-bg-checked'
-    | 'color-input-bg-selected'
-    | 'color-input-border'
-    | 'color-input-border-hover'
-    | 'color-input-border-disabled'
-    | 'color-input-border-selected'
-    | 'color-input-border-checked'
-    | 'color-input-border-error'
-    | 'color-input-content'
-    | 'color-input-content-hover'
-    | 'color-input-content-disabled'
-    | 'color-input-content-error'
-    | 'color-input-content-success'
-    | 'color-input-content-checked'
-    | 'color-input-content-selected'
+    | 'color-control-background'
+    | 'color-control-background-hover'
+    | 'color-control-background-disabled'
+    | 'color-control-background-checked'
+    | 'color-control-background-selected'
+    | 'color-control-border'
+    | 'color-control-border-hover'
+    | 'color-control-border-disabled'
+    | 'color-control-border-selected'
+    | 'color-control-border-checked'
+    | 'color-control-border-error'
+    | 'color-control-value'
+    | 'color-control-value-hover'
+    | 'color-control-value-disabled'
+    | 'color-control-auxiliary'
+    | 'color-control-auxiliary-hover'
+    | 'color-control-auxiliary-disabled'
+    | 'color-control-auxiliary-error'
+    | 'color-control-auxiliary-success'
+    | 'color-control-auxiliary-checked'
+    | 'color-control-auxiliary-selected'
     /**
      * MENU
      */
-    | 'color-menu-bg'
+    | 'color-menu-background'
     | 'color-menu-border'
-    | 'color-menu-item-bg'
-    | 'color-menu-item-bg-hover'
+    | 'color-menu-item-background'
+    | 'color-menu-item-background-hover'
     | 'color-menu-item-content'
     | 'color-menu-item-subcontent'
     | 'color-menu-item-content-hover'
@@ -82,24 +85,26 @@ export type AliasTokens =
     /**
      * BRAND
      */
-    | 'color-bg-brand-subtle'
-    | 'color-bg-brand'
-    | 'color-bg-brand-bold'
-    | 'color-bg-indicator'
+    | 'color-background-brand-subtle'
+    | 'color-background-brand'
+    | 'color-background-brand-bold'
+    | 'color-background-indicator-selected'
+    | 'color-background-indicator-active'
     | 'color-border-brand'
     | 'color-content-brand'
     /**
      * BACKGROUND
      */
-    | 'color-bg'
-    | 'color-bg-overlay'
-    | 'color-bg-isolated'
-    | 'color-bg-disabled'
-    | 'color-bg-empty'
-    | 'color-bg-hover'
-    | 'color-bg-selected'
-    | 'color-bg-selected-hover'
-    | 'color-blanket-bg'
+    | 'color-background'
+    | 'color-background-overlay'
+    | 'color-background-isolated'
+    | 'color-background-disabled'
+    | 'color-background-empty'
+    | 'color-background-hover'
+    | 'color-background-selected'
+    | 'color-background-selected-hover'
+    | 'color-backdrop-background'
+    | 'color-backdrop-background-subtle'
     /**
      * BORDER
      */
@@ -173,92 +178,95 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * NEUTRAL
      *  Use for default background of neutral UI elements,
-     *  sometimes on a subtle background. Could also be named color-bg-inverse.
+     *  sometimes on a subtle background. Could also be named color-background-inverse.
      */
-    'color-bg-neutral-subtlest': 'color-neutral-02',
-    'color-bg-neutral-subtle': 'color-neutral-05',
-    'color-bg-neutral-bold': 'color-neutral-65',
-    'color-bg-neutral-bold-disabled': 'color-neutral-30',
+    'color-background-neutral-subtlest': 'color-neutral-02',
+    'color-background-neutral-subtle': 'color-neutral-05',
+    'color-background-neutral-bold': 'color-neutral-65',
+    'color-background-neutral-bold-disabled': 'color-neutral-30',
     /**
      * SUCCESS
      *  Use for UI elements communicating a favorable outcome and success messaging.
      */
-    'color-feedback-bg-success-subtlest': 'color-success-02',
-    'color-feedback-bg-success-subtle': 'color-success-05',
-    'color-feedback-bg-success-bold': 'color-success-50',
-    'color-feedback-bg-success-bold-disabled': 'color-success-20',
+    'color-feedback-background-success-subtlest': 'color-success-02',
+    'color-feedback-background-success-subtle': 'color-success-05',
+    'color-feedback-background-success-bold': 'color-success-50',
+    'color-feedback-background-success-bold-disabled': 'color-success-20',
     'color-feedback-border-success': 'color-success-50',
     'color-feedback-content-success': 'color-success-70',
     /**
      * ALERT
      *  Use for UI elements communicating critical information and error messaging.
      */
-    'color-feedback-bg-alert-subtlest': 'color-alert-02',
-    'color-feedback-bg-alert-subtle': 'color-alert-05',
-    'color-feedback-bg-alert-bold': 'color-alert-50',
+    'color-feedback-background-alert-subtlest': 'color-alert-02',
+    'color-feedback-background-alert-subtle': 'color-alert-05',
+    'color-feedback-background-alert-bold': 'color-alert-50',
     'color-feedback-border-alert': 'color-alert-50',
     'color-feedback-content-alert': 'color-alert-70',
     /**
      * WARNING
      *  Use for UI elements communicating caution.
      */
-    'color-feedback-bg-warning-subtlest': 'color-warning-02',
-    'color-feedback-bg-warning-subtle': 'color-warning-05',
-    'color-feedback-bg-warning-bold': 'color-warning-50',
+    'color-feedback-background-warning-subtlest': 'color-warning-02',
+    'color-feedback-background-warning-subtle': 'color-warning-05',
+    'color-feedback-background-warning-bold': 'color-warning-50',
     'color-feedback-border-warning': 'color-warning-50',
     'color-feedback-content-warning': 'color-warning-80',
     /**
      * DISCOVERY
      *  Use for UI elements communicating change, something new or onboarding spotlights.
      */
-    'color-feedback-bg-discovery-subtlest': 'color-discovery-02',
-    'color-feedback-bg-discovery-subtle': 'color-discovery-05',
-    'color-feedback-bg-discovery-bold': 'color-discovery-50',
+    'color-feedback-background-discovery-subtlest': 'color-discovery-02',
+    'color-feedback-background-discovery-subtle': 'color-discovery-05',
+    'color-feedback-background-discovery-bold': 'color-discovery-50',
     'color-feedback-border-discovery': 'color-discovery-50',
     'color-feedback-content-discovery': 'color-discovery-70',
     /**
      * INFORMATIVE
      *  Use for UI elements communicating information or something in-progress.
      */
-    'color-feedback-bg-informative-subtlest': 'color-informative-02',
-    'color-feedback-bg-informative-subtle': 'color-informative-05',
-    'color-feedback-bg-informative-bold': 'color-informative-50',
+    'color-feedback-background-informative-subtlest': 'color-informative-02',
+    'color-feedback-background-informative-subtle': 'color-informative-05',
+    'color-feedback-background-informative-bold': 'color-informative-50',
     'color-feedback-border-informative': 'color-informative-50',
     'color-feedback-content-informative': 'color-informative-70',
 
     /**
-     * INPUT
-     *  Use for form UI elements, such as inputs, checkboxes, radio buttons, etc.
+     * CONTROL
+     *  Use for form UI elements, such as inputs, checkboxes, radio buttons, choosers, segmented controls, etc.
      */
-    'color-input-bg': 'color-white',
-    'color-input-bg-hover': 'color-neutral-15',
-    'color-input-bg-disabled': 'color-neutral-05',
-    'color-input-bg-checked': 'color-brand-50',
-    'color-input-bg-selected': 'color-brand-05',
+    'color-control-background': 'color-white',
+    'color-control-background-hover': 'color-neutral-15',
+    'color-control-background-disabled': 'color-neutral-05',
+    'color-control-background-checked': 'color-brand-50',
+    'color-control-background-selected': 'color-brand-05',
 
-    'color-input-border': 'color-neutral-65',
-    'color-input-border-hover': 'color-black',
-    'color-input-border-disabled': 'color-neutral-30',
-    'color-input-border-selected': 'color-brand-50',
-    'color-input-border-checked': 'color-brand-50',
-    'color-input-border-error': 'color-alert-50',
+    'color-control-border': 'color-neutral-65',
+    'color-control-border-hover': 'color-black',
+    'color-control-border-disabled': 'color-neutral-30',
+    'color-control-border-selected': 'color-brand-50',
+    'color-control-border-checked': 'color-brand-50',
+    'color-control-border-error': 'color-alert-50',
 
-    'color-input-content': 'color-neutral-65',
-    'color-input-content-hover': 'color-black',
-    'color-input-content-disabled': 'color-neutral-30',
-    'color-input-content-error': 'color-alert-50',
-    'color-input-content-success': 'color-success-50',
-    'color-input-content-checked': 'color-white',
-    'color-input-content-selected': 'color-brand-70',
+    'color-control-value': 'color-content',
+    'color-control-value-hover': 'color-content-hover',
+    'color-control-value-disabled': 'color-content-disabled',
+    'color-control-auxiliary': 'color-neutral-65',
+    'color-control-auxiliary-hover': 'color-black',
+    'color-control-auxiliary-disabled': 'color-neutral-30',
+    'color-control-auxiliary-error': 'color-alert-50',
+    'color-control-auxiliary-success': 'color-success-50',
+    'color-control-auxiliary-checked': 'color-white',
+    'color-control-auxiliary-selected': 'color-brand-70',
 
     /**
      * MENU
      * Used for menus, dropdown menus, listbox, navigation list and their items.
      */
-    'color-menu-bg': 'color-bg-overlay',
+    'color-menu-background': 'color-background-overlay',
     'color-menu-border': 'color-border-overlay',
-    'color-menu-item-bg': 'transparent-100',
-    'color-menu-item-bg-hover': 'color-bg-hover', // should use transparency instead
+    'color-menu-item-background': 'transparent-100',
+    'color-menu-item-background-hover': 'color-background-hover', // should use transparency instead
     'color-menu-item-content': 'color-content',
     'color-menu-item-subcontent': 'color-content-subtle',
     'color-menu-item-content-hover': 'color-content-hover',
@@ -278,10 +286,11 @@ export const defaultAliasTokens: AliasTokenMap = {
      * content (text & icons)
      *  used for progress trackers
      */
-    'color-bg-brand-subtle': 'color-brand-20',
-    'color-bg-brand': 'color-brand-50',
-    'color-bg-brand-bold': 'color-brand-80',
-    'color-bg-indicator': 'color-brand-50',
+    'color-background-brand-subtle': 'color-brand-20',
+    'color-background-brand': 'color-brand-50',
+    'color-background-brand-bold': 'color-brand-80',
+    'color-background-indicator-selected': 'color-brand-50',
+    'color-background-indicator-active': 'color-brand-80',
     'color-border-brand': 'color-brand-70',
     'color-content-brand': 'color-brand-50',
 
@@ -292,50 +301,51 @@ export const defaultAliasTokens: AliasTokenMap = {
     /**
      * Use as the primary surface base background of the UI.
      */
-    'color-bg': 'color-white',
+    'color-background': 'color-white',
     /**
      * Use for the elevation surface background of elements that sit on top of other UI elements,
      * such as modals, menus, datepicker calendar, global navigation, toggletips, etc.
      */
-    'color-bg-overlay': 'color-white',
+    'color-background-overlay': 'color-white',
     /**
      * A secondary elevation surface background for the UI commonly used for
      * grouped or isolated items, such as sections, accordion panels, table even rows, etc.
      */
-    'color-bg-isolated': 'color-neutral-02',
+    'color-background-isolated': 'color-neutral-02',
 
     /**
      * Use for the background of elements that appear to have no background in a resting state,
      * such as subtle buttons and menu items.
      */
-    // 'color-bg-subtle': 'transparent-100',
+    // 'color-background-subtle': 'transparent-100',
 
     /**
      * Use for backgrounds of elements in a hovered state,
      * such as navigation elements like accordion headers, card links, table cells, clickable tags, etc.
      */
-    'color-bg-hover': 'color-neutral-15',
+    'color-background-hover': 'color-neutral-15',
     /**
      * Use for backgrounds of elements in a disabled state,
      * such as menu items, navigation elements like accordion, etc.
      */
-    'color-bg-disabled': 'color-neutral-05',
+    'color-background-disabled': 'color-neutral-05',
     /**
      * Use for backgrounds of elements in an empty state,
      * such as carousel dots, progress elements, etc.
      */
-    'color-bg-empty': 'color-neutral-15',
+    'color-background-empty': 'color-neutral-15',
     /**
      * Use for the background of elements in a selected state,
      * such as naviaation elements like pagination pages or items like table rows.
      */
-    'color-bg-selected': 'color-brand-05',
-    'color-bg-selected-hover': 'color-brand-10', // should use transparency instead
+    'color-background-selected': 'color-brand-05',
+    'color-background-selected-hover': 'color-brand-10', // should use transparency instead
 
     /**
      * Use for the screen overlay that appears with modal dialogs
      */
-    'color-blanket-bg': 'transparent-dark-75',
+    'color-backdrop-background': 'transparent-dark-75',
+    'color-backdrop-background-subtle': 'transparent-dark-50',
 
     /**
      * BORDER

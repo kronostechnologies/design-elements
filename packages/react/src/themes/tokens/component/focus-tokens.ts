@@ -14,8 +14,8 @@ export type FocusTokenMap = {
 };
 
 export const defaultFocusTokens: FocusTokenMap = {
-    'focus-inside-border-color': 'color-brand-20',
-    'focus-inverted-inside-border-color': 'color-brand-50',
-    'focus-outside-border-color': 'color-brand-50',
-    'focus-inverted-outside-border-color': 'color-brand-20',
+    'focus-inside-border-color': 'color-border-focus-inside',
+    'focus-outside-border-color': 'color-border-focus-outside',
+    'focus-inverted-inside-border-color': 'color-border-focus-inside-inverse',
+    'focus-inverted-outside-border-color': 'color-border-focus-outside-inverse',
 };

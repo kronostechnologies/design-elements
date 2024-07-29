@@ -84,10 +84,11 @@ exports[`Global Navigation matches snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 .c3 > svg {

@@ -1,8 +1,8 @@
 'use strict';
 
-const config = require('conventional-changelog-conventionalcommits');
+import config from 'conventional-changelog-conventionalcommits';
 
-module.exports = config({
+export default config({
     types: [
         { type: 'feat', section: 'Features', hidden: false },
         { type: 'fix', section: 'Bug Fixes', hidden: false },

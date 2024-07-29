@@ -94,7 +94,7 @@ function getTagColors(
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
-const TagContainer = styled.span<TagStylingProps>`
+const TagContainer = styled.div<TagStylingProps>`
     align-items: center;
     background-color: ${(props) => getTagColors(props, 'background-color')};
     border: 1px solid ${(props) => getTagColors(props, 'border-color')};
@@ -152,7 +152,7 @@ export const Tag = forwardRef(({
     color = 'default',
     value,
     onRemove,
-}: TagProps, ref: Ref<HTMLElement>) => {
+}: TagProps, ref: Ref<HTMLDivElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
 
@@ -204,7 +204,6 @@ export const Tag = forwardRef(({
 
             {isRemovable && (
                 <RemoveButton
-                    aria-hidden="true"
                     data-testid={`${value.label}-remove-button`}
                     type="button"
                     buttonType="tertiary"
