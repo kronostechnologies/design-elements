@@ -4,20 +4,6 @@ import { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof ModalDialog> = {
     title: 'Components/Modal',
     component: ModalDialog,
-    argTypes: {
-        appElement: {
-            control: { type: null },
-        },
-        isOpen: {
-            control: { type: null },
-        },
-        onRequestClose: {
-            control: { type: null },
-        },
-        parentSelector: {
-            control: { type: null },
-        },
-    },
 };
 
 export default meta;
