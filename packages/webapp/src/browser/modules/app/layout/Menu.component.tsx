@@ -15,6 +15,12 @@ export const Menu: FunctionComponent = () => {
                     iconName: 'home',
                     name: t('nav:Home'),
                 },
+                {
+                    href: ROUTES.users.path,
+                    end: ROUTES.users.end,
+                    iconName: 'users',
+                    name: t('nav:Users'),
+                },
             ]}
             footerItems={[]}
         />

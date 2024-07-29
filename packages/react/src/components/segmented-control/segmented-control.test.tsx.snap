@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
+exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,7 +22,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 1px solid #878F9A;
+  border: 1px solid #60666E;
   border-right: 0;
   box-sizing: border-box;
   color: #60666E;
@@ -36,7 +36,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 }
 
 .c1:last-child {
-  border-right: 1px solid #878F9A;
+  border-right: 1px solid #60666E;
   margin: 0;
 }
 
@@ -57,19 +57,19 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c1:disabled,
 .c1:disabled:hover {
-  background-color: #FFFFFF;
+  background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
 .c1:hover {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   color: #000000;
 }
 
 .c1:hover + button {
-  border-left-color: #60666E;
+  border-left-color: #000000;
 }
 
 .c2 {
@@ -78,10 +78,10 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #E0F0F9;
-  border: 1px solid #012639;
-  border-right: 1px solid;
+  border: 1px solid #006296;
+  border-right: 1px solid #006296;
   box-sizing: border-box;
-  color: #012639;
+  color: #003A5A;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.02875rem;
   -moz-letter-spacing: 0.02875rem;
@@ -96,7 +96,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 }
 
 .c2:last-child {
-  border-right: 1px solid #012639;
+  border-right: 1px solid #006296;
   margin: 0;
 }
 
@@ -117,9 +117,19 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c2:disabled,
 .c2:disabled:hover {
-  background-color: #FFFFFF;
+  background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
 }
 
 <div
@@ -170,7 +180,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
+exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -192,7 +202,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-  border: 1px solid #878F9A;
+  border: 1px solid #60666E;
   border-right: 0;
   box-sizing: border-box;
   color: #60666E;
@@ -206,7 +216,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 }
 
 .c1:last-child {
-  border-right: 1px solid #878F9A;
+  border-right: 1px solid #60666E;
   margin: 0;
 }
 
@@ -227,19 +237,19 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c1:disabled,
 .c1:disabled:hover {
-  background-color: #FFFFFF;
+  background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
 .c1:hover {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   color: #000000;
 }
 
 .c1:hover + button {
-  border-left-color: #60666E;
+  border-left-color: #000000;
 }
 
 .c2 {
@@ -248,10 +258,10 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #E0F0F9;
-  border: 1px solid #012639;
-  border-right: 1px solid;
+  border: 1px solid #006296;
+  border-right: 1px solid #006296;
   box-sizing: border-box;
-  color: #012639;
+  color: #003A5A;
   font-size: 1rem;
   -webkit-letter-spacing: 0.02875rem;
   -moz-letter-spacing: 0.02875rem;
@@ -266,7 +276,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 }
 
 .c2:last-child {
-  border-right: 1px solid #012639;
+  border-right: 1px solid #006296;
   margin: 0;
 }
 
@@ -287,9 +297,19 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c2:disabled,
 .c2:disabled:hover {
-  background-color: #FFFFFF;
+  background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
 }
 
 <div

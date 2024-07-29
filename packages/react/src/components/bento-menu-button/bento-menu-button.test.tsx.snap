@@ -84,10 +84,11 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -97,10 +98,10 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c4 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -230,7 +231,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c21 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -260,13 +261,13 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c21:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21[disabled] {
@@ -360,7 +361,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -402,7 +403,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -904,10 +905,11 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -917,10 +919,10 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c4 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -1050,7 +1052,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c21 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1080,13 +1082,13 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c21:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21[disabled] {
@@ -1180,7 +1182,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1222,7 +1224,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1636,10 +1638,11 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -1649,10 +1652,10 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c4 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #000000;
+  color: #1B1C1E;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -1782,7 +1785,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c21 {
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1812,13 +1815,13 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c21:visited {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21:visited svg {
-  color: #000000;
-  fill: #000000;
+  color: #602FA0;
+  fill: #602FA0;
 }
 
 .c21[disabled] {
@@ -1912,7 +1915,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1954,7 +1957,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

@@ -19,17 +19,17 @@ export type NavListTokenMap = {
 };
 
 export const defaultNavListTokens: NavListTokenMap = {
-    'nav-list-background-color': 'color-white',
-    'nav-list-border-color': 'color-neutral-65',
+    'nav-list-background-color': 'color-menu-background',
+    'nav-list-border-color': 'color-menu-border',
 
-    'nav-list-item-icon-color': 'color-neutral-90',
-    'nav-list-item-text-color': 'color-neutral-90',
+    'nav-list-item-icon-color': 'color-menu-item-content',
+    'nav-list-item-text-color': 'color-menu-item-content',
 
-    'nav-list-item-hover-background-color': 'color-neutral-15',
-    'nav-list-item-text-hover-color': 'color-black',
-    'nav-list-item-icon-hover-color': 'color-black',
+    'nav-list-item-hover-background-color': 'color-menu-item-background-hover',
+    'nav-list-item-text-hover-color': 'color-menu-item-content-hover',
+    'nav-list-item-icon-hover-color': 'color-menu-item-content-hover',
 
-    'nav-list-item-disabled-text-color': 'color-neutral-30',
+    'nav-list-item-disabled-text-color': 'color-menu-item-content-disabled',
 
-    'nav-list-box-shadow-color': 'transparent-dark-20',
+    'nav-list-box-shadow-color': 'color-box-shadow',
 };

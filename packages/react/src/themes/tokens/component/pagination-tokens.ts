@@ -17,12 +17,12 @@ export type PaginationTokenMap = {
 };
 
 export const defaultPaginationTokens: PaginationTokenMap = {
-    'pagination-page-background-color': 'color-white',
-    'pagination-page-text-color': 'color-neutral-65',
-    'pagination-page-hover-background-color': 'color-neutral-15',
+    'pagination-page-background-color': 'transparent-100',
+    'pagination-page-text-color': 'color-content-subtle',
+    'pagination-page-hover-background-color': 'color-background-hover',
 
-    'pagination-page-selected-hover-background-color': 'color-informative-05',
-    'pagination-page-selected-background-color': 'color-informative-05',
-    'pagination-page-selected-border-color': 'color-informative-50',
-    'pagination-page-selected-text-color': 'color-informative-70',
+    'pagination-page-selected-hover-background-color': 'color-background-selected',
+    'pagination-page-selected-background-color': 'color-background-selected',
+    'pagination-page-selected-border-color': 'color-border-selected',
+    'pagination-page-selected-text-color': 'color-content-selected',
 };

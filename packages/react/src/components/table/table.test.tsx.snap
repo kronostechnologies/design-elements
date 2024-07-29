@@ -37,7 +37,7 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -49,7 +49,7 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -222,7 +222,7 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -234,7 +234,7 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -401,7 +401,7 @@ exports[`Table has column with headers grouped 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -413,7 +413,7 @@ exports[`Table has column with headers grouped 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -608,7 +608,7 @@ exports[`Table has custom text alignment 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -620,7 +620,7 @@ exports[`Table has custom text alignment 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -760,7 +760,7 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -772,7 +772,7 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -877,33 +877,11 @@ exports[`Table has desktop styles 1`] = `
 
 exports[`Table has error rows styles 1`] = `
 .c5 {
-  position: relative;
-  background-color: #FAEAE9;
+  background-color: #FDF7F6;
 }
 
 .c5:not(:first-child) {
   border-top: 1px solid #DBDEE1;
-}
-
-.c5::after {
-  box-shadow: inset 0 0 0 1px #CD2C23;
-  content: '';
-  height: calc(100% + 1px);
-  left: 0;
-  outline: none;
-  position: absolute;
-  width: 100%;
-  z-index: 3;
-}
-
-.c5 td:first-child::after {
-  border-left: 1px solid #CD2C23;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 3;
 }
 
 .c5 td {
@@ -946,7 +924,7 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -958,7 +936,7 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -1098,7 +1076,7 @@ exports[`Table has mobile styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1106,7 +1084,7 @@ exports[`Table has mobile styles 1`] = `
 
 .c0 th {
   font-weight: var(--font-semi-bold);
-  padding: var(--spacing-2x) 0;
+  padding: var(--spacing-3x) 0;
 }
 
 .c0 td {
@@ -1250,7 +1228,7 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1262,7 +1240,7 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -1480,7 +1458,7 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c7:hover {
   background-color: #DBDEE1;
-  border: 1px solid #1B1C1E;
+  border: 1px solid #000000;
 }
 
 .c5 {
@@ -1541,7 +1519,7 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1553,7 +1531,7 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -1818,7 +1796,7 @@ exports[`Table has small rowSize styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -1826,11 +1804,11 @@ exports[`Table has small rowSize styles 1`] = `
 
 .c0 th {
   font-weight: var(--font-semi-bold);
-  padding: var(--spacing-half) var(--spacing-1x);
+  padding: var(--spacing-half) var(--spacing-2x);
 }
 
 .c0 td {
-  padding: var(--spacing-1x);
+  padding: var(--spacing-half) var(--spacing-2x);
 }
 
 .c0 th,
@@ -1955,6 +1933,7 @@ exports[`Table has sorting styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1964,8 +1943,15 @@ exports[`Table has sorting styles 1`] = `
   text-align: left;
 }
 
-.c4:focus {
-  outline: none;
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
 .c3 {
@@ -1992,7 +1978,7 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2004,7 +1990,7 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -2222,7 +2208,7 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2234,7 +2220,7 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -2399,7 +2385,7 @@ exports[`Table has sticky header styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2411,7 +2397,7 @@ exports[`Table has sticky header styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -2555,7 +2541,7 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2567,7 +2553,7 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c0 td {
-  padding: var(--spacing-2x);
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c0 th,
@@ -2707,7 +2693,7 @@ exports[`Table has tablet styles 1`] = `
 }
 
 .c0 {
-  background: #FFFFFF;
+  background: transparent;
   border-collapse: collapse;
   color: #1B1C1E;
   width: 100%;
@@ -2715,7 +2701,7 @@ exports[`Table has tablet styles 1`] = `
 
 .c0 th {
   font-weight: var(--font-semi-bold);
-  padding: var(--spacing-2x) var(--spacing-1x);
+  padding: var(--spacing-3x) var(--spacing-1x);
 }
 
 .c0 td {

@@ -1,5 +1,5 @@
 import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
@@ -21,12 +21,6 @@ const ModalRoles: Record<DialogType, string> = {
     alert: 'alertdialog',
 };
 
-const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
-    ${({ $hasTitleIcon }) => $hasTitleIcon && css`
-        padding-left: var(--spacing-4x);
-    `}
-`;
-
 const Subtitle = styled.h3<MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-normal);
@@ -34,14 +28,10 @@ const Subtitle = styled.h3<MobileDeviceContextProps>`
     margin: var(--spacing-3x) 0 0;
 `;
 
-const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
+const ButtonContainer = styled.div<MobileDeviceContextProps>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
     justify-content: end;
-
-    ${({ isMobile, $hasTitleIcon }) => (isMobile && $hasTitleIcon) && css`
-        margin-left: calc(var(--spacing-4x) * -1);
-    `}
 `;
 
 const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
@@ -62,7 +52,6 @@ const TitleIcon = styled(Icon)`
 const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
     align-items: center;
     display: flex;
-    margin-left: calc(-1 * var(--spacing-4x));
 `;
 
 export interface ModalDialogProps {
@@ -161,7 +150,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         const confirmButtonType = dialogType === 'alert' ? 'destructive-primary' : 'primary';
 
         return (
-            <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>
+            <ButtonContainer isMobile={isMobile}>
                 {dialogType !== 'information' && (
                     <CancelButton
                         data-testid="cancel-button"
@@ -182,7 +171,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     return (
-        <StyledModal
+        <Modal
             ariaDescribedby={ariaDescribedby}
             ariaHideApp={ariaHideApp}
             ariaLabelledBy={titleId}
@@ -197,9 +186,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             isOpen={isOpen}
             appElement={appElement}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-            $hasTitleIcon={hasTitleIcon}
         >
             {children}
-        </StyledModal>
+        </Modal>
     );
 };

@@ -2,7 +2,7 @@
 
 exports[`ProgressIndicator Matches the snapshot 1`] = `
 .c2 p {
-  color: #000000;
+  color: #1B1C1E;
   -webkit-letter-spacing: 0.02875rem;
   -moz-letter-spacing: 0.02875rem;
   -ms-letter-spacing: 0.02875rem;
@@ -28,7 +28,7 @@ exports[`ProgressIndicator Matches the snapshot 1`] = `
 }
 
 .c1 {
-  color: #000000;
+  color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.02875rem;

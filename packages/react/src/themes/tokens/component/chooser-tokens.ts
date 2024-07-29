@@ -22,16 +22,16 @@ export type ChooserTokenMap = {
 };
 
 export const defaultChooserTokens: ChooserTokenMap = {
-    'chooser-selected-background-color': 'color-brand-05',
-    'chooser-selected-border-color': 'color-brand-50',
-    'chooser-selected-text-color': 'color-brand-70',
-    'chooser-text-color': 'color-neutral-65',
-    'chooser-background-color': 'color-white',
-    'chooser-border-color': 'color-neutral-65',
-    'chooser-disabled-background-color': 'color-neutral-05',
-    'chooser-disabled-border-color': 'color-neutral-30',
-    'chooser-disabled-text-color': 'color-neutral-30',
-    'chooser-hover-background-color': 'color-neutral-15',
-    'chooser-hover-border-color': 'color-neutral-90',
-    'chooser-hover-text-color': 'color-neutral-90',
+    'chooser-background-color': 'color-control-background',
+    'chooser-border-color': 'color-control-border',
+    'chooser-text-color': 'color-control-auxiliary',
+    'chooser-selected-background-color': 'color-control-background-selected',
+    'chooser-selected-border-color': 'color-control-border-selected',
+    'chooser-selected-text-color': 'color-control-auxiliary-selected',
+    'chooser-hover-background-color': 'color-control-background-hover',
+    'chooser-hover-border-color': 'color-control-border-hover',
+    'chooser-hover-text-color': 'color-control-auxiliary-hover',
+    'chooser-disabled-background-color': 'color-control-background-disabled',
+    'chooser-disabled-border-color': 'color-control-border-disabled',
+    'chooser-disabled-text-color': 'color-control-auxiliary-disabled',
 };

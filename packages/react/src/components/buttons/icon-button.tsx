@@ -13,6 +13,7 @@ export interface IconButtonProps extends ButtonProps {
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
+    size?: Size;
 }
 
 const getButtonSizeStyles = (
@@ -60,6 +61,7 @@ export const IconButton = forwardRef(({
     onFocus,
     onBlur,
     onKeyDown,
+    size = 'medium',
     ...props
 }: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -80,6 +82,7 @@ export const IconButton = forwardRef(({
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            size={size}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             { children || (

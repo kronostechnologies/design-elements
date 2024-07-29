@@ -82,15 +82,16 @@ exports[`Button has destructive styles (inverted) 1`] = `
   color: #7B1A15;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   color: #F99D99;
+  cursor: not-allowed;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1[aria-disabled='true'],
+.c1[aria-disabled='true']:focus,
+.c1[aria-disabled='true']:hover {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   color: #F99D99;
@@ -186,15 +187,16 @@ exports[`Button has destructive styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #F99D99;
   border-color: #F99D99;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1[aria-disabled='true'],
+.c1[aria-disabled='true']:focus,
+.c1[aria-disabled='true']:hover {
   background-color: #F99D99;
   border-color: #F99D99;
   color: #FFFFFF;
@@ -290,10 +292,11 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   color: #7B1A15;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: #F99D99;
   color: #F99D99;
+  cursor: not-allowed;
 }
 
 <button
@@ -386,15 +389,16 @@ exports[`Button has destructive-secondary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #F99D99;
   border-color: #F99D99;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1[aria-disabled='true'],
+.c1[aria-disabled='true']:focus,
+.c1[aria-disabled='true']:hover {
   background-color: #F99D99;
   border-color: #F99D99;
   color: #FFFFFF;
@@ -498,10 +502,11 @@ exports[`Button has left and right icons 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -612,10 +617,11 @@ exports[`Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -708,15 +714,16 @@ exports[`Button has primary disabled styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
+  aria-disabled="true"
   class="c0 c1"
-  disabled=""
   type="button"
 >
   Primary Button
@@ -800,15 +807,16 @@ exports[`Button has primary styles (inverted) 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
   color: #003A5A;
 }
 
-.c1:disabled {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+.c1[aria-disabled='true'] {
+  background-color: #006296;
+  border-color: #006296;
   color: #84C6EA;
+  cursor: not-allowed;
 }
 
 <button
@@ -901,10 +909,11 @@ exports[`Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -997,10 +1006,11 @@ exports[`Button has secondary styles (inverted) 1`] = `
   color: #84C6EA;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: #006296;
   color: #006296;
+  cursor: not-allowed;
 }
 
 <button
@@ -1070,7 +1080,7 @@ exports[`Button has secondary styles 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #006296;
   color: #006296;
 }
@@ -1088,15 +1098,16 @@ exports[`Button has secondary styles 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c1:disabled {
-  background-color: #FFFFFF;
+.c1[aria-disabled='true'] {
+  background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
+  cursor: not-allowed;
 }
 
 <button
@@ -1189,10 +1200,11 @@ exports[`Button has small styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -1285,10 +1297,11 @@ exports[`Button has small styles on mobile 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
+  cursor: not-allowed;
 }
 
 <button
@@ -1381,10 +1394,11 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
+  cursor: not-allowed;
 }
 
 <button
@@ -1474,13 +1488,14 @@ exports[`Button has tertiary styles 1`] = `
 .c1[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c1:disabled {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 <button
