@@ -1,0 +1,57 @@
+import { Table } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as TableStories  from './data-table.stories';
+
+<Meta of={TableStories} />
+
+# Data Table
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The data table is used to efficiently display and organize data [1].
+<Canvas of={TableStories.Default} />
+
+## Usage
+### When to use
+- Use when faced with a significant amount of interdependent data that needs to be presented in a structured and
+  organized manner [2].
+- Use when all data holds equal importance [4].
+- Use when all entries in your dataset share the same attributes [7].
+- Use when displaying data for comparison purposes [7].
+- Use when you expect your dataset to continue to grow over time [7].
+- Use when users need to enter or modify specific details of a dataset [7].
+- Use when you need to enable sorting, filtering, and searching. This can be beneficial when users need to find
+  specific information or compare data based on certain criteria [7].
+- Use when the user needs to access specific data to perform a task [1].
+
+### When not to use
+- Do not use when rows and columns are only a means of layout [9].
+- Do not use you have a small data set (less than 2 elements that will not evolve over time). It risks cluttering up
+  the interface without adding any real value [2].
+- Do not use when data is not directly comparable [5].
+- Do not use when the data is best represented as a graph or visualization.
+- Do not use when data includes long paragraphs or lists [9].
+- Do not use when there are columns whose cells will generally be empty [9].
+
+## Properties
+<ArgTypes of={Table} />
+
+## References
+1. [https://carbondesignsystem.com/components/data-table/usage/](https://carbondesignsystem.com/components/data-table/usage/)
+2. [https://m2.material.io/components/data-tables](https://m2.material.io/components/data-tables)
+3. [https://balsamiq.com/learn/ui-control-guidelines/tables-data-grids/](https://balsamiq.com/learn/ui-control-guidelines/tables-data-grids/)
+4. [https://cultureamp.design/components/table/](https://cultureamp.design/components/table/)
+5. [https://polaris.shopify.com/components/tables/data-table](https://polaris.shopify.com/components/tables/data-table)
+6. [https://www.uiprep.com/blog/the-ultimate-guide-to-designing-data-tables](https://www.uiprep.com/blog/the-ultimate-guide-to-designing-data-tables)
+7. [https://design.gitlab.com/components/table](https://design.gitlab.com/components/table)
+8. [https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-data-tables/](https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-data-tables/)
+9. [https://primer.style/design/components/data-table](https://primer.style/design/components/data-table)
+10. [https://www.delldesignsystem.com/components/table/?tab=Design](https://www.delldesignsystem.com/components/table/?tab=Design)
+11. [https://www.w3.org/WAI/tutorials/tables/](https://www.w3.org/WAI/tutorials/tables/)
+12. [https://atlassian.design/components/dynamic-table/examples](https://atlassian.design/components/dynamic-table/examples)
+13. [https://mui.com/x/react-data-grid/row-grouping/](https://mui.com/x/react-data-grid/row-grouping/)
+14. [https://www.letsnurture.ca/blog/technology/ui-ux-principle-3-the-text-box-size-should-make-your-content-easy-to-read/#:~:text=A text box that is,and 75 characters per line](https://www.letsnurture.ca/blog/technology/ui-ux-principle-3-the-text-box-size-should-make-your-content-easy-to-read/#:~:text=A%20text%20box%20that%20is,and%2075%20characters%20per%20line)
+15. [https://ux.stackexchange.com/questions/110077/best-practices-to-allow-user-to-hide-show-columns-in-a-data-table](https://ux.stackexchange.com/questions/110077/best-practices-to-allow-user-to-hide-show-columns-in-a-data-table)
