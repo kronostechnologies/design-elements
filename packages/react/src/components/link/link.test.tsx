@@ -205,8 +205,20 @@ describe('Link Component', () => {
             expect(wrapper.find('a').prop('aria-disabled')).toBe('true');
         });
 
-        it('displays screen-reader-only text when external && target="_blank"', () => {
-            const wrapper = mountWithProviders(<Link external />);
+        it('displays screen-reader-only text only when external && target="_blank"', () => {
+            const wrapper = mountWithProviders(<Link />);
+            expect(wrapper.find('ScreenReaderOnlyText').exists()).toBe(false);
+
+            act(() => {
+                wrapper.setProps({ external: true, target: 'none' });
+            });
+
+            expect(wrapper.find('ScreenReaderOnlyText').exists()).toBe(false);
+
+            act(() => {
+                wrapper.setProps({ external: true, target: '_blank' });
+            });
+
             expect(wrapper.find('ScreenReaderOnlyText').exists()).toBe(true);
             expect(wrapper.find('ScreenReaderOnlyText').text()).toContain('opens in a new tab');
         });

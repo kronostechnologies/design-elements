@@ -27,7 +27,7 @@ export const Link: FC<LinkProps> = ({
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('common');
-    const opensInNewTab = target === '_blank';
+    const opensInNewTab = external && target === '_blank';
     const isIconOnly = iconOnly && (iconName || external);
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
@@ -68,7 +68,8 @@ export const Link: FC<LinkProps> = ({
             {external && (
                 <Icon
                     data-testid="external-link-icon"
-                    aria-label={t('opensInNewTab')}
+                    aria-hidden="true"
+                    focusable={false}
                     name="externalLink"
                     role="img"
                     size="16"

@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link Component Styling matches NavLink snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -147,21 +135,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
           tabIndex={0}
         >
           Navigation Link
-          <ScreenReaderOnlyText
-            data-testid="screen-reader-text"
-            label="(opens in a new tab)"
-          >
-            <styled.span
-              data-testid="screen-reader-text"
-            >
-              <span
-                className="c1"
-                data-testid="screen-reader-text"
-              >
-                (opens in a new tab)
-              </span>
-            </styled.span>
-          </ScreenReaderOnlyText>
         </a>
       </Link>
     </NavLink>
@@ -170,18 +143,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches RouteLink snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -306,21 +267,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
         tabIndex={0}
       >
         Navigation Link
-        <ScreenReaderOnlyText
-          data-testid="screen-reader-text"
-          label="(opens in a new tab)"
-        >
-          <styled.span
-            data-testid="screen-reader-text"
-          >
-            <span
-              className="c1"
-              data-testid="screen-reader-text"
-            >
-              (opens in a new tab)
-            </span>
-          </styled.span>
-        </ScreenReaderOnlyText>
       </a>
     </Link>
   </styled.a>
@@ -328,18 +274,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches button link snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -444,28 +378,10 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   tabindex="-1"
 >
   Navigation Link
-  <span
-    class="c1"
-    data-testid="screen-reader-text"
-  >
-    (opens in a new tab)
-  </span>
 </a>
 `;
 
 exports[`Link Component Styling matches default snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -564,40 +480,12 @@ exports[`Link Component Styling matches default snapshot 1`] = `
       onClick={[Function]}
       tabIndex={0}
       to="#"
-    >
-      <ScreenReaderOnlyText
-        data-testid="screen-reader-text"
-        label="(opens in a new tab)"
-      >
-        <styled.span
-          data-testid="screen-reader-text"
-        >
-          <span
-            className="c1"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </styled.span>
-      </ScreenReaderOnlyText>
-    </a>
+    />
   </styled.a>
 </Link>
 `;
 
 exports[`Link Component Styling matches disabled snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -693,12 +581,6 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
   to="/test"
 >
   Navigation Link
-  <span
-    class="c1"
-    data-testid="screen-reader-text"
-  >
-    (opens in a new tab)
-  </span>
 </a>
 `;
 
@@ -812,7 +694,7 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 >
   Navigation Link
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     color="currentColor"
     data-testid="external-link-icon"
     focusable="false"
@@ -830,18 +712,6 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches icon and label snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -937,30 +807,12 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
     width="16"
   />
   Navigation Link
-  <span
-    class="c1"
-    data-testid="screen-reader-text"
-  >
-    (opens in a new tab)
-  </span>
 </a>
 `;
 
 exports[`Link Component Styling matches icon only snapshot 1`] = `
 [
-  .c2 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.c0 {
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1086,12 +938,6 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
         height="16"
         width="16"
       />
-      <span
-        class="c2"
-        data-testid="screen-reader-text"
-      >
-        (opens in a new tab)
-      </span>
     </a>
   </span>,
   .c2 {
@@ -1259,18 +1105,6 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches with children snapshot 1`] = `
-.c1 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1373,21 +1207,6 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
       <span>
         Test
       </span>
-      <ScreenReaderOnlyText
-        data-testid="screen-reader-text"
-        label="(opens in a new tab)"
-      >
-        <styled.span
-          data-testid="screen-reader-text"
-        >
-          <span
-            className="c1"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </styled.span>
-      </ScreenReaderOnlyText>
     </a>
   </styled.a>
 </Link>
