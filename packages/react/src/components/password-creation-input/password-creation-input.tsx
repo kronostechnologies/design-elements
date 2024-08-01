@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
 import { FieldContainer } from '../field/field-container';
-import { Input } from '../text-input/text-input';
+import { Input } from '../text-input/styles/inputs';
 import { useTranslation } from '../../i18n/use-translation';
 import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';

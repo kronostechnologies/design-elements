@@ -19,12 +19,10 @@ const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
 
     return (
         <StyledHint
-            data-testid="invalid-field"
-            aria-live="polite"
+            data-testid="field-hint"
             htmlFor={htmlFor}
             id={id}
             $isMobile={isMobile}
-            role="alert"
         >
             {children}
         </StyledHint>

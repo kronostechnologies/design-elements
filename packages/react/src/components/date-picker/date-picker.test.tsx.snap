@@ -351,6 +351,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -742,6 +743,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1135,6 +1137,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1528,6 +1531,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1949,6 +1953,7 @@ label + .c5 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1957,7 +1962,7 @@ label + .c5 {
   <label
     aria-live="polite"
     class="c3"
-    data-testid="invalid-field"
+    data-testid="field-message"
     for="uuid1"
     id="uuid1_invalid"
     role="alert"
@@ -2359,6 +2364,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -2917,6 +2923,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -4217,6 +4224,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -5493,6 +5501,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >

@@ -12,6 +12,7 @@ export interface FieldControlProps {
 
 export interface FieldContainerProps extends FieldControlProps {
     className?: string;
+    /** Disables default margin */
     noMargin?: boolean;
     label?: string;
     hint?: string;

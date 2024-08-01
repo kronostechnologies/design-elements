@@ -1,4 +1,4 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
@@ -85,4 +85,8 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
     }
 
     ${focus({ theme })};
+`;
+
+export const Input = styled.input<{ isMobile: boolean; }>`
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile })}
 `;

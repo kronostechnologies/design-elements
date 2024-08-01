@@ -31,7 +31,6 @@ const StyledInput = styled.input<{ $isMobile: boolean }>`
         border-color: ${({ theme }) => theme.component['text-input-border-color']};
     }
 
-    &:invalid,
     &[aria-invalid='true'] {
         border-color: ${({ theme }) => theme.component['text-input-error-border-color']};
     }
@@ -73,13 +72,13 @@ export const Input = forwardRef(({
 
     return (
         <StyledInput
+            data-testid="input"
             aria-label={ariaLabel}
             aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
             aria-describedby={ariaDescribedby}
             aria-disabled={disabled}
             aria-required={required}
             aria-invalid={valid ? 'false' : 'true'}
-            data-testid="input"
             id={id}
             disabled={disabled}
             required={required}

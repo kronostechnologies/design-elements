@@ -47,15 +47,15 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     validationErrorMessage,
     ...props
 }) => {
-    const fieldId = useId(providedId);
+    const inputFieldId = useId(providedId);
 
-    const slotIds = getSlotIds(fieldId, label, hint, (validationErrorMessage && !valid));
+    const slotIds = getSlotIds(inputFieldId, label, hint, (validationErrorMessage && !valid));
     const ariaLabel = getAriaLabel(label, providedAriaLabel, providedAriaLabelledby);
     const ariaLabelledby = getAriaLabelledby(slotIds, providedAriaLabelledby);
     const ariaDescribedby = getAriaDescribedby(slotIds, providedAriaDescribedby);
 
     const contextValues = useMemo(() => ({
-        id: fieldId,
+        id: inputFieldId,
         ariaLabel,
         ariaLabelledby,
         ariaDescribedby,
@@ -63,7 +63,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
         hint,
         required,
         disabled,
-    }), [fieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled]);
+    }), [inputFieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled]);
 
     return (
         <FieldControlContext.Provider value={contextValues}>
@@ -78,25 +78,26 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {label && (
                     <Label
                         id={slotIds.label}
-                        htmlFor={fieldId}
+                        htmlFor={inputFieldId}
                         tooltip={tooltip}
                         required={required}
+                        disabled={disabled}
                     >
                         {label}
                     </Label>
                 )}
-                {hint && (
+                {!disabled && hint && (
                     <Hint
                         id={slotIds.hint}
-                        htmlFor={fieldId}
+                        htmlFor={inputFieldId}
                     >
                         {hint}
                     </Hint>
                 )}
-                {!valid && (
+                {!disabled && !valid && (
                     <InvalidFieldMessage
                         id={slotIds.invalid}
-                        htmlFor={fieldId}
+                        htmlFor={inputFieldId}
                         noInvalidFieldIcon={noInvalidFieldIcon}
                     >
                         {validationErrorMessage}

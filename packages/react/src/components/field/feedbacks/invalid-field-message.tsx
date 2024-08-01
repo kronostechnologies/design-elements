@@ -26,7 +26,7 @@ const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldM
 
     return (
         <StyledValidationMessage
-            data-testid="invalid-field"
+            data-testid="field-message"
             aria-live="polite"
             htmlFor={htmlFor}
             id={id}

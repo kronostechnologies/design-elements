@@ -2,7 +2,7 @@
 
 exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
 .c2 {
-  color: #1B1C1E;
+  color: #B7BBC2;
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -37,7 +37,7 @@ input + .c1 {
 
 .c3 {
   background: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;
@@ -71,29 +71,47 @@ input + .c1 {
   color: #60666E;
 }
 
-.c3:disabled {
+.c3:valid,
+.c3[aria-invalid='false'] {
+  border-color: #60666E;
+}
+
+.c3[aria-invalid='true'] {
+  border-color: #CD2C23;
+}
+
+.c3:disabled,
+.c3[aria-disabled='true'] {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #DBDEE1;
 }
 
 .c3:disabled,
-.c3:disabled::-webkit-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-webkit-input-placeholder,
+.c3[aria-disabled='true']::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::-moz-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-moz-placeholder,
+.c3[aria-disabled='true']::-moz-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled:-ms-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled:-ms-input-placeholder,
+.c3[aria-disabled='true']:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::placeholder,
+.c3[aria-disabled='true']::placeholder {
   color: #B7BBC2;
 }
 
@@ -114,14 +132,19 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
     Telephone
   </label>
   <input
+    aria-disabled="true"
+    aria-invalid="false"
+    aria-labelledby="uuid1_label"
+    aria-required="false"
     class="c3"
-    data-testid="text-input"
+    data-testid="input"
     disabled=""
     id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -169,7 +192,7 @@ input + .c1 {
 
 .c3 {
   background: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;
@@ -203,29 +226,47 @@ input + .c1 {
   color: #60666E;
 }
 
-.c3:disabled {
+.c3:valid,
+.c3[aria-invalid='false'] {
+  border-color: #60666E;
+}
+
+.c3[aria-invalid='true'] {
+  border-color: #CD2C23;
+}
+
+.c3:disabled,
+.c3[aria-disabled='true'] {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #DBDEE1;
 }
 
 .c3:disabled,
-.c3:disabled::-webkit-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-webkit-input-placeholder,
+.c3[aria-disabled='true']::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::-moz-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-moz-placeholder,
+.c3[aria-disabled='true']::-moz-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled:-ms-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled:-ms-input-placeholder,
+.c3[aria-disabled='true']:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::placeholder,
+.c3[aria-disabled='true']::placeholder {
   color: #B7BBC2;
 }
 
@@ -246,14 +287,19 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
     Telephone (required)
   </label>
   <input
+    aria-disabled="false"
+    aria-invalid="false"
+    aria-labelledby="uuid1_label"
+    aria-required="true"
     class="c3"
-    data-testid="text-input"
+    data-testid="input"
     id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
@@ -301,7 +347,7 @@ input + .c1 {
 
 .c3 {
   background: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;
@@ -335,29 +381,47 @@ input + .c1 {
   color: #60666E;
 }
 
-.c3:disabled {
+.c3:valid,
+.c3[aria-invalid='false'] {
+  border-color: #60666E;
+}
+
+.c3[aria-invalid='true'] {
+  border-color: #CD2C23;
+}
+
+.c3:disabled,
+.c3[aria-disabled='true'] {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #DBDEE1;
 }
 
 .c3:disabled,
-.c3:disabled::-webkit-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-webkit-input-placeholder,
+.c3[aria-disabled='true']::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::-moz-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::-moz-placeholder,
+.c3[aria-disabled='true']::-moz-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled:-ms-input-placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled:-ms-input-placeholder,
+.c3[aria-disabled='true']:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
 .c3:disabled,
-.c3:disabled::placeholder {
+.c3[aria-disabled='true'],
+.c3:disabled::placeholder,
+.c3[aria-disabled='true']::placeholder {
   color: #B7BBC2;
 }
 
@@ -378,14 +442,19 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
     Telephone
   </label>
   <input
+    aria-disabled="false"
+    aria-invalid="false"
+    aria-labelledby="uuid1_label"
+    aria-required="false"
     class="c3"
-    data-testid="text-input"
+    data-testid="input"
     id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"

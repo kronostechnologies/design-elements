@@ -30,7 +30,7 @@ exports[`Invalid field Matches the snapshot 1`] = `
 <label
   aria-live="polite"
   class="c0"
-  data-testid="invalid-field"
+  data-testid="field-message"
   for="input-id"
   id="test-id"
   role="alert"

@@ -314,11 +314,14 @@ input:valid + .c8 {
             htmlFor="search-input"
           >
             <styled.label
+              $disabled={false}
               $isMobile={false}
+              data-testid="field-label"
               htmlFor="search-input"
             >
               <label
                 className="c2 c3"
+                data-testid="field-label"
                 htmlFor="search-input"
               >
                 <styled.svg

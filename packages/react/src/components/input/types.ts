@@ -1,8 +1,11 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import { FieldControlProps } from '../field/types';
+import { FieldContainerProps, FieldControlProps } from '../field/types';
 
 type BaseInputProps = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     | 'ref'
+    | 'aria-describedby'
+    | 'aria-label'
+    | 'aria-labelledby'
 >;
 
 type CommonFieldControlProps = Pick<FieldControlProps,
@@ -13,3 +16,5 @@ type CommonFieldControlProps = Pick<FieldControlProps,
 >;
 
 export type InputProps = BaseInputProps & CommonFieldControlProps;
+
+export type InputFieldProps = InputProps & FieldContainerProps;

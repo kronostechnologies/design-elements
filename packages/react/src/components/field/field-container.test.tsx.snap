@@ -91,7 +91,7 @@ exports[`Field Container Styling matches invalid snapshot 1`] = `
   <label
     aria-live="polite"
     class="c1"
-    data-testid="invalid-field"
+    data-testid="field-message"
     for="id"
     id="id_invalid"
     role="alert"

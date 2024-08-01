@@ -23,6 +23,7 @@ input + .c0 {
 
 <label
   class="c0 c1"
+  data-testid="field-label"
   for="test-id"
 >
   Children

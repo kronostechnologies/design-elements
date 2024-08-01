@@ -266,6 +266,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -770,6 +771,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -778,7 +780,7 @@ input + .c2 {
   <label
     aria-live="polite"
     class="c4"
-    data-testid="invalid-field"
+    data-testid="field-message"
     for="uuid1"
     id="uuid1_invalid"
     role="alert"
@@ -1725,18 +1727,17 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
     Select an option
   </label>
   <label
-    aria-live="polite"
     class="c4"
-    data-testid="invalid-field"
+    data-testid="field-hint"
     for="uuid1"
     id="uuid1_hint"
-    role="alert"
   >
     Hint
   </label>

@@ -13,7 +13,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field/field-container';
-import { Input } from '../text-input/text-input';
+import { Input } from '../text-input/styles/inputs';
 import { Tooltip } from '../tooltip/tooltip';
 
 interface PasswordInputProps {

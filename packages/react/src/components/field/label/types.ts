@@ -5,7 +5,7 @@ export type BaseLabelProps = Pick<DetailedHTMLProps<LabelHTMLAttributes<HTMLLabe
     | 'id' | 'className' | 'htmlFor'
 >;
 
-type CommonFieldContainerProps = Pick<FieldContainerProps, 'required' | 'tooltip'>;
+type CommonFieldContainerProps = Pick<FieldContainerProps, 'disabled' | 'required' | 'tooltip'>;
 
 export interface LabelProps extends BaseLabelProps, CommonFieldContainerProps {
     requiredLabelType?: 'text';

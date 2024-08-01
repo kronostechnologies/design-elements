@@ -2,7 +2,7 @@ import { ReactWrapper, shallow } from 'enzyme';
 import { ChangeEventHandler } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithProviders, mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
 
 describe('TextInput', () => {
@@ -45,70 +45,70 @@ describe('TextInput', () => {
     });
 
     test('should be valid by default', () => {
-        const wrapper = shallow(<TextInput {...initialProps} />);
+        const wrapper = mountWithProviders(<TextInput {...initialProps} />);
 
         const container = getByTestId(wrapper, 'field-container');
         expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when invalid event is triggered', () => {
-        const wrapper = shallow(<TextInput {...initialProps} />);
+        const wrapper = mountWithProviders(<TextInput {...initialProps} />);
 
-        getByTestId(wrapper, 'text-input').simulate('invalid');
+        getByTestId(wrapper, 'input').simulate('invalid');
 
         const container = getByTestId(wrapper, 'field-container');
         expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as invalid when valid prop is false', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
+        const wrapper = mountWithProviders(<TextInput valid={false} />);
 
         const container = getByTestId(wrapper, 'field-container');
         expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as valid when valid prop is true', () => {
-        const wrapper = shallow(<TextInput valid />);
+        const wrapper = mountWithProviders(<TextInput valid />);
 
         const container = getByTestId(wrapper, 'field-container');
         expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when valid prop is false and input trigger blur with checkValidity is true', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
+        const wrapper = mountWithProviders(<TextInput valid={false} />);
 
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
+        const input = getByTestId(wrapper, 'input');
+        input.simulate('blur', { currentTarget: { checkValidity: () => true } });
         const container = getByTestId(wrapper, 'field-container');
 
         expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as valid when valid prop is true and input trigger blur with checkValidity is true', () => {
-        const wrapper = shallow(<TextInput valid />);
+        const wrapper = mountWithProviders(<TextInput valid />);
 
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
+        const input = getByTestId(wrapper, 'input');
+        input.simulate('blur', { currentTarget: { checkValidity: () => true } });
         const container = getByTestId(wrapper, 'field-container');
 
         expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as valid when valid prop is true and input trigger blur with checkValidity is false', () => {
-        const wrapper = shallow(<TextInput valid />);
+        const wrapper = mountWithProviders(<TextInput valid />);
 
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
+        const input = getByTestId(wrapper, 'input');
+        input.simulate('blur', { currentTarget: { checkValidity: () => false } });
         const container = getByTestId(wrapper, 'field-container');
 
         expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when valid prop is false and input trigger blur with checkValidity is false', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
+        const wrapper = mountWithProviders(<TextInput valid={false} />);
 
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
+        const input = getByTestId(wrapper, 'input');
+        input.simulate('blur', { currentTarget: { checkValidity: () => false } });
         const container = getByTestId(wrapper, 'field-container');
 
         expect(container.prop('valid')).toBe(false);
