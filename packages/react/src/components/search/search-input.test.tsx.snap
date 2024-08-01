@@ -311,11 +311,11 @@ input:valid + .c8 {
         >
           <Label
             data-testid="search-icon"
-            forId="search-input"
+            htmlFor="search-input"
           >
             <styled.label
+              $isMobile={false}
               htmlFor="search-input"
-              isMobile={false}
             >
               <label
                 className="c2 c3"

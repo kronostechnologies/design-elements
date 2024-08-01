@@ -778,11 +778,9 @@ input + .c2 {
     Select an option
   </label>
   <span
-    aria-live="polite"
     class="c4"
-    data-testid="invalid-field"
+    data-testid="field-message"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c5"
@@ -1544,6 +1542,18 @@ input + .c2 {
   margin-left: var(--spacing-half);
 }
 
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -1556,18 +1566,6 @@ input + .c2 {
 
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
-}
-
-.c4 {
-  color: #60666E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
 }
 
 .c10 {
@@ -1735,6 +1733,7 @@ input + .c2 {
   </label>
   <span
     class="c4"
+    data-testid="field-hint"
     id="uuid1_hint"
   >
     Hint
