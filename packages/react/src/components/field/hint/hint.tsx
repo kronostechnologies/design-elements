@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { HintProps } from './types';
 
-const StyledHint = styled.label<{ $isMobile: boolean }>`
+const StyledHint = styled.span<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-hint-text-color']};
     display: block;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};

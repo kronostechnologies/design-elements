@@ -1731,13 +1731,13 @@ input + .c2 {
   >
     Select an option
   </label>
-  <label
+  <span
     class="c4"
     data-testid="field-hint"
     id="uuid1_hint"
   >
     Hint
-  </label>
+  </span>
   <div
     class="c5"
   >
