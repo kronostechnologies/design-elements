@@ -86,19 +86,12 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                     </Label>
                 )}
                 {hint && (
-                    <Hint
-                        id={slotIds.hint}
-                        htmlFor={fieldId}
-                    >
+                    <Hint id={slotIds.hint}>
                         {hint}
                     </Hint>
                 )}
                 {!valid && (
-                    <InvalidFieldMessage
-                        id={slotIds.invalid}
-                        htmlFor={fieldId}
-                        noInvalidFieldIcon={noInvalidFieldIcon}
-                    >
+                    <InvalidFieldMessage id={slotIds.invalid} noInvalidFieldIcon={noInvalidFieldIcon}>
                         {validationErrorMessage}
                     </InvalidFieldMessage>
                 )}

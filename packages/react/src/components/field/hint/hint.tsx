@@ -13,18 +13,15 @@ const StyledHint = styled.label<{ $isMobile: boolean }>`
 `;
 
 const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
-    children, id, htmlFor,
+    children, id,
 }) => {
     const { isMobile } = useDeviceContext();
 
     return (
         <StyledHint
-            data-testid="invalid-field"
-            aria-live="polite"
-            htmlFor={htmlFor}
+            data-testid="field-hint"
             id={id}
             $isMobile={isMobile}
-            role="alert"
         >
             {children}
         </StyledHint>

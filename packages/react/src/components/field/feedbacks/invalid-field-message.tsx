@@ -4,7 +4,7 @@ import { useDeviceContext } from '../../device-context-provider/device-context-p
 import { Icon } from '../../icon/icon';
 import { InvalidFieldMessageProps } from './types';
 
-const StyledValidationMessage = styled.label<{ $isMobile: boolean }>`
+const StyledValidationMessage = styled.span<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-error-text-color']};
     display: flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
@@ -20,18 +20,15 @@ const StyledIcon = styled(Icon)`
 `;
 
 const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldMessageProps>> = ({
-    children, id, noInvalidFieldIcon, htmlFor,
+    children, id, noInvalidFieldIcon,
 }) => {
     const { isMobile } = useDeviceContext();
 
     return (
         <StyledValidationMessage
-            data-testid="invalid-field"
-            aria-live="polite"
-            htmlFor={htmlFor}
+            data-testid="field-message"
             id={id}
             $isMobile={isMobile}
-            role="alert"
         >
             {!noInvalidFieldIcon && (
                 <StyledIcon name="alertOctagon" size={isMobile ? '24' : '16'} />
