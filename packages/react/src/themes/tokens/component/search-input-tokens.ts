@@ -15,9 +15,9 @@ export type SearchInputTokenMap = {
 };
 
 export const defaultSearchInputTokens: SearchInputTokenMap = {
-    'search-input-disabled-icon-color': 'color-neutral-30',
-    'search-input-icon-color': 'color-neutral-65',
+    'search-input-disabled-icon-color': 'color-control-auxiliary-disabled',
+    'search-input-icon-color': 'color-control-auxiliary',
+    'search-input-label-text-color': 'color-control-auxiliary',
     'search-input-reset-button-background-color': 'transparent-100',
     'search-input-reset-button-border-color': 'transparent-100',
-    'search-input-label-text-color': 'color-neutral-65',
 };

@@ -4,8 +4,13 @@ export const translations = {
             helloWorld: 'Hello World!',
         },
         nav: {
-            changeLanguage: 'Change language to {{nextLanguage}} ({{lng}})',
+            changeLanguageTo: 'Change language to {{nextLanguage}} ({{lng}})',
+            changeLanguage: 'Change language',
             Home: 'Home',
+            Users: 'Users',
+        },
+        users: {
+            title: 'Users list',
         },
     },
     fr: {
@@ -13,8 +18,13 @@ export const translations = {
             helloWorld: 'Bonjour le monde!',
         },
         nav: {
-            changeLanguage: 'Changer la langue pour {{nextLanguage}} ({{lng}})',
+            changeLanguageTo: 'Changer la langue pour {{nextLanguage}} ({{lng}})',
+            changeLanguage: 'Changer la langue',
             Home: 'Accueil',
+            Users: 'Utilisateurs',
+        },
+        users: {
+            title: 'Liste d\'utilisateurs',
         },
     },
 };

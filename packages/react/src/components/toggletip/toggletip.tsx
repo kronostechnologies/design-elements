@@ -10,6 +10,21 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { IconButton } from '../buttons/icon-button';
 import { IconName } from '../icon/icon';
 
+type Size = 'small' | 'medium';
+type MaxWidth = 'small' | 'medium' | 'large';
+
+const getToggletipMaxWidthStyles = ({ maxWidth }: { maxWidth?: MaxWidth }): string => {
+    switch (maxWidth) {
+        case 'small':
+            return '18rem';
+        case 'large':
+            return '26rem';
+        case 'medium':
+        default:
+            return '22rem';
+    }
+};
+
 const ToggletipArrow = styled.div`
     height: 1rem;
     position: absolute;
@@ -35,10 +50,10 @@ const ToggletipArrow = styled.div`
     }
 `;
 
-const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
+const ToggletipContainer = styled.div<{ isMobile?: boolean; maxWidth?: MaxWidth }>`
     background-color: ${({ theme }) => theme.component['toggletip-popper-container-background-color']};
     border: 1px solid ${({ theme }) => theme.component['toggletip-popper-container-border-color']};
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-2x);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
     color: ${({ theme }) => theme.component['toggletip-popper-container-text-color']};
@@ -48,9 +63,9 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
     margin: 0;
-    max-width: 327px;
+    max-width: ${getToggletipMaxWidthStyles};
     min-height: ${({ isMobile }) => (isMobile ? '4.5rem' : '2rem')};
-    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x) var(--spacing-1halfx)')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-2x) var(--spacing-3x)')};
     transition: opacity 300ms;
     z-index: 1000;
 
@@ -64,14 +79,15 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
 
     &[data-popper-placement*="bottom"] > ${ToggletipArrow}::before {
         border-color: transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent;
-        border-width: 0 0.5rem 0.4rem;
+        border-width: 0 0.5rem 0.6rem;
         position: absolute;
-        top: -1px;
+        top: -0.25rem;
     }
 
     &[data-popper-placement*="bottom"] > ${ToggletipArrow}::after {
         border-color: transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent;
-        border-width: 0 0.5rem 0.4rem;
+        border-width: 0 0.5rem 0.6rem;
+        top: -0.15rem;
     }
 
     &[data-popper-placement*="top"] > ${ToggletipArrow} {
@@ -84,14 +100,16 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
 
     &[data-popper-placement*="top"] > ${ToggletipArrow}::before {
         border-color: ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0;
+        border-width: 0.5rem 0.45rem 0;
         position: absolute;
-        top: 1px;
+        top: 0.05rem;
     }
 
     &[data-popper-placement*="top"] > ${ToggletipArrow}::after {
         border-color: ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0;
+        border-width: 0.5rem 0.45rem 0;
+        position: absolute;
+        top: -0.02rem;
     }
 
     &[data-popper-placement*="right"] > ${ToggletipArrow} {
@@ -103,14 +121,15 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
 
     &[data-popper-placement*="right"] > ${ToggletipArrow}::before {
         border-color: transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']} transparent transparent;
-        border-width: 0.5rem 0.4rem 0.5rem 0;
+        border-width: 0.45rem 0.5rem 0.45rem 0;
+        left: 0.15rem;
+        position: absolute;
     }
 
     &[data-popper-placement*="right"] > ${ToggletipArrow}::after {
         border-color: transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']} transparent transparent;
-        border-width: 0.5rem 0.4rem 0.5rem 0;
-        left: 0.375rem;
-        top: 0;
+        border-width: 0.45rem 0.5rem 0.45rem 0;
+        left: 0.23rem;
     }
 
     &[data-popper-placement*="left"] > ${ToggletipArrow} {
@@ -122,14 +141,15 @@ const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
 
     &[data-popper-placement*="left"] > ${ToggletipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-border-color']};
-        border-width: 0.5rem 0 0.5rem 0.4rem;
+        border-width: 0.45rem 0 0.45rem 0.5rem;
+        left: 0.33rem;
+        position: absolute;
     }
 
     &[data-popper-placement*="left"] > ${ToggletipArrow}::after {
         border-color: transparent transparent transparent ${({ theme }) => theme.component['toggletip-popper-container-background-color']};
-        border-width: 0.5rem 0 0.5rem 0.4rem;
+        border-width: 0.45rem 0 0.45rem 0.5rem;
         left: 0.25rem;
-        top: 0;
     }
 `;
 
@@ -149,6 +169,8 @@ export interface ToggletipProps {
     desktopPlacement?: ToggletipPlacement;
     disabled?: boolean;
     invertedIcon?: boolean;
+    size?: Size;
+    maxWidth?: MaxWidth;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -169,6 +191,8 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
     disabled,
     desktopPlacement = 'right',
     invertedIcon = false,
+    size = 'medium',
+    maxWidth = 'medium',
 }) => {
     const { isMobile } = useDeviceContext();
     const [isVisible, setVisible] = useState(defaultOpen);
@@ -203,6 +227,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
                 onClick={() => setVisible(!isVisible)}
                 ref={setTriggerRef}
                 inverted={invertedIcon}
+                size={size}
             />
 
             {isVisible && (
@@ -211,6 +236,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
                     isMobile={isMobile}
                     id={toggletipId}
                     ref={setTooltipRef}
+                    maxWidth={maxWidth}
                     {...getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     <ToggletipArrow

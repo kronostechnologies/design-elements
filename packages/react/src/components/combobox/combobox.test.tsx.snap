@@ -59,13 +59,14 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 .c7[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c7:disabled {
+.c7[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c7 > svg {
@@ -111,7 +112,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -136,7 +137,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,13 +539,14 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 .c9[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c9:disabled {
+.c9[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c9 > svg {
@@ -616,7 +618,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -641,7 +643,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1058,13 +1060,14 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 .c5[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c5:disabled {
+.c5[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c5 > svg {
@@ -1090,7 +1093,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1115,7 +1118,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1507,13 +1510,14 @@ exports[`Combobox matches the snapshot 1`] = `
 .c8[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
-  color: #1B1C1E;
+  color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {
@@ -1571,7 +1575,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1596,7 +1600,7 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

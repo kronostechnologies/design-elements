@@ -32,6 +32,7 @@ interface PasswordInputProps {
 }
 
 const PasswordInputContainer = styled.div`
+    align-items: center;
     display: flex;
     position: relative;
 `;
@@ -42,7 +43,7 @@ const StyledInput = styled(Input)`
 
 export const ShowPasswordButton = styled.div`
     position: absolute;
-    right: 0;
+    right: 0.25rem;
 `;
 
 export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
@@ -116,6 +117,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                             data-testid="show-password-button"
                             type="button"
                             onClick={handleShowPassword}
+                            size="small"
                         />
                     </Tooltip>
                 </ShowPasswordButton>

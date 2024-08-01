@@ -11,7 +11,7 @@ on:
       - v*.*.*-beta.*
 
 env:
-  working_directory: .
+  WORKING_DIRECTORY: .
 
 jobs:
   pre_checks:
@@ -46,9 +46,10 @@ jobs:
 
     outputs:
       deploy: ${{ steps.versions.outputs.deploy }}
-      next_version: ${{ steps.versions.outputs.next_version }}
+      next-version: ${{ steps.versions.outputs.next-version }}
       qualifier: ${{ steps.versions.outputs.qualifier }}
-      is_pr: ${{ steps.versions.outputs.is_pr }}
+      is-hotfix: ${{ steps.metadata.outputs.is-hotfix }}
+      is-pr: ${{ steps.versions.outputs.is-pr }}
 
     steps:
       - name: Checkout
@@ -57,48 +58,59 @@ jobs:
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
 
+      - name: Fetch origin/master (for action-metadata commit check)
+        run: |
+          git fetch --no-tags --prune --depth=1000 origin +refs/heads/master:refs/remotes/origin/master '+refs/heads/release/*:refs/remotes/origin/release/*'
+
+      - name: Find application metadata
+        id: metadata
+        uses: equisoft-actions/nodejs-application-metadata@v1
+        with:
+          release-branch: master
+          hotfix-branch-prefix: release/
+
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Find version details
         id: versions
         run: |
-          qualifier=dev
-          next_version=0.0.0
-          deploy=false
-          is_pr=false
+          QUALIFIER=dev
+          NEXT_VERSION=0.0.0
+          DEPLOY=false
+          IS_PR=false
 
           if [[ $GITHUB_REF == refs/tags/v*.*.* ]]; then
-            next_version=${GITHUB_REF#refs/tags/v}
-            deploy=true
+            NEXT_VERSION=${GITHUB_REF#refs/tags/v}
+            DEPLOY=true
 
-            if [[ $next_version == *-*.* ]]; then
-              qualifier=$(echo "${next_version}" | sed -n 's/.*-\(.*\)\..*/\1/p')
+            if [[ $NEXT_VERSION == *-*.* ]]; then
+              QUALIFIER=$(echo "${NEXT_VERSION}" | sed -n 's/.*-\(.*\)\..*/\1/p')
             else
-              qualifier=latest
+              QUALIFIER=latest
             fi
           elif [[ $GITHUB_REF == refs/heads/* ]]; then
-            branch_name=$(echo "${GITHUB_REF#refs/heads/}" | sed -r 's#/+#-#g')
-            if [ "master" = "${branch_name}" ]; then
-              qualifier=snapshot
-              deploy=true
+            BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}" | sed -r 's#/+#-#g')
+            if [ "master" = "${BRANCH_NAME}" ]; then
+              QUALIFIER=snapshot
+              DEPLOY=true
             else
-              qualifier="branch-${branch_name}"
+              QUALIFIER="branch-${BRANCH_NAME}"
             fi
 
             latest=$(curl -sS https://registry.npmjs.org/@equisoft/design-elements-react | jq -r '."dist-tags".latest')
-            next_version="$(npx semver -i "${latest}")-${qualifier}.$(date -u "+%Y%m%d%H%M%S")"
+            NEXT_VERSION="$(npx semver -i "${latest}")-${QUALIFIER}.$(date -u "+%Y%m%d%H%M%S")"
           elif [[ $GITHUB_REF == refs/pull/* ]]; then
-            is_pr=true
-            qualifier=pr-${{ github.event.pull_request.number }}
+            IS_PR=true
+            QUALIFIER=pr-${{ github.event.pull_request.number }}
           fi
 
-          echo "next_version=${next_version}" >> $GITHUB_OUTPUT
-          echo "qualifier=${qualifier}" >> $GITHUB_OUTPUT
-          echo "deploy=${deploy}" >> $GITHUB_OUTPUT
-          echo "is_pr=${is_pr}" >> $GITHUB_OUTPUT
+          echo "next-version=${NEXT_VERSION}" >> $GITHUB_OUTPUT
+          echo "qualifier=${QUALIFIER}" >> $GITHUB_OUTPUT
+          echo "deploy=${DEPLOY}" >> $GITHUB_OUTPUT
+          echo "is-pr=${IS_PR}" >> $GITHUB_OUTPUT
 
   react_eslint:
     name: 'React: ESLint'
@@ -115,7 +127,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run ESLint
         uses: equisoft-actions/yarn-eslint@v2
@@ -138,7 +150,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run Stylelint
         uses: equisoft-actions/yarn-stylelint@v1
@@ -170,7 +182,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       # Tests
       - name: Unit tests
@@ -202,12 +214,12 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       # Compile
       - name: Update package version
         env:
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
 
@@ -247,7 +259,7 @@ jobs:
 
       - name: Update package version
         env:
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
 
@@ -283,7 +295,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run ESLint
         uses: equisoft-actions/yarn-eslint@v2
@@ -314,7 +326,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run Stylelint
         uses: equisoft-actions/yarn-stylelint@v1
@@ -353,12 +365,12 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       # Compile
       - name: Update package version
         env:
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
           contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
@@ -389,7 +401,7 @@ jobs:
       always() &&
       !failure() &&
       !cancelled() &&
-      (needs.setup.outputs.deploy == 'true' || needs.setup.outputs.is_pr == 'true') &&
+      (needs.setup.outputs.deploy == 'true' || needs.setup.outputs.is-pr == 'true') &&
       !contains(needs.*.result, 'failure') &&
       !contains(needs.*.result, 'cancelled')
 
@@ -405,7 +417,7 @@ jobs:
 
       - name: Update package version
         env:
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
           contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
@@ -414,7 +426,7 @@ jobs:
         id: target
         env:
           QUALIFIER: ${{ needs.setup.outputs.qualifier }}
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           if [ "${QUALIFIER}" == "snapshot" ]; then
               echo "folder=${QUALIFIER}" >> $GITHUB_OUTPUT
@@ -439,11 +451,11 @@ jobs:
           token: ${{ secrets.GH_REPO_TOKEN }}
 
       - name: Update latest
-        if: ${{ needs.setup.outputs.qualifier == 'latest' }}
+        if: ${{ needs.setup.outputs.qualifier == 'latest' && needs.setup.outputs.is-hotfix != 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          commit-message: "docs: update latest doc to ${{ needs.setup.outputs.next_version }}"
+          commit-message: "docs: update latest doc to ${{ needs.setup.outputs.next-version }}"
           folder: packages/storybook/dist/
           git-config-email: na-qc@equisoft.com
           git-config-name: kronostechnologies-build
@@ -460,7 +472,7 @@ jobs:
           echo "${body}" >> $GITHUB_STEP_SUMMARY
 
       - name: Comment the summary on the PR
-        if: ${{ needs.setup.outputs.is_pr == 'true' }}
+        if: ${{ needs.setup.outputs.is-pr == 'true' }}
         continue-on-error: true
         uses: actions/github-script@v7
         with:
@@ -497,7 +509,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
         uses: actions/download-artifact@v4
@@ -527,7 +539,7 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
         uses: actions/download-artifact@v4
@@ -562,7 +574,7 @@ jobs:
       always() &&
       !failure() &&
       !cancelled() &&
-      (needs.setup.outputs.deploy == 'true' || needs.setup.outputs.is_pr == 'true') &&
+      (needs.setup.outputs.deploy == 'true' || needs.setup.outputs.is-pr == 'true') &&
       !contains(needs.*.result, 'failure') &&
       !contains(needs.*.result, 'cancelled')
 
@@ -582,11 +594,11 @@ jobs:
       - name: Install NPM dependencies
         uses: equisoft-actions/yarn-install@v1
         with:
-          working-directory: ${{ env.working_directory }}
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Update package version
         env:
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
           contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
@@ -596,7 +608,7 @@ jobs:
         id: target
         env:
           QUALIFIER: ${{ needs.setup.outputs.qualifier }}
-          VERSION: ${{ needs.setup.outputs.next_version }}
+          VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           if [ "${QUALIFIER}" == "snapshot" ]; then
               echo "folder=${QUALIFIER}" >> $GITHUB_OUTPUT
@@ -611,7 +623,7 @@ jobs:
 
       - name: Compile
         env:
-          APP_CONFIG_VERSION: ${{ needs.setup.outputs.next_version }}
+          APP_CONFIG_VERSION: ${{ needs.setup.outputs.next-version }}
           APP_CONFIG_PUBLIC_PATH: /${{ steps.target.outputs.folder }}/webapp/
         shell: bash
         working-directory: ./packages/webapp
@@ -630,11 +642,11 @@ jobs:
           token: ${{ secrets.GH_REPO_TOKEN }}
 
       - name: Update latest
-        if: ${{ needs.setup.outputs.qualifier == 'latest' }}
+        if: ${{ needs.setup.outputs.qualifier == 'latest' && needs.setup.outputs.is-hotfix != 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          commit-message: "docs(webapp): update latest doc to ${{ needs.setup.outputs.next_version }}"
+          commit-message: "docs(webapp): update latest doc to ${{ needs.setup.outputs.next-version }}"
           folder: packages/webapp/dist/
           git-config-email: na-qc@equisoft.com
           git-config-name: kronostechnologies-build
@@ -651,7 +663,7 @@ jobs:
           echo "${body}" >> $GITHUB_STEP_SUMMARY
 
       - name: Comment the summary on the PR
-        if: ${{ needs.setup.outputs.is_pr == 'true' }}
+        if: ${{ needs.setup.outputs.is-pr == 'true' }}
         continue-on-error: true
         uses: actions/github-script@v7
         with:
@@ -686,11 +698,12 @@ jobs:
       - storybook_compile
       - storybook_deploy
       - webapp_deploy
-    if: needs.setup.outputs.deploy == 'true'
+    if: always() && needs.setup.outputs.deploy == 'true'
 
     steps:
       - name: Post workflow status
-        uses: equisoft-actions/notify-workflow-status@v1
+        uses: equisoft-actions/notify-workflow-status@v2
         with:
           needs: ${{ toJSON(needs) }}
-          slack-webhook-url: ${{ secrets.OPS_CI_WEBHOOK_URL }}
+          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+          slack-channel: ${{ github.event.repository.custom_properties.ci_slack_channel }}

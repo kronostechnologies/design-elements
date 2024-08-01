@@ -34,8 +34,8 @@ exports[`Chooser Button GroupItem Matches the snapshot 1`] = `
 
 .c3:hover {
   background: #DBDEE1;
-  border-color: #1B1C1E;
-  color: #1B1C1E;
+  border-color: #000000;
+  color: #000000;
 }
 
 input[type='checkbox']:checked + .c2,
@@ -165,8 +165,8 @@ input[type='radio']:disabled + .c3 {
 
 .c3:hover {
   background: #DBDEE1;
-  border-color: #1B1C1E;
-  color: #1B1C1E;
+  border-color: #000000;
+  color: #000000;
 }
 
 input[type='checkbox']:checked + .c2,
