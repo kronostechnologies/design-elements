@@ -1737,14 +1737,14 @@ input + .c2 {
   >
     Select an option
   </label>
-  <label
+  <span
     class="c4"
     data-testid="field-hint"
     for="uuid1"
     id="uuid1_hint"
   >
     Hint
-  </label>
+  </span>
   <div
     class="c5"
   >

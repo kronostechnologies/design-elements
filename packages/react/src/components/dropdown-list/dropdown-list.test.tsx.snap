@@ -672,14 +672,14 @@ input + .c2 {
   >
     Select an option
   </label>
-  <label
+  <span
     class="c4"
     data-testid="field-hint"
     for="uuid1"
     id="uuid1_hint"
   >
     Hint
-  </label>
+  </span>
   <div
     aria-activedescendant="uuid1_ab"
     aria-controls="uuid1_listbox"
@@ -2574,14 +2574,14 @@ input + .c2 {
   >
     Select an option
   </label>
-  <label
+  <span
     class="c4"
     data-testid="field-hint"
     for="uuid1"
     id="uuid1_hint"
   >
     Hint
-  </label>
+  </span>
   <div
     aria-activedescendant="uuid1_ab"
     aria-controls="uuid1_listbox"
