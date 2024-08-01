@@ -314,8 +314,8 @@ input:valid + .c8 {
             htmlFor="search-input"
           >
             <styled.label
+              $isMobile={false}
               htmlFor="search-input"
-              isMobile={false}
             >
               <label
                 className="c2 c3"
