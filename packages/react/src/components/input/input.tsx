@@ -1,5 +1,6 @@
 import { forwardRef, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { useFieldControlContext } from '../field/context';
@@ -59,6 +60,7 @@ export const Input = forwardRef(({
 }: InputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const inputId = useId(providedId);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const {
         id = inputId,
@@ -85,6 +87,7 @@ export const Input = forwardRef(({
             $isMobile={isMobile}
             ref={ref}
             {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );
 });
