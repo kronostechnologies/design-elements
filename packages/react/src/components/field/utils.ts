@@ -8,20 +8,20 @@ interface FieldIds {
     invalid?: string;
 }
 
-export function getSlotId(prop: ReactNode, formFieldId: string, propName: string): string | undefined {
-    return prop ? `${formFieldId}_${propName}` : undefined;
+export function getSlotId(prop: ReactNode, fieldId: string, propName: string): string | undefined {
+    return prop ? `${fieldId}_${propName}` : undefined;
 }
 
 export function getSlotIds(
-    formFieldId: string,
+    fieldId: string,
     label?: ReactNode,
     hint?: ReactNode,
     invalid?: ReactNode,
 ): FieldIds {
     return {
-        label: getSlotId(label, formFieldId, 'label'),
-        hint: getSlotId(hint, formFieldId, 'hint'),
-        invalid: getSlotId(invalid, formFieldId, 'invalid'),
+        label: getSlotId(label, fieldId, 'label'),
+        hint: getSlotId(hint, fieldId, 'hint'),
+        invalid: getSlotId(invalid, fieldId, 'invalid'),
     };
 }
 

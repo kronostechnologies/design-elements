@@ -1,11 +1,10 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldControlContext, FieldControlProps } from './context';
-import { InvalidFieldMessage } from './feedbacks/invalid-field-message';
-import { Label } from '../label/label';
-import { TooltipProps } from '../tooltip/tooltip';
+import { InvalidFieldMessage, InvalidFieldMessageProps } from './feedbacks/invalid-field-message';
+import { Label, LabelProps } from '../label/label';
+import { Hint } from './hint/hint';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
 
 interface StyledDivProps {
@@ -29,22 +28,15 @@ const StyledDiv = styled.div<StyledDivProps>`
     }
 `;
 
-const StyledHint = styled.span<{ $isMobile: boolean }>`
-    color: ${(props) => props.theme.component['field-hint-text-color']};
-    display: block;
-    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
-    font-weight: var(--font-normal);
-    letter-spacing: 0.02rem;
-    line-height: ${({ $isMobile }) => ($isMobile ? '1.5rem' : '1.25rem')};
-`;
+type CommonLabelProps = Pick<LabelProps, 'tooltip'>;
 
-export interface FieldContainerProps extends FieldControlProps {
+type CommonValidationMessageProps = Pick<InvalidFieldMessageProps, 'noInvalidFieldIcon'>;
+
+export interface FieldContainerProps extends FieldControlProps, CommonLabelProps, CommonValidationMessageProps {
     className?: string;
     noMargin?: boolean;
-    tooltip?: TooltipProps;
     label?: string;
     hint?: string;
-    noInvalidFieldIcon?: boolean;
     validationErrorMessage: string;
 }
 
@@ -66,7 +58,6 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     validationErrorMessage,
     ...props
 }) => {
-    const { isMobile } = useDeviceContext();
     const fieldId = useId(providedId);
 
     const slotIds = getSlotIds(fieldId, label, hint, (validationErrorMessage && !valid));
@@ -98,7 +89,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {label && (
                     <Label
                         id={slotIds.label}
-                        forId={fieldId}
+                        htmlFor={fieldId}
                         tooltip={tooltip}
                         required={required}
                     >
@@ -106,19 +97,21 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                     </Label>
                 )}
                 {hint && (
-                    <StyledHint
+                    <Hint
                         id={slotIds.hint}
-                        $isMobile={isMobile}
+                        htmlFor={fieldId}
                     >
                         {hint}
-                    </StyledHint>
+                    </Hint>
                 )}
                 {!valid && (
                     <InvalidFieldMessage
-                        controlId={slotIds.invalid}
-                        feedbackMsg={validationErrorMessage}
-                        noIcon={noInvalidFieldIcon}
-                    />
+                        id={slotIds.invalid}
+                        htmlFor={fieldId}
+                        noInvalidFieldIcon={noInvalidFieldIcon}
+                    >
+                        {validationErrorMessage}
+                    </InvalidFieldMessage>
                 )}
                 {children}
             </StyledDiv>

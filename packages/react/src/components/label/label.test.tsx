@@ -4,14 +4,14 @@ import { Label } from './label';
 
 describe('Label', () => {
     test('contains tooltip when tooltip prop is defined', () => {
-        const wrapper = mountWithTheme(<Label forId="test" tooltip={{ label: 'test' }}>Test</Label>);
+        const wrapper = mountWithTheme(<Label htmlFor="test" tooltip={{ label: 'test' }}>Test</Label>);
 
         expect(wrapper.find(Tooltip).exists()).toBe(true);
     });
 
     test('Matches the snapshot', () => {
         const tree = renderWithTheme(
-            <Label forId="test-id">
+            <Label htmlFor="test-id">
                 Children
             </Label>,
         );

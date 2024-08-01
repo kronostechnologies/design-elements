@@ -88,10 +88,11 @@ exports[`Field Container Styling matches invalid snapshot 1`] = `
 <div
   class="c0"
 >
-  <span
+  <label
     aria-live="polite"
     class="c1"
     data-testid="invalid-field"
+    for="id"
     id="id_invalid"
     role="alert"
   >
@@ -103,7 +104,7 @@ exports[`Field Container Styling matches invalid snapshot 1`] = `
       width="16"
     />
     This text area input is invalid
-  </span>
+  </label>
   Children
 </div>
 `;

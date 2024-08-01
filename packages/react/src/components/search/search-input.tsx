@@ -185,7 +185,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
         <SearchWrapper className={className}>
             <InnerWrapper>
                 {hasIcon && (
-                    <Label forId={id} data-testid="search-icon">
+                    <Label htmlFor={id} data-testid="search-icon">
                         <IcoSearch disabled={disabled} />
                         <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                     </Label>

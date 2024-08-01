@@ -311,7 +311,7 @@ input:valid + .c8 {
         >
           <Label
             data-testid="search-icon"
-            forId="search-input"
+            htmlFor="search-input"
           >
             <styled.label
               htmlFor="search-input"

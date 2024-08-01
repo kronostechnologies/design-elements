@@ -1954,10 +1954,11 @@ label + .c5 {
   >
     date
   </label>
-  <span
+  <label
     aria-live="polite"
     class="c3"
     data-testid="invalid-field"
+    for="uuid1"
     id="uuid1_invalid"
     role="alert"
   >
@@ -1969,7 +1970,7 @@ label + .c5 {
       width="16"
     />
     Invalid date
-  </span>
+  </label>
   <div
     class="c5 c6"
   >

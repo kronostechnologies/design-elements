@@ -215,7 +215,7 @@ describe('Field Container', () => {
                 consoleSpy.mockRestore();
             });
 
-            test('shouldn\'t contain idInvalid when FormContainer is valid', () => {
+            test('shouldn\'t contain idInvalid when FieldContainer is valid', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
@@ -232,7 +232,7 @@ describe('Field Container', () => {
                 consoleSpy.mockRestore();
             });
 
-            test('should contain idInvalid when FormContainer is invalid', () => {
+            test('should contain idInvalid when FieldContainer is invalid', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
@@ -279,7 +279,7 @@ describe('Field Container', () => {
         });
 
         describe('aria-invalid', () => {
-            test('should be true when Formfield is invalid', () => {
+            test('should be true when FieldContainer is invalid', () => {
                 const wrapper = renderWithProviders(
                     <FieldContainer
                         label={label}
@@ -298,7 +298,7 @@ describe('Field Container', () => {
         });
 
         describe('aria-required', () => {
-            test('should be true when Formfield is required', () => {
+            test('should be true when FieldContainer is required', () => {
                 const wrapper = renderWithProviders(
                     <FieldContainer label={label} hint={hint} id={providedId} required validationErrorMessage="">
                         <Input />
@@ -311,7 +311,7 @@ describe('Field Container', () => {
         });
 
         describe('aria-disabled', () => {
-            test('should be true when FormContainer is disabled', () => {
+            test('should be true when FieldContainer is disabled', () => {
                 const wrapper = renderWithProviders(
                     <FieldContainer label={label} hint={hint} id={providedId} disabled validationErrorMessage="">
                         <Input />

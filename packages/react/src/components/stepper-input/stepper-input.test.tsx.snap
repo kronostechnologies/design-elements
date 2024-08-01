@@ -595,10 +595,11 @@ input + .c1 {
   >
     test
   </label>
-  <span
+  <label
     aria-live="polite"
     class="c3"
     data-testid="invalid-field"
+    for="uuid1"
     id="uuid1_invalid"
     role="alert"
   >
@@ -610,7 +611,7 @@ input + .c1 {
       width="16"
     />
     Invalid number
-  </span>
+  </label>
   <div
     class="c5"
   >
