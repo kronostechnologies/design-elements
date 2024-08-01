@@ -2,80 +2,26 @@ import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComp
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { formatCurrency } from '../../utils/currency';
-import { TextInput } from '../text-input/text-input';
+import { InputField } from '../input/input-field';
+import { MoneyInputProps } from './types';
+import { parseAndRound, roundValueToPrecision, safeFormatCurrency } from './utils';
 
 type Language = 'en' | 'fr';
 
-const InputWrapper = styled.div<{ language: Language }>`
+const StyledInputField = styled(InputField)<{ language: Language }>`
     input {
         text-align: ${({ language }) => (language === 'en' ? 'left' : 'right')};
         width: 132px;
     }
 `;
 
-function safeFormatCurrency(
-    value: number | null,
-    precision: number,
-    locale: string,
-    currency: string,
-): string {
-    return value === null ? '' : formatCurrency(value, precision, locale, currency);
-}
-
-interface Props {
-    className?: string;
-    disabled?: boolean;
-    required?: boolean;
-    /**
-     * Message displayed in case of validation error
-     * @default Invalid number.
-     */
-    validationErrorMessage?: string;
-    label?: string;
-    value?: number | null;
-    /**
-     * Sets input locale and changes visual format accordingly
-     * @default fr-CA
-     */
-    locale?: string;
-    /**
-     * Sets currency
-     * @default CAD
-     */
-    currency?: string;
-    /**
-     * Sets number of decimals
-     * @default 2
-     */
-    precision?: number;
-    hint?: string;
-
-    onChange?(value: number | null, formattedValue: string): void;
-}
-
-function roundValueToPrecision(amount: number | null, precision: number): number | null {
-    return amount !== null && !Number.isNaN(amount)
-        ? Math.round(amount * (10 ** precision)) / (10 ** precision)
-        : null;
-}
-
-function parseAndRound(val: string, precision: number): number | null {
-    return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
-}
-
-export const MoneyInput: VoidFunctionComponent<Props> = ({
-    className,
-    required,
-    disabled,
-    label,
+export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     onChange,
     precision = 2,
     value = null,
     validationErrorMessage,
     locale = 'fr-CA',
     currency = 'CAD',
-    hint,
     ...otherProps
 }) => {
     const { t } = useTranslation('money-input');
@@ -140,24 +86,19 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     }, []);
 
     return (
-        <InputWrapper language={language}>
-            <TextInput
-                className={className}
-                required={required}
-                disabled={disabled}
-                ref={inputElement}
-                type="text"
-                inputMode="numeric"
-                value={displayValue}
-                label={label}
-                placeholder="$"
-                onChange={handleChangeEvent}
-                onBlur={handleBlurEvent}
-                onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-                hint={hint}
-                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-            />
-        </InputWrapper>
+        <StyledInputField
+            ref={inputElement}
+            type="text"
+            inputMode="numeric"
+            value={displayValue}
+            placeholder="$"
+            language={language}
+            onChange={handleChangeEvent}
+            onBlur={handleBlurEvent}
+            onFocus={handleFocusEvent}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
     );
 };
