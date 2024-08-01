@@ -1,4 +1,4 @@
-import { forwardRef, ReactElement, Ref } from 'react';
+import { forwardRef, Fragment, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
@@ -7,7 +7,22 @@ import { useFieldControlContext } from '../field/context';
 import { focus } from '../../utils/css-state';
 import { InputProps } from './types';
 
-const StyledInput = styled.input<{ $isMobile: boolean }>`
+const StyledWrapper = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+`;
+
+const Adornment = styled.div<{ position: 'left' | 'right' }>`
+    color: ${({ theme }) => theme.component['text-input-placeholder-text-color']};
+    position: absolute;
+    ${({ position }) => (position === 'left' ? 'left: 0;' : 'right: 0;')}
+    display: flex;
+    align-items: center;
+    height: 100%;
+`;
+
+const StyledInput = styled.input<{ $isMobile: boolean; $hasLeftAdornment: boolean; $hasRightAdornment: boolean }>`
     background: ${({ theme }) => theme.component['text-input-background-color']};
     border: 1px solid;
     border-radius: var(--border-radius);
@@ -20,7 +35,10 @@ const StyledInput = styled.input<{ $isMobile: boolean }>`
     margin: 0;
     min-height: var(--size-2x);
     outline: none;
-    padding: 0 var(--spacing-1x);
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-right: ${({ $hasRightAdornment }) => ($hasRightAdornment ? 'var(--spacing-4x)' : 'var(--spacing-1x)')};
+    padding-left: ${({ $hasLeftAdornment }) => ($hasLeftAdornment ? 'var(--spacing-4x)' : 'var(--spacing-1x)')};
     width: 100%;
 
     &::placeholder {
@@ -56,11 +74,14 @@ export const Input = forwardRef(({
     valid: providedValid = true,
     required: providedRequired = false,
     disabled: providedDisabled = false,
+    leftAdornment,
+    rightAdornment,
     ...otherProps
 }: InputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const inputId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
+    const WrapperComponent = (leftAdornment || rightAdornment) ? StyledWrapper : Fragment;
 
     const {
         id = inputId,
@@ -73,22 +94,28 @@ export const Input = forwardRef(({
     } = useFieldControlContext(otherProps);
 
     return (
-        <StyledInput
-            data-testid="input"
-            aria-label={ariaLabel}
-            aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
-            aria-describedby={ariaDescribedby}
-            aria-disabled={disabled}
-            aria-required={required}
-            aria-invalid={valid ? 'false' : 'true'}
-            id={id}
-            disabled={disabled}
-            required={required}
-            $isMobile={isMobile}
-            ref={ref}
-            {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
-            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-        />
+        <WrapperComponent>
+            {leftAdornment && <Adornment position="left">{leftAdornment}</Adornment>}
+            <StyledInput
+                data-testid="input"
+                aria-label={ariaLabel}
+                aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
+                aria-describedby={ariaDescribedby}
+                aria-disabled={disabled}
+                aria-required={required}
+                aria-invalid={valid ? 'false' : 'true'}
+                id={id}
+                disabled={disabled}
+                required={required}
+                ref={ref}
+                $isMobile={isMobile}
+                $hasLeftAdornment={!!leftAdornment}
+                $hasRightAdornment={!!rightAdornment}
+                {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+            />
+            {rightAdornment && <Adornment position="right">{rightAdornment}</Adornment>}
+        </WrapperComponent>
     );
 });
 

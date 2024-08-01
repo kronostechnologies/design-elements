@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from 'react';
 import { FieldContainerProps, FieldControlProps } from '../field/types';
 
 type BaseInputProps = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -15,6 +15,11 @@ type CommonFieldControlProps = Pick<FieldControlProps,
     | 'valid'
 >;
 
-export type InputProps = BaseInputProps & CommonFieldControlProps;
+export interface AdornmentProps {
+    leftAdornment?: ReactNode;
+    rightAdornment?: ReactNode;
+}
+
+export type InputProps = BaseInputProps & AdornmentProps & CommonFieldControlProps;
 
 export type InputFieldProps = InputProps & FieldContainerProps;

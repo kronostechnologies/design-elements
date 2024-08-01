@@ -33,6 +33,8 @@ type BaseInputFieldProps = Pick<InputFieldProps,
     | 'onKeyDown'
     | 'onKeyUp'
     | 'onMouseUp'
+    | 'leftAdornment'
+    | 'rightAdornment'
 >;
 
 interface TextInputProps extends BaseInputFieldProps {
