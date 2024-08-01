@@ -25,7 +25,6 @@ type BaseInputFieldProps = Pick<InputFieldProps,
     | 'tooltip'
     | 'onBlur'
     | 'onFocus'
-    | 'leftAdornment'
     | 'rightAdornment'
 >;
 
