@@ -10,7 +10,7 @@ import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { ResolvedTheme } from '../../themes/theme';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
@@ -141,14 +141,14 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     ), [adornment, adornmentPosition]);
 
     return (
-        <FormFieldContainer
+        <FieldContainer
             className={className}
             id={fieldId}
             hint={hint}
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            invalid={numericInput.invalid}
+            valid={!numericInput.invalid}
             noInvalidFieldIcon={!numericInput.validationErrorMessage}
             validationErrorMessage={numericInput.validationErrorMessage ?? ''}
         >
@@ -172,6 +172,6 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
                 />
                 {(adornment && adornmentPosition === 'end') && adornmentContent}
             </Wrapper>
-        </FormFieldContainer>
+        </FieldContainer>
     );
 };

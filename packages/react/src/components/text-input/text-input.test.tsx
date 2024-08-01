@@ -48,7 +48,7 @@ describe('TextInput', () => {
         const wrapper = shallow(<TextInput {...initialProps} />);
 
         const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('invalid')).toBe(false);
+        expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when invalid event is triggered', () => {
@@ -57,21 +57,21 @@ describe('TextInput', () => {
         getByTestId(wrapper, 'text-input').simulate('invalid');
 
         const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('invalid')).toBe(true);
+        expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as invalid when valid prop is false', () => {
         const wrapper = shallow(<TextInput valid={false} />);
 
         const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('invalid')).toBe(true);
+        expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as valid when valid prop is true', () => {
         const wrapper = shallow(<TextInput valid />);
 
         const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('invalid')).toBe(false);
+        expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when valid prop is false and input trigger blur with checkValidity is true', () => {
@@ -81,7 +81,7 @@ describe('TextInput', () => {
         textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
         const container = getByTestId(wrapper, 'field-container');
 
-        expect(container.prop('invalid')).toBe(true);
+        expect(container.prop('valid')).toBe(false);
     });
 
     test('should set as valid when valid prop is true and input trigger blur with checkValidity is true', () => {
@@ -91,7 +91,7 @@ describe('TextInput', () => {
         textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
         const container = getByTestId(wrapper, 'field-container');
 
-        expect(container.prop('invalid')).toBe(false);
+        expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as valid when valid prop is true and input trigger blur with checkValidity is false', () => {
@@ -101,7 +101,7 @@ describe('TextInput', () => {
         textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
         const container = getByTestId(wrapper, 'field-container');
 
-        expect(container.prop('invalid')).toBe(false);
+        expect(container.prop('valid')).toBe(true);
     });
 
     test('should set as invalid when valid prop is false and input trigger blur with checkValidity is false', () => {
@@ -111,7 +111,7 @@ describe('TextInput', () => {
         textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
         const container = getByTestId(wrapper, 'field-container');
 
-        expect(container.prop('invalid')).toBe(true);
+        expect(container.prop('valid')).toBe(false);
     });
 
     test('onChange callback is called when content is changed', () => {

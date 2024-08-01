@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { devConsole } from '../../utils/dev-console';
 import { joinStrings } from '../../utils/string';
 
-interface FormFieldIds {
+interface FieldIds {
     label?: string;
     hint?: string;
     invalid?: string;
@@ -17,7 +17,7 @@ export function getSlotIds(
     label?: ReactNode,
     hint?: ReactNode,
     invalid?: ReactNode,
-): FormFieldIds {
+): FieldIds {
     return {
         label: getSlotId(label, formFieldId, 'label'),
         hint: getSlotId(hint, formFieldId, 'hint'),
@@ -50,14 +50,14 @@ export function getAriaLabel(
 }
 
 export function getAriaLabelledby(
-    { label }: FormFieldIds,
+    { label }: FieldIds,
     additionalLabelledby?: string,
 ): string | undefined {
     return joinStrings(label, additionalLabelledby);
 }
 
 export function getAriaDescribedby(
-    { invalid, hint }: FormFieldIds,
+    { invalid, hint }: FieldIds,
     additionalDescribedby?: string,
 ): string | undefined {
     return joinStrings(invalid, hint, additionalDescribedby);

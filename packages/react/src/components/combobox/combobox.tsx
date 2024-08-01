@@ -15,7 +15,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -46,7 +46,7 @@ function getBorderColor({ disabled, theme, $valid }: TextboxProps): string {
     return theme.component['combobox-border-color'];
 }
 
-const StyledFieldContainer = styled(FormFieldContainer)`
+const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
@@ -597,7 +597,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             label={label}
             required={required}
             tooltip={tooltip}
-            invalid={!valid}
+            valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >

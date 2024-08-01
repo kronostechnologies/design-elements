@@ -1,9 +1,9 @@
 import { renderWithTheme } from '../../../test-utils/renderer';
-import { InvalidField } from './invalid-field';
+import { InvalidFieldMessage } from './invalid-field-message';
 
 describe('Invalid field', () => {
     test('Matches the snapshot', () => {
-        const tree = renderWithTheme(<InvalidField controlId="test-id" feedbackMsg="Feedback Message" />);
+        const tree = renderWithTheme(<InvalidFieldMessage controlId="test-id" feedbackMsg="Feedback Message" />);
 
         expect(tree).toMatchSnapshot();
     });

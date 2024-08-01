@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form Field Container Styling match noMargin snapshot 1`] = `
+exports[`Field Container Styling match noMargin snapshot 1`] = `
 .c0 {
   margin: 0;
 }
@@ -22,7 +22,7 @@ exports[`Form Field Container Styling match noMargin snapshot 1`] = `
 </div>
 `;
 
-exports[`Form Field Container Styling matches default snapshot 1`] = `
+exports[`Field Container Styling matches default snapshot 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -44,7 +44,7 @@ exports[`Form Field Container Styling matches default snapshot 1`] = `
 </div>
 `;
 
-exports[`Form Field Container Styling matches invalid snapshot 1`] = `
+exports[`Field Container Styling matches invalid snapshot 1`] = `
 .c1 {
   color: #CD2C23;
   display: -webkit-box;

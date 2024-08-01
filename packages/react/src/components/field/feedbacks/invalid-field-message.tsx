@@ -18,13 +18,13 @@ const StyledIcon = styled(Icon)`
     margin-right: var(--spacing-base);
 `;
 
-interface InvalidFieldProps {
+interface InvalidFieldMessageProps {
     controlId?: string;
     feedbackMsg: string;
     noIcon?: boolean;
 }
 
-const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
+const InvalidFieldMessage: VoidFunctionComponent<InvalidFieldMessageProps> = ({ controlId, feedbackMsg, noIcon }) => {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -43,4 +43,4 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
     );
 };
 
-export { InvalidField };
+export { InvalidFieldMessage };

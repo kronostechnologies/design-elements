@@ -4,7 +4,7 @@ import { useId } from '../../../hooks/use-id';
 import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { FormFieldControlProps, useFormFieldContext } from '../../form/form-field-context';
+import { FieldControlProps, useFieldControlContext } from '../../field/context';
 
 export interface InputStyleOptions {
     theme: ResolvedTheme,
@@ -94,41 +94,22 @@ const StyledInput = styled.input<{ isMobile: boolean; }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile })}
 `;
 
-type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    | 'id'
-    | 'className'
-    | 'type'
-    | 'name'
-    | 'value'
-    | 'defaultValue'
-    | 'placeholder'
-    | 'disabled'
-    | 'required'
-    | 'pattern'
-    | 'onBlur'
-    | 'onChange'
-    | 'onClick'
-    | 'onFocus'
-    | 'onKeyUp'
-    | 'onKeyDown'
-    | 'onMouseUp'
-    | 'onInvalid'
-    | 'inputMode'
-    | 'autoComplete'
+type BaseInputProps = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    | 'ref'
 >;
 
-type PartialFormFieldProps = Pick<FormFieldControlProps,
+type CommonFieldControlProps = Pick<FieldControlProps,
     | 'ariaLabel'
     | 'ariaLabelledby'
     | 'ariaDescribedby'
-    | 'invalid'
+    | 'valid'
 >;
 
-export type InputProps = PartialInputProps & PartialFormFieldProps;
+export type InputProps = BaseInputProps & CommonFieldControlProps;
 
 export const Input = forwardRef(({
     id: providedId,
-    invalid: providedInvalid = true,
+    valid: providedValid = true,
     required: providedRequired = false,
     disabled: providedDisabled = false,
     ...otherProps
@@ -137,14 +118,14 @@ export const Input = forwardRef(({
     const inputId = useId(providedId);
 
     const {
-        formId,
+        id = inputId,
+        valid = providedValid,
+        required = providedRequired,
+        disabled = providedDisabled,
         ariaLabel,
         ariaLabelledby,
         ariaDescribedby,
-        invalid = providedInvalid,
-        required = providedRequired,
-        disabled = providedDisabled,
-    } = useFormFieldContext(otherProps);
+    } = useFieldControlContext(otherProps);
 
     return (
         <StyledInput
@@ -153,9 +134,9 @@ export const Input = forwardRef(({
             aria-describedby={ariaDescribedby}
             aria-disabled={disabled}
             aria-required={required}
-            aria-invalid={invalid}
+            aria-invalid={valid}
             data-testid="input"
-            id={formId || inputId}
+            id={id}
             disabled={disabled}
             required={required}
             isMobile={isMobile}

@@ -1,6 +1,6 @@
-import { renderWithProviders } from '../../../test-utils/renderer';
-import { devConsole } from '../../../utils/dev-console';
-import { Input } from '../../text-input/styles/inputs';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { devConsole } from '../../utils/dev-console';
+import { Input } from '../text-input/styles/inputs';
 import {
     ARIA_LABEL_WARNING,
     getAriaDescribedby,
@@ -9,10 +9,10 @@ import {
     getSlotId,
     getSlotIds,
     validateAriaLabels,
-} from '../utils';
-import { FormFieldContainer } from './form-field-container';
+} from './utils';
+import { FieldContainer } from './field-container';
 
-describe('Form Field Container', () => {
+describe('Field Container', () => {
     describe('Styling', () => {
         const defaultProps = {
             id: 'id',
@@ -21,9 +21,9 @@ describe('Form Field Container', () => {
 
         test('matches default snapshot', () => {
             const tree = renderWithProviders(
-                <FormFieldContainer {...defaultProps}>
+                <FieldContainer {...defaultProps}>
                     Children
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -31,9 +31,9 @@ describe('Form Field Container', () => {
 
         test('matches invalid snapshot', () => {
             const tree = renderWithProviders(
-                <FormFieldContainer {...defaultProps} invalid>
+                <FieldContainer {...defaultProps} valid={false}>
                     Children
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -41,9 +41,9 @@ describe('Form Field Container', () => {
 
         test('match noMargin snapshot', () => {
             const tree = renderWithProviders(
-                <FormFieldContainer noMargin {...defaultProps}>
+                <FieldContainer noMargin {...defaultProps}>
                     Children
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -62,9 +62,9 @@ describe('Form Field Container', () => {
             const consoleSpy = jest.spyOn(devConsole, 'warn');
             consoleSpy.mockImplementation(() => {});
             const wrapper = renderWithProviders(
-                <FormFieldContainer id={providedId} validationErrorMessage={invalidMessage}>
+                <FieldContainer id={providedId} validationErrorMessage={invalidMessage}>
                     <Input />
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             const inputWrapper = wrapper.find('input');
@@ -80,7 +80,7 @@ describe('Form Field Container', () => {
             const consoleSpy = jest.spyOn(devConsole, 'warn');
             consoleSpy.mockImplementation(() => {});
             const wrapper = renderWithProviders(
-                <FormFieldContainer
+                <FieldContainer
                     ariaLabel={ariaLabel}
                     ariaLabelledby={additionalElementId}
                     ariaDescribedby={additionalElementId}
@@ -90,7 +90,7 @@ describe('Form Field Container', () => {
                     validationErrorMessage={invalidMessage}
                 >
                     <Input />
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             const inputWrapper = wrapper.find('input');
@@ -106,7 +106,7 @@ describe('Form Field Container', () => {
             const consoleSpy = jest.spyOn(devConsole, 'warn');
             consoleSpy.mockImplementation(() => {});
             const wrapper = renderWithProviders(
-                <FormFieldContainer
+                <FieldContainer
                     ariaLabel={`${ariaLabel}_Parent`}
                     ariaLabelledby={`${additionalElementId}_Parent`}
                     ariaDescribedby={`${additionalElementId}_Parent`}
@@ -120,7 +120,7 @@ describe('Form Field Container', () => {
                         ariaLabelledby={`${additionalElementId}_Child`}
                         ariaDescribedby={`${additionalElementId}_Child`}
                     />
-                </FormFieldContainer>,
+                </FieldContainer>,
             );
 
             const inputWrapper = wrapper.find('input');
@@ -137,14 +137,14 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer
+                    <FieldContainer
                         ariaLabel={ariaLabel}
                         label={label}
                         id={providedId}
                         validationErrorMessage={invalidMessage}
                     >
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -162,9 +162,9 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
+                    <FieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -179,13 +179,13 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer
+                    <FieldContainer
                         id={providedId}
                         validationErrorMessage=""
                         ariaLabelledby={additionalElementId}
                     >
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -202,9 +202,9 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer label={label} hint={hint} id={providedId} validationErrorMessage="">
+                    <FieldContainer label={label} hint={hint} id={providedId} validationErrorMessage="">
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -219,9 +219,9 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
+                    <FieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -236,14 +236,14 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer
+                    <FieldContainer
                         label={label}
                         id={providedId}
-                        invalid
+                        valid={false}
                         validationErrorMessage={invalidMessage}
                     >
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -258,7 +258,7 @@ describe('Form Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer
+                    <FieldContainer
                         label={label}
                         id={providedId}
                         hint={hint}
@@ -266,7 +266,7 @@ describe('Form Field Container', () => {
                         ariaDescribedby={additionalElementId}
                     >
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -281,15 +281,15 @@ describe('Form Field Container', () => {
         describe('aria-invalid', () => {
             test('should be true when Formfield is invalid', () => {
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer
+                    <FieldContainer
                         label={label}
                         hint={hint}
                         id={providedId}
-                        invalid
+                        valid
                         validationErrorMessage=""
                     >
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -300,9 +300,9 @@ describe('Form Field Container', () => {
         describe('aria-required', () => {
             test('should be true when Formfield is required', () => {
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer label={label} hint={hint} id={providedId} required validationErrorMessage="">
+                    <FieldContainer label={label} hint={hint} id={providedId} required validationErrorMessage="">
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');
@@ -313,9 +313,9 @@ describe('Form Field Container', () => {
         describe('aria-disabled', () => {
             test('should be true when FormContainer is disabled', () => {
                 const wrapper = renderWithProviders(
-                    <FormFieldContainer label={label} hint={hint} id={providedId} disabled validationErrorMessage="">
+                    <FieldContainer label={label} hint={hint} id={providedId} disabled validationErrorMessage="">
                         <Input />
-                    </FormFieldContainer>,
+                    </FieldContainer>,
                 );
 
                 const inputWrapper = wrapper.find('input');

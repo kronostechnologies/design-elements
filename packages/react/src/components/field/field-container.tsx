@@ -1,17 +1,17 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
-import { useId } from '../../../hooks/use-id';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { InvalidField } from '../feedbacks/invalid-field';
-import { Label } from '../../label/label';
-import { TooltipProps } from '../../tooltip/tooltip';
-import { FormFieldContext, FormFieldControlProps } from '../form-field-context';
-import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from '../utils';
+import { useId } from '../../hooks/use-id';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { FieldControlContext, FieldControlProps } from './context';
+import { InvalidFieldMessage } from './feedbacks/invalid-field-message';
+import { Label } from '../label/label';
+import { TooltipProps } from '../tooltip/tooltip';
+import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
 
 interface StyledDivProps {
     $hasLabel: boolean;
     $hasHint: boolean;
-    $invalid: boolean;
+    $valid: boolean;
     $noMargin?: boolean;
 }
 
@@ -21,35 +21,34 @@ const StyledDiv = styled.div<StyledDivProps>`
     input,
     select,
     textarea {
-        border-color: ${({ theme, $invalid }) => ($invalid ? theme.component['field-input-error-border-color'] : theme.component['field-input-border-color'])};
+        border-color: ${({ theme, $valid }) => ($valid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
     }
 
-    > :nth-child(${({ $hasLabel, $hasHint, $invalid }) => ($hasLabel ? 1 : 0) + ($hasHint ? 1 : 0) + ($invalid ? 1 : 0)}) {
+    > :nth-child(${({ $hasLabel, $hasHint, $valid }) => ($hasLabel ? 1 : 0) + ($hasHint ? 1 : 0) + (!$valid ? 1 : 0)}) {
         margin-bottom: var(--spacing-half);
     }
 `;
 
-const StyledHint = styled.span<{ isMobile: boolean }>`
+const StyledHint = styled.span<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-hint-text-color']};
     display: block;
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
-    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    line-height: ${({ $isMobile }) => ($isMobile ? '1.5rem' : '1.25rem')};
 `;
 
-export interface FormFieldContainerProps extends FormFieldControlProps {
+export interface FieldContainerProps extends FieldControlProps {
     className?: string;
-    id?: string;
-    noInvalidFieldIcon?: boolean;
     noMargin?: boolean;
     tooltip?: TooltipProps;
     label?: string;
     hint?: string;
+    noInvalidFieldIcon?: boolean;
     validationErrorMessage: string;
 }
 
-export const FormFieldContainer: FunctionComponent<PropsWithChildren<FormFieldContainerProps>> = ({
+export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
     id: providedId,
     ariaLabel: providedAriaLabel,
     ariaLabelledby: providedAriaLabelledby,
@@ -59,47 +58,47 @@ export const FormFieldContainer: FunctionComponent<PropsWithChildren<FormFieldCo
     disabled = false,
     hint,
     label,
-    noInvalidFieldIcon,
+    noInvalidFieldIcon = false,
     noMargin,
     required = false,
     tooltip,
-    invalid = false,
+    valid = true,
     validationErrorMessage,
     ...props
 }) => {
     const { isMobile } = useDeviceContext();
-    const formId = useId(providedId);
+    const fieldId = useId(providedId);
 
-    const slotIds = getSlotIds(formId, label, hint, (validationErrorMessage && invalid));
+    const slotIds = getSlotIds(fieldId, label, hint, (validationErrorMessage && !valid));
     const ariaLabel = getAriaLabel(label, providedAriaLabel, providedAriaLabelledby);
     const ariaLabelledby = getAriaLabelledby(slotIds, providedAriaLabelledby);
     const ariaDescribedby = getAriaDescribedby(slotIds, providedAriaDescribedby);
 
     const contextValues = useMemo(() => ({
-        formId,
+        id: fieldId,
         ariaLabel,
         ariaLabelledby,
         ariaDescribedby,
-        invalid,
+        valid,
         hint,
         required,
         disabled,
-    }), [formId, ariaLabel, ariaLabelledby, ariaDescribedby, invalid, hint, required, disabled]);
+    }), [fieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled]);
 
     return (
-        <FormFieldContext.Provider value={contextValues}>
+        <FieldControlContext.Provider value={contextValues}>
             <StyledDiv
                 className={className}
                 $noMargin={noMargin}
                 $hasLabel={!!label}
                 $hasHint={!!hint}
-                $invalid={invalid}
+                $valid={valid}
                 {...props /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {label && (
                     <Label
                         id={slotIds.label}
-                        forId={formId}
+                        forId={fieldId}
                         tooltip={tooltip}
                         required={required}
                     >
@@ -109,13 +108,13 @@ export const FormFieldContainer: FunctionComponent<PropsWithChildren<FormFieldCo
                 {hint && (
                     <StyledHint
                         id={slotIds.hint}
-                        isMobile={isMobile}
+                        $isMobile={isMobile}
                     >
                         {hint}
                     </StyledHint>
                 )}
-                {invalid && (
-                    <InvalidField
+                {!valid && (
+                    <InvalidFieldMessage
                         controlId={slotIds.invalid}
                         feedbackMsg={validationErrorMessage}
                         noIcon={noInvalidFieldIcon}
@@ -123,6 +122,6 @@ export const FormFieldContainer: FunctionComponent<PropsWithChildren<FormFieldCo
                 )}
                 {children}
             </StyledDiv>
-        </FormFieldContext.Provider>
+        </FieldControlContext.Provider>
     );
 };

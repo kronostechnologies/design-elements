@@ -26,7 +26,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { Icon } from '../icon/icon';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -509,7 +509,7 @@ export const Datepicker = forwardRef(({
     return (
         <>
             <ReactDatePickerStyles />
-            <FormFieldContainer
+            <FieldContainer
                 className={className}
                 noMargin={noMargin}
                 id={fieldId}
@@ -517,7 +517,7 @@ export const Datepicker = forwardRef(({
                 required={required}
                 tooltip={tooltip}
                 hint={hint}
-                invalid={!valid}
+                valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             >
                 <Container isMobile={isMobile}>
@@ -584,7 +584,7 @@ export const Datepicker = forwardRef(({
                         <Icon name="calendar" size={isMobile ? '24' : '16'} />
                     </CalendarButton>
                 </Container>
-            </FormFieldContainer>
+            </FieldContainer>
         </>
     );
 });

@@ -2,7 +2,7 @@ import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { Input } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { Tooltip } from '../tooltip/tooltip';
@@ -73,12 +73,12 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
     };
 
     return (
-        <FormFieldContainer
+        <FieldContainer
             id={id}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon
-            invalid={!isValid && !isEmpty}
+            valid={isValid || isEmpty}
         >
             <div id={hintId} aria-live="assertive" aria-hidden="true" aria-atomic="true">
                 <StyledUl>
@@ -123,6 +123,6 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                 </ShowPasswordButton>
             </PasswordInputContainer>
             <PasswordStrengthContainer strength={strength} id={passwordStrengthId} />
-        </FormFieldContainer>
+        </FieldContainer>
     );
 };

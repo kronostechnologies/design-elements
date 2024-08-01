@@ -14,7 +14,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { Icon, IconName } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -52,7 +52,7 @@ function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     return theme.component['dropdown-list-input-border-color'];
 }
 
-const StyledFieldContainer = styled(FormFieldContainer)`
+const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
@@ -479,7 +479,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             label={label}
             required={required}
             tooltip={tooltip}
-            invalid={!valid}
+            valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >

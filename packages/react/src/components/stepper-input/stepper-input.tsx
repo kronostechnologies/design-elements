@@ -12,7 +12,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FormFieldContainer } from '../form/form-container/form-field-container';
+import { FieldContainer } from '../field/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { StepperButtons } from './stepper-buttons';
@@ -126,13 +126,13 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     };
 
     return (
-        <FormFieldContainer
+        <FieldContainer
             id={fieldId}
             hint={hint}
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            invalid={!valid}
+            valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <Wrapper>
@@ -161,6 +161,6 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
                     />
                 )}
             </Wrapper>
-        </FormFieldContainer>
+        </FieldContainer>
     );
 };
