@@ -1,5 +1,5 @@
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
-import { Tooltip } from '../tooltip/tooltip';
+import { mountWithTheme, renderWithTheme } from '../../../test-utils/renderer';
+import { Tooltip } from '../../tooltip/tooltip';
 import { Label } from './label';
 
 describe('Label', () => {

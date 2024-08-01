@@ -7,7 +7,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons/search-button';
-import { Label } from '../label/label';
+import { Label } from '../field/label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 

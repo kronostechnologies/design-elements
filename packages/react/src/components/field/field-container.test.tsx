@@ -1,6 +1,6 @@
 import { renderWithProviders } from '../../test-utils/renderer';
 import { devConsole } from '../../utils/dev-console';
-import { Input } from '../text-input/styles/inputs';
+import { Input } from '../input/input';
 import {
     ARIA_LABEL_WARNING,
     getAriaDescribedby,

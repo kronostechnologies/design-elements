@@ -1,14 +1,5 @@
 import { createContext, useContext } from 'react';
-
-export interface FieldControlProps {
-    id?: string;
-    ariaLabel?: string;
-    ariaLabelledby?: string;
-    ariaDescribedby?: string
-    disabled?: boolean;
-    required?: boolean;
-    valid?: boolean;
-}
+import { FieldControlProps } from './types';
 
 export const FieldControlContext = createContext<FieldControlProps>({});
 

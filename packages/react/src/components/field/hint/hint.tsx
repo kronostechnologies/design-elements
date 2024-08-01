@@ -1,7 +1,7 @@
 import { PropsWithChildren, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { BaseLabelProps } from '../../label/label';
+import { HintProps } from './types';
 
 const StyledHint = styled.label<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-hint-text-color']};
@@ -11,10 +11,6 @@ const StyledHint = styled.label<{ $isMobile: boolean }>`
     letter-spacing: 0.02rem;
     line-height: ${({ $isMobile }) => ($isMobile ? '1.5rem' : '1.25rem')};
 `;
-
-export interface HintProps extends BaseLabelProps {
-    htmlFor: string;
-}
 
 const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
     children, id, htmlFor,

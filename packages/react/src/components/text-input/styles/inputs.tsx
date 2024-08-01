@@ -1,10 +1,7 @@
-import { DetailedHTMLProps, forwardRef, InputHTMLAttributes, ReactElement, Ref } from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-import { useId } from '../../../hooks/use-id';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
-import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { FieldControlProps, useFieldControlContext } from '../../field/context';
+import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
 export interface InputStyleOptions {
     theme: ResolvedTheme,
@@ -89,61 +86,3 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
 
     ${focus({ theme })};
 `;
-
-const StyledInput = styled.input<{ isMobile: boolean; }>`
-    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile })}
-`;
-
-type BaseInputProps = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    | 'ref'
->;
-
-type CommonFieldControlProps = Pick<FieldControlProps,
-    | 'ariaLabel'
-    | 'ariaLabelledby'
-    | 'ariaDescribedby'
-    | 'valid'
->;
-
-export type InputProps = BaseInputProps & CommonFieldControlProps;
-
-export const Input = forwardRef(({
-    id: providedId,
-    valid: providedValid = true,
-    required: providedRequired = false,
-    disabled: providedDisabled = false,
-    ...otherProps
-}: InputProps, ref: Ref<HTMLInputElement>): ReactElement => {
-    const { isMobile } = useDeviceContext();
-    const inputId = useId(providedId);
-
-    const {
-        id = inputId,
-        valid = providedValid,
-        required = providedRequired,
-        disabled = providedDisabled,
-        ariaLabel,
-        ariaLabelledby,
-        ariaDescribedby,
-    } = useFieldControlContext(otherProps);
-
-    return (
-        <StyledInput
-            aria-label={ariaLabel}
-            aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
-            aria-describedby={ariaDescribedby}
-            aria-disabled={disabled}
-            aria-required={required}
-            aria-invalid={valid}
-            data-testid="input"
-            id={id}
-            disabled={disabled}
-            required={required}
-            isMobile={isMobile}
-            ref={ref}
-            {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
-        />
-    );
-});
-
-Input.displayName = 'Input';

@@ -1,10 +1,11 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { FieldControlContext, FieldControlProps } from './context';
-import { InvalidFieldMessage, InvalidFieldMessageProps } from './feedbacks/invalid-field-message';
-import { Label, LabelProps } from '../label/label';
+import { FieldControlContext } from './context';
+import { InvalidFieldMessage } from './feedbacks/invalid-field-message';
+import { Label } from './label/label';
 import { Hint } from './hint/hint';
+import { FieldContainerProps } from './types';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
 
 interface StyledDivProps {
@@ -27,18 +28,6 @@ const StyledDiv = styled.div<StyledDivProps>`
         margin-bottom: var(--spacing-half);
     }
 `;
-
-type CommonLabelProps = Pick<LabelProps, 'tooltip'>;
-
-type CommonValidationMessageProps = Pick<InvalidFieldMessageProps, 'noInvalidFieldIcon'>;
-
-export interface FieldContainerProps extends FieldControlProps, CommonLabelProps, CommonValidationMessageProps {
-    className?: string;
-    noMargin?: boolean;
-    label?: string;
-    hint?: string;
-    validationErrorMessage: string;
-}
 
 export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
     id: providedId,

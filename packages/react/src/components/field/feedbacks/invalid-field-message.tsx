@@ -2,7 +2,7 @@ import { PropsWithChildren, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { Icon } from '../../icon/icon';
-import { BaseLabelProps } from '../../label/label';
+import { InvalidFieldMessageProps } from './types';
 
 const StyledValidationMessage = styled.label<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-error-text-color']};
@@ -18,11 +18,6 @@ const StyledIcon = styled(Icon)`
     display: flex;
     margin-right: var(--spacing-base);
 `;
-
-export interface InvalidFieldMessageProps extends BaseLabelProps {
-    noInvalidFieldIcon?: boolean;
-    htmlFor: string;
-}
 
 const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldMessageProps>> = ({
     children, id, noInvalidFieldIcon, htmlFor,
