@@ -1,4 +1,4 @@
-import {
+import React, {
     ChangeEvent,
     DetailedHTMLProps,
     InputHTMLAttributes,
@@ -94,10 +94,16 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
+    const intervalId = useRef<NodeJS.Timeout>();
+    const timeoutId = useRef<NodeJS.Timeout>();
 
-    function handleIncrement(): void {
+    function handleIncrement(event: React.MouseEvent<HTMLButtonElement>): void {
+        if (event.button !== 0) return;
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepUp();
+        timeoutId.current = setTimeout(() => {
+            intervalId.current = setInterval(() => inputRef.current?.stepUp(), 50);
+        }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
@@ -105,13 +111,28 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         }
     }
 
-    function handleDecrement(): void {
+    function handleDecrement(event: React.MouseEvent<HTMLButtonElement>): void {
+        if (event.button !== 0) return;
         const valueBefore = Number(inputRef.current?.value);
         inputRef.current?.stepDown();
+        timeoutId.current = setTimeout(() => {
+            intervalId.current = setInterval(() => inputRef.current?.stepDown(), 50);
+        }, 500);
         const valueAfter = Number(inputRef.current?.value);
 
         if (valueBefore !== valueAfter) {
             triggerChangeEventOnRef(inputRef);
+        }
+    }
+
+    function handleStop(): void {
+        if (timeoutId.current) {
+            clearTimeout(timeoutId.current);
+            timeoutId.current = undefined;
+        }
+        if (intervalId.current) {
+            clearInterval(intervalId.current);
+            intervalId.current = undefined;
         }
     }
 
@@ -158,6 +179,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
                         disabled={disabled}
                         onDecrement={handleDecrement}
                         onIncrement={handleIncrement}
+                        onStop={handleStop}
                     />
                 )}
             </Wrapper>

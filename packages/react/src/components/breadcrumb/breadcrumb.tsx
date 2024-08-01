@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons/icon-button';
+import { Icon } from '../icon/icon';
 import { NavList } from '../nav-list/nav-list';
 import { NavListOption } from '../nav-list/nav-list-option';
 import { RouteLink } from '../route-link/route-link';
@@ -16,24 +17,54 @@ interface BreadcrumbProps {
 }
 
 const StyledOL = styled.ol`
+    align-items: center;
+    display: inline-flex;
     margin: 0;
     max-width: 100%;
     padding: 0;
     white-space: nowrap;
 `;
 
+const StyledLink = styled(RouteLink)`
+    color: ${({ theme }) => theme.component['breadcrumb-link-color']};
+
+    &:hover {
+        color: ${({ theme }) => theme.component['breadcrumb-link-hover-color']};
+    }
+
+    &[disabled] {
+        color: ${({ theme }) => theme.component['breadcrumb-link-disabled-color']};
+    }
+`;
+
+const StyledActiveLink = styled.span`
+    align-self: center;
+    color: ${({ theme }) => theme.component['breadcrumb-link-active-color']};
+    margin: 0 var(--spacing-1x);
+`;
+
+const StyledSeparatorIcon = styled(Icon)`
+    align-self: center;
+    color: ${({ theme }) => theme.component['breadcrumb-separator-color']};
+    margin: 0 var(--spacing-1x);
+`;
+
 const StyledLi = styled.li`
-    display: inline-block;
+    align-items: center;
+    display: inline-flex;
     position: relative;
 
     & > a {
         text-decoration: underline;
     }
+`;
 
-    &:not(:last-child)::after {
-        content: '/';
-        margin: 0 var(--spacing-1x);
-    }
+const StyledListWrapper = styled.div`
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    z-index: 1;
 `;
 
 const StyledNavList = styled(NavList)`
@@ -110,39 +141,50 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
             <StyledOL>
                 {leftShownRoutes.map((route) => (
                     <StyledLi>
-                        <RouteLink
+                        <StyledLink
                             data-testid={`breadcrumb-link-${route.value}`}
                             href={route.href}
                             routerLink={Link}
                             label={truncateLabel(route.label ?? '')}
+                            disabled={route.disabled}
                         />
+                        <StyledSeparatorIcon name="chevronRight" size="20" />
                     </StyledLi>
                 ))}
                 {showHiddenRoutes && (
                     <StyledLi>
-                        <StyledIconButton
-                            ref={buttonRef}
-                            aria-expanded={isOpen}
-                            type="button"
-                            data-testid="ellipse-button"
-                            buttonType="tertiary"
-                            iconName="moreHorizontal"
-                            label="breadcrumb-list"
-                            onClick={() => setOpen(!isOpen)}
-                        />
-                        <StyledNavList
-                            ordered
-                            data-testid="nav-list"
-                            ref={navListRef}
-                            hidden={!isOpen}
-                            focusedValue={focusedValue}
-                            onChange={() => setOpen(false)}
-                            onKeyDown={handleNavListKeyDown}
-                            options={hiddenRoutes}
-                        />
+                        <StyledListWrapper>
+                            <StyledIconButton
+                                ref={buttonRef}
+                                aria-expanded={isOpen}
+                                type="button"
+                                data-testid="ellipse-button"
+                                buttonType="tertiary"
+                                iconName="moreHorizontal"
+                                label="breadcrumb-list"
+                                onClick={() => setOpen(!isOpen)}
+                            />
+                            <StyledNavList
+                                ordered
+                                data-testid="nav-list"
+                                ref={navListRef}
+                                hidden={!isOpen}
+                                focusedValue={focusedValue}
+                                onChange={() => setOpen(false)}
+                                onKeyDown={handleNavListKeyDown}
+                                options={hiddenRoutes}
+                            />
+                        </StyledListWrapper>
+                        <StyledSeparatorIcon name="chevronRight" size="20" />
                     </StyledLi>
                 )}
-                {showLastRoute && <StyledLi>{truncateLabel(lastRoute.label ?? '')}</StyledLi>}
+                {showLastRoute && (
+                    <StyledLi>
+                        <StyledActiveLink>
+                            {truncateLabel(lastRoute.label ?? '')}
+                        </StyledActiveLink>
+                    </StyledLi>
+                )}
             </StyledOL>
         </nav>
     );

@@ -20,14 +20,19 @@ const StyledUl = styled.ul`
 `;
 
 const PasswordInputContainer = styled.div`
+    align-items: center;
     display: flex;
     margin-bottom: var(--spacing-1x);
     position: relative;
 `;
 
+const StyledInput = styled(Input)`
+    padding-right: var(--size-2x);
+`;
+
 const ShowPasswordButton = styled.div`
     position: absolute;
-    right: 0;
+    right: 0.25rem;
 `;
 
 interface PasswordCreationInputProps {
@@ -93,7 +98,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                 </StyledUl>
             </div>
             <PasswordInputContainer>
-                <Input
+                <StyledInput
                     id={id}
                     name={name ?? 'password'}
                     autoComplete="new-password"
@@ -118,6 +123,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
                             data-testid="show-password-button"
                             type="button"
                             onClick={handleShowPassword}
+                            size="small"
                         />
                     </Tooltip>
                 </ShowPasswordButton>

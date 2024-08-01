@@ -28,27 +28,27 @@ export type SectionalBannerTokenMap = {
 };
 
 export const defaultSectionalBannerTokens: SectionalBannerTokenMap = {
-    'sectional-banner-neutral-background-color': 'color-neutral-02',
-    'sectional-banner-neutral-border-color': 'color-neutral-50',
-    'sectional-banner-neutral-icon-color': 'color-neutral-65',
+    'sectional-banner-neutral-background-color': 'color-background-neutral-subtlest',
+    'sectional-banner-neutral-border-color': 'color-border-bold',
+    'sectional-banner-neutral-icon-color': 'color-content-subtle',
 
-    'sectional-banner-info-background-color': 'color-informative-02',
-    'sectional-banner-info-border-color': 'color-informative-50',
-    'sectional-banner-info-icon-color': 'color-informative-70',
+    'sectional-banner-info-background-color': 'color-feedback-background-informative-subtlest',
+    'sectional-banner-info-border-color': 'color-feedback-border-informative',
+    'sectional-banner-info-icon-color': 'color-feedback-content-informative',
 
-    'sectional-banner-discovery-background-color': 'color-discovery-02',
-    'sectional-banner-discovery-border-color': 'color-discovery-50',
-    'sectional-banner-discovery-icon-color': 'color-discovery-70',
+    'sectional-banner-discovery-background-color': 'color-feedback-background-discovery-subtlest',
+    'sectional-banner-discovery-border-color': 'color-feedback-border-discovery',
+    'sectional-banner-discovery-icon-color': 'color-feedback-content-discovery',
 
-    'sectional-banner-success-background-color': 'color-success-02',
-    'sectional-banner-success-border-color': 'color-success-50',
-    'sectional-banner-success-icon-color': 'color-success-70',
+    'sectional-banner-success-background-color': 'color-feedback-background-success-subtlest',
+    'sectional-banner-success-border-color': 'color-feedback-border-success',
+    'sectional-banner-success-icon-color': 'color-feedback-content-success',
 
-    'sectional-banner-warning-background-color': 'color-warning-02',
-    'sectional-banner-warning-border-color': 'color-warning-50',
-    'sectional-banner-warning-icon-color': 'color-warning-80',
+    'sectional-banner-warning-background-color': 'color-feedback-background-warning-subtlest',
+    'sectional-banner-warning-border-color': 'color-feedback-border-warning',
+    'sectional-banner-warning-icon-color': 'color-feedback-content-warning',
 
-    'sectional-banner-alert-background-color': 'color-alert-02',
-    'sectional-banner-alert-border-color': 'color-alert-50',
-    'sectional-banner-alert-icon-color': 'color-alert-70',
+    'sectional-banner-alert-background-color': 'color-feedback-background-alert-subtlest',
+    'sectional-banner-alert-border-color': 'color-feedback-border-alert',
+    'sectional-banner-alert-icon-color': 'color-feedback-content-alert',
 };

@@ -10,7 +10,7 @@ export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
 export { DropdownNavigation } from './components/dropdown-navigation/dropdown-navigation';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
-export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
+export { SegmentedControl } from './components/segmented-control/segmented-control';
 
 // Form Elements
 export { Avatar } from './components/avatar/avatar';
@@ -27,6 +27,7 @@ export { PhoneInput } from './components/phone-input/phone-input';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
+export { RadioButton } from './components/radio-button/radio-button';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { TextArea } from './components/text-area/text-area';
@@ -58,6 +59,7 @@ export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { GlobalHeader } from './components/global-header/global-header';
 export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
+export { Disclosure } from './components/disclosure/disclosure';
 export { ExternalItemProps } from './components/dropdown-menu/list-items/external-item';
 export { NavItemProps } from './components/dropdown-menu/list-items/nav-item';
 export { Icon } from './components/icon/icon';
