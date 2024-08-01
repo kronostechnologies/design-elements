@@ -675,7 +675,6 @@ input + .c2 {
   <span
     class="c4"
     data-testid="field-hint"
-    for="uuid1"
     id="uuid1_hint"
   >
     Hint
@@ -1148,13 +1147,10 @@ input + .c2 {
   >
     Select an option
   </label>
-  <label
-    aria-live="polite"
+  <span
     class="c4"
     data-testid="field-message"
-    for="uuid1"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c5"
@@ -1164,7 +1160,7 @@ input + .c2 {
       width="16"
     />
     You must select an option
-  </label>
+  </span>
   <div
     aria-activedescendant="uuid1_ab"
     aria-controls="uuid1_listbox"
@@ -2577,7 +2573,6 @@ input + .c2 {
   <span
     class="c4"
     data-testid="field-hint"
-    for="uuid1"
     id="uuid1_hint"
   >
     Hint

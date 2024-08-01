@@ -51,7 +51,10 @@ input + .c1 {
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -142,7 +145,6 @@ input + .c1 {
     aria-disabled="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label"
-    aria-required="false"
     class="c3"
     data-testid="field-input"
     disabled=""
@@ -206,7 +208,10 @@ input + .c1 {
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -297,7 +302,6 @@ input + .c1 {
     aria-disabled="false"
     aria-invalid="false"
     aria-labelledby="uuid1_label"
-    aria-required="true"
     class="c3"
     data-testid="field-input"
     id="uuid1"
@@ -361,7 +365,10 @@ input + .c1 {
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -452,7 +459,6 @@ input + .c1 {
     aria-disabled="false"
     aria-invalid="false"
     aria-labelledby="uuid1_label"
-    aria-required="false"
     class="c3"
     data-testid="field-input"
     id="uuid1"

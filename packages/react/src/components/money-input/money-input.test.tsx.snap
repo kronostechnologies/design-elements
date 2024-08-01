@@ -31,7 +31,10 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -118,7 +121,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   <input
     aria-disabled="false"
     aria-invalid="false"
-    aria-required="false"
     class="c2"
     data-testid="field-input"
     id="uuid1"
@@ -161,7 +163,10 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -248,7 +253,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   <input
     aria-disabled="false"
     aria-invalid="false"
-    aria-required="false"
     class="c2"
     data-testid="field-input"
     id="uuid1"
@@ -291,7 +295,10 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   margin: 0;
   min-height: var(--size-2x);
   outline: none;
-  padding: 0 var(--spacing-1x);
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: var(--spacing-1x);
+  padding-left: var(--spacing-1x);
   width: 100%;
 }
 
@@ -378,7 +385,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   <input
     aria-disabled="false"
     aria-invalid="false"
-    aria-required="false"
     class="c2"
     data-testid="field-input"
     id="uuid1"

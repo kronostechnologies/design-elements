@@ -597,13 +597,10 @@ input + .c1 {
   >
     test
   </label>
-  <label
-    aria-live="polite"
+  <span
     class="c3"
     data-testid="field-message"
-    for="uuid1"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c4"
@@ -613,7 +610,7 @@ input + .c1 {
       width="16"
     />
     Invalid number
-  </label>
+  </span>
   <div
     class="c5"
   >

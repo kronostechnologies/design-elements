@@ -306,13 +306,10 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 <div
   class="c0"
 >
-  <label
-    aria-live="polite"
+  <span
     class="c1"
     data-testid="field-message"
-    for="uuid1"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c2"
@@ -322,7 +319,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
       width="16"
     />
     This is an error message
-  </label>
+  </span>
   <div
     class="c3"
   >
