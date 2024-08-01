@@ -285,7 +285,7 @@ describe('Field Container', () => {
                         label={label}
                         hint={hint}
                         id={providedId}
-                        valid
+                        valid={false}
                         validationErrorMessage=""
                     >
                         <Input />
