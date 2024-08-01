@@ -102,7 +102,6 @@ export const Input = forwardRef(({
                 aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
                 aria-describedby={ariaDescribedby}
                 aria-disabled={disabled}
-                aria-required={required}
                 aria-invalid={valid ? 'false' : 'true'}
                 id={id}
                 disabled={disabled}

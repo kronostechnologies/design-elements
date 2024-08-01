@@ -89,7 +89,6 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {!disabled && hint && (
                     <Hint
                         id={slotIds.hint}
-                        htmlFor={inputFieldId}
                     >
                         {hint}
                     </Hint>
@@ -97,7 +96,6 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {!disabled && !valid && (
                     <InvalidFieldMessage
                         id={slotIds.invalid}
-                        htmlFor={inputFieldId}
                         noInvalidFieldIcon={noInvalidFieldIcon}
                     >
                         {validationErrorMessage}

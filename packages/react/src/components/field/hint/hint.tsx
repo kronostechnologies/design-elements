@@ -13,14 +13,13 @@ const StyledHint = styled.label<{ $isMobile: boolean }>`
 `;
 
 const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
-    children, id, htmlFor,
+    children, id,
 }) => {
     const { isMobile } = useDeviceContext();
 
     return (
         <StyledHint
             data-testid="field-hint"
-            htmlFor={htmlFor}
             id={id}
             $isMobile={isMobile}
         >

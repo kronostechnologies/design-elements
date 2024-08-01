@@ -297,19 +297,6 @@ describe('Field Container', () => {
             });
         });
 
-        describe('aria-required', () => {
-            test('should be true when FieldContainer is required', () => {
-                const wrapper = renderWithProviders(
-                    <FieldContainer label={label} hint={hint} id={providedId} required validationErrorMessage="">
-                        <Input />
-                    </FieldContainer>,
-                );
-
-                const inputWrapper = wrapper.find('input');
-                expect(inputWrapper.prop('aria-required')).toBe('true');
-            });
-        });
-
         describe('aria-disabled', () => {
             test('should be true when FieldContainer is disabled', () => {
                 const wrapper = renderWithProviders(

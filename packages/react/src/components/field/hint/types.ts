@@ -1,3 +1,7 @@
-import { BaseLabelProps } from '../label/types';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface HintProps extends BaseLabelProps {}
+export type BaseSpanProps = Pick<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+    | 'id' | 'className'
+>;
+
+export interface HintProps extends BaseSpanProps {}

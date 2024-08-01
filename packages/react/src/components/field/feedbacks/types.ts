@@ -1,6 +1,10 @@
-import { BaseLabelProps } from '../label/types';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import { FieldContainerProps } from '../types';
+
+export type BaseSpanProps = Pick<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+    | 'id' | 'className'
+>;
 
 type CommonFieldContainerProps = Pick<FieldContainerProps, 'noInvalidFieldIcon'>;
 
-export interface InvalidFieldMessageProps extends BaseLabelProps, CommonFieldContainerProps {}
+export interface InvalidFieldMessageProps extends BaseSpanProps, CommonFieldContainerProps {}
