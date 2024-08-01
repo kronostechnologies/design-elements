@@ -27,13 +27,10 @@ exports[`Invalid field Matches the snapshot 1`] = `
   margin-right: var(--spacing-base);
 }
 
-<label
-  aria-live="polite"
+<span
   class="c0"
-  data-testid="invalid-field"
-  for="input-id"
+  data-testid="field-message"
   id="test-id"
-  role="alert"
 >
   <svg
     class="c1"
@@ -43,5 +40,5 @@ exports[`Invalid field Matches the snapshot 1`] = `
     width="16"
   />
   Feedback Message
-</label>
+</span>
 `;
