@@ -28,17 +28,11 @@ import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 
-interface StyledInputProps {
-    isMobile: boolean;
-    $textAlign?: 'left' | 'right';
-}
-
-const StyleInput = styled.input<StyledInputProps>`
+const StyleInput = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
     border: 0;
     flex: 1 1 auto;
     min-height: 100%;
-    text-align: ${({ $textAlign }) => $textAlign};
     &:focus,
     &:disabled {
         border: 0;
@@ -46,11 +40,23 @@ const StyleInput = styled.input<StyledInputProps>`
     }
 `;
 
-const Adornment = styled.span<{ $position: 'start' | 'end' }>`
+interface AdornmentProps {
+    isMobile: boolean;
+    hasLeftAdornment: boolean;
+    hasRightAdornment: boolean;
+}
+
+const Adornment = styled.span<AdornmentProps>`
     align-self: center;
+    color: ${({ theme }) => (theme.component['text-input-adornment-text-color'])};
     display: flex;
-    padding-left: ${({ $position }) => ($position === 'start' ? 'var(--spacing-1x)' : undefined)};
-    padding-right: ${({ $position }) => ($position === 'end' ? 'var(--spacing-1x)' : undefined)};
+    padding-left: ${({ hasLeftAdornment }) => (hasLeftAdornment ? 'var(--spacing-1x)' : undefined)};
+    padding-right: ${({ hasRightAdornment }) => (hasRightAdornment ? 'var(--spacing-1x)' : undefined)};
+
+    > svg {
+        height: ${({ isMobile }) => (isMobile ? '24px' : '16px')};
+        width: ${({ isMobile }) => (isMobile ? '24px' : '16px')};
+    }
 `;
 
 interface StyledWrapperProps {
@@ -58,7 +64,7 @@ interface StyledWrapperProps {
     $valid?: boolean;
 }
 
-const Wrapper = styled.div<StyledWrapperProps>`
+const StyleWrapper = styled.div<StyledWrapperProps>`
     background: ${({ theme }) => theme.component['text-input-background-color']};
     border: 1px solid ${({ theme }) => theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
@@ -85,8 +91,8 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
 interface TextInputProps extends PartialInputProps {
-    adornment?: ReactNode;
-    adornmentPosition?: 'start' | 'end';
+    leftAdornment?: ReactNode;
+    rightAdornment?: ReactNode;
     ariaDescribedBy?: string;
     ariaInvalid?: boolean;
     className?: string;
@@ -119,8 +125,8 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = forwardRef(({
-    adornment,
-    adornmentPosition = 'start',
+    leftAdornment,
+    rightAdornment,
     ariaDescribedBy,
     ariaInvalid,
     className,
@@ -196,15 +202,15 @@ export const TextInput = forwardRef(({
     };
 
     const adornmentContent = useMemo(() => (
-        adornment ? (
-            <Adornment
-                onClick={handleAdornmentClick}
-                $position={adornmentPosition}
-            >
-                {adornment}
-            </Adornment>
-        ) : null
-    ), [adornment, adornmentPosition]);
+        <Adornment
+            onClick={handleAdornmentClick}
+            hasLeftAdornment={!!leftAdornment}
+            hasRightAdornment={!!rightAdornment}
+            isMobile={isMobile}
+        >
+            {leftAdornment || rightAdornment}
+        </Adornment>
+    ), [leftAdornment, rightAdornment, isMobile]);
 
     useEffect(() => {
         if (valid !== undefined) {
@@ -225,10 +231,9 @@ export const TextInput = forwardRef(({
             hint={hint}
             data-testid="field-container"
         >
-            <Wrapper $disabled={disabled} $valid={validity}>
-                {(adornment && adornmentPosition === 'start') && adornmentContent}
+            <StyleWrapper $disabled={disabled} $valid={validity}>
+                {leftAdornment && adornmentContent}
                 <StyleInput
-                    $textAlign={adornmentPosition === 'end' ? 'right' : 'left'}
                     aria-describedby={processedAriaDescribedBy || undefined}
                     aria-invalid={ariaInvalid}
                     autoComplete={autoComplete}
@@ -254,8 +259,8 @@ export const TextInput = forwardRef(({
                     value={value}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                {(adornment && adornmentPosition === 'end') && adornmentContent}
-            </Wrapper>
+                {rightAdornment && adornmentContent}
+            </StyleWrapper>
         </FieldContainer>
     );
 });

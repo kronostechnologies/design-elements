@@ -38,7 +38,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c3::-webkit-input-placeholder {
@@ -179,7 +178,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c3::-webkit-input-placeholder {
@@ -320,7 +318,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c3::-webkit-input-placeholder {

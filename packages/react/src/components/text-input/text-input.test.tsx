@@ -196,7 +196,7 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                adornment='#'
+                leftAdornment='#'
             />,
         );
 
@@ -212,7 +212,7 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                adornment={<Icon name='phone' />}
+                leftAdornment={<Icon name='phone' />}
             />,
         );
 
@@ -228,8 +228,8 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                adornment='#'
-                adornmentPosition='end'
+                leftAdornment='#'
+                rightAdornment='end'
             />,
         );
 

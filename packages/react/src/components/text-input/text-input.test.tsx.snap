@@ -58,7 +58,6 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c4::-webkit-input-placeholder {
@@ -220,7 +219,6 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c4::-webkit-input-placeholder {
@@ -380,7 +378,6 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c4::-webkit-input-placeholder {
@@ -539,7 +536,6 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c5::-webkit-input-placeholder {
@@ -594,11 +590,17 @@ input + .c1 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding-left: var(--spacing-1x);
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
 }
 
 .c3 {
@@ -719,7 +721,6 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c5::-webkit-input-placeholder {
@@ -774,11 +775,17 @@ input + .c1 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding-left: var(--spacing-1x);
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
 }
 
 .c3 {
@@ -871,7 +878,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c4 {
+.c5 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -894,66 +901,72 @@ input + .c1 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: right;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #60666E;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c4::placeholder {
+.c5::placeholder {
   color: #60666E;
 }
 
-.c4:disabled {
+.c5:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
+.c5:disabled,
+.c5:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
+.c5:disabled,
+.c5:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
+.c5:disabled,
+.c5:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::placeholder {
+.c5:disabled,
+.c5:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c4:focus,
-.c4:disabled {
+.c5:focus,
+.c5:disabled {
   border: 0;
   box-shadow: none;
 }
 
-.c5 {
+.c4 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-left: var(--spacing-1x);
   padding-right: var(--spacing-1x);
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
 }
 
 .c3 {
@@ -993,8 +1006,13 @@ input + .c1 {
   <div
     class="c3"
   >
-    <input
+    <span
       class="c4"
+    >
+      #
+    </span>
+    <input
+      class="c5"
       data-testid="text-input"
       id="uuid1"
       pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -1003,7 +1021,7 @@ input + .c1 {
       value="foo"
     />
     <span
-      class="c5"
+      class="c4"
     >
       #
     </span>

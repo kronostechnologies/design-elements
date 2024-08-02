@@ -11,7 +11,8 @@ export type TextInputTokens =
     | 'text-input-disabled-border-color'
     | 'text-input-disabled-text-color'
     | 'text-input-placeholder-disabled-text-color'
-    | 'text-input-disabled-adornment-text-color';
+    | 'text-input-disabled-adornment-text-color'
+    | 'text-input-adornment-text-color';
 
 export type TextInputTokenValue = AliasTokens | RefTokens;
 
@@ -35,4 +36,6 @@ export const defaultTextInputTokens: TextInputTokenMap = {
     'text-input-placeholder-disabled-text-color': 'color-control-auxiliary-disabled',
 
     'text-input-disabled-adornment-text-color': 'color-control-auxiliary-disabled',
+
+    'text-input-adornment-text-color': 'color-control-auxiliary',
 };
