@@ -7,12 +7,8 @@ const TextInputMeta: Meta<typeof TextInput> = {
     component: TextInput,
     args: {
         type: 'text',
-        adornment: '%',
     },
     argTypes: {
-        adornment: {
-            control: { disable: true },
-        },
         onBlur: {
             control: { disable: true },
         },
@@ -54,7 +50,17 @@ export const IconAsAdornment: Story = {
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
-        adornment: <Icon name="user" />,
+        leftAdornment: <Icon name='user' />,
+        hint: 'Hint',
+    },
+};
+
+export const TextAsAdornment: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        validationErrorMessage: 'Error message',
+        rightAdornment: '%',
         hint: 'Hint',
     },
 };
