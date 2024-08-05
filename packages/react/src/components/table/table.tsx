@@ -205,6 +205,8 @@ function getUtilityColumn<T extends object>(
                 column.cell = ({  table, row }) => (
                     <RadioButton
                         data-testid={`row-radiobutton-${row.index}`}
+                        ariaLabel={t('selectRow')}
+                        ariaLabelledBy={[]}
                         checked={row.getIsSelected()}
                         disabled={!row.getCanSelect()}
                         onChange={() => {
