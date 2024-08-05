@@ -133,6 +133,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
             $textAlign={cell.column.columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
+            id={cell.id}
             hasRightBorder={isLastColumnInAGroup(cell.column)}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}

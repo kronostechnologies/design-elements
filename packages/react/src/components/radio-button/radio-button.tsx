@@ -20,8 +20,7 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
     display: inline-block;
     flex-shrink: 0;
     height: var(--size-1x);
-    margin: 0;
-    margin-top: var(--spacing-half);
+    margin: var(--spacing-half) var(--spacing-1x) 0 0;
     position: relative;
     width: var(--size-1x);
     
@@ -59,7 +58,7 @@ const StyledLabel = styled.label`
 
 const StyledContainer = styled.div`
     align-items: flex-start;
-    display: inline-flex;
+    display: flex;
     position: relative;
 `;
 

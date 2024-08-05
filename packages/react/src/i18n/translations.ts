@@ -110,6 +110,7 @@ export const Translations = {
         },
         table: {
             subrowsAriaLabel: '{{count}} subrows for this item',
+            selectRow: 'Select row',
         },
         tabs: {
             addTab: 'Add Tabs',
@@ -247,6 +248,7 @@ export const Translations = {
         },
         table: {
             subrowsAriaLabel: '{{count}} sous-éléments pour cet élément',
+            selectRow: 'Sélectionnez une rangée',
         },
         tabs: {
             addTab: 'Ajouter des onglets',
