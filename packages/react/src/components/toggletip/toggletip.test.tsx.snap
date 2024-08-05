@@ -84,10 +84,11 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   color: #000000;
 }
 
-.c0:disabled {
+.c0[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -451,10 +452,11 @@ exports[`Toggletip Has default desktop styles 1`] = `
   color: #000000;
 }
 
-.c0:disabled {
+.c0[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -631,10 +633,11 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   color: #000000;
 }
 
-.c0:disabled {
+.c0[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -998,10 +1001,11 @@ exports[`Toggletip Has mobile styles 1`] = `
   color: #000000;
 }
 
-.c0:disabled {
+.c0[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 > svg {

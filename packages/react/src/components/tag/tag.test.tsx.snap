@@ -84,10 +84,11 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -365,10 +366,11 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -646,10 +648,11 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -927,10 +930,11 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -1208,10 +1212,11 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -1489,10 +1494,11 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -1771,10 +1777,11 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -2052,10 +2059,11 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -2334,10 +2342,11 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -2615,10 +2624,11 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -2897,10 +2907,11 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {
@@ -3178,10 +3189,11 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   color: #000000;
 }
 
-.c4:disabled {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c4 > svg {

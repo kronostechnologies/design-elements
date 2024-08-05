@@ -2482,10 +2482,11 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {
@@ -3746,10 +3747,11 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {
@@ -3781,10 +3783,11 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #003A5A;
 }
 
-.c18:disabled {
+.c18[aria-disabled='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
+  cursor: not-allowed;
 }
 
 .c2 {
@@ -5058,10 +5061,11 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
   color: #000000;
 }
 
-.c8:disabled {
+.c8[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8 > svg {

@@ -16,7 +16,6 @@ export type TableTokens =
     | 'table-row-error-background-color'
     | 'table-row-border-color'
     | 'table-row-odd-background-color'
-    | 'table-row-error-border-color'
     | 'table-sort-button-ascending-icon-color'
     | 'table-sort-button-descending-icon-color'
     | 'table-sort-button-default-icon-color';
@@ -45,8 +44,7 @@ export const defaultTableTokens: TableTokenMap = {
     'table-row-border-color': 'color-border',
     'table-row-odd-background-color': 'color-background-isolated',
     'table-row-selected-background-color': 'color-background-selected',
-    'table-row-error-background-color': 'color-feedback-background-alert-subtle',
-    'table-row-error-border-color': 'color-feedback-border-alert',
+    'table-row-error-background-color': 'color-feedback-background-alert-subtlest',
 
     'table-sort-button-ascending-icon-color': 'color-content-subtle',
     'table-sort-button-descending-icon-color': 'color-content-subtle',

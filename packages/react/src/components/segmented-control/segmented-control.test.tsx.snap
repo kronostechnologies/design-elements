@@ -79,7 +79,7 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   align-items: center;
   background-color: #E0F0F9;
   border: 1px solid #006296;
-  border-right: 1px solid;
+  border-right: 1px solid #006296;
   box-sizing: border-box;
   color: #003A5A;
   font-size: 0.875rem;
@@ -120,6 +120,16 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
 }
 
 <div
@@ -249,7 +259,7 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #E0F0F9;
   border: 1px solid #006296;
-  border-right: 1px solid;
+  border-right: 1px solid #006296;
   box-sizing: border-box;
   color: #003A5A;
   font-size: 1rem;
@@ -290,6 +300,16 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c2:hover + button {
+  border-left-color: #000000;
 }
 
 <div

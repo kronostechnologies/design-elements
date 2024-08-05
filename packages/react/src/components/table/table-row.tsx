@@ -107,31 +107,6 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
         }
     `}
 
-    ${({ $error, theme }) => $error && css`
-        position: relative;
-
-        &::after {
-            box-shadow: inset 0 0 0 1px ${theme.component['table-row-error-border-color']};
-            content: '';
-            height: calc(100% + 1px);
-            left: 0;
-            outline: none;
-            position: absolute;
-            width: 100%;
-            z-index: 3;
-        }
-
-        td:first-child::after {
-            border-left: 1px solid ${theme.component['table-row-error-border-color']};
-            content: '';
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            z-index: 3;
-        }
-    `}
-
     ${getRowBackgroundColor}
     ${getCellBackgroundCss}
 `;
