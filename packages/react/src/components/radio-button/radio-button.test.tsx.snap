@@ -33,21 +33,9 @@ exports[`Radio button matches snapshot 1`] = `
 
 .c1:checked {
   border: 2px solid #006296;
-}
-
-.c1:checked::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  height: var(--size-half);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .c1:disabled + label {

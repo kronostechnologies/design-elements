@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useId } from '../../hooks/use-id';
 
+const getDotSvgDataUrl = (color: string): string => {
+    const svg = `
+        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="4" fill="${color}"/>
+        </svg>`;
+    return `url('data:image/svg+xml;utf8,${encodeURIComponent(svg)}')`;
+};
+
 const StyledInput = styled.input<{ disabled?: boolean }>`
     appearance: none;
     background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
@@ -21,18 +29,9 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
      
     &:checked {
         border: 2px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-checked-border-color'])};
-        &::after {
-            background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-checked-background-color'])};
-            border-radius: 50%;
-            content: '';
-            display: block;
-            height: var(--size-half);
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: var(--size-half);
-        }
+        background-image: ${({ theme, disabled }) => getDotSvgDataUrl(disabled ? theme.component['radio-button-disabled-checked-dot-color'] : theme.component['radio-button-checked-dot-color'])};
+        background-position: center;
+        background-repeat: no-repeat;
     }
     
     &:disabled {
