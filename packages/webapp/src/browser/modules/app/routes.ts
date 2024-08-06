@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router';
 import { RouteCollection, RouteDefinition } from '../../core';
 import { HomePage } from '../home';
-import { UsersPage } from '../users/Users.component';
+import { UserPage, UsersPage } from '../users';
 
 export const ROUTES: RouteCollection = {
     home: {
@@ -12,6 +12,11 @@ export const ROUTES: RouteCollection = {
     users: {
         path: '/users',
         component: UsersPage,
+        end: true,
+    },
+    user: {
+        path: '/user/:id?',
+        component: UserPage,
         end: true,
     },
 };

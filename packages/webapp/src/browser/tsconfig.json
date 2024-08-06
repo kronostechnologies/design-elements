@@ -2,6 +2,7 @@
   "extends": "@equisoft/typescript-config/tsconfig.standards.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "jsx": "react-jsx",
