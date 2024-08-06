@@ -28,10 +28,10 @@ const StyledInput = styled.input<{ disabled?: boolean }>`
     ${(theme) => focus(theme, { selector: '+' })}
      
     &:checked {
-        border: 2px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-checked-border-color'])};
         background-image: ${({ theme, disabled }) => getDotSvgDataUrl(disabled ? theme.component['radio-button-disabled-checked-dot-color'] : theme.component['radio-button-checked-dot-color'])};
         background-position: center;
         background-repeat: no-repeat;
+        border: 2px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-checked-border-color'])};
     }
     
     &:disabled {
