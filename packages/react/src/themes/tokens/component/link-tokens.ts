@@ -8,7 +8,15 @@ export type LinkTokens =
     | 'route-link-text-color'
     | 'route-link-disabled-text-color'
     | 'route-link-hover-text-color'
-    | 'route-link-visited-text-color';
+    | 'route-link-visited-text-color'
+    | 'link-text-color'
+    | 'link-disabled-text-color'
+    | 'link-hover-text-color'
+    | 'link-visited-text-color'
+    | 'link-icon-color'
+    | 'link-disabled-icon-color'
+    | 'link-hover-icon-color'
+    | 'link-visited-icon-color';
 
 export type LinkTokenValue = AliasTokens | RefTokens;
 
@@ -26,4 +34,13 @@ export const defaultLinkTokens: LinkTokenMap = {
 
     'skip-link-text-color': 'color-link-content',
     'skip-link-background-color': 'color-background',
+
+    'link-text-color': 'color-link-content',
+    'link-disabled-text-color': 'color-link-content-disabled',
+    'link-hover-text-color': 'color-link-content-hover',
+    'link-visited-text-color': 'color-link-content-visited',
+    'link-icon-color': 'color-link-content',
+    'link-disabled-icon-color': 'color-link-content-disabled',
+    'link-hover-icon-color': 'color-link-content-hover',
+    'link-visited-icon-color': 'color-link-content-visited',
 };

@@ -1,11 +1,11 @@
 import { MouseEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { defaultButtonStyles } from '../buttons/abstract-button';
+import { getBaseButtonStyles } from '../buttons/abstract/styled';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const StyledLink = styled.a<{ isMobile: boolean }>`
-    ${defaultButtonStyles};
+    ${({ isMobile }) => getBaseButtonStyles({ $isMobile: isMobile })};
 
     background: ${({ theme }) => theme.component['skip-link-background-color']};
     color: ${({ theme }) => theme.component['skip-link-text-color']};
