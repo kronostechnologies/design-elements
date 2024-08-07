@@ -60,7 +60,6 @@ const StyledLabel = styled.label`
 const StyledContainer = styled.div`
     align-items: flex-start;
     display: inline-flex;
-    margin-top: var(--spacing-1x);
     position: relative;
 `;
 
