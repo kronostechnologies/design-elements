@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
 import { FieldContainer } from '../field-container/field-container';
-import { Input } from '../text-input/text-input';
 import { useTranslation } from '../../i18n/use-translation';
 import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';
@@ -12,6 +11,7 @@ import { getDefaultValidationConditions, ValidationCondition } from './validatio
 import { v4 as uuid } from '../../utils/uuid';
 import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledUl = styled.ul`
     font-size: 0.75rem;
@@ -26,7 +26,8 @@ const PasswordInputContainer = styled.div`
     position: relative;
 `;
 
-const StyledInput = styled(Input)`
+const StyledInput = styled.input<{ isMobile: boolean }>`
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
     padding-right: var(--size-2x);
 `;
 
