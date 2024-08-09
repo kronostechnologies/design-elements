@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fieldset Component Styling matches default 1`] = `
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+<ForwardRef>
+  <styled.fieldset
+    $orientation="vertical"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-orientation="vertical"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
+
+exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+<ForwardRef
+  orientation="horizontal"
+>
+  <styled.fieldset
+    $orientation="horizontal"
+    data-orientation="horizontal"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-orientation="horizontal"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
+
+exports[`Fieldset Component Styling matches vertical orientation 1`] = `
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+<ForwardRef
+  orientation="vertical"
+>
+  <styled.fieldset
+    $orientation="vertical"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-orientation="vertical"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
+
+exports[`Fieldset Component Styling matches with legend 1`] = `
+.c1 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+<ForwardRef
+  legend={
+    {
+      "bold": true,
+      "children": "Text Legend",
+    }
+  }
+>
+  <styled.fieldset
+    $orientation="vertical"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-orientation="vertical"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      <Legend
+        bold={true}
+        id="uuid1-legend"
+      >
+        <styled.legend
+          $bold={true}
+          $isMobile={false}
+          datatest-id="legend"
+          id="uuid1-legend"
+        >
+          <legend
+            className="c1"
+            id="uuid1-legend"
+          >
+            Text Legend
+          </legend>
+        </styled.legend>
+      </Legend>
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
