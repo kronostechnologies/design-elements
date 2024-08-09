@@ -186,6 +186,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   right: var(--spacing-2x);
 }
 
+.c3 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -248,14 +256,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  color: #1B1C1E;
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin: 0;
-}
-
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius-2x);
@@ -296,15 +296,15 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   padding-top: 0;
 }
 
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
 .c15 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -586,15 +586,15 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   padding-top: 0;
 }
 
+.c6 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
 .c9 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
-}
-
-.c6 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 <body
@@ -839,6 +839,14 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   right: var(--spacing-2x);
 }
 
+.c3 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -901,14 +909,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  color: #1B1C1E;
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin: 0;
-}
-
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius-2x);
@@ -949,15 +949,15 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   padding-top: 0;
 }
 
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
 .c15 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -1248,6 +1248,14 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   right: var(--spacing-2x);
 }
 
+.c3 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -1310,14 +1318,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  color: #1B1C1E;
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin: 0;
-}
-
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius-2x);
@@ -1358,15 +1358,15 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   padding-top: 0;
 }
 
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
 .c15 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -1599,6 +1599,14 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   right: 0;
 }
 
+.c3 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -1661,14 +1669,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  color: #1B1C1E;
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin: 0;
-}
-
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius-2x);
@@ -1709,15 +1709,15 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   padding-top: 0;
 }
 
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-2x) 0;
+}
+
 .c14 {
   position: absolute;
   right: var(--spacing-half);
   top: 1.75rem;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-2x) 0;
 }
 
 .c4 {

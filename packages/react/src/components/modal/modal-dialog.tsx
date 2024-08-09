@@ -1,86 +1,24 @@
-import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
+import { Fragment, ReactElement, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
-import { Button } from '../buttons/button';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Heading } from '../heading/heading';
-import { Icon, IconName } from '../icon/icon';
 import { Modal } from './modal';
-
-type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
-
-export type DialogType =
-    | 'information'
-    | 'action'
-    | 'alert';
+import {
+    ButtonContainer,
+    CancelButton,
+    ConfirmButton,
+    StyledHeadingWrapperComponent,
+    Subtitle,
+    TitleIcon,
+} from './styled';
+import { DialogType, ModalDialogProps } from './types';
 
 const ModalRoles: Record<DialogType, string> = {
     information: 'dialog',
     action: 'dialog',
     alert: 'alertdialog',
 };
-
-const Subtitle = styled.h3<MobileDeviceContextProps>`
-    font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
-    font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => (isMobile ? 1.75 : 1.375)}rem;
-    margin: var(--spacing-3x) 0 0;
-`;
-
-const ButtonContainer = styled.div<MobileDeviceContextProps>`
-    display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
-    justify-content: end;
-`;
-
-const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
-    margin-left: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
-    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 0)};
-`;
-
-const CancelButton = styled(Button)``;
-
-const HeadingWrapper = styled.div`
-    position: relative;
-`;
-
-const TitleIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
-`;
-
-const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
-    align-items: center;
-    display: flex;
-`;
-
-export interface ModalDialogProps {
-    /** Takes a query selector targeting the app Element. */
-    appElement?: string;
-    ariaDescribedby?: string;
-    /** Boolean indicating if the appElement should be hidden. Defaults to true.
-     * Should only be used for test purposes. */
-    ariaHideApp?: boolean;
-    cancelButton?: { label?: string, onCancel?(): void };
-    children?: ReactNode;
-    className?: string;
-    confirmButton?: { label?: string, onConfirm?(): void };
-    footerContent?: ReactElement;
-    hasCloseButton?: boolean;
-    isOpen: boolean;
-    parentSelector?: () => HTMLElement;
-    /**
-     * Defines if the overlay click should close the modal
-     * @default true
-     */
-    shouldCloseOnOverlayClick?: boolean;
-    subtitle?: string;
-    title: string;
-    titleIcon?: IconName;
-    dialogType?: DialogType;
-
-    onRequestClose(): void;
-}
 
 export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     appElement,

@@ -2,7 +2,8 @@ import { fireEvent, RenderResult } from '@testing-library/react';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { Modal, ModalProps } from './modal';
+import { Modal } from './modal';
+import { ModalProps } from './types';
 
 type ModalPropsLite = Omit<ModalProps, 'ariaDescribedby' | 'ariaLabel' | 'ariaHideApp' | 'onRequestClose'>;
 

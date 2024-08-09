@@ -3,8 +3,9 @@ import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ModalDialog, ModalDialogProps, DialogType } from './modal-dialog';
+import { ModalDialog } from './modal-dialog';
 import { IconName } from '../icon/icon';
+import { DialogType, ModalDialogProps } from './types';
 
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose' | 'title'>;
 
