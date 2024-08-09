@@ -6,6 +6,6 @@ export const UserPage: FunctionComponent = () => {
     const { t } = useTranslation('user');
 
     return (
-        <Heading bold noMargin type='xlarge' tag="h1">{t('title')}</Heading>
+        <Heading bold noMargin type='xlarge' tag="h1">{t('viewTitle')}</Heading>
     );
 };

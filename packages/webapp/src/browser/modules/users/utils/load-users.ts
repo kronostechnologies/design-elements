@@ -9,7 +9,7 @@ export function loadUsers(): User[] {
         name: `${userData['first name']} ${userData['last name']}`,
         title: userData.title,
         email: userData.email,
-        birthDate: userData['birth date'],
+        birthDate: new Date(userData['birth date']),
         time: userData.time,
         gender: userData.gender,
         numberDependents: userData['number dependents'],
