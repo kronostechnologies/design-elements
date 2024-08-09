@@ -25,8 +25,7 @@ const TableContainer = styled.div`
     flex-shrink: 0;
     gap: 8px;
     padding: 16px 32px;
-
-
+    
     td:nth-child(4) {
         padding-left: 0;
         padding-right: 0;
