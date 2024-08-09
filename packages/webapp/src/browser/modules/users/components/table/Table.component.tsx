@@ -7,8 +7,11 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useUsersActions, useUsersContext } from '../../state';
 import { User, UserKeys, UsersAction } from '../../types';
+import {
+    Name as NameCell,
+    Delete as DeleteCell,
+} from './cells';
 import { Footer as TableFooter } from './Footer.component';
-import { Name as NameCell } from './cells/Name.component';
 
 const TableContainer = styled.div`
     align-items: flex-start;
@@ -23,9 +26,15 @@ const TableContainer = styled.div`
     gap: 8px;
     padding: 16px 32px;
 
+
+    td:nth-child(4) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .action-column {
         box-sizing: border-box;
-        width: auto;
+        width: 50px;
     }
 
     .data-column {
@@ -68,11 +77,16 @@ export const Table: FunctionComponent = () => {
             sortable: true,
         },
         {
-            id: 'actions',
-            headerAriaLabel: 'actions',
+            id: 'action-delete',
+            headerAriaLabel: 'delete',
+            accessorKey: 'id',
             header: '',
             className: 'action-column',
             sortable: false,
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => (
+                <DeleteCell id={props.cell.getValue() as User['id']} />
+            ),
         },
     ], [t]);
 
