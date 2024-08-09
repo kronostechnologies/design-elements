@@ -45,7 +45,6 @@ describe('Fieldset Component', () => {
             );
             const legend = tree.find(Legend);
             expect(legend.prop('children')).toBe('Legend text');
-            expect(legend.exists()).toBeTruthy();
         });
 
         it('renders a legend when provided as legend props', () => {
@@ -56,7 +55,6 @@ describe('Fieldset Component', () => {
             );
             const legend = tree.find(Legend);
             expect(legend.prop('children')).toBe('Legend text');
-            expect(legend.exists()).toBeTruthy();
         });
 
         it('passes the disabled prop to the legend', () => {
