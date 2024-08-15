@@ -502,9 +502,9 @@ export const Datepicker = forwardRef(({
         const numericalFormat = getNumericalDateFormat(dateFormat);
         if (numericalFormat && /^\d+$/.test(value) && value.length === numericalFormat.length) {
             const date = parse(value, numericalFormat, new Date());
-            setSelectedDate(date);
+            handleInputChange(date);
         }
-    }, [dateFormat]);
+    }, [dateFormat, handleInputChange]);
 
     return (
         <>
