@@ -5,19 +5,19 @@ import { getBaseButtonStyles } from './abstract/styled';
 import { ButtonProps, ButtonType } from './types';
 import { focus } from '../../utils/css-state';
 
-export interface ButtonTypeStyles {
+interface ButtonTypeStyles {
     buttonType: ButtonType;
     focusable?: boolean;
     inverted?: boolean;
     theme: ResolvedTheme;
 }
 
-export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<ResolvedTheme>> = ({
+export function getButtonTypeStyles({
     focusable,
     inverted,
     buttonType,
     theme,
-}) => {
+}: ButtonTypeStyles): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     const inversionSuffix = inverted ? '-inverted' : '';
 
     return css`
@@ -50,7 +50,7 @@ export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolat
             `}
         }
     `;
-};
+}
 
 export const getButtonStyles = ({
     buttonType, inverted, focusable, size,

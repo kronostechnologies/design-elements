@@ -83,43 +83,12 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-1halfx);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-1halfx);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c13 {
@@ -133,47 +102,21 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c14[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c14 > svg {
+.c13 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -296,7 +239,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   padding-top: 0;
 }
 
-.c15 {
+.c14 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
@@ -415,7 +358,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         </footer>
         <button
           aria-label="Close dialog"
-          class="c13 c14 c15"
+          class="c9 c13 c14"
           data-testid="close-button"
           type="button"
         >
@@ -463,10 +406,10 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -736,43 +679,12 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-1halfx);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-1halfx);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c13 {
@@ -786,47 +698,21 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c14[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c14 > svg {
+.c13 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -949,7 +835,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   padding-top: 0;
 }
 
-.c15 {
+.c14 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
@@ -1068,7 +954,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         </footer>
         <button
           aria-label="Close dialog"
-          class="c13 c14 c15"
+          class="c9 c13 c14"
           data-testid="close-button"
           type="button"
         >
@@ -1145,43 +1031,12 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-1halfx);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-1halfx);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c13 {
@@ -1195,47 +1050,21 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c14[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c14 > svg {
+.c13 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1358,7 +1187,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   padding-top: 0;
 }
 
-.c15 {
+.c14 {
   position: absolute;
   right: var(--spacing-4x);
   top: 1.75rem;
@@ -1477,7 +1306,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         </footer>
         <button
           aria-label="Close dialog"
-          class="c13 c14 c15"
+          class="c9 c13 c14"
           data-testid="close-button"
           type="button"
         >

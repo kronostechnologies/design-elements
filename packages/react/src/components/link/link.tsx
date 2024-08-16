@@ -9,15 +9,13 @@ import { StyledLink } from './styled';
 import { LinkProps } from './types';
 
 export const Link: FC<LinkProps> = ({
-    buttonProps,
+    button,
     children,
     disabled = false,
     external = false,
     href = '#',
-    iconName,
-    iconOnly = false,
+    icon,
     id: providedId,
-    label,
     target = '_blank',
     onClick,
     routerLink,
@@ -28,7 +26,7 @@ export const Link: FC<LinkProps> = ({
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('common');
     const opensInNewTab = external && target === '_blank';
-    const isIconOnly = iconOnly && (iconName || external);
+    const isIconOnly = icon && !children;
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (disabled) {
@@ -51,20 +49,20 @@ export const Link: FC<LinkProps> = ({
             target={external ? target : undefined}
             tabIndex={disabled ? -1 : 0}
             rel={external ? rel : undefined}
-            $buttonProps={buttonProps}
+            $buttonProps={button}
             $isMobile={isMobile}
             $disabled={disabled}
             {...linkProps /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {iconName && (
+            {icon?.name && (
                 <Icon
                     data-testid="link-icon"
                     aria-hidden="true"
-                    name={iconName}
+                    name={icon.name}
                     size="16"
                 />
             )}
-            {!isIconOnly && (label ?? children)}
+            {!isIconOnly && children}
             {external && (
                 <Icon
                     data-testid="external-link-icon"
@@ -87,7 +85,7 @@ export const Link: FC<LinkProps> = ({
     return isIconOnly ? (
         <Tooltip
             aria-describedby={`${id}-tooltip`}
-            label={label ?? href}
+            label={icon.label}
         >
             {renderLink()}
         </Tooltip>

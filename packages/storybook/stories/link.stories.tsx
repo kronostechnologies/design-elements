@@ -48,17 +48,15 @@ External.decorators = [RouterDecorator];
 export const WithIcon: Story = {
     ...Default,
     args: {
-        iconName: 'mail',
-        label: 'Link with icon',
+        icon: { name: 'mail', label: 'Link with icon' },
+        children: 'Link with icon',
     },
 };
 
 export const OnlyIcon: Story = {
     ...Default,
     args: {
-        iconOnly: true,
-        iconName: 'mail',
-        label: 'Link icon only',
+        icon: { name: 'mail', label: 'Link icon only' },
     },
     render: (args) => (
         <Link
@@ -71,7 +69,7 @@ export const OnlyIcon: Story = {
 export const Disabled: Story = {
     ...Default,
     args: {
-        label: 'Disabled Link',
+        children: 'Disabled Link',
         disabled: true,
     },
 };
@@ -80,8 +78,8 @@ export const ButtonLink: Story = {
     ...External,
     args: {
         external: true,
-        label: 'Button Link',
-        buttonProps: {
+        children: 'Button Link',
+        button: {
             buttonType: 'secondary',
         },
     },
@@ -99,7 +97,7 @@ WithCallback.parameters = rawCodeParameters;
 
 export const WithRouteLink: Story = {
     args: {
-        label: 'Router Link',
+        children: 'Router Link',
         href: '/storybook',
         routerLink: RouteLink,
     },

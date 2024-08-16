@@ -1,7 +1,6 @@
 import { FocusEventHandler, MouseEvent, KeyboardEvent } from 'react';
 import { IconName } from '../icon/icon';
-
-export type Size = 'small' | 'medium';
+import { Size } from './abstract/types';
 
 export type Type = 'submit' | 'button' | 'reset';
 

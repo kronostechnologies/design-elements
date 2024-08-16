@@ -1,15 +1,15 @@
 import { MouseEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { getBaseButtonStyles } from '../buttons/abstract/styled';
+import { getBaseButtonStyles } from '../buttons';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledLink = styled.a<{ isMobile: boolean }>`
-    ${({ isMobile }) => getBaseButtonStyles({ $isMobile: isMobile })};
+const StyledLink = styled.a<{ $isMobile: boolean }>`
+    ${({ $isMobile }) => getBaseButtonStyles({ $isMobile })};
 
     background: ${({ theme }) => theme.component['skip-link-background-color']};
     color: ${({ theme }) => theme.component['skip-link-text-color']};
-    font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
+    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);
     letter-spacing: 0.015rem;
     overflow: hidden;
@@ -44,7 +44,7 @@ export const SkipLink: VoidFunctionComponent<SkipLinkProps> = ({
         <StyledLink
             className={className}
             href={href}
-            isMobile={isMobile}
+            $isMobile={isMobile}
             onClick={onClick}
         >
             {t('label')}

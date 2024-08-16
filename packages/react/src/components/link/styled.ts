@@ -62,7 +62,7 @@ export const getLinkStyles = ({
 
 export const StyledLink = styled.a<{
     $disabled: LinkProps['disabled'],
-    $buttonProps?: LinkProps['buttonProps'],
+    $buttonProps?: LinkProps['button'],
     $isMobile: boolean
 }>`
     ${({

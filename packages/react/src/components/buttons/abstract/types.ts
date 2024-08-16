@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
-import { Size } from '../types';
+
+export type Size = 'small' | 'medium';
 
 export interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     focusable?: boolean;

@@ -80,7 +80,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
 
 <Link
   href="/test"
-  label="Navigation Link"
   routerLink={
     {
       "$$typeof": Symbol(react.forward_ref),
@@ -222,7 +221,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 
 <Link
   href="/test"
-  label="Navigation Link"
   routerLink={
     {
       "$$typeof": Symbol(react.forward_ref),
@@ -370,12 +368,12 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
 }
 
 <a
-  aria-disabled="true"
+  aria-disabled="false"
   class="c0"
   data-testid="link"
   href="/test"
   id="uuid1"
-  tabindex="-1"
+  tabindex="0"
 >
   Navigation Link
 </a>
@@ -659,17 +657,8 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 .c0[disabled],
 .c0[aria-disabled='true'],
 .c0:disabled {
-  color: #8FCEF0;
   cursor: not-allowed;
   pointer-events: none;
-  -webkit-text-decoration-color: #8FCEF0;
-  text-decoration-color: #8FCEF0;
-}
-
-.c0[disabled] svg,
-.c0[aria-disabled='true'] svg,
-.c0:disabled svg {
-  color: #8FCEF0;
 }
 
 .c0 {
@@ -684,12 +673,13 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 }
 
 <a
-  aria-disabled="true"
+  aria-disabled="false"
   class="c0"
   data-testid="link"
+  href="/test"
   id="uuid1"
   rel="noopener noreferrer"
-  tabindex="-1"
+  tabindex="0"
   target="_blank"
 >
   Navigation Link

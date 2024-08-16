@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes } from 'react';
 import { NavLink, Link as ReactRouterLink, NavLinkProps } from 'react-router-dom';
-import { ButtonProps } from '../buttons/types';
+import { ButtonProps } from '../buttons';
 import { IconName } from '../icon/icon';
 
 type BaseLinkProps = Pick<AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -33,7 +33,7 @@ export interface LinkProps extends BaseLinkProps {
     disabled?: boolean;
 
     /** Button Link Variant */
-    buttonProps?: LinkButtonProps;
+    button?: LinkButtonProps;
 
     /** External Link Variant */
     external?: boolean;
@@ -41,9 +41,10 @@ export interface LinkProps extends BaseLinkProps {
     /** Icon Only Variant (with a tooltip)
      *  Make sure to provide an icon name and a label (for the tooltip)
      */
-    iconOnly?: boolean;
-    iconName?: IconName;
-    label?: string;
+    icon?: {
+        name: IconName;
+        label: string;
+    };
 
     routerLink?: typeof NavLink | typeof ReactRouterLink;
 }

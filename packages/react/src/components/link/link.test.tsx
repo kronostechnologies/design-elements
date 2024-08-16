@@ -54,18 +54,18 @@ describe('Link Component', () => {
         });
 
         it('renders icon and updates dynamically', () => {
-            const wrapper = mountWithProviders(<Link iconName="mail" />);
+            const wrapper = mountWithProviders(<Link icon={{ name: 'mail', label: 'This is a label' }}>Label</Link>);
             expect(wrapper.find('Icon').prop('name')).toBe('mail');
 
             act(() => {
-                wrapper.setProps({ iconName: 'bell' });
+                wrapper.setProps({ icon: { name: 'bell', label: 'This is a label' } });
             });
 
             expect(wrapper.find('Icon').prop('name')).toBe('bell');
         });
 
-        it('renders tooltip when isIconOnly and label is provided', () => {
-            const tooltipWrapper = mountWithProviders(<Link iconName="mail" iconOnly label="Test Label" />);
+        it('renders tooltip isIconOnly is provided', () => {
+            const tooltipWrapper = mountWithProviders(<Link icon={{ name: 'mail', label: 'Test Label' }} />);
             expect(tooltipWrapper.find('Tooltip').prop('label')).toBe('Test Label');
             expect(tooltipWrapper.find('Icon').exists()).toBe(true);
         });
@@ -75,18 +75,18 @@ describe('Link Component', () => {
             expect(childrenWrapper.contains(<div className="test-child">Child Content</div>)).toBe(true);
         });
 
-        it('overrides children when label provided and updates dynamically', () => {
-            const wrapper = mountWithProviders(<Link label="Label Content"><div>Child Content</div></Link>);
-            expect(wrapper.text()).toContain('Label Content');
-            expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
-
-            act(() => {
-                wrapper.setProps({ label: 'Updated Label' });
-            });
-
-            expect(wrapper.text()).toContain('Updated Label');
-            expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
-        });
+        // it('overrides children when label provided and updates dynamically', () => {
+        //     const wrapper = mountWithProviders(<Link label="Label Content"><div>Child Content</div></Link>);
+        //     expect(wrapper.text()).toContain('Label Content');
+        //     expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
+        //
+        //     act(() => {
+        //         wrapper.setProps({ label: 'Updated Label' });
+        //     });
+        //
+        //     expect(wrapper.text()).toContain('Updated Label');
+        //     expect(wrapper.contains(<div>Child Content</div>)).toBe(false);
+        // });
 
         it('renders RouteLink when routerLink prop is RouteLink', () => {
             const routeLinkWrapper = mountWithProviders(<Link routerLink={RouteLink} href="/internal-route" />);
@@ -113,9 +113,10 @@ describe('Link Component', () => {
             const tree = renderWithProviders(
                 <Link
                     href="/test"
-                    label="Navigation Link"
-                    iconName="mail"
-                />,
+                    icon={{ name: 'mail', label: 'This is a label' }}
+                >
+                    Navigation Link
+                </Link>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -123,11 +124,7 @@ describe('Link Component', () => {
 
         test('matches icon only snapshot', () => {
             const tree = renderWithProviders(
-                <Link
-                    iconOnly
-                    iconName="mail"
-                    label="Navigation Link"
-                />,
+                <Link icon={{ name: 'mail', label: 'Navigation Link' }} />,
             );
 
             expect(tree).toMatchSnapshot();
@@ -135,12 +132,7 @@ describe('Link Component', () => {
 
         test('matches external link snapshot', () => {
             const tree = renderWithProviders(
-                <Link
-                    href="/test"
-                    label="Navigation Link"
-                    disabled
-                    external
-                />,
+                <Link href="/test" external>Navigation Link</Link>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -151,12 +143,12 @@ describe('Link Component', () => {
                 <Link
                     routerLink={NavLink}
                     href="/test"
-                    label="Navigation Link"
-                    disabled
-                    buttonProps={{
+                    button={{
                         buttonType: 'secondary',
                     }}
-                />,
+                >
+                    Navigation Link
+                </Link>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -164,11 +156,9 @@ describe('Link Component', () => {
 
         test('matches disabled snapshot', () => {
             const tree = renderWithProviders(
-                <Link
-                    href="/test"
-                    label="Navigation Link"
-                    disabled
-                />,
+                <Link href="/test" disabled>
+                    Navigation Link
+                </Link>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -176,11 +166,7 @@ describe('Link Component', () => {
 
         test('matches NavLink snapshot', () => {
             const tree = mountWithProviders(
-                <Link
-                    routerLink={NavLink}
-                    href="/test"
-                    label="Navigation Link"
-                />,
+                <Link routerLink={NavLink} href="/test">Navigation Link</Link>,
             );
 
             expect(tree).toMatchSnapshot();
@@ -188,11 +174,7 @@ describe('Link Component', () => {
 
         test('matches RouteLink snapshot', () => {
             const tree = mountWithProviders(
-                <Link
-                    routerLink={RouteLink}
-                    href="/test"
-                    label="Navigation Link"
-                />,
+                <Link routerLink={RouteLink} href="/test">Navigation Link</Link>,
             );
 
             expect(tree).toMatchSnapshot();

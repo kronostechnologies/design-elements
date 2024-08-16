@@ -1,7 +1,7 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../../themes/theme';
 import { focus } from '../../../utils/css-state';
-import { Size } from '../types';
+import { Size } from './types';
 
 export interface BaseButtonStyles {
     $size?: Size;
@@ -10,7 +10,7 @@ export interface BaseButtonStyles {
     $inverted?: boolean;
 }
 
-export const getButtonMinHeight = ({ $isMobile, $size }: BaseButtonStyles): string => {
+function getButtonMinHeight({ $isMobile, $size }: BaseButtonStyles): string {
     switch ($size) {
         case 'small':
             return $isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)';
@@ -18,9 +18,9 @@ export const getButtonMinHeight = ({ $isMobile, $size }: BaseButtonStyles): stri
         default:
             return $isMobile ? 'var(--size-3x)' : 'var(--size-2x)';
     }
-};
+}
 
-export const getButtonPadding = ({ $isMobile, $size }: BaseButtonStyles): string => {
+function getButtonPadding({ $isMobile, $size }: BaseButtonStyles): string {
     switch ($size) {
         case 'small':
             return $isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-1halfx);';
@@ -28,10 +28,13 @@ export const getButtonPadding = ({ $isMobile, $size }: BaseButtonStyles): string
         default:
             return $isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);';
     }
-};
+}
 
 export const getBaseButtonStyles = ({
-    $size, $isMobile, $focusable, $inverted,
+    $size,
+    $isMobile,
+    $focusable,
+    $inverted,
 }: BaseButtonStyles): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     align-items: center;
     appearance: none;
@@ -63,6 +66,6 @@ export const getBaseButtonStyles = ({
     }
 `;
 
-export const StyledAbstractButton = styled.button<{ $focusable?: boolean; isMobile: boolean; size?: Size }>`
-    ${({ $focusable, size, isMobile }) => getBaseButtonStyles({ $size: size, $focusable, $isMobile: isMobile })};
+export const StyledAbstractButton = styled.button<BaseButtonStyles>`
+    ${getBaseButtonStyles};
 `;
