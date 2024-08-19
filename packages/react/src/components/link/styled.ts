@@ -1,15 +1,18 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { getButtonStyles } from '../buttons/styled';
+import { getButtonStyles } from '../buttons';
 import { LinkProps } from './types';
 
+interface LinkStylesProps {
+    $isMobile: boolean;
+    $disabled: LinkProps['disabled'];
+    theme: ResolvedTheme;
+}
+
 export const getLinkStyles = ({
-    $disabled, $isMobile,
-}: {
-    $disabled: LinkProps['disabled'],
-    $isMobile: boolean
-}, theme: ResolvedTheme): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
+    $disabled, $isMobile, theme,
+}: LinkStylesProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     align-items: center;
     border-radius: var(--border-radius);
     color: ${theme.component['link-text-color']};
@@ -69,8 +72,19 @@ export const StyledLink = styled.a<{
         $buttonProps, $disabled, $isMobile, theme,
     }) => (
         $buttonProps
-            ? getButtonStyles($buttonProps, $isMobile, theme)
-            : getLinkStyles({ $disabled, $isMobile }, theme))
+            ? getButtonStyles({
+                $size: $buttonProps.size,
+                buttonType: $buttonProps.buttonType,
+                focusable: $buttonProps.focusable,
+                inverted: $buttonProps.inverted,
+                $isMobile,
+                theme,
+            })
+            : getLinkStyles({
+                $disabled,
+                $isMobile,
+                theme,
+            }))
 };
 
     display: inline-flex;

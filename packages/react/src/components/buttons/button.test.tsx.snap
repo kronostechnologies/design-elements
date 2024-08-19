@@ -470,14 +470,6 @@ exports[`Button has left and right icons 1`] = `
   width: var(--size-1x);
 }
 
-.c2 {
-  margin-right: var(--spacing-1x);
-}
-
-.c3 {
-  margin-left: var(--spacing-1x);
-}
-
 .c1 {
   background-color: #006296;
   border-color: #006296;
@@ -507,6 +499,14 @@ exports[`Button has left and right icons 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c2 {
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
 }
 
 <button

@@ -1,7 +1,8 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { Icon } from '../icon/icon';
-import { getBaseButtonStyles } from './abstract/styled';
+import { AbstractButton } from './abstract/abstract-button';
+import { BaseButtonStyles, getBaseButtonStyles } from './abstract/styled';
 import { ButtonProps, ButtonType } from './types';
 import { focus } from '../../utils/css-state';
 
@@ -52,11 +53,13 @@ export function getButtonTypeStyles({
     `;
 }
 
+interface ButtonStylesProps extends ButtonTypeStyles, BaseButtonStyles {}
+
 export const getButtonStyles = ({
-    buttonType, inverted, focusable, size,
-}: ButtonProps, $isMobile: boolean, theme: ResolvedTheme): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
+    buttonType, inverted, focusable, $size, $isMobile, theme,
+}: ButtonStylesProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     ${getBaseButtonStyles({
-        $size: size,
+        $size,
         $isMobile,
         $focusable: focusable,
         $inverted: inverted,
@@ -65,6 +68,10 @@ export const getButtonStyles = ({
     ${getButtonTypeStyles({
         buttonType, inverted, focusable, theme,
     })};
+`;
+
+export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
+    ${getButtonTypeStyles}
 `;
 
 export const LeftIcon = styled(Icon)`
