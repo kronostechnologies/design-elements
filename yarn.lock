@@ -1691,7 +1691,6 @@ __metadata:
     "@types/jest": "npm:^29.5.1"
     "@types/lodash": "npm:^4.14.186"
     "@types/react": "npm:~17.0.58"
-    "@types/react-datepicker": "npm:^6.0.0"
     "@types/react-dom": "npm:~17.0.20"
     "@types/react-modal": "npm:^3.16.0"
     "@types/styled-components": "npm:^5.1.26"
@@ -1719,7 +1718,7 @@ __metadata:
     jest-styled-components: "npm:^7.1.1"
     prop-types: "npm:^15.8.1"
     react: "npm:~17.0.2"
-    react-datepicker: "npm:^7.0.0"
+    react-datepicker: "npm:^7.3.0"
     react-docgen-typescript-plugin: "npm:1.0.8"
     react-dom: "npm:~17.0.2"
     react-is: "npm:~17.0.2"
@@ -4502,17 +4501,6 @@ __metadata:
     "@types/react": "npm:*"
     "@types/reactcss": "npm:*"
   checksum: 10c0/1ac1012466b27b8678a1129056427e7ebe2c7c301d241f3669c52ed5ac33f5fc8e4cbeeb566c2eaa674b2fc57c7a306528046e15e1117906e4ec137418c6be8f
-  languageName: node
-  linkType: hard
-
-"@types/react-datepicker@npm:^6.0.0":
-  version: 6.2.0
-  resolution: "@types/react-datepicker@npm:6.2.0"
-  dependencies:
-    "@floating-ui/react": "npm:^0.26.2"
-    "@types/react": "npm:*"
-    date-fns: "npm:^3.3.1"
-  checksum: 10c0/40342f0a5e15bac6f2b35072a2f7041db20b924692123aface78f2cbf0e896c0c02c299a9173583e01e5b6dad38e3da86ad0e56e943e74e0c0dc7d5c60129bdf
   languageName: node
   linkType: hard
 
@@ -13205,9 +13193,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:^7.0.0":
-  version: 7.1.0
-  resolution: "react-datepicker@npm:7.1.0"
+"react-datepicker@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "react-datepicker@npm:7.3.0"
   dependencies:
     "@floating-ui/react": "npm:^0.26.2"
     clsx: "npm:^2.1.0"
@@ -13217,7 +13205,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 10c0/ee62f9bedcd8ed720b5ba08c7457958219c24d07e4badf694c00e9e2ec1a2fa986c72f4258acf1f2028d6a2dc520b3cf8c0aee6de5b599bd33e0e86d55812946
+  checksum: 10c0/a926c896fbd827bd6195e5fdbf98bf48fc86a076112bcff38dcbd580da24a98c0c8f5ed1a1dfb2d91076134e41b209e118ccd41cbc3b2036e94c54af25e1788c
   languageName: node
   linkType: hard
 

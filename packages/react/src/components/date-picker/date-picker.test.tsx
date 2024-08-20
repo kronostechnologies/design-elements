@@ -8,7 +8,10 @@ describe('Datepicker', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(<Datepicker onChange={callback} label="date" />);
 
-        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002-02-02' } });
+        const inputTarget = document.createElement('input');
+        inputTarget.value = '2002-02-02';
+
+        getByTestId(wrapper, 'text-input').simulate('change', { target: inputTarget });
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
@@ -52,7 +55,10 @@ describe('Datepicker', () => {
     test('input value should format on blur', () => {
         const wrapper = mountWithTheme(<Datepicker />);
 
-        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002 02 02' } });
+        const inputTarget = document.createElement('input');
+        inputTarget.value = '2002 02 02';
+
+        getByTestId(wrapper, 'text-input').simulate('change', { target: inputTarget });
         getByTestId(wrapper, 'text-input').simulate('blur');
 
         expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
