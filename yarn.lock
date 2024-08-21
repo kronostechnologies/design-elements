@@ -6892,7 +6892,7 @@ __metadata:
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:4.6.2"
     html-webpack-plugin: "npm:5.6.0"
-    i18next: "npm:23.12.3"
+    i18next: "npm:23.14.0"
     i18next-browser-languagedetector: "npm:8.0.0"
     postcss: "npm:8.4.41"
     postcss-styled-syntax: "npm:0.6.4"
@@ -8851,12 +8851,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:23.12.3, i18next@npm:^23.0.0":
-  version: 23.12.3
-  resolution: "i18next@npm:23.12.3"
+"i18next@npm:23.14.0, i18next@npm:^23.0.0":
+  version: 23.14.0
+  resolution: "i18next@npm:23.14.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/8c17d448130a1f0ea81d4684bdbb791ebc5df0defdb65e0103e0084fe802d2e36451da8721a39dea29401f709de79e34e6a8079913bf38018a698203f606f2b0
+  checksum: 10c0/c26638a816e6213e515c158b17894ca3c54693911e1dc637cd279e11d53f8ded2494c3dcc6e2e94c639987ef63718193a1e2b4f3d5873fbcf89f266582140cd5
   languageName: node
   linkType: hard
 
