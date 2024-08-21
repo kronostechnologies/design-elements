@@ -15,7 +15,7 @@ import {
     useRef,
     useState,
 } from 'react';
-import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
+import DatePicker, { DatePickerProps, ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker';
 import { parse } from 'date-fns';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -45,7 +45,7 @@ import {
 } from './utils/datepicker-utils';
 import { focus } from '../../utils/css-state';
 
-interface StyledDatePickerProps extends ReactDatePickerProps {
+type StyledDatePickerProps = DatePickerProps & {
     isMobile: boolean;
     theme: ResolvedTheme;
     valid?: boolean;
@@ -531,7 +531,7 @@ export const Datepicker = forwardRef(({
                         isMobile={isMobile}
                         id={fieldId}
                         ref={dateInputRef}
-                        renderCustomHeader={(customHeaderProps) => (
+                        renderCustomHeader={(customHeaderProps: ReactDatePickerCustomHeaderProps) => (
                             <CalendarHeader
                                 months={months}
                                 monthsOptions={monthsOptions}
