@@ -49,8 +49,8 @@
     "styled-components": ">= 4"
   },
   "devDependencies": {
-    "@equisoft/eslint-config": "3.0.6",
-    "@equisoft/eslint-config-typescript-react": "3.0.6",
+    "@equisoft/eslint-config": "3.0.7",
+    "@equisoft/eslint-config-typescript-react": "3.0.7",
     "@equisoft/typescript-config": "2.0.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@svgr/webpack": "^8.1.0",
@@ -93,7 +93,7 @@
     "sass-loader": "~16.0.0",
     "style-loader": "^4.0.0",
     "styled-components": "^5.3.10",
-    "stylelint": "16.8.1",
+    "stylelint": "16.8.2",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.2",
     "ts-mockito": "^2.6.1",
