@@ -59,6 +59,7 @@ export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { GlobalHeader } from './components/global-header/global-header';
 export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
+export { Disclosure } from './components/disclosure/disclosure';
 export { ExternalItemProps } from './components/dropdown-menu/list-items/external-item';
 export { NavItemProps } from './components/dropdown-menu/list-items/nav-item';
 export { Icon } from './components/icon/icon';

@@ -233,10 +233,11 @@ exports[`Tabs matches snapshot (global) 1`] = `
   color: #000000;
 }
 
-.c2:disabled {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 {
@@ -682,10 +683,11 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   color: #000000;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 {
@@ -1142,10 +1144,11 @@ exports[`Tabs matches snapshot 1`] = `
   color: #000000;
 }
 
-.c3:disabled {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c0 {

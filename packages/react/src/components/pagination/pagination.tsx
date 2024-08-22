@@ -204,7 +204,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     return (
         <Container className={className} isMobile={isMobile}>
             <Navigation aria-labelledby={ariaLabelledby}>
-                <span aria-live='off' role='status'>
+                <div aria-live='off' role='status'>
                     <CurrentPageLabelHeading id={headingId} data-testid="currentPageLabelHeading">
                         <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                             <ScreenReaderOnlyText label={`${t('pagination')} - `} />
@@ -215,7 +215,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
                             })}
                         </ResultsLabel>
                     </CurrentPageLabelHeading>
-                </span>
+                </div>
                 {forwardBackwardNavActive && (
                     <NavButton
                         data-testid="previousPageButton"
