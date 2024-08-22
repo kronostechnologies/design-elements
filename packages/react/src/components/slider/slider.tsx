@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Slider as BaseSlider, SliderValueLabelSlotProps, sliderClasses } from '@mui/base/Slider';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
@@ -35,7 +36,7 @@ export const ValueTooltip = styled.div`
 `;
 
 const Labels = styled.div`
-    color: ${({ theme }) => theme.component['slider-rail-label-text-color']};
+    color: ${({ theme }) => theme.component['slider-track-empty-label-text-color']};
     display: flex;
     font-size: 0.75rem;
     justify-content: space-between;
@@ -58,7 +59,7 @@ const StyledSlider = styled(BaseSlider)`
     width: 100%;
 
     & .${sliderClasses.rail} {
-        background-color: ${({ theme }) => theme.component['slider-rail-background-color']};
+        background-color: ${({ theme }) => theme.component['slider-track-empty-background-color']};
         border-radius: 99px;
         display: block;
         height: 8px;
@@ -69,7 +70,7 @@ const StyledSlider = styled(BaseSlider)`
     }
 
     & .${sliderClasses.track} {
-        background-color: ${({ theme }) => theme.component['slider-track-background-color']};
+        background-color: ${({ theme }) => theme.component['slider-track-filled-background-color']};
         border-radius: 99px;
         display: block;
         height: 8px;
@@ -135,7 +136,7 @@ const StyledSlider = styled(BaseSlider)`
     }
 
     & .${sliderClasses.mark} {
-        background-color: ${({ theme }) => theme.component['slider-rail-mark-background-color']};
+        background-color: ${({ theme }) => theme.component['slider-track-empty-mark-background-color']};
         border-radius: 99%;
         height: 2px;
         position: absolute;
@@ -144,7 +145,7 @@ const StyledSlider = styled(BaseSlider)`
     }
 
     & .${sliderClasses.markActive} {
-        background-color: ${({ theme }) => theme.component['slider-track-mark-background-color']};
+        background-color: ${({ theme }) => theme.component['slider-track-filled-mark-background-color']};
     }
 
     &.${sliderClasses.disabled} {
@@ -152,11 +153,11 @@ const StyledSlider = styled(BaseSlider)`
         pointer-events: none;
         
         .${sliderClasses.rail} {
-            background-color: ${({ theme }) => theme.component['slider-rail-disabled-background-color']};
+            background-color: ${({ theme }) => theme.component['slider-track-empty-disabled-background-color']};
         }
 
         .${sliderClasses.track} {
-            background-color: ${({ theme }) => theme.component['slider-track-disabled-background-color']};
+            background-color: ${({ theme }) => theme.component['slider-track-filled-disabled-background-color']};
         }
 
         .${sliderClasses.thumb} {
@@ -166,11 +167,11 @@ const StyledSlider = styled(BaseSlider)`
         }
 
         .${sliderClasses.mark} {
-            background-color: ${({ theme }) => theme.component['slider-rail-mark-disabled-background-color']};
+            background-color: ${({ theme }) => theme.component['slider-track-empty-mark-disabled-background-color']};
         }
 
         & .${sliderClasses.markActive} {
-            background-color: ${({ theme }) => theme.component['slider-track-mark-disabled-background-color']};
+            background-color: ${({ theme }) => theme.component['slider-track-filled-mark-disabled-background-color']};
         }
     }
 `;
@@ -202,7 +203,6 @@ interface SliderProps<TValue extends number | number[]> {
     onChange?: (event: Event, value: InferValueType<TValue>) => void;
 }
 
-// eslint-disable-next-line comma-spacing
 export const Slider = <TValue extends number | number[]>({
     className,
     id: providedId,
@@ -220,7 +220,9 @@ export const Slider = <TValue extends number | number[]>({
     step,
     onChange,
 }: SliderProps<TValue>): ReactElement => {
+    const { t } = useTranslation('slider');
     const id = useId(providedId);
+    const isRange = Array.isArray(value ?? defaultValue);
 
     return (
         <FieldContainer
@@ -245,13 +247,9 @@ export const Slider = <TValue extends number | number[]>({
                     step={step}
                     marks={step ? true : undefined}
                     slots={{ valueLabel: SliderValueTooltip }}
-                    slotProps={{
-                        input: { id },
-                    }}
                     onChange={onChange}
-
+                    getAriaLabel={() => (isRange ? t('rangeAriaLabel', { label }) : label)}
                 />
-                {/* <BaseSlider slotProps={{ valueLabel: }}> */}
             </SliderContainer>
             <Labels>
                 <span>{min}</span>

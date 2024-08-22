@@ -2,15 +2,15 @@ import { AliasTokens } from '../alias-tokens';
 import { RefTokens } from '../ref-tokens';
 
 export type SliderTokens =
-    | 'slider-rail-background-color'
-    | 'slider-rail-disabled-background-color'
-    | 'slider-rail-label-text-color'
-    | 'slider-rail-mark-background-color'
-    | 'slider-rail-mark-disabled-background-color'
-    | 'slider-track-background-color'
-    | 'slider-track-disabled-background-color'
-    | 'slider-track-mark-background-color'
-    | 'slider-track-mark-disabled-background-color'
+    | 'slider-track-empty-background-color'
+    | 'slider-track-empty-disabled-background-color'
+    | 'slider-track-empty-label-text-color'
+    | 'slider-track-empty-mark-background-color'
+    | 'slider-track-empty-mark-disabled-background-color'
+    | 'slider-track-filled-background-color'
+    | 'slider-track-filled-disabled-background-color'
+    | 'slider-track-filled-mark-background-color'
+    | 'slider-track-filled-mark-disabled-background-color'
     | 'slider-thumb-background-color'
     | 'slider-thumb-border-color'
     | 'slider-thumb-disabled-border-color';
@@ -22,15 +22,15 @@ export type SliderTokenMap = {
 };
 
 export const defaultSliderTokens: SliderTokenMap = {
-    'slider-rail-background-color': 'color-background-empty',
-    'slider-rail-disabled-background-color': 'color-background-neutral-subtle',
-    'slider-rail-label-text-color': 'color-content-subtle',
-    'slider-rail-mark-background-color': 'color-background-neutral-bold',
-    'slider-rail-mark-disabled-background-color': 'color-background-indicator-disabled',
-    'slider-track-background-color': 'color-background-brand',
-    'slider-track-disabled-background-color': 'color-background-neutral-bold-disabled',
-    'slider-track-mark-background-color': 'color-control-background',
-    'slider-track-mark-disabled-background-color': 'color-control-background',
+    'slider-track-empty-background-color': 'color-background-empty',
+    'slider-track-empty-disabled-background-color': 'color-background-neutral-subtle',
+    'slider-track-empty-label-text-color': 'color-content-subtle',
+    'slider-track-empty-mark-background-color': 'color-background-neutral-bold',
+    'slider-track-empty-mark-disabled-background-color': 'color-background-indicator-disabled',
+    'slider-track-filled-background-color': 'color-background-brand',
+    'slider-track-filled-disabled-background-color': 'color-background-neutral-bold-disabled',
+    'slider-track-filled-mark-background-color': 'color-control-background',
+    'slider-track-filled-mark-disabled-background-color': 'color-control-background',
     'slider-thumb-background-color': 'color-control-background',
     'slider-thumb-border-color': 'color-border-brand',
     'slider-thumb-disabled-border-color': 'color-control-border-disabled',
