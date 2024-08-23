@@ -26,7 +26,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
     background-color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-background-color'] : theme.component['segmented-control-background-color'])};
     border: 1px solid ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-border-color'] : theme.component['segmented-control-border-color'])};
-    border-right: ${({ pressed }) => (pressed ? '1px solid' : 0)};
+    border-right: ${({ theme, pressed }) => (pressed ? `1px solid ${theme.component['segmented-control-pressed-border-color']}` : 0)};
     box-sizing: border-box;
     color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-text-color'] : theme.component['segmented-control-text-color'])};
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
@@ -55,18 +55,16 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         border-color: ${({ theme }) => theme.component['segmented-control-disabled-border-color']};
         color: ${({ theme }) => theme.component['segmented-control-disabled-text-color']};
     }
+        
+    &:hover {
+        background-color: ${({ theme }) => theme.component['segmented-control-hover-background-color']};
+        border-color: ${({ theme }) => theme.component['segmented-control-hover-border-color']};
+        color: ${({ theme }) => theme.component['segmented-control-hover-text-color']};
 
-    ${({ theme, pressed }) => !pressed && css`
-        &:hover {
-            background-color: ${theme.component['segmented-control-hover-background-color']};
-            border-color: ${theme.component['segmented-control-hover-border-color']};
-            color: ${theme.component['segmented-control-hover-text-color']};
-
-            & + button {
-                border-left-color: ${theme.component['segmented-control-hover-border-color']};
-            }
+        & + button {
+            border-left-color: ${({ theme }) => theme.component['segmented-control-hover-border-color']};
         }
-    `}
+    }
 `;
 
 interface SegmentedControlProps {

@@ -68,7 +68,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
     aria-labelledby="uuid1"
     class="c1"
   >
-    <span
+    <div
       aria-live="off"
       role="status"
     >
@@ -89,7 +89,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
           0–0 of 0 results
         </span>
       </h3>
-    </span>
+    </div>
     <ol
       class="c5"
     />
@@ -165,7 +165,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
     aria-labelledby="uuid1"
     class="c1"
   >
-    <span
+    <div
       aria-live="off"
       role="status"
     >
@@ -186,7 +186,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
           0–0 of 0 results
         </span>
       </h3>
-    </span>
+    </div>
     <ol
       class="c5"
     />
@@ -262,7 +262,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
     aria-labelledby="uuid1"
     class="c1"
   >
-    <span
+    <div
       aria-live="off"
       role="status"
     >
@@ -283,7 +283,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
           0–0 of 0 results
         </span>
       </h3>
-    </span>
+    </div>
     <ol
       class="c5"
     />
@@ -359,7 +359,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
     aria-labelledby="uuid1"
     class="c1"
   >
-    <span
+    <div
       aria-live="off"
       role="status"
     >
@@ -380,7 +380,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
           0–0 of 0 results
         </span>
       </h3>
-    </span>
+    </div>
     <ol
       class="c5"
     />

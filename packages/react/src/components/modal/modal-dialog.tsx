@@ -127,7 +127,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             <>
                 <HeadingWrapperComponent>
                     {titleIconName && (
-                        <TitleIcon name={titleIconName} size="24" data-testid="title-icon" />
+                        <TitleIcon name={titleIconName} size="24" data-testid="title-icon" aria-hidden="true" />
                     )}
                     <Heading
                         id={titleId}
