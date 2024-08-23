@@ -1,40 +1,19 @@
 import styled from 'styled-components';
 import { FieldsetProps, LegendProps } from './types';
 
-const getFontSize = ({ $isMobile, $size }: { $isMobile: boolean, $size?: LegendProps['size'] }): string => {
-    const effectiveSize = $size || 'medium';
-    if ($isMobile) {
-        switch (effectiveSize) {
-            case 'small':
-                return '0.75rem';
-            case 'medium':
-                return '0.875rem';
-            case 'large':
-                return '1rem';
-            default:
-                return '0.875rem';
-        }
-    } else {
-        switch (effectiveSize) {
-            case 'small':
-                return '0.625rem';
-            case 'medium':
-                return '0.75rem';
-            case 'large':
-                return '0.875rem';
-            default:
-                return '0.75rem';
-        }
-    }
-};
+function getFontSize({ $isMobile, $size = 'medium' }: { $isMobile: boolean, $size?: LegendProps['size'] }): string {
+    const mobileSizes = { small: '0.75rem', medium: '0.875rem', large: '1rem' };
+    const desktopSizes = { small: '0.625rem', medium: '0.75rem', large: '0.875rem' };
+    const sizes = $isMobile ? mobileSizes : desktopSizes;
+    return sizes[$size] || sizes.medium;
+}
 
 export const StyledLegend = styled.legend<{
     $size: LegendProps['size'],
-    $disabled: LegendProps['disabled'],
     $bold: LegendProps['bold'],
     $isMobile: boolean,
 }>`
-    color: ${({ $disabled, theme }) => ($disabled ? theme.component['legend-disabled-text-color'] : theme.component['legend-text-color'])};
+    color: ${({ theme }) => theme.component['legend-text-color']};
     display: table;
     font-size: ${getFontSize};
     font-weight: ${({ $bold }) => ($bold ? 'var(--font-bold)' : 'var(--font-normal)')};
@@ -53,4 +32,11 @@ export const StyledFieldset = styled.fieldset<{
     min-inline-size: 0;
     min-width: 0;
     padding: 0;
+
+    &:disabled,
+    &[aria-disabled='true'] {
+        legend {
+            color: ${({ theme }) => theme.component['legend-disabled-text-color']};
+        }
+    }
 `;

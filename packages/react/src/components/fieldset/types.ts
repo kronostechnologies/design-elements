@@ -6,7 +6,6 @@ export interface LegendProps extends HTMLAttributes<HTMLLegendElement> {
     className?: string;
     size?: LegendSize;
     bold?: boolean;
-    disabled?: boolean;
 }
 
 export type FieldsetOrientation = 'horizontal' | 'vertical';
@@ -16,7 +15,7 @@ type BaseFieldsetProps = Pick<FieldsetHTMLAttributes<HTMLFieldSetElement>,
 >;
 
 export interface FieldsetProps extends BaseFieldsetProps {
-    legend?: string | LegendProps;
+    legend?: Omit<LegendProps, 'children'> & { text: string };
     orientation?: FieldsetOrientation;
     children: ReactNode;
 }

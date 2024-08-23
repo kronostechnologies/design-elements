@@ -6,7 +6,6 @@ import { LegendProps } from './types';
 export const Legend: FC<LegendProps> = ({
     children,
     size,
-    disabled,
     bold,
     ...props
 }) => {
@@ -16,7 +15,6 @@ export const Legend: FC<LegendProps> = ({
         <StyledLegend
             datatest-id='legend'
             $size={size}
-            $disabled={disabled}
             $bold={bold}
             $isMobile={isMobile}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}

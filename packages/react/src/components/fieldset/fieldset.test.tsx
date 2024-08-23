@@ -6,7 +6,7 @@ describe('Fieldset Component', () => {
     describe('Features', () => {
         it('applies provided ID to the fieldset', () => {
             const tree = mountWithProviders(
-                <Fieldset id='customId' legend={{ children: 'Legend Text' }}>
+                <Fieldset id='customId' legend={{ text: 'Legend Text' }}>
                     Test Content
                 </Fieldset>,
             );
@@ -37,44 +37,24 @@ describe('Fieldset Component', () => {
             expect(legend.exists()).toBeFalsy();
         });
 
-        it('renders a legend when provided as string', () => {
+        it('renders a legend when props provided', () => {
             const tree = mountWithProviders(
-                <Fieldset legend='Legend text'>
+                <Fieldset legend={{ text: 'Legend text' }}>
                     Test Content
                 </Fieldset>,
             );
             const legend = tree.find(Legend);
             expect(legend.prop('children')).toBe('Legend text');
-        });
-
-        it('renders a legend when provided as legend props', () => {
-            const tree = mountWithProviders(
-                <Fieldset legend={{ children: 'Legend text' }}>
-                    Test Content
-                </Fieldset>,
-            );
-            const legend = tree.find(Legend);
-            expect(legend.prop('children')).toBe('Legend text');
-        });
-
-        it('passes the disabled prop to the legend', () => {
-            const tree = mountWithProviders(
-                <Fieldset disabled legend={{ children: 'Legend Text' }}>
-                    Test Content
-                </Fieldset>,
-            );
-            expect(tree.find(Legend).props().disabled).toBeTruthy();
-            expect(tree.find(Legend).props()).toHaveProperty('disabled');
         });
 
         it('updates legend text dynamically', () => {
             const tree = mountWithProviders(
-                <Fieldset legend={{ children: 'Initial Legend Text' }}>
+                <Fieldset legend={{ text: 'Initial Legend Text' }}>
                     Test Content
                 </Fieldset>,
             );
             expect(tree.find(Legend).text()).toContain('Initial Legend Text');
-            tree.setProps({ legend: { children: 'Updated Legend Text' } });
+            tree.setProps({ legend: { text: 'Updated Legend Text' } });
             expect(tree.find(Legend).text()).toContain('Updated Legend Text');
         });
     });
@@ -91,10 +71,12 @@ describe('Fieldset Component', () => {
 
         it('matches with legend', () => {
             const tree = mountWithProviders(
-                <Fieldset legend={{ children: 'Text Legend', bold: true }}>
+                <Fieldset legend={{ text: 'Text Legend', bold: true }}>
                     Test Content
                 </Fieldset>,
             );
+            expect(tree).toMatchSnapshot();
+            tree.setProps({ disabled: true });
             expect(tree).toMatchSnapshot();
         });
 

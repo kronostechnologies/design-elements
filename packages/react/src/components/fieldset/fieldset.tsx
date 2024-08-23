@@ -14,16 +14,18 @@ export const Fieldset = forwardRef(({
 }: FieldsetProps, ref: Ref<HTMLFieldSetElement>): ReactElement => {
     const id = useId(providedId);
 
-    const renderLegend = (): ReactElement => {
-        if (typeof legend === 'string') {
-            return <Legend id={`${id}-legend`} disabled={disabled}>{legend}</Legend>;
+    const renderLegend = (): ReactElement | null => {
+        if (!legend) {
+            return null;
         }
+        const { text, ...legendProps } = legend;
         return (
             <Legend
+                {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
                 id={`${id}-legend`}
-                disabled={disabled}
-                {...legend /* eslint-disable-line react/jsx-props-no-spreading */}
-            />
+            >
+                {text}
+            </Legend>
         );
     };
 
@@ -34,6 +36,7 @@ export const Fieldset = forwardRef(({
             $orientation={orientation}
             data-orientation={orientation}
             aria-disabled={disabled}
+            disabled={disabled}
             ref={ref}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >

@@ -52,7 +52,7 @@ export const Default: Story = {
 
 export const Legend: Story = {
     args: {
-        legend: { children: 'This is a legend!', bold: true, size: 'large' },
+        legend: { text: 'This is a legend!', bold: true, size: 'large' },
         children: withCheckboxes,
     },
 };
@@ -60,7 +60,7 @@ export const Legend: Story = {
 export const Disabled: Story = {
     args: {
         disabled: true,
-        legend: { children: 'This is disabled!', size: 'large' },
+        legend: { text: 'This is disabled!', size: 'large' },
         children: withCheckboxes,
     },
 };
@@ -68,21 +68,21 @@ export const Disabled: Story = {
 export const Horizontal: Story = {
     args: {
         orientation: 'horizontal',
-        legend: { children: 'This is horizontal with text inputs!', size: 'large' },
+        legend: { text: 'This is horizontal with text inputs!', size: 'large' },
         children: withTextInputs,
     },
 };
 
 export const WithRadioButtons: Story = {
     args: {
-        legend: { children: 'With Radio Buttons!', size: 'large' },
+        legend: { text: 'With Radio Buttons!', size: 'large' },
         children: withRadioButtons,
     },
 };
 
 export const WithRadioCards: Story = {
     args: {
-        legend: { children: 'With Radio Buttons!', size: 'large' },
+        legend: { text: 'With Radio Buttons!', size: 'large' },
         children: withRadioCards,
     },
 };

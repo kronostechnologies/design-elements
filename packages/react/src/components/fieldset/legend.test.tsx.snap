@@ -1,6 +1,336 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Legend Component Device: desktop renders with all combinations of props 1`] = `
+exports[`Legend Component Device: desktop renders with size large renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size large renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size large renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size large renders with bold true renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size medium renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size medium renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size medium renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size medium renders with bold true renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size small renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size small renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size small renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: desktop renders with size small renders with bold true renders with disabled true 1`] = `
 .c0 {
   color: #B7BBC2;
   display: table;
@@ -30,7 +360,667 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 </Legend>
 `;
 
-exports[`Legend Component Device: desktop renders with all combinations of props 2`] = `
+exports[`Legend Component Device: mobile renders with size large renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size large renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size large renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size large renders with bold true renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size medium renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size medium renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size medium renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size medium renders with bold true renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size small renders with bold false renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size small renders with bold false renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size small renders with bold true renders with disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Device: mobile renders with size small renders with bold true renders with disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: large Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: large Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: large Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: large Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: medium Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: medium Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: medium Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: medium Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: small Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: small Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: desktop Size: small Bold: true Disabled: false 1`] = `
 .c0 {
   color: #1B1C1E;
   display: table;
@@ -60,7 +1050,807 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 </Legend>
 `;
 
-exports[`Legend Component Device: desktop renders with all combinations of props 3`] = `
+exports[`Legend Component Render with Device: desktop Size: small Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: large Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: large Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: large Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: large Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: medium Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: medium Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: medium Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: medium Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: small Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: small Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: small Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Render with Device: mobile Size: small Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: large Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: medium Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: small Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: small Bold: false Disabled: true 1`] = `
 .c0 {
   color: #B7BBC2;
   display: table;
@@ -90,7 +1880,863 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 </Legend>
 `;
 
-exports[`Legend Component Device: desktop renders with all combinations of props 4`] = `
+exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: small Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: small Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: large Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: medium Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: false Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: false Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: true Disabled: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: small Bold: true Disabled: true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size large, bold false, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size large, bold false, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size large, bold true, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size large, bold true, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size medium, bold false, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size medium, bold false, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size medium, bold true, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size medium, bold true, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size small, bold false, disabled false 1`] = `
 .c0 {
   color: #1B1C1E;
   display: table;
@@ -120,405 +2766,9 @@ exports[`Legend Component Device: desktop renders with all combinations of props
 </Legend>
 `;
 
-exports[`Legend Component Device: desktop renders with all combinations of props 5`] = `
+exports[`Legend Component renders with device: desktop, size small, bold false, disabled true 1`] = `
 .c0 {
   color: #B7BBC2;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={true}
-  size="medium"
->
-  <styled.legend
-    $bold={true}
-    $disabled={true}
-    $isMobile={false}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 6`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={false}
-  size="medium"
->
-  <styled.legend
-    $bold={true}
-    $disabled={false}
-    $isMobile={false}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 7`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={true}
-  size="medium"
->
-  <styled.legend
-    $bold={false}
-    $disabled={true}
-    $isMobile={false}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 8`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={false}
-  size="medium"
->
-  <styled.legend
-    $bold={false}
-    $disabled={false}
-    $isMobile={false}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 9`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={true}
-  size="large"
->
-  <styled.legend
-    $bold={true}
-    $disabled={true}
-    $isMobile={false}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 10`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={false}
-  size="large"
->
-  <styled.legend
-    $bold={true}
-    $disabled={false}
-    $isMobile={false}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 11`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={true}
-  size="large"
->
-  <styled.legend
-    $bold={false}
-    $disabled={true}
-    $isMobile={false}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with all combinations of props 12`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={false}
-  size="large"
->
-  <styled.legend
-    $bold={false}
-    $disabled={false}
-    $isMobile={false}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with bold false 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
->
-  <styled.legend
-    $bold={false}
-    $isMobile={false}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with bold true 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
->
-  <styled.legend
-    $bold={true}
-    $isMobile={false}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with disabled false 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  disabled={false}
->
-  <styled.legend
-    $disabled={false}
-    $isMobile={false}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with disabled true 1`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  disabled={true}
->
-  <styled.legend
-    $disabled={true}
-    $isMobile={false}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with size large 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  size="large"
->
-  <styled.legend
-    $isMobile={false}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with size medium 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  size="medium"
->
-  <styled.legend
-    $isMobile={false}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: desktop renders with size small 1`] = `
-.c0 {
-  color: #1B1C1E;
   display: table;
   font-size: 0.625rem;
   font-weight: var(--font-normal);
@@ -526,9 +2776,13 @@ exports[`Legend Component Device: desktop renders with size small 1`] = `
 }
 
 <Legend
+  bold={false}
+  disabled={true}
   size="small"
 >
   <styled.legend
+    $bold={false}
+    $disabled={true}
     $isMobile={false}
     $size="small"
     datatest-id="legend"
@@ -542,11 +2796,41 @@ exports[`Legend Component Device: desktop renders with size small 1`] = `
 </Legend>
 `;
 
-exports[`Legend Component Device: mobile renders with all combinations of props 1`] = `
+exports[`Legend Component renders with device: desktop, size small, bold true, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: desktop, size small, bold true, disabled true 1`] = `
 .c0 {
   color: #B7BBC2;
   display: table;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -558,6 +2842,306 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 >
   <styled.legend
     $bold={true}
+    $disabled={true}
+    $isMobile={false}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size large, bold false, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size large, bold false, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size large, bold true, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size large, bold true, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="large"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="large"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size medium, bold false, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size medium, bold false, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size medium, bold true, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={false}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={false}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size medium, bold true, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  disabled={true}
+  size="medium"
+>
+  <styled.legend
+    $bold={true}
+    $disabled={true}
+    $isMobile={true}
+    $size="medium"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size small, bold false, disabled false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={false}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
+    $disabled={false}
+    $isMobile={true}
+    $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component renders with device: mobile, size small, bold false, disabled true 1`] = `
+.c0 {
+  color: #B7BBC2;
+  display: table;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  disabled={true}
+  size="small"
+>
+  <styled.legend
+    $bold={false}
     $disabled={true}
     $isMobile={true}
     $size="small"
@@ -572,7 +3156,7 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 </Legend>
 `;
 
-exports[`Legend Component Device: mobile renders with all combinations of props 2`] = `
+exports[`Legend Component renders with device: mobile, size small, bold true, disabled false 1`] = `
 .c0 {
   color: #1B1C1E;
   display: table;
@@ -602,475 +3186,23 @@ exports[`Legend Component Device: mobile renders with all combinations of props 
 </Legend>
 `;
 
-exports[`Legend Component Device: mobile renders with all combinations of props 3`] = `
+exports[`Legend Component renders with device: mobile, size small, bold true, disabled true 1`] = `
 .c0 {
   color: #B7BBC2;
   display: table;
   font-size: 0.75rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
 
 <Legend
-  bold={false}
+  bold={true}
   disabled={true}
   size="small"
 >
   <styled.legend
-    $bold={false}
-    $disabled={true}
-    $isMobile={true}
-    $size="small"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 4`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={false}
-  size="small"
->
-  <styled.legend
-    $bold={false}
-    $disabled={false}
-    $isMobile={true}
-    $size="small"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 5`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={true}
-  size="medium"
->
-  <styled.legend
     $bold={true}
     $disabled={true}
-    $isMobile={true}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 6`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={false}
-  size="medium"
->
-  <styled.legend
-    $bold={true}
-    $disabled={false}
-    $isMobile={true}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 7`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={true}
-  size="medium"
->
-  <styled.legend
-    $bold={false}
-    $disabled={true}
-    $isMobile={true}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 8`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={false}
-  size="medium"
->
-  <styled.legend
-    $bold={false}
-    $disabled={false}
-    $isMobile={true}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 9`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 1rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={true}
-  size="large"
->
-  <styled.legend
-    $bold={true}
-    $disabled={true}
-    $isMobile={true}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 10`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 1rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
-  disabled={false}
-  size="large"
->
-  <styled.legend
-    $bold={true}
-    $disabled={false}
-    $isMobile={true}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 11`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={true}
-  size="large"
->
-  <styled.legend
-    $bold={false}
-    $disabled={true}
-    $isMobile={true}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with all combinations of props 12`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
-  disabled={false}
-  size="large"
->
-  <styled.legend
-    $bold={false}
-    $disabled={false}
-    $isMobile={true}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with bold false 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={false}
->
-  <styled.legend
-    $bold={false}
-    $isMobile={true}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with bold true 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  bold={true}
->
-  <styled.legend
-    $bold={true}
-    $isMobile={true}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with disabled false 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  disabled={false}
->
-  <styled.legend
-    $disabled={false}
-    $isMobile={true}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with disabled true 1`] = `
-.c0 {
-  color: #B7BBC2;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  disabled={true}
->
-  <styled.legend
-    $disabled={true}
-    $isMobile={true}
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with size large 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  size="large"
->
-  <styled.legend
-    $isMobile={true}
-    $size="large"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with size medium 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  size="medium"
->
-  <styled.legend
-    $isMobile={true}
-    $size="medium"
-    datatest-id="legend"
-  >
-    <legend
-      className="c0"
-    >
-      Sample Legend
-    </legend>
-  </styled.legend>
-</Legend>
-`;
-
-exports[`Legend Component Device: mobile renders with size small 1`] = `
-.c0 {
-  color: #1B1C1E;
-  display: table;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  margin: 0 0 var(--spacing-1x);
-}
-
-<Legend
-  size="small"
->
-  <styled.legend
     $isMobile={true}
     $size="small"
     datatest-id="legend"
