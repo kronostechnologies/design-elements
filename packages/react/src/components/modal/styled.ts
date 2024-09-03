@@ -1,11 +1,9 @@
 import { CSSProperties } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
-import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { ContentProps, FooterProps, HeaderProps, MobileDeviceContextProps, StyledModalProps } from './types';
+import { ContentProps, FooterProps, HeaderProps, StyledModalProps } from './types';
 
 function getPadding({ noPadding, isMobile }: ContentProps): string {
     if (noPadding) {
@@ -84,38 +82,4 @@ export const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMo
     position: absolute;
     right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-4x)')};
     top: 1.75rem;
-`;
-
-export const Subtitle = styled.h3<MobileDeviceContextProps>`
-    font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
-    font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => (isMobile ? 1.75 : 1.375)}rem;
-    margin: var(--spacing-3x) 0 0;
-`;
-
-export const ButtonContainer = styled.div<MobileDeviceContextProps>`
-    display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
-    justify-content: end;
-`;
-
-export const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
-    margin-left: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
-    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 0)};
-`;
-
-export const CancelButton = styled(Button)`
-`;
-
-const HeadingWrapper = styled.div`
-    position: relative;
-`;
-
-export const TitleIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
-`;
-
-export const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
-    align-items: center;
-    display: flex;
 `;

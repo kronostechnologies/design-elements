@@ -1,9 +1,9 @@
 import { Fragment, ReactElement, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
-import { useTranslation } from '../../i18n/use-translation';
-import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Heading } from '../heading/heading';
-import { Modal } from './modal';
+import { useTranslation } from '../../../i18n/use-translation';
+import { v4 as uuid } from '../../../utils/uuid';
+import { useDeviceContext } from '../../device-context-provider/device-context-provider';
+import { Heading } from '../../heading/heading';
+import { Modal } from '../modal';
 import {
     ButtonContainer,
     CancelButton,

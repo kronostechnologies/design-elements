@@ -1,6 +1,5 @@
-import { CSSProperties, ReactElement, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { DeviceContextProps } from '../device-context-provider/device-context-provider';
-import { IconName } from '../icon/icon';
 
 export interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
     noPadding: boolean;
@@ -22,11 +21,6 @@ export interface FooterProps extends ContentProps {
 }
 
 export type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
-
-export type DialogType =
-    | 'information'
-    | 'action'
-    | 'alert';
 
 export interface BaseModalProps {
     /** Takes a query selector targeting the app Element. */
@@ -81,16 +75,4 @@ export interface ModalProps extends BaseModalProps {
 
     /** Function that will run after the modal has closed */
     onAfterClose?(): void;
-}
-
-export interface ModalDialogProps extends BaseModalProps {
-    title: string;
-    titleIcon?: IconName;
-    subtitle?: string;
-
-    footerContent?: ReactElement;
-
-    dialogType?: DialogType;
-    confirmButton?: { label?: string, onConfirm?(): void };
-    cancelButton?: { label?: string, onCancel?(): void };
 }

@@ -194,6 +194,57 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   margin: 0;
 }
 
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 95vw;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c6 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x) 0;
+}
+
+.c2 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
+}
+
+.c2 + .c5 {
+  padding-top: 0;
+}
+
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c15 {
+  position: absolute;
+  right: var(--spacing-4x);
+  top: 1.75rem;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -254,57 +305,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 95vw;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c4 {
@@ -847,6 +847,57 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   margin: 0;
 }
 
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 95vw;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c6 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x) 0;
+}
+
+.c2 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
+}
+
+.c2 + .c5 {
+  padding-top: 0;
+}
+
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c15 {
+  position: absolute;
+  right: var(--spacing-4x);
+  top: 1.75rem;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -907,57 +958,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 95vw;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c4 {
@@ -1256,6 +1256,57 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   margin: 0;
 }
 
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 95vw;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c6 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x) 0;
+}
+
+.c2 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
+}
+
+.c2 + .c5 {
+  padding-top: 0;
+}
+
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c15 {
+  position: absolute;
+  right: var(--spacing-4x);
+  top: 1.75rem;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -1316,57 +1367,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 95vw;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c4 {
@@ -1607,6 +1607,57 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   margin: 0;
 }
 
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 95vw;
+  min-width: initial;
+  position: relative;
+  width: calc(100vw - var(--spacing-2x));
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-2x);
+}
+
+.c6 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-2x) var(--spacing-2x) 0;
+}
+
+.c2 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x);
+}
+
+.c2 + .c5 {
+  padding-top: 0;
+}
+
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-2x) 0;
+}
+
+.c14 {
+  position: absolute;
+  right: var(--spacing-half);
+  top: 1.75rem;
+}
+
 .c10 {
   background-color: transparent;
   border-color: transparent;
@@ -1667,57 +1718,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 95vw;
-  min-width: initial;
-  position: relative;
-  width: calc(100vw - var(--spacing-2x));
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-2x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-2x) var(--spacing-2x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-2x) 0;
-}
-
-.c14 {
-  position: absolute;
-  right: var(--spacing-half);
-  top: 1.75rem;
 }
 
 .c4 {
