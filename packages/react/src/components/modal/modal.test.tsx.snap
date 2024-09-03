@@ -46,8 +46,8 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -65,21 +65,21 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 }
 
 .c3 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c3 > * {
@@ -160,8 +160,8 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -179,21 +179,21 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 }
 
 .c3 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-half);
-  right: 0;
-  padding-right: var(--spacing-half);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-half);
+  padding-top: var(--spacing-half);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c3 > * {
@@ -370,8 +370,8 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -389,21 +389,21 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 }
 
 .c3 {
-  position: absolute;
-  top: 0;
-  padding-top: 0;
-  right: 0;
-  padding-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: 0;
+  padding-top: 0;
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c3 > * {
@@ -595,8 +595,8 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -614,21 +614,21 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c3 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c3 > * {
@@ -819,8 +819,8 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -838,21 +838,21 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c3 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-half);
-  right: 0;
-  padding-right: var(--spacing-half);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-half);
+  padding-top: var(--spacing-half);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c3 > * {

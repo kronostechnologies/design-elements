@@ -215,8 +215,8 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -246,21 +246,21 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c12 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c12 > * {
@@ -348,11 +348,11 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  gap: var(--spacing-1x);
 }
 
 <body
@@ -589,8 +589,8 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -620,21 +620,21 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 }
 
 .c7 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c7 > * {
@@ -931,8 +931,8 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -962,21 +962,21 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c12 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c12 > * {
@@ -1064,11 +1064,11 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  gap: var(--spacing-1x);
 }
 
 <body
@@ -1370,8 +1370,8 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -1401,21 +1401,21 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c12 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-3x);
-  right: 0;
-  padding-right: var(--spacing-4x);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-4x);
+  padding-top: var(--spacing-3x);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c12 > * {
@@ -1503,11 +1503,11 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  gap: var(--spacing-1x);
 }
 
 <body
@@ -1751,8 +1751,8 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  min-height: 1vh;
   max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -1782,21 +1782,21 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c12 {
-  position: absolute;
-  top: 0;
-  padding-top: var(--spacing-half);
-  right: 0;
-  padding-right: var(--spacing-half);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: auto;
+  padding-right: var(--spacing-half);
+  padding-top: var(--spacing-half);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c12 > * {
@@ -1884,11 +1884,11 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  gap: var(--spacing-1x);
 }
 
 <body

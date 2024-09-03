@@ -71,6 +71,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                         name={titleIconName}
                         size="24"
                         data-testid="title-icon"
+                        aria-hidden="true"
                     />
                 )}
                 <Heading
