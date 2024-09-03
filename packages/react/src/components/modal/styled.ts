@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { Button } from '../buttons/button';
@@ -32,6 +33,10 @@ function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
     return isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`;
 }
 
+function getModalWidth({ width, isMobile }: StyledModalProps): CSSProperties['width'] {
+    return isMobile ? 'calc(100vw - var(--spacing-2x))' : width;
+}
+
 export const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.component['modal-background-color']};
     border-radius: var(--border-radius-2x);
@@ -40,10 +45,10 @@ export const StyledModal = styled(ReactModal)<StyledModalProps>`
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - var(--spacing-2x));
-    max-width: 700px;
+    max-width: 95vw;
     min-width: ${getModalMinWidth};
     position: relative;
-    width: ${({ isMobile }) => (isMobile ? 'calc(100vw - var(--spacing-2x))' : '60vw')};
+    width: ${getModalWidth};
 
     /* Firefox overflow-y: scroll problem fix (skipped bottom padding)
     https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */

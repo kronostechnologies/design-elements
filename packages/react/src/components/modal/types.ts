@@ -1,10 +1,11 @@
-import { ReactElement, ReactNode } from 'react';
+import { CSSProperties, ReactElement, ReactNode } from 'react';
 import { DeviceContextProps } from '../device-context-provider/device-context-provider';
 import { IconName } from '../icon/icon';
 
 export interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
     noPadding: boolean;
     hasCloseButton: boolean;
+    width: CSSProperties['width'];
 }
 
 export interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
@@ -36,6 +37,11 @@ export interface BaseModalProps {
     ariaHideApp?: boolean;
     children?: ReactNode;
     className?: string;
+    /**
+     * Modify the modal width
+     * @default 60vw
+     */
+    width?: CSSProperties['width'];
     /**
      * Adds "x" iconButton to close modal
      * @default true
@@ -78,11 +84,11 @@ export interface ModalProps extends BaseModalProps {
 }
 
 export interface ModalDialogProps extends BaseModalProps {
-    footerContent?: ReactElement;
-
     title: string;
-    subtitle?: string;
     titleIcon?: IconName;
+    subtitle?: string;
+
+    footerContent?: ReactElement;
 
     dialogType?: DialogType;
     confirmButton?: { label?: string, onConfirm?(): void };

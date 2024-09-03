@@ -189,7 +189,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c3 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -269,7 +269,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -541,7 +541,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 .c3 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -559,7 +559,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -842,7 +842,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c3 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -922,7 +922,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -1251,7 +1251,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c3 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -1331,7 +1331,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -1602,7 +1602,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c3 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -1682,7 +1682,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));

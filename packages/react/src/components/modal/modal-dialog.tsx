@@ -32,6 +32,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     footerContent,
     hasCloseButton,
     isOpen,
+    width,
     parentSelector,
     shouldCloseOnOverlayClick = true,
     subtitle,
@@ -73,6 +74,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                         type="medium"
                         tag="h2"
                         noMargin
+                        bold
                     >
                         {title}
                     </Heading>
@@ -124,6 +126,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             isOpen={isOpen}
             appElement={appElement}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+            width={width}
         >
             {children}
         </Modal>

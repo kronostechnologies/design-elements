@@ -71,8 +71,7 @@ export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
 export { Table } from './components/table/table';
 export { TableColumn, TableData } from './components/table/types';
-export { Modal } from './components/modal/modal';
-export { ModalDialog } from './components/modal/modal-dialog';
+export { Modal, ModalDialog } from './components/modal';
 export {
     Tag, TagValue, TagColor, TagSize, TagProps,
 } from './components/tag/tag';

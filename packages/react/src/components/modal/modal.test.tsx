@@ -1,4 +1,5 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
+import { ReactElement, useState } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
@@ -72,5 +73,29 @@ describe('Modal', () => {
         const { baseElement } = renderModal({ isOpen: true, noPadding: true });
 
         expect(baseElement).toMatchSnapshot();
+    });
+
+    test('Modal width prop is applied correctly', () => {
+        const initialWidth = '500px';
+        const newWidth = '70vw';
+        const TestComponent = (): ReactElement => {
+            const [width, setWidth] = useState(initialWidth);
+            return (
+                <>
+                    <button type='button' onClick={() => setWidth(newWidth)}>Change Width</button>
+                    <Modal isOpen width={width} ariaHideApp={false} onRequestClose={doNothing}>
+                        <p id="modal-description">Test Content</p>
+                    </Modal>
+                </>
+            );
+        };
+        const { getByRole, getByText } = renderPortalWithProviders(<TestComponent />, 'desktop');
+        const modal = getByRole('dialog');
+
+        expect(getComputedStyle(modal).width).toBe(initialWidth);
+
+        fireEvent.click(getByText('Change Width'));
+
+        expect(getComputedStyle(modal).width).toBe(newWidth);
     });
 });

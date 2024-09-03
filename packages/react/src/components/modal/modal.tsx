@@ -22,6 +22,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     className,
     noPadding = false,
     hasCloseButton = true,
+    width = '60vw',
     isOpen,
     modalFooter,
     modalHeader,
@@ -102,6 +103,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             breakpoints={breakpoints}
             isMobile={isMobile}
+            width={width}
         >
             {modalHeader && (
                 <Header
