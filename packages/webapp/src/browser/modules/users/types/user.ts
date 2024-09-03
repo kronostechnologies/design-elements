@@ -5,7 +5,7 @@ export interface User {
     name: string;
     title?: string;
     email?: string;
-    birthDate?: string;
+    birthDate?: Date;
     time?: string;
     gender?: string;
     numberDependents?: number;

@@ -18,6 +18,11 @@ export const usersReducer = (state: UsersContextProps, action: UsersActionProps)
                 };
             }
             break;
+        case UsersAction.DELETE:
+            if (action.id) {
+                updatedState.users = state.users.filter((user) => user.id !== action.id);
+            }
+            break;
         default:
             return state;
     }
