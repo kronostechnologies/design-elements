@@ -5,12 +5,6 @@ import { Icon } from '../../icon/icon';
 import { MobileDeviceContextProps } from '../types';
 import { DialogType } from './types';
 
-export const StyledContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2x);
-`;
-
 export const Subtitle = styled(Heading)`
 `;
 

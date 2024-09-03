@@ -82,7 +82,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1x);
 }
 
-.c11 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -122,18 +122,18 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c11 {
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c10:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c11 > svg {
+.c10 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
@@ -194,7 +194,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   margin: 0;
 }
 
-.c8 {
+.c7 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -229,6 +229,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
@@ -253,15 +261,46 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   align-items: center;
 }
 
-.c9 {
+.c8 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c12 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+}
+
+.c11 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c11:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c11[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c12 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c12 {
@@ -277,61 +316,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c13[aria-disabled='true'] {
+.c12[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-2x);
-}
-
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,36 +404,32 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         <main
           class="c6"
         >
-          <div
-            class="c7"
+          <h3
+            class="c7 "
           >
-            <h3
-              class="c8 "
-            >
-              Subtitle
-            </h3>
-            <p
-              id="modal-description"
-            >
-              Test Content
-            </p>
-          </div>
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
         </main>
         <footer
-          class="c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <button
-              class="c11 c12 "
+              class="c10 c11 "
               data-testid="cancel-button"
               type="button"
             >
               Test Cancel
             </button>
             <button
-              class="c11 c13 "
+              class="c10 c12 "
               data-testid="confirm-button"
               type="button"
             >
@@ -590,6 +583,14 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
@@ -614,20 +615,9 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   align-items: center;
 }
 
-.c8 {
+.c7 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-2x);
 }
 
 <body
@@ -691,18 +681,14 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
         <main
           class="c6"
         >
-          <div
-            class="c7"
+          <p
+            id="modal-description"
           >
-            <p
-              id="modal-description"
-            >
-              Test Content
-            </p>
-          </div>
+            Test Content
+          </p>
         </main>
         <footer
-          class="c8"
+          class="c7"
         >
           <p>
             Custom content
@@ -772,7 +758,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1x);
 }
 
-.c11 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -812,18 +798,18 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c11 {
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c10:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c11 > svg {
+.c10 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
@@ -884,7 +870,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   margin: 0;
 }
 
-.c8 {
+.c7 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -919,6 +905,14 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
@@ -943,15 +937,46 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   align-items: center;
 }
 
-.c9 {
+.c8 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c12 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+}
+
+.c11 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c11:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c11[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c12 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c12 {
@@ -967,61 +992,19 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c13[aria-disabled='true'] {
+.c12[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-2x);
-}
-
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1097,36 +1080,32 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         <main
           class="c6"
         >
-          <div
-            class="c7"
+          <h3
+            class="c7 "
           >
-            <h3
-              class="c8 "
-            >
-              Subtitle
-            </h3>
-            <p
-              id="modal-description"
-            >
-              Test Content
-            </p>
-          </div>
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
         </main>
         <footer
-          class="c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <button
-              class="c11 c12 "
+              class="c10 c11 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c11 c13 "
+              class="c10 c12 "
               data-testid="confirm-button"
               type="button"
             >
@@ -1198,7 +1177,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c11 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1238,18 +1217,18 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c11 {
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c10:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c11 > svg {
+.c10 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
@@ -1310,7 +1289,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   margin: 0;
 }
 
-.c8 {
+.c7 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -1345,6 +1324,14 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
@@ -1369,15 +1356,46 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   align-items: center;
 }
 
-.c9 {
+.c8 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c12 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+}
+
+.c11 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c11:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c11[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c12 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c12 {
@@ -1393,61 +1411,19 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c13[aria-disabled='true'] {
+.c12[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-2x);
-}
-
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1523,36 +1499,32 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         <main
           class="c6"
         >
-          <div
-            class="c7"
+          <h3
+            class="c7 "
           >
-            <h3
-              class="c8 "
-            >
-              Subtitle
-            </h3>
-            <p
-              id="modal-description"
-            >
-              Test Content
-            </p>
-          </div>
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
         </main>
         <footer
-          class="c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <button
-              class="c11 c12 "
+              class="c10 c11 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c11 c13 "
+              class="c10 c12 "
               data-testid="confirm-button"
               type="button"
             >
@@ -1678,7 +1650,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   margin: 0;
 }
 
-.c8 {
+.c7 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -1713,6 +1685,14 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-2x) var(--spacing-2x);
@@ -1737,15 +1717,46 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   align-items: center;
 }
 
-.c9 {
+.c8 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-2x);
 }
 
-.c11 {
+.c10 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+}
+
+.c10 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c10:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c10:hover,
+.c10[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c10[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c11 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c11 {
@@ -1761,61 +1772,19 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c11:hover,
 .c11[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c11[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c12 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c12:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c12[aria-disabled='true'] {
+.c11[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-2x);
-}
-
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1891,36 +1860,32 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         <main
           class="c6"
         >
-          <div
-            class="c7"
+          <h3
+            class="c7 "
           >
-            <h3
-              class="c8 "
-            >
-              Subtitle
-            </h3>
-            <p
-              id="modal-description"
-            >
-              Test Content
-            </p>
-          </div>
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
         </main>
         <footer
-          class="c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <button
-              class="c4 c11 "
+              class="c4 c10 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c4 c12 "
+              class="c4 c11 "
               data-testid="confirm-button"
               type="button"
             >

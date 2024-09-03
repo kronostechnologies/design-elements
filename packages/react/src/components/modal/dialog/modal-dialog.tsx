@@ -8,7 +8,6 @@ import {
     ButtonContainer,
     CancelButton,
     ConfirmButton,
-    StyledContentWrapper,
     StyledHeadingWrapperComponent,
     Subtitle,
     TitleIcon,
@@ -129,19 +128,17 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             width={width}
         >
-            <StyledContentWrapper>
-                {subtitle && (
-                    <Subtitle
-                        tag="h3"
-                        type="small"
-                        noMargin
-                        bold
-                    >
-                        {subtitle}
-                    </Subtitle>
-                )}
-                {children}
-            </StyledContentWrapper>
+            {subtitle && (
+                <Subtitle
+                    tag="h3"
+                    type="small"
+                    noMargin
+                    bold
+                >
+                    {subtitle}
+                </Subtitle>
+            )}
+            {children}
         </Modal>
     );
 };

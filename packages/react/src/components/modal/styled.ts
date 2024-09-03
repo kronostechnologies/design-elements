@@ -57,6 +57,9 @@ export const StyledModal = styled(ReactModal)<StyledModalProps>`
 `;
 
 export const Main = styled.main<ContentProps>`
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2x);
     max-height: 100%;
     overflow-y: auto;
     padding: ${getHeightPadding} ${getWidthPadding};
