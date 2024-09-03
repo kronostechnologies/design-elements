@@ -1,15 +1,14 @@
-import { FunctionComponent, PropsWithChildren, useCallback, useEffect, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactElement, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import {
     Footer,
     Header,
     Main,
+    StyledCloseButton,
     StyledModal,
-    StyledOverlayWrapper,
 } from './styled';
 import { ModalProps } from './types';
 
@@ -82,6 +81,26 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
         ReactModal.setAppElement(appElement);
     }
 
+    function renderCloseButton(): ReactElement | null {
+        if (!hasCloseButton) {
+            return null;
+        }
+        return (
+            <StyledCloseButton
+                data-testid="close-button"
+                label={t('closeButtonLabel')}
+                type="button"
+                buttonType="tertiary"
+                iconName="x"
+                onClick={onRequestClose}
+                size="small"
+                isMobile={isMobile}
+                $hasHeader={!!modalHeader}
+                $noPadding={noPadding}
+            />
+        );
+    }
+
     return (
         <StyledModal
             aria={{
@@ -91,8 +110,6 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             }}
             ariaHideApp={ariaHideApp}
             className={className}
-            noPadding={noPadding}
-            hasCloseButton={hasCloseButton}
             isOpen={isOpen}
             onAfterOpen={onAfterOpen}
             onAfterClose={onAfterClose}
@@ -104,60 +121,41 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             breakpoints={breakpoints}
             isMobile={isMobile}
-            width={width}
+            $width={width}
         >
+            {!modalHeader && renderCloseButton()}
             {modalHeader && (
                 <Header
-                    hasCloseButton={hasCloseButton}
                     isMobile={isMobile}
-                    isTopScrolled={topScroll > 0}
-                    noPadding={noPadding}
+                    $hasCloseButton={hasCloseButton}
+                    $isTopScrolled={topScroll > 0}
+                    $noPadding={noPadding}
                 >
                     {modalHeader}
+                    {renderCloseButton()}
                 </Header>
             )}
-
             {children && (
                 <Main
-                    hasCloseButton={hasCloseButton}
                     isMobile={isMobile}
-                    noPadding={noPadding}
                     ref={mainRefCallback}
                     $hasHeader={!!modalHeader}
                     $hasFooter={!!modalFooter}
+                    $noPadding={noPadding}
                 >
                     {children}
+
                 </Main>
             )}
-
             {modalFooter && (
                 <Footer
-                    hasCloseButton={hasCloseButton}
-                    isBottomScrolled={bottomScroll > 0}
                     isMobile={isMobile}
-                    noPadding={noPadding}
+                    $isBottomScrolled={bottomScroll > 0}
+                    $noPadding={noPadding}
                 >
                     {modalFooter}
                 </Footer>
             )}
-
-            <StyledOverlayWrapper
-                noPadding={noPadding}
-                hasCloseButton={hasCloseButton}
-                isMobile={isMobile}
-            >
-                {hasCloseButton && (
-                    <IconButton
-                        data-testid="close-button"
-                        label={t('closeButtonLabel')}
-                        type="button"
-                        buttonType="tertiary"
-                        iconName="x"
-                        onClick={onRequestClose}
-                        size="small"
-                    />
-                )}
-            </StyledOverlayWrapper>
         </StyledModal>
     );
 };

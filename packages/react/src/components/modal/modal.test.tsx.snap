@@ -45,6 +45,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
   max-width: 95vw;
   min-height: 1vh;
@@ -62,28 +63,6 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
-}
-
-.c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding-right: var(--spacing-4x);
-  padding-top: var(--spacing-3x);
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.c3 > * {
-  pointer-events: auto;
 }
 
 <body
@@ -129,9 +108,6 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
             Test Content
           </p>
         </main>
-        <div
-          class="c3"
-        />
       </div>
     </div>
   </div>
@@ -159,6 +135,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
   max-width: 95vw;
   min-height: 1vh;
@@ -175,29 +152,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 .c2 {
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding-right: var(--spacing-half);
-  padding-top: var(--spacing-half);
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.c3 > * {
-  pointer-events: auto;
+  padding: var(--spacing-2x) var(--spacing-2x);
 }
 
 <body
@@ -243,9 +198,6 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
             Test Content
           </p>
         </main>
-        <div
-          class="c3"
-        />
       </div>
     </div>
   </div>
@@ -253,7 +205,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (noPadding) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -293,24 +245,24 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -319,32 +271,32 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -369,6 +321,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
   max-width: 95vw;
   min-height: 1vh;
@@ -382,31 +335,20 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   display: block;
 }
 
-.c2 {
+.c5 {
   max-height: 100%;
   overflow-y: auto;
   padding: 0 0;
 }
 
-.c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding-right: 0;
-  padding-top: 0;
+.c4 {
   pointer-events: none;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c3 > * {
+.c4 > * {
   pointer-events: auto;
 }
 
@@ -444,8 +386,22 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <main
-          class="c2"
+          class="c5"
         >
           <p
             id="modal-description"
@@ -453,24 +409,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
             Test Content
           </p>
         </main>
-        <div
-          class="c3"
-        >
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -478,7 +416,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (opened, desktop) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -518,24 +456,24 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -544,32 +482,32 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -594,6 +532,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
   max-width: 95vw;
   min-height: 1vh;
@@ -607,31 +546,20 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   display: block;
 }
 
-.c2 {
+.c5 {
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-3x) var(--spacing-4x);
 }
 
-.c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding-right: var(--spacing-4x);
-  padding-top: var(--spacing-3x);
+.c4 {
   pointer-events: none;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
 }
 
-.c3 > * {
+.c4 > * {
   pointer-events: auto;
 }
 
@@ -669,8 +597,22 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <main
-          class="c2"
+          class="c5"
         >
           <p
             id="modal-description"
@@ -678,24 +620,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
             Test Content
           </p>
         </main>
-        <div
-          class="c3"
-        >
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -703,7 +627,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (opened, mobile) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -743,24 +667,24 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -768,32 +692,32 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -818,6 +742,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
   max-width: 95vw;
   min-height: 1vh;
@@ -831,31 +756,20 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   display: block;
 }
 
-.c2 {
+.c5 {
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-2x) var(--spacing-2x);
 }
 
-.c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding-right: var(--spacing-half);
-  padding-top: var(--spacing-half);
+.c4 {
   pointer-events: none;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: var(--spacing-2x);
+  top: var(--spacing-2x);
 }
 
-.c3 > * {
+.c4 > * {
   pointer-events: auto;
 }
 
@@ -893,8 +807,22 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </button>
         <main
-          class="c2"
+          class="c5"
         >
           <p
             id="modal-description"
@@ -902,24 +830,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
             Test Content
           </p>
         </main>
-        <div
-          class="c3"
-        >
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="24"
-              width="24"
-            />
-          </button>
-        </div>
       </div>
     </div>
   </div>

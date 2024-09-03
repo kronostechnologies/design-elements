@@ -2,24 +2,22 @@ import { CSSProperties, ReactNode } from 'react';
 import { DeviceContextProps } from '../device-context-provider/device-context-provider';
 
 export interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
-    noPadding: boolean;
-    hasCloseButton: boolean;
-    width: CSSProperties['width'];
+    $width: CSSProperties['width'];
 }
 
 export interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
-    noPadding: boolean;
-    hasCloseButton: boolean;
+    $noPadding: boolean;
     $hasHeader?: boolean;
     $hasFooter?: boolean;
 }
 
 export interface HeaderProps extends ContentProps {
-    isTopScrolled?: boolean;
+    $hasCloseButton: boolean;
+    $isTopScrolled?: boolean;
 }
 
 export interface FooterProps extends ContentProps {
-    isBottomScrolled?: boolean;
+    $isBottomScrolled?: boolean;
 }
 
 export type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
