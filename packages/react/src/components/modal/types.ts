@@ -10,6 +10,8 @@ export interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints'
 export interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
     noPadding: boolean;
     hasCloseButton: boolean;
+    $hasHeader?: boolean;
+    $hasFooter?: boolean;
 }
 
 export interface HeaderProps extends ContentProps {

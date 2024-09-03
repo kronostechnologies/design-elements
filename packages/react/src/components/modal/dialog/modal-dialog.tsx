@@ -8,6 +8,7 @@ import {
     ButtonContainer,
     CancelButton,
     ConfirmButton,
+    StyledContentWrapper,
     StyledHeadingWrapperComponent,
     Subtitle,
     TitleIcon,
@@ -44,7 +45,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
-    const titleIconName = dialogType === 'alert' ? 'alertFilled' : titleIcon;
+    const titleIconName = dialogType === 'alert' ? 'alertOctagon' : titleIcon;
     const hasTitleIcon = !!titleIconName;
 
     function handleConfirm(): void {
@@ -63,26 +64,26 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         const HeadingWrapperComponent = hasTitleIcon ? StyledHeadingWrapperComponent : Fragment;
 
         return (
-            <>
-                <HeadingWrapperComponent>
-                    {titleIconName && (
-                        <TitleIcon name={titleIconName} size="24" data-testid="title-icon" />
-                    )}
-                    <Heading
-                        id={titleId}
-                        ref={titleRef}
-                        type="medium"
-                        tag="h2"
-                        noMargin
-                        bold
-                    >
-                        {title}
-                    </Heading>
-                </HeadingWrapperComponent>
-                {subtitle && (
-                    <Subtitle isMobile={isMobile}>{subtitle}</Subtitle>
+            <HeadingWrapperComponent>
+                {titleIconName && (
+                    <TitleIcon
+                        $dialogType={dialogType}
+                        name={titleIconName}
+                        size="24"
+                        data-testid="title-icon"
+                    />
                 )}
-            </>
+                <Heading
+                    id={titleId}
+                    ref={titleRef}
+                    type="medium"
+                    tag="h2"
+                    noMargin
+                    bold
+                >
+                    {title}
+                </Heading>
+            </HeadingWrapperComponent>
         );
     }
 
@@ -104,7 +105,6 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                     label={confirmButton?.label || t('confirmButtonLabel')}
                     buttonType={confirmButtonType}
                     onClick={handleConfirm}
-                    isMobile={isMobile}
                 />
             </ButtonContainer>
         );
@@ -128,7 +128,19 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             width={width}
         >
-            {children}
+            <StyledContentWrapper>
+                {subtitle && (
+                    <Subtitle
+                        tag="h3"
+                        type="small"
+                        noMargin
+                        bold
+                    >
+                        {subtitle}
+                    </Subtitle>
+                )}
+                {children}
+            </StyledContentWrapper>
         </Modal>
     );
 };

@@ -2,13 +2,14 @@ import { FunctionComponent, PropsWithChildren, useCallback, useEffect, useState 
 import ReactModal from 'react-modal';
 import { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import {
-    CloseIconButton,
     Footer,
     Header,
     Main,
     StyledModal,
+    StyledOverlayWrapper,
 } from './styled';
 import { ModalProps } from './types';
 
@@ -122,6 +123,8 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                     isMobile={isMobile}
                     noPadding={noPadding}
                     ref={mainRefCallback}
+                    $hasHeader={!!modalHeader}
+                    $hasFooter={!!modalFooter}
                 >
                     {children}
                 </Main>
@@ -138,18 +141,23 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                 </Footer>
             )}
 
-            {hasCloseButton && (
-                <CloseIconButton
-                    data-testid="close-button"
-                    label={t('closeButtonLabel')}
-                    type="button"
-                    buttonType="tertiary"
-                    iconName="x"
-                    onClick={onRequestClose}
-                    isMobile={isMobile}
-                    size="small"
-                />
-            )}
+            <StyledOverlayWrapper
+                noPadding={noPadding}
+                hasCloseButton={hasCloseButton}
+                isMobile={isMobile}
+            >
+                {hasCloseButton && (
+                    <IconButton
+                        data-testid="close-button"
+                        label={t('closeButtonLabel')}
+                        type="button"
+                        buttonType="tertiary"
+                        iconName="x"
+                        onClick={onRequestClose}
+                        size="small"
+                    />
+                )}
+            </StyledOverlayWrapper>
         </StyledModal>
     );
 };

@@ -124,7 +124,7 @@ describe('Modal-Dialog', () => {
     test.each([
         ['information', 'alertFilled', 'primary', false],
         ['action', 'home', 'primary', true],
-        ['alert', 'alertFilled', 'destructive-primary', true],
+        ['alert', 'alertOctagon', 'destructive-primary', true],
     ])(
         'should respect %s dialogType with proper titleIcon and buttons',
         (modalType, expectedIcon, expectedButtonType, hasCancelButton) => {
