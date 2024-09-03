@@ -39,8 +39,8 @@ export const StyledModal = styled(ReactModal)<StyledModalProps>`
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - var(--spacing-2x));
-    min-height: 1vh;
     max-width: 95vw;
+    min-height: 1vh;
     min-width: ${getModalMinWidth};
     position: relative;
     width: ${getModalWidth};
@@ -74,15 +74,15 @@ export const Footer = styled.footer<FooterProps>`
 `;
 
 export const StyledOverlayWrapper = styled.div<ContentProps>`
-    position: absolute;
-    top: 0;
-    padding-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : getHeightPadding)};
-    right: 0;
-    padding-right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : getWidthPadding)};
-    display: flex;
     align-items: flex-start;
+    display: flex;
     height: auto;
+    padding-right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : getWidthPadding)};
+    padding-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : getHeightPadding)};
     pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     & > * {
         pointer-events: auto;

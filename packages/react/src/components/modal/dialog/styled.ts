@@ -17,8 +17,8 @@ export const Subtitle = styled(Heading)`
 export const ButtonContainer = styled.div<MobileDeviceContextProps>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
-    justify-content: flex-end;
     gap: var(--spacing-1x);
+    justify-content: flex-end;
 `;
 
 export const ConfirmButton = styled(Button)`
