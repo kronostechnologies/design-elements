@@ -13,7 +13,6 @@ import {
     useCallback,
     useEffect,
     useImperativeHandle,
-    useMemo,
     useRef,
     useState,
 } from 'react';
@@ -41,22 +40,26 @@ const StyleInput = styled.input<{ isMobile: boolean }>`
 `;
 
 interface AdornmentProps {
-    isMobile: boolean;
-    hasLeftAdornment: boolean;
-    hasRightAdornment: boolean;
+    $isMobile: boolean;
 }
 
 const Adornment = styled.span<AdornmentProps>`
     align-self: center;
-    color: ${({ theme }) => (theme.component['text-input-adornment-text-color'])};
+    color: ${({ theme }) => theme.component['text-input-adornment-color']};
     display: flex;
-    padding-left: ${({ hasLeftAdornment }) => (hasLeftAdornment ? 'var(--spacing-1x)' : undefined)};
-    padding-right: ${({ hasRightAdornment }) => (hasRightAdornment ? 'var(--spacing-1x)' : undefined)};
+    flex-shrink: 0;
 
     > svg {
-        height: ${({ isMobile }) => (isMobile ? '24px' : '16px')};
-        width: ${({ isMobile }) => (isMobile ? '24px' : '16px')};
+        height: ${({ $isMobile }) => ($isMobile ? '24px' : '16px')};
+        width: ${({ $isMobile }) => ($isMobile ? '24px' : '16px')};
     }
+`;
+
+const LeftAdornment = styled(Adornment)`
+    padding-left: var(--spacing-1x);
+`;
+const RightAdornment = styled(Adornment)`
+    padding-right: var(--spacing-1x);
 `;
 
 interface StyledWrapperProps {
@@ -91,8 +94,6 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
 interface TextInputProps extends PartialInputProps {
-    leftAdornment?: ReactNode;
-    rightAdornment?: ReactNode;
     ariaDescribedBy?: string;
     ariaInvalid?: boolean;
     className?: string;
@@ -102,10 +103,12 @@ interface TextInputProps extends PartialInputProps {
     noMargin?: boolean;
     id?: string;
     label?: string;
+    leftAdornment?: ReactNode;
     tooltip?: TooltipProps;
     pattern?: string;
     placeholder?: string;
     required?: boolean;
+    rightAdornment?: ReactNode;
     type?: string;
     valid?: boolean;
     validationErrorMessage?: string;
@@ -125,8 +128,6 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = forwardRef(({
-    leftAdornment,
-    rightAdornment,
     ariaDescribedBy,
     ariaInvalid,
     className,
@@ -136,12 +137,14 @@ export const TextInput = forwardRef(({
     id: providedId,
     inputMode,
     label,
+    leftAdornment,
     tooltip,
     name,
     noMargin,
     pattern,
     placeholder,
     required,
+    rightAdornment,
     type,
     valid,
     validationErrorMessage,
@@ -201,17 +204,6 @@ export const TextInput = forwardRef(({
         inputRef.current?.focus();
     };
 
-    const adornmentContent = useMemo(() => (
-        <Adornment
-            onClick={handleAdornmentClick}
-            hasLeftAdornment={!!leftAdornment}
-            hasRightAdornment={!!rightAdornment}
-            isMobile={isMobile}
-        >
-            {leftAdornment || rightAdornment}
-        </Adornment>
-    ), [leftAdornment, rightAdornment, isMobile]);
-
     useEffect(() => {
         if (valid !== undefined) {
             setValidity({ validity: valid });
@@ -232,7 +224,15 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <StyleWrapper $disabled={disabled} $valid={validity}>
-                {leftAdornment && adornmentContent}
+                {leftAdornment && (
+                    <LeftAdornment
+                        onClick={handleAdornmentClick}
+                        $isMobile={isMobile}
+                    >
+                        {leftAdornment}
+                    </LeftAdornment>
+                )}
+
                 <StyleInput
                     aria-describedby={processedAriaDescribedBy || undefined}
                     aria-invalid={ariaInvalid}
@@ -259,7 +259,15 @@ export const TextInput = forwardRef(({
                     value={value}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                {rightAdornment && adornmentContent}
+                {rightAdornment && (
+                    <RightAdornment
+                        onClick={handleAdornmentClick}
+                        $isMobile={isMobile}
+                    >
+                        {rightAdornment}
+                    </RightAdornment>
+                )}
+
             </StyleWrapper>
         </FieldContainer>
     );
