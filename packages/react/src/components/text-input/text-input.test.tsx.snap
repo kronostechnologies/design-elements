@@ -513,7 +513,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
+.c6 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -538,50 +538,50 @@ input + .c1 {
   min-height: 100%;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #60666E;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c5::placeholder {
+.c6::placeholder {
   color: #60666E;
 }
 
-.c5:disabled {
+.c6:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-webkit-input-placeholder {
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-moz-placeholder {
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled:-ms-input-placeholder {
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::placeholder {
+.c6:disabled,
+.c6:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c5:focus,
-.c5:disabled {
+.c6:focus,
+.c6:disabled {
   border: 0;
   box-shadow: none;
 }
@@ -595,12 +595,18 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: var(--spacing-1x);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c4 > svg {
   height: 16px;
   width: 16px;
+}
+
+.c5 {
+  padding-left: var(--spacing-1x);
 }
 
 .c3 {
@@ -641,7 +647,7 @@ input + .c1 {
     class="c3"
   >
     <span
-      class="c4"
+      class="c4 c5"
     >
       <svg
         color="currentColor"
@@ -651,7 +657,7 @@ input + .c1 {
       />
     </span>
     <input
-      class="c5"
+      class="c6"
       data-testid="text-input"
       id="uuid1"
       pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -698,7 +704,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
+.c6 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -723,50 +729,50 @@ input + .c1 {
   min-height: 100%;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #60666E;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c5::placeholder {
+.c6::placeholder {
   color: #60666E;
 }
 
-.c5:disabled {
+.c6:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-webkit-input-placeholder {
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-moz-placeholder {
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled:-ms-input-placeholder {
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::placeholder {
+.c6:disabled,
+.c6:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c5:focus,
-.c5:disabled {
+.c6:focus,
+.c6:disabled {
   border: 0;
   box-shadow: none;
 }
@@ -780,12 +786,18 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: var(--spacing-1x);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c4 > svg {
   height: 16px;
   width: 16px;
+}
+
+.c5 {
+  padding-left: var(--spacing-1x);
 }
 
 .c3 {
@@ -826,12 +838,12 @@ input + .c1 {
     class="c3"
   >
     <span
-      class="c4"
+      class="c4 c5"
     >
       #
     </span>
     <input
-      class="c5"
+      class="c6"
       data-testid="text-input"
       id="uuid1"
       pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -878,7 +890,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
+.c6 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -903,50 +915,50 @@ input + .c1 {
   min-height: 100%;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #60666E;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c5::placeholder {
+.c6::placeholder {
   color: #60666E;
 }
 
-.c5:disabled {
+.c6:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-webkit-input-placeholder {
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-moz-placeholder {
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled:-ms-input-placeholder {
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::placeholder {
+.c6:disabled,
+.c6:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c5:focus,
-.c5:disabled {
+.c6:focus,
+.c6:disabled {
   border: 0;
   box-shadow: none;
 }
@@ -960,13 +972,22 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: var(--spacing-1x);
-  padding-right: var(--spacing-1x);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c4 > svg {
   height: 16px;
   width: 16px;
+}
+
+.c5 {
+  padding-left: var(--spacing-1x);
+}
+
+.c7 {
+  padding-right: var(--spacing-1x);
 }
 
 .c3 {
@@ -1007,12 +1028,12 @@ input + .c1 {
     class="c3"
   >
     <span
-      class="c4"
+      class="c4 c5"
     >
       #
     </span>
     <input
-      class="c5"
+      class="c6"
       data-testid="text-input"
       id="uuid1"
       pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -1021,9 +1042,9 @@ input + .c1 {
       value="foo"
     />
     <span
-      class="c4"
+      class="c4 c7"
     >
-      #
+      end
     </span>
   </div>
 </div>
