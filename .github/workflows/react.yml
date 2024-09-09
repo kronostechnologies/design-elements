@@ -186,7 +186,7 @@ jobs:
 
       # Tests
       - name: Unit tests
-        uses: equisoft-actions/yarn-jest@v1
+        uses: equisoft-actions/yarn-jest@v2
         with:
           working-directory: ./packages/react
 
