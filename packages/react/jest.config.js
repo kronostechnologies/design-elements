@@ -6,6 +6,7 @@ module.exports = {
 
     reporters: [
         'default',
+        process.env.CI === 'true' && 'github-actions',
         [
             'jest-junit',
             {
@@ -16,7 +17,7 @@ module.exports = {
                 titleTemplate: '{title}',
             },
         ],
-    ],
+    ].filter(Boolean),
 
     collectCoverage: true,
     collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}'],
