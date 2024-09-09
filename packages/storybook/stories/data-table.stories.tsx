@@ -1430,11 +1430,13 @@ export const Optimization: Story = () => {
             </p>
             <p style={{ marginBottom: '2rem' }}>
                 Additionally, if your columns use some dependencies, you can pass them via useRef instead, so you
-                don't have to recreate the columns object everytime the dependencies changes.
+                don&apos;t have to recreate the columns object everytime the dependencies changes.
             </p>
-            <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
-                Toggle Editable
-            </Button>
+            <p>
+                <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                    Toggle Editable
+                </Button>
+            </p>
             <Table
                 columns={columns}
                 data={data}
