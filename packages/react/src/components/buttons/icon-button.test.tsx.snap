@@ -53,7 +53,6 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -164,7 +163,6 @@ exports[`Icon Button Has disabled styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -276,7 +274,6 @@ exports[`Icon Button Has mobile styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -387,7 +384,6 @@ exports[`Icon Button Has primary styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -498,7 +494,6 @@ exports[`Icon Button Has secondary styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -609,7 +604,6 @@ exports[`Icon Button Has small styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -721,7 +715,6 @@ exports[`Icon Button Has tertiary styles 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

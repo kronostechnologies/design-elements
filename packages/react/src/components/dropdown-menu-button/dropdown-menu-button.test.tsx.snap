@@ -53,7 +53,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -717,7 +716,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

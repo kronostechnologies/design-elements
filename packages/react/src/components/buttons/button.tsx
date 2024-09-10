@@ -12,7 +12,9 @@ import {
     Icon,
     IconName,
 } from '../icon/icon';
+import { Spinner} from '../spinner/spinner';
 import { ResolvedTheme } from '../../themes/theme';
+import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
@@ -36,6 +38,11 @@ export interface ButtonProps {
     focusable?: boolean;
     inverted?: boolean;
     label?: string;
+    loading?: boolean;
+    /**
+     * @default 'Loading...'
+     */    
+    loadingLabel?: string;
     /**
      * Size variant
      * @default medium
@@ -52,6 +59,10 @@ export interface ButtonProps {
     onBlur?: FocusEventHandler<HTMLButtonElement>;
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
+
+const StyledSpinner = styled(Spinner)`
+    margin-right: var(--spacing-1x);
+`
 
 const LeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
@@ -73,6 +84,8 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     disabled,
     focusable = true,
     label,
+    loading,
+    loadingLabel,
     onClick,
     onFocus,
     onBlur,
@@ -84,6 +97,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     ...props
 }: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
+    const { t } = useTranslation('button');
     const iconSize = props?.size === 'small' && !isMobile ? '16' : '24';
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -122,15 +136,24 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}
-            {leftIconName && (
-                <LeftIcon
-                    aria-hidden="true"
-                    data-testid="left-icon"
-                    name={leftIconName}
-                    size={iconSize}
-                />
+            {loading ? (
+                <>
+                    <StyledSpinner />
+                    {loadingLabel || t('loadingLabel')}
+                </>
+            ) : (
+                <>
+                {leftIconName && (
+                    <LeftIcon
+                        aria-hidden="true"
+                        data-testid="left-icon"
+                        name={leftIconName}
+                        size={iconSize}
+                    />
+                )}
+                {label}
+                </>
             )}
-            {label}
             {rightIconName && (
                 <RightIcon
                     aria-hidden="true"

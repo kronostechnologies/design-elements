@@ -255,7 +255,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -460,7 +459,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -665,7 +663,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
