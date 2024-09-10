@@ -12,7 +12,7 @@ import {
     Icon,
     IconName,
 } from '../icon/icon';
-import { Spinner} from '../spinner/spinner';
+import { Spinner } from '../spinner/spinner';
 import { ResolvedTheme } from '../../themes/theme';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -40,8 +40,8 @@ export interface ButtonProps {
     label?: string;
     loading?: boolean;
     /**
-     * @default 'Loading...'
-     */    
+     * @default Loading...
+     */
     loadingLabel?: string;
     /**
      * Size variant
@@ -62,7 +62,7 @@ export interface ButtonProps {
 
 const StyledSpinner = styled(Spinner)`
     margin-right: var(--spacing-1x);
-`
+`;
 
 const LeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
@@ -143,15 +143,15 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                 </>
             ) : (
                 <>
-                {leftIconName && (
-                    <LeftIcon
-                        aria-hidden="true"
-                        data-testid="left-icon"
-                        name={leftIconName}
-                        size={iconSize}
-                    />
-                )}
-                {label}
+                    {leftIconName && (
+                        <LeftIcon
+                            aria-hidden="true"
+                            data-testid="left-icon"
+                            name={leftIconName}
+                            size={iconSize}
+                        />
+                    )}
+                    {label}
                 </>
             )}
             {rightIconName && (
