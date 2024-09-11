@@ -152,15 +152,15 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                         />
                     )}
                     {label}
+                    {rightIconName && (
+                        <RightIcon
+                            aria-hidden="true"
+                            data-testid="right-icon"
+                            name={rightIconName}
+                            size={iconSize}
+                        />
+                    )}
                 </>
-            )}
-            {rightIconName && (
-                <RightIcon
-                    aria-hidden="true"
-                    data-testid="right-icon"
-                    name={rightIconName}
-                    size={iconSize}
-                />
             )}
         </StyledButton>
     );
