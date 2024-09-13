@@ -53,7 +53,6 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
 }
 
 .c2 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -243,7 +242,6 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
 }
 
 .c2 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -433,7 +431,6 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
 }
 
 .c2 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -648,7 +645,6 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
 }
 
 .c2 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

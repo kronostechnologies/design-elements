@@ -7,6 +7,9 @@ export const Translations = {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
         },
+        button: {
+            loadingLabel: 'Loading...',
+        },
         combobox: {
             clearInput: 'Clear input',
             loading: 'Loading...',
@@ -140,6 +143,9 @@ export const Translations = {
         bento: {
             productsLabel: 'Produits',
             externalsLabel: 'Ressources',
+        },
+        button: {
+            loadingLabel: 'Chargement...',
         },
         combobox: {
             clearInput: 'Vider le champ',
