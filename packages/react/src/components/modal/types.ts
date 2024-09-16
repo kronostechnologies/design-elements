@@ -1,26 +1,33 @@
 import { CSSProperties, ReactNode } from 'react';
 import { DeviceContextProps } from '../device-context-provider/device-context-provider';
 
-export interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
+export interface StyledModalProps extends Pick<DeviceContextProps, 'isMobile' | 'breakpoints'> {
     $width: CSSProperties['width'];
 }
 
-export interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
+export type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
+
+export interface CommonStyledProps extends MobileDeviceContextProps {
     $noPadding: boolean;
+}
+
+export interface MainProps extends CommonStyledProps {
     $hasHeader?: boolean;
     $hasFooter?: boolean;
 }
 
-export interface HeaderProps extends ContentProps {
+export interface HeaderProps extends CommonStyledProps {
     $hasCloseButton: boolean;
     $isTopScrolled?: boolean;
 }
 
-export interface FooterProps extends ContentProps {
+export interface FooterProps extends CommonStyledProps {
     $isBottomScrolled?: boolean;
 }
 
-export type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
+export interface CloseButtonProps extends CommonStyledProps {
+    $hasHeader: boolean;
+}
 
 export interface BaseModalProps {
     /** Takes a query selector targeting the app Element. */
@@ -48,7 +55,6 @@ export interface BaseModalProps {
      */
     shouldCloseOnOverlayClick?: boolean;
     parentSelector?: () => HTMLElement;
-
     onRequestClose(): void;
 }
 
@@ -60,19 +66,15 @@ export interface ModalProps extends BaseModalProps {
      * @default false
      */
     noPadding?: boolean;
-
     modalHeader?: ReactNode;
     modalFooter?: ReactNode;
-
     /**
      * Sets modal role tag
      * @default dialog
      */
     role?: string;
-
     /** Function that will run after the modal has opened */
     onAfterOpen?(): void;
-
     /** Function that will run after the modal has closed */
     onAfterClose?(): void;
 }

@@ -11,9 +11,7 @@ export interface ModalDialogProps extends BaseModalProps {
     title: string;
     titleIcon?: IconName;
     subtitle?: string;
-
     footerContent?: ReactElement;
-
     dialogType?: DialogType;
     confirmButton?: { label?: string, onConfirm?(): void };
     cancelButton?: { label?: string, onCancel?(): void };

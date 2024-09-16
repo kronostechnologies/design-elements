@@ -1,20 +1,18 @@
-import { Fragment, ReactElement, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
+import { Fragment, ReactElement, Ref, useRef, VoidFunctionComponent } from 'react';
+import { useId } from '../../../hooks/use-id';
 import { useTranslation } from '../../../i18n/use-translation';
-import { v4 as uuid } from '../../../utils/uuid';
+import { Button } from '../../buttons/button';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { Heading } from '../../heading/heading';
 import { Modal } from '../modal';
 import {
     ButtonContainer,
-    CancelButton,
-    ConfirmButton,
     StyledHeadingWrapperComponent,
-    Subtitle,
     TitleIcon,
 } from './styled';
 import { DialogType, ModalDialogProps } from './types';
 
-const ModalRoles: Record<DialogType, string> = {
+const modalRoles: Record<DialogType, string> = {
     information: 'dialog',
     action: 'dialog',
     alert: 'alertdialog',
@@ -42,7 +40,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
-    const titleId = useMemo(uuid, []);
+    const titleId = useId();
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
     const titleIconName = dialogType === 'alert' ? 'alertOctagon' : titleIcon;
     const hasTitleIcon = !!titleIconName;
@@ -93,14 +91,14 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         return (
             <ButtonContainer isMobile={isMobile}>
                 {dialogType !== 'information' && (
-                    <CancelButton
+                    <Button
                         data-testid="cancel-button"
                         label={cancelButton?.label || t('cancelButtonLabel')}
                         buttonType="tertiary"
                         onClick={handleCancel}
                     />
                 )}
-                <ConfirmButton
+                <Button
                     data-testid="confirm-button"
                     label={confirmButton?.label || t('confirmButtonLabel')}
                     buttonType={confirmButtonType}
@@ -108,6 +106,19 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                 />
             </ButtonContainer>
         );
+    }
+
+    function getSubtitle(): ReactElement | null {
+        return subtitle ? (
+            <Heading
+                tag="h3"
+                type="small"
+                noMargin
+                bold
+            >
+                {subtitle}
+            </Heading>
+        ) : null;
     }
 
     return (
@@ -120,7 +131,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
             parentSelector={parentSelector}
-            role={ModalRoles[dialogType]}
+            role={modalRoles[dialogType]}
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
             isOpen={isOpen}
@@ -128,16 +139,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             width={width}
         >
-            {subtitle && (
-                <Subtitle
-                    tag="h3"
-                    type="small"
-                    noMargin
-                    bold
-                >
-                    {subtitle}
-                </Subtitle>
-            )}
+            {getSubtitle()}
             {children}
         </Modal>
     );

@@ -2,17 +2,9 @@ import { CSSProperties } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
-import { ContentProps, FooterProps, HeaderProps, StyledModalProps } from './types';
+import { CloseButtonProps, CommonStyledProps, FooterProps, HeaderProps, MainProps, StyledModalProps } from './types';
 
-function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
-    return isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`;
-}
-
-function getModalWidth({ $width, isMobile }: StyledModalProps): CSSProperties['width'] {
-    return isMobile ? 'calc(100vw - var(--spacing-2x))' : $width;
-}
-
-function getWidthPadding({ $noPadding, isMobile }: ContentProps): string {
+function getWidthPadding({ $noPadding, isMobile }: CommonStyledProps): string {
     if ($noPadding) {
         return '0';
     }
@@ -22,7 +14,7 @@ function getWidthPadding({ $noPadding, isMobile }: ContentProps): string {
     return 'var(--spacing-4x)';
 }
 
-function getHeightPadding({ $noPadding, isMobile }: ContentProps): string {
+function getHeightPadding({ $noPadding, isMobile }: CommonStyledProps): string {
     if ($noPadding) {
         return '0';
     }
@@ -30,6 +22,14 @@ function getHeightPadding({ $noPadding, isMobile }: ContentProps): string {
         return 'var(--spacing-2x)';
     }
     return 'var(--spacing-3x)';
+}
+
+function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
+    return isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`;
+}
+
+function getModalWidth({ $width, isMobile }: StyledModalProps): CSSProperties['width'] {
+    return isMobile ? 'calc(100vw - var(--spacing-2x))' : $width;
 }
 
 export const StyledModal = styled(ReactModal)<StyledModalProps>`
@@ -56,7 +56,7 @@ export const StyledModal = styled(ReactModal)<StyledModalProps>`
     }
 `;
 
-export const Main = styled.main<ContentProps>`
+export const Main = styled.main<MainProps>`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2x);
@@ -83,7 +83,7 @@ export const Footer = styled.footer<FooterProps>`
     padding: var(--spacing-4x) ${getWidthPadding};
 `;
 
-export const StyledCloseButton = styled(IconButton)<ContentProps>`
+export const StyledCloseButton = styled(IconButton)<CloseButtonProps>`
     ${({ $hasHeader }) => !$hasHeader && `
         pointer-events: none;
         position: absolute;
