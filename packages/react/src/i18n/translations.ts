@@ -101,6 +101,9 @@ export const Translations = {
         'skip-link': {
             label: 'Skip to main content',
         },
+        slider: {
+            rangeAriaLabel: '{{label}} range',
+        },
         'stepper-input': {
             validationErrorMessage: 'Invalid number',
         },
@@ -237,6 +240,9 @@ export const Translations = {
         },
         'skip-link': {
             label: 'Passer au contenu principal',
+        },
+        slider: {
+            rangeAriaLabel: 'Plage de {{label}}',
         },
         'stepper-input': {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
