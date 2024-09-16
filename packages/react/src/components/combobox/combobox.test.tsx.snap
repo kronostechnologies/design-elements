@@ -42,7 +42,6 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 }
 
 .c6 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -522,7 +521,6 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 }
 
 .c8 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1042,7 +1040,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c4 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -1492,7 +1489,6 @@ exports[`Combobox matches the snapshot 1`] = `
 }
 
 .c7 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

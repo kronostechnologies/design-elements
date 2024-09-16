@@ -65,7 +65,6 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -154,7 +153,6 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }

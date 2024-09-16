@@ -7,6 +7,9 @@ export const Translations = {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
         },
+        button: {
+            loadingLabel: 'Loading...',
+        },
         combobox: {
             clearInput: 'Clear input',
             loading: 'Loading...',
@@ -93,12 +96,6 @@ export const Translations = {
             label: 'Search',
         },
         'sectional-banner': {
-            Alert: 'Alert',
-            Warning: 'Warning',
-            Success: 'Success',
-            Info: 'Information',
-            Discovery: 'Pro-tip',
-            Neutral: 'Information',
             dismissLabel: 'Dismiss banner',
         },
         'skip-link': {
@@ -146,6 +143,9 @@ export const Translations = {
         bento: {
             productsLabel: 'Produits',
             externalsLabel: 'Ressources',
+        },
+        button: {
+            loadingLabel: 'Chargement...',
         },
         combobox: {
             clearInput: 'Vider le champ',
@@ -233,12 +233,6 @@ export const Translations = {
             label: 'Rechercher',
         },
         'sectional-banner': {
-            Alert: 'Alerte',
-            Warning: 'Attention',
-            Success: 'Succès',
-            Info: 'Information',
-            Discovery: 'Truc de pro',
-            Neutral: 'Information',
             dismissLabel: 'Rejeter la bannière',
         },
         'skip-link': {

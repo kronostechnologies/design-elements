@@ -53,7 +53,6 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -421,7 +420,6 @@ exports[`Toggletip Has default desktop styles 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -602,7 +600,6 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -970,7 +967,6 @@ exports[`Toggletip Has mobile styles 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
