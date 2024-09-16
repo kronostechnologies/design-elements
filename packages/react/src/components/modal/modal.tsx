@@ -95,7 +95,6 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                 onClick={onRequestClose}
                 size="small"
                 isMobile={isMobile}
-                $hasHeader={!!modalHeader}
                 $noPadding={noPadding}
             />
         );
@@ -123,7 +122,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             isMobile={isMobile}
             $width={width}
         >
-            {!modalHeader && renderCloseButton()}
+            {renderCloseButton()}
             {modalHeader && (
                 <Header
                     isMobile={isMobile}
@@ -132,7 +131,6 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                     $noPadding={noPadding}
                 >
                     {modalHeader}
-                    {renderCloseButton()}
                 </Header>
             )}
             {children && (
@@ -142,6 +140,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                     $hasHeader={!!modalHeader}
                     $hasFooter={!!modalFooter}
                     $noPadding={noPadding}
+                    $hasCloseButton={hasCloseButton}
                 >
                     {children}
 

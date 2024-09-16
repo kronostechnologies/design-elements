@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
-import { CloseButtonProps, CommonStyledProps, FooterProps, HeaderProps, MainProps, StyledModalProps } from './types';
+import { CommonStyledProps, FooterProps, HeaderProps, MainProps, StyledModalProps } from './types';
 
 function getWidthPadding({ $noPadding, isMobile }: CommonStyledProps): string {
     if ($noPadding) {
@@ -65,16 +65,18 @@ export const Main = styled.main<MainProps>`
     padding: ${getHeightPadding} ${getWidthPadding};
     ${({ $hasHeader }) => $hasHeader && 'padding-top: 0'};
     ${({ $hasFooter }) => $hasFooter && 'padding-bottom: 0'};
-`;
+    ${({ $hasHeader, $hasCloseButton, ...props }) => !$hasHeader && $hasCloseButton
+        && `padding-right: calc(${getWidthPadding(props)} + var(--spacing-3x))`};`;
 
 export const Header = styled.header<HeaderProps>`
     border-bottom: 1px solid ${({ $isTopScrolled, theme }) => ($isTopScrolled ? theme.component['modal-border-color'] : 'transparent')};
     padding: ${getHeightPadding} ${getWidthPadding};
 
-    ${({ $hasCloseButton }) => $hasCloseButton && `
+    ${({ $hasCloseButton, ...props }) => $hasCloseButton && `
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        padding-right: calc(${getWidthPadding(props)} + var(--spacing-3x));
     `};
 `;
 
@@ -83,15 +85,13 @@ export const Footer = styled.footer<FooterProps>`
     padding: var(--spacing-4x) ${getWidthPadding};
 `;
 
-export const StyledCloseButton = styled(IconButton)<CloseButtonProps>`
-    ${({ $hasHeader }) => !$hasHeader && `
-        pointer-events: none;
-        position: absolute;
+export const StyledCloseButton = styled(IconButton)<CommonStyledProps>`
+    pointer-events: none;
+    position: absolute;
 
-        & > * {
-            pointer-events: auto;
-        }
-    `};
-    right: ${({ $hasHeader }) => !$hasHeader && getWidthPadding};
-    top: ${({ $hasHeader }) => !$hasHeader && getHeightPadding};
+    & > * {
+        pointer-events: auto;
+    }
+    right: ${getWidthPadding};
+    top: ${getHeightPadding};
 `;

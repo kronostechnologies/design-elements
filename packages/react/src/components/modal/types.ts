@@ -12,6 +12,7 @@ export interface CommonStyledProps extends MobileDeviceContextProps {
 }
 
 export interface MainProps extends CommonStyledProps {
+    $hasCloseButton: boolean;
     $hasHeader?: boolean;
     $hasFooter?: boolean;
 }
@@ -23,10 +24,6 @@ export interface HeaderProps extends CommonStyledProps {
 
 export interface FooterProps extends CommonStyledProps {
     $isBottomScrolled?: boolean;
-}
-
-export interface CloseButtonProps extends CommonStyledProps {
-    $hasHeader: boolean;
 }
 
 export interface BaseModalProps {

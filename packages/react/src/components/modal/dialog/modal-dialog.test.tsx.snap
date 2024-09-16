@@ -25,7 +25,7 @@ exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -65,24 +65,24 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -122,24 +122,24 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c10:focus {
+.c11:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c10 > svg {
+.c11 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -148,32 +148,32 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -186,41 +186,10 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   right: var(--spacing-2x);
 }
 
-.c11 {
+.c12 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c11 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c11:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c11[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c12 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c12 {
@@ -236,19 +205,50 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c12[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-semi-bold);
@@ -256,7 +256,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c8 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -290,7 +290,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   display: block;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -306,9 +306,13 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   padding-bottom: 0;
 }
 
-.c2 {
+.c5 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -317,18 +321,26 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
 }
 
-.c8 {
+.c9 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c9 {
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
+}
+
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -377,35 +389,35 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5 "
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
         <main
-          class="c6"
+          class="c7"
         >
           <h3
-            class="c7"
+            class="c8"
           >
             Subtitle
           </h3>
@@ -416,20 +428,20 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
           </p>
         </main>
         <footer
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <button
-              class="c10 c11"
+              class="c11 c12"
               data-testid="cancel-button"
               type="button"
             >
               Test Cancel
             </button>
             <button
-              class="c10 c12"
+              class="c11 c13"
               data-testid="confirm-button"
               type="button"
             >
@@ -444,7 +456,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -484,24 +496,24 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -510,32 +522,32 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -548,7 +560,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   right: var(--spacing-2x);
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-semi-bold);
@@ -582,7 +594,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   display: block;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -598,9 +610,13 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   padding-bottom: 0;
 }
 
-.c2 {
+.c5 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -609,15 +625,23 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
 }
 
-.c7 {
+.c8 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
+}
+
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
+}
+
+.c4 > * {
+  pointer-events: auto;
 }
 
 <body
@@ -654,32 +678,32 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5 "
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
         <main
-          class="c6"
+          class="c7"
         >
           <p
             id="modal-description"
@@ -688,7 +712,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
           </p>
         </main>
         <footer
-          class="c7"
+          class="c8"
         >
           <p>
             Custom content
@@ -701,7 +725,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -741,24 +765,24 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -798,24 +822,24 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c10:focus {
+.c11:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c10 > svg {
+.c11 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -824,32 +848,32 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -862,41 +886,10 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   right: var(--spacing-2x);
 }
 
-.c11 {
+.c12 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c11 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c11:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c11[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c12 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c12 {
@@ -912,19 +905,50 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c12[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-semi-bold);
@@ -932,7 +956,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c8 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -966,7 +990,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   display: block;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -982,9 +1006,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   padding-bottom: 0;
 }
 
-.c2 {
+.c5 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -993,18 +1021,26 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
 }
 
-.c8 {
+.c9 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c9 {
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
+}
+
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1053,35 +1089,35 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5 "
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
         <main
-          class="c6"
+          class="c7"
         >
           <h3
-            class="c7"
+            class="c8"
           >
             Subtitle
           </h3>
@@ -1092,20 +1128,20 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
           </p>
         </main>
         <footer
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <button
-              class="c10 c11"
+              class="c11 c12"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c10 c12"
+              class="c11 c13"
               data-testid="confirm-button"
               type="button"
             >
@@ -1120,7 +1156,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1160,24 +1196,24 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1217,24 +1253,24 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c11 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c10:focus {
+.c11:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c10 > svg {
+.c11 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -1243,32 +1279,32 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1281,41 +1317,10 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   right: var(--spacing-2x);
 }
 
-.c11 {
+.c12 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c11 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c11:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c11[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c12 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c12 {
@@ -1331,19 +1336,50 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c12:hover,
 .c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c12[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-semi-bold);
@@ -1351,7 +1387,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c8 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -1385,7 +1421,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   display: block;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1401,9 +1437,13 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   padding-bottom: 0;
 }
 
-.c2 {
+.c5 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1412,18 +1452,26 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
 }
 
-.c8 {
+.c9 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c9 {
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
+}
+
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1472,35 +1520,35 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5 "
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
         <main
-          class="c6"
+          class="c7"
         >
           <h3
-            class="c7"
+            class="c8"
           >
             Subtitle
           </h3>
@@ -1511,20 +1559,20 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
           </p>
         </main>
         <footer
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <button
-              class="c10 c11"
+              class="c11 c12"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c10 c12"
+              class="c11 c13"
               data-testid="confirm-button"
               type="button"
             >
@@ -1539,7 +1587,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
-.c4 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1579,24 +1627,24 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c4 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c4 > svg {
+.c2 > svg {
   color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c5 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -1604,32 +1652,32 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c5 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c5:hover,
-.c5[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c5[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c5 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -1642,41 +1690,10 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   right: 0;
 }
 
-.c10 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c10[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c11 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c11 {
@@ -1692,19 +1709,50 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c11:hover,
 .c11[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c11[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c12 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c12:hover,
+.c12[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c11[aria-disabled='true'] {
+.c12[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-semi-bold);
@@ -1712,7 +1760,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c8 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -1746,7 +1794,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   display: block;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1762,9 +1810,13 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   padding-bottom: 0;
 }
 
-.c2 {
+.c5 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-2x) var(--spacing-2x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1773,18 +1825,26 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-right: calc(var(--spacing-2x) + var(--spacing-3x));
 }
 
-.c8 {
+.c9 {
   border-top: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-2x);
 }
 
-.c9 {
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-2x);
+  top: var(--spacing-2x);
+}
+
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1833,35 +1893,35 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5 "
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              color="currentColor"
-              focusable="false"
-              height="24"
-              width="24"
-            />
-          </button>
         </header>
         <main
-          class="c6"
+          class="c7"
         >
           <h3
-            class="c7"
+            class="c8"
           >
             Subtitle
           </h3>
@@ -1872,20 +1932,20 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
           </p>
         </main>
         <footer
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <button
-              class="c4 c10"
+              class="c2 c11"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c4 c11"
+              class="c2 c12"
               data-testid="confirm-button"
               type="button"
             >
