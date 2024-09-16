@@ -7026,7 +7026,7 @@ __metadata:
     react-is: "npm:18.3.1"
     react-router: "npm:6.26.1"
     react-router-dom: "npm:6.26.1"
-    serve-static: "npm:1.15.0"
+    serve-static: "npm:1.16.0"
     styled-components: "npm:5.3.11"
     stylelint: "npm:16.8.2"
     ts-loader: "npm:9.5.1"
@@ -13301,18 +13301,6 @@ __metadata:
     mime-types: "npm:~2.1.17"
     parseurl: "npm:~1.3.2"
   checksum: 10c0/a666471a24196f74371edf2c3c7bcdd82adbac52f600804508754b5296c3567588bf694258b19e0cb23a567acfa20d9721bfdaed3286007b81f9741ada8a3a9c
-  languageName: node
-  linkType: hard
-
-"serve-static@npm:1.15.0":
-  version: 1.15.0
-  resolution: "serve-static@npm:1.15.0"
-  dependencies:
-    encodeurl: "npm:~1.0.2"
-    escape-html: "npm:~1.0.3"
-    parseurl: "npm:~1.3.3"
-    send: "npm:0.18.0"
-  checksum: 10c0/fa9f0e21a540a28f301258dfe1e57bb4f81cd460d28f0e973860477dd4acef946a1f41748b5bd41c73b621bea2029569c935faa38578fd34cd42a9b4947088ba
   languageName: node
   linkType: hard
 
