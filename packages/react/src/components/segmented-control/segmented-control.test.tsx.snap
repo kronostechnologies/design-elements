@@ -2,18 +2,15 @@
 
 exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 .c0 {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c0 button:first-child {
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-.c0 button:last-child {
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c1 {
@@ -21,23 +18,46 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-right: 0;
-  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
   color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
-  -webkit-letter-spacing: 0.02875rem;
-  -moz-letter-spacing: 0.02875rem;
-  -ms-letter-spacing: 0.02875rem;
-  letter-spacing: 0.02875rem;
+  font-weight: var(--font-normal);
+  gap: var(--spacing-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25rem;
   min-height: var(--size-2x);
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
+  position: relative;
 }
 
-.c1:last-child {
-  border-right: 1px solid #60666E;
-  margin: 0;
+.c1:hover {
+  background-color: transparent;
+  color: #000000;
+}
+
+.c1:hover::before {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius-1halfx);
+  content: " ";
+  display: block;
+  min-height: 1.5rem;
+  left: 6px;
+  position: absolute;
+  top: .1875rem;
+  width: calc(100% - var(--spacing-1halfx));
 }
 
 .c1:focus {
@@ -55,21 +75,24 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:disabled,
-.c1:disabled:hover {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
+.c1[aria-disabled="true"],
+.c1[aria-disabled="true"]:hover {
   color: #B7BBC2;
+  pointer-events: none;
 }
 
-.c1:hover {
-  background-color: #DBDEE1;
-  border-color: #000000;
-  color: #000000;
-}
-
-.c1:hover + button {
-  border-left-color: #000000;
+.c1 span::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  font-weight: var(--font-semi-bold);
 }
 
 .c2 {
@@ -79,25 +102,44 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   align-items: center;
   background-color: #E0F0F9;
   border: 1px solid #006296;
-  border-right: 1px solid #006296;
-  box-sizing: border-box;
+  border-radius: var(--border-radius);
   color: #003A5A;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
-  -webkit-letter-spacing: 0.02875rem;
-  -moz-letter-spacing: 0.02875rem;
-  -ms-letter-spacing: 0.02875rem;
-  letter-spacing: 0.02875rem;
+  font-weight: var(--font-semi-bold);
+  gap: var(--spacing-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25rem;
   min-height: var(--size-2x);
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
+  position: relative;
 }
 
-.c2 + button {
-  border-left: 0;
+.c2:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
 }
 
-.c2:last-child {
-  border-right: 1px solid #006296;
-  margin: 0;
+.c2:hover::before {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius-1halfx);
+  content: none;
+  display: block;
+  min-height: 1.5rem;
+  left: 6px;
+  position: absolute;
+  top: .1875rem;
+  width: calc(100% - var(--spacing-1halfx));
 }
 
 .c2:focus {
@@ -115,21 +157,24 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:disabled,
-.c2:disabled:hover {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
+.c2[aria-disabled="true"],
+.c2[aria-disabled="true"]:hover {
   color: #B7BBC2;
+  pointer-events: none;
 }
 
-.c2:hover {
-  background-color: #DBDEE1;
-  border-color: #000000;
-  color: #000000;
-}
-
-.c2:hover + button {
-  border-left-color: #000000;
+.c2 span::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  font-weight: var(--font-semi-bold);
 }
 
 <div
@@ -138,62 +183,72 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   role="group"
 >
   <button
-    aria-label="Option 1"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-0"
     type="button"
     value="option1"
   >
-    Option 1
+    <span
+      data-text="Option 1"
+    >
+      Option 1
+    </span>
   </button>
   <button
-    aria-label="Option 2"
     aria-pressed="true"
     class="c2"
     data-testid="test-toggle-button-1"
     type="button"
     value="option2"
   >
-    Option 2
+    <span
+      data-text="Option 2"
+    >
+      Option 2
+    </span>
   </button>
   <button
-    aria-label="Option 3"
+    aria-disabled="true"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-2"
     type="button"
     value="option3"
   >
-    Option 3
+    <span
+      data-text="Option 3"
+    >
+      Option 3
+    </span>
   </button>
   <button
-    aria-label="Option 4"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-3"
     type="button"
     value="option4"
   >
-    Option 4
+    <span
+      data-text="Option 4"
+    >
+      Option 4
+    </span>
   </button>
 </div>
 `;
 
 exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 .c0 {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c0 button:first-child {
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-.c0 button:last-child {
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c1 {
@@ -201,23 +256,46 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-right: 0;
-  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
   color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1rem;
-  -webkit-letter-spacing: 0.02875rem;
-  -moz-letter-spacing: 0.02875rem;
-  -ms-letter-spacing: 0.02875rem;
-  letter-spacing: 0.02875rem;
+  font-weight: var(--font-normal);
+  gap: var(--spacing-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25rem;
   min-height: var(--size-3x);
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
+  position: relative;
 }
 
-.c1:last-child {
-  border-right: 1px solid #60666E;
-  margin: 0;
+.c1:hover {
+  background-color: transparent;
+  color: #000000;
+}
+
+.c1:hover::before {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius-1halfx);
+  content: " ";
+  display: block;
+  min-height: 1.5rem;
+  left: 6px;
+  position: absolute;
+  top: .1875rem;
+  width: calc(100% - var(--spacing-1halfx));
 }
 
 .c1:focus {
@@ -235,21 +313,24 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:disabled,
-.c1:disabled:hover {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
+.c1[aria-disabled="true"],
+.c1[aria-disabled="true"]:hover {
   color: #B7BBC2;
+  pointer-events: none;
 }
 
-.c1:hover {
-  background-color: #DBDEE1;
-  border-color: #000000;
-  color: #000000;
-}
-
-.c1:hover + button {
-  border-left-color: #000000;
+.c1 span::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  font-weight: var(--font-semi-bold);
 }
 
 .c2 {
@@ -259,25 +340,44 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #E0F0F9;
   border: 1px solid #006296;
-  border-right: 1px solid #006296;
-  box-sizing: border-box;
+  border-radius: var(--border-radius);
   color: #003A5A;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1rem;
-  -webkit-letter-spacing: 0.02875rem;
-  -moz-letter-spacing: 0.02875rem;
-  -ms-letter-spacing: 0.02875rem;
-  letter-spacing: 0.02875rem;
+  font-weight: var(--font-semi-bold);
+  gap: var(--spacing-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25rem;
   min-height: var(--size-3x);
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
+  position: relative;
 }
 
-.c2 + button {
-  border-left: 0;
+.c2:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
 }
 
-.c2:last-child {
-  border-right: 1px solid #006296;
-  margin: 0;
+.c2:hover::before {
+  background-color: rgb(0 0 0 / 0.05);
+  border-radius: var(--border-radius-1halfx);
+  content: none;
+  display: block;
+  min-height: 1.5rem;
+  left: 6px;
+  position: absolute;
+  top: .1875rem;
+  width: calc(100% - var(--spacing-1halfx));
 }
 
 .c2:focus {
@@ -295,21 +395,24 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:disabled,
-.c2:disabled:hover {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
+.c2[aria-disabled="true"],
+.c2[aria-disabled="true"]:hover {
   color: #B7BBC2;
+  pointer-events: none;
 }
 
-.c2:hover {
-  background-color: #DBDEE1;
-  border-color: #000000;
-  color: #000000;
-}
-
-.c2:hover + button {
-  border-left-color: #000000;
+.c2 span::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  font-weight: var(--font-semi-bold);
 }
 
 <div
@@ -318,44 +421,57 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   role="group"
 >
   <button
-    aria-label="Option 1"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-0"
     type="button"
     value="option1"
   >
-    Option 1
+    <span
+      data-text="Option 1"
+    >
+      Option 1
+    </span>
   </button>
   <button
-    aria-label="Option 2"
     aria-pressed="true"
     class="c2"
     data-testid="test-toggle-button-1"
     type="button"
     value="option2"
   >
-    Option 2
+    <span
+      data-text="Option 2"
+    >
+      Option 2
+    </span>
   </button>
   <button
-    aria-label="Option 3"
+    aria-disabled="true"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-2"
     type="button"
     value="option3"
   >
-    Option 3
+    <span
+      data-text="Option 3"
+    >
+      Option 3
+    </span>
   </button>
   <button
-    aria-label="Option 4"
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-3"
     type="button"
     value="option4"
   >
-    Option 4
+    <span
+      data-text="Option 4"
+    >
+      Option 4
+    </span>
   </button>
 </div>
 `;

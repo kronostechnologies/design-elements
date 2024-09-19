@@ -7,8 +7,13 @@ const SegmentedControlMeta: Meta<typeof SegmentedControl> = {
     title: 'Components/Segmented Control',
     component: SegmentedControl,
     argTypes: {
+        requireSelection: {
+            control: 'boolean',
+            description: 'When true, a button must always be selected',
+            defaultValue: false,
+        },
         onClick: {
-            control: { disable: true },
+            control: { ariaDisabled: true },
         },
     },
 };
@@ -26,6 +31,19 @@ export const Default: Story = {
             { label: 'Option 4', value: 'option4' },
         ],
         groupName: 'Story1',
+    },
+};
+
+export const WithIcon: Story = {
+    args: {
+        buttonGroup: [
+            { value: 'option1', icon: 'alertCircle', ariaLabel: 'Alert'},
+            { label: 'Option', value: 'option2', icon: 'alertCircle' },
+            { label: 'Option', value: 'option3', icon: 'alertCircle', ariaDisabled: true,},
+            { label: 'Option', value: 'option4', defaultPressed: true },
+        ],
+        groupName: 'Story1',
+        requireSelection: true,
     },
 };
 

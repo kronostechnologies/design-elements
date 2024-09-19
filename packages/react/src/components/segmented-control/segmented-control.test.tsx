@@ -6,7 +6,7 @@ import { SegmentedControl } from './segmented-control';
 const buttonGroup = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2', defaultPressed: true },
-    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3', ariaDisabled: true },
     { label: 'Option 4', value: 'option4' },
 ];
 
@@ -23,6 +23,20 @@ describe('SegmentedControl', () => {
         const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test2" />);
 
         expect(getByTestId(wrapper, 'test-toggle-button-1').prop('pressed')).toBe(true);
+    });
+
+    test('should have aria-pressed="true" for the default pressed button', () => {
+        const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test2" />);
+        const button = getByTestId(wrapper, 'test-toggle-button-1');
+    
+        expect(button.prop('aria-pressed')).toBe(true);
+    });
+
+    test('should have aria-disabled="true" for disabled button', () => {
+        const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test" />);
+        const button = getByTestId(wrapper, 'test-toggle-button-2');
+    
+        expect(button.prop('aria-disabled')).toBe(true);
     });
 
     test('Matches snapshot (desktop)', () => {
