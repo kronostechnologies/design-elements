@@ -46,7 +46,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
             left: 6px;
             min-height: 1.5rem;
             position: absolute;
-            top: .1875rem;
+            top: 0.1875rem;
             width: calc(100% - var(--spacing-1halfx));
         }
     }
@@ -57,8 +57,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
     ${focus};
 
-    &[aria-disabled="true"],
-    &[aria-disabled="true"]:hover {
+    &[aria-disabled='true'],
+    &[aria-disabled='true']:hover {
         color: ${({ theme }) => theme.component['segmented-control-disabled-text-color']};
         pointer-events: none;
     }
@@ -108,7 +108,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
     const [selectedButton, setSelectedButton] = useState<string>(
-        defaultPressedButton ? defaultPressedButton.value : ''
+        defaultPressedButton ? defaultPressedButton.value : '',
     );
 
     useEffect(() => {
