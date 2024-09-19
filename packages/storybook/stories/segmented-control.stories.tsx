@@ -7,10 +7,10 @@ const SegmentedControlMeta: Meta<typeof SegmentedControl> = {
     title: 'Components/Segmented Control',
     component: SegmentedControl,
     argTypes: {
-        requireSelection: {
+        toggleable: {
             control: 'boolean',
             description: 'When true, a button must always be selected',
-            defaultValue: false,
+            defaultValue: true,
         },
         onClick: {
             control: { ariaDisabled: true },
@@ -60,7 +60,7 @@ export const WithIcon: Story = {
             },
         ],
         groupName: 'Story1',
-        requireSelection: true,
+        toggleable: false,
     },
 };
 

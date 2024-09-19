@@ -1,4 +1,4 @@
-import { MouseEvent, useState, useEffect, VoidFunctionComponent } from 'react';
+import { MouseEvent, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
@@ -14,7 +14,6 @@ const Container = styled.div`
 interface ToggleButtonProps {
     pressed: boolean;
     isMobile: boolean;
-    ariaDisabled: boolean;
 }
 
 const ToggleButton = styled.button<ToggleButtonProps>`
@@ -94,7 +93,7 @@ interface SegmentedControlProps {
      * Sets common name for all buttons
      */
     groupName: string;
-    requireSelection?: boolean;
+    toggleable?: boolean;
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
@@ -102,7 +101,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     buttonGroup,
     className,
     groupName,
-    requireSelection = false,
+    toggleable = true,
     onClick,
 }) => {
     const { isMobile } = useDeviceContext();
@@ -110,12 +109,6 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     const [selectedButton, setSelectedButton] = useState<string>(
         defaultPressedButton ? defaultPressedButton.value : '',
     );
-
-    useEffect(() => {
-        if (requireSelection && !selectedButton && buttonGroup.length > 0) {
-            setSelectedButton(buttonGroup[0].value);
-        }
-    }, [buttonGroup, selectedButton, requireSelection]);
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
         const button = buttonGroup.find((btn) => btn.value === event.currentTarget.value);
@@ -125,7 +118,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
             return;
         }
 
-        if (requireSelection) {
+        if (!toggleable) {
             if (selectedButton !== newValue) {
                 setSelectedButton(newValue);
             }
@@ -150,7 +143,6 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
                     onClick={handleClick}
                     type="button"
                     value={button.value}
-                    ariaDisabled={!!button.ariaDisabled}
                 >
                     {button.icon && (
                         <Icon
