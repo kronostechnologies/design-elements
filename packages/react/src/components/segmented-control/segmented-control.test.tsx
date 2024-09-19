@@ -28,14 +28,14 @@ describe('SegmentedControl', () => {
     test('should have aria-pressed="true" for the default pressed button', () => {
         const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test2" />);
         const button = getByTestId(wrapper, 'test-toggle-button-1');
-    
+
         expect(button.prop('aria-pressed')).toBe(true);
     });
 
     test('should have aria-disabled="true" for disabled button', () => {
         const wrapper = shallow(<SegmentedControl buttonGroup={buttonGroup} groupName="Test" />);
         const button = getByTestId(wrapper, 'test-toggle-button-2');
-    
+
         expect(button.prop('aria-disabled')).toBe(true);
     });
 

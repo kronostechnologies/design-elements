@@ -44,6 +44,6 @@ export const defaultSegmentedControlTokens: SegmentedControlTokenMap = {
     'segmented-control-pressed-border-color': 'color-control-border-selected',
     'segmented-control-pressed-text-color': 'color-control-auxiliary-selected',
 
-    'segmented-control-pressed-hover-background-color' : 'color-control-background-selected-hover',
-    'segmented-control-pressed-hover-text-color' : 'color-control-auxiliary-selected'
+    'segmented-control-pressed-hover-background-color': 'color-control-background-selected-hover',
+    'segmented-control-pressed-hover-text-color': 'color-control-auxiliary-selected',
 };

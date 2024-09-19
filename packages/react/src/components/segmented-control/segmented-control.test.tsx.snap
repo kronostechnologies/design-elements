@@ -53,8 +53,8 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   border-radius: var(--border-radius-1halfx);
   content: " ";
   display: block;
-  min-height: 1.5rem;
   left: 6px;
+  min-height: 1.5rem;
   position: absolute;
   top: .1875rem;
   width: calc(100% - var(--spacing-1halfx));
@@ -84,15 +84,15 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 .c1 span::after {
   content: attr(data-text);
   display: block;
+  font-weight: var(--font-semi-bold);
   height: 0;
-  visibility: hidden;
   overflow: hidden;
+  pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
-  font-weight: var(--font-semi-bold);
+  visibility: hidden;
 }
 
 .c2 {
@@ -135,8 +135,8 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   border-radius: var(--border-radius-1halfx);
   content: none;
   display: block;
-  min-height: 1.5rem;
   left: 6px;
+  min-height: 1.5rem;
   position: absolute;
   top: .1875rem;
   width: calc(100% - var(--spacing-1halfx));
@@ -166,15 +166,15 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 .c2 span::after {
   content: attr(data-text);
   display: block;
+  font-weight: var(--font-semi-bold);
   height: 0;
-  visibility: hidden;
   overflow: hidden;
+  pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
-  font-weight: var(--font-semi-bold);
+  visibility: hidden;
 }
 
 <div
@@ -291,8 +291,8 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   border-radius: var(--border-radius-1halfx);
   content: " ";
   display: block;
-  min-height: 1.5rem;
   left: 6px;
+  min-height: 1.5rem;
   position: absolute;
   top: .1875rem;
   width: calc(100% - var(--spacing-1halfx));
@@ -322,15 +322,15 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 .c1 span::after {
   content: attr(data-text);
   display: block;
+  font-weight: var(--font-semi-bold);
   height: 0;
-  visibility: hidden;
   overflow: hidden;
+  pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
-  font-weight: var(--font-semi-bold);
+  visibility: hidden;
 }
 
 .c2 {
@@ -373,8 +373,8 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   border-radius: var(--border-radius-1halfx);
   content: none;
   display: block;
-  min-height: 1.5rem;
   left: 6px;
+  min-height: 1.5rem;
   position: absolute;
   top: .1875rem;
   width: calc(100% - var(--spacing-1halfx));
@@ -404,15 +404,15 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 .c2 span::after {
   content: attr(data-text);
   display: block;
+  font-weight: var(--font-semi-bold);
   height: 0;
-  visibility: hidden;
   overflow: hidden;
+  pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
-  font-weight: var(--font-semi-bold);
+  visibility: hidden;
 }
 
 <div

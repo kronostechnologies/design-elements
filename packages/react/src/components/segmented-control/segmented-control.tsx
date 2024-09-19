@@ -43,8 +43,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
             border-radius: var(--border-radius-1halfx);
             content: ${({ pressed }) => (pressed ? 'none' : '" "')};
             display: block;
-            min-height: 1.5rem;
             left: 6px;
+            min-height: 1.5rem;
             position: absolute;
             top: .1875rem;
             width: calc(100% - var(--spacing-1halfx));
@@ -67,12 +67,12 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     span::after {
         content: attr(data-text);
         display: block;
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-        user-select: none;
-        pointer-events: none;
         font-weight: var(--font-semi-bold);
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        visibility: hidden;
     }
 `;
 
@@ -107,7 +107,9 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
 }) => {
     const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
-    const [selectedButton, setSelectedButton] = useState<string>(defaultPressedButton ? defaultPressedButton.value : '');
+    const [selectedButton, setSelectedButton] = useState<string>(
+        defaultPressedButton ? defaultPressedButton.value : ''
+    );
 
     useEffect(() => {
         if (requireSelection && !selectedButton && buttonGroup.length > 0) {
@@ -118,7 +120,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
         const button = buttonGroup.find((btn) => btn.value === event.currentTarget.value);
         const newValue = event.currentTarget.value;
-        
+
         if (button?.ariaDisabled) {
             return;
         }
@@ -150,19 +152,19 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
                     value={button.value}
                     ariaDisabled={!!button.ariaDisabled}
                 >
-                {button.icon && (
-                    <Icon
-                        aria-hidden="true"
-                        name={button.icon}
-                        size="16"
-                    />
-                )}
-                {button.label && (
-                    <span data-text={button.label}>
-                        {button.label}
-                    </span>
-                )}
-            </ToggleButton>
+                    {button.icon && (
+                        <Icon
+                            aria-hidden="true"
+                            name={button.icon}
+                            size="16"
+                        />
+                    )}
+                    {button.label && (
+                        <span data-text={button.label}>
+                            {button.label}
+                        </span>
+                    )}
+                </ToggleButton>
             ))}
         </Container>
     );

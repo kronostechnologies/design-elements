@@ -37,9 +37,9 @@ export const Default: Story = {
 export const WithIcon: Story = {
     args: {
         buttonGroup: [
-            { value: 'option1', icon: 'alertCircle', ariaLabel: 'Alert'},
+            { value: 'option1', icon: 'alertCircle', ariaLabel: 'Alert' },
             { label: 'Option', value: 'option2', icon: 'alertCircle' },
-            { label: 'Option', value: 'option3', icon: 'alertCircle', ariaDisabled: true,},
+            { label: 'Option', value: 'option3', icon: 'alertCircle', ariaDisabled: true },
             { label: 'Option', value: 'option4', defaultPressed: true },
         ],
         groupName: 'Story1',
