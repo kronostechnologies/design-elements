@@ -40,7 +40,7 @@ export const WithIcon: Story = {
             {
                 value: 'option1',
                 icon: 'alertCircle',
-                ariaLabel: 'Alert'
+                ariaLabel: 'Alert',
             },
             {
                 label: 'Option',
