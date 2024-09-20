@@ -6,7 +6,7 @@ import { SegmentedControl } from './segmented-control';
 const buttonGroup = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2', defaultPressed: true },
-    { label: 'Option 3', value: 'option3', ariaDisabled: true },
+    { label: 'Option 3', value: 'option3', disabled: true },
     { label: 'Option 4', value: 'option4' },
 ];
 
