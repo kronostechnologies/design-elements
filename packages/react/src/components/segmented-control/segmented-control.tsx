@@ -81,10 +81,9 @@ interface SegmentedControlProps {
      */
     buttonGroup: {
         defaultPressed?: boolean;
-        disabled?: boolean;
         icon?: IconName;
         ariaLabel?: string;
-        ariaDisabled?: boolean;
+        disabled?: boolean;
         label?: string;
         value: string
     }[];
@@ -114,7 +113,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
         const button = buttonGroup.find((btn) => btn.value === event.currentTarget.value);
         const newValue = event.currentTarget.value;
 
-        if (button?.ariaDisabled) {
+        if (button?.disabled) {
             return;
         }
 
@@ -134,7 +133,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
             {buttonGroup.map((button, i) => (
                 <ToggleButton
                     aria-label={button.ariaLabel || undefined}
-                    aria-disabled={button.ariaDisabled ? true : undefined}
+                    aria-disabled={button.disabled ? true : undefined}
                     aria-pressed={button.value === selectedButton}
                     pressed={button.value === selectedButton}
                     data-testid={`test-toggle-button-${i}`}

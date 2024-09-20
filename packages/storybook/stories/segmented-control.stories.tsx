@@ -13,7 +13,7 @@ const SegmentedControlMeta: Meta<typeof SegmentedControl> = {
             defaultValue: true,
         },
         onClick: {
-            control: { ariaDisabled: true },
+            control: { disabled: true },
         },
     },
 };
@@ -51,7 +51,7 @@ export const WithIcon: Story = {
                 label: 'Option',
                 value: 'option3',
                 icon: 'alertCircle',
-                ariaDisabled: true,
+                disabled: true,
             },
             {
                 label: 'Option',
