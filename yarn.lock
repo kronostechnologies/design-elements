@@ -2229,7 +2229,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:^0.26.2":
+"@floating-ui/react@npm:^0.26.23":
   version: 0.26.24
   resolution: "@floating-ui/react@npm:0.26.24"
   dependencies:
@@ -5496,7 +5496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^2.1.0":
+"clsx@npm:^2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
@@ -6208,7 +6208,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^3.3.1":
+"date-fns@npm:^3.6.0":
   version: 3.6.0
   resolution: "date-fns@npm:3.6.0"
   checksum: 10c0/0b5fb981590ef2f8e5a3ba6cd6d77faece0ea7f7158948f2eaae7bbb7c80a8f63ae30b01236c2923cf89bb3719c33aeb150c715ea4fe4e86e37dcf06bed42fb6
@@ -11763,18 +11763,17 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^7.3.0":
-  version: 7.3.0
-  resolution: "react-datepicker@npm:7.3.0"
+  version: 7.4.0
+  resolution: "react-datepicker@npm:7.4.0"
   dependencies:
-    "@floating-ui/react": "npm:^0.26.2"
-    clsx: "npm:^2.1.0"
-    date-fns: "npm:^3.3.1"
-    prop-types: "npm:^15.7.2"
-    react-onclickoutside: "npm:^6.13.0"
+    "@floating-ui/react": "npm:^0.26.23"
+    clsx: "npm:^2.1.1"
+    date-fns: "npm:^3.6.0"
+    prop-types: "npm:^15.8.1"
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 10c0/a926c896fbd827bd6195e5fdbf98bf48fc86a076112bcff38dcbd580da24a98c0c8f5ed1a1dfb2d91076134e41b209e118ccd41cbc3b2036e94c54af25e1788c
+  checksum: 10c0/07f32a5b719106e1a3b933f5eb5aa18c0458bf5f712709df920fd78ac49858396219981874c02fb244b1b4d903b1df07d8860e32974ddb526bf56fd6942e0ddd
   languageName: node
   linkType: hard
 
@@ -11963,16 +11962,6 @@ __metadata:
     react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
     react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
   checksum: 10c0/7b56e2c505b2b924736c471a34754a4211df40ac2d6fb0949cf095aea5e65d3326bd9f111fa7898acf40afa54f526809ad8aa47e02b8328663d11422568dc7b1
-  languageName: node
-  linkType: hard
-
-"react-onclickoutside@npm:^6.13.0":
-  version: 6.13.1
-  resolution: "react-onclickoutside@npm:6.13.1"
-  peerDependencies:
-    react: ^15.5.x || ^16.x || ^17.x || ^18.x
-    react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
-  checksum: 10c0/93b02c493332ca7f8b480a1e185386c4af55d1daf33af2f68ddf440e4fc9b22ad13f59d7e204694aa31c1c2e332f0766c7ee302fe3b0cecbd0e0b45d55905c96
   languageName: node
   linkType: hard
 
