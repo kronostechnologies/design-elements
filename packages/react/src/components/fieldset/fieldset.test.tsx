@@ -10,10 +10,12 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
-            expect(tree.find('#customId').exists()).toBeTruthy();
+
             const fieldset = tree.find('fieldset');
-            expect(fieldset.props()).toHaveProperty('id', 'customId');
             const legend = tree.find(Legend);
+
+            expect(tree.find('#customId').exists()).toBeTruthy();
+            expect(fieldset.props()).toHaveProperty('id', 'customId');
             expect(legend.props()).toHaveProperty('id', 'customId-legend');
         });
 
@@ -23,7 +25,9 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
+
             const fieldset = tree.find('fieldset');
+
             expect(fieldset.props()).toHaveProperty('id');
         });
 
@@ -33,7 +37,9 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
+
             const legend = tree.find(Legend);
+
             expect(legend.exists()).toBeFalsy();
         });
 
@@ -43,7 +49,9 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
+
             const legend = tree.find(Legend);
+
             expect(legend.prop('children')).toBe('Legend text');
         });
 
@@ -53,8 +61,9 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
-            expect(tree.find(Legend).text()).toContain('Initial Legend Text');
+
             tree.setProps({ legend: { text: 'Updated Legend Text' } });
+
             expect(tree.find(Legend).text()).toContain('Updated Legend Text');
         });
     });
@@ -66,17 +75,27 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
+
             expect(tree).toMatchSnapshot();
         });
 
-        it('matches with legend', () => {
+        it('matches with bold legend', () => {
             const tree = mountWithProviders(
                 <Fieldset legend={{ text: 'Text Legend', bold: true }}>
                     Test Content
                 </Fieldset>,
             );
+
             expect(tree).toMatchSnapshot();
-            tree.setProps({ disabled: true });
+        });
+
+        it('matches with disabled legend', () => {
+            const tree = mountWithProviders(
+                <Fieldset disabled legend={{ text: 'Text Legend' }}>
+                    Test Content
+                </Fieldset>,
+            );
+
             expect(tree).toMatchSnapshot();
         });
 
@@ -86,8 +105,10 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
-            expect(tree).toMatchSnapshot();
+
             const fieldset = tree.find('fieldset');
+
+            expect(tree).toMatchSnapshot();
             expect(fieldset.props()).toHaveProperty('data-orientation', 'vertical');
         });
 
@@ -97,8 +118,10 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
-            expect(tree).toMatchSnapshot();
+
             const fieldset = tree.find('fieldset');
+
+            expect(tree).toMatchSnapshot();
             expect(fieldset.props()).toHaveProperty('data-orientation', 'horizontal');
         });
     });
@@ -108,7 +131,9 @@ describe('Fieldset Component', () => {
             const tree = mountWithProviders(
                 <Fieldset aria-label="Test Fieldset">Test Content</Fieldset>,
             );
+
             const fieldset = tree.find('fieldset');
+
             expect(fieldset.props()).toHaveProperty('aria-label', 'Test Fieldset');
         });
 
@@ -116,7 +141,9 @@ describe('Fieldset Component', () => {
             const tree = mountWithProviders(
                 <Fieldset disabled>Test Content</Fieldset>,
             );
+
             const fieldset = tree.find('fieldset');
+
             expect(fieldset.props()).toHaveProperty('aria-disabled', true);
         });
 
@@ -126,7 +153,9 @@ describe('Fieldset Component', () => {
                     Test Content
                 </Fieldset>,
             );
+
             const fieldset = tree.find('fieldset');
+
             expect(fieldset.props()).toHaveProperty('role', 'group');
         });
     });

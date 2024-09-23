@@ -13,25 +13,11 @@ export const Fieldset = forwardRef(({
     ...props
 }: FieldsetProps, ref: Ref<HTMLFieldSetElement>): ReactElement => {
     const id = useId(providedId);
-
-    const renderLegend = (): ReactElement | null => {
-        if (!legend) {
-            return null;
-        }
-        const { text, ...legendProps } = legend;
-        return (
-            <Legend
-                {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                id={`${id}-legend`}
-            >
-                {text}
-            </Legend>
-        );
-    };
+    const { text, ...legendProps } = legend || {};
 
     return (
         <StyledFieldset
-            data-testid='fieldset'
+            data-testid="fieldset"
             id={id}
             $orientation={orientation}
             data-orientation={orientation}
@@ -40,7 +26,14 @@ export const Fieldset = forwardRef(({
             ref={ref}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {legend && renderLegend()}
+            {legend && (
+                <Legend
+                    {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    id={`${id}-legend`}
+                >
+                    {text}
+                </Legend>
+            )}
             {children}
         </StyledFieldset>
     );
