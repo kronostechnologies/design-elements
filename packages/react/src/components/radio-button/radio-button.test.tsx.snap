@@ -14,7 +14,7 @@ exports[`Radio button matches snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0 var(--spacing-1x) 0 0;
+  margin: var(--spacing-half) var(--spacing-1x) 0 0;
   position: relative;
   width: var(--size-1x);
 }
