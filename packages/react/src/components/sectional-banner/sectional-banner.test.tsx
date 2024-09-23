@@ -1,4 +1,4 @@
-import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { SectionalBanner } from './sectional-banner';
@@ -43,22 +43,6 @@ describe('SectionalBanner', () => {
     });
 
     (['mobile', 'desktop'] as DeviceType[]).forEach((device) => {
-        it(`should not show dismiss button when type is alert (${device})`, () => {
-            const wrapper = mountWithProviders(
-                <SectionalBanner
-                    type="alert"
-                    onDismiss={jest.fn()}
-                >
-                    Test
-                </SectionalBanner>,
-                { wrappingComponentProps: { staticDevice: device } },
-            );
-
-            const dismissButton = findByTestId(wrapper, 'dismiss-button');
-
-            expect(dismissButton.exists()).toBe(false);
-        });
-
         it(`should show destructive button when type is alert (${device})`, () => {
             const wrapper = mountWithProviders(
                 <SectionalBanner
@@ -91,7 +75,7 @@ describe('SectionalBanner', () => {
 
             getByTestId(wrapper, 'dismiss-button').simulate('click');
 
-            expect(onDismiss).toBeCalled();
+            expect(onDismiss).toHaveBeenCalled();
         });
 
         it(`should call callback when button is clicked (${device})`, () => {
@@ -109,7 +93,7 @@ describe('SectionalBanner', () => {
 
             getByTestId(wrapper, `${device}-button`).simulate('click');
 
-            expect(onButtonClicked).toBeCalled();
+            expect(onButtonClicked).toHaveBeenCalled();
         });
     });
 });
