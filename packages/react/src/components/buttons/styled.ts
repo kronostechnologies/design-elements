@@ -1,6 +1,7 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { Icon } from '../icon/icon';
+import { Spinner } from '../spinner/spinner';
 import { AbstractButton } from './abstract/abstract-button';
 import { BaseButtonStyles, getBaseButtonStyles } from './abstract/styled';
 import { ButtonProps, ButtonType } from './types';
@@ -72,6 +73,10 @@ export const getButtonStyles = ({
 
 export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
     ${getButtonTypeStyles}
+`;
+
+export const StyledSpinner = styled(Spinner)`
+    margin-right: var(--spacing-1x);
 `;
 
 export const LeftIcon = styled(Icon)`

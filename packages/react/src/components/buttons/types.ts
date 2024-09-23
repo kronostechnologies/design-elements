@@ -28,6 +28,11 @@ export interface ButtonProps {
     focusable?: boolean;
     inverted?: boolean;
     label?: string;
+    loading?: boolean;
+    /**
+     * @default Loading...
+     */
+    loadingLabel?: string;
     /**
      * Size variant
      * @default medium
