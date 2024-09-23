@@ -18,6 +18,8 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     disabled,
     focusable = true,
     label,
+    loading,
+    loadingLabel,
     onClick,
     onFocus,
     onBlur,
@@ -29,6 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     ...props
 }: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
+    const { t } = useTranslation('button');
     const iconSize = props?.size === 'small' && !isMobile ? '16' : '24';
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -67,22 +70,31 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}
-            {leftIconName && (
-                <LeftIcon
-                    aria-hidden="true"
-                    data-testid="left-icon"
-                    name={leftIconName}
-                    size={iconSize}
-                />
-            )}
-            {label}
-            {rightIconName && (
-                <RightIcon
-                    aria-hidden="true"
-                    data-testid="right-icon"
-                    name={rightIconName}
-                    size={iconSize}
-                />
+            {loading ? (
+                <>
+                    <StyledSpinner />
+                    {loadingLabel || t('loadingLabel')}
+                </>
+            ) : (
+                <>
+                    {leftIconName && (
+                        <LeftIcon
+                            aria-hidden="true"
+                            data-testid="left-icon"
+                            name={leftIconName}
+                            size={iconSize}
+                        />
+                    )}
+                    {label}
+                    {rightIconName && (
+                        <RightIcon
+                            aria-hidden="true"
+                            data-testid="right-icon"
+                            name={rightIconName}
+                            size={iconSize}
+                        />
+                    )}
+                </>
             )}
         </StyledButton>
     );

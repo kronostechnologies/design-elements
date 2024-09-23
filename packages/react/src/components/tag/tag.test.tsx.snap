@@ -53,7 +53,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -335,7 +334,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -617,7 +615,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -899,7 +896,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -1181,7 +1177,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1463,7 +1458,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -1745,7 +1739,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -2028,7 +2021,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -2310,7 +2302,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -2593,7 +2584,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -2875,7 +2865,6 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -3158,7 +3147,6 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
 }
 
 .c3 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }

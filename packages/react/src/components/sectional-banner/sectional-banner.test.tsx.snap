@@ -41,9 +41,9 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   width: 1rem;
 }
 
-.c5 {
+.c4 {
   font-size: 0.875rem;
-  margin: var(--spacing-half) 0 0 0;
+  margin: 0;
 }
 
 .c3 {
@@ -52,19 +52,8 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   margin-left: var(--spacing-1halfx);
 }
 
-.c4 {
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5;
-  margin: 0;
-}
-
-<section
-  aria-atomic="true"
-  aria-labelledby="uuid1"
-  aria-live="polite"
+<div
   class="c0"
-  role="status"
 >
   <svg
     aria-hidden="true"
@@ -77,14 +66,8 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   <div
     class="c3"
   >
-    <span
-      class="c4"
-      id="uuid1"
-    >
-      Information
-    </span>
     <div
-      class="c5"
+      class="c4"
     >
       <p>
         Some sub title
@@ -96,7 +79,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
       </ul>
     </div>
   </div>
-</section>
+</div>
 `;
 
 exports[`SectionalBanner should match snapshot (desktop) 1`] = `
@@ -140,9 +123,9 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   width: 1rem;
 }
 
-.c5 {
+.c4 {
   font-size: 0.875rem;
-  margin: var(--spacing-half) 0 0 0;
+  margin: 0;
 }
 
 .c3 {
@@ -151,19 +134,8 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   margin-left: var(--spacing-1halfx);
 }
 
-.c4 {
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5;
-  margin: 0;
-}
-
-<section
-  aria-atomic="true"
-  aria-labelledby="uuid1"
-  aria-live="polite"
+<div
   class="c0"
-  role="status"
 >
   <svg
     aria-hidden="true"
@@ -176,19 +148,13 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   <div
     class="c3"
   >
-    <span
-      class="c4"
-      id="uuid1"
-    >
-      Information
-    </span>
     <p
-      class="c5"
+      class="c4"
     >
       Test
     </p>
   </div>
-</section>
+</div>
 `;
 
 exports[`SectionalBanner should match snapshot (mobile) 1`] = `
@@ -231,9 +197,9 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   width: 1rem;
 }
 
-.c5 {
+.c4 {
   font-size: 1rem;
-  margin: var(--spacing-2x) 0 0 0;
+  margin: 0;
 }
 
 .c3 {
@@ -242,19 +208,8 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   margin-left: var(--spacing-1halfx);
 }
 
-.c4 {
-  font-size: 1.125rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.7;
-  margin: 0;
-}
-
-<section
-  aria-atomic="true"
-  aria-labelledby="uuid1"
-  aria-live="polite"
+<div
   class="c0"
-  role="status"
 >
   <svg
     aria-hidden="true"
@@ -267,17 +222,11 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   <div
     class="c3"
   >
-    <span
-      class="c4"
-      id="uuid1"
-    >
-      Information
-    </span>
     <p
-      class="c5"
+      class="c4"
     >
       Test
     </p>
   </div>
-</section>
+</div>
 `;

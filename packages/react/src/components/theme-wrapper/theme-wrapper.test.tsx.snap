@@ -53,7 +53,6 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -148,7 +147,6 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
