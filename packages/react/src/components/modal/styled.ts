@@ -88,10 +88,10 @@ export const Footer = styled.footer<FooterProps>`
 export const StyledCloseButton = styled(IconButton)<CommonStyledProps>`
     pointer-events: none;
     position: absolute;
+    right: ${getWidthPadding};
+    top: ${getHeightPadding};
 
     & > * {
         pointer-events: auto;
     }
-    right: ${getWidthPadding};
-    top: ${getHeightPadding};
 `;
