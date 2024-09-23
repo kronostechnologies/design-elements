@@ -23,11 +23,11 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     border-radius: var(--border-radius);
     color: ${({ theme, pressed }) => (pressed ? theme.component['segmented-control-pressed-text-color'] : theme.component['segmented-control-text-color'])};
     display: flex;
+    font-family: var(--font-family);
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ pressed }) => (pressed ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     gap: var(--spacing-1x);
     justify-content: center;
-    letter-spacing: 0.05rem;
     line-height: 1.25rem;
     min-height: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1halfx);
@@ -39,14 +39,15 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
         &::before {
             background-color: ${({ theme }) => (theme.component['segmented-control-hover-background-color'])};
-            border-radius: var(--border-radius-1halfx);
+            border-radius: var(--border-radius);
             content: ${({ pressed }) => (pressed ? 'none' : '" "')};
             display: block;
-            left: 6px;
+            height: calc(100% - 0.375rem);
+            left: 0.1875rem;
             min-height: 1.5rem;
             position: absolute;
             top: 0.1875rem;
-            width: calc(100% - var(--spacing-1halfx));
+            width: calc(100% - 0.375rem);
         }
     }
 
