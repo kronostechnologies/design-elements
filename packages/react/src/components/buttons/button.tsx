@@ -6,8 +6,9 @@ import {
     ReactElement,
     Ref,
 } from 'react';
+import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { LeftIcon, RightIcon, StyledButton } from './styled';
+import { LeftIcon, RightIcon, StyledButton, StyledSpinner } from './styled';
 import { ButtonProps } from './types';
 
 export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({

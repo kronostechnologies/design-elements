@@ -337,7 +337,6 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
 }
 
 .c0 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
