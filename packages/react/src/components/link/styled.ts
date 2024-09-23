@@ -10,7 +10,7 @@ interface LinkStylesProps {
     theme: ResolvedTheme;
 }
 
-export const getLinkStyles = ({
+const getLinkStyles = ({
     $disabled, $isMobile, theme,
 }: LinkStylesProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     align-items: center;
