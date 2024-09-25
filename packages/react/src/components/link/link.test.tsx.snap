@@ -12,12 +12,12 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -39,8 +39,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -51,8 +49,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -153,12 +149,12 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -180,8 +176,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -192,8 +186,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -390,12 +382,12 @@ exports[`Link Component Styling matches default snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -417,8 +409,6 @@ exports[`Link Component Styling matches default snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -429,8 +419,6 @@ exports[`Link Component Styling matches default snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -494,12 +482,12 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -521,8 +509,6 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -533,8 +519,6 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -548,8 +532,6 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
   color: #8FCEF0;
   cursor: not-allowed;
   pointer-events: none;
-  -webkit-text-decoration-color: #8FCEF0;
-  text-decoration-color: #8FCEF0;
 }
 
 .c0[disabled] svg,
@@ -605,12 +587,12 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -632,8 +614,6 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -644,8 +624,6 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -712,12 +690,12 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -739,8 +717,6 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -751,8 +727,6 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,
@@ -837,12 +811,12 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -864,8 +838,6 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 .c1[visited],
 .c1:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c1[visited] svg,
@@ -876,8 +848,6 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 .c1[hover],
 .c1:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c1[hover] svg,
@@ -1105,12 +1075,12 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
   font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  padding: 0 4px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1132,8 +1102,6 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
 .c0[visited],
 .c0:visited {
   color: #602FA0;
-  -webkit-text-decoration-color: #602FA0;
-  text-decoration-color: #602FA0;
 }
 
 .c0[visited] svg,
@@ -1144,8 +1112,6 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
 .c0[hover],
 .c0:hover {
   color: #003A5A;
-  -webkit-text-decoration-color: #003A5A;
-  text-decoration-color: #003A5A;
 }
 
 .c0[hover] svg,

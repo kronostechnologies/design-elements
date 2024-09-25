@@ -20,9 +20,9 @@ const getLinkStyles = ({
     font-size: ${$isMobile ? '1rem' : '0.875rem'};
     font-style: normal;
     font-weight: var(--font-normal);
-    letter-spacing: 0.2px;
-    line-height: 20px;
-    padding: 0 4px;
+    letter-spacing: 0.0125rem;
+    line-height: 1.25rem;
+    padding: 0 var(--spacing-half);
 
     svg {
         color: ${theme.component['link-icon-color']};
@@ -33,7 +33,6 @@ const getLinkStyles = ({
     &[visited],
     &:visited {
         color: ${theme.component['link-visited-text-color']};
-        text-decoration-color: ${theme.component['link-visited-text-color']};
         svg {
             color: ${theme.component['link-visited-icon-color']};
         }
@@ -42,7 +41,6 @@ const getLinkStyles = ({
     &[hover],
     &:hover {
         color: ${theme.component['link-hover-text-color']};
-        text-decoration-color: ${theme.component['link-hover-text-color']};
         svg {
             color: ${theme.component['link-hover-icon-color']};
         }
@@ -54,7 +52,6 @@ const getLinkStyles = ({
         color: ${$disabled && theme.component['link-disabled-text-color']};
         cursor: not-allowed;
         pointer-events: none;
-        text-decoration-color: ${$disabled && theme.component['link-disabled-text-color']};
         svg {
             color: ${$disabled && theme.component['link-disabled-icon-color']};
         }
