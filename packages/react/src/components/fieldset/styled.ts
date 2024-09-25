@@ -14,7 +14,6 @@ export const StyledLegend = styled.legend<{
     $isMobile: boolean,
 }>`
     color: ${({ theme }) => theme.component['legend-text-color']};
-    display: table;
     font-size: ${getFontSize};
     font-weight: ${({ $bold }) => ($bold ? 'var(--font-bold)' : 'var(--font-normal)')};
     margin: 0 0 var(--spacing-1x);

@@ -133,7 +133,6 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
 exports[`Fieldset Component Styling matches with bold legend 1`] = `
 .c1 {
   color: #1B1C1E;
-  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
@@ -208,7 +207,6 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
 exports[`Fieldset Component Styling matches with disabled legend 1`] = `
 .c1 {
   color: #1B1C1E;
-  display: table;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
