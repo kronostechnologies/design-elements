@@ -14,7 +14,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FieldContainer } from '../field/field-container';
 import { Icon, IconName } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -475,7 +475,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         <StyledFieldContainer
             className={className}
             noMargin={noMargin}
-            fieldId={id}
+            id={id}
             label={label}
             required={required}
             tooltip={tooltip}

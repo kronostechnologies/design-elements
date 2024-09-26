@@ -12,7 +12,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FieldContainer } from '../field/field-container';
 import { Input } from '../text-input/text-input';
 import { Tooltip } from '../tooltip/tooltip';
 
@@ -79,7 +79,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
 
     return (
         <FieldContainer
-            fieldId={id}
+            id={id}
             valid={isValid}
             label={label}
             hint={hint}

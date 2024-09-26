@@ -596,11 +596,9 @@ input + .c1 {
     test
   </label>
   <span
-    aria-live="polite"
     class="c3"
-    data-testid="invalid-field"
+    data-testid="field-message"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c4"
