@@ -58,10 +58,7 @@ interface RadioInputProps {
     defaultChecked?: boolean;
     disabled?: boolean;
     id?: string;
-    isMobile?: boolean;
-    label?: string;
     name?: string;
-    required?: boolean;
     value?: string;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;

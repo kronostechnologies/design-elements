@@ -6,9 +6,9 @@ import {
     useMemo,
     VoidFunctionComponent,
 } from 'react';
+import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
-import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { RadioInput } from '../radio-button/radio-input';
 import * as S from './styled-components';

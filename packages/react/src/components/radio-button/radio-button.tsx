@@ -1,6 +1,6 @@
 import { ChangeEvent, FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { RadioInput } from '../radio-button/radio-input';
+import { RadioInput } from './radio-input';
 import { useId } from '../../hooks/use-id';
 
 const StyledLabel = styled.label`

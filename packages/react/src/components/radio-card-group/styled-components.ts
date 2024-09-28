@@ -59,9 +59,9 @@ export const CardContent = styled.span`
 `;
 
 export const Title = styled.span<CardProps>`
+    font-size: 1rem;
     font-weight: var(--font-semi-bold);
     line-height: 1.5rem;
-    font-size: 1rem;
     margin-bottom: var(--spacing-1x);
 `;
 
