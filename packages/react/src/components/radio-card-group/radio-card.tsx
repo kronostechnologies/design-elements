@@ -60,7 +60,6 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
                 defaultChecked={defaultChecked}
                 disabled={disabled}
                 id={id}
-                isMobile={isMobile}
                 name={name}
                 required={required}
                 value={value}

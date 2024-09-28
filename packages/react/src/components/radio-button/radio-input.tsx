@@ -11,7 +11,7 @@ const getDotSvgDataUrl = (color: string): string => {
     return `url('data:image/svg+xml;utf8,${encodeURIComponent(svg)}')`;
 };
 
-const StyledInput = styled.input<{ disabled?: boolean }>`
+const StyledInput = styled.input<{ disabled?: boolean; isMobile?: boolean }>`
     appearance: none;
     background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
     border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-border-color'])};
@@ -59,6 +59,7 @@ interface RadioInputProps {
     disabled?: boolean;
     id?: string;
     name?: string;
+    required?: boolean;
     value?: string;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
@@ -74,6 +75,7 @@ export const RadioInput: FunctionComponent<RadioInputProps> = ({
     id,
     name,
     value,
+    required,
     onChange,
 }) => {
     const inputId = useId(id);
@@ -90,6 +92,7 @@ export const RadioInput: FunctionComponent<RadioInputProps> = ({
             checked={checked}
             disabled={disabled}
             onChange={onChange}
+            required={required}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy?.join(' ')}
         />

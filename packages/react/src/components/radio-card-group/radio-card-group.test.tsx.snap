@@ -65,9 +65,9 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
@@ -231,9 +231,9 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
@@ -396,9 +396,9 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
@@ -561,9 +561,9 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
@@ -727,9 +727,9 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
@@ -894,9 +894,9 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
 }
 
 .c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  font-size: 1rem;
   margin-bottom: var(--spacing-1x);
 }
 
