@@ -23,7 +23,7 @@ import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { TableData, TableColumn } from './types';
-import { RadioButton } from '../radio-button/radio-button';
+import { RadioInput } from '../radio-button/radio-input';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
 
@@ -173,8 +173,8 @@ const ExpandButton = styled(IconButton) <{ $expanded: boolean }>`
     }
 `;
 
-const StyledRadioButton = styled(RadioButton)`
-    margin-top: 0;
+const StyledRadioInput = styled(RadioInput)`
+    vertical-align: sub;
 `;
 
 function getUtilityColumn<T extends object>(
@@ -218,7 +218,7 @@ function getUtilityColumn<T extends object>(
                 column.cell = ({ table, row }) => {
                     const radioBtnId = `row-radiobutton-${row.index}`;
                     return (
-                        <StyledRadioButton
+                        <StyledRadioInput
                             id={radioBtnId}
                             data-testid={radioBtnId}
                             ariaLabel={t('selectRow')}
