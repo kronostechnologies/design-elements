@@ -118,6 +118,11 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         setTransitionStarted(false);
     }, []);
 
+    const buttonsWithId = buttons.map((button) => ({
+        ...button,
+        inputId: button.inputId || useId(),
+    }));
+
     return (
         <StyledFieldset className={className}>
             {label && (
@@ -127,9 +132,8 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     {tooltip && <StyledTooltip {...tooltip} />}
                 </StyledLegend>
             )}
-            {buttons.map((button) => {
+            {buttonsWithId.map((button) => {
                 const isExpanded = currentChecked === button.value;
-                const inputId = button.inputId || useId();
 
                 return (
                     <>
@@ -142,7 +146,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                             data-testid={`${dataTestId}-${button.value}`}
                             defaultChecked={button.defaultChecked}
                             disabled={button.disabled}
-                            id={inputId}
+                            id={button.inputId}
                             label={button.label}
                             name={groupName}
                             onChange={handleChange}
