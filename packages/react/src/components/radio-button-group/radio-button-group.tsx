@@ -93,6 +93,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     const [transitionStarted, setTransitionStarted] = useState(false);
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
+    const generatedIds = buttons.map(() => useId());
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setCurrentChecked(event.target.value);
@@ -118,9 +119,9 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         setTransitionStarted(false);
     }, []);
 
-    const buttonsWithId = buttons.map((button) => ({
+    const buttonsWithId = buttons.map((button, index) => ({
         ...button,
-        inputId: button.inputId || useId(),
+        inputId: button.inputId || generatedIds[index],
     }));
 
     return (
