@@ -15,7 +15,6 @@ export type SegmentedControlTokens =
     | 'segmented-control-pressed-background-color'
     | 'segmented-control-pressed-border-color'
     | 'segmented-control-pressed-text-color'
-    | 'segmented-control-text-color'
     | 'segmented-control-pressed-hover-background-color'
     | 'segmented-control-pressed-hover-text-color';
 

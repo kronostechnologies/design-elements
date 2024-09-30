@@ -111,10 +111,10 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
     );
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
-        const button = buttonGroup.find((btn) => btn.value === event.currentTarget.value);
         const newValue = event.currentTarget.value;
+        const clickedButton = buttonGroup.find((btn) => btn.value === newValue);
 
-        if (button?.disabled) {
+        if (clickedButton?.disabled) {
             return;
         }
 
