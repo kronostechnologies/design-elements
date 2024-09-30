@@ -4,7 +4,6 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { RadioButton } from '../radio-button/radio-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useId } from '../../hooks/use-id';
 
 const StyledFieldset = styled.fieldset`
     border: none;
@@ -93,7 +92,6 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     const [transitionStarted, setTransitionStarted] = useState(false);
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
-    const ids = buttons.map(() => useId());
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setCurrentChecked(event.target.value);
@@ -128,7 +126,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     {tooltip && <StyledTooltip {...tooltip} />}
                 </StyledLegend>
             )}
-            {buttons.map((button, index) => {
+            {buttons.map((button) => {
                 const isExpanded = currentChecked === button.value;
 
                 return (
@@ -142,7 +140,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                             data-testid={`${dataTestId}-${button.value}`}
                             defaultChecked={button.defaultChecked}
                             disabled={button.disabled}
-                            id={button.inputId || ids[index]} 
+                            id={button.inputId}
                             label={button.label}
                             name={groupName}
                             onChange={handleChange}
