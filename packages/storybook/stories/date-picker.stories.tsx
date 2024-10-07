@@ -46,4 +46,14 @@ export const WithOnFocusCallback: Story = {
         label: 'Date',
         onFocus: (event: FocusEvent<HTMLInputElement>) => console.info(`[onFocus] Value: ${event.target.value}`),
     },
+
+};
+
+export const WithTodayButton: Story = {
+    args: {
+        label: 'Date',
+        onChange: (date: Date) => console.info(`[onChange] Date: ${date}`),
+        hasTodayButton: true
+    },
+
 };

@@ -19,7 +19,10 @@ export type DatepickerTokens =
     | 'datepicker-day-today-text-color'
     | 'datepicker-header-background-color'
     | 'datepicker-background-color'
-    | 'datepicker-backdrop-color';
+    | 'datepicker-backdrop-color'
+    | 'datepicker-today-button-color'
+    | 'datepicker-today-button-hover-color'
+    | 'datepicker-today-button-outline-color';
 
 export type DatepickerTokenValue = AliasTokens | RefTokens;
 
@@ -51,4 +54,8 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-selected-text-color': 'color-content-selected',
 
     'datepicker-day-today-text-color': 'color-content-selected',
+
+    'datepicker-today-button-color': 'color-brand-50',
+    'datepicker-today-button-hover-color': 'color-brand-70',
+    'datepicker-today-button-outline-color': 'color-brand-20',
 };

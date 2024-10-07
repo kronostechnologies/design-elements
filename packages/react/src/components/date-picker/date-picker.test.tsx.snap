@@ -4160,6 +4160,21 @@ label + .c3 {
   text-align: center;
 }
 
+.c17 > button {
+  color: #006296;
+  border-color: #006296;
+}
+
+.c17 > button:hover {
+  color: #003A5A;
+  border-color: #003A5A;
+}
+
+.c17 > button:focus {
+  box-shadow: rgb(0 0 0 / 0.2);
+  outline: #84C6EA solid 2px;
+}
+
 .c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;

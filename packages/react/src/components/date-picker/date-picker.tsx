@@ -190,6 +190,21 @@ const TodayButtonWrapper = styled.div`
     clear: both;
     padding-top: var(--spacing-1x);
     text-align: center;
+    
+    > button {
+        border-color: ${({ theme }) => theme.component['datepicker-today-button-color']};
+        color: ${({ theme }) => theme.component['datepicker-today-button-color']};
+        
+        &:hover {
+            border-color: ${({ theme }) => theme.component['datepicker-today-button-hover-color']};
+            color: ${({ theme }) => theme.component['datepicker-today-button-hover-color']};
+        }
+        
+        &:focus {
+            box-shadow: ${({ theme }) => theme.component['datepicker-box-shadow-color']};
+            outline: ${({ theme }) => theme.component['datepicker-today-button-outline-color']} solid 2px;
+        }
+    }
 `;
 
 const CalendarButton = styled(AbstractButton)<CalendarButtonProps>`
