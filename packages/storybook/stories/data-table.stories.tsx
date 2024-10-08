@@ -571,7 +571,7 @@ export const SortableRows: Story = () => {
     );
 };
 
-export const SelectableRows: Story = () => {
+export const MultipleSelectableRows: Story = () => {
     interface SelectableData {
         column1: string;
         column2: string;
@@ -606,7 +606,52 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Table selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table rowSelectionMode="multiple" columns={columns} data={data} onSelectedRowsChange={console.info} />
+    );
+};
+
+export const SingleSelectableRows: Story = () => {
+    interface SelectableData {
+        column1: string;
+        column2: string;
+        column3: number;
+    }
+
+    const columns: TableColumn<SelectableData>[] = [
+        {
+            header: 'Column 1',
+            accessorKey: 'column1',
+        },
+        {
+            header: 'Column 2',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableData<SelectableData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 20,
+        },
+    ];
+    return (
+        <Table
+            rowSelectionMode="single"
+            columns={columns}
+            data={data}
+            onSelectedRowsChange={console.info}
+            ariaLabelledByColumnId="column2"
+        />
     );
 };
 
@@ -1273,7 +1318,7 @@ export const WithBackgroundColor: Story = () => {
     return (
         <ScrollableWrap>
             <StyledTableWithBackground
-                selectableRows
+                rowSelectionMode="multiple"
                 stickyHeader
                 stickyFooter
                 columns={columns}

@@ -14,8 +14,7 @@ exports[`Radio button matches snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: var(--size-1x);
-  margin: 0;
-  margin-top: var(--spacing-half);
+  margin: var(--spacing-half) var(--spacing-1x) 0 0;
   position: relative;
   width: var(--size-1x);
 }
@@ -61,10 +60,10 @@ exports[`Radio button matches snapshot 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
 }
 
