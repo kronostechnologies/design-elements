@@ -245,6 +245,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -532,6 +533,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -819,6 +821,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -1106,6 +1109,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"
@@ -1393,6 +1397,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             >
               <styled.button
                 $focusable={true}
+                $isMobile={false}
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
                 className="c4 c3"

@@ -148,6 +148,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
           >
             <styled.button
               $focusable={true}
+              $isMobile={false}
               aria-controls="idContent"
               aria-expanded={false}
               buttonType="primary"
@@ -337,6 +338,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
           >
             <styled.button
               $focusable={true}
+              $isMobile={false}
               aria-controls="idContent"
               aria-expanded={true}
               buttonType="primary"
@@ -537,6 +539,7 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
           >
             <styled.button
               $focusable={true}
+              $isMobile={false}
               aria-controls="idContent"
               aria-expanded={false}
               aria-label="disclose content"
@@ -751,6 +754,7 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
           >
             <styled.button
               $focusable={true}
+              $isMobile={false}
               aria-controls="idContent"
               aria-expanded={true}
               aria-label="disclose content"

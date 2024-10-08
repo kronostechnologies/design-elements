@@ -1,8 +1,8 @@
-import { RouteLink } from '@equisoft/design-elements-react';
 import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
-import * as RouteLinkStories from './link.stories';
+import * as LinkStories from './link.stories';
+import {Link} from "@equisoft/design-elements-react";
 
-<Meta of={RouteLinkStories} />
+<Meta of={LinkStories} />
 
 # Link
 1. [Definition](#definition)
@@ -12,7 +12,7 @@ import * as RouteLinkStories from './link.stories';
 
 ## Definition
 The Link component enables users to seamlessly navigate between pages, both within and outside the application. 
-<Canvas of={RouteLinkStories.Default} />
+<Canvas of={LinkStories.Default} />
 
 ## Usage
 ### When to use
@@ -25,10 +25,15 @@ The Link component enables users to seamlessly navigate between pages, both with
 ### Route Link
 Route link redirects users somewhere else inside the application. 
 - This variant can use an icon or not
-<Canvas of={RouteLinkStories.Default} />
+<Canvas of={LinkStories.Default} />
+
+### External Link
+External links redirect users outside the current page by opening a new tab or opening a new window for old browsers.
+- External links should always have an icon at the end, representing the external link.
+<Canvas of={LinkStories.External} />
 
 ## Properties
-<ArgTypes of={RouteLink} />
+<ArgTypes of={Link} />
 
 ## References
 

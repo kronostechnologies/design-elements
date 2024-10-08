@@ -1,7 +1,7 @@
 import { MouseEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon/icon';
-import { AbstractButton } from './abstract-button';
+import { AbstractButton } from './abstract/abstract-button';
 
 interface ButtonProps {
     className: string;
