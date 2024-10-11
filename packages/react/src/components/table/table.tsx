@@ -15,6 +15,7 @@ import {
     RowSelectionState,
 } from '@tanstack/react-table';
 import { TFunction } from 'i18next';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { StyledTableRow, TableRow } from './table-row';
@@ -22,10 +23,11 @@ import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { TableData, TableColumn } from './types';
+import { TableData, TableColumn, TableDataAsRowData } from './types';
 import { RadioInput } from '../radio-button/radio-input';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
+import { getExpandedIncludingGroups, isDataRowType } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -116,12 +118,13 @@ const StyledTable = styled.table<StyledTableProps>`
     color: ${({ theme }) => theme.component['table-text-color']};
     width: 100%;
 
-    th {
+    thead th {
         font-weight: var(--font-semi-bold);
         padding: ${({ $device, $rowSize }) => getThPadding($device, $rowSize)};
     }
 
-    td {
+    tbody td,
+    tbody th {
         padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
     }
 
@@ -230,7 +233,7 @@ function getUtilityColumn<T extends object>(
                                 const selected = row.getIsSelected;
                                 table.toggleAllRowsSelected(false);
                                 row.toggleSelected(!selected());
-                        }}
+                            }}
                         />
                     );
                 };
@@ -273,7 +276,8 @@ export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
-    columns: TableColumn<T>[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    columns: (TableColumn<T> | any)[];
     expandableRows?: 'single' | 'multiple';
     /**
      * Adds row numbers
@@ -319,6 +323,7 @@ export const Table = <T extends object>({
     onSort,
 }: TableProps<T>): ReactElement => {
     const { t } = useTranslation('table');
+    const tableId = useId();
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
@@ -340,24 +345,25 @@ export const Table = <T extends object>({
         return cols;
     }, [rowSelectionMode, expandableRows, rowNumbers, providedColumns, t, ariaLabelledByColumnId]);
 
+    const allExpanded = useMemo(() => getExpandedIncludingGroups(expanded, data), [expanded, data]);
+
     const tableOptions: TableOptions<T> = {
         data,
         columns,
         state: {
             sorting,
             rowSelection,
-            expanded,
+            expanded: allExpanded,
         },
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        getSubRows: ((row) => (row as any).subRows),
+        getSubRows: (originalRow: TableData<T>) => originalRow.subRows,
         getExpandedRowModel: getExpandedRowModel(),
         getRowCanExpand:
             expandableRows
-                ? ((row) => row.subRows.length > 0 || !!(row.original as TableData<T>).subContent)
+                ? ((row) => row.subRows.length > 0 || !!(row.original as TableDataAsRowData<T>).subContent)
                 : undefined,
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
@@ -411,16 +417,19 @@ export const Table = <T extends object>({
             </StyledTHead>
             <StyledTBody>
                 {table.getRowModel().rows.map((row) => {
-                    const rowOriginal = row.original as TableData<T>;
+                    const rowOriginal = row.original;
+                    const isDataRow = isDataRowType(rowOriginal);
+                    const hasError = isDataRow && !!rowOriginal.error;
                     return (
                         <Fragment key={row.id}>
                             <TableRow<T>
+                                tableId={tableId}
                                 striped={striped}
-                                error={!!rowOriginal.error}
+                                error={hasError}
                                 row={row}
                                 onClick={onRowClick}
                             />
-                            {rowOriginal.subContent && row.getIsExpanded() && (
+                            {isDataRow && rowOriginal.subContent && row.getIsExpanded() && (
                                 <StyledTableRow>
                                     <td />
                                     <td colSpan={99}>
