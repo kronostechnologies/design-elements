@@ -272,8 +272,7 @@ export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    columns: (TableColumn<T> | any)[];
+    columns: TableColumn<T>[];
     expandableRows?: 'single' | 'multiple';
     /**
      * Adds row numbers
