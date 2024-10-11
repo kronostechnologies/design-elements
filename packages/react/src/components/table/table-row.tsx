@@ -111,7 +111,7 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
 `;
 
 const StyledGroupingCell = styled.th`
-    font-weight: normal;
+    font-weight: 400;
 `;
 
 const StyledCell = styled.td<StyledCellProps>`
