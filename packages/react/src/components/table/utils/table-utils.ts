@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Column } from '@tanstack/react-table';
+import { Column, ExpandedState } from '@tanstack/react-table';
+import { TableData, TableDataAsRowData, TableDataAsRowGroup } from '../types';
 
 export function calculateStickyColumns(
     stickyColumns: boolean[],
@@ -78,4 +79,23 @@ export function isLastColumnInAGroup<TData, TValue>(column: Column <TData, TValu
 
     const parentColumns = column.parent.columns;
     return column === parentColumns[parentColumns.length - 1];
+}
+
+export function isGroupRowType<T extends object>(rowData: TableData<T>): rowData is TableDataAsRowGroup<T> {
+    return (rowData as TableDataAsRowGroup<T>)?.groupLabel !== undefined;
+}
+
+export function isDataRowType<T extends object>(rowData: TableData<T>): rowData is TableDataAsRowData<T> {
+    return ('groupLabel' in rowData);
+}
+
+export function getExpandedIncludingGroups(expanded: ExpandedState, data: TableData<object>[]): ExpandedState {
+    if (expanded === true) {
+        return expanded;
+    }
+
+    return {
+        ...expanded,
+        ...data.reduce((p, c, i) => (isGroupRowType(c) ? { ...p, [i]: true } : p), {} as Record<string, boolean>),
+    };
 }

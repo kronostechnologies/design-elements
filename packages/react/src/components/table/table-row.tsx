@@ -4,13 +4,12 @@ import {
     Row,
     Cell,
     Column,
-    RowData,
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { TableColumn } from './types';
 import { focus } from '../../utils/css-state';
-import { isLastColumnInAGroup } from './utils/table-utils';
+import { isGroupRowType, isLastColumnInAGroup } from './utils/table-utils';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
@@ -19,7 +18,7 @@ interface StyledTableRowProps {
     $striped?: boolean;
 }
 
-interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
+interface CustomCell<TData extends object, TValue = unknown> extends Cell<TData, TValue> {
     column: Column<TData, TValue> & {
         columnDef: TableColumn<TData, TValue>;
     };
@@ -106,9 +105,13 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
             cursor: pointer;
         }
     `}
-
+    
     ${getRowBackgroundColor}
     ${getCellBackgroundCss}
+`;
+
+const StyledGroupingCell = styled.th`
+    font-weight: normal;
 `;
 
 const StyledCell = styled.td<StyledCellProps>`
@@ -142,6 +145,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
 }
 
 interface TableRowProps<T extends object> {
+    tableId: string;
     row: Row<T>;
     striped: boolean;
     error: boolean;
@@ -149,21 +153,32 @@ interface TableRowProps<T extends object> {
 }
 
 export const TableRow = <T extends object>({
+    tableId,
     error,
     onClick,
     row,
     striped,
-}: TableRowProps<T>): ReactElement => (
-    <StyledTableRow
-        $clickable={!!onClick}
-        $error={error}
-        $striped={striped}
-        $selected={row.getIsSelected()}
-        onClick={() => onClick && onClick(row)}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
-        data-testid={`table-row-${row.id}`}
-    >
-        {row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
-    </StyledTableRow>
-);
+}: TableRowProps<T>): ReactElement => {
+    const rowOriginal = row.original;
+    const isGroupRow = isGroupRowType(rowOriginal);
+    return (
+        <StyledTableRow
+            $clickable={!!onClick}
+            $error={error}
+            $striped={striped}
+            $selected={row.getIsSelected()}
+            onClick={() => onClick && onClick(row)}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
+            data-testid={`table-row-${row.id}`}
+        >
+            {isGroupRow
+                ? (
+                    <StyledGroupingCell id={`${tableId}_${row.id}`} colSpan={row.getVisibleCells().length} scope="colgroup">
+                        {rowOriginal.groupLabel}
+                    </StyledGroupingCell>
+                )
+                : row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
+        </StyledTableRow>
+    );
+};

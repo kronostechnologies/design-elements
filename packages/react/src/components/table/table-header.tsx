@@ -5,7 +5,6 @@ import {
     HeaderGroup,
     Column,
     flexRender,
-    RowData,
     SortDirection,
 } from '@tanstack/react-table';
 import { devConsole } from '../../utils/dev-console';
@@ -14,7 +13,7 @@ import { TableColumn } from './types';
 import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
 import { focus } from '../../utils/css-state';
 
-interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
+interface CustomHeader<TData extends object, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
         columnDef: TableColumn<TData, TValue>;
     };

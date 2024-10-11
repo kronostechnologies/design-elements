@@ -136,7 +136,7 @@ export const WithFooter: Story = () => {
 
     // Footer function for the 'numbers' column
     const footerSum = (): ReactElement => {
-        const total = data.reduce((sum, row) => row.numbers + sum, 0);
+        const total = (data as FooterData[]).reduce((sum, row) => row.numbers + sum, 0);
         return (
             <span>
                 Total:
@@ -402,12 +402,12 @@ export const RowClickCallback: Story = () => {
     ];
 
     return (
-        <Table<DataWithHref>
+        <Table
             columns={columns}
             data={data}
             onRowClick={(row) => {
                 console.info('row: ', row);
-                console.info('href: ', row.original.href);
+                console.info('href: ', (row.original as DataWithHref).href);
             }}
         />
     );
@@ -651,6 +651,52 @@ export const SingleSelectableRows: Story = () => {
             data={data}
             onSelectedRowsChange={console.info}
             ariaLabelledByColumnId="column2"
+        />
+    );
+};
+
+export const RowsGrouping: Story = () => {
+    interface GroupData {
+        id: string;
+        name: string;
+    }
+
+    const columns: TableColumn<GroupData>[] = [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+        },
+    ];
+
+    const data: TableData<GroupData>[] = [
+        {
+            id: '1',
+            name: '',
+            groupLabel: 'AAA',
+            subRows: [
+                { id: '1.A', name: 'AAA-1' },
+                { id: '1.B', name: 'AAA-2' },
+            ],
+        },
+        {
+            id: '2',
+            name: '',
+            groupLabel: 'BBB',
+            subRows: [
+                { id: '2.A', name: 'BBB-1' },
+                { id: '2.B', name: 'BBB-2' },
+            ],
+        },
+    ];
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            rowSelectionMode='multiple'
         />
     );
 };
@@ -1230,7 +1276,7 @@ export const StickyHeaderAndFooter: Story = () => {
     );
 };
 
-const StyledTableWithBackground = styled(Table<StickyHeaderFooterData>)`
+const StyledTableWithBackground = styled(Table)`
     background: #a9cad8;
 `;
 
@@ -1558,7 +1604,7 @@ export const TableWithPagination: Story = () => {
                 onSort={(sort) => {
                     if (sort) {
                         const key = sort.id as keyof TablePaginationData;
-                        setData([...data].sort((a, b) => sortFn(a[key], b[key], sort.desc)));
+                        setData([...data as TablePaginationData[]].sort((a, b) => sortFn(a[key], b[key], sort.desc)));
                     }
                 }}
                 manualSort

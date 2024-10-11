@@ -5,11 +5,10 @@ import {
     HeaderGroup,
     Column,
     flexRender,
-    RowData,
 } from '@tanstack/react-table';
 import { TableColumn } from './types';
 
-interface CustomFooter<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
+interface CustomFooter<TData extends object, TValue = unknown> extends Header<TData, TValue> {
     column: Column<TData, TValue> & {
         columnDef: TableColumn<TData, TValue>;
     };
