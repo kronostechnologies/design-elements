@@ -82,11 +82,11 @@ export function isLastColumnInAGroup<TData, TValue>(column: Column <TData, TValu
 }
 
 export function isGroupRowType<T extends object>(rowData: TableData<T>): rowData is TableDataAsRowGroup<T> {
-    return (rowData as TableDataAsRowGroup<T>)?.groupLabel !== undefined;
+    return ('groupLabel' in rowData);
 }
 
 export function isDataRowType<T extends object>(rowData: TableData<T>): rowData is TableDataAsRowData<T> {
-    return ('groupLabel' in rowData);
+    return !('groupLabel' in rowData);
 }
 
 export function getExpandedIncludingGroups(expanded: ExpandedState, data: TableData<object>[]): ExpandedState {

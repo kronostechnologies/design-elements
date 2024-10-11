@@ -665,10 +665,12 @@ export const RowsGrouping: Story = () => {
         {
             header: 'ID',
             accessorKey: 'id',
+            sortable: true,
         },
         {
             header: 'Name',
             accessorKey: 'name',
+            sortable: true,
         },
     ];
 
@@ -678,8 +680,8 @@ export const RowsGrouping: Story = () => {
             name: '',
             groupLabel: 'AAA',
             subRows: [
-                { id: '1.A', name: 'AAA-1' },
-                { id: '1.B', name: 'AAA-2' },
+                { id: '1.A', name: 'AAA' },
+                { id: '1.B', name: 'DDD' },
             ],
         },
         {
@@ -687,8 +689,8 @@ export const RowsGrouping: Story = () => {
             name: '',
             groupLabel: 'BBB',
             subRows: [
-                { id: '2.A', name: 'BBB-1' },
-                { id: '2.B', name: 'BBB-2' },
+                { id: '2.A', name: 'BBB' },
+                { id: '2.B', name: 'CCC' },
             ],
         },
     ];

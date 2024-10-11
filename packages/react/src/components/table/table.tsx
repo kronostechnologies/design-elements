@@ -123,16 +123,12 @@ const StyledTable = styled.table<StyledTableProps>`
         padding: ${({ $device, $rowSize }) => getThPadding($device, $rowSize)};
     }
 
-    tbody td,
-    tbody th {
-        padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
-    }
-
     th,
     td {
         font-size: ${({ $device }) => ($device === 'desktop' ? 0.875 : 1)}rem;
         line-height: 1.5rem;
         margin: 0;
+        padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
         text-align: left;
 
         &:last-child {
