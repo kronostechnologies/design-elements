@@ -88,3 +88,11 @@ export function renderPortalWithProviders(
 ): RenderResult {
     return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }
+
+export function rerenderPortalWithProviders(
+    component: ReactElement,
+    rerender: RenderResult['rerender'],
+    device?: DeviceType,
+): void {
+    rerender(<AllProviders staticDevice={device}>{component}</AllProviders>);
+}

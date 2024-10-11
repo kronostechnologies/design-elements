@@ -11,24 +11,30 @@ import * as TextInputStories  from './text-input.stories';
 4. [Properties](#properties)
 
 ## Definition
-Text input allows users to enter a single line of text into a form. 
+- Text input allows users to enter a single line of text into a form.
 <Canvas of={TextInputStories.Default} />
 
 ## Usage
-### When to use 
+### When to use
 - Use to enter a short text (usually one or two words) [1].
     - E.g. Name, Last Name, Role, Organization, etc.
 - Use for input that needs unique information that cannot be predicted with a preset of options [2]
 - Use to input data that can be entered more quickly in a free-hand format versus a more complex control [2].
 
-### When not to use 
+### When not to use
 - Do not use for numeric inputs, date input, passwords or long text strings.
     - For long text strings, consider using the text area component.
 - Do not use if a user can only enter an option from a predefined list as it is likely to result in an error. Consider using a control component such as a dropdown, select, or radio button group instead [2].
 
-## Variants 
+## Variants
 ### Default
 <Canvas of={TextInputStories.Default} />
+
+### With icon as adornment
+<Canvas of={TextInputStories.IconAsAdornment} />
+
+### With text as adornment
+<Canvas of={TextInputStories.TextAsAdornment} />
 
 ## Properties
 <ArgTypes of={TextInput} />
