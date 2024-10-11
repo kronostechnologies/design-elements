@@ -676,8 +676,6 @@ export const RowsGrouping: Story = () => {
 
     const data: TableData<GroupData>[] = [
         {
-            id: '1',
-            name: '',
             groupLabel: 'AAA',
             subRows: [
                 { id: '1.A', name: 'AAA' },
@@ -685,8 +683,6 @@ export const RowsGrouping: Story = () => {
             ],
         },
         {
-            id: '2',
-            name: '',
             groupLabel: 'BBB',
             subRows: [
                 { id: '2.A', name: 'BBB' },
