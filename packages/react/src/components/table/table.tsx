@@ -272,7 +272,8 @@ export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
-    columns: TableColumn<T>[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    columns: (TableColumn<T> | any)[];
     expandableRows?: 'single' | 'multiple';
     /**
      * Adds row numbers
@@ -343,7 +344,7 @@ export const Table = <T extends object>({
     const allExpanded = useMemo(() => getExpandedIncludingGroups(expanded, data), [expanded, data]);
 
     const tableOptions: TableOptions<T> = {
-        data,
+        data: data as T[],
         columns,
         state: {
             sorting,
