@@ -4,7 +4,8 @@ declare global { var __DS_DEV__: boolean; }
 global.__DS_DEV__ = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
 // Buttons
-export { Button, ButtonProps } from './components/buttons/button';
+export { Button } from './components/buttons/button';
+export { ButtonProps } from './components/buttons/types';
 export { IconButton } from './components/buttons/icon-button';
 export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
@@ -93,6 +94,7 @@ export { useToast } from './hooks/use-toast';
 export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';
 export * from './components/global-navigation/global-navigation';
 export { RouteLink } from './components/route-link/route-link';
+export { Link } from './components/link';
 
 // Results
 export * from './components/legend/legend';

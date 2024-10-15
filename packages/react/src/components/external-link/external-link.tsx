@@ -48,6 +48,9 @@ export interface ExternalLinkProps {
     onClick?(event: MouseEvent<Element, globalThis.MouseEvent>): void;
 }
 
+/**
+ * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
+ */
 export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
     className,
     disabled,

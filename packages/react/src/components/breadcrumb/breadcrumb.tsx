@@ -2,7 +2,7 @@ import { KeyboardEvent, useCallback, useEffect, useRef, useState, VoidFunctionCo
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
-import { IconButton } from '../buttons/icon-button';
+import { IconButton } from '../buttons';
 import { Icon } from '../icon/icon';
 import { NavList } from '../nav-list/nav-list';
 import { NavListOption } from '../nav-list/nav-list-option';

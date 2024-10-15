@@ -1,0 +1,36 @@
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as RouteLinkStories from './route-link.stories';
+import {RouteLink} from "@equisoft/design-elements-react";
+
+<Meta of={RouteLinkStories} />
+
+# Route Link
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The Link component enables users to seamlessly navigate between pages, both within and outside the application.
+<Canvas of={RouteLinkStories.Default} />
+
+## Usage
+### When to use
+- Use when you have to bring the user somewhere else into or outside the application.
+
+### When not to use
+- Do not use if the action of clicking the link doesn’t bring the user somewhere else.
+
+## Variants
+### Route Link
+Route link redirects users somewhere else inside the application.
+- This variant can use an icon or not
+<Canvas of={RouteLinkStories.Default} />
+
+## Properties
+<ArgTypes of={RouteLink} />
+
+## References
+
+
+
