@@ -15,6 +15,7 @@ export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
 }
 
 interface DisclosureWidgetProps {
+    className?: string;
     idContent?: string;
     buttonProps: ButtonPropsWithoutOnClick;
 }
@@ -41,6 +42,7 @@ const DisclosureContainer = styled.div`
 `;
 
 export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetProps>> = ({
+    className,
     idContent: providedIdContent,
     buttonProps,
     children,
@@ -53,6 +55,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
             {!buttonProps.iconName && (
                 <Button
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    className={className}
                     onClick={() => setExpanded(!expanded)}
                     onBlur={() => setExpanded(false)}
                     aria-expanded={expanded}
@@ -62,6 +65,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
             {buttonProps.iconName && (
                 <IconButton
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    className={className}
                     iconName={buttonProps.iconName}
                     onClick={() => setExpanded(!expanded)}
                     onBlur={() => setExpanded(false)}
