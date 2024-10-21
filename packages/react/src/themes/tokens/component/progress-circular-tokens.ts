@@ -12,6 +12,6 @@ export type ProgressCircularTokenMap = {
 };
 
 export const defaultProgressCircularTokens: ProgressCircularTokenMap = {
-    'progress-circular-fill-color': 'color-content-brand',
-    'progress-circular-inverted-fill-color': 'color-content-inverse',
+    'progress-circular-fill-color': 'color-background-brand',
+    'progress-circular-inverted-fill-color': 'color-white',
 };
