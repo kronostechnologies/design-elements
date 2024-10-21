@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import { renderWithTheme } from '../../test-utils/renderer';
+import { renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { themeProvider } from '../../test-utils/theme-provider';
 import { MoneyInput } from './money-input';
 
@@ -112,6 +112,21 @@ describe('CurrencyInput Component', () => {
 
         simulateValueChange(input, '');
         expect(input.value).toMatchFormattedMoney('');
+    });
+
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <MoneyInput label='test' required validationErrorMessage='This field is required' />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('text-input'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
     });
 
     it('matches snapshot (fr-CA)', () => {

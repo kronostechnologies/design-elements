@@ -1,8 +1,9 @@
+import { fireEvent } from '@testing-library/react';
 import { ReactWrapper, shallow } from 'enzyme';
 import { ChangeEventHandler } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
 import { Icon } from '../icon/icon';
 
@@ -113,6 +114,21 @@ describe('TextInput', () => {
         const container = getByTestId(wrapper, 'field-container');
 
         expect(container.prop('valid')).toBe(false);
+    });
+
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <TextInput label='test' required validationErrorMessage='This field is required' />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('text-input'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
     });
 
     test('onChange callback is called when content is changed', () => {

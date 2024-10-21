@@ -1,12 +1,4 @@
-import {
-    Button,
-    Icon,
-    MoneyInput,
-    NumericInput,
-    PhoneInput, StepperInput,
-    TextArea,
-    TextInput,
-} from '@equisoft/design-elements-react';
+import { Icon, TextInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -51,53 +43,6 @@ export const Default: Story = {
         validationErrorMessage: 'Error message',
         hint: 'Hint',
     },
-};
-
-export const Required: Story = {
-    ...TextInputMeta,
-    args: {
-        validationErrorMessage: 'This field is required',
-        required: true,
-        valid: undefined,
-    },
-    render: (args) => (
-        <form>
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <TextInput label='Text Field' {...args} />
-            <MoneyInput
-                label='Money Field'
-                validationErrorMessage={args.validationErrorMessage}
-                required={args.required}
-                // valid={args.valid}
-            />
-            <NumericInput
-                label='Numeric Field'
-                validationErrorMessage={args.validationErrorMessage}
-                required={args.required}
-                // invalid={!args.valid}
-            />
-            <PhoneInput
-                label='Phone Field'
-                pattern="(___) ___-____"
-                validationErrorMessage={args.validationErrorMessage}
-                required={args.required}
-                // valid={args.valid}
-            />
-            <TextArea
-                label='Text Area'
-                validationErrorMessage={args.validationErrorMessage}
-                required={args.required}
-                valid={args.valid}
-            />
-            <StepperInput
-                label='Stepper Field'
-                validationErrorMessage={args.validationErrorMessage}
-                required={args.required}
-                valid={args.valid}
-            />
-            <Button buttonType='primary' type='submit'>Submit</Button>
-        </form>
-        ),
 };
 
 export const IconAsAdornment: Story = {
