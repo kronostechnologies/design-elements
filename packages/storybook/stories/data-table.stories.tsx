@@ -5,10 +5,9 @@ import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Components/Table',
+    title: 'Components/Data Table',
     component: Table,
     parameters: rawCodeParameters,
-    tags: ['autodocs'],
 };
 
 interface Data {
@@ -17,7 +16,7 @@ interface Data {
     column3: string;
 }
 
-export const Normal: Story = () => {
+export const Default: Story = () => {
     const columns: TableColumn<Data>[] = [
         {
             header: 'Column 1',
@@ -572,7 +571,7 @@ export const SortableRows: Story = () => {
     );
 };
 
-export const SelectableRows: Story = () => {
+export const MultipleSelectableRows: Story = () => {
     interface SelectableData {
         column1: string;
         column2: string;
@@ -607,7 +606,52 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Table selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Table rowSelectionMode="multiple" columns={columns} data={data} onSelectedRowsChange={console.info} />
+    );
+};
+
+export const SingleSelectableRows: Story = () => {
+    interface SelectableData {
+        column1: string;
+        column2: string;
+        column3: number;
+    }
+
+    const columns: TableColumn<SelectableData>[] = [
+        {
+            header: 'Column 1',
+            accessorKey: 'column1',
+        },
+        {
+            header: 'Column 2',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableData<SelectableData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 20,
+        },
+    ];
+    return (
+        <Table
+            rowSelectionMode="single"
+            columns={columns}
+            data={data}
+            onSelectedRowsChange={console.info}
+            ariaLabelledByColumnId="column2"
+        />
     );
 };
 
@@ -1274,7 +1318,7 @@ export const WithBackgroundColor: Story = () => {
     return (
         <ScrollableWrap>
             <StyledTableWithBackground
-                selectableRows
+                rowSelectionMode="multiple"
                 stickyHeader
                 stickyFooter
                 columns={columns}
@@ -1371,16 +1415,6 @@ interface OptimizationData {
     country: string;
 }
 
-/**
- * When the components is re-rendering, it will always update the table with the provided data and columns, even when
- * you pass the same data and columns. But the very important key here is if you pass a different **columns** object
- * between renders, the table will UNMOUNT and RE-MOUNT every cell instead of doing the usual React update. This will
- * impact the performance and could create unwanted behaviors. So to prevent that, you should give the column
- * definitions a stable identity by memoizing it (ex: store it in a useMemo or useState hook).
- *
- * Additionally, if your columns use some dependencies, you can pass them via useRef instead, so you don't have to
- * recreate the columns object everytime the dependencies changes.
- */
 export const Optimization: Story = () => {
     const [data, setData] = useState<OptimizationData[]>([
         {
@@ -1431,9 +1465,23 @@ export const Optimization: Story = () => {
 
     return (
         <>
-            <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
-                Toggle Editable
-            </Button>
+            <p>
+                When the component is re-rendering, it will always update the table with the provided data and columns,
+                even when you pass the same data and columns. But the very important key here is if you pass a
+                different **columns** object between renders, the table will UNMOUNT and RE-MOUNT every cell instead
+                of doing the usual React update. This will impact the performance and could create unwanted behaviors.
+                To prevent this, you should give the column definitions a stable identity by memoizing it
+                (ex: store it in a useMemo or useState hook).
+            </p>
+            <p style={{ marginBottom: '2rem' }}>
+                Additionally, if your columns use some dependencies, you can pass them via useRef instead, so you
+                don&apos;t have to recreate the columns object everytime the dependencies changes.
+            </p>
+            <p>
+                <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                    Toggle Editable
+                </Button>
+            </p>
             <Table
                 columns={columns}
                 data={data}

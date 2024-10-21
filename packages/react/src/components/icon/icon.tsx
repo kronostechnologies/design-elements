@@ -58,6 +58,8 @@ import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import CaretDown from '../../icons/caret-down.svg';
 import CaretRight from '../../icons/caret-right.svg';
 import Unlink from '../../icons/unlink.svg';
+import Export from '../../icons/export.svg';
+import Table from '../../icons/table.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
@@ -88,6 +90,7 @@ const iconMapping = {
     edit: Edit,
     equisoft: Equisoft,
     externalLink: ExternalLink,
+    export: Export,
     eye: Eye,
     eyeOff: EyeOff,
     files: Files,
@@ -112,6 +115,7 @@ const iconMapping = {
     search: Search,
     settings: Settings,
     star: Star,
+    table: Table,
     transfer: Transfer,
     trash: Trash,
     unlink: Unlink,

@@ -53,7 +53,6 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -746,7 +745,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1440,7 +1438,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c2 > svg {
-  color: inherit;
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -2129,7 +2126,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c1 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

@@ -30,6 +30,7 @@ type Story = StoryObj<typeof SectionalBanner>;
 
 export const Neutral: Story = {
     args: {
+        title: 'Neutral',
         type: 'neutral',
     },
     render: (args) => {
@@ -50,6 +51,7 @@ export const Neutral: Story = {
 
 export const Informative: Story = {
     args: {
+        title: 'Informative',
         type: 'info',
     },
     render: (args) => {
@@ -70,6 +72,7 @@ export const Informative: Story = {
 
 export const Success: Story = {
     args: {
+        title: 'Success',
         type: 'success',
     },
     render: (args) => {
@@ -90,6 +93,7 @@ export const Success: Story = {
 
 export const Warning: Story = {
     args: {
+        title: 'Warning',
         type: 'warning',
     },
     render: (args) => {
@@ -110,6 +114,7 @@ export const Warning: Story = {
 
 export const Alert: Story = {
     args: {
+        title: 'Alert',
         type: 'alert',
     },
     render: (args) => {
@@ -135,6 +140,7 @@ export const Alert: Story = {
 
 export const Discovery: Story = {
     args: {
+        title: 'Discovery',
         type: 'discovery',
     },
     render: (args) => {

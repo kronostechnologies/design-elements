@@ -53,7 +53,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
 }
 
 .c5 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -341,7 +340,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
 }
 
 .c5 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -629,7 +627,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
 }
 
 .c5 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -917,7 +914,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 }
 
 .c5 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1205,7 +1201,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c5 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }

@@ -55,6 +55,7 @@ export type AliasTokens =
     | 'color-control-background-disabled'
     | 'color-control-background-checked'
     | 'color-control-background-selected'
+    | 'color-control-background-selected-hover'
     | 'color-control-border'
     | 'color-control-border-hover'
     | 'color-control-border-disabled'
@@ -242,6 +243,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-control-background-disabled': 'color-neutral-05',
     'color-control-background-checked': 'color-brand-50',
     'color-control-background-selected': 'color-brand-05',
+    'color-control-background-selected-hover': 'color-brand-10',
 
     'color-control-border': 'color-neutral-65',
     'color-control-border-hover': 'color-black',

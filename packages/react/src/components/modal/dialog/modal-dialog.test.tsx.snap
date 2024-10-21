@@ -25,64 +25,7 @@ exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c9:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c9 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c13 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -122,105 +65,60 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   user-select: none;
 }
 
-.c13 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
+.c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c14[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c14 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c10[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c11 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c11 {
@@ -234,25 +132,133 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:hover,
-.c11[aria-expanded='true'] {
+.c11 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c12 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c12:hover,
+.c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c11[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
+  margin: 0;
+}
+
+.c8 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -268,8 +274,10 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -278,43 +286,59 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.c5 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
+}
+
+.c9 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x);
 }
 
 .c4 {
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  line-height: 1.375rem;
-  margin: var(--spacing-3x) 0 0;
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
 }
 
-.c8 {
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,15 +346,11 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
-  -webkit-justify-content: end;
+  -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
-  justify-content: end;
-}
-
-.c12 {
-  margin-left: var(--spacing-1x);
-  margin-top: 0;
+  justify-content: flex-end;
 }
 
 <body
@@ -367,24 +387,38 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         role="dialog"
         tabindex="-1"
       >
+        <button
+          aria-label="Close dialog"
+          class="c2 c3 c4"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
         <header
-          class="c2"
+          class="c5"
         >
           <h2
-            class="c3"
+            class="c6"
             id="uuid1"
           >
             Title
           </h2>
+        </header>
+        <main
+          class="c7"
+        >
           <h3
-            class="c4"
+            class="c8"
           >
             Subtitle
           </h3>
-        </header>
-        <main
-          class="c5 c6"
-        >
           <p
             id="modal-description"
           >
@@ -392,20 +426,20 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
           </p>
         </main>
         <footer
-          class="c7"
+          class="c9"
         >
           <div
-            class="c8"
+            class="c10"
           >
             <button
-              class="c9 c10 "
+              class="c11 c12"
               data-testid="cancel-button"
               type="button"
             >
               Test Cancel
             </button>
             <button
-              class="c9 c11 c12"
+              class="c11 c13"
               data-testid="confirm-button"
               type="button"
             >
@@ -413,20 +447,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
             </button>
           </div>
         </footer>
-        <button
-          aria-label="Close dialog"
-          class="c13 c14 c15"
-          data-testid="close-button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
       </div>
     </div>
   </div>
@@ -434,7 +454,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
-.c7 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -474,24 +494,23 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   user-select: none;
 }
 
-.c7 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c7 > svg {
-  color: inherit;
+.c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -500,32 +519,32 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c8 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c8:hover,
-.c8[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c8[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c8 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -538,10 +557,10 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   right: var(--spacing-2x);
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
   margin: 0;
 }
@@ -558,8 +577,10 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -568,33 +589,56 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .c5 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
   border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
+  padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
 }
 
-.c2 + .c4 {
-  padding-top: 0;
+.c8 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x);
 }
 
-.c9 {
+.c4 {
+  pointer-events: none;
   position: absolute;
   right: var(--spacing-4x);
-  top: 1.75rem;
+  top: var(--spacing-3x);
 }
 
-.c6 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+.c4 > * {
+  pointer-events: auto;
 }
 
 <body
@@ -631,35 +675,9 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-            id="uuid1"
-          >
-            Title
-          </h2>
-        </header>
-        <main
-          class="c4 c5"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c6"
-        >
-          <p>
-            Custom content
-          </p>
-        </footer>
         <button
           aria-label="Close dialog"
-          class="c7 c8 c9"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -671,6 +689,32 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
             width="16"
           />
         </button>
+        <header
+          class="c5"
+        >
+          <h2
+            class="c6"
+            id="uuid1"
+          >
+            Title
+          </h2>
+        </header>
+        <main
+          class="c7"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c8"
+        >
+          <p>
+            Custom content
+          </p>
+        </footer>
       </div>
     </div>
   </div>
@@ -678,64 +722,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c9:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c9 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c13 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -775,105 +762,60 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c13 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
+.c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c14[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c14 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c10[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c11 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c11 {
@@ -887,25 +829,133 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:hover,
-.c11[aria-expanded='true'] {
+.c11 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c12 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c12:hover,
+.c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c11[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
+  margin: 0;
+}
+
+.c8 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -921,8 +971,10 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -931,43 +983,59 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.c5 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
+}
+
+.c9 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x);
 }
 
 .c4 {
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  line-height: 1.375rem;
-  margin: var(--spacing-3x) 0 0;
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
 }
 
-.c8 {
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -975,15 +1043,11 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
-  -webkit-justify-content: end;
+  -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
-  justify-content: end;
-}
-
-.c12 {
-  margin-left: var(--spacing-1x);
-  margin-top: 0;
+  justify-content: flex-end;
 }
 
 <body
@@ -1020,55 +1084,9 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-            id="uuid1"
-          >
-            Title
-          </h2>
-          <h3
-            class="c4"
-          >
-            Subtitle
-          </h3>
-        </header>
-        <main
-          class="c5 c6"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c7"
-        >
-          <div
-            class="c8"
-          >
-            <button
-              class="c9 c10 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              class="c9 c11 c12"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-          </div>
-        </footer>
         <button
           aria-label="Close dialog"
-          class="c13 c14 c15"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -1080,6 +1098,52 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
             width="16"
           />
         </button>
+        <header
+          class="c5"
+        >
+          <h2
+            class="c6"
+            id="uuid1"
+          >
+            Title
+          </h2>
+        </header>
+        <main
+          class="c7"
+        >
+          <h3
+            class="c8"
+          >
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              class="c11 c12"
+              data-testid="cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="c11 c13"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -1087,64 +1151,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c9:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c9 > svg {
-  color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c13 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1184,105 +1191,60 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c13 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c13 > svg {
-  color: inherit;
+.c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c14 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c14:hover,
-.c14[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c14[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c14 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c10[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c11 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c11 {
@@ -1296,25 +1258,133 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:hover,
-.c11[aria-expanded='true'] {
+.c11 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c12 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c12:hover,
+.c12[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c12[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c13 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c13 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c13:hover,
+.c13[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c11[aria-disabled='true'] {
+.c13[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
+  margin: 0;
+}
+
+.c8 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -1330,8 +1400,10 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -1340,43 +1412,59 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c15 {
-  position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.c5 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
+}
+
+.c9 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x);
 }
 
 .c4 {
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  line-height: 1.375rem;
-  margin: var(--spacing-3x) 0 0;
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-4x);
+  top: var(--spacing-3x);
 }
 
-.c8 {
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1384,15 +1472,11 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  gap: var(--spacing-1x);
   -webkit-box-pack: end;
-  -webkit-justify-content: end;
+  -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
-  justify-content: end;
-}
-
-.c12 {
-  margin-left: var(--spacing-1x);
-  margin-top: 0;
+  justify-content: flex-end;
 }
 
 <body
@@ -1429,55 +1513,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-            id="uuid1"
-          >
-            Title
-          </h2>
-          <h3
-            class="c4"
-          >
-            Subtitle
-          </h3>
-        </header>
-        <main
-          class="c5 c6"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c7"
-        >
-          <div
-            class="c8"
-          >
-            <button
-              class="c9 c10 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              class="c9 c11 c12"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-          </div>
-        </footer>
         <button
           aria-label="Close dialog"
-          class="c13 c14 c15"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -1489,6 +1527,52 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
             width="16"
           />
         </button>
+        <header
+          class="c5"
+        >
+          <h2
+            class="c6"
+            id="uuid1"
+          >
+            Title
+          </h2>
+        </header>
+        <main
+          class="c7"
+        >
+          <h3
+            class="c8"
+          >
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              class="c11 c12"
+              data-testid="cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="c11 c13"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -1496,7 +1580,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
-.c9 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1536,24 +1620,23 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c9 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c9:focus {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c9 > svg {
-  color: inherit;
+.c2 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c13 {
+.c3 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -1561,32 +1644,32 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-3x);
 }
 
-.c13 {
+.c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c13:hover,
-.c13[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c13[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c13 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -1599,41 +1682,10 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   right: 0;
 }
 
-.c10 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c10[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c11 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c11 {
@@ -1649,23 +1701,62 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c11:hover,
 .c11[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c11[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c12 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c12:hover,
+.c12[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c11[aria-disabled='true'] {
+.c12[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
 }
 
-.c3 {
+.c6 {
   color: #1B1C1E;
   font-size: 1.25rem;
-  font-weight: var(--font-normal);
+  font-weight: var(--font-semi-bold);
   line-height: 2rem;
+  margin: 0;
+}
+
+.c8 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -1681,8 +1772,10 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -1691,43 +1784,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-2x);
-}
-
-.c6 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-2x) var(--spacing-2x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x);
-}
-
-.c2 + .c5 {
-  padding-top: 0;
-}
-
-.c14 {
-  position: absolute;
-  right: var(--spacing-half);
-  top: 1.75rem;
 }
 
 .c7 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-2x) 0;
-}
-
-.c4 {
-  font-size: 1.125rem;
-  font-weight: var(--font-normal);
-  line-height: 1.75rem;
-  margin: var(--spacing-3x) 0 0;
-}
-
-.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1735,15 +1794,61 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: end;
-  -webkit-justify-content: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-2x) var(--spacing-2x);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.c12 {
-  margin-left: 0;
-  margin-top: var(--spacing-1x);
+.c5 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-2x) var(--spacing-2x);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: calc(var(--spacing-2x) + var(--spacing-3x));
+}
+
+.c9 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-2x);
+}
+
+.c4 {
+  pointer-events: none;
+  position: absolute;
+  right: var(--spacing-2x);
+  top: var(--spacing-2x);
+}
+
+.c4 > * {
+  pointer-events: auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 <body
@@ -1780,55 +1885,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-            id="uuid1"
-          >
-            Title
-          </h2>
-          <h3
-            class="c4"
-          >
-            Subtitle
-          </h3>
-        </header>
-        <main
-          class="c5 c6"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c7"
-        >
-          <div
-            class="c8"
-          >
-            <button
-              class="c9 c10 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              class="c9 c11 c12"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-          </div>
-        </footer>
         <button
           aria-label="Close dialog"
-          class="c9 c13 c14"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -1840,6 +1899,52 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
             width="24"
           />
         </button>
+        <header
+          class="c5"
+        >
+          <h2
+            class="c6"
+            id="uuid1"
+          >
+            Title
+          </h2>
+        </header>
+        <main
+          class="c7"
+        >
+          <h3
+            class="c8"
+          >
+            Subtitle
+          </h3>
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              class="c2 c11"
+              data-testid="cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="c2 c12"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
   </div>

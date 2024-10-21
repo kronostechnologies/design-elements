@@ -72,8 +72,7 @@ export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
 export { Table } from './components/table/table';
 export { TableColumn, TableData } from './components/table/types';
-export { Modal } from './components/modal/modal';
-export { ModalDialog } from './components/modal/modal-dialog';
+export { Modal, ModalDialog } from './components/modal';
 export {
     Tag, TagValue, TagColor, TagSize, TagProps,
 } from './components/tag/tag';
@@ -98,6 +97,7 @@ export { RouteLink } from './components/route-link/route-link';
 
 // Results
 export * from './components/legend/legend';
+export { Fieldset } from './components/fieldset';
 export { ProgressIndicator } from './components/progress-indicator/progress-indicator';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';

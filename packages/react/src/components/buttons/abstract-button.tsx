@@ -50,7 +50,6 @@ export const defaultButtonStyles = css<{ $focusable?: boolean, isMobile: boolean
     ${(props) => props.$focusable !== false && focus};
 
     > svg {
-        color: inherit;
         height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
         width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     }
