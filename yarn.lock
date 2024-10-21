@@ -11972,8 +11972,8 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^7.3.0":
-  version: 7.4.0
-  resolution: "react-datepicker@npm:7.4.0"
+  version: 7.5.0
+  resolution: "react-datepicker@npm:7.5.0"
   dependencies:
     "@floating-ui/react": "npm:^0.26.23"
     clsx: "npm:^2.1.1"
@@ -11982,7 +11982,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 10c0/07f32a5b719106e1a3b933f5eb5aa18c0458bf5f712709df920fd78ac49858396219981874c02fb244b1b4d903b1df07d8860e32974ddb526bf56fd6942e0ddd
+  checksum: 10c0/6e94a609654b8a0eaa9b2e8c4fab803aa954e78df9729f05337ae97c4e910b1488129ee8d4b11dea575dbe0992242c078cb692ed0cba4e5d98414d8ba393972d
   languageName: node
   linkType: hard
 
