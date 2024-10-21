@@ -24,6 +24,7 @@ export { NumericInput } from './components/numeric-input/numeric-input';
 export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
 export { PasswordInput } from './components/password-input/password-input';
 export { PhoneInput } from './components/phone-input/phone-input';
+export { ProgressCircular, ProgressCircularProps } from './components/progress-circular/progress-circular';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
