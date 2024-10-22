@@ -60,7 +60,6 @@ export const getBaseButtonStyles = ({
     ${({ theme }) => $focusable !== false && focus({ theme }, { inverted: $inverted })};
 
     > svg {
-        //color: inherit;
         height: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
         width: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
     }

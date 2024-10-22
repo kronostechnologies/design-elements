@@ -1,4 +1,4 @@
-import { FocusEventHandler, MouseEvent, KeyboardEvent } from 'react';
+import { FocusEventHandler, MouseEventHandler, KeyboardEventHandler } from 'react';
 import { IconName } from '../icon/icon';
 import { Size } from './abstract/types';
 
@@ -44,8 +44,8 @@ export interface ButtonProps {
     leftIconName?: IconName;
     rightIconName?: IconName;
 
-    onClick?(event: MouseEvent<HTMLButtonElement>): void;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
     onFocus?: FocusEventHandler<HTMLButtonElement>;
     onBlur?: FocusEventHandler<HTMLButtonElement>;
-    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
+    onKeyDown?: KeyboardEventHandler<HTMLButtonElement>;
 }
