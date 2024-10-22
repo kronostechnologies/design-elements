@@ -174,7 +174,6 @@ export const TextInput = forwardRef(({
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
             if (required && event.currentTarget.value === '') {
-                // Do not set validity to false if the input is required and empty
                 setValidity({ validity: true });
             } else {
                 setValidity({ validity: event.currentTarget.checkValidity() });
