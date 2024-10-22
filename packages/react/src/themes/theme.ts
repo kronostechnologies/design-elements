@@ -1,4 +1,4 @@
-import { AliasTokenMap, RefTokenMap, ComponentTokenMap, ResolvedComponentTokens } from './tokens';
+import { AliasTokenMap, ComponentTokenMap, RefTokenMap, ResolvedAliasTokens, ResolvedComponentTokens } from './tokens';
 
 export interface ThemeCustomization {
     ref?: Partial<RefTokenMap>;
@@ -8,6 +8,6 @@ export interface ThemeCustomization {
 
 export interface ResolvedTheme {
     ref: RefTokenMap;
-    alias: AliasTokenMap;
+    alias: ResolvedAliasTokens;
     component: ResolvedComponentTokens;
 }

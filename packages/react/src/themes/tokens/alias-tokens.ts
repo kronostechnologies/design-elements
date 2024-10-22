@@ -1,5 +1,5 @@
 import { NoSelfReference } from '../../utility-types';
-import { RefTokens } from './ref-tokens';
+import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type AliasTokens =
     /**
@@ -436,6 +436,12 @@ export const defaultAliasTokens: AliasTokenMap = {
      */
     'color-box-shadow': 'transparent-dark-20',
 };
+
+export type ResolvedAliasTokenValue = RefTokenValue;
+
+export type ResolvedAliasTokens = {
+    [Token in AliasTokens]: ResolvedAliasTokenValue;
+}
 
 export function isAliasToken(token: string): token is AliasTokens {
     return token in defaultAliasTokens;
