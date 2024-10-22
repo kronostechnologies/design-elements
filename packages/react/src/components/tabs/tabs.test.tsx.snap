@@ -57,6 +57,37 @@ exports[`Tabs matches snapshot (global) 1`] = `
   width: var(--size-1x);
 }
 
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -206,37 +237,6 @@ exports[`Tabs matches snapshot (global) 1`] = `
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c2:hover,
-.c2[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c2[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 {
@@ -506,6 +506,37 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -655,37 +686,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 {
@@ -966,6 +966,37 @@ exports[`Tabs matches snapshot 1`] = `
   width: var(--size-1x);
 }
 
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1115,37 +1146,6 @@ exports[`Tabs matches snapshot 1`] = `
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 {

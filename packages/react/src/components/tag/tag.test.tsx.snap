@@ -1716,10 +1716,10 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2279,10 +2279,10 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2842,10 +2842,10 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
