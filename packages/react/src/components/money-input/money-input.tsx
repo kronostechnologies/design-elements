@@ -24,6 +24,7 @@ function safeFormatCurrency(
 }
 
 interface Props {
+    id?: string
     className?: string;
     disabled?: boolean;
     required?: boolean;
@@ -67,6 +68,7 @@ function parseAndRound(val: string, precision: number): number | null {
 }
 
 export const MoneyInput: VoidFunctionComponent<Props> = ({
+    id: providedId,
     className,
     required,
     disabled,
@@ -145,6 +147,7 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     return (
         <InputWrapper $textAlignment={textAlignment}>
             <TextInput
+                id={providedId}
                 className={className}
                 required={required}
                 disabled={disabled}

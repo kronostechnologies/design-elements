@@ -1,9 +1,17 @@
-import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } from 'react';
+import {
+    ChangeEvent,
+    FocusEvent,
+    FormEventHandler,
+    useCallback,
+    useEffect,
+    useState,
+    VoidFunctionComponent,
+} from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -28,6 +36,7 @@ const Counter = styled.div<{ valid: boolean, theme: ResolvedTheme }>`
 `;
 
 export interface TextAreaProps {
+    id?: string;
     className?: string;
     label: string;
     tooltip?: TooltipProps;
@@ -46,6 +55,7 @@ export interface TextAreaProps {
     /** Only use if you want to control input value externally */
     value?: string;
     hint?: string;
+    valid?: boolean;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
 
@@ -65,6 +75,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
 }
 
 export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
+    id: providedId,
     className,
     noMargin,
     onBlur,
@@ -80,45 +91,52 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     validationErrorMessage,
     value,
     maxLength,
+    valid,
     ...otherProps
 }) => {
     const { t } = useTranslation('text-area');
-    const [validity, setValidity] = useState(true);
+    const [validity, setValidity] = useState(valid ?? true);
     const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
-    const idTextArea = useMemo(uuid, []);
-    const idCounter = useMemo(uuid, []);
+    const idTextArea = useId(providedId);
+    const idCounter = useId();
     const dataAttributes = useDataAttributes(otherProps);
 
     function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
-        if (maxLength === undefined || inputValueLength <= maxLength) {
-            setValidity(event.currentTarget.checkValidity());
+        if (valid === undefined) {
+            if (required && inputValueLength === 0) {
+                setValidity(true);
+            } else if (maxLength === undefined || inputValueLength <= maxLength) {
+                setValidity(event.currentTarget.checkValidity());
+            }
         }
 
-        if (onBlur) {
-            onBlur(event);
-        }
+        onBlur?.(event);
     }
 
     function handleChange(event: ChangeEvent<HTMLTextAreaElement>): void {
         const valueLength = event.currentTarget.value.length;
         setInputValueLength(valueLength);
 
-        if (maxLength && valueLength > maxLength) {
-            setValidity(false);
-        } else if (!validity) {
-            setValidity(true);
+        if (valid === undefined) {
+            if (maxLength && valueLength > maxLength) {
+                setValidity(false);
+            } else if (!validity) {
+                setValidity(true);
+            }
         }
 
-        if (onChange) {
-            onChange(event);
-        }
+        onChange?.(event);
     }
 
     function handleFocus(event: FocusEvent<HTMLTextAreaElement>): void {
-        if (onFocus) {
-            onFocus(event);
-        }
+        onFocus?.(event);
     }
+
+    const handleOnInvalid: FormEventHandler<HTMLTextAreaElement> = useCallback(() => {
+        if (valid === undefined) {
+            setValidity(false);
+        }
+    }, [valid]);
 
     function getValidationErrorMessage(): string {
         if (validationErrorMessage) {
@@ -135,6 +153,12 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
         { id: idCounter, include: !!maxLength },
     ]);
+
+    useEffect(() => {
+        if (valid !== undefined) {
+            setValidity(valid);
+        }
+    }, [valid]);
 
     return (
         <FieldContainer
@@ -158,6 +182,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
+                onInvalid={handleOnInvalid}
                 placeholder={placeholder}
                 required={required}
                 value={value}

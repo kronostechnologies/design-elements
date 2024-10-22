@@ -173,13 +173,15 @@ export const TextInput = forwardRef(({
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
-            setValidity({ validity: event.currentTarget.checkValidity() });
+            if (required && event.currentTarget.value === '') {
+                setValidity({ validity: true });
+            } else {
+                setValidity({ validity: event.currentTarget.checkValidity() });
+            }
         }
 
-        if (onBlur) {
-            onBlur(event);
-        }
-    }, [onBlur, valid]);
+        onBlur?.(event);
+    }, [onBlur, valid, required]);
 
     const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
         if (valid === undefined) {
@@ -188,15 +190,11 @@ export const TextInput = forwardRef(({
     }, [valid]);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
-        if (onChange) {
-            onChange(event);
-        }
+        onChange?.(event);
     }, [onChange]);
 
     const handleFocus: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
-        if (onFocus) {
-            onFocus(event);
-        }
+        onFocus?.(event);
     }, [onFocus]);
 
     useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
