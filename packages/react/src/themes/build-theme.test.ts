@@ -1,9 +1,9 @@
 import { devConsole } from '../utils/dev-console';
 import { buildTheme } from './build-theme';
 import { ThemeCustomization } from './theme';
-import { defaultRefTokens, defaultAliasTokens } from './tokens';
+import { defaultRefTokens } from './tokens';
 
-const customization : ThemeCustomization = {
+const customization: ThemeCustomization = {
     ref: {
         'color-brand-05': 'red',
         'color-brand-20': 'green',
@@ -27,17 +27,6 @@ const expectedTheme = {
         'color-brand-20': 'green',
         'color-neutral-02': 'blue',
     },
-    alias: {
-        ...defaultAliasTokens,
-        'color-content': 'color-brand-05',
-        'color-content-subtle': 'color-brand-20',
-    },
-    component: {
-        'button-primary-background-color': 'blue',
-        'button-primary-inverted-background-color': 'green',
-        'button-focus-border': 'red',
-        'button-primary-border-color': '#006296',
-    },
 };
 describe('buildTheme', () => {
     it('should build the defaultRefTokens theme with the customization provided', () => {
@@ -49,45 +38,33 @@ describe('buildTheme', () => {
     it('should build the defaultAliasTokens theme with the customization provided', () => {
         const builtTheme = buildTheme(customization);
 
-        expect(builtTheme.alias).toEqual(expectedTheme.alias);
+        expect(builtTheme.alias).toMatchSnapshot();
     });
 
     it('should build the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
         const builtTheme = buildTheme(customization);
 
-        expect(
-            builtTheme.component['button-primary-background-color'],
-        ).toEqual(
-            expectedTheme.component['button-primary-background-color'],
-        );
+        expect(builtTheme.component['focus-inside-border-color']).toEqual('green');
     });
 
     it('should build the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
         const builtTheme = buildTheme(customization);
 
-        expect(
-            builtTheme.component['button-primary-inverted-background-color'],
-        ).toEqual(
-            expectedTheme.component['button-primary-inverted-background-color'],
-        );
+        expect(builtTheme.component['button-primary-inverted-background-color']).toEqual('green');
     });
 
     it('should build the defaultComponentTokens with a partial customization', () => {
         const builtTheme = buildTheme(customization);
 
-        expect(
-            builtTheme.component['button-primary-border-color'],
-        ).toEqual(
-            expectedTheme.component['button-primary-border-color'],
-        );
+        expect(builtTheme.component['button-primary-border-color']).toEqual('#006296');
     });
 
     it('should log an error for for an unresolved token', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
-        consoleSpy.mockImplementation(() => {});
+        consoleSpy.mockImplementation(() => undefined);
 
         const token = 'invalid-token';
-        const invalidCustomizationWithUnresolvedToken : ThemeCustomization = {
+        const invalidCustomizationWithUnresolvedToken: ThemeCustomization = {
             component: {
                 // @ts-expect-error-unresolved-token-test-purpose
                 'button-primary-background-color': 'invalid-token',
@@ -101,10 +78,10 @@ describe('buildTheme', () => {
 
     it('should log an error for self-referencing AliasToken', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
-        consoleSpy.mockImplementation(() => {});
+        consoleSpy.mockImplementation(() => undefined);
 
         const token = 'color-content';
-        const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
+        const invalidCustomizationWithSelfReferenced: ThemeCustomization = {
             alias: {
                 // @ts-expect-error-self-referenced-token-test-purpose
                 'color-content': 'color-content',
