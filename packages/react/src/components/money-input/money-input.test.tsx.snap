@@ -131,7 +131,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
         data-testid="text-input"
         id="uuid1"
         inputmode="numeric"
-        placeholder="$"
         type="text"
         value="$100.00"
       />
@@ -271,7 +270,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
         data-testid="text-input"
         id="uuid1"
         inputmode="numeric"
-        placeholder="$"
         type="text"
         value="$100.00"
       />
@@ -392,7 +390,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 }
 
 .c0 input {
-  text-align: right;
+  text-align: left;
   width: 132px;
 }
 
@@ -411,7 +409,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
         data-testid="text-input"
         id="uuid1"
         inputmode="numeric"
-        placeholder="$"
         type="text"
         value="100,00 $"
       />
