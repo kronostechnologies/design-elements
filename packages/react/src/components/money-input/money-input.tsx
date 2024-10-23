@@ -26,6 +26,7 @@ function safeFormatCurrency(
 interface Props {
     className?: string;
     disabled?: boolean;
+    readOnly?: boolean;
     required?: boolean;
     /**
      * Message displayed in case of validation error
@@ -68,6 +69,7 @@ function parseAndRound(val: string, precision: number): number | null {
 
 export const MoneyInput: VoidFunctionComponent<Props> = ({
     className,
+    readOnly,
     required,
     disabled,
     label,
@@ -146,6 +148,7 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
         <InputWrapper $textAlignment={textAlignment}>
             <TextInput
                 className={className}
+                readOnly={readOnly}
                 required={required}
                 disabled={disabled}
                 ref={inputElement}
