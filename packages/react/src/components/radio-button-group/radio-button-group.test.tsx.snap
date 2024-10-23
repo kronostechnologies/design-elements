@@ -1,6 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio button Matches the snapshot 1`] = `
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  margin: 0;
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
+}
+
+.c7 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #F1F2F2;
+  border: 1px solid #B7BBC2;
+  border-radius: 50%;
+  color: #F1F2F2;
+  display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  margin: 0;
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c7 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23B7BBC2%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #B7BBC2;
+}
+
+.c7:disabled + label {
+  color: #B7BBC2;
+}
+
+.c7:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c7:hover:not(:checked) {
+  border: 1px solid #B7BBC2;
+}
+
+.c6 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c5 {
+  margin-top: var(--spacing-quarter);
+}
+
 .c0 {
   border: none;
   margin: 0;
@@ -20,157 +138,14 @@ exports[`Radio button Matches the snapshot 1`] = `
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: 0;
-  margin-top: var(--spacing-1x);
+  margin-bottom: var(--spacing-1x);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-top: var(--spacing-1x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c2 input {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  width: var(--size-1x);
-}
-
-.c2 input + .radioInput {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2 input:focus + .radioInput {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c2 input:checked + .radioInput {
-  border: 2px solid #006296;
-}
-
-.c2 input:checked + .radioInput::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
-}
-
-.c2 .radioInput {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  height: var(--size-1x);
-  margin-right: var(--spacing-1x);
-  position: relative;
-  width: var(--size-1x);
-}
-
-.c2:hover .radioInput {
-  border: 1px solid #000000;
-}
-
 .c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-top: var(--spacing-1x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3 input {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  width: var(--size-1x);
-}
-
-.c3 input + .radioInput {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3 input:focus + .radioInput {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3 input:checked + .radioInput {
-  border: 2px solid #006296;
-}
-
-.c3 input:checked + .radioInput::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
-}
-
-.c3 .radioInput {
-  background-color: #F1F2F2;
-  border: 1px solid #B7BBC2;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  height: var(--size-1x);
-  margin-right: var(--spacing-1x);
-  position: relative;
-  width: var(--size-1x);
-}
-
-.c3:hover .radioInput {
-  border: 1px solid #B7BBC2;
+  margin-bottom: var(--spacing-1x);
 }
 
 <fieldset
@@ -182,81 +157,80 @@ exports[`Radio button Matches the snapshot 1`] = `
     Planets
   </legend>
   <div
-    class=""
+    class="c2 c3"
   >
+    <input
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
+      id="uuid1"
+      name="planets"
+      type="radio"
+      value="earth"
+    />
     <label
-      class="c2"
+      class="c6"
+      data-testid="radiobutton-uuid1_label"
+      for="uuid1"
     >
-       
-      <input
-        data-testid="radio-button-group-earth"
-        name="planets"
-        type="radio"
-        value="earth"
-      />
-      <span
-        class="radioInput"
-      />
       Earth
     </label>
   </div>
   <div
-    class=""
+    class="c2 c3"
   >
+    <input
+      checked=""
+      class="c4 c5"
+      data-testid="radiobutton-uuid2"
+      id="uuid2"
+      name="planets"
+      type="radio"
+      value="mars"
+    />
     <label
-      class="c2"
+      class="c6"
+      data-testid="radiobutton-uuid2_label"
+      for="uuid2"
     >
-       
-      <input
-        checked=""
-        data-testid="radio-button-group-mars"
-        name="planets"
-        type="radio"
-        value="mars"
-      />
-      <span
-        class="radioInput"
-      />
       Mars
     </label>
   </div>
   <div
-    class=""
+    class="c2 c3"
   >
-    <label
-      class="c3"
+    <input
+      class="c7 c5"
+      data-testid="radiobutton-uuid3"
       disabled=""
+      id="uuid3"
+      name="planets"
+      type="radio"
+      value="pluto"
+    />
+    <label
+      class="c6"
+      data-testid="radiobutton-uuid3_label"
+      for="uuid3"
     >
-       
-      <input
-        data-testid="radio-button-group-pluto"
-        disabled=""
-        name="planets"
-        type="radio"
-        value="pluto"
-      />
-      <span
-        class="radioInput"
-      />
       Pluto
     </label>
   </div>
   <div
-    class=""
+    class="c2 c3"
   >
+    <input
+      class="c4 c5"
+      data-testid="radiobutton-uuid4"
+      id="uuid4"
+      name="planets"
+      type="radio"
+      value="saturn"
+    />
     <label
-      class="c2"
+      class="c6"
+      data-testid="radiobutton-uuid4_label"
+      for="uuid4"
     >
-       
-      <input
-        data-testid="radio-button-group-saturn"
-        name="planets"
-        type="radio"
-        value="saturn"
-      />
-      <span
-        class="radioInput"
-      />
       Saturn
     </label>
   </div>
