@@ -10,13 +10,12 @@ export type TextInputToken =
     | 'text-input-disabled-border-color'
     | 'text-input-disabled-text-color'
     | 'text-input-placeholder-disabled-text-color'
-    | 'text-input-disabled-adornment-text-color'
-    | 'text-input-adornment-color'
+    | 'text-input-disabled-adornment-color'
     | 'text-input-readonly-background-color'
     | 'text-input-readonly-border-color'
     | 'text-input-readonly-text-color'
-    | 'text-input-disabled-adornment-color'
-    | 'text-input-readonly-adornment-color';
+    | 'text-input-readonly-adornment-color'
+    | 'text-input-adornment-color';
 
 export const defaultTextInputTokens: ComponentTokenMap<TextInputToken> = {
     'text-input-background-color': 'color-control-background',

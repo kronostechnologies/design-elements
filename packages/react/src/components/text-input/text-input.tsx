@@ -242,6 +242,7 @@ export const TextInput = forwardRef(({
             noMargin={noMargin}
             fieldId={fieldId}
             label={label}
+            readOnly={readOnly}
             required={required}
             tooltip={tooltip}
             valid={validity}
