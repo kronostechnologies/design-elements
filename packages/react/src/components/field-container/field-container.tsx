@@ -46,6 +46,7 @@ export interface FieldContainerProps {
     noInvalidFieldIcon?: boolean;
     noMargin?: boolean;
     required?: boolean;
+    readOnly?: boolean;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
     valid: boolean;
@@ -61,6 +62,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     noInvalidFieldIcon,
     noMargin,
     required,
+    readOnly,
     tooltip,
     toggletip,
     valid,
