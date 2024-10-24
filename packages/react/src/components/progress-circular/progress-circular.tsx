@@ -2,13 +2,19 @@ import { VoidFunctionComponent } from 'react';
 import styled, { useTheme } from 'styled-components';
 
 const sizes = {
-    lg: 64,
-    md: 32,
-    sm: 24,
-    xs: 16,
+    xsmall: 16,
+    small: 24,
+    medium: 32,
+    large: 64,
 };
 
 type Size = keyof typeof sizes;
+
+const VIEWBOX = 64;
+const STROKE_WIDTH = 8;
+const RADIUS = (VIEWBOX - STROKE_WIDTH) / 2;
+const CENTER_XY = VIEWBOX / 2;
+const CIRCUMFERENCE = RADIUS * 2 * Math.PI;
 
 const Circle = styled.circle`
     transition: stroke-dashoffset 850ms ease;
@@ -25,35 +31,34 @@ export interface ProgressCircularProps {
 export const ProgressCircular: VoidFunctionComponent<ProgressCircularProps> = ({
     className,
     inverted = false,
-    size = 'md',
+    size = 'medium',
     value,
 }) => {
     const theme = useTheme();
-
-    const circumference = 28 * 2 * Math.PI;
-    const strokeDashoffset = circumference - ((value / 100) * circumference);
+    const strokeDashoffset = (1 - (value / 100)) * CIRCUMFERENCE;
 
     return (
         <svg
             width={sizes[size]}
             height={sizes[size]}
-            viewBox="0 0 64 64"
+            viewBox={`0 0 ${VIEWBOX} ${VIEWBOX}`}
             className={className}
             aria-hidden="true"
+            focusable="false"
         >
             <Circle
-                cx="32"
-                cy="32"
-                r="28"
+                cx={CENTER_XY}
+                cy={CENTER_XY}
+                r={RADIUS}
                 stroke={inverted
-                    ? theme.component['progress-circular-inverted-fill-color']
-                    : theme.component['progress-circular-fill-color']}
-                strokeWidth="8"
+                    ? theme.component['progress-circular-inverted-color']
+                    : theme.component['progress-circular-color']}
+                strokeWidth={STROKE_WIDTH}
                 fill="none"
-                strokeDasharray={circumference}
+                strokeDasharray={CIRCUMFERENCE}
                 strokeDashoffset={strokeDashoffset}
                 strokeLinecap="round"
-                transform="rotate(-90 32 32)"
+                transform={`rotate(-90 ${CENTER_XY} ${CENTER_XY})`}
             />
         </svg>
     );

@@ -5,7 +5,7 @@ const meta: Meta<typeof ProgressCircular> = {
     title: 'Components/Progress Circular',
     component: ProgressCircular,
     args: {
-        size: 'md',
+        size: 'medium',
         inverted: false,
     },
     argTypes: {
@@ -29,7 +29,7 @@ const meta: Meta<typeof ProgressCircular> = {
         size: {
             control: {
                 type: 'select',
-                options: ['xs', 'sm', 'md', 'lg'],
+                options: ['xsmall', 'small', 'medium', 'large'],
             },
         },
     },
