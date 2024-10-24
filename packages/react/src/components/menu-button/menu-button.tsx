@@ -1,9 +1,9 @@
 import React, { FunctionComponent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
-import { ButtonType } from '../buttons/abstract-button';
 import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
+import { ButtonType } from '../buttons/types';
 import { Icon, IconName } from '../icon/icon';
 import { Menu, MenuItem } from '../menu/menu';
 import { eventIsInside } from '../../utils/events';

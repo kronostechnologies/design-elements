@@ -1,5 +1,4 @@
 import {
-    FocusEventHandler,
     forwardRef,
     KeyboardEvent,
     MouseEvent,
@@ -7,74 +6,10 @@ import {
     ReactElement,
     Ref,
 } from 'react';
-import styled from 'styled-components';
-import {
-    Icon,
-    IconName,
-} from '../icon/icon';
-import { Spinner } from '../spinner/spinner';
-import { ResolvedTheme } from '../../themes/theme';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
-
-export type Size = 'small' | 'medium';
-
-export type Type = 'submit' | 'button' | 'reset';
-
-export interface ButtonProps {
-    id?: string;
-    autofocus?: boolean;
-    /**
-     * Visual style
-     * @default primary
-     */
-    buttonType: ButtonType;
-    className?: string;
-    disabled?: boolean;
-    /**
-     * @default true
-     */
-    focusable?: boolean;
-    inverted?: boolean;
-    label?: string;
-    loading?: boolean;
-    /**
-     * @default Loading...
-     */
-    loadingLabel?: string;
-    /**
-     * Size variant
-     * @default medium
-     */
-    size?: Size;
-    title?: string;
-    type?: Type;
-
-    leftIconName?: IconName;
-    rightIconName?: IconName;
-
-    onClick?(event: MouseEvent<HTMLButtonElement>): void;
-    onFocus?: FocusEventHandler<HTMLButtonElement>;
-    onBlur?: FocusEventHandler<HTMLButtonElement>;
-    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
-}
-
-const StyledSpinner = styled(Spinner)`
-    margin-right: var(--spacing-1x);
-`;
-
-const LeftIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
-`;
-
-const RightIcon = styled(Icon)`
-    margin-left: var(--spacing-1x);
-`;
-
-const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & ButtonProps>`
-    ${getButtonTypeStyles}
-`;
+import { LeftIcon, RightIcon, StyledButton, StyledSpinner } from './styled';
+import { ButtonProps } from './types';
 
 export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
     autofocus,

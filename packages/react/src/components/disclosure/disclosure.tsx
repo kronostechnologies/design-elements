@@ -1,8 +1,12 @@
 import { FunctionComponent, PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { Button, ButtonProps, Size } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
+import {
+    Size,
+    Button,
+    IconButton,
+    ButtonProps,
+} from '../buttons';
 import { IconName } from '../icon/icon';
 
 export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
