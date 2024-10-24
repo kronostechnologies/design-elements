@@ -8,6 +8,7 @@ exports[`ProgressCircular Matches the snapshot 1`] = `
 
 <svg
   aria-hidden="true"
+  focusable="false"
   height="32"
   viewBox="0 0 64 64"
   width="32"
@@ -20,7 +21,7 @@ exports[`ProgressCircular Matches the snapshot 1`] = `
     r="28"
     stroke="#006296"
     stroke-dasharray="175.92918860102841"
-    stroke-dashoffset="59.81592412434965"
+    stroke-dashoffset="59.81592412434966"
     stroke-linecap="round"
     stroke-width="8"
     transform="rotate(-90 32 32)"
