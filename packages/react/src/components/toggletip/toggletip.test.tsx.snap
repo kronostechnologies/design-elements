@@ -276,6 +276,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       >
         <styled.button
           $focusable={true}
+          $isMobile={false}
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -504,6 +505,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
       >
         <styled.button
           $focusable={true}
+          $isMobile={false}
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
@@ -823,6 +825,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       >
         <styled.button
           $focusable={true}
+          $isMobile={true}
           aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
@@ -1051,6 +1054,7 @@ exports[`Toggletip Has mobile styles 1`] = `
       >
         <styled.button
           $focusable={true}
+          $isMobile={true}
           aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
