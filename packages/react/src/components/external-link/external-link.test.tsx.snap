@@ -67,7 +67,7 @@ exports[`External Link matches snapshot (disabled) 1`] = `
 }
 
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {
@@ -129,7 +129,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0 {
@@ -187,7 +187,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3 {
@@ -257,7 +257,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 }
 
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0 {
@@ -315,7 +315,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 }
 
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3 {
@@ -383,7 +383,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0 {
@@ -441,7 +441,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3 {
@@ -511,7 +511,7 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0 {
@@ -562,7 +562,7 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {

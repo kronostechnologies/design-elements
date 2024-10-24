@@ -170,7 +170,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -221,7 +221,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {
@@ -862,7 +862,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -913,7 +913,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {
@@ -1552,7 +1552,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c18:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c18 {
@@ -1603,7 +1603,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c19:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c21 {
@@ -2243,7 +2243,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -2294,7 +2294,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {
