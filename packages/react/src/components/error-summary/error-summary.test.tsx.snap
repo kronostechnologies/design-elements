@@ -24,7 +24,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c9:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c9 {
