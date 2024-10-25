@@ -1,12 +1,28 @@
+import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithTheme, renderPortalWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
 describe('Stepper input', () => {
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <StepperInput label='test' required validationErrorMessage='This field is required' />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('stepper-input'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
+    });
+
     test('onChange callback should be called when input value changes', () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperInput onChange={callback} />);
+        const wrapper = mountWithTheme(<StepperInput onChange={callback} />);
 
         getByTestId(wrapper, 'stepper-input').simulate('change', { target: { value: 3 } });
 
@@ -15,7 +31,7 @@ describe('Stepper input', () => {
 
     test('onBlur callback should be called when input is blurred', () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperInput onBlur={callback} />);
+        const wrapper = mountWithTheme(<StepperInput onBlur={callback} />);
 
         getByTestId(wrapper, 'stepper-input').simulate('blur');
 

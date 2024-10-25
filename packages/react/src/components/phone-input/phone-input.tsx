@@ -29,6 +29,8 @@ interface PhoneInputProps {
     label?: string;
     hint?: string;
     name?: string;
+    id?: string;
+    validationErrorMessage?: string;
 }
 
 const MaskContainer = styled.div<{ isMobile: boolean }>`
@@ -68,6 +70,7 @@ function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMa
 }
 
 export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
+    id: providedId,
     pattern,
     defaultValue,
     required,
@@ -75,6 +78,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
     label,
     hint,
     name,
+    validationErrorMessage,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
@@ -218,6 +222,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
             <TextInput
                 data-testid="phone-text-input"
                 ref={inputRef}
+                id={providedId}
                 type="tel"
                 name={name}
                 value={phoneInputValue}
@@ -228,6 +233,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 onChange={handleChange}
                 onMouseUp={handleMouseUp}
                 onKeyDown={handleKeyDown}
+                validationErrorMessage={validationErrorMessage}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </Container>
