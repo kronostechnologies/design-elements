@@ -429,7 +429,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-link-content': 'color-informative-50',
     'color-link-content-disabled': 'color-informative-20',
     'color-link-content-hover': 'color-informative-70',
-    'color-link-content-visited': 'color-discovery-50',
+    'color-link-content-visited': 'color-informative-50',
 
     /**
      * BOX-SHADOW

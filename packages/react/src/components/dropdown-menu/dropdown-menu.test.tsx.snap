@@ -35,7 +35,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c6:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c6 {
@@ -86,7 +86,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c7:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c9 {
@@ -126,13 +126,13 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c8:visited {
-  color: #602FA0;
-  fill: #602FA0;
+  color: #006296;
+  fill: #006296;
 }
 
 .c8:visited svg {
-  color: #602FA0;
-  fill: #602FA0;
+  color: #006296;
+  fill: #006296;
 }
 
 .c8[disabled] {
@@ -445,7 +445,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c6:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c6 {
@@ -496,7 +496,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c7:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c9 {
@@ -536,13 +536,13 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c8:visited {
-  color: #602FA0;
-  fill: #602FA0;
+  color: #006296;
+  fill: #006296;
 }
 
 .c8:visited svg {
-  color: #602FA0;
-  fill: #602FA0;
+  color: #006296;
+  fill: #006296;
 }
 
 .c8[disabled] {
