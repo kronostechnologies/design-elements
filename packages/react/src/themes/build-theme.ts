@@ -1,23 +1,20 @@
 import { devConsole } from '../utils/dev-console';
+import { ResolvedTheme, ThemeCustomization } from './theme';
 import {
+    AliasTokenMap,
     AliasTokens,
-    ResolvedComponentTokens,
-    RefTokens,
-    RefTokenValue,
-    defaultRefTokens,
+    ComponentTokenMap,
     defaultAliasTokens,
     defaultComponentTokens,
-    isRefToken,
+    defaultRefTokens,
     isAliasToken,
     isComponentToken,
+    isRefToken,
     RefTokenMap,
-    AliasTokenMap,
-    ComponentTokenMap,
+    RefTokens,
+    RefTokenValue,
+    ResolvedComponentTokens,
 } from './tokens';
-import {
-    ResolvedTheme,
-    ThemeCustomization,
-} from './theme';
 
 interface CustomizedTheme {
     ref: RefTokenMap;
@@ -43,25 +40,38 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
 
     function resolveToken(token: AliasTokens | RefTokens): RefTokenValue {
         if (isRefToken(token)) {
-            return customizedTheme.ref[token];
+            return resolvedTheme.ref[token];
         }
 
         if (isAliasToken(token)) {
-            const aliasToken = customizedTheme.alias[token];
+            const aliasToken = resolvedTheme.alias[token];
 
             if (aliasToken === token) {
                 devConsole.error(`Self-referencing AliasToken detected: '${token}'`);
                 return '';
             }
 
-            return resolveToken(aliasToken);
+            if (isAliasToken(aliasToken) || isRefToken(aliasToken)) {
+                return resolveToken(aliasToken);
+            }
+            return aliasToken;
         }
 
         devConsole.error(`Token '${token}' not found in RefTokens or AliasTokens`);
         return '';
     }
 
-    // Resolve component tokens
+    Object.keys(customizedTheme.alias).forEach((token) => {
+        if (isAliasToken(token)) {
+            const tokenToResolve = customizedTheme.alias[token];
+            if (tokenToResolve) {
+                resolvedTheme.alias[token] = resolveToken(tokenToResolve);
+            } else {
+                devConsole.error(`Token "${token}" is undefined.`);
+            }
+        }
+    });
+
     Object.keys(customizedTheme.component).forEach((token) => {
         if (isComponentToken(token)) {
             const tokenToResolve = customizedTheme.component[token];
