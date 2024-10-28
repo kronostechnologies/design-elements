@@ -103,7 +103,7 @@ exports[`buildTheme should build the defaultAliasTokens theme with the customiza
   "color-link-content": "#006296",
   "color-link-content-disabled": "#8FCEF0",
   "color-link-content-hover": "#003A5A",
-  "color-link-content-visited": "#602FA0",
+  "color-link-content-visited": "#006296",
   "color-menu-background": "#FFFFFF",
   "color-menu-border": "#878F9A",
   "color-menu-item-background": "transparent",
