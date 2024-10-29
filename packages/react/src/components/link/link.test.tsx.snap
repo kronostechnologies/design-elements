@@ -38,12 +38,12 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -175,12 +175,12 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -408,12 +408,12 @@ exports[`Link Component Styling matches default snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -508,12 +508,12 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -613,12 +613,12 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -716,12 +716,12 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
@@ -837,12 +837,12 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 
 .c1[visited],
 .c1:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c1[visited] svg,
 .c1:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c1[hover],
@@ -1101,12 +1101,12 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
 
 .c0[visited],
 .c0:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[visited] svg,
 .c0:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c0[hover],
