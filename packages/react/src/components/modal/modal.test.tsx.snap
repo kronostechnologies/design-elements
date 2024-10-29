@@ -45,8 +45,10 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -55,13 +57,20 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
+  padding: var(--spacing-3x) var(--spacing-4x);
 }
 
 <body
@@ -134,8 +143,10 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -144,13 +155,20 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-2x);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-2x) 0;
+  padding: var(--spacing-2x) var(--spacing-2x);
 }
 
 <body
@@ -203,7 +221,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (noPadding) 1`] = `
-.c3 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -232,15 +250,40 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c3 {
@@ -254,46 +297,21 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   outline-offset: -2px;
 }
 
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c4[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c4 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -318,8 +336,10 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -328,19 +348,32 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: 0;
-}
-
-.c2 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: 0 0 0;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0 0;
+  padding-right: calc(0 + var(--spacing-3x));
+}
+
+.c4 {
+  pointer-events: none;
   position: absolute;
-  right: var(--spacing-4x);
-  top: 1.75rem;
+  right: 0;
+  top: 0;
+}
+
+.c4 > * {
+  pointer-events: auto;
 }
 
 <body
@@ -377,18 +410,9 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <main
-          class="c2"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
         <button
           aria-label="Close dialog"
-          class="c3 c4 c5"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -400,6 +424,15 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
             width="16"
           />
         </button>
+        <main
+          class="c5"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
       </div>
     </div>
   </div>
@@ -407,7 +440,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (opened, desktop) 1`] = `
-.c3 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -436,15 +469,40 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
 }
 
 .c3 {
@@ -458,46 +516,21 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c4[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c4 > svg {
+.c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -522,8 +555,10 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: calc(480px - var(--spacing-4x));
   position: relative;
   width: 60vw;
@@ -532,19 +567,32 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c2 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-3x) var(--spacing-4x) 0;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-3x) var(--spacing-4x);
+  padding-right: calc(var(--spacing-4x) + var(--spacing-3x));
+}
+
+.c4 {
+  pointer-events: none;
   position: absolute;
   right: var(--spacing-4x);
-  top: 1.75rem;
+  top: var(--spacing-3x);
+}
+
+.c4 > * {
+  pointer-events: auto;
 }
 
 <body
@@ -581,18 +629,9 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <main
-          class="c2"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
         <button
           aria-label="Close dialog"
-          class="c3 c4 c5"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -604,6 +643,15 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
             width="16"
           />
         </button>
+        <main
+          class="c5"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
       </div>
     </div>
   </div>
@@ -611,7 +659,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 `;
 
 exports[`Modal Matches snapshot (opened, mobile) 1`] = `
-.c3 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -651,6 +699,30 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c2 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-3x);
+}
+
 .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
@@ -662,45 +734,21 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c4:hover,
-.c4[aria-expanded='true'] {
+.c3:hover,
+.c3[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c4[aria-disabled='true'] {
+.c3[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
 }
 
-.c4 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
@@ -725,8 +773,10 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: auto;
   max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
+  max-width: 95vw;
+  min-height: 1vh;
   min-width: initial;
   position: relative;
   width: calc(100vw - var(--spacing-2x));
@@ -735,19 +785,32 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c1::after {
   content: '';
   display: block;
-  padding-bottom: var(--spacing-2x);
-}
-
-.c2 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-2x) var(--spacing-2x) 0;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-2x) var(--spacing-2x);
+  padding-right: calc(var(--spacing-2x) + var(--spacing-3x));
+}
+
+.c4 {
+  pointer-events: none;
   position: absolute;
-  right: var(--spacing-half);
-  top: 1.75rem;
+  right: var(--spacing-2x);
+  top: var(--spacing-2x);
+}
+
+.c4 > * {
+  pointer-events: auto;
 }
 
 <body
@@ -784,18 +847,9 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
         role="dialog"
         tabindex="-1"
       >
-        <main
-          class="c2"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
         <button
           aria-label="Close dialog"
-          class="c3 c4 c5"
+          class="c2 c3 c4"
           data-testid="close-button"
           type="button"
         >
@@ -807,6 +861,15 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
             width="24"
           />
         </button>
+        <main
+          class="c5"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
       </div>
     </div>
   </div>

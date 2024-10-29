@@ -1,9 +1,11 @@
+import { fireEvent } from '@testing-library/react';
 import { ReactWrapper, shallow } from 'enzyme';
 import { ChangeEventHandler } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
+import { Icon } from '../icon/icon';
 
 describe('TextInput', () => {
     const initialProps = {
@@ -114,6 +116,21 @@ describe('TextInput', () => {
         expect(container.prop('valid')).toBe(false);
     });
 
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <TextInput label='test' required validationErrorMessage='This field is required' />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('text-input'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
+    });
+
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = setup(callback);
@@ -180,6 +197,55 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches the snapshot adornment text', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                leftAdornment='#'
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches the snapshot adornment icon', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                leftAdornment={<Icon name='phone' />}
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot (Normal - Adornment at end)', () => {
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                leftAdornment='#'
+                rightAdornment='end'
             />,
         );
 

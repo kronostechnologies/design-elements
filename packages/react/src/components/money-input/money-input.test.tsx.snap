@@ -15,7 +15,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -33,48 +33,71 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #60666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #60666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3:focus,
+.c3:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
 }
 
 .c2 {
@@ -82,7 +105,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -100,15 +123,18 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
     class="c1"
     data-testid="field-container"
   >
-    <input
+    <div
       class="c2"
-      data-testid="text-input"
-      id="uuid1"
-      inputmode="numeric"
-      placeholder="$"
-      type="text"
-      value="$100.00"
-    />
+    >
+      <input
+        class="c3"
+        data-testid="text-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="$100.00"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -128,7 +154,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -146,48 +172,71 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #60666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #60666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3:focus,
+.c3:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
 }
 
 .c2 {
@@ -195,7 +244,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -213,15 +262,18 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
     class="c1"
     data-testid="field-container"
   >
-    <input
+    <div
       class="c2"
-      data-testid="text-input"
-      id="uuid1"
-      inputmode="numeric"
-      placeholder="$"
-      type="text"
-      value="$100.00"
-    />
+    >
+      <input
+        class="c3"
+        data-testid="text-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="$100.00"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -241,7 +293,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -259,48 +311,71 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #60666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #60666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c3:focus,
+.c3:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
 }
 
 .c2 {
@@ -308,14 +383,14 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
 .c0 input {
-  text-align: right;
+  text-align: left;
   width: 132px;
 }
 
@@ -326,15 +401,18 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
     class="c1"
     data-testid="field-container"
   >
-    <input
+    <div
       class="c2"
-      data-testid="text-input"
-      id="uuid1"
-      inputmode="numeric"
-      placeholder="$"
-      type="text"
-      value="100,00 $"
-    />
+    >
+      <input
+        class="c3"
+        data-testid="text-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="100,00 $"
+      />
+    </div>
   </div>
 </div>
 `;

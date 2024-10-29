@@ -465,14 +465,6 @@ exports[`Button has left and right icons 1`] = `
   width: var(--size-1x);
 }
 
-.c2 {
-  margin-right: var(--spacing-1x);
-}
-
-.c3 {
-  margin-left: var(--spacing-1x);
-}
-
 .c1 {
   background-color: #006296;
   border-color: #006296;
@@ -502,6 +494,14 @@ exports[`Button has left and right icons 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c2 {
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
 }
 
 <button
@@ -1137,10 +1137,10 @@ exports[`Button has small styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-1halfx);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-1halfx);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;

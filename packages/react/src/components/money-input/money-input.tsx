@@ -5,11 +5,11 @@ import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput } from '../text-input/text-input';
 
-type Language = 'en' | 'fr';
+type TextAlignment = 'left' | 'right';
 
-const InputWrapper = styled.div<{ language: Language }>`
+const InputWrapper = styled.div<{ $textAlignment: TextAlignment }>`
     input {
-        text-align: ${({ language }) => (language === 'en' ? 'left' : 'right')};
+        text-align: ${({ $textAlignment }) => $textAlignment};
         width: 132px;
     }
 `;
@@ -24,6 +24,7 @@ function safeFormatCurrency(
 }
 
 interface Props {
+    id?: string
     className?: string;
     disabled?: boolean;
     required?: boolean;
@@ -50,6 +51,8 @@ interface Props {
      */
     precision?: number;
     hint?: string;
+    noMargin?: boolean;
+    textAlignment?: TextAlignment;
 
     onChange?(value: number | null, formattedValue: string): void;
 }
@@ -65,6 +68,7 @@ function parseAndRound(val: string, precision: number): number | null {
 }
 
 export const MoneyInput: VoidFunctionComponent<Props> = ({
+    id: providedId,
     className,
     required,
     disabled,
@@ -76,11 +80,12 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     locale = 'fr-CA',
     currency = 'CAD',
     hint,
+    noMargin,
+    textAlignment = 'left',
     ...otherProps
 }) => {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
-    const language: Language = locale.split('-')[0] as Language;
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [hasFocus, setHasFocus] = useState<boolean>(false);
@@ -140,8 +145,9 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     }, []);
 
     return (
-        <InputWrapper language={language}>
+        <InputWrapper $textAlignment={textAlignment}>
             <TextInput
+                id={providedId}
                 className={className}
                 required={required}
                 disabled={disabled}
@@ -150,12 +156,12 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
                 inputMode="numeric"
                 value={displayValue}
                 label={label}
-                placeholder="$"
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 hint={hint}
+                noMargin={noMargin}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </InputWrapper>
