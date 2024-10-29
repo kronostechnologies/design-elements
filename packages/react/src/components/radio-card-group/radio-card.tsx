@@ -55,10 +55,9 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
     }
 
     return (
-        <S.Label isDisabled={disabled} isMobile={isMobile} htmlFor={id}>
+        <S.Label isDisabled={disabled} isMobile={isMobile} htmlFor={id} className={className}>
             <StyledRadioInput
                 checked={checked}
-                className={className}
                 data-testid={`radio-card-${value}-input`}
                 defaultChecked={defaultChecked}
                 disabled={disabled}
