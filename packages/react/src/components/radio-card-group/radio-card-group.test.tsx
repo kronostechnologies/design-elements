@@ -37,30 +37,6 @@ describe('Radio Card', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('label should have isChecked prop set to true when input is defaultChecked', () => {
-        const wrapper = mountWithTheme(
-            <RadioCardGroup>
-                <RadioCard name="test" label="Test" value="test" defaultChecked>
-                    Test description
-                </RadioCard>
-            </RadioCardGroup>,
-        );
-
-        expect(getByTestId(wrapper, containerTestId).getElement().props.isChecked).toBe(true);
-    });
-
-    test('container should have isChecked prop set to true when input is checked', () => {
-        const wrapper = mountWithTheme(
-            <RadioCardGroup>
-                <RadioCard name="test" label="Test" value="test" defaultChecked>
-                    Test description
-                </RadioCard>
-            </RadioCardGroup>,
-        );
-
-        expect(getByTestId(wrapper, containerTestId).getElement().props.isChecked).toBe(true);
-    });
-
     test('Matches snapshot (Default, Desktop)', () => {
         const tree = renderWithProviders(
             <RadioCardGroup>

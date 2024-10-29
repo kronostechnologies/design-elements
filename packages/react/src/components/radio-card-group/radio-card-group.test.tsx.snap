@@ -1,16 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #FFFFFF;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
+  margin: 0;
+  position: relative;
   width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -28,39 +64,28 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -76,13 +101,9 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
+.c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
@@ -103,31 +124,8 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1x);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -136,53 +134,85 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   <legend
     class="c1"
   />
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
+    for="uuid1"
   >
     <input
       checked=""
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
+        class="c7"
       >
-        <span
-          class="c9 c10"
-        />
         Test
       </span>
       <span
-        class="c11 c12"
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;
 
 exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #FFFFFF;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
+  margin: 0;
+  position: relative;
   width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -200,39 +230,28 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -248,13 +267,9 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
+.c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
@@ -275,31 +290,8 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1x);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -308,52 +300,84 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   <legend
     class="c1"
   />
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
+    for="uuid1"
   >
     <input
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
+        class="c7"
       >
-        <span
-          class="c9 c10"
-        />
         Test
       </span>
       <span
-        class="c11 c12"
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;
 
 exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #FFFFFF;
   display: inline-block;
-  height: var(--size-1halfx);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
-  width: var(--size-1halfx);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  margin: 0;
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -371,39 +395,28 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 1rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -419,13 +432,9 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
+.c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
@@ -446,31 +455,8 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1halfx);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1halfx);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -479,52 +465,84 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   <legend
     class="c1"
   />
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
+    for="uuid1"
   >
     <input
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
+        class="c7"
       >
-        <span
-          class="c9 c10"
-        />
         Test
       </span>
       <span
-        class="c11 c12"
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;
 
 exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #F1F2F2;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
+  margin: 0;
+  position: relative;
   width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23B7BBC2%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #B7BBC2;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #B7BBC2;
 }
 
 .c1 {
@@ -542,39 +560,28 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  color: #B7BBC2;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -590,14 +597,10 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
-  background-color: #DBDEE1;
-  border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
-  color: #000000;
+.c3:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
 }
 
 .c0 {
@@ -617,31 +620,8 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1x);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -650,57 +630,85 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   <legend
     class="c1"
   />
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
-    disabled=""
+    for="uuid1"
   >
     <input
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       disabled=""
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
-        disabled=""
+        class="c7"
       >
-        <span
-          class="c9 c10"
-          disabled=""
-        />
         Test
       </span>
       <span
-        class="c11 c12"
-        disabled=""
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;
 
 exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #FFFFFF;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
+  margin: 0;
+  position: relative;
   width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -718,39 +726,28 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -766,13 +763,9 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
+.c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
@@ -793,31 +786,8 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1x);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -828,52 +798,84 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   >
     Test
   </legend>
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
+    for="uuid1"
   >
     <input
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
+        class="c7"
       >
-        <span
-          class="c9 c10"
-        />
         Test
       </span>
       <span
-        class="c11 c12"
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;
 
 exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
-.c10 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
-  box-sizing: border-box;
+  color: #FFFFFF;
   display: inline-block;
-  height: var(--size-1halfx);
-  margin-right: var(--spacing-2x);
-  vertical-align: middle;
-  width: var(--size-1halfx);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  margin: 0;
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c4:disabled + label {
+  color: #B7BBC2;
+}
+
+.c4:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c4:hover:not(:checked) {
+  border: 1px solid #000000;
 }
 
 .c1 {
@@ -891,39 +893,28 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+.c7 {
+  font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: 0.24px;
-  -moz-letter-spacing: 0.24px;
-  -ms-letter-spacing: 0.24px;
-  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
 }
 
-.c12 {
+.c8 {
   font-size: 1rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-4x);
+  line-height: 1.25rem;
 }
 
 .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
@@ -939,13 +930,9 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:hover:not([disabled]) {
+.c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
-}
-
-.c3:hover:not([disabled]) .c11,
-.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
@@ -966,31 +953,8 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c4 {
-  height: var(--size-1halfx);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0.125rem;
-  width: var(--size-1halfx);
-}
-
-.c4:checked + .c5 > .c7 > .c9 {
-  border: 2px solid #006296;
-}
-
-.c4:checked + .c5 > .c7 > .c9::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  margin: 6px;
-  position: absolute;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
+.c5 {
+  margin-top: var(--spacing-half);
 }
 
 <fieldset
@@ -1001,37 +965,33 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   >
     Test
   </legend>
-  <div
+  <label
     class="c2 c3"
-    data-testid="radio-card-test-container"
+    for="uuid1"
   >
     <input
-      class="c4"
-      data-testid="radio-card-test-input"
+      class="c4 c5"
+      data-testid="radiobutton-uuid1"
       id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
-    <label
-      class="c5 c6"
-      for="uuid1"
+    <span
+      class="c6"
     >
       <span
-        class="c7 c8"
+        class="c7"
       >
-        <span
-          class="c9 c10"
-        />
         Test
       </span>
       <span
-        class="c11 c12"
+        class="c8"
         id="description-uuid1"
       >
         Test description
       </span>
-    </label>
-  </div>
+    </span>
+  </label>
 </fieldset>
 `;

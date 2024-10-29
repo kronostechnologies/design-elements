@@ -1,8 +1,8 @@
 import { ChangeEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { focus } from '../../utils/css-state';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+import { RadioButton } from '../radio-button/radio-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const StyledFieldset = styled.fieldset`
@@ -18,68 +18,16 @@ const StyledLegend = styled.legend<{ isMobile: boolean }>`
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
-    margin: 0;
-    margin-top: var(--spacing-1x);
+    margin-bottom: var(--spacing-1x);
     width: fit-content;
+`;
+
+const StyledRadioButton = styled(RadioButton)`
+    margin-bottom: var(--spacing-1x);
 `;
 
 const StyledTooltip = styled(Tooltip)`
     margin-left: calc(var(--spacing-1x) * 1.5);
-`;
-
-const RadioWrapper = styled.div``;
-
-const StyledLabel = styled.label<{ disabled?: boolean }>`
-    align-items: center;
-    display: inline-flex;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    margin-top: var(--spacing-1x);
-    position: relative;
-    user-select: none;
-
-    input {
-        height: var(--size-1x);
-        left: 0;
-        margin: 0;
-        opacity: 0;
-        position: absolute;
-        width: var(--size-1x);
-
-        ${(theme) => focus(theme, { selector: '+ .radioInput' })}
-
-        &:checked + .radioInput {
-            border: 2px solid ${({ theme }) => theme.component['radio-button-checked-border-color']};
-
-            &::after {
-                background-color: ${({ theme }) => theme.component['radio-button-checked-background-color']};
-                border-radius: 50%;
-                content: '';
-                height: var(--size-half);
-                left: 50%;
-                position: absolute;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: var(--size-half);
-            }
-        }
-    }
-
-    .radioInput {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-background-color'] : theme.component['radio-button-background-color'])};
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-border-color'])};
-        border-radius: 50%;
-        box-sizing: border-box;
-        display: inline-block;
-        height: var(--size-1x);
-        margin-right: var(--spacing-1x);
-        position: relative;
-        width: var(--size-1x);
-    }
-
-    &:hover .radioInput {
-        border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
-    }
 `;
 
 const ContentWrapper = styled.div<{ $isExpanded: boolean, $maxHeight?: number, $transitionDuration: number }>(({ $isExpanded, $maxHeight = 500, $transitionDuration }) => `
@@ -95,6 +43,7 @@ const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: bool
 interface RadioButtonProps {
     label: string;
     value: string;
+    id?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
     content?: {
@@ -104,6 +53,8 @@ interface RadioButtonProps {
 }
 
 interface RadioButtonGroupProps {
+    ariaLabel?: string;
+    ariaLabelledBy?: string[];
     className?: string;
     id?: string;
     label?: string;
@@ -119,6 +70,8 @@ interface RadioButtonGroupProps {
 }
 
 export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
+    ariaLabel,
+    ariaLabelledBy,
     buttons,
     className,
     groupName,
@@ -177,22 +130,22 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                 const isExpanded = currentChecked === button.value;
 
                 return (
-                    <RadioWrapper key={`${groupName}-${button.value}`}>
-                        <StyledLabel disabled={button.disabled}>
-                            {' '}
-                            <input
-                                data-testid={`${dataTestId}-${button.value}`}
-                                type="radio"
-                                name={groupName}
-                                value={button.value}
-                                checked={checkedValue ? checkedValue === button.value : undefined}
-                                defaultChecked={button.defaultChecked}
-                                disabled={button.disabled}
-                                onChange={handleChange}
-                            />
-                            <span className="radioInput" />
-                            {button.label}
-                        </StyledLabel>
+                    <>
+                        <StyledRadioButton
+                            key={`${groupName}-${button.value}`}
+                            aria-label={ariaLabel}
+                            aria-labelledby={ariaLabelledBy?.join(' ')}
+                            checked={checkedValue ? checkedValue === button.value : undefined}
+                            className={className}
+                            data-testid={`${dataTestId}-${button.value}`}
+                            defaultChecked={button.defaultChecked}
+                            disabled={button.disabled}
+                            id={button.id}
+                            label={button.label}
+                            name={groupName}
+                            onChange={handleChange}
+                            value={button.value}
+                        />
                         {button.content && (
                             <ContentWrapper
                                 data-testid="content-wrapper"
@@ -209,7 +162,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                                 </InnerContent>
                             </ContentWrapper>
                         )}
-                    </RadioWrapper>
+                    </>
                 );
             })}
         </StyledFieldset>
