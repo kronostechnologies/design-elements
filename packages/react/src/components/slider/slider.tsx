@@ -72,7 +72,7 @@ export const Slider = <TValue extends number | number[]>({
                     marks={step ? true : undefined}
                     slots={{ valueLabel: ValueTooltip }}
                     onChange={onChange}
-                    getAriaLabel={() => (isRange ? t('rangeAriaLabel', { label }) : label)}
+                    aria-label={isRange ? t('rangeAriaLabel', { label }) : label}
                 />
             </SliderContainer>
             <Labels>
