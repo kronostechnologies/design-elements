@@ -21,7 +21,7 @@ interface CardProps {
     theme: ResolvedTheme;
 }
 
-function getContentColor({disabled, theme }: InputContainerProps): string {
+function getContentColor({ disabled, theme }: InputContainerProps): string {
     if (disabled) {
         return theme.component['radio-card-disabled-text-color'];
     }
