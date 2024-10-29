@@ -43,7 +43,7 @@ const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: bool
 interface RadioButtonProps {
     label: string;
     value: string;
-    inputId?: string;
+    id?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
     content?: {
@@ -140,7 +140,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                             data-testid={`${dataTestId}-${button.value}`}
                             defaultChecked={button.defaultChecked}
                             disabled={button.disabled}
-                            id={button.inputId}
+                            id={button.id}
                             label={button.label}
                             name={groupName}
                             onChange={handleChange}

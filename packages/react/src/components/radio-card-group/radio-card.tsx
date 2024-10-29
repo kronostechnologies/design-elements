@@ -16,6 +16,7 @@ import * as S from './styled-components';
 export interface RadioCardProps {
     checked?: boolean;
     children?: ReactNode;
+    className?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
     id?: string;
@@ -34,6 +35,7 @@ const StyledRadioInput = styled(RadioInput)`
 export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
     checked,
     children,
+    className,
     defaultChecked,
     disabled,
     name,
@@ -56,6 +58,7 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
         <S.Label isDisabled={disabled} isMobile={isMobile} htmlFor={id}>
             <StyledRadioInput
                 checked={checked}
+                className={className}
                 data-testid={`radio-card-${value}-input`}
                 defaultChecked={defaultChecked}
                 disabled={disabled}

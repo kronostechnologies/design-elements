@@ -3,7 +3,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 
 interface InputContainerProps {
-    isDisabled?: boolean;
+    disabled?: boolean;
     isMobile: boolean;
     isChecked?: boolean;
     theme: ResolvedTheme;
@@ -21,8 +21,8 @@ interface CardProps {
     theme: ResolvedTheme;
 }
 
-function getContentColor({ isDisabled, theme }: InputContainerProps): string {
-    if (isDisabled) {
+function getContentColor({disabled, theme }: InputContainerProps): string {
+    if (disabled) {
         return theme.component['radio-card-disabled-text-color'];
     }
     return theme.component['radio-card-text-color'];

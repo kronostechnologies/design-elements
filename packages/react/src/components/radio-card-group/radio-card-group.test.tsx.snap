@@ -576,7 +576,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius-2x);
-  color: #B7BBC2;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
