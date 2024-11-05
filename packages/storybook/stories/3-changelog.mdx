@@ -4,7 +4,67 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog
 
-## v8.0.0 <mark>Latest</mark> (Jul 30, 2024)
+## v9.0.0 <mark>Latest</mark> (Oct 31, 2024)
+### ⚠ BREAKING CHANGES
+
+* **SegmentedControl:** renamed component design tokens (#995)
+* **SectionalBanner:** `headingTag` prop doesn't accept "span" value anymore (#988)
+* **Table:** renamed `selectableRows` prop to `rowSelectionMode` (#976)
+
+### New Components
+ * **Link**
+ * **Fieldset**
+ * **ProgressCircular**
+ * **Slider**
+
+### Features
+
+* **Button:** add loading state ([#990](https://github.com/kronostechnologies/design-elements/issues/990)) ([851ac49](https://github.com/kronostechnologies/design-elements/commit/851ac4923698cf40f6916a0af949e98a9ddb4f5c))
+* **Fieldset:** implement fieldset component ([#952](https://github.com/kronostechnologies/design-elements/issues/952)) ([a519381](https://github.com/kronostechnologies/design-elements/commit/a51938192d5adfd2dad2b11b789ec01449069f3a))
+* **Icon:** add table and export icons ([#996](https://github.com/kronostechnologies/design-elements/issues/996)) ([9c9e005](https://github.com/kronostechnologies/design-elements/commit/9c9e0056e4970d6e95f99c3dc12844dc9331ce1e))
+* **Link:** implement link component ([#953](https://github.com/kronostechnologies/design-elements/issues/953)) ([512bb43](https://github.com/kronostechnologies/design-elements/commit/512bb4384993f0d8878b2f2fef596d6a85f1626c))
+* **Modal:** adjust styling, adds width flexibility and header is now bold ([#984](https://github.com/kronostechnologies/design-elements/issues/984)) ([509e7a1](https://github.com/kronostechnologies/design-elements/commit/509e7a1f32e6fe56843716e811291bbd313da26a))
+* **ProgressCircular:** new component ([#1011](https://github.com/kronostechnologies/design-elements/issues/1011)) ([967abcf](https://github.com/kronostechnologies/design-elements/commit/967abcf8d7422abe54d32c463ea93b19d537eace))
+* **RadioButton, RadioCard, RadioButtonGroup:** extract radio input ([#999](https://github.com/kronostechnologies/design-elements/issues/999)) ([c691a0c](https://github.com/kronostechnologies/design-elements/commit/c691a0c923632d6e8ec1494f1b49aa30bdfc065b))
+* **SectionalBanner:** fix html and less restrictive usage ([#988](https://github.com/kronostechnologies/design-elements/issues/988)) ([9a8b3fc](https://github.com/kronostechnologies/design-elements/commit/9a8b3fccb6d73c536a8041448e9de2c7e42019c4))
+* **SegmentedControl:** new Style and add icon ([#995](https://github.com/kronostechnologies/design-elements/issues/995)) ([0a78376](https://github.com/kronostechnologies/design-elements/commit/0a783765f375b9bc69d513eeeb3b4a77f854dfc0))
+* **Slider:** add new slider component ([#893](https://github.com/kronostechnologies/design-elements/issues/893)) ([4d8cdab](https://github.com/kronostechnologies/design-elements/commit/4d8cdabead427eae5ad94fbd9fda50127fc99b89))
+* **Table:** adds single rowselectionmode to table ([#976](https://github.com/kronostechnologies/design-elements/issues/976)) ([a7958f4](https://github.com/kronostechnologies/design-elements/commit/a7958f42ffa6fd429751a63c83ebb5151650fba6))
+* **TextInput:** add adornment ([#949](https://github.com/kronostechnologies/design-elements/issues/949)) ([aea2a85](https://github.com/kronostechnologies/design-elements/commit/aea2a85a2a2bd4144b7eaabe3e077bd1b0d15edf))
+
+### Bug Fixes
+
+* **DatePicker:** when entering a date without separators, valid date should call onChange ([#972](https://github.com/kronostechnologies/design-elements/issues/972)) ([91b42e4](https://github.com/kronostechnologies/design-elements/commit/91b42e42c8c5dccd9c8ffd52e2cec583b93bed87))
+* **Icon:** change color 'link' icon to currentColor ([#966](https://github.com/kronostechnologies/design-elements/issues/966)) ([0439711](https://github.com/kronostechnologies/design-elements/commit/04397115ddc090115cbdd115724d0cf15c3cfaa5))
+* **Modal:** icon add ariaHidden ([#970](https://github.com/kronostechnologies/design-elements/issues/970)) ([4ecca0f](https://github.com/kronostechnologies/design-elements/commit/4ecca0f55df463edb46d357890eeb4ecc10fc6cd))
+* **MoneyInput:** update styling and behavior ([#1010](https://github.com/kronostechnologies/design-elements/issues/1010)) ([ac166db](https://github.com/kronostechnologies/design-elements/commit/ac166db2df82653ff012a23d72bc861bac6c46a1))
+* **Pagination:** change span for div ([#965](https://github.com/kronostechnologies/design-elements/issues/965)) ([2eb2827](https://github.com/kronostechnologies/design-elements/commit/2eb282742d3ce95c361ba51ae1b55ec384169c61))
+* **RadioButton:** not centered when zoomed ([#967](https://github.com/kronostechnologies/design-elements/issues/967)) ([b409142](https://github.com/kronostechnologies/design-elements/commit/b4091428311af5dc6e0fd427b71d209cdd5b01b7))
+* **Spinner:** replace svg ([#983](https://github.com/kronostechnologies/design-elements/issues/983)) ([c8ee565](https://github.com/kronostechnologies/design-elements/commit/c8ee56530c4fed8bd29fa85a0fa415e47bcf16e9))
+* **Theme:** resolve alias tokens to ref token values ([#1013](https://github.com/kronostechnologies/design-elements/issues/1013)) ([d940897](https://github.com/kronostechnologies/design-elements/commit/d94089726b59d67acc66e2ef8adbf0ef4c391d9e))
+* **Token:** replace visited color ([#1015](https://github.com/kronostechnologies/design-elements/issues/1015)) ([ec3f204](https://github.com/kronostechnologies/design-elements/commit/ec3f2041915ccc85ad1d51715acb8eae6d2804a3))
+
+### Dependencies
+
+* **deps:** update dependency date-fns to v4 ([#992](https://github.com/kronostechnologies/design-elements/issues/992)) ([b0cfc57](https://github.com/kronostechnologies/design-elements/commit/b0cfc5750b8fb7ee33ee58bebc297072b1d6b032))
+* **deps:** update dependency i18next ([#991](https://github.com/kronostechnologies/design-elements/issues/991)) ([351b6f4](https://github.com/kronostechnologies/design-elements/commit/351b6f4fabf9f7ced8c02b45ffeea56dfbf5ecfd))
+* **deps:** update dependency i18next ([#974](https://github.com/kronostechnologies/design-elements/issues/974)) ([b3d7b21](https://github.com/kronostechnologies/design-elements/commit/b3d7b211e32cc16b470e5ff6d364695dc5b5f423))
+* **deps:** update dependency i18next ([#1006](https://github.com/kronostechnologies/design-elements/issues/1006)) ([c9bfeee](https://github.com/kronostechnologies/design-elements/commit/c9bfeee14edb7a5681db5f8cc66de15f7f49a7ac))
+* **deps:** update dependency react-datepicker ([#997](https://github.com/kronostechnologies/design-elements/issues/997)) ([148a25f](https://github.com/kronostechnologies/design-elements/commit/148a25fda1fb30f67c8b0133e0606433b93f9ccd))
+* **deps:** update dependency react-datepicker ([#1008](https://github.com/kronostechnologies/design-elements/issues/1008)) ([c6cbbed](https://github.com/kronostechnologies/design-elements/commit/c6cbbed47f2f630c43ae85949332290e87891276))
+* **deps:** update dependency react-datepicker to v7 ([#907](https://github.com/kronostechnologies/design-elements/issues/907)) ([00e4e54](https://github.com/kronostechnologies/design-elements/commit/00e4e540edcc34b92618f955ababbf0b3611a169))
+* **deps:** update dependency react-i18next ([#1017](https://github.com/kronostechnologies/design-elements/issues/1017)) ([b32b193](https://github.com/kronostechnologies/design-elements/commit/b32b19371f30b3153580e8b4adbeec0643baabf6))
+* **deps:** update react-router ([#962](https://github.com/kronostechnologies/design-elements/issues/962)) ([17f7c78](https://github.com/kronostechnologies/design-elements/commit/17f7c7835a61827ce268f7ddf25331a4aac9f2d9))
+* **deps:** update react-router ([#1004](https://github.com/kronostechnologies/design-elements/issues/1004)) ([8f10a4a](https://github.com/kronostechnologies/design-elements/commit/8f10a4abe520a5d49ec554d1b970f924523bf598))
+
+### Docs
+
+* **storybook:** update data table ([#841](https://github.com/kronostechnologies/design-elements/issues/841)) ([f338261](https://github.com/kronostechnologies/design-elements/commit/f3382619fb32dee6e6a10ac2e944fcc95e255e5d))
+* **webapp:** added delete action ([#968](https://github.com/kronostechnologies/design-elements/issues/968)) ([9566b3f](https://github.com/kronostechnologies/design-elements/commit/9566b3fbdcba98db775086ba862cc79cad55eeb3))
+* **webapp:** added users data table ([#935](https://github.com/kronostechnologies/design-elements/issues/935)) ([c88c8a1](https://github.com/kronostechnologies/design-elements/commit/c88c8a166351e655361cb1f6f51bfa0056f8b92d))
+
+
+## v8.0.0 (Jul 30, 2024)
 ### ⚠ BREAKING CHANGES
 
 * **Table:** fix error background + add large size ([#954](https://github.com/kronostechnologies/design-elements/issues/954)) ([8576501](https://github.com/kronostechnologies/design-elements/commit/8576501d68985cbfb10a9b7af8a5249b09754548))
