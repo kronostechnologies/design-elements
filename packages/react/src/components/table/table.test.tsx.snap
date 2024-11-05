@@ -1495,17 +1495,17 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c7 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
   left: 0;
-  margin-right: var(--spacing-1x);
+  margin: var(--spacing-half) var(--spacing-1x);
   position: relative;
   width: var(--size-1x);
 }
@@ -1552,10 +1552,10 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
