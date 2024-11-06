@@ -8,14 +8,13 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css, ThemedCssFunction } from 'styled-components';
-import { Heading, Tag } from '../heading/heading';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
+import { Button, IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Heading, Tag } from '../heading/heading';
 import { Icon, IconName } from '../icon/icon';
 
 type MobileDeviceContext = { $isMobile: boolean };
@@ -164,7 +163,6 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
 interface BannerTypeProps {
     container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
     iconName: IconName;
-    title: 'Neutral' | 'Info' | 'Discovery' | 'Success' | 'Warning' | 'Alert';
 }
 
 function handleType(type: SectionalBannerType): BannerTypeProps {
@@ -173,37 +171,31 @@ function handleType(type: SectionalBannerType): BannerTypeProps {
             return {
                 container: NeutralContainer,
                 iconName: 'info',
-                title: 'Neutral',
             };
         case 'info':
             return {
                 container: InfoContainer,
                 iconName: 'info',
-                title: 'Info',
             };
         case 'discovery':
             return {
                 container: DiscoveryContainer,
                 iconName: 'lightbulb',
-                title: 'Discovery',
             };
         case 'success':
             return {
                 container: SuccessContainer,
                 iconName: 'check',
-                title: 'Success',
             };
         case 'warning':
             return {
                 container: WarningContainer,
                 iconName: 'alertTriangle',
-                title: 'Warning',
             };
         case 'alert':
             return {
                 container: AlertContainer,
                 iconName: 'alertOctagon',
-                title: 'Alert',
             };
     }
 }
@@ -291,8 +283,8 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
 
             {onDismiss && (
                 <DismissIconButton
-                    buttonType='tertiary'
-                    iconName='x'
+                    buttonType="tertiary"
+                    iconName="x"
                     onClick={onDismiss}
                     label={t('dismissLabel')}
                     $isMobile={isMobile}
