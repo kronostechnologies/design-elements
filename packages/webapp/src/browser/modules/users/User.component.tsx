@@ -13,15 +13,15 @@ const PageWrapper = styled.div`
 `;
 
 const StyledWarning = styled.span`
+    color: ${({ theme }) => theme.alias['color-content']};
     display: flex;
     flex-direction: row;
-    gap: 4px;
-    color: ${({ theme }) => theme.alias['color-content']};
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
+    gap: 4px;
     letter-spacing: 0.2px;
+    line-height: 20px;
 `;
 
 const StyledAsterisk = styled.span`
@@ -29,8 +29,8 @@ const StyledAsterisk = styled.span`
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
     letter-spacing: 0.2px;
+    line-height: 20px;
 `;
 
 export const UserPage: FunctionComponent = () => {

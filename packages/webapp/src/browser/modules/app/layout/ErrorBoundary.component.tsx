@@ -6,11 +6,11 @@ import { ErrorBoundary, ROUTES } from '../../../core';
 import { ScreenCentered } from './styled-elements';
 
 const NotFoundContainer = styled.div`
-    margin-top: 13rem; /* mt-52 */
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-weight: 600; /* font-semibold */
+    margin-top: 13rem; /* mt-52 */
 `;
 
 export const NotFoundRoute: FC = () => {
