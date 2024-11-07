@@ -12,6 +12,7 @@ import {
     Delete as DeleteCell,
 } from './cells';
 import { Footer as TableFooter } from './Footer.component';
+import { ToolBar } from './toolbar/Toolbar.component';
 
 const TableContainer = styled.div`
     align-items: flex-start;
@@ -25,7 +26,7 @@ const TableContainer = styled.div`
     flex-shrink: 0;
     gap: 8px;
     padding: 16px 32px;
-    
+
     td:nth-child(4) {
         padding-left: 0;
         padding-right: 0;
@@ -91,6 +92,7 @@ export const Table: FunctionComponent = () => {
 
     return (
         <TableContainer>
+            <ToolBar />
             <DataTable
                 rowSize="small"
                 columns={columns}

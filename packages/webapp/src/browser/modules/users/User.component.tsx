@@ -1,11 +1,57 @@
 import { Heading } from '@equisoft/design-elements-react';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
+import styled from 'styled-components';
+import { Form as UserForm } from './components/form/Form.component';
+import { UserMode } from './types';
+
+const PageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+`;
+
+const StyledWarning = styled.span`
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: ${({ theme }) => theme.alias['color-content']};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+`;
+
+const StyledAsterisk = styled.span`
+    color: ${({ theme }) => theme.alias['color-feedback-border-alert']};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+`;
 
 export const UserPage: FunctionComponent = () => {
     const { t } = useTranslation('user');
+    const { mode, id } = useParams();
+    const userMode = mode as UserMode || UserMode.CREATE;
+    const titleMap = {
+        [UserMode.CREATE]: t('createTitle'),
+        [UserMode.EDIT]: t('editTitle'),
+        [UserMode.READ]: t('readTitle'),
+    };
+    const title = titleMap[userMode];
 
     return (
-        <Heading bold noMargin type='xlarge' tag="h1">{t('viewTitle')}</Heading>
+        <PageWrapper>
+            <Heading bold noMargin type='xlarge' tag="h1">{title}</Heading>
+            <StyledWarning>
+                {t('requiredFields')}
+                <StyledAsterisk>*</StyledAsterisk>
+            </StyledWarning>
+            <UserForm id={id} />
+        </PageWrapper>
     );
 };

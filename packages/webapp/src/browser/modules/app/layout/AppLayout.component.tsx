@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 import styled from 'styled-components';
 import { Header } from './Header.component';
 import { Menu } from './Menu.component';
-import { UnexpectedErrorBoundary } from './UnexpectedErrorBoundary.component';
+import { UnexpectedErrorBoundary } from './ErrorBoundary.component';
 
 const Screen = styled.div`
     display: grid;
