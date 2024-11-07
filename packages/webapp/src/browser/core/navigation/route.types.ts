@@ -1,6 +1,6 @@
 export interface RouteDefinition {
     path: string;
-    getHref: (...args: any[]) => string;
+    getHref: (...args: string[]) => string;
     end?: boolean;
 }
 

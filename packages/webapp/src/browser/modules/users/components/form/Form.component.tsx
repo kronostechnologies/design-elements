@@ -7,6 +7,7 @@ interface UserFormProps {
 export const Form: FunctionComponent<UserFormProps> = (
     { id },
 ) => {
+    // eslint-disable-next-line no-console
     console.log(id);
     return (
         <form />
