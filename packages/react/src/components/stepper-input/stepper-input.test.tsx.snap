@@ -164,7 +164,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -501,7 +501,7 @@ input + .c1 {
 }
 
 .c6 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -707,7 +707,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -981,7 +981,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;

@@ -27,7 +27,7 @@ import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 
-const StyleInput = styled.input<{ isMobile: boolean }>`
+const StyledInput = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
     border: 0;
     flex: 1 1 auto;
@@ -65,10 +65,11 @@ const RightAdornment = styled(Adornment)`
 interface StyledWrapperProps {
     $disabled?: boolean;
     $valid?: boolean;
+    $readOnly?: boolean;
 }
 
-const StyleWrapper = styled.div<StyledWrapperProps>`
-    background: ${({ theme }) => theme.component['text-input-background-color']};
+const StyledWrapper = styled.div<StyledWrapperProps>`
+    background-color: ${({ theme }) => theme.component['text-input-background-color']};
     border: 1px solid ${({ theme }) => theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
@@ -79,13 +80,28 @@ const StyleWrapper = styled.div<StyledWrapperProps>`
 
     ${({ $valid, theme }) => !$valid && css`
         border-color: ${theme.component['text-input-error-border-color']};
-`};
+    `};
+
     ${({ $disabled, theme }) => $disabled && css`
         background-color: ${theme.component['text-input-disabled-background-color']};
         border-color: ${theme.component['text-input-disabled-border-color']};
 
         ${Adornment} {
-            color: ${theme.component['text-input-disabled-adornment-text-color']};
+            color: ${theme.component['text-input-disabled-adornment-color']};
+        }
+    `};
+
+    ${({ $readOnly, theme }) => $readOnly && css`
+        background-color: ${theme.component['text-input-readonly-background-color']};
+        border-color: ${theme.component['text-input-readonly-border-color']};
+
+        ${Adornment} {
+            color: ${theme.component['text-input-readonly-adornment-color']};
+        }
+
+        > input:read-only {
+            background-color: transparent;
+            border-color: transparent;
         }
     `};
 `;
@@ -107,6 +123,7 @@ interface TextInputProps extends PartialInputProps {
     tooltip?: TooltipProps;
     pattern?: string;
     placeholder?: string;
+    readOnly?: boolean;
     required?: boolean;
     rightAdornment?: ReactNode;
     type?: string;
@@ -143,6 +160,7 @@ export const TextInput = forwardRef(({
     noMargin,
     pattern,
     placeholder,
+    readOnly,
     required,
     rightAdornment,
     type,
@@ -221,7 +239,7 @@ export const TextInput = forwardRef(({
             hint={hint}
             data-testid="field-container"
         >
-            <StyleWrapper $disabled={disabled} $valid={validity}>
+            <StyledWrapper $disabled={disabled} $valid={validity} $readOnly={readOnly}>
                 {leftAdornment && (
                     <LeftAdornment
                         onClick={handleAdornmentClick}
@@ -231,7 +249,7 @@ export const TextInput = forwardRef(({
                     </LeftAdornment>
                 )}
 
-                <StyleInput
+                <StyledInput
                     aria-describedby={processedAriaDescribedBy || undefined}
                     aria-invalid={ariaInvalid}
                     autoComplete={autoComplete}
@@ -252,6 +270,7 @@ export const TextInput = forwardRef(({
                     onInvalid={handleOnInvalid}
                     pattern={pattern}
                     placeholder={placeholder}
+                    readOnly={readOnly}
                     required={required}
                     type={type || 'text'}
                     value={value}
@@ -266,7 +285,7 @@ export const TextInput = forwardRef(({
                     </RightAdornment>
                 )}
 
-            </StyleWrapper>
+            </StyledWrapper>
         </FieldContainer>
     );
 });
