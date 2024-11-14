@@ -4,8 +4,8 @@ import { BadgeToken, defaultBadgeTokens } from './component/badge-tokens';
 import { BentoMenuButtonToken, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { BreadcrumbToken, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
 import { ButtonToken, defaultButtonTokens } from './component/button-tokens';
+import { CaptionToken, defaultCaptionTokens } from './component/caption-tokens';
 import { CardToken, defaultCardTokens } from './component/card-tokens';
-import { defaultCaptionTokens, CaptionToken } from './component/caption-tokens';
 import { CarouselToken, defaultCarouselTokens } from './component/carousel-tokens';
 import { CheckboxToken, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { ChooserToken, defaultChooserTokens } from './component/chooser-tokens';
@@ -15,6 +15,7 @@ import { defaultDisclosureTokens, DisclosureToken } from './component/disclosure
 import { defaultDropdownListTokens, DropdownListToken } from './component/dropdown-list-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuToken } from './component/dropdown-menu-tokens';
 import { defaultFieldTokens, FieldToken } from './component/field-tokens';
+import { defaultFilterTokens, FilterToken } from './component/filter-tokens';
 import { defaultFocusTokens, FocusToken } from './component/focus-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerToken } from './component/global-banner-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderToken } from './component/global-header-tokens';
@@ -72,6 +73,7 @@ export type ComponentToken =
     | DropdownListToken
     | DropdownMenuToken
     | FieldToken
+    | FilterToken
     | FocusToken
     | GlobalBannerToken
     | GlobalHeaderToken
@@ -129,6 +131,7 @@ export const defaultComponentTokens = {
     ...defaultDropdownListTokens,
     ...defaultDropdownMenuTokens,
     ...defaultFieldTokens,
+    ...defaultFilterTokens,
     ...defaultFocusTokens,
     ...defaultGlobalBannerTokens,
     ...defaultGlobalHeaderTokens,

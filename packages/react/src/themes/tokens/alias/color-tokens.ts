@@ -70,6 +70,7 @@ export type ColorAliasToken =
     | 'color-menu-border'
     | 'color-menu-item-background'
     | 'color-menu-item-background-hover'
+    | 'color-menu-item-background-indicator-selected'
     | 'color-menu-item-content'
     | 'color-menu-item-subcontent'
     | 'color-menu-item-content-hover'
@@ -188,6 +189,7 @@ export const defaultColorAliasTokens: AliasTokenMap<ColorAliasToken> = {
     'color-menu-border': 'color-border-overlay',
     'color-menu-item-background': 'transparent-100',
     'color-menu-item-background-hover': 'color-background-hover', // should use transparency instead
+    'color-menu-item-background-indicator-selected': 'color-brand-50',
     'color-menu-item-content': 'color-content',
     'color-menu-item-subcontent': 'color-content-subtle',
     'color-menu-item-content-hover': 'color-content-hover',
