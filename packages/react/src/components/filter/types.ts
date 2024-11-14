@@ -1,6 +1,7 @@
 export interface FilterOption<O> {
     label: string,
     value: O,
+    disabled?: boolean;
 }
 
 export type FilterMode = 'single-select';

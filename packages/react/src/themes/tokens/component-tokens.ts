@@ -11,6 +11,7 @@ import { defaultDisclosureTokens, DisclosureTokens } from './component/disclosur
 import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
 import { CardTokens, defaultCardTokens } from './component/card-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
+import { defaultFilterTokens, FilterTokens } from './component/filter-tokens';
 import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
 import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation-tokens';
@@ -105,7 +106,8 @@ export type ComponentTokens =
     | DropdownMenuTokens
     | TabTokens
     | LozengeTokens
-    | GlobalNavigationTokens;
+    | GlobalNavigationTokens
+    | FilterTokens;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -166,6 +168,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultLozengeTokens,
     ...defaultGlobalNavigationTokens,
     ...defaultBreadcrumbTokens,
+    ...defaultFilterTokens,
 };
 
 export type ResolvedComponentTokenValue = RefTokenValue;

@@ -83,6 +83,7 @@ export type AliasTokens =
     | 'color-menu-item-subcontent'
     | 'color-menu-item-content-hover'
     | 'color-menu-item-content-disabled'
+    | 'color-menu-item-background-indicator-selected'
     /**
      * BRAND
      */
@@ -273,6 +274,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-menu-item-subcontent': 'color-content-subtle',
     'color-menu-item-content-hover': 'color-content-hover',
     'color-menu-item-content-disabled': 'color-content-disabled',
+    'color-menu-item-background-indicator-selected': 'color-brand-50',
 
     /**
      * BRAND
