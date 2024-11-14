@@ -81,7 +81,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c10:hover {
@@ -89,6 +89,7 @@ input + .c2 {
 }
 
 .c10::before {
+  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -525,7 +526,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c12:hover {
@@ -533,6 +534,7 @@ input + .c2 {
 }
 
 .c12::before {
+  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -1003,7 +1005,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c12:hover {
@@ -1011,6 +1013,7 @@ input + .c2 {
 }
 
 .c12::before {
+  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -1430,7 +1433,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c8:hover {
@@ -1438,6 +1441,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c8::before {
+  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
@@ -2427,7 +2431,7 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   outline: 2px solid #006296;
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 
 .c11:hover {
@@ -2435,6 +2439,7 @@ input + .c2 {
 }
 
 .c11::before {
+  background-color: #006296;
   content: '';
   display: block;
   height: 100%;
