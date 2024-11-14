@@ -30,7 +30,7 @@ export const defaultListboxTokens: ListboxTokenMap = {
     'listbox-item-disabled-background-color': 'color-menu-item-background',
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
     'listbox-item-subcontent-disabled-text-color': 'color-menu-item-content-disabled',
-    'listbox-item-indicator-selected-background-color' : 'color-background-indicator-selected',
+    'listbox-item-indicator-selected-background-color': 'color-background-indicator-selected',
 
     'listbox-box-shadow-depth-color': 'color-box-shadow',
 };
