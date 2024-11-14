@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
-.c1 {
+.c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
+.c0 input,
+.c0 select,
+.c0 textarea {
   border-color: #60666E;
 }
 
-.c1 > :nth-child(0) {
+.c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
@@ -111,46 +111,42 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   outline-offset: -2px;
 }
 
-.c0 input {
+.c1 .eds-TextInput-control {
   text-align: left;
   width: 132px;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <div
-    class="c1"
-    data-testid="field-container"
+    class="c2 eds-TextInput-control"
   >
-    <div
-      class="c2"
-    >
-      <input
-        class="c3"
-        data-testid="text-input"
-        id="uuid1"
-        inputmode="numeric"
-        type="text"
-        value="$100.00"
-      />
-    </div>
+    <input
+      class="c3"
+      data-testid="text-input"
+      id="uuid1"
+      inputmode="numeric"
+      type="text"
+      value="$100.00"
+    />
   </div>
 </div>
 `;
 
 exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
-.c1 {
+.c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
+.c0 input,
+.c0 select,
+.c0 textarea {
   border-color: #60666E;
 }
 
-.c1 > :nth-child(0) {
+.c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
@@ -250,46 +246,42 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   outline-offset: -2px;
 }
 
-.c0 input {
+.c1 .eds-TextInput-control {
   text-align: left;
   width: 132px;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <div
-    class="c1"
-    data-testid="field-container"
+    class="c2 eds-TextInput-control"
   >
-    <div
-      class="c2"
-    >
-      <input
-        class="c3"
-        data-testid="text-input"
-        id="uuid1"
-        inputmode="numeric"
-        type="text"
-        value="$100.00"
-      />
-    </div>
+    <input
+      class="c3"
+      data-testid="text-input"
+      id="uuid1"
+      inputmode="numeric"
+      type="text"
+      value="$100.00"
+    />
   </div>
 </div>
 `;
 
 exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
-.c1 {
+.c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
+.c0 input,
+.c0 select,
+.c0 textarea {
   border-color: #60666E;
 }
 
-.c1 > :nth-child(0) {
+.c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
 }
 
@@ -389,30 +381,26 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   outline-offset: -2px;
 }
 
-.c0 input {
+.c1 .eds-TextInput-control {
   text-align: left;
   width: 132px;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <div
-    class="c1"
-    data-testid="field-container"
+    class="c2 eds-TextInput-control"
   >
-    <div
-      class="c2"
-    >
-      <input
-        class="c3"
-        data-testid="text-input"
-        id="uuid1"
-        inputmode="numeric"
-        type="text"
-        value="100,00 $"
-      />
-    </div>
+    <input
+      class="c3"
+      data-testid="text-input"
+      id="uuid1"
+      inputmode="numeric"
+      type="text"
+      value="100,00 $"
+    />
   </div>
 </div>
 `;

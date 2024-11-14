@@ -1,7 +1,9 @@
 import {
     ChangeEvent,
+    ClipboardEvent,
     DetailedHTMLProps,
     FocusEvent,
+    FormEvent,
     FormEventHandler,
     forwardRef,
     InputHTMLAttributes,
@@ -26,12 +28,15 @@ import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
+import { textInputClasses } from './text-input-classes';
 
 const StyleInput = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
+
     border: 0;
     flex: 1 1 auto;
     min-height: 100%;
+
     &:focus,
     &:disabled {
         border: 0;
@@ -79,7 +84,7 @@ const StyleWrapper = styled.div<StyledWrapperProps>`
 
     ${({ $valid, theme }) => !$valid && css`
         border-color: ${theme.component['text-input-error-border-color']};
-`};
+    `};
     ${({ $disabled, theme }) => $disabled && css`
         background-color: ${theme.component['text-input-disabled-background-color']};
         border-color: ${theme.component['text-input-disabled-border-color']};
@@ -93,7 +98,7 @@ const StyleWrapper = styled.div<StyledWrapperProps>`
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
-interface TextInputProps extends PartialInputProps {
+export interface TextInputProps extends PartialInputProps {
     ariaDescribedBy?: string;
     ariaInvalid?: boolean;
     className?: string;
@@ -120,16 +125,21 @@ interface TextInputProps extends PartialInputProps {
 
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 
+    onInvalid?(event: FormEvent<HTMLInputElement>): void;
+
     onKeyUp?(event: KeyboardEvent<HTMLInputElement>): void;
 
     onKeyDown?(event: KeyboardEvent<HTMLInputElement>): void;
 
     onMouseUp?(event: MouseEvent<HTMLInputElement>): void;
+
+    onPaste?(event: ClipboardEvent<HTMLInputElement>): void;
 }
 
 export const TextInput = forwardRef(({
     ariaDescribedBy,
     ariaInvalid,
+    autoComplete,
     className,
     defaultValue,
     disabled,
@@ -149,13 +159,14 @@ export const TextInput = forwardRef(({
     valid,
     validationErrorMessage,
     value,
-    autoComplete,
     onBlur,
     onChange,
     onFocus,
+    onInvalid,
     onKeyUp,
     onKeyDown,
     onMouseUp,
+    onPaste,
     ...otherProps
 }: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -183,11 +194,12 @@ export const TextInput = forwardRef(({
         onBlur?.(event);
     }, [onBlur, valid, required]);
 
-    const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
+    const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback((event) => {
         if (valid === undefined) {
             setValidity({ validity: false });
         }
-    }, [valid]);
+        onInvalid?.(event);
+    }, [onInvalid, valid]);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         onChange?.(event);
@@ -221,9 +233,14 @@ export const TextInput = forwardRef(({
             hint={hint}
             data-testid="field-container"
         >
-            <StyleWrapper $disabled={disabled} $valid={validity}>
+            <StyleWrapper
+                className={textInputClasses.control}
+                $disabled={disabled}
+                $valid={validity}
+            >
                 {leftAdornment && (
                     <LeftAdornment
+                        className={textInputClasses.leftAdornment}
                         onClick={handleAdornmentClick}
                         $isMobile={isMobile}
                     >
@@ -250,6 +267,7 @@ export const TextInput = forwardRef(({
                     onKeyUp={onKeyUp}
                     onKeyDown={onKeyDown}
                     onInvalid={handleOnInvalid}
+                    onPaste={onPaste}
                     pattern={pattern}
                     placeholder={placeholder}
                     required={required}
@@ -259,6 +277,7 @@ export const TextInput = forwardRef(({
                 />
                 {rightAdornment && (
                     <RightAdornment
+                        className={textInputClasses.rightAdornment}
                         onClick={handleAdornmentClick}
                         $isMobile={isMobile}
                     >

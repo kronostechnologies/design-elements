@@ -1,74 +1,22 @@
-import {
-    HTMLProps,
-    ReactNode,
-    useMemo,
-    useRef,
-    VoidFunctionComponent,
-} from 'react';
-import styled, { css } from 'styled-components';
-import { useId } from '../../hooks/use-id';
-import { focus } from '../../utils/css-state';
-import { ResolvedTheme } from '../../themes/theme';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { inputsStyle } from '../text-input/styles/inputs';
+import { HTMLProps, ReactNode, useRef, VoidFunctionComponent } from 'react';
+import styled from 'styled-components';
+import { TextInput, textInputClasses, TextInputProps } from '../text-input';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
 
-interface StyledInputProps {
-    device: DeviceContextProps;
-    theme: ResolvedTheme;
+interface StyledInputProps extends TextInputProps {
     $textAlign: 'left' | 'right';
 }
 
-const StyledInput = styled.input<StyledInputProps>`
-    ${({ theme, device }) => inputsStyle({ theme, isMobile: device.isMobile, isFocusable: false })};
-
-    border: 0;
-    flex: 1 1 auto;
-    min-height: 100%;
-    text-align: ${({ $textAlign }) => $textAlign};
-
-    &:focus,
-    &:disabled {
-        border: 0;
-        box-shadow: none;
+const StyledTextInput = styled(TextInput)<StyledInputProps>`
+    .${textInputClasses.control} {
+        text-align: ${({ $textAlign }) => $textAlign};
     }
-`;
 
-const Adornment = styled.span<{ $position: 'start' | 'end' }>`
-    align-self: center;
-    display: flex;
-    padding-left: ${({ $position }) => ($position === 'start' ? 'var(--spacing-1x)' : undefined)};
-    padding-right: ${({ $position }) => ($position === 'end' ? 'var(--spacing-1x)' : undefined)};
-`;
-
-interface StyledWrapperProps {
-    $disabled?: boolean;
-    $invalid?: boolean;
-}
-
-const Wrapper = styled.div<StyledWrapperProps>`
-    background: ${({ theme }) => theme.component['numeric-input-background-color']};
-    border: 1px solid ${({ theme }) => theme.component['numeric-input-border-color']};
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    display: flex;
-    height: var(--size-2x);
-
-    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
-
-    ${({ $invalid, theme }) => $invalid && css`
-        border-color: ${theme.component['numeric-input-error-border-color']};
-`};
-    ${({ $disabled, theme }) => $disabled && css`
-        background-color: ${theme.component['numeric-input-disabled-background-color']};
-        border-color: ${theme.component['numeric-input-disabled-border-color']};
-
-        ${Adornment} {
-            color: ${theme.component['numeric-input-disabled-adornment-text-color']};
-        }
-    `};
+    .${textInputClasses.leftAdornment},
+    .${textInputClasses.rightAdornment} {
+        color: ${({ theme }) => theme.alias['color-control-value']};
+    }
 `;
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
@@ -120,8 +68,6 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     value,
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
-    const device = useDeviceContext();
-    const fieldId = useId(id);
 
     const numericInput = useNumericInput({
         defaultValue,
@@ -136,45 +82,33 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         value,
     });
 
-    const adornmentContent = useMemo(() => (
-        adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
-    ), [adornment, adornmentPosition]);
-
     return (
-        <FieldContainer
+        <StyledTextInput
+            $textAlign={textAlign}
             className={className}
-            fieldId={fieldId}
+            data-testid="numeric-input"
+            defaultValue={defaultValue?.toString()}
+            disabled={disabled}
             hint={hint}
+            id={id}
+            inputMode="numeric"
+            valid={numericInput.invalid === undefined ? undefined : !numericInput.invalid}
             label={label}
-            tooltip={tooltip}
+            leftAdornment={adornmentPosition === 'start' && adornment}
             noMargin={noMargin}
-            required={required}
-            valid={!numericInput.invalid}
-            noInvalidFieldIcon={!numericInput.validationErrorMessage}
-            validationErrorMessage={numericInput.validationErrorMessage ?? ''}
-        >
-            <Wrapper $disabled={disabled} $invalid={numericInput.invalid}>
-                {(adornment && adornmentPosition === 'start') && adornmentContent}
-                <StyledInput
-                    $textAlign={textAlign}
-                    data-testid="numeric-input"
-                    device={device}
-                    disabled={disabled}
-                    id={fieldId}
-                    inputMode="numeric"
-                    onBlur={numericInput.onBlurHandler}
-                    onChange={numericInput.onChangeHandler}
-                    onFocus={onFocus}
-                    onInvalid={numericInput.onInvalid}
-                    onPaste={numericInput.onPasteHandler}
-                    placeholder={placeholder}
-                    required={required}
-                    ref={inputRef}
-                    type="text"
-                    value={numericInput.value}
-                />
-                {(adornment && adornmentPosition === 'end') && adornmentContent}
-            </Wrapper>
-        </FieldContainer>
+            onBlur={numericInput.onBlurHandler}
+            onChange={numericInput.onChangeHandler}
+            onFocus={onFocus}
+            onInvalid={numericInput.onInvalid}
+            onPaste={numericInput.onPasteHandler}
+            placeholder={placeholder}
+            required={numericInput.required}
+            ref={inputRef}
+            rightAdornment={adornmentPosition === 'end' && adornment}
+            tooltip={tooltip}
+            type="text"
+            value={numericInput.value}
+            validationErrorMessage={numericInput.validationErrorMessage}
+        />
     );
 };

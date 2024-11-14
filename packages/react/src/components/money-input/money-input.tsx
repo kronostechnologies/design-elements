@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
-import { TextInput } from '../text-input/text-input';
+import { TextInput, textInputClasses } from '../text-input';
 
 type TextAlignment = 'left' | 'right';
 
-const InputWrapper = styled.div<{ $textAlignment: TextAlignment }>`
-    input {
+const StyledTextInput = styled(TextInput)<{ $textAlignment: TextAlignment }>`
+    .${textInputClasses.control} {
         text-align: ${({ $textAlignment }) => $textAlignment};
         width: 132px;
     }
@@ -24,7 +24,7 @@ function safeFormatCurrency(
 }
 
 interface Props {
-    id?: string
+    id?: string;
     className?: string;
     disabled?: boolean;
     required?: boolean;
@@ -145,25 +145,24 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     }, []);
 
     return (
-        <InputWrapper $textAlignment={textAlignment}>
-            <TextInput
-                id={providedId}
-                className={className}
-                required={required}
-                disabled={disabled}
-                ref={inputElement}
-                type="text"
-                inputMode="numeric"
-                value={displayValue}
-                label={label}
-                onChange={handleChangeEvent}
-                onBlur={handleBlurEvent}
-                onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-                hint={hint}
-                noMargin={noMargin}
-                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-            />
-        </InputWrapper>
+        <StyledTextInput
+            $textAlignment={textAlignment}
+            id={providedId}
+            className={className}
+            required={required}
+            disabled={disabled}
+            ref={inputElement}
+            type="text"
+            inputMode="numeric"
+            value={displayValue}
+            label={label}
+            onChange={handleChangeEvent}
+            onBlur={handleBlurEvent}
+            onFocus={handleFocusEvent}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            hint={hint}
+            noMargin={noMargin}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
     );
 };
