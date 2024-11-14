@@ -1147,11 +1147,9 @@ input + .c2 {
     Select an option
   </label>
   <span
-    aria-live="polite"
     class="c4"
     data-testid="invalid-field"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c5"
