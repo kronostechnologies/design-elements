@@ -10,6 +10,12 @@ export const Translations = {
         button: {
             loadingLabel: 'Loading...',
         },
+        checkbox: {
+            validationErrorMessage: 'This field is required',
+        },
+        'checkbox-group': {
+            validationErrorMessage: 'Please select an option',
+        },
         combobox: {
             clearInput: 'Clear input',
             loading: 'Loading...',
@@ -150,6 +156,12 @@ export const Translations = {
         },
         button: {
             loadingLabel: 'Chargement...',
+        },
+        checkbox: {
+            validationErrorMessage: 'Ce champ est requis',
+        },
+        'checkbox-group': {
+            validationErrorMessage: 'Veuillez sélectionner une option',
         },
         combobox: {
             clearInput: 'Vider le champ',
