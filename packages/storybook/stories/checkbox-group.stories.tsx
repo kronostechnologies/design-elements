@@ -53,7 +53,13 @@ export const Disabled: Story = () => (
 );
 
 export const Required: Story = () => (
-    <CheckboxGroup data-testid='some-checkbox-group-data-testid' label="Vehicule" checkboxGroup={Checkboxes} required valid={false}/>
+    <CheckboxGroup
+        data-testid='some-checkbox-group-data-testid'
+        label="Vehicule"
+        checkboxGroup={Checkboxes}
+        required
+        valid={false}
+    />
 );
 
 export const Controlled: Story = () => (
