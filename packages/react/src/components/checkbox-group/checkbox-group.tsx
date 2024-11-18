@@ -24,7 +24,7 @@ const ValidationErrorAlert = styled.div<{ label: string }>`
     align-items: flex-start;
     color: ${({ theme }) => theme.component['checkbox-error-border-color']};
     display: flex;
-    margin: ${({ label }) => `${label ? 'calc(var(--spacing-1x) * -q1) ' : '0'} 0 0 var(--spacing-1x) `};
+    margin: ${({ label }) => `${label ? 'calc(var(--spacing-1x) * -1) ' : '0'} 0 0 var(--spacing-1x) `};
     padding-bottom: var(--spacing-1x);
 `;
 
