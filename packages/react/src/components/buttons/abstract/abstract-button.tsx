@@ -7,6 +7,8 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
     children,
     onClick,
     focusable,
+    isMobile: providedIsMobile,
+    size,
     ...props
 }: AbstractButtonProps, ref: Ref<HTMLButtonElement>) => {
     const { isMobile } = useDeviceContext();
@@ -14,7 +16,8 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
     return (
         <StyledAbstractButton
             $focusable={focusable}
-            $isMobile={isMobile}
+            $isMobile={providedIsMobile !== undefined ? providedIsMobile : isMobile}
+            $size={size}
             onClick={onClick}
             ref={ref}
             tabIndex={focusable === false ? -1 : undefined}
