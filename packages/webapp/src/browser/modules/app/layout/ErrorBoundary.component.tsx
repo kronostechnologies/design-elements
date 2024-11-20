@@ -2,7 +2,8 @@ import { Link } from '@equisoft/design-elements-react';
 import { FC, FunctionComponent, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { ErrorBoundary, ROUTES } from '../../../core';
+import { ErrorBoundary } from '../../../core';
+import { ROUTES } from '../../../core/navigation/routes';
 import { ScreenCentered } from './styled-elements';
 
 const NotFoundContainer = styled.div`

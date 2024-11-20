@@ -5,39 +5,21 @@ import { ConfigurationProvider, initializeConfiguration } from '../../core';
 import { Provider as UsersProvider } from '../users/components/Provider.component';
 import { UnexpectedErrorBoundary } from './layout';
 
-const ServerProviders: FunctionComponent = (
+export const AppProviders: FunctionComponent = (
     { children },
 ) => {
     const appConfig = initializeConfiguration();
+    const { i18n } = useTranslation();
+
     return (
         <ConfigurationProvider configuration={appConfig}>
             <UnexpectedErrorBoundary>
                 <UsersProvider>
-                    {children}
+                    <DesignSystem language={i18n.language}>
+                        {children}
+                    </DesignSystem>
                 </UsersProvider>
             </UnexpectedErrorBoundary>
         </ConfigurationProvider>
     );
 };
-
-const ClientProviders: FunctionComponent = (
-    { children },
-) => {
-    const { i18n } = useTranslation();
-
-    return (
-        <DesignSystem language={i18n.language}>
-            {children}
-        </DesignSystem>
-    );
-};
-
-export const AppProviders: FunctionComponent = (
-    { children },
-) => (
-    <ServerProviders>
-        <ClientProviders>
-            {children}
-        </ClientProviders>
-    </ServerProviders>
-);

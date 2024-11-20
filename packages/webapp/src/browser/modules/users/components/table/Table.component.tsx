@@ -59,7 +59,7 @@ export const Table: FunctionComponent = () => {
             focusable: true,
             // eslint-disable-next-line react/no-unstable-nested-components
             cell: (props) => (
-                <NameCell id={props.cell.getValue() as User['id']} />
+                <NameCell id={props.row.original.id} name={props.row.original.name} />
             ),
         },
         {
@@ -85,7 +85,7 @@ export const Table: FunctionComponent = () => {
             sortable: false,
             // eslint-disable-next-line react/no-unstable-nested-components
             cell: (props) => (
-                <DeleteCell id={props.cell.getValue() as User['id']} />
+                <DeleteCell id={props.row.original.id} />
             ),
         },
     ], [t]);

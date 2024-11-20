@@ -1,7 +1,7 @@
 import { GlobalNavigation } from '@equisoft/design-elements-react';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ROUTES } from '../../../core';
+import { ROUTES } from '../../../core/navigation/routes';
 
 export const Menu: FunctionComponent = () => {
     const { t } = useTranslation();

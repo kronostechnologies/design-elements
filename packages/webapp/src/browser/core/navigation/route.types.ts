@@ -1,6 +1,8 @@
+import { FunctionComponent } from 'react';
+
 export interface RouteDefinition {
     path: string;
-    getHref: (...args: string[]) => string;
+    component: FunctionComponent;
     end?: boolean;
 }
 
