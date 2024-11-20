@@ -33,7 +33,7 @@ export { RadioButton } from './components/radio-button/radio-button';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { TextArea } from './components/text-area/text-area';
-export { TextInput } from './components/text-input/text-input';
+export * from './components/text-input';
 export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
 export {
     hasALowerCaseLetter,

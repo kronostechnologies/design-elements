@@ -79,7 +79,8 @@ function getValidationErrorType(value: string, {
     if (value !== '') {
         if (max !== undefined && Number(value) > max) {
             return 'max';
-        } if (min !== undefined && Number(value) < min) {
+        }
+        if (min !== undefined && Number(value) < min) {
             return 'min';
         }
     }
