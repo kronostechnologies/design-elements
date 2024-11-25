@@ -4,7 +4,49 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog
 
-## v9.0.0 <mark>Latest</mark> (Oct 31, 2024)
+## v9.1.0 <mark>Latest</mark> (Nov 18, 2024)
+
+This version also include all the changes from the deprecated v9.0.0.
+With this release, we are introducing a new way to style certain elements inside the components.
+This is done by exposing CSS classes through a Javascript object that can be used to style the elements.
+We added classes for the `TextInput` component and components that extend it, such as `MoneyInput` and `NumericInput`.
+
+In previous versions, you could style the `input` element inside the `TextInput` component by using the `input` CSS selector.
+```jsx
+import { TextInput } from '@equisoft/design-elements-react';
+
+const SomeInput = styled(TextInput)`
+    input {
+        width: 80px;
+    }
+`;
+```
+
+With this release, this is not possible anymore. Instead, you should use the `textInputClasses.control` class inside the `TextInput` component.
+```jsx
+import { TextInput, textInputClasses } from '@equisoft/design-elements-react';
+
+const SomeInput = styled(TextInput)`
+    .${textInputClasses.control} {
+        width: 80px;
+    }
+`;
+```
+
+### Features
+
+* **MoneyInput,NumericInput,TextInput:** expose CSS class to allow styling elements ([#1027](https://github.com/kronostechnologies/design-elements/issues/1027)) ([e38c8f6](https://github.com/kronostechnologies/design-elements/commit/e38c8f6e8817b638f0ea94ae5dc65d05c30bc493))
+
+### Bug Fixes
+
+* **Checkbox:** prevent input compression with long text ([#1021](https://github.com/kronostechnologies/design-elements/issues/1021)) ([2b66bae](https://github.com/kronostechnologies/design-elements/commit/2b66baefde1e783cddddd8a11050e22a03bfe933))
+
+### Dependencies
+
+* update react-router ([#1031](https://github.com/kronostechnologies/design-elements/issues/1031)) ([1c1802c](https://github.com/kronostechnologies/design-elements/commit/1c1802ce75ac131050ec5b6039603817b1c3eac9))
+
+
+## <s>v9.0.0</s> <em>Replaced by v9.1.0</em> (Oct 31, 2024)
 ### ⚠ BREAKING CHANGES
 
 * **SegmentedControl:** renamed component design tokens (#995)
