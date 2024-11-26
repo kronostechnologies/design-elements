@@ -1,9 +1,9 @@
 import { ReactElement, useCallback, useState, MouseEvent } from 'react';
-import styled, { css } from 'styled-components';
-import { Button } from '../buttons/button';
+import styled from 'styled-components';
 import { Disclosure } from '../disclosure/disclosure';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FilterOption, FilterType, FilterMode } from './types';
+import { Option } from './filter-option';
 
 function getDefault<O>(
     defaultOptionValue: O,
@@ -18,12 +18,6 @@ function getDefault<O>(
     }
 
     return options[0];
-}
-interface StyledButtonProps {
-    focusable: boolean;
-    disabled?: boolean;
-    isMobile: boolean;
-    $selected: boolean;
 }
 
 const StyledDisclosure = styled(Disclosure)<{ selected: boolean }>`
@@ -54,39 +48,6 @@ const StyledDisclosure = styled(Disclosure)<{ selected: boolean }>`
                 }
         `}
     }
-`;
-
-const StyledOption = styled(Button)<StyledButtonProps>`
-    border: 0;
-    border-radius: 0;
-    color: ${({ disabled, theme }) => (disabled ? theme.component['filter-option-disabled-text-color'] : theme.component['filter-option-text-color'])};
-    display: block;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    font-weight: ${({ $selected }) => ($selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    line-height: var(--size-1halfx);
-    min-height: var(--size-1halfx);
-    padding: var(--spacing-half) var(--spacing-2x);
-    position: relative;
-    text-align: left;
-    text-transform: none;
-    width: 100%;
-
-    &:hover {
-        background-color: ${({ theme, disabled }) => (disabled ? theme.component['filter-option-disabled-background-color'] : theme.component['filter-option-hover-background-color'])};
-    }
-
-    ${({ $selected }) => $selected && css`
-        &::before {
-            background-color: ${({ theme }) => theme.component['filter-option-indicator-selected-background-color']};
-            content: '';
-            display: block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 4px;
-        }
-    `}
 `;
 
 interface FilterProps<T, O> {
@@ -137,7 +98,7 @@ export const Filter = <T, O>({
         >
             {
                 options.map((option: FilterOption<O>) => (
-                    <StyledOption
+                    <Option
                         key={`${key}-${option.label}`}
                         $selected={option.value === selectedOption?.value}
                         disabled={option.disabled}
