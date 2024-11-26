@@ -26,7 +26,7 @@ export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
     size?: Size;
 }
 
-interface DisclosureWidgetProps {
+export interface DisclosureWidgetProps {
     className?: string;
     idContent?: string;
     buttonProps: ButtonPropsWithoutOnClick;

@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { filterData } from './filterData';
+import { filterData } from './filter-data';
 import { FilterType, SelectedFilters } from './types';
 
 interface UseFilteredDataResponse<T> {

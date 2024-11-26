@@ -1,4 +1,4 @@
-export * from './Filter.component';
+export * from './filter';
 export * from './types';
-export * from './filterData';
-export * from './useFilters.hook';
+export * from './filter-data';
+export * from './use-filters';

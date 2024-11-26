@@ -103,7 +103,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
   position: relative;
 }
 
-<Disclosure
+<TestDisclosure
   buttonProps={
     {
       "buttonType": "primary",
@@ -111,82 +111,88 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
     }
   }
 >
-  <styled.div>
-    <div
-      className="c0"
-    >
-      <Button
-        aria-controls="idContent"
-        aria-expanded={false}
-        buttonType="primary"
-        label="disclose content"
-        onBlur={[Function]}
-        onClick={[Function]}
+  <Disclosure
+    buttonProps={
+      {
+        "buttonType": "primary",
+        "label": "disclose content",
+      }
+    }
+    expanded={false}
+    setExpanded={[Function]}
+  >
+    <styled.div>
+      <div
+        className="c0"
       >
-        <Styled(AbstractButton)
+        <Button
           aria-controls="idContent"
           aria-expanded={false}
           buttonType="primary"
-          focusable={true}
-          isMobile={false}
-          onBlur={[Function]}
+          label="disclose content"
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
-          <AbstractButton
+          <Styled(AbstractButton)
             aria-controls="idContent"
             aria-expanded={false}
             buttonType="primary"
-            className="c1"
             focusable={true}
             isMobile={false}
-            onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
           >
-            <styled.button
-              $focusable={true}
+            <AbstractButton
               aria-controls="idContent"
               aria-expanded={false}
               buttonType="primary"
               className="c1"
+              focusable={true}
               isMobile={false}
-              onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
             >
-              <button
+              <styled.button
+                $focusable={true}
                 aria-controls="idContent"
                 aria-expanded={false}
-                className="c2 c1"
-                onBlur={[Function]}
+                buttonType="primary"
+                className="c1"
+                isMobile={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 type="button"
               >
-                disclose content
-              </button>
-            </styled.button>
-          </AbstractButton>
-        </Styled(AbstractButton)>
-      </Button>
-      <styled.div
-        $expanded={false}
-        id="idContent"
-      >
-        <div
-          className="c3"
+                <button
+                  aria-controls="idContent"
+                  aria-expanded={false}
+                  className="c2 c1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  disclose content
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </Button>
+        <styled.div
+          $expanded={false}
           id="idContent"
         >
-          content
-        </div>
-      </styled.div>
-    </div>
-  </styled.div>
-</Disclosure>
+          <div
+            className="c3"
+            id="idContent"
+          >
+            content
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Disclosure>
+</TestDisclosure>
 `;
 
 exports[`Disclosure Button matches the snapshot when expanded 1`] = `
@@ -292,7 +298,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
   position: relative;
 }
 
-<Disclosure
+<TestDisclosure
   buttonProps={
     {
       "buttonType": "primary",
@@ -300,82 +306,88 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
     }
   }
 >
-  <styled.div>
-    <div
-      className="c0"
-    >
-      <Button
-        aria-controls="idContent"
-        aria-expanded={true}
-        buttonType="primary"
-        label="disclose content"
-        onBlur={[Function]}
-        onClick={[Function]}
+  <Disclosure
+    buttonProps={
+      {
+        "buttonType": "primary",
+        "label": "disclose content",
+      }
+    }
+    expanded={true}
+    setExpanded={[Function]}
+  >
+    <styled.div>
+      <div
+        className="c0"
       >
-        <Styled(AbstractButton)
+        <Button
           aria-controls="idContent"
           aria-expanded={true}
           buttonType="primary"
-          focusable={true}
-          isMobile={false}
-          onBlur={[Function]}
+          label="disclose content"
           onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
         >
-          <AbstractButton
+          <Styled(AbstractButton)
             aria-controls="idContent"
             aria-expanded={true}
             buttonType="primary"
-            className="c1"
             focusable={true}
             isMobile={false}
-            onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
           >
-            <styled.button
-              $focusable={true}
+            <AbstractButton
               aria-controls="idContent"
               aria-expanded={true}
               buttonType="primary"
               className="c1"
+              focusable={true}
               isMobile={false}
-              onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
             >
-              <button
+              <styled.button
+                $focusable={true}
                 aria-controls="idContent"
                 aria-expanded={true}
-                className="c2 c1"
-                onBlur={[Function]}
+                buttonType="primary"
+                className="c1"
+                isMobile={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 type="button"
               >
-                disclose content
-              </button>
-            </styled.button>
-          </AbstractButton>
-        </Styled(AbstractButton)>
-      </Button>
-      <styled.div
-        $expanded={true}
-        id="idContent"
-      >
-        <div
-          className="c3"
+                <button
+                  aria-controls="idContent"
+                  aria-expanded={true}
+                  className="c2 c1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  disclose content
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </Button>
+        <styled.div
+          $expanded={true}
           id="idContent"
         >
-          content
-        </div>
-      </styled.div>
-    </div>
-  </styled.div>
-</Disclosure>
+          <div
+            className="c3"
+            id="idContent"
+          >
+            content
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Disclosure>
+</TestDisclosure>
 `;
 
 exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
@@ -488,7 +500,7 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   position: relative;
 }
 
-<Disclosure
+<TestDisclosure
   buttonProps={
     {
       "buttonType": "primary",
@@ -497,99 +509,106 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
     }
   }
 >
-  <styled.div>
-    <div
-      className="c0"
-    >
-      <IconButton
-        aria-controls="idContent"
-        aria-expanded={false}
-        buttonType="primary"
-        iconName="home"
-        label="disclose content"
-        onBlur={[Function]}
-        onClick={[Function]}
+  <Disclosure
+    buttonProps={
+      {
+        "buttonType": "primary",
+        "iconName": "home",
+        "label": "disclose content",
+      }
+    }
+    expanded={false}
+    setExpanded={[Function]}
+  >
+    <styled.div>
+      <div
+        className="c0"
       >
-        <Styled(AbstractButton)
+        <IconButton
           aria-controls="idContent"
           aria-expanded={false}
-          aria-label="disclose content"
           buttonType="primary"
-          focusable={true}
-          isMobile={false}
-          onBlur={[Function]}
+          iconName="home"
+          label="disclose content"
           onClick={[Function]}
-          size="medium"
-          type="submit"
         >
-          <AbstractButton
+          <Styled(AbstractButton)
             aria-controls="idContent"
             aria-expanded={false}
             aria-label="disclose content"
             buttonType="primary"
-            className="c1"
             focusable={true}
             isMobile={false}
-            onBlur={[Function]}
             onClick={[Function]}
             size="medium"
             type="submit"
           >
-            <styled.button
-              $focusable={true}
+            <AbstractButton
               aria-controls="idContent"
               aria-expanded={false}
               aria-label="disclose content"
               buttonType="primary"
               className="c1"
+              focusable={true}
               isMobile={false}
-              onBlur={[Function]}
               onClick={[Function]}
               size="medium"
               type="submit"
             >
-              <button
+              <styled.button
+                $focusable={true}
                 aria-controls="idContent"
                 aria-expanded={false}
                 aria-label="disclose content"
-                className="c2 c1"
-                onBlur={[Function]}
+                buttonType="primary"
+                className="c1"
+                isMobile={false}
                 onClick={[Function]}
                 size="medium"
                 type="submit"
               >
-                <Icon
-                  aria-hidden="true"
-                  name="home"
-                  size="16"
+                <button
+                  aria-controls="idContent"
+                  aria-expanded={false}
+                  aria-label="disclose content"
+                  className="c2 c1"
+                  onClick={[Function]}
+                  size="medium"
+                  type="submit"
                 >
-                  <svg
+                  <Icon
                     aria-hidden="true"
-                    color="currentColor"
-                    focusable={false}
-                    height="16"
-                    width="16"
-                  />
-                </Icon>
-              </button>
-            </styled.button>
-          </AbstractButton>
-        </Styled(AbstractButton)>
-      </IconButton>
-      <styled.div
-        $expanded={false}
-        id="idContent"
-      >
-        <div
-          className="c3"
+                    name="home"
+                    size="16"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+        <styled.div
+          $expanded={false}
           id="idContent"
         >
-          content
-        </div>
-      </styled.div>
-    </div>
-  </styled.div>
-</Disclosure>
+          <div
+            className="c3"
+            id="idContent"
+          >
+            content
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Disclosure>
+</TestDisclosure>
 `;
 
 exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
@@ -702,7 +721,7 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   position: relative;
 }
 
-<Disclosure
+<TestDisclosure
   buttonProps={
     {
       "buttonType": "primary",
@@ -711,97 +730,104 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
     }
   }
 >
-  <styled.div>
-    <div
-      className="c0"
-    >
-      <IconButton
-        aria-controls="idContent"
-        aria-expanded={true}
-        buttonType="primary"
-        iconName="home"
-        label="disclose content"
-        onBlur={[Function]}
-        onClick={[Function]}
+  <Disclosure
+    buttonProps={
+      {
+        "buttonType": "primary",
+        "iconName": "home",
+        "label": "disclose content",
+      }
+    }
+    expanded={true}
+    setExpanded={[Function]}
+  >
+    <styled.div>
+      <div
+        className="c0"
       >
-        <Styled(AbstractButton)
+        <IconButton
           aria-controls="idContent"
           aria-expanded={true}
-          aria-label="disclose content"
           buttonType="primary"
-          focusable={true}
-          isMobile={false}
-          onBlur={[Function]}
+          iconName="home"
+          label="disclose content"
           onClick={[Function]}
-          size="medium"
-          type="submit"
         >
-          <AbstractButton
+          <Styled(AbstractButton)
             aria-controls="idContent"
             aria-expanded={true}
             aria-label="disclose content"
             buttonType="primary"
-            className="c1"
             focusable={true}
             isMobile={false}
-            onBlur={[Function]}
             onClick={[Function]}
             size="medium"
             type="submit"
           >
-            <styled.button
-              $focusable={true}
+            <AbstractButton
               aria-controls="idContent"
               aria-expanded={true}
               aria-label="disclose content"
               buttonType="primary"
               className="c1"
+              focusable={true}
               isMobile={false}
-              onBlur={[Function]}
               onClick={[Function]}
               size="medium"
               type="submit"
             >
-              <button
+              <styled.button
+                $focusable={true}
                 aria-controls="idContent"
                 aria-expanded={true}
                 aria-label="disclose content"
-                className="c2 c1"
-                onBlur={[Function]}
+                buttonType="primary"
+                className="c1"
+                isMobile={false}
                 onClick={[Function]}
                 size="medium"
                 type="submit"
               >
-                <Icon
-                  aria-hidden="true"
-                  name="home"
-                  size="16"
+                <button
+                  aria-controls="idContent"
+                  aria-expanded={true}
+                  aria-label="disclose content"
+                  className="c2 c1"
+                  onClick={[Function]}
+                  size="medium"
+                  type="submit"
                 >
-                  <svg
+                  <Icon
                     aria-hidden="true"
-                    color="currentColor"
-                    focusable={false}
-                    height="16"
-                    width="16"
-                  />
-                </Icon>
-              </button>
-            </styled.button>
-          </AbstractButton>
-        </Styled(AbstractButton)>
-      </IconButton>
-      <styled.div
-        $expanded={true}
-        id="idContent"
-      >
-        <div
-          className="c3"
+                    name="home"
+                    size="16"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+        <styled.div
+          $expanded={true}
           id="idContent"
         >
-          content
-        </div>
-      </styled.div>
-    </div>
-  </styled.div>
-</Disclosure>
+          <div
+            className="c3"
+            id="idContent"
+          >
+            content
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Disclosure>
+</TestDisclosure>
 `;
