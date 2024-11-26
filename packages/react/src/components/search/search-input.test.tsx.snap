@@ -428,7 +428,6 @@ input:valid + .c8 {
                 $isMobile={false}
                 className="c12 c11 primary"
                 disabled={true}
-                isMobile={false}
                 onClick={[Function]}
               >
                 <button
