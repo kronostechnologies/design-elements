@@ -1,5 +1,6 @@
-import { RadioCardGroup, RadioCard } from '@equisoft/design-elements-react';
+import { RadioCard, RadioCardGroup } from '@equisoft/design-elements-react';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 const meta: Meta<typeof RadioCardGroup> = {
@@ -87,3 +88,33 @@ export const OnChangeCallback: StoryFn = () => (
     </RadioCardGroup>
 );
 OnChangeCallback.parameters = rawCodeParameters;
+
+export const Controlled: StoryFn = () => {
+    const [selectedValue, setSelectedValue] = useState<string>();
+
+    return (
+        <RadioCardGroup>
+            <RadioCard
+                checked={selectedValue === 'card1'}
+                name="story6"
+                label="Card 1"
+                value="card1"
+                onChange={(event) => setSelectedValue(event.target.value)}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec commodo nulla sapien, at condimentum ipsum tristique id.
+            </RadioCard>
+            <RadioCard
+                name="story6"
+                label="Card 2"
+                checked={selectedValue === 'card2'}
+                value="card2"
+                onChange={(event) => setSelectedValue(event.target.value)}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec commodo nulla sapien, at condimentum ipsum tristique id.
+            </RadioCard>
+        </RadioCardGroup>
+    );
+};
+Controlled.parameters = rawCodeParameters;
