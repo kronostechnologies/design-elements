@@ -68,12 +68,16 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {
@@ -235,12 +239,16 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {
@@ -401,12 +409,16 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 1rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {
@@ -567,12 +579,16 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {
@@ -734,12 +750,16 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {
@@ -902,12 +922,16 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
 }
 
 .c8 {
   font-size: 1rem;
   line-height: 1.25rem;
+  margin-top: var(--spacing-1x);
+}
+
+.c8:empty {
+  margin: 0;
 }
 
 .c3 {

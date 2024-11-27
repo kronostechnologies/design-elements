@@ -55,12 +55,16 @@ export const Title = styled.span<CardProps>`
     font-size: 1rem;
     font-weight: var(--font-semi-bold);
     line-height: 1.5rem;
-    margin-bottom: var(--spacing-1x);
 `;
 
 export const Description = styled.span<DescriptionProps>`
     font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     line-height: 1.25rem;
+    margin-top: var(--spacing-1x);
+
+    &:empty {
+        margin: 0;
+    }
 `;
 
 export const Label = styled.label<CardProps>`
