@@ -71,7 +71,6 @@ export const Label = styled.label<CardProps>`
     background-color: ${getLabelBackgroundColor};
     border: 1px solid ${getLabelBorderColor};
     border-radius: var(--border-radius-2x);
-    box-sizing: border-box;
     color: ${getContentColor};
     display: flex;
     gap: var(--spacing-2x);

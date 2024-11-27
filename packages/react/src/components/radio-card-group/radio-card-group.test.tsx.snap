@@ -84,7 +84,6 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   background-color: #E0F0F9;
   border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -256,7 +255,6 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -427,7 +425,6 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -598,7 +595,6 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #B7BBC2;
   display: -webkit-box;
   display: -webkit-flex;
@@ -770,7 +766,6 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -943,7 +938,6 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
