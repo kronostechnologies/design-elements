@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { RadioButton } from '../radio-button/radio-button';
@@ -9,6 +9,7 @@ const StyledFieldset = styled.fieldset`
     border: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 `;
 
 const StyledLegend = styled.legend<{ isMobile: boolean }>`
@@ -30,10 +31,14 @@ const StyledTooltip = styled(Tooltip)`
     margin-left: calc(var(--spacing-1x) * 1.5);
 `;
 
-const ContentWrapper = styled.div<{ $isExpanded: boolean, $maxHeight?: number, $transitionDuration: number }>(({ $isExpanded, $maxHeight = 500, $transitionDuration }) => `
-    overflow: hidden;
+const ContentWrapper = styled.div<{ $isExpanded: boolean, $maxHeight?: number, $transitionDuration: number }>(({ $isExpanded, $maxHeight = 500, $transitionDuration }) => css`
     max-height: ${$isExpanded ? `${$maxHeight}px` : '0'};
+    overflow: hidden;
     transition: max-height ${$transitionDuration}ms ease-in-out;
+
+    :not(:last-child) {
+        margin-bottom: ${$isExpanded ? 'var(--spacing-1x)' : '0'};
+    }
 `);
 
 const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: boolean }>(({ $isExpanded, $transitionStarted }) => `
