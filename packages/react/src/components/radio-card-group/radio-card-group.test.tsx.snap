@@ -77,8 +77,8 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 }
 
 .c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  background-color: #E0F0F9;
+  border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
   color: #1B1C1E;
   display: -webkit-box;
@@ -136,6 +136,7 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   />
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
@@ -302,6 +303,7 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   />
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
@@ -467,6 +469,7 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   />
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
@@ -576,7 +579,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
   border-radius: var(--border-radius-2x);
-  color: #1B1C1E;
+  color: #B7BBC2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -632,6 +635,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   />
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
@@ -800,6 +804,7 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   </legend>
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
@@ -967,6 +972,7 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   </legend>
   <label
     class="c2 c3"
+    data-testid="radio-card-test-label"
     for="uuid1"
   >
     <input
