@@ -98,9 +98,10 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         onChange?.(event);
     }, [onChange, setCurrentChecked]);
 
+    let newRefValue: string | undefined;
     if (checkedValue !== undefined && checkedValue !== prevChecked.current) {
         setCurrentChecked(checkedValue);
-        prevChecked.current = checkedValue;
+        newRefValue = checkedValue;
     }
 
     if (currentChecked !== prevChecked.current) {
@@ -110,7 +111,11 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         if (willHaveTransition) {
             setTransitionStarted(true);
         }
-        prevChecked.current = currentChecked;
+        newRefValue = currentChecked;
+    }
+
+    if (newRefValue !== null) {
+        prevChecked.current = newRefValue;
     }
 
     const handleTransitionEnd = useCallback(() => {
