@@ -93,7 +93,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
         ${focus};
 
-        &:hover {
+        &:not([aria-disabled='true']):hover {
             background-color: ${({ theme }) => theme.component['datepicker-day-hover-background-color']};
             border-radius: 50%;
         }
