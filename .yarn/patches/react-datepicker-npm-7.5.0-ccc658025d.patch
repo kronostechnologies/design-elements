@@ -1,5 +1,5 @@
 diff --git a/dist/react-datepicker.js b/dist/react-datepicker.js
-index ae82bcf47146deeb250b7cc62c4d89e0bed5068a..118434da600b033da37de1482e5c8031b713170f 100644
+index ae82bcf47146deeb250b7cc62c4d89e0bed5068a..42c41972c77433c14bfb465c0b50a7d0d78c8bf4 100644
 --- a/dist/react-datepicker.js
 +++ b/dist/react-datepicker.js
 @@ -86,10 +86,11 @@
@@ -7,7 +7,7 @@ index ae82bcf47146deeb250b7cc62c4d89e0bed5068a..118434da600b033da37de1482e5c8031
          var handleClickOutside = React.useCallback(function (event) {
              var _a;
 -            if (ref.current && !ref.current.contains(event.target)) {
-+            var target = event.composed ? event.composedPath().shift() : event.target;
++            var target = (event.composed && event.composedPath && event.composedPath().find(eventTarget => eventTarget instanceof Node)) || event.target;
 +            if (ref.current && !ref.current.contains(target)) {
                  if (!(ignoreClass &&
 -                    event.target instanceof HTMLElement &&
