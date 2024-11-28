@@ -11898,7 +11898,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:^7.3.0":
+"react-datepicker@npm:7.5.0":
   version: 7.5.0
   resolution: "react-datepicker@npm:7.5.0"
   dependencies:
@@ -11910,6 +11910,21 @@ __metadata:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
   checksum: 10c0/6e94a609654b8a0eaa9b2e8c4fab803aa954e78df9729f05337ae97c4e910b1488129ee8d4b11dea575dbe0992242c078cb692ed0cba4e5d98414d8ba393972d
+  languageName: node
+  linkType: hard
+
+"react-datepicker@patch:react-datepicker@npm%3A7.5.0#~/.yarn/patches/react-datepicker-npm-7.5.0-ccc658025d.patch":
+  version: 7.5.0
+  resolution: "react-datepicker@patch:react-datepicker@npm%3A7.5.0#~/.yarn/patches/react-datepicker-npm-7.5.0-ccc658025d.patch::version=7.5.0&hash=ed47da"
+  dependencies:
+    "@floating-ui/react": "npm:^0.26.23"
+    clsx: "npm:^2.1.1"
+    date-fns: "npm:^3.6.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18
+    react-dom: ^16.9.0 || ^17 || ^18
+  checksum: 10c0/3162c33350a6ae58a143d8ade896dafe4d7f8c2393def23c953ddc3e00c7ee06dde5a736f0e6b12a16084cbfd041441ce95a27a84b18067b38b1438f6370e5fc
   languageName: node
   linkType: hard
 
