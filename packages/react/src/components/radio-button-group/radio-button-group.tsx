@@ -1,5 +1,5 @@
-import { ChangeEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
+import { ChangeEvent, Fragment, TransitionEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
+import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { RadioButton } from '../radio-button/radio-button';
@@ -9,6 +9,7 @@ const StyledFieldset = styled.fieldset`
     border: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 `;
 
 const StyledLegend = styled.legend<{ isMobile: boolean }>`
@@ -30,13 +31,40 @@ const StyledTooltip = styled(Tooltip)`
     margin-left: calc(var(--spacing-1x) * 1.5);
 `;
 
-const ContentWrapper = styled.div<{ $isExpanded: boolean, $maxHeight?: number, $transitionDuration: number }>(({ $isExpanded, $maxHeight = 500, $transitionDuration }) => `
-    overflow: hidden;
+interface ContentWrapperProps {
+    $isCollapsing: boolean;
+    $isExpanded: boolean;
+    $maxHeight?: number;
+    $transitionDuration: number;
+}
+
+function getTransition({ $isCollapsing, $transitionDuration }: ContentWrapperProps): string {
+    const maxHeightTransition = `max-height ${$transitionDuration}ms ease-in-out`;
+    if ($isCollapsing) {
+        const marginTransition = `margin-bottom ${$transitionDuration / 2}ms ${$transitionDuration / 2}ms ease-in-out`;
+        return `${maxHeightTransition}, ${marginTransition}`;
+    }
+
+    return maxHeightTransition;
+}
+
+const ContentWrapper = styled.div<ContentWrapperProps>(({
+    $isExpanded,
+    $maxHeight = 500,
+}) => css`
     max-height: ${$isExpanded ? `${$maxHeight}px` : '0'};
-    transition: max-height ${$transitionDuration}ms ease-in-out;
+    overflow: hidden;
+    transition: ${getTransition};
+
+    :not(:last-child) {
+        margin-bottom: ${$isExpanded ? 'var(--spacing-1x)' : '0'};
+    }
 `);
 
-const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: boolean }>(({ $isExpanded, $transitionStarted }) => `
+const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: boolean }>(({
+    $isExpanded,
+    $transitionStarted,
+}) => `
     display: ${$isExpanded || $transitionStarted ? 'block' : 'none'};
 `);
 
@@ -90,6 +118,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     );
     const prevChecked = useRef(currentChecked);
     const [transitionStarted, setTransitionStarted] = useState(false);
+    const [collapsingElement, setCollapsingElement] = useState<string>();
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
 
@@ -109,23 +138,27 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
             || buttons.find((b) => b.value === currentChecked)?.content;
 
         if (willHaveTransition) {
+            setCollapsingElement(prevChecked.current);
             setTransitionStarted(true);
         }
         newRefValue = currentChecked;
     }
 
-    if (newRefValue !== null) {
+    if (newRefValue !== undefined) {
         prevChecked.current = newRefValue;
     }
 
-    const handleTransitionEnd = useCallback(() => {
-        setTransitionStarted(false);
+    const handleTransitionEnd = useCallback((event: TransitionEvent) => {
+        if (event.propertyName === 'max-height') {
+            setCollapsingElement(undefined);
+            setTransitionStarted(false);
+        }
     }, []);
 
     return (
-        <StyledFieldset className={className}>
+        <StyledFieldset key={label} className={className}>
             {label && (
-                <StyledLegend isMobile={isMobile}>
+                <StyledLegend key="legend" isMobile={isMobile}>
                     {label}
                     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                     {tooltip && <StyledTooltip {...tooltip} />}
@@ -135,7 +168,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                 const isExpanded = currentChecked === button.value;
 
                 return (
-                    <>
+                    <Fragment key={`${groupName}-${button.value}-fragment`}>
                         <StyledRadioButton
                             key={`${groupName}-${button.value}`}
                             aria-label={ariaLabel}
@@ -153,9 +186,11 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                         />
                         {button.content && (
                             <ContentWrapper
+                                key={`${groupName}-${button.value}-content`}
                                 data-testid="content-wrapper"
                                 $maxHeight={button.content.maxHeight}
                                 $isExpanded={isExpanded}
+                                $isCollapsing={transitionStarted && collapsingElement === button.value}
                                 $transitionDuration={transitionDuration}
                                 onTransitionEnd={handleTransitionEnd}
                             >
@@ -167,7 +202,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                                 </InnerContent>
                             </ContentWrapper>
                         )}
-                    </>
+                    </Fragment>
                 );
             })}
         </StyledFieldset>
