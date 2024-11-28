@@ -141,7 +141,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -531,7 +531,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -923,7 +923,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -1315,7 +1315,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -1735,7 +1735,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6 .react-datepicker__day:hover {
+.c6 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -2143,7 +2143,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -2701,7 +2701,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -3996,7 +3996,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
@@ -5278,7 +5278,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:hover {
+.c4 .react-datepicker__day:not([aria-disabled='true']):hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
