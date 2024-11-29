@@ -1,5 +1,5 @@
 import { NoSelfReference } from '../../utility-types';
-import { RefTokens } from './ref-tokens';
+import { RefTokens, RefTokenValue } from './ref-tokens';
 
 export type AliasTokens =
     /**
@@ -89,9 +89,11 @@ export type AliasTokens =
     | 'color-background-brand-subtle'
     | 'color-background-brand'
     | 'color-background-brand-bold'
+    | 'color-background-indicator-disabled'
     | 'color-background-indicator-selected'
     | 'color-background-indicator-active'
     | 'color-border-brand'
+    | 'color-border-brand-bold'
     | 'color-content-brand'
     /**
      * BACKGROUND
@@ -291,9 +293,11 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-background-brand-subtle': 'color-brand-20',
     'color-background-brand': 'color-brand-50',
     'color-background-brand-bold': 'color-brand-80',
+    'color-background-indicator-disabled': 'color-neutral-30',
     'color-background-indicator-selected': 'color-brand-50',
     'color-background-indicator-active': 'color-brand-80',
-    'color-border-brand': 'color-brand-70',
+    'color-border-brand': 'color-brand-50',
+    'color-border-brand-bold': 'color-brand-70',
     'color-content-brand': 'color-brand-50',
 
     /**
@@ -429,13 +433,19 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-link-content': 'color-informative-50',
     'color-link-content-disabled': 'color-informative-20',
     'color-link-content-hover': 'color-informative-70',
-    'color-link-content-visited': 'color-discovery-50',
+    'color-link-content-visited': 'color-informative-50',
 
     /**
      * BOX-SHADOW
      */
     'color-box-shadow': 'transparent-dark-20',
 };
+
+export type ResolvedAliasTokenValue = RefTokenValue;
+
+export type ResolvedAliasTokens = {
+    [Token in AliasTokens]: ResolvedAliasTokenValue;
+}
 
 export function isAliasToken(token: string): token is AliasTokens {
     return token in defaultAliasTokens;

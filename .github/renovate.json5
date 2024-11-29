@@ -1,6 +1,10 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["local>kronostechnologies/renovate-config"],
+  extends: [
+    "local>kronostechnologies/renovate-config",
+    ":semanticCommitTypeAll(deps)",
+    ":semanticCommitScope(*)"
+  ],
   packageRules: [
     {
       matchCategories: ["js"],
@@ -9,26 +13,31 @@
         "react-dom",
       ],
       groupName: "React",
+      semanticCommitScope: "{{groupName}}",
     },
     {
       matchCategories: ["js"],
       matchPackageNames: ["react-datepicker"],
       groupName: "react-datepicker",
+      semanticCommitScope: "{{groupName}}",
     },
     {
       matchCategories: ["js"],
       matchPackageNames: ["react-modal"],
       groupName: "react-modal",
+      semanticCommitScope: "{{groupName}}",
     },
     {
       matchCategories: ["js"],
       matchPackageNames: ["react-popper-tooltip"],
       groupName: "react-popper-tooltip",
+      semanticCommitScope: "{{groupName}}",
     },
     {
       matchCategories: ["js"],
       matchPackageNames: ["react-table"],
       groupName: "react-table",
+      semanticCommitScope: "{{groupName}}",
     },
   ],
 }

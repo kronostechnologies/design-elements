@@ -15,7 +15,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c4 {
+.c6 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -38,69 +38,80 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
-.c4::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c4::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #60666E;
 }
 
-.c4:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c4::placeholder {
+.c6::placeholder {
   color: #60666E;
 }
 
-.c4:disabled {
+.c6:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::placeholder {
+.c6:disabled,
+.c6:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c4:focus,
-.c4:disabled {
+.c6:focus,
+.c6:disabled {
   border: 0;
   box-shadow: none;
 }
 
-.c3 {
+.c4 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c5 {
   padding-left: var(--spacing-1x);
 }
 
-.c1 {
+.c2 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -114,34 +125,44 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   border-color: #B7BBC2;
 }
 
-.c1 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus-within {
+.c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1 .c2 {
+.c2 .c3 {
   color: #B7BBC2;
 }
 
+.c1 .eds-TextInput-control {
+  text-align: left;
+}
+
+.c1 .eds-TextInput-leftAdornment,
+.c1 .eds-TextInput-rightAdornment {
+  color: #1B1C1E;
+}
+
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <div
-    class="c1"
+    class="c2 eds-TextInput-control"
   >
     <span
-      class="c2 c3"
+      class="c3 c4 c5 eds-TextInput-leftAdornment"
     >
       %
     </span>
     <input
-      class="c4"
+      class="c6"
       data-testid="numeric-input"
       disabled=""
       id="uuid1"
@@ -154,7 +175,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
 `;
 
 exports[`NumericInput matches the snapshot (Invalid) 1`] = `
-.c1 {
+.c2 {
   color: #CD2C23;
   display: -webkit-box;
   display: -webkit-flex;
@@ -169,7 +190,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   line-height: 1.25rem;
 }
 
-.c2 {
+.c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -194,7 +215,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c5 {
+.c7 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -217,69 +238,80 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
-.c5::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c5::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #60666E;
 }
 
-.c5:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c5::placeholder {
+.c7::placeholder {
   color: #60666E;
 }
 
-.c5:disabled {
+.c7:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-webkit-input-placeholder {
+.c7:disabled,
+.c7:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::-moz-placeholder {
+.c7:disabled,
+.c7:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled:-ms-input-placeholder {
+.c7:disabled,
+.c7:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c5:disabled,
-.c5:disabled::placeholder {
+.c7:disabled,
+.c7:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c5:focus,
-.c5:disabled {
+.c7:focus,
+.c7:disabled {
   border: 0;
   box-shadow: none;
 }
 
-.c4 {
+.c5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c5 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c6 {
   padding-left: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -292,29 +324,39 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   border-color: #CD2C23;
 }
 
-.c3 {
+.c4 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus-within {
+.c4:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
+.c1 .eds-TextInput-control {
+  text-align: left;
+}
+
+.c1 .eds-TextInput-leftAdornment,
+.c1 .eds-TextInput-rightAdornment {
+  color: #1B1C1E;
+}
+
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <span
     aria-live="polite"
-    class="c1"
+    class="c2"
     data-testid="invalid-field"
     id="uuid1_invalid"
     role="alert"
   >
     <svg
-      class="c2"
+      class="c3"
       color="currentColor"
       focusable="false"
       height="16"
@@ -323,15 +365,16 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
     This is an error message
   </span>
   <div
-    class="c3"
+    class="c4 eds-TextInput-control"
   >
     <span
-      class="c4"
+      class="c5 c6 eds-TextInput-leftAdornment"
     >
       %
     </span>
     <input
-      class="c5"
+      aria-describedby="uuid1_invalid"
+      class="c7"
       data-testid="numeric-input"
       id="uuid1"
       inputmode="numeric"
@@ -357,152 +400,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
-  background: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-  text-align: left;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c2::-moz-placeholder {
-  color: #60666E;
-}
-
-.c2:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c2::placeholder {
-  color: #60666E;
-}
-
-.c2:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c2:disabled,
-.c2:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c2:focus,
-.c2:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c3 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-right: var(--spacing-1x);
-}
-
-.c1 {
-  background: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-}
-
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <input
-      class="c2"
-      data-testid="numeric-input"
-      id="uuid1"
-      inputmode="numeric"
-      type="text"
-      value="50"
-    />
-    <span
-      class="c3"
-    >
-      %
-    </span>
-  </div>
-</div>
-`;
-
-exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
-}
-
 .c3 {
   background: #FFFFFF;
   border: 1px solid #60666E;
@@ -526,7 +423,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 100%;
-  text-align: left;
 }
 
 .c3::-webkit-input-placeholder {
@@ -577,18 +473,30 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   box-shadow: none;
 }
 
-.c2 {
+.c4 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: var(--spacing-1x);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.c1 {
+.c4 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c5 {
+  padding-right: var(--spacing-1x);
+}
+
+.c2 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -600,30 +508,207 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   height: var(--size-2x);
 }
 
-.c1 {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus-within {
+.c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
+.c1 .eds-TextInput-control {
+  text-align: left;
+}
+
+.c1 .eds-TextInput-leftAdornment,
+.c1 .eds-TextInput-rightAdornment {
+  color: #1B1C1E;
+}
+
 <div
-  class="c0"
+  class="c0 c1"
+  data-testid="field-container"
 >
   <div
-    class="c1"
+    class="c2 eds-TextInput-control"
+  >
+    <input
+      class="c3"
+      data-testid="numeric-input"
+      id="uuid1"
+      inputmode="numeric"
+      type="text"
+      value="50"
+    />
+    <span
+      class="c4 c5 eds-TextInput-rightAdornment"
+    >
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c5 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c5::-moz-placeholder {
+  color: #60666E;
+}
+
+.c5:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c5::placeholder {
+  color: #60666E;
+}
+
+.c5:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c5:disabled,
+.c5:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5:disabled,
+.c5:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5:disabled,
+.c5:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5:disabled,
+.c5:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c5:focus,
+.c5:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c4 {
+  padding-left: var(--spacing-1x);
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+}
+
+.c2 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c2:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 .eds-TextInput-control {
+  text-align: left;
+}
+
+.c1 .eds-TextInput-leftAdornment,
+.c1 .eds-TextInput-rightAdornment {
+  color: #1B1C1E;
+}
+
+<div
+  class="c0 c1"
+  data-testid="field-container"
+>
+  <div
+    class="c2 eds-TextInput-control"
   >
     <span
-      class="c2"
+      class="c3 c4 eds-TextInput-leftAdornment"
     >
       %
     </span>
     <input
-      class="c3"
+      class="c5"
       data-testid="numeric-input"
       id="uuid1"
       inputmode="numeric"

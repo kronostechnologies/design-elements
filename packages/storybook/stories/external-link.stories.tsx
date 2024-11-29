@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
 const ExternalLinkMeta: Meta<typeof ExternalLink> = {
-    title: 'Components/External Link',
+    title: 'Deprecated/External Link (deprecated)',
     component: ExternalLink,
     args: {
         label: 'External Link',

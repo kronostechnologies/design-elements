@@ -1,7 +1,8 @@
+import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { TextArea } from './text-area';
 
 describe('TextArea', () => {
@@ -101,5 +102,20 @@ describe('TextArea', () => {
 
         const charCounter = findByTestId(wrapper, 'char-counter');
         expect(charCounter.exists()).toBe(false);
+    });
+
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <TextArea label='test' required validationErrorMessage='This field is required' />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('textarea'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
     });
 });

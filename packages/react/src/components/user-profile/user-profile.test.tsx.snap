@@ -57,33 +57,6 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F1F2F2;
-  border-radius: 50%;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: var(--font-semi-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 0.625rem;
-  height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
-  width: var(--size-1halfx);
-}
-
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -113,6 +86,33 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
 }
 
 .c7 {
@@ -170,7 +170,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -221,7 +221,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {
@@ -749,33 +749,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F1F2F2;
-  border-radius: 50%;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: var(--font-semi-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 0.625rem;
-  height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
-  width: var(--size-1halfx);
-}
-
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -805,6 +778,33 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
 }
 
 .c7 {
@@ -862,7 +862,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -913,7 +913,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {
@@ -1552,7 +1552,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c18:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c18 {
@@ -1603,7 +1603,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c19:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c21 {
@@ -2130,33 +2130,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F1F2F2;
-  border-radius: 50%;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: var(--font-semi-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 0.625rem;
-  height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
-  width: var(--size-1halfx);
-}
-
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -2186,6 +2159,33 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
 }
 
 .c7 {
@@ -2243,7 +2243,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c19:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c19 {
@@ -2294,7 +2294,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c20:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c22 {

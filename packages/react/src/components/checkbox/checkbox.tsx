@@ -33,15 +33,15 @@ const IndeterminateIcon = styled(Icon).attrs({ name: 'minus' })`
 `;
 
 const CustomCheckbox = styled.span<{ disabled?: boolean }>`
-    align-self: center;
     background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-unchecked-background-color'])};
     border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-unchecked-border-color'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
+    flex-shrink: 0;
     height: var(--size-1x);
     left: 0;
-    margin-right: var(--spacing-1x);
+    margin: var(--spacing-half) var(--spacing-1x);
     position: relative;
     width: ${checkboxWidth};
 
@@ -84,7 +84,7 @@ interface StyledLabelProps {
 }
 
 const StyledLabel = styled.label<StyledLabelProps>`
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     line-height: 1.5rem;
     position: relative;

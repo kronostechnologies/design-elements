@@ -5,6 +5,7 @@ import {
     ClipboardEventHandler,
     FocusEvent,
     FocusEventHandler,
+    FormEventHandler,
     useCallback,
     useState,
 } from 'react';
@@ -40,6 +41,7 @@ export interface UseNumericInputReturn {
     onBlurHandler: FocusEventHandler<HTMLInputElement>;
     onChangeHandler: ChangeEventHandler<HTMLInputElement>;
     onPasteHandler: ClipboardEventHandler<HTMLInputElement>;
+    onInvalid?: FormEventHandler<HTMLInputElement>;
     precision?: number;
     required?: boolean;
     invalid: boolean;
@@ -77,7 +79,8 @@ function getValidationErrorType(value: string, {
     if (value !== '') {
         if (max !== undefined && Number(value) > max) {
             return 'max';
-        } if (min !== undefined && Number(value) < min) {
+        }
+        if (min !== undefined && Number(value) < min) {
             return 'min';
         }
     }
@@ -97,7 +100,7 @@ export function useNumericInput({
     onChange,
     precision,
     required,
-    invalid,
+    invalid: providedInvalid,
     validationErrorMessage: providedValidationErrorMessage,
     value: providedValue,
 }: UseNumericInputParams): UseNumericInputReturn {
@@ -153,9 +156,21 @@ export function useNumericInput({
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
         const value = cleanIncompleteNumber(event.target.value);
         setInputValue(value);
-        validate(value);
+
+        if (!(required && value === '')) {
+            validate(value);
+        } else {
+            setValidationErrorType(undefined);
+        }
+
         onBlur?.(event, createCallbackData(value));
-    }, [onBlur, validate]);
+    }, [onBlur, required, validate]);
+
+    const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
+        if (providedInvalid === undefined) {
+            validate(inputValue);
+        }
+    }, [inputValue, providedInvalid, validate]);
 
     if (providedValue !== undefined) {
         const validatedProvidedValue = validateProvidedValue(providedValue);
@@ -178,8 +193,8 @@ export function useNumericInput({
         }
     };
 
-    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorType !== undefined);
-    const errorMessage = (providedValidationErrorMessage ?? getErrorMessage());
+    const isInvalid = providedInvalid ?? validationErrorType !== undefined;
+    const errorMessage = providedValidationErrorMessage ?? getErrorMessage();
 
     return {
         max,
@@ -187,6 +202,7 @@ export function useNumericInput({
         onBlurHandler: handleBlur,
         onChangeHandler: handleChange,
         onPasteHandler: handlePaste,
+        onInvalid: handleOnInvalid,
         precision,
         required,
         invalid: isInvalid,

@@ -1,6 +1,7 @@
+import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
 import { PhoneInput } from './phone-input';
 
 describe('PhoneInput', () => {
@@ -95,5 +96,25 @@ describe('PhoneInput', () => {
 
         const phoneInput = getByTestId(wrapper, 'phone-text-input');
         expect(phoneInput.prop('value')).toBe('(123) 456-7890');
+    });
+
+    test('should not show validation message when input is empty and required onBlur', () => {
+        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+            <form>
+                <PhoneInput
+                    pattern='(___) ___-____'
+                    label='test'
+                    required
+                    validationErrorMessage='This field is required'
+                />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        fireEvent.blur(byTestId('phone-text-input'), { target: { value: '' } });
+        expect(queryByTestId('invalid-field')).toBeNull();
+
+        fireEvent.click(byTestId('submit-button'));
+        expect(byTestId('invalid-field')).not.toBeNull();
     });
 });

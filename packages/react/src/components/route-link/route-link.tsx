@@ -41,6 +41,9 @@ interface LinkProps extends RouterLinkProps {
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
+/**
+ * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
+ */
 export const RouteLink: VoidFunctionComponent<LinkProps> = ({
     className,
     disabled,

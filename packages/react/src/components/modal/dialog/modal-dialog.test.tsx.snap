@@ -137,53 +137,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: var(--size-1x);
 }
 
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -244,6 +197,53 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
 .c6 {
@@ -834,53 +834,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1x);
 }
 
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -941,6 +894,53 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
 .c6 {
@@ -1263,53 +1263,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  min-width: var(--size-1halfx);
-  padding: 0;
-  width: var(--size-1halfx);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -1370,6 +1323,53 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
 .c6 {
@@ -1636,52 +1636,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: 0;
-}
-
 .c11 {
   background-color: transparent;
   border-color: transparent;
@@ -1742,6 +1696,52 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-3x);
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3:hover,
+.c3[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c3[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: 0;
 }
 
 .c6 {
