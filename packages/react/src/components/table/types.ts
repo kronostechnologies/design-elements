@@ -1,21 +1,14 @@
-import { ColumnDef } from '@tanstack/react-table';
+import { Cell, Column, ColumnDef, Header } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
-export type TableDataAsRowData<TData> = TData & {
+export type TableData<TData> = TData & {
     id?: number | string;
     error?: boolean;
-    subRows?: TableDataAsRowData<TData>[];
+    subRows?: TableData<TData>[];
     subContent?: React.ReactNode;
 }
 
-export type TableDataAsRowGroup<TData> = {
-    groupLabel?: string;
-    subRows?: TableDataAsRowData<TData>[];
-}
-
-export type TableData<TData> = TableDataAsRowData<TData> | TableDataAsRowGroup<TData>;
-
-export type TableColumn<TData, TValue = unknown> = ColumnDef<TData, TValue> & {
+export type TableColumn<TData> = ColumnDef<TData> & {
     className?: string;
     footerColSpan?: number;
     headerAriaLabel?: string;
@@ -25,3 +18,15 @@ export type TableColumn<TData, TValue = unknown> = ColumnDef<TData, TValue> & {
     sticky?: boolean;
     textAlign?: CSSProperties['textAlign'];
 };
+
+export interface CustomHeader<TData extends object, TValue = unknown> extends Header<TData, TValue> {
+    column: Column<TData, TValue> & {
+        columnDef: TableColumn<TData>;
+    };
+}
+
+export interface CustomCell<TData extends object, TValue = unknown> extends Cell<TData, TValue> {
+    column: Column<TData, TValue> & {
+        columnDef: TableColumn<TData>;
+    };
+}
