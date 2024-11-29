@@ -13,9 +13,9 @@ import {
     ExpandedState,
     TableOptions,
     RowSelectionState,
+    Table as TableType,
 } from '@tanstack/react-table';
 import { TFunction } from 'i18next';
-import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { StyledTableRow, TableRow } from './table-row';
@@ -23,11 +23,10 @@ import { TableHeader } from './table-header';
 import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { TableData, TableColumn, TableDataAsRowData } from './types';
+import { TableData, TableColumn } from './types';
 import { RadioInput } from '../radio-button/radio-input';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
-import { getExpandedIncludingGroups, isDataRowType } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -104,6 +103,8 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
 }
 
 const utilColumnClassName = 'eq-table__util-column';
+
+const ALWAYS_EXPANDED_VALUE = true;
 
 interface StyledTableProps {
     $clickableRows: boolean;
@@ -297,6 +298,7 @@ export interface TableProps<T extends object> {
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
     onSort?(sort: ColumnSort | null): void;
+    expandChildsOnRowSelection?: boolean;
 }
 
 export const Table = <T extends object>({
@@ -316,31 +318,33 @@ export const Table = <T extends object>({
     onRowClick,
     onSelectedRowsChange,
     onSort,
+    expandChildsOnRowSelection,
 }: TableProps<T>): ReactElement => {
     const { t } = useTranslation('table');
-    const tableId = useId();
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
 
-    // Add utility columns for row numbers and row selection
+    let table: TableType<T>;
+
+    // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
         const cols = [...providedColumns];
 
         if (rowSelectionMode) {
             cols.unshift(getUtilityColumn<T>('selection', t, rowSelectionMode, ariaLabelledByColumnId));
-        } else if (expandableRows) {
+        }
+        if (expandableRows) {
             cols.unshift(getUtilityColumn<T>('expand', t));
-        } else if (rowNumbers) {
+        }
+        if (rowNumbers) {
             cols.unshift(getUtilityColumn<T>('numbers', t));
         }
 
         return cols;
     }, [rowSelectionMode, expandableRows, rowNumbers, providedColumns, t, ariaLabelledByColumnId]);
-
-    const allExpanded = useMemo(() => getExpandedIncludingGroups(expanded, data), [expanded, data]);
 
     const tableOptions: TableOptions<T> = {
         data,
@@ -348,17 +352,17 @@ export const Table = <T extends object>({
         state: {
             sorting,
             rowSelection,
-            expanded: allExpanded,
+            expanded,
         },
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        getSubRows: (originalRow: TableData<T>) => originalRow.subRows,
+        getSubRows: (originalRow) => (originalRow as TableData<T>).subRows,
         getExpandedRowModel: getExpandedRowModel(),
         getRowCanExpand:
             expandableRows
-                ? ((row) => row.subRows.length > 0 || !!(row.original as TableDataAsRowData<T>).subContent)
+                ? ((row) => row.subRows.length > 0 || !!(row.original as TableData<T>).subContent)
                 : undefined,
         onSortingChange: (updater: Updater<SortingState>) => {
             const newValue = functionalUpdate(updater, sorting);
@@ -372,14 +376,27 @@ export const Table = <T extends object>({
             if (expandableRows === 'single' && Object.keys(newValue).length > 1) {
                 newValue = functionalUpdate(updater, {});
             }
-
             setExpanded(newValue);
         },
         enableRowSelection: true,
-        onRowSelectionChange: setRowSelection,
+        onRowSelectionChange: (updater: Updater<RowSelectionState>) => {
+            const newValue = functionalUpdate(updater, rowSelection);
+            setRowSelection(newValue);
+
+            if (expanded !== ALWAYS_EXPANDED_VALUE && expandableRows && expandChildsOnRowSelection) {
+                if (Object.keys(newValue).length > Object.keys(rowSelection).length) {
+                    const newlySelectedRowId = Object.keys(newValue).find((id) => !rowSelection[id])!;
+                    const row = table.getRow(newlySelectedRowId);
+
+                    if (row.subRows && row.subRows.length > 0) {
+                        row.toggleExpanded(true);
+                    }
+                }
+            }
+        },
     };
 
-    const table = useReactTable(tableOptions);
+    table = useReactTable(tableOptions);
     const hasFooter = columns.some((column) => 'footer' in column);
     const currentRowSelection = table.getState().rowSelection;
 
@@ -412,19 +429,17 @@ export const Table = <T extends object>({
             </StyledTHead>
             <StyledTBody>
                 {table.getRowModel().rows.map((row) => {
-                    const rowOriginal = row.original;
-                    const isDataRow = isDataRowType(rowOriginal);
-                    const hasError = isDataRow && !!rowOriginal.error;
+                    const rowOriginal = row.original as TableData<T>;
+                    const hasError = !!rowOriginal.error;
                     return (
                         <Fragment key={row.id}>
                             <TableRow<T>
-                                tableId={tableId}
                                 striped={striped}
                                 error={hasError}
                                 row={row}
                                 onClick={onRowClick}
                             />
-                            {isDataRow && rowOriginal.subContent && row.getIsExpanded() && (
+                            {rowOriginal.subContent && row.getIsExpanded() && (
                                 <StyledTableRow>
                                     <td />
                                     <td colSpan={99}>
