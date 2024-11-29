@@ -1,6 +1,5 @@
-import { fireEvent, render } from '@testing-library/react';
-import { renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
-import { themeProvider } from '../../test-utils/theme-provider';
+import { fireEvent } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/testing-library';
 import { MoneyInput } from './money-input';
 
 function simulateValueChange(input: HTMLInputElement, value: String): void {
@@ -13,11 +12,10 @@ function getInputElement(container: Element): HTMLInputElement {
     return container.querySelector('input') as HTMLInputElement;
 }
 
-describe('CurrencyInput Component', () => {
+describe('MoneyInput Component', () => {
     it('should remove formatting on focus', () => {
-        const { container } = render(
+        const { container } = renderWithProviders(
             <MoneyInput value={12345.25} />,
-            { wrapper: themeProvider() },
         );
         const input = getInputElement(container);
 
@@ -27,7 +25,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should format on blur', () => {
-        const { container } = render(<MoneyInput value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput value={12345.25} />);
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -37,7 +35,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should remove fractions when precision is 0 and changing value', () => {
-        const { container } = render(<MoneyInput precision={0} value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput precision={0} value={12345.25} />);
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345.25');
@@ -45,7 +43,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should use precision when changing value', () => {
-        const { container } = render(<MoneyInput value={null} precision={2} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput value={null} precision={2} />);
         const input = getInputElement(container);
 
         simulateValueChange(input, '123.457');
@@ -53,7 +51,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should format according to locale when changing value', () => {
-        const { container } = render(<MoneyInput locale="en-CA" />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput locale="en-CA" />);
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345');
@@ -61,21 +59,21 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should format provided value', () => {
-        const { container } = render(<MoneyInput value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput value={12345.25} />);
         const input = getInputElement(container);
 
         expect(input.value).toMatchFormattedMoney('12 345,25 $');
     });
 
     it('should format to provided currency', () => {
-        const { container } = render(<MoneyInput value={12345.25} currency="USD" />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput value={12345.25} currency="USD" />);
         const input = getInputElement(container);
 
         expect(input.value).toMatchFormattedMoney('12 345,25 $');
     });
 
     it('should select all text on focus', () => {
-        const { container } = render(<MoneyInput value={12345} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput value={12345} />);
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -86,9 +84,8 @@ describe('CurrencyInput Component', () => {
 
     it('should respect precision and locale when calling change handler', () => {
         const handleChange = jest.fn();
-        const { container } = render(
+        const { container } = renderWithProviders(
             <MoneyInput locale="en-CA" precision={0} value={0} onChange={handleChange} />,
-            { wrapper: themeProvider() },
         );
         const input = getInputElement(container);
 
@@ -97,7 +94,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should allow 0 as a value', () => {
-        const { container } = render(<MoneyInput precision={0} value={0} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput precision={0} value={0} />);
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -107,7 +104,7 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should allow to be empty', () => {
-        const { container } = render(<MoneyInput precision={0} value={0} />, { wrapper: themeProvider() });
+        const { container } = renderWithProviders(<MoneyInput precision={0} value={0} />);
         const input = getInputElement(container);
 
         simulateValueChange(input, '');
@@ -115,9 +112,9 @@ describe('CurrencyInput Component', () => {
     });
 
     test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+        const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
-                <MoneyInput label='test' required validationErrorMessage='This field is required' />
+                <MoneyInput label="test" required validationErrorMessage="This field is required" />
                 <button data-testid="submit-button" type="submit">Submit</button>
             </form>,
         );
@@ -130,20 +127,20 @@ describe('CurrencyInput Component', () => {
     });
 
     it('matches snapshot (fr-CA)', () => {
-        const tree = renderWithTheme(<MoneyInput value={100} />);
+        const { container } = renderWithProviders(<MoneyInput value={100} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('matches snapshot (en-CA)', () => {
-        const tree = renderWithTheme(<MoneyInput value={100} locale="en-CA" />);
+        const { container } = renderWithProviders(<MoneyInput value={100} locale="en-CA" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('matches snapshot (en-US)', () => {
-        const tree = renderWithTheme(<MoneyInput value={100} locale="en-CA" />);
+        const { container } = renderWithProviders(<MoneyInput value={100} locale="en-CA" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
