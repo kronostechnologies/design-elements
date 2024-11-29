@@ -20,11 +20,13 @@ import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import Eye from 'feather-icons/dist/icons/eye.svg';
 import EyeOff from 'feather-icons/dist/icons/eye-off.svg';
+import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
 import Mail from 'feather-icons/dist/icons/mail.svg';
 import MapPin from 'feather-icons/dist/icons/map-pin.svg';
+import Maximize from 'feather-icons/dist/icons/maximize-2.svg';
 import Menu from 'feather-icons/dist/icons/menu.svg';
 import Minus from 'feather-icons/dist/icons/minus.svg';
 import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
@@ -94,6 +96,7 @@ const iconMapping = {
     eye: Eye,
     eyeOff: EyeOff,
     files: Files,
+    graph: Graph,
     helpCircle: HelpCircle,
     history: History,
     home: Home,
@@ -102,6 +105,7 @@ const iconMapping = {
     lightbulb: Lightbulb,
     mail: Mail,
     mapPin: MapPin,
+    maximize: Maximize,
     megaphone: Megaphone,
     menu: Menu,
     minus: Minus,
