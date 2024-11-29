@@ -1630,6 +1630,8 @@ exports[`Table has selectable rows styles 1`] = `
           class="c4"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-all"
             type="checkbox"
@@ -1683,6 +1685,8 @@ exports[`Table has selectable rows styles 1`] = `
           class="c4"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-0"
             type="checkbox"
@@ -1732,6 +1736,8 @@ exports[`Table has selectable rows styles 1`] = `
           class="c4"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-1"
             type="checkbox"
@@ -1781,6 +1787,8 @@ exports[`Table has selectable rows styles 1`] = `
           class="c4"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-2"
             type="checkbox"
