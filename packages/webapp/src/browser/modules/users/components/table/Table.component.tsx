@@ -12,6 +12,7 @@ import {
     Delete as DeleteCell,
 } from './cells';
 import { Footer as TableFooter } from './Footer.component';
+import { ToolBar } from './toolbar/Toolbar.component';
 
 const TableContainer = styled.div`
     align-items: flex-start;
@@ -25,7 +26,7 @@ const TableContainer = styled.div`
     flex-shrink: 0;
     gap: 8px;
     padding: 16px 32px;
-    
+
     td:nth-child(4) {
         padding-left: 0;
         padding-right: 0;
@@ -58,7 +59,7 @@ export const Table: FunctionComponent = () => {
             focusable: true,
             // eslint-disable-next-line react/no-unstable-nested-components
             cell: (props) => (
-                <NameCell id={props.cell.getValue() as User['id']} />
+                <NameCell id={props.row.original.id} name={props.row.original.name} />
             ),
         },
         {
@@ -84,13 +85,14 @@ export const Table: FunctionComponent = () => {
             sortable: false,
             // eslint-disable-next-line react/no-unstable-nested-components
             cell: (props) => (
-                <DeleteCell id={props.cell.getValue() as User['id']} />
+                <DeleteCell id={props.row.original.id} />
             ),
         },
     ], [t]);
 
     return (
         <TableContainer>
+            <ToolBar />
             <DataTable
                 rowSize="small"
                 columns={columns}

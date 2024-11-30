@@ -10,6 +10,6 @@ export async function bootstrap(document: NonElementParentNode): Promise<void> {
 
     if (rootElement) {
         const root = createRoot(rootElement);
-        root.render(<App configuration={configuration} />);
+        root.render(<App />);
     }
 }
