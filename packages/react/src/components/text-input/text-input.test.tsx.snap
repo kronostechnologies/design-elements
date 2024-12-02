@@ -139,8 +139,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone
   </label>
@@ -298,8 +298,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone (required)
   </label>
@@ -457,8 +457,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone
   </label>
@@ -638,8 +638,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone
   </label>
@@ -829,8 +829,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone
   </label>
@@ -1019,8 +1019,8 @@ input + .c1 {
 >
   <label
     class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    for="uuid2"
+    id="uuid2_label"
   >
     Telephone
   </label>

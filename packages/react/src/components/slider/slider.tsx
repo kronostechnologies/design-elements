@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
-import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useId } from '../../hooks/use-id';
+import { FieldContainer } from '../field-container/field-container';
 import { ValueTooltip } from './value-tooltip';
 import { Labels, SliderContainer, StyledSlider } from './styles';
 
