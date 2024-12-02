@@ -53,7 +53,6 @@ exports[`SearchInput should match the snapshot 1`] = `
 }
 
 .c13 > svg {
-  color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -426,9 +425,9 @@ input:valid + .c8 {
               onClick={[Function]}
             >
               <styled.button
+                $isMobile={false}
                 className="c12 c11 primary"
                 disabled={true}
-                isMobile={false}
                 onClick={[Function]}
               >
                 <button

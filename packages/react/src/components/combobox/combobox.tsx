@@ -24,6 +24,7 @@ import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
+import { useListSelect } from '../../hooks/use-list-select';
 
 interface TextboxProps {
     disabled?: boolean;
@@ -317,23 +318,24 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         onChange?.(newValue);
     }, [onChange]);
 
-    const [selectedOption, setSelectedOption] = useState<ComboboxOption | undefined>(
-        () => findOptionByValue(value ?? defaultValue),
+    const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
+        value ?? defaultValue,
     );
-
-    const [previousSelectedOption, setPreviousSelectedOption] = useState<ComboboxOption | undefined>(
-        () => findOptionByValue(value ?? defaultValue),
+    const {
+        currentSelectedElement: selectedOption,
+        previousSelectedElement: previousSelectedOption,
+        selectElement: selectOption,
+        clearSelection: clearSelectedOptions,
+        revertPreviousSelectedElement: revertPreviousSelectedOption,
+    } = useListSelect<ComboboxOption>(
+        (option: ComboboxOption, optionToCompare: ComboboxOption) => option.value === optionToCompare.value,
+        initialSelectedOptionCallback,
     );
-
-    function selectOption(newOption: ComboboxOption | undefined): void {
-        setSelectedOption(newOption);
-        setPreviousSelectedOption(newOption);
-    }
 
     const revertInputValue: () => void = useCallback(() => {
-        setSelectedOption(previousSelectedOption);
+        revertPreviousSelectedOption();
         changeInputValue(previousSelectedOption?.value ?? '');
-    }, [changeInputValue, previousSelectedOption]);
+    }, [changeInputValue, previousSelectedOption, revertPreviousSelectedOption]);
 
     const {
         selectedElement: focusedOption,
@@ -408,6 +410,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         inputValue,
         open,
         revertInputValue,
+        selectOption,
         selectedOption,
     ]);
 
@@ -450,7 +453,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     function handleClearButtonClick(): void {
         changeInputValue('');
         setFocusedOption(undefined);
-        selectOption(undefined);
+        clearSelectedOptions();
 
         textboxRef.current?.focus();
     }
@@ -528,7 +531,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     closeListbox();
                 } else {
                     changeInputValue('');
-                    selectOption(undefined);
+                    clearSelectedOptions();
                 }
                 break;
             case 'Backspace':
@@ -568,7 +571,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         if (matchingOption) {
             selectOption(matchingOption);
         } else if (allowCustomValue || newInputValue === '') {
-            selectOption(undefined);
+            clearSelectedOptions();
         }
     }
 

@@ -15,7 +15,7 @@ import {
     useRef,
     useState,
 } from 'react';
-import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
+import DatePicker, { DatePickerProps, ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker';
 import { parse } from 'date-fns';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -23,7 +23,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { AbstractButton } from '../buttons/abstract-button';
+import { AbstractButton } from '../buttons/abstract/abstract-button';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field/field-container';
@@ -45,7 +45,7 @@ import {
 } from './utils/datepicker-utils';
 import { focus } from '../../utils/css-state';
 
-interface StyledDatePickerProps extends ReactDatePickerProps {
+type StyledDatePickerProps = DatePickerProps & {
     isMobile: boolean;
     theme: ResolvedTheme;
     valid?: boolean;
@@ -93,7 +93,7 @@ const Container = styled.div<{ isMobile: boolean, theme: ResolvedTheme }>`
 
         ${focus};
 
-        &:hover {
+        &:not([aria-disabled='true']):hover {
             background-color: ${({ theme }) => theme.component['datepicker-day-hover-background-color']};
             border-radius: 50%;
         }
@@ -502,9 +502,9 @@ export const Datepicker = forwardRef(({
         const numericalFormat = getNumericalDateFormat(dateFormat);
         if (numericalFormat && /^\d+$/.test(value) && value.length === numericalFormat.length) {
             const date = parse(value, numericalFormat, new Date());
-            setSelectedDate(date);
+            handleInputChange(date);
         }
-    }, [dateFormat]);
+    }, [dateFormat, handleInputChange]);
 
     return (
         <>
@@ -531,7 +531,7 @@ export const Datepicker = forwardRef(({
                         isMobile={isMobile}
                         id={fieldId}
                         ref={dateInputRef}
-                        renderCustomHeader={(customHeaderProps) => (
+                        renderCustomHeader={(customHeaderProps: ReactDatePickerCustomHeaderProps) => (
                             <CalendarHeader
                                 months={months}
                                 monthsOptions={monthsOptions}

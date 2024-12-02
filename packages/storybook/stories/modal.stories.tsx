@@ -3,6 +3,9 @@ import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ModalDialog> = {
     title: 'Components/Modal',
+    argTypes: {
+        width: { control: { type: 'text' } },
+    },
     component: ModalDialog,
 };
 

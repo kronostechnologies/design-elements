@@ -25,6 +25,7 @@ import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
 import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
 import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
+import { defaultProgressCircularTokens, ProgressCircularTokens } from './component/progress-circular-tokens';
 import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
 import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
 import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
@@ -52,6 +53,7 @@ import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
 import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
 import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
 import { defaultTabTokens, TabTokens } from './component/tab-tokens';
+import { defaultSliderTokens, SliderTokens } from './component/slider-tokens';
 
 export type ComponentTokens =
     | AvatarTokens
@@ -85,10 +87,12 @@ export type ComponentTokens =
     | NavListTokens
     | PaginationTokens
     | ProgressTokens
+    | ProgressCircularTokens
     | LinkTokens
     | BadgeTokens
     | GlobalBannerTokens
     | SectionalBannerTokens
+    | SliderTokens
     | SpinnerTokens
     | StatusTokens
     | TagTokens
@@ -125,6 +129,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultNavListTokens,
     ...defaultPaginationTokens,
     ...defaultProgressTokens,
+    ...defaultProgressCircularTokens,
     ...defaultLinkTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
@@ -148,6 +153,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultBadgeTokens,
     ...defaultGlobalBannerTokens,
     ...defaultSectionalBannerTokens,
+    ...defaultSliderTokens,
     ...defaultSpinnerTokens,
     ...defaultStatusTokens,
     ...defaultTagTokens,

@@ -65,6 +65,15 @@ export const DestructiveTertiary: Story = {
     },
 };
 
+export const PrimaryLoading: Story = {
+    args: {
+        buttonType: 'primary',
+        disabled: true,
+        label: 'Submit',
+        loading: true,
+    },
+};
+
 export const PrimaryWithIcon: Story = {
     args: {
         buttonType: 'primary',

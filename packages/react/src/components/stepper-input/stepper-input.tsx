@@ -1,16 +1,19 @@
 import React, {
     ChangeEvent,
-    DetailedHTMLProps,
+    DetailedHTMLProps, FormEventHandler,
     InputHTMLAttributes,
     RefObject,
-    useMemo,
+    useCallback,
+    useEffect,
     useRef,
+    useState,
+    FocusEvent,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
@@ -63,6 +66,7 @@ interface StepperInputProps extends PartialStepperInputProps {
     valid?: boolean;
     validationErrorMessage?: string;
     value?: Value;
+    required?: boolean;
 
     onChange?(value: Value): void
 }
@@ -76,14 +80,15 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     defaultValue,
     disabled,
     hint,
-    id,
+    id: providedId,
     label,
     max,
     min,
     noMargin,
     step,
     tooltip,
-    valid = true,
+    required,
+    valid,
     validationErrorMessage,
     value,
     onBlur,
@@ -93,9 +98,10 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const fieldId = useId(providedId);
     const intervalId = useRef<NodeJS.Timeout>();
     const timeoutId = useRef<NodeJS.Timeout>();
+    const [validity, setValidity] = useState(valid ?? true);
 
     function handleIncrement(event: React.MouseEvent<HTMLButtonElement>): void {
         if (event.button !== 0) return;
@@ -146,6 +152,30 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         }
     };
 
+    const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
+        if (valid === undefined) {
+            if (required && event.currentTarget.value === '') {
+                setValidity(true);
+            } else {
+                setValidity(event.currentTarget.checkValidity());
+            }
+        }
+
+        onBlur?.(event);
+    }, [onBlur, valid, required]);
+
+    const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
+        if (valid === undefined) {
+            setValidity(false);
+        }
+    }, [valid]);
+
+    useEffect(() => {
+        if (valid !== undefined) {
+            setValidity(valid);
+        }
+    }, [valid]);
+
     return (
         <FieldContainer
             id={fieldId}
@@ -153,11 +183,13 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={valid}
+            required={required}
+            valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <Wrapper>
                 <StyledInput
+                    aria-invalid={!validity}
                     data-testid="stepper-input"
                     defaultValue={defaultValue}
                     device={device}
@@ -167,9 +199,11 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
                     min={min}
                     name="points"
                     onChange={handleChange}
-                    onBlur={onBlur}
+                    onBlur={handleBlur}
                     onFocus={onFocus}
+                    onInvalid={handleOnInvalid}
                     ref={inputRef}
+                    required={required}
                     step={step}
                     type="number"
                     value={value === null ? '' : value}

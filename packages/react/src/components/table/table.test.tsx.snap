@@ -109,11 +109,13 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -124,11 +126,13 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -139,11 +143,13 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -296,11 +302,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -313,11 +321,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -330,11 +340,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -496,16 +508,19 @@ exports[`Table has column with headers grouped 1`] = `
     >
       <td
         class="c7"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="0_column2"
       >
         World
       </td>
       <td
         class="c8"
+        id="0_column3"
       />
     </tr>
     <tr
@@ -514,16 +529,19 @@ exports[`Table has column with headers grouped 1`] = `
     >
       <td
         class="c7"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="1_column2"
       >
         Planet
       </td>
       <td
         class="c8"
+        id="1_column3"
       />
     </tr>
     <tr
@@ -532,16 +550,19 @@ exports[`Table has column with headers grouped 1`] = `
     >
       <td
         class="c7"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="2_column2"
       >
         Galaxy
       </td>
       <td
         class="c8"
+        id="2_column3"
       />
     </tr>
   </tbody>
@@ -680,11 +701,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class="c7"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="0_column2"
       >
         World
       </td>
@@ -695,11 +718,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class="c7"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="1_column2"
       >
         Planet
       </td>
@@ -710,11 +735,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         class="c7"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -832,11 +859,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -847,11 +876,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -862,11 +893,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -996,11 +1029,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -1011,11 +1046,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         World
       </td>
@@ -1026,11 +1063,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         World
       </td>
@@ -1148,11 +1187,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -1163,11 +1204,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -1178,11 +1221,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -1316,6 +1361,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class="c6"
+        id="0_numbers"
       >
         <span
           class="c7"
@@ -1325,11 +1371,13 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -1340,6 +1388,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class="c6"
+        id="1_numbers"
       >
         <span
           class="c7"
@@ -1349,11 +1398,13 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -1364,6 +1415,7 @@ exports[`Table has rowNumbers styles 1`] = `
     >
       <td
         class="c6"
+        id="2_numbers"
       >
         <span
           class="c7"
@@ -1373,11 +1425,13 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -1441,17 +1495,17 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c7 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
   left: 0;
-  margin-right: var(--spacing-1x);
+  margin: var(--spacing-half) var(--spacing-1x);
   position: relative;
   width: var(--size-1x);
 }
@@ -1498,10 +1552,10 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1623,6 +1677,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class="c14"
+        id="0_selection"
       >
         <label
           class="c4"
@@ -1654,11 +1709,13 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class="c14"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c14"
+        id="0_column2"
       >
         World
       </td>
@@ -1669,6 +1726,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class="c14"
+        id="1_selection"
       >
         <label
           class="c4"
@@ -1700,11 +1758,13 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class="c14"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c14"
+        id="1_column2"
       >
         Planet
       </td>
@@ -1715,6 +1775,7 @@ exports[`Table has selectable rows styles 1`] = `
     >
       <td
         class="c14"
+        id="2_selection"
       >
         <label
           class="c4"
@@ -1746,11 +1807,13 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
       <td
         class="c14"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c14"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -1868,11 +1931,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -1883,11 +1948,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -1898,11 +1965,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -2074,11 +2143,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         class="c8"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="0_column2"
       >
         World
       </td>
@@ -2089,11 +2160,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         class="c8"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="1_column2"
       >
         Planet
       </td>
@@ -2104,11 +2177,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         class="c8"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c8"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -2286,16 +2361,19 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c8"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c9"
+        id="0_column2"
       >
         Big
       </td>
       <td
         class="c10"
+        id="0_column3"
       >
         World
       </td>
@@ -2306,16 +2384,19 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c8"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c9"
+        id="1_column2"
       >
         Big
       </td>
       <td
         class="c10"
+        id="1_column3"
       >
         World
       </td>
@@ -2326,16 +2407,19 @@ exports[`Table has sticky column styles 1`] = `
     >
       <td
         class="c8"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c9"
+        id="2_column2"
       >
         Big
       </td>
       <td
         class="c10"
+        id="2_column3"
       >
         World
       </td>
@@ -2457,11 +2541,13 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -2472,11 +2558,13 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -2487,11 +2575,13 @@ exports[`Table has sticky header styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -2613,11 +2703,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -2628,11 +2720,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -2643,11 +2737,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>
@@ -2765,11 +2861,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class="c6"
+        id="0_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="0_column2"
       >
         World
       </td>
@@ -2780,11 +2878,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class="c6"
+        id="1_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="1_column2"
       >
         Planet
       </td>
@@ -2795,11 +2895,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         class="c6"
+        id="2_column1"
       >
         Hello
       </td>
       <td
         class="c6"
+        id="2_column2"
       >
         Galaxy
       </td>

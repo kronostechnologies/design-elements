@@ -1,4 +1,4 @@
-import { TextInput } from '@equisoft/design-elements-react';
+import { Icon, TextInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -41,6 +41,26 @@ export const Default: Story = {
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
+        hint: 'Hint',
+    },
+};
+
+export const IconAsAdornment: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        validationErrorMessage: 'Error message',
+        leftAdornment: <Icon name='user' />,
+        hint: 'Hint',
+    },
+};
+
+export const TextAsAdornment: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        validationErrorMessage: 'Error message',
+        rightAdornment: '%',
         hint: 'Hint',
     },
 };

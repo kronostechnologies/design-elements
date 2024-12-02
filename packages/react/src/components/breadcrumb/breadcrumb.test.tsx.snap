@@ -34,7 +34,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c2:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {
@@ -55,7 +55,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c3:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3[disabled] {
@@ -206,7 +206,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c2:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {
@@ -227,7 +227,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c3:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3[disabled] {
@@ -437,7 +437,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c2:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {
@@ -458,7 +458,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c3:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3[disabled] {
@@ -591,7 +591,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c2:visited {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c2 {
@@ -612,7 +612,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c3:visited svg {
-  color: #602FA0;
+  color: #006296;
 }
 
 .c3[disabled] {

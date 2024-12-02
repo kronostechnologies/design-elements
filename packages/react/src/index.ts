@@ -4,7 +4,8 @@ declare global { var __DS_DEV__: boolean; }
 global.__DS_DEV__ = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
 // Buttons
-export { Button, ButtonProps } from './components/buttons/button';
+export { Button } from './components/buttons/button';
+export { ButtonProps } from './components/buttons/types';
 export { IconButton } from './components/buttons/icon-button';
 export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton, MenuButtonProps } from './components/menu-button/menu-button';
@@ -24,6 +25,7 @@ export { NumericInput } from './components/numeric-input/numeric-input';
 export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
 export { PasswordInput } from './components/password-input/password-input';
 export { PhoneInput } from './components/phone-input/phone-input';
+export { ProgressCircular, ProgressCircularProps } from './components/progress-circular/progress-circular';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
@@ -31,7 +33,7 @@ export { RadioButton } from './components/radio-button/radio-button';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { TextArea } from './components/text-area/text-area';
-export { TextInput } from './components/text-input/text-input';
+export * from './components/text-input';
 export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
 export {
     hasALowerCaseLetter,
@@ -66,13 +68,13 @@ export { Icon } from './components/icon/icon';
 export { SectionalBanner, SectionalBannerType } from './components/sectional-banner/sectional-banner';
 export * from './components/progress-tracker/progress-tracker';
 export { SideDrawer } from './components/side-drawer/side-drawer';
+export { Slider } from './components/slider/slider';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
 export { Table } from './components/table/table';
 export { TableColumn, TableData } from './components/table/types';
-export { Modal } from './components/modal/modal';
-export { ModalDialog } from './components/modal/modal-dialog';
+export { Modal, ModalDialog } from './components/modal';
 export {
     Tag, TagValue, TagColor, TagSize, TagProps,
 } from './components/tag/tag';
@@ -94,9 +96,11 @@ export { useToast } from './hooks/use-toast';
 export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';
 export * from './components/global-navigation/global-navigation';
 export { RouteLink } from './components/route-link/route-link';
+export { Link } from './components/link';
 
 // Results
 export * from './components/legend/legend';
+export { Fieldset } from './components/fieldset';
 export { ProgressIndicator } from './components/progress-indicator/progress-indicator';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';

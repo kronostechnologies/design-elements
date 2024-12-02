@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio button matches snapshot 1`] = `
-.c1 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -15,56 +15,43 @@ exports[`Radio button matches snapshot 1`] = `
   flex-shrink: 0;
   height: var(--size-1x);
   margin: 0;
-  margin-top: var(--spacing-half);
   position: relative;
   width: var(--size-1x);
 }
 
-.c1 + {
+.c2 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus + {
+.c2:focus {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1:checked {
+.c2:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
   border: 2px solid #006296;
 }
 
-.c1:checked::after {
-  background-color: #006296;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  height: var(--size-half);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
-}
-
-.c1:disabled + label {
+.c2:disabled + label {
   color: #B7BBC2;
 }
 
-.c1:hover:checked:not(:disabled) {
+.c2:hover:checked:not(:disabled) {
   border: 1px solid #000000;
 }
 
-.c1:hover:not(:checked) {
+.c2:hover:not(:checked) {
   border: 1px solid #000000;
 }
 
-.c2 {
+.c3 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin-left: var(--spacing-1x);
 }
 
@@ -73,12 +60,15 @@ exports[`Radio button matches snapshot 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin-top: var(--spacing-1x);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+}
+
+.c1 {
+  margin-top: var(--spacing-quarter);
 }
 
 <RadioButton
@@ -88,24 +78,36 @@ exports[`Radio button matches snapshot 1`] = `
     <div
       className="c0"
     >
-      <styled.input
+      <Styled(RadioInput)
         data-testid="radiobutton-uuid1"
         id="uuid1"
-        type="radio"
       >
-        <input
+        <RadioInput
           className="c1"
           data-testid="radiobutton-uuid1"
           id="uuid1"
-          type="radio"
-        />
-      </styled.input>
+        >
+          <styled.input
+            className="c1"
+            data-testid="radiobutton-uuid1"
+            id="uuid1"
+            type="radio"
+          >
+            <input
+              className="c2 c1"
+              data-testid="radiobutton-uuid1"
+              id="uuid1"
+              type="radio"
+            />
+          </styled.input>
+        </RadioInput>
+      </Styled(RadioInput)>
       <styled.label
         data-testid="radiobutton-uuid1_label"
         htmlFor="uuid1"
       >
         <label
-          className="c2"
+          className="c3"
           data-testid="radiobutton-uuid1_label"
           htmlFor="uuid1"
         >

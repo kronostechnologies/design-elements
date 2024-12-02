@@ -12,20 +12,16 @@ import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
+import { Button, IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Heading, Tag } from '../heading/heading';
 import { Icon, IconName } from '../icon/icon';
 
 type MobileDeviceContext = { $isMobile: boolean };
 export type SectionalBannerType = 'neutral' | 'info' | 'discovery' | 'success' | 'warning' | 'alert';
-type Role = 'status' | 'alert';
-type Live = 'polite' | 'assertive';
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
 
 interface AbstractContainerProps extends MobileDeviceContext {
     className?: string;
-    role: Role;
     tabIndex?: number;
 }
 
@@ -58,7 +54,7 @@ function abstractContainer(
     borderColor: keyof ResolvedTheme['component'],
     iconColor: keyof ResolvedTheme['component'],
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
-    return styled.section<AbstractContainerProps>`
+    return styled.div<AbstractContainerProps>`
         background-color: ${(props) => props.theme.component[bgColor]};
         border: 1px solid ${(props) => props.theme.component[borderColor]};
         border-radius: var(--border-radius-2x);
@@ -114,7 +110,7 @@ const AlertContainer = abstractContainer(
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.$isMobile ? '1rem' : '0.875rem')};
-    margin: ${(props) => (props.$isMobile ? 'var(--spacing-2x)' : 'var(--spacing-half)')} 0 0 0;
+    margin: 0;
 `;
 
 const TextWrapper = styled.div<MobileDeviceContext>`
@@ -133,18 +129,10 @@ function getDismissButtonTop({ $marginTop }: DismissButtonProps): string {
     return `calc(var(--spacing-2x) - ${2 * $marginTop}px)`;
 }
 
-const DismissIconButton = styled(IconButton)
-    .attrs({ buttonType: 'tertiary', iconName: 'x' }) <DismissButtonProps>`
+const DismissIconButton = styled(IconButton) <DismissButtonProps>`
     position: absolute;
     right: ${getDismissButtonRight};
     top: ${getDismissButtonTop};
-`;
-
-const Heading = styled.span<MobileDeviceContext>`
-    font-size: ${(props) => (props.$isMobile ? '1.125rem' : '1rem')};
-    font-weight: var(--font-semi-bold);
-    line-height: ${(props) => (props.$isMobile ? '1.7' : '1.5')};
-    margin: 0;
 `;
 
 const StyledActionButton = styled(Button)`
@@ -173,11 +161,8 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
 );
 
 interface BannerTypeProps {
-    ariaLive: Live;
     container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
     iconName: IconName;
-    role: Role;
-    title: 'Neutral' | 'Info' | 'Discovery' | 'Success' | 'Warning' | 'Alert';
 }
 
 function handleType(type: SectionalBannerType): BannerTypeProps {
@@ -186,49 +171,31 @@ function handleType(type: SectionalBannerType): BannerTypeProps {
             return {
                 container: NeutralContainer,
                 iconName: 'info',
-                ariaLive: 'polite',
-                role: 'status',
-                title: 'Neutral',
             };
         case 'info':
             return {
                 container: InfoContainer,
                 iconName: 'info',
-                ariaLive: 'polite',
-                role: 'status',
-                title: 'Info',
             };
         case 'discovery':
             return {
                 container: DiscoveryContainer,
                 iconName: 'lightbulb',
-                ariaLive: 'polite',
-                role: 'status',
-                title: 'Discovery',
             };
         case 'success':
             return {
                 container: SuccessContainer,
                 iconName: 'check',
-                ariaLive: 'polite',
-                role: 'status',
-                title: 'Success',
             };
         case 'warning':
             return {
                 container: WarningContainer,
                 iconName: 'alertTriangle',
-                ariaLive: 'assertive',
-                role: 'alert',
-                title: 'Warning',
             };
         case 'alert':
             return {
                 container: AlertContainer,
                 iconName: 'alertOctagon',
-                ariaLive: 'assertive',
-                role: 'alert',
-                title: 'Alert',
             };
     }
 }
@@ -238,8 +205,7 @@ interface SectionalBannerProps {
     className?: string;
     children: ReactNode;
     focusable?: boolean;
-    /** @default `span` */
-    headingTag?: HeadingTag;
+    headingTag?: Tag;
     id?: string;
     /** Sets custom message title */
     title?: string;
@@ -285,10 +251,6 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
             className={className}
             $isMobile={isMobile}
             tabIndex={focusable ? -1 : undefined}
-            aria-live={bannerType.ariaLive}
-            aria-atomic="true"
-            aria-labelledby={headingId}
-            role={bannerType.role}
         >
             <BannerIcon
                 name={bannerType.iconName}
@@ -298,7 +260,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
             />
 
             <TextWrapper $isMobile={isMobile}>
-                <Heading $isMobile={isMobile} as={headingTag} id={headingId}>{title || t(bannerType.title)}</Heading>
+                {title && <Heading tag={headingTag} id={headingId} type="small" bold noMargin>{title}</Heading>}
                 <Message $isMobile={isMobile} as={messageTag}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton
@@ -319,8 +281,10 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
                 />
             )}
 
-            {!isAlertType && onDismiss && (
+            {onDismiss && (
                 <DismissIconButton
+                    buttonType="tertiary"
+                    iconName="x"
                     onClick={onDismiss}
                     label={t('dismissLabel')}
                     $isMobile={isMobile}

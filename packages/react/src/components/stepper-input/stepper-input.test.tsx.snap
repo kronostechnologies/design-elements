@@ -263,6 +263,7 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-invalid="false"
       class="c4"
       data-testid="stepper-input"
       disabled=""
@@ -613,6 +614,7 @@ input + .c1 {
     class="c5"
   >
     <input
+      aria-invalid="true"
       class="c6"
       data-testid="stepper-input"
       id="uuid1"
@@ -802,6 +804,7 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-invalid="false"
       class="c4"
       data-testid="stepper-input"
       id="uuid1"
@@ -1075,6 +1078,7 @@ input + .c1 {
     class="c3"
   >
     <input
+      aria-invalid="false"
       class="c4"
       data-testid="stepper-input"
       id="uuid1"

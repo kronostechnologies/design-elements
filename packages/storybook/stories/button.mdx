@@ -54,6 +54,13 @@ Buttons allow users to trigger targeted actions [1][2][3].
 - Use the destructive tertiary button for potentially irreversible actions that must not grab as much attention as the destructive secondary.
 <Canvas of={ButtonStories.DestructiveTertiary} />
 
+## States
+### Processing / Loading
+- A progress button gives users a visual cue that indicates a loading state [12]. When users don't receive feedback that the system is processing their request, they may assume that they didn't press the button correctly. This confusion can lead them to click the button repeatedly, thinking that their initial action didn't register and adds to the system's processing load, potentially causing performance issues [13].
+- Use the processing state for actions that take more than two seconds to finish.
+- Use to better inform users what's in progress, you should change the button label to describe what the system is doing (ex: change Submit to Submitting...) [12].
+<Canvas of={ButtonStories.PrimaryLoading} />
+
 ## Properties
 ### With icon
 - Use an icon to the left of the label to provide a quick visual feedback.
@@ -80,3 +87,5 @@ Buttons allow users to trigger targeted actions [1][2][3].
 9. [https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4](https://uxplanet.org/7-basic-rules-for-button-design-63dcdf5676b4)
 10. [https://www.lukew.com/ff/entry.asp?571](https://www.lukew.com/ff/entry.asp?571)
 11. [https://balsamiq.com/learn/articles/button-design-best-practices/](https://balsamiq.com/learn/articles/button-design-best-practices/)
+12. [https://uxmovement.medium.com/when-you-need-to-show-a-buttons-loading-state-41fc4d5e3c65](https://uxmovement.medium.com/when-you-need-to-show-a-buttons-loading-state-41fc4d5e3c65)
+13. [https://moezmustafa.medium.com/mastering-the-art-of-button-design-why-loading-states-matter-a1bdc42c0b02](https://moezmustafa.medium.com/mastering-the-art-of-button-design-why-loading-states-matter-a1bdc42c0b02)
