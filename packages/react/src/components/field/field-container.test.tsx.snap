@@ -90,7 +90,7 @@ exports[`Field Container Styling matches invalid snapshot 1`] = `
 >
   <span
     class="c1"
-    data-testid="field-message"
+    data-testid="invalid-field"
     id="id_invalid"
   >
     <svg

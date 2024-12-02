@@ -1,7 +1,7 @@
 import { PropsWithChildren, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { Icon } from '../../icon/icon';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
 import { InvalidFieldMessageProps } from './types';
 
 const StyledValidationMessage = styled.span<{ $isMobile: boolean }>`
@@ -26,7 +26,7 @@ const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldM
 
     return (
         <StyledValidationMessage
-            data-testid="field-message"
+            data-testid="invalid-field"
             id={id}
             $isMobile={isMobile}
         >

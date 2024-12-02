@@ -82,12 +82,12 @@ describe('NumericInput', () => {
 
     test('should display error message on invalid value', () => {
         const wrapper = mountWithTheme(<NumericInput value="2" min={100} />);
-        expect(getByTestId(wrapper, 'field-message').exists()).toBe(true);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
     });
 
     test('should display error message on invalid defaultValue', () => {
         const wrapper = mountWithTheme(<NumericInput defaultValue="2" min={100} />);
-        expect(getByTestId(wrapper, 'field-message').exists()).toBe(true);
+        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
     });
 
     test('should not have error message on required when value is empty', () => {

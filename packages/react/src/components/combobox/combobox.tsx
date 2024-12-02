@@ -596,7 +596,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         <StyledFieldContainer
             className={className}
             noMargin={noMargin}
-            id={id}
+            fieldId={id}
             label={label}
             required={required}
             tooltip={tooltip}

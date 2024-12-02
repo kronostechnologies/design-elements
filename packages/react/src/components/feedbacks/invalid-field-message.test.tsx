@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../../test-utils/renderer';
+import { renderWithTheme } from '../../test-utils/renderer';
 import { InvalidFieldMessage } from './invalid-field-message';
 
 describe('Invalid field', () => {

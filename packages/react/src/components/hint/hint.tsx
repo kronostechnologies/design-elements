@@ -1,6 +1,6 @@
 import { PropsWithChildren, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { HintProps } from './types';
 
 const StyledHint = styled.span<{ $isMobile: boolean }>`

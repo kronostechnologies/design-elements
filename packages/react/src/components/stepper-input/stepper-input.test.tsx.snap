@@ -598,7 +598,7 @@ input + .c1 {
   </label>
   <span
     class="c3"
-    data-testid="field-message"
+    data-testid="invalid-field"
     id="uuid1_invalid"
   >
     <svg

@@ -2,9 +2,9 @@ import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { FieldControlContext } from './context';
-import { InvalidFieldMessage } from './feedbacks/invalid-field-message';
-import { Label } from './label/label';
-import { Hint } from './hint/hint';
+import { InvalidFieldMessage } from '../feedbacks/invalid-field-message';
+import { Label } from '../label/label';
+import { Hint } from '../hint/hint';
 import { FieldContainerProps } from './types';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
 

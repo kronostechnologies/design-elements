@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, LabelHTMLAttributes } from 'react';
-import { FieldContainerProps } from '../types';
+import { FieldContainerProps } from '../field/types';
 
 export type BaseLabelProps = Pick<DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>,
     | 'id' | 'className' | 'htmlFor'

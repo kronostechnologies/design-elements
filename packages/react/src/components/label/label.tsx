@@ -1,8 +1,8 @@
 import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { Tooltip } from '../../tooltip/tooltip';
-import { useTranslation } from '../../../i18n/use-translation';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Tooltip } from '../tooltip/tooltip';
+import { useTranslation } from '../../i18n/use-translation';
 import { LabelProps, RequiredLabelProps } from './types';
 
 const StyledWrapper = styled.div`

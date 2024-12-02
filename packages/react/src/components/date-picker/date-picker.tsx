@@ -512,7 +512,7 @@ export const Datepicker = forwardRef(({
             <FieldContainer
                 className={className}
                 noMargin={noMargin}
-                id={fieldId}
+                fieldId={fieldId}
                 label={label}
                 required={required}
                 tooltip={tooltip}
