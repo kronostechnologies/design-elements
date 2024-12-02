@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconButton } from '../buttons/icon-button';
 import { useTranslation } from '../../i18n/use-translation';
-import { FieldContainer } from '../field/field-container';
+import { FieldContainer } from '../field-container/field-container';
 import { Tooltip } from '../tooltip/tooltip';
 import { getPasswordStrength } from './password-strength';
 import { PasswordRule } from './password-rule';
@@ -80,7 +80,7 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
 
     return (
         <FieldContainer
-            id={id}
+            fieldId={id}
             label={t('create-password')}
             validationErrorMessage=""
             noInvalidFieldIcon

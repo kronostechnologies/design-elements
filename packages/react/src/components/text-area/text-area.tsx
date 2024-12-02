@@ -12,7 +12,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
-import { FieldContainer } from '../field/field-container';
+import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
@@ -165,7 +165,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             data-testid="container"
             className={className}
             noMargin={noMargin}
-            id={idTextArea}
+            fieldId={idTextArea}
             label={label}
             required={required}
             tooltip={tooltip}

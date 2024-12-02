@@ -26,7 +26,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract/abstract-button';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field/field-container';
+import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
-import { FieldContainer } from '../field/field-container';
+import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useId } from '../../hooks/use-id';
 import { ValueTooltip } from './value-tooltip';

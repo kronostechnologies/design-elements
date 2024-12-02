@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { FieldContainerProps } from '../field/types';
+import { FieldContainerProps } from '../field-container/types';
 
 export type BaseSpanProps = Pick<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
     | 'id' | 'className'
