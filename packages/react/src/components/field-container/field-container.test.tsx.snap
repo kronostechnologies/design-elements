@@ -89,9 +89,11 @@ exports[`Field Container Styling matches invalid snapshot 1`] = `
   class="c0"
 >
   <span
+    aria-live="polite"
     class="c1"
     data-testid="invalid-field"
     id="id_invalid"
+    role="alert"
   >
     <svg
       class="c2"

@@ -20,8 +20,10 @@ export const InvalidFieldMessage = forwardRef(({
     return (
         <StyledValidationMessage
             data-testid="invalid-field"
+            aria-live="polite"
             id={id}
             ref={ref}
+            role="alert"
             $isMobile={isMobile}
             {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
