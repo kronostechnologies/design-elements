@@ -23,7 +23,9 @@ input + .c0 {
 
 <label
   class="c0 c1"
+  data-testid="label"
   for="test-id"
+  id="uuid1"
 >
   Children
 </label>

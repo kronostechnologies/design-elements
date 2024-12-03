@@ -1,6 +1,9 @@
-import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
+import { forwardRef, Fragment, FunctionComponent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useFieldControlContext } from '../field-container/context';
 import { Tooltip } from '../tooltip/tooltip';
 import { useTranslation } from '../../i18n/use-translation';
 import { LabelProps, RequiredLabelProps } from './types';
@@ -45,19 +48,44 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
     }
 };
 
-export const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
-    className, children, forId, id, tooltip, required, requiredLabelType = 'text',
-}) => {
-    const WrapperComponent = tooltip ? StyledWrapper : Fragment;
+export const Label = forwardRef(({
+    id: providedId,
+    forId: providedForId,
+    className,
+    children,
+    tooltip,
+    ...otherProps
+}: PropsWithChildren<LabelProps>, ref: Ref<HTMLLabelElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
+    const dataAttributes = useDataAttributes(otherProps);
+    const {
+        id: inputId,
+        slotIds,
+        required,
+    } = useFieldControlContext({});
+    const id = useId(slotIds?.label ?? providedId);
+    const htmlFor = inputId ?? providedForId;
+
+    const WrapperComponent = tooltip ? StyledWrapper : Fragment;
 
     return (
         <WrapperComponent>
-            <StyledLabel className={className} htmlFor={forId} id={id} $isMobile={isMobile}>
+            <StyledLabel
+                data-testid={`${inputId ? 'field-' : ''}label`}
+                className={className}
+                htmlFor={htmlFor}
+                id={id}
+                ref={ref}
+                $isMobile={isMobile}
+                {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+            >
                 {children}
-                {required && <RequiredLabel type={requiredLabelType} />}
+                {required && <RequiredLabel />}
             </StyledLabel>
             {tooltip && <StyledTooltip {...tooltip} /* eslint-disable-line react/jsx-props-no-spreading */ />}
         </WrapperComponent>
     );
-};
+});
+
+Label.displayName = 'Label';

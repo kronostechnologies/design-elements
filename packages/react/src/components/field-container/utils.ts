@@ -1,12 +1,7 @@
 import { ReactNode } from 'react';
 import { devConsole } from '../../utils/dev-console';
 import { joinStrings } from '../../utils/string';
-
-interface FieldSlotIds {
-    label?: string;
-    hint?: string;
-    invalid?: string;
-}
+import { FieldSlotIds } from './types';
 
 export function getSlotId(prop: ReactNode, fieldId: string, propName: string): string | undefined {
     return prop ? `${fieldId}_${propName}` : undefined;

@@ -63,7 +63,8 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
         hint,
         required,
         disabled,
-    }), [fieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled]);
+        slotIds,
+    }), [fieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled, slotIds]);
 
     return (
         <FieldControlContext.Provider value={contextValues}>
@@ -75,23 +76,10 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 $valid={valid}
                 {...props /* eslint-disable-line react/jsx-props-no-spreading */}
             >
-                {label && (
-                    <Label
-                        id={slotIds.label}
-                        forId={fieldId}
-                        tooltip={tooltip}
-                        required={required}
-                    >
-                        {label}
-                    </Label>
-                )}
-                {hint && (
-                    <Hint id={slotIds.hint}>
-                        {hint}
-                    </Hint>
-                )}
+                {label && <Label tooltip={tooltip}>{label}</Label>}
+                {hint && <Hint>{hint}</Hint>}
                 {!valid && (
-                    <InvalidFieldMessage id={slotIds.invalid} noInvalidFieldIcon={noInvalidFieldIcon}>
+                    <InvalidFieldMessage noInvalidFieldIcon={noInvalidFieldIcon}>
                         {validationErrorMessage}
                     </InvalidFieldMessage>
                 )}

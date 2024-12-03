@@ -1,5 +1,11 @@
 import { TooltipProps } from '../tooltip/tooltip';
 
+export interface FieldSlotIds {
+    label?: string;
+    hint?: string;
+    invalid?: string;
+}
+
 export interface FieldControlProps {
     id?: string;
     ariaLabel?: string;
@@ -8,6 +14,7 @@ export interface FieldControlProps {
     disabled?: boolean;
     required?: boolean;
     valid?: boolean;
+    slotIds?: FieldSlotIds;
 }
 
 export interface FieldContainerProps extends FieldControlProps {

@@ -217,6 +217,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid2"
     id="uuid2_label"
   >
@@ -665,6 +666,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid2"
     id="uuid2_label"
   >
@@ -1139,6 +1141,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid2"
     id="uuid2_label"
   >
@@ -2561,6 +2564,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid2"
     id="uuid2_label"
   >

@@ -1,7 +1,7 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { NativeInputProps } from '../../types/native-props';
 import { FieldControlProps } from '../field-container/types';
 
-type BaseInputProps = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+type PartialNativeInputProps = Omit<NativeInputProps,
     | 'ref'
 >;
 
@@ -12,4 +12,4 @@ type CommonFieldControlProps = Pick<FieldControlProps,
     | 'valid'
 >;
 
-export type InputProps = BaseInputProps & CommonFieldControlProps;
+export type InputProps = PartialNativeInputProps & CommonFieldControlProps;

@@ -1,3 +1,5 @@
 import { NativeSpanProps } from '../../types/native-props';
 
-export interface HintProps extends NativeSpanProps {}
+type PartialNativeSpanProps = Omit<NativeSpanProps, 'ref'>
+
+export interface HintProps extends PartialNativeSpanProps {}
