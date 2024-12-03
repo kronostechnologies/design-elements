@@ -1,5 +1,5 @@
 import { NativeInputProps } from '../../types/native-props';
-import { FieldControlProps } from '../field-container/types';
+import { FieldControlProps } from '../field/context';
 
 type PartialNativeInputProps = Omit<NativeInputProps,
     | 'ref'

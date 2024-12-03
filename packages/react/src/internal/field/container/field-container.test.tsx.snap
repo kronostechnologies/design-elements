@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field Container Styling match noMargin snapshot 1`] = `
+.c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c3 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c0 {
+  margin: 0;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    data-testid="field-label"
+    for="id"
+    id="id_label"
+  >
+    This is a label.
+  </label>
+  <span
+    class="c3"
+    data-testid="field-hint"
+    id="id_hint"
+  >
+    This is a hint.
+  </span>
+  Children
+</div>
+`;
+
+exports[`Field Container Styling match required snapshot 1`] = `
+.c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c3 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    data-testid="field-label"
+    for="id"
+    id="id_label"
+  >
+    This is a label. (required)
+  </label>
+  <span
+    class="c3"
+    data-testid="field-hint"
+    id="id_hint"
+  >
+    This is a hint.
+  </span>
+  Children
+</div>
+`;
+
+exports[`Field Container Styling matches default snapshot 1`] = `
+.c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c3 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    data-testid="field-label"
+    for="id"
+    id="id_label"
+  >
+    This is a label.
+  </label>
+  <span
+    class="c3"
+    data-testid="field-hint"
+    id="id_hint"
+  >
+    This is a hint.
+  </span>
+  Children
+</div>
+`;
+
+exports[`Field Container Styling matches invalid snapshot 1`] = `
+.c4 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: var(--spacing-base);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c3 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #CD2C23;
+}
+
+.c0 > :nth-child(3) {
+  margin-bottom: var(--spacing-half);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    data-testid="field-label"
+    for="id"
+    id="id_label"
+  >
+    This is a label.
+  </label>
+  <span
+    class="c3"
+    data-testid="field-hint"
+    id="id_hint"
+  >
+    This is a hint.
+  </span>
+  <span
+    aria-live="polite"
+    class="c4"
+    data-testid="invalid-field"
+    id="id_invalid"
+    role="alert"
+  >
+    <svg
+      class="c5"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    This text area input is invalid
+  </span>
+  Children
+</div>
+`;

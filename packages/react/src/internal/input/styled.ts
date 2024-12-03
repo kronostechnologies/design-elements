@@ -1,12 +1,7 @@
-import { forwardRef, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
-import { useId } from '../../hooks/use-id';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useFieldControlContext } from '../field-container/context';
 import { focus } from '../../utils/css-state';
-import { InputProps } from './types';
 
-const StyledInput = styled.input<{ $isMobile: boolean }>`
+export const StyledInput = styled.input<{ $isMobile: boolean }>`
     background: ${({ theme }) => theme.component['text-input-background-color']};
     border: 1px solid;
     border-radius: var(--border-radius);
@@ -50,43 +45,3 @@ const StyledInput = styled.input<{ $isMobile: boolean }>`
 
     ${({ theme }) => focus({ theme })};
 `;
-
-export const Input = forwardRef(({
-    id: providedId,
-    valid: providedValid = true,
-    required: providedRequired = false,
-    disabled: providedDisabled = false,
-    ...otherProps
-}: InputProps, ref: Ref<HTMLInputElement>): ReactElement => {
-    const { isMobile } = useDeviceContext();
-    const inputId = useId(providedId);
-
-    const {
-        id = inputId,
-        valid = providedValid,
-        required = providedRequired,
-        disabled = providedDisabled,
-        ariaLabel,
-        ariaLabelledby,
-        ariaDescribedby,
-    } = useFieldControlContext(otherProps);
-
-    return (
-        <StyledInput
-            aria-label={ariaLabel}
-            aria-labelledby={ariaLabel ? undefined : ariaLabelledby}
-            aria-describedby={ariaDescribedby}
-            aria-disabled={disabled}
-            aria-invalid={valid ? 'false' : 'true'}
-            data-testid="input"
-            id={id}
-            disabled={disabled}
-            required={required}
-            $isMobile={isMobile}
-            ref={ref}
-            {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
-        />
-    );
-});
-
-Input.displayName = 'Input';

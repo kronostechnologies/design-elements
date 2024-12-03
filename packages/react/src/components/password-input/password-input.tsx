@@ -12,7 +12,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FieldContainer } from '../../internal/field/container/field-container';
 import { Tooltip } from '../tooltip/tooltip';
 import { inputsStyle } from '../text-input/styles/inputs';
 

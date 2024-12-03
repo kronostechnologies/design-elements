@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Tooltip } from '../tooltip/tooltip';
+import { Tooltip } from '../../components/tooltip/tooltip';
 
 export const StyledWrapper = styled.div`
     align-items: center;

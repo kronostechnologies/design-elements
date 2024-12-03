@@ -1,17 +1,16 @@
-import { ReactNode } from 'react';
-import { devConsole } from '../../utils/dev-console';
-import { joinStrings } from '../../utils/string';
-import { FieldSlotIds } from './types';
+import { devConsole } from '../../../utils/dev-console';
+import { joinStrings } from '../../../utils/string';
+import { FieldSlotIds } from '../context';
 
-export function getSlotId(prop: ReactNode, fieldId: string, propName: string): string | undefined {
-    return prop ? `${fieldId}_${propName}` : undefined;
+export function getSlotId(hasSlot: boolean | undefined, fieldId: string, slotName: string): string | undefined {
+    return hasSlot ? `${fieldId}_${slotName}` : undefined;
 }
 
 export function getSlotIds(
     fieldId: string,
-    label?: ReactNode,
-    hint?: ReactNode,
-    invalid?: ReactNode,
+    label?: boolean,
+    hint?: boolean,
+    invalid?: boolean,
 ): FieldSlotIds {
     return {
         label: getSlotId(label, fieldId, 'label'),

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon } from '../icon/icon';
+import { Icon } from '../../../components/icon/icon';
 
 export const StyledValidationMessage = styled.span<{ $isMobile: boolean }>`
     color: ${(props) => props.theme.component['field-error-text-color']};

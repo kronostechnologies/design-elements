@@ -1,10 +1,10 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useId } from '../../hooks/use-id';
-import { FieldControlContext } from './context';
-import { InvalidFieldMessage } from '../feedbacks/invalid-field-message';
-import { Label } from '../label/label';
-import { Hint } from '../hint/hint';
+import { useDataAttributes } from '../../../hooks/use-data-attributes';
+import { useId } from '../../../hooks/use-id';
+import { FieldContext } from '../context';
+import { ValidationMessage } from '../validation-message';
+import { Label } from '../../label';
+import { Hint } from '../hint';
 import { StyledDiv } from './styled';
 import { FieldContainerProps } from './types';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
@@ -30,7 +30,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     const dataAttributes = useDataAttributes(otherProps);
     const fieldId = useId(providedId);
 
-    const slotIds = getSlotIds(fieldId, label, hint, (validationErrorMessage && !valid));
+    const slotIds = getSlotIds(fieldId, !!label, !!hint, !!(validationErrorMessage && !valid));
     const ariaLabel = getAriaLabel(label, providedAriaLabel, providedAriaLabelledby);
     const ariaLabelledby = getAriaLabelledby(slotIds, providedAriaLabelledby);
     const ariaDescribedby = getAriaDescribedby(slotIds, providedAriaDescribedby);
@@ -48,7 +48,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     }), [fieldId, ariaLabel, ariaLabelledby, ariaDescribedby, valid, hint, required, disabled, slotIds]);
 
     return (
-        <FieldControlContext.Provider value={contextValues}>
+        <FieldContext.Provider value={contextValues}>
             <StyledDiv
                 className={className}
                 $noMargin={noMargin}
@@ -61,12 +61,12 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {label && <Label tooltip={tooltip}>{label}</Label>}
                 {hint && <Hint>{hint}</Hint>}
                 {!valid && (
-                    <InvalidFieldMessage noInvalidFieldIcon={noInvalidFieldIcon}>
+                    <ValidationMessage noInvalidFieldIcon={noInvalidFieldIcon}>
                         {validationErrorMessage}
-                    </InvalidFieldMessage>
+                    </ValidationMessage>
                 )}
                 {children}
             </StyledDiv>
-        </FieldControlContext.Provider>
+        </FieldContext.Provider>
     );
 };

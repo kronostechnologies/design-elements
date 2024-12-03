@@ -1,26 +1,21 @@
 import { forwardRef, Fragment, FunctionComponent, PropsWithChildren, ReactElement, Ref } from 'react';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useFieldControlContext } from '../field-container/context';
+import { useDeviceContext } from '../../components/device-context-provider/device-context-provider';
 import { useTranslation } from '../../i18n/use-translation';
+import { useFieldControl } from '../field/context';
 import { StyledLabel, StyledTooltip, StyledWrapper } from './styled';
-import { LabelProps, RequiredLabelProps } from './types';
+import { LabelProps } from './types';
 
-const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
+const RequiredLabel: FunctionComponent = () => {
     const { t } = useTranslation('text-input');
-
-    switch (type) {
-        case 'text':
-        default:
-            return (
-                <>
-                    &nbsp;(
-                    {t('required')}
-                    )
-                </>
-            );
-    }
+    return (
+        <>
+            &nbsp;(
+            {t('required')}
+            )
+        </>
+    );
 };
 
 export const Label = forwardRef(({
@@ -37,7 +32,7 @@ export const Label = forwardRef(({
         id: inputId,
         slotIds,
         required,
-    } = useFieldControlContext({});
+    } = useFieldControl();
     const id = useId(slotIds?.label ?? providedId);
     const htmlFor = inputId ?? providedForId;
 
