@@ -45,15 +45,15 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
     }
 };
 
-const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
-    className, children, htmlFor, id, tooltip, required, requiredLabelType = 'text',
+export const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
+    className, children, forId, id, tooltip, required, requiredLabelType = 'text',
 }) => {
     const WrapperComponent = tooltip ? StyledWrapper : Fragment;
     const { isMobile } = useDeviceContext();
 
     return (
         <WrapperComponent>
-            <StyledLabel className={className} htmlFor={htmlFor} id={id} $isMobile={isMobile}>
+            <StyledLabel className={className} htmlFor={forId} id={id} $isMobile={isMobile}>
                 {children}
                 {required && <RequiredLabel type={requiredLabelType} />}
             </StyledLabel>
@@ -61,5 +61,3 @@ const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
         </WrapperComponent>
     );
 };
-
-export { Label };

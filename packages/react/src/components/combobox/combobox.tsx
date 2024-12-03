@@ -77,7 +77,6 @@ const Textbox = styled.input<TextboxProps>`
     width: 100%;
 
     ${focus};
-
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;

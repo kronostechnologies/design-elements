@@ -12,7 +12,7 @@ const StyledHint = styled.span<{ $isMobile: boolean }>`
     line-height: ${({ $isMobile }) => ($isMobile ? '1.5rem' : '1.25rem')};
 `;
 
-const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
+export const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
     children, id,
 }) => {
     const { isMobile } = useDeviceContext();
@@ -27,5 +27,3 @@ const Hint: VoidFunctionComponent<PropsWithChildren<HintProps>> = ({
         </StyledHint>
     );
 };
-
-export { Hint };

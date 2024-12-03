@@ -1,13 +1,10 @@
-import { DetailedHTMLProps, LabelHTMLAttributes } from 'react';
+import { NativeLabelProps } from '../../types/native-props';
 import { FieldContainerProps } from '../field-container/types';
-
-export type BaseLabelProps = Pick<DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>,
-    | 'id' | 'className' | 'htmlFor'
->;
 
 type CommonFieldContainerProps = Pick<FieldContainerProps, 'required' | 'tooltip'>;
 
-export interface LabelProps extends BaseLabelProps, CommonFieldContainerProps {
+export interface LabelProps extends NativeLabelProps, CommonFieldContainerProps {
+    forId: string;
     requiredLabelType?: 'text';
 }
 

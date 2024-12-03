@@ -19,7 +19,7 @@ const StyledIcon = styled(Icon)`
     margin-right: var(--spacing-base);
 `;
 
-const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldMessageProps>> = ({
+export const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldMessageProps>> = ({
     children, id, noInvalidFieldIcon,
 }) => {
     const { isMobile } = useDeviceContext();
@@ -37,5 +37,3 @@ const InvalidFieldMessage: VoidFunctionComponent<PropsWithChildren<InvalidFieldM
         </StyledValidationMessage>
     );
 };
-
-export { InvalidFieldMessage };

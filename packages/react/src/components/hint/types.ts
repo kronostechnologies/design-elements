@@ -1,7 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { NativeSpanProps } from '../../types/native-props';
 
-export type BaseSpanProps = Pick<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
-    | 'id' | 'className'
->;
-
-export interface HintProps extends BaseSpanProps {}
+export interface HintProps extends NativeSpanProps {}

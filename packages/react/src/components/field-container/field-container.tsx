@@ -78,7 +78,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 {label && (
                     <Label
                         id={slotIds.label}
-                        htmlFor={fieldId}
+                        forId={fieldId}
                         tooltip={tooltip}
                         required={required}
                     >
