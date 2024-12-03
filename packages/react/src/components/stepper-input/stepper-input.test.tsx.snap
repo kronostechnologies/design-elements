@@ -255,8 +255,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     test
   </label>
@@ -593,15 +593,15 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     test
   </label>
   <span
     class="c3"
     data-testid="invalid-field"
-    id="uuid2_invalid"
+    id="uuid1_invalid"
   >
     <svg
       class="c4"
@@ -798,8 +798,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     test
   </label>
@@ -1073,8 +1073,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     test
   </label>

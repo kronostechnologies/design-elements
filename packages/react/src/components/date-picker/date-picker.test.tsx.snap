@@ -351,8 +351,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -742,8 +742,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1135,8 +1135,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1528,8 +1528,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1949,15 +1949,15 @@ label + .c5 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
   <span
     class="c3"
     data-testid="invalid-field"
-    id="uuid2_invalid"
+    id="uuid1_invalid"
   >
     <svg
       class="c4"
@@ -2356,8 +2356,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -2915,8 +2915,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -3001,15 +3001,15 @@ label + .c3 {
                         class="c12 c13"
                       >
                         <div
-                          aria-controls="uuid3_listbox"
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid3_label uuid3_listbox_october_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
                           class="c14"
                           data-testid="month-select"
-                          id="uuid3"
+                          id="uuid2"
                           role="combobox"
                           tabindex="0"
                           value="october"
@@ -3043,15 +3043,15 @@ label + .c3 {
                         class="c12 c13"
                       >
                         <div
-                          aria-controls="uuid5_listbox"
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid5_label uuid5_listbox_2010_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
                           class="c14"
                           data-testid="year-select"
-                          id="uuid5"
+                          id="uuid3"
                           role="combobox"
                           tabindex="0"
                           value="2010"
@@ -4217,8 +4217,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -4303,15 +4303,15 @@ label + .c3 {
                         class="c12 c13"
                       >
                         <div
-                          aria-controls="uuid3_listbox"
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a month"
-                          aria-labelledby="uuid3_label uuid3_listbox_october_label"
+                          aria-labelledby="uuid2_label uuid2_listbox_october_label"
                           aria-required="false"
                           class="c14"
                           data-testid="month-select"
-                          id="uuid3"
+                          id="uuid2"
                           role="combobox"
                           tabindex="0"
                           value="october"
@@ -4345,15 +4345,15 @@ label + .c3 {
                         class="c12 c13"
                       >
                         <div
-                          aria-controls="uuid5_listbox"
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
                           aria-invalid="false"
                           aria-label="Select a year"
-                          aria-labelledby="uuid5_label uuid5_listbox_2010_label"
+                          aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                           aria-required="false"
                           class="c14"
                           data-testid="year-select"
-                          id="uuid5"
+                          id="uuid3"
                           role="combobox"
                           tabindex="0"
                           value="2010"
@@ -5494,8 +5494,8 @@ label + .c3 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -5576,15 +5576,15 @@ label + .c3 {
                           class="c12 c13"
                         >
                           <div
-                            aria-controls="uuid3_listbox"
+                            aria-controls="uuid2_listbox"
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a month"
-                            aria-labelledby="uuid3_label uuid3_listbox_october_label"
+                            aria-labelledby="uuid2_label uuid2_listbox_october_label"
                             aria-required="false"
                             class="c14"
                             data-testid="month-select"
-                            id="uuid3"
+                            id="uuid2"
                             role="combobox"
                             tabindex="0"
                             value="october"
@@ -5618,15 +5618,15 @@ label + .c3 {
                           class="c12 c13"
                         >
                           <div
-                            aria-controls="uuid5_listbox"
+                            aria-controls="uuid3_listbox"
                             aria-expanded="false"
                             aria-invalid="false"
                             aria-label="Select a year"
-                            aria-labelledby="uuid5_label uuid5_listbox_2010_label"
+                            aria-labelledby="uuid3_label uuid3_listbox_2010_label"
                             aria-required="false"
                             class="c14"
                             data-testid="year-select"
-                            id="uuid5"
+                            id="uuid3"
                             role="combobox"
                             tabindex="0"
                             value="2010"

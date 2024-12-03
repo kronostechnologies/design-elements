@@ -218,8 +218,8 @@ input + .c2 {
   <label
     class="c2 c3"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Select an option
   </label>
@@ -667,15 +667,15 @@ input + .c2 {
   <label
     class="c2 c3"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Select an option
   </label>
   <span
     class="c4"
     data-testid="field-hint"
-    id="uuid2_hint"
+    id="uuid1_hint"
   >
     Hint
   </span>
@@ -1142,15 +1142,15 @@ input + .c2 {
   <label
     class="c2 c3"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Select an option
   </label>
   <span
     class="c4"
     data-testid="invalid-field"
-    id="uuid2_invalid"
+    id="uuid1_invalid"
   >
     <svg
       class="c5"
@@ -2565,15 +2565,15 @@ input + .c2 {
   <label
     class="c2 c3"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Select an option
   </label>
   <span
     class="c4"
     data-testid="field-hint"
-    id="uuid2_hint"
+    id="uuid1_hint"
   >
     Hint
   </span>

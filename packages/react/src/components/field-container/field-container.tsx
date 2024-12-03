@@ -10,7 +10,7 @@ import { FieldContainerProps } from './types';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
 
 export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
-    id: providedId,
+    fieldId: providedId,
     ariaLabel: providedAriaLabel,
     ariaLabelledby: providedAriaLabelledby,
     ariaDescribedby: providedAriaDescribedby,

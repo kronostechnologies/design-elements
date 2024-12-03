@@ -1,3 +1,4 @@
+import { NativeDivProps } from '../../types/native-props';
 import { TooltipProps } from '../tooltip/tooltip';
 
 export interface FieldSlotIds {
@@ -17,9 +18,13 @@ export interface FieldControlProps {
     slotIds?: FieldSlotIds;
 }
 
-export interface FieldContainerProps extends FieldControlProps {
+type PartialNativeDivProps = Omit<NativeDivProps, 'id' | 'ref'>;
+
+export interface FieldContainerProps extends
+    Omit<FieldControlProps, 'id' | 'slotIds'>,
+    PartialNativeDivProps
+{
     fieldId?: string;
-    className?: string;
     noMargin?: boolean;
     label?: string;
     hint?: string;

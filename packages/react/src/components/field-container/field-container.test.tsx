@@ -15,7 +15,7 @@ import { FieldContainer } from './field-container';
 describe('Field Container', () => {
     describe('Styling', () => {
         const defaultProps = {
-            id: 'id',
+            fieldId: 'id',
             validationErrorMessage: 'This text area input is invalid',
         };
 
@@ -62,7 +62,7 @@ describe('Field Container', () => {
             const consoleSpy = jest.spyOn(devConsole, 'warn');
             consoleSpy.mockImplementation(() => {});
             const wrapper = renderWithProviders(
-                <FieldContainer id={providedId} validationErrorMessage={invalidMessage}>
+                <FieldContainer fieldId={providedId} validationErrorMessage={invalidMessage}>
                     <Input />
                 </FieldContainer>,
             );
@@ -85,7 +85,7 @@ describe('Field Container', () => {
                     ariaLabelledby={additionalElementId}
                     ariaDescribedby={additionalElementId}
                     label={label}
-                    id={providedId}
+                    fieldId={providedId}
                     hint={hint}
                     validationErrorMessage={invalidMessage}
                 >
@@ -111,7 +111,7 @@ describe('Field Container', () => {
                     ariaLabelledby={`${additionalElementId}_Parent`}
                     ariaDescribedby={`${additionalElementId}_Parent`}
                     label={label}
-                    id={providedId}
+                    fieldId={providedId}
                     hint={hint}
                     validationErrorMessage={invalidMessage}
                 >
@@ -140,7 +140,7 @@ describe('Field Container', () => {
                     <FieldContainer
                         ariaLabel={ariaLabel}
                         label={label}
-                        id={providedId}
+                        fieldId={providedId}
                         validationErrorMessage={invalidMessage}
                     >
                         <Input />
@@ -162,7 +162,7 @@ describe('Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
+                    <FieldContainer label={label} fieldId={providedId} validationErrorMessage={invalidMessage}>
                         <Input />
                     </FieldContainer>,
                 );
@@ -180,7 +180,7 @@ describe('Field Container', () => {
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
                     <FieldContainer
-                        id={providedId}
+                        fieldId={providedId}
                         validationErrorMessage=""
                         ariaLabelledby={additionalElementId}
                     >
@@ -202,7 +202,7 @@ describe('Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FieldContainer label={label} hint={hint} id={providedId} validationErrorMessage="">
+                    <FieldContainer label={label} hint={hint} fieldId={providedId} validationErrorMessage="">
                         <Input />
                     </FieldContainer>,
                 );
@@ -219,7 +219,7 @@ describe('Field Container', () => {
                 const consoleSpy = jest.spyOn(devConsole, 'warn');
                 consoleSpy.mockImplementation(() => {});
                 const wrapper = renderWithProviders(
-                    <FieldContainer label={label} id={providedId} validationErrorMessage={invalidMessage}>
+                    <FieldContainer label={label} fieldId={providedId} validationErrorMessage={invalidMessage}>
                         <Input />
                     </FieldContainer>,
                 );
@@ -238,7 +238,7 @@ describe('Field Container', () => {
                 const wrapper = renderWithProviders(
                     <FieldContainer
                         label={label}
-                        id={providedId}
+                        fieldId={providedId}
                         valid={false}
                         validationErrorMessage={invalidMessage}
                     >
@@ -260,7 +260,7 @@ describe('Field Container', () => {
                 const wrapper = renderWithProviders(
                     <FieldContainer
                         label={label}
-                        id={providedId}
+                        fieldId={providedId}
                         hint={hint}
                         validationErrorMessage=""
                         ariaDescribedby={additionalElementId}
@@ -284,7 +284,7 @@ describe('Field Container', () => {
                     <FieldContainer
                         label={label}
                         hint={hint}
-                        id={providedId}
+                        fieldId={providedId}
                         valid={false}
                         validationErrorMessage=""
                     >
@@ -300,7 +300,7 @@ describe('Field Container', () => {
         describe('aria-disabled', () => {
             test('should be true when FieldContainer is disabled', () => {
                 const wrapper = renderWithProviders(
-                    <FieldContainer label={label} hint={hint} id={providedId} disabled validationErrorMessage="">
+                    <FieldContainer label={label} hint={hint} fieldId={providedId} disabled validationErrorMessage="">
                         <Input />
                     </FieldContainer>,
                 );

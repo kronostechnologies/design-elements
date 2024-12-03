@@ -237,8 +237,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Label
   </label>
@@ -558,8 +558,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Label
   </label>
@@ -854,8 +854,8 @@ input + .c1 {
   <label
     class="c1 c2"
     data-testid="field-label"
-    for="uuid2"
-    id="uuid2_label"
+    for="uuid1"
+    id="uuid1_label"
   >
     Label
   </label>
