@@ -1,36 +1,11 @@
 import { forwardRef, Fragment, FunctionComponent, PropsWithChildren, ReactElement, Ref } from 'react';
-import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { useFieldControlContext } from '../field-container/context';
-import { Tooltip } from '../tooltip/tooltip';
 import { useTranslation } from '../../i18n/use-translation';
+import { StyledLabel, StyledTooltip, StyledWrapper } from './styled';
 import { LabelProps, RequiredLabelProps } from './types';
-
-const StyledWrapper = styled.div`
-    align-items: center;
-    display: flex;
-`;
-
-const StyledLabel = styled.label<{$isMobile: boolean}>`
-    color: ${(props) => props.theme.component['label-text-color']};
-    display: block;
-    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
-    font-weight: var(--font-normal);
-    letter-spacing: 0.02rem;
-    line-height: ${({ $isMobile }) => ($isMobile ? '1.5rem' : '1.25rem')};
-    margin: 0;
-    width: fit-content;
-
-    input + & {
-        margin-left: var(--spacing-half);
-    }
-`;
-
-const StyledTooltip = styled(Tooltip)`
-    margin-left: calc(var(--spacing-1x) * 1.5);
-`;
 
 const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
     const { t } = useTranslation('text-input');

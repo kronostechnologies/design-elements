@@ -1,33 +1,13 @@
 import { FunctionComponent, PropsWithChildren, useMemo } from 'react';
-import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { FieldControlContext } from './context';
 import { InvalidFieldMessage } from '../feedbacks/invalid-field-message';
 import { Label } from '../label/label';
 import { Hint } from '../hint/hint';
+import { StyledDiv } from './styled';
 import { FieldContainerProps } from './types';
 import { getAriaDescribedby, getAriaLabel, getAriaLabelledby, getSlotIds } from './utils';
-
-interface StyledDivProps {
-    $hasLabel: boolean;
-    $hasHint: boolean;
-    $valid: boolean;
-    $noMargin?: boolean;
-}
-
-const StyledDiv = styled.div<StyledDivProps>`
-    margin: ${({ $noMargin }) => ($noMargin ? '0' : '0 0 var(--spacing-3x)')};
-
-    input,
-    select,
-    textarea {
-        border-color: ${({ theme, $valid }) => ($valid ? theme.component['field-input-border-color'] : theme.component['field-input-error-border-color'])};
-    }
-
-    > :nth-child(${({ $hasLabel, $hasHint, $valid }) => ($hasLabel ? 1 : 0) + ($hasHint ? 1 : 0) + (!$valid ? 1 : 0)}) {
-        margin-bottom: var(--spacing-half);
-    }
-`;
 
 export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
     id: providedId,
@@ -45,8 +25,9 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     tooltip,
     valid = true,
     validationErrorMessage,
-    ...props
+    ...otherProps
 }) => {
+    const dataAttributes = useDataAttributes(otherProps);
     const fieldId = useId(providedId);
 
     const slotIds = getSlotIds(fieldId, label, hint, (validationErrorMessage && !valid));
@@ -74,7 +55,8 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
                 $hasLabel={!!label}
                 $hasHint={!!hint}
                 $valid={valid}
-                {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+                {...otherProps /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {label && <Label tooltip={tooltip}>{label}</Label>}
                 {hint && <Hint>{hint}</Hint>}
