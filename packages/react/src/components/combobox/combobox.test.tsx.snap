@@ -266,6 +266,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -770,6 +771,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1540,6 +1542,18 @@ input + .c2 {
   margin-left: var(--spacing-half);
 }
 
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -1552,18 +1566,6 @@ input + .c2 {
 
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
-}
-
-.c4 {
-  color: #60666E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
 }
 
 .c10 {
@@ -1724,6 +1726,7 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1731,6 +1734,7 @@ input + .c2 {
   </label>
   <span
     class="c4"
+    data-testid="field-hint"
     id="uuid1_hint"
   >
     Hint
