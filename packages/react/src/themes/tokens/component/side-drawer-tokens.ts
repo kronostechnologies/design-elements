@@ -1,17 +1,10 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type SideDrawerTokens =
+export type SideDrawerToken =
     'side-drawer-background-color' |
     'side-drawer-box-shadow-color';
 
-export type SideDrawerTokensValue = AliasTokens | RefTokens;
-
-export type SideDrawerTokensMap = {
-    [Token in SideDrawerTokens]: SideDrawerTokensValue;
-}
-
-export const defaultSideDrawerTokens: SideDrawerTokensMap = {
+export const defaultSideDrawerTokens: ComponentTokenMap<SideDrawerToken> = {
     'side-drawer-background-color': 'color-background-overlay',
     'side-drawer-box-shadow-color': 'color-box-shadow',
 };

@@ -1,20 +1,13 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type BreadcrumbTokens =
+export type BreadcrumbToken =
     | 'breadcrumb-link-color'
     | 'breadcrumb-link-hover-color'
     | 'breadcrumb-link-active-color'
     | 'breadcrumb-link-disabled-color'
     | 'breadcrumb-separator-color';
 
-export type BreadcrumbTokensValue = AliasTokens | RefTokens;
-
-export type BreadcrumbTokensMap = {
-    [Token in BreadcrumbTokens]: BreadcrumbTokensValue;
-};
-
-export const defaultBreadcrumbTokens : BreadcrumbTokensMap = {
+export const defaultBreadcrumbTokens: ComponentTokenMap<BreadcrumbToken> = {
     'breadcrumb-link-active-color': 'color-content',
     'breadcrumb-link-color': 'color-content-subtle',
     'breadcrumb-link-disabled-color': 'color-content-disabled',

@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type TooltipTokens =
+export type TooltipToken =
     | 'tooltip-icon-color'
     | 'tooltip-inverted-icon-color'
     | 'tooltip-popper-container-border-color'
@@ -9,13 +8,7 @@ export type TooltipTokens =
     | 'tooltip-popper-container-success-background-color'
     | 'tooltip-popper-container-default-background-color'
 
-export type TooltipTokenValue = AliasTokens | RefTokens;
-
-export type TooltipTokenMap = {
-    [Token in TooltipTokens]: TooltipTokenValue;
-};
-
-export const defaultTooltipTokens: TooltipTokenMap = {
+export const defaultTooltipTokens: ComponentTokenMap<TooltipToken> = {
     'tooltip-icon-color': 'color-content',
     'tooltip-inverted-icon-color': 'color-content-inverse',
     'tooltip-popper-container-border-color': 'color-border-inverse',

@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type ComboboxTokens =
+export type ComboboxToken =
     | 'combobox-background-color'
     | 'combobox-disabled-background-color'
     | 'combobox-border-color'
@@ -17,13 +16,7 @@ export type ComboboxTokens =
     | 'combobox-arrow-button-icon-color'
     | 'combobox-arrow-button-disabled-icon-color';
 
-export type ComboboxTokenValue = AliasTokens | RefTokens;
-
-export type ComboboxTokenMap = {
-    [Token in ComboboxTokens]: ComboboxTokenValue;
-};
-
-export const defaultComboboxTokens: ComboboxTokenMap = {
+export const defaultComboboxTokens: ComponentTokenMap<ComboboxToken> = {
     'combobox-clear-button-border-right-color': 'color-control-auxiliary',
     'combobox-clear-button-disabled-icon-color': 'color-control-auxiliary-disabled',
     'combobox-clear-button-icon-color': 'color-control-auxiliary',

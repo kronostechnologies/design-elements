@@ -1,5 +1,5 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { getButtonStyles } from '../buttons';
 import { LinkProps } from './types';

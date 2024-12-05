@@ -1,17 +1,10 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type AvatarTokens =
+export type AvatarToken =
     | 'avatar-background-color'
     | 'avatar-text-color'
 
-export type AvatarTokenValue = AliasTokens | RefTokens;
-
-export type AvatarTokenMap = {
-    [Token in AvatarTokens]: AvatarTokenValue;
-};
-
-export const defaultAvatarTokens: AvatarTokenMap = {
+export const defaultAvatarTokens: ComponentTokenMap<AvatarToken> = {
     'avatar-background-color': 'color-background-neutral-subtle',
     'avatar-text-color': 'color-content-subtle',
 };

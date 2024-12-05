@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type PasswordInputTokens =
+export type PasswordInputToken =
     | 'password-rule-empty-text-color'
     | 'password-rule-success-text-color'
     | 'password-rule-error-text-color'
@@ -12,19 +11,11 @@ export type PasswordInputTokens =
     | 'password-strength-meter-good-color'
     | 'password-strength-meter-strong-color'
 
-export type PasswordInputTokenValue = AliasTokens | RefTokens;
-
-export type PasswordInputTokenMap = {
-    [Token in PasswordInputTokens]: PasswordInputTokenValue;
-};
-
-export const defaultPasswordInputTokens: PasswordInputTokenMap = {
+export const defaultPasswordInputTokens: ComponentTokenMap<PasswordInputToken> = {
     'password-rule-empty-text-color': 'color-content-subtle',
     'password-rule-error-text-color': 'color-control-auxiliary-error',
     'password-rule-success-text-color': 'color-control-auxiliary-success',
-
     'password-strength-label-text-color': 'color-content-subtle',
-
     'password-strength-meter-empty-color': 'color-background-empty',
     'password-strength-meter-weak-color': 'color-alert-50',
     'password-strength-meter-fair-color': 'color-warning-50',

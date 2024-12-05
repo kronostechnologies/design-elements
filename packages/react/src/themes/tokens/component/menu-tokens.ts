@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type MenuTokens =
+export type MenuToken =
     | 'menu-background-color'
     | 'menu-border-color'
     | 'menu-box-shadow-color'
@@ -16,27 +15,18 @@ export type MenuTokens =
     | 'menu-item-disabled-text-color'
     | 'menu-group-text-color';
 
-export type MenuTokenValue = AliasTokens | RefTokens;
-
-export type MenuTokenMap = {
-    [Token in MenuTokens]: MenuTokenValue;
-};
-
-export const defaultMenuTokens: MenuTokenMap = {
+export const defaultMenuTokens: ComponentTokenMap<MenuToken> = {
     'menu-background-color': 'color-menu-background',
     'menu-border-color': 'color-menu-border',
     'menu-submenu-background-color': 'color-menu-background',
     'menu-submenu-border-color': 'color-menu-border',
-
     'menu-group-text-color': 'color-menu-item-subcontent',
-
     'menu-item-text-color': 'color-menu-item-content',
     'menu-item-hover-text-color': 'color-menu-item-content-hover',
     'menu-item-icon-color': 'color-menu-item-content',
     'menu-item-hover-icon-color': 'color-menu-item-content-hover',
     'menu-item-disabled-text-color': 'color-menu-item-content-disabled',
     'menu-item-hover-background-color': 'color-menu-item-background-hover',
-
     'menu-submenu-box-shadow-color': 'color-box-shadow',
     'menu-box-shadow-color': 'color-box-shadow',
 };

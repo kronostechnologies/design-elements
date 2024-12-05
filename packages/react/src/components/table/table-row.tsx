@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { flexRender, Row } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { isLastColumnInAGroup } from './utils/table-utils';
 import { CustomCell } from './types';

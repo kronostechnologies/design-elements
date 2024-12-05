@@ -1,4 +1,6 @@
-export type PaletteTokens =
+import type { RefTokenMap } from '../tokens';
+
+export type PaletteToken =
     | 'color-brand-05'
     | 'color-brand-10'
     | 'color-brand-20'
@@ -130,13 +132,7 @@ export type PaletteTokens =
     | 'color-decorative-10-50'
     | 'color-decorative-10-70';
 
-export type PaletteValue = string;
-
-export type PaletteTokenMap = {
-    [Token in PaletteTokens]: PaletteValue;
-};
-
-export const defaultPaletteTokens: PaletteTokenMap = {
+export const defaultPaletteTokens: RefTokenMap<PaletteToken> = {
     'color-brand-05': '#E0F0F9',
     'color-brand-10': '#C2E2F4',
     'color-brand-20': '#84C6EA',

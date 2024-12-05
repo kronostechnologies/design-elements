@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type CardTokens =
+export type CardToken =
     | 'card-background-color'
     | 'card-border-color'
     | 'card-link-border-color'
@@ -10,13 +9,7 @@ export type CardTokens =
     | 'card-link-hover-background-color'
     | 'card-link-hover-border-color';
 
-export type CardTokensValue = AliasTokens | RefTokens;
-
-export type CardTokensMap = {
-    [Token in CardTokens]: CardTokensValue;
-};
-
-export const defaultCardTokens : CardTokensMap = {
+export const defaultCardTokens : ComponentTokenMap<CardToken> = {
     'card-background-color': 'color-background',
     'card-border-color': 'color-border-subtle',
     'card-text-color': 'color-content',

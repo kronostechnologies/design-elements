@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';

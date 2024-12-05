@@ -1,20 +1,13 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type StatusTokens =
+export type StatusToken =
     | 'status-circle-blocked-background-color'
     | 'status-circle-enabled-background-color'
     | 'status-circle-disabled-background-color'
     | 'status-circle-disabled-border-color'
     | 'status-disabled-text-color';
 
-export type StatusTokenValue = AliasTokens | RefTokens;
-
-export type StatusTokenMap = {
-    [Token in StatusTokens]: StatusTokenValue;
-};
-
-export const defaultStatusTokens: StatusTokenMap = {
+export const defaultStatusTokens: ComponentTokenMap<StatusToken> = {
     'status-circle-blocked-background-color': 'color-feedback-background-alert-bold',
     'status-circle-enabled-background-color': 'color-feedback-background-success-bold',
     'status-circle-disabled-background-color': 'color-background-disabled',
