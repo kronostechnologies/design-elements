@@ -179,7 +179,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
         &::before {
-            background-color: ${({ theme }) => theme.component['listbox-item-indicator-selected-background-color']};
+            background-color: ${({ theme }) => theme.component['listbox-item-indicator-selected-color']};
             content: '';
             display: block;
             height: 100%;
