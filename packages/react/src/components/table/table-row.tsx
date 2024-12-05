@@ -7,7 +7,7 @@ import {
     RowData,
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { TableColumn } from './types';
 import { focus } from '../../utils/css-state';
 import { isLastColumnInAGroup } from './utils/table-utils';

@@ -1,27 +1,14 @@
-import { ColorUtilityTokens, ColorUtilityValue, defaultColorUtilityTokens } from './ref/color-utility-tokens';
-import { defaultPaletteTokens, PaletteTokens, PaletteValue } from './ref/palette-tokens';
-import { defaultTextAttributeTokens, TextAttributeTokens, TextAttributeValue } from './ref/text-attributes-tokens';
+import { defaultPaletteTokens, PaletteToken } from './ref/palette-tokens';
+import { defaultTextTokens, TextToken } from './ref/text-tokens';
+import { defaultUtilityTokens, UtilityToken } from './ref/utility-tokens';
 
-export type RefTokenValue =
-    | PaletteValue
-    | TextAttributeValue
-    | ColorUtilityValue;
+export type RefToken =
+    | PaletteToken
+    | TextToken
+    | UtilityToken;
 
-export type RefTokens =
-    | PaletteTokens
-    | TextAttributeTokens
-    | ColorUtilityTokens;
-
-export type RefTokenMap = {
-    [Token in RefTokens]: RefTokenValue;
-}
-
-export const defaultRefTokens: RefTokenMap = {
+export const defaultRefTokens = {
     ...defaultPaletteTokens,
-    ...defaultColorUtilityTokens,
-    ...defaultTextAttributeTokens,
+    ...defaultTextTokens,
+    ...defaultUtilityTokens,
 };
-
-export function isRefToken(token: string): token is RefTokens {
-    return token in defaultRefTokens;
-}
