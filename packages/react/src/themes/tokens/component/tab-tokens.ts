@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type TabTokens =
+export type TabToken =
     | 'tab-section-border-color'
     | 'tab-section-box-shadow-color'
     | 'tab-global-list-background-color'
@@ -22,46 +21,23 @@ export type TabTokens =
     | 'tab-scroll-button-hover-background-color'
     | 'tab-border-bottom-color';
 
-export type TabTokenValue = AliasTokens | RefTokens;
-
-export type TabTokenMap = {
-    [Token in TabTokens]: TabTokenValue;
-};
-
-export const defaultTabTokens: TabTokenMap = {
-    /**
-     * tabs global
-     */
+export const defaultTabTokens: ComponentTokenMap<TabToken> = {
     'tab-global-button-background-color': 'transparent-100',
     'tab-global-list-background-color': 'color-background',
     'tab-global-button-selected-background-color': 'transparent-100',
-
-    /**
-     * tabs section
-     */
     'tab-section-background-color': 'color-background',
     'tab-section-border-color': 'color-border',
     'tab-section-box-shadow-color': 'color-box-shadow',
     'tab-section-list-background-color': 'color-background-neutral-subtle',
     'tab-section-button-background-color': 'color-background',
     'tab-section-button-selected-background-color': 'color-background',
-
-    /**
-     * tab button
-     */
     'tab-button-icon-color': 'color-content-subtle',
     'tab-button-text-color': 'color-content-subtle',
     'tab-button-hover-text-color': 'color-content-hover',
     'tab-button-active-text-color': 'color-content',
     'tab-button-selected-text-color': 'color-content',
-
     'tab-scroll-button-hover-background-color': 'color-neutral-15',
-
     'tab-border-bottom-color': 'color-border',
-
-    /**
-     * tab button indicator
-     */
     'tab-button-indicator-hover-background-color': 'color-background-hover',
     'tab-button-indicator-active-background-color': 'color-background-indicator-active',
     'tab-button-indicator-selected-background-color': 'color-background-indicator-selected',

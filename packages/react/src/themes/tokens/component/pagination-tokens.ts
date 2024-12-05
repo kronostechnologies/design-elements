@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type PaginationTokens =
+export type PaginationToken =
     | 'pagination-page-background-color'
     | 'pagination-page-text-color'
     | 'pagination-page-hover-background-color'
@@ -10,17 +9,10 @@ export type PaginationTokens =
     | 'pagination-page-selected-border-color'
     | 'pagination-page-selected-text-color'
 
-export type PaginationTokenValue = AliasTokens | RefTokens;
-
-export type PaginationTokenMap = {
-    [Token in PaginationTokens]: PaginationTokenValue;
-};
-
-export const defaultPaginationTokens: PaginationTokenMap = {
+export const defaultPaginationTokens: ComponentTokenMap<PaginationToken> = {
     'pagination-page-background-color': 'transparent-100',
     'pagination-page-text-color': 'color-content-subtle',
     'pagination-page-hover-background-color': 'color-background-hover',
-
     'pagination-page-selected-hover-background-color': 'color-background-selected',
     'pagination-page-selected-background-color': 'color-background-selected',
     'pagination-page-selected-border-color': 'color-border-selected',

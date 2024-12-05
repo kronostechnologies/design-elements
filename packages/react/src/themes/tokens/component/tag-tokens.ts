@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type TagTokens =
+export type TagToken =
     | 'tag-background-color'
     | 'tag-border-color'
     | 'tag-text-color'
@@ -55,28 +54,19 @@ export type TagTokens =
     | 'tag-decorative-10-text-color'
     | 'tag-decorative-10-icon-color';
 
-export type TagTokenValue = AliasTokens | RefTokens;
-
-export type TagTokenMap = {
-    [Token in TagTokens]: TagTokenValue;
-};
-
-export const defaultTagTokens: TagTokenMap = {
+export const defaultTagTokens: ComponentTokenMap<TagToken> = {
     'tag-background-color': 'color-background-neutral-subtle',
     'tag-border-color': 'color-border-bold',
     'tag-text-color': 'color-content',
     'tag-icon-color': 'color-content',
-
     'tag-hover-background-color': 'color-background-hover',
     'tag-hover-border-color': 'color-border-hover',
     'tag-hover-icon-color': 'color-content-hover',
     'tag-hover-text-color': 'color-content-hover',
-
     'tag-selected-background-color': 'color-background-selected',
     'tag-selected-border-color': 'color-border-selected',
     'tag-selected-text-color': 'color-content-selected',
     'tag-selected-icon-color': 'color-content-selected',
-
     'tag-decorative-01-background-color': 'color-decorative-01-05',
     'tag-decorative-01-border-color': 'color-decorative-01-50',
     'tag-decorative-01-text-color': 'color-decorative-01-70',

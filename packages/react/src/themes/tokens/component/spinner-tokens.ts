@@ -1,15 +1,8 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type SpinnerTokens =
+export type SpinnerToken =
     | 'spinner-fill-color';
 
-export type SpinnerTokenValue = AliasTokens | RefTokens;
-
-export type SpinnerTokenMap = {
-    [Token in SpinnerTokens]: SpinnerTokenValue;
-};
-
-export const defaultSpinnerTokens: SpinnerTokenMap = {
+export const defaultSpinnerTokens: ComponentTokenMap<SpinnerToken> = {
     'spinner-fill-color': 'color-background-brand',
 };
