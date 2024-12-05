@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type DropdownListTokens =
+export type DropdownListToken =
     | 'dropdown-list-input-background-color'
     | 'dropdown-list-input-disabled-background-color'
     | 'dropdown-list-input-border-color'
@@ -12,13 +11,7 @@ export type DropdownListTokens =
     | 'dropdown-list-arrow-color'
     | 'dropdown-list-arrow-disabled-color';
 
-export type DropdownListTokenValue = AliasTokens | RefTokens;
-
-export type DropdownListTokenMap = {
-    [Token in DropdownListTokens]: DropdownListTokenValue;
-};
-
-export const defaultDropdownListTokens: DropdownListTokenMap = {
+export const defaultDropdownListTokens: ComponentTokenMap<DropdownListToken> = {
     'dropdown-list-input-background-color': 'color-control-background',
     'dropdown-list-input-border-color': 'color-control-border',
     'dropdown-list-input-error-border-color': 'color-control-border-error',

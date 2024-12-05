@@ -1,5 +1,5 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { Icon } from '../icon/icon';
 import { Spinner } from '../spinner/spinner';
 import { AbstractButton } from './abstract/abstract-button';

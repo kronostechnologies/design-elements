@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type AccordionTokens =
+export type AccordionToken =
     | 'accordion-panel-background-color'
     | 'accordion-panel-border-color'
     | 'accordion-panel-text-color'
@@ -16,13 +15,7 @@ export type AccordionTokens =
     | 'accordion-header-disabled-text-color'
     | 'accordion-header-disabled-icon-color';
 
-export type AccordionTokenValue = AliasTokens | RefTokens;
-
-export type AccordionTokenMap = {
-    [Token in AccordionTokens]: AccordionTokenValue;
-};
-
-export const defaultAccordionTokens: AccordionTokenMap = {
+export const defaultAccordionTokens: ComponentTokenMap<AccordionToken> = {
     'accordion-panel-background-color': 'color-background-isolated',
     'accordion-panel-border-color': 'color-border',
     'accordion-panel-text-color': 'color-content',

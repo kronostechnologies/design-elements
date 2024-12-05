@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
