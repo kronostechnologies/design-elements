@@ -4,9 +4,9 @@ import {
     SectionalBanner,
     DropdownList,
     DropdownListOption,
-    equisoftTheme,
     ThemeCustomization,
-    buildTheme,
+    equisoftThemeCustomization,
+    useTheme,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
@@ -68,43 +68,41 @@ const flowerThemeCustomization: ThemeCustomization = {
     },
 };
 
-const flowerTheme = buildTheme(flowerThemeCustomization);
-
 export const Theming: Story = {
     render() {
-        const [theme, setTheme] = useState(equisoftTheme);
+        const [themeCustomization, setThemeCustomization] = useState(equisoftThemeCustomization);
         const [label, setLabel] = useState('Equisoft Theme');
 
         function setCustomTheme(newSelectedTheme: DropdownListOption): void {
             setLabel(newSelectedTheme.label);
             switch (newSelectedTheme.value) {
-                case 'flowerTheme':
-                    setTheme(flowerTheme);
+                case 'flower':
+                    setThemeCustomization(flowerThemeCustomization);
                     break;
-                case 'equisoftTheme':
+                case 'equisoft':
                 default:
-                    setTheme(equisoftTheme);
+                    setThemeCustomization(equisoftThemeCustomization);
                     break;
             }
         }
 
         return (
-            <DesignSystem theme={theme}>
+            <DesignSystem themeCustomization={themeCustomization}>
                 <div>
                     <div style={{ display: 'box', alignItems: 'center', gap: '2rem' }}>
                         <h3>{label}</h3>
                         <div style={{ width: '200px' }}>
                             <DropdownList
                                 onChange={(option: DropdownListOption) => setCustomTheme(option)}
-                                defaultValue="equisoftTheme"
+                                defaultValue="equisoft"
                                 options={[
                                     {
                                         label: 'Equisoft Theme',
-                                        value: 'equisoftTheme',
+                                        value: 'equisoft',
                                     },
                                     {
                                         label: 'Flower Theme',
-                                        value: 'flowerTheme',
+                                        value: 'flower',
                                     },
                                 ]}
                             />
@@ -129,7 +127,7 @@ export const Theming: Story = {
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" disabled />
                         </div>
                         <div style={{
-                            backgroundColor: theme.component['global-header-background-color'],
+                            backgroundColor: useTheme().component['global-header-background-color'],
                             padding: '1rem',
                         }}
                         >
@@ -140,7 +138,7 @@ export const Theming: Story = {
                             <Button label="Destructive Secondary" buttonType="destructive-secondary" inverted />
                         </div>
                         <div style={{
-                            backgroundColor: theme.component['global-header-background-color'],
+                            backgroundColor: useTheme().component['global-header-background-color'],
                             padding: '1rem',
                         }}
                         >
