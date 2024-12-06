@@ -1,17 +1,10 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type BadgeTokens =
+export type BadgeToken =
     | 'badge-background-color'
     | 'badge-text-color';
 
-export type BadgeTokenValue = AliasTokens | RefTokens;
-
-export type BadgeTokenMap = {
-    [Token in BadgeTokens]: BadgeTokenValue;
-};
-
-export const defaultBadgeTokens: BadgeTokenMap = {
+export const defaultBadgeTokens: ComponentTokenMap<BadgeToken> = {
     'badge-background-color': 'color-feedback-background-alert-bold',
     'badge-text-color': 'color-content-inverse',
 };

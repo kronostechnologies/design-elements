@@ -1,19 +1,12 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type DisclosureTokens =
+export type DisclosureToken =
     | 'disclosure-background-color'
     | 'disclosure-border-color'
     | 'disclosure-box-shadow-color'
     | 'disclosure-text-color';
 
-export type DisclosureTokenValue = AliasTokens | RefTokens;
-
-export type DisclosureTokenMap = {
-    [Token in DisclosureTokens]: DisclosureTokenValue;
-};
-
-export const defaultDisclosureTokens: DisclosureTokenMap = {
+export const defaultDisclosureTokens: ComponentTokenMap<DisclosureToken> = {
     'disclosure-background-color': 'color-menu-background',
     'disclosure-border-color': 'color-menu-border',
     'disclosure-box-shadow-color': 'color-box-shadow',

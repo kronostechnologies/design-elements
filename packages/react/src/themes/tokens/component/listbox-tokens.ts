@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type ListboxTokens =
+export type ListboxToken =
     | 'listbox-background-color'
     | 'listbox-border-color'
     | 'listbox-item-text-color'
@@ -12,23 +11,14 @@ export type ListboxTokens =
     | 'listbox-item-subcontent-disabled-text-color'
     | 'listbox-box-shadow-depth-color';
 
-export type ListboxTokenValue = AliasTokens | RefTokens;
-
-export type ListboxTokenMap = {
-    [Token in ListboxTokens]: ListboxTokenValue;
-};
-
-export const defaultListboxTokens: ListboxTokenMap = {
+export const defaultListboxTokens: ComponentTokenMap<ListboxToken> = {
     'listbox-background-color': 'color-menu-background',
     'listbox-border-color': 'color-menu-border',
-
     'listbox-item-text-color': 'color-menu-item-content',
     'listbox-item-subcontent-text-color': 'color-menu-item-subcontent',
     'listbox-item-hover-background-color': 'color-menu-item-background-hover',
-
     'listbox-item-disabled-background-color': 'color-menu-item-background',
     'listbox-item-disabled-text-color': 'color-menu-item-content-disabled',
     'listbox-item-subcontent-disabled-text-color': 'color-menu-item-content-disabled',
-
     'listbox-box-shadow-depth-color': 'color-box-shadow',
 };
