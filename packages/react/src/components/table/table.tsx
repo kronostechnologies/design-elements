@@ -13,7 +13,6 @@ import {
     ExpandedState,
     TableOptions,
     RowSelectionState,
-    Table as TableType,
 } from '@tanstack/react-table';
 import { TFunction } from 'i18next';
 import { useTranslation } from '../../i18n/use-translation';
@@ -202,7 +201,7 @@ function getSelectionColumn<T extends object>(
                 onChange={table.getToggleAllRowsSelectedHandler()}
             />
         );
-        column.cell = ({ row }) => {
+        column.cell = ({ table, row }) => {
             let indeterminate = false;
             let checked = false;
 
@@ -215,10 +214,28 @@ function getSelectionColumn<T extends object>(
             }
 
             const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-                row.getToggleSelectedHandler()(event);
+                const isChecked = event.currentTarget.checked;
+
+                const updatedSelection = { ...table.getState().rowSelection };
+                if (isChecked) {
+                    updatedSelection[row.id] = true;
+                } else {
+                    delete updatedSelection[row.id];
+                }
+
+                // Select parent when all childs was selected, or deselect parent when any child was deselected
+                const allSelectedIds = Object.keys(updatedSelection);
+                allSelectedIds.forEach((key) => {
+                    const parentRow = table.getRow(key).getParentRow();
+                    if (parentRow && parentRow.subRows.length > 0) {
+                        const allChildsChecked = parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id));
+                        parentRow.toggleSelected(allChildsChecked, { selectChildren: false });
+                    }
+                });
+
+                row.toggleSelected(isChecked);
 
                 // auto-expand
-                const isChecked = event.currentTarget.checked;
                 const hasChilds = row.subRows.length > 0;
                 if (expandChildsOnRowSelection && expanded !== ALWAYS_EXPANDED_VALUE && isChecked && hasChilds) {
                     row.toggleExpanded(true);
@@ -254,9 +271,8 @@ function getSelectionColumn<T extends object>(
                     disabled={!row.getCanSelect()}
                     name={radioBtnName}
                     onChange={() => {
-                        const selected = row.getIsSelected;
                         table.toggleAllRowsSelected(false);
-                        row.toggleSelected(!selected());
+                        row.toggleSelected(true);
                     }}
                 />
             );
@@ -366,8 +382,6 @@ export const Table = <T extends object>({
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
 
-    let table: TableType<T>;
-
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
         const cols = [...providedColumns];
@@ -434,33 +448,10 @@ export const Table = <T extends object>({
             setExpanded(newValue);
         },
         enableRowSelection: true,
-        onRowSelectionChange: (updater: Updater<RowSelectionState>) => {
-            const newValue = functionalUpdate(updater, rowSelection);
-            const allSelectedIds = Object.keys(newValue);
-
-            // Unselect parent when no child was selected
-            allSelectedIds.forEach((key) => {
-                const row = table.getRow(key);
-                if (row.subRows.length > 0 && row.subRows.some((sub) => !allSelectedIds.includes(sub.id))) {
-                    delete newValue[key];
-                }
-            });
-
-            // Select parent when all childs was selected
-            allSelectedIds.forEach((key) => {
-                const parentRow = table.getRow(key).getParentRow();
-                if (parentRow
-                    && parentRow.subRows.length > 0
-                    && parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id))) {
-                    newValue[parentRow.id] = true;
-                }
-            });
-
-            setRowSelection(newValue);
-        },
+        onRowSelectionChange: setRowSelection,
     };
 
-    table = useReactTable(tableOptions);
+    const table = useReactTable(tableOptions);
     const hasFooter = columns.some((column) => 'footer' in column);
     const currentRowSelection = table.getState().rowSelection;
 
