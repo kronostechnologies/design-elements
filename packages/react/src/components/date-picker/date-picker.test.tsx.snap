@@ -1950,11 +1950,9 @@ label + .c5 {
     date
   </label>
   <span
-    aria-live="polite"
     class="c3"
     data-testid="invalid-field"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c4"

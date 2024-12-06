@@ -30,10 +30,8 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
     return (
         <Field
             data-testid="invalid-field"
-            aria-live="polite"
             id={`${controlId}_invalid`}
             isMobile={isMobile}
-            role="alert"
         >
             {!noIcon && (
                 <StyledIcon name="alertOctagon" size={isMobile ? '24' : '16'} />

@@ -100,7 +100,6 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
 
 export interface TextInputProps extends PartialInputProps {
     ariaDescribedBy?: string;
-    ariaInvalid?: boolean;
     className?: string;
     defaultValue?: string;
     disabled?: boolean;
@@ -138,7 +137,6 @@ export interface TextInputProps extends PartialInputProps {
 
 export const TextInput = forwardRef(({
     ariaDescribedBy,
-    ariaInvalid,
     autoComplete,
     className,
     defaultValue,
@@ -250,7 +248,7 @@ export const TextInput = forwardRef(({
 
                 <StyleInput
                     aria-describedby={processedAriaDescribedBy || undefined}
-                    aria-invalid={ariaInvalid}
+                    aria-invalid={!validity || undefined}
                     autoComplete={autoComplete}
                     data-testid="text-input"
                     isMobile={isMobile}
