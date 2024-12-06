@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
     height: 400px;
@@ -47,3 +48,6 @@ export const WithOnFocusCallback: Story = {
         onFocus: (event: FocusEvent<HTMLInputElement>) => console.info(`[onFocus] Value: ${event.target.value}`),
     },
 };
+
+export const InsideShadowDom: Story = { ...Default };
+InsideShadowDom.decorators = [ShadowDomDecorator];

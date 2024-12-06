@@ -5,7 +5,7 @@ import { RadioCard } from './radio-card';
 
 describe('Radio Card', () => {
     const inputTestId = 'radio-card-test-input';
-    const containerTestId = 'radio-card-test-container';
+    const labelTestId = 'radio-card-test-label';
 
     test('onChange callback is called when input is changed', () => {
         const callback = jest.fn();
@@ -22,7 +22,7 @@ describe('Radio Card', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test.skip('onChange callback is called when container is clicked', () => {
+    test.skip('onChange callback is called when label is clicked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <RadioCardGroup>
@@ -32,7 +32,7 @@ describe('Radio Card', () => {
             </RadioCardGroup>,
         );
 
-        getByTestId(wrapper, containerTestId).simulate('click');
+        getByTestId(wrapper, labelTestId).simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });

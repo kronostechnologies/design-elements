@@ -1,7 +1,7 @@
-import { ChangeEvent, FunctionComponent } from 'react';
+import { ChangeEvent, FocusEvent, forwardRef, Ref } from 'react';
 import styled from 'styled-components';
-import { focus } from '../../utils/css-state';
 import { useId } from '../../hooks/use-id';
+import { focus } from '../../utils/css-state';
 
 const getDotSvgDataUrl = (color: string): string => {
     const svg = `
@@ -23,27 +23,27 @@ const StyledInput = styled.input<{ disabled?: boolean; isMobile?: boolean }>`
     margin: 0;
     position: relative;
     width: var(--size-1x);
-    
+
     ${focus}
-     
+
     &:checked {
         background-image: ${({ theme, disabled }) => getDotSvgDataUrl(disabled ? theme.component['radio-button-disabled-checked-dot-color'] : theme.component['radio-button-checked-dot-color'])};
         background-position: center;
         background-repeat: no-repeat;
         border: 2px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-border-color'] : theme.component['radio-button-checked-border-color'])};
     }
-    
+
     &:disabled {
         & + label {
             color: ${({ theme }) => theme.component['radio-button-disabled-label-color']};
         }
     }
-        
+
     &:hover {
         &:checked:not(:disabled) {
             border: 1px solid ${({ theme }) => theme.component['radio-button-hover-border-color']};
         }
-        
+
         &:not(:checked) {
             border: 1px solid ${({ theme, disabled }) => (disabled ? theme.component['radio-button-disabled-hover-border-color'] : theme.component['radio-button-hover-border-color'])};
         }
@@ -62,10 +62,11 @@ interface RadioInputProps {
     required?: boolean;
     value?: string;
 
+    onBlur?(event: FocusEvent<HTMLInputElement>): void;
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const RadioInput: FunctionComponent<RadioInputProps> = ({
+export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(({
     ariaLabel,
     ariaLabelledBy,
     checked,
@@ -76,8 +77,9 @@ export const RadioInput: FunctionComponent<RadioInputProps> = ({
     name,
     value,
     required,
+    onBlur,
     onChange,
-}) => {
+}: RadioInputProps, ref: Ref<HTMLInputElement>) => {
     const inputId = useId(id);
 
     return (
@@ -91,12 +93,14 @@ export const RadioInput: FunctionComponent<RadioInputProps> = ({
             defaultChecked={defaultChecked}
             checked={checked}
             disabled={disabled}
+            onBlur={onBlur}
             onChange={onChange}
             required={required}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy?.join(' ')}
+            ref={ref}
         />
     );
-};
+});
 
 RadioInput.displayName = 'RadioInput';

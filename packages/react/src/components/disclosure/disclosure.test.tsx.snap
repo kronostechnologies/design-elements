@@ -153,7 +153,6 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
               aria-expanded={false}
               buttonType="primary"
               className="c1"
-              isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -343,7 +342,6 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
               aria-expanded={true}
               buttonType="primary"
               className="c1"
-              isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -540,15 +538,14 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
             <styled.button
               $focusable={true}
               $isMobile={false}
+              $size="medium"
               aria-controls="idContent"
               aria-expanded={false}
               aria-label="disclose content"
               buttonType="primary"
               className="c1"
-              isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
-              size="medium"
               type="submit"
             >
               <button
@@ -558,7 +555,6 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
                 className="c2 c1"
                 onBlur={[Function]}
                 onClick={[Function]}
-                size="medium"
                 type="submit"
               >
                 <Icon
@@ -755,15 +751,14 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
             <styled.button
               $focusable={true}
               $isMobile={false}
+              $size="medium"
               aria-controls="idContent"
               aria-expanded={true}
               aria-label="disclose content"
               buttonType="primary"
               className="c1"
-              isMobile={false}
               onBlur={[Function]}
               onClick={[Function]}
-              size="medium"
               type="submit"
             >
               <button
@@ -773,7 +768,6 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
                 className="c2 c1"
                 onBlur={[Function]}
                 onClick={[Function]}
-                size="medium"
                 type="submit"
               >
                 <Icon

@@ -581,10 +581,10 @@ exports[`Icon Button Has small styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-2x);
+  min-height: var(--size-1halfx);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
