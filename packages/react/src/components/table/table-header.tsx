@@ -1,24 +1,11 @@
 import { CSSProperties, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
-import {
-    Header,
-    HeaderGroup,
-    Column,
-    flexRender,
-    RowData,
-    SortDirection,
-} from '@tanstack/react-table';
+import { HeaderGroup, flexRender, SortDirection } from '@tanstack/react-table';
 import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
-import { TableColumn } from './types';
 import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
 import { focus } from '../../utils/css-state';
-
-interface CustomHeader<TData extends RowData, TValue = unknown> extends Header<TData, TValue> {
-    column: Column<TData, TValue> & {
-        columnDef: TableColumn<TData, TValue>;
-    };
-}
+import { CustomHeader } from './types';
 
 const SortButton = styled.button<{ $textAlign: string }>`
     align-items: center;
@@ -89,39 +76,37 @@ function getSortState(currentSort: false | SortDirection): SortState {
 }
 
 function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TValue>): ReactElement {
+    const columnDef = header.column.columnDef;
     const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
     const hasRightBorder = isAGroupColumn(header.column) || isLastColumnInAGroup(header.column);
     const sortState: SortState = getSortState(header.column.getIsSorted());
 
-    if (!header.column.columnDef.header && !header.column.columnDef.headerAriaLabel) {
+    if (!columnDef.header && !columnDef.headerAriaLabel) {
         devConsole.warn(
             `aria-label missing for column ${header.id} without text. please add headerAriaLabel to column.`,
         );
     }
 
-    if (header.column.columnDef.sortable) {
+    if (columnDef.sortable) {
         return (
             <StyledHeader
-                aria-label={header.column.columnDef.headerAriaLabel}
+                aria-label={columnDef.headerAriaLabel}
                 aria-sort={sortState}
-                className={header.column.columnDef.className ?? ''}
+                className={columnDef.className ?? ''}
                 colSpan={colSpan}
                 hasRightBorder={hasRightBorder}
                 key={header.id}
                 scope="col"
                 $startOffset={header.getStart()}
-                $sticky={header.column.columnDef.sticky ?? false}
-                $textAlign={header.column.columnDef.textAlign}
+                $sticky={columnDef.sticky ?? false}
+                $textAlign={columnDef.textAlign}
             >
                 {header.isPlaceholder ? null : (
                     <SortButton
-                        $textAlign={header.column.columnDef.textAlign ?? 'left'}
+                        $textAlign={columnDef.textAlign ?? 'left'}
                         onClick={header.column.getToggleSortingHandler()}
                     >
-                        {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                        )}
+                        {flexRender(columnDef.header, header.getContext())}
                         <StyledSortButtonIcon sort={sortState} data-testid="sort-icon" />
                     </SortButton>
                 )}
@@ -131,20 +116,17 @@ function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TV
 
     return (
         <StyledHeader
-            aria-label={header.column.columnDef.headerAriaLabel}
-            className={header.column.columnDef.className ?? undefined}
+            aria-label={columnDef.headerAriaLabel}
+            className={columnDef.className ?? undefined}
             colSpan={colSpan}
             hasRightBorder={hasRightBorder}
             key={header.id}
             scope="col"
             $startOffset={header.getStart()}
-            $sticky={header.column.columnDef.sticky ?? false}
-            $textAlign={header.column.columnDef.textAlign}
+            $sticky={columnDef.sticky ?? false}
+            $textAlign={columnDef.textAlign}
         >
-            {!header.isPlaceholder && flexRender(
-                header.column.columnDef.header,
-                header.getContext(),
-            )}
+            {!header.isPlaceholder && flexRender(columnDef.header, header.getContext())}
         </StyledHeader>
     );
 }
@@ -159,6 +141,6 @@ export const TableHeader = <T extends object>({
     sticky,
 }: TableHeaderProps<T>): ReactElement => (
     <StyleHeaderRow $sticky={sticky}>
-        {headerGroup.headers.map((header) => getHeading(header as CustomHeader<T>))}
+        {headerGroup.headers.map((header) => getHeading(header))}
     </StyleHeaderRow>
 );
