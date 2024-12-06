@@ -864,7 +864,7 @@ export const Grouping: Story = {
 
         const data: TableData<GroupingData>[] = [
             {
-                id: '1',
+                id: '',
                 name: 'Group A',
                 subRows: [
                     { id: '1.A', name: 'AAA-1' },
@@ -872,7 +872,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '3',
+                id: '',
                 name: 'Group C',
                 subRows: [
                     { id: '3.A', name: 'CCC-1' },
@@ -880,7 +880,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '2',
+                id: '',
                 name: 'Group B',
                 subRows: [
                     { id: '2.A', name: 'BBB-1' },
