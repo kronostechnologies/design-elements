@@ -3,11 +3,16 @@ import {
     isValidElement,
     ReactElement,
     ReactNode,
+    useCallback,
+    useEffect,
     useMemo,
+    useRef,
+    useState,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { RadioInput } from '../radio-button/radio-input';
@@ -47,15 +52,54 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
+    const inputRef = useRef<HTMLInputElement>(null);
+    const labelRef = useRef<HTMLLabelElement>(null);
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
+    const [isChecked, setIsChecked] = useState(defaultChecked ?? checked);
 
-    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-        onChange?.(event);
+    if (checked !== undefined && checked !== isChecked) {
+        setIsChecked(checked);
     }
 
+    const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
+        const clickIsOutside = !eventIsInside(event, labelRef.current);
+
+        if (clickIsOutside && inputRef.current) {
+            setTimeout(() => setIsChecked(inputRef.current?.checked));
+        }
+    }, [labelRef, inputRef]);
+
+    useEffect(() => {
+        document.addEventListener('mouseup', handleClickOutside);
+
+        return () => document.removeEventListener('mouseup', handleClickOutside);
+    }, [handleClickOutside]);
+
+    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
+        setIsChecked(event.target.checked);
+        onChange?.(event);
+    }, [onChange]);
+
+    const handleBlur = useCallback((): void => {
+        setTimeout(() => setIsChecked(inputRef.current?.checked));
+    }, []);
+
     return (
-        <S.Label isDisabled={disabled} isMobile={isMobile} htmlFor={id} className={className}>
+        <S.Label
+            $isChecked={isChecked}
+            $isDisabled={disabled}
+            $isMobile={isMobile}
+            htmlFor={id}
+            className={className}
+            ref={labelRef}
+            onBlur={handleBlur}
+            data-testid={`radio-card-${value}-label`}
+            onMouseDown={(e) => {
+                inputRef.current?.click();
+                e.preventDefault();
+            }}
+        >
             <StyledRadioInput
                 checked={checked}
                 data-testid={`radio-card-${value}-input`}
@@ -63,16 +107,17 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
                 disabled={disabled}
                 id={id}
                 name={name}
+                ref={inputRef}
                 required={required}
                 value={value}
                 onChange={handleChange}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
             <S.CardContent>
-                <S.Title isMobile={isMobile}>
+                <S.Title $isMobile={isMobile}>
                     {label}
                 </S.Title>
-                <S.Description id={`description-${id}`} isMobile={isMobile}>
+                <S.Description id={`description-${id}`} $isMobile={isMobile}>
                     {children}
                 </S.Description>
             </S.CardContent>

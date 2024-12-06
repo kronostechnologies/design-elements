@@ -2,47 +2,40 @@ import styled from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 
-interface InputContainerProps {
-    disabled?: boolean;
-    isMobile: boolean;
-    isChecked?: boolean;
-    theme: ResolvedTheme;
-}
-
 interface DescriptionProps {
-    isMobile: boolean;
+    $isMobile: boolean;
     theme: ResolvedTheme;
 }
 
 interface CardProps {
-    isDisabled?: boolean;
-    isMobile: boolean;
-    isChecked?: boolean;
+    $isDisabled?: boolean;
+    $isMobile: boolean;
+    $isChecked?: boolean;
     theme: ResolvedTheme;
 }
 
-function getContentColor({ disabled, theme }: InputContainerProps): string {
-    if (disabled) {
+function getContentColor({ $isDisabled, theme }: CardProps): string {
+    if ($isDisabled) {
         return theme.component['radio-card-disabled-text-color'];
     }
     return theme.component['radio-card-text-color'];
 }
 
-function getLabelBackgroundColor({ isDisabled, isChecked, theme }: CardProps): string {
-    if (isDisabled) {
+function getLabelBackgroundColor({ $isDisabled, $isChecked, theme }: CardProps): string {
+    if ($isDisabled) {
         return theme.component['radio-card-disabled-background-color'];
     }
-    if (isChecked) {
+    if ($isChecked) {
         return theme.component['radio-card-selected-background-color'];
     }
     return theme.component['radio-card-background-color'];
 }
 
-function getLabelBorderColor({ isDisabled, isChecked, theme }: CardProps): string {
-    if (isDisabled) {
+function getLabelBorderColor({ $isDisabled, $isChecked, theme }: CardProps): string {
+    if ($isDisabled) {
         return theme.component['radio-card-disabled-border-color'];
     }
-    if (isChecked) {
+    if ($isChecked) {
         return theme.component['radio-card-selected-border-color'];
     }
     return theme.component['radio-card-border-color'];
@@ -62,18 +55,23 @@ export const Title = styled.span<CardProps>`
     font-size: 1rem;
     font-weight: var(--font-semi-bold);
     line-height: 1.5rem;
-    margin-bottom: var(--spacing-1x);
 `;
 
 export const Description = styled.span<DescriptionProps>`
-    font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
+    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     line-height: 1.25rem;
+    margin-top: var(--spacing-1x);
+
+    &:empty {
+        margin: 0;
+    }
 `;
 
 export const Label = styled.label<CardProps>`
     background-color: ${getLabelBackgroundColor};
     border: 1px solid ${getLabelBorderColor};
     border-radius: var(--border-radius-2x);
+    box-sizing: border-box;
     color: ${getContentColor};
     display: flex;
     gap: var(--spacing-2x);
@@ -83,9 +81,9 @@ export const Label = styled.label<CardProps>`
     ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
 
     &:hover {
-        background-color: ${({ isDisabled, theme }) => (isDisabled ? theme.component['radio-card-disabled-background-color'] : theme.component['radio-card-hover-background-color'])};
-        border-color: ${({ isDisabled, theme }) => (isDisabled ? theme.component['radio-card-disabled-border-color'] : theme.component['radio-card-hover-border-color'])};
-        color: ${({ isDisabled, theme }) => (isDisabled ? theme.component['radio-card-disabled-text-color'] : theme.component['radio-card-hover-text-color'])};
+        background-color: ${({ $isDisabled, theme }) => ($isDisabled ? theme.component['radio-card-disabled-background-color'] : theme.component['radio-card-hover-background-color'])};
+        border-color: ${({ $isDisabled, theme }) => ($isDisabled ? theme.component['radio-card-disabled-border-color'] : theme.component['radio-card-hover-border-color'])};
+        color: ${({ $isDisabled, theme }) => ($isDisabled ? theme.component['radio-card-disabled-text-color'] : theme.component['radio-card-hover-text-color'])};
     }
 `;
 
