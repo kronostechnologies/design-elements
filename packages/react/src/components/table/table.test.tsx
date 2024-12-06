@@ -364,35 +364,29 @@ describe('Table', () => {
             .prop('type')).toBe('radio');
     });
 
-    // TODO: Fix the test
-    // test('has single selection when selecting other row in single selection mode', () => {
-    //     const callback = jest.fn();
-    //     const wrapper = mountWithTheme(
-    //         <Table
-    //             rowSelectionMode="single"
-    //             columns={columns}
-    //             data={data}
-    //             onSelectedRowsChange={callback}
-    //         />,
-    //     );
+    test('has single selection when selecting other row in single selection mode', async () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table
+                rowSelectionMode="single"
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={callback}
+            />,
+        );
 
-    //     getByTestId(wrapper, 'row-radiobutton-0')
-    //         .find('input')
-    //         .simulate('change', { target: { checked: true } });
-    //     getByTestId(wrapper, 'row-radiobutton-1')
-    //         .find('input')
-    //         .simulate('change', { target: { checked: true } });
+        getByTestId(wrapper, 'row-radiobutton-0')
+            .find('input')
+            .simulate('change', { target: { checked: true } });
+        getByTestId(wrapper, 'row-radiobutton-1')
+            .find('input')
+            .simulate('change', { target: { checked: true } });
 
-    //     // eslint-disable-next-line no-console
-    //     console.log(getByTestId(wrapper, 'row-radiobutton-0').debug());
-    //     // eslint-disable-next-line no-console
-    //     console.log(getByTestId(wrapper, 'row-radiobutton-1').debug());
-
-    //     expect(getByTestId(wrapper, 'row-radiobutton-0')
-    //         .find('input')
-    //         .prop('checked')).toBe(false);
-    //     expect(getByTestId(wrapper, 'row-radiobutton-1')
-    //         .find('input')
-    //         .prop('checked')).toBe(true);
-    // });
+        expect(getByTestId(wrapper, 'row-radiobutton-0')
+            .find('input')
+            .prop('checked')).toBe(false);
+        expect(getByTestId(wrapper, 'row-radiobutton-1')
+            .find('input')
+            .prop('checked')).toBe(true);
+    });
 });
