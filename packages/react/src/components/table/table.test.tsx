@@ -364,7 +364,7 @@ describe('Table', () => {
             .prop('type')).toBe('radio');
     });
 
-    test('has single selection when selecting other row in single selection mode', async () => {
+    test('has single selection when selecting other row in single selection mode', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table

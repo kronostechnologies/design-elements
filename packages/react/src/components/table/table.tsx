@@ -214,7 +214,7 @@ function getSelectionColumn<T extends object>(
             }
 
             const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-                const isChecked = event.currentTarget.checked;
+                const isChecked = event.target.checked;
 
                 const updatedSelection = { ...table.getState().rowSelection };
                 if (isChecked) {
