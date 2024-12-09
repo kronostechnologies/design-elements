@@ -72,8 +72,7 @@ export { Slider } from './components/slider/slider';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/toggletip/toggletip';
-export { Table } from './components/table/table';
-export { TableColumn, TableData } from './components/table/types';
+export * from './components/table';
 export { Modal, ModalDialog } from './components/modal';
 export {
     Tag, TagValue, TagColor, TagSize, TagProps,

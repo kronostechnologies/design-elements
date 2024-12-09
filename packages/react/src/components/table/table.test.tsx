@@ -375,17 +375,17 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'radiobutton-row-radiobutton-0')
+        getByTestId(wrapper, 'row-radiobutton-0')
             .find('input')
             .simulate('change', { target: { checked: true } });
-        getByTestId(wrapper, 'radiobutton-row-radiobutton-1')
+        getByTestId(wrapper, 'row-radiobutton-1')
             .find('input')
             .simulate('change', { target: { checked: true } });
 
-        expect(getByTestId(wrapper, 'radiobutton-row-radiobutton-0')
+        expect(getByTestId(wrapper, 'row-radiobutton-0')
             .find('input')
             .prop('checked')).toBe(false);
-        expect(getByTestId(wrapper, 'radiobutton-row-radiobutton-1')
+        expect(getByTestId(wrapper, 'row-radiobutton-1')
             .find('input')
             .prop('checked')).toBe(true);
     });

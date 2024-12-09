@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Column } from '@tanstack/react-table';
 
 export function calculateStickyColumns(
@@ -67,11 +66,11 @@ export function calculateStickyPosition(
     }
 }
 
-export function isAGroupColumn<TData, TValue>(column: Column <TData, TValue>): boolean {
+export function isAGroupColumn<TData, TValue>(column: Column<TData, TValue>): boolean {
     return column.columns.length > 0;
 }
 
-export function isLastColumnInAGroup<TData, TValue>(column: Column <TData, TValue>): boolean {
+export function isLastColumnInAGroup<TData, TValue>(column: Column<TData, TValue>): boolean {
     if (!column.parent) {
         return false;
     }

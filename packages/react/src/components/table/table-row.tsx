@@ -1,28 +1,16 @@
 import { CSSProperties, ReactElement } from 'react';
-import {
-    flexRender,
-    Row,
-    Cell,
-    Column,
-    RowData,
-} from '@tanstack/react-table';
+import { flexRender, Row } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
-import { TableColumn } from './types';
 import { focus } from '../../utils/css-state';
 import { isLastColumnInAGroup } from './utils/table-utils';
+import { CustomCell } from './types';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
     $error?: boolean;
     $selected?: boolean;
     $striped?: boolean;
-}
-
-interface CustomCell<TData extends RowData, TValue = unknown> extends Cell<TData, TValue> {
-    column: Column<TData, TValue> & {
-        columnDef: TableColumn<TData, TValue>;
-    };
 }
 
 interface StyledCellProps {
@@ -106,7 +94,7 @@ export const StyledTableRow = styled.tr<StyledTableRowProps>`
             cursor: pointer;
         }
     `}
-
+    
     ${getRowBackgroundColor}
     ${getCellBackgroundCss}
 `;
@@ -127,16 +115,17 @@ const StyledCell = styled.td<StyledCellProps>`
 `;
 
 function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>): ReactElement | null {
+    const columnDef = cell.column.columnDef;
     return (
         <StyledCell
-            $sticky={cell.column.columnDef.sticky || false}
-            $textAlign={cell.column.columnDef.textAlign}
+            $sticky={columnDef.sticky || false}
+            $textAlign={columnDef.textAlign}
             $startOffset={cell.column.getStart()}
             key={cell.id}
             id={cell.id}
             hasRightBorder={isLastColumnInAGroup(cell.column)}
         >
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            {flexRender(columnDef.cell, cell.getContext())}
         </StyledCell>
     );
 }
@@ -164,6 +153,6 @@ export const TableRow = <T extends object>({
         {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
         data-testid={`table-row-${row.id}`}
     >
-        {row.getVisibleCells().map((cell) => getCell(cell as CustomCell<T>))}
+        {row.getVisibleCells().map((cell) => getCell(cell))}
     </StyledTableRow>
 );

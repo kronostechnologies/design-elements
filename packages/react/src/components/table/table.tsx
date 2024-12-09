@@ -29,7 +29,11 @@ import { v4 as uuid } from '../../utils/uuid';
 
 type RowSize = 'small' | 'medium' | 'large';
 
-type UtilityColumnType = 'selection' | 'numbers' | 'expand';
+const enum UtilityColumnId {
+    Selection = 'selection',
+    Numbers = 'numbers',
+    Expand = 'expand'
+}
 
 type RowSelectionMode = 'single' | 'multiple';
 
@@ -103,6 +107,8 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
 
 const utilColumnClassName = 'eq-table__util-column';
 
+const ALWAYS_EXPANDED_VALUE = true;
+
 interface StyledTableProps {
     $clickableRows: boolean;
     $device: DeviceType;
@@ -116,13 +122,9 @@ const StyledTable = styled.table<StyledTableProps>`
     color: ${({ theme }) => theme.component['table-text-color']};
     width: 100%;
 
-    th {
+    thead th {
         font-weight: var(--font-semi-bold);
         padding: ${({ $device, $rowSize }) => getThPadding($device, $rowSize)};
-    }
-
-    td {
-        padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
     }
 
     th,
@@ -130,6 +132,7 @@ const StyledTable = styled.table<StyledTableProps>`
         font-size: ${({ $device }) => ($device === 'desktop' ? 0.875 : 1)}rem;
         line-height: 1.5rem;
         margin: 0;
+        padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
         text-align: left;
 
         &:last-child {
@@ -177,94 +180,146 @@ const StyledRadioInput = styled(RadioInput)`
     vertical-align: sub;
 `;
 
-function getUtilityColumn<T extends object>(
-    type: UtilityColumnType,
+function getSelectionColumn<T extends object>(
     t: TFunction<'translation'>,
-    rowSelectionMode?: RowSelectionMode,
-    ariaLabelledByColumnId?: string,
+    rowSelectionMode: RowSelectionMode | undefined,
+    ariaLabelledByColumnId: string | undefined,
+    expandChildsOnRowSelection: boolean | undefined,
+    expanded: ExpandedState,
 ): TableColumn<T> {
     const column: TableColumn<T> = {
-        id: type,
+        id: UtilityColumnId.Selection,
         className: utilColumnClassName,
     };
 
-    switch (type) {
-        case 'selection':
-            if (rowSelectionMode === 'multiple') {
-                column.header = ({ table }) => (
-                    <Checkbox
-                        data-testid="row-checkbox-all"
-                        checked={table.getIsAllRowsSelected()}
-                        indeterminate={table.getIsSomeRowsSelected()}
-                        onChange={table.getToggleAllRowsSelectedHandler()}
-                    />
-                );
-                column.cell = ({ row }) => (
-                    <Checkbox
-                        data-testid={`row-checkbox-${row.index}`}
-                        checked={row.getIsSelected()}
-                        disabled={!row.getCanSelect()}
-                        indeterminate={row.getIsSomeSelected()}
-                        onChange={row.getToggleSelectedHandler()}
-                    />
-                );
-            } else if (rowSelectionMode === 'single') {
-                if (!ariaLabelledByColumnId) {
-                    devConsole.warn('ariaLabelledByColumnId is recommended for Accessibility');
-                }
+    if (rowSelectionMode === 'multiple') {
+        column.header = ({ table }) => (
+            <Checkbox
+                data-testid="row-checkbox-all"
+                checked={table.getIsAllRowsSelected()}
+                indeterminate={table.getIsSomeRowsSelected()}
+                onChange={table.getToggleAllRowsSelectedHandler()}
+            />
+        );
+        column.cell = ({ table, row }) => {
+            let indeterminate = false;
+            let checked = false;
 
-                const radioBtnName = `row-radiobutton-${uuid()}`;
-
-                column.cell = ({ table, row }) => {
-                    const radioBtnId = `row-radiobutton-${row.index}`;
-                    return (
-                        <StyledRadioInput
-                            id={radioBtnId}
-                            data-testid={radioBtnId}
-                            ariaLabel={t('selectRow')}
-                            ariaLabelledBy={ariaLabelledByColumnId ? [radioBtnId, `${row.id}_${ariaLabelledByColumnId}`] : []}
-                            checked={row.getIsSelected()}
-                            disabled={!row.getCanSelect()}
-                            name={radioBtnName}
-                            onChange={() => {
-                                const selected = row.getIsSelected;
-                                table.toggleAllRowsSelected(false);
-                                row.toggleSelected(!selected());
-                        }}
-                        />
-                    );
-                };
+            if (row.getIsAllSubRowsSelected()) {
+                checked = true;
+            } else if (row.getIsSomeSelected()) {
+                indeterminate = true;
+            } else {
+                checked = row.getIsSelected();
             }
-            break;
 
-        case 'numbers':
-            column.cell = ({ row }) => <RowNumber>{row.index + 1}</RowNumber>;
-            break;
+            const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+                const isChecked = event.target.checked;
 
-        case 'expand':
-            column.cell = ({ row }) => {
-                const isExpanded = row.getIsExpanded();
-                if (!row.getCanExpand()) {
-                    return null;
+                const updatedSelection = { ...table.getState().rowSelection };
+                if (isChecked) {
+                    updatedSelection[row.id] = true;
+                } else {
+                    delete updatedSelection[row.id];
                 }
-                return (
-                    <ExpandButton
-                        type="button"
-                        buttonType="tertiary"
-                        iconName="caretRight"
-                        onClick={row.getToggleExpandedHandler()}
-                        aria-expanded={isExpanded}
-                        $expanded={isExpanded}
-                        aria-label={
-                            row.subRows.length > 0
-                                ? t('subrowsAriaLabel', { count: row.subRows.length })
-                                : undefined
-                        }
-                    />
-                );
+
+                // Select parent when all childs was selected, or deselect parent when any child was deselected
+                const allSelectedIds = Object.keys(updatedSelection);
+                allSelectedIds.forEach((key) => {
+                    const parentRow = table.getRow(key).getParentRow();
+                    if (parentRow && parentRow.subRows.length > 0) {
+                        const allChildsChecked = parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id));
+                        parentRow.toggleSelected(allChildsChecked, { selectChildren: false });
+                    }
+                });
+
+                row.toggleSelected(isChecked);
+
+                // auto-expand
+                const hasChilds = row.subRows.length > 0;
+                if (expandChildsOnRowSelection && expanded !== ALWAYS_EXPANDED_VALUE && isChecked && hasChilds) {
+                    row.toggleExpanded(true);
+                }
             };
-            break;
+
+            return (
+                <Checkbox
+                    data-testid={`row-checkbox-${row.index}`}
+                    checked={checked}
+                    disabled={!row.getCanSelect()}
+                    indeterminate={indeterminate}
+                    onChange={onChange}
+                />
+            );
+        };
+    } else if (rowSelectionMode === 'single') {
+        if (!ariaLabelledByColumnId) {
+            devConsole.warn('ariaLabelledByColumnId is recommended for Accessibility');
+        }
+
+        const radioBtnName = `row-radiobutton-${uuid()}`;
+
+        column.cell = ({ table, row }) => {
+            const radioBtnId = `row-radiobutton-${row.index}`;
+            return (
+                <StyledRadioInput
+                    id={radioBtnId}
+                    data-testid={radioBtnId}
+                    ariaLabel={t('selectRow')}
+                    ariaLabelledBy={ariaLabelledByColumnId ? [radioBtnId, `${row.id}_${ariaLabelledByColumnId}`] : []}
+                    checked={row.getIsSelected()}
+                    disabled={!row.getCanSelect()}
+                    name={radioBtnName}
+                    onChange={() => {
+                        table.toggleAllRowsSelected(false);
+                        row.toggleSelected(true);
+                    }}
+                />
+            );
+        };
     }
+
+    return column;
+}
+
+function getExpandColumn<T extends object>(
+    t: TFunction<'translation'>,
+): TableColumn<T> {
+    const column: TableColumn<T> = {
+        id: UtilityColumnId.Expand,
+        className: utilColumnClassName,
+        cell: ({ row }) => {
+            const isExpanded = row.getIsExpanded();
+            if (!row.getCanExpand()) {
+                return null;
+            }
+            return (
+                <ExpandButton
+                    type="button"
+                    buttonType="tertiary"
+                    iconName="caretRight"
+                    onClick={row.getToggleExpandedHandler()}
+                    aria-expanded={isExpanded}
+                    $expanded={isExpanded}
+                    aria-label={
+                        row.subRows.length > 0
+                            ? t('subrowsAriaLabel', { count: row.subRows.length })
+                            : undefined
+                    }
+                />
+            );
+        },
+    };
+
+    return column;
+}
+
+function getNumbersColumn<T extends object>(): TableColumn<T> {
+    const column: TableColumn<T> = {
+        id: UtilityColumnId.Numbers,
+        className: utilColumnClassName,
+        cell: ({ row }) => <RowNumber>{row.index + 1}</RowNumber>,
+    };
 
     return column;
 }
@@ -298,6 +353,7 @@ export interface TableProps<T extends object> {
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
     onSort?(sort: ColumnSort | null): void;
+    expandChildsOnRowSelection?: boolean;
 }
 
 export const Table = <T extends object>({
@@ -317,6 +373,7 @@ export const Table = <T extends object>({
     onRowClick,
     onSelectedRowsChange,
     onSort,
+    expandChildsOnRowSelection,
 }: TableProps<T>): ReactElement => {
     const { t } = useTranslation('table');
     const tableRef = useRef<HTMLTableElement>(null);
@@ -325,20 +382,37 @@ export const Table = <T extends object>({
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
 
-    // Add utility columns for row numbers and row selection
+    // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
         const cols = [...providedColumns];
 
         if (rowSelectionMode) {
-            cols.unshift(getUtilityColumn<T>('selection', t, rowSelectionMode, ariaLabelledByColumnId));
-        } else if (expandableRows) {
-            cols.unshift(getUtilityColumn<T>('expand', t));
-        } else if (rowNumbers) {
-            cols.unshift(getUtilityColumn<T>('numbers', t));
+            cols.unshift(getSelectionColumn<T>(
+                t,
+                rowSelectionMode,
+                ariaLabelledByColumnId,
+                expandChildsOnRowSelection,
+                expanded,
+            ));
+        }
+        if (expandableRows) {
+            cols.unshift(getExpandColumn<T>(t));
+        }
+        if (rowNumbers) {
+            cols.unshift(getNumbersColumn<T>());
         }
 
         return cols;
-    }, [rowSelectionMode, expandableRows, rowNumbers, providedColumns, t, ariaLabelledByColumnId]);
+    }, [
+        t,
+        rowSelectionMode,
+        expandableRows,
+        rowNumbers,
+        providedColumns,
+        ariaLabelledByColumnId,
+        expandChildsOnRowSelection,
+        expanded,
+    ]);
 
     const tableOptions: TableOptions<T> = {
         data,
@@ -352,8 +426,7 @@ export const Table = <T extends object>({
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        getSubRows: ((row) => (row as any).subRows),
+        getSubRows: (originalRow) => (originalRow as TableData<T>).subRows,
         getExpandedRowModel: getExpandedRowModel(),
         getRowCanExpand:
             expandableRows
@@ -366,12 +439,12 @@ export const Table = <T extends object>({
         },
         onExpandedChange: (updater: Updater<ExpandedState>) => {
             let newValue = functionalUpdate(updater, expanded);
+            const allExpandedIds = Object.keys(newValue);
 
             // Hackish because onExpandedChange doesn't provide the currently expanded/collapsed row
-            if (expandableRows === 'single' && Object.keys(newValue).length > 1) {
+            if (expandableRows === 'single' && allExpandedIds.length > 1) {
                 newValue = functionalUpdate(updater, {});
             }
-
             setExpanded(newValue);
         },
         enableRowSelection: true,
@@ -412,11 +485,12 @@ export const Table = <T extends object>({
             <StyledTBody>
                 {table.getRowModel().rows.map((row) => {
                     const rowOriginal = row.original as TableData<T>;
+                    const hasError = !!rowOriginal.error;
                     return (
                         <Fragment key={row.id}>
                             <TableRow<T>
                                 striped={striped}
-                                error={!!rowOriginal.error}
+                                error={hasError}
                                 row={row}
                                 onClick={onRowClick}
                             />
