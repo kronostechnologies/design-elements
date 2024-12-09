@@ -121,11 +121,9 @@ input + .c1 {
     test label
   </label>
   <span
-    aria-live="polite"
     class="c3"
     data-testid="invalid-field"
     id="test-id_invalid"
-    role="alert"
   >
     <svg
       class="c4"

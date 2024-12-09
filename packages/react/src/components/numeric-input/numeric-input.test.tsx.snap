@@ -349,11 +349,9 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   data-testid="field-container"
 >
   <span
-    aria-live="polite"
     class="c2"
     data-testid="invalid-field"
     id="uuid1_invalid"
-    role="alert"
   >
     <svg
       class="c3"
@@ -374,6 +372,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
     </span>
     <input
       aria-describedby="uuid1_invalid"
+      aria-invalid="true"
       class="c7"
       data-testid="numeric-input"
       id="uuid1"
