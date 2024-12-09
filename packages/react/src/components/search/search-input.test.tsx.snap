@@ -313,12 +313,16 @@ input:valid + .c8 {
             forId="search-input"
           >
             <styled.label
+              $isMobile={false}
+              data-testid="search-icon"
               htmlFor="search-input"
-              isMobile={false}
+              id="uuid1"
             >
               <label
                 className="c2 c3"
+                data-testid="search-icon"
                 htmlFor="search-input"
+                id="uuid1"
               >
                 <styled.svg
                   disabled={true}

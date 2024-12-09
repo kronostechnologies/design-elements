@@ -15,7 +15,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FieldContainer } from '../../internal/field/container/field-container';
 import { IconButton } from '../buttons/icon-button';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -77,7 +77,7 @@ const Textbox = styled.input<TextboxProps>`
     width: 100%;
 
     ${focus};
-    
+
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;

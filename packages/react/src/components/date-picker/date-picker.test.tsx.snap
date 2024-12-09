@@ -350,6 +350,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -740,6 +741,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1132,6 +1134,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1524,6 +1527,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -1944,6 +1948,7 @@ label + .c5 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -2352,6 +2357,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -2910,6 +2916,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -4211,6 +4218,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >
@@ -5487,6 +5495,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    data-testid="field-label"
     for="uuid1"
     id="uuid1_label"
   >

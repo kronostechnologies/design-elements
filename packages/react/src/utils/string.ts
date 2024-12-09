@@ -7,3 +7,8 @@ export function allSameLetter(text: string): boolean {
 export function stripDiacritics(input: string): string {
     return input.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
+
+export function joinStrings(...strings: Array<string | undefined>): string | undefined {
+    const filteredStrings = strings.filter(Boolean);
+    return filteredStrings.length > 0 ? filteredStrings.join(' ') : undefined;
+}
