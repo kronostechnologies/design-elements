@@ -1725,10 +1725,10 @@ __metadata:
     jest-junit: "npm:^16.0.0"
     jest-styled-components: "npm:^7.1.1"
     prop-types: "npm:^15.8.1"
-    react: "npm:~17.0.2"
+    react: "npm:~18.3.0"
     react-datepicker: "npm:^7.3.0"
     react-docgen-typescript-plugin: "npm:1.0.8"
-    react-dom: "npm:~17.0.2"
+    react-dom: "npm:~18.3.0"
     react-is: "npm:~17.0.2"
     react-modal: "npm:^3.16.1"
     react-popper-tooltip: "npm:^4.4.2"
@@ -1804,8 +1804,8 @@ __metadata:
     eslint-plugin-react-hooks: "npm:4.6.2"
     eslint-plugin-storybook: "npm:0.8.0"
     i18next: "npm:^23.0.0"
-    react: "npm:~17.0.2"
-    react-dom: "npm:~17.0.2"
+    react: "npm:~18.3.0"
+    react-dom: "npm:~18.3.0"
     react-is: "npm:~17.0.2"
     react-router-dom: "npm:~6.28.0"
     sass: "npm:^1.71.1"
@@ -11991,7 +11991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.3.1, react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0":
+"react-dom@npm:18.3.1, react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react-dom@npm:~18.3.0":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
   dependencies:
@@ -12003,7 +12003,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17, react-dom@npm:~17.0.2":
+"react-dom@npm:^17":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -12195,7 +12195,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.3.1, react@npm:^16.8.0 || ^17.0.0 || ^18.0.0":
+"react@npm:18.3.1, react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react@npm:~18.3.0":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
@@ -12204,7 +12204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^17, react@npm:~17.0.2":
+"react@npm:^17":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
