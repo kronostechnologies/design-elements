@@ -167,7 +167,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $focused, $disabled, theme }) => ($focused && css`
         outline: 2px solid ${$disabled ? 'transparent' : theme.component['focus-outside-border-color']};
-        outline-offset: -3px;
+        outline-offset: -2px;
     `)}
 
     ${({ $selected }) => ($selected && css`
@@ -179,6 +179,7 @@ const ListItem = styled.li<ListItemProps>`
 
     ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
         &::before {
+            background-color: ${({ theme }) => theme.component['listbox-item-indicator-selected-color']};
             content: '';
             display: block;
             height: 100%;
