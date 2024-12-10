@@ -459,7 +459,16 @@ export const Table = <T extends object>({
         if (rowSelectionMode && onSelectedRowsChange) {
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
-            const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
+            const selectedRows = selectedIndexes.map((index: string) => {
+                if (rowSelectionMode === 'single') {
+                    return data[parseInt(index, 10)]
+                }
+
+                if (rowSelectionMode === 'multiple') {
+                    const [groupIndex, rowIndex] = index.split('.');
+                    return (data[parseInt(groupIndex)] as any)?.subRows?.[parseInt(rowIndex)] || data[parseInt(index, 10)];
+                }
+            });
             onSelectedRowsChange(selectedRows);
         }
     }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, data]);

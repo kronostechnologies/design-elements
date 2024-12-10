@@ -653,6 +653,55 @@ export const MultipleSelectableRows: Story = {
     },
 };
 
+export const MultipleSelectableExpandableSubRows: Story = {
+    render() {
+        interface ExpandableData {
+            id: string;
+            name: string;
+        }
+
+        const columns: TableColumn<ExpandableData>[] = [
+            {
+                header: 'ID',
+                accessorKey: 'id',
+            },
+            {
+                header: 'Name',
+                accessorKey: 'name',
+            },
+        ];
+
+        const data: TableData<ExpandableData>[] = [
+            {
+                id: '1',
+                name: 'AAA',
+                subRows: [
+                    { id: '1.A', name: 'AAA-1' },
+                    { id: '1.B', name: 'AAA-2' },
+                ],
+            },
+            {
+                id: '2',
+                name: 'BBB',
+                subRows: [
+                    { id: '2.A', name: 'BBB-1' },
+                    { id: '2.B', name: 'BBB-2' },
+                ],
+            },
+        ];
+        return (
+            <Table
+                expandableRows={'multiple'}
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={console.info}
+                expandChildsOnRowSelection={true}
+            />
+        );
+    },
+};
+
 export const SingleSelectableRows: Story = {
     render() {
         interface SelectableData {
