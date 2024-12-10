@@ -691,12 +691,12 @@ export const MultipleSelectableExpandableSubRows: Story = {
         ];
         return (
             <Table
-                expandableRows={'multiple'}
+                expandableRows="multiple"
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
                 onSelectedRowsChange={console.info}
-                expandChildsOnRowSelection={true}
+                expandChildsOnRowSelection
             />
         );
     },
