@@ -462,8 +462,7 @@ export const Table = <T extends object>({
             const selectedRows = selectedIndexes.map((index: string) => {
                 if (rowSelectionMode === 'multiple') {
                     const [groupIndex, rowIndex] = index.split('.');
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    return (data[parseInt(groupIndex, 10)] as any)
+                    return (data[parseInt(groupIndex, 10)] as T & { subRows?: Array<T> })
                             ?.subRows
                             ?.[parseInt(rowIndex, 10)]
                         || data[parseInt(index, 10)];
