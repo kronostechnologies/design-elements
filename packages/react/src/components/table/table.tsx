@@ -460,14 +460,16 @@ export const Table = <T extends object>({
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
             const selectedRows = selectedIndexes.map((index: string) => {
-                if (rowSelectionMode === 'single') {
-                    return data[parseInt(index, 10)]
-                }
-
                 if (rowSelectionMode === 'multiple') {
                     const [groupIndex, rowIndex] = index.split('.');
-                    return (data[parseInt(groupIndex)] as any)?.subRows?.[parseInt(rowIndex)] || data[parseInt(index, 10)];
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    return (data[parseInt(groupIndex, 10)] as any)
+                            ?.subRows
+                            ?.[parseInt(rowIndex, 10)]
+                        || data[parseInt(index, 10)];
                 }
+
+                return data[parseInt(index, 10)];
             });
             onSelectedRowsChange(selectedRows);
         }
