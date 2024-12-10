@@ -457,12 +457,10 @@ export const Table = <T extends object>({
 
     useEffect(() => {
         if (rowSelectionMode && onSelectedRowsChange) {
-            const selectedRowIds = currentRowSelection;
-            const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
-            const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
+            const selectedRows = Object.keys(currentRowSelection).map((rowId) => table.getRow(rowId).original);
             onSelectedRowsChange(selectedRows);
         }
-    }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, data]);
+    }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, table]);
 
     return (
         <StyledTable
