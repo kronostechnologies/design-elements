@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
+exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -135,7 +135,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 </div>
 `;
 
-exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
+exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -270,7 +270,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 </div>
 `;
 
-exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
+exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
