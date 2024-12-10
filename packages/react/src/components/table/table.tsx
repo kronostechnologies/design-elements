@@ -457,7 +457,7 @@ export const Table = <T extends object>({
 
     useEffect(() => {
         if (rowSelectionMode && onSelectedRowsChange) {
-            const selectedRows = Object.keys(currentRowSelection).map((rowId) => table.getRow(rowId).original as T);
+            const selectedRows = Object.keys(currentRowSelection).map((rowId) => table.getRow(rowId).original);
             onSelectedRowsChange(selectedRows);
         }
     }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, table]);
