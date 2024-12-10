@@ -114,6 +114,8 @@ exports[`Checkbox Matches the snapshot 1`] = `
     class="c0"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-boat"
       name="vehicule1"
@@ -240,6 +242,8 @@ exports[`Checkbox Matches the snapshot 1`] = `
     class="c0"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       checked=""
       class="c1"
       data-testid="checkboxGroup-plane"
@@ -368,6 +372,8 @@ exports[`Checkbox Matches the snapshot 1`] = `
     disabled=""
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-car"
       disabled=""
@@ -496,6 +502,8 @@ exports[`Checkbox Matches the snapshot 1`] = `
     class="c0"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-bike"
       name="vehicule4"

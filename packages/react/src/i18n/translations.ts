@@ -10,6 +10,9 @@ export const Translations = {
         button: {
             loadingLabel: 'Loading...',
         },
+        checkbox: {
+            validationErrorMessage: 'This field is required',
+        },
         combobox: {
             clearInput: 'Clear input',
             loading: 'Loading...',
@@ -150,6 +153,9 @@ export const Translations = {
         },
         button: {
             loadingLabel: 'Chargement...',
+        },
+        checkbox: {
+            validationErrorMessage: 'Ce champ est requis',
         },
         combobox: {
             clearInput: 'Vider le champ',
