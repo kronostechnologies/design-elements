@@ -4,6 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput, textInputClasses } from '../text-input';
+import { toLocale } from './toLocale';
 
 type TextAlignment = 'left' | 'right';
 
@@ -23,7 +24,7 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-interface Props {
+export interface MoneyInputProps {
     id?: string;
     className?: string;
     disabled?: boolean;
@@ -37,7 +38,7 @@ interface Props {
     value?: number | null;
     /**
      * Sets input locale and changes visual format accordingly
-     * @default fr-CA
+     * Defaults to the locale provided to the DesignSystem provider
      */
     locale?: string;
     /**
@@ -67,7 +68,7 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export const MoneyInput: VoidFunctionComponent<Props> = ({
+export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     id: providedId,
     className,
     required,
@@ -77,14 +78,15 @@ export const MoneyInput: VoidFunctionComponent<Props> = ({
     precision = 2,
     value = null,
     validationErrorMessage,
-    locale = 'fr-CA',
+    locale: providedLocale,
     currency = 'CAD',
     hint,
     noMargin,
     textAlignment = 'left',
     ...otherProps
 }) => {
-    const { t } = useTranslation('money-input');
+    const { i18n, t } = useTranslation('money-input');
+    const locale = providedLocale ?? toLocale(i18n.language, currency);
     const inputElement = useRef<HTMLInputElement>(null);
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));

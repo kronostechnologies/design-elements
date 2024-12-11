@@ -8,9 +8,14 @@ import { DesignSystem, DesignSystemProps } from '../components/design-system';
 import { DeviceType } from '../components/device-context-provider/device-context-provider';
 import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
 
-export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps>> = ({ children, staticDevice }) => (
+export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps>> = ({
+    children,
+    language,
+    theme,
+    staticDevice,
+}) => (
     <MemoryRouter>
-        <DesignSystem staticDevice={staticDevice}>
+        <DesignSystem language={language} staticDevice={staticDevice} theme={theme}>
             {children}
         </DesignSystem>
     </MemoryRouter>
