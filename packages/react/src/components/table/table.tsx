@@ -459,7 +459,15 @@ export const Table = <T extends object>({
         if (rowSelectionMode && onSelectedRowsChange) {
             const selectedRowIds = currentRowSelection;
             const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
+<<<<<<< Updated upstream
             const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
+=======
+
+            const selectedRows = (rowSelectionMode === 'multiple')
+                ? Object.keys(currentRowSelection).map((rowId) =>  table.getRow(rowId).original as T)
+                : selectedIndexes.map((index: string) => data[parseInt(index, 10)]);
+
+>>>>>>> Stashed changes
             onSelectedRowsChange(selectedRows);
         }
     }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, data]);
