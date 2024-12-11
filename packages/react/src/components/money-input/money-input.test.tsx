@@ -12,6 +12,10 @@ function getInputElement(container: Element): HTMLInputElement {
     return container.querySelector('input') as HTMLInputElement;
 }
 
+function normalizeSpaces(value: string): string {
+    return value.replace(/\s/g, ' ');
+}
+
 describe('MoneyInput Component', () => {
     it('should remove formatting on focus', () => {
         const { container } = renderWithProviders(
@@ -31,7 +35,7 @@ describe('MoneyInput Component', () => {
         fireEvent.focus(input);
         fireEvent.blur(input);
 
-        expect(input.value).toMatchFormattedMoney('12 345,25 $');
+        expect(normalizeSpaces(input.value)).toEqual('12 345,25 $');
     });
 
     it('should remove fractions when precision is 0 and changing value', () => {
@@ -39,7 +43,7 @@ describe('MoneyInput Component', () => {
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345.25');
-        expect(input.value).toMatchFormattedMoney('12 345 $');
+        expect(normalizeSpaces(input.value)).toEqual('12 345 $');
     });
 
     it('should use precision when changing value', () => {
@@ -47,7 +51,7 @@ describe('MoneyInput Component', () => {
         const input = getInputElement(container);
 
         simulateValueChange(input, '123.457');
-        expect(input.value).toMatchFormattedMoney('123,46 $');
+        expect(normalizeSpaces(input.value)).toEqual('123,46 $');
     });
 
     it('should format according to locale when changing value', () => {
@@ -55,21 +59,21 @@ describe('MoneyInput Component', () => {
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345');
-        expect(input.value).toMatchFormattedMoney('$12,345.00');
+        expect(normalizeSpaces(input.value)).toEqual('$12,345.00');
     });
 
     it('should format provided value', () => {
         const { container } = renderWithProviders(<MoneyInput value={12345.25} />);
         const input = getInputElement(container);
 
-        expect(input.value).toMatchFormattedMoney('12 345,25 $');
+        expect(normalizeSpaces(input.value)).toEqual('12 345,25 $');
     });
 
     it('should format to provided currency', () => {
         const { container } = renderWithProviders(<MoneyInput value={12345.25} currency="USD" />);
         const input = getInputElement(container);
 
-        expect(input.value).toMatchFormattedMoney('12 345,25 $');
+        expect(normalizeSpaces(input.value)).toEqual('12 345,25 $');
     });
 
     it('should select all text on focus', () => {
@@ -100,7 +104,7 @@ describe('MoneyInput Component', () => {
         fireEvent.focus(input);
         fireEvent.blur(input);
 
-        expect(input.value).toMatchFormattedMoney('0 $');
+        expect(normalizeSpaces(input.value)).toEqual('0 $');
     });
 
     it('should allow to be empty', () => {
@@ -108,7 +112,7 @@ describe('MoneyInput Component', () => {
         const input = getInputElement(container);
 
         simulateValueChange(input, '');
-        expect(input.value).toMatchFormattedMoney('');
+        expect(normalizeSpaces(input.value)).toEqual('');
     });
 
     test('should not show validation message when input is empty and required onBlur', () => {
