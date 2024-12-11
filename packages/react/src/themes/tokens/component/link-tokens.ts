@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type LinkTokens =
+export type LinkToken =
     | 'external-link-visited-text-color'
     | 'skip-link-text-color'
     | 'skip-link-background-color'
@@ -18,23 +17,14 @@ export type LinkTokens =
     | 'link-hover-icon-color'
     | 'link-visited-icon-color';
 
-export type LinkTokenValue = AliasTokens | RefTokens;
-
-export type LinkTokenMap = {
-    [Token in LinkTokens]: LinkTokenValue;
-};
-
-export const defaultLinkTokens: LinkTokenMap = {
+export const defaultLinkTokens: ComponentTokenMap<LinkToken> = {
     'external-link-visited-text-color': 'color-link-content-visited',
-
     'route-link-visited-text-color': 'color-link-content-visited',
     'route-link-text-color': 'color-link-content',
     'route-link-disabled-text-color': 'color-link-content-disabled',
     'route-link-hover-text-color': 'color-link-content-hover',
-
     'skip-link-text-color': 'color-link-content',
     'skip-link-background-color': 'color-background',
-
     'link-text-color': 'color-link-content',
     'link-disabled-text-color': 'color-link-content-disabled',
     'link-hover-text-color': 'color-link-content-hover',
