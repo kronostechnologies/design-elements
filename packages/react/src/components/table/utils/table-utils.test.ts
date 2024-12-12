@@ -1,4 +1,5 @@
-import { calculateStickyColumns, calculateStickyHeader } from './table-utils';
+import { type RowSelectionState } from '@tanstack/react-table';
+import { calculateStickyColumns, calculateStickyHeader, isSameRowSelectionState } from './table-utils';
 
 function getTable(): HTMLTableElement {
     const table: HTMLTableElement = document.createElement('table');
@@ -25,8 +26,8 @@ function getTable(): HTMLTableElement {
     return table;
 }
 
-function getTableValues() : {
-    headerCells: NodeListOf<HTMLTableHeaderCellElement>,
+function getTableValues(): {
+    headerCells: NodeListOf<HTMLTableCellElement>,
     rows: NodeListOf<HTMLTableRowElement>,
     } {
     const table = getTable();
@@ -38,6 +39,42 @@ function getTableValues() : {
 }
 
 describe('Table utils', () => {
+    describe('isSameRowSelectionState', () => {
+        test('should return true for identical objects', () => {
+            const obj1: RowSelectionState = { row1: true, row2: false };
+            const obj2: RowSelectionState = { row1: true, row2: false };
+
+            expect(isSameRowSelectionState(obj1, obj2)).toBe(true);
+        });
+
+        test('should return false for objects with different keys', () => {
+            const obj1: RowSelectionState = { row1: true, row2: false };
+            const obj2: RowSelectionState = { row1: true, row3: false };
+
+            expect(isSameRowSelectionState(obj1, obj2)).toBe(false);
+        });
+
+        test('should return false for objects with different values', () => {
+            const obj1: RowSelectionState = { row1: true, row2: false };
+            const obj2: RowSelectionState = { row1: true, row2: true };
+
+            expect(isSameRowSelectionState(obj1, obj2)).toBe(false);
+        });
+
+        test('should return true for the same object reference', () => {
+            const obj1: RowSelectionState = { row1: true, row2: false };
+
+            expect(isSameRowSelectionState(obj1, obj1)).toBe(true);
+        });
+
+        test('should return false for objects with different lengths', () => {
+            const obj1: RowSelectionState = { row1: true };
+            const obj2: RowSelectionState = { row1: true, row2: false };
+
+            expect(isSameRowSelectionState(obj1, obj2)).toBe(false);
+        });
+    });
+
     describe('calculateStickyColumns', () => {
         test('should set header cell z-index when column is sticky', () => {
             const { headerCells, rows } = getTableValues();
