@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table has aria-label on header columns 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -33,6 +17,22 @@ exports[`Table has aria-label on header columns 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 
@@ -156,6 +156,25 @@ exports[`Table has aria-label on header columns 1`] = `
 `;
 
 exports[`Table has clickable rows styles 1`] = `
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
 .c5 {
   background-color: inherit;
 }
@@ -202,25 +221,6 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c6 {
-  background-color: inherit;
-}
-
-.c3 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c2 {
   background-color: inherit;
 }
 
@@ -350,27 +350,6 @@ exports[`Table has clickable rows styles 1`] = `
 `;
 
 exports[`Table has column with headers grouped 1`] = `
-.c6 {
-  background-color: inherit;
-}
-
-.c6:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c6 td {
-  background-color: inherit;
-}
-
-.c7 {
-  background-color: inherit;
-}
-
-.c8 {
-  background-color: inherit;
-  border-right: 1px solid #DBDEE1;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -404,6 +383,27 @@ exports[`Table has column with headers grouped 1`] = `
 
 .c2 {
   background-color: inherit;
+}
+
+.c6 {
+  background-color: inherit;
+}
+
+.c6:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c6 td {
+  background-color: inherit;
+}
+
+.c7 {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+  border-right: 1px solid #DBDEE1;
 }
 
 .c0 {
@@ -561,28 +561,6 @@ exports[`Table has column with headers grouped 1`] = `
 `;
 
 exports[`Table has custom text alignment 1`] = `
-.c6 {
-  background-color: inherit;
-}
-
-.c6:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c6 td {
-  background-color: inherit;
-}
-
-.c7 {
-  background-color: inherit;
-  text-align: right;
-}
-
-.c8 {
-  background-color: inherit;
-  text-align: center;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -617,6 +595,28 @@ exports[`Table has custom text alignment 1`] = `
 
 .c2 {
   background-color: inherit;
+}
+
+.c6 {
+  background-color: inherit;
+}
+
+.c6:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c6 td {
+  background-color: inherit;
+}
+
+.c7 {
+  background-color: inherit;
+  text-align: right;
+}
+
+.c8 {
+  background-color: inherit;
+  text-align: center;
 }
 
 .c0 {
@@ -739,22 +739,6 @@ exports[`Table has custom text alignment 1`] = `
 `;
 
 exports[`Table has desktop styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -771,6 +755,22 @@ exports[`Table has desktop styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 
@@ -894,6 +894,25 @@ exports[`Table has desktop styles 1`] = `
 `;
 
 exports[`Table has error rows styles 1`] = `
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
 .c5 {
   background-color: #FDF7F6;
 }
@@ -919,25 +938,6 @@ exports[`Table has error rows styles 1`] = `
 }
 
 .c6 {
-  background-color: inherit;
-}
-
-.c3 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c2 {
   background-color: inherit;
 }
 
@@ -1061,22 +1061,6 @@ exports[`Table has error rows styles 1`] = `
 `;
 
 exports[`Table has mobile styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -1093,6 +1077,22 @@ exports[`Table has mobile styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 
@@ -1216,22 +1216,6 @@ exports[`Table has mobile styles 1`] = `
 `;
 
 exports[`Table has rowNumbers styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -1248,6 +1232,22 @@ exports[`Table has rowNumbers styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 
@@ -1417,41 +1417,6 @@ exports[`Table has rowNumbers styles 1`] = `
 `;
 
 exports[`Table has selectable rows styles 1`] = `
-.c13 {
-  background-color: inherit;
-}
-
-.c13:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c13 td {
-  background-color: inherit;
-}
-
-.c14 {
-  background-color: inherit;
-}
-
-.c3 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c2 {
-  background-color: inherit;
-}
-
 .c9 {
   color: #FFFFFF;
   display: none;
@@ -1546,6 +1511,41 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c4:not(:first-of-type) {
   margin-top: var(--spacing-1x);
+}
+
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
+.c13 {
+  background-color: inherit;
+}
+
+.c13:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c13 td {
+  background-color: inherit;
+}
+
+.c14 {
+  background-color: inherit;
 }
 
 .c0 {
@@ -1796,22 +1796,6 @@ exports[`Table has selectable rows styles 1`] = `
 `;
 
 exports[`Table has small rowSize styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -1828,6 +1812,22 @@ exports[`Table has small rowSize styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 
@@ -1951,22 +1951,6 @@ exports[`Table has small rowSize styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
-.c7 {
-  background-color: inherit;
-}
-
-.c7:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c7 td {
-  background-color: inherit;
-}
-
-.c8 {
-  background-color: inherit;
-}
-
 .c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2014,6 +1998,22 @@ exports[`Table has sorting styles 1`] = `
 
 .c5 {
   margin-left: var(--spacing-1x);
+}
+
+.c7 {
+  background-color: inherit;
+}
+
+.c7:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c7 td {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
 }
 
 .c0 {
@@ -2160,38 +2160,6 @@ exports[`Table has sorting styles 1`] = `
 `;
 
 exports[`Table has sticky column styles 1`] = `
-.c7 {
-  background-color: inherit;
-}
-
-.c7:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c7 td {
-  background-color: inherit;
-}
-
-.c8 {
-  background-color: inherit;
-  left: 0px;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 2;
-}
-
-.c9 {
-  background-color: inherit;
-  left: 75px;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 2;
-}
-
-.c10 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -2246,6 +2214,38 @@ exports[`Table has sticky column styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c7 {
+  background-color: inherit;
+}
+
+.c7:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c7 td {
+  background-color: inherit;
+}
+
+.c8 {
+  background-color: inherit;
+  left: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+}
+
+.c9 {
+  background-color: inherit;
+  left: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+}
+
+.c10 {
   background-color: inherit;
 }
 
@@ -2393,22 +2393,6 @@ exports[`Table has sticky column styles 1`] = `
 `;
 
 exports[`Table has sticky header styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -2430,6 +2414,22 @@ exports[`Table has sticky header styles 1`] = `
   position: sticky;
   top: 0;
   z-index: 6;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
+  background-color: inherit;
 }
 
 .c0 {
@@ -2552,6 +2552,25 @@ exports[`Table has sticky header styles 1`] = `
 `;
 
 exports[`Table has striped styles 1`] = `
+.c3 {
+  background-color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c2 {
+  background-color: inherit;
+}
+
 .c5 {
   background-color: inherit;
 }
@@ -2569,25 +2588,6 @@ exports[`Table has striped styles 1`] = `
 }
 
 .c6 {
-  background-color: inherit;
-}
-
-.c3 {
-  background-color: inherit;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c3:before {
-  border-bottom: 1px solid #DBDEE1;
-  bottom: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 100%;
-}
-
-.c2 {
   background-color: inherit;
 }
 
@@ -2711,22 +2711,6 @@ exports[`Table has striped styles 1`] = `
 `;
 
 exports[`Table has tablet styles 1`] = `
-.c5 {
-  background-color: inherit;
-}
-
-.c5:not(:first-child) {
-  border-top: 1px solid #DBDEE1;
-}
-
-.c5 td {
-  background-color: inherit;
-}
-
-.c6 {
-  background-color: inherit;
-}
-
 .c3 {
   background-color: inherit;
   box-sizing: border-box;
@@ -2743,6 +2727,22 @@ exports[`Table has tablet styles 1`] = `
 }
 
 .c2 {
+  background-color: inherit;
+}
+
+.c5 {
+  background-color: inherit;
+}
+
+.c5:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c5 td {
+  background-color: inherit;
+}
+
+.c6 {
   background-color: inherit;
 }
 

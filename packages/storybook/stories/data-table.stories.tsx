@@ -660,6 +660,8 @@ export const MultipleSelectableExpandableSubRows: Story = {
             name: string;
         }
 
+        const [selectedRows, setSelectedRows] = useState<ExpandableData[]>([]);
+
         const columns: TableColumn<ExpandableData>[] = [
             {
                 header: 'ID',
@@ -671,7 +673,7 @@ export const MultipleSelectableExpandableSubRows: Story = {
             },
         ];
 
-        const data: TableData<ExpandableData>[] = [
+        const data: TableData<ExpandableData>[] = useMemo(() => [
             {
                 id: '1',
                 name: 'AAA',
@@ -688,15 +690,16 @@ export const MultipleSelectableExpandableSubRows: Story = {
                     { id: '2.B', name: 'BBB-2' },
                 ],
             },
-        ];
+        ], []);
         return (
-            <Table
+            <Table<ExpandableData>
                 expandableRows="multiple"
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                onSelectedRowsChange={console.info}
-                expandChildsOnRowSelection
+                selectedRows={selectedRows}
+                onSelectedRowsChange={setSelectedRows}
+                expandChildrenOnRowSelection
             />
         );
     },
@@ -789,7 +792,7 @@ export const ExpandableSubrowsMultiple: Story = {
             <Table
                 columns={columns}
                 data={data}
-                expandableRows='multiple'
+                expandableRows="multiple"
             />
         );
     },
@@ -835,7 +838,7 @@ export const ExpandableSubrowsSingle: Story = {
             <Table
                 columns={columns}
                 data={data}
-                expandableRows='single'
+                expandableRows="single"
             />
         );
     },
@@ -882,7 +885,7 @@ export const ExpandableSubContent: Story = {
             <Table
                 columns={columns}
                 data={data}
-                expandableRows='single'
+                expandableRows="single"
             />
         );
     },
@@ -944,7 +947,7 @@ export const Grouping: Story = {
                 {...args as TableProps<GroupingData>}
                 columns={columns}
                 data={data}
-                rowSelectionMode='multiple'
+                rowSelectionMode="multiple"
             />
         );
     },
@@ -1654,7 +1657,7 @@ export const Optimization: Story = {
                     don&apos;t have to recreate the columns object everytime the dependencies changes.
                 </p>
                 <p>
-                    <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                    <Button type="button" buttonType="secondary" onClick={() => setAllowEditing(!allowEditing)}>
                         Toggle Editable
                     </Button>
                 </p>
