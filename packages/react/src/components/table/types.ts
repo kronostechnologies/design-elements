@@ -2,7 +2,6 @@ import { Cell, Column, ColumnDef, Header } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
 export type TableData<TData> = TData & {
-    id?: number | string;
     error?: boolean;
     subRows?: TableData<TData>[];
     subContent?: React.ReactNode;

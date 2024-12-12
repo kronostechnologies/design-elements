@@ -41,7 +41,7 @@ const tabs: Tab[] = [
         title: 'Contact',
         panelContent: (
             <StyledDiv>
-                <Table columns={contactTableColumns} data={contactTableData} />
+                <Table<Data> columns={contactTableColumns} data={contactTableData} dataKey="column1" />
             </StyledDiv>
         ),
     },

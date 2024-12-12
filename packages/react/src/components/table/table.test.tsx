@@ -5,29 +5,34 @@ import { Table, TableProps } from './table';
 import { TableColumn } from './types';
 
 interface TestData {
+    id: string;
     column1: string;
     column2: string;
     error?: boolean;
 }
 
 interface TestData3Columns {
+    id: string;
     column1: string;
     column2: string;
     column3: string;
 }
 
-type TablePropsLite = Omit<TableProps<TestData>, 'columns' | 'data'>;
+type TablePropsLite = Omit<TableProps<TestData>, 'columns' | 'data' | 'dataKey'>;
 
 const data: TestData[] = [
     {
+        id: '0',
         column1: 'Hello',
         column2: 'World',
     },
     {
+        id: '1',
         column1: 'Hello',
         column2: 'Planet',
     },
     {
+        id: '2',
         column1: 'Hello',
         column2: 'Galaxy',
     },
@@ -39,7 +44,7 @@ function renderTable(
     props?: TablePropsLite,
 ): cheerio.Cheerio {
     return renderWithProviders(
-        <Table columns={columnsArray} data={data} {...props} />,
+        <Table columns={columnsArray} data={data} dataKey="id" {...props} />,
         currentDevice,
     );
 }
@@ -138,15 +143,18 @@ const columnsSticky: TableColumn<TestData3Columns>[] = [
 
 const errorData: TestData[] = [
     {
+        id: '0',
         column1: 'Hello',
         column2: 'World',
         error: true,
     },
     {
+        id: '1',
         column1: 'Hello',
         column2: 'World',
     },
     {
+        id: '2',
         column1: 'Hello',
         column2: 'World',
         error: true,
@@ -155,16 +163,19 @@ const errorData: TestData[] = [
 
 const stickyColumnsData: TestData3Columns[] = [
     {
+        id: '0',
         column1: 'Hello',
         column2: 'Big',
         column3: 'World',
     },
     {
+        id: '1',
         column1: 'Hello',
         column2: 'Big',
         column3: 'World',
     },
     {
+        id: '2',
         column1: 'Hello',
         column2: 'Big',
         column3: 'World',
@@ -174,9 +185,10 @@ const stickyColumnsData: TestData3Columns[] = [
 describe('Table', () => {
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
         const wrapper = mountWithProviders(
-            <Table
+            <Table<TestData>
                 columns={columnsSorted}
                 data={data}
+                dataKey="id"
                 defaultSort={{ id: 'column1', desc: false }}
             />,
         );
@@ -187,10 +199,11 @@ describe('Table', () => {
     test('onRowClick callback is called when a row is clicked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onRowClick={callback}
             />,
         );
@@ -204,10 +217,11 @@ describe('Table', () => {
         const callback = jest.fn();
 
         mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -219,10 +233,11 @@ describe('Table', () => {
     test('onSelectedRowsChange callback is called when row-checkbox is checked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -235,10 +250,11 @@ describe('Table', () => {
     test('onSelectedRowsChange callback is called with all rows when row-checkbox-all is checked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -303,34 +319,39 @@ describe('Table', () => {
     });
 
     test('has error rows styles', () => {
-        const tree = renderWithProviders(<Table columns={columns} data={errorData} />);
+        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} dataKey="id" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has selectable rows styles', () => {
-        const tree = renderWithProviders(<Table rowSelectionMode="multiple" columns={columns} data={data} />);
+        const tree = renderWithProviders(
+            <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} dataKey="id" />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky header styles', () => {
-        const tree = renderWithProviders(<Table stickyHeader columns={columns} data={data} />);
+        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} dataKey="id" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky column styles', () => {
-        const tree = renderWithProviders(<Table columns={columnsSticky} data={stickyColumnsData} />);
+        const tree = renderWithProviders(
+            <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} dataKey="id" />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has aria-label on header columns', () => {
         const tree = renderWithProviders(
-            <Table
+            <Table<TestData>
                 columns={columnsWithHeaderAriaLabel}
                 data={data}
+                dataKey="id"
             />,
         );
 
@@ -342,6 +363,7 @@ describe('Table', () => {
             <Table<TestData>
                 columns={columnsWithHeadersGrouped}
                 data={data}
+                dataKey="id"
             />,
         );
 
@@ -351,10 +373,11 @@ describe('Table', () => {
     test('has radio buttons in single selection mode', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -367,10 +390,11 @@ describe('Table', () => {
     test('has single selection when selecting other row in single selection mode', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -393,14 +417,17 @@ describe('Table', () => {
     test('should select only one row when multiple selected rows are provided but selectionMode is single', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 selectedRows={[data[0], data[1]]}
                 onSelectedRowsChange={callback}
             />,
         );
+
+        console.info('wrapper', wrapper.debug());
 
         expect(getByTestId(wrapper, 'row-radiobutton-0')
             .find('input')
@@ -413,10 +440,11 @@ describe('Table', () => {
     test('should select multiple rows when selectionMode is multiple', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <Table
+            <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
+                dataKey="id"
                 selectedRows={[data[0], data[1]]}
                 onSelectedRowsChange={callback}
             />,

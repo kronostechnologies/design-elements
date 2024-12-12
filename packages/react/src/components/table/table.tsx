@@ -25,7 +25,7 @@ import { RadioInput } from '../radio-button/radio-input';
 import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
 import { StyledTableRow, TableRow } from './table-row';
-import { TableColumn, TableData } from './types';
+import { type TableColumn, type TableData } from './types';
 import { createRowSelectionStateFromSelectedRows, isSameRowSelectionState } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
@@ -283,10 +283,8 @@ function getSelectionColumn<T extends object>(
     return column;
 }
 
-function getExpandColumn<T extends object>(
-    t: TFunction<'translation'>,
-): TableColumn<T> {
-    const column: TableColumn<T> = {
+function getExpandColumn<T extends object>(t: TFunction<'translation'>): TableColumn<T> {
+    return {
         id: UtilityColumnId.Expand,
         className: utilColumnClassName,
         cell: ({ row }) => {
@@ -310,9 +308,7 @@ function getExpandColumn<T extends object>(
                 />
             );
         },
-    };
-
-    return column;
+    } satisfies TableColumn<T>;
 }
 
 function getNumbersColumn<T extends object>(): TableColumn<T> {
@@ -328,6 +324,7 @@ function getNumbersColumn<T extends object>(): TableColumn<T> {
 export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
+    dataKey: keyof T;
     defaultSort?: ColumnSort;
     columns: TableColumn<T>[];
     expandableRows?: 'single' | 'multiple';
@@ -365,6 +362,7 @@ export const Table = <T extends object>({
     ariaLabelledByColumnId,
     className,
     data,
+    dataKey,
     defaultSort,
     columns: providedColumns,
     expandableRows,
@@ -421,6 +419,8 @@ export const Table = <T extends object>({
         expanded,
     ]);
 
+    const getRowId = (row: T): string => `${row[dataKey]}`;
+
     const tableOptions: TableOptions<T> = {
         data,
         columns,
@@ -432,6 +432,7 @@ export const Table = <T extends object>({
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
+        getRowId,
         getSortedRowModel: getSortedRowModel(),
         getSubRows: (originalRow) => (originalRow as TableData<T>).subRows,
         getExpandedRowModel: getExpandedRowModel(),
@@ -470,8 +471,11 @@ export const Table = <T extends object>({
     }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, table]);
 
     if (selectedRows !== undefined && previousSelectedRows !== selectedRows && rowSelectionMode !== undefined) {
-        const allRowsAndSubRows = table.getRowModel().flatRows;
-        const newSelection = createRowSelectionStateFromSelectedRows(allRowsAndSubRows, selectedRows, rowSelectionMode);
+        const newSelection: RowSelectionState = createRowSelectionStateFromSelectedRows(
+            getRowId,
+            selectedRows,
+            rowSelectionMode,
+        );
 
         if (!isSameRowSelectionState(currentRowSelection, newSelection)) {
             setRowSelection(newSelection);
