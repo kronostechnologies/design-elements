@@ -1,4 +1,25 @@
-import { Column } from '@tanstack/react-table';
+import { type Column, type RowSelectionState } from '@tanstack/react-table';
+
+export function isSameRowSelectionState(obj1: RowSelectionState, obj2: RowSelectionState): boolean {
+    if (obj1 === obj2) {
+        return true;
+    }
+
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+
+    for (let i = 0; i < keys1.length; i++) {
+        const key = keys1[i];
+        if (obj1[key] !== obj2[key]) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 export function calculateStickyColumns(
     stickyColumns: boolean[],
@@ -30,40 +51,6 @@ export function calculateStickyHeader(
         headerCell.style.setProperty('top', '0px');
         headerCell.style.setProperty('z-index', stickyColumns[index] ? '5' : '4');
     });
-}
-
-export function calculateStickyFooter(
-    stickyColumns: boolean[],
-    footerCells: NodeListOf<HTMLTableCellElement>,
-): void {
-    Array.from(footerCells).forEach((footerCell, index) => {
-        footerCell.style.setProperty('bottom', '0px');
-        footerCell.style.setProperty('z-index', stickyColumns[index] ? '5' : '4');
-    });
-}
-
-export function calculateStickyPosition(
-    stickyColumns: boolean[],
-    stickyHeader: boolean,
-    stickyFooter: boolean,
-    tableRef: React.RefObject<HTMLTableElement>,
-): void {
-    if (tableRef.current === null) {
-        return;
-    }
-    const headerCells = tableRef.current.querySelectorAll('th');
-    const rows = tableRef.current.querySelectorAll<HTMLTableRowElement>('tbody > tr');
-    const footerCells = tableRef.current.querySelector('tfoot')?.querySelectorAll('td');
-
-    calculateStickyColumns(stickyColumns, headerCells, rows);
-
-    if (stickyHeader) {
-        calculateStickyHeader(stickyColumns, headerCells);
-    }
-
-    if (stickyFooter && footerCells !== null && footerCells !== undefined) {
-        calculateStickyFooter(stickyColumns, footerCells);
-    }
 }
 
 export function isAGroupColumn<TData, TValue>(column: Column<TData, TValue>): boolean {

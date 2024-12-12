@@ -17,7 +17,6 @@ import { Fragment, ReactElement, useEffect, useMemo, useRef, useState } from 're
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { devConsole } from '../../utils/dev-console';
-import { isEqual } from '../../utils/object';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconButton } from '../buttons';
 import { Checkbox } from '../checkbox/checkbox';
@@ -27,6 +26,7 @@ import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
 import { StyledTableRow, TableRow } from './table-row';
 import { TableColumn, TableData } from './types';
+import { isSameRowSelectionState } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -479,7 +479,7 @@ export const Table = <T extends object>({
             return acc;
         }, {} satisfies RowSelectionState);
 
-        if (!isEqual(currentRowSelection, newSelection)) {
+        if (!isSameRowSelectionState(currentRowSelection, newSelection)) {
             setRowSelection(newSelection);
         }
         setPreviousSelectedRows(selectedRows);
