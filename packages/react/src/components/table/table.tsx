@@ -224,7 +224,7 @@ function getSelectionColumn<T extends object>(
                     delete updatedSelection[row.id];
                 }
 
-                // Select parent when all children was selected, or deselect parent when any child was deselected
+                // Select parent when all children were selected, or deselect parent when any child was deselected
                 const allSelectedIds = Object.keys(updatedSelection);
                 allSelectedIds.forEach((key) => {
                     const parentRow = table.getRow(key).getParentRow();
