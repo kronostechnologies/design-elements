@@ -389,4 +389,44 @@ describe('Table', () => {
             .find('input')
             .prop('checked')).toBe(true);
     });
+
+    test('should select only one row when multiple selected rows are provided but selectionMode is single', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table
+                rowSelectionMode="single"
+                columns={columns}
+                data={data}
+                selectedRows={[data[0], data[1]]}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'row-radiobutton-0')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-radiobutton-1')
+            .find('input')
+            .prop('checked')).toBe(false);
+    });
+
+    test('should select multiple rows when selectionMode is multiple', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={data}
+                selectedRows={[data[0], data[1]]}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'row-checkbox-0')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-checkbox-1')
+            .find('input')
+            .prop('checked')).toBe(true);
+    });
 });

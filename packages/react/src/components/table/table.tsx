@@ -26,7 +26,7 @@ import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
 import { StyledTableRow, TableRow } from './table-row';
 import { TableColumn, TableData } from './types';
-import { isSameRowSelectionState } from './utils/table-utils';
+import { createRowSelectionStateFromSelectedRows, isSameRowSelectionState } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -387,7 +387,7 @@ export const Table = <T extends object>({
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
-    const [previousSelectedRows, setPreviousSelectedRows] = useState<T[] | undefined>(selectedRows);
+    const [previousSelectedRows, setPreviousSelectedRows] = useState<T[] | undefined>();
 
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
@@ -470,14 +470,8 @@ export const Table = <T extends object>({
     }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, table]);
 
     if (selectedRows !== undefined && previousSelectedRows !== selectedRows && rowSelectionMode !== undefined) {
-        const selectedRowIds = table.getRowModel().flatRows
-            .filter((row) => selectedRows.includes(row.original))
-            .map((row) => row.id);
-
-        const newSelection: RowSelectionState = selectedRowIds.reduce((acc: RowSelectionState, rowId) => {
-            acc[rowId] = true;
-            return acc;
-        }, {} satisfies RowSelectionState);
+        const allRowsAndSubRows = table.getRowModel().flatRows;
+        const newSelection = createRowSelectionStateFromSelectedRows(allRowsAndSubRows, selectedRows, rowSelectionMode);
 
         if (!isSameRowSelectionState(currentRowSelection, newSelection)) {
             setRowSelection(newSelection);

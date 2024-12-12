@@ -1,4 +1,4 @@
-import { type Column, type RowSelectionState } from '@tanstack/react-table';
+import { type Column, type Row, type RowSelectionState } from '@tanstack/react-table';
 
 export function isSameRowSelectionState(obj1: RowSelectionState, obj2: RowSelectionState): boolean {
     if (obj1 === obj2) {
@@ -19,6 +19,25 @@ export function isSameRowSelectionState(obj1: RowSelectionState, obj2: RowSelect
     }
 
     return true;
+}
+
+export function createRowSelectionStateFromSelectedRows<T>(
+    rows: Row<T>[],
+    selectedRows: T[],
+    rowSelectionMode: 'single' | 'multiple',
+): RowSelectionState {
+    let selectedRowIds = rows
+        .filter((row) => selectedRows.includes(row.original))
+        .map((row) => row.id);
+
+    if (rowSelectionMode === 'single' && selectedRowIds.length > 1) {
+        selectedRowIds = [selectedRowIds[0]];
+    }
+
+    return selectedRowIds.reduce((acc: RowSelectionState, rowId) => {
+        acc[rowId] = true;
+        return acc;
+    }, {} satisfies RowSelectionState);
 }
 
 export function calculateStickyColumns(
