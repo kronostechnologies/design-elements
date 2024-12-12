@@ -343,11 +343,11 @@ export interface TableProps<T extends object> {
      */
     rowSize?: RowSize;
     rowSelectionMode?: RowSelectionMode;
+    selectedRows?: T[];
     /**
      * Adds striped rows
      * @default false
      */
-    selectedRows?: T[];
     striped?: boolean;
     className?: string;
     stickyHeader?: boolean;
