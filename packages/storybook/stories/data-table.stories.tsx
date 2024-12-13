@@ -69,7 +69,7 @@ export const Default: Story = {
                 {...args as TableProps<Data>}
                 columns={columns}
                 data={data}
-                dataKey="column1"
+                rowIdField="column1"
             />
         );
     },
@@ -77,7 +77,7 @@ export const Default: Story = {
 
 const StyledTable = styled(
     ({ className, columns, data }) => (
-        <Table<Data> className={className} columns={columns} data={data} dataKey="column1" />
+        <Table<Data> className={className} columns={columns} data={data} rowIdField="column1" />
     ),
 )`
     .column-1 {
@@ -192,7 +192,7 @@ export const WithFooter: Story = {
         ];
 
         return (
-            <Table<FooterData> columns={columns} data={data} dataKey="column1" />
+            <Table<FooterData> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -234,7 +234,7 @@ export const ErrorRows: Story = {
             },
         ];
         return (
-            <Table<Data> columns={columns} data={data} dataKey="column1" />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -274,7 +274,7 @@ export const Striped: Story = {
             },
         ];
         return (
-            <Table<Data> striped columns={columns} data={data} dataKey="column1" />
+            <Table<Data> striped columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -314,7 +314,7 @@ export const RowNumbers: Story = {
             },
         ];
         return (
-            <Table<Data> rowNumbers columns={columns} data={data} dataKey="column1" />
+            <Table<Data> rowNumbers columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -354,7 +354,7 @@ export const SmallRows: Story = {
             },
         ];
         return (
-            <Table<Data> rowSize="small" columns={columns} data={data} dataKey="column1" />
+            <Table<Data> rowSize="small" columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -394,7 +394,7 @@ export const LargeRows: Story = {
             },
         ];
         return (
-            <Table<Data> rowSize="large" columns={columns} data={data} dataKey="column1" />
+            <Table<Data> rowSize="large" columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -442,7 +442,7 @@ export const RowClickCallback: Story = {
             <Table<DataWithHref>
                 columns={columns}
                 data={data}
-                dataKey="column1"
+                rowIdField="column1"
                 onRowClick={(row) => {
                     console.info('row: ', row);
                     console.info('href: ', (row.original as DataWithHref).href);
@@ -485,7 +485,7 @@ export const CustomTextAlignment: Story = {
         ];
 
         return (
-            <Table<Data> columns={columns} data={data} dataKey="column1" />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -553,7 +553,7 @@ export const CustomColumns: Story = {
         ];
 
         return (
-            <Table<ComplexData> columns={columns} data={data} dataKey="id" />
+            <Table<ComplexData> columns={columns} data={data} rowIdField="id" />
         );
     },
 };
@@ -617,7 +617,7 @@ export const SortableRows: Story = {
             <Table<SortableData>
                 columns={columns}
                 data={data}
-                dataKey="column1"
+                rowIdField="column1"
                 defaultSort={{ id: 'column2', desc: false }}
             />
         );
@@ -664,7 +664,7 @@ export const MultipleSelectableRows: Story = {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="column1"
+                rowIdField="column1"
                 onSelectedRowsChange={console.info}
             />
         );
@@ -716,7 +716,7 @@ export const MultipleSelectableExpandableSubRows: Story = {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 selectedRows={selectedRows}
                 onSelectedRowsChange={setSelectedRows}
                 expandChildrenOnRowSelection
@@ -765,7 +765,7 @@ export const SingleSelectableRows: Story = {
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
-                dataKey="column1"
+                rowIdField="column1"
                 onSelectedRowsChange={console.info}
                 ariaLabelledByColumnId="column2"
             />
@@ -813,7 +813,7 @@ export const ExpandableSubrowsMultiple: Story = {
             <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 expandableRows="multiple"
             />
         );
@@ -860,7 +860,7 @@ export const ExpandableSubrowsSingle: Story = {
             <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 expandableRows="single"
             />
         );
@@ -908,7 +908,7 @@ export const ExpandableSubContent: Story = {
             <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 expandableRows="single"
             />
         );
@@ -1229,7 +1229,7 @@ export const Sticky: Story = {
                 <Table<StickyData>
                     columns={columns}
                     data={data}
-                    dataKey="column1"
+                    rowIdField="column1"
                     stickyHeader
                     onRowClick={(row) => console.info('row: ', row)}
                 />
@@ -1332,7 +1332,7 @@ export const StickyFooter: Story = {
                 <Table<StickyHeaderFooterData>
                     columns={columns}
                     data={data}
-                    dataKey="column1"
+                    rowIdField="column1"
                     stickyFooter
                     onRowClick={(row) => console.info('row: ', row)}
                 />
@@ -1428,7 +1428,7 @@ export const StickyHeaderAndFooter: Story = {
                 <Table<StickyHeaderFooterData>
                     columns={columns}
                     data={data}
-                    dataKey="column1"
+                    rowIdField="column1"
                     stickyHeader
                     stickyFooter
                     onRowClick={(row) => console.info('row: ', row)}
@@ -1533,7 +1533,7 @@ export const WithBackgroundColor: Story = {
                     stickyFooter
                     columns={columns}
                     data={data}
-                    dataKey="column1"
+                    rowIdField="column1"
                     onSelectedRowsChange={console.info}
                 />
             </ScrollableWrap>
@@ -1574,7 +1574,7 @@ export const HeaderAriaLabel: Story = {
             },
         ];
         return (
-            <Table<Data> columns={columns} data={data} dataKey="column1" />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -1620,7 +1620,7 @@ export const GroupedHeaders: Story = {
         ];
 
         return (
-            <Table<Data> columns={columns} data={data} dataKey="column1" />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -1702,7 +1702,7 @@ export const Optimization: Story = {
                 <Table<OptimizationData>
                     columns={columns}
                     data={data}
-                    dataKey="id"
+                    rowIdField="id"
                 />
             </>
         );
@@ -1774,7 +1774,7 @@ export const TableWithPagination: Story = {
                 <Table<TablePaginationData>
                     columns={columns}
                     data={currentPageData}
-                    dataKey="id"
+                    rowIdField="id"
                     defaultSort={{ id: 'id', desc: false }}
                     onSort={(sort) => {
                         if (sort) {

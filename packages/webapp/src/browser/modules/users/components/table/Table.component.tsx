@@ -95,7 +95,7 @@ export const Table: FunctionComponent = () => {
                 rowSize="small"
                 columns={columns}
                 data={table.currentPageUsers}
-                dataKey="id"
+                rowIdField="id"
                 manualSort
                 onSort={(sort) => dispatch({
                     type: UsersAction.UPDATE_TABLE,

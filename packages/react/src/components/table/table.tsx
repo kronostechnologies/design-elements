@@ -312,23 +312,24 @@ function getExpandColumn<T extends object>(t: TFunction<'translation'>): TableCo
 }
 
 function getNumbersColumn<T extends object>(): TableColumn<T> {
-    const column: TableColumn<T> = {
+    return {
         id: UtilityColumnId.Numbers,
         className: utilColumnClassName,
         cell: ({ row }) => <RowNumber>{row.index + 1}</RowNumber>,
-    };
-
-    return column;
+    } satisfies TableColumn<T>;
 }
 
 export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
-    dataKey: keyof T;
     defaultSort?: ColumnSort;
     columns: TableColumn<T>[];
     expandableRows?: 'single' | 'multiple';
     expandChildrenOnRowSelection?: boolean;
+    /**
+     * Field name that will be used to generate the unique ID of each row
+     */
+    rowIdField: keyof T;
     /**
      * Adds row numbers
      * @default false
@@ -362,7 +363,7 @@ export const Table = <T extends object>({
     ariaLabelledByColumnId,
     className,
     data,
-    dataKey,
+    rowIdField,
     defaultSort,
     columns: providedColumns,
     expandableRows,
@@ -419,7 +420,7 @@ export const Table = <T extends object>({
         expanded,
     ]);
 
-    const getRowId = (row: T): string => `${row[dataKey]}`;
+    const getRowId = (row: T): string => `${row[rowIdField]}`;
 
     const tableOptions: TableOptions<T> = {
         data,

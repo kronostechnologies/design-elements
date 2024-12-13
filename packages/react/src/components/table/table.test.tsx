@@ -18,7 +18,7 @@ interface TestData3Columns {
     column3: string;
 }
 
-type TablePropsLite = Omit<TableProps<TestData>, 'columns' | 'data' | 'dataKey'>;
+type TablePropsLite = Omit<TableProps<TestData>, 'columns' | 'data' | 'rowIdField'>;
 
 const data: TestData[] = [
     {
@@ -44,7 +44,7 @@ function renderTable(
     props?: TablePropsLite,
 ): cheerio.Cheerio {
     return renderWithProviders(
-        <Table columns={columnsArray} data={data} dataKey="id" {...props} />,
+        <Table columns={columnsArray} data={data} rowIdField="id" {...props} />,
         currentDevice,
     );
 }
@@ -188,7 +188,7 @@ describe('Table', () => {
             <Table<TestData>
                 columns={columnsSorted}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 defaultSort={{ id: 'column1', desc: false }}
             />,
         );
@@ -203,7 +203,7 @@ describe('Table', () => {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onRowClick={callback}
             />,
         );
@@ -221,7 +221,7 @@ describe('Table', () => {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -237,7 +237,7 @@ describe('Table', () => {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -254,7 +254,7 @@ describe('Table', () => {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -319,28 +319,28 @@ describe('Table', () => {
     });
 
     test('has error rows styles', () => {
-        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} dataKey="id" />);
+        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} rowIdField="id" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has selectable rows styles', () => {
         const tree = renderWithProviders(
-            <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} dataKey="id" />,
+            <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} rowIdField="id" />,
         );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky header styles', () => {
-        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} dataKey="id" />);
+        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has sticky column styles', () => {
         const tree = renderWithProviders(
-            <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} dataKey="id" />,
+            <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} rowIdField="id" />,
         );
 
         expect(tree).toMatchSnapshot();
@@ -351,7 +351,7 @@ describe('Table', () => {
             <Table<TestData>
                 columns={columnsWithHeaderAriaLabel}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
             />,
         );
 
@@ -363,7 +363,7 @@ describe('Table', () => {
             <Table<TestData>
                 columns={columnsWithHeadersGrouped}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
             />,
         );
 
@@ -377,7 +377,7 @@ describe('Table', () => {
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -394,7 +394,7 @@ describe('Table', () => {
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 onSelectedRowsChange={callback}
             />,
         );
@@ -421,7 +421,7 @@ describe('Table', () => {
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 selectedRows={[data[0], data[1]]}
                 onSelectedRowsChange={callback}
             />,
@@ -444,7 +444,7 @@ describe('Table', () => {
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                dataKey="id"
+                rowIdField="id"
                 selectedRows={[data[0], data[1]]}
                 onSelectedRowsChange={callback}
             />,
