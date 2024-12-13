@@ -333,7 +333,9 @@ describe('Table', () => {
     });
 
     test('has sticky header styles', () => {
-        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />);
+        const tree = renderWithProviders(
+            <Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

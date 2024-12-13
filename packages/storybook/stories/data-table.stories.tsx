@@ -940,7 +940,7 @@ export const Grouping: Story = {
 
         const data: TableData<GroupingData>[] = [
             {
-                id: '',
+                id: '0',
                 name: 'Group A',
                 subRows: [
                     { id: '1.A', name: 'AAA-1' },
@@ -948,7 +948,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '',
+                id: '1',
                 name: 'Group C',
                 subRows: [
                     { id: '3.A', name: 'CCC-1' },
@@ -956,7 +956,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '',
+                id: '2',
                 name: 'Group B',
                 subRows: [
                     { id: '2.A', name: 'BBB-1' },
@@ -966,11 +966,12 @@ export const Grouping: Story = {
         ];
 
         return (
-            <Table
+            <Table<GroupingData>
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...args as TableProps<GroupingData>}
                 columns={columns}
                 data={data}
+                rowIdField="id"
                 rowSelectionMode="multiple"
             />
         );
