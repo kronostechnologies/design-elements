@@ -25,7 +25,7 @@ const TableContainer = styled.div`
     flex-shrink: 0;
     gap: 8px;
     padding: 16px 32px;
-    
+
     td:nth-child(4) {
         padding-left: 0;
         padding-right: 0;
@@ -91,10 +91,11 @@ export const Table: FunctionComponent = () => {
 
     return (
         <TableContainer>
-            <DataTable
+            <DataTable<User>
                 rowSize="small"
                 columns={columns}
                 data={table.currentPageUsers}
+                dataKey="id"
                 manualSort
                 onSort={(sort) => dispatch({
                     type: UsersAction.UPDATE_TABLE,
