@@ -2,7 +2,7 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Table, TableProps } from './table';
-import { TableColumn } from './types';
+import { TableColumn, TableData } from './types';
 
 interface TestData {
     id: string;
@@ -213,8 +213,9 @@ describe('Table', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onSelectedRowsChange callback is called on first render', () => {
-        const callback = jest.fn();
+    test('onSelectedRows callbacks are called on first render', () => {
+        const onSelectedRowIdsChange = jest.fn();
+        const onSelectedRowsChange = jest.fn();
 
         mountWithTheme(
             <Table<TestData>
@@ -222,46 +223,55 @@ describe('Table', () => {
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                onSelectedRowsChange={callback}
+                onSelectedRowIdsChange={onSelectedRowIdsChange}
+                onSelectedRowsChange={onSelectedRowsChange}
             />,
         );
 
-        expect(callback).toHaveBeenCalledTimes(1);
-        expect(callback).toHaveBeenCalledWith([]);
+        expect(onSelectedRowIdsChange).toHaveBeenCalledTimes(1);
+        expect(onSelectedRowIdsChange).toHaveBeenCalledWith([]);
+        expect(onSelectedRowsChange).toHaveBeenCalledTimes(1);
+        expect(onSelectedRowsChange).toHaveBeenCalledWith([]);
     });
 
-    test('onSelectedRowsChange callback is called when row-checkbox is checked', () => {
-        const callback = jest.fn();
+    test('onSelectedRows callbacks are called when row-checkbox is checked', () => {
+        const onSelectedRowIdsChange = jest.fn();
+        const onSelectedRowsChange = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                onSelectedRowsChange={callback}
+                onSelectedRowIdsChange={onSelectedRowIdsChange}
+                onSelectedRowsChange={onSelectedRowsChange}
             />,
         );
 
         getByTestId(wrapper, 'row-checkbox-0').find('input').simulate('change', { target: { checked: true } });
 
-        expect(callback).nthCalledWith(2, [data[0]]);
+        expect(onSelectedRowIdsChange).nthCalledWith(2, [data[0].id]);
+        expect(onSelectedRowsChange).nthCalledWith(2, [data[0]]);
     });
 
-    test('onSelectedRowsChange callback is called with all rows when row-checkbox-all is checked', () => {
-        const callback = jest.fn();
+    test('onSelectedRows callbacks are called with all rows when row-checkbox-all is checked', () => {
+        const onSelectedRowIdsChange = jest.fn();
+        const onSelectedRowsChange = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                onSelectedRowsChange={callback}
+                onSelectedRowIdsChange={onSelectedRowIdsChange}
+                onSelectedRowsChange={onSelectedRowsChange}
             />,
         );
 
         getByTestId(wrapper, 'row-checkbox-all').find('input').simulate('change', { target: { checked: true } });
 
-        expect(callback).nthCalledWith(2, data);
+        expect(onSelectedRowIdsChange).nthCalledWith(2, data.map((row) => row.id));
+        expect(onSelectedRowsChange).nthCalledWith(2, data);
     });
 
     test('has desktop styles', () => {
@@ -373,14 +383,12 @@ describe('Table', () => {
     });
 
     test('has radio buttons in single selection mode', () => {
-        const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                onSelectedRowsChange={callback}
             />,
         );
 
@@ -390,14 +398,12 @@ describe('Table', () => {
     });
 
     test('has single selection when selecting other row in single selection mode', () => {
-        const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                onSelectedRowsChange={callback}
             />,
         );
 
@@ -417,19 +423,15 @@ describe('Table', () => {
     });
 
     test('should select only one row when multiple selected rows are provided but selectionMode is single', () => {
-        const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                selectedRows={[data[0], data[1]]}
-                onSelectedRowsChange={callback}
+                selectedRowIds={[data[0].id, data[1].id]}
             />,
         );
-
-        console.info('wrapper', wrapper.debug());
 
         expect(getByTestId(wrapper, 'row-radiobutton-0')
             .find('input')
@@ -440,15 +442,13 @@ describe('Table', () => {
     });
 
     test('should select multiple rows when selectionMode is multiple', () => {
-        const callback = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                selectedRows={[data[0], data[1]]}
-                onSelectedRowsChange={callback}
+                selectedRowIds={[data[0].id, data[1].id]}
             />,
         );
 
@@ -456,6 +456,106 @@ describe('Table', () => {
             .find('input')
             .prop('checked')).toBe(true);
         expect(getByTestId(wrapper, 'row-checkbox-1')
+            .find('input')
+            .prop('checked')).toBe(true);
+    });
+
+    test('should select all sub rows when selection parent row', async () => {
+        const onSelectedRowIdsChange = jest.fn();
+        const dataWithSubrows: TableData<TestData>[] = [
+            {
+                id: '0',
+                column1: 'Hello',
+                column2: 'World',
+                subRows: [
+                    {
+                        id: '1',
+                        column1: 'Hello',
+                        column2: 'Planet',
+                    },
+                    {
+                        id: '2',
+                        column1: 'Hello',
+                        column2: 'Galaxy',
+                    },
+                ],
+            },
+        ];
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={dataWithSubrows}
+                rowIdField="id"
+                onSelectedRowIdsChange={onSelectedRowIdsChange}
+                expandChildrenOnRowSelection
+            />,
+        );
+
+        getByTestId(wrapper, 'row-checkbox-0')
+            .find('input')
+            .simulate('change', { target: { checked: true } });
+
+        expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['0', '1', '2']);
+        expect(getByTestId(wrapper, 'row-checkbox-0')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-checkbox-1')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-checkbox-2')
+            .find('input')
+            .prop('checked')).toBe(true);
+    });
+
+    test('should exclude group row from selectedRows callback', async () => {
+        const onSelectedRowIdsChange = jest.fn();
+        const onSelectedRowChange = jest.fn();
+        const dataWithSubRows: TableData<TestData>[] = [
+            {
+                id: '0',
+                column1: 'Hello',
+                column2: 'World',
+                subRows: [
+                    {
+                        id: '1',
+                        column1: 'Hello',
+                        column2: 'Planet',
+                    },
+                    {
+                        id: '2',
+                        column1: 'Hello',
+                        column2: 'Galaxy',
+                    },
+                ],
+            },
+        ];
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={dataWithSubRows}
+                rowIdField="id"
+                excludeGroupsFromSelection
+                onSelectedRowIdsChange={onSelectedRowIdsChange}
+                onSelectedRowsChange={onSelectedRowChange}
+                expandChildrenOnRowSelection
+            />,
+        );
+
+        getByTestId(wrapper, 'row-checkbox-0')
+            .find('input')
+            .simulate('change', { target: { checked: true } });
+
+        expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['1', '2']);
+        expect(onSelectedRowChange).toHaveBeenLastCalledWith(dataWithSubRows[0].subRows);
+        expect(getByTestId(wrapper, 'row-checkbox-0')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-checkbox-1')
+            .find('input')
+            .prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'row-checkbox-2')
             .find('input')
             .prop('checked')).toBe(true);
     });

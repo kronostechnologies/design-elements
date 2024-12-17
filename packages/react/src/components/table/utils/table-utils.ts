@@ -1,4 +1,5 @@
 import { type Column, type RowSelectionState } from '@tanstack/react-table';
+import { type TableRowId } from '../table';
 
 export function isSameRowSelectionState(obj1: RowSelectionState, obj2: RowSelectionState): boolean {
     if (obj1 === obj2) {
@@ -21,15 +22,16 @@ export function isSameRowSelectionState(obj1: RowSelectionState, obj2: RowSelect
     return true;
 }
 
-export function createRowSelectionStateFromSelectedRows<T>(
-    getRowId: (row: T) => string,
-    selectedRows: T[],
+export function createRowSelectionStateFromSelectedRows(
+    selectedRowIds: TableRowId[],
     rowSelectionMode: 'single' | 'multiple',
 ): RowSelectionState {
-    let selectedRowIds = selectedRows.map(getRowId);
     if (rowSelectionMode === 'single' && selectedRowIds.length > 1) {
-        selectedRowIds = [selectedRowIds[0]];
+        return {
+            [selectedRowIds[0]]: true,
+        } satisfies RowSelectionState;
     }
+
     return selectedRowIds.reduce((acc: RowSelectionState, rowId) => {
         acc[rowId] = true;
         return acc;

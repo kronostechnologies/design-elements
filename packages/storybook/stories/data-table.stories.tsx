@@ -1,15 +1,16 @@
-import { ReactElement, useMemo, useRef, useState } from 'react';
 import {
     Button,
     Pagination,
     Table,
-    TableProps,
-    TableColumn,
-    TableData,
+    type TableColumn,
+    type TableData,
+    type TableProps,
+    type TableRowId,
     TextInput,
     Tooltip,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import { ReactElement, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -496,7 +497,7 @@ interface ComplexData {
         tooltip?: string;
     };
     amount?: string;
-    id: number;
+    id: string;
 }
 
 const CategoryCell = ({ cellValue }: { cellValue: ComplexData['category'] }): ReactElement => {
@@ -526,14 +527,14 @@ export const CustomColumns: Story = {
                     tooltip: 'Money for emergencies',
                 },
                 amount: '2000$',
-                id: 0,
+                id: '0',
             },
             {
                 category: {
                     value: 'Investments',
                 },
                 amount: '12000$',
-                id: 1,
+                id: '1',
             },
         ];
 
@@ -678,7 +679,7 @@ export const MultipleSelectableExpandableSubRows: Story = {
             name: string;
         }
 
-        const [selectedRows, setSelectedRows] = useState<ExpandableData[]>([]);
+        const [selectedRowIds, setSelectedRowIds] = useState<TableRowId[]>([]);
 
         const columns: TableColumn<ExpandableData>[] = [
             {
@@ -717,8 +718,8 @@ export const MultipleSelectableExpandableSubRows: Story = {
                 columns={columns}
                 data={data}
                 rowIdField="id"
-                selectedRows={selectedRows}
-                onSelectedRowsChange={setSelectedRows}
+                selectedRowIds={selectedRowIds}
+                onSelectedRowIdsChange={setSelectedRowIds}
                 expandChildrenOnRowSelection
             />
         );
@@ -1627,7 +1628,7 @@ export const GroupedHeaders: Story = {
 };
 
 interface OptimizationData {
-    id: number;
+    id: string;
     name: string;
     country: string;
 }
@@ -1636,12 +1637,12 @@ export const Optimization: Story = {
     render() {
         const [data, setData] = useState<OptimizationData[]>([
             {
-                id: 1,
+                id: '1',
                 name: 'Jennifer',
                 country: 'Canada',
             },
             {
-                id: 2,
+                id: '2',
                 name: 'William',
                 country: 'USA',
             },
@@ -1711,7 +1712,7 @@ export const Optimization: Story = {
 };
 
 interface TablePaginationData {
-    id: number;
+    id: string;
     age: number;
     country: string;
 }
@@ -1719,7 +1720,7 @@ interface TablePaginationData {
 function makeData(): TableData<TablePaginationData>[] {
     const countries = ['Canada', 'United States', 'France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Japan'];
     return [...Array(35).keys()].map((i) => ({
-        id: i + 1,
+        id: `${i + 1}`,
         age: Math.floor(Math.random() * 90) + 10,
         country: countries[Math.floor(Math.random() * countries.length)],
     }));
