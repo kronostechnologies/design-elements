@@ -1719,7 +1719,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:4.6.2"
     expect: "npm:^29.5.0"
     feather-icons: "npm:^4.29.0"
-    i18next: "npm:^23.0.0"
+    i18next: "npm:^24.0.0"
     jest: "npm:^29.5.0"
     jest-environment-jsdom: "npm:^29.5.0"
     jest-junit: "npm:^16.0.0"
@@ -1803,7 +1803,7 @@ __metadata:
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:4.6.2"
     eslint-plugin-storybook: "npm:0.8.0"
-    i18next: "npm:^23.0.0"
+    i18next: "npm:^24.0.0"
     react: "npm:~17.0.2"
     react-dom: "npm:~17.0.2"
     react-is: "npm:~17.0.2"
@@ -6955,7 +6955,7 @@ __metadata:
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:4.6.2"
     html-webpack-plugin: "npm:5.6.0"
-    i18next: "npm:23.16.0"
+    i18next: "npm:24.1.2"
     i18next-browser-languagedetector: "npm:8.0.0"
     postcss: "npm:8.4.41"
     postcss-styled-syntax: "npm:0.6.4"
@@ -8836,21 +8836,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:23.16.0":
-  version: 23.16.0
-  resolution: "i18next@npm:23.16.0"
+"i18next@npm:24.1.2, i18next@npm:^24.0.0":
+  version: 24.1.2
+  resolution: "i18next@npm:24.1.2"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/17b40d125befec02e2c8069e658ea54d36ee46fab9e05bbeed93bb5ec75fab8bd334139372652d5df491147a124447a8ee1b78ccba726b7d61b1c03e84c7b6c5
-  languageName: node
-  linkType: hard
-
-"i18next@npm:^23.0.0":
-  version: 23.16.6
-  resolution: "i18next@npm:23.16.6"
-  dependencies:
-    "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/c5a001ae8ef1b7d0def558d48bad207df43711fd83c625a82292dd328feb024070d9f17fc6b27074836b8d5cafeeb3f0e6f0ac0d994139548009661e1972c72d
+  peerDependencies:
+    typescript: ^5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/e3fb9f2c839e08b36b44c520440e1bca1c0e16106c00612210094a9ff9bad9b7b94fb92d39763c67138056174a15b228c7de1e690dcbee4c4effc82c93ac1ed8
   languageName: node
   linkType: hard
 
