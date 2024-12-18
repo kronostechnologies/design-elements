@@ -13,7 +13,7 @@ import {
     useReactTable,
 } from '@tanstack/react-table';
 import { TFunction } from 'i18next';
-import { Fragment, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, Fragment, ReactElement, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { devConsole } from '../../utils/dev-console';
@@ -26,7 +26,7 @@ import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
 import { StyledTableRow, TableRow } from './table-row';
 import { type TableColumn, type TableData } from './types';
-import { createRowSelectionStateFromSelectedRows, isSameRowSelectionState } from './utils/table-utils';
+import { createRowSelectionStateFromSelectedRowIds } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -36,7 +36,7 @@ const enum UtilityColumnId {
     Expand = 'expand'
 }
 
-type RowSelectionMode = 'single' | 'multiple';
+export type RowSelectionMode = 'single' | 'multiple';
 
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     switch (rowSize) {
@@ -214,27 +214,41 @@ function getSelectionColumn<T extends object>(
                 checked = row.getIsSelected();
             }
 
-            const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+            const onChange = (event: ChangeEvent<HTMLInputElement>): void => {
                 const isChecked = event.target.checked;
 
-                const updatedSelection = { ...table.getState().rowSelection };
-                if (isChecked) {
-                    updatedSelection[row.id] = true;
-                } else {
-                    delete updatedSelection[row.id];
-                }
+                table.setRowSelection((oldSelection: RowSelectionState) => {
+                    const updatedSelection = { ...oldSelection };
 
-                // Select parent when all children were selected, or deselect parent when any child was deselected
-                const allSelectedIds = Object.keys(updatedSelection);
-                allSelectedIds.forEach((key) => {
-                    const parentRow = table.getRow(key).getParentRow();
-                    if (parentRow && parentRow.subRows.length > 0) {
-                        const allChildrenChecked = parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id));
-                        parentRow.toggleSelected(allChildrenChecked, { selectChildren: false });
+                    if (isChecked) {
+                        updatedSelection[row.id] = true;
+
+                        row.subRows.forEach((sub) => {
+                            updatedSelection[sub.id] = true;
+                        });
+                    } else {
+                        delete updatedSelection[row.id];
+
+                        row.subRows.forEach((sub) => {
+                            delete updatedSelection[sub.id];
+                        });
                     }
-                });
 
-                row.toggleSelected(isChecked);
+                    // Select parent when all children were selected, or deselect parent when any child was deselected
+                    const parentRow = row.getParentRow();
+
+                    if (parentRow && parentRow.subRows.length > 0) {
+                        const allChildrenChecked = parentRow.subRows.every((sub) => updatedSelection[sub.id]);
+
+                        if (allChildrenChecked) {
+                            updatedSelection[parentRow.id] = true;
+                        } else {
+                            delete updatedSelection[parentRow.id];
+                        }
+                    }
+
+                    return updatedSelection;
+                });
 
                 // auto-expand
                 const hasChildren = row.subRows.length > 0;
@@ -261,6 +275,12 @@ function getSelectionColumn<T extends object>(
         const radioBtnName = `row-radiobutton-${uuid()}`;
 
         column.cell = ({ table, row }) => {
+            const onChange = (): void => {
+                table.setRowSelection(() => ({
+                    [row.id]: true,
+                }));
+            };
+
             const radioBtnId = `row-radiobutton-${row.id}`;
             return (
                 <StyledRadioInput
@@ -271,10 +291,7 @@ function getSelectionColumn<T extends object>(
                     checked={row.getIsSelected()}
                     disabled={!row.getCanSelect()}
                     name={radioBtnName}
-                    onChange={() => {
-                        table.toggleAllRowsSelected(false);
-                        row.toggleSelected(true);
-                    }}
+                    onChange={onChange}
                 />
             );
         };
@@ -394,7 +411,15 @@ export const Table = <T extends object>({
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
-    const [previousSelectedRows, setPreviousSelectedRows] = useState<TableRowId[] | undefined>();
+    const [previousSelectedRowIds, setPreviousSelectedRowIds] = useState<TableRowId[]>([]);
+    const tableInstance = useRef<ReturnType<typeof useReactTable<T>>>();
+
+    function hasSelectedIdsChanged(rowIds: TableRowId[]): boolean {
+        return previousSelectedRowIds !== rowIds && (
+            previousSelectedRowIds.length !== rowIds.length
+            || previousSelectedRowIds.some((value) => !rowIds.includes(value))
+        );
+    }
 
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
@@ -428,8 +453,6 @@ export const Table = <T extends object>({
         expanded,
     ]);
 
-    const getRowId = (row: T): TableRowId => row[rowIdField] as TableRowId;
-
     const tableOptions: TableOptions<T> = {
         data,
         columns,
@@ -441,7 +464,7 @@ export const Table = <T extends object>({
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
-        getRowId,
+        getRowId: (row: T): TableRowId => row[rowIdField] as TableRowId,
         getSortedRowModel: getSortedRowModel(),
         getSubRows: (originalRow) => (originalRow as TableData<T>).subRows,
         getExpandedRowModel: getExpandedRowModel(),
@@ -465,41 +488,46 @@ export const Table = <T extends object>({
             setExpanded(newValue);
         },
         enableRowSelection: true,
-        onRowSelectionChange: setRowSelection,
+        onRowSelectionChange: (updater: Updater<RowSelectionState>) => {
+            const newRowSelection = functionalUpdate(updater, rowSelection);
+            const newSelectedRowIds = Object.keys(newRowSelection);
+
+            setRowSelection(newRowSelection);
+            setPreviousSelectedRowIds(newSelectedRowIds);
+
+            const currentTable = tableInstance.current;
+
+            if (currentTable) {
+                const emittedRowIds = newSelectedRowIds.filter(
+                    (rowId) => !excludeGroupsFromSelection || !currentTable.getRow(rowId).subRows.length,
+                );
+
+                onSelectedRowIdsChange?.(emittedRowIds);
+
+                if (onSelectedRowsChange) {
+                    const emittedSelectedRows = emittedRowIds
+                        .map((rowId) => currentTable.getRow(rowId))
+                        .map((row) => row.original);
+
+                    onSelectedRowsChange(emittedSelectedRows);
+                }
+            }
+        },
     };
 
     const table = useReactTable(tableOptions);
+    tableInstance.current = table;
+
     const hasFooter = columns.some((column) => 'footer' in column);
-    const currentRowSelection = table.getState().rowSelection;
 
-    useEffect(() => {
-        if (rowSelectionMode && (onSelectedRowsChange || onSelectedRowIdsChange)) {
-            const newSelectedRows = Object.keys(currentRowSelection)
-                .map((rowId) => table.getRow(rowId))
-                .filter((row) => !excludeGroupsFromSelection || row.subRows.length === 0);
-
-            onSelectedRowIdsChange?.(newSelectedRows.map((row) => row.id));
-            onSelectedRowsChange?.(newSelectedRows.map((row) => row.original));
-        }
-    }, [
-        rowSelectionMode,
-        currentRowSelection,
-        excludeGroupsFromSelection,
-        onSelectedRowsChange,
-        table,
-        onSelectedRowIdsChange,
-    ]);
-
-    if (selectedRowIds !== undefined && previousSelectedRows !== selectedRowIds && rowSelectionMode !== undefined) {
-        const newSelection: RowSelectionState = createRowSelectionStateFromSelectedRows(
+    if (rowSelectionMode !== undefined && selectedRowIds !== undefined && hasSelectedIdsChanged(selectedRowIds)) {
+        const newSelection: RowSelectionState = createRowSelectionStateFromSelectedRowIds(
             selectedRowIds,
             rowSelectionMode,
         );
 
-        if (!isSameRowSelectionState(currentRowSelection, newSelection)) {
-            setRowSelection(newSelection);
-        }
-        setPreviousSelectedRows(selectedRowIds);
+        setRowSelection(newSelection);
+        setPreviousSelectedRowIds(selectedRowIds);
     }
 
     return (

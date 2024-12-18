@@ -213,27 +213,6 @@ describe('Table', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onSelectedRows callbacks are called on first render', () => {
-        const onSelectedRowIdsChange = jest.fn();
-        const onSelectedRowsChange = jest.fn();
-
-        mountWithTheme(
-            <Table<TestData>
-                rowSelectionMode="multiple"
-                columns={columns}
-                data={data}
-                rowIdField="id"
-                onSelectedRowIdsChange={onSelectedRowIdsChange}
-                onSelectedRowsChange={onSelectedRowsChange}
-            />,
-        );
-
-        expect(onSelectedRowIdsChange).toHaveBeenCalledTimes(1);
-        expect(onSelectedRowIdsChange).toHaveBeenCalledWith([]);
-        expect(onSelectedRowsChange).toHaveBeenCalledTimes(1);
-        expect(onSelectedRowsChange).toHaveBeenCalledWith([]);
-    });
-
     test('onSelectedRows callbacks are called when row-checkbox is checked', () => {
         const onSelectedRowIdsChange = jest.fn();
         const onSelectedRowsChange = jest.fn();
@@ -250,8 +229,8 @@ describe('Table', () => {
 
         getByTestId(wrapper, 'row-checkbox-0').find('input').simulate('change', { target: { checked: true } });
 
-        expect(onSelectedRowIdsChange).nthCalledWith(2, [data[0].id]);
-        expect(onSelectedRowsChange).nthCalledWith(2, [data[0]]);
+        expect(onSelectedRowIdsChange).toHaveBeenCalledWith([data[0].id]);
+        expect(onSelectedRowsChange).toHaveBeenCalledWith([data[0]]);
     });
 
     test('onSelectedRows callbacks are called with all rows when row-checkbox-all is checked', () => {
@@ -270,8 +249,8 @@ describe('Table', () => {
 
         getByTestId(wrapper, 'row-checkbox-all').find('input').simulate('change', { target: { checked: true } });
 
-        expect(onSelectedRowIdsChange).nthCalledWith(2, data.map((row) => row.id));
-        expect(onSelectedRowsChange).nthCalledWith(2, data);
+        expect(onSelectedRowIdsChange).toHaveBeenCalledWith(data.map((row) => row.id));
+        expect(onSelectedRowsChange).toHaveBeenCalledWith(data);
     });
 
     test('has desktop styles', () => {
