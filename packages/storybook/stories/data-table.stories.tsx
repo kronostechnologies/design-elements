@@ -1,15 +1,16 @@
-import { ReactElement, useMemo, useRef, useState } from 'react';
 import {
     Button,
     Pagination,
     Table,
-    TableProps,
-    TableColumn,
-    TableData,
+    type TableColumn,
+    type TableData,
+    type TableProps,
+    type TableRowId,
     TextInput,
     Tooltip,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import { ReactElement, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -58,24 +59,27 @@ export const Default: Story = {
                 column3: 'b',
             },
             {
-                column1: 'a',
-                column2: 'a',
-                column3: 'a',
+                column1: 'c',
+                column2: 'c',
+                column3: 'c',
             },
         ];
         return (
-            <Table
+            <Table<Data>
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...args as TableProps<Data>}
                 columns={columns}
                 data={data}
+                rowIdField="column1"
             />
         );
     },
 };
 
 const StyledTable = styled(
-    ({ className, columns, data }) => (<Table<Data> className={className} columns={columns} data={data} />),
+    ({ className, columns, data }) => (
+        <Table<Data> className={className} columns={columns} data={data} rowIdField="column1" />
+    ),
 )`
     .column-1 {
         box-sizing: border-box;
@@ -189,7 +193,7 @@ export const WithFooter: Story = {
         ];
 
         return (
-            <Table columns={columns} data={data} />
+            <Table<FooterData> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -231,7 +235,7 @@ export const ErrorRows: Story = {
             },
         ];
         return (
-            <Table columns={columns} data={data} />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -271,7 +275,7 @@ export const Striped: Story = {
             },
         ];
         return (
-            <Table striped columns={columns} data={data} />
+            <Table<Data> striped columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -311,7 +315,7 @@ export const RowNumbers: Story = {
             },
         ];
         return (
-            <Table rowNumbers columns={columns} data={data} />
+            <Table<Data> rowNumbers columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -351,7 +355,7 @@ export const SmallRows: Story = {
             },
         ];
         return (
-            <Table rowSize="small" columns={columns} data={data} />
+            <Table<Data> rowSize="small" columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -391,7 +395,7 @@ export const LargeRows: Story = {
             },
         ];
         return (
-            <Table rowSize="large" columns={columns} data={data} />
+            <Table<Data> rowSize="large" columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -436,9 +440,10 @@ export const RowClickCallback: Story = {
         ];
 
         return (
-            <Table
+            <Table<DataWithHref>
                 columns={columns}
                 data={data}
+                rowIdField="column1"
                 onRowClick={(row) => {
                     console.info('row: ', row);
                     console.info('href: ', (row.original as DataWithHref).href);
@@ -481,7 +486,7 @@ export const CustomTextAlignment: Story = {
         ];
 
         return (
-            <Table columns={columns} data={data} />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -492,6 +497,7 @@ interface ComplexData {
         tooltip?: string;
     };
     amount?: string;
+    id: string;
 }
 
 const CategoryCell = ({ cellValue }: { cellValue: ComplexData['category'] }): ReactElement => {
@@ -521,12 +527,14 @@ export const CustomColumns: Story = {
                     tooltip: 'Money for emergencies',
                 },
                 amount: '2000$',
+                id: '0',
             },
             {
                 category: {
                     value: 'Investments',
                 },
                 amount: '12000$',
+                id: '1',
             },
         ];
 
@@ -546,7 +554,7 @@ export const CustomColumns: Story = {
         ];
 
         return (
-            <Table columns={columns} data={data} />
+            <Table<ComplexData> columns={columns} data={data} rowIdField="id" />
         );
     },
 };
@@ -607,7 +615,12 @@ export const SortableRows: Story = {
             },
         ];
         return (
-            <Table columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
+            <Table<SortableData>
+                columns={columns}
+                data={data}
+                rowIdField="column1"
+                defaultSort={{ id: 'column2', desc: false }}
+            />
         );
     },
 };
@@ -648,7 +661,13 @@ export const MultipleSelectableRows: Story = {
             },
         ];
         return (
-            <Table rowSelectionMode="multiple" columns={columns} data={data} onSelectedRowsChange={console.info} />
+            <Table<SelectableData>
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={data}
+                rowIdField="column1"
+                onSelectedRowsChange={console.info}
+            />
         );
     },
 };
@@ -659,6 +678,8 @@ export const MultipleSelectableExpandableSubRows: Story = {
             id: string;
             name: string;
         }
+
+        const [selectedRowIds, setSelectedRowIds] = useState<TableRowId[]>([]);
 
         const columns: TableColumn<ExpandableData>[] = [
             {
@@ -689,14 +710,17 @@ export const MultipleSelectableExpandableSubRows: Story = {
                 ],
             },
         ];
+
         return (
-            <Table
+            <Table<ExpandableData>
                 expandableRows="multiple"
                 rowSelectionMode="multiple"
                 columns={columns}
                 data={data}
-                onSelectedRowsChange={console.info}
-                expandChildsOnRowSelection
+                rowIdField="id"
+                selectedRowIds={selectedRowIds}
+                onSelectedRowIdsChange={setSelectedRowIds}
+                expandChildrenOnRowSelection
             />
         );
     },
@@ -742,6 +766,7 @@ export const SingleSelectableRows: Story = {
                 rowSelectionMode="single"
                 columns={columns}
                 data={data}
+                rowIdField="column1"
                 onSelectedRowsChange={console.info}
                 ariaLabelledByColumnId="column2"
             />
@@ -786,10 +811,11 @@ export const ExpandableSubrowsMultiple: Story = {
             },
         ];
         return (
-            <Table
+            <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                expandableRows='multiple'
+                rowIdField="id"
+                expandableRows="multiple"
             />
         );
     },
@@ -832,10 +858,11 @@ export const ExpandableSubrowsSingle: Story = {
             },
         ];
         return (
-            <Table
+            <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                expandableRows='single'
+                rowIdField="id"
+                expandableRows="single"
             />
         );
     },
@@ -879,10 +906,11 @@ export const ExpandableSubContent: Story = {
         ];
 
         return (
-            <Table
+            <Table<ExpandableData>
                 columns={columns}
                 data={data}
-                expandableRows='single'
+                rowIdField="id"
+                expandableRows="single"
             />
         );
     },
@@ -913,7 +941,7 @@ export const Grouping: Story = {
 
         const data: TableData<GroupingData>[] = [
             {
-                id: '',
+                id: '0',
                 name: 'Group A',
                 subRows: [
                     { id: '1.A', name: 'AAA-1' },
@@ -921,7 +949,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '',
+                id: '1',
                 name: 'Group C',
                 subRows: [
                     { id: '3.A', name: 'CCC-1' },
@@ -929,7 +957,7 @@ export const Grouping: Story = {
                 ],
             },
             {
-                id: '',
+                id: '2',
                 name: 'Group B',
                 subRows: [
                     { id: '2.A', name: 'BBB-1' },
@@ -939,12 +967,13 @@ export const Grouping: Story = {
         ];
 
         return (
-            <Table
+            <Table<GroupingData>
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...args as TableProps<GroupingData>}
                 columns={columns}
                 data={data}
-                rowSelectionMode='multiple'
+                rowIdField="id"
+                rowSelectionMode="multiple"
             />
         );
     },
@@ -1199,7 +1228,13 @@ export const Sticky: Story = {
 
         return (
             <ScrollableWrap>
-                <Table columns={columns} data={data} stickyHeader onRowClick={(row) => console.info('row: ', row)} />
+                <Table<StickyData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="column1"
+                    stickyHeader
+                    onRowClick={(row) => console.info('row: ', row)}
+                />
             </ScrollableWrap>
         );
     },
@@ -1296,7 +1331,13 @@ export const StickyFooter: Story = {
 
         return (
             <ScrollableWrap>
-                <Table columns={columns} data={data} stickyFooter onRowClick={(row) => console.info('row: ', row)} />
+                <Table<StickyHeaderFooterData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="column1"
+                    stickyFooter
+                    onRowClick={(row) => console.info('row: ', row)}
+                />
             </ScrollableWrap>
         );
     },
@@ -1386,9 +1427,10 @@ export const StickyHeaderAndFooter: Story = {
 
         return (
             <ScrollableWrap>
-                <Table
+                <Table<StickyHeaderFooterData>
                     columns={columns}
                     data={data}
+                    rowIdField="column1"
                     stickyHeader
                     stickyFooter
                     onRowClick={(row) => console.info('row: ', row)}
@@ -1487,12 +1529,13 @@ export const WithBackgroundColor: Story = {
 
         return (
             <ScrollableWrap>
-                <StyledTableWithBackground
+                <StyledTableWithBackground<StickyHeaderFooterData>
                     rowSelectionMode="multiple"
                     stickyHeader
                     stickyFooter
                     columns={columns}
                     data={data}
+                    rowIdField="column1"
                     onSelectedRowsChange={console.info}
                 />
             </ScrollableWrap>
@@ -1533,7 +1576,7 @@ export const HeaderAriaLabel: Story = {
             },
         ];
         return (
-            <Table columns={columns} data={data} />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
@@ -1579,13 +1622,13 @@ export const GroupedHeaders: Story = {
         ];
 
         return (
-            <Table columns={columns} data={data} />
+            <Table<Data> columns={columns} data={data} rowIdField="column1" />
         );
     },
 };
 
 interface OptimizationData {
-    id: number;
+    id: string;
     name: string;
     country: string;
 }
@@ -1594,12 +1637,12 @@ export const Optimization: Story = {
     render() {
         const [data, setData] = useState<OptimizationData[]>([
             {
-                id: 1,
+                id: '1',
                 name: 'Jennifer',
                 country: 'Canada',
             },
             {
-                id: 2,
+                id: '2',
                 name: 'William',
                 country: 'USA',
             },
@@ -1654,13 +1697,14 @@ export const Optimization: Story = {
                     don&apos;t have to recreate the columns object everytime the dependencies changes.
                 </p>
                 <p>
-                    <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                    <Button type="button" buttonType="secondary" onClick={() => setAllowEditing(!allowEditing)}>
                         Toggle Editable
                     </Button>
                 </p>
-                <Table
+                <Table<OptimizationData>
                     columns={columns}
                     data={data}
+                    rowIdField="id"
                 />
             </>
         );
@@ -1668,7 +1712,7 @@ export const Optimization: Story = {
 };
 
 interface TablePaginationData {
-    id: number;
+    id: string;
     age: number;
     country: string;
 }
@@ -1676,7 +1720,7 @@ interface TablePaginationData {
 function makeData(): TableData<TablePaginationData>[] {
     const countries = ['Canada', 'United States', 'France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Japan'];
     return [...Array(35).keys()].map((i) => ({
-        id: i + 1,
+        id: `${i + 1}`,
         age: Math.floor(Math.random() * 90) + 10,
         country: countries[Math.floor(Math.random() * countries.length)],
     }));
@@ -1729,9 +1773,10 @@ export const TableWithPagination: Story = {
 
         return (
             <>
-                <Table
+                <Table<TablePaginationData>
                     columns={columns}
                     data={currentPageData}
+                    rowIdField="id"
                     defaultSort={{ id: 'id', desc: false }}
                     onSort={(sort) => {
                         if (sort) {

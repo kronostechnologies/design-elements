@@ -1,31 +1,32 @@
-import { ReactElement, useRef, useState, useMemo, useEffect, Fragment } from 'react';
-import styled from 'styled-components';
 import {
-    Row,
-    getCoreRowModel,
-    getSortedRowModel,
-    SortingState,
-    useReactTable,
     ColumnSort,
-    Updater,
-    functionalUpdate,
-    getExpandedRowModel,
     ExpandedState,
-    TableOptions,
+    functionalUpdate,
+    getCoreRowModel,
+    getExpandedRowModel,
+    getSortedRowModel,
+    Row,
     RowSelectionState,
+    SortingState,
+    TableOptions,
+    Updater,
+    useReactTable,
 } from '@tanstack/react-table';
 import { TFunction } from 'i18next';
+import { Fragment, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { IconButton } from '../buttons/icon-button';
-import { StyledTableRow, TableRow } from './table-row';
-import { TableHeader } from './table-header';
-import { TableFooter } from './table-footer';
-import { Checkbox } from '../checkbox/checkbox';
-import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { TableData, TableColumn } from './types';
-import { RadioInput } from '../radio-button/radio-input';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
+import { IconButton } from '../buttons';
+import { Checkbox } from '../checkbox/checkbox';
+import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { RadioInput } from '../radio-button/radio-input';
+import { TableFooter } from './table-footer';
+import { TableHeader } from './table-header';
+import { StyledTableRow, TableRow } from './table-row';
+import { type TableColumn, type TableData } from './types';
+import { createRowSelectionStateFromSelectedRows, isSameRowSelectionState } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -184,7 +185,7 @@ function getSelectionColumn<T extends object>(
     t: TFunction<'translation'>,
     rowSelectionMode: RowSelectionMode | undefined,
     ariaLabelledByColumnId: string | undefined,
-    expandChildsOnRowSelection: boolean | undefined,
+    expandChildrenOnRowSelection: boolean | undefined,
     expanded: ExpandedState,
 ): TableColumn<T> {
     const column: TableColumn<T> = {
@@ -223,28 +224,28 @@ function getSelectionColumn<T extends object>(
                     delete updatedSelection[row.id];
                 }
 
-                // Select parent when all childs was selected, or deselect parent when any child was deselected
+                // Select parent when all children were selected, or deselect parent when any child was deselected
                 const allSelectedIds = Object.keys(updatedSelection);
                 allSelectedIds.forEach((key) => {
                     const parentRow = table.getRow(key).getParentRow();
                     if (parentRow && parentRow.subRows.length > 0) {
-                        const allChildsChecked = parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id));
-                        parentRow.toggleSelected(allChildsChecked, { selectChildren: false });
+                        const allChildrenChecked = parentRow.subRows.every((sub) => allSelectedIds.includes(sub.id));
+                        parentRow.toggleSelected(allChildrenChecked, { selectChildren: false });
                     }
                 });
 
                 row.toggleSelected(isChecked);
 
                 // auto-expand
-                const hasChilds = row.subRows.length > 0;
-                if (expandChildsOnRowSelection && expanded !== ALWAYS_EXPANDED_VALUE && isChecked && hasChilds) {
+                const hasChildren = row.subRows.length > 0;
+                if (expandChildrenOnRowSelection && expanded !== ALWAYS_EXPANDED_VALUE && isChecked && hasChildren) {
                     row.toggleExpanded(true);
                 }
             };
 
             return (
                 <Checkbox
-                    data-testid={`row-checkbox-${row.index}`}
+                    data-testid={`row-checkbox-${row.id}`}
                     checked={checked}
                     disabled={!row.getCanSelect()}
                     indeterminate={indeterminate}
@@ -260,7 +261,7 @@ function getSelectionColumn<T extends object>(
         const radioBtnName = `row-radiobutton-${uuid()}`;
 
         column.cell = ({ table, row }) => {
-            const radioBtnId = `row-radiobutton-${row.index}`;
+            const radioBtnId = `row-radiobutton-${row.id}`;
             return (
                 <StyledRadioInput
                     id={radioBtnId}
@@ -282,10 +283,8 @@ function getSelectionColumn<T extends object>(
     return column;
 }
 
-function getExpandColumn<T extends object>(
-    t: TFunction<'translation'>,
-): TableColumn<T> {
-    const column: TableColumn<T> = {
+function getExpandColumn<T extends object>(t: TFunction<'translation'>): TableColumn<T> {
+    return {
         id: UtilityColumnId.Expand,
         className: utilColumnClassName,
         cell: ({ row }) => {
@@ -309,27 +308,32 @@ function getExpandColumn<T extends object>(
                 />
             );
         },
-    };
-
-    return column;
+    } satisfies TableColumn<T>;
 }
 
 function getNumbersColumn<T extends object>(): TableColumn<T> {
-    const column: TableColumn<T> = {
+    return {
         id: UtilityColumnId.Numbers,
         className: utilColumnClassName,
         cell: ({ row }) => <RowNumber>{row.index + 1}</RowNumber>,
-    };
-
-    return column;
+    } satisfies TableColumn<T>;
 }
+
+export type TableRowId = string;
+type RowIdField<T> = { [K in keyof T]: T[K] extends TableRowId ? K : never }[keyof T]
 
 export interface TableProps<T extends object> {
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
     columns: TableColumn<T>[];
+    excludeGroupsFromSelection?: boolean;
     expandableRows?: 'single' | 'multiple';
+    expandChildrenOnRowSelection?: boolean;
+    /**
+     * Field name that will be used to generate the unique ID of each row
+     */
+    rowIdField: RowIdField<T>;
     /**
      * Adds row numbers
      * @default false
@@ -341,6 +345,7 @@ export interface TableProps<T extends object> {
      */
     rowSize?: RowSize;
     rowSelectionMode?: RowSelectionMode;
+    selectedRowIds?: TableRowId[];
     /**
      * Adds striped rows
      * @default false
@@ -350,19 +355,27 @@ export interface TableProps<T extends object> {
     stickyHeader?: boolean;
     stickyFooter?: boolean;
     manualSort?: boolean;
+
     onRowClick?(row: Row<T>): void;
+
+    onSelectedRowIdsChange?(selectedRows: TableRowId[]): void;
+
     onSelectedRowsChange?(selectedRows: T[]): void;
+
     onSort?(sort: ColumnSort | null): void;
-    expandChildsOnRowSelection?: boolean;
 }
 
 export const Table = <T extends object>({
     ariaLabelledByColumnId,
     className,
     data,
+    rowIdField,
     defaultSort,
     columns: providedColumns,
+    excludeGroupsFromSelection = false,
     expandableRows,
+    expandChildrenOnRowSelection,
+    selectedRowIds,
     stickyHeader = false,
     stickyFooter = false,
     rowNumbers = false,
@@ -371,9 +384,9 @@ export const Table = <T extends object>({
     striped = false,
     manualSort = false,
     onRowClick,
+    onSelectedRowIdsChange,
     onSelectedRowsChange,
     onSort,
-    expandChildsOnRowSelection,
 }: TableProps<T>): ReactElement => {
     const { t } = useTranslation('table');
     const tableRef = useRef<HTMLTableElement>(null);
@@ -381,6 +394,7 @@ export const Table = <T extends object>({
     const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
     const [expanded, setExpanded] = useState<ExpandedState>({});
+    const [previousSelectedRows, setPreviousSelectedRows] = useState<TableRowId[] | undefined>();
 
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
@@ -391,7 +405,7 @@ export const Table = <T extends object>({
                 t,
                 rowSelectionMode,
                 ariaLabelledByColumnId,
-                expandChildsOnRowSelection,
+                expandChildrenOnRowSelection,
                 expanded,
             ));
         }
@@ -410,9 +424,11 @@ export const Table = <T extends object>({
         rowNumbers,
         providedColumns,
         ariaLabelledByColumnId,
-        expandChildsOnRowSelection,
+        expandChildrenOnRowSelection,
         expanded,
     ]);
+
+    const getRowId = (row: T): TableRowId => row[rowIdField] as TableRowId;
 
     const tableOptions: TableOptions<T> = {
         data,
@@ -425,6 +441,7 @@ export const Table = <T extends object>({
         enableMultiSort: false,
         manualSorting: manualSort,
         getCoreRowModel: getCoreRowModel(),
+        getRowId,
         getSortedRowModel: getSortedRowModel(),
         getSubRows: (originalRow) => (originalRow as TableData<T>).subRows,
         getExpandedRowModel: getExpandedRowModel(),
@@ -456,11 +473,34 @@ export const Table = <T extends object>({
     const currentRowSelection = table.getState().rowSelection;
 
     useEffect(() => {
-        if (rowSelectionMode && onSelectedRowsChange) {
-            const selectedRows = Object.keys(currentRowSelection).map((rowId) => table.getRow(rowId).original);
-            onSelectedRowsChange(selectedRows);
+        if (rowSelectionMode && (onSelectedRowsChange || onSelectedRowIdsChange)) {
+            const newSelectedRows = Object.keys(currentRowSelection)
+                .map((rowId) => table.getRow(rowId))
+                .filter((row) => !excludeGroupsFromSelection || row.subRows.length === 0);
+
+            onSelectedRowIdsChange?.(newSelectedRows.map((row) => row.id));
+            onSelectedRowsChange?.(newSelectedRows.map((row) => row.original));
         }
-    }, [rowSelectionMode, currentRowSelection, onSelectedRowsChange, table]);
+    }, [
+        rowSelectionMode,
+        currentRowSelection,
+        excludeGroupsFromSelection,
+        onSelectedRowsChange,
+        table,
+        onSelectedRowIdsChange,
+    ]);
+
+    if (selectedRowIds !== undefined && previousSelectedRows !== selectedRowIds && rowSelectionMode !== undefined) {
+        const newSelection: RowSelectionState = createRowSelectionStateFromSelectedRows(
+            selectedRowIds,
+            rowSelectionMode,
+        );
+
+        if (!isSameRowSelectionState(currentRowSelection, newSelection)) {
+            setRowSelection(newSelection);
+        }
+        setPreviousSelectedRows(selectedRowIds);
+    }
 
     return (
         <StyledTable
