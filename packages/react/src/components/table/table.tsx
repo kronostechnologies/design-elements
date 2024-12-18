@@ -187,6 +187,7 @@ function getSelectionColumn<T extends object>(
     ariaLabelledByColumnId: string | undefined,
     expandChildrenOnRowSelection: boolean | undefined,
     expanded: ExpandedState,
+    hideSelectAll: boolean,
 ): TableColumn<T> {
     const column: TableColumn<T> = {
         id: UtilityColumnId.Selection,
@@ -194,14 +195,17 @@ function getSelectionColumn<T extends object>(
     };
 
     if (rowSelectionMode === 'multiple') {
-        column.header = ({ table }) => (
-            <Checkbox
-                data-testid="row-checkbox-all"
-                checked={table.getIsAllRowsSelected()}
-                indeterminate={table.getIsSomeRowsSelected()}
-                onChange={table.getToggleAllRowsSelectedHandler()}
-            />
-        );
+        if (!hideSelectAll) {
+            column.header = ({ table }) => (
+                <Checkbox
+                    data-testid="row-checkbox-all"
+                    checked={table.getIsAllRowsSelected()}
+                    indeterminate={table.getIsSomeRowsSelected()}
+                    onChange={table.getToggleAllRowsSelectedHandler()}
+                />
+            );
+        }
+
         column.cell = ({ table, row }) => {
             let indeterminate = false;
             let checked = false;
@@ -347,6 +351,7 @@ export interface TableProps<T extends object> {
     excludeGroupsFromSelection?: boolean;
     expandableRows?: 'single' | 'multiple';
     expandChildrenOnRowSelection?: boolean;
+    hideSelectAll?: boolean;
     /**
      * Field name that will be used to generate the unique ID of each row
      */
@@ -392,6 +397,7 @@ export const Table = <T extends object>({
     excludeGroupsFromSelection = false,
     expandableRows,
     expandChildrenOnRowSelection,
+    hideSelectAll = false,
     selectedRowIds,
     stickyHeader = false,
     stickyFooter = false,
@@ -432,6 +438,7 @@ export const Table = <T extends object>({
                 ariaLabelledByColumnId,
                 expandChildrenOnRowSelection,
                 expanded,
+                hideSelectAll,
             ));
         }
         if (expandableRows) {
@@ -451,6 +458,7 @@ export const Table = <T extends object>({
         ariaLabelledByColumnId,
         expandChildrenOnRowSelection,
         expanded,
+        hideSelectAll,
     ]);
 
     const tableOptions: TableOptions<T> = {

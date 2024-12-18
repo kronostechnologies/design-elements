@@ -182,6 +182,8 @@ const stickyColumnsData: TestData3Columns[] = [
     },
 ];
 
+const SELECT_ALL_CHECKBOX_TESTID = 'row-checkbox-all';
+
 describe('Table', () => {
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
         const wrapper = mountWithProviders(
@@ -247,10 +249,25 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'row-checkbox-all').find('input').simulate('change', { target: { checked: true } });
+        getByTestId(wrapper, SELECT_ALL_CHECKBOX_TESTID).find('input')
+            .simulate('change', { target: { checked: true } });
 
         expect(onSelectedRowIdsChange).toHaveBeenCalledWith(data.map((row) => row.id));
         expect(onSelectedRowsChange).toHaveBeenCalledWith(data);
+    });
+
+    test('should hide select all checkbox', () => {
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                rowSelectionMode="multiple"
+                columns={columns}
+                data={data}
+                rowIdField="id"
+                hideSelectAll
+            />,
+        );
+
+        expect(getByTestId(wrapper, SELECT_ALL_CHECKBOX_TESTID).exists()).toBe(false);
     });
 
     test('has desktop styles', () => {
@@ -439,7 +456,7 @@ describe('Table', () => {
             .prop('checked')).toBe(true);
     });
 
-    test('should select all sub rows when selection parent row', async () => {
+    test('should select all sub rows when selection parent row', () => {
         const onSelectedRowIdsChange = jest.fn();
         const dataWithSubrows: TableData<TestData>[] = [
             {
@@ -487,7 +504,7 @@ describe('Table', () => {
             .prop('checked')).toBe(true);
     });
 
-    test('should exclude group row from selectedRows callback', async () => {
+    test('should exclude group row from selectedRows callback', () => {
         const onSelectedRowIdsChange = jest.fn();
         const onSelectedRowChange = jest.fn();
         const dataWithSubRows: TableData<TestData>[] = [
