@@ -721,6 +721,7 @@ export const MultipleSelectableExpandableSubRows: Story = {
                 selectedRowIds={selectedRowIds}
                 onSelectedRowIdsChange={setSelectedRowIds}
                 expandChildrenOnRowSelection
+                hideSelectAll
             />
         );
     },
