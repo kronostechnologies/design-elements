@@ -1774,6 +1774,8 @@ __metadata:
     "@storybook/addon-controls": "npm:^8.1.2"
     "@storybook/addon-docs": "npm:^8.1.2"
     "@storybook/addon-links": "npm:^8.1.2"
+    "@storybook/addon-toolbars": "npm:^8.4.7"
+    "@storybook/addon-viewport": "npm:^8.4.7"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.3"
     "@storybook/blocks": "npm:^8.1.2"
     "@storybook/manager-api": "npm:^8.1.2"
@@ -3071,6 +3073,26 @@ __metadata:
     react:
       optional: true
   checksum: 10c0/475d3231ac6c6531cfa5d01e8816b90cbf51e993c1575fa7bf541540bf76af52d7f1087e929b87d771ce41ae4fd7762df1e25c9d8543200630f8618d85b16520
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-toolbars@npm:^8.4.7":
+  version: 8.4.7
+  resolution: "@storybook/addon-toolbars@npm:8.4.7"
+  peerDependencies:
+    storybook: ^8.4.7
+  checksum: 10c0/1c315d5ad07291f35ad780ef69fbd6570a582c008ab911cf14bff84061546b9ea1373d1127213844652d73a47c3011d28c1ad08d465fc120969c133dabfe7638
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-viewport@npm:^8.4.7":
+  version: 8.4.7
+  resolution: "@storybook/addon-viewport@npm:8.4.7"
+  dependencies:
+    memoizerific: "npm:^1.11.3"
+  peerDependencies:
+    storybook: ^8.4.7
+  checksum: 10c0/4dec3b59be1f3b99d3c9eaab695a7e346d975b772f6691f8286005d78a13a204c5680c6c8733ae83060c7639b56efed9f3580cee7413834ac6595b56345183ef
   languageName: node
   linkType: hard
 
@@ -10554,6 +10576,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-or-similar@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "map-or-similar@npm:1.5.0"
+  checksum: 10c0/33c6ccfdc272992e33e4e99a69541a3e7faed9de3ac5bc732feb2500a9ee71d3f9d098980a70b7746e7eeb7f859ff7dfb8aa9b5ecc4e34170a32ab78cfb18def
+  languageName: node
+  linkType: hard
+
 "math-intrinsics@npm:^1.1.0":
   version: 1.1.0
   resolution: "math-intrinsics@npm:1.1.0"
@@ -10621,6 +10650,15 @@ __metadata:
     tree-dump: "npm:^1.0.1"
     tslib: "npm:^2.0.0"
   checksum: 10c0/95bab707edcc86ac5acdb3ca53b420be34aa04167d0f03398b702bfadb44b72a6a27198b93593e7d9094cf911d70a0d679301fbc0e309f7ac43fa04a676b1b60
+  languageName: node
+  linkType: hard
+
+"memoizerific@npm:^1.11.3":
+  version: 1.11.3
+  resolution: "memoizerific@npm:1.11.3"
+  dependencies:
+    map-or-similar: "npm:^1.5.0"
+  checksum: 10c0/661bf69b7afbfad57f0208f0c63324f4c96087b480708115b78ee3f0237d86c7f91347f6db31528740b2776c2e34c709bcb034e1e910edee2270c9603a0a469e
   languageName: node
   linkType: hard
 

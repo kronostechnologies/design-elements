@@ -1,12 +1,13 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { Decorator, Preview } from '@storybook/react';
 import { DocsContainer } from "@storybook/blocks";
+import { themes } from './themes';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
-    Story => (
-        <DesignSystem>
+    (Story, { globals }) => (
+        <DesignSystem themeCustomization={themes[globals.theme].customization}>
             <Story />
         </DesignSystem>
     ),
@@ -14,6 +15,24 @@ const decorators: Decorator[] = [
 
 const preview: Preview = {
     decorators,
+    globalTypes: {
+        theme: {
+        name: 'Theme',
+            description: 'Global theme for components',
+            toolbar: {
+                title: 'Theme',
+                icon: 'paintbrush',
+                items: Object.keys(themes).map((value: string) => ({
+                    value,
+                    title: themes[value].name,
+                })),
+                dynamicTitle: true,
+            },
+        },
+    },
+    initialGlobals: {
+        theme: 'equisoft',
+    },
     parameters: {
         controls: {
             exclude: ['key', 'ref'],
