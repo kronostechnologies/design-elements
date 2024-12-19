@@ -1,15 +1,8 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type BentoMenuButtonTokens =
+export type BentoMenuButtonToken =
     | 'bento-menu-separator-color'
 
-export type BentoMenuButtonTokenValue = AliasTokens | RefTokens;
-
-export type BentoMenuButtonTokenMap = {
-    [Token in BentoMenuButtonTokens]: BentoMenuButtonTokenValue;
-};
-
-export const defaultBentoMenuButtonTokens: BentoMenuButtonTokenMap = {
+export const defaultBentoMenuButtonTokens: ComponentTokenMap<BentoMenuButtonToken> = {
     'bento-menu-separator-color': 'color-border',
 };

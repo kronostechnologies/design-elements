@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type CheckboxTokens =
+export type CheckboxToken =
     | 'checkbox-checked-icon-color'
     | 'checkbox-disabled-background-color'
     | 'checkbox-unchecked-background-color'
@@ -13,13 +12,7 @@ export type CheckboxTokens =
     | 'checkbox-checked-background-color'
     | 'checkbox-error-border-color';
 
-export type CheckboxTokenValue = AliasTokens | RefTokens;
-
-export type CheckboxTokenMap = {
-    [Token in CheckboxTokens]: CheckboxTokenValue;
-};
-
-export const defaultCheckboxTokens: CheckboxTokenMap = {
+export const defaultCheckboxTokens: ComponentTokenMap<CheckboxToken> = {
     'checkbox-unchecked-background-color': 'color-control-background',
     'checkbox-unchecked-border-color': 'color-control-border',
     'checkbox-checked-icon-color': 'color-control-auxiliary-checked',
