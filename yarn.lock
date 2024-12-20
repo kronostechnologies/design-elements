@@ -6972,7 +6972,7 @@ __metadata:
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:4.6.2"
     html-webpack-plugin: "npm:5.6.0"
-    i18next: "npm:24.1.2"
+    i18next: "npm:24.2.0"
     i18next-browser-languagedetector: "npm:8.0.0"
     postcss: "npm:8.4.41"
     postcss-styled-syntax: "npm:0.6.4"
@@ -6981,7 +6981,7 @@ __metadata:
     pretty-format: "npm:29.7.0"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    react-i18next: "npm:15.1.0"
+    react-i18next: "npm:15.2.0"
     react-is: "npm:18.3.1"
     react-router: "npm:6.28.0"
     react-router-dom: "npm:6.28.0"
@@ -8850,9 +8850,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:24.1.2, i18next@npm:^24.0.0":
-  version: 24.1.2
-  resolution: "i18next@npm:24.1.2"
+"i18next@npm:24.2.0, i18next@npm:^24.0.0":
+  version: 24.2.0
+  resolution: "i18next@npm:24.2.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
   peerDependencies:
@@ -8860,7 +8860,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/e3fb9f2c839e08b36b44c520440e1bca1c0e16106c00612210094a9ff9bad9b7b94fb92d39763c67138056174a15b228c7de1e690dcbee4c4effc82c93ac1ed8
+  checksum: 10c0/3c41a4e214b8191e7c579db776a9dd6a5f02a0925bb5788c11e522f51c5e581546f53db22ba8cccb398d69cc463438aaca4660bad2990d5ffc854434bc9a72be
   languageName: node
   linkType: hard
 
@@ -12063,9 +12063,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:15.1.0":
-  version: 15.1.0
-  resolution: "react-i18next@npm:15.1.0"
+"react-i18next@npm:15.2.0":
+  version: 15.2.0
+  resolution: "react-i18next@npm:15.2.0"
   dependencies:
     "@babel/runtime": "npm:^7.25.0"
     html-parse-stringify: "npm:^3.0.1"
@@ -12077,7 +12077,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10c0/a812a8345222e4c0b9423cec6bf0997abf5b72802d29c4b5c91c3a8ba0be87f536f5968456d6e3b6526e978ea5db7addde24d5855dd98a1d4ca7eb9aed8a9b20
+  checksum: 10c0/e6dfd3f04a070777231ea50e750d74ed7a72c56e3f2da238e8666db65431c805482706bbc76bdb69e5196c4125ff4c955ea4166a1788997a679c3a5c03590654
   languageName: node
   linkType: hard
 
