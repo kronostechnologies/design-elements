@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type SliderTokens =
+export type SliderToken =
     | 'slider-track-empty-background-color'
     | 'slider-track-empty-disabled-background-color'
     | 'slider-track-empty-label-text-color'
@@ -15,13 +14,7 @@ export type SliderTokens =
     | 'slider-thumb-border-color'
     | 'slider-thumb-disabled-border-color';
 
-export type SliderTokensValue = AliasTokens | RefTokens;
-
-export type SliderTokenMap = {
-    [Token in SliderTokens]: SliderTokensValue;
-};
-
-export const defaultSliderTokens: SliderTokenMap = {
+export const defaultSliderTokens: ComponentTokenMap<SliderToken> = {
     'slider-track-empty-background-color': 'color-background-empty',
     'slider-track-empty-disabled-background-color': 'color-background-neutral-subtle',
     'slider-track-empty-label-text-color': 'color-content-subtle',

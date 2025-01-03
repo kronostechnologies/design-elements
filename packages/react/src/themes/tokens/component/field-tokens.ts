@@ -1,22 +1,14 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type FieldTokens =
+export type FieldToken =
     | 'field-error-text-color'
     | 'field-hint-text-color'
     | 'field-input-border-color'
     | 'field-input-error-border-color';
 
-export type FieldTokenValue = AliasTokens | RefTokens;
-
-export type FieldTokenMap = {
-    [Token in FieldTokens]: FieldTokenValue;
-};
-
-export const defaultFieldTokens: FieldTokenMap = {
+export const defaultFieldTokens: ComponentTokenMap<FieldToken> = {
     'field-hint-text-color': 'color-control-auxiliary',
     'field-error-text-color': 'color-control-auxiliary-error',
-
     'field-input-border-color': 'color-control-border',
     'field-input-error-border-color': 'color-control-border-error',
 };

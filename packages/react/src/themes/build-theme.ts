@@ -1,28 +1,30 @@
 import { devConsole } from '../utils/dev-console';
-import { ResolvedTheme, ThemeCustomization } from './theme';
+import { ResolvedTheme, ThemeCustomization, ThemeDeclaration } from './theme';
 import {
-    AliasTokenMap,
-    AliasTokens,
-    ComponentTokenMap,
+    AliasToken,
+    ComponentToken,
     defaultAliasTokens,
     defaultComponentTokens,
     defaultRefTokens,
-    isAliasToken,
-    isComponentToken,
-    isRefToken,
-    RefTokenMap,
-    RefTokens,
-    RefTokenValue,
-    ResolvedComponentTokens,
+    RefToken,
+    ResolvedTokenMap,
+    TokenValue,
+    TokenName,
 } from './tokens';
 
-interface CustomizedTheme {
-    ref: RefTokenMap;
-    alias: AliasTokenMap;
-    component: ComponentTokenMap;
+function isRefToken(tokenName: TokenName): tokenName is RefToken {
+    return tokenName in defaultRefTokens;
 }
 
-function customizeTheme(customization: ThemeCustomization): CustomizedTheme {
+function isAliasToken(tokenName: TokenName): tokenName is AliasToken {
+    return tokenName in defaultAliasTokens;
+}
+
+function isComponentToken(tokenName: TokenName): tokenName is ComponentToken {
+    return tokenName in defaultComponentTokens;
+}
+
+function customizeTheme(customization: ThemeCustomization): ThemeDeclaration {
     return {
         ref: { ...defaultRefTokens, ...customization.ref },
         alias: { ...defaultAliasTokens, ...customization.alias },
@@ -35,10 +37,10 @@ export function buildTheme(customization: ThemeCustomization): ResolvedTheme {
 
     const resolvedTheme: ResolvedTheme = {
         ...customizedTheme,
-        component: {} as ResolvedComponentTokens,
+        component: {} as ResolvedTokenMap<ComponentToken>,
     };
 
-    function resolveToken(token: AliasTokens | RefTokens): RefTokenValue {
+    function resolveToken(token: AliasToken | RefToken): TokenValue {
         if (isRefToken(token)) {
             return resolvedTheme.ref[token];
         }

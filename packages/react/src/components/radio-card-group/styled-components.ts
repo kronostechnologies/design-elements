@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 
 interface DescriptionProps {
