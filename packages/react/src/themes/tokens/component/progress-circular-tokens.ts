@@ -1,17 +1,10 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type ProgressCircularTokens =
+export type ProgressCircularToken =
     | 'progress-circular-color'
     | 'progress-circular-inverted-color'
 
-export type ProgressCircularTokenValue = AliasTokens | RefTokens;
-
-export type ProgressCircularTokenMap = {
-    [Token in ProgressCircularTokens]: ProgressCircularTokenValue;
-};
-
-export const defaultProgressCircularTokens: ProgressCircularTokenMap = {
+export const defaultProgressCircularTokens: ComponentTokenMap<ProgressCircularToken> = {
     'progress-circular-color': 'color-background-brand',
     'progress-circular-inverted-color': 'color-white',
 };

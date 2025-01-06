@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type GlobalNavigationTokens =
+export type GlobalNavigationToken =
     | 'global-navigation-background-color'
     | 'global-navigation-box-shadow-color'
     | 'global-navigation-item-text-color'
@@ -11,13 +10,7 @@ export type GlobalNavigationTokens =
     | 'global-navigation-item-selected-text-color'
     | 'global-navigation-separator-border-color';
 
-export type GlobalNavigationTokenValue = AliasTokens | RefTokens;
-
-export type GlobalNavigationTokenMap = {
-    [Token in GlobalNavigationTokens]: GlobalNavigationTokenValue;
-};
-
-export const defaultGlobalNavigationTokens: GlobalNavigationTokenMap = {
+export const defaultGlobalNavigationTokens: ComponentTokenMap<GlobalNavigationToken> = {
     'global-navigation-background-color': 'color-background-overlay',
     'global-navigation-box-shadow-color': 'color-box-shadow',
     'global-navigation-item-hover-background-color': 'color-background-hover',

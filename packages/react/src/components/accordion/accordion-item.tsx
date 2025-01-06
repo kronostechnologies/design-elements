@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes/theme';
-import { Button } from '../buttons/button';
+import { ResolvedTheme } from '../../themes';
+import { Button } from '../buttons';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
 import { focus } from '../../utils/css-state';

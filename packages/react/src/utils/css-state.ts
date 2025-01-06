@@ -1,5 +1,5 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { ResolvedTheme } from '../themes/theme';
+import { ResolvedTheme } from '../themes';
 
 type FocusType = 'focus' | 'focus-visible' | 'focus-within';
 

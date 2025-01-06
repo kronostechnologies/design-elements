@@ -8,7 +8,7 @@ import styled, {
 } from 'styled-components';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes/theme';
+import { ResolvedTheme } from '../../themes';
 import { IconButton, IconButtonProps } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';

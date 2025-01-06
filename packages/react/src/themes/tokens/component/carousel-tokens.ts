@@ -1,18 +1,11 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type CarouselTokens =
+export type CarouselToken =
     | 'carousel-dot-selected-background-color'
     | 'carousel-dot-unselected-background-color'
     | 'carousel-dot-border-color';
 
-export type CarouselTokenValue = AliasTokens | RefTokens;
-
-export type CarouselTokenMap = {
-    [Token in CarouselTokens]: CarouselTokenValue;
-};
-
-export const defaultCarouselTokens: CarouselTokenMap = {
+export const defaultCarouselTokens: ComponentTokenMap<CarouselToken> = {
     'carousel-dot-selected-background-color': 'color-background-indicator-selected',
     'carousel-dot-unselected-background-color': 'color-background-empty',
     'carousel-dot-border-color': 'transparent-100',

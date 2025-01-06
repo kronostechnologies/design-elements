@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type DatepickerTokens =
+export type DatepickerToken =
     | 'datepicker-border-color'
     | 'datepicker-box-shadow-color'
     | 'datepicker-day-border-color'
@@ -21,27 +20,17 @@ export type DatepickerTokens =
     | 'datepicker-background-color'
     | 'datepicker-backdrop-color';
 
-export type DatepickerTokenValue = AliasTokens | RefTokens;
-
-export type DatepickerTokenMap = {
-    [Token in DatepickerTokens]: DatepickerTokenValue;
-};
-
-export const defaultDatepickerTokens: DatepickerTokenMap = {
+export const defaultDatepickerTokens: ComponentTokenMap<DatepickerToken> = {
     'datepicker-background-color': 'color-background-overlay',
     'datepicker-border-color': 'color-border-overlay',
     'datepicker-box-shadow-color': 'color-box-shadow',
     'datepicker-backdrop-color': 'color-backdrop-background-subtle',
-
     'datepicker-header-background-color': 'transparent-100',
-
     'datepicker-day-background-color': 'transparent-100',
     'datepicker-day-border-color': 'transparent-100',
     'datepicker-day-text-color': 'color-content',
-
     'datepicker-day-hover-background-color': 'color-background-hover',
     'datepicker-day-disabled-text-color': 'color-content-disabled',
-
     'datepicker-day-outside-month-text-color': 'color-content-subtle',
     'datepicker-day-selected-outside-month-background-color': 'color-background-selected',
     'datepicker-day-selected-outside-month-border-color': 'color-border-selected',
@@ -49,6 +38,5 @@ export const defaultDatepickerTokens: DatepickerTokenMap = {
     'datepicker-day-selected-background-color': 'color-background-selected',
     'datepicker-day-selected-border-color': 'color-border-selected',
     'datepicker-day-selected-text-color': 'color-content-selected',
-
     'datepicker-day-today-text-color': 'color-content-selected',
 };

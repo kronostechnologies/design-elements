@@ -1,7 +1,6 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type ChooserTokens =
+export type ChooserToken =
     | 'chooser-background-color'
     | 'chooser-border-color'
     | 'chooser-text-color'
@@ -15,13 +14,7 @@ export type ChooserTokens =
     | 'chooser-selected-background-color'
     | 'chooser-selected-border-color';
 
-export type ChooserTokenValue = AliasTokens | RefTokens;
-
-export type ChooserTokenMap = {
-    [Token in ChooserTokens]: ChooserTokenValue;
-};
-
-export const defaultChooserTokens: ChooserTokenMap = {
+export const defaultChooserTokens: ComponentTokenMap<ChooserToken> = {
     'chooser-background-color': 'color-control-background',
     'chooser-border-color': 'color-control-border',
     'chooser-text-color': 'color-control-auxiliary',

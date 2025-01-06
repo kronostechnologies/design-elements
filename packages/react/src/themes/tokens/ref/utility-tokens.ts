@@ -1,4 +1,6 @@
-export type ColorUtilityTokens =
+import type { RefTokenMap } from '../tokens';
+
+export type UtilityToken =
     | 'transparent-dark-5'
     | 'transparent-light-5'
     | 'transparent-dark-10'
@@ -39,13 +41,7 @@ export type ColorUtilityTokens =
     | 'transparent-light-95'
     | 'transparent-100';
 
-export type ColorUtilityValue = string;
-
-export type ColorUtilityTokenMap = {
-    [Token in ColorUtilityTokens]: ColorUtilityValue;
-};
-
-export const defaultColorUtilityTokens: ColorUtilityTokenMap = {
+export const defaultUtilityTokens: RefTokenMap<UtilityToken> = {
     'transparent-dark-5': 'rgb(0 0 0 / 0.05)',
     'transparent-light-5': 'rgb(255 255 255 / 0.05)',
     'transparent-dark-10': 'rgb(0 0 0 / 0.1)',

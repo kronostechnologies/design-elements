@@ -1,185 +1,167 @@
-import { AliasTokens } from './alias-tokens';
-import { AvatarTokens, defaultAvatarTokens } from './component/avatar-tokens';
-import { BentoMenuButtonTokens, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
-import { BreadcrumbTokens, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
-import { ButtonTokens, defaultButtonTokens } from './component/button-tokens';
-import { CheckboxTokens, defaultCheckboxTokens } from './component/checkbox-tokens';
-import { ChooserTokens, defaultChooserTokens } from './component/chooser-tokens';
-import { ComboboxTokens, defaultComboboxTokens } from './component/combobox-tokens';
-import { DatepickerTokens, defaultDatepickerTokens } from './component/datepicker-tokens';
-import { defaultDisclosureTokens, DisclosureTokens } from './component/disclosure-tokens';
-import { defaultDropdownListTokens, DropdownListTokens } from './component/dropdown-list-tokens';
-import { CardTokens, defaultCardTokens } from './component/card-tokens';
-import { defaultDropdownMenuTokens, DropdownMenuTokens } from './component/dropdown-menu-tokens';
-import { defaultFocusTokens, FocusTokens } from './component/focus-tokens';
-import { defaultGlobalHeaderTokens, GlobalHeaderTokens } from './component/global-header-tokens';
-import { defaultGlobalNavigationTokens, GlobalNavigationTokens } from './component/global-navigation-tokens';
-import { defaultHeadingTokens, HeadingTokens } from './component/heading-tokens';
-import { defaultFieldTokens, FieldTokens } from './component/field-tokens';
-import { defaultLinkTokens, LinkTokens } from './component/link-tokens';
-import { defaultProgressTokens, ProgressTokens } from './component/progress-tokens';
-import { defaultTextInputTokens, TextInputTokens } from './component/text-input-tokens';
-import { defaultLabelTokens, LabelTokens } from './component/label-tokens';
-import { defaultListboxTokens, ListboxTokens } from './component/listbox-tokens';
-import { defaultMenuTokens, MenuTokens } from './component/menu-tokens';
-import { defaultNumericInputTokens, NumericInputTokens } from './component/numeric-input-tokens';
-import { defaultPasswordInputTokens, PasswordInputTokens } from './component/password-input-tokens';
-import { defaultPhoneInputTokens, PhoneInputTokens } from './component/phone-input-tokens';
-import { defaultProgressCircularTokens, ProgressCircularTokens } from './component/progress-circular-tokens';
-import { defaultRadioButtonGroupTokens, RadioButtonGroupTokens } from './component/radio-button-group-tokens';
-import { defaultRadioCardTokens, RadioCardTokens } from './component/radio-card-tokens';
-import { defaultSearchInputTokens, SearchInputTokens } from './component/search-input-tokens';
-import { defaultStepperTokens, StepperTokens } from './component/stepper-tokens';
-import { defaultTextAreaTokens, TextAreaTokens } from './component/text-area-tokens';
-import { defaultSegmentedControlTokens, SegmentedControlTokens } from './component/segmented-control-tokens';
-import { defaultToggleSwitchTokens, ToggleSwitchTokens } from './component/toggle-switch-tokens';
-import { defaultLegendTokens, LegendTokens } from './component/legend-tokens';
-import { defaultLozengeTokens, LozengeTokens } from './component/lozenge-tokens';
-import { defaultNavListTokens, NavListTokens } from './component/nav-list-tokens';
-import { defaultPaginationTokens, PaginationTokens } from './component/pagination-tokens';
-import { defaultSideDrawerTokens, SideDrawerTokens } from './component/side-drawer-tokens';
-import { defaultTableTokens, TableTokens } from './component/table-tokens';
-import { RefTokens, RefTokenValue } from './ref-tokens';
-import { BadgeTokens, defaultBadgeTokens } from './component/badge-tokens';
-import { defaultGlobalBannerTokens, GlobalBannerTokens } from './component/global-banner-tokens';
-import { defaultSectionalBannerTokens, SectionalBannerTokens } from './component/sectional-banner-tokens';
-import { defaultSpinnerTokens, SpinnerTokens } from './component/spinner-tokens';
-import { defaultStatusTokens, StatusTokens } from './component/status-tokens';
-import { defaultTagTokens, TagTokens } from './component/tag-tokens';
-import { defaultToastTokens, ToastTokens } from './component/toast-tokens';
-import { AccordionTokens, defaultAccordionTokens } from './component/accordion-tokens';
-import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
-import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
-import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
-import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
-import { defaultTabTokens, TabTokens } from './component/tab-tokens';
-import { defaultSliderTokens, SliderTokens } from './component/slider-tokens';
+import { AccordionToken, defaultAccordionTokens } from './component/accordion-tokens';
+import { AvatarToken, defaultAvatarTokens } from './component/avatar-tokens';
+import { BadgeToken, defaultBadgeTokens } from './component/badge-tokens';
+import { BentoMenuButtonToken, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
+import { BreadcrumbToken, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
+import { ButtonToken, defaultButtonTokens } from './component/button-tokens';
+import { CardToken, defaultCardTokens } from './component/card-tokens';
+import { CarouselToken, defaultCarouselTokens } from './component/carousel-tokens';
+import { CheckboxToken, defaultCheckboxTokens } from './component/checkbox-tokens';
+import { ChooserToken, defaultChooserTokens } from './component/chooser-tokens';
+import { ComboboxToken, defaultComboboxTokens } from './component/combobox-tokens';
+import { DatepickerToken, defaultDatepickerTokens } from './component/datepicker-tokens';
+import { defaultDisclosureTokens, DisclosureToken } from './component/disclosure-tokens';
+import { defaultDropdownListTokens, DropdownListToken } from './component/dropdown-list-tokens';
+import { defaultDropdownMenuTokens, DropdownMenuToken } from './component/dropdown-menu-tokens';
+import { defaultFieldTokens, FieldToken } from './component/field-tokens';
+import { defaultFocusTokens, FocusToken } from './component/focus-tokens';
+import { defaultGlobalBannerTokens, GlobalBannerToken } from './component/global-banner-tokens';
+import { defaultGlobalHeaderTokens, GlobalHeaderToken } from './component/global-header-tokens';
+import { defaultGlobalNavigationTokens, GlobalNavigationToken } from './component/global-navigation-tokens';
+import { defaultHeadingTokens, HeadingToken } from './component/heading-tokens';
+import { defaultLabelTokens, LabelToken } from './component/label-tokens';
+import { defaultLegendTokens, LegendToken } from './component/legend-tokens';
+import { defaultLinkTokens, LinkToken } from './component/link-tokens';
+import { defaultListboxTokens, ListboxToken } from './component/listbox-tokens';
+import { defaultLozengeTokens, LozengeToken } from './component/lozenge-tokens';
+import { defaultMenuTokens, MenuToken } from './component/menu-tokens';
+import { defaultModalTokens, ModalToken } from './component/modal-tokens';
+import { defaultNavListTokens, NavListToken } from './component/nav-list-tokens';
+import { defaultNumericInputTokens, NumericInputToken } from './component/numeric-input-tokens';
+import { defaultPaginationTokens, PaginationToken } from './component/pagination-tokens';
+import { defaultPasswordInputTokens, PasswordInputToken } from './component/password-input-tokens';
+import { defaultPhoneInputTokens, PhoneInputToken } from './component/phone-input-tokens';
+import { defaultProgressCircularTokens, ProgressCircularToken } from './component/progress-circular-tokens';
+import { defaultProgressTokens, ProgressToken } from './component/progress-tokens';
+import { defaultRadioButtonGroupTokens, RadioButtonGroupToken } from './component/radio-button-group-tokens';
+import { defaultRadioCardTokens, RadioCardToken } from './component/radio-card-tokens';
+import { defaultSearchInputTokens, SearchInputToken } from './component/search-input-tokens';
+import { defaultSectionalBannerTokens, SectionalBannerToken } from './component/sectional-banner-tokens';
+import { defaultSegmentedControlTokens, SegmentedControlToken } from './component/segmented-control-tokens';
+import { defaultSideDrawerTokens, SideDrawerToken } from './component/side-drawer-tokens';
+import { defaultSliderTokens, SliderToken } from './component/slider-tokens';
+import { defaultSpinnerTokens, SpinnerToken } from './component/spinner-tokens';
+import { defaultStatusTokens, StatusToken } from './component/status-tokens';
+import { defaultStepperTokens, StepperToken } from './component/stepper-tokens';
+import { defaultTabTokens, TabToken } from './component/tab-tokens';
+import { defaultTableTokens, TableToken } from './component/table-tokens';
+import { defaultTagTokens, TagToken } from './component/tag-tokens';
+import { defaultTextAreaTokens, TextAreaToken } from './component/text-area-tokens';
+import { defaultTextInputTokens, TextInputToken } from './component/text-input-tokens';
+import { defaultToastTokens, ToastToken } from './component/toast-tokens';
+import { defaultToggleSwitchTokens, ToggleSwitchToken } from './component/toggle-switch-tokens';
+import { defaultToggleTipTokens, ToggleTipToken } from './component/toggletip-tokens';
+import { defaultTooltipTokens, TooltipToken } from './component/tooltip-tokens';
 
-export type ComponentTokens =
-    | AvatarTokens
-    | BentoMenuButtonTokens
-    | ButtonTokens
-    | BreadcrumbTokens
-    | DisclosureTokens
-    | FocusTokens
-    | HeadingTokens
-    | LabelTokens
-    | CheckboxTokens
-    | ChooserTokens
-    | DatepickerTokens
-    | DropdownListTokens
-    | ListboxTokens
-    | ComboboxTokens
-    | MenuTokens
-    | PasswordInputTokens
-    | NumericInputTokens
-    | PhoneInputTokens
-    | SearchInputTokens
-    | StepperTokens
-    | TextAreaTokens
-    | FieldTokens
-    | RadioButtonGroupTokens
-    | SegmentedControlTokens
-    | ToggleSwitchTokens
-    | TextInputTokens
-    | RadioCardTokens
-    | LegendTokens
-    | NavListTokens
-    | PaginationTokens
-    | ProgressTokens
-    | ProgressCircularTokens
-    | LinkTokens
-    | BadgeTokens
-    | GlobalBannerTokens
-    | SectionalBannerTokens
-    | SliderTokens
-    | SpinnerTokens
-    | StatusTokens
-    | TagTokens
-    | ToastTokens
-    | AccordionTokens
-    | CarouselTokens
-    | ModalTokens
-    | TooltipTokens
-    | ToggleTipTokens
-    | SideDrawerTokens
-    | GlobalHeaderTokens
-    | CardTokens
-    | TableTokens
-    | DropdownMenuTokens
-    | TabTokens
-    | LozengeTokens
-    | GlobalNavigationTokens;
+export type ComponentToken =
+    | AccordionToken
+    | AvatarToken
+    | BadgeToken
+    | BentoMenuButtonToken
+    | BreadcrumbToken
+    | ButtonToken
+    | CardToken
+    | CarouselToken
+    | CheckboxToken
+    | ChooserToken
+    | ComboboxToken
+    | DatepickerToken
+    | DisclosureToken
+    | DropdownListToken
+    | DropdownMenuToken
+    | FieldToken
+    | FocusToken
+    | GlobalBannerToken
+    | GlobalHeaderToken
+    | GlobalNavigationToken
+    | HeadingToken
+    | LabelToken
+    | LegendToken
+    | LinkToken
+    | ListboxToken
+    | LozengeToken
+    | MenuToken
+    | ModalToken
+    | NavListToken
+    | NumericInputToken
+    | PaginationToken
+    | PasswordInputToken
+    | ProgressCircularToken
+    | ProgressToken
+    | PhoneInputToken
+    | RadioButtonGroupToken
+    | RadioCardToken
+    | SearchInputToken
+    | SectionalBannerToken
+    | SegmentedControlToken
+    | SideDrawerToken
+    | SliderToken
+    | SpinnerToken
+    | StatusToken
+    | StepperToken
+    | TableToken
+    | TabToken
+    | TagToken
+    | TextAreaToken
+    | TextInputToken
+    | ToastToken
+    | ToggleSwitchToken
+    | ToggleTipToken
+    | TooltipToken;
 
-export type ComponentTokenValue = AliasTokens | RefTokens;
-
-export type ComponentTokenMap = {
-    [Token in ComponentTokens]: ComponentTokenValue;
-}
-
-export const defaultComponentTokens: ComponentTokenMap = {
+export const defaultComponentTokens = {
+    ...defaultAccordionTokens,
     ...defaultAvatarTokens,
+    ...defaultBadgeTokens,
     ...defaultBentoMenuButtonTokens,
+    ...defaultBreadcrumbTokens,
     ...defaultButtonTokens,
+    ...defaultCardTokens,
+    ...defaultCarouselTokens,
+    ...defaultCheckboxTokens,
+    ...defaultChooserTokens,
+    ...defaultComboboxTokens,
+    ...defaultDatepickerTokens,
     ...defaultDisclosureTokens,
+    ...defaultDropdownListTokens,
+    ...defaultDropdownMenuTokens,
+    ...defaultFieldTokens,
     ...defaultFocusTokens,
+    ...defaultGlobalBannerTokens,
+    ...defaultGlobalHeaderTokens,
+    ...defaultGlobalNavigationTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultLegendTokens,
-    ...defaultNavListTokens,
-    ...defaultPaginationTokens,
-    ...defaultProgressTokens,
-    ...defaultProgressCircularTokens,
     ...defaultLinkTokens,
-    ...defaultCheckboxTokens,
-    ...defaultChooserTokens,
-    ...defaultDatepickerTokens,
-    ...defaultDropdownListTokens,
     ...defaultListboxTokens,
-    ...defaultComboboxTokens,
+    ...defaultLozengeTokens,
     ...defaultMenuTokens,
-    ...defaultPasswordInputTokens,
+    ...defaultModalTokens,
+    ...defaultNavListTokens,
     ...defaultNumericInputTokens,
+    ...defaultPaginationTokens,
+    ...defaultPasswordInputTokens,
     ...defaultPhoneInputTokens,
-    ...defaultSearchInputTokens,
-    ...defaultStepperTokens,
-    ...defaultTextAreaTokens,
-    ...defaultFieldTokens,
+    ...defaultProgressCircularTokens,
+    ...defaultProgressTokens,
     ...defaultRadioButtonGroupTokens,
-    ...defaultSegmentedControlTokens,
-    ...defaultToggleSwitchTokens,
-    ...defaultTextInputTokens,
     ...defaultRadioCardTokens,
-    ...defaultBadgeTokens,
-    ...defaultGlobalBannerTokens,
+    ...defaultSearchInputTokens,
     ...defaultSectionalBannerTokens,
+    ...defaultSegmentedControlTokens,
+    ...defaultSideDrawerTokens,
     ...defaultSliderTokens,
     ...defaultSpinnerTokens,
     ...defaultStatusTokens,
-    ...defaultTagTokens,
-    ...defaultToastTokens,
-    ...defaultAccordionTokens,
-    ...defaultCarouselTokens,
-    ...defaultModalTokens,
-    ...defaultTooltipTokens,
-    ...defaultToggleTipTokens,
-    ...defaultTabTokens,
-    ...defaultSideDrawerTokens,
-    ...defaultGlobalHeaderTokens,
-    ...defaultCardTokens,
+    ...defaultStepperTokens,
     ...defaultTableTokens,
-    ...defaultDropdownMenuTokens,
-    ...defaultLozengeTokens,
-    ...defaultGlobalNavigationTokens,
-    ...defaultBreadcrumbTokens,
+    ...defaultTabTokens,
+    ...defaultTagTokens,
+    ...defaultTextAreaTokens,
+    ...defaultTextInputTokens,
+    ...defaultToastTokens,
+    ...defaultToggleSwitchTokens,
+    ...defaultToggleTipTokens,
+    ...defaultTooltipTokens,
 };
-
-export type ResolvedComponentTokenValue = RefTokenValue;
-
-export type ResolvedComponentTokens = {
-    [Token in ComponentTokens]: ResolvedComponentTokenValue;
-}
-
-export function isComponentToken(token: string): token is ComponentTokens {
-    return token in defaultComponentTokens;
-}

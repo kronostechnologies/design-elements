@@ -1,15 +1,8 @@
-import { AliasTokens } from '../alias-tokens';
-import { RefTokens } from '../ref-tokens';
+import type { ComponentTokenMap } from '../tokens';
 
-export type LabelTokens =
+export type LabelToken =
     | 'label-text-color';
 
-export type LabelTokenValue = AliasTokens | RefTokens;
-
-export type LabelTokenMap = {
-    [Token in LabelTokens]: LabelTokenValue;
-};
-
-export const defaultLabelTokens: LabelTokenMap = {
+export const defaultLabelTokens: ComponentTokenMap<LabelToken> = {
     'label-text-color': 'color-content',
 };
