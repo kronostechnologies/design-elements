@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Core/Listbox',
+    title: 'Components/Core/Listbox (core)',
     component: Listbox,
     tags: ['autodocs'],
 };
