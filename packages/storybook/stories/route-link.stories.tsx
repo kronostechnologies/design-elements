@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 
 const RouteLinkMeta: Meta<typeof RouteLink> = {
-    title: 'Deprecated/Route Link (deprecated)',
+    title: 'Components/Deprecated/Route Link (deprecated)',
     component: RouteLink,
     args: {
         label: 'Route Link',
