@@ -15,7 +15,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c4 {
+.c6 {
   background-color-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -82,13 +82,13 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   color: #B7BBC2;
 }
 
-.c4:-moz-read-only {
+.c6:-moz-read-only {
   background-color: rgb(0 0 0 / 0.03);
   border-color: transparent;
   color: #1B1C1E;
 }
 
-.c4:read-only {
+.c6:read-only {
   background-color: rgb(0 0 0 / 0.03);
   border-color: transparent;
   color: #1B1C1E;
@@ -124,7 +124,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
 }
 
 .c2 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -228,7 +228,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 }
 
 .c7 {
-  background-color-color: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -294,13 +294,13 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   color: #B7BBC2;
 }
 
-.c5:-moz-read-only {
+.c7:-moz-read-only {
   background-color: rgb(0 0 0 / 0.03);
   border-color: transparent;
   color: #1B1C1E;
 }
 
-.c5:read-only {
+.c7:read-only {
   background-color: rgb(0 0 0 / 0.03);
   border-color: transparent;
   color: #1B1C1E;
@@ -336,7 +336,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -848,7 +848,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 }
 
 .c2 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -919,7 +919,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 }
 
 .c5 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -985,6 +985,18 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   color: #B7BBC2;
 }
 
+.c5:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c5:focus,
 .c5:disabled {
   border: 0;
@@ -1015,7 +1027,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 }
 
 .c2 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
