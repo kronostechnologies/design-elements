@@ -24,6 +24,7 @@ import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength }
 interface PhoneInputProps {
     pattern: string;
     defaultValue?: string;
+    readOnly?: boolean;
     required?: boolean;
     disabled?: boolean;
     label?: string;
@@ -73,6 +74,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
     id: providedId,
     pattern,
     defaultValue,
+    readOnly,
     required,
     disabled,
     label,
@@ -226,6 +228,7 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
                 type="tel"
                 name={name}
                 value={phoneInputValue}
+                readOnly={readOnly}
                 required={required}
                 disabled={disabled}
                 hint={hint}
