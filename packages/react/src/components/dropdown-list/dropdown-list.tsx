@@ -56,9 +56,10 @@ const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-const StyledListbox = styled(Listbox)`
-    margin-top: var(--spacing-half);
+const StyledListbox = styled(Listbox)<{ $expandDirection: string }>`
+    ${({ $expandDirection }) => $expandDirection === 'down' ? 'margin-top: var(--spacing-half);' : 'margin-bottom: calc(-1 * var(--spacing-1x));'}
     position: absolute;
+    ${({ $expandDirection }) => ($expandDirection ? 'bottom: 100%;' : '')}
     width: 100%;
 `;
 
@@ -144,6 +145,7 @@ export interface DropdownListProps<M extends boolean | undefined> {
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
+    expandDirection?: 'up' | 'down';
     id?: string;
     label?: string;
     name?: string;
@@ -186,6 +188,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     defaultOpen = false,
     defaultValue,
     disabled,
+    expandDirection: expandDirectionProp,
     noMargin,
     id: providedId,
     label,
@@ -206,6 +209,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const { device, isMobile } = useDeviceContext();
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
+    const expandDirection = expandDirectionProp ?? 'down';
 
     const textboxRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
@@ -483,6 +487,21 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >
+            {open && expandDirection === 'up' && (
+                <StyledListbox
+                    $expandDirection={expandDirection}
+                    ariaLabelledBy={`${id}_label`}
+                    ref={listboxRef}
+                    data-testid="listbox"
+                    focusable={false}
+                    focusedValue={focusedOption?.value}
+                    id={`${id}_listbox`}
+                    onOptionClick={handleListboxOptionClick}
+                    options={options}
+                    value={getListboxSelectedOptionValues()}
+                    multiselect={multiselect}
+                />
+            )}
             <Textbox
                 aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
                 aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
@@ -528,9 +547,10 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 />
             </Textbox>
 
-            {open && (
+            {open && expandDirection === 'down' && (
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
+                    $expandDirection={expandDirection}
                     ref={listboxRef}
                     data-testid="listbox"
                     focusable={false}

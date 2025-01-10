@@ -89,6 +89,14 @@ export const WithIcon: Story = {
     },
 };
 
+export const WithDirectionUp: Story = {
+    ...DropdownListMeta,
+    args: {
+        label: 'Select multiple options',
+        expandDirection: 'up',
+    },
+};
+
 export const WithCallback: Story = {
     ...DropdownListMeta,
     args: {
@@ -96,4 +104,5 @@ export const WithCallback: Story = {
         onChange: (option: DropdownListOption) => console.info(`Label: ${option.label} | Value: ${option.value}`),
     },
 };
+
 WithCallback.parameters = rawCodeParameters;
