@@ -1,38 +1,38 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { Decorator, Preview } from '@storybook/react';
 import { DocsContainer } from "@storybook/blocks";
-import { themes } from './themes';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
-    (Story, { globals }) => (
-        <DesignSystem themeCustomization={themes[globals.theme].customization}>
+    Story => (
+        <DesignSystem>
             <Story />
         </DesignSystem>
     ),
 ];
 
+const viewportOptions = {
+    mobile: {
+        name: 'Mobile',
+        styles: {
+            height: '834px',
+            width: '480px',
+        },
+        type: 'mobile',
+    },
+    tablet: {
+        name: 'Tablet',
+        styles: {
+            height: '834px',
+            width: '1023px',
+        },
+        type: 'tablet',
+    },
+};
+
 const preview: Preview = {
     decorators,
-    globalTypes: {
-        theme: {
-        name: 'Theme',
-            description: 'Global theme for components',
-            toolbar: {
-                title: 'Theme',
-                icon: 'paintbrush',
-                items: Object.keys(themes).map((value: string) => ({
-                    value,
-                    title: themes[value].name,
-                })),
-                dynamicTitle: true,
-            },
-        },
-    },
-    initialGlobals: {
-        theme: 'equisoft',
-    },
     parameters: {
         controls: {
             exclude: ['key', 'ref'],
@@ -57,6 +57,12 @@ const preview: Preview = {
             storySort: {
                 order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
             },
+        },
+        viewport: {
+            options: viewportOptions,
+        },
+        initialGlobals: {
+            viewport: { value: 'responsive', isRotated: false },
         },
     },
 };

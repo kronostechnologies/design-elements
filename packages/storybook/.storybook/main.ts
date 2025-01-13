@@ -69,6 +69,9 @@ const config: StorybookConfig = {
     core: {
         disableTelemetry: true,
     },
+    features: {
+        viewportStoryGlobals: true,
+    },
 };
 
 export default config;
