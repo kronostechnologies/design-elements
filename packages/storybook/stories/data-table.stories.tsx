@@ -666,31 +666,47 @@ export const MultipleSelectableRows: Story = {
                 columns={columns}
                 data={data}
                 rowIdField="column1"
-                onSelectedRowsChange={console.info}
+                onSelectedRowIdsChange={console.info}
             />
         );
     },
 };
 
+interface ExpandableData {
+    id: string;
+    name: string;
+}
+
+const expandableDataColumns: TableColumn<ExpandableData>[] = [
+    {
+        header: 'ID',
+        accessorKey: 'id',
+    },
+    {
+        header: 'Name',
+        accessorKey: 'name',
+    },
+];
+
+const ROWS_PER_PAGE = 5;
+
+function generateData(totalRows: number): TableData<ExpandableData>[] {
+    return new Array(totalRows).fill(null).map((_, index) => {
+        const page = Math.floor(index / ROWS_PER_PAGE) + 1;
+        return {
+            id: `${page}-${index}`,
+            name: `Row ${page}-${index}`,
+            subRows: [
+                { id: `${page}-${index}.A`, name: `Row ${page}-${index}.A` },
+                { id: `${page}-${index}.B`, name: `Row ${page}-${index}.B` },
+            ],
+        };
+    });
+}
+
 export const MultipleSelectableExpandableSubRows: Story = {
     render() {
-        interface ExpandableData {
-            id: string;
-            name: string;
-        }
-
         const [selectedRowIds, setSelectedRowIds] = useState<TableRowId[]>([]);
-
-        const columns: TableColumn<ExpandableData>[] = [
-            {
-                header: 'ID',
-                accessorKey: 'id',
-            },
-            {
-                header: 'Name',
-                accessorKey: 'name',
-            },
-        ];
 
         const data: TableData<ExpandableData>[] = [
             {
@@ -715,7 +731,7 @@ export const MultipleSelectableExpandableSubRows: Story = {
             <Table<ExpandableData>
                 expandableRows="multiple"
                 rowSelectionMode="multiple"
-                columns={columns}
+                columns={expandableDataColumns}
                 data={data}
                 rowIdField="id"
                 selectedRowIds={selectedRowIds}
@@ -723,6 +739,46 @@ export const MultipleSelectableExpandableSubRows: Story = {
                 expandChildrenOnRowSelection
                 hideSelectAll
             />
+        );
+    },
+};
+
+export const PaginatedMultipleSelectableExpandableSubRows: Story = {
+    render() {
+        const TOTAL_PAGES = 3;
+        const data = useMemo(() => generateData(ROWS_PER_PAGE * TOTAL_PAGES), []);
+
+        const [selectedRowIds, setSelectedRowIds] = useState<TableRowId[]>([]);
+        const [currentPage, setCurrentPage] = useState(1);
+
+        const currentData = useMemo(
+            () => data.slice((currentPage - 1) * ROWS_PER_PAGE, currentPage * ROWS_PER_PAGE),
+            [data, currentPage],
+        );
+
+        return (
+            <>
+                <Table<ExpandableData>
+                    expandableRows="multiple"
+                    rowSelectionMode="multiple"
+                    columns={expandableDataColumns}
+                    data={currentData}
+                    rowIdField="id"
+                    selectedRowIds={selectedRowIds}
+                    onSelectedRowIdsChange={(ids: TableRowId[]) => {
+                        console.info(ids);
+                        setSelectedRowIds(ids);
+                    }}
+                    expandChildrenOnRowSelection
+                />
+                <Pagination
+                    resultsPerPage={ROWS_PER_PAGE}
+                    numberOfResults={data.length}
+                    activePage={currentPage}
+                    onPageChange={(page) => setCurrentPage(page)}
+                    pagesShown={5}
+                />
+            </>
         );
     },
 };
@@ -768,7 +824,7 @@ export const SingleSelectableRows: Story = {
                 columns={columns}
                 data={data}
                 rowIdField="column1"
-                onSelectedRowsChange={console.info}
+                onSelectedRowIdsChange={console.info}
                 ariaLabelledByColumnId="column2"
             />
         );
@@ -777,22 +833,6 @@ export const SingleSelectableRows: Story = {
 
 export const ExpandableSubrowsMultiple: Story = {
     render() {
-        interface ExpandableData {
-            id: string;
-            name: string;
-        }
-
-        const columns: TableColumn<ExpandableData>[] = [
-            {
-                header: 'ID',
-                accessorKey: 'id',
-            },
-            {
-                header: 'Name',
-                accessorKey: 'name',
-            },
-        ];
-
         const data: TableData<ExpandableData>[] = [
             {
                 id: '1',
@@ -813,7 +853,7 @@ export const ExpandableSubrowsMultiple: Story = {
         ];
         return (
             <Table<ExpandableData>
-                columns={columns}
+                columns={expandableDataColumns}
                 data={data}
                 rowIdField="id"
                 expandableRows="multiple"
@@ -824,22 +864,6 @@ export const ExpandableSubrowsMultiple: Story = {
 
 export const ExpandableSubrowsSingle: Story = {
     render() {
-        interface ExpandableData {
-            id: string;
-            name: string;
-        }
-
-        const columns: TableColumn<ExpandableData>[] = [
-            {
-                header: 'ID',
-                accessorKey: 'id',
-            },
-            {
-                header: 'Name',
-                accessorKey: 'name',
-            },
-        ];
-
         const data: TableData<ExpandableData>[] = [
             {
                 id: '1',
@@ -860,7 +884,7 @@ export const ExpandableSubrowsSingle: Story = {
         ];
         return (
             <Table<ExpandableData>
-                columns={columns}
+                columns={expandableDataColumns}
                 data={data}
                 rowIdField="id"
                 expandableRows="single"
@@ -871,22 +895,6 @@ export const ExpandableSubrowsSingle: Story = {
 
 export const ExpandableSubContent: Story = {
     render() {
-        interface ExpandableData {
-            id: string;
-            name: string;
-        }
-
-        const columns: TableColumn<ExpandableData>[] = [
-            {
-                header: 'ID',
-                accessorKey: 'id',
-            },
-            {
-                header: 'Name',
-                accessorKey: 'name',
-            },
-        ];
-
         const data: TableData<ExpandableData>[] = [
             {
                 id: '1',
@@ -908,7 +916,7 @@ export const ExpandableSubContent: Story = {
 
         return (
             <Table<ExpandableData>
-                columns={columns}
+                columns={expandableDataColumns}
                 data={data}
                 rowIdField="id"
                 expandableRows="single"
@@ -1537,7 +1545,7 @@ export const WithBackgroundColor: Story = {
                     columns={columns}
                     data={data}
                     rowIdField="column1"
-                    onSelectedRowsChange={console.info}
+                    onSelectedRowIdsChange={console.info}
                 />
             </ScrollableWrap>
         );
