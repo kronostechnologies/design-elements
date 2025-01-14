@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 
 export default {
     component: Status,
-    title: 'Deprecated/Status (deprecated)',
+    title: 'Components/Deprecated/Status (deprecated)',
     tags: ['autodocs'],
 };
 

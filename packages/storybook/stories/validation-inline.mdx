@@ -1,0 +1,98 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Patterns/Forms/Validation inline" />
+
+# Form Validation (Inline)
+
+**Note**: This documentation outlines the best practice for providing feedback when users enter invalid data in form controls. It should be followed to ensure a consistent and accessible user experience. However, if project constraints or limitations (such as technical debt) make it impractical to implement this exact pattern, deviations may occur. In such cases, alternative patterns may be used while still aiming to maintain accessibility and usability standards.
+
+
+## Objective (problem to solve)
+
+Users need feedback after entering invalid data for a form control.
+
+## Solution (how to address the problem)
+
+Notify users by providing an error message when the form control loses focus (on blur).
+
+## Visual Design
+
+<figure>
+    <img src="doc/patterns/forms/Client-side-focus.png" alt="form with field with keyboard focus" style={{ width: '600px' }} />
+    <figcaption>Figure 1: Form control with keyboard focus, highlighting the field for user interaction.</figcaption>
+</figure>
+
+<figure>
+    <img src="doc/patterns/forms/Client-side-error.png" alt="form with field in error" style={{ width: '600px' }} />
+    <figcaption>Figure 2: Form control with the focus on the next field, showing the previous field in an error state after focus has moved.</figcaption>
+</figure>
+
+## Behavior
+
+1. Users enter invalid data in a form.
+2. The entered value fails the validation when the user moves the focus away from the form control.
+3. An error icon and message is displayed next to the form control.
+    1. The error message clearly describes the error.
+    2. The error message provides guidance of how to fix the error.
+    3. The icon and error message have a red color that passes the contrast ratio of 3:1.
+4. Form control's border turns red, passing the contrast ratio of 3:1.
+5. Form control have an `aria-invalid=”true”` attribute for screen reader to announce it as “invalid” on focus.
+6. Form control have a `aria-describedby="[id-of-the-error-message]"` attribute associated to their respective error message for screen reader to announce the error message on focus.
+
+## Usage Guidelines
+
+### When to use
+
+When users enter invalid data into a form control and need immediate feedback.
+
+## Rationale (why this solution)
+
+When a form is filled, the values are checked and a feedback is necessary to indicate to users if the entered value is valid or not. By Indicating an error right after users move the focus away from the form control provides the least interaction cost for the user allowing them to fix the error as it happen.
+
+### Form controls
+
+Providing an error message next to each invalid form control allows users to identify each one of them individually. The error message has a red color that passes the color contrast ratio of 3:1 and an error icon allowing also color blind users to clearly identify the error state of a form control.
+
+### Screen Reader Considerations
+We’ve decided not to notify screen reader users at the same time as sight users (they’ll be notify after the form is submitted). This approach helps avoid potential usability issues associated with inline or client-side validation. For example, using the `aria-live="assertive"` attribute on blur may be too intrusive for some users, while using `aria-live="polite"` could result in the screen reader announcing the next form control before reading the error message for the invalid control, which may confuse users.
+
+The `aria-invalid="true"` and the `aria-describedby="[id-of-the-error-message]"` attributes allows screen reader users to be notified of invalid form control and their respective error message when focused.
+
+## Accessibility
+
+- WCAG 2.1 Success Criterion [1.4.3 Contrast Minimum](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.1 Error Identification](https://www.w3.org/WAI/WCAG21/Understanding/error-identification.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.2 Labels or Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.3 Error Suggestions](https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion.html) (Level AA)
+- WCAG 2.1 Success Criterion [3.3.4 Error Prevention (Legal, Financial, Data)](https://www.w3.org/WAI/WCAG21/Understanding/error-prevention-all.html) (Level AA)
+
+## Related components
+
+- Combobox
+- Date picker
+- Money input
+- Numeric input
+- Phone input
+- Stepper input
+- Text input
+- Text area
+
+## References
+
+- [https://www.nngroup.com/articles/errors-forms-design-guidelines/](https://www.nngroup.com/articles/errors-forms-design-guidelines/)
+- [https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc](https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc)
+- [https://usability.yale.edu/web-accessibility/articles/forms](https://usability.yale.edu/web-accessibility/articles/forms)
+- [https://webaim.org/techniques/formvalidation/](https://webaim.org/techniques/formvalidation/)
+- [https://www.w3.org/WAI/tutorials/forms/notifications/](https://www.w3.org/WAI/tutorials/forms/notifications/)
+- [https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/](https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/)
+- [https://www.washington.edu/accessibility/checklist/form-validation/](https://www.washington.edu/accessibility/checklist/form-validation/)
+- [https://www.ibm.com/able/toolkit/design/ux/feedback/](https://www.ibm.com/able/toolkit/design/ux/feedback/)
+- [https://www.ibm.com/able/toolkit/develop/coding-interactions/dynamic-content/#provide-errors-accessibly](https://www.ibm.com/able/toolkit/develop/coding-interactions/dynamic-content/#provide-errors-accessibly)
+- [https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible](https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible)
+- [https://design-system.service.gov.uk/patterns/validation/](https://design-system.service.gov.uk/patterns/validation/)
+- [https://www.carbondesignsystem.com/patterns/forms-pattern/#errors-and-validation](https://www.carbondesignsystem.com/patterns/forms-pattern/#errors-and-validation)
+- [https://design.mindsphere.io/patterns/form-validation.html](https://design.mindsphere.io/patterns/form-validation.html)
+- [https://hds.hel.fi/patterns/form-validation](https://hds.hel.fi/patterns/form-validation)
+- [https://rei.github.io/rei-cedar-docs/patterns/form-validation/](https://rei.github.io/rei-cedar-docs/patterns/form-validation/)
+- [https://ui-patterns.com/patterns/InputFeedback](https://ui-patterns.com/patterns/InputFeedback)
+- [https://ds.equisoft.io/pr-949/?path=/story/components-text-input--default](https://ds.equisoft.io/pr-949/?path=/story/components-text-input--default)
