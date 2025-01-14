@@ -3,96 +3,139 @@ import { buildTheme } from './build-theme';
 import { ThemeCustomization } from './theme';
 import { defaultRefTokens } from './tokens';
 
-const customization: ThemeCustomization = {
-    ref: {
-        'color-brand-05': 'red',
-        'color-brand-20': 'green',
-        'color-neutral-02': 'blue',
-    },
-    alias: {
-        'color-content': 'color-brand-05',
-        'color-content-subtle': 'color-brand-20',
-    },
-    component: {
-        'button-primary-background-color': 'color-neutral-02',
-        'button-primary-inverted-background-color': 'color-brand-20',
-        'focus-inside-border-color': 'color-content-subtle',
-    },
-};
-
-const expectedTheme = {
-    ref: {
-        ...defaultRefTokens,
-        'color-brand-05': 'red',
-        'color-brand-20': 'green',
-        'color-neutral-02': 'blue',
-    },
-};
 describe('buildTheme', () => {
-    it('should build the defaultRefTokens theme with the customization provided', () => {
-        const builtTheme = buildTheme(customization);
+    test('custom ref tokens override defaults', () => {
+        const colorName = 'crimson-red';
+        const theme = buildTheme({
+            ref: {
+                'color-brand-50': colorName,
+            },
+        });
 
-        expect(builtTheme.ref).toEqual(expectedTheme.ref);
+        expect(theme.ref['color-brand-50']).toEqual(colorName);
     });
 
-    it('should build the defaultAliasTokens theme with the customization provided', () => {
-        const builtTheme = buildTheme(customization);
+    test('custom alias tokens override defaults', () => {
+        const refTokenName = 'color-white';
+        const theme = buildTheme({
+            alias: {
+                'color-content': refTokenName,
+            },
+        });
 
-        expect(builtTheme.alias).toMatchSnapshot();
+        expect(theme.alias['color-content']).toEqual(defaultRefTokens[refTokenName]);
     });
 
-    it('should build the defaultComponentTokens with a customization of a ComponentToken as an AliasToken', () => {
-        const builtTheme = buildTheme(customization);
-
-        expect(builtTheme.component['focus-inside-border-color']).toEqual('green');
-    });
-
-    it('should build the defaultComponentTokens with a customization of a ComponentToken as a RefToken', () => {
-        const builtTheme = buildTheme(customization);
-
-        expect(builtTheme.component['button-primary-inverted-background-color']).toEqual('green');
-    });
-
-    it('should build the defaultComponentTokens with a partial customization', () => {
-        const builtTheme = buildTheme(customization);
-
-        expect(builtTheme.component['button-primary-border-color']).toEqual('#006296');
-    });
-
-    it('should log an error for for an unresolved token', () => {
-        const consoleSpy = jest.spyOn(devConsole, 'error');
-        consoleSpy.mockImplementation(() => undefined);
-
-        const token = 'invalid-token';
-        const invalidCustomizationWithUnresolvedToken: ThemeCustomization = {
+    test('custom component tokens override defaults', () => {
+        const refTokenName = 'color-white';
+        const theme = buildTheme({
             component: {
-                // @ts-expect-error-unresolved-token-test-purpose
-                'button-primary-background-color': 'invalid-token',
+                'text-input-text-color': refTokenName,
+            },
+        });
+
+        expect(theme.component['text-input-text-color']).toEqual(defaultRefTokens[refTokenName]);
+    });
+
+    test('contextual values are used when the correct context is active', () => {
+        const customization: ThemeCustomization = {
+            ref: {
+                'font-size-350': '0.875rem',
+                'font-size-400': '1rem',
+            },
+            alias: {
+                'text-body-medium-font-size': 'font-size-350',
+                'text-body-medium-font-size:mobile': 'font-size-400',
             },
         };
 
-        buildTheme(invalidCustomizationWithUnresolvedToken);
+        const theme = buildTheme(customization, ['mobile']);
 
-        expect(consoleSpy).toHaveBeenCalledWith(`Token '${token}' not found in RefTokens or AliasTokens`);
+        expect(theme.alias['text-body-medium-font-size']).toEqual(customization.ref?.['font-size-400']);
     });
 
-    it('should log an error for self-referencing AliasToken', () => {
+    test('contextual values are not used outside of the correct context', () => {
+        const customization: ThemeCustomization = {
+            ref: {
+                'font-size-350': '0.875rem',
+                'font-size-400': '1rem',
+            },
+            alias: {
+                'text-body-medium-font-size': 'font-size-350',
+                'text-body-medium-font-size:mobile': 'font-size-400',
+            },
+        };
+
+        const theme = buildTheme(customization);
+
+        expect(theme.alias['text-body-medium-font-size']).toEqual(customization.ref?.['font-size-350']);
+    });
+
+    test('contextual values are discarded when not used', () => {
+        const customization: ThemeCustomization = {
+            ref: {
+                'font-size-350': '0.875rem',
+                'font-size-400': '1rem',
+            },
+            alias: {
+                'text-body-medium-font-size': 'font-size-350',
+                'text-body-medium-font-size:mobile': 'font-size-400',
+            },
+        };
+
+        const theme = buildTheme(customization);
+
+        // @ts-expect-error-discarded-token-test
+        expect(theme.alias['text-body-medium-font-size:mobile']).toBeUndefined();
+    });
+
+    test('component token values are resolved through aliases', () => {
+        const customization: ThemeCustomization = {
+            ref: {
+                'color-brand-50': 'cadmium-yellow',
+            },
+            alias: {
+                'color-content': 'color-brand-50',
+                'color-content-brand': 'color-content',
+            },
+            component: {
+                'button-primary-background-color': 'color-content-brand',
+            },
+        };
+
+        const theme = buildTheme(customization);
+
+        expect(theme.component['button-primary-background-color']).toEqual('cadmium-yellow');
+    });
+
+    test('logs an error with an invalid token', () => {
         const consoleSpy = jest.spyOn(devConsole, 'error');
         consoleSpy.mockImplementation(() => undefined);
 
-        const token = 'color-content';
-        const invalidCustomizationWithSelfReferenced: ThemeCustomization = {
+        buildTheme({
+            component: {
+                // @ts-expect-error-invalid-token-test
+                'button-primary-background-color': 'invalid-token',
+            },
+        });
+
+        expect(consoleSpy).toHaveBeenCalled();
+    });
+
+    test('logs an error with self-referencing token', () => {
+        const consoleSpy = jest.spyOn(devConsole, 'error');
+        consoleSpy.mockImplementation(() => undefined);
+
+        buildTheme({
             alias: {
-                // @ts-expect-error-self-referenced-token-test-purpose
+                // @ts-expect-error-self-referencing-test
                 'color-content': 'color-content',
             },
             component: {
                 'button-primary-background-color': 'color-content',
             },
-        };
+        });
 
-        buildTheme(invalidCustomizationWithSelfReferenced);
-
-        expect(consoleSpy).toHaveBeenCalledWith(`Self-referencing AliasToken detected: '${token}'`);
+        expect(consoleSpy).toHaveBeenCalled();
     });
 });

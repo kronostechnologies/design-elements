@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { DesignSystem, DesignSystemProps } from '../components/design-system';
-import { equisoftTheme } from '../theme';
+import { equisoftThemeCustomization } from '../theme';
 
 export function renderWithProviders(
     ui: Parameters<typeof render>[0],
@@ -12,11 +12,11 @@ export function renderWithProviders(
         isolateStyles,
         language,
         staticDevice,
-        theme,
+        themeCustomization,
     } = {
         isolateStyles: false,
         language: 'fr',
-        theme: equisoftTheme,
+        themeCustomization: equisoftThemeCustomization,
         ...wrapperProps,
     };
     return render(
@@ -29,7 +29,7 @@ export function renderWithProviders(
                         isolateStyles={isolateStyles}
                         language={language}
                         staticDevice={staticDevice}
-                        theme={theme}
+                        themeCustomization={themeCustomization}
                     >
                         {children}
                     </DesignSystem>

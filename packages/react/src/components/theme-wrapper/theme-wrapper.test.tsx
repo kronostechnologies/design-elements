@@ -1,8 +1,8 @@
 import { render, shallow } from 'enzyme';
-import { buildTheme, Button } from '../..';
+import { Button } from '../..';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 import { ThemeWrapper } from './theme-wrapper';
-import { ThemeCustomization } from '../../themes/theme';
+import { ThemeCustomization } from '../../themes';
 
 describe('Theme Wrapper', () => {
     test('Returns component with default theme', () => {
@@ -25,10 +25,8 @@ describe('Theme Wrapper', () => {
             },
         };
 
-        const builtTheme = buildTheme(themeCustomization);
-
         const tree1 = render(
-            <ThemeWrapper theme={builtTheme}>
+            <ThemeWrapper themeCustomization={themeCustomization}>
                 <Button buttonType="primary" />
             </ThemeWrapper>,
         );

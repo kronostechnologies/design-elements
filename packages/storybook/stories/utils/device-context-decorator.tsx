@@ -1,12 +1,12 @@
-import { DeviceContextProvider } from '@equisoft/design-elements-react';
+import { DesignSystem } from '@equisoft/design-elements-react';
 import { ComponentType } from 'react';
 import { decorateWith, Decorator } from './decorator';
 
-export const DeviceContextDecorator: Decorator = decorateWith(DeviceContextProvider);
+export const DeviceContextDecorator: Decorator = decorateWith(DesignSystem);
 
 export const DesktopDecorator: Decorator = (Story: ComponentType) => (
-    <DeviceContextProvider staticDevice="desktop"><Story /></DeviceContextProvider>
+    <DesignSystem staticDevice="desktop"><Story /></DesignSystem>
 );
 export const MobileDecorator: Decorator = (Story: ComponentType) => (
-    <DeviceContextProvider staticDevice="mobile"><Story /></DeviceContextProvider>
+    <DesignSystem staticDevice="mobile"><Story /></DesignSystem>
 );

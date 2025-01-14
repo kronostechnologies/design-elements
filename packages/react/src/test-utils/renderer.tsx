@@ -11,11 +11,11 @@ import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
 export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps>> = ({
     children,
     language,
-    theme,
+    themeCustomization,
     staticDevice,
 }) => (
     <MemoryRouter>
-        <DesignSystem language={language} staticDevice={staticDevice} theme={theme}>
+        <DesignSystem language={language} staticDevice={staticDevice} themeCustomization={themeCustomization}>
             {children}
         </DesignSystem>
     </MemoryRouter>

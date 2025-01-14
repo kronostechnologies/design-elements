@@ -1,9 +1,13 @@
-import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
-import { equisoftTheme } from '../../theme';
-import { ResolvedTheme } from '../../themes/theme';
+import { buildTheme, equisoftThemeCustomization, ThemeCustomization, TokenContext } from '../../themes';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+
+export interface DisplayPreferences {
+    // User-provided preferences for display (density, contrast, motion, etc.)
+}
 
 export interface ThemeWrapperProps {
     /**
@@ -11,29 +15,50 @@ export interface ThemeWrapperProps {
      * @default false
      */
     isolateStyles?: boolean;
-    theme?: ResolvedTheme;
+    themeCustomization?: ThemeCustomization;
+    displayPreferences?: DisplayPreferences;
 }
 
-/**
- * @deprecated Use {@link DesignSystem} instead
- */
+// Context values should be added in order of importance. Later values will be applied over earlier values.
+function getTokenContext(
+    deviceContext: DeviceContextProps,
+    // @ts-ignore Future use
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    displayPreferences?: DisplayPreferences,
+): TokenContext[] {
+    const context: TokenContext[] = [];
+
+    if (deviceContext.isMobile) {
+        context.push('mobile');
+    }
+
+    if (deviceContext.isTablet) {
+        context.push('tablet');
+    }
+
+    return context;
+}
+
 export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps>> = ({
     children,
     isolateStyles = false,
-    theme = equisoftTheme,
+    themeCustomization = equisoftThemeCustomization,
+    displayPreferences,
 }) => {
-    let content: ReactNode;
-    if (isolateStyles) {
-        content = <ShadowWrapper>{children}</ShadowWrapper>;
-    } else {
-        content = children;
-    }
+    const deviceContext = useDeviceContext();
+
+    const resolvedTheme = buildTheme(
+        themeCustomization,
+        getTokenContext(deviceContext, displayPreferences),
+    );
 
     useStyle(isolateStyles);
 
     return (
-        <ThemeProvider theme={theme}>
-            {content}
+        <ThemeProvider theme={resolvedTheme}>
+            {isolateStyles
+                ? <ShadowWrapper>{children}</ShadowWrapper>
+                : children}
         </ThemeProvider>
     );
 };
