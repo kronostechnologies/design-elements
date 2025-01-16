@@ -4,6 +4,8 @@ import { FunctionComponent } from 'react';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const Default: FunctionComponent<CheckboxProps> = (props) => <Checkbox {...props} />;
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const Required: FunctionComponent<CheckboxProps> = (props) => <Checkbox required valid={false} {...props} />;
 
 const CheckboxMeta: Meta<typeof Default> = {
     title: 'Components/Checkbox',
