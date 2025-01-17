@@ -28,6 +28,7 @@ export interface MoneyInputProps {
     id?: string;
     className?: string;
     disabled?: boolean;
+    readOnly?: boolean;
     required?: boolean;
     /**
      * Message displayed in case of validation error
@@ -71,6 +72,7 @@ function parseAndRound(val: string, precision: number): number | null {
 export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     id: providedId,
     className,
+    readOnly,
     required,
     disabled,
     label,
@@ -151,6 +153,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             $textAlignment={textAlignment}
             id={providedId}
             className={className}
+            readOnly={readOnly}
             required={required}
             disabled={disabled}
             ref={inputElement}
