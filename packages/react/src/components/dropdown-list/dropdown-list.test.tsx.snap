@@ -232,6 +232,7 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c4"
     data-testid="textbox"
@@ -609,6 +610,7 @@ input + .c2 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -695,6 +697,7 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c5"
     data-testid="textbox"
@@ -1095,6 +1098,7 @@ input + .c2 {
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1184,6 +1188,7 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="true"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c6"
     data-testid="textbox"
@@ -1527,6 +1532,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1595,6 +1601,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     aria-invalid="false"
     aria-label="Select an option"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c2"
     data-testid="textbox"
@@ -1938,6 +1945,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2009,6 +2017,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
     aria-invalid="false"
     aria-label="Select an option"
     aria-labelledby="uuid1_label"
+    aria-readonly="false"
     aria-required="false"
     class="c2"
     data-testid="textbox"
@@ -2540,6 +2549,7 @@ input + .c2 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2621,6 +2631,7 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c5"
     data-testid="textbox"

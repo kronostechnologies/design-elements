@@ -36,6 +36,7 @@ interface TextboxProps {
     $disabled?: boolean;
     $isMobile: boolean;
     $isMultiselect?: boolean;
+    $readOnly?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
     value: string;
@@ -45,15 +46,40 @@ export interface DropdownListOption extends ListboxOption {
     label: string;
 }
 
-function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
+function getBackgroundColor({ $disabled, $readOnly, theme }: TextboxProps): string {
+    if ($disabled) {
+        return theme.component['dropdown-list-input-disabled-background-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-background-color'];
+    }
+
+    return theme.component['dropdown-list-input-background-color'];
+}
+
+function getBorderColor({ $disabled, $readOnly, theme, $valid }: TextboxProps): string {
     if ($disabled) {
         return theme.component['dropdown-list-input-disabled-border-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-border-color'];
     }
     if (!$valid) {
         return theme.component['dropdown-list-input-error-border-color'];
     }
 
     return theme.component['dropdown-list-input-border-color'];
+}
+
+function getTextColor({ $disabled, $readOnly, theme }: TextboxProps): string {
+    if ($disabled) {
+        return theme.component['dropdown-list-input-disabled-text-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-text-color'];
+    }
+
+    return theme.component['dropdown-list-input-text-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -77,11 +103,11 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
 
 const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-input-disabled-background-color'] : theme.component['dropdown-list-input-background-color'])};
+    background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${({ $disabled, theme }) => $disabled && theme.component['dropdown-list-input-disabled-text-color']};
+    color: ${getTextColor};
     display: flex;
     justify-content: space-between;
     min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
@@ -162,6 +188,7 @@ export interface DropdownListProps<M extends boolean | undefined> {
     name?: string;
     options: DropdownListOption[];
     required?: boolean;
+    readOnly?: boolean;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
     /**
@@ -214,6 +241,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     onChange,
     options,
     name,
+    readOnly,
     required,
     tooltip,
     toggletip,
@@ -301,7 +329,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     function openListbox(): void {
-        if (disabled) {
+        if (disabled || readOnly) {
             return;
         }
 
@@ -500,7 +528,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             aria-hidden="true"
             data-testid={`listboxtag-${option.value}`}
             key={option.value}
-            onRemove={handleTagRemove}
+            onRemove={readOnly ? undefined : handleTagRemove}
             value={{ id: option.value, label: option.label }}
         />
     ));
@@ -550,6 +578,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 aria-expanded={open}
                 aria-invalid={!valid ? 'true' : 'false'}
                 aria-labelledby={ariaLabelledBy}
+                aria-readonly={readOnly ? 'true' : 'false'}
                 aria-required={required ? 'true' : 'false'}
                 data-testid="textbox"
                 id={id}
@@ -560,6 +589,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 onClick={handleTextboxClick}
                 onKeyDown={handleTextboxKeyDown}
                 ref={textboxRef}
+                $readOnly={readOnly}
                 role="combobox"
                 tabIndex={0}
                 $valid={valid}
