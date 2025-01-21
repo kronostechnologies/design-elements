@@ -5,6 +5,7 @@ import {
     useCallback,
     useContext,
     useEffect,
+    useRef,
     useState,
 } from 'react';
 import { breakpoints, Breakpoints } from '../../legacy-constants/breakpoints';
@@ -24,23 +25,11 @@ export interface DeviceContextProps {
 }
 
 function getDeviceContext(deviceName: DeviceType): DeviceContextProps {
-    let isDesktop = false;
-    let isTablet = false;
-    let isMobile = false;
-
-    if (deviceName === 'desktop') {
-        isDesktop = true;
-    } else if (deviceName === 'tablet') {
-        isTablet = true;
-    } else if (deviceName === 'mobile') {
-        isMobile = true;
-    }
-
     return {
         device: deviceName,
-        isDesktop,
-        isTablet,
-        isMobile,
+        isDesktop: deviceName === 'desktop',
+        isTablet: deviceName === 'tablet',
+        isMobile: deviceName === 'mobile',
         breakpoints,
     };
 }
@@ -68,23 +57,23 @@ export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceCo
 }) => {
     const deviceType = staticDevice || getDeviceType();
 
-    const [previousDeviceType, setPreviousDeviceType] = useState<DeviceType>(deviceType);
-    const [previousStaticDevice, setPreviousStaticDevice] = useState<DeviceType | undefined>(staticDevice);
+    const previousDeviceType = useRef<DeviceType>(deviceType);
+    const previousStaticDevice = useRef<DeviceType | undefined>(staticDevice);
     const [deviceContext, setDeviceContext] = useState<DeviceContextProps>(getDeviceContext(deviceType));
 
-    if (staticDevice !== previousStaticDevice) {
-        setPreviousStaticDevice(staticDevice);
+    if (staticDevice !== previousStaticDevice.current) {
+        previousStaticDevice.current = staticDevice;
         setDeviceContext(getDeviceContext(deviceType));
     }
 
     const handleScreenResize = useCallback(() => {
         const currentDeviceType = getDeviceType();
 
-        if (currentDeviceType !== previousDeviceType) {
-            setPreviousDeviceType(currentDeviceType);
+        if (currentDeviceType !== previousDeviceType.current) {
+            previousDeviceType.current = currentDeviceType;
             setDeviceContext(getDeviceContext(currentDeviceType));
         }
-    }, [previousDeviceType]);
+    }, []);
 
     useEffect(() => {
         if (!staticDevice) {
