@@ -4,7 +4,7 @@ import type { AliasToken } from './alias-tokens';
 export type TokenName = string;
 export type TokenValue = string;
 
-export type TokenContext = 'mobile' | 'tablet';
+export type TokenContext = 'desktop' | 'tablet' | 'mobile';
 
 export type TokenMap<T extends TokenName, V extends TokenValue> = {
     [Name in T]: Exclude<V, Name>;

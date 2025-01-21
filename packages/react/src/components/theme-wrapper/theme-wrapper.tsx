@@ -36,6 +36,10 @@ function getTokenContext(
         context.push('tablet');
     }
 
+    if (deviceContext.isDesktop) {
+        context.push('desktop');
+    }
+
     return context;
 }
 
