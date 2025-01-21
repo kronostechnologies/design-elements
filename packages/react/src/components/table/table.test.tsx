@@ -215,9 +215,8 @@ describe('Table', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onSelectedRows callbacks are called when row-checkbox is checked', () => {
+    test('onSelectedRowIds is called when row-checkbox is checked', () => {
         const onSelectedRowIdsChange = jest.fn();
-        const onSelectedRowsChange = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="multiple"
@@ -225,19 +224,16 @@ describe('Table', () => {
                 data={data}
                 rowIdField="id"
                 onSelectedRowIdsChange={onSelectedRowIdsChange}
-                onSelectedRowsChange={onSelectedRowsChange}
             />,
         );
 
         getByTestId(wrapper, 'row-checkbox-0').find('input').simulate('change', { target: { checked: true } });
 
         expect(onSelectedRowIdsChange).toHaveBeenCalledWith([data[0].id]);
-        expect(onSelectedRowsChange).toHaveBeenCalledWith([data[0]]);
     });
 
-    test('onSelectedRows callbacks are called with all rows when row-checkbox-all is checked', () => {
+    test('onSelectedRowIds is called with all rows when row-checkbox-all is checked', () => {
         const onSelectedRowIdsChange = jest.fn();
-        const onSelectedRowsChange = jest.fn();
         const wrapper = mountWithTheme(
             <Table<TestData>
                 rowSelectionMode="multiple"
@@ -245,7 +241,6 @@ describe('Table', () => {
                 data={data}
                 rowIdField="id"
                 onSelectedRowIdsChange={onSelectedRowIdsChange}
-                onSelectedRowsChange={onSelectedRowsChange}
             />,
         );
 
@@ -253,7 +248,6 @@ describe('Table', () => {
             .simulate('change', { target: { checked: true } });
 
         expect(onSelectedRowIdsChange).toHaveBeenCalledWith(data.map((row) => row.id));
-        expect(onSelectedRowsChange).toHaveBeenCalledWith(data);
     });
 
     test('should hide select all checkbox', () => {
@@ -493,58 +487,6 @@ describe('Table', () => {
             .simulate('change', { target: { checked: true } });
 
         expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['0', '1', '2']);
-        expect(getByTestId(wrapper, 'row-checkbox-0')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-checkbox-1')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-checkbox-2')
-            .find('input')
-            .prop('checked')).toBe(true);
-    });
-
-    test('should exclude group row from selectedRows callback', () => {
-        const onSelectedRowIdsChange = jest.fn();
-        const onSelectedRowChange = jest.fn();
-        const dataWithSubRows: TableData<TestData>[] = [
-            {
-                id: '0',
-                column1: 'Hello',
-                column2: 'World',
-                subRows: [
-                    {
-                        id: '1',
-                        column1: 'Hello',
-                        column2: 'Planet',
-                    },
-                    {
-                        id: '2',
-                        column1: 'Hello',
-                        column2: 'Galaxy',
-                    },
-                ],
-            },
-        ];
-        const wrapper = mountWithTheme(
-            <Table<TestData>
-                rowSelectionMode="multiple"
-                columns={columns}
-                data={dataWithSubRows}
-                rowIdField="id"
-                excludeGroupsFromSelection
-                onSelectedRowIdsChange={onSelectedRowIdsChange}
-                onSelectedRowsChange={onSelectedRowChange}
-                expandChildrenOnRowSelection
-            />,
-        );
-
-        getByTestId(wrapper, 'row-checkbox-0')
-            .find('input')
-            .simulate('change', { target: { checked: true } });
-
-        expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['1', '2']);
-        expect(onSelectedRowChange).toHaveBeenLastCalledWith(dataWithSubRows[0].subRows);
         expect(getByTestId(wrapper, 'row-checkbox-0')
             .find('input')
             .prop('checked')).toBe(true);

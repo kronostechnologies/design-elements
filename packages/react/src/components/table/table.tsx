@@ -199,9 +199,9 @@ function getSelectionColumn<T extends object>(
             column.header = ({ table }) => (
                 <Checkbox
                     data-testid="row-checkbox-all"
-                    checked={table.getIsAllRowsSelected()}
-                    indeterminate={table.getIsSomeRowsSelected()}
-                    onChange={table.getToggleAllRowsSelectedHandler()}
+                    checked={table.getIsAllPageRowsSelected()}
+                    indeterminate={table.getIsSomePageRowsSelected()}
+                    onChange={table.getToggleAllPageRowsSelectedHandler()}
                 />
             );
         }
@@ -348,7 +348,6 @@ export interface TableProps<T extends object> {
     data: T[];
     defaultSort?: ColumnSort;
     columns: TableColumn<T>[];
-    excludeGroupsFromSelection?: boolean;
     expandableRows?: 'single' | 'multiple';
     expandChildrenOnRowSelection?: boolean;
     hideSelectAll?: boolean;
@@ -380,9 +379,7 @@ export interface TableProps<T extends object> {
 
     onRowClick?(row: Row<T>): void;
 
-    onSelectedRowIdsChange?(selectedRows: TableRowId[]): void;
-
-    onSelectedRowsChange?(selectedRows: T[]): void;
+    onSelectedRowIdsChange?(selectedRowIds: TableRowId[]): void;
 
     onSort?(sort: ColumnSort | null): void;
 }
@@ -394,7 +391,6 @@ export const Table = <T extends object>({
     rowIdField,
     defaultSort,
     columns: providedColumns,
-    excludeGroupsFromSelection = false,
     expandableRows,
     expandChildrenOnRowSelection,
     hideSelectAll = false,
@@ -408,7 +404,6 @@ export const Table = <T extends object>({
     manualSort = false,
     onRowClick,
     onSelectedRowIdsChange,
-    onSelectedRowsChange,
     onSort,
 }: TableProps<T>): ReactElement => {
     const { t } = useTranslation('table');
@@ -506,19 +501,7 @@ export const Table = <T extends object>({
             const currentTable = tableInstance.current;
 
             if (currentTable) {
-                const emittedRowIds = newSelectedRowIds.filter(
-                    (rowId) => !excludeGroupsFromSelection || !currentTable.getRow(rowId).subRows.length,
-                );
-
-                onSelectedRowIdsChange?.(emittedRowIds);
-
-                if (onSelectedRowsChange) {
-                    const emittedSelectedRows = emittedRowIds
-                        .map((rowId) => currentTable.getRow(rowId))
-                        .map((row) => row.original);
-
-                    onSelectedRowsChange(emittedSelectedRows);
-                }
+                onSelectedRowIdsChange?.(newSelectedRowIds);
             }
         },
     };
