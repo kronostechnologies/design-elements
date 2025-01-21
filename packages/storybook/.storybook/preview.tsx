@@ -12,25 +12,6 @@ const decorators: Decorator[] = [
     ),
 ];
 
-const viewportOptions = {
-    mobile: {
-        name: 'Mobile',
-        styles: {
-            height: '834px',
-            width: '480px',
-        },
-        type: 'mobile',
-    },
-    tablet: {
-        name: 'Tablet',
-        styles: {
-            height: '834px',
-            width: '1023px',
-        },
-        type: 'tablet',
-    },
-};
-
 const preview: Preview = {
     decorators,
     parameters: {
@@ -57,12 +38,6 @@ const preview: Preview = {
             storySort: {
                 order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
             },
-        },
-        viewport: {
-            options: viewportOptions,
-        },
-        initialGlobals: {
-            viewport: { value: 'responsive', isRotated: false },
         },
     },
 };
