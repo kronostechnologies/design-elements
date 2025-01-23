@@ -51,6 +51,4 @@ const SkipLinkMeta: Meta<typeof SkipLink> = {
 export default SkipLinkMeta;
 type Story = StoryObj<typeof SkipLink>;
 
-export const Default: Story = {
-    ...SkipLinkMeta,
-};
+export const Default: Story = {};

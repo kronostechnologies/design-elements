@@ -17,6 +17,7 @@ const routeMap = (length: number): BreadcrumbElement[] => {
 const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
     title: 'Components/Breadcrumb',
     component: Breadcrumb,
+    decorators: [RouterDecorator],
     argTypes: {
         history: {
             control: { disable: true },
@@ -34,15 +35,10 @@ const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
 export default BreadcrumbMeta;
 type Story = StoryObj<typeof Breadcrumb>;
 
-export const Default: Story = {
-    ...BreadcrumbMeta,
-};
-Default.decorators = [RouterDecorator];
+export const Default: Story = {};
 
 export const WithMany: Story = {
-    ...BreadcrumbMeta,
     render: () => (
         <Breadcrumb history={routeMap(15)} />
     ),
 };
-WithMany.decorators = [RouterDecorator];

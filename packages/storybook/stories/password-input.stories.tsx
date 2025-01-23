@@ -28,4 +28,4 @@ const PasswordInputMeta: Meta<typeof PasswordInput> = {
 export default PasswordInputMeta;
 type Story = StoryObj<typeof PasswordInput>;
 
-export const Default: Story = { ...PasswordInputMeta };
+export const Default: Story = {};

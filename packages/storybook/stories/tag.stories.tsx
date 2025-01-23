@@ -57,9 +57,7 @@ const TagMeta: Meta<typeof Tag> = {
 export default TagMeta;
 type Story = StoryObj<typeof Tag>;
 
-export const Default: Story = {
-    ...TagMeta,
-};
+export const Default: Story = {};
 
 export const Removable: Story = {
     ...Default,

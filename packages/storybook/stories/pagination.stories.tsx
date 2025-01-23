@@ -1,13 +1,11 @@
 import { Pagination } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { DeviceContextDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const PaginationMeta: Meta<typeof Pagination> = {
     title: 'Components/Pagination',
     component: Pagination,
-    decorators: [DeviceContextDecorator],
     args: {
         resultsPerPage: 10,
         numberOfResults: 30,
@@ -28,12 +26,9 @@ const PaginationMeta: Meta<typeof Pagination> = {
 export default PaginationMeta;
 type Story = StoryObj<typeof Pagination>;
 
-export const Default: Story = {
-    ...PaginationMeta,
-};
+export const Default: Story = {};
 
 export const ControlledPagination: Story = {
-    ...PaginationMeta,
     render: () => {
         const [currentPage, setCurrentPage] = useState(18);
 

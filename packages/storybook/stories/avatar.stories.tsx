@@ -1,7 +1,6 @@
 import { Avatar } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import AvatarImg from './assets/avatars.png';
-import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
 const meta: Meta<typeof Avatar> = {
     title: 'Components/Avatar',
@@ -17,7 +16,6 @@ export const TextAvatar: Story = {
         size: 'medium',
         username: 'Patrick B',
     },
-    decorators: [DesktopDecorator],
 };
 
 export const ImageAvatar: Story = {
@@ -26,12 +24,10 @@ export const ImageAvatar: Story = {
         imgSrc: AvatarImg,
         username: 'John',
     },
-    decorators: [DesktopDecorator],
 };
 
 export const IconAvatar: Story = {
     args: {
         size: 'medium',
     },
-    decorators: [MobileDecorator],
 };

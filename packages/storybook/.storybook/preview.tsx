@@ -1,18 +1,42 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { DocsContainer } from '@storybook/blocks';
 import { Decorator, Preview } from '@storybook/react';
+import { ModernViewport } from '@storybook/addon-viewport';
 import { i18nDecorator } from './i18n-decorator';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
     i18nDecorator,
-    (Story, context) => (
-        <DesignSystem language={context.globals.locale}>
-            <Story />
+    (Story, { globals }) => (
+        <DesignSystem
+            language={globals.language}
+            staticDevice={globals.staticDevice}
+            themeCustomization={globals.themeCustomization}
+        >
+            <Story/>
         </DesignSystem>
     ),
 ];
+
+const viewportOptions: Record<string, ModernViewport> = {
+    mobile: {
+        name: 'Mobile',
+        styles: {
+            height: '834px',
+            width: '480px',
+        },
+        type: 'mobile',
+    },
+    tablet: {
+        name: 'Tablet',
+        styles: {
+            height: '834px',
+            width: '1023px',
+        },
+        type: 'tablet',
+    },
+};
 
 const preview: Preview = {
     decorators,
@@ -28,6 +52,12 @@ const preview: Preview = {
                     { value: 'fr-CA', title: 'Français' },
                 ],
             },
+        },
+        staticDevice: {
+            type: 'string',
+        },
+        themeCustomization: {
+            name: 'Theme',
         },
     },
     initialGlobals: {
@@ -51,15 +81,24 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ['Introduction',
+                order: [
+                    'Introduction',
                     'Getting started',
                     'Foundations',
                     'Components',
-                    ['*', 'Core', 'Deprecated'],
+                    [
+                        '*',
+                        'Core',
+                        'Deprecated',
+                    ],
                     'Patterns',
                     'Atoms',
-                    'Changelog'],
+                    'Changelog',
+                ],
             },
+        },
+        viewport: {
+            options: viewportOptions,
         },
     },
 };

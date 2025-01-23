@@ -3,7 +3,6 @@ import { Meta, StoryObj } from '@storybook/react';
 import type { ComponentProps } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
-import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 const StyledDiv = styled.div`
@@ -110,13 +109,4 @@ const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
 export default BentoMenuMeta;
 type Story = StoryObj<typeof BentoMenuButton>;
 
-export const Desktop: Story = {
-    decorators: [DesktopDecorator],
-    ...BentoMenuMeta,
-};
-Desktop.decorators = [DesktopDecorator];
-
-export const Mobile: Story = {
-    ...BentoMenuMeta,
-};
-Mobile.decorators = [MobileDecorator];
+export const Default: Story = {};

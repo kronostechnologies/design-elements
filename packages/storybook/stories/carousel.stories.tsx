@@ -46,16 +46,13 @@ const CarouselMeta: Meta<typeof Carousel> = {
 export default CarouselMeta;
 type Story = StoryObj<typeof Carousel>;
 
-export const Default: Story = {
-    ...CarouselMeta,
-};
+export const Default: Story = {};
 
 export const Loop: Story = {
     args: {
         loop: true,
         autoTransitionDelay: 0,
     },
-    ...CarouselMeta,
 };
 
 export const WithAutomaticTransition: Story = {
@@ -63,26 +60,22 @@ export const WithAutomaticTransition: Story = {
         loop: true,
         autoTransitionDelay: 1000,
     },
-    ...CarouselMeta,
 };
 
 export const WithoutArrows: Story = {
     args: {
         withArrows: false,
     },
-    ...CarouselMeta,
 };
 
 export const WithHeader: Story = {
     args: {
         header: <Header>Header</Header>,
     },
-    ...CarouselMeta,
 };
 
 export const WithInitialSlide: Story = {
     args: {
         initialSlide: 1,
     },
-    ...CarouselMeta,
 };

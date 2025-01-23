@@ -26,9 +26,8 @@ const SearchGlobalMeta: Meta<typeof SearchGlobal> = {
 export default SearchGlobalMeta;
 type Story = StoryObj<typeof SearchGlobal>;
 
-export const Default: Story = { ...SearchGlobalMeta };
+export const Default: Story = {};
 
 export const EventCallbacks: Story = {
-    ...SearchGlobalMeta,
     parameters: rawCodeParameters,
 };

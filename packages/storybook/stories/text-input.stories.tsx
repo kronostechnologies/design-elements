@@ -37,7 +37,6 @@ export default TextInputMeta;
 type Story = StoryObj<typeof TextInput>;
 
 export const Default: Story = {
-    ...TextInputMeta,
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
@@ -46,7 +45,6 @@ export const Default: Story = {
 };
 
 export const IconAsAdornment: Story = {
-    ...TextInputMeta,
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
@@ -56,7 +54,6 @@ export const IconAsAdornment: Story = {
 };
 
 export const TextAsAdornment: Story = {
-    ...TextInputMeta,
     args: {
         label: 'First Name',
         validationErrorMessage: 'Error message',
@@ -66,7 +63,6 @@ export const TextAsAdornment: Story = {
 };
 
 export const WithEventCallbacks: Story = {
-    ...TextInputMeta,
     parameters: rawCodeParameters,
     args: {
         required: true,

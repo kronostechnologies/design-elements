@@ -12,7 +12,7 @@ import * as GlobalHeaderStories  from './global-header.stories';
 
 ## Definition
 The global header sits at the top of the application interface, consistently visible across all screens, serving as a hub for the application's branding and name. Additionally, it houses essential tools like navigation, search, notifications, and user settings.
-<Canvas of={GlobalHeaderStories.Desktop} />
+<Canvas of={GlobalHeaderStories.Default} />
 
 ## Usage
 - Use to prominently display the company's logo, name, or other branding elements to reinforce brand identity.
@@ -21,10 +21,10 @@ The global header sits at the top of the application interface, consistently vis
 
 ## Variants
 ### Default
-<Canvas of={GlobalHeaderStories.Desktop} />
+<Canvas of={GlobalHeaderStories.Default} />
 
 ### Mobile
-<Canvas of={GlobalHeaderStories.Mobile} />
+To preview the navigation menu as seen on mobile devices, use the `viewport` menu in the story toolbar.
 
 ## Properties
 <ArgTypes of={GlobalHeader} />

@@ -35,6 +35,13 @@ export const App: FC = () => (
 
 <ArgTypes of={DesignSystem} />
 
+## Responsive design
+
+Some components are built to adjust to the screen size. To visualize how the components behave on different screen
+sizes, use the viewport size selector in the toolbar (visible in individual story pages).
+
+A button, as seen on a mobile device:
+<Canvas of={GettingStartedStories.MobileButton} />
 
 ## Theming
 
@@ -43,11 +50,15 @@ it's possible to override parts of the theme by providing a `themeCustomization`
 For more details, take a look at the [type definitions](https://github.com/kronostechnologies/design-elements/blob/master/packages/react/src/themes/theme.ts)
 and the list of available design tokens.
 
+<Canvas of={GettingStartedStories.Theming} />
+
 
 ## Internationalization
 
-If your application supports multiple languages, you simply need to sync the selected language in your application with
-the `DesignSystem` provider's `language` prop. The default language is **english**.
+If your application supports multiple languages, you simply need to provide your application's configured language to
+the `language` prop of the `DesignSystem` component. The default value is `en` (English). You can switch the language
+throughout the Storybook using the globe icon in the toolbar.
+
 The following sample shows that the provider only translates the messages
 related to the design system. For a more complex example, take a look at the [webapp-boilerplate](https://github.com/kronostechnologies/webapp-boilerplate/tree/master/web/src/browser).
 

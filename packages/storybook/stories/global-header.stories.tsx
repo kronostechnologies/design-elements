@@ -2,12 +2,12 @@ import { GlobalHeader } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ReactElement } from 'react';
 import CustomLogoSvg from './assets/customLogo.svg';
-import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 const GlobalHeaderMeta: Meta<typeof GlobalHeader> = {
     title: 'Components/Global Header',
     component: GlobalHeader,
+    decorators: [RouterDecorator],
     argTypes: {
         customLogo: {
             control: { disable: true },
@@ -29,14 +29,6 @@ const GlobalHeaderMeta: Meta<typeof GlobalHeader> = {
     ),
 };
 
-export default GlobalHeaderMeta;
-type Story = StoryObj<typeof GlobalHeader>;
-
-export const Desktop: Story = {
-    ...GlobalHeaderMeta,
-};
-Desktop.decorators = [RouterDecorator];
-
 const drawerContent: ReactElement = (
     <div style={{ padding: '16px' }}>
         <h2>Section 1</h2>
@@ -48,22 +40,22 @@ const drawerContent: ReactElement = (
     </div>
 );
 
-export const Mobile: Story = {
-    ...GlobalHeaderMeta,
+export default GlobalHeaderMeta;
+type Story = StoryObj<typeof GlobalHeader>;
+
+export const Default: Story = {
     args: {
         mobileDrawerContent: drawerContent,
     },
 };
-Mobile.decorators = [RouterDecorator, MobileDecorator];
 
 const customLogo: ReactElement = (
     <img src={CustomLogoSvg} />
 );
 
 export const WithCustomLogo: Story = {
-    ...GlobalHeaderMeta,
     args: {
         customLogo,
+        mobileDrawerContent: drawerContent,
     },
 };
-WithCustomLogo.decorators = [RouterDecorator];
