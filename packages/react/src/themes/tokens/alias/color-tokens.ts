@@ -43,21 +43,25 @@ export type ColorAliasToken =
     | 'color-control-background'
     | 'color-control-background-hover'
     | 'color-control-background-disabled'
+    | 'color-control-background-readonly'
     | 'color-control-background-checked'
     | 'color-control-background-selected'
     | 'color-control-background-selected-hover'
     | 'color-control-border'
     | 'color-control-border-hover'
     | 'color-control-border-disabled'
+    | 'color-control-border-readonly'
     | 'color-control-border-selected'
     | 'color-control-border-checked'
     | 'color-control-border-error'
     | 'color-control-value'
     | 'color-control-value-hover'
     | 'color-control-value-disabled'
+    | 'color-control-value-readonly'
     | 'color-control-auxiliary'
     | 'color-control-auxiliary-hover'
     | 'color-control-auxiliary-disabled'
+    | 'color-control-auxiliary-readonly'
     | 'color-control-auxiliary-error'
     | 'color-control-auxiliary-success'
     | 'color-control-auxiliary-checked'
@@ -157,21 +161,25 @@ export const defaultColorAliasTokens: AliasTokenMap<ColorAliasToken> = {
     'color-control-background': 'color-white',
     'color-control-background-hover': 'color-neutral-15',
     'color-control-background-disabled': 'color-neutral-05',
+    'color-control-background-readonly': 'transparent-dark-3',
     'color-control-background-checked': 'color-brand-50',
     'color-control-background-selected': 'color-brand-05',
     'color-control-background-selected-hover': 'color-brand-10',
     'color-control-border': 'color-neutral-65',
     'color-control-border-hover': 'color-black',
     'color-control-border-disabled': 'color-neutral-30',
+    'color-control-border-readonly': 'transparent-100',
     'color-control-border-selected': 'color-brand-50',
     'color-control-border-checked': 'color-brand-50',
     'color-control-border-error': 'color-alert-50',
     'color-control-value': 'color-content',
     'color-control-value-hover': 'color-content-hover',
     'color-control-value-disabled': 'color-content-disabled',
+    'color-control-value-readonly': 'color-content',
     'color-control-auxiliary': 'color-neutral-65',
     'color-control-auxiliary-hover': 'color-black',
     'color-control-auxiliary-disabled': 'color-neutral-30',
+    'color-control-auxiliary-readonly': 'color-neutral-65',
     'color-control-auxiliary-error': 'color-alert-50',
     'color-control-auxiliary-success': 'color-success-50',
     'color-control-auxiliary-checked': 'color-white',
