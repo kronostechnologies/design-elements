@@ -157,7 +157,7 @@ input + .c2 {
 }
 
 .c7 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -223,6 +223,18 @@ input + .c2 {
 .c7:disabled,
 .c7:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c7:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c7:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c7 {

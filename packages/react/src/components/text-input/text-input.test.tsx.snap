@@ -36,7 +36,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -102,6 +102,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c4:focus,
 .c4:disabled {
   border: 0;
@@ -109,7 +121,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -197,7 +209,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -263,6 +275,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c4:focus,
 .c4:disabled {
   border: 0;
@@ -270,7 +294,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -356,7 +380,7 @@ input + .c1 {
 }
 
 .c4 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -422,6 +446,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c4:focus,
 .c4:disabled {
   border: 0;
@@ -429,7 +465,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -514,7 +550,7 @@ input + .c1 {
 }
 
 .c6 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -580,6 +616,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c6:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c6:focus,
 .c6:disabled {
   border: 0;
@@ -610,7 +658,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -705,7 +753,7 @@ input + .c1 {
 }
 
 .c6 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -771,6 +819,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c6:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c6:focus,
 .c6:disabled {
   border: 0;
@@ -801,7 +861,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -891,7 +951,7 @@ input + .c1 {
 }
 
 .c6 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -957,6 +1017,18 @@ input + .c1 {
   color: #B7BBC2;
 }
 
+.c6:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
 .c6:focus,
 .c6:disabled {
   border: 0;
@@ -991,7 +1063,7 @@ input + .c1 {
 }
 
 .c3 {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
