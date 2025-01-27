@@ -8,7 +8,11 @@ export type DesignSystemProps = ThemeWrapperProps & DeviceContextProviderProps &
 
 export const DesignSystem: FunctionComponent<PropsWithChildren<DesignSystemProps>> = (props) => (
     <DeviceContextProvider staticDevice={props.staticDevice}>
-        <ThemeWrapper theme={props.theme} isolateStyles={props.isolateStyles}>
+        <ThemeWrapper
+            isolateStyles={props.isolateStyles}
+            themeCustomization={props.themeCustomization}
+            displayPreferences={props.displayPreferences}
+        >
             <IntlProvider language={props.language}>
                 <ToastProvider>
                     {props.children}

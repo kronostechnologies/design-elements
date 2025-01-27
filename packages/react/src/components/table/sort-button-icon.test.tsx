@@ -1,9 +1,11 @@
 import { shallow } from 'enzyme';
 import { useTheme } from '../../hooks/use-theme';
-import { equisoftTheme } from '../../themes';
 import { SortButtonIcon } from './sort-button-icon';
+import { buildTheme, equisoftThemeCustomization } from '../../themes';
 
 jest.mock('../../hooks/use-theme');
+
+const equisoftTheme = buildTheme(equisoftThemeCustomization);
 
 describe('SortButtonIcon', () => {
     beforeEach(() => {

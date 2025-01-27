@@ -1,4 +1,13 @@
-import { createContext, FunctionComponent, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import {
+    createContext,
+    FunctionComponent,
+    PropsWithChildren,
+    useCallback,
+    useContext,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import { breakpoints, Breakpoints } from '../../legacy-constants/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';
@@ -15,40 +24,20 @@ export interface DeviceContextProps {
     breakpoints: Breakpoints;
 }
 
-const getDeviceContext = (deviceName: DeviceType | undefined = undefined): DeviceContextProps => {
-    let isDesktop = false;
-    let isTablet = false;
-    let isMobile = false;
-    const defaultContext: DeviceContextProps = {
-        device: 'desktop',
-        isDesktop: true,
-        isTablet: false,
-        isMobile: false,
+function getDeviceContext(deviceName: DeviceType): DeviceContextProps {
+    return {
+        device: deviceName,
+        isDesktop: deviceName === 'desktop',
+        isTablet: deviceName === 'tablet',
+        isMobile: deviceName === 'mobile',
         breakpoints,
     };
+}
 
-    if (deviceName) {
-        if (deviceName === 'desktop') {
-            isDesktop = true;
-        } else if (deviceName === 'tablet') {
-            isTablet = true;
-        } else if (deviceName === 'mobile') {
-            isMobile = true;
-        }
-
-        return {
-            device: deviceName,
-            isDesktop,
-            isTablet,
-            isMobile,
-            breakpoints,
-        };
-    }
-    return defaultContext;
-};
-
-const getDevice = (screenWidth: number): DeviceType => {
+function getDeviceType(): DeviceType {
     let currentDevice: DeviceType = 'desktop';
+    const screenWidth = (window.innerWidth || document.documentElement.clientWidth);
+
     if (screenWidth >= breakpoints.desktop) {
         currentDevice = 'desktop';
     } else if (screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile) {
@@ -58,39 +47,46 @@ const getDevice = (screenWidth: number): DeviceType => {
     }
 
     return currentDevice;
-};
+}
 
-const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
+const DeviceContext = createContext<DeviceContextProps>(getDeviceContext(getDeviceType()));
 
-/**
- * @deprecated Use {@link DesignSystem} instead
- */
 export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceContextProviderProps>> = ({
     children,
     staticDevice,
 }) => {
-    const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
+    const deviceType = staticDevice || getDeviceType();
 
-    function handleScreenResize(): void {
-        const screenWidth = (window.innerWidth || document.documentElement.clientWidth);
-        const currentDevice = getDevice(screenWidth);
+    const previousDeviceType = useRef<DeviceType>(deviceType);
+    const previousStaticDevice = useRef<DeviceType | undefined>(staticDevice);
+    const [deviceContext, setDeviceContext] = useState<DeviceContextProps>(getDeviceContext(deviceType));
 
-        setDevice(getDeviceContext(currentDevice));
+    if (staticDevice !== previousStaticDevice.current) {
+        previousStaticDevice.current = staticDevice;
+        setDeviceContext(getDeviceContext(deviceType));
     }
+
+    const handleScreenResize = useCallback(() => {
+        const currentDeviceType = getDeviceType();
+
+        if (currentDeviceType !== previousDeviceType.current) {
+            previousDeviceType.current = currentDeviceType;
+            setDeviceContext(getDeviceContext(currentDeviceType));
+        }
+    }, []);
 
     useEffect(() => {
         if (!staticDevice) {
-            handleScreenResize();
             window.addEventListener('resize', handleScreenResize);
             return () => {
                 window.removeEventListener('resize', handleScreenResize);
             };
         }
         return undefined;
-    }, [staticDevice]);
+    }, [handleScreenResize, staticDevice]);
 
     return (
-        <DeviceContext.Provider value={device}>
+        <DeviceContext.Provider value={deviceContext}>
             {children}
         </DeviceContext.Provider>
     );

@@ -42,9 +42,7 @@ export {
 } from './components/password-creation-input/validation-condition';
 
 // Context
-export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
-export { DeviceContextProvider, useDeviceContext } from './components/device-context-provider/device-context-provider';
-export { IntlProvider } from './components/internationalization-provider/internationalization-provider';
+export { useDeviceContext } from './components/device-context-provider/device-context-provider';
 
 // Lists
 export { Listbox, ListboxOption } from './components/listbox/listbox';
@@ -105,9 +103,10 @@ export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';
 
 // Themes
-export { equisoftTheme, buildTheme } from './themes';
+export {
+    buildTheme, equisoftThemeCustomization, ResolvedTheme as Theme, ThemeCustomization,
+} from './themes';
 export { injectMainCss } from './styles';
-export { ResolvedTheme as Theme, ThemeCustomization } from './themes/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';
