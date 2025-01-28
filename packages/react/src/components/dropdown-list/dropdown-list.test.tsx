@@ -120,17 +120,17 @@ describe('Dropdown list', () => {
             const wrapper = shallow(
                 <DropdownList
                     options={provinces}
-                    readOnly={true}
+                    readOnly
                     onChange={onChangeMock}
                     label="ReadOnly Dropdown"
-                />
+                />,
             );
 
             getByTestId(wrapper, 'textbox').simulate('click');
 
             const option = findByTestId(wrapper, 'listitem-qc');
             expect(option.exists()).toBe(false);
-        
+
             if (option.exists()) {
                 option.simulate('click');
             }
