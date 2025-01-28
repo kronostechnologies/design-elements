@@ -57,7 +57,12 @@ function getBackgroundColor({ $disabled, $readOnly, theme }: TextboxProps): stri
     return theme.component['dropdown-list-input-background-color'];
 }
 
-function getBorderColor({ $disabled, $readOnly, theme, $valid }: TextboxProps): string {
+function getBorderColor({
+    $disabled,
+    $readOnly,
+    theme,
+    $valid
+}: TextboxProps): string {
     if ($disabled) {
         return theme.component['dropdown-list-input-disabled-border-color'];
     }

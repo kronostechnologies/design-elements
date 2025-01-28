@@ -84,7 +84,7 @@ describe('Dropdown list', () => {
     describe('readonly state', () => {
         test('renders correctly with readOnly enabled', () => {
             const wrapper = shallow(
-                <DropdownList options={provinces} readOnly={true} label="ReadOnly Dropdown" />
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
             );
 
             const textbox = getByTestId(wrapper, 'textbox');
@@ -93,7 +93,7 @@ describe('Dropdown list', () => {
 
         test('does not open listbox when clicked in readOnly mode', () => {
             const wrapper = shallow(
-                <DropdownList options={provinces} readOnly={true} label="ReadOnly Dropdown" />
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
             );
 
             getByTestId(wrapper, 'textbox').simulate('click');
@@ -103,7 +103,7 @@ describe('Dropdown list', () => {
 
         test('does not respond to keyboard events in readOnly mode', () => {
             const wrapper = shallow(
-                <DropdownList options={provinces} readOnly={true} label="ReadOnly Dropdown" />
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
             );
 
             getByTestId(wrapper, 'textbox').simulate('keydown', {
@@ -116,7 +116,7 @@ describe('Dropdown list', () => {
 
         test('readonly mode prevents option selection', () => {
             const onChangeMock = jest.fn();
-        
+
             const wrapper = shallow(
                 <DropdownList
                     options={provinces}
@@ -125,16 +125,16 @@ describe('Dropdown list', () => {
                     label="ReadOnly Dropdown"
                 />
             );
-        
+
             getByTestId(wrapper, 'textbox').simulate('click');
-        
+
             const option = findByTestId(wrapper, 'listitem-qc');
             expect(option.exists()).toBe(false);
         
             if (option.exists()) {
                 option.simulate('click');
             }
-        
+
             expect(onChangeMock).not.toHaveBeenCalled();
         });
     });
