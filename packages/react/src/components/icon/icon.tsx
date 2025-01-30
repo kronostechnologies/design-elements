@@ -35,6 +35,7 @@ import Phone from 'feather-icons/dist/icons/phone.svg';
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
+import Send from 'feather-icons/dist/icons/send.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
@@ -117,6 +118,7 @@ const iconMapping = {
     plusSign: PlusSign,
     reorder: Reorder,
     search: Search,
+    send: Send,
     settings: Settings,
     star: Star,
     table: Table,
