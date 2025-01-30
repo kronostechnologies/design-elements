@@ -4,6 +4,13 @@ import { Meta, StoryObj } from '@storybook/react';
 const AttachedFileMeta: Meta<typeof AttachedFile> = {
     title: 'Components/Attached File',
     component: AttachedFile,
+    argTypes: {
+        children: {
+            control: {
+                type: 'text',
+            },
+        },
+    },
     args: {
         onCancel() {
             // eslint-disable-next-line no-console
