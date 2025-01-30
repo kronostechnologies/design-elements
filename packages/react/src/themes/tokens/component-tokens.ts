@@ -1,5 +1,6 @@
 import { AccordionToken, defaultAccordionTokens } from './component/accordion-tokens';
 import { AvatarToken, defaultAvatarTokens } from './component/avatar-tokens';
+import { AttachedFileToken, defaultAttachedFileTokens } from './component/attached-file-tokens';
 import { BadgeToken, defaultBadgeTokens } from './component/badge-tokens';
 import { BentoMenuButtonToken, defaultBentoMenuButtonTokens } from './component/bento-menu-button-tokens';
 import { BreadcrumbToken, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
@@ -56,6 +57,7 @@ import { defaultTooltipTokens, TooltipToken } from './component/tooltip-tokens';
 export type ComponentToken =
     | AccordionToken
     | AvatarToken
+    | AttachedFileToken
     | BadgeToken
     | BentoMenuButtonToken
     | BreadcrumbToken
@@ -112,6 +114,7 @@ export type ComponentToken =
 export const defaultComponentTokens = {
     ...defaultAccordionTokens,
     ...defaultAvatarTokens,
+    ...defaultAttachedFileTokens,
     ...defaultBadgeTokens,
     ...defaultBentoMenuButtonTokens,
     ...defaultBreadcrumbTokens,

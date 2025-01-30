@@ -20,6 +20,8 @@ import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import Eye from 'feather-icons/dist/icons/eye.svg';
 import EyeOff from 'feather-icons/dist/icons/eye-off.svg';
+import File from 'feather-icons/dist/icons/file.svg';
+import FileText from 'feather-icons/dist/icons/file-text.svg';
 import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
@@ -39,6 +41,7 @@ import Send from 'feather-icons/dist/icons/send.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
+import Upload from 'feather-icons/dist/icons/upload.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
@@ -96,7 +99,9 @@ const iconMapping = {
     export: Export,
     eye: Eye,
     eyeOff: EyeOff,
+    file: File,
     files: Files,
+    fileText: FileText,
     graph: Graph,
     helpCircle: HelpCircle,
     history: History,
@@ -125,6 +130,7 @@ const iconMapping = {
     transfer: Transfer,
     trash: Trash,
     unlink: Unlink,
+    upload: Upload,
     user: User,
     users: Users,
     warningFilled: WarningFilled,

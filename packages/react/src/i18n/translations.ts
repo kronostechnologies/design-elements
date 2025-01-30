@@ -3,6 +3,14 @@ export const Translations = {
         avatar: {
             ariaLabel: '{{username}} avatar',
         },
+        'attached-file': {
+            close: 'Close',
+            retry: 'Retry',
+            cancel: 'Cancel',
+            deleteFile: 'Delete file',
+            uploading: 'Uploading... {{percent}}%',
+            uploadCompleted: 'Upload completed',
+        },
         bento: {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
@@ -143,6 +151,14 @@ export const Translations = {
     fr: {
         avatar: {
             ariaLabel: 'Avatar de {{username}}',
+        },
+        'attached-file': {
+            close: 'Fermer',
+            retry: 'Réessayer',
+            cancel: 'Annuler',
+            deleteFile: 'Supprimer le fichier',
+            uploading: 'Téléversement... {{percent}}%',
+            uploadCompleted: 'Téléversement terminé',
         },
         bento: {
             productsLabel: 'Produits',
