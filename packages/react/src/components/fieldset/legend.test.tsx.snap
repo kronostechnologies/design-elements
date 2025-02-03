@@ -3,7 +3,7 @@
 exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -30,7 +30,7 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = 
 exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -57,7 +57,7 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
 exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -84,7 +84,7 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] =
 exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -111,7 +111,7 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = 
 exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -138,7 +138,7 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = 
 exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -165,7 +165,7 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -192,7 +192,7 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
 exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -219,7 +219,7 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -246,7 +246,7 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = 
 exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -273,7 +273,7 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -300,7 +300,7 @@ exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
 exports[`Legend Component Styling Device: mobile Size: small Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { FieldsetProps, LegendProps } from './types';
 
 function getFontSize({ $isMobile, $size = 'medium' }: { $isMobile: boolean, $size?: LegendProps['size'] }): string {
-    const mobileSizes = { small: '0.75rem', medium: '0.875rem', large: '1rem' };
-    const desktopSizes = { small: '0.625rem', medium: '0.75rem', large: '0.875rem' };
+    const mobileSizes = { xxsmall: '0.75rem', xsmall: '0.875rem', small: '1rem', medium: '1.25rem', large: '1.5rem' };
+    const desktopSizes = { xxsmall: '0.75rem', xsmall: '0.875rem', small: '1rem', medium: '1.25rem', large: '1.5rem' };
     const sizes = $isMobile ? mobileSizes : desktopSizes;
     return sizes[$size] || sizes.medium;
 }
@@ -19,13 +19,10 @@ export const StyledLegend = styled.legend<{
     margin: 0 0 var(--spacing-1x);
 `;
 
-export const StyledFieldset = styled.fieldset<{
-    $orientation: FieldsetProps['orientation'],
-}>`
+export const StyledFieldset = styled.fieldset<FieldsetProps>`
     border: 0;
     border: none;
     display: flex;
-    flex-direction: ${({ $orientation }) => ($orientation === 'horizontal' ? 'row' : 'column')};
     gap: var(--spacing-1x);
     margin: 0;
     min-inline-size: 0;
