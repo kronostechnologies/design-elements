@@ -13,7 +13,8 @@ export default fieldsetMeta;
 type Story = StoryObj<typeof Fieldset>;
 
 const withCheckboxes = (
-    <div style={{ display: 'flex', flexDirection: 'column' }}> {/*  replace with grid */}
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {/*  replace inline style with grid */}
         <Checkbox label='Checkbox 1!' />
         <Checkbox label='Checkbox 2!' />
         <Checkbox label='Checkbox 3!' />
@@ -46,7 +47,7 @@ const withRadioCards = (
 
 export const Default: Story = {
     args: {
-        legend: { text: 'This is a legend!', size: 'xxsmall', },
+        legend: { text: 'This is a legend!', size: 'xxsmall' },
         children: withTextInputs,
     },
 };
