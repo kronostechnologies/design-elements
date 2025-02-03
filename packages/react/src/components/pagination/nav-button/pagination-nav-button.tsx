@@ -31,6 +31,7 @@ export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps
     return (
         <StyledIconButton
             data-testid={dataTestId}
+            className={`pagination-nav-button ${isPrevious ? 'previous' : 'next'}`}
             iconName={iconName}
             label={label}
             type="button"

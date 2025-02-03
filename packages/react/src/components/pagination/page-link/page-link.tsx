@@ -24,12 +24,14 @@ export const PageLink: FC<PageLinkProps> = ({
     return (
         <Page
             key={id}
+            className="pagination-link"
             data-testid={id}
             isSelected={isSelected}
             onClick={isSelected ? undefined : () => changePage(index)}
             onKeyPress={(event) => handlePageKeyDown(event.key, index)}
             isMobile={isMobile}
             tabIndex={0}
+            role="button"
         >
             <StyledText
                 aria-label={`go to page ${index}`}

@@ -84,12 +84,12 @@ export const Pagination: FC<PaginationProps> = ({
     return (
         <PaginationContext.Provider value={value}>
             <Navigation
-                className={className}
+                className={`pagination-container ${className}`}
                 isMobile={isMobile}
                 aria-labelledby={headingId}
             >
                 <PaginationLabel id={headingId} />
-                <PaginationLinksWrapper>
+                <PaginationLinksWrapper className="pagination-links-wrapper">
                     <PaginationNavButton action="previous" />
                     {range(begin, end).map((i) => (
                         <PageLink key={i} index={i} />

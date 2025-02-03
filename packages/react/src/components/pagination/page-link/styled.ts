@@ -7,7 +7,7 @@ function getSelectionSuffix(isSelected: boolean): SelectionSuffix {
     return isSelected ? '-selected' : '';
 }
 
-export const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
+export const Page = styled.div<{ isSelected: boolean, isMobile: boolean }>`
     display: flex;
     flex-direction: column;
     justify-content: center;

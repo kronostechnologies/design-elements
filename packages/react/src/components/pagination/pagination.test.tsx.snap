@@ -2,38 +2,38 @@
 
 exports[`Pagination Matches the desktop snapshot 1`] = `
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 30rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: 1.5rem;
   height: 1.5rem;
-  padding: 0;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  padding: 0;
+  width: 30rem;
+}
+
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1.5rem;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 0.5rem;
+  padding: 0;
 }
 
 .c3 {
@@ -64,10 +64,11 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 <nav
   aria-labelledby="uuid1"
-  class="c0"
+  class="c0 pagination-container undefined"
 >
   <div
     aria-live="off"
+    class="pagination-label"
     role="status"
   >
     <h3
@@ -88,46 +89,46 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       </span>
     </h3>
   </div>
-  <ol
-    class="c4"
+  <div
+    class="c4 pagination-links-wrapper"
   />
 </nav>
 `;
 
 exports[`Pagination Matches the desktop snapshot with multiples digits page numbers 1`] = `
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 30rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: 1.5rem;
   height: 1.5rem;
-  padding: 0;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  padding: 0;
+  width: 30rem;
+}
+
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1.5rem;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 0.5rem;
+  padding: 0;
 }
 
 .c3 {
@@ -158,10 +159,11 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 
 <nav
   aria-labelledby="uuid1"
-  class="c0"
+  class="c0 pagination-container undefined"
 >
   <div
     aria-live="off"
+    class="pagination-label"
     role="status"
   >
     <h3
@@ -182,46 +184,46 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
       </span>
     </h3>
   </div>
-  <ol
-    class="c4"
+  <div
+    class="c4 pagination-links-wrapper"
   />
 </nav>
 `;
 
 exports[`Pagination Matches the mobile snapshot 1`] = `
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 30rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: 1.5rem;
   height: 1.5rem;
-  padding: 0;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  padding: 0;
+  width: 30rem;
+}
+
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1.5rem;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 0.5rem;
+  padding: 0;
 }
 
 .c3 {
@@ -252,10 +254,11 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 <nav
   aria-labelledby="uuid1"
-  class="c0"
+  class="c0 pagination-container undefined"
 >
   <div
     aria-live="off"
+    class="pagination-label"
     role="status"
   >
     <h3
@@ -276,46 +279,46 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       </span>
     </h3>
   </div>
-  <ol
-    class="c4"
+  <div
+    class="c4 pagination-links-wrapper"
   />
 </nav>
 `;
 
 exports[`Pagination Matches the mobile snapshot with multiples digits page numbers 1`] = `
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 30rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: 1.5rem;
   height: 1.5rem;
-  padding: 0;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  padding: 0;
+  width: 30rem;
+}
+
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1.5rem;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 0.5rem;
+  padding: 0;
 }
 
 .c3 {
@@ -346,10 +349,11 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 
 <nav
   aria-labelledby="uuid1"
-  class="c0"
+  class="c0 pagination-container undefined"
 >
   <div
     aria-live="off"
+    class="pagination-label"
     role="status"
   >
     <h3
@@ -370,8 +374,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
       </span>
     </h3>
   </div>
-  <ol
-    class="c4"
+  <div
+    class="c4 pagination-links-wrapper"
   />
 </nav>
 `;

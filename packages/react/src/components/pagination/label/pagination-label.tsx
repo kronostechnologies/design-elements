@@ -22,7 +22,7 @@ export const PaginationLabel: FC<PageLabelProps> = ({
         ? Math.min(numberOfResults, resultsPerPage * currentPage) : 0;
 
     return (
-        <div aria-live='off' role='status'>
+        <div className="pagination-label" aria-live='off' role='status'>
             <CurrentPageLabelHeading id={id} data-testid="currentPageLabelHeading">
                 <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                     <ScreenReaderOnlyText label={`${t('pagination')} - `} />

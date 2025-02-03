@@ -11,7 +11,7 @@ export const Navigation = styled.nav<{ isMobile: boolean }>`
     width: 30rem;
 `;
 
-export const PaginationLinksWrapper = styled.ol`
+export const PaginationLinksWrapper = styled.div`
     align-items: center;
     display: flex;
     gap: 0.5rem;
