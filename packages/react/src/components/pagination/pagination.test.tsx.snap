@@ -1,7 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination Matches the desktop snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30rem;
+  height: 1.5rem;
+  padding: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -13,30 +48,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 1px;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 var(--spacing-half);
-  padding: 0;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
+.c2 {
   font-size: 0.9rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
@@ -45,60 +57,80 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2 {
+.c1 {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-<div
+<nav
+  aria-labelledby="uuid1"
   class="c0"
 >
-  <nav
-    aria-labelledby="uuid1"
-    class="c1"
+  <div
+    aria-live="off"
+    role="status"
   >
-    <div
-      aria-live="off"
-      role="status"
+    <h3
+      class="c1"
+      data-testid="currentPageLabelHeading"
+      id="uuid1"
     >
-      <h3
+      <span
         class="c2"
-        data-testid="currentPageLabelHeading"
-        id="uuid1"
+        data-testid="resultsLabel"
       >
         <span
           class="c3"
-          data-testid="resultsLabel"
         >
-          <span
-            class="c4"
-          >
-            Pagination - 
-          </span>
-          0–0 of 0 results
+          Pagination - 
         </span>
-      </h3>
-    </div>
-    <ol
-      class="c5"
-    />
-  </nav>
-</div>
+        0–0 of 0 results
+      </span>
+    </h3>
+  </div>
+  <ol
+    class="c4"
+  />
+</nav>
 `;
 
 exports[`Pagination Matches the desktop snapshot with multiples digits page numbers 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30rem;
+  height: 1.5rem;
+  padding: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -110,30 +142,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   width: 1px;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 var(--spacing-half);
-  padding: 0;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
+.c2 {
   font-size: 0.9rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
@@ -142,60 +151,80 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   white-space: nowrap;
 }
 
-.c2 {
+.c1 {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-<div
+<nav
+  aria-labelledby="uuid1"
   class="c0"
 >
-  <nav
-    aria-labelledby="uuid1"
-    class="c1"
+  <div
+    aria-live="off"
+    role="status"
   >
-    <div
-      aria-live="off"
-      role="status"
+    <h3
+      class="c1"
+      data-testid="currentPageLabelHeading"
+      id="uuid1"
     >
-      <h3
+      <span
         class="c2"
-        data-testid="currentPageLabelHeading"
-        id="uuid1"
+        data-testid="resultsLabel"
       >
         <span
           class="c3"
-          data-testid="resultsLabel"
         >
-          <span
-            class="c4"
-          >
-            Pagination - 
-          </span>
-          0–0 of 0 results
+          Pagination - 
         </span>
-      </h3>
-    </div>
-    <ol
-      class="c5"
-    />
-  </nav>
-</div>
+        0–0 of 0 results
+      </span>
+    </h3>
+  </div>
+  <ol
+    class="c4"
+  />
+</nav>
 `;
 
 exports[`Pagination Matches the mobile snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30rem;
+  height: 1.5rem;
+  padding: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -207,30 +236,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 1px;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 var(--spacing-half);
-  padding: 0;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
+.c2 {
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -239,60 +245,80 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2 {
+.c1 {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-<div
+<nav
+  aria-labelledby="uuid1"
   class="c0"
 >
-  <nav
-    aria-labelledby="uuid1"
-    class="c1"
+  <div
+    aria-live="off"
+    role="status"
   >
-    <div
-      aria-live="off"
-      role="status"
+    <h3
+      class="c1"
+      data-testid="currentPageLabelHeading"
+      id="uuid1"
     >
-      <h3
+      <span
         class="c2"
-        data-testid="currentPageLabelHeading"
-        id="uuid1"
+        data-testid="resultsLabel"
       >
         <span
           class="c3"
-          data-testid="resultsLabel"
         >
-          <span
-            class="c4"
-          >
-            Pagination - 
-          </span>
-          0–0 of 0 results
+          Pagination - 
         </span>
-      </h3>
-    </div>
-    <ol
-      class="c5"
-    />
-  </nav>
-</div>
+        0–0 of 0 results
+      </span>
+    </h3>
+  </div>
+  <ol
+    class="c4"
+  />
+</nav>
 `;
 
 exports[`Pagination Matches the mobile snapshot with multiples digits page numbers 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30rem;
+  height: 1.5rem;
+  padding: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -304,30 +330,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   width: 1px;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 var(--spacing-half);
-  padding: 0;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
+.c2 {
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 2rem;
@@ -336,54 +339,39 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   white-space: nowrap;
 }
 
-.c2 {
+.c1 {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-<div
+<nav
+  aria-labelledby="uuid1"
   class="c0"
 >
-  <nav
-    aria-labelledby="uuid1"
-    class="c1"
+  <div
+    aria-live="off"
+    role="status"
   >
-    <div
-      aria-live="off"
-      role="status"
+    <h3
+      class="c1"
+      data-testid="currentPageLabelHeading"
+      id="uuid1"
     >
-      <h3
+      <span
         class="c2"
-        data-testid="currentPageLabelHeading"
-        id="uuid1"
+        data-testid="resultsLabel"
       >
         <span
           class="c3"
-          data-testid="resultsLabel"
         >
-          <span
-            class="c4"
-          >
-            Pagination - 
-          </span>
-          0–0 of 0 results
+          Pagination - 
         </span>
-      </h3>
-    </div>
-    <ol
-      class="c5"
-    />
-  </nav>
-</div>
+        0–0 of 0 results
+      </span>
+    </h3>
+  </div>
+  <ol
+    class="c4"
+  />
+</nav>
 `;

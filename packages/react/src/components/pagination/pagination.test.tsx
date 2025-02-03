@@ -1,7 +1,8 @@
 import { shallow } from 'enzyme';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Pagination } from './pagination';
+import { PageLink } from './page-link/page-link';
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
@@ -43,98 +44,120 @@ describe('Pagination', () => {
     describe('pages list', () => {
         test('should display pages', () => {
             const wrapper = shallow(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
-            const pages = findByTestId(wrapper, 'page-', { modifier: '^' });
+
+            const pages = wrapper.find(PageLink);
 
             expect(pages).toHaveLength(5);
         });
 
         test('should go to page 2 when clicking on page 2', () => {
             const callback = jest.fn();
-            const wrapper = shallow(
-                <Pagination resultsPerPage={3} numberOfResults={6} defaultActivePage={1} onPageChange={callback} />,
+            const wrapper = mountWithProviders(
+                <Pagination
+                    resultsPerPage={3}
+                    numberOfResults={6}
+                    defaultActivePage={1}
+                    onPageChange={callback}
+                />,
             );
-            const pageButton = findByTestId(wrapper, 'page-2');
+            const pageButton = findByTestId(wrapper, 'page-2').at(0);
 
             pageButton.simulate('click');
 
             expect(callback).toHaveBeenCalledWith(2);
+            wrapper.unmount();
         });
 
         test('should highlight selected page', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={3} numberOfResults={9} defaultActivePage={3} />);
-            const pageButton = findByTestId(wrapper, 'page-3');
+            const wrapper = mountWithProviders(
+                <Pagination resultsPerPage={3} numberOfResults={9} defaultActivePage={3} />,
+            );
+            const pageButton = findByTestId(wrapper, 'page-3').at(0);
 
             expect(pageButton.prop('isSelected')).toBe(true);
+            wrapper.unmount();
         });
     });
 
     describe('results label', () => {
         test('should display zero results when number of results is undefined', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={0} numberOfResults={undefined} />);
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const wrapper = mountWithProviders(
+                <Pagination resultsPerPage={0} numberOfResults={undefined} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />0–0 of 0 results');
+            expect(label.text()).toEqual('Pagination - 0–0 of 0 results');
+            wrapper.unmount();
         });
 
         test('should display the number of results when provided', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={3} numberOfResults={12345} />);
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const wrapper = mountWithProviders(
+                <Pagination resultsPerPage={3} numberOfResults={12345} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–3 of 12345 results');
+            expect(label.text()).toEqual('Pagination - 1–3 of 12345 results');
+            wrapper.unmount();
         });
 
         test('should display first page results label when number of results is even', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={6} numberOfResults={30} activePage={1} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–6 of 30 results');
+            expect(label.text()).toEqual('Pagination - 1–6 of 30 results');
+            wrapper.unmount();
         });
 
         test('should display second page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={6} numberOfResults={30} activePage={2} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />7–12 of 30 results');
+            expect(label.text()).toEqual('Pagination - 7–12 of 30 results');
+            wrapper.unmount();
         });
 
         test('should display last page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={6} numberOfResults={30} activePage={6} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />25–30 of 30 results');
+            expect(label.text()).toEqual('Pagination - 25–30 of 30 results');
+            wrapper.unmount();
         });
 
         test('should display first page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={1} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–50 of 1530 results');
+            expect(label.text()).toEqual('Pagination - 1–50 of 1530 results');
+            wrapper.unmount();
         });
 
         test('should display second page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={2} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />51–100 of 1530 results');
+            expect(label.text()).toEqual('Pagination - 51–100 of 1530 results');
+            wrapper.unmount();
         });
 
         test('should display last page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={31} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = findByTestId(wrapper, 'resultsLabel').at(0);
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1501–1530 of 1530 results');
+            expect(label.text()).toEqual('Pagination - 1501–1530 of 1530 results');
+            wrapper.unmount();
         });
     });
 
@@ -152,7 +175,7 @@ describe('Pagination', () => {
             describe(testCase.id, () => {
                 test(`should go to page ${testCase.goesToPage} when clicked`, () => {
                     const callback = jest.fn();
-                    const wrapper = shallow(
+                    const wrapper = mountWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
@@ -160,44 +183,50 @@ describe('Pagination', () => {
                             onPageChange={callback}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = findByTestId(wrapper, testCase.id).at(0);
 
                     button.simulate('click');
 
                     expect(callback).toHaveBeenCalledWith(testCase.goesToPage);
+                    wrapper.unmount();
                 });
 
                 test(`should be disabled when on page ${testCase.disabledWhenOnPage}`, () => {
-                    const wrapper = shallow(
+                    const wrapper = mountWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
                             defaultActivePage={testCase.disabledWhenOnPage}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = findByTestId(wrapper, testCase.id).at(0);
 
-                    expect(button.prop('enabled')).toBe(false);
+                    expect(button.prop('isVisible')).toBe(false);
+                    wrapper.unmount();
                 });
 
                 test(`should be enabled when on page ${testCase.enabledWhenOnPage}`, () => {
-                    const wrapper = shallow(
+                    const wrapper = mountWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
                             defaultActivePage={testCase.enabledWhenOnPage}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = findByTestId(wrapper, testCase.id).at(0);
 
-                    expect(button.prop('enabled')).toBe(true);
+                    expect(button.prop('isVisible')).toBe(true);
+                    wrapper.unmount();
                 });
 
                 test(`should not be rendered when there's less than ${testCase.stopRenderAt} page`, () => {
-                    const wrapper = shallow(<Pagination resultsPerPage={testCase.stopRenderAt - 1} />);
-                    const button = findByTestId(wrapper, testCase.id);
+                    const wrapper = mountWithProviders(
+                        <Pagination resultsPerPage={testCase.stopRenderAt - 1} />,
+                    );
+                    const button = findByTestId(wrapper, testCase.id).at(0);
 
                     expect(button.exists()).toBe(false);
+                    wrapper.unmount();
                 });
             });
         });
