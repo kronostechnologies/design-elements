@@ -35,9 +35,9 @@ export const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
 export const StyledText = styled.a<{ isSelected: boolean, isMobile: boolean }>`
     color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-text-color`]};
     font-size: ${({ isMobile }) => (isMobile ? 0.875 : 0.875)}rem;
-    font-weight: ${({ isSelected }) => (isSelected ? 'var(--font-bold)' : 'var(--font-normal)')};
-    line-height: ${({ isMobile }) => (isMobile ? 1.25 : 1.25)}rem;
-    letter-spacing: 0.0125rem;
     font-style: normal;
+    font-weight: ${({ isSelected }) => (isSelected ? 'var(--font-bold)' : 'var(--font-normal)')};
+    letter-spacing: 0.0125rem;
+    line-height: ${({ isMobile }) => (isMobile ? 1.25 : 1.25)}rem;
     text-align: center;
 `;

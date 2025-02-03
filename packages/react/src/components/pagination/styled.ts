@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const Navigation = styled.nav<{ isMobile: boolean }>`
-    display: flex;
-    width: 30rem;
-    height: 1.5rem;
-    padding: 0;
-    justify-content: flex-end;
     align-items: center;
-    gap: 1.5rem;
+    display: flex;
     flex-shrink: 0;
+    gap: 1.5rem;
+    height: 1.5rem;
+    justify-content: flex-end;
+    padding: 0;
+    width: 30rem;
 `;
 
 export const PaginationLinksWrapper = styled.ol`
-    display: flex;
-    padding: 0;
     align-items: center;
+    display: flex;
     gap: 0.5rem;
+    padding: 0;
 `;
