@@ -4,9 +4,9 @@ import { clamp } from '../../utils/math';
 import { range } from '../../utils/range';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { calculateShownPageRange } from './util/pagination-util';
-import { Navigation, PaginationLinksWrapper } from './styled';
+import { Navigation, PaginationButtonsWrapper, PaginationPageButtonsWrapper } from './styled';
 import { PaginationNavButton } from './nav-button/pagination-nav-button';
-import { PageLink } from './page-link/page-link';
+import { PaginationPageButton } from './page-button/pagination-page-button';
 import { PaginationContext } from './context';
 import { PaginationLabel } from './label/pagination-label';
 
@@ -85,17 +85,25 @@ export const Pagination: FC<PaginationProps> = ({
         <PaginationContext.Provider value={value}>
             <Navigation
                 className={`pagination-container ${className}`}
-                isMobile={isMobile}
+                $isMobile={isMobile}
                 aria-labelledby={headingId}
             >
                 <PaginationLabel id={headingId} />
-                <PaginationLinksWrapper className="pagination-links-wrapper">
+                <PaginationButtonsWrapper
+                    className="pagination-buttons-wrapper"
+                    $isMobile={isMobile}
+                >
                     <PaginationNavButton action="previous" />
-                    {range(begin, end).map((i) => (
-                        <PageLink key={i} index={i} />
-                    ))}
+                    <PaginationPageButtonsWrapper
+                        className="pagination-page-buttons-wrapper"
+                        $isMobile={isMobile}
+                    >
+                        {range(begin, end).map((i) => (
+                            <PaginationPageButton key={i} index={i} />
+                        ))}
+                    </PaginationPageButtonsWrapper>
                     <PaginationNavButton action="next" />
-                </PaginationLinksWrapper>
+                </PaginationButtonsWrapper>
             </Navigation>
         </PaginationContext.Provider>
     );

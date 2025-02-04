@@ -1,6 +1,7 @@
 import { VoidFunctionComponent } from 'react';
-import { StyledIconButton } from './styled';
+import { StyledButtonContainer, StyledWrapper } from './styled';
 import { usePaginationContext } from '../context';
+import { IconButton } from '../../buttons';
 
 export type NavigationAction = 'previous' | 'next';
 
@@ -29,18 +30,19 @@ export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps
     const dataTestId = isPrevious ? 'previousPageButton' : 'nextPageButton';
 
     return (
-        <StyledIconButton
-            data-testid={dataTestId}
-            className={`pagination-nav-button ${isPrevious ? 'previous' : 'next'}`}
-            iconName={iconName}
-            label={label}
-            type="button"
-            buttonType="tertiary"
-            isVisible={!isDisabled}
-            aria-disabled={isDisabled}
-            disabled={isDisabled}
-            tab-index={isDisabled ? -1 : 0}
-            onClick={onClick}
-        />
+        <StyledWrapper $isVisible={!isDisabled}>
+            <StyledButtonContainer>
+                <IconButton
+                    data-testid={dataTestId}
+                    className={`pagination-navigation-button-${isPrevious ? 'previous' : 'next'}`}
+                    iconName={iconName}
+                    label={label}
+                    type="button"
+                    buttonType="tertiary"
+                    disabled={isDisabled}
+                    onClick={onClick}
+                />
+            </StyledButtonContainer>
+        </StyledWrapper>
     );
 };

@@ -14,13 +14,10 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   gap: 1.5rem;
-  height: 1.5rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0;
-  width: 30rem;
 }
 
 .c4 {
@@ -36,6 +33,20 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   padding: 0;
 }
 
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
 .c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -48,18 +59,23 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 1px;
 }
 
-.c2 {
-  font-size: 0.9rem;
+.c1 {
+  color: #1B1C1E;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
-  margin-bottom: 0;
-  margin-right: var(--spacing-3x);
-  white-space: nowrap;
+  margin: var(--spacing-3x) 0;
 }
 
-.c1 {
+.c2 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin: 0;
 }
 
 <nav
@@ -72,26 +88,24 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
     role="status"
   >
     <h3
-      class="c1"
-      data-testid="currentPageLabelHeading"
+      class="c1 c2"
       id="uuid1"
     >
       <span
-        class="c2"
-        data-testid="resultsLabel"
+        class="c3"
       >
-        <span
-          class="c3"
-        >
-          Pagination - 
-        </span>
-        0–0 of 0 results
+        Pagination - 
       </span>
+      0–0 of 0 results
     </h3>
   </div>
   <div
-    class="c4 pagination-links-wrapper"
-  />
+    class="c4 pagination-buttons-wrapper"
+  >
+    <ol
+      class="c5 pagination-page-buttons-wrapper"
+    />
+  </div>
 </nav>
 `;
 
@@ -109,13 +123,10 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   -ms-flex-negative: 0;
   flex-shrink: 0;
   gap: 1.5rem;
-  height: 1.5rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0;
-  width: 30rem;
 }
 
 .c4 {
@@ -131,6 +142,20 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   padding: 0;
 }
 
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
 .c3 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -143,18 +168,23 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   width: 1px;
 }
 
-.c2 {
-  font-size: 0.9rem;
+.c1 {
+  color: #1B1C1E;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
-  margin-bottom: 0;
-  margin-right: var(--spacing-3x);
-  white-space: nowrap;
+  margin: var(--spacing-3x) 0;
 }
 
-.c1 {
+.c2 {
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin: 0;
 }
 
 <nav
@@ -167,26 +197,24 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
     role="status"
   >
     <h3
-      class="c1"
-      data-testid="currentPageLabelHeading"
+      class="c1 c2"
       id="uuid1"
     >
       <span
-        class="c2"
-        data-testid="resultsLabel"
+        class="c3"
       >
-        <span
-          class="c3"
-        >
-          Pagination - 
-        </span>
-        0–0 of 0 results
+        Pagination - 
       </span>
+      0–0 of 0 results
     </h3>
   </div>
   <div
-    class="c4 pagination-links-wrapper"
-  />
+    class="c4 pagination-buttons-wrapper"
+  >
+    <ol
+      class="c5 pagination-page-buttons-wrapper"
+    />
+  </div>
 </nav>
 `;
 
@@ -203,14 +231,11 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  gap: 1.5rem;
-  height: 1.5rem;
+  gap: 2.25rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0;
-  width: 30rem;
 }
 
 .c4 {
@@ -222,7 +247,21 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
   padding: 0;
 }
 
@@ -238,18 +277,23 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 1px;
 }
 
+.c1 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c2 {
   font-size: 1rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin-bottom: var(--spacing-1halfx);
-  margin-right: 0;
-  white-space: nowrap;
-}
-
-.c1 {
-  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.5rem;
+  margin: 0;
 }
 
 <nav
@@ -262,26 +306,24 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
     role="status"
   >
     <h3
-      class="c1"
-      data-testid="currentPageLabelHeading"
+      class="c1 c2"
       id="uuid1"
     >
       <span
-        class="c2"
-        data-testid="resultsLabel"
+        class="c3"
       >
-        <span
-          class="c3"
-        >
-          Pagination - 
-        </span>
-        0–0 of 0 results
+        Pagination - 
       </span>
+      0–0 of 0 results
     </h3>
   </div>
   <div
-    class="c4 pagination-links-wrapper"
-  />
+    class="c4 pagination-buttons-wrapper"
+  >
+    <ol
+      class="c5 pagination-page-buttons-wrapper"
+    />
+  </div>
 </nav>
 `;
 
@@ -298,14 +340,11 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  gap: 1.5rem;
-  height: 1.5rem;
+  gap: 2.25rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0;
-  width: 30rem;
 }
 
 .c4 {
@@ -317,7 +356,21 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
   padding: 0;
 }
 
@@ -333,18 +386,23 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   width: 1px;
 }
 
+.c1 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c2 {
   font-size: 1rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
-  margin-bottom: var(--spacing-1halfx);
-  margin-right: 0;
-  white-space: nowrap;
-}
-
-.c1 {
-  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.5rem;
+  margin: 0;
 }
 
 <nav
@@ -357,25 +415,23 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
     role="status"
   >
     <h3
-      class="c1"
-      data-testid="currentPageLabelHeading"
+      class="c1 c2"
       id="uuid1"
     >
       <span
-        class="c2"
-        data-testid="resultsLabel"
+        class="c3"
       >
-        <span
-          class="c3"
-        >
-          Pagination - 
-        </span>
-        0–0 of 0 results
+        Pagination - 
       </span>
+      0–0 of 0 results
     </h3>
   </div>
   <div
-    class="c4 pagination-links-wrapper"
-  />
+    class="c4 pagination-buttons-wrapper"
+  >
+    <ol
+      class="c5 pagination-page-buttons-wrapper"
+    />
+  </div>
 </nav>
 `;

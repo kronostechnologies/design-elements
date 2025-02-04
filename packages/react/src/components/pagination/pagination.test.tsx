@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Pagination } from './pagination';
-import { PageLink } from './page-link/page-link';
+import { PaginationPageButton } from './page-button/pagination-page-button';
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
@@ -45,7 +45,7 @@ describe('Pagination', () => {
         test('should display pages', () => {
             const wrapper = shallow(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
 
-            const pages = wrapper.find(PageLink);
+            const pages = wrapper.find(PaginationPageButton);
 
             expect(pages).toHaveLength(5);
         });
@@ -201,7 +201,7 @@ describe('Pagination', () => {
                     );
                     const button = findByTestId(wrapper, testCase.id).at(0);
 
-                    expect(button.prop('isVisible')).toBe(false);
+                    expect(button.prop('disabled')).toBe(true);
                     wrapper.unmount();
                 });
 
@@ -215,7 +215,7 @@ describe('Pagination', () => {
                     );
                     const button = findByTestId(wrapper, testCase.id).at(0);
 
-                    expect(button.prop('isVisible')).toBe(true);
+                    expect(button.prop('disabled')).toBe(false);
                     wrapper.unmount();
                 });
 

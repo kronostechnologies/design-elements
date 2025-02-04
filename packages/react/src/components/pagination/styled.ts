@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
-export const Navigation = styled.nav<{ isMobile: boolean }>`
+export const Navigation = styled.nav<{ $isMobile: boolean }>`
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    gap: 1.5rem;
-    height: 1.5rem;
+    gap: ${({ $isMobile }) => ($isMobile ? '2.25rem' : '1.5rem')};
     justify-content: flex-end;
-    padding: 0;
-    width: 30rem;
 `;
 
-export const PaginationLinksWrapper = styled.div`
+export const PaginationButtonsWrapper = styled.div<{ $isMobile: boolean }>`
     align-items: center;
     display: flex;
-    gap: 0.5rem;
+    gap: ${({ $isMobile }) => ($isMobile ? '0.75rem' : '0.5rem')};
+    padding: 0;
+`;
+
+export const PaginationPageButtonsWrapper = styled.ol<{ $isMobile: boolean }>`
+    align-items: center;
+    display: flex;
+    gap: ${({ $isMobile }) => ($isMobile ? '0.75rem' : '0.5rem')};
+    margin: 0;
     padding: 0;
 `;

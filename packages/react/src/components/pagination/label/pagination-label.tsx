@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { ScreenReaderOnlyText } from '../../screen-reader-only-text/ScreenReaderOnlyText';
 import { useTranslation } from '../../../i18n/use-translation';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { CurrentPageLabelHeading, ResultsLabel } from './styled';
+import { ResultsLabelHeading } from './styled';
 import { usePaginationContext } from '../context';
 
 interface PageLabelProps {
@@ -23,16 +23,20 @@ export const PaginationLabel: FC<PageLabelProps> = ({
 
     return (
         <div className="pagination-label" aria-live='off' role='status'>
-            <CurrentPageLabelHeading id={id} data-testid="currentPageLabelHeading">
-                <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    <ScreenReaderOnlyText label={`${t('pagination')} - `} />
-                    {t('results', {
-                        pageStartIndex,
-                        pageEndIndex,
-                        numberOfResults,
-                    })}
-                </ResultsLabel>
-            </CurrentPageLabelHeading>
+            <ResultsLabelHeading
+                id={id}
+                data-testid="resultsLabel"
+                type="small"
+                tag="h3"
+                $isMobile={isMobile}
+            >
+                <ScreenReaderOnlyText label={`${t('pagination')} - `} />
+                {t('results', {
+                    pageStartIndex,
+                    pageEndIndex,
+                    numberOfResults,
+                })}
+            </ResultsLabelHeading>
         </div>
     );
 };

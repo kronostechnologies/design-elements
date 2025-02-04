@@ -1,15 +1,10 @@
 import styled from 'styled-components';
+import { Heading } from '../../heading/heading';
 
-export const ResultsLabel = styled.span<{ isMobile: boolean }>`
-    font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
+export const ResultsLabelHeading = styled(Heading)<{ $isMobile: boolean }>`
+    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);
-    line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
-    margin-bottom: ${(props) => (props.isMobile ? 'var(--spacing-1halfx)' : 0)};
-    margin-right: ${(props) => (props.isMobile ? 0 : 'var(--spacing-3x)')};
-    white-space: nowrap;
-`;
-
-export const CurrentPageLabelHeading = styled.h3`
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    letter-spacing: 0.0125rem;
+    line-height: ${({ $isMobile }) => ($isMobile ? 1.5 : 1.25)}rem;
+    margin: 0;
 `;
