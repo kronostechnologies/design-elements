@@ -32,7 +32,7 @@ interface Data {
 }
 
 export const Default: Story = {
-    render(args) {
+    render() {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -67,7 +67,6 @@ export const Default: Story = {
         ];
         return (
             <Table<Data>
-                {...args as TableProps<Data>}
                 columns={columns}
                 data={data}
                 rowIdField="column1"
@@ -77,7 +76,7 @@ export const Default: Story = {
 };
 
 export const WithCaption: Story = {
-    render(args) {
+    render() {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -112,7 +111,6 @@ export const WithCaption: Story = {
         ];
         return (
             <Table<Data>
-                {...args as TableProps<Data>}
                 caption="Table caption"
                 captionSize="large"
                 columns={columns}
@@ -124,7 +122,7 @@ export const WithCaption: Story = {
 };
 
 export const WithHeading: Story = {
-    render(args) {
+    render() {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -166,7 +164,6 @@ export const WithHeading: Story = {
                         <>
                             <Heading id={headingId} type="medium">Table Heading</Heading>
                             <Table<Data>
-                                {...args as TableProps<Data>}
                                 columns={columns}
                                 data={data}
                                 rowIdField="column1"
@@ -181,7 +178,7 @@ export const WithHeading: Story = {
 };
 
 export const WithSummary: Story = {
-    render(args) {
+    render() {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -221,9 +218,12 @@ export const WithSummary: Story = {
 
                     return (
                         <>
-                            <p id="DescriptionId">This is a summury of the table. It provides an overview of the dataset, displaying key information across multiple columns. It allows users to sort, filter, and interact with the data efficiently.</p>
+                            <p id="DescriptionId">
+                                This is a summury of the table. It provides an overview of the dataset,
+                                displaying key information across multiple columns. It allows users to sort,
+                                filter, and interact with the data efficiently.
+                            </p>
                             <Table<Data>
-                                {...args as TableProps<Data>}
                                 columns={columns}
                                 data={data}
                                 rowIdField="column1"

@@ -192,12 +192,12 @@ describe('Table', () => {
                 data={data}
                 rowIdField="id"
                 caption="Test Caption"
-            />
+            />,
         );
-    
+
         expect(wrapper.find('caption').text()).toBe('Test Caption');
     });
-    
+
     test('should apply aria-labelledby attribute', () => {
         const headingId = 'table-heading';
         const wrapper = mountWithTheme(
@@ -209,12 +209,12 @@ describe('Table', () => {
                     rowIdField="id"
                     ariaLabelledBy={headingId}
                 />
-            </>
+            </>,
         );
-    
+
         expect(wrapper.find('table').prop('aria-labelledby')).toBe(headingId);
     });
-    
+
     test('should apply aria-describedby attribute', () => {
         const descriptionId = 'table-description';
         const wrapper = mountWithTheme(
@@ -226,12 +226,12 @@ describe('Table', () => {
                     rowIdField="id"
                     ariaDescribedBy={descriptionId}
                 />
-            </>
+            </>,
         );
-    
+
         expect(wrapper.find('table').prop('aria-describedby')).toBe(descriptionId);
-    });    
-    
+    });
+
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
         const wrapper = mountWithProviders(
             <Table<TestData>
