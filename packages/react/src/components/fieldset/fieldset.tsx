@@ -7,7 +7,7 @@ import { FieldsetProps } from './types';
 export const Fieldset = forwardRef(({
     id: providedId,
     children,
-    legend = { text: 'Default Legend' },
+    legend,
     disabled,
     ...props
 }: FieldsetProps, ref: Ref<HTMLFieldSetElement>): ReactElement => {
