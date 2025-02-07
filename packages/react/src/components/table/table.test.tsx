@@ -185,6 +185,53 @@ const stickyColumnsData: TestData3Columns[] = [
 const SELECT_ALL_CHECKBOX_TESTID = 'row-checkbox-all';
 
 describe('Table', () => {
+    test('should render table caption', () => {
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                columns={columns}
+                data={data}
+                rowIdField="id"
+                caption="Test Caption"
+            />
+        );
+    
+        expect(wrapper.find('caption').text()).toBe('Test Caption');
+    });
+    
+    test('should apply aria-labelledby attribute', () => {
+        const headingId = 'table-heading';
+        const wrapper = mountWithTheme(
+            <>
+                <h2 id={headingId}>Table Title</h2>
+                <Table<TestData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="id"
+                    ariaLabelledBy={headingId}
+                />
+            </>
+        );
+    
+        expect(wrapper.find('table').prop('aria-labelledby')).toBe(headingId);
+    });
+    
+    test('should apply aria-describedby attribute', () => {
+        const descriptionId = 'table-description';
+        const wrapper = mountWithTheme(
+            <>
+                <p id={descriptionId}>This table describes important data.</p>
+                <Table<TestData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="id"
+                    ariaDescribedBy={descriptionId}
+                />
+            </>
+        );
+    
+        expect(wrapper.find('table').prop('aria-describedby')).toBe(descriptionId);
+    });    
+    
     test('column sorting should be set to defaultSort value when defaultSort is set', () => {
         const wrapper = mountWithProviders(
             <Table<TestData>

@@ -24,8 +24,9 @@ import { DeviceType, useDeviceContext } from '../device-context-provider/device-
 import { RadioInput } from '../radio-button/radio-input';
 import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
+import { TableCaption } from './table-caption';
 import { StyledTableRow, TableRow } from './table-row';
-import { type TableColumn, type TableData } from './types';
+import { type TableColumn, type TableData, type TableCaptionSize } from './types';
 import { createRowSelectionStateFromSelectedRowIds } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';
@@ -344,9 +345,13 @@ export type TableRowId = string;
 type RowIdField<T> = { [K in keyof T]: T[K] extends TableRowId ? K : never }[keyof T]
 
 export interface TableProps<T extends object> {
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
+    caption?: string;
+    captionSize?: TableCaptionSize;
     columns: TableColumn<T>[];
     expandableRows?: 'single' | 'multiple';
     expandChildrenOnRowSelection?: boolean;
@@ -385,7 +390,11 @@ export interface TableProps<T extends object> {
 }
 
 export const Table = <T extends object>({
+    ariaLabelledBy,
+    ariaDescribedBy,
     ariaLabelledByColumnId,
+    caption,
+    captionSize = 'medium',
     className,
     data,
     rowIdField,
@@ -523,6 +532,8 @@ export const Table = <T extends object>({
 
     return (
         <StyledTable
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={ariaDescribedBy}
             className={className}
             $rowSize={rowSize}
             $striped={striped}
@@ -530,6 +541,7 @@ export const Table = <T extends object>({
             $clickableRows={onRowClick !== undefined}
             ref={tableRef}
         >
+            {caption && <TableCaption size={captionSize}>{caption}</TableCaption>}
             <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>

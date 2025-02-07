@@ -1,5 +1,6 @@
 import {
     Button,
+    Heading,
     Pagination,
     Table,
     type TableColumn,
@@ -66,12 +67,172 @@ export const Default: Story = {
         ];
         return (
             <Table<Data>
-                // eslint-disable-next-line react/jsx-props-no-spreading
                 {...args as TableProps<Data>}
                 columns={columns}
                 data={data}
                 rowIdField="column1"
             />
+        );
+    },
+};
+
+export const WithCaption: Story = {
+    render(args) {
+        const columns: TableColumn<Data>[] = [
+            {
+                header: 'Column 1',
+                accessorKey: 'column1',
+            },
+            {
+                header: 'Column 2',
+                accessorKey: 'column2',
+            },
+            {
+                header: 'Column 3',
+                accessorKey: 'column3',
+            },
+        ];
+
+        const data: TableData<Data>[] = [
+            {
+                column1: 'a',
+                column2: 'a',
+                column3: 'a',
+            },
+            {
+                column1: 'b',
+                column2: 'b',
+                column3: 'b',
+            },
+            {
+                column1: 'c',
+                column2: 'c',
+                column3: 'c',
+            },
+        ];
+        return (
+            <Table<Data>
+                {...args as TableProps<Data>}
+                caption="Table caption"
+                captionSize="large"
+                columns={columns}
+                data={data}
+                rowIdField="column1"
+            />
+        );
+    },
+};
+
+export const WithHeading: Story = {
+    render(args) {
+        const columns: TableColumn<Data>[] = [
+            {
+                header: 'Column 1',
+                accessorKey: 'column1',
+            },
+            {
+                header: 'Column 2',
+                accessorKey: 'column2',
+            },
+            {
+                header: 'Column 3',
+                accessorKey: 'column3',
+            },
+        ];
+
+        const data: TableData<Data>[] = [
+            {
+                column1: 'a',
+                column2: 'a',
+                column3: 'a',
+            },
+            {
+                column1: 'b',
+                column2: 'b',
+                column3: 'b',
+            },
+            {
+                column1: 'c',
+                column2: 'c',
+                column3: 'c',
+            },
+        ];
+        return (
+            <>
+                {(() => {
+                    const [headingId] = useState(() => `heading-${crypto.randomUUID()}`);
+
+                    return (
+                        <>
+                            <Heading id={headingId} type="medium">Table Heading</Heading>
+                            <Table<Data>
+                                {...args as TableProps<Data>}
+                                columns={columns}
+                                data={data}
+                                rowIdField="column1"
+                                ariaLabelledBy={headingId}
+                            />
+                        </>
+                    );
+                })()}
+            </>
+        );
+    },
+};
+
+export const WithSummary: Story = {
+    render(args) {
+        const columns: TableColumn<Data>[] = [
+            {
+                header: 'Column 1',
+                accessorKey: 'column1',
+            },
+            {
+                header: 'Column 2',
+                accessorKey: 'column2',
+            },
+            {
+                header: 'Column 3',
+                accessorKey: 'column3',
+            },
+        ];
+
+        const data: TableData<Data>[] = [
+            {
+                column1: 'a',
+                column2: 'a',
+                column3: 'a',
+            },
+            {
+                column1: 'b',
+                column2: 'b',
+                column3: 'b',
+            },
+            {
+                column1: 'c',
+                column2: 'c',
+                column3: 'c',
+            },
+        ];
+        return (
+            <>
+                {(() => {
+                    const [DescriptionId] = useState(() => `description-${crypto.randomUUID()}`);
+
+                    return (
+                        <>
+                            <p id="DescriptionId">This is a summury of the table. It provides an overview of the dataset, displaying key information across multiple columns. It allows users to sort, filter, and interact with the data efficiently.</p>
+                            <Table<Data>
+                                {...args as TableProps<Data>}
+                                columns={columns}
+                                data={data}
+                                rowIdField="column1"
+                                ariaDescribedBy={DescriptionId}
+                            />
+                        </>
+                    );
+                })()}
+            </>
         );
     },
 };
