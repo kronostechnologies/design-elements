@@ -311,11 +311,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   box-sizing: border-box;
   position: fixed;
@@ -530,11 +525,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   cursor: not-allowed;
 }
 
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   box-sizing: border-box;
   position: fixed;
@@ -688,7 +678,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -720,7 +710,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: var(--size-3x);
+  width: var(--size-2x);
 }
 
 .c3 {
@@ -746,11 +736,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
 }
 
 .c0 {
@@ -857,8 +842,8 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
             aria-hidden="true"
             color="currentColor"
             focusable="false"
-            height="24"
-            width="24"
+            height="20"
+            width="20"
           />
         </button>
         <main

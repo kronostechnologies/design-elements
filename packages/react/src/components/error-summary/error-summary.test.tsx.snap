@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorSummary matches the snapshot 1`] = `
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -19,20 +19,20 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c9:hover {
+.c10:hover {
   color: #003A5A;
 }
 
-.c9:visited {
+.c10:visited {
   color: #006296;
 }
 
-.c9 {
+.c10 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c9:focus-visible {
+.c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -43,7 +43,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   line-height: 1.5rem;
-  margin: 0;
+  margin: var(--spacing-3x) 0;
 }
 
 .c2 {
@@ -52,18 +52,18 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   background-color: #FDF7F6;
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  line-height: 24px;
-  padding: var(--spacing-2x) var(--spacing-3x);
-  position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-areas: "icon content dismiss";
+  grid-template-columns: auto 1fr auto;
+  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
 
 .c0 {
@@ -86,34 +86,40 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   width: 1rem;
 }
 
-.c5 {
+.c6 {
   font-size: 0.875rem;
-  margin: 0;
+  margin: 0 0 1rem;
+}
+
+.c6:last-child {
+  margin-bottom: 0;
+}
+
+.c5 {
+  margin: 0 0 var(--spacing-half);
 }
 
 .c3 {
-  box-sizing: border-box;
   grid-area: content;
-  margin-left: var(--spacing-1halfx);
 }
 
-.c6 {
+.c7 {
   font-size: 0.875rem;
   margin: var(--spacing-1x) 0 0 0;
 }
 
-.c6:first-child {
+.c7:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-.c7 {
+.c8 {
   list-style: inside disc;
   margin: var(--spacing-1x) 0;
   padding-left: var(--spacing-1x);
 }
 
-.c8 {
+.c9 {
   margin-bottom: var(--spacing-1x);
 }
 
@@ -133,37 +139,37 @@ exports[`ErrorSummary matches the snapshot 1`] = `
     class="c3"
   >
     <h2
-      class="c4"
+      class="c4 c5"
       id="uuid1"
     >
       The form contains one or more errors
     </h2>
     <div
-      class="c5"
+      class="c6"
     >
       <p
-        class="c6"
+        class="c7"
       >
         Please correct them to proceed to the next step.
       </p>
       <ul
-        class="c7"
+        class="c8"
       >
         <li
-          class="c8"
+          class="c9"
         >
           <a
-            class="c9"
+            class="c10"
             href="#error-input"
           >
             This is an error
           </a>
         </li>
         <li
-          class="c8"
+          class="c9"
         >
           <a
-            class="c9"
+            class="c10"
             href="#error-input-2"
           >
             Another error!

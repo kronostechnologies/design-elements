@@ -27,13 +27,13 @@ const getButtonSizeStyles = (
                 ${!isMobile && 'min-width: var(--size-1halfx)'};
 
                 padding: 0;
-                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)'};
+                width: ${isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)'};
             `;
         case 'medium':
         default:
             return css`
                 padding: 0;
-                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-2x)'};
+                width: ${isMobile ? 'var(--size-2x)' : 'var(--size-2x)'};
             `;
     }
 };
@@ -41,11 +41,6 @@ const getButtonSizeStyles = (
 const StyledButton = styled(AbstractButton)`
     ${getButtonTypeStyles};
     ${getButtonSizeStyles};
-
-    > svg {
-        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-    }
 `;
 
 export const IconButton = forwardRef(({
@@ -91,7 +86,7 @@ export const IconButton = forwardRef(({
                 <Icon
                     aria-hidden="true"
                     name={iconName}
-                    size={isMobile ? '24' : '16'}
+                    size={isMobile ? '20' : '16'}
                 />
             )}
         </StyledButton>

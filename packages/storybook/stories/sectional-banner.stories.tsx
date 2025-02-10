@@ -32,6 +32,7 @@ export const Neutral: Story = {
     args: {
         title: 'Neutral',
         type: 'neutral',
+        buttonLabel: 'Click me',
     },
     render: (args) => {
         const [dismissed, setDismissed] = useState<boolean>(false);
