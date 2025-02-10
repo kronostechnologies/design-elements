@@ -61,7 +61,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   border-radius: var(--border-radius-2x);
   display: grid;
   gap: 0.75rem;
-  grid-template-areas: "icon content dismiss";
+  grid-template-areas: 'icon content dismiss';
   grid-template-columns: auto 1fr auto;
   padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
@@ -82,13 +82,13 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 1rem;
-  width: 1rem;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c6 {
   font-size: 0.875rem;
-  margin: 0 0 1rem;
+  margin: 0 0 var(--spacing-2x);
 }
 
 .c6:last-child {

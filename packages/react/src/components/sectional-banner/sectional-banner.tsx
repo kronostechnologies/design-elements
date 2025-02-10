@@ -42,7 +42,7 @@ function abstractContainer(
         border-radius: var(--border-radius-2x);
         display: grid;
         gap: 0.75rem;
-        grid-template-areas: "icon content dismiss";
+        grid-template-areas: 'icon content dismiss';
         grid-template-columns: auto 1fr auto;
         padding: ${(props) => (props.$isMobile ? 'var(--spacing-3x)' : 'var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x)')};
 
@@ -51,8 +51,8 @@ function abstractContainer(
         ${BannerIcon} {
             color: ${(props) => (props.theme.component[iconColor])};
             flex: 0 0 auto;
-            height: ${(props) => (props.$isMobile ? '1.25rem' : '1rem')};
-            width: ${(props) => (props.$isMobile ? '1.25rem' : '1rem')};
+            height: ${(props) => (props.$isMobile ? '1.25rem' : 'var(--size-1x)')};
+            width: ${(props) => (props.$isMobile ? '1.25rem' : 'var(--size-1x)')};
         }
     `;
 }
@@ -90,7 +90,7 @@ const AlertContainer = abstractContainer(
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.$isMobile ? '1rem' : '0.875rem')};
-    margin: 0 0 1rem;
+    margin: 0 0 var(--spacing-2x);
 
     &:last-child {
         margin-bottom: 0;

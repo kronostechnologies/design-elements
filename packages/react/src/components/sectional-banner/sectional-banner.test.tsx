@@ -55,7 +55,7 @@ describe('SectionalBanner', () => {
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
-            const buttonWrapper = getByTestId(wrapper, `action-button`);
+            const buttonWrapper = getByTestId(wrapper, 'action-button');
             const button = getByTestId(buttonWrapper, 'button');
 
             expect(button.prop('buttonType')).toBe('destructive-primary');
@@ -91,7 +91,7 @@ describe('SectionalBanner', () => {
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
-            getByTestId(wrapper, `action-button`).simulate('click');
+            getByTestId(wrapper, 'action-button').simulate('click');
 
             expect(onButtonClicked).toHaveBeenCalled();
         });
