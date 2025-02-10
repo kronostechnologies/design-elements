@@ -99,7 +99,7 @@ const Message = styled.p<MobileDeviceContext>`
 
 const StyledHeading = styled(Heading)`
     margin: 0 0 var(--spacing-half);
-`
+`;
 
 const TextWrapper = styled.div<MobileDeviceContext>`
     grid-area: content;
