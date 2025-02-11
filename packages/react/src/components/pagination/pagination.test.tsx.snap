@@ -18,33 +18,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
+  min-height: 1.75rem;
 }
 
 .c3 {
@@ -98,13 +72,6 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       </span>
       0–0 of 0 results
     </h3>
-  </div>
-  <div
-    class="c4 pagination-buttons-wrapper"
-  >
-    <ol
-      class="c5 pagination-page-buttons-wrapper"
-    />
   </div>
 </nav>
 `;
@@ -127,33 +94,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
+  min-height: 1.75rem;
 }
 
 .c3 {
@@ -208,13 +149,6 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
       0–0 of 0 results
     </h3>
   </div>
-  <div
-    class="c4 pagination-buttons-wrapper"
-  >
-    <ol
-      class="c5 pagination-page-buttons-wrapper"
-    />
-  </div>
 </nav>
 `;
 
@@ -236,33 +170,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.75rem;
-  padding: 0;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
+  min-height: 1.75rem;
 }
 
 .c3 {
@@ -316,13 +224,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       </span>
       0–0 of 0 results
     </h3>
-  </div>
-  <div
-    class="c4 pagination-buttons-wrapper"
-  >
-    <ol
-      class="c5 pagination-page-buttons-wrapper"
-    />
   </div>
 </nav>
 `;
@@ -345,33 +246,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.75rem;
-  padding: 0;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
+  min-height: 1.75rem;
 }
 
 .c3 {
@@ -425,13 +300,6 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
       </span>
       0–0 of 0 results
     </h3>
-  </div>
-  <div
-    class="c4 pagination-buttons-wrapper"
-  >
-    <ol
-      class="c5 pagination-page-buttons-wrapper"
-    />
   </div>
 </nav>
 `;

@@ -1,14 +1,11 @@
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useId } from '../../hooks/use-id';
 import { clamp } from '../../utils/math';
-import { range } from '../../utils/range';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { calculateShownPageRange } from './util/pagination-util';
-import { Navigation, PaginationButtonsWrapper, PaginationPageButtonsWrapper } from './styled';
-import { PaginationNavButton } from './nav-button/pagination-nav-button';
-import { PaginationPageButton } from './page-button/pagination-page-button';
+import { Navigation } from './styled';
 import { PaginationContext } from './context';
 import { PaginationLabel } from './label/pagination-label';
+import { PaginationButtons } from './buttons/pagination-buttons';
 
 export interface PaginationProps {
     className?: string;
@@ -54,9 +51,8 @@ export const Pagination: FC<PaginationProps> = ({
     const headingId = useId();
     const currentNumberOfResults = numberOfResults === undefined ? 0 : numberOfResults;
     const totalPages = currentNumberOfResults === 0 ? 0 : Math.ceil(currentNumberOfResults / resultsPerPage);
-    const pagesDisplayed = Math.min(pagesShown, totalPages);
+    const pagesDisplayed = Math.min(Math.max(pagesShown, 1), totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
-    const { begin, end } = calculateShownPageRange(totalPages, pagesDisplayed, currentPage);
 
     useEffect(() => {
         if (activePage) {
@@ -89,21 +85,7 @@ export const Pagination: FC<PaginationProps> = ({
                 aria-labelledby={headingId}
             >
                 <PaginationLabel id={headingId} />
-                <PaginationButtonsWrapper
-                    className="pagination-buttons-wrapper"
-                    $isMobile={isMobile}
-                >
-                    <PaginationNavButton action="previous" />
-                    <PaginationPageButtonsWrapper
-                        className="pagination-page-buttons-wrapper"
-                        $isMobile={isMobile}
-                    >
-                        {range(begin, end).map((i) => (
-                            <PaginationPageButton key={i} index={i} />
-                        ))}
-                    </PaginationPageButtonsWrapper>
-                    <PaginationNavButton action="next" />
-                </PaginationButtonsWrapper>
+                <PaginationButtons />
             </Navigation>
         </PaginationContext.Provider>
     );

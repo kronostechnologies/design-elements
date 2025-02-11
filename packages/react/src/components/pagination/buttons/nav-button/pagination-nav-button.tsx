@@ -1,7 +1,7 @@
 import { VoidFunctionComponent } from 'react';
 import { StyledButtonContainer, StyledWrapper } from './styled';
-import { usePaginationContext } from '../context';
-import { IconButton } from '../../buttons';
+import { usePaginationContext } from '../../context';
+import { IconButton } from '../../../buttons';
 
 export type NavigationAction = 'previous' | 'next';
 

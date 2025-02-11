@@ -1,8 +1,7 @@
-import { shallow } from 'enzyme';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Pagination } from './pagination';
-import { PaginationPageButton } from './page-button/pagination-page-button';
+import { PaginationPageButton } from './buttons/page-button/pagination-page-button';
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
@@ -43,11 +42,18 @@ describe('Pagination', () => {
 
     describe('pages list', () => {
         test('should display pages', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
+            const wrapper = mountWithProviders(
+                <Pagination
+                    resultsPerPage={5}
+                    numberOfResults={25}
+                    pagesShown={5}
+                />,
+            );
 
-            const pages = wrapper.find(PaginationPageButton);
+            const pageButtons = wrapper.find(PaginationPageButton);
 
-            expect(pages).toHaveLength(5);
+            expect(pageButtons).toHaveLength(5);
+            wrapper.unmount();
         });
 
         test('should go to page 2 when clicking on page 2', () => {
@@ -75,6 +81,17 @@ describe('Pagination', () => {
             const pageButton = findByTestId(wrapper, 'page-3').at(0);
 
             expect(pageButton.prop('isSelected')).toBe(true);
+            wrapper.unmount();
+        });
+
+        test('should not display pages when displayed page less than 2', () => {
+            const wrapper = mountWithProviders(
+                <Pagination resultsPerPage={10} numberOfResults={8} />,
+            );
+
+            const pageButtons = wrapper.find(PaginationPageButton);
+
+            expect(pageButtons).toHaveLength(0);
             wrapper.unmount();
         });
     });

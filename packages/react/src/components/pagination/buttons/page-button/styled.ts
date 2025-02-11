@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { focus } from '../../../utils/css-state';
+import { focus } from '../../../../utils/css-state';
 
 type SelectionSuffix = '-selected' | '';
 

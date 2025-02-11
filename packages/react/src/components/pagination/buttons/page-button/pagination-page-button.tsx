@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../../../device-context-provider/device-context-provider';
 import { PageButtonWrapper, StyledButton, StyledText } from './styled';
-import { usePaginationContext } from '../context';
+import { usePaginationContext } from '../../context';
 
 interface PageButtonProps {
     index: number;
