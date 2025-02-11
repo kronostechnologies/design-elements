@@ -24,6 +24,8 @@ export const PaginationPageButton: FC<PageButtonProps> = ({
     return (
         <PageButtonWrapper key={id}>
             <StyledButton
+                aria-label={`go to page ${index}`}
+                aria-current={isSelected ? 'page' : undefined}
                 className="pagination-page-button"
                 data-testid={id}
                 isSelected={isSelected}
@@ -33,8 +35,6 @@ export const PaginationPageButton: FC<PageButtonProps> = ({
                 $isMobile={isMobile}
             >
                 <StyledText
-                    aria-label={`go to page ${index}`}
-                    aria-current={isSelected ? 'page' : undefined}
                     $isMobile={isMobile}
                     isSelected={isSelected}
                 >

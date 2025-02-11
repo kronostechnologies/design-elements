@@ -1,7 +1,7 @@
 import { VoidFunctionComponent } from 'react';
-import { StyledButtonContainer, StyledWrapper } from './styled';
+import { StyledButtonContainer, StyledIconButton, StyledWrapper } from './styled';
 import { usePaginationContext } from '../../context';
-import { IconButton } from '../../../buttons';
+import { useDeviceContext } from '../../../device-context-provider/device-context-provider';
 
 export type NavigationAction = 'previous' | 'next';
 
@@ -12,6 +12,7 @@ export interface PaginationNavButtonProps {
 export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps> = (
     { action },
 ) => {
+    const { isMobile } = useDeviceContext();
     const {
         totalPages,
         pagesDisplayed,
@@ -32,7 +33,7 @@ export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps
     return (
         <StyledWrapper $isVisible={!isDisabled}>
             <StyledButtonContainer>
-                <IconButton
+                <StyledIconButton
                     data-testid={dataTestId}
                     className={`pagination-navigation-button-${isPrevious ? 'previous' : 'next'}`}
                     iconName={iconName}
@@ -41,6 +42,7 @@ export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps
                     buttonType="tertiary"
                     disabled={isDisabled}
                     onClick={onClick}
+                    $isMobile={isMobile}
                 />
             </StyledButtonContainer>
         </StyledWrapper>
