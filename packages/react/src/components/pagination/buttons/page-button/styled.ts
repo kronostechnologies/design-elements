@@ -11,10 +11,10 @@ export const PageButtonWrapper = styled.li`
     list-style: none;
 `;
 
-export const StyledButton = styled.button<{ isSelected: boolean, $isMobile: boolean }>`
+export const StyledButton = styled.button<{ $isSelected: boolean, $isMobile: boolean }>`
     align-items: center;
-    background-color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-background-color`]};
-    border: ${({ isSelected, theme }) => (isSelected ? `1px solid ${theme.component['pagination-page-selected-border-color']}` : 'none')};
+    background-color: ${({ $isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix($isSelected)}-background-color`]};
+    border: ${({ $isSelected, theme }) => ($isSelected ? `1px solid ${theme.component['pagination-page-selected-border-color']}` : 'none')};
     border-radius: var(--border-radius-4x);
     display: flex;
     justify-content: center;
@@ -25,19 +25,19 @@ export const StyledButton = styled.button<{ isSelected: boolean, $isMobile: bool
     ${focus};
 
     &:hover {
-        background-color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-hover-background-color`]};
+        background-color: ${({ $isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix($isSelected)}-hover-background-color`]};
     }
 `;
 
-export const StyledText = styled.span<{ isSelected: boolean, $isMobile: boolean }>`
-    color: ${({ isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix(isSelected)}-text-color`]};
+export const StyledText = styled.span<{ $isSelected: boolean, $isMobile: boolean }>`
+    color: ${({ $isSelected, theme }) => theme.component[`pagination-page${getSelectionSuffix($isSelected)}-text-color`]};
     font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
-    font-weight: ${({ isSelected }) => (isSelected ? 'var(--font-bold)' : 'var(--font-normal)')};
+    font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-bold)' : 'var(--font-normal)')};
     letter-spacing: 0.0125rem;
     line-height: ${({ $isMobile }) => ($isMobile ? 1.5 : 1.25)}rem;
 
     &:hover {
-        ${({ isSelected, theme }) => !isSelected && `
+        ${({ $isSelected, theme }) => !$isSelected && `
             color: ${theme.component['pagination-page-hover-text-color']};
         `}
     }

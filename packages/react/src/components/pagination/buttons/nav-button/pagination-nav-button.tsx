@@ -1,5 +1,5 @@
 import { VoidFunctionComponent } from 'react';
-import { StyledButtonContainer, StyledIconButton, StyledWrapper } from './styled';
+import { StyledIconButton } from './styled';
 import { usePaginationContext } from '../../context';
 import { useDeviceContext } from '../../../device-context-provider/device-context-provider';
 
@@ -31,20 +31,17 @@ export const PaginationNavButton: VoidFunctionComponent<PaginationNavButtonProps
     const dataTestId = isPrevious ? 'previousPageButton' : 'nextPageButton';
 
     return (
-        <StyledWrapper $isVisible={!isDisabled}>
-            <StyledButtonContainer>
-                <StyledIconButton
-                    data-testid={dataTestId}
-                    className={`pagination-navigation-button-${isPrevious ? 'previous' : 'next'}`}
-                    iconName={iconName}
-                    label={label}
-                    type="button"
-                    buttonType="tertiary"
-                    disabled={isDisabled}
-                    onClick={onClick}
-                    $isMobile={isMobile}
-                />
-            </StyledButtonContainer>
-        </StyledWrapper>
+        <StyledIconButton
+            data-testid={dataTestId}
+            className={`pagination-navigation-button-${isPrevious ? 'previous' : 'next'}`}
+            iconName={iconName}
+            label={label}
+            type="button"
+            buttonType="tertiary"
+            disabled={isDisabled}
+            onClick={onClick}
+            $isMobile={isMobile}
+            $isVisible={!isDisabled}
+        />
     );
 };

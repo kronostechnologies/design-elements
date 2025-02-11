@@ -80,7 +80,7 @@ describe('Pagination', () => {
             );
             const pageButton = findByTestId(wrapper, 'page-3').at(0);
 
-            expect(pageButton.prop('isSelected')).toBe(true);
+            expect(pageButton.prop('$isSelected')).toBe(true);
             wrapper.unmount();
         });
 

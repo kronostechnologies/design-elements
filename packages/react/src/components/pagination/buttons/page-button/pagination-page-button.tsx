@@ -28,7 +28,7 @@ export const PaginationPageButton: FC<PageButtonProps> = ({
                 aria-current={isSelected ? 'page' : undefined}
                 className="pagination-page-button"
                 data-testid={id}
-                isSelected={isSelected}
+                $isSelected={isSelected}
                 onClick={isSelected ? undefined : () => changePage(index)}
                 onKeyPress={(event) => handlePageKeyDown(event.key, index)}
                 type="button"
@@ -36,7 +36,7 @@ export const PaginationPageButton: FC<PageButtonProps> = ({
             >
                 <StyledText
                     $isMobile={isMobile}
-                    isSelected={isSelected}
+                    $isSelected={isSelected}
                 >
                     {index}
                 </StyledText>
