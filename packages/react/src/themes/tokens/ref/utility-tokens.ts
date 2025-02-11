@@ -1,6 +1,7 @@
 import type { RefTokenMap } from '../tokens';
 
 export type UtilityToken =
+    | 'transparent-dark-3'
     | 'transparent-dark-5'
     | 'transparent-light-5'
     | 'transparent-dark-10'
@@ -42,6 +43,7 @@ export type UtilityToken =
     | 'transparent-100';
 
 export const defaultUtilityTokens: RefTokenMap<UtilityToken> = {
+    'transparent-dark-3': 'rgb(0 0 0 / 0.03)',
     'transparent-dark-5': 'rgb(0 0 0 / 0.05)',
     'transparent-light-5': 'rgb(255 255 255 / 0.05)',
     'transparent-dark-10': 'rgb(0 0 0 / 0.1)',

@@ -36,6 +36,7 @@ interface NumericInputProps extends NativeInputProps {
     onChange?: UseNumericInputParams['onChange'];
     precision?: number;
     required?: boolean;
+    readOnly?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
     invalid?: boolean;
@@ -61,6 +62,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     placeholder,
     precision,
     required,
+    readOnly,
     textAlign = 'left',
     tooltip,
     invalid,
@@ -102,6 +104,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             onInvalid={numericInput.onInvalid}
             onPaste={numericInput.onPasteHandler}
             placeholder={placeholder}
+            readOnly={readOnly}
             required={numericInput.required}
             ref={inputRef}
             rightAdornment={adornmentPosition === 'end' && adornment}

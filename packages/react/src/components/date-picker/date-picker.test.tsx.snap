@@ -222,7 +222,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -286,6 +286,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -612,7 +624,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -676,6 +688,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -1004,7 +1028,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -1068,6 +1092,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -1396,7 +1432,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -1460,6 +1496,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -1816,7 +1864,7 @@ label + .c5 {
 }
 
 .c7.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -1880,6 +1928,18 @@ label + .c5 {
 .c7.datePickerInput:disabled,
 .c7.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c7.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c7.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c7.datePickerInput {
@@ -2222,7 +2282,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -2286,6 +2346,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -2780,7 +2852,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -2844,6 +2916,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -4075,7 +4159,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -4139,6 +4223,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {
@@ -5357,7 +5453,7 @@ label + .c3 {
 }
 
 .c5.datePickerInput {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -5421,6 +5517,18 @@ label + .c3 {
 .c5.datePickerInput:disabled,
 .c5.datePickerInput:disabled::placeholder {
   color: #B7BBC2;
+}
+
+.c5.datePickerInput:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5.datePickerInput:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 .c5.datePickerInput {

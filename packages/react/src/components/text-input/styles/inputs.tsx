@@ -16,7 +16,7 @@ export const inputsStyle = ({
     isFocusable = true,
     isValid = true,
 }: InputStyleOptions): FlattenSimpleInterpolation => css`
-    background: ${theme.component['text-input-background-color']};
+    background-color: ${theme.component['text-input-background-color']};
     border: 1px solid ${isValid ? theme.component['text-input-border-color'] : theme.component['text-input-error-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
@@ -46,6 +46,12 @@ export const inputsStyle = ({
         }
     }
 
+    &:read-only {
+        background-color: ${theme.component['text-input-readonly-background-color']};
+        border-color: ${theme.component['text-input-readonly-border-color']};
+        color: ${theme.component['text-input-readonly-text-color']};
+    }
+
     ${isFocusable && focus({ theme })};
 `;
 
@@ -55,7 +61,7 @@ interface ResponsiveInputsStyles {
 }
 
 export const responsiveInputsStyle = ({ theme, device: { isMobile } }: ResponsiveInputsStyles): FlattenSimpleInterpolation => css`
-    background: ${theme.component['text-input-background-color']};
+    background-color: ${theme.component['text-input-background-color']};
     border: 1px solid ${theme.component['text-input-border-color']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
