@@ -43,10 +43,15 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 
 .c4 {
   font-size: 0.875rem;
-  margin: 0 0 var(--spacing-2x);
+  margin: 0;
 }
 
-.c4:last-child {
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
   margin-bottom: 0;
 }
 
@@ -127,10 +132,15 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 
 .c4 {
   font-size: 0.875rem;
-  margin: 0 0 var(--spacing-2x);
+  margin: 0;
 }
 
-.c4:last-child {
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
   margin-bottom: 0;
 }
 
@@ -204,10 +214,15 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 
 .c4 {
   font-size: 1rem;
-  margin: 0 0 var(--spacing-2x);
+  margin: 0;
 }
 
-.c4:last-child {
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
   margin-bottom: 0;
 }
 

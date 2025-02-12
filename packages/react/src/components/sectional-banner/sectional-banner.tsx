@@ -90,9 +90,14 @@ const AlertContainer = abstractContainer(
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.$isMobile ? '1rem' : '0.875rem')};
-    margin: 0 0 var(--spacing-2x);
+    margin: 0;
 
-    &:last-child {
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child,
+    & > *:last-child {
         margin-bottom: 0;
     }
 `;
@@ -112,6 +117,7 @@ const DismissIconButton = styled(IconButton)`
 
 const StyledActionButton = styled(Button)`
     grid-area: button;
+    margin-top: 1rem;
 `;
 
 type ActionButtonProps = {

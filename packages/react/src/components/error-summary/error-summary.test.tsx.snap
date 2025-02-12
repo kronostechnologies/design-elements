@@ -88,10 +88,15 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 
 .c6 {
   font-size: 0.875rem;
-  margin: 0 0 var(--spacing-2x);
+  margin: 0;
 }
 
-.c6:last-child {
+.c6 > *:first-child {
+  margin-top: 0;
+}
+
+.c6:last-child,
+.c6 > *:last-child {
   margin-bottom: 0;
 }
 
