@@ -10,6 +10,7 @@ exports[`DropdownMenu Is hidden 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c6 {
@@ -420,6 +421,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c6 {
