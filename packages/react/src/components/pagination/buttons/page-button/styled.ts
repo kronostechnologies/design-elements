@@ -21,6 +21,7 @@ export const StyledButton = styled.button<{ $isSelected: boolean, $isMobile: boo
     max-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     min-width: ${({ $isMobile }) => ($isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     padding: ${({ $isMobile }) => ($isMobile ? '0.25rem 0.5rem' : '0.125rem 0.25rem')};
+    user-select: none;
     
     ${focus};
 
