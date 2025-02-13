@@ -84,7 +84,7 @@ export interface AttachedFileProps {
     /**
      * Size in bytes
      */
-    filesize: number;
+    filesize?: number;
     percent?: number;
     errorText?: string;
     onCancel?(): void;
@@ -131,7 +131,6 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
                     <Spinner
                         className={attachedFileClasses.icon}
                         color="#333"
-                        percent={percent ?? 0}
                     />
                 );
             case 'cancelled':
@@ -230,7 +229,7 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
         }
     }, [t, currentStatus, errorText, percent]);
 
-    const filesizeText = filesize ? ` (${formatFilesize(tCommon('unitSymbolBytes', { returnObjects: true }) as string[], filesize)})` : null;
+    const filesizeText = filesize !== undefined ? ` (${formatFilesize(tCommon('unitSymbolBytes', { returnObjects: true }) as string[], filesize)})` : null;
 
     return (
         <AttachedFileRoot className={clsx(attachedFileClasses.root, className)} id={id} $status={currentStatus}>
