@@ -66,17 +66,10 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
     Object.assign(locale.options || {}, optionsOverride);
 }
 
-/**
- * The version of format as only numbers (ex: "yyyy-MM-dd" would become "yyyyMMdd").
- * Note that Month and Day are always converted to the 2 digits format.
- */
-export function getNumericalDateFormat(dateFormat: string): string | null {
-    if (/[^yMd/\-,. ]/g.test(dateFormat)) {
-        return null;
-    }
-
-    return dateFormat
-        .replace(/[^yMd]/g, '')
-        .replace(/M+/g, 'MM')
-        .replace(/d+/g, 'dd');
+// Allow input values of contiguous or space-separated numbers (without dashes or slashes)
+export function getAlternateDateFormats(dateFormat: string): string[] {
+    return [
+        dateFormat.replace(/[^yMd]/g, ''),
+        dateFormat.replace(/[^yMd]/g, ' '),
+    ].filter((format) => format !== dateFormat);
 }

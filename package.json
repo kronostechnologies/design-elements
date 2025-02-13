@@ -29,7 +29,6 @@
     "@types/react-router-dom": "5.3.3",
     "cheerio": "1.0.0-rc.12",
     "webpack": "^5",
-    "react-datepicker": "patch:react-datepicker@npm%3A7.5.0#~/.yarn/patches/react-datepicker-npm-7.5.0-ccc658025d.patch",
     "react-docgen-typescript-plugin": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch"
   },
   "packageManager": "yarn@4.12.0"

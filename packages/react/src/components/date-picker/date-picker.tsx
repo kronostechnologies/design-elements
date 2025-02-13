@@ -4,7 +4,6 @@ import {
     forwardRef,
     FunctionComponent,
     KeyboardEvent,
-    MouseEvent,
     PropsWithChildren,
     ReactElement,
     Ref,
@@ -16,7 +15,6 @@ import {
     useState,
 } from 'react';
 import DatePicker, { DatePickerProps, ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker';
-import { parse } from 'date-fns';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -34,12 +32,12 @@ import { TooltipProps } from '../tooltip/tooltip';
 import { CalendarHeader } from './calendar-header';
 import {
     DayOfWeek,
+    getAlternateDateFormats,
     getLocale,
     getLocaleDateFormat,
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
-    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
     SupportedLocale,
@@ -295,7 +293,7 @@ interface DatepickerProps {
 
     onCalendarOpen?(): void;
 
-    onChange?(date: Date): void;
+    onChange?(date: Date | null): void;
 
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
@@ -338,7 +336,7 @@ export const Datepicker = forwardRef(({
 }: DatepickerProps, ref: Ref<DatepickerHandles>): ReactElement => {
     const { t } = useTranslation('datepicker');
     const { isMobile } = useDeviceContext();
-    const [selectedDate, setSelectedDate] = useState(defaultDate);
+    const [selectedDate, setSelectedDate] = useState(defaultDate || null);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
@@ -350,7 +348,7 @@ export const Datepicker = forwardRef(({
 
     useImperativeHandle(ref, () => ({
         reset: () => {
-            setSelectedDate(defaultDate);
+            setSelectedDate(defaultDate || null);
         },
         setDate: (date: Date) => {
             setSelectedDate(date);
@@ -374,7 +372,7 @@ export const Datepicker = forwardRef(({
         }, 0);
     }
 
-    function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
+    function handleCalendarKeyDown(event: KeyboardEvent<HTMLElement>): void {
         switch (event.key) {
             case 'ArrowUp':
             case 'ArrowDown':
@@ -423,7 +421,7 @@ export const Datepicker = forwardRef(({
         }
     }
 
-    const handleInputChange: (date: Date) => void = useCallback((date) => {
+    const handleInputChange: (date: Date | null) => void = useCallback((date) => {
         setSelectedDate(date);
 
         if (onChange) {
@@ -431,7 +429,7 @@ export const Datepicker = forwardRef(({
         }
     }, [onChange]);
 
-    function handleClickOutside(event: MouseEvent<HTMLInputElement>): void {
+    const handleClickOutside: DatePickerProps['onClickOutside'] = (event) => {
         if (
             dateInputRef.current
             && calendarButtonRef.current
@@ -439,7 +437,7 @@ export const Datepicker = forwardRef(({
         ) {
             dateInputRef.current.setOpen(true);
         }
-    }
+    };
 
     function handleInputClick(): void {
         dateInputRef.current?.setOpen(false, true);
@@ -498,18 +496,10 @@ export const Datepicker = forwardRef(({
         </div>
     ), [handleTodayButtonClick, hasTodayButton, locale, selectedDate, t]);
 
-    const dateFormat = providedDateFormat || getLocaleDateFormat(currentLocale);
-
-    // react-datepicker has also an option to support multiple input formats, but it behave differently than
-    // the single format. So we do this workaround instead.
-    const handleInputChangeRaw = useCallback((event: FocusEvent<HTMLInputElement>): void => {
-        const value = event.target.value;
-        const numericalFormat = getNumericalDateFormat(dateFormat);
-        if (numericalFormat && /^\d+$/.test(value) && value.length === numericalFormat.length) {
-            const date = parse(value, numericalFormat, new Date());
-            handleInputChange(date);
-        }
-    }, [dateFormat, handleInputChange]);
+    const dateFormats = useMemo(() => {
+        const dateFormat = providedDateFormat || getLocaleDateFormat(currentLocale);
+        return [dateFormat, ...getAlternateDateFormats(dateFormat)];
+    }, [currentLocale, providedDateFormat]);
 
     return (
         <>
@@ -547,13 +537,12 @@ export const Datepicker = forwardRef(({
                         )}
                         calendarContainer={CalendarContainer}
                         className="datePickerInput"
-                        dateFormat={dateFormat}
+                        dateFormat={dateFormats}
                         disabled={disabled}
                         locale={locale}
                         maxDate={maxDate || undefined}
                         minDate={minDate || undefined}
                         onChange={handleInputChange}
-                        onChangeRaw={handleInputChangeRaw}
                         onSelect={handleCalendarSelect}
                         onBlur={handleInputBlur}
                         onFocus={onFocus}
