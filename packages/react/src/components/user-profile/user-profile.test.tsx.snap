@@ -124,6 +124,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -816,6 +817,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -1516,6 +1518,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -2197,6 +2200,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
