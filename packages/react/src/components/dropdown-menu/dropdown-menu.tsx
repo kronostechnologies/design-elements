@@ -13,6 +13,7 @@ const List = styled.div`
     list-style-type: none;
     position: absolute;
     width: 100%;
+    z-index: 700;
 `;
 
 export interface DropdownMenuProps {
