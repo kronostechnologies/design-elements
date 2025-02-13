@@ -33,7 +33,7 @@ const getButtonSizeStyles = (
         default:
             return css`
                 padding: 0;
-                width: ${isMobile ? 'var(--size-2x)' : 'var(--size-2x)'};
+                width: var(--size-2x);
             `;
     }
 };

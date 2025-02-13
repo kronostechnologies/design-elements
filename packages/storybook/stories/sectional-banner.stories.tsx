@@ -66,9 +66,9 @@ export const Informative: Story = {
             >
                 <p>Here&apos;s a contextual notice with an icon and title.</p>
                 <ul>
-                    <li>patate</li>
-                    <li>patate</li>
-                    <li>patate</li>
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                    <li>List item 3</li>
                 </ul>
             </SectionalBanner>
         ) : (

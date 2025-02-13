@@ -16,7 +16,7 @@ function getButtonMinHeight({ $isMobile, $size }: BaseButtonStyles): string {
             return $isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)';
         case 'medium':
         default:
-            return $isMobile ? 'var(--size-2x)' : 'var(--size-2x)';
+            return 'var(--size-2x)';
     }
 }
 
