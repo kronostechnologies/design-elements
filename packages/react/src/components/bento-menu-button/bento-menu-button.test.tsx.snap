@@ -104,6 +104,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -924,6 +925,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -1656,6 +1658,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {

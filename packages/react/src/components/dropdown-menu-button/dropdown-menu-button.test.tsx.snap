@@ -391,6 +391,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
@@ -1054,6 +1055,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {

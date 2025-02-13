@@ -34,22 +34,52 @@ describe('Datepicker', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onCalendarClose callback is called when calendar closes', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onCalendarClose={callback} startOpen label="date" />);
+    describe('Calendar button', () => {
+        beforeEach(() => {
+            jest.useFakeTimers();
+        });
 
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+        test('onCalendarClose callback is called when calendar closes', async () => {
+            const callback = jest.fn();
+            const wrapper = mountWithTheme(<Datepicker onCalendarClose={callback} startOpen label="date" />);
 
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
+            getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+            jest.runAllTimers();
 
-    test('onCalendarOpen callback is called when calendar opens', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onCalendarOpen={callback} label="date" />);
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
 
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+        test('onCalendarOpen callback is called when calendar opens', async () => {
+            const callback = jest.fn();
+            const wrapper = mountWithTheme(<Datepicker onCalendarOpen={callback} label="date" />);
 
-        expect(callback).toHaveBeenCalledTimes(1);
+            getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+            jest.runAllTimers();
+
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
+
+        test('calendar should open when calendar button is clicked', async () => {
+            const wrapper = mountWithTheme(<Datepicker />);
+
+            await actAndWaitForEffects(wrapper, () => {
+                getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
+        });
+
+        test('calendar should close when calendar button is clicked (start open)', async () => {
+            const wrapper = mountWithTheme(<Datepicker startOpen />);
+
+            await actAndWaitForEffects(wrapper, () => {
+                getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
+        });
     });
 
     test('input value should format on blur', () => {
@@ -82,22 +112,6 @@ describe('Datepicker', () => {
         const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'text-input').simulate('focus');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
-    });
-
-    test('calendar should open when calendar button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
-    });
-
-    test('calendar should close when calendar button is clicked (start open)', () => {
-        const wrapper = mountWithTheme(<Datepicker startOpen />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
         expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
     });
