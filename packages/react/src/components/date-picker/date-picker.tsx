@@ -399,14 +399,17 @@ export const Datepicker = forwardRef(({
     }
 
     function handleCalendarButtonMouseDown(): void {
-        if (dateInputRef.current?.isCalendarOpen()) {
-            dateInputRef.current?.setOpen(false);
-            onCalendarClose?.();
-        } else {
-            dateInputRef.current?.setOpen(true);
-            onCalendarOpen?.();
-            focusCalendarDate();
-        }
+        // Workaround issue with Chrome 133 that crashes the tab when the calendar button is clicked
+        setTimeout(() => {
+            if (dateInputRef.current?.isCalendarOpen()) {
+                dateInputRef.current?.setOpen(false);
+                onCalendarClose?.();
+            } else {
+                dateInputRef.current?.setOpen(true);
+                onCalendarOpen?.();
+                focusCalendarDate();
+            }
+        }, 0);
     }
 
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
