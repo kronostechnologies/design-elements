@@ -36,7 +36,6 @@ export default AttachedFileMeta;
 type Story = StoryObj<typeof AttachedFile>;
 
 export const Default: Story = {
-    ...AttachedFileMeta,
     args: {
         ...AttachedFileMeta.args,
         filename: 'File.txt',
@@ -46,7 +45,6 @@ export const Default: Story = {
 };
 
 export const Uploading: Story = {
-    ...AttachedFileMeta,
     args: {
         ...AttachedFileMeta.args,
         status: 'uploading',
@@ -57,7 +55,6 @@ export const Uploading: Story = {
 };
 
 export const Error: Story = {
-    ...AttachedFileMeta,
     args: {
         ...AttachedFileMeta.args,
         status: 'error',
@@ -68,7 +65,6 @@ export const Error: Story = {
 };
 
 export const Cancelled: Story = {
-    ...AttachedFileMeta,
     args: {
         ...AttachedFileMeta.args,
         status: 'cancelled',
@@ -78,7 +74,6 @@ export const Cancelled: Story = {
 };
 
 export const Success: Story = {
-    ...AttachedFileMeta,
     args: {
         ...AttachedFileMeta.args,
         filename: 'File.txt',
@@ -87,8 +82,7 @@ export const Success: Story = {
     },
 };
 
-export const WithLozange: Story = {
-    ...AttachedFileMeta,
+export const WithLozenge: Story = {
     args: {
         ...AttachedFileMeta.args,
         filename: 'File.txt',

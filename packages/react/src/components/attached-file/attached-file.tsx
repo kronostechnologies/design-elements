@@ -12,8 +12,7 @@ import { attachedFileClasses } from './attached-file-classes';
 
 type AttachedFileStatus = 'default' | 'uploading' | 'cancelled' | 'error' | 'success';
 
-function formatFilesize(size: number): string {
-    const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+function formatFilesize(units: string[], size: number): string {
     let i = 0;
     let scaledSize = size;
     while (scaledSize >= 1024) {
@@ -112,6 +111,7 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
     children,
 }) => {
     const { t } = useTranslation('attached-file');
+    const { t: tCommon } = useTranslation('common');
     const id = useId(providedId);
     const theme = useTheme();
     const [currentStatus, setCurrentStatus] = useState(status);
@@ -139,7 +139,7 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
                     <Icon
                         className={attachedFileClasses.icon}
                         color={theme.component['attached-file-error-icon-color']}
-                        name="alertOctagon"
+                        name="xOctagon"
                     />
                 );
             case 'error':
@@ -176,7 +176,7 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
             case 'cancelled':
                 return (
                     <>
-                        <IconButton buttonType='tertiary' onClick={onRetry} size='small' iconName='upload' />
+                        <Button buttonType='tertiary' onClick={onRetry} size='small'>{t('resume')}</Button>
                         <IconButton
                             buttonType='tertiary'
                             onClick={onClose}
@@ -189,7 +189,7 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
             case 'error':
                 return (
                     <>
-                        <Button buttonType='tertiary' onClick={onRetry} size='small'>{t('retry')}</Button>
+                        {onRetry && <Button buttonType='tertiary' onClick={onRetry} size='small'>{t('retry')}</Button>}
                         <IconButton
                             buttonType='tertiary'
                             onClick={onClose}
@@ -218,7 +218,9 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
     const statusText = useMemo(() => {
         switch (currentStatus) {
             case 'uploading':
-                return t('uploading', { percent });
+                return t('uploading') + (percent !== undefined ? ` ${percent}%` : null);
+            case 'cancelled':
+                return t('uploadCancelled');
             case 'error':
                 return errorText;
             case 'success':
@@ -228,12 +230,15 @@ export const AttachedFile: FunctionComponent<PropsWithChildren<AttachedFileProps
         }
     }, [t, currentStatus, errorText, percent]);
 
+    const filesizeText = filesize ? ` (${formatFilesize(tCommon('unitSymbolBytes', { returnObjects: true }) as string[], filesize)})` : null;
+
     return (
         <AttachedFileRoot className={clsx(attachedFileClasses.root, className)} id={id} $status={currentStatus}>
             {renderIcon()}
             <AttachedFileContent>
                 <AttachedFileName id={`${id}-filename`}>
-                    {`${filename} (${formatFilesize(filesize)})`}
+                    {filename}
+                    {filesizeText}
                 </AttachedFileName>
                 {statusText && (
                     <span className={attachedFileClasses.status}>

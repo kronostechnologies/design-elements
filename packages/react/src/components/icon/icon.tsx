@@ -45,6 +45,7 @@ import Upload from 'feather-icons/dist/icons/upload.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
+import XOctagon from 'feather-icons/dist/icons/x-octagon.svg';
 import { VoidFunctionComponent } from 'react';
 import AlertFilled from '../../icons/alert-filled.svg';
 import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
@@ -135,6 +136,7 @@ const iconMapping = {
     users: Users,
     warningFilled: WarningFilled,
     x: X,
+    xOctagon: XOctagon,
 } as const;
 
 export type IconName = keyof typeof iconMapping;
