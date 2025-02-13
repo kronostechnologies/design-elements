@@ -1,11 +1,11 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
 import {
+    getAlternateDateFormats,
     getLocale,
     getLocaleDateFormat,
     getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
-    getNumericalDateFormat,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
 } from './datepicker-utils';
@@ -109,35 +109,31 @@ describe('Datepicker utils', () => {
         });
     });
 
-    describe('get format as numbers only', () => {
+    describe('allow variations of a given date format', () => {
         const tests = [
             {
                 format: 'yyyy-MM-dd',
-                result: 'yyyyMMdd',
+                result: ['yyyyMMdd', 'yyyy MM dd'],
             },
             {
                 format: 'yyyy/d/M',
-                result: 'yyyyddMM',
+                result: ['yyyydM', 'yyyy d M'],
             },
             {
                 format: 'dd/MM/yyyy',
-                result: 'ddMMyyyy',
+                result: ['ddMMyyyy', 'dd MM yyyy'],
             },
             {
                 format: 'yy-MM-dd',
-                result: 'yyMMdd',
-            },
-            {
-                format: 'invalid',
-                result: null,
+                result: ['yyMMdd', 'yy MM dd'],
             },
         ];
 
         test.each(tests)(
             'should return $result with format $format',
             (item) => {
-                const result = getNumericalDateFormat(item.format);
-                expect(result).toBe(item.result);
+                const result = getAlternateDateFormats(item.format);
+                expect(result).toStrictEqual(item.result);
             },
         );
     });
