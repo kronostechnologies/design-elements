@@ -52,22 +52,26 @@ export type TextAliasToken =
     | 'text-label-small-line-height'
     | 'text-label-medium-font-size'
     | 'text-label-medium-line-height'
-    | 'text-label-medium-letter-spacing'
-    | 'text-label-medium-transform'
-    | 'text-label-small-font-family'
-    | 'text-label-small-font-weight'
-    | 'text-label-small-font-size'
-    | 'text-label-small-line-height'
-    | 'text-label-small-letter-spacing'
-    | 'text-label-small-transform'
-    | 'text-legend-small-font-family'
-    | 'text-legend-small-font-weight'
+    | 'text-legend-font-family'
+    | 'text-legend-font-weight'
+    | 'text-legend-letter-spacing'
+    | 'text-legend-transform'
+    | 'text-legend-xxsmall-font-size'
+    | 'text-legend-xxsmall-line-height'
+    | 'text-legend-xsmall-font-size'
+    | 'text-legend-xsmall-line-height'
     | 'text-legend-small-font-size'
     | 'text-legend-small-line-height'
-    | 'text-legend-small-letter-spacing'
-    | 'text-legend-small-transform'
-    | 'text-caption-medium-font-family'
-    | 'text-caption-medium-font-weight'
+    | 'text-legend-medium-font-size'
+    | 'text-legend-medium-line-height'
+    | 'text-legend-large-font-size'
+    | 'text-legend-large-line-height'
+    | 'text-caption-font-family'
+    | 'text-caption-font-weight'
+    | 'text-caption-letter-spacing'
+    | 'text-caption-transform'
+    | 'text-caption-small-font-size'
+    | 'text-caption-small-line-height'
     | 'text-caption-medium-font-size'
     | 'text-caption-medium-line-height'
     | 'text-caption-large-font-size'
@@ -124,25 +128,29 @@ export const defaultTextAliasTokens: AliasTokenMap<TextAliasToken> = {
     'text-label-small-font-size': 'text-body-small-font-size',
     'text-label-small-line-height': 'line-height-500',
     'text-label-medium-font-size': 'text-body-medium-font-size',
-    'text-label-medium-line-height': 'text-body-medium-line-height',
-    'text-label-medium-letter-spacing': 'text-body-medium-letter-spacing',
-    'text-label-medium-transform': 'text-body-medium-transform',
-    'text-label-small-font-family': 'text-body-small-font-family',
-    'text-label-small-font-weight': 'text-body-small-font-weight',
-    'text-label-small-font-size': 'text-body-small-font-size',
-    'text-label-small-line-height': 'text-body-small-line-height',
-    'text-label-small-letter-spacing': 'text-body-small-letter-spacing',
-    'text-label-small-transform': 'text-body-small-transform',
-    'text-legend-small-font-family': 'text-heading-small-font-family',
-    'text-legend-small-font-weight': 'text-heading-small-font-weight',
+    'text-label-medium-line-height': 'line-height-600',
+    'text-legend-font-family': 'text-heading-font-family',
+    'text-legend-font-weight': 'text-heading-font-weight',
+    'text-legend-letter-spacing': 'text-heading-letter-spacing',
+    'text-legend-transform': 'text-heading-transform',
+    'text-legend-xxsmall-font-size': 'text-body-small-font-size',
+    'text-legend-xxsmall-line-height': 'line-height-500',
+    'text-legend-xsmall-font-size': 'text-body-medium-font-size',
+    'text-legend-xsmall-line-height': 'line-height-600',
     'text-legend-small-font-size': 'text-heading-small-font-size',
     'text-legend-small-line-height': 'text-heading-small-line-height',
-    'text-legend-small-letter-spacing': 'text-heading-small-letter-spacing',
-    'text-legend-small-transform': 'text-heading-small-transform',
-    'text-caption-medium-font-family': 'text-body-medium-font-family',
-    'text-caption-medium-font-weight': 'text-body-medium-font-weight',
-    'text-caption-medium-font-size': 'text-body-medium-font-size',
-    'text-caption-medium-line-height': 'text-body-medium-line-height',
-    'text-caption-medium-letter-spacing': 'text-body-medium-letter-spacing',
-    'text-caption-medium-transform': 'text-body-medium-transform',
+    'text-legend-medium-font-size': 'text-heading-medium-font-size',
+    'text-legend-medium-line-height': 'text-heading-medium-line-height',
+    'text-legend-large-font-size': 'text-heading-large-font-size',
+    'text-legend-large-line-height': 'text-heading-large-line-height',
+    'text-caption-font-family': 'text-heading-font-family',
+    'text-caption-font-weight': 'text-heading-font-weight',
+    'text-caption-letter-spacing': 'text-heading-letter-spacing',
+    'text-caption-transform': 'text-heading-transform',
+    'text-caption-small-font-size': 'text-heading-small-font-size',
+    'text-caption-small-line-height': 'text-heading-small-line-height',
+    'text-caption-medium-font-size': 'text-heading-medium-font-size',
+    'text-caption-medium-line-height': 'text-heading-medium-line-height',
+    'text-caption-large-font-size': 'text-heading-large-font-size',
+    'text-caption-large-line-height': 'text-heading-large-line-height',
 };
