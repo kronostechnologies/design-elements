@@ -37,11 +37,6 @@ exports[`Fieldset Component Styling matches default 1`] = `
   <styled.fieldset
     data-testid="fieldset"
     id="uuid1"
-    legend={
-      {
-        "text": "Default Legend",
-      }
-    }
   >
     <fieldset
       className="c0"
@@ -50,11 +45,12 @@ exports[`Fieldset Component Styling matches default 1`] = `
     >
       <Legend
         id="uuid1-legend"
+        text="Default Legend"
       >
         <styled.legend
-          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
+          text="Default Legend"
         >
           <legend
             className="c1"
@@ -108,12 +104,6 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
   <styled.fieldset
     data-testid="fieldset"
     id="uuid1"
-    legend={
-      {
-        "bold": true,
-        "text": "Bold Legend",
-      }
-    }
   >
     <fieldset
       className="c0"
@@ -123,12 +113,13 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
       <Legend
         bold={true}
         id="uuid1-legend"
+        text="Bold Legend"
       >
         <styled.legend
           $bold={true}
-          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
+          text="Bold Legend"
         >
           <legend
             className="c1"
@@ -184,11 +175,6 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
     data-testid="fieldset"
     disabled={true}
     id="uuid1"
-    legend={
-      {
-        "text": "Disabled Legend",
-      }
-    }
   >
     <fieldset
       aria-disabled={true}
@@ -199,17 +185,80 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
     >
       <Legend
         id="uuid1-legend"
+        text="Disabled Legend"
       >
         <styled.legend
-          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
+          text="Disabled Legend"
         >
           <legend
             className="c1"
             id="uuid1-legend"
           >
             Disabled Legend
+          </legend>
+        </styled.legend>
+      </Legend>
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
+
+exports[`Fieldset Component Styling matches with string legend 1`] = `
+.c1 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<ForwardRef
+  legend="Simple Legend"
+>
+  <styled.fieldset
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      <Legend
+        id="uuid1-legend"
+        text="Simple Legend"
+      >
+        <styled.legend
+          datatest-id="legend"
+          id="uuid1-legend"
+          text="Simple Legend"
+        >
+          <legend
+            className="c1"
+            id="uuid1-legend"
+          >
+            Simple Legend
           </legend>
         </styled.legend>
       </Legend>

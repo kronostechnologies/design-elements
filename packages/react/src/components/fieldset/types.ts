@@ -13,6 +13,6 @@ type BaseFieldsetProps = Pick<FieldsetHTMLAttributes<HTMLFieldSetElement>,
 >;
 
 export interface FieldsetProps extends BaseFieldsetProps {
-    legend: Omit<LegendProps, 'children'> & { text: string };
+    legend: string | (Omit<LegendProps, 'children'> & { text: string });
     children: ReactNode;
 }
