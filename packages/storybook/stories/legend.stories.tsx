@@ -19,7 +19,7 @@ const legendItems: LegendItem[] = [
 ];
 
 export default {
-    title: 'Deprecated/Legend (deprecated)',
+    title: 'Components/Deprecated/Legend (deprecated)',
     component: Legend,
     tags: ['autodocs'],
 };

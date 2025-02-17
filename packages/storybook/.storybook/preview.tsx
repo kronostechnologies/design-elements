@@ -36,7 +36,7 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
+                order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Core', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
             },
         },
     },
