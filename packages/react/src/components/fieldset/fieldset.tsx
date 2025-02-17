@@ -12,7 +12,9 @@ export const Fieldset = forwardRef(({
     ...props
 }: FieldsetProps, ref: Ref<HTMLFieldSetElement>): ReactElement => {
     const id = useId(providedId);
-    const { text, ...legendProps } = legend;
+    const legendProps = typeof legend === 'string' 
+      ? { text: legend }
+      : legend;
 
     return (
         <StyledFieldset
@@ -21,14 +23,13 @@ export const Fieldset = forwardRef(({
             aria-disabled={disabled}
             disabled={disabled}
             ref={ref}
-            legend={legend}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             <Legend
-                {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
                 id={`${id}-legend`}
+                {...legendProps}
             >
-                {text}
+                {legendProps.text}
             </Legend>
             {children}
         </StyledFieldset>

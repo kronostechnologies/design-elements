@@ -47,7 +47,7 @@ const withRadioCards = (
 
 export const Default: Story = {
     args: {
-        legend: { text: 'This is a legend!', size: 'xxsmall' },
+        legend: 'This is a legend!',
         children: withTextInputs,
     },
 };
