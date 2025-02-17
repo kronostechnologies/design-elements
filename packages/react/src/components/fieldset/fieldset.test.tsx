@@ -70,11 +70,13 @@ describe('Fieldset Component', () => {
 
         it('handles object legend prop with additional properties', () => {
             const tree = mountWithProviders(
-                <Fieldset legend={{ 
-                    text: 'Complex Legend Text',
-                    size: 'large',
-                    bold: true 
-                }}>
+                <Fieldset
+                    legend={{
+                        text: 'Complex Legend Text',
+                        size: 'large',
+                        bold: true,
+                    }}
+                >
                     Test Content
                 </Fieldset>,
             );
@@ -92,10 +94,10 @@ describe('Fieldset Component', () => {
                 </Fieldset>,
             );
 
-            tree.setProps({ 
-                legend: { 
-                    text: 'Complex Legend', 
-                    size: 'large' 
+            tree.setProps({
+                legend: {
+                    text: 'Complex Legend',
+                    size: 'large',
                 } 
             });
 
@@ -106,10 +108,12 @@ describe('Fieldset Component', () => {
 
         it('updates legend from object to string prop', () => {
             const tree = mountWithProviders(
-                <Fieldset legend={{ 
-                    text: 'Complex Legend', 
-                    size: 'large' 
-                }}>
+                <Fieldset
+                    legend={{
+                        text: 'Complex Legend',
+                        size: 'large',
+                    }}
+                >
                     Test Content
                 </Fieldset>,
             );

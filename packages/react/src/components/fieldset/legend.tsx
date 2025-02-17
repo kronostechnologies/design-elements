@@ -8,7 +8,6 @@ export const Legend: FC<LegendProps> = ({
     bold,
     ...props
 }) => {
-
     return (
         <StyledLegend
             datatest-id='legend'
