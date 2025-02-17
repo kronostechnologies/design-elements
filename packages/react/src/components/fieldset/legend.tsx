@@ -7,15 +7,13 @@ export const Legend: FC<LegendProps> = ({
     size,
     bold,
     ...props
-}) => {
-    return (
-        <StyledLegend
-            datatest-id='legend'
-            $size={size}
-            $bold={bold}
-            {...props /* eslint-disable-line react/jsx-props-no-spreading */}
-        >
-            {children}
-        </StyledLegend>
-    );
-};
+}) => (
+    <StyledLegend
+        datatest-id='legend'
+        $size={size}
+        $bold={bold}
+        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+    >
+        {children}
+    </StyledLegend>
+);

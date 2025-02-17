@@ -27,7 +27,7 @@ export const Fieldset = forwardRef(({
         >
             <Legend
                 id={`${id}-legend`}
-                {...legendProps  /* eslint-disable-line react/jsx-props-no-spreading */}
+                {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {legendProps.text}
             </Legend>
