@@ -98,7 +98,7 @@ describe('Fieldset Component', () => {
                 legend: {
                     text: 'Complex Legend',
                     size: 'large',
-                } 
+                },
             });
 
             const legend = tree.find(Legend);
