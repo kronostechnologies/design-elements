@@ -24,9 +24,9 @@ import { DeviceType, useDeviceContext } from '../device-context-provider/device-
 import { RadioInput } from '../radio-button/radio-input';
 import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
-import { TableCaption } from './table-caption';
+import { TableCaption, TableCaptionSize } from './table-caption';
 import { StyledTableRow, TableRow } from './table-row';
-import { type TableColumn, type TableData, type TableCaptionSize } from './types';
+import { type TableColumn, type TableData } from './types';
 import { createRowSelectionStateFromSelectedRowIds } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium' | 'large';

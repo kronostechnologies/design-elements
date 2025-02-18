@@ -1,6 +1,18 @@
-import { forwardRef } from 'react';
+import { forwardRef, HTMLAttributes, PropsWithChildren, useMemo } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
-import { TableCaptionProps, TableCaptionSize, StyledTableCaptionProps } from './types';
+
+export type TableCaptionSize = 'large' | 'medium' | 'small';
+
+export interface TableCaptionProps extends HTMLAttributes<HTMLTableCaptionElement> {
+    className?: string;
+    id?: string;
+    bold?: boolean;
+    size?: TableCaptionSize;
+}
+
+export interface StyledTableCaptionProps {
+    $bold?: boolean;
+}
 
 const TableCaptionLarge = styled.caption<StyledTableCaptionProps>`
     color: ${({ theme }) => theme.component['caption-text-color']};
@@ -29,31 +41,30 @@ const TableCaptionSmall = styled.caption<StyledTableCaptionProps>`
     text-align: left;
 `;
 
-function getComponent(size: TableCaptionSize): StyledComponent<'caption', DefaultTheme, TableCaptionProps> {
+function getComponent(size: TableCaptionSize): StyledComponent<'caption', DefaultTheme, StyledTableCaptionProps> {
     switch (size) {
         case 'large':
             return TableCaptionLarge;
-        case 'medium':
-            return TableCaptionMedium;
         case 'small':
             return TableCaptionSmall;
+        default:
+            return TableCaptionMedium;
     }
 }
 
-export const TableCaption = forwardRef<HTMLTableCaptionElement, TableCaptionProps>(({
+export const TableCaption = forwardRef<HTMLTableCaptionElement, PropsWithChildren<TableCaptionProps>>(({
     bold,
     className,
     children,
     id,
     size,
 }, ref) => {
-    const StyledTableCaption = getComponent(size ?? 'medium');
+    const StyledTableCaption = useMemo(() => getComponent(size ?? 'medium'), [size]);
 
     return (
         <StyledTableCaption
-            datatest-id='caption'
-            size={size}
-            bold={bold}
+            data-testid='caption'
+            $bold={bold}
             className={className}
             id={id}
             ref={ref}
@@ -62,3 +73,5 @@ export const TableCaption = forwardRef<HTMLTableCaptionElement, TableCaptionProp
         </StyledTableCaption>
     );
 });
+
+TableCaption.displayName = 'TableCaption';

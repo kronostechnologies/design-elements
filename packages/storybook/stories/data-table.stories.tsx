@@ -32,7 +32,7 @@ interface Data {
 }
 
 export const Default: Story = {
-    render() {
+    render(args) {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -67,6 +67,8 @@ export const Default: Story = {
         ];
         return (
             <Table<Data>
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...args as TableProps<Data>}
                 columns={columns}
                 data={data}
                 rowIdField="column1"
@@ -76,7 +78,7 @@ export const Default: Story = {
 };
 
 export const WithCaption: Story = {
-    render() {
+    render(args) {
         const columns: TableColumn<Data>[] = [
             {
                 header: 'Column 1',
@@ -111,6 +113,8 @@ export const WithCaption: Story = {
         ];
         return (
             <Table<Data>
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...args as TableProps<Data>}
                 caption="Table caption"
                 captionSize="large"
                 columns={columns}
@@ -157,21 +161,13 @@ export const WithHeading: Story = {
         ];
         return (
             <>
-                {(() => {
-                    const [headingId] = useState(() => `heading-${crypto.randomUUID()}`);
-
-                    return (
-                        <>
-                            <Heading id={headingId} type="medium">Table Heading</Heading>
-                            <Table<Data>
-                                columns={columns}
-                                data={data}
-                                rowIdField="column1"
-                                ariaLabelledBy={headingId}
-                            />
-                        </>
-                    );
-                })()}
+                <Heading id="with-heading-heading-id" type="medium">Table Heading</Heading>
+                <Table<Data>
+                    columns={columns}
+                    data={data}
+                    rowIdField="column1"
+                    ariaLabelledBy="with-heading-heading-id"
+                />
             </>
         );
     },
@@ -213,25 +209,17 @@ export const WithSummary: Story = {
         ];
         return (
             <>
-                {(() => {
-                    const [DescriptionId] = useState(() => `description-${crypto.randomUUID()}`);
-
-                    return (
-                        <>
-                            <p id="DescriptionId">
-                                This is a summury of the table. It provides an overview of the dataset,
-                                displaying key information across multiple columns. It allows users to sort,
-                                filter, and interact with the data efficiently.
-                            </p>
-                            <Table<Data>
-                                columns={columns}
-                                data={data}
-                                rowIdField="column1"
-                                ariaDescribedBy={DescriptionId}
-                            />
-                        </>
-                    );
-                })()}
+                <p id="with-summary-description-id">
+                    This is a summary of the table. It provides an overview of the dataset,
+                    displaying key information across multiple columns. It allows users to sort,
+                    filter, and interact with the data efficiently.
+                </p>
+                <Table<Data>
+                    columns={columns}
+                    data={data}
+                    rowIdField="column1"
+                    ariaDescribedBy="with-summary-description-id"
+                />
             </>
         );
     },
