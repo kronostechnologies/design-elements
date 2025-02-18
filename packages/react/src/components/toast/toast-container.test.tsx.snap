@@ -90,11 +90,6 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   cursor: not-allowed;
 }
 
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -374,11 +369,6 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
 }
 
 .c0 {
@@ -662,11 +652,6 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   cursor: not-allowed;
 }
 
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -948,11 +933,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   cursor: not-allowed;
 }
 
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1232,11 +1212,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c4 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
 }
 
 .c0 {

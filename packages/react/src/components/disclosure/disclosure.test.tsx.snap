@@ -468,11 +468,6 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   cursor: not-allowed;
 }
 
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c3 {
   background-color: #FFFFFF;
   border: 0;
@@ -679,11 +674,6 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
 }
 
 .c3 {

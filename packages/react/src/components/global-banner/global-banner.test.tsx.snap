@@ -1028,7 +1028,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1252,7 +1252,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1514,7 +1514,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1776,7 +1776,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
