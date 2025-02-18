@@ -90,11 +90,6 @@ exports[`Global Navigation matches snapshot 1`] = `
   cursor: not-allowed;
 }
 
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);

@@ -90,11 +90,6 @@ exports[`Carousel should match snapshot 1`] = `
   cursor: not-allowed;
 }
 
-.c2 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;

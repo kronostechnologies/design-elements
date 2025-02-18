@@ -32,6 +32,7 @@ export const Neutral: Story = {
     args: {
         title: 'Neutral',
         type: 'neutral',
+        buttonLabel: 'Click me',
     },
     render: (args) => {
         const [dismissed, setDismissed] = useState<boolean>(false);
@@ -53,6 +54,7 @@ export const Informative: Story = {
     args: {
         title: 'Informative',
         type: 'info',
+        buttonLabel: 'Click me',
     },
     render: (args) => {
         const [dismissed, setDismissed] = useState<boolean>(false);
@@ -62,7 +64,12 @@ export const Informative: Story = {
                 {...args /* eslint-disable-line react/jsx-props-no-spreading */}
                 onDismiss={() => setDismissed(true)}
             >
-                Here&apos;s a contextual notice with an icon and title.
+                <p>Here&apos;s a contextual notice with an icon and title.</p>
+                <ul>
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                    <li>List item 3</li>
+                </ul>
             </SectionalBanner>
         ) : (
             <Button buttonType="primary" onClick={() => setDismissed(false)}>Show banner</Button>
@@ -125,7 +132,7 @@ export const Alert: Story = {
                 {...args /* eslint-disable-line react/jsx-props-no-spreading */}
                 onDismiss={() => setDismissed(true)}
             >
-                Here&apos;s a contextual notice with an icon and title.
+                <p>Here&apos;s a contextual notice with an icon and title.</p>
                 <p>Some sub title</p>
                 <ul>
                     <li>Some bullet points</li>
