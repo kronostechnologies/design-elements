@@ -14,6 +14,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { Icon, IconName } from '../icon/icon';
+import { Tooltip } from '../tooltip/tooltip';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 import { Button } from '../buttons/button';
@@ -106,10 +107,6 @@ const AddButton = styled(Button)`
     white-space: nowrap;
 `;
 
-const AddIcon = styled(Icon)`
-    margin-right: var(--spacing-half);
-`;
-
 export interface Tab {
     id: string;
     title: string;
@@ -126,12 +123,20 @@ interface TabItem extends Tab {
     onBeforeUnload?(): Promise<boolean>;
 }
 
+interface AddButtonProps {
+    label?: string;
+    disabled?: boolean;
+    loading?: boolean;
+    tooltipContent?: string;
+}
+
 interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
     global?: boolean;
     tabs: Tab[];
     defaultSelectedId?: string;
+    addButtonProps?: AddButtonProps;
     onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
@@ -142,6 +147,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
+    addButtonProps,
     onAddTab,
     onRemove,
 }) => {
@@ -149,6 +155,27 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     const tabsListRef = createRef<HTMLDivElement>();
     const scrollLeftButtonRef = createRef<HTMLButtonElement>();
     const scrollRightButtonRef = createRef<HTMLButtonElement>();
+
+    const addButton = {
+        ...{
+            label: t('addTab'),
+            disabled: false,
+            loading: false,
+            tooltipContent: null,
+        },
+        ...addButtonProps,
+    };
+    const addButtonComponent = (
+        <AddButton
+            type="button"
+            buttonType="tertiary"
+            leftIconName="plusSign"
+            label={addButton.label}
+            disabled={addButton.disabled}
+            loading={addButton.loading}
+            onClick={onAddTab}
+        />
+    );
 
     const { scrollToLeft, scrollToRight } = useScrollable({
         scrollableElement: tabsListRef,
@@ -286,10 +313,14 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         </TabButton>
                     ))}
                     {onAddTab && (
-                        <AddButton buttonType='tertiary' type="button" onClick={onAddTab}>
-                            <AddIcon name="plusSign" size='16' aria-hidden="true" focusable={false} />
-                            {t('addTab')}
-                        </AddButton>
+                        <>
+                            {addButton.tooltipContent && (
+                                <Tooltip label={addButton.tooltipContent} desktopPlacement="top">
+                                    {addButtonComponent}
+                                </Tooltip>
+                            )}
+                            {!addButton.tooltipContent && (addButtonComponent)}
+                        </>
                     )}
                 </TabButtonsList>
                 <ScrollButton

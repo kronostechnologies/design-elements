@@ -101,23 +101,35 @@ export const AddAndDeleteTabs: Story = {
     ...TabsMeta,
     render: () => {
         const [currentTabs, setCurrentTabs] = useState<Tab[]>(tabs);
+        const [isLoading, setIsLoading] = useState(false);
 
         function handleRemove(tabId: string): void {
             setCurrentTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
         }
 
+        const handleAdd = (): void => {
+            setIsLoading(true);
+            // Simuler un délai de chargement
+            setTimeout(() => {
+                addTabCounter += 1;
+                setCurrentTabs([...currentTabs, {
+                    id: `tab${addTabCounter}`,
+                    title: 'New Tab',
+                    panelContent: <StyledDiv>New tab content</StyledDiv>,
+                }]);
+                setIsLoading(false);
+            }, 500);
+        };
+
         return (
             <Tabs
                 tabs={currentTabs}
                 onRemove={handleRemove}
-                onAddTab={() => {
-                    addTabCounter += 1;
-                    setCurrentTabs([...currentTabs, {
-                        id: `tab${addTabCounter}`,
-                        title: 'New Tab',
-                        panelContent: <StyledDiv>New tab content</StyledDiv>,
-                    },
-                    ]);
+                onAddTab={handleAdd}
+                addButtonProps={{
+                    label: 'Add new tab',
+                    loading: isLoading,
+                    tooltipContent: 'Add a new tab',
                 }}
             />
         );
