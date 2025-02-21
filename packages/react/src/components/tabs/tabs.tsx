@@ -136,7 +136,7 @@ interface Props {
     global?: boolean;
     tabs: Tab[];
     defaultSelectedId?: string;
-    providedAddButtonProps?: AddButtonProps;
+    addButtonProps?: AddButtonProps;
     onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
@@ -147,7 +147,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
-    providedAddButtonProps,
+    addButtonProps: providedAddButtonProps,
     onAddTab,
     onRemove,
 }) => {
