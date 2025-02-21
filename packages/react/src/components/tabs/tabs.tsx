@@ -157,12 +157,10 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     const scrollRightButtonRef = createRef<HTMLButtonElement>();
 
     const addButtonProps = {
-        ...{
-            label: t('addTab'),
-            disabled: false,
-            loading: false,
-            tooltipContent: null,
-        },
+        label: t('addTab'),
+        disabled: false,
+        loading: false,
+        tooltipContent: null,
         ...providedAddButtonProps,
     };
     const addButtonComponent = (
