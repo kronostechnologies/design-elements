@@ -136,7 +136,7 @@ interface Props {
     global?: boolean;
     tabs: Tab[];
     defaultSelectedId?: string;
-    addButtonProps?: AddButtonProps;
+    providedAddButtonProps?: AddButtonProps;
     onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
@@ -147,7 +147,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
-    addButtonProps,
+    providedAddButtonProps,
     onAddTab,
     onRemove,
 }) => {
@@ -156,23 +156,23 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     const scrollLeftButtonRef = createRef<HTMLButtonElement>();
     const scrollRightButtonRef = createRef<HTMLButtonElement>();
 
-    const addButton = {
+    const addButtonProps = {
         ...{
             label: t('addTab'),
             disabled: false,
             loading: false,
             tooltipContent: null,
         },
-        ...addButtonProps,
+        ...providedAddButtonProps,
     };
     const addButtonComponent = (
         <AddButton
             type="button"
             buttonType="tertiary"
             leftIconName="plusSign"
-            label={addButton.label}
-            disabled={addButton.disabled}
-            loading={addButton.loading}
+            label={addButtonProps.label}
+            disabled={addButtonProps.disabled}
+            loading={addButtonProps.loading}
             onClick={onAddTab}
         />
     );
@@ -313,14 +313,11 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         </TabButton>
                     ))}
                     {onAddTab && (
-                        <>
-                            {addButton.tooltipContent && (
-                                <Tooltip label={addButton.tooltipContent} desktopPlacement="top">
-                                    {addButtonComponent}
-                                </Tooltip>
-                            )}
-                            {!addButton.tooltipContent && (addButtonComponent)}
-                        </>
+                        addButtonProps.tooltipContent ? (
+                            <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
+                                {addButtonComponent}
+                            </Tooltip>
+                        ) : addButtonComponent
                     )}
                 </TabButtonsList>
                 <ScrollButton
