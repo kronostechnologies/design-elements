@@ -128,6 +128,7 @@ interface AddButtonProps {
     disabled?: boolean;
     loading?: boolean;
     tooltipContent?: string;
+    onClick?(): void;
 }
 
 interface Props {
@@ -137,7 +138,6 @@ interface Props {
     tabs: Tab[];
     defaultSelectedId?: string;
     addButtonProps?: AddButtonProps;
-    onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
 
@@ -148,7 +148,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     tabs,
     defaultSelectedId,
     addButtonProps: providedAddButtonProps,
-    onAddTab,
     onRemove,
 }) => {
     const { t } = useTranslation('tabs');
@@ -171,7 +170,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
             label={addButtonProps.label}
             disabled={addButtonProps.disabled}
             loading={addButtonProps.loading}
-            onClick={onAddTab}
+            onClick={addButtonProps.onClick}
         />
     );
 
@@ -310,7 +309,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             {tabItem.title}
                         </TabButton>
                     ))}
-                    {onAddTab && (
+                    {addButtonProps.onClick && (
                         addButtonProps.tooltipContent ? (
                             <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
                                 {addButtonComponent}

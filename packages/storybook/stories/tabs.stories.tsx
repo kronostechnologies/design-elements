@@ -119,10 +119,10 @@ export const AddAndDeleteTabs: Story = {
             <Tabs
                 tabs={currentTabs}
                 onRemove={handleRemove}
-                onAddTab={handleAdd}
                 addButtonProps={{
                     label: 'Add new tab',
                     tooltipContent: 'Add a new tab',
+                    onClick: handleAdd,
                 }}
             />
         );
