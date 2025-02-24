@@ -18,22 +18,11 @@ import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 import { Button } from '../buttons/button';
 
-const TabsWrapper = styled.div<{ $global?: boolean; }>`
-    ${({ theme, $global }) => !$global && css`
-        background: ${theme.component['tab-section-background-color']};
-        border: 1px solid ${theme.component['tab-section-border-color']};
-        border-radius: var(--border-radius-2x);
-        box-shadow: 0 1px 4px 0 ${theme.component['tab-section-box-shadow-color']};
-    `};
-`;
+export type TabListType = 'default' | 'dimmed';
 
-const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
+const TabButtonsContainer = styled.div`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    background: ${({ theme, $global }) => ($global ? theme.component['tab-global-list-background-color'] : theme.component['tab-section-list-background-color'])};
-    border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
-    box-sizing: content-box;
     height: var(--size-2halfx);
-    padding-top: ${({ $global }) => $global && 'var(--spacing-2x)'};
     position: relative;
 
     &::before {
@@ -47,27 +36,29 @@ const TabButtonsContainer = styled.div<{ $global?: boolean; }>`
     }
 `;
 
-const TabButtonsList = styled.div<{ $global?: boolean; }>`
-    border-radius: ${({ $global }) => !$global && 'var(--border-radius-2x) var(--border-radius-2x) 0 0'};
+const TabList = styled.div<{ noPadding?: boolean; tablistType: TabListType }>`
+    background-color: ${({ theme, tablistType }) => theme.component[`tab-list-${tablistType}-background-color`]};
     display: flex;
     gap: var(--spacing-half);
     height: var(--size-2halfx);
     overflow-x: auto;
     overflow-y: hidden;
-    padding: ${({ $global }) => !$global && '0 var(--spacing-2x)'};
+    padding: ${({ noPadding }) => (noPadding ? '0' : '0 var(--spacing-2halfx)')};
     scrollbar-width: none;
     white-space: nowrap;
 `;
 
-const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'right'; }>`
+const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; tablistType: TabListType }>`
     align-items: center;
-    background: ${({ theme, $global }) => theme.component[`tab-${$global ? 'global' : 'section'}-list-background-color`]};
+    background-color: ${({ theme, tablistType }) => theme.component[`tab-list-${tablistType}-background-color`]};
     border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
     display: inline-flex;
+    flex-shrink: 0;
     height: var(--size-2halfx);
     min-height: auto;
+    padding: 0 var(--spacing-1x);
     position: absolute;
     z-index: 1;
 
@@ -75,24 +66,14 @@ const ScrollButton = styled(Button) <{ $global?: boolean; $position: 'left' | 'r
         background: ${({ theme }) => theme.component['tab-scroll-button-hover-background-color']};
     }
 
-    ${({ $position, $global }) => $position === 'left' && css`
+    ${({ $position }) => $position === 'left' && css`
         box-shadow: 3px 0px 3px -2px rgba(0, 0, 0, 0.1);
         left: 0;
-        padding: 0 var(--spacing-1x) 0 var(--spacing-2x);
-
-        ${!$global && css`
-            border-radius: var(--border-radius-2x) 0 0 0;
-        `};
     `};
 
-    ${({ $position, $global }) => $position === 'right' && css`
+    ${({ $position }) => $position === 'right' && css`
         box-shadow: -3px 0px 3px -2px rgba(0, 0, 0, 0.1);
-        padding: 0 var(--spacing-2x) 0 var(--spacing-1x);
         right: 0;
-
-        ${!$global && css`
-            border-radius: 0 var(--border-radius-2x) 0 0;
-        `};
     `};
 
     &.hidden {
@@ -134,20 +115,24 @@ interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
     global?: boolean;
+    noPadding?: boolean;
     tabs: Tab[];
     defaultSelectedId?: string;
-    addButton?: AddButtonProps;
+    tablistType?: TabListType;
+    onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
     className,
     global,
+    noPadding,
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
     addButton: providedAddButtonProps,
     onRemove,
+    tablistType = 'default',
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
@@ -270,8 +255,8 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     }
 
     return (
-        <TabsWrapper $global={global} className={className}>
-            <TabButtonsContainer $global={global}>
+        <div className={className}>
+            <TabButtonsContainer>
                 <ScrollButton
                     className="hidden"
                     buttonType="tertiary"
@@ -279,16 +264,17 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     aria-hidden="true"
                     onClick={() => scrollToLeft()}
                     $position="left"
-                    $global={global}
                     ref={scrollLeftButtonRef}
+                    tablistType={tablistType}
                 >
                     <Icon name='chevronLeft' size='16' aria-hidden="true" focusable={false} />
                 </ScrollButton>
-                <TabButtonsList
+                <TabList
                     role="tablist"
                     aria-label="tabs label"
-                    $global={global}
+                    noPadding={noPadding}
                     ref={tabsListRef}
+                    tablistType={tablistType}
                 >
                     {tabItems.map((tabItem, i) => (
                         <TabButton
@@ -315,7 +301,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             </Tooltip>
                         ) : addButtonComponent
                     )}
-                </TabButtonsList>
+                </TabList>
                 <ScrollButton
                     className="hidden"
                     buttonType="tertiary"
@@ -323,8 +309,8 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     aria-hidden="true"
                     onClick={() => scrollToRight()}
                     $position="right"
-                    $global={global}
                     ref={scrollRightButtonRef}
+                    tablistType={tablistType}
                 >
                     <Icon name='chevronRight' size='16' aria-hidden="true" focusable={false} />
                 </ScrollButton>
@@ -345,6 +331,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                 }
                 return null;
             })}
-        </TabsWrapper>
+        </div>
     );
 };
