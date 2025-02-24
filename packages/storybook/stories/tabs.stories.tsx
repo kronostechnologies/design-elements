@@ -93,6 +93,7 @@ export const Global: Story = {
     ...TabsMeta,
     args: {
         global: true,
+        tablistType: 'dimmed',
     },
 };
 
