@@ -1,8 +1,6 @@
 import { render as testingLibRender, RenderResult } from '@testing-library/react';
 import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render } from 'enzyme';
-import { Component, FunctionComponent, PropsWithChildren, ReactElement, ReactPortal } from 'react';
-import ReactDOM from 'react-dom';
-import { act } from 'react-dom/test-utils';
+import { act, Component, FunctionComponent, PropsWithChildren, ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { DesignSystem, DesignSystemProps } from '../components/design-system';
 import { DeviceType } from '../components/device-context-provider/device-context-provider';
@@ -14,7 +12,7 @@ export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps
     theme,
     staticDevice,
 }) => (
-    <MemoryRouter>
+    <MemoryRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
         <DesignSystem language={language} staticDevice={staticDevice} theme={theme}>
             {children}
         </DesignSystem>
@@ -33,7 +31,7 @@ export function mountWithProviders<C extends Component, P = C['props'], S = C['s
 ): ReactWrapper<P, S, C> {
     return mount(component, {
         ...options,
-        wrappingComponent: AllProviders,
+        wrappingComponent: AllProviders as Options['wrappingComponent'],
     });
 }
 
@@ -42,7 +40,7 @@ export function mountWithTheme<C extends Component, P = C['props'], S = C['state
     options?: MountRendererProps,
 ): ReactWrapper<P, S, C> {
     return mount(component, {
-        wrappingComponent: ThemeWrapper,
+        wrappingComponent: ThemeWrapper as MountRendererProps['wrappingComponent'],
         ...options,
     });
 }
@@ -50,14 +48,8 @@ export function mountWithTheme<C extends Component, P = C['props'], S = C['state
 export function renderWithProviders(
     component: ReactElement,
     device?: DeviceType,
-): cheerio.Cheerio {
-    const oldPortal = ReactDOM.createPortal;
-    ReactDOM.createPortal = () => null as unknown as ReactPortal;
-    try {
-        return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
-    } finally {
-        ReactDOM.createPortal = oldPortal;
-    }
+): RenderResult {
+    return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }
 
 export function renderWithTheme(
@@ -85,13 +77,6 @@ export async function actAndWaitForEffects<C extends Component, P = C['props'], 
     await act(async () => action());
     await actUpdate(wrapper);
     return wrapper;
-}
-
-export function renderPortalWithProviders(
-    component: ReactElement,
-    device?: DeviceType,
-): RenderResult {
-    return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }
 
 export function rerenderPortalWithProviders(

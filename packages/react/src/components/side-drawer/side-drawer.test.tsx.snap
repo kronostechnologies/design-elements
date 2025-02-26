@@ -30,6 +30,7 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
   class="c0 c1"
   open=""
   origin="right"
+  style="display: block;"
   width="50%"
 >
   <p>
@@ -92,6 +93,7 @@ exports[`Side Drawer Has nested drawer 1`] = `
   class="c0 c1"
   open=""
   origin="left"
+  style="display: block;"
   width="100%"
 >
   <div
@@ -99,6 +101,7 @@ exports[`Side Drawer Has nested drawer 1`] = `
     class="c0 c2"
     open=""
     origin="right"
+    style="display: block;"
     width="100%"
   >
     <p>
@@ -138,6 +141,7 @@ exports[`Side Drawer Has width set to 50% 1`] = `
   class="c0 c1"
   open=""
   origin="right"
+  style="display: block;"
   width="50%"
 >
   <p>
@@ -250,6 +254,7 @@ exports[`Side Drawer Is open 1`] = `
   class="c0 c1"
   open=""
   origin="right"
+  style="display: block;"
   width="100%"
 >
   <p>

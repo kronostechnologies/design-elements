@@ -3022,13 +3022,13 @@ label + .c3 {
       <div
         class="react-datepicker-popper popper"
         data-placement="bottom-start"
-        style="position:absolute;left:0;top:0"
+        style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
       >
         <div
-          style="display:contents"
+          style="display: contents;"
         >
           <div
-            style="display:contents"
+            style="display: contents;"
           >
             <div
               aria-label="Choose date"
@@ -3071,7 +3071,7 @@ label + .c3 {
                     >
                       <div
                         class="c11"
-                        style="margin-right:8px"
+                        style="margin-right: 8px;"
                       >
                         <div
                           class="c12 c13"
@@ -4336,13 +4336,13 @@ label + .c3 {
       <div
         class="react-datepicker-popper popper"
         data-placement="bottom-start"
-        style="position:absolute;left:0;top:0"
+        style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
       >
         <div
-          style="display:contents"
+          style="display: contents;"
         >
           <div
-            style="display:contents"
+            style="display: contents;"
           >
             <div
               aria-label="Choose date"
@@ -4385,7 +4385,7 @@ label + .c3 {
                     >
                       <div
                         class="c11"
-                        style="margin-right:8px"
+                        style="margin-right: 8px;"
                       >
                         <div
                           class="c12 c13"
@@ -5623,10 +5623,10 @@ label + .c3 {
           tabindex="-1"
         >
           <div
-            style="display:contents"
+            style="display: contents;"
           >
             <div
-              style="display:contents"
+              style="display: contents;"
             >
               <div
                 aria-label="Choose date"
@@ -5669,7 +5669,7 @@ label + .c3 {
                       >
                         <div
                           class="c11"
-                          style="margin-right:8px"
+                          style="margin-right: 8px;"
                         >
                           <div
                             class="c12 c13"

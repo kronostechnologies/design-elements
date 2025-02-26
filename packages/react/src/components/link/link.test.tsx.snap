@@ -775,7 +775,7 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches icon only snapshot 1`] = `
-[
+HTMLCollection [
   .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1049,12 +1049,12 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
     data-testid="tooltip-content-container"
     id="uuid2"
     role="tooltip"
-    style="position:absolute;left:0;top:0"
+    style="position: absolute; left: 0px; top: 0px;"
   >
     <div
       class="c1 c2"
       data-popper-arrow="true"
-      style="position:absolute"
+      style="position: absolute;"
     />
     <div
       class="c3"

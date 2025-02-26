@@ -21,56 +21,60 @@ describe('Route Link', () => {
     });
 
     test('matches snapshot (NavLink)', () => {
-        const tree = renderWithProviders(<RouteLink routerLink={NavLink} href="/test" label="Navigation Link" />);
+        const { container } = renderWithProviders(
+            <RouteLink routerLink={NavLink} href="/test" label="Navigation Link" />,
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (NavLink | label and icon)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RouteLink routerLink={NavLink} href="/test" label="Navigation Link" iconName="mail" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (NavLink | only icon)', () => {
-        const tree = renderWithProviders(<RouteLink routerLink={NavLink} href="/test" iconName="mail" />);
+        const { container } = renderWithProviders(<RouteLink routerLink={NavLink} href="/test" iconName="mail" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (NavLink | disabled)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RouteLink routerLink={NavLink} href="/test" label="Navigation Link" disabled />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (Link)', () => {
-        const tree = renderWithProviders(<RouteLink routerLink={Link} href="/test" label="Navigation Link" />);
+        const { container } = renderWithProviders(<RouteLink routerLink={Link} href="/test" label="Navigation Link" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (Link | label and icon)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RouteLink routerLink={Link} href="/test" label="Navigation Link" iconName="mail" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (Link | only icon)', () => {
-        const tree = renderWithProviders(<RouteLink routerLink={Link} href="/test" iconName="mail" />);
+        const { container } = renderWithProviders(<RouteLink routerLink={Link} href="/test" iconName="mail" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (Link | disabled)', () => {
-        const tree = renderWithProviders(<RouteLink routerLink={Link} href="/test" label="Navigation Link" disabled />);
+        const { container } = renderWithProviders(
+            <RouteLink routerLink={Link} href="/test" label="Navigation Link" disabled />,
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

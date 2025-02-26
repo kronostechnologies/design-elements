@@ -97,18 +97,18 @@ describe('DropdownMenuButton', () => {
     });
 
     test('Matches Snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownMenuButton render={TestGroups} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownMenuButton defaultOpen render={TestGroups} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

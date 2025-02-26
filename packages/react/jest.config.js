@@ -53,11 +53,15 @@ module.exports = {
     snapshotSerializers: ['enzyme-to-json/serializer'],
     testMatch: ['**/*.test.{ts,tsx}'],
     transform: {
-        '^.+\\.tsx?$': [
-            'ts-jest',
-            {
-                tsconfig: path.resolve(__dirname, 'tsconfig.test.json'),
+        '\\.m?[t]sx?$': ['@swc/jest', {
+            jsc: {
+                transform: {
+                    react: {
+                        runtime: 'automatic',
+                    },
+                },
             },
+        },
         ],
     },
 };

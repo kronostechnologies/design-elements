@@ -5,39 +5,39 @@ import { Pagination } from './pagination';
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={12} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches the desktop snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={12} />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches the mobile snapshot with multiples digits page numbers', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={1000} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches the desktop snapshot with multiples digits page numbers', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={1000} />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('pages list', () => {
