@@ -193,9 +193,9 @@ describe('Tabs', () => {
             document.body.appendChild(divElement);
         });
 
-        // afterEach(() => {
-        //     ReactDOM.unmountComponentAtNode(divElement);
-        // });
+        afterEach(() => {
+            divElement.replaceChildren();
+        });
 
         it('should go to the next tab-button when ArrowRight key is pressed on a tab-button', () => {
             const tabs = givenTabs(2);

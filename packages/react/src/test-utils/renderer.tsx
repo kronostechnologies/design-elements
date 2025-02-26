@@ -12,7 +12,7 @@ export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps
     theme,
     staticDevice,
 }) => (
-    <MemoryRouter>
+    <MemoryRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
         <DesignSystem language={language} staticDevice={staticDevice} theme={theme}>
             {children}
         </DesignSystem>
