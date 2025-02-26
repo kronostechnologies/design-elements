@@ -270,6 +270,7 @@ input + .c1 {
       id="uuid1"
       name="points"
       type="number"
+      value=""
     />
     <div
       class="c5"
@@ -620,6 +621,7 @@ input + .c1 {
       id="uuid1"
       name="points"
       type="number"
+      value=""
     />
     <div
       class="c7"
@@ -810,6 +812,7 @@ input + .c1 {
       id="uuid1"
       name="points"
       type="number"
+      value=""
     />
   </div>
 </div>
@@ -1084,6 +1087,7 @@ input + .c1 {
       id="uuid1"
       name="points"
       type="number"
+      value=""
     />
     <div
       class="c5"

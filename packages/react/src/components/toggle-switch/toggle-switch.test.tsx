@@ -30,14 +30,20 @@ describe('ToggleSwitch', () => {
     });
 
     test('Matches snapshot (desktop)', () => {
-        const tree = renderWithProviders(<ToggleSwitch label="Switch" toggled onToggle={jest.fn()} />, 'desktop');
+        const { container } = renderWithProviders(
+            <ToggleSwitch label="Switch" toggled onToggle={jest.fn()} />,
+            'desktop',
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.children).toMatchSnapshot();
     });
 
     test('Matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(<ToggleSwitch label="Switch" toggled onToggle={jest.fn()} />, 'mobile');
+        const { container } = renderWithProviders(
+            <ToggleSwitch label="Switch" toggled onToggle={jest.fn()} />,
+            'mobile',
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.children).toMatchSnapshot();
     });
 });

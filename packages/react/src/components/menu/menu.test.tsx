@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
@@ -144,7 +143,7 @@ describe('Menu', () => {
         });
 
         afterEach(() => {
-            ReactDOM.unmountComponentAtNode(divElement);
+            divElement.replaceChildren();
         });
 
         test('should be on the first option when initialFocus is set to 0', () => {

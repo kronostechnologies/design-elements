@@ -51,7 +51,7 @@ describe('Tag', () => {
 
                 (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
                     it(`matches snapshot (${deviceType})`, () => {
-                        const tree = renderWithProviders(
+                        const { container } = renderWithProviders(
                             <Tag
                                 size={size}
                                 color={color}
@@ -60,11 +60,11 @@ describe('Tag', () => {
                             deviceType,
                         );
 
-                        expect(tree).toMatchSnapshot();
+                        expect(container.firstChild).toMatchSnapshot();
                     });
 
                     it(`matches snapshot (${deviceType} with icons)`, () => {
-                        const tree = renderWithProviders(
+                        const { container } = renderWithProviders(
                             <Tag
                                 size={size}
                                 color={color}
@@ -74,11 +74,11 @@ describe('Tag', () => {
                             deviceType,
                         );
 
-                        expect(tree).toMatchSnapshot();
+                        expect(container.firstChild).toMatchSnapshot();
                     });
 
                     it(`matches snapshot (${deviceType} removable)`, () => {
-                        const tree = renderWithProviders(
+                        const { container } = renderWithProviders(
                             <Tag
                                 size={size}
                                 color={color}
@@ -88,7 +88,7 @@ describe('Tag', () => {
                             deviceType,
                         );
 
-                        expect(tree).toMatchSnapshot();
+                        expect(container.firstChild).toMatchSnapshot();
                     });
                 });
             });

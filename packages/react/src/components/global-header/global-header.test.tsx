@@ -6,35 +6,35 @@ import { GlobalHeader } from './global-header';
 
 describe('Global Header', () => {
     it('Matches the snapshot (desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('Matches the snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('SkipLink', () => {

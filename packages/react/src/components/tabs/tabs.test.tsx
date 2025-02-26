@@ -1,5 +1,4 @@
 import { ReactWrapper } from 'enzyme';
-import ReactDOM from 'react-dom';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
 import {
@@ -166,25 +165,25 @@ describe('Tabs', () => {
     test('matches snapshot', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
+        const { container } = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (global)', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = renderWithProviders(<Tabs tabs={tabs} global forceRenderTabPanels />);
+        const { container } = renderWithProviders(<Tabs tabs={tabs} global forceRenderTabPanels />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (mobile)', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />, 'mobile');
+        const { container } = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />, 'mobile');
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('focus', () => {
@@ -194,9 +193,9 @@ describe('Tabs', () => {
             document.body.appendChild(divElement);
         });
 
-        afterEach(() => {
-            ReactDOM.unmountComponentAtNode(divElement);
-        });
+        // afterEach(() => {
+        //     ReactDOM.unmountComponentAtNode(divElement);
+        // });
 
         it('should go to the next tab-button when ArrowRight key is pressed on a tab-button', () => {
             const tabs = givenTabs(2);
