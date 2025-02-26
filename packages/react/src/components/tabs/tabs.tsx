@@ -128,7 +128,7 @@ interface AddButtonProps {
     disabled?: boolean;
     loading?: boolean;
     tooltipContent?: string;
-    onClick?(): void;
+    onClick(): void;
 }
 
 interface Props {
@@ -137,7 +137,7 @@ interface Props {
     global?: boolean;
     tabs: Tab[];
     defaultSelectedId?: string;
-    addButtonProps?: AddButtonProps;
+    addButton?: AddButtonProps;
     onRemove?(tabId: string): void;
 }
 
@@ -147,7 +147,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
-    addButtonProps: providedAddButtonProps,
+    addButton: providedAddButtonProps,
     onRemove,
 }) => {
     const { t } = useTranslation('tabs');
@@ -162,7 +162,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         tooltipContent: null,
         ...providedAddButtonProps,
     };
-    const addButtonComponent = (
+    const addButtonComponent = providedAddButtonProps && (
         <AddButton
             type="button"
             buttonType="tertiary"
@@ -309,7 +309,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             {tabItem.title}
                         </TabButton>
                     ))}
-                    {addButtonProps.onClick && (
+                    {addButtonComponent && (
                         addButtonProps.tooltipContent ? (
                             <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
                                 {addButtonComponent}
