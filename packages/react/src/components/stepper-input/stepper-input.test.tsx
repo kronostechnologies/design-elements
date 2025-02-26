@@ -1,14 +1,14 @@
 import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderPortalWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
 describe('Stepper input', () => {
     test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+        const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
-                <StepperInput label='test' required validationErrorMessage='This field is required' />
+                <StepperInput label="test" required validationErrorMessage="This field is required" />
                 <button data-testid="submit-button" type="submit">Submit</button>
             </form>,
         );
@@ -48,26 +48,26 @@ describe('Stepper input', () => {
     });
 
     test('matches snapshot', () => {
-        const tree = renderWithProviders(<StepperInput label="test" />);
+        const { container } = renderWithProviders(<StepperInput label="test" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" />, 'mobile');
+        const { container } = renderWithProviders(<StepperInput label="test" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (invalid)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" valid={false} />);
+        const { container } = renderWithProviders(<StepperInput label="test" valid={false} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (disabled)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" disabled />);
+        const { container } = renderWithProviders(<StepperInput label="test" disabled />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

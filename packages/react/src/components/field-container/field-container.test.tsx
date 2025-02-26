@@ -9,32 +9,32 @@ const defaultProps = {
 
 describe('Field Container', () => {
     test('matches snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <FieldContainer valid {...defaultProps}>
                 Children
             </FieldContainer>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('should have invalid styles given valid prop is set to false', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <FieldContainer valid={false} {...defaultProps}>
                 Children
             </FieldContainer>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('should not have margins given noMargin prop is set to true', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <FieldContainer valid noMargin {...defaultProps}>
                 Children
             </FieldContainer>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

@@ -106,7 +106,7 @@ describe('Link Component', () => {
         });
 
         test('matches icon and label snapshot', () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <Link
                     href="/test"
                     icon={{ name: 'mail', label: 'This is a label' }}
@@ -115,27 +115,27 @@ describe('Link Component', () => {
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         test('matches icon only snapshot', () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <Link icon={{ name: 'mail', label: 'Navigation Link' }} />,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.children).toMatchSnapshot();
         });
 
         test('matches external link snapshot', () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <Link href="/test" external>Navigation Link</Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         test('matches button link snapshot', () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <Link
                     routerLink={NavLink}
                     href="/test"
@@ -147,17 +147,17 @@ describe('Link Component', () => {
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         test('matches disabled snapshot', () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <Link href="/test" disabled>
                     Navigation Link
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         test('matches NavLink snapshot', () => {

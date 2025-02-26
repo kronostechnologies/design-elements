@@ -112,26 +112,26 @@ describe('UserProfile', () => {
     });
 
     test('Matches Snapshot (desktop)', () => {
-        const tree = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'desktop');
+        const { container } = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'desktop');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (tag="nav")', () => {
-        const tree = renderWithProviders(<UserProfile tag="nav" username="Test Button" options={options} />);
+        const { container } = renderWithProviders(<UserProfile tag="nav" username="Test Button" options={options} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (mobile)', () => {
-        const tree = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'mobile');
+        const { container } = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithProviders(<UserProfile defaultOpen username="Test Button" options={options} />);
+        const { container } = renderWithProviders(<UserProfile defaultOpen username="Test Button" options={options} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

@@ -1,10 +1,10 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { doNothing } from '../../../test-utils/callbacks';
 import { getByTestId as enzymeGetByTestId } from '../../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderPortalWithProviders } from '../../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../../test-utils/renderer';
 import { DeviceType } from '../../device-context-provider/device-context-provider';
-import { ModalDialog } from './modal-dialog';
 import { IconName } from '../../icon/icon';
+import { ModalDialog } from './modal-dialog';
 import { DialogType, ModalDialogProps } from './types';
 
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose' | 'title'>;
@@ -21,7 +21,7 @@ const withSubtitle = {
 };
 
 function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'): RenderResult {
-    return renderPortalWithProviders(
+    return renderWithProviders(
         <ModalDialog {...defaultTestProps} {...props}>
             <p id="modal-description">Test Content</p>
         </ModalDialog>,
@@ -30,6 +30,11 @@ function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'
 }
 
 describe('Modal-Dialog', () => {
+    beforeEach(() => {
+        document.body.replaceChildren();
+        document.body.className = '';
+    });
+
     test('onConfirm callback is called when confirm-button is clicked', () => {
         const callback = jest.fn();
         const { getByTestId } = renderModal({
@@ -61,11 +66,13 @@ describe('Modal-Dialog', () => {
     });
 
     test('has title-icon when titleIcon prop is defined', () => {
+        const attachTo = document.createElement('div');
+        document.body.replaceChildren(attachTo);
         const wrapper = mountWithProviders(
             <ModalDialog ariaHideApp={false} title="test" titleIcon="home" isOpen onRequestClose={jest.fn()}>
                 <p id="modal-description">Test Content</p>
             </ModalDialog>,
-            { attachTo: document.body },
+            { attachTo },
         );
 
         expect(enzymeGetByTestId(wrapper, 'title-icon').exists()).toBe(true);
@@ -128,6 +135,8 @@ describe('Modal-Dialog', () => {
     ])(
         'should respect %s dialogType with proper titleIcon and buttons',
         (modalType, expectedIcon, expectedButtonType, hasCancelButton) => {
+            const attachTo = document.createElement('div');
+            document.body.replaceChildren(attachTo);
             const wrapper = mountWithProviders(
                 <ModalDialog
                     ariaHideApp={false}
@@ -139,7 +148,7 @@ describe('Modal-Dialog', () => {
                 >
                     <p id="modal-description">Test Content</p>
                 </ModalDialog>,
-                { attachTo: document.body },
+                { attachTo },
             );
 
             const titleIcon = enzymeGetByTestId(wrapper, 'title-icon');

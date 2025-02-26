@@ -47,19 +47,25 @@ describe('ToggleTag', () => {
 
             (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
                 it(`matches snapshot (${deviceType})`, () => {
-                    const tree = renderWithProviders(<ToggleTag size={size} value={{ label: 'Test' }} />, 'desktop');
+                    const { container } = renderWithProviders(
+                        <ToggleTag size={size} value={{ label: 'Test' }} />,
+                        'desktop',
+                    );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType})`, () => {
-                    const tree = renderWithProviders(<ToggleTag size={size} value={{ label: 'Test' }} />, 'mobile');
+                    const { container } = renderWithProviders(
+                        <ToggleTag size={size} value={{ label: 'Test' }} />,
+                        'mobile',
+                    );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType} with icons)`, () => {
-                    const tree = renderWithProviders(
+                    const { container } = renderWithProviders(
                         <ToggleTag
                             size={size}
                             iconName="home"
@@ -67,11 +73,11 @@ describe('ToggleTag', () => {
                         />,
                     );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType} clickable)`, () => {
-                    const tree = renderWithProviders(
+                    const { container } = renderWithProviders(
                         <ToggleTag
                             size={size}
                             value={{ label: 'Test' }}
@@ -79,7 +85,7 @@ describe('ToggleTag', () => {
                         />,
                     );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
             });
         });
