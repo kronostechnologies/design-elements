@@ -1,0 +1,21 @@
+name: Create release branch
+
+on:
+  push:
+    tags:
+      - v*.*.0
+
+jobs:
+  create-release-branch:
+    runs-on: ubuntu-latest
+    environment: release-branch
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: equisoft-actions/create-release-branch@v2
+        with:
+          github-token: ${{ secrets.ADMIN_PAT }}
