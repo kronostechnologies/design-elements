@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { TextArea } from './text-area';
 
 describe('TextArea', () => {
@@ -105,7 +105,7 @@ describe('TextArea', () => {
     });
 
     test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+        const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
                 <TextArea label='test' required validationErrorMessage='This field is required' />
                 <button data-testid="submit-button" type="submit">Submit</button>

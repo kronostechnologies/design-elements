@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
-[
+HTMLCollection [
   .c2 {
   background: #FFFFFF;
   border-radius: 100%;
@@ -99,7 +99,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 `;
 
 exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
-[
+HTMLCollection [
   .c2 {
   background: #FFFFFF;
   border-radius: 100%;

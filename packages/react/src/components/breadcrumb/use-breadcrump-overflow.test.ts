@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useBreadcrumbOverflow } from './use-breadcrumb-overflow';
 
 const firstElement = { label: 'HOME', value: 'index', href: '/index' };

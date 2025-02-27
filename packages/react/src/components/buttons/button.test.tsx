@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Button } from './button';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 describe('Button', () => {
     test('onClick callback is called when clicked', () => {
@@ -31,31 +31,31 @@ describe('Button', () => {
     });
 
     test('has primary disabled styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" disabled label="Primary Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has primary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has primary styles (inverted)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has secondary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button
                 onClick={doNothing}
                 buttonType="secondary"
@@ -63,57 +63,59 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has secondary styles (inverted)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="secondary" label="Secondary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has tertiary styles', () => {
-        const tree = renderWithProviders(<Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />);
+        const { container } = renderWithProviders(
+            <Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />,
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has tertiary styles (inverted)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has destructive styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has destructive styles (inverted)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has destructive-secondary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has destructive-secondary styles (inverted)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button
                 onClick={doNothing}
                 buttonType="destructive-secondary"
@@ -122,33 +124,33 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has small styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has mobile styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has small styles on mobile', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('focusable button has no tabIndex prop', () => {
@@ -207,7 +209,7 @@ describe('Button', () => {
     });
 
     test('has left and right icons', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Button
                 buttonType="primary"
                 label="Primary Button"
@@ -217,6 +219,6 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
