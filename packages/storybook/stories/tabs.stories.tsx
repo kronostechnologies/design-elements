@@ -106,18 +106,23 @@ export const AddAndDeleteTabs: Story = {
             setCurrentTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
         }
 
+        const handleAdd = (): void => {
+            addTabCounter += 1;
+            setCurrentTabs([...currentTabs, {
+                id: `tab${addTabCounter}`,
+                title: 'New Tab',
+                panelContent: <StyledDiv>New tab content</StyledDiv>,
+            }]);
+        };
+
         return (
             <Tabs
                 tabs={currentTabs}
                 onRemove={handleRemove}
-                onAddTab={() => {
-                    addTabCounter += 1;
-                    setCurrentTabs([...currentTabs, {
-                        id: `tab${addTabCounter}`,
-                        title: 'New Tab',
-                        panelContent: <StyledDiv>New tab content</StyledDiv>,
-                    },
-                    ]);
+                addButton={{
+                    label: 'Add new tab',
+                    tooltipContent: 'Add a new tab',
+                    onClick: handleAdd,
                 }}
             />
         );
