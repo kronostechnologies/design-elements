@@ -1,0 +1,1035 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttachedFile Matches Cancelled Snapshot 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c6 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c6[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  padding: var(--spacing-1x) var(--spacing-2x) var(--spacing-1x) var(--spacing-1halfx);
+}
+
+.c0 .eds-AttachedFile-icon {
+  height: var(--size-1x);
+  margin-top: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c0 .eds-AttachedFile-status {
+  color: #60666E;
+}
+
+.c1 {
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: var(--spacing-half);
+  line-height: 1rem;
+  margin-top: var(--spacing-half);
+}
+
+.c2 {
+  display: block;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: var(--spacing-1x);
+  margin-left: auto;
+}
+
+<div
+  class="c0 eds-AttachedFile-root"
+  id="uuid1"
+>
+  <svg
+    class="eds-AttachedFile-icon"
+    color="#CD2C23"
+    focusable="false"
+    height="24"
+    width="24"
+  />
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      id="uuid1-filename"
+    >
+      File.txt (97.7 KB)
+    </span>
+    <span
+      class="eds-AttachedFile-status"
+    >
+      Uploading cancelled
+    </span>
+  </div>
+  <div
+    class="c3"
+  >
+    <button
+      class="c4 c5"
+      type="button"
+    >
+      Resume
+    </button>
+    <button
+      aria-label="Close"
+      class="c4 c6"
+      type="submit"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AttachedFile Matches Default Snapshot 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c5 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  padding: var(--spacing-1x) var(--spacing-2x) var(--spacing-1x) var(--spacing-1halfx);
+}
+
+.c0 .eds-AttachedFile-icon {
+  height: var(--size-1x);
+  margin-top: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c0 .eds-AttachedFile-status {
+  color: #60666E;
+}
+
+.c1 {
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: var(--spacing-half);
+  line-height: 1rem;
+  margin-top: var(--spacing-half);
+}
+
+.c2 {
+  display: block;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: var(--spacing-1x);
+  margin-left: auto;
+}
+
+<div
+  class="c0 eds-AttachedFile-root"
+  id="uuid1"
+>
+  <svg
+    class="eds-AttachedFile-icon"
+    color="#60666E"
+    focusable="false"
+    height="24"
+    width="24"
+  />
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      id="uuid1-filename"
+    >
+      File.txt (97.7 KB)
+    </span>
+  </div>
+  <div
+    class="c3"
+  >
+    <button
+      aria-label="Delete file"
+      aria-labelledby="uuid1-delete uuid1-filename"
+      class="c4 c5"
+      id="uuid1-delete"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AttachedFile Matches Error Snapshot 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c5 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  padding: var(--spacing-1x) var(--spacing-2x) var(--spacing-1x) var(--spacing-1halfx);
+}
+
+.c0 .eds-AttachedFile-icon {
+  height: var(--size-1x);
+  margin-top: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c0 .eds-AttachedFile-status {
+  color: #CD2C23;
+}
+
+.c1 {
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: var(--spacing-half);
+  line-height: 1rem;
+  margin-top: var(--spacing-half);
+}
+
+.c2 {
+  display: block;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: var(--spacing-1x);
+  margin-left: auto;
+}
+
+<div
+  class="c0 eds-AttachedFile-root"
+  id="uuid1"
+>
+  <svg
+    class="eds-AttachedFile-icon"
+    color="#CD2C23"
+    focusable="false"
+    height="24"
+    width="24"
+  />
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      id="uuid1-filename"
+    >
+      File.txt (97.7 KB)
+    </span>
+  </div>
+  <div
+    class="c3"
+  >
+    <button
+      aria-label="Close"
+      class="c4 c5"
+      type="submit"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AttachedFile Matches Success Snapshot 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c5 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  padding: var(--spacing-1x) var(--spacing-2x) var(--spacing-1x) var(--spacing-1halfx);
+}
+
+.c0 .eds-AttachedFile-icon {
+  height: var(--size-1x);
+  margin-top: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c0 .eds-AttachedFile-status {
+  color: #008533;
+}
+
+.c1 {
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: var(--spacing-half);
+  line-height: 1rem;
+  margin-top: var(--spacing-half);
+}
+
+.c2 {
+  display: block;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: var(--spacing-1x);
+  margin-left: auto;
+}
+
+<div
+  class="c0 eds-AttachedFile-root"
+  id="uuid1"
+>
+  <svg
+    class="eds-AttachedFile-icon"
+    color="#008533"
+    focusable="false"
+    height="24"
+    width="24"
+  />
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      id="uuid1-filename"
+    >
+      File.txt (97.7 KB)
+    </span>
+    <span
+      class="eds-AttachedFile-status"
+    >
+      Uploading completed
+    </span>
+  </div>
+  <div
+    class="c3"
+  >
+    <button
+      aria-label="Delete file"
+      aria-labelledby="uuid1-delete uuid1-filename"
+      class="c4 c5"
+      id="uuid1-delete"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AttachedFile Matches Uploading Snapshot 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
+.c6 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c6 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c6[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  padding: var(--spacing-1x) var(--spacing-2x) var(--spacing-1x) var(--spacing-1halfx);
+}
+
+.c0 .eds-AttachedFile-icon {
+  height: var(--size-1x);
+  margin-top: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c0 .eds-AttachedFile-status {
+  color: #60666E;
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: var(--spacing-half);
+  line-height: 1rem;
+  margin-top: var(--spacing-half);
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  gap: var(--spacing-1x);
+  margin-left: auto;
+}
+
+<div
+  class="c0 eds-AttachedFile-root"
+  id="uuid1"
+>
+  <svg
+    class="c1 eds-AttachedFile-icon"
+    color="#333"
+  />
+  <div
+    class="c2"
+  >
+    <span
+      class="c3"
+      id="uuid1-filename"
+    >
+      File.txt (97.7 KB)
+    </span>
+    <span
+      class="eds-AttachedFile-status"
+    >
+      Uploading...null
+    </span>
+  </div>
+  <div
+    class="c4"
+  >
+    <button
+      class="c5 c6"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,59 @@
+import { AttachedFile } from "@equisoft/design-elements-react";
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+import * as AttachedFileStories from "./attached-file.stories";
+
+<Meta of={AttachedFileStories} />
+
+# Attached File
+
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [States](#states)
+4. [Properties](#properties)
+
+## Definition
+
+Drop zone allows users to upload files by dragging and dropping the files (or folders) into an area on a page, or activating a button [2].
+
+<Canvas of={AttachedFileStories.Default} />
+
+## Usage
+
+### When to use
+
+- Use when you need to display files that users have uploaded, such as documents, images, or other attachments.
+- Use alongside the Dropzone component to visually represent files that users have dragged and dropped into an upload area.
+- Use when you want to provide users with real-time feedback on the status of their file uploads, including progress indicators and success/error states.
+- Use when you want to allow users to perform actions on uploaded files, such as deleting or retrying a failed upload.
+- Use in forms where users are required to upload and manage documents, ensuring they can easily add, view, and manage their files as part of the submission process.
+- Use when you want to enforce file type, size restrictions, or other validation rules.
+
+### When not to use
+
+- Do not use if you need to display content directly on the page rather than as an attachment.
+- Do not use for files requiring complex interactions such as in-line editing, annotation, or version control.
+
+## States
+
+### Default
+
+The Default state is the final state of the attached file, following the Success state.
+
+### Uploading
+
+The Uploading state is the initial state of the attached file, indicating the progress of the file as it is being imported into the application.
+
+### Error
+
+The Error state occurs when there is an issue with the upload. Possible issues include:
+
+- Unsupported file type.
+- Upload failure.
+
+### Success
+
+The Success state confirms that the attached file has been successfully uploaded. This state is displayed briefly (2 seconds) before transitioning to the Default state.
+
+## Properties
+
+<ArgTypes of={AttachedFile} />
