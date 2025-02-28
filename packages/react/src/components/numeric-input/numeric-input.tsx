@@ -21,7 +21,7 @@ const StyledTextInput = styled(TextInput)<StyledInputProps>`
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
-interface NumericInputProps extends NativeInputProps {
+export interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
     adornmentPosition?: 'start' | 'end';
     className?: string;

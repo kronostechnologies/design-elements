@@ -9,13 +9,9 @@ import {
     useCallback,
     useState,
 } from 'react';
-import { isNumber, isWithinPrecision, truncateAtPrecision } from '../../utils/math';
 import { useTranslation } from '../../i18n/use-translation';
-import {
-    cleanIncompleteNumber,
-    cleanPastedContent,
-    isValidValueForInput,
-} from './utils';
+import { isNumber, isWithinPrecision, truncateAtPrecision } from '../../utils/math';
+import { cleanIncompleteNumber, isValidValueForInput, replacePastedValue } from './utils';
 
 interface NumericInputCallbackData {
     value: string;
@@ -49,7 +45,7 @@ export interface UseNumericInputReturn {
     value: number | string;
 }
 
-function validateProvidedValue(newValue: number | string): string {
+function validateProvidedValue(newValue: unknown): string {
     if (isNumber(newValue)) {
         return newValue.toString();
     }
@@ -92,6 +88,24 @@ const createCallbackData = (inputValue: string): NumericInputCallbackData => ({
     valueAsNumber: inputValue === '' ? null : Number(inputValue),
 });
 
+function convertClipboardToChangeEvent(
+    event: ClipboardEvent<HTMLInputElement>,
+    newValue: string,
+): ChangeEvent<HTMLInputElement> {
+    return {
+        ...event,
+        currentTarget: {
+            ...event.currentTarget,
+            value: newValue,
+        },
+        target: {
+            ...event.currentTarget,
+            ...event.target,
+            value: newValue,
+        },
+    };
+}
+
 export function useNumericInput({
     defaultValue,
     max,
@@ -122,9 +136,7 @@ export function useNumericInput({
 
     const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
-        let newValue = event.clipboardData.getData('text/plain');
-
-        newValue = cleanPastedContent(newValue);
+        let newValue = replacePastedValue(event);
 
         if (precision !== undefined) {
             newValue = truncateAtPrecision(newValue, precision);
@@ -136,7 +148,8 @@ export function useNumericInput({
         }
 
         setInputValue(newValue);
-    }, [precision]);
+        onChange?.(convertClipboardToChangeEvent(event, newValue), createCallbackData(newValue));
+    }, [onChange, precision]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
         const value = event.target.value;
