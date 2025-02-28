@@ -193,10 +193,10 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     ), [tabs]);
 
     const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
-    const [selectedTab, setSelectedTab] = useState(defaultSelectedTab ?? tabItems[0]);
+    const [selectedTab, setSelectedTab] = useState<TabItem | undefined>(defaultSelectedTab ?? tabItems[0]);
 
     function isTabSelected(tabId: string): boolean {
-        return selectedTab.id === tabId;
+        return selectedTab?.id === tabId;
     }
 
     const handleRemoveTab = useCallback((tabId: string) => {
