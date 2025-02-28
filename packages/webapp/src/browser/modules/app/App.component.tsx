@@ -1,5 +1,5 @@
 import { DesignSystem } from '@equisoft/design-elements-react';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import { Configuration, ConfigurationProvider, createRouter, initializeConfiguration } from '../../core';
@@ -22,7 +22,7 @@ const router = createRouter([
     basename: appConfig.publicPath,
 });
 
-export const DataProviders: FunctionComponent = (
+export const DataProviders: FunctionComponent<PropsWithChildren> = (
     { children },
 ) => (
     <UsersProvider>

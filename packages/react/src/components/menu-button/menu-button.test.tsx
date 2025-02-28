@@ -43,9 +43,9 @@ describe('MenuButton', () => {
         expect(getByTestId(wrapper, 'menu-button').type()).toBe(IconButton);
     });
 
-    it('should open menu when menu-button is clicked', () => {
+    it('should open menu when menu-button is clicked', async () => {
         const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
-        waitForComponentToPaint(wrapper);
+        await waitForComponentToPaint(wrapper);
 
         getByTestId(wrapper, 'menu-button').simulate('click');
 

@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { Accordion } from './index';
 
@@ -10,7 +9,7 @@ describe('AccordionContianer', () => {
     });
 
     afterEach(() => {
-        ReactDOM.unmountComponentAtNode(divElement);
+        divElement.replaceChildren();
     });
 
     it('should toggle expansion in single mode', () => {
