@@ -22,6 +22,17 @@ const Checkboxes = [
     { label: 'Bike', name: 'vehicule4', value: 'bike' },
 ];
 
+const CheckboxesNotChecked = [
+    { label: 'Boat', name: 'vehicule1', value: 'boat' },
+    {
+        label: 'Plane', name: 'vehicule2', value: 'plane',
+    },
+    {
+        label: 'Car', name: 'vehicule3', value: 'car', disabled: true,
+    },
+    { label: 'Bike', name: 'vehicule4', value: 'bike' },
+];
+
 const CheckboxesControlled = [
     { label: 'Blue', name: 'color1', value: 'blue' },
     { label: 'Red', name: 'color2', value: 'red' },
@@ -49,6 +60,16 @@ export const Disabled: Story = () => (
             label: 'Car', name: 'vehicule', value: 'car', disabled: true,
         },
     ]}
+    />
+);
+
+export const Required: Story = () => (
+    <CheckboxGroup
+        data-testid='some-checkbox-group-data-testid'
+        label="Vehicule"
+        checkboxGroup={CheckboxesNotChecked}
+        required
+        valid={false}
     />
 );
 

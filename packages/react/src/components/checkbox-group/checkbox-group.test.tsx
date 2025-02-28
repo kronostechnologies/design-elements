@@ -45,4 +45,36 @@ describe('Checkbox', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('should display warning message if input is invalid and not checked', () => {
+        const wrapper = mountWithTheme(
+            <CheckboxGroup
+                label="Vehicule"
+                checkboxGroup={checkboxGroup}
+                required
+                valid={false}
+                id="checkbox-group-test"
+            />,
+        );
+
+        const warning = wrapper.find('checkbox-group-test_validationAlert');
+        expect(warning).toBeDefined();
+    });
+
+    test('should hide warning message if group is invalid and one input is checked', () => {
+        const wrapper = mountWithTheme(
+            <CheckboxGroup
+                label="Vehicule"
+                checkboxGroup={checkboxGroup}
+                required
+                valid={false}
+                id="checkbox-group-test"
+            />,
+        );
+
+        wrapper.find('input').at(0).simulate('change');
+
+        const warningPostCheck = wrapper.find('checkbox-group-test_validationAlert');
+        expect(warningPostCheck).toEqual({});
+    });
 });
