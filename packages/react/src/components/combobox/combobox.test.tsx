@@ -268,7 +268,8 @@ describe('Combobox', () => {
                 disabled: true,
                 label: emptyListMessage,
                 value: '',
-            }]);
+            },
+            ]);
         });
 
         test('the empty message is not removed if custom values are not allowed', () => {
@@ -284,7 +285,8 @@ describe('Combobox', () => {
                 disabled: true,
                 label: emptyListMessage,
                 value: '',
-            }]);
+            },
+            ]);
         });
 
         test('the empty message is removed if custom values are allowed', () => {
@@ -310,7 +312,8 @@ describe('Combobox', () => {
                 disabled: true,
                 label: 'Loading...',
                 value: '',
-            }]);
+            },
+            ]);
         });
     });
 
@@ -658,7 +661,7 @@ describe('Combobox', () => {
     });
 
     test('matches the snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Combobox
                 defaultOpen
                 label="Select an option"
@@ -667,11 +670,11 @@ describe('Combobox', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (invalid)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Combobox
                 defaultOpen
                 label="Select an option"
@@ -680,11 +683,11 @@ describe('Combobox', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (disabled)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Combobox
                 defaultOpen
                 label="Select an option"
@@ -693,11 +696,11 @@ describe('Combobox', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Combobox
                 defaultOpen
                 options={provinces}
@@ -705,6 +708,6 @@ describe('Combobox', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

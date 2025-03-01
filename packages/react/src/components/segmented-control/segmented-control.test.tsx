@@ -40,20 +40,20 @@ describe('SegmentedControl', () => {
     });
 
     test('Matches snapshot (desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SegmentedControl buttonGroup={buttonGroup} groupName="Test4" />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SegmentedControl buttonGroup={buttonGroup} groupName="Test4" />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

@@ -154,19 +154,19 @@ describe('BentoMenuButton', () => {
     });
 
     test('Matches Snapshot (tag="nav")', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <BentoMenuButton tag="nav" productLinks={products} externalLinks={externals} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (productLinks and externalLinks)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (productGroups and externalLinks)', () => {
@@ -181,13 +181,13 @@ describe('BentoMenuButton', () => {
             productLinks: givenOtherProducts(),
         };
 
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <BentoMenuButton
                 productGroups={[productGroupA, productGroupB]}
                 externalLinks={externals}
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
