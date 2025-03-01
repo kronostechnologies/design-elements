@@ -3,6 +3,16 @@ export const Translations = {
         avatar: {
             ariaLabel: '{{username}} avatar',
         },
+        'attached-file': {
+            close: 'Close',
+            retry: 'Retry',
+            resume: 'Resume',
+            cancel: 'Cancel',
+            deleteFile: 'Delete file',
+            uploading: 'Uploading...',
+            uploadCompleted: 'Uploading completed',
+            uploadCancelled: 'Uploading cancelled',
+        },
         bento: {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
@@ -22,6 +32,7 @@ export const Translations = {
             opensInNewTab: 'opens in a new tab',
             opensInNewTabScreenReader: '(opens in a new tab)',
             error: 'Error',
+            unitSymbolBytes: ['B', 'KB', 'MB', 'GB', 'TB', 'PB'],
         },
         datepicker: {
             calendarButtonLabel: 'Choose date',
@@ -144,6 +155,16 @@ export const Translations = {
         avatar: {
             ariaLabel: 'Avatar de {{username}}',
         },
+        'attached-file': {
+            close: 'Fermer',
+            retry: 'Réessayer',
+            resume: 'Reprendre',
+            cancel: 'Annuler',
+            deleteFile: 'Supprimer le fichier',
+            uploading: 'Téléversement...',
+            uploadCompleted: 'Téléversement terminé',
+            uploadCancelled: 'Téléversement annulé',
+        },
         bento: {
             productsLabel: 'Produits',
             externalsLabel: 'Ressources',
@@ -163,6 +184,7 @@ export const Translations = {
             opensInNewTab: 'ouvre dans un nouvel onglet',
             opensInNewTabScreenReader: '(ouvre dans un nouvel onglet)',
             error: 'Erreur',
+            unitSymbolBytes: ['o', 'Ko', 'Mo', 'Go', 'To', 'Po'],
         },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',
