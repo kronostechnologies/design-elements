@@ -1,3 +1,6 @@
+import { type ClipboardEvent } from 'react';
+import { replaceRange } from '../../utils/string';
+
 /**
  * We allow to input incomplete number that is obvious. It's similar to the behavior of Number(value).
  * The difference is we can keep all digits (zero ending decimals).
@@ -19,9 +22,14 @@ export function cleanIncompleteNumber(inputValue: string): string {
     return value;
 }
 
-export function cleanPastedContent(content: string): string {
-    // Remove spaces and invisible characters (ex: \r, \n, ZWSP) around the copied text
-    return content.trim();
+export function replacePastedValue(event: ClipboardEvent<HTMLInputElement>): string {
+    const pastedValue = event.clipboardData.getData('text/plain').trim();
+
+    const input = event.currentTarget;
+    const start = input.selectionStart || 0;
+    const end = input.selectionEnd || 0;
+
+    return replaceRange(input.value, start, end, pastedValue);
 }
 
 /**
