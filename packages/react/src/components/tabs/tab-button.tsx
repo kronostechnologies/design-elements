@@ -5,15 +5,16 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
+import { TabSize } from './tabs';
 
-const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $removable?: boolean; }>`
+const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
     color: ${({ $selected, theme }) => ($selected ? theme.component['tab-button-selected-text-color'] : theme.component['tab-button-text-color'])};
     display: flex;
     font-family: var(--font-family);
-    font-size: ${({ $global }) => ($global ? '0.875rem' : '0.75rem')};
+    font-size: ${({ $size }) => ($size === 'default' ? '0.875rem' : '0.75rem')};
     gap: var(--spacing-half);
-    padding: ${({ $global }) => ($global ? '0 var(--spacing-2x)' : '0 var(--spacing-1x)')};
+    padding: ${({ $size }) => ($size === 'default' ? '0 var(--spacing-2x)' : '0 var(--spacing-1x)')};
     padding-right: ${({ $removable }) => ($removable && 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
@@ -26,7 +27,7 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
         bottom: 0;
         content: '';
         display: block;
-        height: ${({ $global }) => ($global ? '0.25rem' : '0.125rem')};
+        height: ${({ $size }) => ($size === 'default' ? '0.25rem' : '0.125rem')};
         left: 0;
         position: absolute;
         width: 100%;
@@ -94,7 +95,7 @@ const ButtonLabel = styled.span`
 `;
 
 interface TabButtonProps {
-    global?: boolean;
+    size?: TabSize;
     id: string;
     children: string;
     panelId: string;
@@ -107,7 +108,7 @@ interface TabButtonProps {
 }
 
 export const TabButton = forwardRef(({
-    global,
+    size = 'default',
     id,
     panelId,
     children,
@@ -142,7 +143,7 @@ export const TabButton = forwardRef(({
                 onClick={onClick}
                 $removable={hasRemove}
                 $selected={isSelected}
-                $global={global}
+                $size={size}
             >
                 {leftIcon && (
                     <StyledButtonIcon

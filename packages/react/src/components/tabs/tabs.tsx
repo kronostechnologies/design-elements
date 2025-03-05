@@ -17,8 +17,18 @@ import { Tooltip } from '../tooltip/tooltip';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 import { Button } from '../buttons/button';
+import { tabsClasses } from './tabs-classes';
 
-export type TabListType = 'default' | 'dimmed';
+export type TabSize = 'default' | 'small';
+
+const getButtonSize = () => {
+    return 'var(--size-2x)';
+};
+
+interface TabsWrapperProps {
+    $hasLeftScroll: boolean;
+    $hasRightScroll: boolean;
+}
 
 const TabButtonsContainer = styled.div`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
@@ -36,21 +46,29 @@ const TabButtonsContainer = styled.div`
     }
 `;
 
-const TabList = styled.div<{ noPadding?: boolean; tablistType: TabListType }>`
-    background-color: ${({ theme, tablistType }) => theme.component[`tab-list-${tablistType}-background-color`]};
+const TabsWrapper = styled.div<TabsWrapperProps>`
+    // Hides Tabs behind buttons when scrolling
+    mask-image: linear-gradient(
+        90deg, 
+        ${props => props.$hasLeftScroll ? `transparent 0px, transparent ${getButtonSize()}, #000 ${getButtonSize()},` : '#000 0px,'}
+        #000 calc(100% - ${getButtonSize()}), 
+        ${props => props.$hasRightScroll ? `transparent calc(100% - ${getButtonSize()}), transparent 100%` : '#000 100%'}
+    );
+`
+
+const TabList = styled.div`
     display: flex;
     gap: var(--spacing-half);
     height: var(--size-2halfx);
     overflow-x: auto;
     overflow-y: hidden;
-    padding: ${({ noPadding }) => (noPadding ? '0' : '0 var(--spacing-2halfx)')};
     scrollbar-width: none;
     white-space: nowrap;
 `;
 
-const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; tablistType: TabListType }>`
+const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
     align-items: center;
-    background-color: ${({ theme, tablistType }) => theme.component[`tab-list-${tablistType}-background-color`]};
+    background-color: inherit;
     border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
     border-radius: 0;
     bottom: 0;
@@ -60,6 +78,7 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; tablistType:
     min-height: auto;
     padding: 0 var(--spacing-1x);
     position: absolute;
+    width: ${getButtonSize};
     z-index: 1;
 
     &:hover {
@@ -114,30 +133,29 @@ interface AddButtonProps {
 interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
-    global?: boolean;
-    noPadding?: boolean;
+    size?: TabSize;  
     tabs: Tab[];
     defaultSelectedId?: string;
-    tablistType?: TabListType;
     onAddTab?(): void;
     onRemove?(tabId: string): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
     className,
-    global,
-    noPadding,
+    size = 'default',
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,
     addButton: providedAddButtonProps,
     onRemove,
-    tablistType = 'default',
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
     const scrollLeftButtonRef = createRef<HTMLButtonElement>();
     const scrollRightButtonRef = createRef<HTMLButtonElement>();
+
+    const [isLeftScrollVisible, setIsLeftScrollVisible] = useState(false);
+    const [isRightScrollVisible, setIsRightScrollVisible] = useState(false);
 
     const addButtonProps = {
         label: t('addTab'),
@@ -164,6 +182,10 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         onScroll: ({ atStartX, atEndX }) => {
             scrollLeftButtonRef.current?.classList.toggle('hidden', atStartX);
             scrollRightButtonRef.current?.classList.toggle('hidden', atEndX);
+            
+            // Mettre à jour les états
+            setIsLeftScrollVisible(!atStartX);
+            setIsRightScrollVisible(!atEndX);
         },
     });
 
@@ -256,7 +278,9 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
     return (
         <div className={className}>
-            <TabButtonsContainer>
+            <TabButtonsContainer
+                className={tabsClasses.tablistContainer}
+            >
                 <ScrollButton
                     className="hidden"
                     buttonType="tertiary"
@@ -265,43 +289,45 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     onClick={() => scrollToLeft()}
                     $position="left"
                     ref={scrollLeftButtonRef}
-                    tablistType={tablistType}
                 >
                     <Icon name='chevronLeft' size='16' aria-hidden="true" focusable={false} />
                 </ScrollButton>
-                <TabList
-                    role="tablist"
-                    aria-label="tabs label"
-                    noPadding={noPadding}
-                    ref={tabsListRef}
-                    tablistType={tablistType}
+                <TabsWrapper
+                    $hasLeftScroll={isLeftScrollVisible}
+                    $hasRightScroll={isRightScrollVisible}
                 >
-                    {tabItems.map((tabItem, i) => (
-                        <TabButton
-                            global={global}
-                            id={tabItem.id}
-                            panelId={tabItem.panelId}
-                            key={tabItem.id}
-                            data-testid={`tab-${i + 1}`}
-                            leftIcon={tabItem.leftIcon}
-                            rightIcon={tabItem.rightIcon}
-                            isSelected={isTabSelected(tabItem.id)}
-                            ref={tabItem.buttonRef}
-                            onClick={() => handleTabSelected(tabItem)}
-                            onRemove={onRemove ? () => handleRemoveTab(tabItem.id) : undefined}
-                            onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
-                        >
-                            {tabItem.title}
-                        </TabButton>
-                    ))}
-                    {addButtonComponent && (
-                        addButtonProps.tooltipContent ? (
-                            <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
-                                {addButtonComponent}
-                            </Tooltip>
-                        ) : addButtonComponent
-                    )}
-                </TabList>
+                    <TabList
+                        role="tablist"
+                        aria-label="tabs label"
+                        ref={tabsListRef}
+                    >
+                        {tabItems.map((tabItem, i) => (
+                            <TabButton
+                                size={size}
+                                id={tabItem.id}
+                                panelId={tabItem.panelId}
+                                key={tabItem.id}
+                                data-testid={`tab-${i + 1}`}
+                                leftIcon={tabItem.leftIcon}
+                                rightIcon={tabItem.rightIcon}
+                                isSelected={isTabSelected(tabItem.id)}
+                                ref={tabItem.buttonRef}
+                                onClick={() => handleTabSelected(tabItem)}
+                                onRemove={onRemove ? () => handleRemoveTab(tabItem.id) : undefined}
+                                onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
+                            >
+                                {tabItem.title}
+                            </TabButton>
+                        ))}
+                        {addButtonComponent && (
+                            addButtonProps.tooltipContent ? (
+                                <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
+                                    {addButtonComponent}
+                                </Tooltip>
+                            ) : addButtonComponent
+                        )}
+                    </TabList>
+                </TabsWrapper>
                 <ScrollButton
                     className="hidden"
                     buttonType="tertiary"
@@ -310,7 +336,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     onClick={() => scrollToRight()}
                     $position="right"
                     ref={scrollRightButtonRef}
-                    tablistType={tablistType}
                 >
                     <Icon name='chevronRight' size='16' aria-hidden="true" focusable={false} />
                 </ScrollButton>
@@ -323,7 +348,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                             hidden={!isTabSelected(tabItem.id)}
                             id={tabItem.panelId}
                             key={tabItem.panelId}
-                            global={global}
+                            size={size}
                         >
                             {tabItem.panelContent}
                         </TabPanel>
