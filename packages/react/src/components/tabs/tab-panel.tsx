@@ -1,16 +1,17 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
+import { TabSize } from './tabs';
 
 interface TabPanelProps {
     buttonId: string,
     children: ReactNode;
     hidden: boolean,
     id: string,
-    global?: boolean;
+    size?: TabSize;
 }
 
-const StyledDiv = styled.div<{ $isGlobal?: boolean; }>`
+const StyledDiv = styled.div<{ $size?: TabSize }>`
     border-top: none;
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-visible' })}
@@ -19,12 +20,12 @@ const StyledDiv = styled.div<{ $isGlobal?: boolean; }>`
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
     buttonId,
     children,
-    global = false,
+    size = 'default',
     hidden,
     id,
 }) => (
     <StyledDiv
-        $isGlobal={global}
+        $size={size}
         aria-hidden={hidden}
         aria-labelledby={buttonId}
         hidden={hidden}

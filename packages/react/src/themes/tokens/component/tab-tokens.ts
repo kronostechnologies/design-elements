@@ -1,8 +1,7 @@
 import type { ComponentTokenMap } from '../tokens';
 
 export type TabToken =
-    | 'tab-list-default-background-color'
-    | 'tab-list-dimmed-background-color'
+    | 'tab-list-background-color'
     | 'tab-button-icon-color'
     | 'tab-button-text-color'
     | 'tab-button-indicator-hover-background-color'
@@ -15,8 +14,7 @@ export type TabToken =
     | 'tab-border-bottom-color';
 
 export const defaultTabTokens: ComponentTokenMap<TabToken> = {
-    'tab-list-default-background-color': 'color-background',
-    'tab-list-dimmed-background-color': 'color-background-neutral-subtle',
+    'tab-list-background-color': 'color-background',
     'tab-button-icon-color': 'color-content-subtle',
     'tab-button-text-color': 'color-content-subtle',
     'tab-button-hover-text-color': 'color-content-hover',
