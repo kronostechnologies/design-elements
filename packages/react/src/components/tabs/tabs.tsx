@@ -14,16 +14,14 @@ import { useTranslation } from '../../i18n/use-translation';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { Icon, IconName } from '../icon/icon';
 import { Tooltip } from '../tooltip/tooltip';
+import { Button } from '../buttons/button';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
-import { Button } from '../buttons/button';
 import { tabsClasses } from './tabs-classes';
 
 export type TabSize = 'default' | 'small';
 
-const getButtonSize = () => {
-    return 'var(--size-2x)';
-};
+const getButtonSize = (): string => 'var(--size-2x)';
 
 interface TabsWrapperProps {
     $hasLeftScroll: boolean;
@@ -47,14 +45,14 @@ const TabButtonsContainer = styled.div`
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
-    // Hides Tabs behind buttons when scrolling
+    // Prevent show Tabs behind buttons when scrolling
     mask-image: linear-gradient(
         90deg, 
-        ${props => props.$hasLeftScroll ? `transparent 0px, transparent ${getButtonSize()}, #000 ${getButtonSize()},` : '#000 0px,'}
+        ${(props) => (props.$hasLeftScroll ? `transparent 0px, transparent ${getButtonSize()}, #000 ${getButtonSize()},` : '#000 0px,')}
         #000 calc(100% - ${getButtonSize()}), 
-        ${props => props.$hasRightScroll ? `transparent calc(100% - ${getButtonSize()}), transparent 100%` : '#000 100%'}
+        ${(props) => (props.$hasRightScroll ? `transparent calc(100% - ${getButtonSize()}), transparent 100%` : '#000 100%')}
     );
-`
+`;
 
 const TabList = styled.div`
     display: flex;
@@ -133,10 +131,10 @@ interface AddButtonProps {
 interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
-    size?: TabSize;  
+    size?: TabSize;
     tabs: Tab[];
     defaultSelectedId?: string;
-    onAddTab?(): void;
+    addButton?: AddButtonProps;
     onRemove?(tabId: string): void;
 }
 
@@ -182,7 +180,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         onScroll: ({ atStartX, atEndX }) => {
             scrollLeftButtonRef.current?.classList.toggle('hidden', atStartX);
             scrollRightButtonRef.current?.classList.toggle('hidden', atEndX);
-            
+
             // Mettre à jour les états
             setIsLeftScrollVisible(!atStartX);
             setIsRightScrollVisible(!atEndX);

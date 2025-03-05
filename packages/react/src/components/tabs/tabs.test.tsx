@@ -172,15 +172,15 @@ describe('Tabs', () => {
 
     test('has small styles', () => {
         const tabs: Tab[] = givenTabs(2);
-    
+
         const wrapper = renderWithProviders(
-            <Tabs 
-                tabs={tabs} 
-                forceRenderTabPanels 
+            <Tabs
+                tabs={tabs}
+                forceRenderTabPanels
                 size="small"
             />
         );
-    
+
         expect(wrapper).toMatchSnapshot();
     });
 
