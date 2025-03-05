@@ -21,7 +21,7 @@ describe('TabButton', () => {
     test('should display button text', () => {
         const expectedButtonText = 'some text';
         const wrapper = mountWithProviders(
-            <TabButton {...focusedAndSelected} size="default">{expectedButtonText}</TabButton>
+            <TabButton {...focusedAndSelected} size="default">{expectedButtonText}</TabButton>,
         );
 
         const tabPanel = getByTestId(wrapper, 'tab-text');
