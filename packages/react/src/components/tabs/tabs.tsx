@@ -45,7 +45,8 @@ const TabButtonsContainer = styled.div`
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
-    mask-image: linear-gradient(
+    mask-image: 
+        linear-gradient(
         90deg,
         ${(props) => (
             props.$hasLeftScroll
