@@ -1,15 +1,7 @@
-import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { TabSize } from './tabs';
-
-interface TabPanelProps {
-    buttonId: string,
-    children: ReactNode;
-    hidden: boolean,
-    id: string,
-    size?: TabSize;
-}
+import { TabSize, TabPanelProps } from './types';
 
 const StyledDiv = styled.div<{ $size?: TabSize }>`
     border-top: none;
@@ -32,7 +24,6 @@ export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
         id={id}
         role="tabpanel"
         tabIndex={0}
-
     >
         {children}
     </StyledDiv>

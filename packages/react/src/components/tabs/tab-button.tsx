@@ -1,11 +1,11 @@
-import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
+import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
-import { Icon, IconName } from '../icon/icon';
-import { TabSize } from './tabs';
+import { Icon } from '../icon/icon';
+import { TabButtonProps, TabSize } from './types';
 
 const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
@@ -93,19 +93,6 @@ const ButtonLabel = styled.span`
         visibility: hidden;
     }
 `;
-
-interface TabButtonProps {
-    size?: TabSize;
-    id: string;
-    children: string;
-    panelId: string;
-    leftIcon?: IconName
-    rightIcon?: IconName;
-    isSelected: boolean;
-    onClick(): void;
-    onRemove?(): void;
-    onKeyDown?(event: KeyboardEvent<HTMLDivElement>): void;
-}
 
 export const TabButton = forwardRef(({
     size = 'default',
