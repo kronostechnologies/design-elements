@@ -18,9 +18,8 @@ import { Tooltip } from '../tooltip/tooltip';
 import { Button } from '../buttons/button';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
+import { TabSize } from './types';
 import { tabsClasses } from './tabs-classes';
-
-export type TabSize = 'default' | 'small';
 
 const getButtonSize = (): string => 'var(--size-2x)';
 
@@ -46,7 +45,6 @@ const TabButtonsContainer = styled.div`
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
-    // Prevent show Tabs behind buttons when scrolling
     mask-image: linear-gradient(
         90deg, 
         ${(props) => (props.$hasLeftScroll ? `transparent 0px, transparent ${getButtonSize()}, #000 ${getButtonSize()},` : '#000 0px,')}
@@ -115,10 +113,8 @@ export interface Tab {
 }
 
 interface TabItem extends Tab {
-    id: string;
     panelId: string;
     buttonRef: RefObject<HTMLButtonElement>;
-    onBeforeUnload?(): Promise<boolean>;
 }
 
 interface AddButtonProps {
@@ -163,6 +159,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         tooltipContent: null,
         ...providedAddButtonProps,
     };
+
     const addButtonComponent = providedAddButtonProps && (
         <AddButton
             type="button"
