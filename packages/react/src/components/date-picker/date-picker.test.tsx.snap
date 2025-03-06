@@ -3152,6 +3152,7 @@ label + .c3 {
                     </div>
                   </div>
                   <button
+                    aria-disabled="true"
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
@@ -4460,6 +4461,7 @@ label + .c3 {
                     </div>
                   </div>
                   <button
+                    aria-disabled="true"
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
@@ -5739,6 +5741,7 @@ label + .c3 {
                       </div>
                     </div>
                     <button
+                      aria-disabled="true"
                       aria-label="Go to next month"
                       class="c7 c8 c9"
                       data-testid="month-next"

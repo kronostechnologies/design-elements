@@ -74,6 +74,7 @@ export const IconButton = forwardRef(({
             type={type}
             buttonType={buttonType}
             disabled={disabled}
+            aria-disabled={disabled ? 'true' : undefined}
             focusable={focusable}
             onClick={onClick}
             onFocus={onFocus}

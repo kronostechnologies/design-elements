@@ -31,6 +31,7 @@ export interface MenuButtonProps {
     buttonType: ButtonType;
     className?: string;
     defaultOpen?: boolean;
+    disabled?: boolean;
     iconName?: IconName;
     iconLabel?: string;
     inverted?: boolean;
@@ -45,6 +46,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     children,
     className,
     defaultOpen,
+    disabled,
     iconName,
     iconLabel,
     inverted,
@@ -134,6 +136,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                     aria-expanded={visible}
                     buttonType={buttonType}
                     inverted={inverted}
+                    disabled={disabled}
                     iconName={iconName}
                     onClick={handleClickInside}
                 />
@@ -147,6 +150,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                     aria-expanded={visible}
                     buttonType={buttonType}
                     inverted={inverted}
+                    disabled={disabled}
                     onClick={handleClickInside}
                 >
                     {children}

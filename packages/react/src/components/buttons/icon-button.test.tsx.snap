@@ -196,6 +196,7 @@ exports[`Icon Button Has disabled styles 1`] = `
 }
 
 <button
+  aria-disabled="true"
   aria-label="home"
   class="c0 c1"
   disabled=""

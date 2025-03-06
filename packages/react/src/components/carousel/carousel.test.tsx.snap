@@ -233,6 +233,7 @@ exports[`Carousel should match snapshot 1`] = `
 >
   <button
     aria-controls="uuid1"
+    aria-disabled="true"
     aria-label="previous"
     class="c1 c2 c3"
     data-testid="carousel-previous"

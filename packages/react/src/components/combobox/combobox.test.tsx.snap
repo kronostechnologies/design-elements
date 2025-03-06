@@ -284,6 +284,7 @@ input + .c2 {
       value=""
     />
     <button
+      aria-disabled="true"
       aria-label="Show Select an option options"
       class="c6 c7 c8"
       data-testid="arrow"
