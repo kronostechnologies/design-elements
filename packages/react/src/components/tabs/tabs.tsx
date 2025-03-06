@@ -51,17 +51,13 @@ const TabsWrapper = styled.div<TabsWrapperProps>`
                 props.$hasLeftScroll
                     ? `transparent 0px,
                        transparent ${getButtonSize()},
-                       #000 ${getButtonSize()},`
-                    : 
-                    '#000 0px,'
+                       #000 ${getButtonSize()},` : '#000 0px,'
             )}
             #000 calc(100% - ${getButtonSize()}),
             ${(props) => (
                 props.$hasRightScroll
                     ? `transparent calc(100% - ${getButtonSize()}),
-                       transparent 100%`
-                    : 
-                    '#000 100%'
+                       transparent 100%` : '#000 100%'
             )}
         )
     ;
