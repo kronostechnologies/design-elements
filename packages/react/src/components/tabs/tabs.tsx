@@ -30,7 +30,7 @@ interface TabsWrapperProps {
 
 const TabTopSection = styled.div`
     display: grid;
-    grid-template-areas: "tabs addButton";
+    grid-template-areas: 'tabs addButton';
     grid-template-columns: auto 1fr;
     position: relative;
     width: 100%;
@@ -44,15 +44,15 @@ const TabTopSection = styled.div`
         position: absolute;
         width: 100%;
     }
-`
+`;
 
 const TabButtonsContainer = styled.div`
     /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
     display: flex;
     grid-area: tabs;
     height: var(--size-2halfx);
-    position: relative;
     overflow: hidden;
+    position: relative;
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
