@@ -44,24 +44,27 @@ const TabButtonsContainer = styled.div`
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
-    mask-image: 
+    mask-image:
         linear-gradient(
-        90deg,
-        ${(props) => (
-            props.$hasLeftScroll
-                ? `transparent 0px,
-                   transparent ${getButtonSize()},
-                   #000 ${getButtonSize()},`
-                : '#000 0px,'
-        )}
-        #000 calc(100% - ${getButtonSize()}),
-        ${(props) => (
-            props.$hasRightScroll
-                ? `transparent calc(100% - ${getButtonSize()}),
-                   transparent 100%`
-                : '#000 100%'
-        )}
-    );
+            90deg,
+            ${(props) => (
+                props.$hasLeftScroll
+                    ? `transparent 0px,
+                       transparent ${getButtonSize()},
+                       #000 ${getButtonSize()},`
+                    : 
+                    '#000 0px,'
+            )}
+            #000 calc(100% - ${getButtonSize()}),
+            ${(props) => (
+                props.$hasRightScroll
+                    ? `transparent calc(100% - ${getButtonSize()}),
+                       transparent 100%`
+                    : 
+                    '#000 100%'
+            )}
+        )
+    ;
 `;
 
 const TabList = styled.div`
