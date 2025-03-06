@@ -19,6 +19,7 @@ import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 import { TabSize } from './types';
 import { tabsClasses } from './tabs-classes';
+import { focus } from '../../utils/css-state';
 
 const getButtonSize = (): string => 'var(--size-2x)';
 
@@ -27,10 +28,12 @@ interface TabsWrapperProps {
     $hasRightScroll: boolean;
 }
 
-const TabButtonsContainer = styled.div`
-    /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
-    height: var(--size-2halfx);
+const TabTopSection = styled.div`
+    display: grid;
+    grid-template-areas: "tabs addButton";
+    grid-template-columns: auto 1fr;
     position: relative;
+    width: 100%;
 
     &::before {
         border-bottom: 1px solid ${({ theme }) => theme.component['tab-border-bottom-color']};
@@ -41,6 +44,15 @@ const TabButtonsContainer = styled.div`
         position: absolute;
         width: 100%;
     }
+`
+
+const TabButtonsContainer = styled.div`
+    /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
+    display: flex;
+    grid-area: tabs;
+    height: var(--size-2halfx);
+    position: relative;
+    overflow: hidden;
 `;
 
 const TabsWrapper = styled.div<TabsWrapperProps>`
@@ -48,19 +60,20 @@ const TabsWrapper = styled.div<TabsWrapperProps>`
         linear-gradient(
             90deg,
             ${(props) => (
-                props.$hasLeftScroll
-                    ? `transparent 0px,
+        props.$hasLeftScroll
+            ? `transparent 0px,
                        transparent ${getButtonSize()},
                        #000 ${getButtonSize()},` : '#000 0px,'
-            )}
+    )}
             #000 calc(100% - ${getButtonSize()}),
             ${(props) => (
-                props.$hasRightScroll
-                    ? `transparent calc(100% - ${getButtonSize()}),
+        props.$hasRightScroll
+            ? `transparent calc(100% - ${getButtonSize()}),
                        transparent 100%` : '#000 100%'
-            )}
+    )}
         )
     ;
+    overflow: hidden;
 `;
 
 const TabList = styled.div`
@@ -69,6 +82,7 @@ const TabList = styled.div`
     height: var(--size-2halfx);
     overflow-x: auto;
     overflow-y: hidden;
+    position: relative;
     scrollbar-width: none;
     white-space: nowrap;
 `;
@@ -92,6 +106,8 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
         background: ${({ theme }) => theme.component['tab-scroll-button-hover-background-color']};
     }
 
+    ${({ theme }) => focus({ theme }, { insideOnly: true })};
+
     ${({ $position }) => $position === 'left' && css`
         box-shadow: 3px 0px 3px -2px rgba(0, 0, 0, 0.1);
         left: 0;
@@ -109,6 +125,7 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
 
 const AddButton = styled(Button)`
     align-self: center;
+    grid-area: addButton;
     min-width: auto;
     white-space: nowrap;
 `;
@@ -123,8 +140,10 @@ export interface Tab {
 }
 
 interface TabItem extends Tab {
+    id: string;
     panelId: string;
     buttonRef: RefObject<HTMLButtonElement>;
+    onBeforeUnload?(): Promise<boolean>;
 }
 
 interface AddButtonProps {
@@ -189,7 +208,6 @@ export const Tabs: VoidFunctionComponent<Props> = ({
             scrollLeftButtonRef.current?.classList.toggle('hidden', atStartX);
             scrollRightButtonRef.current?.classList.toggle('hidden', atEndX);
 
-            // Mettre à jour les états
             setIsLeftScrollVisible(!atStartX);
             setIsRightScrollVisible(!atEndX);
         },
@@ -284,68 +302,72 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
     return (
         <div className={className}>
-            <TabButtonsContainer
-                className={tabsClasses.tablistContainer}
-            >
-                <ScrollButton
-                    className="hidden"
-                    buttonType="tertiary"
-                    type="button"
-                    aria-hidden="true"
-                    onClick={() => scrollToLeft()}
-                    $position="left"
-                    ref={scrollLeftButtonRef}
+            <TabTopSection>
+                <TabButtonsContainer
+                    className={tabsClasses.tablistContainer}
                 >
-                    <Icon name='chevronLeft' size='16' aria-hidden="true" focusable={false} />
-                </ScrollButton>
-                <TabsWrapper
-                    $hasLeftScroll={isLeftScrollVisible}
-                    $hasRightScroll={isRightScrollVisible}
-                >
-                    <TabList
-                        role="tablist"
-                        aria-label="tabs label"
-                        ref={tabsListRef}
+                    <ScrollButton
+                        className="hidden"
+                        buttonType="tertiary"
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => scrollToLeft()}
+                        $position="left"
+                        ref={scrollLeftButtonRef}
+                        tabIndex={-1}
                     >
-                        {tabItems.map((tabItem, i) => (
-                            <TabButton
-                                size={size}
-                                id={tabItem.id}
-                                panelId={tabItem.panelId}
-                                key={tabItem.id}
-                                data-testid={`tab-${i + 1}`}
-                                leftIcon={tabItem.leftIcon}
-                                rightIcon={tabItem.rightIcon}
-                                isSelected={isTabSelected(tabItem.id)}
-                                ref={tabItem.buttonRef}
-                                onClick={() => handleTabSelected(tabItem)}
-                                onRemove={onRemove ? () => handleRemoveTab(tabItem.id) : undefined}
-                                onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
-                            >
-                                {tabItem.title}
-                            </TabButton>
-                        ))}
-                        {addButtonComponent && (
-                            addButtonProps.tooltipContent ? (
-                                <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
-                                    {addButtonComponent}
-                                </Tooltip>
-                            ) : addButtonComponent
-                        )}
-                    </TabList>
-                </TabsWrapper>
-                <ScrollButton
-                    className="hidden"
-                    buttonType="tertiary"
-                    type="button"
-                    aria-hidden="true"
-                    onClick={() => scrollToRight()}
-                    $position="right"
-                    ref={scrollRightButtonRef}
-                >
-                    <Icon name='chevronRight' size='16' aria-hidden="true" focusable={false} />
-                </ScrollButton>
-            </TabButtonsContainer>
+                        <Icon name='chevronLeft' size='16' aria-hidden="true" focusable={false} />
+                    </ScrollButton>
+                    <TabsWrapper
+                        $hasLeftScroll={isLeftScrollVisible}
+                        $hasRightScroll={isRightScrollVisible}
+                    >
+                        <TabList
+                            role="tablist"
+                            aria-label="tabs label"
+                            ref={tabsListRef}
+                        >
+                            {tabItems.map((tabItem, i) => (
+                                <TabButton
+                                    size={size}
+                                    id={tabItem.id}
+                                    panelId={tabItem.panelId}
+                                    key={tabItem.id}
+                                    data-testid={`tab-${i + 1}`}
+                                    leftIcon={tabItem.leftIcon}
+                                    rightIcon={tabItem.rightIcon}
+                                    isSelected={isTabSelected(tabItem.id)}
+                                    ref={tabItem.buttonRef}
+                                    onClick={() => handleTabSelected(tabItem)}
+                                    onRemove={onRemove ? () => handleRemoveTab(tabItem.id) : undefined}
+                                    onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
+                                >
+                                    {tabItem.title}
+                                </TabButton>
+                            ))}
+                        </TabList>
+                    </TabsWrapper>
+                    <ScrollButton
+                        className="hidden"
+                        buttonType="tertiary"
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => scrollToRight()}
+                        $position="right"
+                        ref={scrollRightButtonRef}
+                        tabIndex={-1}
+                    >
+                        <Icon name='chevronRight' size='16' aria-hidden="true" focusable={false} />
+                    </ScrollButton>
+                </TabButtonsContainer>
+                {addButtonComponent && (
+                    addButtonProps.tooltipContent ? (
+                        <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
+                            {addButtonComponent}
+                        </Tooltip>
+                    ) : addButtonComponent
+                )}
+            </TabTopSection>
             {tabItems.map((tabItem) => {
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {
                     return (
