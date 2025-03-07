@@ -29,9 +29,7 @@ interface TabsWrapperProps {
 }
 
 const TabTopSection = styled.div`
-    display: grid;
-    grid-template-areas: 'tabs addButton';
-    grid-template-columns: auto 1fr;
+    display: flex;
     position: relative;
     width: 100%;
 
@@ -124,10 +122,8 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
 `;
 
 const AddButton = styled(Button)`
-    align-self: center;
-    grid-area: addButton;
-    min-width: auto;
-    white-space: nowrap;
+    align-self: center;  
+    flex-shrink: 0;  
 `;
 
 export interface Tab {
@@ -361,7 +357,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                     </ScrollButton>
                 </TabButtonsContainer>
                 {addButtonComponent && (
-                    addButtonProps.tooltipContent ? (
+                    addButtonProps.tooltipContent && addButtonProps.disabled ? (
                         <Tooltip label={addButtonProps.tooltipContent} desktopPlacement="top">
                             {addButtonComponent}
                         </Tooltip>
