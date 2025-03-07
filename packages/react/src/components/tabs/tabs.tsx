@@ -123,8 +123,8 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
 `;
 
 const AddButton = styled(Button)`
-    align-self: center;  
-    flex-shrink: 0;  
+    align-self: center;
+    flex-shrink: 0;
 `;
 
 export interface Tab {
