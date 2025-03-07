@@ -241,7 +241,7 @@ exports[`Tabs has small styles 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "tabs addButton";
+  grid-template-areas: 'tabs addButton';
   grid-template-columns: auto 1fr;
   position: relative;
   width: 100%;
@@ -264,8 +264,8 @@ exports[`Tabs has small styles 1`] = `
   display: flex;
   grid-area: tabs;
   height: var(--size-2halfx);
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .c5 {
@@ -746,7 +746,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "tabs addButton";
+  grid-template-areas: 'tabs addButton';
   grid-template-columns: auto 1fr;
   position: relative;
   width: 100%;
@@ -769,8 +769,8 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   display: flex;
   grid-area: tabs;
   height: var(--size-2halfx);
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .c5 {
@@ -1251,7 +1251,7 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "tabs addButton";
+  grid-template-areas: 'tabs addButton';
   grid-template-columns: auto 1fr;
   position: relative;
   width: 100%;
@@ -1274,8 +1274,8 @@ exports[`Tabs matches snapshot 1`] = `
   display: flex;
   grid-area: tabs;
   height: var(--size-2halfx);
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .c5 {
