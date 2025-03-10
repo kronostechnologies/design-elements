@@ -86,6 +86,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -349,6 +350,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -613,6 +615,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {

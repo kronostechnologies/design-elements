@@ -66,6 +66,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -541,6 +542,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -1053,6 +1055,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1497,6 +1500,7 @@ exports[`Combobox matches the snapshot 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {

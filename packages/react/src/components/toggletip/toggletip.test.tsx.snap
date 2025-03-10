@@ -88,6 +88,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -449,6 +450,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <Toggletip>
@@ -623,6 +625,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -984,6 +987,7 @@ exports[`Toggletip Has mobile styles 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <Toggletip>

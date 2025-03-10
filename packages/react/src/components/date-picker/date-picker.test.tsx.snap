@@ -2550,6 +2550,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -3820,6 +3821,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   border-color: #84C6EA;
   color: #84C6EA;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -3853,6 +3855,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -5143,6 +5146,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {

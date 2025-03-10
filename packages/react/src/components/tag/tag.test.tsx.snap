@@ -88,6 +88,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -364,6 +365,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -640,6 +642,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -916,6 +919,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -1192,6 +1196,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -1468,6 +1473,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -1745,6 +1751,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -2021,6 +2028,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -2298,6 +2306,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -2574,6 +2583,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -2851,6 +2861,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {
@@ -3127,6 +3138,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1 {

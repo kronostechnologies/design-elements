@@ -88,6 +88,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {

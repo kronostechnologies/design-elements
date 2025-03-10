@@ -86,6 +86,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -306,6 +307,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -337,6 +339,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -564,6 +567,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -595,6 +599,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -822,6 +827,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -853,6 +859,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1084,6 +1091,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1308,6 +1316,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -1339,6 +1348,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1570,6 +1580,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -1601,6 +1612,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1832,6 +1844,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -1863,6 +1876,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {

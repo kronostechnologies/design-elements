@@ -88,6 +88,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -369,6 +370,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -650,6 +652,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -931,6 +934,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1212,6 +1216,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {

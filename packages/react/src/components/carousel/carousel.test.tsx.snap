@@ -88,6 +88,7 @@ exports[`Carousel should match snapshot 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {

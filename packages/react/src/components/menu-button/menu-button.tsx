@@ -134,9 +134,10 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                     label={iconLabel ?? t('buttonAriaLabel')}
                     aria-haspopup="menu"
                     aria-expanded={visible}
+                    aria-disabled={disabled ? 'true' : undefined}
+                    disabled={disabled}
                     buttonType={buttonType}
                     inverted={inverted}
-                    disabled={disabled}
                     iconName={iconName}
                     onClick={handleClickInside}
                 />
@@ -148,9 +149,10 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                     type="button"
                     aria-haspopup="menu"
                     aria-expanded={visible}
+                    aria-disabled={disabled ? 'true' : undefined}
+                    disabled={disabled}
                     buttonType={buttonType}
                     inverted={inverted}
-                    disabled={disabled}
                     onClick={handleClickInside}
                 >
                     {children}
