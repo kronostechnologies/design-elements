@@ -11,6 +11,7 @@ import {
     cloneElement,
     isValidElement,
     ReactElement,
+    ReactNode,
 } from 'react';
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
@@ -340,7 +341,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         setIsClicked(false);
     }, [isMobile, closeTooltip]);
 
-    const renderChildrenWithAria = () => {
+    const renderChildrenWithAria = (): ReactNode => {
         if (!children) {
             return (
                 <Icon
@@ -356,7 +357,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
         if (isValidElement(children)) {
             return cloneElement(children as ReactElement, {
-                'aria-describedby': isVisible ? tooltipId : undefined,
+                'aria-describedby':  tooltipId,
             });
         }
 
