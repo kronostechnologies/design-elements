@@ -880,6 +880,7 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
     tabindex="-1"
   >
     <a
+      aria-describedby="uuid2"
       aria-disabled="false"
       class="c1"
       data-testid="link"

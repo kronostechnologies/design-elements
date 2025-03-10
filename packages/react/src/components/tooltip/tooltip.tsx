@@ -357,7 +357,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
         if (isValidElement(children)) {
             return cloneElement(children as ReactElement, {
-                'aria-describedby':  tooltipId,
+                'aria-describedby': tooltipId,
             });
         }
 
