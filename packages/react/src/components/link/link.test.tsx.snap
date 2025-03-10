@@ -874,7 +874,6 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 }
 
 <span
-    aria-describedby="uuid2"
     class="c0"
     data-testid="tooltip"
     id="tooltip-trigger-uuid2"
