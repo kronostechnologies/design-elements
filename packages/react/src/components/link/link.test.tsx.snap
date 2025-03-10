@@ -882,6 +882,7 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
   >
     <a
       aria-disabled="false"
+      aria-label="Navigation Link"
       class="c1"
       data-testid="link"
       href="#"
