@@ -1598,10 +1598,10 @@ label + .c3 {
       </div>
     </div>
     <button
+      aria-disabled="true"
       aria-label="Choose date"
       class="c6 c7"
       data-testid="calendar-button"
-      disabled=""
       tabindex="0"
       type="button"
     >
@@ -3157,7 +3157,6 @@ label + .c3 {
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
-                    disabled=""
                     type="button"
                   >
                     <svg
@@ -4468,7 +4467,6 @@ label + .c3 {
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
-                    disabled=""
                     type="button"
                   >
                     <svg
@@ -5749,7 +5747,6 @@ label + .c3 {
                       aria-label="Go to next month"
                       class="c7 c8 c9"
                       data-testid="month-next"
-                      disabled=""
                       type="button"
                     >
                       <svg

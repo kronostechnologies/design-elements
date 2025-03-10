@@ -238,7 +238,6 @@ exports[`Carousel should match snapshot 1`] = `
     aria-label="previous"
     class="c1 c2 c3"
     data-testid="carousel-previous"
-    disabled=""
     type="button"
   >
     <svg

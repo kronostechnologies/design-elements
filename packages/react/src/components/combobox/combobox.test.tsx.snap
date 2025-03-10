@@ -289,7 +289,6 @@ input + .c2 {
       aria-label="Show Select an option options"
       class="c6 c7 c8"
       data-testid="arrow"
-      disabled=""
       tabindex="-1"
       type="button"
     >
