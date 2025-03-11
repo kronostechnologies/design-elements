@@ -18,6 +18,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons';
 import { Listbox, ListboxOption } from '../listbox/listbox';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
@@ -77,7 +78,7 @@ const Textbox = styled.input<TextboxProps>`
     width: 100%;
 
     ${focus};
-    
+
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
@@ -172,6 +173,7 @@ interface ComboboxProps {
     placeholder?: string;
     required?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /**
      * Sets input validity
      */
@@ -215,6 +217,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     name,
     required,
     tooltip,
+    toggletip,
     valid = true,
     validationErrorMessage,
     value,
@@ -600,6 +603,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             label={label}
             required={required}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}

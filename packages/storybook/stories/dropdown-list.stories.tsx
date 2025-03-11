@@ -97,3 +97,14 @@ export const WithCallback: Story = {
     },
 };
 WithCallback.parameters = rawCodeParameters;
+
+export const WithToggletip: Story = {
+    ...DropdownListMeta,
+    args: {
+        tooltip: undefined,
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};
