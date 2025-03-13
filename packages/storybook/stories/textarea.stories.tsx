@@ -69,3 +69,13 @@ export const EventCallbacks: Story = {
         );
     },
 };
+
+export const WithToggletip: Story = {
+    ...TextAreaMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

@@ -1,6 +1,7 @@
 import { ChangeEvent, Fragment, TransitionEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { Toggletip, ToggletipProps } from '../toggletip/toggletip';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { RadioButton } from '../radio-button/radio-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -13,6 +14,7 @@ const StyledFieldset = styled.fieldset`
 `;
 
 const StyledLegend = styled.legend<{ isMobile: boolean }>`
+    align-items: center;
     color: ${({ theme }) => theme.component['radio-button-group-legend-text-color']};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
@@ -29,6 +31,10 @@ const StyledRadioButton = styled(RadioButton)`
 
 const StyledTooltip = styled(Tooltip)`
     margin-left: calc(var(--spacing-1x) * 1.5);
+`;
+
+const StyledToggletip = styled(Toggletip)`
+    margin-left: var(--spacing-half);
 `;
 
 interface ContentWrapperProps {
@@ -87,6 +93,7 @@ interface RadioButtonGroupProps {
     id?: string;
     label?: string;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /** Sets the name property of all buttons */
     groupName: string;
     checkedValue?: string;
@@ -105,6 +112,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     groupName,
     label,
     tooltip,
+    toggletip,
     onChange,
     transitionDuration = 500,
     checkedValue,
@@ -162,6 +170,8 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     {label}
                     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                     {tooltip && <StyledTooltip {...tooltip} />}
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    {toggletip && <StyledToggletip size="small" {...toggletip} />}
                 </StyledLegend>
             )}
             {buttons.map((button) => {

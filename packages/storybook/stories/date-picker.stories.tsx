@@ -51,3 +51,13 @@ export const WithOnFocusCallback: Story = {
 
 export const InsideShadowDom: Story = { ...Default };
 InsideShadowDom.decorators = [ShadowDomDecorator];
+
+export const WithToggletip: Story = {
+    ...Default,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

@@ -41,3 +41,13 @@ export const WithOnChangeCallback: Story = {
         onChange: (value: number) => console.info(value),
     },
 };
+
+export const WithToggletip: Story = {
+    ...StepperInputMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};
