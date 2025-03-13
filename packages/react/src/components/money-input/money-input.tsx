@@ -4,6 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput, textInputClasses } from '../text-input';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { toLocale } from './toLocale';
 
 type TextAlignment = 'left' | 'right';
@@ -54,6 +55,7 @@ export interface MoneyInputProps {
     hint?: string;
     noMargin?: boolean;
     textAlignment?: TextAlignment;
+    toggletip?: ToggletipProps;
 
     onChange?(value: number | null, formattedValue: string): void;
 }
@@ -83,6 +85,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     hint,
     noMargin,
     textAlignment = 'left',
+    toggletip,
     ...otherProps
 }) => {
     const { i18n, t } = useTranslation('money-input');
@@ -164,6 +167,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
             noMargin={noMargin}
+            toggletip={toggletip}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );

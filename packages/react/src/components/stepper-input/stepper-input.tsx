@@ -17,6 +17,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { StepperButtons } from './stepper-buttons';
 
@@ -63,6 +64,7 @@ interface StepperInputProps extends PartialStepperInputProps {
     min?: number;
     noMargin?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     valid?: boolean;
     validationErrorMessage?: string;
     value?: Value;
@@ -87,6 +89,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     noMargin,
     step,
     tooltip,
+    toggletip,
     required,
     valid,
     validationErrorMessage,
@@ -182,6 +185,7 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
             hint={hint}
             label={label}
             tooltip={tooltip}
+            toggletip={toggletip}
             noMargin={noMargin}
             required={required}
             valid={validity}

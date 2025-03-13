@@ -78,7 +78,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -100,7 +100,7 @@ input + .c2 {
 }
 
 .c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c9 {
@@ -579,7 +579,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -601,7 +601,7 @@ input + .c2 {
 }
 
 .c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c11 {
@@ -1068,7 +1068,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c7 {
@@ -1511,7 +1511,7 @@ exports[`Combobox matches the snapshot 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1533,7 +1533,7 @@ input + .c2 {
 }
 
 .c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c4 {

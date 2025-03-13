@@ -17,6 +17,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { Icon, IconName } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useId } from '../../hooks/use-id';
@@ -150,6 +151,7 @@ export interface DropdownListProps<M extends boolean | undefined> {
     options: DropdownListOption[];
     required?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /**
      * Sets input validity
      */
@@ -194,6 +196,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     name,
     required,
     tooltip,
+    toggletip,
     valid = true,
     validationErrorMessage,
     value,
@@ -479,6 +482,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             label={label}
             required={required}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}

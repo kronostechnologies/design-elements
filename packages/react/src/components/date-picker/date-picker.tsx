@@ -29,6 +29,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { inputsStyle } from '../text-input/styles/inputs';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { CalendarHeader } from './calendar-header';
 import {
@@ -257,6 +258,7 @@ interface DatepickerProps {
     /** Sets input label */
     label?: string;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /**
      * Sets localization
      * @default en-CA
@@ -329,6 +331,7 @@ export const Datepicker = forwardRef(({
     openToDate,
     startOpen,
     tooltip,
+    toggletip,
     valid = true,
     validationErrorMessage,
     ...props
@@ -518,6 +521,7 @@ export const Datepicker = forwardRef(({
                 label={label}
                 required={required}
                 tooltip={tooltip}
+                toggletip={toggletip}
                 hint={hint}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}

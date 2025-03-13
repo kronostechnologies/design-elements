@@ -94,7 +94,7 @@ exports[`SearchInput should match the snapshot 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;

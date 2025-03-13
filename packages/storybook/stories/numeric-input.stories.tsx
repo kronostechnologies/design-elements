@@ -65,3 +65,13 @@ export const ControlledValue: Story = {
     },
 };
 ControlledValue.parameters = rawCodeParameters;
+
+export const WithToggletip: Story = {
+    ...NumericInputMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

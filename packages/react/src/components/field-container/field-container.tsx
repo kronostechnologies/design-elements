@@ -4,6 +4,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 
 interface StyledDivProps {
@@ -24,7 +25,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
-        margin-bottom: var(--spacing-half);
+        margin-bottom: var(--spacing-quarter);
     }
 `;
 
@@ -46,6 +47,7 @@ export interface FieldContainerProps {
     noMargin?: boolean;
     required?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     valid: boolean;
     validationErrorMessage: string;
 }
@@ -60,6 +62,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     noMargin,
     required,
     tooltip,
+    toggletip,
     valid,
     validationErrorMessage,
     ...props
@@ -75,7 +78,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label id={`${fieldId}_label`} forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
+            {label && <Label id={`${fieldId}_label`} forId={fieldId} tooltip={tooltip} toggletip={toggletip} required={required}>{label}</Label>}
             {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
