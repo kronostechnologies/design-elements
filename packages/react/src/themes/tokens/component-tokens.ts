@@ -5,6 +5,7 @@ import { BentoMenuButtonToken, defaultBentoMenuButtonTokens } from './component/
 import { BreadcrumbToken, defaultBreadcrumbTokens } from './component/breadcrumb-tokens';
 import { ButtonToken, defaultButtonTokens } from './component/button-tokens';
 import { CardToken, defaultCardTokens } from './component/card-tokens';
+import { defaultCaptionTokens, CaptionToken } from './component/caption-tokens';
 import { CarouselToken, defaultCarouselTokens } from './component/carousel-tokens';
 import { CheckboxToken, defaultCheckboxTokens } from './component/checkbox-tokens';
 import { ChooserToken, defaultChooserTokens } from './component/chooser-tokens';
@@ -60,6 +61,7 @@ export type ComponentToken =
     | BentoMenuButtonToken
     | BreadcrumbToken
     | ButtonToken
+    | CaptionToken
     | CardToken
     | CarouselToken
     | CheckboxToken
@@ -117,6 +119,7 @@ export const defaultComponentTokens = {
     ...defaultBreadcrumbTokens,
     ...defaultButtonTokens,
     ...defaultCardTokens,
+    ...defaultCaptionTokens,
     ...defaultCarouselTokens,
     ...defaultCheckboxTokens,
     ...defaultChooserTokens,
