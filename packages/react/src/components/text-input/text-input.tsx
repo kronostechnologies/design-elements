@@ -23,6 +23,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -125,6 +126,7 @@ export interface TextInputProps extends PartialInputProps {
     label?: string;
     leftAdornment?: ReactNode;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     pattern?: string;
     placeholder?: string;
     readOnly?: boolean;
@@ -164,6 +166,7 @@ export const TextInput = forwardRef(({
     label,
     leftAdornment,
     tooltip,
+    toggletip,
     name,
     noMargin,
     pattern,
@@ -244,6 +247,7 @@ export const TextInput = forwardRef(({
             label={label}
             required={required}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}

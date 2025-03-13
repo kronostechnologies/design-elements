@@ -14,6 +14,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -40,6 +41,7 @@ export interface TextAreaProps {
     className?: string;
     label: string;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
@@ -88,6 +90,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     placeholder,
     required,
     tooltip,
+    toggletip,
     validationErrorMessage,
     value,
     maxLength,
@@ -169,6 +172,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             label={label}
             required={required}
             tooltip={tooltip}
+            toggletip={toggletip}
             hint={hint}
             valid={validity}
             validationErrorMessage={getValidationErrorMessage()}

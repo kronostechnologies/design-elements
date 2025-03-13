@@ -55,3 +55,14 @@ export const Disabled: Story = {
         disabled: true,
     },
 };
+
+export const WithToggletip: Story = {
+    ...SliderMeta,
+    args: {
+        ...SliderMeta.args,
+        toggletip: {
+            label: 'Toggletip',
+            children: 'Toggletip content',
+        },
+    },
+};
