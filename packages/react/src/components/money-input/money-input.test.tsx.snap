@@ -12,7 +12,7 @@ exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -159,7 +159,7 @@ exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -306,7 +306,7 @@ exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {

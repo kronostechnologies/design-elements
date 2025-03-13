@@ -7,8 +7,9 @@ import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { useTranslation } from '../../i18n/use-translation';
 
 const StyledDiv = styled.div`
-    align-items: end;
+    align-items: center;
     display: flex;
+    gap: var(--spacing-half);
 `;
 
 const StyledLabel = styled.label<{isMobile: boolean}>`
@@ -17,21 +18,13 @@ const StyledLabel = styled.label<{isMobile: boolean}>`
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
-    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    line-height: 1.5rem;
     margin: 0;
     width: fit-content;
 
     input + & {
         margin-left: var(--spacing-half);
     }
-`;
-
-const StyledTooltip = styled(Tooltip)`
-    margin-left: calc(var(--spacing-1x) * 1.5);
-`;
-
-const StyledToggletip = styled(Toggletip)`
-    margin-left: calc(var(--spacing-half) * 1.5);
 `;
 
 interface LabelProps {
@@ -76,8 +69,8 @@ const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
                 {children}
                 {required && <RequiredLabel type={requiredLabelType} />}
             </StyledLabel>
-            {tooltip && <StyledTooltip {...tooltip} />}
-            {toggletip && <StyledToggletip size="small" {...toggletip} />}
+            {tooltip && <Tooltip {...tooltip} />}
+            {toggletip && <Toggletip size="small" {...toggletip} />}
         </WrapperComponent>
     );
 };

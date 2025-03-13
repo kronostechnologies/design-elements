@@ -25,7 +25,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
-        margin-bottom: var(--spacing-half);
+        margin-bottom: var(--spacing-quarter);
     }
 `;
 
