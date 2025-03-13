@@ -1,4 +1,4 @@
-import { forwardRef, PropsWithChildren, Ref, MouseEvent } from 'react';
+import { forwardRef, PropsWithChildren, Ref, MouseEvent, useCallback } from 'react';
 import { useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { StyledAbstractButton } from './styled';
 import { AbstractButtonProps } from './types';
@@ -14,14 +14,14 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 }: AbstractButtonProps, ref: Ref<HTMLButtonElement>) => {
     const { isMobile } = useDeviceContext();
 
-    const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+    const handleClick = useCallback((event: MouseEvent<HTMLButtonElement>): void => {
         if (disabled) {
             event.preventDefault();
             event.stopPropagation();
         } else if (onClick) {
             onClick(event);
         }
-    };
+    }, [disabled, onClick]);
 
     return (
         <StyledAbstractButton
