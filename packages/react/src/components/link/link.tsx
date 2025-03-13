@@ -43,6 +43,7 @@ export const Link: FC<LinkProps> = ({
             to={external ? undefined : href}
             data-testid="link"
             aria-disabled={disabled ? 'true' : 'false'}
+            aria-label={isIconOnly ? icon.label : undefined}
             id={id}
             href={disabled ? undefined : href}
             onClick={handleClick}
