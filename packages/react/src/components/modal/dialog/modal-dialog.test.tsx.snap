@@ -166,6 +166,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c13 {
@@ -197,6 +198,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -231,6 +233,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -537,6 +540,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -853,6 +857,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c13 {
@@ -884,6 +889,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -918,6 +924,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1277,6 +1284,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c13 {
@@ -1308,6 +1316,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -1342,6 +1351,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1645,6 +1655,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c12 {
@@ -1676,6 +1687,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -1709,6 +1721,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {

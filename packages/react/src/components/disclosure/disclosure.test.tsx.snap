@@ -86,6 +86,7 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -275,6 +276,7 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -466,6 +468,7 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -674,6 +677,7 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {

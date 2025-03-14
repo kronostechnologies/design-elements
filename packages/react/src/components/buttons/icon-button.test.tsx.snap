@@ -88,6 +88,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
   border-color: #F99D99;
   color: #F99D99;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -193,12 +194,13 @@ exports[`Icon Button Has disabled styles 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
+  aria-disabled="true"
   aria-label="home"
   class="c0 c1"
-  disabled=""
   type="submit"
 >
   <svg
@@ -299,6 +301,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -404,6 +407,7 @@ exports[`Icon Button Has primary styles 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -509,6 +513,7 @@ exports[`Icon Button Has secondary styles 1`] = `
   border-color: #84C6EA;
   color: #84C6EA;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -615,6 +620,7 @@ exports[`Icon Button Has small styles 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -720,6 +726,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
