@@ -72,6 +72,13 @@ export const Tertiary: Story = {
     },
 };
 
+export const PrimaryDisabled: Story = {
+    ...MenuButtonMeta,
+    args: {
+        disabled: true,
+    },
+};
+
 export const IconPrimary: Story = {
     ...MenuButtonMeta,
     args: {

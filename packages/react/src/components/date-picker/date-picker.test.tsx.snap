@@ -1550,10 +1550,10 @@ label + .c3 {
       </div>
     </div>
     <button
+      aria-disabled="true"
       aria-label="Choose date"
       class="c6 c7"
       data-testid="calendar-button"
-      disabled=""
       tabindex="0"
       type="button"
     >
@@ -2478,6 +2478,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -3068,10 +3069,10 @@ label + .c3 {
                     </div>
                   </div>
                   <button
+                    aria-disabled="true"
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
-                    disabled=""
                     type="button"
                   >
                     <svg
@@ -3735,6 +3736,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   border-color: #84C6EA;
   color: #84C6EA;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c8 {
@@ -3768,6 +3770,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -4364,10 +4367,10 @@ label + .c3 {
                     </div>
                   </div>
                   <button
+                    aria-disabled="true"
                     aria-label="Go to next month"
                     class="c7 c8 c9"
                     data-testid="month-next"
-                    disabled=""
                     type="button"
                   >
                     <svg
@@ -5045,6 +5048,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -5631,10 +5635,10 @@ label + .c3 {
                       </div>
                     </div>
                     <button
+                      aria-disabled="true"
                       aria-label="Go to next month"
                       class="c7 c8 c9"
                       data-testid="month-next"
-                      disabled=""
                       type="button"
                     >
                       <svg

@@ -356,6 +356,7 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   border-color: #84C6EA;
   color: #84C6EA;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <a

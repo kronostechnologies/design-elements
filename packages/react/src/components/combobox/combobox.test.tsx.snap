@@ -66,6 +66,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
@@ -284,10 +285,10 @@ input + .c2 {
       value=""
     />
     <button
+      aria-disabled="true"
       aria-label="Show Select an option options"
       class="c6 c7 c8"
       data-testid="arrow"
-      disabled=""
       tabindex="-1"
       type="button"
     >
@@ -540,6 +541,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -1052,6 +1054,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c0 {
@@ -1496,6 +1499,7 @@ exports[`Combobox matches the snapshot 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c3 {
