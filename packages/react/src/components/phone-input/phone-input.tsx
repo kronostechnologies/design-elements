@@ -12,7 +12,7 @@ import {
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { TextInput } from '../text-input/text-input';
+import { TextInput } from '../text-input';
 import {
     findNextInsertPositionFromPatternInputDiff,
     getPreviousPlaceholderIndex,
