@@ -171,10 +171,16 @@ describe('Tabs', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('matches snapshot (global)', () => {
+    test('has small styles', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = renderWithProviders(<Tabs tabs={tabs} global forceRenderTabPanels />);
+        const wrapper = renderWithProviders(
+            <Tabs
+                tabs={tabs}
+                forceRenderTabPanels
+                size="small"
+            />,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
