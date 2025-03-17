@@ -51,6 +51,7 @@ export { Listbox, ListboxOption } from './components/listbox/listbox';
 
 // Miscellaneous
 export { AccordionItem, Accordion, ItemsProps } from './components/accordion/index';
+export * from './components/attached-file';
 export { Badge } from './components/badge/badge';
 export { Card } from './components/card/card';
 export { CardLink } from './components/card-link/card-link';

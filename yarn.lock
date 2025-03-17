@@ -1730,6 +1730,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:7.18.0"
     "@typescript-eslint/parser": "npm:7.18.0"
     "@wojtekmaj/enzyme-adapter-react-17": "npm:^0.8.0"
+    clsx: "npm:^2.1.1"
     cross-env: "npm:^7.0.3"
     css-loader: "npm:^7.0.0"
     date-fns: "npm:^4.0.0"
