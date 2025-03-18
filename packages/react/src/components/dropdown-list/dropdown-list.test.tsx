@@ -432,7 +432,7 @@ describe('Dropdown list', () => {
     });
 
     test('matches the snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 label="Select an option"
@@ -441,11 +441,11 @@ describe('Dropdown list', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (invalid)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 label="Select an option"
@@ -454,11 +454,11 @@ describe('Dropdown list', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (disabled)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 label="Select an option"
@@ -467,11 +467,11 @@ describe('Dropdown list', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 options={provinces}
@@ -479,11 +479,11 @@ describe('Dropdown list', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (multiselect)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 options={provinces}
@@ -491,11 +491,11 @@ describe('Dropdown list', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches the snapshot (icon)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownList
                 defaultOpen
                 label="Select an option"
@@ -505,6 +505,6 @@ describe('Dropdown list', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

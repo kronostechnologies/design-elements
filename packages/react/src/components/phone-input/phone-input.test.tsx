@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { PhoneInput } from './phone-input';
 
 describe('PhoneInput', () => {
@@ -99,7 +99,7 @@ describe('PhoneInput', () => {
     });
 
     test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+        const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
                 <PhoneInput
                     pattern='(___) ___-____'

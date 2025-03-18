@@ -35,7 +35,7 @@ describe('Icon Button', () => {
     });
 
     test('Has disabled styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -44,11 +44,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has primary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -56,11 +56,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has secondary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -68,11 +68,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has tertiary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -80,11 +80,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has destructive-secondary styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -92,11 +92,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has small styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -105,11 +105,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Has mobile styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -118,7 +118,7 @@ describe('Icon Button', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('focusable button has no tabIndex prop', () => {

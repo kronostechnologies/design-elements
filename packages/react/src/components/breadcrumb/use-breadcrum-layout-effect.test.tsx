@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useBreadcrumbLayoutEffect } from './use-breadcrumb-layout-effect';
 
 const firstElement = { label: 'HOME', value: 'index', href: '/index' };

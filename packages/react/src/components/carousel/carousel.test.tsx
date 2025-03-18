@@ -37,9 +37,9 @@ describe('Carousel', () => {
     });
 
     it('should match snapshot', () => {
-        const wrapper = renderWithProviders(<Carousel>{slides}</Carousel>);
+        const { container } = renderWithProviders(<Carousel>{slides}</Carousel>);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('Padding slides', () => {

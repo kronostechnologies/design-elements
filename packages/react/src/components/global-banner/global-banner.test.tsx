@@ -12,25 +12,25 @@ const bannerTypesArray: GlobalBannerType[] = ['alert', 'warning', 'discovery', '
 describe('GlobalBanner', () => {
     bannerTypesArray.forEach((type) => {
         test(`matches snapshot (desktop, ${type})`, () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'desktop',
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         test(`matches snapshot (mobile, ${type})`, () => {
-            const tree = renderWithProviders(
+            const { container } = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'mobile',
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
     });
 

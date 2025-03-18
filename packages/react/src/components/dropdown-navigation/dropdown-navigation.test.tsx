@@ -184,13 +184,13 @@ describe('DropdownNavigation', () => {
     });
 
     test('Matches Snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownNavigation options={options}>
                 Test Button
             </DropdownNavigation>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Renders div container tag when "tag" prop is set to div', () => {
@@ -212,22 +212,22 @@ describe('DropdownNavigation', () => {
     });
 
     test('Matches Snapshot (tag="nav")', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownNavigation tag="nav" options={options}>
                 Test Button
             </DropdownNavigation>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownNavigation defaultOpen options={options}>
                 Test Button
             </DropdownNavigation>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

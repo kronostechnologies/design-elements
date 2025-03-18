@@ -1,7 +1,7 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { ReactElement } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
-import { renderPortalWithProviders, rerenderPortalWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, rerenderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';
 import { ModalProps } from './types';
@@ -16,7 +16,7 @@ const defaultTestProps = {
 };
 
 function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): RenderResult {
-    return renderPortalWithProviders(
+    return renderWithProviders(
         <Modal {...defaultTestProps} {...props}>
             <p id="modal-description">Test Content</p>
         </Modal>,
@@ -27,7 +27,7 @@ function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): Ren
 describe('Modal', () => {
     test('onRequestClose callback is called when close-button is clicked', () => {
         const callback = jest.fn();
-        const { getByTestId } = renderPortalWithProviders(
+        const { getByTestId } = renderWithProviders(
             <Modal isOpen onRequestClose={callback} ariaHideApp={false}>
                 <p id="modal-description">Test Content</p>
             </Modal>,
@@ -84,7 +84,7 @@ describe('Modal', () => {
             </Modal>
         );
 
-        const { getByRole, rerender } = renderPortalWithProviders(<TestComponent width={initialWidth} />, 'desktop');
+        const { getByRole, rerender } = renderWithProviders(<TestComponent width={initialWidth} />, 'desktop');
         const modal = getByRole('dialog');
 
         expect(getComputedStyle(modal).width).toBe(initialWidth);

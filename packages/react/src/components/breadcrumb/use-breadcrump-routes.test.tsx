@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useBreadcrumbOverflow } from './use-breadcrumb-overflow';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 

@@ -30,19 +30,19 @@ describe('DropdownMenu', () => {
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownMenu>{TestGroups}</DropdownMenu>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Is hidden', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <DropdownMenu hidden>{TestGroups}</DropdownMenu>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has controllable data-testid', () => {

@@ -1606,6 +1606,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c5"
             data-testid="row-checkbox-all"
             type="checkbox"
+            value=""
           />
           <span
             class="c6 c7"
@@ -1659,6 +1660,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c5"
             data-testid="row-checkbox-0"
             type="checkbox"
+            value=""
           />
           <span
             class="c6 c7"
@@ -1708,6 +1710,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c5"
             data-testid="row-checkbox-1"
             type="checkbox"
+            value=""
           />
           <span
             class="c6 c7"
@@ -1757,6 +1760,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c5"
             data-testid="row-checkbox-2"
             type="checkbox"
+            value=""
           />
           <span
             class="c6 c7"
