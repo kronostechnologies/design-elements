@@ -356,6 +356,7 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   border-color: #84C6EA;
   color: #84C6EA;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <a
@@ -774,7 +775,7 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 `;
 
 exports[`Link Component Styling matches icon only snapshot 1`] = `
-[
+HTMLCollection [
   .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -874,14 +875,15 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
 }
 
 <span
-    aria-describedby="uuid2"
     class="c0"
     data-testid="tooltip"
     id="tooltip-trigger-uuid2"
     tabindex="-1"
   >
     <a
+      aria-describedby="uuid2"
       aria-disabled="false"
+      aria-label="Navigation Link"
       class="c1"
       data-testid="link"
       href="#"
@@ -1047,12 +1049,12 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
     data-testid="tooltip-content-container"
     id="uuid2"
     role="tooltip"
-    style="position:absolute;left:0;top:0"
+    style="position: absolute; left: 0px; top: 0px;"
   >
     <div
       class="c1 c2"
       data-popper-arrow="true"
-      style="position:absolute"
+      style="position: absolute;"
     />
     <div
       class="c3"

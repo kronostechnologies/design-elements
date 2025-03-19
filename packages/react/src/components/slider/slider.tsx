@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useId } from '../../hooks/use-id';
 import { FieldContainer } from '../field-container/field-container';
@@ -21,6 +22,7 @@ interface SliderProps<TValue extends number | number[]> {
     label?: string;
     noMargin?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     invalid?: boolean;
     validationErrorMessage?: string;
     step?: number;
@@ -39,6 +41,7 @@ export const Slider = <TValue extends number | number[]>({
     label,
     noMargin,
     tooltip,
+    toggletip,
     invalid,
     validationErrorMessage,
     step,
@@ -55,6 +58,7 @@ export const Slider = <TValue extends number | number[]>({
             hint={hint}
             label={label}
             tooltip={tooltip}
+            toggletip={toggletip}
             noMargin={noMargin}
             valid={!invalid}
             noInvalidFieldIcon={!validationErrorMessage}

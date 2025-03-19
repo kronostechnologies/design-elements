@@ -86,6 +86,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -779,6 +780,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -1417,7 +1419,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1449,7 +1451,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #FFFFFF;
   padding: 0;
-  width: var(--size-3x);
+  width: var(--size-2x);
 }
 
 .c3 {
@@ -1475,11 +1477,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
+  pointer-events: none;
 }
 
 .c4 {
@@ -2162,6 +2160,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {

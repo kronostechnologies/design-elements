@@ -13,10 +13,10 @@ export interface BaseButtonStyles {
 function getButtonMinHeight({ $isMobile, $size }: BaseButtonStyles): string {
     switch ($size) {
         case 'small':
-            return $isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)';
+            return $isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)';
         case 'medium':
         default:
-            return $isMobile ? 'var(--size-3x)' : 'var(--size-2x)';
+            return 'var(--size-2x)';
     }
 }
 

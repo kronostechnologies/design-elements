@@ -1,6 +1,7 @@
 import { HTMLProps, ReactNode, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { TextInput, textInputClasses, TextInputProps } from '../text-input';
+import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
 
@@ -21,7 +22,7 @@ const StyledTextInput = styled(TextInput)<StyledInputProps>`
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
-interface NumericInputProps extends NativeInputProps {
+export interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
     adornmentPosition?: 'start' | 'end';
     className?: string;
@@ -39,6 +40,7 @@ interface NumericInputProps extends NativeInputProps {
     readOnly?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     invalid?: boolean;
     validationErrorMessage?: string;
     value?: number | string;
@@ -65,6 +67,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     readOnly,
     textAlign = 'left',
     tooltip,
+    toggletip,
     invalid,
     validationErrorMessage,
     value,
@@ -109,6 +112,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             ref={inputRef}
             rightAdornment={adornmentPosition === 'end' && adornment}
             tooltip={tooltip}
+            toggletip={toggletip}
             type="text"
             value={numericInput.value}
             validationErrorMessage={numericInput.validationErrorMessage}

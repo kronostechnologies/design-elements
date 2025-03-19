@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 // eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
 import fonts from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./body.scss';
 import { useMainCss } from './style-loader';

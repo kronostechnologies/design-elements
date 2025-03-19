@@ -86,6 +86,7 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -180,6 +181,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button

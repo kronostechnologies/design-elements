@@ -50,6 +50,7 @@ export function getButtonTypeStyles({
                     color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-text-color`]};
                 }
             `}
+            pointer-events: none;
         }
     `;
 }

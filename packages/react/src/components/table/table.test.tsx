@@ -1,3 +1,4 @@
+import { RenderResult } from '@testing-library/react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
@@ -42,7 +43,7 @@ function renderTable(
     columnsArray: TableColumn<TestData>[],
     currentDevice?: DeviceType,
     props?: TablePropsLite,
-): cheerio.Cheerio {
+): RenderResult {
     return renderWithProviders(
         <Table columns={columnsArray} data={data} rowIdField="id" {...props} />,
         currentDevice,
@@ -312,91 +313,97 @@ describe('Table', () => {
     });
 
     test('has desktop styles', () => {
-        const tree = renderTable(columns, 'desktop');
+        const { container } = renderTable(columns, 'desktop');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has tablet styles', () => {
-        const tree = renderTable(columns, 'tablet');
+        const { container } = renderTable(columns, 'tablet');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has mobile styles', () => {
-        const tree = renderTable(columns, 'mobile');
+        const { container } = renderTable(columns, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has custom text alignment', () => {
-        const tree = renderTable(columnsTextAligned);
+        const { container } = renderTable(columnsTextAligned);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has sorting styles', () => {
-        const tree = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
+        const { container } = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has striped styles', () => {
-        const tree = renderTable(columns, undefined, { striped: true });
+        const { container } = renderTable(columns, undefined, { striped: true });
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has small rowSize styles', () => {
-        const tree = renderTable(columns, undefined, { rowSize: 'small' });
+        const { container } = renderTable(columns, undefined, { rowSize: 'small' });
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has rowNumbers styles', () => {
-        const tree = renderTable(columns, undefined, { rowNumbers: true });
+        const { container } = renderTable(columns, undefined, { rowNumbers: true });
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has clickable rows styles', () => {
-        const tree = renderTable(columns, undefined, { onRowClick: jest.fn() });
+        const { container } = renderTable(columns, undefined, { onRowClick: jest.fn() });
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has error rows styles', () => {
-        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} rowIdField="id" />);
+        const { container } = renderWithProviders(
+            <Table<TestData>
+                columns={columns}
+                data={errorData}
+                rowIdField="id"
+            />,
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has selectable rows styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} rowIdField="id" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has sticky header styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has sticky column styles', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} rowIdField="id" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has aria-label on header columns', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Table<TestData>
                 columns={columnsWithHeaderAriaLabel}
                 data={data}
@@ -404,11 +411,11 @@ describe('Table', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has column with headers grouped', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <Table<TestData>
                 columns={columnsWithHeadersGrouped}
                 data={data}
@@ -416,7 +423,7 @@ describe('Table', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('has radio buttons in single selection mode', () => {

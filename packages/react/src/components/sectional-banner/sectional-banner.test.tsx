@@ -7,18 +7,18 @@ jest.mock('../../utils/uuid');
 
 describe('SectionalBanner', () => {
     it('should match snapshot (desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 Test
             </SectionalBanner>,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should match snapshot (custom message)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 <p>Some sub title</p>
                 <ul>
@@ -28,18 +28,18 @@ describe('SectionalBanner', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should match snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 Test
             </SectionalBanner>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     (['mobile', 'desktop'] as DeviceType[]).forEach((device) => {
@@ -55,7 +55,7 @@ describe('SectionalBanner', () => {
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
-            const buttonWrapper = getByTestId(wrapper, `${device}-button`);
+            const buttonWrapper = getByTestId(wrapper, 'action-button');
             const button = getByTestId(buttonWrapper, 'button');
 
             expect(button.prop('buttonType')).toBe('destructive-primary');
@@ -91,7 +91,7 @@ describe('SectionalBanner', () => {
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
-            getByTestId(wrapper, `${device}-button`).simulate('click');
+            getByTestId(wrapper, 'action-button').simulate('click');
 
             expect(onButtonClicked).toHaveBeenCalled();
         });

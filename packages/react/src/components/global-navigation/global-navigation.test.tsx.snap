@@ -88,11 +88,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   border-color: #84C6EA;
   color: #FFFFFF;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c0 {
@@ -122,6 +118,81 @@ exports[`Global Navigation matches snapshot 1`] = `
 
 .c5 > li:first-child > :first-child {
   padding-top: var(--spacing-1x);
+}
+
+.c10 {
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  line-height: 1.5rem;
+  padding: var(--spacing-half) var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.c10 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c10:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c10:hover {
+  background-color: #DBDEE1;
+}
+
+.c10.active {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: var(--font-bold);
+}
+
+.c9 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  display: none;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  left: 4.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+
+.c9 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c9 > :first-child a {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.c9 > :last-child a {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .c7 {
@@ -164,7 +235,14 @@ exports[`Global Navigation matches snapshot 1`] = `
   position: relative;
 }
 
-.c8 {
+.c6:hover .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -184,7 +262,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   text-decoration: none;
 }
 
-.c8.active {
+.c12.active {
   background-color: #E0F0F9;
   color: #003A5A;
   font-weight: var(--font-bold);
@@ -204,14 +282,14 @@ exports[`Global Navigation matches snapshot 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c13 {
   font-size: 0.75rem;
   line-height: 1.25rem;
   text-align: center;
   word-break: break-word;
 }
 
-.c10 {
+.c11 {
   background-color: #DBDEE1;
   border: 0;
   height: 1px;
@@ -226,7 +304,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 }
 
 <div
-  style="height:600px"
+  style="height: 600px;"
 >
   <div
     class="c0"
@@ -257,119 +335,78 @@ exports[`Global Navigation matches snapshot 1`] = `
           <li
             class="c6"
           >
-            <a
-              class="c7 c8"
-              data-testid="home-home-link"
-              href="/test1"
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-label="Show more navigation elements"
+              class="c7"
+              data-testid="show-more-button"
+              type="button"
             >
               <svg
-                aria-hidden="true"
                 color="currentColor"
                 focusable="false"
-                height="20"
-                width="20"
+                height="16"
+                width="16"
               />
-              <span
-                class="c9"
-              >
-                home
-              </span>
-            </a>
-          </li>
-          <li
-            class="c6"
-          >
-            <a
-              class="c7 c8"
-              data-testid="edit-edit-link"
-              href="/test2"
+            </button>
+            <ul
+              class="c8 c9"
+              data-testid="show-more-menu"
             >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
-              <span
-                class="c9"
-              >
-                edit
-              </span>
-            </a>
-          </li>
-          <li
-            class="c6"
-          >
-            <a
-              class="c7 c8"
-              data-testid="map-mapPin-link"
-              href="/test3"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
-              <span
-                class="c9"
-              >
-                map
-              </span>
-            </a>
-          </li>
-          <li
-            class="c6"
-          >
-            <a
-              class="c7 c8"
-              data-testid="mail-mail-link"
-              href="/test4"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
-              <span
-                class="c9"
-              >
-                mail
-              </span>
-            </a>
-          </li>
-          <li
-            class="c6"
-          >
-            <a
-              class="c7 c8"
-              data-testid="phone-phone-link"
-              href="/test5"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
-              <span
-                class="c9"
-              >
-                phone
-              </span>
-            </a>
+              <li>
+                <a
+                  class="c10"
+                  data-testid="home-home-menu-link"
+                  href="/test1"
+                >
+                  home
+                </a>
+              </li>
+              <li>
+                <a
+                  class="c10"
+                  data-testid="edit-edit-menu-link"
+                  href="/test2"
+                >
+                  edit
+                </a>
+              </li>
+              <li>
+                <a
+                  class="c10"
+                  data-testid="map-mapPin-menu-link"
+                  href="/test3"
+                >
+                  map
+                </a>
+              </li>
+              <li>
+                <a
+                  class="c10"
+                  data-testid="mail-mail-menu-link"
+                  href="/test4"
+                >
+                  mail
+                </a>
+              </li>
+              <li>
+                <a
+                  class="c10"
+                  data-testid="phone-phone-menu-link"
+                  href="/test5"
+                >
+                  phone
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
     </div>
     <div>
       <hr
-        class="c10"
+        class="c11"
       />
       <nav
         aria-label="App Navigation"
@@ -381,7 +418,7 @@ exports[`Global Navigation matches snapshot 1`] = `
             class="c6"
           >
             <a
-              class="c7 c8"
+              class="c7 c12"
               data-testid="info-info-link"
               href="/test6"
             >
@@ -393,7 +430,7 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c9"
+                class="c13"
               >
                 info
               </span>
@@ -403,7 +440,7 @@ exports[`Global Navigation matches snapshot 1`] = `
             class="c6"
           >
             <a
-              class="c7 c8"
+              class="c7 c12"
               data-testid="help-helpCircle-link"
               href="/test7"
             >
@@ -415,7 +452,7 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c9"
+                class="c13"
               >
                 help
               </span>

@@ -38,7 +38,7 @@ describe('Radio Card', () => {
     });
 
     test('Matches snapshot (Default, Desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test">
                     Test description
@@ -47,11 +47,11 @@ describe('Radio Card', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (Label, Desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup label="Test">
                 <RadioCard name="test" label="Test" value="test">
                     Test description
@@ -60,11 +60,11 @@ describe('Radio Card', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (Checked, Desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test" checked>
                     Test description
@@ -73,11 +73,11 @@ describe('Radio Card', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (Disabled, Desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test" disabled>
                     Test description
@@ -86,11 +86,11 @@ describe('Radio Card', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (Default, Mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test">
                     Test description
@@ -99,11 +99,11 @@ describe('Radio Card', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('Matches snapshot (Label, Mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <RadioCardGroup label="Test">
                 <RadioCard name="test" label="Test" value="test">
                     Test description
@@ -112,6 +112,6 @@ describe('Radio Card', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

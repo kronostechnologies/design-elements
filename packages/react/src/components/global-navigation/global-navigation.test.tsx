@@ -110,12 +110,12 @@ describe('Global Navigation', () => {
     });
 
     test('matches snapshot', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <div style={{ height: '600px' }}>
                 <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
             </div>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

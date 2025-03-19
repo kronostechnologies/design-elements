@@ -49,3 +49,13 @@ export const OnChangeCallback: Story = {
     },
 };
 OnChangeCallback.parameters = rawCodeParameters;
+
+export const WithToggletip: Story = {
+    ...MoneyInputMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

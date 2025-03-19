@@ -88,11 +88,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c4 {
@@ -909,11 +905,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c4 {
@@ -1642,11 +1634,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c4 {

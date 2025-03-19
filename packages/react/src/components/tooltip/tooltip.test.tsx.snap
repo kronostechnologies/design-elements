@@ -175,7 +175,6 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
-    aria-describedby="uuid1"
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
@@ -188,7 +187,6 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     tabIndex={0}
   >
     <span
-      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
@@ -202,11 +200,13 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
+        aria-describedby="uuid1"
         color="#1B1C1E"
         name="info"
         size="16"
       >
         <svg
+          aria-describedby="uuid1"
           color="#1B1C1E"
           focusable={false}
           height="16"
@@ -448,7 +448,6 @@ exports[`Tooltip Has default desktop styles 1`] = `
   label="Test Content"
 >
   <styled.span
-    aria-describedby="uuid1"
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
@@ -461,7 +460,6 @@ exports[`Tooltip Has default desktop styles 1`] = `
     tabIndex={0}
   >
     <span
-      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
@@ -725,7 +723,6 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
-    aria-describedby="uuid1"
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
@@ -738,7 +735,6 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     tabIndex={0}
   >
     <span
-      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
@@ -752,11 +748,13 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       tabIndex={0}
     >
       <Icon
+        aria-describedby="uuid1"
         color="#1B1C1E"
         name="info"
         size="24"
       >
         <svg
+          aria-describedby="uuid1"
           color="#1B1C1E"
           focusable={false}
           height="24"
@@ -998,7 +996,6 @@ exports[`Tooltip Has mobile styles 1`] = `
   label="Test Content"
 >
   <styled.span
-    aria-describedby="uuid1"
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
@@ -1011,7 +1008,6 @@ exports[`Tooltip Has mobile styles 1`] = `
     tabIndex={0}
   >
     <span
-      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"

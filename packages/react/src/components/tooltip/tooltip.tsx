@@ -8,6 +8,10 @@ import {
     useRef,
     useMemo,
     useState,
+    cloneElement,
+    isValidElement,
+    ReactElement,
+    ReactNode,
 } from 'react';
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
@@ -337,12 +341,34 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         setIsClicked(false);
     }, [isMobile, closeTooltip]);
 
+    const renderChildrenWithAria = (): ReactNode => {
+        if (!children) {
+            return (
+                <Icon
+                    name="info"
+                    size={isMobile ? '24' : '16'}
+                    color={invertedIcon
+                        ? Theme.component['tooltip-inverted-icon-color']
+                        : Theme.component['tooltip-icon-color']}
+                    aria-describedby={isVisible ? tooltipId : undefined}
+                />
+            );
+        }
+
+        if (isValidElement(children)) {
+            return cloneElement(children as ReactElement, {
+                'aria-describedby': tooltipId,
+            });
+        }
+
+        return children;
+    };
+
     return (
         <>
             <StyledSpan
                 data-testid="tooltip"
                 className={className}
-                aria-describedby={tooltipId}
                 id={tooltipTriggerId}
                 tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
@@ -354,15 +380,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 onMouseLeave={handleMouseLeave}
                 ref={popperTooltip.setTriggerRef}
             >
-                {children || (
-                    <Icon
-                        name="info"
-                        size={isMobile ? '24' : '16'}
-                        color={invertedIcon
-                            ? Theme.component['tooltip-inverted-icon-color']
-                            : Theme.component['tooltip-icon-color']}
-                    />
-                )}
+                {renderChildrenWithAria()}
             </StyledSpan>
 
             <TooltipContainer

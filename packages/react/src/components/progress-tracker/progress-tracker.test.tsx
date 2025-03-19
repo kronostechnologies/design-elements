@@ -76,9 +76,9 @@ describe('Progress Component', () => {
         it('linear', () => {
             const steps = generateSteps(3);
 
-            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={2} />);
+            const { container } = renderWithProviders(<ProgressTracker steps={steps} value={2} />);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
         it('non linear', () => {
@@ -89,9 +89,9 @@ describe('Progress Component', () => {
                 { label: 'Step 4' },
             ];
 
-            const wrapper = renderWithProviders(<ProgressTracker steps={steps} value={3} linear={false} />);
+            const { container } = renderWithProviders(<ProgressTracker steps={steps} value={3} linear={false} />);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
     });
 });

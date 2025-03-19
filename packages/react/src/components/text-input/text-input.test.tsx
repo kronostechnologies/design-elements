@@ -3,7 +3,7 @@ import { ReactWrapper, shallow } from 'enzyme';
 import { ChangeEventHandler } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
 import { Icon } from '../icon/icon';
 
@@ -117,7 +117,7 @@ describe('TextInput', () => {
     });
 
     test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+        const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
                 <TextInput label='test' required validationErrorMessage='This field is required' />
                 <button data-testid="submit-button" type="submit">Submit</button>

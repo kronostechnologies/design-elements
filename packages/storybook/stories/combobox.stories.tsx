@@ -91,3 +91,13 @@ export const UsingAsyncDataSource: Story = {
         );
     },
 };
+
+export const WithToggletip: Story = {
+    ...comboboxMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

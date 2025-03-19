@@ -94,7 +94,7 @@ exports[`SearchInput should match the snapshot 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -438,13 +438,13 @@ input:valid + .c8 {
             >
               <styled.button
                 $isMobile={false}
+                aria-disabled="true"
                 className="c12 c11 primary"
-                disabled={true}
                 onClick={[Function]}
               >
                 <button
+                  aria-disabled="true"
                   className="c13 c12 c11 primary"
-                  disabled={true}
                   onClick={[Function]}
                 >
                   <Styled(Icon)>

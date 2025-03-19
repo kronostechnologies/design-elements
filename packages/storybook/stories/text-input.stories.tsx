@@ -82,3 +82,14 @@ export const EventCallbacks: Story = {
         },
     },
 };
+
+export const WithToggletip: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};
