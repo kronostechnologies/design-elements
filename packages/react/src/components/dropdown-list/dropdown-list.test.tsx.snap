@@ -140,9 +140,12 @@ input + .c2 {
 }
 
 .c8 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c4 {
@@ -259,177 +262,181 @@ input + .c2 {
     />
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c7 c8"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c9"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c7 c8"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c10"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c9"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c11"
+        <li
+          aria-selected="true"
+          class="c10"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c12"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c11"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -586,9 +593,12 @@ input + .c2 {
 }
 
 .c10 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c5 {
@@ -726,177 +736,181 @@ input + .c2 {
     />
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c9 c10"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c11"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c9 c10"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c12"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c11"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c13"
+        <li
+          aria-selected="true"
+          class="c12"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c13"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -1067,9 +1081,12 @@ input + .c2 {
 }
 
 .c10 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c6 {
@@ -1201,177 +1218,181 @@ input + .c2 {
     />
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c9 c10"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c11"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c9 c10"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c12"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c11"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c13"
+        <li
+          aria-selected="true"
+          class="c12"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c14"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c13"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -1494,9 +1515,12 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c6 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c2 {
@@ -1607,177 +1631,181 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     />
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c5 c6"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c7"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c5 c6"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c8"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c7"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c9"
+        <li
+          aria-selected="true"
+          class="c8"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c10"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c9"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -1903,9 +1931,12 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 }
 
 .c6 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c2 {
@@ -2018,332 +2049,336 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
     />
   </div>
   <div
-    aria-labelledby="uuid1_label"
-    aria-multiselectable="true"
-    class="c5 c6"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c7"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-labelledby="uuid1_label"
+      aria-multiselectable="true"
+      class="c5 c6"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        class="c8"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c7"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          aria-hidden="true"
-          class="c9"
+        <li
+          class="c8"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c8"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            aria-hidden="true"
+            class="c9"
+          >
+            <svg
+              class="c10 c11"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+          <span
+            class="c12"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -2500,9 +2535,12 @@ input + .c2 {
 }
 
 .c9 {
+  left: 0px;
   margin-top: var(--spacing-half);
   position: absolute;
+  top: 0px;
   width: 100%;
+  z-index: 99999;
 }
 
 .c5 {
@@ -2626,177 +2664,181 @@ input + .c2 {
     />
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c8 c9"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c10"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c8 c9"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c11"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c10"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c12"
+        <li
+          aria-selected="true"
+          class="c11"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Alberta
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            British Columbia
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Manitoba
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            New Brunswick
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Newfoundland and Labrador
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Northwest Territories
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Nova Scotia
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Nunavut
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Ontario
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Prince Edward Island
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Quebec
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12"
+          >
+            Saskatchewan
+          </span>
+        </li>
+        <li
+          class="c13"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c12"
+          >
+            Yukon
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
