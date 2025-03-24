@@ -104,24 +104,36 @@ exports[`Checkbox matches snapshot 1`] = `
 >
   <styled.label
     hasLabel={true}
+    htmlFor="uuid1"
     key="vehicule-boat"
   >
     <label
       className="c0"
+      htmlFor="uuid1"
     >
       <styled.input
+        aria-invalid={false}
+        aria-labelledby=""
+        id="uuid1"
         name="vehicule"
+        onChange={[Function]}
         type="checkbox"
         value="boat"
       >
         <input
+          aria-invalid={false}
+          aria-labelledby=""
           className="c1"
+          id="uuid1"
           name="vehicule"
+          onChange={[Function]}
           type="checkbox"
           value="boat"
         />
       </styled.input>
-      <styled.span>
+      <styled.span
+        $valid={true}
+      >
         <span
           className="c2 c3"
         >
