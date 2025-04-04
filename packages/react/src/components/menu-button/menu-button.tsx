@@ -19,6 +19,7 @@ const StyledMenu = styled(Menu)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     position: absolute;
+    z-index: 1;
     ${({ $placement }) => ($placement === 'left' ? 'right: 0;' : 'left: 0;')}
 `;
 
