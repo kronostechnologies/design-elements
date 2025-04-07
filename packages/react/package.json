@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "0.8.0",
-    "@equisoft/eslint-config": "3.0.7",
+    "@equisoft/eslint-config": "4.0.1",
     "@equisoft/eslint-config-typescript-react": "4.0.1",
     "@equisoft/typescript-config": "2.0.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
