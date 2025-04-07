@@ -12,7 +12,6 @@ import styled, { css } from 'styled-components';
 import { useScrollable } from '../../hooks/use-scrollable';
 import { useTranslation } from '../../i18n/use-translation';
 import { getNextElement, getPreviousElement } from '../../utils/array';
-import { v4 as uuid } from '../../utils/uuid';
 import { Icon, IconName } from '../icon/icon';
 import { Tooltip } from '../tooltip/tooltip';
 import { TabButton } from './tab-button';
@@ -187,7 +186,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         (tab) => ({
             ...tab,
             id: tab.id,
-            panelId: uuid(),
+            panelId: `${tab.id}-panel`,
             buttonRef: createRef<HTMLButtonElement>(),
         }),
     ), [tabs]);
