@@ -12,7 +12,7 @@
     "test": "echo Running Typescript type-checking; tsc -p ./tsconfig.test.json && NODE_ENV=test jest --config=jest.config.js",
     "test:ci": "yarn test --max-workers=2 --ci",
     "lint": "yarn eslint && yarn stylelint",
-    "eslint": "eslint src/ test/",
+    "eslint": "eq-eslint src/ test/",
     "eslint:ci": "yarn eslint",
     "stylelint": "yarn g:stylelint \"./packages/react/src/**/*.{ts,tsx}\"",
     "stylelint:ci": "yarn stylelint",

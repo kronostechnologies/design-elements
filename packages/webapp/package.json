@@ -12,7 +12,7 @@
     "build:development": "NODE_ENV=development webpack build --config ./src/scripts/webpack/webpack.config.dev.js",
     "build:prod": "yarn build:production",
     "build:production": "NODE_ENV=production webpack build --config ./src/scripts/webpack/webpack.config.prod.js",
-    "eslint": "eslint ./src",
+    "eslint": "eq-eslint ./src",
     "eslint:ci": "yarn eslint",
     "check-locales": "node ./src/scripts/fetch-locales.js",
     "fetch-locales": "yarn check-locales -f",

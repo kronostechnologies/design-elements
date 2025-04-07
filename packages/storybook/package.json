@@ -7,7 +7,7 @@
     "start": "storybook dev -c .storybook",
     "start-docs": "storybook dev -c .storybook --docs",
     "lint": "yarn eslint && yarn stylelint",
-    "eslint": "eslint stories/",
+    "eslint": "eq-eslint stories/",
     "eslint:ci": "yarn eslint",
     "stylelint": "yarn g:stylelint \"./packages/storybook/stories/**/*.{ts,tsx}\"",
     "stylelint:ci": "yarn stylelint"
