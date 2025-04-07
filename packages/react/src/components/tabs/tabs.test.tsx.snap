@@ -363,7 +363,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
         data-testid="tab-1"
       >
         <button
-          aria-controls="uuid1"
+          aria-controls="tab-1-panel"
           aria-selected="true"
           class="c6 c7"
           data-testid="tab-1-button"
@@ -385,7 +385,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
         data-testid="tab-2"
       >
         <button
-          aria-controls="uuid2"
+          aria-controls="tab-2-panel"
           aria-selected="false"
           class="c6 c10"
           data-testid="tab-2-button"
@@ -422,7 +422,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c12"
-    id="uuid1"
+    id="tab-1-panel"
     role="tabpanel"
     tabindex="0"
   >
@@ -437,7 +437,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     aria-labelledby="tab-2"
     class="c12"
     hidden=""
-    id="uuid2"
+    id="tab-2-panel"
     role="tabpanel"
     tabindex="0"
   >
@@ -824,7 +824,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
         data-testid="tab-1"
       >
         <button
-          aria-controls="uuid1"
+          aria-controls="tab-1-panel"
           aria-selected="true"
           class="c7 c8"
           data-testid="tab-1-button"
@@ -846,7 +846,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
         data-testid="tab-2"
       >
         <button
-          aria-controls="uuid2"
+          aria-controls="tab-2-panel"
           aria-selected="false"
           class="c7 c11"
           data-testid="tab-2-button"
@@ -883,7 +883,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c13"
-    id="uuid1"
+    id="tab-1-panel"
     role="tabpanel"
     tabindex="0"
   >
@@ -898,7 +898,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     aria-labelledby="tab-2"
     class="c13"
     hidden=""
-    id="uuid2"
+    id="tab-2-panel"
     role="tabpanel"
     tabindex="0"
   >
@@ -1285,7 +1285,7 @@ exports[`Tabs matches snapshot 1`] = `
         data-testid="tab-1"
       >
         <button
-          aria-controls="uuid1"
+          aria-controls="tab-1-panel"
           aria-selected="true"
           class="c7 c8"
           data-testid="tab-1-button"
@@ -1307,7 +1307,7 @@ exports[`Tabs matches snapshot 1`] = `
         data-testid="tab-2"
       >
         <button
-          aria-controls="uuid2"
+          aria-controls="tab-2-panel"
           aria-selected="false"
           class="c7 c11"
           data-testid="tab-2-button"
@@ -1344,7 +1344,7 @@ exports[`Tabs matches snapshot 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c13"
-    id="uuid1"
+    id="tab-1-panel"
     role="tabpanel"
     tabindex="0"
   >
@@ -1359,7 +1359,7 @@ exports[`Tabs matches snapshot 1`] = `
     aria-labelledby="tab-2"
     class="c13"
     hidden=""
-    id="uuid2"
+    id="tab-2-panel"
     role="tabpanel"
     tabindex="0"
   >
