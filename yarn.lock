@@ -1585,7 +1585,7 @@ __metadata:
   resolution: "@equisoft/design-elements-react@workspace:packages/react"
   dependencies:
     "@cfaester/enzyme-adapter-react-18": "npm:0.8.0"
-    "@equisoft/eslint-config": "npm:3.0.7"
+    "@equisoft/eslint-config": "npm:4.0.1"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.1"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
@@ -1669,7 +1669,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.26.3"
     "@babel/preset-typescript": "npm:^7.26.0"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:3.0.7"
+    "@equisoft/eslint-config": "npm:4.0.1"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.1"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@mdx-js/react": "npm:^3.0.0"
@@ -1787,23 +1787,6 @@ __metadata:
   bin:
     eq-eslint: eslint.js
   checksum: 10c0/054d693737bf82a8ce9c14cd11cca25d1a40f2e1d5b1586113ced7a17a1f014d74952d9d9b4cc2b8712089563397e3bb778309fb7efd0655e911431ab3de1a53
-  languageName: node
-  linkType: hard
-
-"@equisoft/eslint-config@npm:3.0.7":
-  version: 3.0.7
-  resolution: "@equisoft/eslint-config@npm:3.0.7"
-  dependencies:
-    eslint-config-airbnb-base: "npm:^15.0.0"
-  peerDependencies:
-    "@microsoft/eslint-formatter-sarif": ^3
-    eslint: ^8
-    eslint-import-resolver-node: ^0.3
-    eslint-plugin-import: ^2
-    yargs: ^17
-  bin:
-    eslint: eslint.js
-  checksum: 10c0/bacef3606db79685a7ecfe25b6156077f78c3192c17306cedc4dec173986397ad8b2c691495c882fdb3a7b8f75c18e3f5b8c374cab364ca927012ed61415d08f
   languageName: node
   linkType: hard
 
@@ -7368,7 +7351,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-react": "npm:7.26.3"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:3.0.7"
+    "@equisoft/eslint-config": "npm:4.0.1"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.1"
     "@equisoft/jest-utils": "npm:1.5.2"
     "@equisoft/react-test-utils": "npm:1.5.2"

@@ -12,7 +12,7 @@
     "test": "echo Running Typescript type-checking; tsc -p ./tsconfig.test.json && NODE_ENV=test jest --config=jest.config.js",
     "test:ci": "yarn test --max-workers=2 --ci",
     "lint": "yarn eslint && yarn stylelint",
-    "eslint": "eslint src/ test/",
+    "eslint": "eq-eslint src/ test/",
     "eslint:ci": "yarn eslint",
     "stylelint": "yarn g:stylelint \"./packages/react/src/**/*.{ts,tsx}\"",
     "stylelint:ci": "yarn stylelint",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "0.8.0",
-    "@equisoft/eslint-config": "3.0.7",
+    "@equisoft/eslint-config": "4.0.1",
     "@equisoft/eslint-config-typescript-react": "4.0.1",
     "@equisoft/typescript-config": "2.0.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
