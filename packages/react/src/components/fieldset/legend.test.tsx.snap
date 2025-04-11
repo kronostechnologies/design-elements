@@ -3,7 +3,7 @@
 exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -14,7 +14,6 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = 
 >
   <styled.legend
     $bold={false}
-    $isMobile={false}
     $size="large"
     datatest-id="legend"
   >
@@ -30,7 +29,7 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: false 1`] = 
 exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -41,7 +40,6 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
 >
   <styled.legend
     $bold={true}
-    $isMobile={false}
     $size="large"
     datatest-id="legend"
   >
@@ -57,7 +55,7 @@ exports[`Legend Component Styling Device: desktop Size: large Bold: true 1`] = `
 exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -68,7 +66,6 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] =
 >
   <styled.legend
     $bold={false}
-    $isMobile={false}
     $size="medium"
     datatest-id="legend"
   >
@@ -84,7 +81,7 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: false 1`] =
 exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -95,7 +92,6 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = 
 >
   <styled.legend
     $bold={true}
-    $isMobile={false}
     $size="medium"
     datatest-id="legend"
   >
@@ -111,7 +107,7 @@ exports[`Legend Component Styling Device: desktop Size: medium Bold: true 1`] = 
 exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -122,7 +118,6 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = 
 >
   <styled.legend
     $bold={false}
-    $isMobile={false}
     $size="small"
     datatest-id="legend"
   >
@@ -138,7 +133,7 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: false 1`] = 
 exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -149,8 +144,111 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
 >
   <styled.legend
     $bold={true}
-    $isMobile={false}
     $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: xsmall Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="xsmall"
+>
+  <styled.legend
+    $bold={false}
+    $size="xsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: xsmall Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="xsmall"
+>
+  <styled.legend
+    $bold={true}
+    $size="xsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: xxsmall Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="xxsmall"
+>
+  <styled.legend
+    $bold={false}
+    $size="xxsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: desktop Size: xxsmall Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="xxsmall"
+>
+  <styled.legend
+    $bold={true}
+    $size="xxsmall"
     datatest-id="legend"
   >
     <legend
@@ -165,7 +263,7 @@ exports[`Legend Component Styling Device: desktop Size: small Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -176,7 +274,6 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
 >
   <styled.legend
     $bold={false}
-    $isMobile={true}
     $size="large"
     datatest-id="legend"
   >
@@ -192,7 +289,7 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: false 1`] = `
 exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -203,7 +300,6 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
 >
   <styled.legend
     $bold={true}
-    $isMobile={true}
     $size="large"
     datatest-id="legend"
   >
@@ -219,7 +315,7 @@ exports[`Legend Component Styling Device: mobile Size: large Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -230,7 +326,6 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = 
 >
   <styled.legend
     $bold={false}
-    $isMobile={true}
     $size="medium"
     datatest-id="legend"
   >
@@ -246,7 +341,7 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: false 1`] = 
 exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -257,7 +352,6 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
 >
   <styled.legend
     $bold={true}
-    $isMobile={true}
     $size="medium"
     datatest-id="legend"
   >
@@ -273,7 +367,7 @@ exports[`Legend Component Styling Device: mobile Size: medium Bold: true 1`] = `
 exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: var(--font-normal);
   margin: 0 0 var(--spacing-1x);
 }
@@ -284,7 +378,6 @@ exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
 >
   <styled.legend
     $bold={false}
-    $isMobile={true}
     $size="small"
     datatest-id="legend"
   >
@@ -300,7 +393,7 @@ exports[`Legend Component Styling Device: mobile Size: small Bold: false 1`] = `
 exports[`Legend Component Styling Device: mobile Size: small Bold: true 1`] = `
 .c0 {
   color: #1B1C1E;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: var(--font-bold);
   margin: 0 0 var(--spacing-1x);
 }
@@ -311,8 +404,111 @@ exports[`Legend Component Styling Device: mobile Size: small Bold: true 1`] = `
 >
   <styled.legend
     $bold={true}
-    $isMobile={true}
     $size="small"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: xsmall Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="xsmall"
+>
+  <styled.legend
+    $bold={false}
+    $size="xsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: xsmall Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="xsmall"
+>
+  <styled.legend
+    $bold={true}
+    $size="xsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: xxsmall Bold: false 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={false}
+  size="xxsmall"
+>
+  <styled.legend
+    $bold={false}
+    $size="xxsmall"
+    datatest-id="legend"
+  >
+    <legend
+      className="c0"
+    >
+      Sample Legend
+    </legend>
+  </styled.legend>
+</Legend>
+`;
+
+exports[`Legend Component Styling Device: mobile Size: xxsmall Bold: true 1`] = `
+.c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<Legend
+  bold={true}
+  size="xxsmall"
+>
+  <styled.legend
+    $bold={true}
+    $size="xxsmall"
     datatest-id="legend"
   >
     <legend
