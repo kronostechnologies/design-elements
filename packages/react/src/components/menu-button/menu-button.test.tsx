@@ -157,4 +157,15 @@ describe('MenuButton', () => {
             expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronUp');
         });
     });
+
+    it('should render a tooltip when the tooltip prop is provided', () => {
+        const tooltipProps = { label: 'Tooltip text', placement: 'top' };
+        const wrapper = mountWithTheme(
+            <MenuButton buttonType="primary" options={options} tooltip={tooltipProps}>
+                Test
+            </MenuButton>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });

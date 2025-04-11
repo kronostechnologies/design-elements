@@ -84,6 +84,7 @@ export const IconPrimary: Story = {
     args: {
         iconName: 'moreVertical',
         buttonType: 'tertiary',
+        tooltip: { label: 'A tooltip', desktopPlacement: 'right' },
     },
 };
 
