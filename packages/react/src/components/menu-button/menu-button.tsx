@@ -1,13 +1,12 @@
-import React, { FunctionComponent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
+import React, { FunctionComponent, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { ButtonType } from '../buttons/types';
+import { eventIsInside } from '../../utils/events';
+import { Button, ButtonType, IconButton } from '../buttons';
 import { Icon, IconName } from '../icon/icon';
 import { Menu, MenuItem } from '../menu/menu';
-import { eventIsInside } from '../../utils/events';
-import { useTranslation } from '../../i18n/use-translation';
+import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 
 export type MenuPlacement = 'right' | 'left';
 
@@ -36,9 +35,11 @@ export interface MenuButtonProps {
     iconName?: IconName;
     iconLabel?: string;
     inverted?: boolean;
-    options: MenuItem[];
-    onMenuVisibilityChanged?(isOpen: boolean): void;
     menuPlacement?: MenuPlacement;
+    options: MenuItem[];
+    tooltip?: TooltipProps;
+
+    onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
 export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
@@ -54,6 +55,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     options,
     onMenuVisibilityChanged,
     menuPlacement = 'right',
+    tooltip,
 }) => {
     const { t } = useTranslation('menu-button');
 
@@ -88,7 +90,6 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     /**
      * Set focus on first menu item conditionally
      * depending on whether it's a keypress, or a mouse event
-     * @type {() => void}
      */
     const handleClickInside = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
         setVisible(!visible);
@@ -100,7 +101,6 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
 
     /**
      * Hide menu when option is clicked
-     * @type {() => void}
      */
     const handleOnOptionSelect: () => void = useCallback(() => {
         if (!visible) {
@@ -120,49 +120,58 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside]);
 
+    const button = iconName ? (
+        <IconButton
+            ref={buttonRef}
+            autofocus={autofocus}
+            data-testid="menu-button"
+            type="button"
+            label={iconLabel ?? t('buttonAriaLabel')}
+            aria-haspopup="menu"
+            aria-expanded={visible}
+            disabled={disabled}
+            buttonType={buttonType}
+            inverted={inverted}
+            iconName={iconName}
+            onClick={handleClickInside}
+        />
+    ) : (
+        <Button
+            ref={buttonRef}
+            autofocus={autofocus}
+            data-testid="menu-button"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded={visible}
+            disabled={disabled}
+            buttonType={buttonType}
+            inverted={inverted}
+            onClick={handleClickInside}
+        >
+            {children}
+            <StyledIcon
+                aria-hidden="true"
+                data-testid="chevron-icon"
+                name={visible ? 'chevronUp' : 'chevronDown'}
+                size="16"
+            />
+        </Button>
+    );
+
+    const wrappedButton = tooltip ? (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <Tooltip {...tooltip}>{button}</Tooltip>
+    ) : (
+        button
+    );
+
     return (
         <StyledContainer
             className={className}
             ref={containerRef}
             onKeyDown={handleTabKeyDown}
         >
-            {iconName ? (
-                <IconButton
-                    ref={buttonRef}
-                    autofocus={autofocus}
-                    data-testid="menu-button"
-                    type="button"
-                    label={iconLabel ?? t('buttonAriaLabel')}
-                    aria-haspopup="menu"
-                    aria-expanded={visible}
-                    disabled={disabled}
-                    buttonType={buttonType}
-                    inverted={inverted}
-                    iconName={iconName}
-                    onClick={handleClickInside}
-                />
-            ) : (
-                <Button
-                    ref={buttonRef}
-                    autofocus={autofocus}
-                    data-testid="menu-button"
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-expanded={visible}
-                    disabled={disabled}
-                    buttonType={buttonType}
-                    inverted={inverted}
-                    onClick={handleClickInside}
-                >
-                    {children}
-                    <StyledIcon
-                        aria-hidden="true"
-                        data-testid="chevron-icon"
-                        name={visible ? 'chevronUp' : 'chevronDown'}
-                        size="16"
-                    />
-                </Button>
-            )}
+            {wrappedButton}
             {visible && (
                 <StyledMenu
                     $placement={menuPlacement}
