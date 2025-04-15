@@ -152,8 +152,7 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
                 <Bottom>
                     <Reason>
                         <strong>
-                            {t('docusign:reason_label')}
-                            :
+                            {t('docusign:reason_label')} :&nbsp;
                         </strong>
                         {envelope.reasonText}
                     </Reason>
@@ -169,10 +168,10 @@ export const DocusignPage: FunctionComponent = memo(() => {
 
     const formatDate = useCallback(
         (date: Date): string => new Intl.DateTimeFormat(i18n.language, {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-            }).format(date),
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        }).format(date),
         [i18n.language],
     );
 
@@ -200,16 +199,17 @@ export const DocusignPage: FunctionComponent = memo(() => {
         },
     ], []);
 
-    const renderEnvelopes = useCallback(() => {
-        return envelopeData.map((envelope) => (
+    const renderEnvelopes = useCallback(
+        () => envelopeData.map((envelope) => (
             <EnvelopeItem
                 key={envelope.id}
                 envelope={envelope}
                 t={t}
                 formatDate={formatDate}
             />
-        ));
-    }, [envelopeData, t, formatDate]);
+        )),
+        [envelopeData, t, formatDate]
+    );
 
     const count = useMemo(() => envelopeData.length, [envelopeData]);
 
