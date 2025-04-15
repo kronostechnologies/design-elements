@@ -24,7 +24,7 @@ const AccordionItemContainer = styled.div`
     &:not(:first-child) {
         margin-top: var(--spacing-1x);
     }
-`
+`;
 
 const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};

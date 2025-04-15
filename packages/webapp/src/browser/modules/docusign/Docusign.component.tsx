@@ -31,7 +31,12 @@ const Container = styled.div`
 `;
 
 const StyledAccordion = styled(Accordion)`
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         & > button {
             border-radius: var(--border-radius);
             font-size: inherit;
@@ -60,17 +65,17 @@ const StyledAccordion = styled(Accordion)`
 `;
 
 const Envelope = styled.div`
-    background: #FFF;
-    border: 1px solid  #DBDEE1;
+    background: #fff;
+    border: 1px solid  #dbdee1;
     border-radius: .25rem;
     display: grid;
     font-family: var(--font-family);
-    grid-template-columns: 1fr auto;
     grid-column-gap: 1rem;
+    grid-template-columns: 1fr auto;
     grid-template-areas:
-                "main secondary"
-                "bottom bottom";
-    padding: .75rem 1rem;
+                'main secondary'
+                'bottom bottom';
+    padding: 0.75rem 1rem;
 
     &:not(:last-child) {
         margin-bottom: 0.5rem;
@@ -91,7 +96,7 @@ const Secondary = styled.div`
     align-items: flex-end;
     display: flex;
     flex-direction: column;
-    gap: .25rem;
+    gap: 0.25rem;
 `;
 
 const Bottom = styled.div`
@@ -119,7 +124,7 @@ interface EnvelopeProps {
 
 const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate }) => {
     const statusConfig = STATUS_CONFIG[envelope.status];
-    
+
     return (
         <Envelope key={envelope.id} id={envelope.id}>
             <Main>
@@ -127,13 +132,14 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
                     {envelope.title}
                 </StyledHeading>
                 <StyledDate>
-                    {t('docusign:created_on')} {formatDate(envelope.createdDate)}
+                    {t('docusign:created_on')}
+                    {formatDate(envelope.createdDate)}
                 </StyledDate>
             </Main>
             <Secondary>
-                <Lozenge 
-                    variant={statusConfig.variant} 
-                    subtle 
+                <Lozenge
+                    variant={statusConfig.variant}
+                    subtle
                     icon={statusConfig.icon}
                 >
                     {t(`docusign:status${envelope.status.charAt(0).toUpperCase() + envelope.status.slice(1)}`)}
@@ -145,7 +151,9 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
             {envelope.reasonText && (
                 <Bottom>
                     <Reason>
-                        <strong>{t('docusign:reason_label')}:</strong> {envelope.reasonText}
+                        <strong>{t('docusign:reason_label')}
+                        :</strong>
+                        {envelope.reasonText}
                     </Reason>
                 </Bottom>
             )}
@@ -164,7 +172,7 @@ export const DocusignPage: FunctionComponent = memo(() => {
                 month: 'long',
                 day: 'numeric',
             }).format(date),
-        [i18n.language]
+        [i18n.language],
     );
 
     const envelopeData = useMemo(() => [
@@ -173,31 +181,31 @@ export const DocusignPage: FunctionComponent = memo(() => {
             title: 'TFSA account opening',
             createdDate: new Date(),
             status: 'send' as const,
-            reasonText: 'This document requires your signature to finalize the account opening.'
+            reasonText: 'This document requires your signature to finalize the account opening.',
         },
         {
             id: uuid(),
             title: 'Lorem ipsum dolor sit amet',
             createdDate: new Date(),
             status: 'completed' as const,
-            reasonText: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt.'
+            reasonText: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
         },
         {
             id: uuid(),
             title: 'Lorem ipsum dolor sit amet',
             createdDate: new Date(),
             status: 'declined' as const,
-            reasonText: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt.'
+            reasonText: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
         }
     ], []);
 
     const renderEnvelopes = useCallback(() => {
         return envelopeData.map((envelope) => (
-            <EnvelopeItem 
-                key={envelope.id} 
-                envelope={envelope} 
-                t={t} 
-                formatDate={formatDate} 
+            <EnvelopeItem
+                key={envelope.id}
+                envelope={envelope}
+                t={t}
+                formatDate={formatDate}
             />
         ));
     }, [envelopeData, t, formatDate]);
