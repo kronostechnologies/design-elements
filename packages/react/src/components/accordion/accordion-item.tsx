@@ -9,6 +9,7 @@ import { focus } from '../../utils/css-state';
 export interface AccordionItemProps {
     title: string;
     id?: string;
+    className?: string;
     headingType?: Type | undefined;
     headingTag?: Tag | undefined;
     expanded?: boolean | undefined;
@@ -19,13 +20,18 @@ export interface AccordionItemProps {
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
 
+const AccordionItemContainer = styled.div`
+    &:not(:first-child) {
+        margin-top: var(--spacing-1x);
+    }
+`
+
 const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};
     border-color: ${({ theme }) => theme.component['accordion-panel-border-color']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-style: solid;
     border-width: 0;
-    margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
@@ -64,7 +70,7 @@ const HeadingStyled = styled(Heading)`
 `;
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
-    align-items: flex-start;
+    align-items: center;
     background: ${({ theme }) => theme.component['accordion-header-background-color']};
     border: 1px solid ${({ theme }) => theme.component['accordion-header-border-color']};
     border-radius: var(--border-radius-2x);
@@ -118,6 +124,7 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
 export const AccordionItem: React.FC<AccordionItemProps> = ({
     title,
     id,
+    className,
     headingType = 'medium',
     headingTag = 'h3',
     expanded = false,
@@ -131,7 +138,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const panelId = `panel-${id}`;
 
     return (
-        <>
+        <AccordionItemContainer className={className}>
             <HeadingStyled type={headingType} tag={headingTag} noMargin>
                 <ButtonStyled
                     id={headerId}
@@ -157,6 +164,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     {content}
                 </AccordionBody>
             </AccordionSection>
-        </>
+        </AccordionItemContainer>
     );
 };

@@ -8,6 +8,7 @@ export const translations = {
             changeLanguage: 'Change language',
             Home: 'Home',
             Users: 'Users',
+            Docusign: 'Docusign',
         },
         users: {
             title: 'Users list',
@@ -23,6 +24,16 @@ export const translations = {
         user: {
             viewTitle: 'User information',
         },
+        docusign: {
+            link: 'Open in docusign',
+            statusSend: 'send',
+            statusCompleted: 'completed',
+            statusPending: 'pending',
+            statusDeclined: 'declined',
+            reason_label: 'Reason',
+            created_on: 'Created on',
+            accordion_title: "DocuSign envelope status ({{count}})"
+        }
     },
     fr: {
         core: {
@@ -33,6 +44,7 @@ export const translations = {
             changeLanguage: 'Changer la langue',
             Home: 'Accueil',
             Users: 'Utilisateurs',
+            Docusign: 'Docusign',
         },
         users: {
             title: 'Liste d\'utilisateurs',
@@ -48,5 +60,15 @@ export const translations = {
         user: {
             viewTitle: 'Information sur l\'utilisateur',
         },
+        docusign: {
+            link: 'Ouvrir dans docusign',
+            statusSend: 'envoyé',
+            statusCompleted: 'completé',
+            statusPending: 'en attente',
+            statusDeclined: 'décliné',
+            reason_label: 'Raison',
+            created_on: 'Créé le',
+            accordion_title: "DocuSign statut de l'enveloppe ({{count}})"
+        }
     },
 };
