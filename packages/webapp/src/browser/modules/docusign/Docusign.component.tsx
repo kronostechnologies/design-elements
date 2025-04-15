@@ -67,14 +67,14 @@ const StyledAccordion = styled(Accordion)`
 const Envelope = styled.div`
     background: #fff;
     border: 1px solid  #dbdee1;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     display: grid;
     font-family: var(--font-family);
     grid-column-gap: 1rem;
-    grid-template-columns: 1fr auto;
     grid-template-areas:
-                'main secondary'
-                'bottom bottom';
+        'main secondary'
+        'bottom bottom';
+    grid-template-columns: 1fr auto;
     padding: 0.75rem 1rem;
 
     &:not(:last-child) {
@@ -151,8 +151,10 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
             {envelope.reasonText && (
                 <Bottom>
                     <Reason>
-                        <strong>{t('docusign:reason_label')}
-                        :</strong>
+                        <strong>
+                            {t('docusign:reason_label')}
+                            :
+                        </strong>
                         {envelope.reasonText}
                     </Reason>
                 </Bottom>
@@ -166,8 +168,7 @@ export const DocusignPage: FunctionComponent = memo(() => {
     const { t, i18n } = useTranslation();
 
     const formatDate = useCallback(
-        (date: Date): string =>
-            new Intl.DateTimeFormat(i18n.language, {
+        (date: Date): string => new Intl.DateTimeFormat(i18n.language, {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -196,7 +197,7 @@ export const DocusignPage: FunctionComponent = memo(() => {
             createdDate: new Date(),
             status: 'declined' as const,
             reasonText: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-        }
+        },
     ], []);
 
     const renderEnvelopes = useCallback(() => {
