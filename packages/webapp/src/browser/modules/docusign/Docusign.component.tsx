@@ -152,7 +152,8 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
                 <Bottom>
                     <Reason>
                         <strong>
-                            {t('docusign:reason_label')} :&nbsp;
+                            {t('docusign:reason_label')}
+                            &nbsp;:&nbsp;
                         </strong>
                         {envelope.reasonText}
                     </Reason>
@@ -208,7 +209,7 @@ export const DocusignPage: FunctionComponent = memo(() => {
                 formatDate={formatDate}
             />
         )),
-        [envelopeData, t, formatDate]
+        [envelopeData, t, formatDate],
     );
 
     const count = useMemo(() => envelopeData.length, [envelopeData]);
