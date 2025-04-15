@@ -49,6 +49,60 @@ describe('Checkbox', () => {
         expect(input.prop('disabled')).toBe(true);
     });
 
+    test('should be required when required prop is set to true', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} required />);
+
+        const input = wrapper.find('input');
+        expect(input.prop('required')).toBe(true);
+    });
+
+    test('should display warning message if input is invalid and not checked', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} id="checkbox-test" required valid={false} />);
+
+        const warning = wrapper.find('checkbox-test');
+        expect(warning).toBeDefined();
+    });
+
+    test('should hide warning message if input is invalid and then checked', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} id="checkbox-test" required valid={false} />);
+
+        const warningPreCheck = wrapper.find('checkbox-test');
+        expect(warningPreCheck).toBeDefined();
+
+        wrapper.find('input').simulate('change');
+
+        const warningPostCheck = wrapper.find('checkbox-test');
+        expect(warningPostCheck).toEqual({});
+    });
+
+    test('should have aria-labelledby prop when warning message is displayed and input is invalid', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} required id="checkbox-test" valid={false} />);
+
+        const input = wrapper.find('input');
+        expect(input.prop('aria-labelledby')).toBe('checkbox-test');
+    });
+
+    test('should have empty aria-labelledby prop when input is valid', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} required id="checkbox-test" />);
+
+        const input = wrapper.find('input');
+        expect(input.prop('aria-labelledby')).toBe('');
+    });
+
+    test('should have aria-invalid prop set to true when warning message is displayed and input is invalid', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} required id="checkbox-test" valid={false} />);
+
+        const input = wrapper.find('input');
+        expect(input.prop('aria-invalid')).toBe(true);
+    });
+
+    test('should have aria-invalid prop set to false when input is valid', () => {
+        const wrapper = mountWithTheme(<Checkbox {...defaultProps} required id="checkbox-test" />);
+
+        const input = wrapper.find('input');
+        expect(input.prop('aria-invalid')).toBe(false);
+    });
+
     test('matches snapshot', () => {
         const tree = mountWithTheme(<Checkbox {...defaultProps} />);
 
