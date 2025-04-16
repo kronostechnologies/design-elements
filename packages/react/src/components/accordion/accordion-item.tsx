@@ -5,11 +5,11 @@ import { Button } from '../buttons';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
 import { focus } from '../../utils/css-state';
+import { accordionClasses } from './accordion-classes';
 
 export interface AccordionItemProps {
     title: string;
     id?: string;
-    className?: string;
     headingType?: Type | undefined;
     headingTag?: Tag | undefined;
     expanded?: boolean | undefined;
@@ -124,7 +124,6 @@ const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
 export const AccordionItem: React.FC<AccordionItemProps> = ({
     title,
     id,
-    className,
     headingType = 'medium',
     headingTag = 'h3',
     expanded = false,
@@ -138,11 +137,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const panelId = `panel-${id}`;
 
     return (
-        <AccordionItemContainer className={className}>
-            <HeadingStyled type={headingType} tag={headingTag} noMargin>
+        <AccordionItemContainer>
+            <HeadingStyled className={accordionClasses.heading} type={headingType} tag={headingTag} noMargin>
                 <ButtonStyled
                     id={headerId}
                     buttonType="tertiary"
+                    className={accordionClasses.button}
                     label={title}
                     aria-expanded={expanded}
                     aria-controls={panelId}
@@ -159,8 +159,9 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 aria-labelledby={headerId}
                 aria-expanded={expanded}
                 aria-disabled={disabled}
+                className={accordionClasses.section}
             >
-                <AccordionBody>
+                <AccordionBody className={accordionClasses.body}>
                     {content}
                 </AccordionBody>
             </AccordionSection>

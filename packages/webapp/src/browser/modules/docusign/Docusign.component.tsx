@@ -31,36 +31,29 @@ const Container = styled.div`
 `;
 
 const StyledAccordion = styled(Accordion)`
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        & > button {
-            border-radius: var(--border-radius);
-            font-size: inherit;
-            font-weight: var(--font-semi-bold);
-            line-height: inherit;
-            padding: var(--spacing-1halfx) var(--spacing-2x);
+    .eds-Accordion-button {
+        border-radius: var(--border-radius);
+        font-size: inherit;
+        font-weight: var(--font-semi-bold);
+        line-height: inherit;
+        padding: var(--spacing-1halfx) var(--spacing-2x);
 
-            svg {
-                margin-left: auto;
-                order: 2;
-            }
+        svg {
+            margin-left: auto;
+            order: 2;
+        }
 
-            &[aria-expanded='true'] {
-                border-radius: var(--border-radius) var(--border-radius) 0 0;
-            }
+        &[aria-expanded='true'] {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
     }
-
-    section {
+    
+    .eds-Accordion-section {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
 
-        > div {
-            padding: 0.75rem 1rem;
-        }
+    .eds-Accordion-body {
+        padding: 0.75rem 1rem;
     }
 `;
 
