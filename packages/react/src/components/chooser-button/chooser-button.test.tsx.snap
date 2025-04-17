@@ -65,15 +65,15 @@ input[type='radio']:checked + .c1 {
 }
 
 .c1,
-input[type="checkbox"]:focus + .c1,
-input[type="radio"]:focus + .c1 {
+input[type="checkbox"]:focus-visible + .c1,
+input[type="radio"]:focus-visible + .c1 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c1:focus,
-input[type="checkbox"]:focus + .c1,
-input[type="radio"]:focus + .c1 {
+.c1:focus-visible,
+input[type="checkbox"]:focus-visible + .c1,
+input[type="radio"]:focus-visible + .c1 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

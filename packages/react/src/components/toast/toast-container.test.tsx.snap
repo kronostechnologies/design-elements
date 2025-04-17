@@ -46,7 +46,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -70,7 +70,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -328,7 +328,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -352,7 +352,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -610,7 +610,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -634,7 +634,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -892,7 +892,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -916,7 +916,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1174,7 +1174,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1198,7 +1198,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;

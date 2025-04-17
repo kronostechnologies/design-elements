@@ -24,7 +24,7 @@ exports[`Radio button matches snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

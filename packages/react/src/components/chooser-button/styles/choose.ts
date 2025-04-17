@@ -32,7 +32,7 @@ export const Label = styled.label`
         color: ${({ theme }) => theme.component['chooser-selected-text-color']};
     }
 
-    ${({ theme }) => focus({ theme }, { selector: ', input[type="checkbox"]:focus + &, input[type="radio"]:focus + &' })}
+    ${({ theme }) => focus({ theme }, { selector: ', input[type="checkbox"]:focus-visible + &, input[type="radio"]:focus-visible + &' })}
 
     input[type='checkbox']:disabled + &,
     input[type='radio']:disabled + & {

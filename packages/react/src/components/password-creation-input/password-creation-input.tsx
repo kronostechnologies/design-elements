@@ -27,7 +27,7 @@ const PasswordInputContainer = styled.div`
 `;
 
 const StyledInput = styled.input<{ isMobile: boolean }>`
-    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: true })};
     padding-right: var(--size-2x);
 `;
 

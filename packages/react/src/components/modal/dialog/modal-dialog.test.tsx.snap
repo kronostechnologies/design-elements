@@ -70,7 +70,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -126,7 +126,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -148,7 +148,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c12:focus {
+.c12:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -180,7 +180,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -215,7 +215,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -497,7 +497,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -522,7 +522,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -761,7 +761,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -817,7 +817,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -839,7 +839,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c12:focus {
+.c12:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -871,7 +871,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -906,7 +906,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1188,7 +1188,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1244,7 +1244,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1266,7 +1266,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c12:focus {
+.c12:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1298,7 +1298,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1333,7 +1333,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1615,7 +1615,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1637,7 +1637,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c11:focus {
+.c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1669,7 +1669,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c12:focus {
+.c12:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1703,7 +1703,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

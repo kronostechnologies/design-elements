@@ -46,7 +46,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -68,7 +68,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -151,7 +151,7 @@ exports[`Button has destructive styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -173,7 +173,7 @@ exports[`Button has destructive styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -256,7 +256,7 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -278,7 +278,7 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -353,7 +353,7 @@ exports[`Button has destructive-secondary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -375,7 +375,7 @@ exports[`Button has destructive-secondary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -458,7 +458,7 @@ exports[`Button has left and right icons 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -480,7 +480,7 @@ exports[`Button has left and right icons 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -581,7 +581,7 @@ exports[`Button has mobile styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -603,7 +603,7 @@ exports[`Button has mobile styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -678,7 +678,7 @@ exports[`Button has primary disabled styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -700,7 +700,7 @@ exports[`Button has primary disabled styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -776,7 +776,7 @@ exports[`Button has primary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -798,7 +798,7 @@ exports[`Button has primary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -873,7 +873,7 @@ exports[`Button has primary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -895,7 +895,7 @@ exports[`Button has primary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -970,7 +970,7 @@ exports[`Button has secondary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -992,7 +992,7 @@ exports[`Button has secondary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1067,7 +1067,7 @@ exports[`Button has secondary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1089,7 +1089,7 @@ exports[`Button has secondary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1164,7 +1164,7 @@ exports[`Button has small styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1186,7 +1186,7 @@ exports[`Button has small styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1261,7 +1261,7 @@ exports[`Button has small styles on mobile 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1283,7 +1283,7 @@ exports[`Button has small styles on mobile 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1358,7 +1358,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1380,7 +1380,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1455,7 +1455,7 @@ exports[`Button has tertiary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1477,7 +1477,7 @@ exports[`Button has tertiary styles 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

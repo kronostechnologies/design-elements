@@ -46,7 +46,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -70,7 +70,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -323,7 +323,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -347,7 +347,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -600,7 +600,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -624,7 +624,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -877,7 +877,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -901,7 +901,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1154,7 +1154,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1178,7 +1178,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1431,7 +1431,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1455,7 +1455,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1708,7 +1708,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1733,7 +1733,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1986,7 +1986,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2010,7 +2010,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2263,7 +2263,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2288,7 +2288,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2541,7 +2541,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2565,7 +2565,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2818,7 +2818,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2843,7 +2843,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3096,7 +3096,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3120,7 +3120,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

@@ -150,7 +150,7 @@ describe('Icon Button', () => {
         />);
 
         expect(wrapper).toHaveStyleRule('outline', '2px solid #84C6EA', {
-            modifier: ':focus',
+            modifier: ':focus-visible',
         });
     });
 

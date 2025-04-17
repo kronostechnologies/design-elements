@@ -46,7 +46,7 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
   outline-offset: -2px;
 }
 
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -68,7 +68,7 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -249,7 +249,7 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
