@@ -169,7 +169,7 @@ describe('Button', () => {
         const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
 
         expect(wrapper).toHaveStyleRule('outline', '2px solid #84C6EA', {
-            modifier: ':focus',
+            modifier: ':focus-visible',
         });
     });
 

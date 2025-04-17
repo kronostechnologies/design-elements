@@ -85,7 +85,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -138,7 +138,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -233,7 +233,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -423,7 +423,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -476,7 +476,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c9:focus {
+.c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -571,7 +571,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -776,7 +776,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -903,7 +903,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -956,7 +956,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1051,7 +1051,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
