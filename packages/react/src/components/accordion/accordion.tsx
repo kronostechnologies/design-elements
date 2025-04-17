@@ -16,6 +16,7 @@ export interface ItemsProps {
 }
 
 interface AccordionProps {
+    className?: string;
     id?: string;
     items: ItemsProps[];
     mode?: 'single' | 'multi';
@@ -29,6 +30,7 @@ export const StyledAccordionGroup = styled.div`
 `;
 
 export const Accordion: React.FC<AccordionProps> = ({
+    className,
     id: providedId,
     mode = 'single',
     items,
@@ -99,7 +101,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     };
 
     return (
-        <StyledAccordionGroup>
+        <StyledAccordionGroup className={className}>
             {items.map((item, index) => {
                 const uniqueId = `${id}-${item.title.replace(/\s+/g, '-')}`;
                 return (
@@ -111,6 +113,8 @@ export const Accordion: React.FC<AccordionProps> = ({
                         expanded={expandedItemIds.includes(uniqueId)}
                         disabled={item.disabled}
                         buttonRef={buttonRefs[index]}
+                        headingType={item.headingType}
+                        headingTag={item.headingTag}
                         onToggle={() => handleToggle(uniqueId)}
                         onKeyDown={(event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index)}
                     />
