@@ -178,7 +178,7 @@ describe('Tabs', () => {
                 tabs={tabs}
                 forceRenderTabPanels
                 size="small"
-            />,
+            />
         );
 
         expect(wrapper).toMatchSnapshot();
