@@ -145,10 +145,10 @@ const ListBoxTag = styled(Tag)`
     }
 `;
 
-const Arrow = styled(Icon)<{ $disabled?: boolean }>`
+const Arrow = styled(Icon)<{ $disabled?: boolean, $readOnly?: boolean }>`
     align-items: center;
     color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
-    display: flex;
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     flex: none;
     height: var(--size-1x);
     margin-left: auto;
@@ -617,6 +617,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                     aria-hidden="true"
                     data-testid="arrow"
                     $disabled={disabled}
+                    $readOnly={readOnly}
                     name={open ? 'chevronUp' : 'chevronDown'}
                     size={device === 'mobile' ? '24' : '16'}
                 />
