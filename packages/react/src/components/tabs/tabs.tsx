@@ -21,7 +21,7 @@ import { TabSize } from './types';
 import { tabsClasses } from './tabs-classes';
 import { focus } from '../../utils/css-state';
 
-const getButtonSize = (): string => 'var(--size-2x)';
+const buttonSize = 'var(--size-2x)';
 
 interface TabsWrapperProps {
     $hasLeftScroll: boolean;
@@ -45,7 +45,6 @@ const TabTopSection = styled.div`
 `;
 
 const TabButtonsContainer = styled.div`
-    /* stylelint-disable-next-line @stylistic/declaration-bang-space-before */
     display: flex;
     grid-area: tabs;
     height: var(--size-2halfx);
@@ -60,13 +59,13 @@ const TabsWrapper = styled.div<TabsWrapperProps>`
             ${(props) => (
         props.$hasLeftScroll
             ? `transparent 0px,
-                       transparent ${getButtonSize()},
-                       #000 ${getButtonSize()},` : '#000 0px,'
+                       transparent ${buttonSize},
+                       #000 ${buttonSize},` : '#000 0px,'
     )}
-            #000 calc(100% - ${getButtonSize()}),
+            #000 calc(100% - ${buttonSize}),
             ${(props) => (
         props.$hasRightScroll
-            ? `transparent calc(100% - ${getButtonSize()}),
+            ? `transparent calc(100% - ${buttonSize}),
                        transparent 100%` : '#000 100%'
     )}
         )
@@ -97,7 +96,7 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
     min-height: auto;
     padding: 0 var(--spacing-1x);
     position: absolute;
-    width: ${getButtonSize};
+    width: ${buttonSize};
     z-index: 1;
 
     &:hover {
@@ -162,7 +161,7 @@ interface Props {
 
 export const Tabs: VoidFunctionComponent<Props> = ({
     className,
-    size = 'default',
+    size = 'medium',
     forceRenderTabPanels,
     tabs,
     defaultSelectedId,

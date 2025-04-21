@@ -1,7 +1,7 @@
 import { ReactNode, KeyboardEvent } from 'react';
 import { IconName } from '../icon/icon';
 
-export type TabSize = 'default' | 'small';
+export type TabSize = 'medium' | 'small';
 
 export interface Tab {
     id: string;

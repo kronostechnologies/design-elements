@@ -12,9 +12,9 @@ const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $remo
     color: ${({ $selected, theme }) => ($selected ? theme.component['tab-button-selected-text-color'] : theme.component['tab-button-text-color'])};
     display: flex;
     font-family: var(--font-family);
-    font-size: ${({ $size }) => ($size === 'default' ? '0.875rem' : '0.75rem')};
+    font-size: ${({ $size }) => ($size === 'medium' ? '0.875rem' : '0.75rem')};
     gap: var(--spacing-half);
-    padding: ${({ $size }) => ($size === 'default' ? '0 var(--spacing-2x)' : '0 var(--spacing-1x)')};
+    padding: ${({ $size }) => ($size === 'medium' ? '0 var(--spacing-2x)' : '0 var(--spacing-1x)')};
     padding-right: ${({ $removable }) => ($removable && 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
@@ -27,7 +27,7 @@ const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $remo
         bottom: 0;
         content: '';
         display: block;
-        height: ${({ $size }) => ($size === 'default' ? '0.25rem' : '0.125rem')};
+        height: ${({ $size }) => ($size === 'medium' ? '0.25rem' : '0.125rem')};
         left: 0;
         position: absolute;
         width: 100%;
@@ -95,7 +95,7 @@ const ButtonLabel = styled.span`
 `;
 
 export const TabButton = forwardRef(({
-    size = 'default',
+    size,
     id,
     panelId,
     children,

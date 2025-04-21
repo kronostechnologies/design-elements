@@ -12,7 +12,7 @@ const StyledDiv = styled.div<{ $size?: TabSize }>`
 export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
     buttonId,
     children,
-    size = 'default',
+    size,
     hidden,
     id,
 }) => (
