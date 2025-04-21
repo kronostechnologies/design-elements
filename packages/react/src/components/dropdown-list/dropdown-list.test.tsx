@@ -131,10 +131,6 @@ describe('Dropdown list', () => {
             const option = findByTestId(wrapper, 'listitem-qc');
             expect(option.exists()).toBe(false);
 
-            if (option.exists()) {
-                option.simulate('click');
-            }
-
             expect(onChangeMock).not.toHaveBeenCalled();
         });
     });
