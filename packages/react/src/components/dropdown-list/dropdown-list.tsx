@@ -90,7 +90,7 @@ const Textbox = styled.div<TextboxProps>`
     user-select: none;
     width: 100%;
 
-    ${focus};
+    ${({ theme }) => focus({ theme }, { focusType: 'focus' })};
 `;
 
 const TextWrapper = styled.span`
