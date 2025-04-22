@@ -46,7 +46,7 @@ exports[`SearchInput should match the snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c13:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -230,7 +230,7 @@ input + .c2 {
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -269,7 +269,7 @@ label + .c6 {
   outline-offset: -2px;
 }
 
-.c9:focus {
+.c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

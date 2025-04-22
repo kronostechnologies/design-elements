@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ResolvedTheme } from '../../themes/theme';
-import { focus } from '../../utils/css-state';
 
 interface DescriptionProps {
     $isMobile: boolean;
@@ -77,8 +76,6 @@ export const Label = styled.label<CardProps>`
     gap: var(--spacing-2x);
     padding: var(--spacing-2x) var(--spacing-3x);
     width: 100%;
-
-    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
 
     &:hover {
         background-color: ${({ $isDisabled, theme }) => ($isDisabled ? theme.component['radio-card-disabled-background-color'] : theme.component['radio-card-hover-background-color'])};

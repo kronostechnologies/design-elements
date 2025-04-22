@@ -46,7 +46,7 @@ exports[`Datepicker has openToDate 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -135,7 +135,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -293,7 +293,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -436,7 +436,7 @@ exports[`Datepicker matches snapshot (data-testid) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -525,7 +525,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -683,7 +683,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -828,7 +828,7 @@ exports[`Datepicker matches snapshot (desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -917,7 +917,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1075,7 +1075,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1220,7 +1220,7 @@ exports[`Datepicker matches snapshot (disabled) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1309,7 +1309,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1467,7 +1467,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1614,7 +1614,7 @@ exports[`Datepicker matches snapshot (invalid) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1729,7 +1729,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6 .react-datepicker__day:focus {
+.c6 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1887,7 +1887,7 @@ label + .c5 {
   outline-offset: -2px;
 }
 
-.c7.datePickerInput:focus {
+.c7.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2046,7 +2046,7 @@ exports[`Datepicker matches snapshot (mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2135,7 +2135,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2293,7 +2293,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2436,7 +2436,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2460,7 +2460,7 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2689,7 +2689,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -2847,7 +2847,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3696,7 +3696,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3718,7 +3718,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   outline-offset: -2px;
 }
 
-.c18:focus {
+.c18:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3752,7 +3752,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -3981,7 +3981,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -4139,7 +4139,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -5006,7 +5006,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c7:focus {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -5030,7 +5030,7 @@ exports[`Datepicker matches snapshot (open, mobile) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -5259,7 +5259,7 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c4 .react-datepicker__day:focus {
+.c4 .react-datepicker__day:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -5417,7 +5417,7 @@ label + .c3 {
   outline-offset: -2px;
 }
 
-.c5.datePickerInput:focus {
+.c5.datePickerInput:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

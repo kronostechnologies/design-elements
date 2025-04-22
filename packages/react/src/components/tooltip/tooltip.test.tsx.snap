@@ -164,7 +164,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -438,7 +438,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -714,7 +714,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -988,7 +988,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

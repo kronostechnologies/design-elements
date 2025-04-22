@@ -322,7 +322,7 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -338,7 +338,7 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -795,7 +795,7 @@ exports[`Link Component Styling matches icon only snapshot 1`] = `
   outline-offset: -2px;
 }
 
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;

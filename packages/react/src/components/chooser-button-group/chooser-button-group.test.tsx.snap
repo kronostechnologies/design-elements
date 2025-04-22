@@ -46,15 +46,15 @@ input[type='radio']:checked + .c3 {
 }
 
 .c3,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
+input[type="checkbox"]:focus-visible + .c3,
+input[type="radio"]:focus-visible + .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
+.c3:focus-visible,
+input[type="checkbox"]:focus-visible + .c3,
+input[type="radio"]:focus-visible + .c3 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -177,15 +177,15 @@ input[type='radio']:checked + .c3 {
 }
 
 .c3,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
+input[type="checkbox"]:focus-visible + .c3,
+input[type="radio"]:focus-visible + .c3 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c3:focus,
-input[type="checkbox"]:focus + .c3,
-input[type="radio"]:focus + .c3 {
+.c3:focus-visible,
+input[type="checkbox"]:focus-visible + .c3,
+input[type="radio"]:focus-visible + .c3 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
