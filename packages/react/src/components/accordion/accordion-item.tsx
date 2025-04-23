@@ -138,7 +138,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 
     return (
         <AccordionItemContainer>
-            <HeadingStyled className={accordionClasses.heading} type={headingType} tag={headingTag} noMargin>
+            <HeadingStyled
+                className={accordionClasses.heading}
+                type={headingType}
+                tag={headingTag}
+                noMargin
+            >
                 <ButtonStyled
                     id={headerId}
                     buttonType="tertiary"
@@ -151,7 +156,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon className={accordionClasses.buttonIcon} name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon 
+                        className={accordionClasses.buttonIcon}
+                        name={expanded ? 'caretDown' : 'caretRight'}
+                        aria-hidden="true"
+                    />
                 </ButtonStyled>
             </HeadingStyled>
             <AccordionPanel
