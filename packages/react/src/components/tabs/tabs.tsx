@@ -56,10 +56,10 @@ const TabsWrapper = styled.div<TabsWrapperProps>`
     mask-image:
         linear-gradient(
             90deg,
-            ${(props) => ( props.$hasLeftScroll
+            ${(props) => (props.$hasLeftScroll
             ? `transparent 0px, transparent ${buttonSize}, #000 ${buttonSize},` : '#000 0px,')}
             #000 calc(100% - ${buttonSize}),
-            ${(props) => ( props.$hasRightScroll
+            ${(props) => (props.$hasRightScroll
             ? `transparent calc(100% - ${buttonSize}), transparent 100%` : '#000 100%')}
         );
     overflow: hidden;
