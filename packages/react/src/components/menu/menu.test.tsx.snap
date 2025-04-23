@@ -46,7 +46,7 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   outline-offset: -2px;
 }
 
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -215,7 +215,7 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   outline-offset: -2px;
 }
 
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
