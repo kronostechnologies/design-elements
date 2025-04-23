@@ -4,12 +4,7 @@ import { mountWithProviders } from '../../test-utils/renderer';
 import { TabButton } from './tab-button';
 
 describe('TabButton', () => {
-    const defaultProps = {
-
-    };
-
     const focusedAndSelected = {
-        ...defaultProps,
         id: 'aId',
         panelId: 'aPanelId',
         isSelected: true,

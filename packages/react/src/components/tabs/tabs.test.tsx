@@ -173,7 +173,7 @@ describe('Tabs', () => {
     test('has small styles', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = renderWithProviders(
+        const { container } = renderWithProviders(
             <Tabs
                 tabs={tabs}
                 forceRenderTabPanels
@@ -181,7 +181,7 @@ describe('Tabs', () => {
             />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('matches snapshot (mobile)', () => {
