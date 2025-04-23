@@ -5,6 +5,7 @@ import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
 import { focus } from '../../utils/css-state';
+import { accordionClasses } from './accordion-classes';
 
 export interface AccordionItemProps {
     title: string;
@@ -19,13 +20,18 @@ export interface AccordionItemProps {
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
 
-const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
+const AccordionItemContainer = styled.div`
+    &:not(:first-child) {
+        margin-top: var(--spacing-1x);
+    }
+`;
+
+const AccordionPanel = styled.section<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};
     border-color: ${({ theme }) => theme.component['accordion-panel-border-color']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-style: solid;
     border-width: 0;
-    margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
@@ -39,7 +45,7 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     }
 `;
 
-const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
+const AccordionContent = styled.div<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};
     color: ${({ theme }) => theme.component['accordion-panel-text-color']};
     font-size: 0.75rem;
@@ -64,7 +70,7 @@ const HeadingStyled = styled(Heading)`
 `;
 
 const ButtonStyled = styled(Button)<{ theme: ResolvedTheme }>`
-    align-items: flex-start;
+    align-items: center;
     background: ${({ theme }) => theme.component['accordion-header-background-color']};
     border: 1px solid ${({ theme }) => theme.component['accordion-header-border-color']};
     border-radius: var(--border-radius-2x);
@@ -131,11 +137,17 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const panelId = `panel-${id}`;
 
     return (
-        <>
-            <HeadingStyled type={headingType} tag={headingTag} noMargin>
+        <AccordionItemContainer>
+            <HeadingStyled
+                className={accordionClasses.heading}
+                type={headingType}
+                tag={headingTag}
+                noMargin
+            >
                 <ButtonStyled
                     id={headerId}
                     buttonType="tertiary"
+                    className={accordionClasses.button}
                     label={title}
                     aria-expanded={expanded}
                     aria-controls={panelId}
@@ -144,19 +156,24 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon
+                        className={accordionClasses.buttonIcon}
+                        name={expanded ? 'caretDown' : 'caretRight'}
+                        aria-hidden="true"
+                    />
                 </ButtonStyled>
             </HeadingStyled>
-            <AccordionSection
+            <AccordionPanel
                 id={panelId}
                 aria-labelledby={headerId}
                 aria-expanded={expanded}
                 aria-disabled={disabled}
+                className={accordionClasses.panel}
             >
-                <AccordionBody>
+                <AccordionContent className={accordionClasses.content}>
                     {content}
-                </AccordionBody>
-            </AccordionSection>
-        </>
+                </AccordionContent>
+            </AccordionPanel>
+        </AccordionItemContainer>
     );
 };
