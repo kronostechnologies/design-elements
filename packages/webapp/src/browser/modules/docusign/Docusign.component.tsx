@@ -1,4 +1,4 @@
-import { Accordion, Heading, Link, Lozenge } from '@equisoft/design-elements-react';
+import { Accordion, accordionClasses, Heading, Link, Lozenge, LozengeVariant } from '@equisoft/design-elements-react';
 import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuid } from 'uuid';
@@ -13,11 +13,10 @@ interface EnvelopeData {
 }
 
 // Types for Lozenge variants and icons based on your design system
-type LozengeVariant = 'success' | 'warning' | 'alert';
-type IconType = 'check' | 'send' | 'alertOctagon';
+type IconName = 'check' | 'send' | 'alertOctagon';
 
 // Status configuration for different envelope statuses with proper typing
-const STATUS_CONFIG: Record<EnvelopeData['status'], { variant: LozengeVariant; icon: IconType }> = {
+const STATUS_CONFIG: Record<EnvelopeData['status'], { variant: LozengeVariant; icon: IconName }> = {
     completed: { variant: 'success', icon: 'check' },
     send: { variant: 'warning', icon: 'send' },
     declined: { variant: 'alert', icon: 'alertOctagon' },
@@ -31,28 +30,28 @@ const Container = styled.div`
 `;
 
 const StyledAccordion = styled(Accordion)`
-    .eds-Accordion-button {
+    .${accordionClasses.button} {
         border-radius: var(--border-radius);
         font-size: inherit;
         font-weight: var(--font-semi-bold);
         line-height: inherit;
         padding: var(--spacing-1halfx) var(--spacing-2x);
 
-        svg {
-            margin-left: auto;
-            order: 2;
-        }
-
         &[aria-expanded='true'] {
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
     }
+
+    .${accordionClasses.buttonIcon} {
+        margin-left: auto;
+        order: 2;
+    }
     
-    .eds-Accordion-section {
+    .${accordionClasses.panel} {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
 
-    .eds-Accordion-body {
+    .${accordionClasses.content} {
         padding: 0.75rem 1rem;
     }
 `;
@@ -111,11 +110,11 @@ const Reason = styled.p`
 // EnvelopeItem Component
 interface EnvelopeProps {
     envelope: EnvelopeData;
-    t: ReturnType<typeof useTranslation>['t']; // Using ReturnType instead of TFunction
     formatDate: (date: Date) => string;
 }
 
-const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate }) => {
+const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, formatDate }) => {
+    const { t } = useTranslation();
     const statusConfig = STATUS_CONFIG[envelope.status];
 
     return (
@@ -126,6 +125,7 @@ const EnvelopeItem: React.FC<EnvelopeProps> = memo(({ envelope, t, formatDate })
                 </StyledHeading>
                 <StyledDate>
                     {t('docusign:created_on')}
+                    &nbsp;
                     {formatDate(envelope.createdDate)}
                 </StyledDate>
             </Main>
@@ -193,32 +193,24 @@ export const DocusignPage: FunctionComponent = memo(() => {
         },
     ], []);
 
-    const renderEnvelopes = useCallback(
-        () => envelopeData.map((envelope) => (
-            <EnvelopeItem
-                key={envelope.id}
-                envelope={envelope}
-                t={t}
-                formatDate={formatDate}
-            />
-        )),
-        [envelopeData, t, formatDate],
-    );
-
-    const count = useMemo(() => envelopeData.length, [envelopeData]);
-
     const accordionItems = useMemo(() => [
         {
-            title: t('docusign:accordion_title', { count }) ?? `DocuSign envelope status (${count})`,
+            title: t('docusign:accordion_title', { count: envelopeData.length }) ?? `DocuSign envelope status (${envelopeData.length})`,
             headingType: 'small' as const,
             headingTag: 'h2' as const,
             content: (
                 <div>
-                    {renderEnvelopes()}
+                    {envelopeData.map((envelope) => (
+                        <EnvelopeItem
+                            key={envelope.id}
+                            envelope={envelope}
+                            formatDate={formatDate}
+                        />
+                    ))}
                 </div>
             ),
         },
-    ], [t, count, renderEnvelopes]);
+    ], [t, envelopeData, formatDate]);
 
     return (
         <Container>

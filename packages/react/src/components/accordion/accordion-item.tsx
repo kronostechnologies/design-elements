@@ -26,7 +26,7 @@ const AccordionItemContainer = styled.div`
     }
 `;
 
-const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
+const AccordionPanel = styled.section<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};
     border-color: ${({ theme }) => theme.component['accordion-panel-border-color']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
@@ -45,7 +45,7 @@ const AccordionSection = styled.section<{ theme: ResolvedTheme }>`
     }
 `;
 
-const AccordionBody = styled.div<{ theme: ResolvedTheme }>`
+const AccordionContent = styled.div<{ theme: ResolvedTheme }>`
     background: ${({ theme }) => theme.component['accordion-panel-background-color']};
     color: ${({ theme }) => theme.component['accordion-panel-text-color']};
     font-size: 0.75rem;
@@ -151,20 +151,20 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon className={accordionClasses.buttonIcon} name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
                 </ButtonStyled>
             </HeadingStyled>
-            <AccordionSection
+            <AccordionPanel
                 id={panelId}
                 aria-labelledby={headerId}
                 aria-expanded={expanded}
                 aria-disabled={disabled}
-                className={accordionClasses.section}
+                className={accordionClasses.panel}
             >
-                <AccordionBody className={accordionClasses.body}>
+                <AccordionContent className={accordionClasses.content}>
                     {content}
-                </AccordionBody>
-            </AccordionSection>
+                </AccordionContent>
+            </AccordionPanel>
         </AccordionItemContainer>
     );
 };
