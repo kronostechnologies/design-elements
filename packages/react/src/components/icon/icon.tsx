@@ -67,7 +67,6 @@ import Unlink from '../../icons/unlink.svg';
 import Export from '../../icons/export.svg';
 import Table from '../../icons/table.svg';
 
-
 const iconMapping = {
     alertCircle: AlertCircle,
     alertFilled: AlertFilled,
