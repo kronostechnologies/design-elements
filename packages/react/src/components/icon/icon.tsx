@@ -24,6 +24,7 @@ import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
+import Lock from 'feather-icons/dist/icons/lock.svg';
 import Mail from 'feather-icons/dist/icons/mail.svg';
 import MapPin from 'feather-icons/dist/icons/map-pin.svg';
 import Maximize from 'feather-icons/dist/icons/maximize-2.svg';
@@ -38,6 +39,8 @@ import Search from 'feather-icons/dist/icons/search.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
+import Unlock from 'feather-icons/dist/icons/unlock.svg';
+import UploadCloud from 'feather-icons/dist/icons/upload-cloud.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
@@ -103,6 +106,7 @@ const iconMapping = {
     info: Info,
     link: Link,
     lightbulb: Lightbulb,
+    lock: Lock,
     mail: Mail,
     mapPin: MapPin,
     maximize: Maximize,
@@ -123,6 +127,8 @@ const iconMapping = {
     transfer: Transfer,
     trash: Trash,
     unlink: Unlink,
+    unlock: Unlock,
+    uploadCloud: UploadCloud,
     user: User,
     users: Users,
     warningFilled: WarningFilled,
