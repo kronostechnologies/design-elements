@@ -156,7 +156,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon 
+                    <Icon
                         className={accordionClasses.buttonIcon}
                         name={expanded ? 'caretDown' : 'caretRight'}
                         aria-hidden="true"
