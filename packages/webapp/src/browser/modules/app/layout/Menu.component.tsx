@@ -21,6 +21,12 @@ export const Menu: FunctionComponent = () => {
                     iconName: 'users',
                     name: t('nav:Users'),
                 },
+                {
+                    href: ROUTES.docusign.path,
+                    end: ROUTES.docusign.end,
+                    iconName: 'home',
+                    name: t('nav:Docusign'),
+                },
             ]}
             footerItems={[]}
         />
