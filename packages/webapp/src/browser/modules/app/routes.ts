@@ -2,6 +2,7 @@ import { RouteObject } from 'react-router';
 import { RouteCollection, RouteDefinition } from '../../core';
 import { HomePage } from '../home';
 import { UserPage, UsersPage } from '../users';
+import { DocusignPage } from '../docusign';
 
 export const ROUTES: RouteCollection = {
     home: {
@@ -17,6 +18,11 @@ export const ROUTES: RouteCollection = {
     user: {
         path: '/user/:id?',
         component: UserPage,
+        end: true,
+    },
+    docusign: {
+        path: '/docusign',
+        component: DocusignPage,
         end: true,
     },
 };

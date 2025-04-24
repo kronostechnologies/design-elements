@@ -94,6 +94,7 @@ export const WithCallback: Story = {
     args: {
         label: 'Select an option',
         onChange: (option: DropdownListOption) => console.info(`Label: ${option.label} | Value: ${option.value}`),
+        onClose: () => console.info('onClose event triggered'),
     },
 };
 WithCallback.parameters = rawCodeParameters;

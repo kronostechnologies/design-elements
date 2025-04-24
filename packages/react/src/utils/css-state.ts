@@ -16,7 +16,7 @@ export const focus = (
 ): FlattenSimpleInterpolation => {
     const {
         selector,
-        focusType = 'focus',
+        focusType = 'focus-visible',
         inverted = false,
         insideOnly = false,
     } = options;

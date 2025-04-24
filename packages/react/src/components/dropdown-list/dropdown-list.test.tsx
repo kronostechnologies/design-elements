@@ -79,6 +79,24 @@ describe('Dropdown list', () => {
 
             expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
         });
+
+        test('callback is fired when the textbox is closed', () => {
+            const callback = jest.fn();
+            const wrapper = shallow(
+                <DropdownList options={provinces} onClose={callback} />,
+            );
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'keydown',
+                { key: 'ArrowDown', preventDefault: jest.fn() },
+            );
+            getByTestId(wrapper, 'textbox').simulate(
+                'blur',
+                { relatedTarget: document.createElement('div') },
+            );
+
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
     });
 
     describe('readonly state', () => {

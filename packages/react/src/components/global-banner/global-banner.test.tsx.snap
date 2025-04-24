@@ -46,7 +46,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -68,7 +68,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -267,7 +267,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -289,7 +289,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -321,7 +321,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -527,7 +527,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -549,7 +549,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -581,7 +581,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -787,7 +787,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -809,7 +809,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -841,7 +841,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1051,7 +1051,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1073,7 +1073,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1276,7 +1276,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1298,7 +1298,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1330,7 +1330,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1540,7 +1540,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1562,7 +1562,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1594,7 +1594,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1804,7 +1804,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c5:focus {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
@@ -1826,7 +1826,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c6:focus {
+.c6:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -1858,7 +1858,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   outline-offset: -2px;
 }
 
-.c8:focus {
+.c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
