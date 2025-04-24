@@ -186,6 +186,11 @@ export interface DropdownListProps<M extends boolean | undefined> {
     iconName?: IconName;
 
     /**
+     * OnClose callback function, called when the dropdown is closed
+     */
+    onClose?(): void;
+
+    /**
      * OnChange callback function, invoked when options are selected
      */
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
@@ -212,6 +217,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     id: providedId,
     label,
     onChange,
+    onClose,
     options,
     name,
     required,
@@ -341,7 +347,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
-    }, []);
+        onClose?.();
+    }, [onClose]);
 
     const selectOption: (option: DropdownListOption) => void = useCallback((option) => {
         setSelectedOptions([option]);
