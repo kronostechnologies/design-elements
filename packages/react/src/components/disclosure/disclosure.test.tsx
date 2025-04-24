@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
 import { useId } from '../../hooks/use-id';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Button } from '../buttons/button';
@@ -7,7 +7,7 @@ import { ButtonPropsWithoutOnClick, Container, Disclosure, DisclosureWidgetProps
 
 jest.mock('../../hooks/use-id');
 
-const TestDisclosure: FunctionComponent<Omit<Omit<DisclosureWidgetProps, 'setExpanded'>, 'expanded'>> = (
+const TestDisclosure: FC<PropsWithChildren<Omit<DisclosureWidgetProps, 'setExpanded' | 'expanded'>>> = (
     props,
 ) => {
     const [expanded, setExpanded] = useState(false);

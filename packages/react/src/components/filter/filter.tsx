@@ -1,5 +1,5 @@
 import { ReactElement, useCallback, useState, MouseEvent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Disclosure } from '../disclosure/disclosure';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FilterOption, FilterType, FilterMode } from './types';
@@ -37,16 +37,14 @@ const StyledDisclosure = styled(Disclosure)<{ selected: boolean }>`
             background: ${({ theme }) => theme.component['filter-hover-background-color']};
             color: ${({ theme }) => theme.component['filter-hover-label-color']};
         }
-
-        ${({ selected, theme }) => selected && `
-                background: ${theme.component['filter-selected-background-color']};
-                color: ${theme.component['filter-selected-label-color']};
-                border-color: ${theme.component['filter-selected-border-color']};
-
-                &:hover {
-                    background: ${theme.component['filter-selected-hover-background-color']};
-                }
-        `}
+        ${({ selected, theme }) => selected && css`
+            background: ${theme.component['filter-selected-background-color']};
+            border-color: ${theme.component['filter-selected-border-color']};
+            color: ${theme.component['filter-selected-label-color']};
+            &:hover {
+                background: ${theme.component['filter-selected-hover-background-color']};
+            }`
+        }
     }
 `;
 
@@ -108,7 +106,7 @@ export const Filter = <T, O>({
                         onClick={(_: MouseEvent<HTMLButtonElement>) => {
                             optionOnClick(option);
                         }}
-                        buttonType='tertiary'
+                        buttonType="tertiary"
                     />
                 ))
             }
