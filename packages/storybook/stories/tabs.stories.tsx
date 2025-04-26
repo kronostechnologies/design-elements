@@ -85,14 +85,17 @@ const TabsMeta: Meta<typeof Tabs> = {
 export default TabsMeta;
 type Story = StoryObj<typeof Tabs>;
 
-export const Default: Story = {
-    ...TabsMeta,
-};
-
-export const Global: Story = {
+export const Medium: Story = {
     ...TabsMeta,
     args: {
-        global: true,
+        size: 'medium',
+    },
+};
+
+export const Small: Story = {
+    ...TabsMeta,
+    args: {
+        size: 'small',
     },
 };
 
@@ -119,6 +122,7 @@ export const AddAndDeleteTabs: Story = {
             <Tabs
                 tabs={currentTabs}
                 onRemove={handleRemove}
+                size="medium"
                 addButton={{
                     label: 'Add new tab',
                     tooltipContent: 'Add a new tab',
@@ -145,9 +149,9 @@ export const Scrollable: Story = {
 
         return (
             <div style={{ maxWidth: '600px' }}>
-                <Tabs tabs={customTabs} />
+                <Tabs tabs={customTabs} size="medium" />
                 <br />
-                <Tabs tabs={customTabs} global />
+                <Tabs tabs={customTabs} size="small" />
             </div>
         );
     },

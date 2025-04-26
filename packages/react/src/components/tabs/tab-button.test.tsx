@@ -15,7 +15,9 @@ describe('TabButton', () => {
 
     test('should display button text', () => {
         const expectedButtonText = 'some text';
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>{expectedButtonText}</TabButton>);
+        const wrapper = mountWithProviders(
+            <TabButton {...focusedAndSelected} size="medium">{expectedButtonText}</TabButton>,
+        );
 
         const tabPanel = getByTestId(wrapper, 'tab-text');
 
@@ -23,7 +25,7 @@ describe('TabButton', () => {
     });
 
     test('should not have a left icon in button when tab doesn\'t have a left icon name', () => {
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
+        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected} size="medium">some text</TabButton>);
 
         const tabButtonLeftIcon = findByTestId(wrapper, 'tab-left-icon');
 
@@ -33,7 +35,7 @@ describe('TabButton', () => {
     test('should have a left icon in button when tab has a left icon name', () => {
         const expectedLeftIcon = 'chevronUp';
         const wrapper = mountWithProviders(
-            <TabButton {...focusedAndSelected} leftIcon={expectedLeftIcon}>some text</TabButton>,
+            <TabButton {...focusedAndSelected} size="medium" leftIcon={expectedLeftIcon}>some text</TabButton>,
         );
 
         const tabButtonLeftIcon = getByTestId(wrapper, 'tab-left-icon');
@@ -42,7 +44,7 @@ describe('TabButton', () => {
     });
 
     test('should not have a right icon in button when tab doesn\'t have a right icon name', () => {
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
+        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected} size="medium">some text</TabButton>);
 
         const tabButtonRightIcon = findByTestId(wrapper, 'tab-right-icon');
 
@@ -52,7 +54,7 @@ describe('TabButton', () => {
     test('should have a right icon in button when tab has a right icon name', () => {
         const expectedRightIcon = 'chevronDown';
         const wrapper = mountWithProviders(
-            <TabButton {...focusedAndSelected} rightIcon={expectedRightIcon}>some text</TabButton>,
+            <TabButton {...focusedAndSelected} size="medium" rightIcon={expectedRightIcon}>some text</TabButton>,
         );
 
         const tabButtonRightIcon = getByTestId(wrapper, 'tab-right-icon');
@@ -68,6 +70,7 @@ describe('TabButton', () => {
                 panelId="aPanelId"
                 isSelected
                 onClick={expectedOnClickCall}
+                size="medium"
             >
                 some text
             </TabButton>,

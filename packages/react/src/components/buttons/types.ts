@@ -38,6 +38,7 @@ export interface ButtonProps {
      * @default medium
      */
     size?: Size;
+    tabIndex?: number;
     title?: string;
     type?: Type;
 
