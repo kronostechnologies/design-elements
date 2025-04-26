@@ -1,21 +1,20 @@
-import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
+import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
-import { Icon, IconName } from '../icon/icon';
+import { Icon } from '../icon/icon';
+import { TabButtonProps, TabSize } from './types';
 
-const selectedIndicatorPosition = (global: boolean | undefined): string => (global ? 'bottom: 0' : 'top: 0');
-
-const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $removable?: boolean; }>`
+const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;
     color: ${({ $selected, theme }) => ($selected ? theme.component['tab-button-selected-text-color'] : theme.component['tab-button-text-color'])};
     display: flex;
     font-family: var(--font-family);
-    font-size: 0.875rem;
+    font-size: ${({ $size }) => ($size === 'medium' ? '0.875rem' : '0.75rem')};
     gap: var(--spacing-half);
-    padding: 0 var(--spacing-2x);
+    padding: ${({ $size }) => ($size === 'medium' ? '0 var(--spacing-2x)' : '0 var(--spacing-1x)')};
     padding-right: ${({ $removable }) => ($removable && 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
@@ -25,13 +24,13 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
     }
 
     &::after {
+        bottom: 0;
         content: '';
         display: block;
-        height: 4px;
+        height: ${({ $size }) => ($size === 'medium' ? '0.25rem' : '0.125rem')};
         left: 0;
         position: absolute;
         width: 100%;
-        ${({ $global }) => selectedIndicatorPosition($global)};
     }
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-visible', insideOnly: true })};
@@ -47,8 +46,7 @@ const StyledButton = styled.button<{ $global?: boolean; $selected?: boolean; $re
         }
     `}
 
-    ${({ $global, $selected, theme }) => $selected && css`
-        background: ${$global ? theme.component['tab-global-button-selected-background-color'] : theme.component['tab-section-button-selected-background-color']};
+    ${({ $selected, theme }) => $selected && css`
         font-weight: var(--font-semi-bold);
 
         &::after {
@@ -96,21 +94,8 @@ const ButtonLabel = styled.span`
     }
 `;
 
-interface TabButtonProps {
-    global?: boolean;
-    id: string;
-    children: string;
-    panelId: string;
-    leftIcon?: IconName
-    rightIcon?: IconName;
-    isSelected: boolean;
-    onClick(): void;
-    onRemove?(): void;
-    onKeyDown?(event: KeyboardEvent<HTMLDivElement>): void;
-}
-
 export const TabButton = forwardRef(({
-    global,
+    size,
     id,
     panelId,
     children,
@@ -145,7 +130,7 @@ export const TabButton = forwardRef(({
                 onClick={onClick}
                 $removable={hasRemove}
                 $selected={isSelected}
-                $global={global}
+                $size={size}
             >
                 {leftIcon && (
                     <StyledButtonIcon

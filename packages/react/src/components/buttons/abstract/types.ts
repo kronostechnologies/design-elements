@@ -6,4 +6,5 @@ export interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElem
     focusable?: boolean;
     isMobile: boolean;
     size?: Size;
+    tabIndex?: number;
 }
