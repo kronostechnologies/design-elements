@@ -99,6 +99,60 @@ describe('Dropdown list', () => {
         });
     });
 
+    describe('readonly state', () => {
+        test('renders correctly with readOnly enabled', () => {
+            const wrapper = shallow(
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
+            );
+
+            const textbox = getByTestId(wrapper, 'textbox');
+            expect(textbox.prop('aria-readonly')).toBe('true');
+        });
+
+        test('does not open listbox when clicked in readOnly mode', () => {
+            const wrapper = shallow(
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
+            );
+
+            getByTestId(wrapper, 'textbox').simulate('click');
+
+            expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+        });
+
+        test('does not respond to keyboard events in readOnly mode', () => {
+            const wrapper = shallow(
+                <DropdownList options={provinces} readOnly label="ReadOnly Dropdown" />,
+            );
+
+            getByTestId(wrapper, 'textbox').simulate('keydown', {
+                key: 'ArrowDown',
+                preventDefault: jest.fn(),
+            });
+
+            expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+        });
+
+        test('readonly mode prevents option selection', () => {
+            const onChangeMock = jest.fn();
+
+            const wrapper = shallow(
+                <DropdownList
+                    options={provinces}
+                    readOnly
+                    onChange={onChangeMock}
+                    label="ReadOnly Dropdown"
+                />,
+            );
+
+            getByTestId(wrapper, 'textbox').simulate('click');
+
+            const option = findByTestId(wrapper, 'listitem-qc');
+            expect(option.exists()).toBe(false);
+
+            expect(onChangeMock).not.toHaveBeenCalled();
+        });
+    });
+
     describe('default value', () => {
         test('defaultValue assigns this value to the input', () => {
             const wrapper = shallow(<DropdownList options={provinces} defaultValue="qc" />);
