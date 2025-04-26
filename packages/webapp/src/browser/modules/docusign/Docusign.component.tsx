@@ -46,7 +46,7 @@ const StyledAccordion = styled(Accordion)`
         margin-left: auto;
         order: 2;
     }
-    
+
     .${accordionClasses.panel} {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
