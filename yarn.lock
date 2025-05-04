@@ -7383,7 +7383,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:5.2.0"
     html-webpack-plugin: "npm:5.6.0"
     i18next: "npm:25.0.1"
-    i18next-browser-languagedetector: "npm:8.0.0"
+    i18next-browser-languagedetector: "npm:8.1.0"
     postcss: "npm:8.4.41"
     postcss-styled-syntax: "npm:0.6.4"
     posthtml: "npm:0.16.6"
@@ -9332,12 +9332,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:8.0.0":
-  version: 8.0.0
-  resolution: "i18next-browser-languagedetector@npm:8.0.0"
+"i18next-browser-languagedetector@npm:8.1.0":
+  version: 8.1.0
+  resolution: "i18next-browser-languagedetector@npm:8.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/08a7c747ec18a0743b54390a0b42836d814b15fb49c92b90c259298e6a6e7e001ff9df99d0fd308283a34fceea53b4d9053aa1695a37f696bc04160017bbb524
+  checksum: 10c0/d55162f8062e4fdca07403273ef352e7122e1f9abe479404c6711f5a9b75ddb4b33d49b5a50416637d3a3f0553881ba6a570062c8f6e6c52b031eceb0bb8669e
   languageName: node
   linkType: hard
 
