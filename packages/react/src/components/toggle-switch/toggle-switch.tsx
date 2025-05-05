@@ -1,4 +1,4 @@
-import { useMemo, VoidFunctionComponent } from 'react';
+import { ReactElement, useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { ResolvedTheme } from '../../themes';
@@ -6,16 +6,24 @@ import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
+export type LabelPosition = 'left' | 'right';
+
 interface StyledLabelProps {
     theme: ResolvedTheme;
     isMobile: boolean;
     disabled: boolean;
+    labelPosition: LabelPosition;
 }
 const StyledLabel = styled.label<StyledLabelProps>`
     color: ${({ theme }) => theme.component['toggle-switch-label-text-color']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
-    margin-left: var(--spacing-1x);
+    margin:
+ ${({ labelPosition }) => (
+            labelPosition === 'left'
+                    ? '0 var(--spacing-1x) 0 0'
+                    : '0 0 0 var(--spacing-1x)'
+    )};
     user-select: none;
 `;
 
@@ -79,6 +87,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
 interface ToggleSwitchProps {
     label: string;
+    labelPosition?: LabelPosition;
     disabled?: boolean;
     toggled: boolean;
     onToggle(value: boolean): void;
@@ -86,6 +95,7 @@ interface ToggleSwitchProps {
 
 export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
     label,
+    labelPosition = 'right',
     disabled,
     onToggle,
     toggled,
@@ -100,8 +110,22 @@ export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
         onToggle(!toggled);
     };
 
+    const renderLabel = (): ReactElement => (
+        <StyledLabel
+            id={labelId}
+            data-testid="switch-label"
+            htmlFor={buttonId}
+            isMobile={isMobile}
+            disabled={!!disabled}
+            labelPosition={labelPosition}
+        >
+            {label}
+        </StyledLabel>
+    );
+
     return (
         <>
+            {labelPosition === 'left' && renderLabel()}
             <StyledButton
                 id={buttonId}
                 role="switch"
@@ -117,7 +141,7 @@ export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
             >
                 <StyledButtonSpan isMobile={isMobile} />
             </StyledButton>
-            <StyledLabel id={labelId} htmlFor={buttonId} isMobile={isMobile} disabled={!!disabled}>{label}</StyledLabel>
+            {labelPosition === 'right' && renderLabel()}
         </>
     );
 };
