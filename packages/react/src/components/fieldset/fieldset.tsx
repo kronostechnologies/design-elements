@@ -7,33 +7,30 @@ import { FieldsetProps } from './types';
 export const Fieldset = forwardRef(({
     id: providedId,
     children,
-    orientation = 'vertical',
     legend,
     disabled,
     ...props
 }: FieldsetProps, ref: Ref<HTMLFieldSetElement>): ReactElement => {
     const id = useId(providedId);
-    const { text, ...legendProps } = legend || {};
+    const legendProps = typeof legend === 'string'
+      ? { text: legend }
+      : legend;
 
     return (
         <StyledFieldset
             data-testid="fieldset"
             id={id}
-            $orientation={orientation}
-            data-orientation={orientation}
             aria-disabled={disabled}
             disabled={disabled}
             ref={ref}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {legend && (
-                <Legend
-                    {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                    id={`${id}-legend`}
-                >
-                    {text}
-                </Legend>
-            )}
+            <Legend
+                id={`${id}-legend`}
+                {...legendProps /* eslint-disable-line react/jsx-props-no-spreading */}
+            >
+                {legendProps.text}
+            </Legend>
             {children}
         </StyledFieldset>
     );
