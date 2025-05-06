@@ -90,6 +90,9 @@ export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';
 export { ToastType } from './components/toast/toast-type';
 export { useToast } from './hooks/use-toast';
+export {
+    Filter, useFilters, FilterType, FilterMode, FilterOption,
+} from './components/filter';
 
 // Navigation
 export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';
