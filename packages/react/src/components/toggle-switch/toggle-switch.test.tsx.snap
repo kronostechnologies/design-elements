@@ -81,7 +81,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  margin-left: var(--spacing-1x);
+  margin: 0 0 0 var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -90,6 +90,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 
 <label
     class="c0"
+    data-testid="switch-label"
     for="uuid2"
     id="uuid1"
   >
@@ -179,7 +180,7 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   color: #1B1C1E;
   font-size: 1rem;
   line-height: 2rem;
-  margin-left: var(--spacing-1x);
+  margin: 0 0 0 var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -188,6 +189,7 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 
 <label
     class="c0"
+    data-testid="switch-label"
     for="uuid2"
     id="uuid1"
   >
@@ -278,7 +280,7 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   color: #1B1C1E;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  margin-left: var(--spacing-1x);
+  margin: 0 0 0 var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -287,6 +289,7 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 
 <label
     class="c0"
+    data-testid="switch-label"
     disabled=""
     for="uuid2"
     id="uuid1"
