@@ -35,12 +35,12 @@ describe('ToggleSwitch', () => {
     });
 
     test('renders label to the left when labelPosition is "left"', () => {
-        const { container } = renderWithProviders(
+        const { getByTestId: byTestId, getByRole } = renderWithProviders(
             <ToggleSwitch label="Switch" labelPosition="left" toggled onToggle={jest.fn()} />,
         );
 
-        const label = container.querySelector('label');
-        const button = container.querySelector('button');
+        const label = byTestId('switch-label');
+        const button = getByRole('switch');
 
         expect(label?.nextSibling).toBe(button);
     });
