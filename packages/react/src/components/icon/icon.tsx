@@ -16,6 +16,7 @@ import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
 import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
 import Circle from 'feather-icons/dist/icons/circle.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
+import Download from 'feather-icons/dist/icons/download.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import Eye from 'feather-icons/dist/icons/eye.svg';
@@ -51,6 +52,7 @@ import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
 import ArrowUpCircle from '../../icons/arrow-up-circle.svg';
 import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
+import CalendarAdd from '../../icons/calendar-add.svg';
 import Files from '../../icons/files.svg';
 import History from '../../icons/history.svg';
 import Link from '../../icons/link.svg';
@@ -81,6 +83,7 @@ const iconMapping = {
     bell: Bell,
     bento: Bento,
     calendar: Calendar,
+    calendarAdd: CalendarAdd,
     caretDown: CaretDown,
     caretRight: CaretRight,
     check: Check,
@@ -93,6 +96,7 @@ const iconMapping = {
     circle: Circle,
     contracts: Contracts,
     copy: Copy,
+    download: Download,
     edit: Edit,
     equisoft: Equisoft,
     externalLink: ExternalLink,
