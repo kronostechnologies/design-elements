@@ -7485,7 +7485,7 @@ __metadata:
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:5.2.0"
     html-webpack-plugin: "npm:5.6.0"
-    i18next: "npm:25.0.1"
+    i18next: "npm:25.1.2"
     i18next-browser-languagedetector: "npm:8.1.0"
     postcss: "npm:8.4.41"
     postcss-styled-syntax: "npm:0.6.4"
@@ -9444,9 +9444,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:25.0.1":
-  version: 25.0.1
-  resolution: "i18next@npm:25.0.1"
+"i18next@npm:25.1.2, i18next@npm:^25.0.0":
+  version: 25.1.2
+  resolution: "i18next@npm:25.1.2"
   dependencies:
     "@babel/runtime": "npm:^7.26.10"
   peerDependencies:
@@ -9454,21 +9454,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/2f380658472e6697c2133240c2bbffbacefdc49ef7224f00823816f7dcb7977047ad54bfb3dd49e2bd27cf66cc3fb77aa04141328b2efe83c58c0430fce0cdf7
-  languageName: node
-  linkType: hard
-
-"i18next@npm:^25.0.0":
-  version: 25.0.2
-  resolution: "i18next@npm:25.0.2"
-  dependencies:
-    "@babel/runtime": "npm:^7.26.10"
-  peerDependencies:
-    typescript: ^5
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/1f09bce7fa620c26e107c42a356c7e968fedd1f4df948ab5b9c885b3b5abf52113aba4b0042c00e2fadd0ce732ee3e25d994d595215e874136343684c78ce608
+  checksum: 10c0/ba028411a201c5816d01215110f42d99133c4e77724ebf60c38087bfb367921ba5c4e4eb1e9a4b8456d9550d1f50278b13528012ad53d2936de9092a9dd4120d
   languageName: node
   linkType: hard
 
