@@ -60,7 +60,7 @@
     "@swc/jest": "0.2.37",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "^16.2.0",
-    "@types/cheerio": "^0.22.31",
+    "@types/cheerio": "^1.0.0",
     "@types/enzyme": "^3.10.13",
     "@types/feather-icons": "^4.7.0",
     "@types/jest": "^29.5.1",

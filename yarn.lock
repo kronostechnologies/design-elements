@@ -1699,7 +1699,7 @@ __metadata:
     "@tanstack/react-table": "npm:^8.10.7"
     "@testing-library/dom": "npm:10.4.0"
     "@testing-library/react": "npm:^16.2.0"
-    "@types/cheerio": "npm:^0.22.31"
+    "@types/cheerio": "npm:^1.0.0"
     "@types/enzyme": "npm:^3.10.13"
     "@types/feather-icons": "npm:^4.7.0"
     "@types/jest": "npm:^29.5.1"
@@ -3986,12 +3986,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cheerio@npm:<1, @types/cheerio@npm:^0.22.22, @types/cheerio@npm:^0.22.31":
+"@types/cheerio@npm:<1, @types/cheerio@npm:^0.22.22":
   version: 0.22.35
   resolution: "@types/cheerio@npm:0.22.35"
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/648552e6b981185220b356634374aacdee31815ee55c9a6776bcbf7f8c217e54a3a3951d9929b403ca637190ba748f884e6126c730238c5704bf4488a47dedae
+  languageName: node
+  linkType: hard
+
+"@types/cheerio@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@types/cheerio@npm:1.0.0"
+  dependencies:
+    cheerio: "npm:*"
+  checksum: 10c0/6290af8750586d2b97532c177c99c2814a498b0848a42dc4505dc9dce425578fa02897775fa70444e4beae2957fd9d9f1fdc3924301f563ba0a49e048c3c7263
   languageName: node
   linkType: hard
 
