@@ -24,25 +24,25 @@ describe('ToggleSwitch', () => {
     });
 
     test('renders label to the right when labelPosition is "right" (by default)', () => {
-        const { getByTestId: byTestId, getByRole } = renderWithProviders(
+        const wrapper = mountWithProviders(
             <ToggleSwitch label="Switch" toggled onToggle={jest.fn()} />,
         );
 
-        const label = byTestId('switch-label');
-        const button = getByRole('switch');
+        const label = getByTestId(wrapper, 'switch-label');
+        const button = wrapper.find('[role="switch"]').at(0);
 
-        expect(button?.nextSibling).toBe(label);
+        expect(button.getDOMNode().nextSibling).toBe(label.getDOMNode());
     });
 
     test('renders label to the left when labelPosition is "left"', () => {
-        const { getByTestId: byTestId, getByRole } = renderWithProviders(
+        const wrapper = mountWithProviders(
             <ToggleSwitch label="Switch" labelPosition="left" toggled onToggle={jest.fn()} />,
         );
 
-        const label = byTestId('switch-label');
-        const button = getByRole('switch');
+        const label = getByTestId(wrapper, 'switch-label');
+        const button = wrapper.find('[role="switch"]').at(0);
 
-        expect(label?.nextSibling).toBe(button);
+        expect(label.getDOMNode().nextSibling).toBe(button.getDOMNode());
     });
 
     test('has disabled styles', () => {
