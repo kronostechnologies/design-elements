@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import {
@@ -9,14 +9,33 @@ import {
 } from '../buttons';
 import { IconName } from '../icon/icon';
 
+const useClickOutside = (ref: React.RefObject<HTMLElement>, handler: () => void): void => {
+    useEffect(() => {
+        const listener = (event: MouseEvent): void => {
+            if (!ref.current || ref.current.contains(event.target as Node)) {
+                return;
+            }
+            handler();
+        };
+
+        document.addEventListener('mousedown', listener);
+        return () => {
+            document.removeEventListener('mousedown', listener);
+        };
+    }, [ref, handler]);
+};
+
 export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
     iconName?: IconName;
     size?: Size;
 }
 
-interface DisclosureWidgetProps {
+export interface DisclosureWidgetProps {
+    className?: string;
     idContent?: string;
     buttonProps: ButtonPropsWithoutOnClick;
+    expanded: boolean;
+    setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Container = styled.div<{ $expanded: boolean; }>`
@@ -41,20 +60,25 @@ const DisclosureContainer = styled.div`
 `;
 
 export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetProps>> = ({
+    className,
     idContent: providedIdContent,
     buttonProps,
     children,
+    expanded,
+    setExpanded,
 }) => {
-    const [expanded, setExpanded] = useState<boolean>(false);
     const idContent = useId(providedIdContent);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useClickOutside(containerRef, () => setExpanded(false));
 
     return (
-        <DisclosureContainer>
+        <DisclosureContainer className={className}>
             {!buttonProps.iconName && (
                 <Button
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    className={className}
                     onClick={() => setExpanded(!expanded)}
-                    onBlur={() => setExpanded(false)}
                     aria-expanded={expanded}
                     aria-controls={idContent}
                 />
@@ -62,9 +86,9 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
             {buttonProps.iconName && (
                 <IconButton
                     {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+                    className={className}
                     iconName={buttonProps.iconName}
                     onClick={() => setExpanded(!expanded)}
-                    onBlur={() => setExpanded(false)}
                     aria-expanded={expanded}
                     aria-controls={idContent}
                 />
