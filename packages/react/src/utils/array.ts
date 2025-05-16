@@ -76,6 +76,28 @@ export function findNextElement<T>(
     );
 }
 
-export function unique<T>(list: T[]): T[] {
-    return [...new Set(list)];
+function defaultPredicate<T>(item: T, itemToCompared: T): boolean {
+    return item === itemToCompared;
+}
+
+export function unique<T>(
+    list: T[],
+    predicate: (item: T, itemToCompared: T) => boolean = defaultPredicate,
+): T[] {
+    return list.reduce((acc: T[], current: T) => {
+        const isDuplicate = acc.some((item: T) => predicate(item, current));
+        if (!isDuplicate) {
+            acc.push(current);
+        }
+
+        return acc;
+    }, []);
+}
+
+export function includes<T>(
+    list: T[],
+    item: T,
+    predicate: (item: T, itemToCompared: T) => boolean = defaultPredicate,
+): boolean {
+    return list.some((listItem: T) => predicate(listItem, item));
 }

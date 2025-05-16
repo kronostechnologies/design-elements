@@ -7,6 +7,7 @@ import {
     getLastElement,
     getNextElement,
     getPreviousElement,
+    includes,
     unique,
 } from './array';
 
@@ -145,6 +146,44 @@ describe('array utilities', () => {
             const expected = [0, 1, 2, 3, 4];
 
             expect(unique(input)).toEqual(expected);
+        });
+
+        test('returns unique values with custom predicate', () => {
+            const input = [
+                { value: 1, name: 'one' },
+                { value: 2, name: 'two' },
+                { value: 1, name: '1' },
+            ];
+
+            const uniqueValues = unique(input, (a, b) => a.value === b.value);
+
+            expect(uniqueValues).toEqual([{ value: 1, name: 'one' }, { value: 2, name: 'two' }]);
+        });
+    });
+
+    describe('includes', () => {
+        test('returns true if the array includes the value', () => {
+            const isIncludes = includes([1, 2, 3], 2);
+
+            expect(isIncludes).toBe(true);
+        });
+
+        test('returns false if the array does not include the value', () => {
+            const isIncludes = includes([1, 2, 3], 4);
+
+            expect(isIncludes).toBe(false);
+        });
+
+        test('returns true if the array includes the value with custom predicate', () => {
+            const input = [
+                { value: 1, name: 'one' },
+                { value: 2, name: 'two' },
+                { value: 3, name: 'three' },
+            ];
+
+            const isIncludes = includes(input, { value: 2, name: 'two' }, (a, b) => a.value === b.value);
+
+            expect(isIncludes).toBe(true);
         });
     });
 });
