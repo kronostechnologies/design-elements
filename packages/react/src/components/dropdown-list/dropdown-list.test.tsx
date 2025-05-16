@@ -240,6 +240,49 @@ describe('Dropdown list', () => {
         });
     });
 
+    test('options are disabled when max number of selectable options is reached', () => {
+        const wrapper = mountWithTheme(
+            <DropdownList options={provinces} defaultOpen multiselect maxSelectableOptions={2} />,
+        );
+
+        getByTestId(wrapper, 'listitem-on').simulate('click');
+        getByTestId(wrapper, 'listitem-qc').simulate('click');
+
+        const disabledOptions = [
+            getByTestId(wrapper, 'listitem-ab'),
+            getByTestId(wrapper, 'listitem-bc'),
+            getByTestId(wrapper, 'listitem-mb'),
+            getByTestId(wrapper, 'listitem-nb'),
+            getByTestId(wrapper, 'listitem-nl'),
+            getByTestId(wrapper, 'listitem-nt'),
+            getByTestId(wrapper, 'listitem-ns'),
+            getByTestId(wrapper, 'listitem-nu'),
+            getByTestId(wrapper, 'listitem-pe'),
+            getByTestId(wrapper, 'listitem-sk'),
+            getByTestId(wrapper, 'listitem-yt'),
+        ];
+        disabledOptions.forEach((option) => {
+            expect(option.getDOMNode().getAttribute('aria-disabled')).toBe('true');
+        });
+    });
+
+    test('selected options are not disabled when max number of selectable options is reached', () => {
+        const wrapper = mountWithTheme(
+            <DropdownList options={provinces} defaultOpen multiselect maxSelectableOptions={2} />,
+        );
+
+        getByTestId(wrapper, 'listitem-on').simulate('click');
+        getByTestId(wrapper, 'listitem-qc').simulate('click');
+
+        const selectedOptions = [
+            getByTestId(wrapper, 'listitem-on'),
+            getByTestId(wrapper, 'listitem-qc'),
+        ];
+        selectedOptions.forEach((option) => {
+            expect(option.getDOMNode().getAttribute('aria-disabled')).toBe('false');
+        });
+    });
+
     describe('component is controlled', () => {
         test('the input value is set according to the value prop', () => {
             const wrapper = shallow(<DropdownList options={provinces} value="qc" />);

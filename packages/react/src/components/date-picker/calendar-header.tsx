@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownList, DropdownListOption } from '../dropdown-list/dropdown-list';
+import { DropdownList } from '../dropdown-list/dropdown-list';
+import { DropdownListOption } from '../dropdown-list/dropdown-list-option';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;

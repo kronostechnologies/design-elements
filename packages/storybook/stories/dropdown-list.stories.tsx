@@ -81,6 +81,15 @@ export const MultiSelect: Story = {
     },
 };
 
+export const MultiSelectWithMaximumOfSelectableOptions: Story = {
+    ...DropdownListMeta,
+    args: {
+        label: 'Select multiple options with a maximum of selectable options',
+        multiselect: true,
+        maxSelectableOptions: 2,
+    },
+};
+
 export const WithIcon: Story = {
     ...DropdownListMeta,
     args: {
