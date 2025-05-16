@@ -6,10 +6,7 @@ import {
     useState,
     VoidFunctionComponent,
     ReactNode,
-    useEffect,
 } from 'react';
-import { createPortal } from 'react-dom';
-import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -91,19 +88,10 @@ const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-interface StyledListboxProps {
-    $left?: number;
-    $top?: number;
-    $width?: number;
-}
-
-const StyledListbox = styled(Listbox)<StyledListboxProps>`
-    left: ${(props: StyledListboxProps) => `${props.$left}px`};
+const StyledListbox = styled(Listbox)`
     margin-top: var(--spacing-half);
     position: absolute;
-    top: ${(props) => `${props.$top}px`};
-    width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
-    z-index: 99999;
+    width: 100%;
 `;
 
 const Textbox = styled.div<TextboxProps>`
@@ -231,14 +219,6 @@ export interface DropdownListProps<M extends boolean | undefined> {
 const optionPredicate: (option: DropdownListOption) => boolean = (option) => !option.disabled;
 const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
 
-function getRootElement(shadowRoot: ShadowRoot | null): Element {
-    if (shadowRoot) {
-        return shadowRoot.getRootNode() as unknown as Element;
-    }
-
-    return document.body;
-}
-
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -268,16 +248,11 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const { device, isMobile } = useDeviceContext();
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
-    const shadowRoot = useShadowRoot();
 
     const textboxRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
-    const [listboxPosition, setListboxPosition] = (
-        useState({ top: 0, left: 0, width: 0 })
-    );
-    const rootElement = getRootElement(shadowRoot);
 
     function getDefaultOptions(): DropdownListOption[] | undefined {
         let defaultOptions: DropdownListOption[] | undefined;
@@ -344,39 +319,9 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             return;
         }
 
-        if (textboxRef.current) {
-            const rect = textboxRef.current.getBoundingClientRect();
-            setListboxPosition({
-                top: rect.bottom + window.scrollY,
-                left: rect.left + window.scrollX,
-                width: rect.width,
-            });
-        }
-
         setFocusedOption(getLastSelectedOption(selectedOptions));
         setOpen(true);
     }
-
-    useEffect(() => {
-        function updatePosition(): void {
-            if (open && textboxRef.current) {
-                const rect = textboxRef.current.getBoundingClientRect();
-                setListboxPosition({
-                    top: rect.bottom + window.scrollY,
-                    left: rect.left + window.scrollX,
-                    width: rect.width,
-                });
-            }
-        }
-
-        window.addEventListener('resize', updatePosition);
-        window.addEventListener('scroll', updatePosition, true);
-
-        return () => {
-            window.removeEventListener('resize', updatePosition);
-            window.removeEventListener('scroll', updatePosition, true);
-        };
-    }, [open]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
@@ -630,7 +575,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 />
             </Textbox>
 
-            {open && createPortal(
+            {open && (
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
                     ref={listboxRef}
@@ -642,11 +587,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                     options={options}
                     value={getListboxSelectedOptionValues()}
                     multiselect={multiselect}
-                    $left={listboxPosition.left}
-                    $top={listboxPosition.top}
-                    $width={listboxPosition.width}
-                />,
-                rootElement,
+                />
             )}
         </StyledFieldContainer>
     );
