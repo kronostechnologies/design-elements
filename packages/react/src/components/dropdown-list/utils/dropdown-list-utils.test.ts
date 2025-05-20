@@ -1,0 +1,210 @@
+import { DropdownListOption } from '../dropdown-list-option';
+import {
+    disableNonSelectedOptions,
+    getDefaultOptions,
+    getOptionLabel,
+    isOptionEnabled,
+    isOptionSelected,
+    optionsAreEqual,
+} from './dropdown-list-utils';
+
+describe('Dropdown List utils', () => {
+    describe('optionAreEqual', () => {
+        test('should return true when options are equal', () => {
+            const option1 = { value: '1', label: 'Option 1' };
+            const option2 = { value: '1', label: 'Option 1' };
+
+            const result: boolean = optionsAreEqual(option1, option2);
+
+            expect(result).toBe(true);
+        });
+
+        test('should return false when options values are not equal', () => {
+            const option1 = { value: '1', label: 'Option 1' };
+            const option2 = { value: '2', label: 'Option 2' };
+
+            const result: boolean = optionsAreEqual(option1, option2);
+
+            expect(result).toBe(false);
+        });
+    });
+
+    describe('isOptionEnabled', () => {
+        test('should return false when option is disabled', () => {
+            const option = { value: '1', label: 'Option 1', disabled: true };
+
+            const result: boolean = isOptionEnabled(option);
+
+            expect(result).toBe(false);
+        });
+
+        test('should return true when option is not disabled', () => {
+            const option = { value: '1', label: 'Option 1', disabled: false };
+
+            const result: boolean = isOptionEnabled(option);
+
+            expect(result).toBe(true);
+        });
+    });
+
+    describe('disableNonSelectedOptions', () => {
+        test('should disable non-selected options', () => {
+            const options = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+                { value: '3', label: 'Option 3' },
+            ];
+            const selectedOptions = [{ value: '1', label: 'Option 1' }];
+
+            const result = disableNonSelectedOptions(options, selectedOptions);
+
+            expect(result).toEqual([
+                { value: '1', label: 'Option 1', disabled: false },
+                { value: '2', label: 'Option 2', disabled: true },
+                { value: '3', label: 'Option 3', disabled: true },
+            ]);
+        });
+
+        test('should not enabled options that are already disabled', () => {
+            const options = [
+                { value: '1', label: 'Option 1', disabled: true },
+                { value: '2', label: 'Option 2', disabled: true },
+                { value: '3', label: 'Option 3' },
+            ];
+            const selectedOptions = [{ value: '1', label: 'Option 1' }];
+
+            const result = disableNonSelectedOptions(options, selectedOptions);
+
+            expect(result).toEqual([
+                { value: '1', label: 'Option 1', disabled: true },
+                { value: '2', label: 'Option 2', disabled: true },
+                { value: '3', label: 'Option 3', disabled: true },
+            ]);
+        });
+
+        test('should not disabled options when no options are selected', () => {
+            const options = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+                { value: '3', label: 'Option 3' },
+            ];
+
+            const result = disableNonSelectedOptions(options, []);
+
+            expect(result).toEqual([
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+                { value: '3', label: 'Option 3' },
+            ]);
+        });
+    });
+
+    describe('getDefaultOptions', () => {
+        test('should return options matching the provided value when value is a string', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ];
+
+            const result = getDefaultOptions('1', options);
+
+            expect(result).toEqual([{ value: '1', label: 'Option 1' }]);
+        });
+
+        test('should return options matching the provided value when value is an array of strings', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ];
+
+            const result = getDefaultOptions(['1', '2'], options);
+
+            expect(result).toEqual([
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ]);
+        });
+
+        test('should return the first enabled option when value is undefined and multiselect is false', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1', disabled: true },
+                { value: '2', label: 'Option 2', disabled: false },
+            ];
+
+            const result = getDefaultOptions(undefined, options, false);
+
+            expect(result).toEqual([{ value: '2', label: 'Option 2', disabled: false }]);
+        });
+
+        test('should return an empty option when no enabled options exist and value is undefined', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1', disabled: true },
+                { value: '2', label: 'Option 2', disabled: true },
+            ];
+
+            const result = getDefaultOptions(undefined, options, false);
+
+            expect(result).toEqual([{ value: '', label: '' }]);
+        });
+
+        test('should return undefined when value is undefined and multiselect is true', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1', disabled: false },
+                { value: '2', label: 'Option 2', disabled: false },
+            ];
+
+            const result = getDefaultOptions(undefined, options, true);
+
+            expect(result).toBeUndefined();
+        });
+
+        test('should return empty list when no matching options are found for the provided value', () => {
+            const options: DropdownListOption[] = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ];
+
+            const result = getDefaultOptions('3', options);
+
+            expect(result).toEqual([]);
+        });
+    });
+
+    describe('getOptionLabel', () => {
+        test('should return the label of the option', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+
+            const result = getOptionLabel(option);
+
+            expect(result).toBe('Option 1');
+        });
+    });
+
+    describe('isOptionSelected', () => {
+        test('should return true when the option is selected', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: DropdownListOption[] = [{ value: '1', label: 'Option 1' }];
+
+            const result = isOptionSelected(option, selectedOptions);
+
+            expect(result).toBe(true);
+        });
+
+        test('should return false when the option is not selected', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: DropdownListOption[] = [{ value: '2', label: 'Option 2' }];
+
+            const result = isOptionSelected(option, selectedOptions);
+
+            expect(result).toBe(false);
+        });
+
+        test('should return false when selectedOptions is undefined', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+
+            const result = isOptionSelected(option, undefined);
+
+            expect(result).toBe(false);
+        });
+    });
+});
