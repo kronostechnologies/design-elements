@@ -1840,6 +1840,9 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
