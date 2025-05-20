@@ -1,5 +1,5 @@
 import { findOptionsByValue } from '../../listbox/listbox-option';
-import { includes } from '../../../utils/array';
+import { includes, unique } from '../../../utils/array';
 import { DropdownListOption } from '../dropdown-list-option';
 
 export function optionAreEqual(
@@ -7,6 +7,28 @@ export function optionAreEqual(
     optionToCompared: DropdownListOption,
 ): boolean {
     return option.value === optionToCompared.value;
+}
+
+export function addUniqueOption(
+    newOption: DropdownListOption,
+    options?: DropdownListOption[],
+): DropdownListOption[] {
+    if (!options) {
+        return [newOption];
+    }
+
+    return unique([...options, newOption], optionAreEqual);
+}
+
+export function removeOption(
+    optionToRemove: DropdownListOption,
+    options?: DropdownListOption[],
+): DropdownListOption[] {
+    if (!options) {
+        return [];
+    }
+
+    return options.filter((option) => !optionAreEqual(option, optionToRemove));
 }
 
 export function isOptionEnabled(option: DropdownListOption): boolean {
@@ -22,11 +44,11 @@ export function disableNonSelectedOptions(
     }
 
     return options.map((option) => {
-        const isOptionSelected = includes(selectedOptions, option, optionAreEqual);
+        const optionIsSelected = includes(selectedOptions, option, optionAreEqual);
 
         return ({
             ...option,
-            disabled: option.disabled || !isOptionSelected,
+            disabled: option.disabled || !optionIsSelected,
         });
     });
 }
@@ -47,4 +69,19 @@ export function getDefaultOptions(
     }
 
     return defaultOptions;
+}
+
+export function getOptionLabel(option: DropdownListOption): string {
+    return option.label;
+}
+
+export function isOptionSelected(
+    option: DropdownListOption,
+    selectedOptions?: DropdownListOption[],
+): boolean {
+    if (!selectedOptions) {
+        return false;
+    }
+
+    return includes(selectedOptions, option, optionAreEqual);
 }

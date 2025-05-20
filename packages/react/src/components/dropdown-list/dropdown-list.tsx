@@ -28,15 +28,17 @@ import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useListSearch } from '../../hooks/use-list-search';
-import { sanitizeId } from '../../utils/dom';
-import { includes, unique } from '../../utils/array';
+import { getRootElement, sanitizeId } from '../../utils/dom';
 import { Tag } from '../tag/tag';
 import { findOptionsByValue } from '../listbox/listbox-option';
 import {
     disableNonSelectedOptions,
     getDefaultOptions,
     isOptionEnabled,
-    optionAreEqual,
+    getOptionLabel,
+    isOptionSelected,
+    addUniqueOption,
+    removeOption,
 } from './utils/dropdown-list-utils';
 import { DropdownListOption } from './dropdown-list-option';
 
@@ -233,16 +235,6 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
-const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
-
-function getRootElement(shadowRoot: ShadowRoot | null): Element {
-    if (shadowRoot) {
-        return shadowRoot.getRootNode() as unknown as Element;
-    }
-
-    return document.body;
-}
-
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -302,14 +294,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }, [multiselect, maxSelectableOptions, providedOptions, selectedOptions]);
 
     function toggleOptionSelection(option: DropdownListOption, forceSelected?: boolean): void {
-        const isOptionAlreadySelected = selectedOptions ? includes(selectedOptions, option, optionAreEqual) : false;
-
-        const newSelectedOptions = !isOptionAlreadySelected || forceSelected
-            ? unique([...selectedOptions ?? [], option], optionAreEqual)
-            : selectedOptions?.filter((opt) => !optionAreEqual(opt, option));
+        const newSelectedOptions = !isOptionSelected(option, selectedOptions) || forceSelected
+            ? addUniqueOption(option, selectedOptions)
+            : removeOption(option, selectedOptions);
 
         setSelectedOptions(newSelectedOptions);
-        onChange?.(newSelectedOptions ?? []);
+        onChange?.(newSelectedOptions);
     }
 
     function getLastSelectedOption(
@@ -451,7 +441,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         elements: options,
         focusedElement: focusedOption,
         onFoundElementChange: handleFoundOption,
-        searchPropertyAccessor,
+        searchPropertyAccessor: getOptionLabel,
         predicate: isOptionEnabled,
     });
 

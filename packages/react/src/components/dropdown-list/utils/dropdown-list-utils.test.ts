@@ -1,5 +1,12 @@
 import { DropdownListOption } from '../dropdown-list-option';
-import { disableNonSelectedOptions, getDefaultOptions, isOptionEnabled, optionAreEqual } from './dropdown-list-utils';
+import {
+    disableNonSelectedOptions,
+    getDefaultOptions,
+    getOptionLabel,
+    isOptionEnabled,
+    isOptionSelected,
+    optionAreEqual,
+} from './dropdown-list-utils';
 
 describe('Dropdown List utils', () => {
     describe('optionAreEqual', () => {
@@ -160,6 +167,44 @@ describe('Dropdown List utils', () => {
             const result = getDefaultOptions('3', options);
 
             expect(result).toEqual([]);
+        });
+    });
+
+    describe('getOptionLabel', () => {
+        test('should return the label of the option', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+
+            const result = getOptionLabel(option);
+
+            expect(result).toBe('Option 1');
+        });
+    });
+
+    describe('isOptionSelected', () => {
+        test('should return true when the option is selected', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: DropdownListOption[] = [{ value: '1', label: 'Option 1' }];
+
+            const result = isOptionSelected(option, selectedOptions);
+
+            expect(result).toBe(true);
+        });
+
+        test('should return false when the option is not selected', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: DropdownListOption[] = [{ value: '2', label: 'Option 2' }];
+
+            const result = isOptionSelected(option, selectedOptions);
+
+            expect(result).toBe(false);
+        });
+
+        test('should return false when selectedOptions is undefined', () => {
+            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+
+            const result = isOptionSelected(option, undefined);
+
+            expect(result).toBe(false);
         });
     });
 });
