@@ -7,6 +7,7 @@ import {
     VoidFunctionComponent,
     ReactNode,
     useEffect,
+    useMemo,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
@@ -19,7 +20,7 @@ import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon, IconName } from '../icon/icon';
-import { Listbox, ListboxOption } from '../listbox/listbox';
+import { Listbox } from '../listbox/listbox';
 import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -27,10 +28,19 @@ import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useListSearch } from '../../hooks/use-list-search';
-import { sanitizeId } from '../../utils/dom';
-import { unique } from '../../utils/array';
+import { getRootElement, sanitizeId } from '../../utils/dom';
 import { Tag } from '../tag/tag';
 import { findOptionsByValue } from '../listbox/listbox-option';
+import {
+    disableNonSelectedOptions,
+    getDefaultOptions,
+    isOptionEnabled,
+    getOptionLabel,
+    isOptionSelected,
+    addUniqueOption,
+    removeOption,
+} from './utils/dropdown-list-utils';
+import { DropdownListOption } from './dropdown-list-option';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -40,10 +50,6 @@ interface TextboxProps {
     theme: ResolvedTheme;
     $valid: boolean;
     value: string;
-}
-
-export interface DropdownListOption extends ListboxOption {
-    label: string;
 }
 
 function getBackgroundColor({ $disabled, $readOnly, theme }: TextboxProps): string {
@@ -211,6 +217,7 @@ export interface DropdownListProps<M extends boolean | undefined> {
     value?: Value;
     hint?: string;
     multiselect?: M;
+    maxSelectableOptions?: number;
 
     /**
      * Display an icon inside the Dropdown control
@@ -228,17 +235,6 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
-const optionPredicate: (option: DropdownListOption) => boolean = (option) => !option.disabled;
-const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
-
-function getRootElement(shadowRoot: ShadowRoot | null): Element {
-    if (shadowRoot) {
-        return shadowRoot.getRootNode() as unknown as Element;
-    }
-
-    return document.body;
-}
-
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -250,7 +246,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     label,
     onChange,
     onClose,
-    options,
+    options: providedOptions,
     name,
     readOnly,
     required,
@@ -261,6 +257,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     value,
     hint,
     multiselect,
+    maxSelectableOptions,
     iconName,
     ...otherProps
 }) => {
@@ -279,28 +276,28 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     );
     const rootElement = getRootElement(shadowRoot);
 
-    function getDefaultOptions(): DropdownListOption[] | undefined {
-        let defaultOptions: DropdownListOption[] | undefined;
-
-        if (value !== undefined || defaultValue !== undefined) {
-            defaultOptions = findOptionsByValue(options, value ?? defaultValue);
-        }
-
-        if (defaultOptions === undefined && !multiselect) {
-            defaultOptions = [options.find(optionPredicate) ?? { value: '', label: '' }];
-        }
-
-        return defaultOptions;
-    }
-
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
-        () => getDefaultOptions(),
+        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
     );
 
+    const options = useMemo(() => {
+        const isMaxSelectableOptionsReached = multiselect
+            && maxSelectableOptions
+            && selectedOptions
+            && selectedOptions.length >= maxSelectableOptions;
+
+        if (isMaxSelectableOptionsReached) {
+            return disableNonSelectedOptions(providedOptions, selectedOptions);
+        }
+
+        return providedOptions;
+    }, [multiselect, maxSelectableOptions, providedOptions, selectedOptions]);
+
     function toggleOptionSelection(option: DropdownListOption, forceSelected?: boolean): void {
-        const newSelectedOptions = !selectedOptions?.includes(option) || forceSelected
-            ? unique([...selectedOptions ?? [], option])
-            : selectedOptions?.filter((opt) => opt !== option);
+        const newSelectedOptions = !isOptionSelected(option, selectedOptions) || forceSelected
+            ? addUniqueOption(option, selectedOptions)
+            : removeOption(option, selectedOptions);
+
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
     }
@@ -327,7 +324,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     } = useListCursor({
         elements: options,
         initialElement: getLastSelectedOption(selectedOptions),
-        predicate: optionPredicate,
+        predicate: isOptionEnabled,
     });
 
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
@@ -417,7 +414,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (optionPredicate(option)) {
+        if (isOptionEnabled(option)) {
             if (multiselect) {
                 toggleOptionSelection(option);
             } else {
@@ -444,8 +441,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         elements: options,
         focusedElement: focusedOption,
         onFoundElementChange: handleFoundOption,
-        searchPropertyAccessor,
-        predicate: optionPredicate,
+        searchPropertyAccessor: getOptionLabel,
+        predicate: isOptionEnabled,
     });
 
     function handleTextboxKeyDown(event: KeyboardEvent<HTMLDivElement>): void {

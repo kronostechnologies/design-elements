@@ -2,7 +2,7 @@ import type { Locale } from 'date-fns';
 import { enCA } from 'date-fns/locale';
 import { Month } from 'date-fns/types';
 import { range } from '../../../utils/range';
-import { DropdownListOption } from '../../dropdown-list/dropdown-list';
+import { DropdownListOption } from '../../dropdown-list/dropdown-list-option';
 
 const monthNumbers: Month[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
