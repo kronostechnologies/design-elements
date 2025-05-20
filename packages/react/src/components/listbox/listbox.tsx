@@ -127,6 +127,7 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
+    flex-shrink: 0;
     height: var(--size-1x);
     justify-content: center;
     margin-right: var(--spacing-1x);
