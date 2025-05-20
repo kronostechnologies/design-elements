@@ -5,7 +5,7 @@ import {
     getOptionLabel,
     isOptionEnabled,
     isOptionSelected,
-    optionAreEqual,
+    optionsAreEqual,
 } from './dropdown-list-utils';
 
 describe('Dropdown List utils', () => {
@@ -14,7 +14,7 @@ describe('Dropdown List utils', () => {
             const option1 = { value: '1', label: 'Option 1' };
             const option2 = { value: '1', label: 'Option 1' };
 
-            const result: boolean = optionAreEqual(option1, option2);
+            const result: boolean = optionsAreEqual(option1, option2);
 
             expect(result).toBe(true);
         });
@@ -23,7 +23,7 @@ describe('Dropdown List utils', () => {
             const option1 = { value: '1', label: 'Option 1' };
             const option2 = { value: '2', label: 'Option 2' };
 
-            const result: boolean = optionAreEqual(option1, option2);
+            const result: boolean = optionsAreEqual(option1, option2);
 
             expect(result).toBe(false);
         });

@@ -2,11 +2,11 @@ import { findOptionsByValue } from '../../listbox/listbox-option';
 import { includes, unique } from '../../../utils/array';
 import { DropdownListOption } from '../dropdown-list-option';
 
-export function optionAreEqual(
+export function optionsAreEqual(
     option: DropdownListOption,
-    optionToCompared: DropdownListOption,
+    optionToCompare: DropdownListOption,
 ): boolean {
-    return option.value === optionToCompared.value;
+    return option.value === optionToCompare.value;
 }
 
 export function addUniqueOption(
@@ -17,7 +17,7 @@ export function addUniqueOption(
         return [newOption];
     }
 
-    return unique([...options, newOption], optionAreEqual);
+    return unique([...options, newOption], optionsAreEqual);
 }
 
 export function removeOption(
@@ -28,7 +28,7 @@ export function removeOption(
         return [];
     }
 
-    return options.filter((option) => !optionAreEqual(option, optionToRemove));
+    return options.filter((option) => !optionsAreEqual(option, optionToRemove));
 }
 
 export function isOptionEnabled(option: DropdownListOption): boolean {
@@ -44,7 +44,7 @@ export function disableNonSelectedOptions(
     }
 
     return options.map((option) => {
-        const optionIsSelected = includes(selectedOptions, option, optionAreEqual);
+        const optionIsSelected = includes(selectedOptions, option, optionsAreEqual);
 
         return ({
             ...option,
@@ -83,5 +83,5 @@ export function isOptionSelected(
         return false;
     }
 
-    return includes(selectedOptions, option, optionAreEqual);
+    return includes(selectedOptions, option, optionsAreEqual);
 }
