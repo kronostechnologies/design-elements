@@ -54,7 +54,6 @@ exports[`Table has aria-label on header columns 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -242,7 +241,6 @@ exports[`Table has clickable rows styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -424,7 +422,6 @@ exports[`Table has column with headers grouped 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -637,7 +634,6 @@ exports[`Table has custom text alignment 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -792,7 +788,6 @@ exports[`Table has desktop styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -959,7 +954,6 @@ exports[`Table has error rows styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -1114,7 +1108,6 @@ exports[`Table has mobile styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-3x) 0;
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -1269,7 +1262,6 @@ exports[`Table has rowNumbers styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -1566,7 +1558,6 @@ exports[`Table has selectable rows styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -1853,7 +1844,6 @@ exports[`Table has small rowSize styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-half) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -2038,7 +2028,6 @@ exports[`Table has sorting styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -2271,7 +2260,6 @@ exports[`Table has sticky column styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -2454,7 +2442,6 @@ exports[`Table has sticky header styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -2613,7 +2600,6 @@ exports[`Table has striped styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-1x) var(--spacing-2x);
-  text-align: left;
 }
 
 .c0 th:last-child,
@@ -2768,7 +2754,6 @@ exports[`Table has tablet styles 1`] = `
   line-height: 1.5rem;
   margin: 0;
   padding: var(--spacing-3x) var(--spacing-1x);
-  text-align: left;
 }
 
 .c0 th:last-child,
