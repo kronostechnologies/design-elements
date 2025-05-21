@@ -129,7 +129,7 @@ const iconMapping = {
     search: Search,
     send: Send,
     settings: Settings,
-    share2: Share2,
+    share: Share2,
     star: Star,
     table: Table,
     transfer: Transfer,
