@@ -137,11 +137,14 @@ input + .c2 {
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c8 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -583,11 +586,14 @@ input + .c2 {
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c10 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -1064,11 +1070,14 @@ input + .c2 {
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c10 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -1491,11 +1500,14 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c6 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -1900,11 +1912,14 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c6 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -2497,11 +2512,14 @@ input + .c2 {
 
 .c1 {
   position: relative;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
 }
 
 .c9 {
   margin-top: var(--spacing-half);
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 

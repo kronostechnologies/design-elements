@@ -3,6 +3,7 @@ import {
     KeyboardEvent,
     ReactNode,
     useCallback,
+    useEffect,
     useMemo,
     useRef,
     useState,
@@ -92,12 +93,17 @@ function getTextColor({ $disabled, $readOnly, theme }: TextboxProps): string {
 
 const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
+    transform: translate(0); /* this is needed to have the Listbox in position: fixed */
 `;
 
-const StyledListbox = styled(Listbox)`
+interface StyledListboxProps {
+    $width?: number;
+}
+
+const StyledListbox = styled(Listbox)<StyledListboxProps>`
     margin-top: var(--spacing-half);
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
 `;
 
 const Textbox = styled.div<TextboxProps>`
@@ -258,6 +264,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
+    const [listboxWidth, setListboxWidth] = useState<number>(0);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
         () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
@@ -324,9 +331,29 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             return;
         }
 
+        if (textboxRef.current) {
+            const rect = textboxRef.current.getBoundingClientRect();
+            setListboxWidth(rect.width);
+        }
+
         setFocusedOption(getLastSelectedOption(selectedOptions));
         setOpen(true);
     }
+
+    useEffect(() => {
+        function updatePosition(): void {
+            if (open && textboxRef.current) {
+                const rect = textboxRef.current.getBoundingClientRect();
+                setListboxWidth(rect.width);
+            }
+        }
+
+        window.addEventListener('resize', updatePosition);
+
+        return () => {
+            window.removeEventListener('resize', updatePosition);
+        };
+    }, [open]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
@@ -592,6 +619,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                     options={options}
                     value={getListboxSelectedOptionValues()}
                     multiselect={multiselect}
+                    $width={listboxWidth}
                 />
             )}
         </StyledFieldContainer>
