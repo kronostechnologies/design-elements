@@ -40,6 +40,7 @@ import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
 import Send from 'feather-icons/dist/icons/send.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
+import Share2 from 'feather-icons/dist/icons/share-2.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
 import Unlock from 'feather-icons/dist/icons/unlock.svg';
@@ -130,6 +131,7 @@ const iconMapping = {
     search: Search,
     send: Send,
     settings: Settings,
+    share: Share2,
     star: Star,
     table: Table,
     transfer: Transfer,
