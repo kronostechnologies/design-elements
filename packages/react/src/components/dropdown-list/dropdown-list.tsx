@@ -1,46 +1,44 @@
 import {
     FocusEvent,
     KeyboardEvent,
+    ReactNode,
     useCallback,
+    useEffect,
+    useMemo,
     useRef,
     useState,
     VoidFunctionComponent,
-    ReactNode,
-    useEffect,
-    useMemo,
 } from 'react';
-import { createPortal } from 'react-dom';
-import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
+import { useListCursor } from '../../hooks/use-list-cursor';
+import { useListSearch } from '../../hooks/use-list-search';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon, IconName } from '../icon/icon';
 import { Listbox } from '../listbox/listbox';
+import { findOptionsByValue } from '../listbox/listbox-option';
+import { Tag } from '../tag/tag';
 import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
-import { useId } from '../../hooks/use-id';
-import { useListCursor } from '../../hooks/use-list-cursor';
-import { useClickOutside } from '../../hooks/use-click-outside';
-import { useListSearch } from '../../hooks/use-list-search';
-import { getRootElement, sanitizeId } from '../../utils/dom';
-import { Tag } from '../tag/tag';
-import { findOptionsByValue } from '../listbox/listbox-option';
+import { DropdownListOption } from './dropdown-list-option';
 import {
+    addUniqueOption,
     disableNonSelectedOptions,
     getDefaultOptions,
-    isOptionEnabled,
     getOptionLabel,
+    isOptionEnabled,
     isOptionSelected,
-    addUniqueOption,
     removeOption,
 } from './utils/dropdown-list-utils';
-import { DropdownListOption } from './dropdown-list-option';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -95,21 +93,17 @@ function getTextColor({ $disabled, $readOnly, theme }: TextboxProps): string {
 
 const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
+    transform: translate(0); /* this is needed to have the Listbox in position: fixed */
 `;
 
 interface StyledListboxProps {
-    $left?: number;
-    $top?: number;
     $width?: number;
 }
 
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
-    left: ${(props: StyledListboxProps) => `${props.$left}px`};
     margin-top: var(--spacing-half);
-    position: absolute;
-    top: ${(props) => `${props.$top}px`};
+    position: fixed;
     width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
-    z-index: 99999;
 `;
 
 const Textbox = styled.div<TextboxProps>`
@@ -265,16 +259,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const { device, isMobile } = useDeviceContext();
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
-    const shadowRoot = useShadowRoot();
 
     const textboxRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
-    const [listboxPosition, setListboxPosition] = (
-        useState({ top: 0, left: 0, width: 0 })
-    );
-    const rootElement = getRootElement(shadowRoot);
+    const [listboxWidth, setListboxWidth] = useState<number>(0);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
         () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
@@ -343,11 +333,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
 
         if (textboxRef.current) {
             const rect = textboxRef.current.getBoundingClientRect();
-            setListboxPosition({
-                top: rect.bottom + window.scrollY,
-                left: rect.left + window.scrollX,
-                width: rect.width,
-            });
+            setListboxWidth(rect.width);
         }
 
         setFocusedOption(getLastSelectedOption(selectedOptions));
@@ -358,20 +344,14 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         function updatePosition(): void {
             if (open && textboxRef.current) {
                 const rect = textboxRef.current.getBoundingClientRect();
-                setListboxPosition({
-                    top: rect.bottom + window.scrollY,
-                    left: rect.left + window.scrollX,
-                    width: rect.width,
-                });
+                setListboxWidth(rect.width);
             }
         }
 
         window.addEventListener('resize', updatePosition);
-        window.addEventListener('scroll', updatePosition, true);
 
         return () => {
             window.removeEventListener('resize', updatePosition);
-            window.removeEventListener('scroll', updatePosition, true);
         };
     }, [open]);
 
@@ -627,7 +607,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 />
             </Textbox>
 
-            {open && createPortal(
+            {open && (
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
                     ref={listboxRef}
@@ -639,11 +619,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                     options={options}
                     value={getListboxSelectedOptionValues()}
                     multiselect={multiselect}
-                    $left={listboxPosition.left}
-                    $top={listboxPosition.top}
-                    $width={listboxPosition.width}
-                />,
-                rootElement,
+                    $width={listboxWidth}
+                />
             )}
         </StyledFieldContainer>
     );
