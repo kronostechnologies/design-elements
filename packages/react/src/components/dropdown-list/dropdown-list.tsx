@@ -3,12 +3,11 @@ import {
     KeyboardEvent,
     ReactNode,
     useCallback,
+    useEffect,
     useMemo,
     useRef,
     useState,
     VoidFunctionComponent,
-    ReactNode,
-    useEffect,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
@@ -22,7 +21,7 @@ import { useListSearch } from '../../hooks/use-list-search';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { sanitizeId } from '../../utils/dom';
+import { findNearestRelativeParent, getRootElement, sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
@@ -175,6 +174,12 @@ export interface TagValue {
     label: string;
 }
 
+interface ListboxPosition {
+    left: number;
+    top: number;
+    width: number;
+}
+
 export interface DropdownListProps<M extends boolean | undefined> {
     /**
      * Aria label for the input (used when no visual label is present)
@@ -236,12 +241,23 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
-function getRootElement(shadowRoot: ShadowRoot | null): Element {
-    if (shadowRoot) {
-        return shadowRoot.getRootNode() as unknown as Element;
+function getListboxPosition(textbox: HTMLDivElement, shadowHost: Element | undefined): ListboxPosition {
+    const rect = textbox.getBoundingClientRect();
+    const offsetParent: Element | null = shadowHost ? findNearestRelativeParent(shadowHost as HTMLElement) : null;
+    const offsetParentRect = offsetParent?.getBoundingClientRect();
+    let topOffset = window.scrollY;
+    let leftOffset = window.scrollX;
+
+    if (offsetParent && offsetParentRect) {
+        topOffset = -offsetParentRect.top;
+        leftOffset = -offsetParentRect.left;
     }
 
-    return document.body;
+    return {
+        top: rect.bottom + topOffset,
+        left: rect.left + leftOffset,
+        width: rect.width,
+    };
 }
 
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
@@ -280,9 +296,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
-    const [listboxPosition, setListboxPosition] = (
-        useState({ top: 0, left: 0, width: 0 })
-    );
+    const [listboxPosition, setListboxPosition] = useState<ListboxPosition>({ top: 0, left: 0, width: 0 });
     const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
@@ -351,12 +365,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         }
 
         if (textboxRef.current) {
-            const rect = textboxRef.current.getBoundingClientRect();
-            setListboxPosition({
-                top: rect.bottom + window.scrollY,
-                left: rect.left + window.scrollX,
-                width: rect.width,
-            });
+            const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+            setListboxPosition(newListboxPosition);
         }
 
         setFocusedOption(getLastSelectedOption(selectedOptions));
@@ -366,12 +376,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     useEffect(() => {
         function updatePosition(): void {
             if (open && textboxRef.current) {
-                const rect = textboxRef.current.getBoundingClientRect();
-                setListboxPosition({
-                    top: rect.bottom + window.scrollY,
-                    left: rect.left + window.scrollX,
-                    width: rect.width,
-                });
+                const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+                setListboxPosition(newListboxPosition);
             }
         }
 
@@ -382,7 +388,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             window.removeEventListener('resize', updatePosition);
             window.removeEventListener('scroll', updatePosition, true);
         };
-    }, [open]);
+    }, [open, shadowRoot?.host]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);

@@ -1,4 +1,4 @@
-import { generateComponentClasses } from './generate-component-classes';
+import { generateComponentClasses } from './component-classes';
 
 describe('generateComponentClasses', () => {
     const keys = ['root', 'label', 'icon'];

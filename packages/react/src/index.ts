@@ -48,7 +48,7 @@ export { DeviceContextProvider, useDeviceContext } from './components/device-con
 export { IntlProvider } from './components/internationalization-provider/internationalization-provider';
 
 // Lists
-export { Listbox, ListboxOption } from './components/listbox/listbox';
+export { Listbox, ListboxOption, ListboxProps } from './components/listbox/listbox';
 
 // Miscellaneous
 export * from './components/accordion';
