@@ -303,7 +303,7 @@ input + .c2 {
   </div>
   <div
     aria-labelledby="uuid1_label"
-    class="c9 c10"
+    class="c9 c10 react-datepicker-ignore-onclickoutside"
     data-testid="listbox-container"
     id="uuid1_listbox"
     role="listbox"
@@ -315,157 +315,157 @@ input + .c2 {
       role="presentation"
     >
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Alberta"
         id="uuid1_listbox_Alberta"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Alberta
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-British_Columbia"
         id="uuid1_listbox_British_Columbia"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           British Columbia
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Manitoba"
         id="uuid1_listbox_Manitoba"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Manitoba
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-New_Brunswick"
         id="uuid1_listbox_New_Brunswick"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           New Brunswick
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Newfoundland_and_Labrador"
         id="uuid1_listbox_Newfoundland_and_Labrador"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Newfoundland and Labrador
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Northwest_Territories"
         id="uuid1_listbox_Northwest_Territories"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Northwest Territories
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nova_Scotia"
         id="uuid1_listbox_Nova_Scotia"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Nova Scotia
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nunavut"
         id="uuid1_listbox_Nunavut"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Nunavut
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Ontario"
         id="uuid1_listbox_Ontario"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Ontario
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Prince_Edward_Island"
         id="uuid1_listbox_Prince_Edward_Island"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Prince Edward Island
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Quebec"
         id="uuid1_listbox_Quebec"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Quebec
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Saskatchewan"
         id="uuid1_listbox_Saskatchewan"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Saskatchewan
         </span>
       </li>
       <li
-        class="c12"
+        class="c12 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Yukon"
         id="uuid1_listbox_Yukon"
         role="option"
       >
         <span
-          class="c13"
+          class="c13 react-datepicker-ignore-onclickoutside"
         >
           Yukon
         </span>
@@ -816,7 +816,7 @@ input + .c2 {
   </div>
   <div
     aria-labelledby="uuid1_label"
-    class="c11 c12"
+    class="c11 c12 react-datepicker-ignore-onclickoutside"
     data-testid="listbox-container"
     id="uuid1_listbox"
     role="listbox"
@@ -828,157 +828,157 @@ input + .c2 {
       role="presentation"
     >
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Alberta"
         id="uuid1_listbox_Alberta"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Alberta
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-British_Columbia"
         id="uuid1_listbox_British_Columbia"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           British Columbia
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Manitoba"
         id="uuid1_listbox_Manitoba"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Manitoba
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-New_Brunswick"
         id="uuid1_listbox_New_Brunswick"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           New Brunswick
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Newfoundland_and_Labrador"
         id="uuid1_listbox_Newfoundland_and_Labrador"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Newfoundland and Labrador
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Northwest_Territories"
         id="uuid1_listbox_Northwest_Territories"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Northwest Territories
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nova_Scotia"
         id="uuid1_listbox_Nova_Scotia"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Nova Scotia
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nunavut"
         id="uuid1_listbox_Nunavut"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Nunavut
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Ontario"
         id="uuid1_listbox_Ontario"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Ontario
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Prince_Edward_Island"
         id="uuid1_listbox_Prince_Edward_Island"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Prince Edward Island
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Quebec"
         id="uuid1_listbox_Quebec"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Quebec
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Saskatchewan"
         id="uuid1_listbox_Saskatchewan"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Saskatchewan
         </span>
       </li>
       <li
-        class="c14"
+        class="c14 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Yukon"
         id="uuid1_listbox_Yukon"
         role="option"
       >
         <span
-          class="c15"
+          class="c15 react-datepicker-ignore-onclickoutside"
         >
           Yukon
         </span>
@@ -1261,7 +1261,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   </div>
   <div
     aria-labelledby="uuid1_label"
-    class="c7 c8"
+    class="c7 c8 react-datepicker-ignore-onclickoutside"
     data-testid="listbox-container"
     id="uuid1_listbox"
     role="listbox"
@@ -1273,157 +1273,157 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
       role="presentation"
     >
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Alberta"
         id="uuid1_listbox_Alberta"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Alberta
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-British_Columbia"
         id="uuid1_listbox_British_Columbia"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           British Columbia
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Manitoba"
         id="uuid1_listbox_Manitoba"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Manitoba
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-New_Brunswick"
         id="uuid1_listbox_New_Brunswick"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           New Brunswick
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Newfoundland_and_Labrador"
         id="uuid1_listbox_Newfoundland_and_Labrador"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Newfoundland and Labrador
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Northwest_Territories"
         id="uuid1_listbox_Northwest_Territories"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Northwest Territories
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nova_Scotia"
         id="uuid1_listbox_Nova_Scotia"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Nova Scotia
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nunavut"
         id="uuid1_listbox_Nunavut"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Nunavut
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Ontario"
         id="uuid1_listbox_Ontario"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Ontario
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Prince_Edward_Island"
         id="uuid1_listbox_Prince_Edward_Island"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Prince Edward Island
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Quebec"
         id="uuid1_listbox_Quebec"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Quebec
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Saskatchewan"
         id="uuid1_listbox_Saskatchewan"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Saskatchewan
         </span>
       </li>
       <li
-        class="c10"
+        class="c10 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Yukon"
         id="uuid1_listbox_Yukon"
         role="option"
       >
         <span
-          class="c11"
+          class="c11 react-datepicker-ignore-onclickoutside"
         >
           Yukon
         </span>
@@ -1752,7 +1752,7 @@ input + .c2 {
   </div>
   <div
     aria-labelledby="uuid1_label"
-    class="c10 c11"
+    class="c10 c11 react-datepicker-ignore-onclickoutside"
     data-testid="listbox-container"
     id="uuid1_listbox"
     role="listbox"
@@ -1764,157 +1764,157 @@ input + .c2 {
       role="presentation"
     >
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Alberta"
         id="uuid1_listbox_Alberta"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Alberta
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-British_Columbia"
         id="uuid1_listbox_British_Columbia"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           British Columbia
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Manitoba"
         id="uuid1_listbox_Manitoba"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Manitoba
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-New_Brunswick"
         id="uuid1_listbox_New_Brunswick"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           New Brunswick
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Newfoundland_and_Labrador"
         id="uuid1_listbox_Newfoundland_and_Labrador"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Newfoundland and Labrador
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Northwest_Territories"
         id="uuid1_listbox_Northwest_Territories"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Northwest Territories
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nova_Scotia"
         id="uuid1_listbox_Nova_Scotia"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Nova Scotia
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Nunavut"
         id="uuid1_listbox_Nunavut"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Nunavut
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Ontario"
         id="uuid1_listbox_Ontario"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Ontario
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Prince_Edward_Island"
         id="uuid1_listbox_Prince_Edward_Island"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Prince Edward Island
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Quebec"
         id="uuid1_listbox_Quebec"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Quebec
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Saskatchewan"
         id="uuid1_listbox_Saskatchewan"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Saskatchewan
         </span>
       </li>
       <li
-        class="c13"
+        class="c13 react-datepicker-ignore-onclickoutside"
         data-testid="listitem-Yukon"
         id="uuid1_listbox_Yukon"
         role="option"
       >
         <span
-          class="c14"
+          class="c14 react-datepicker-ignore-onclickoutside"
         >
           Yukon
         </span>

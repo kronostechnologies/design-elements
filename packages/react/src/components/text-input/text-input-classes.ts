@@ -1,4 +1,4 @@
-import { generateComponentClasses } from '../../utils/generate-component-classes';
+import { generateComponentClasses } from '../../utils/component-classes';
 
 const COMPONENT_NAME = 'TextInput';
 

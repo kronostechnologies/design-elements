@@ -244,7 +244,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 
 <div
   aria-multiselectable="true"
-  class="c0"
+  class="c0 react-datepicker-ignore-onclickoutside"
   data-testid="listbox-container"
   id="uuid1"
   role="listbox"
@@ -257,7 +257,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   >
     <li
       aria-selected="true"
-      class="c2"
+      class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionA"
       id="uuid1_optionA"
       role="option"
@@ -276,18 +276,18 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
         />
       </span>
       <span
-        class="c7"
+        class="c7 react-datepicker-ignore-onclickoutside"
       >
         Option A
         <span
-          class="c8"
+          class="c8 react-datepicker-ignore-onclickoutside"
         >
           The first one
         </span>
       </span>
     </li>
     <li
-      class="c9"
+      class="c9 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
@@ -305,14 +305,14 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
         />
       </span>
       <span
-        class="c7"
+        class="c7 react-datepicker-ignore-onclickoutside"
       >
         Option B
       </span>
     </li>
     <li
       aria-selected="true"
-      class="c2"
+      class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionC"
       id="uuid1_optionC"
       role="option"
@@ -331,14 +331,14 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
         />
       </span>
       <span
-        class="c7"
+        class="c7 react-datepicker-ignore-onclickoutside"
       >
         Option C
       </span>
     </li>
     <li
       aria-disabled="true"
-      class="c11"
+      class="c11 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionD"
       id="uuid1_optionD"
       role="option"
@@ -357,13 +357,13 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
         />
       </span>
       <span
-        class="c7"
+        class="c7 react-datepicker-ignore-onclickoutside"
       >
         Option D
       </span>
     </li>
     <li
-      class="c9"
+      class="c9 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionE"
       id="uuid1_optionE"
       role="option"
@@ -381,7 +381,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
         />
       </span>
       <span
-        class="c7"
+        class="c7 react-datepicker-ignore-onclickoutside"
       >
         Option E
       </span>
@@ -534,7 +534,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 react-datepicker-ignore-onclickoutside"
   data-testid="listbox-container"
   id="uuid1"
   role="listbox"
@@ -546,17 +546,17 @@ exports[`Listbox Matches the snapshot 1`] = `
     role="presentation"
   >
     <li
-      class="c2"
+      class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionA"
       id="uuid1_optionA"
       role="option"
     >
       <span
-        class="c3"
+        class="c3 react-datepicker-ignore-onclickoutside"
       >
         Option A
         <span
-          class="c4"
+          class="c4 react-datepicker-ignore-onclickoutside"
         >
           The first one
         </span>
@@ -564,50 +564,50 @@ exports[`Listbox Matches the snapshot 1`] = `
     </li>
     <li
       aria-selected="true"
-      class="c5"
+      class="c5 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
     >
       <span
-        class="c3"
+        class="c3 react-datepicker-ignore-onclickoutside"
       >
         Option B
       </span>
     </li>
     <li
-      class="c2"
+      class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionC"
       id="uuid1_optionC"
       role="option"
     >
       <span
-        class="c3"
+        class="c3 react-datepicker-ignore-onclickoutside"
       >
         Option C
       </span>
     </li>
     <li
       aria-disabled="true"
-      class="c6"
+      class="c6 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionD"
       id="uuid1_optionD"
       role="option"
     >
       <span
-        class="c3"
+        class="c3 react-datepicker-ignore-onclickoutside"
       >
         Option D
       </span>
     </li>
     <li
-      class="c2"
+      class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionE"
       id="uuid1_optionE"
       role="option"
     >
       <span
-        class="c3"
+        class="c3 react-datepicker-ignore-onclickoutside"
       >
         Option E
       </span>

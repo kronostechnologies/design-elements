@@ -27,3 +27,8 @@ jest.mock('react', () => ({
         counter = 0;
     });
 }
+
+// Workaround for the offsetParent property in jsdom
+Object.defineProperty(HTMLElement.prototype, 'offsetParent', {
+    get() { return this.parentElement; },
+});
