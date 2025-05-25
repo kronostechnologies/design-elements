@@ -6364,6 +6364,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"conventional-changelog-conventionalcommits@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "conventional-changelog-conventionalcommits@npm:9.0.0"
+  dependencies:
+    compare-func: "npm:^2.0.0"
+  checksum: 10c0/96352c228cb14f0a5bc8628b2285361d72c39906070abe9c38e0d76d741c9f2653b20520ebed51d9a8d41d597c67d79220d4afba9f27e6cef4dc381c7fd4f9c3
+  languageName: node
+  linkType: hard
+
 "conventional-changelog-core@npm:^8.0.0":
   version: 8.0.0
   resolution: "conventional-changelog-core@npm:8.0.0"
@@ -13267,7 +13276,7 @@ __metadata:
     "@types/eslint": "npm:^8.56.10"
     "@types/yargs": "npm:^17.0.32"
     conventional-changelog-cli: "npm:^5.0.0"
-    conventional-changelog-conventionalcommits: "npm:^8.0.0"
+    conventional-changelog-conventionalcommits: "npm:^9.0.0"
     eslint: "npm:^8.39.0"
     postcss: "npm:^8.4.35"
     postcss-styled-syntax: "npm:^0.6.4"
