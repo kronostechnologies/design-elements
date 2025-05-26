@@ -1,6 +1,7 @@
 import { NumericInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+import { LanguageSwitchDecorator } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const NumericInputMeta: Meta<typeof NumericInput> = {
@@ -37,12 +38,10 @@ const NumericInputMeta: Meta<typeof NumericInput> = {
 export default NumericInputMeta;
 type Story = StoryObj<typeof NumericInput>;
 
-export const Default: Story = {
-    ...NumericInputMeta,
-};
+export const Default: Story = {};
 
 export const ControlledValue: Story = {
-    ...NumericInputMeta,
+    decorators: [LanguageSwitchDecorator],
     render: () => {
         const [inputValue, setInputValue] = useState('50');
         return (
@@ -67,7 +66,6 @@ export const ControlledValue: Story = {
 ControlledValue.parameters = rawCodeParameters;
 
 export const WithToggletip: Story = {
-    ...NumericInputMeta,
     args: {
         toggletip: {
             label: 'Toggletip label',
