@@ -1,25 +1,63 @@
 import { type ClipboardEvent } from 'react';
 import { replaceRange } from '../../utils/string';
 
+export const DEFAULT_DECIMAL_SEPARATOR: string = '.';
+export const DECIMAL_SEPARATORS: string[] = ['.', ','];
+const DECIMAL_SEPARATORS_PATTERN: string = `[${DECIMAL_SEPARATORS.join('')}]`;
+
+export function getDecimalSeparator(locale: string): string {
+    try {
+        const formatter = new Intl.NumberFormat(locale);
+        const parts: Intl.NumberFormatPart[] = formatter.formatToParts(1.1);
+        const decimalPart: Intl.NumberFormatPart | undefined = parts.find((part) => part.type === 'decimal');
+        return decimalPart?.value || '.';
+    } catch (e) {
+        console.warn(`Could not determine decimal separator for locale "${locale}", defaulting to '.'.`, e);
+        return '.';
+    }
+}
+
+export function convertDecimalSeparator(value: string, toSeparator: string): string {
+    if (!value) {
+        return value;
+    }
+    return value.replace(new RegExp(`${DECIMAL_SEPARATORS_PATTERN}(?!.*${DECIMAL_SEPARATORS_PATTERN})`), toSeparator);
+}
+
+export function toStandardFormat(value: string): string {
+    return convertDecimalSeparator(value, DEFAULT_DECIMAL_SEPARATOR);
+}
+
 /**
  * We allow to input incomplete number that is obvious. It's similar to the behavior of Number(value).
  * The difference is we can keep all digits (zero ending decimals).
  */
-export function cleanIncompleteNumber(inputValue: string): string {
-    let value = inputValue;
-
-    if (value === '' || Number.isNaN(Number(value))) {
+export function cleanIncompleteNumber(inputValue: string, decimalSeparator: string): string {
+    if (inputValue === decimalSeparator || inputValue === `-${decimalSeparator}`) {
         return '';
     }
 
-    if (value.endsWith('.')) {
-        value = value.slice(0, -1);
+    const standardValue = toStandardFormat(inputValue);
+
+    if (standardValue === '' || Number.isNaN(Number(standardValue))) {
+        return '';
     }
 
-    // Add missing integral zero (.25 => 0.25)
-    value = value.replace(/^(-?)\./, '$10.');
+    let cleanedStandardValue = standardValue;
+    if (cleanedStandardValue.endsWith('.')) {
+        cleanedStandardValue = cleanedStandardValue.slice(0, -1);
+    }
 
-    return value;
+    if (cleanedStandardValue.startsWith('.')) {
+        cleanedStandardValue = `0${cleanedStandardValue}`;
+    } else if (cleanedStandardValue.startsWith('-.')) {
+        cleanedStandardValue = `-0${cleanedStandardValue.substring(1)}`;
+    }
+
+    if (cleanedStandardValue === '') {
+        return '';
+    }
+    return convertDecimalSeparator(cleanedStandardValue, decimalSeparator);
 }
 
 export function replacePastedValue(event: ClipboardEvent<HTMLInputElement>): string {
@@ -35,9 +73,12 @@ export function replacePastedValue(event: ClipboardEvent<HTMLInputElement>): str
 /**
  * Validate that value can be put in the input (including partially incomplete number)
  */
-export function isValidValueForInput(value: string): boolean {
-    if (value.includes('.')) {
-        return /^-?\d*\.\d*$/.test(value);
+export function isValidValueForInput(value: string, decimalSeparator: string): boolean {
+    if (value === '' || value === '-') {
+        return true;
     }
-    return /^-?\d*$/.test(value);
+
+    const escapedSeparator = decimalSeparator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+    return new RegExp(`^-?\\d*(${escapedSeparator}?\\d*)?$`).test(value);
 }
