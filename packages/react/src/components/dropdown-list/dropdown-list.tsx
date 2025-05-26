@@ -3,11 +3,14 @@ import {
     KeyboardEvent,
     ReactNode,
     useCallback,
+    useEffect,
     useMemo,
     useRef,
     useState,
     VoidFunctionComponent,
 } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
@@ -18,7 +21,7 @@ import { useListSearch } from '../../hooks/use-list-search';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
-import { sanitizeId } from '../../utils/dom';
+import { findNearestRelativeParent, getRootElement, sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
@@ -94,10 +97,19 @@ const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-const StyledListbox = styled(Listbox)`
+interface StyledListboxProps {
+    $left?: number;
+    $top?: number;
+    $width?: number;
+}
+
+const StyledListbox = styled(Listbox)<StyledListboxProps>`
+    left: ${(props: StyledListboxProps) => `${props.$left}px`};
     margin-top: var(--spacing-half);
     position: absolute;
-    width: 100%;
+    top: ${(props) => `${props.$top}px`};
+    width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
+    z-index: 99999;
 `;
 
 const Textbox = styled.div<TextboxProps>`
@@ -162,6 +174,12 @@ export interface TagValue {
     label: string;
 }
 
+interface ListboxPosition {
+    left: number;
+    top: number;
+    width: number;
+}
+
 export interface DropdownListProps<M extends boolean | undefined> {
     /**
      * Aria label for the input (used when no visual label is present)
@@ -223,6 +241,25 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
+function getListboxPosition(textbox: HTMLDivElement, shadowHost: Element | undefined): ListboxPosition {
+    const rect = textbox.getBoundingClientRect();
+    const offsetParent: Element | null = shadowHost ? findNearestRelativeParent(shadowHost as HTMLElement) : null;
+    const offsetParentRect = offsetParent?.getBoundingClientRect();
+    let topOffset = window.scrollY;
+    let leftOffset = window.scrollX;
+
+    if (offsetParent && offsetParentRect) {
+        topOffset = -offsetParentRect.top;
+        leftOffset = -offsetParentRect.left;
+    }
+
+    return {
+        top: rect.bottom + topOffset,
+        left: rect.left + leftOffset,
+        width: rect.width,
+    };
+}
+
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -253,11 +290,14 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const { device, isMobile } = useDeviceContext();
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
+    const shadowRoot = useShadowRoot();
 
     const textboxRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
+    const [listboxPosition, setListboxPosition] = useState<ListboxPosition>({ top: 0, left: 0, width: 0 });
+    const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
         () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
@@ -324,9 +364,31 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             return;
         }
 
+        if (textboxRef.current) {
+            const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+            setListboxPosition(newListboxPosition);
+        }
+
         setFocusedOption(getLastSelectedOption(selectedOptions));
         setOpen(true);
     }
+
+    useEffect(() => {
+        function updatePosition(): void {
+            if (open && textboxRef.current) {
+                const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+                setListboxPosition(newListboxPosition);
+            }
+        }
+
+        window.addEventListener('resize', updatePosition);
+        window.addEventListener('scroll', updatePosition, true);
+
+        return () => {
+            window.removeEventListener('resize', updatePosition);
+            window.removeEventListener('scroll', updatePosition, true);
+        };
+    }, [open, shadowRoot?.host]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
@@ -580,7 +642,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 />
             </Textbox>
 
-            {open && (
+            {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
                     ref={listboxRef}
@@ -592,7 +654,11 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                     options={options}
                     value={getListboxSelectedOptionValues()}
                     multiselect={multiselect}
-                />
+                    $left={listboxPosition.left}
+                    $top={listboxPosition.top}
+                    $width={listboxPosition.width}
+                />,
+                rootElement,
             )}
         </StyledFieldContainer>
     );

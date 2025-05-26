@@ -10,15 +10,16 @@ import {
     useState,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
-import { mergeRefs } from '../../utils/react-merge-refs';
 import { unique } from '../../utils/array';
+import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
+import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
+import { mergeRefs } from '../../utils/react-merge-refs';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
 import { findOptionsByValue } from './listbox-option';
 
 type Value = string | string[];
@@ -30,7 +31,7 @@ export interface ListboxOption {
     caption?: string;
 }
 
-interface ListboxProps {
+export interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     options: ListboxOption[];
@@ -447,12 +448,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         onKeyDown?.(event);
     }
 
+    const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
+
     return (
         <Container
             aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
             aria-labelledby={ariaLabelledBy}
             aria-multiselectable={multiselect ? 'true' : undefined}
-            className={className}
+            className={containerClassNames}
             data-testid="listbox-container"
             $focusable={focusable}
             id={id}
@@ -472,6 +475,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                     <ListItem
                         aria-disabled={option.disabled}
                         aria-selected={isOptionSelected(option) ? 'true' : undefined}
+                        className={IGNORE_CLICK_OUTSIDE}
                         data-testid={sanitizeId(`listitem-${option.value}`)}
                         $disabled={option.disabled}
                         $focused={isOptionFocused(option)}
@@ -501,10 +505,11 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                                 <CheckMarkIcon />
                             </CustomCheckbox>
                         ) : null}
-                        <ListItemTextContainer>
+                        <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
                             {option.label || option.value}
                             {option.caption && (
                                 <ListItemCaption
+                                    className={IGNORE_CLICK_OUTSIDE}
                                     $disabled={option.disabled}
                                     $isMobile={isMobile}
                                 >

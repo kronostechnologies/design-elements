@@ -1,7 +1,19 @@
 import { shallow } from 'enzyme';
+import { ReactNode } from 'react';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DropdownList } from './dropdown-list';
+
+jest.mock('react-dom', () => ({
+    ...jest.requireActual('react-dom'),
+    createPortal: (children: ReactNode, _: Element | DocumentFragment) => (
+        <div data-testid="mock-portal">{children}</div>
+    ),
+}));
+
+jest.mock('../toast/toast-provider', () => ({
+    ToastProvider: ({ children }: { children: ReactNode }) => children,
+}));
 
 const provinces = [
     { value: 'ab', label: 'Alberta' },
