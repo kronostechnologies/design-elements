@@ -7,11 +7,20 @@ import {
     FocusEventHandler,
     FormEventHandler,
     useCallback,
+    useMemo,
     useState,
 } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
 import { isNumber, isWithinPrecision, truncateAtPrecision } from '../../utils/math';
-import { cleanIncompleteNumber, isValidValueForInput, replacePastedValue } from './utils';
+import {
+    cleanIncompleteNumber,
+    convertDecimalSeparator,
+    DEFAULT_DECIMAL_SEPARATOR,
+    getDecimalSeparator,
+    isValidValueForInput,
+    replacePastedValue,
+    toStandardFormat,
+} from './utils';
 
 interface NumericInputCallbackData {
     value: string;
@@ -45,47 +54,15 @@ export interface UseNumericInputReturn {
     value: number | string;
 }
 
-function validateProvidedValue(newValue: unknown): string {
-    if (isNumber(newValue)) {
-        return newValue.toString();
-    }
-    if (typeof newValue === 'string' && isValidValueForInput(newValue)) {
-        return newValue;
-    }
-
-    console.warn(`Invalid value passed to NumericInput: ${newValue}`);
-    return '';
-}
-
 type ValidationErrorType = 'required' | 'max' | 'min';
 
 interface GetValidationErrorTypeOptions {
-    max?: number;
-    min?: number;
-    required?: boolean;
     skipRequired?: boolean;
-}
-
-function getValidationErrorType(value: string, {
-    max, min, required, skipRequired,
-}: GetValidationErrorTypeOptions): ValidationErrorType | undefined {
-    if (value === '' && required && !skipRequired) {
-        return 'required';
-    }
-    if (value !== '') {
-        if (max !== undefined && Number(value) > max) {
-            return 'max';
-        }
-        if (min !== undefined && Number(value) < min) {
-            return 'min';
-        }
-    }
-    return undefined;
 }
 
 const createCallbackData = (inputValue: string): NumericInputCallbackData => ({
     value: inputValue,
-    valueAsNumber: inputValue === '' ? null : Number(inputValue),
+    valueAsNumber: inputValue === '' ? null : Number(toStandardFormat(inputValue)),
 });
 
 function convertClipboardToChangeEvent(
@@ -118,66 +95,122 @@ export function useNumericInput({
     validationErrorMessage: providedValidationErrorMessage,
     value: providedValue,
 }: UseNumericInputParams): UseNumericInputReturn {
-    const { t } = useTranslation('numeric-input');
+    const { t, i18n } = useTranslation('numeric-input');
+    const decimalSeparator = useMemo(() => getDecimalSeparator(i18n.language), [i18n.language]);
+
+    const toLocaleFormat = useCallback(
+        (val: string): string => convertDecimalSeparator(val, decimalSeparator),
+        [decimalSeparator],
+    );
+
+    const validateProvidedValue = useCallback((newValue: unknown): string => {
+        if (isNumber(newValue)) {
+            return toLocaleFormat(newValue.toString());
+        }
+        if (typeof newValue === 'string') {
+            const standardValue = toStandardFormat(newValue);
+            if (isValidValueForInput(standardValue, DEFAULT_DECIMAL_SEPARATOR)) {
+                return toLocaleFormat(standardValue);
+            }
+        }
+
+        console.warn(`Invalid value passed to NumericInput: ${newValue}`);
+        return '';
+    }, [toLocaleFormat]);
+
     const [inputValue, setInputValue] = useState(
         validateProvidedValue(providedValue ?? defaultValue ?? ''),
     );
 
+    const getValidationErrorType = useCallback((
+        value: string,
+        options?: GetValidationErrorTypeOptions,
+    ): ValidationErrorType | undefined => {
+        if (value === '' && required && options?.skipRequired !== true) {
+            return 'required';
+        }
+        if (value !== '') {
+            const standardValue = toStandardFormat(value);
+            const numValue = Number(standardValue);
+            if (max !== undefined && numValue > max) {
+                return 'max';
+            }
+            if (min !== undefined && numValue < min) {
+                return 'min';
+            }
+        }
+        return undefined;
+    }, [max, min, required]);
+
     const [validationErrorType, setValidationErrorType] = useState<ValidationErrorType | undefined>(
-        getValidationErrorType(inputValue, {
-            max, min, required, skipRequired: true,
-        }),
+        getValidationErrorType(inputValue, { skipRequired: true }),
     );
 
-    const validate = useCallback((value: string): void => {
-        const errorType = getValidationErrorType(value, { max, min, required });
+    const validate = useCallback((valueToValidate: string): void => {
+        const errorType = getValidationErrorType(valueToValidate);
         setValidationErrorType(errorType);
-    }, [max, min, required]);
+    }, [getValidationErrorType]);
 
     const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
-        let newValue = replacePastedValue(event);
+        let newValue = convertDecimalSeparator(replacePastedValue(event), decimalSeparator);
 
-        if (precision !== undefined) {
-            newValue = truncateAtPrecision(newValue, precision);
+        if (!isValidValueForInput(newValue, decimalSeparator)) {
+            newValue = inputValue;
+        } else if (precision !== undefined) {
+            const standardValue = toStandardFormat(newValue);
+            const truncatedStandard = truncateAtPrecision(standardValue, precision);
+            newValue = toLocaleFormat(truncatedStandard);
         }
 
-        // When the content is invalid, we will clear the field so the user has a feedback that the paste didn't work
-        if (!isValidValueForInput(newValue)) {
+        if (!isValidValueForInput(newValue, decimalSeparator)) {
             newValue = '';
         }
 
         setInputValue(newValue);
         onChange?.(convertClipboardToChangeEvent(event, newValue), createCallbackData(newValue));
-    }, [onChange, precision]);
+        validate(newValue);
+    }, [onChange, precision, decimalSeparator, inputValue, toLocaleFormat, validate]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
         const value = event.target.value;
         if (value !== '') {
-            if (!isValidValueForInput(value)) {
+            if (!isValidValueForInput(value, decimalSeparator)) {
                 return;
             }
-            if (precision !== undefined && !isWithinPrecision(value, precision)) {
-                return;
+            if (precision !== undefined) {
+                const standardValue = toStandardFormat(value);
+                if (!isWithinPrecision(standardValue, precision)) {
+                    return;
+                }
             }
         }
 
         setInputValue(value);
         onChange?.(event, createCallbackData(value));
-    }, [onChange, precision]);
+        if (providedInvalid === undefined) {
+            validate(value);
+        }
+    }, [onChange, precision, decimalSeparator, validate, providedInvalid]);
 
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
-        const value = cleanIncompleteNumber(event.target.value);
+        let value = cleanIncompleteNumber(event.target.value, decimalSeparator);
+
+        if (precision !== undefined && value !== '') {
+            const standardValue = toStandardFormat(value);
+            const truncatedStandard = truncateAtPrecision(standardValue, precision);
+            value = toLocaleFormat(truncatedStandard);
+        }
         setInputValue(value);
 
         if (!(required && value === '')) {
             validate(value);
         } else {
-            setValidationErrorType(undefined);
+            setValidationErrorType(getValidationErrorType(value));
         }
 
         onBlur?.(event, createCallbackData(value));
-    }, [onBlur, required, validate]);
+    }, [onBlur, required, validate, decimalSeparator, precision, toLocaleFormat, getValidationErrorType]);
 
     const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
         if (providedInvalid === undefined) {
@@ -189,7 +222,9 @@ export function useNumericInput({
         const validatedProvidedValue = validateProvidedValue(providedValue);
         if (validatedProvidedValue !== inputValue) {
             setInputValue(validatedProvidedValue);
-            validate(validatedProvidedValue);
+            if (providedInvalid === undefined) {
+                validate(validatedProvidedValue);
+            }
         }
     }
 
