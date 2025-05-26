@@ -1,46 +1,46 @@
 import {
     FocusEvent,
     KeyboardEvent,
+    ReactNode,
     useCallback,
+    useEffect,
+    useMemo,
     useRef,
     useState,
     VoidFunctionComponent,
-    ReactNode,
-    useEffect,
-    useMemo,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useId } from '../../hooks/use-id';
+import { useListCursor } from '../../hooks/use-list-cursor';
+import { useListSearch } from '../../hooks/use-list-search';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { findNearestRelativeParent, getRootElement, sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon, IconName } from '../icon/icon';
 import { Listbox } from '../listbox/listbox';
+import { findOptionsByValue } from '../listbox/listbox-option';
+import { Tag } from '../tag/tag';
 import { ToggletipProps } from '../toggletip/toggletip';
 import { TooltipProps } from '../tooltip/tooltip';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
-import { useId } from '../../hooks/use-id';
-import { useListCursor } from '../../hooks/use-list-cursor';
-import { useClickOutside } from '../../hooks/use-click-outside';
-import { useListSearch } from '../../hooks/use-list-search';
-import { getRootElement, sanitizeId } from '../../utils/dom';
-import { Tag } from '../tag/tag';
-import { findOptionsByValue } from '../listbox/listbox-option';
+import { DropdownListOption } from './dropdown-list-option';
 import {
+    addUniqueOption,
     disableNonSelectedOptions,
     getDefaultOptions,
-    isOptionEnabled,
     getOptionLabel,
+    isOptionEnabled,
     isOptionSelected,
-    addUniqueOption,
     removeOption,
 } from './utils/dropdown-list-utils';
-import { DropdownListOption } from './dropdown-list-option';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -174,6 +174,12 @@ export interface TagValue {
     label: string;
 }
 
+interface ListboxPosition {
+    left: number;
+    top: number;
+    width: number;
+}
+
 export interface DropdownListProps<M extends boolean | undefined> {
     /**
      * Aria label for the input (used when no visual label is present)
@@ -235,6 +241,25 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
+function getListboxPosition(textbox: HTMLDivElement, shadowHost: Element | undefined): ListboxPosition {
+    const rect = textbox.getBoundingClientRect();
+    const offsetParent: Element | null = shadowHost ? findNearestRelativeParent(shadowHost as HTMLElement) : null;
+    const offsetParentRect = offsetParent?.getBoundingClientRect();
+    let topOffset = window.scrollY;
+    let leftOffset = window.scrollX;
+
+    if (offsetParent && offsetParentRect) {
+        topOffset = -offsetParentRect.top;
+        leftOffset = -offsetParentRect.left;
+    }
+
+    return {
+        top: rect.bottom + topOffset,
+        left: rect.left + leftOffset,
+        width: rect.width,
+    };
+}
+
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -271,9 +296,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const listboxRef = useRef<HTMLDivElement>(null);
 
     const [open, setOpen] = useState(defaultOpen);
-    const [listboxPosition, setListboxPosition] = (
-        useState({ top: 0, left: 0, width: 0 })
-    );
+    const [listboxPosition, setListboxPosition] = useState<ListboxPosition>({ top: 0, left: 0, width: 0 });
     const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
@@ -342,12 +365,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         }
 
         if (textboxRef.current) {
-            const rect = textboxRef.current.getBoundingClientRect();
-            setListboxPosition({
-                top: rect.bottom + window.scrollY,
-                left: rect.left + window.scrollX,
-                width: rect.width,
-            });
+            const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+            setListboxPosition(newListboxPosition);
         }
 
         setFocusedOption(getLastSelectedOption(selectedOptions));
@@ -357,12 +376,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     useEffect(() => {
         function updatePosition(): void {
             if (open && textboxRef.current) {
-                const rect = textboxRef.current.getBoundingClientRect();
-                setListboxPosition({
-                    top: rect.bottom + window.scrollY,
-                    left: rect.left + window.scrollX,
-                    width: rect.width,
-                });
+                const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
+                setListboxPosition(newListboxPosition);
             }
         }
 
@@ -373,7 +388,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             window.removeEventListener('resize', updatePosition);
             window.removeEventListener('scroll', updatePosition, true);
         };
-    }, [open]);
+    }, [open, shadowRoot?.host]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
