@@ -1,19 +1,46 @@
-import { CSSProperties, ReactElement } from 'react';
-import styled, { css } from 'styled-components';
-import { HeaderGroup, flexRender, SortDirection } from '@tanstack/react-table';
+import { flexRender, HeaderGroup, SortDirection } from '@tanstack/react-table';
+import { CSSProperties, ReactElement, useMemo } from 'react';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { ResolvedTheme } from '../../themes';
+import { focus } from '../../utils/css-state';
 import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
-import { isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
-import { focus } from '../../utils/css-state';
 import { CustomHeader } from './types';
+import { findNearestTextAlign, isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
 
-const SortButton = styled.button<{ $textAlign: string }>`
+interface SortButtonProps {
+    $textAlign: CSSProperties['textAlign'];
+}
+
+function convertTextAlignToMargin(
+    { $textAlign }: SortButtonProps,
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> | undefined {
+    switch ($textAlign) {
+        case 'right':
+            return css`margin-right: calc(-1 * var(--spacing-half));`;
+        default:
+            return undefined;
+    }
+}
+
+function convertTextAlignToFlexAlign({ $textAlign }: SortButtonProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
+    switch ($textAlign) {
+        case 'right':
+            return css`justify-self: flex-end;`;
+        case 'center':
+            return css`justify-self: center;`;
+        default:
+            return css`justify-self: flex-start;`;
+    }
+}
+
+const SortButton = styled.button<SortButtonProps>`
     align-items: center;
     border-radius: var(--border-radius);
     cursor: pointer;
     display: flex;
     font: inherit;
-    text-align: ${({ $textAlign }) => $textAlign};
+    ${convertTextAlignToFlexAlign};
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-visible', insideOnly: true })};
 `;
@@ -60,8 +87,9 @@ const StyleHeaderRow = styled.tr<{ $sticky: boolean }>`
     `}
 `;
 
-const StyledSortButtonIcon = styled(SortButtonIcon)`
+const StyledSortButtonIcon = styled(SortButtonIcon)<SortButtonProps>`
     margin-left: var(--spacing-1x);
+    ${convertTextAlignToMargin};
 `;
 
 function getSortState(currentSort: false | SortDirection): SortState {
@@ -80,6 +108,8 @@ function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TV
     const colSpan = header.colSpan > 1 ? header.colSpan : undefined;
     const hasRightBorder = isAGroupColumn(header.column) || isLastColumnInAGroup(header.column);
     const sortState: SortState = getSortState(header.column.getIsSorted());
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const textAlign = useMemo(() => findNearestTextAlign(header.column), [header.column]);
 
     if (!columnDef.header && !columnDef.headerAriaLabel) {
         devConsole.warn(
@@ -99,15 +129,19 @@ function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TV
                 scope="col"
                 $startOffset={header.getStart()}
                 $sticky={columnDef.sticky ?? false}
-                $textAlign={columnDef.textAlign}
+                $textAlign={textAlign}
             >
                 {header.isPlaceholder ? null : (
                     <SortButton
-                        $textAlign={columnDef.textAlign ?? 'left'}
+                        $textAlign={textAlign}
                         onClick={header.column.getToggleSortingHandler()}
                     >
                         {flexRender(columnDef.header, header.getContext())}
-                        <StyledSortButtonIcon sort={sortState} data-testid="sort-icon" />
+                        <StyledSortButtonIcon
+                            sort={sortState}
+                            $textAlign={textAlign}
+                            data-testid="sort-icon"
+                        />
                     </SortButton>
                 )}
             </StyledHeader>
@@ -124,7 +158,7 @@ function getHeading<TData extends object, TValue>(header: CustomHeader<TData, TV
             scope="col"
             $startOffset={header.getStart()}
             $sticky={columnDef.sticky ?? false}
-            $textAlign={columnDef.textAlign}
+            $textAlign={textAlign}
         >
             {!header.isPlaceholder && flexRender(columnDef.header, header.getContext())}
         </StyledHeader>

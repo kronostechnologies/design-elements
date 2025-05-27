@@ -29,6 +29,7 @@ interface Data {
     column1: string;
     column2: string;
     column3: string;
+    column4?: string;
 }
 
 export const Default: Story = {
@@ -726,11 +727,13 @@ export const SortableRows: Story = {
                 header: 'Column 2',
                 accessorKey: 'column2',
                 sortable: true,
+                textAlign: 'right',
             },
             {
                 header: 'Column 3',
                 accessorKey: 'column3',
                 sortable: true,
+                textAlign: 'center',
             },
             {
                 header: 'Custom sort by length',
@@ -1763,6 +1766,17 @@ export const GroupedHeaders: Story = {
                         accessorKey: 'column3',
                     },
                 ],
+                textAlign: 'center',
+            },
+            {
+                header: 'Group 3',
+                columns: [
+                    {
+                        header: 'Column 4',
+                        accessorKey: 'column4',
+                    },
+                ],
+                textAlign: 'right',
             },
         ];
 
@@ -1771,11 +1785,13 @@ export const GroupedHeaders: Story = {
                 column1: 'a',
                 column2: 'a',
                 column3: 'a',
+                column4: 'a',
             },
             {
                 column1: 'b',
                 column2: 'b',
                 column3: 'b',
+                column4: 'b',
             },
         ];
 
