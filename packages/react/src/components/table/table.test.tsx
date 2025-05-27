@@ -84,6 +84,7 @@ const columnsWithHeadersGrouped: TableColumn<TestData>[] = [
                 accessorKey: 'column3',
             },
         ],
+        textAlign: 'right',
     },
 ];
 

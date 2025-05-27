@@ -428,7 +428,10 @@ export const Table = <T extends object>({
 
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
-        const cols = [...providedColumns];
+        const cols: TableColumn<T>[] = providedColumns.map((column) => ({
+            ...column,
+            textAlign: column.textAlign ?? 'left',
+        }));
 
         if (rowSelectionMode) {
             cols.unshift(getSelectionColumn<T>(
