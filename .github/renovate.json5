@@ -39,5 +39,10 @@
       groupName: "react-table",
       semanticCommitScope: "{{groupName}}",
     },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["cheerio"],
+      enabled: false,
+    },
   ],
 }
