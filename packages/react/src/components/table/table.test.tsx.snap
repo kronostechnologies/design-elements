@@ -1671,10 +1671,14 @@ exports[`Table has selectable rows styles 1`] = `
       >
         <label
           class="c4"
+          for="uuid1"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-all"
+            id="uuid1"
             type="checkbox"
             value=""
           />
@@ -1725,10 +1729,14 @@ exports[`Table has selectable rows styles 1`] = `
       >
         <label
           class="c4"
+          for="uuid2"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-0"
+            id="uuid2"
             type="checkbox"
             value=""
           />
@@ -1775,10 +1783,14 @@ exports[`Table has selectable rows styles 1`] = `
       >
         <label
           class="c4"
+          for="uuid3"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-1"
+            id="uuid3"
             type="checkbox"
             value=""
           />
@@ -1825,10 +1837,14 @@ exports[`Table has selectable rows styles 1`] = `
       >
         <label
           class="c4"
+          for="uuid4"
         >
           <input
+            aria-invalid="false"
+            aria-labelledby=""
             class="c5"
             data-testid="row-checkbox-2"
+            id="uuid4"
             type="checkbox"
             value=""
           />
