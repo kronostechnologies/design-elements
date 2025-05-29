@@ -103,7 +103,7 @@ export * from './components/legend/legend';
 export { Fieldset } from './components/fieldset';
 export { ProgressIndicator } from './components/progress-indicator/progress-indicator';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
-export { Pagination } from './components/pagination/pagination';
+export * from './components/pagination';
 
 // Themes
 export { equisoftTheme, buildTheme } from './themes';
