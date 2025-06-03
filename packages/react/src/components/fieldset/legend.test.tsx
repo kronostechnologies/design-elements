@@ -4,7 +4,7 @@ import { Legend } from './legend';
 import { LegendSize } from './types';
 
 describe('Legend Component', () => {
-    const sizes: LegendSize[] = ['small', 'medium', 'large'];
+    const sizes: LegendSize[] = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
     const boldStates = [true, false];
     const devices: DeviceContextProviderProps['staticDevice'][] = ['mobile', 'desktop'];
 

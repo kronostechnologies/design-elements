@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Fieldset Component Styling matches default 1`] = `
+.c1 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
 .c0 {
   border: 0;
   border: none;
@@ -8,51 +15,6 @@ exports[`Fieldset Component Styling matches default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-1x);
-  margin: 0;
-  min-inline-size: 0;
-  min-width: 0;
-  padding: 0;
-}
-
-.c0:disabled legend,
-.c0[aria-disabled='true'] legend {
-  color: #B7BBC2;
-}
-
-<ForwardRef>
-  <styled.fieldset
-    $orientation="vertical"
-    data-orientation="vertical"
-    data-testid="fieldset"
-    id="uuid1"
-  >
-    <fieldset
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      id="uuid1"
-    >
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
-`;
-
-exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
-.c0 {
-  border: 0;
-  border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   gap: var(--spacing-1x);
   margin: 0;
   min-inline-size: 0;
@@ -66,64 +28,38 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
 }
 
 <ForwardRef
-  orientation="horizontal"
+  legend={
+    {
+      "text": "Default Legend",
+    }
+  }
 >
   <styled.fieldset
-    $orientation="horizontal"
-    data-orientation="horizontal"
     data-testid="fieldset"
     id="uuid1"
   >
     <fieldset
       className="c0"
-      data-orientation="horizontal"
       data-testid="fieldset"
       id="uuid1"
     >
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
-`;
-
-exports[`Fieldset Component Styling matches vertical orientation 1`] = `
-.c0 {
-  border: 0;
-  border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--spacing-1x);
-  margin: 0;
-  min-inline-size: 0;
-  min-width: 0;
-  padding: 0;
-}
-
-.c0:disabled legend,
-.c0[aria-disabled='true'] legend {
-  color: #B7BBC2;
-}
-
-<ForwardRef
-  orientation="vertical"
->
-  <styled.fieldset
-    $orientation="vertical"
-    data-orientation="vertical"
-    data-testid="fieldset"
-    id="uuid1"
-  >
-    <fieldset
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      id="uuid1"
-    >
+      <Legend
+        id="uuid1-legend"
+        text="Default Legend"
+      >
+        <styled.legend
+          datatest-id="legend"
+          id="uuid1-legend"
+          text="Default Legend"
+        >
+          <legend
+            className="c1"
+            id="uuid1-legend"
+          >
+            Default Legend
+          </legend>
+        </styled.legend>
+      </Legend>
       Test Content
     </fieldset>
   </styled.fieldset>
@@ -145,9 +81,6 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   gap: var(--spacing-1x);
   margin: 0;
   min-inline-size: 0;
@@ -164,37 +97,35 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
   legend={
     {
       "bold": true,
-      "text": "Text Legend",
+      "text": "Bold Legend",
     }
   }
 >
   <styled.fieldset
-    $orientation="vertical"
-    data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
   >
     <fieldset
       className="c0"
-      data-orientation="vertical"
       data-testid="fieldset"
       id="uuid1"
     >
       <Legend
         bold={true}
         id="uuid1-legend"
+        text="Bold Legend"
       >
         <styled.legend
           $bold={true}
-          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
+          text="Bold Legend"
         >
           <legend
             className="c1"
             id="uuid1-legend"
           >
-            Text Legend
+            Bold Legend
           </legend>
         </styled.legend>
       </Legend>
@@ -219,9 +150,6 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   gap: var(--spacing-1x);
   margin: 0;
   min-inline-size: 0;
@@ -238,14 +166,12 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
   disabled={true}
   legend={
     {
-      "text": "Text Legend",
+      "text": "Disabled Legend",
     }
   }
 >
   <styled.fieldset
-    $orientation="vertical"
     aria-disabled={true}
-    data-orientation="vertical"
     data-testid="fieldset"
     disabled={true}
     id="uuid1"
@@ -253,24 +179,86 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
     <fieldset
       aria-disabled={true}
       className="c0"
-      data-orientation="vertical"
       data-testid="fieldset"
       disabled={true}
       id="uuid1"
     >
       <Legend
         id="uuid1-legend"
+        text="Disabled Legend"
       >
         <styled.legend
-          $isMobile={false}
           datatest-id="legend"
           id="uuid1-legend"
+          text="Disabled Legend"
         >
           <legend
             className="c1"
             id="uuid1-legend"
           >
-            Text Legend
+            Disabled Legend
+          </legend>
+        </styled.legend>
+      </Legend>
+      Test Content
+    </fieldset>
+  </styled.fieldset>
+</ForwardRef>
+`;
+
+exports[`Fieldset Component Styling matches with string legend 1`] = `
+.c1 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<ForwardRef
+  legend="Simple Legend"
+>
+  <styled.fieldset
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <fieldset
+      className="c0"
+      data-testid="fieldset"
+      id="uuid1"
+    >
+      <Legend
+        id="uuid1-legend"
+        text="Simple Legend"
+      >
+        <styled.legend
+          datatest-id="legend"
+          id="uuid1-legend"
+          text="Simple Legend"
+        >
+          <legend
+            className="c1"
+            id="uuid1-legend"
+          >
+            Simple Legend
           </legend>
         </styled.legend>
       </Legend>

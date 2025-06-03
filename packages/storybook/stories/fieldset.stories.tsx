@@ -13,11 +13,12 @@ export default fieldsetMeta;
 type Story = StoryObj<typeof Fieldset>;
 
 const withCheckboxes = (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {/*  replace inline style with grid */}
         <Checkbox label='Checkbox 1!' />
         <Checkbox label='Checkbox 2!' />
         <Checkbox label='Checkbox 3!' />
-    </>
+    </div>
 );
 
 const withRadioButtons = (
@@ -46,43 +47,29 @@ const withRadioCards = (
 
 export const Default: Story = {
     args: {
-        children: withCheckboxes,
-    },
-};
-
-export const Legend: Story = {
-    args: {
-        legend: { text: 'This is a legend!', bold: true, size: 'large' },
-        children: withCheckboxes,
+        legend: 'This is a legend!',
+        children: withTextInputs,
     },
 };
 
 export const Disabled: Story = {
     args: {
         disabled: true,
-        legend: { text: 'This is disabled!', size: 'large' },
+        legend: { text: 'This is disabled!', size: 'xxsmall' },
         children: withCheckboxes,
-    },
-};
-
-export const Horizontal: Story = {
-    args: {
-        orientation: 'horizontal',
-        legend: { text: 'This is horizontal with text inputs!', size: 'large' },
-        children: withTextInputs,
     },
 };
 
 export const WithRadioButtons: Story = {
     args: {
-        legend: { text: 'With Radio Buttons!', size: 'large' },
+        legend: { text: 'With Radio Buttons!', size: 'xxsmall' },
         children: withRadioButtons,
     },
 };
 
 export const WithRadioCards: Story = {
     args: {
-        legend: { text: 'With Radio Buttons!', size: 'large' },
+        legend: { text: 'With Radio Buttons!', size: 'xxsmall' },
         children: withRadioCards,
     },
 };
