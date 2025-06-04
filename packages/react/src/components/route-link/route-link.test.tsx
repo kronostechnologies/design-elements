@@ -1,25 +1,8 @@
-import { shallow } from 'enzyme';
 import { Link, NavLink } from 'react-router-dom';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { RouteLink } from './route-link';
 
 describe('Route Link', () => {
-    it('calls onClick callback when clicked', () => {
-        const callback = jest.fn();
-        const wrapper = shallow(
-            <RouteLink
-                routerLink={NavLink}
-                href="/test"
-                label="Navigation Link"
-                onClick={callback}
-            />,
-        );
-
-        wrapper.simulate('click');
-
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
-
     test('matches snapshot (NavLink)', () => {
         const { container } = renderWithProviders(
             <RouteLink routerLink={NavLink} href="/test" label="Navigation Link" />,

@@ -1,5 +1,4 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { NavItemProps } from '../dropdown-menu/list-items';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
 
@@ -84,31 +83,6 @@ describe('UserProfile', () => {
 
             expect(result).toBe(undefined);
         });
-    });
-
-    test('should contain username', () => {
-        const username = 'John Doe';
-        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
-
-        expect(getByTestId(wrapper, 'menu-button').contains(username)).toBe(true);
-    });
-
-    test('should call on click when an option is clicked', () => {
-        const username = 'John Doe';
-        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
-
-        const actionA = getByTestId(wrapper, 'action-optionA');
-        actionA.invoke('onClick')();
-
-        expect(onClick).toHaveBeenCalled();
-    });
-
-    test('should not call on click when an option is disabled', () => {
-        const username = 'John Doe';
-        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
-
-        const actionB = getByTestId(wrapper, 'action-optionB');
-        expect(actionB.prop('onClick')).toBe(undefined);
     });
 
     test('Matches Snapshot (desktop)', () => {

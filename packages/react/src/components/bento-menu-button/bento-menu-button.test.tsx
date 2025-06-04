@@ -1,5 +1,4 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
 import { BentoMenuButton } from './bento-menu-button';
 
@@ -70,62 +69,6 @@ describe('BentoMenuButton', () => {
     beforeEach(() => {
         products = givenProducts();
         externals = givenExternals();
-    });
-
-    it('should call product on click when a product is clicked', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={products} externalLinks={externals} />,
-        );
-
-        const productA = getByTestId(wrapper, 'product-optionA');
-        productA.invoke('onClick')();
-
-        expect(products[0].onClick).toHaveBeenCalled();
-    });
-
-    it('should not call product on click when a product is disabled', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={products} externalLinks={externals} />,
-        );
-
-        const productB = getByTestId(wrapper, 'product-optionB');
-        expect(productB.prop('onClick')).toBe(undefined);
-    });
-
-    it('should call external on click when a external is clicked', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={products} externalLinks={externals} />,
-        );
-
-        const externalA = getByTestId(wrapper, 'external-Option A');
-        externalA.invoke('onClick')();
-
-        expect(externals[0].onClick).toHaveBeenCalled();
-    });
-
-    it('should not call external on click when a external is disabled', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={products} externalLinks={externals} />,
-        );
-
-        const externalB = getByTestId(wrapper, 'external-Option B');
-        expect(externalB.prop('onClick')).toBe(undefined);
-    });
-
-    it('should not show Products section when productLinks array is empty', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={[]} externalLinks={externals} />,
-        );
-
-        expect(getByTestId(wrapper, 'products-group').exists()).toBe(false);
-    });
-
-    it('should not show Resources section when externalLinks array is empty', () => {
-        const wrapper = mountWithProviders(
-            <BentoMenuButton productLinks={products} externalLinks={[]} />,
-        );
-
-        expect(getByTestId(wrapper, 'resources-group').exists()).toBe(false);
     });
 
     test('should throw exception if both productGroups and productLinks are passed', () => {

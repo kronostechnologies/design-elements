@@ -184,7 +184,6 @@ jobs:
         with:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
-      # Tests
       - name: Unit tests
         uses: equisoft-actions/yarn-jest@v2
         with:
@@ -197,6 +196,40 @@ jobs:
           name: react-test-coverage.clover.xml
           path: packages/react/build/jest/coverage/clover.xml
           if-no-files-found: error
+
+  react_unit_tests_enzyme:
+    name: "React: Unit tests (enzyme)"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup asdf-vm
+        uses: equisoft-actions/with-asdf-vm@v2
+
+      - name: Install NPM dependencies
+        uses: equisoft-actions/yarn-install@v1
+        with:
+          working-directory: ${{ env.WORKING_DIRECTORY }}
+
+      - name: Unit tests
+        uses: equisoft-actions/yarn-jest@v2
+        with:
+          report-name: typescript-test-results-enzyme.junit.xml
+          coverage-report-name: typescript-test-coverage-enzyme.clover.xml
+          working-directory: ./packages/legacy-tests
+
+      - name: Upload test coverage results
+        uses: actions/upload-artifact@v4
+        if: ${{ success() || failure() }}
+        with:
+          name: react-test-coverage-enzyme.clover.xml
+          path: packages/legacy-tests/build/jest/coverage/clover.xml
+          if-no-files-found: error
+
 
   react_compile:
     name: "React: Compile"
