@@ -112,10 +112,14 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 <label
     class="c0"
+    for="uuid2"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-boat"
+      id="uuid2"
       name="vehicule1"
       type="checkbox"
       value="boat"
@@ -238,11 +242,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 <label
     class="c0"
+    for="uuid3"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       checked=""
       class="c1"
       data-testid="checkboxGroup-plane"
+      id="uuid3"
       name="vehicule2"
       type="checkbox"
       value="plane"
@@ -366,11 +374,15 @@ exports[`Checkbox Matches the snapshot 1`] = `
 <label
     class="c0"
     disabled=""
+    for="uuid4"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-car"
       disabled=""
+      id="uuid4"
       name="vehicule3"
       type="checkbox"
       value="car"
@@ -494,10 +506,14 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 <label
     class="c0"
+    for="uuid5"
   >
     <input
+      aria-invalid="false"
+      aria-labelledby=""
       class="c1"
       data-testid="checkboxGroup-bike"
+      id="uuid5"
       name="vehicule4"
       type="checkbox"
       value="bike"

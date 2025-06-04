@@ -6,12 +6,16 @@ import {
     Ref,
     useEffect,
     useImperativeHandle,
-    useRef,
+    useRef, useState,
 } from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { ResolvedTheme } from '../../themes/theme';
+import { useId } from '../../hooks/use-id';
+import { useTranslation } from '../../i18n/use-translation';
+import { InvalidField } from '../feedbacks/invalid-field';
 
 const checkboxWidth = 'var(--size-1x)';
 
@@ -32,9 +36,27 @@ const IndeterminateIcon = styled(Icon).attrs({ name: 'minus' })`
     ${iconStyles}
 `;
 
-const CustomCheckbox = styled.span<{ disabled?: boolean }>`
+interface CheckboxStyleProps {
+    disabled?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
+
+function getBorderColor({ disabled, theme, $valid }: CheckboxStyleProps): string {
+    if (disabled) {
+        return theme.component['checkbox-disabled-border-color'];
+    }
+
+    if (!$valid) {
+        return theme.component['checkbox-error-border-color'];
+    }
+
+    return theme.component['checkbox-unchecked-border-color'];
+}
+
+const CustomCheckbox = styled.span<CheckboxStyleProps>`
     background-color: ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-background-color'] : theme.component['checkbox-unchecked-background-color'])};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.component['checkbox-disabled-border-color'] : theme.component['checkbox-unchecked-border-color'])};
+    border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
@@ -95,6 +117,11 @@ const StyledLabel = styled.label<StyledLabelProps>`
     }
 `;
 
+const InvalidFieldContainer = styled.div`
+    margin: calc(var(--spacing-1x) * -1) 0 0 var(--spacing-1x);
+    padding-bottom: var(--spacing-1x);
+`;
+
 export interface CheckboxProps {
     checked?: boolean;
     className?: string;
@@ -104,6 +131,9 @@ export interface CheckboxProps {
     indeterminate?: boolean;
     label?: string,
     name?: string,
+    required?: boolean,
+    valid?: boolean,
+    validationErrorMessage?: string;
     value?: string,
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
@@ -114,15 +144,21 @@ export const Checkbox: FunctionComponent<PropsWithChildren<CheckboxProps>> = for
     className,
     defaultChecked,
     disabled,
-    id,
+    id: providedId,
     indeterminate,
     label,
     name,
+    required,
+    valid = true,
     value,
     onChange,
+    validationErrorMessage,
     ...otherProps
 }, ref: Ref<HTMLInputElement | null>) => {
+    const { t } = useTranslation('checkbox');
+    const id = useId(providedId);
     const checkboxRef = useRef<HTMLInputElement>(null);
+    const [isChecked, setIsChecked] = useState<boolean | undefined>(checked || false);
 
     useImperativeHandle(ref, () => checkboxRef.current, [checkboxRef]);
     const dataAttributes = useDataAttributes(otherProps);
@@ -134,31 +170,50 @@ export const Checkbox: FunctionComponent<PropsWithChildren<CheckboxProps>> = for
     }, [indeterminate]);
 
     return (
-        <StyledLabel
-            hasLabel={!!label}
-            htmlFor={id}
-            className={className}
-            disabled={disabled}
-            key={`${name}-${value}`}
-        >
-            <StyledInput
-                id={id}
-                ref={checkboxRef}
-                type="checkbox"
-                name={name}
-                value={value}
-                checked={checked}
-                defaultChecked={defaultChecked}
+        <>
+            {
+                required && !valid && !isChecked
+                && (
+                    <InvalidFieldContainer>
+                        <InvalidField
+                            controlId={id}
+                            feedbackMsg={validationErrorMessage || t('validationErrorMessage')}
+                        />
+                    </InvalidFieldContainer>
+                )
+            }
+            <StyledLabel
+                hasLabel={!!label}
+                htmlFor={id}
+                className={className}
                 disabled={disabled}
-                onChange={onChange}
-                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-            />
-            <CustomCheckbox disabled={disabled}>
-                <CheckMarkIcon />
-                <IndeterminateIcon />
-            </CustomCheckbox>
-            {label}
-        </StyledLabel>
+                key={`${name}-${value}`}
+            >
+                <StyledInput
+                    id={id}
+                    aria-labelledby={!valid ? id : ''}
+                    aria-invalid={!valid && !isChecked}
+                    ref={checkboxRef}
+                    type="checkbox"
+                    name={name}
+                    value={value}
+                    checked={checked}
+                    required={required}
+                    defaultChecked={defaultChecked}
+                    disabled={disabled}
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                        setIsChecked(!!checkboxRef.current?.checked);
+                        onChange?.(event);
+                    }}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+                />
+                <CustomCheckbox disabled={disabled} $valid={valid}>
+                    <CheckMarkIcon />
+                    <IndeterminateIcon />
+                </CustomCheckbox>
+                {label}
+            </StyledLabel>
+        </>
     );
 });
 
