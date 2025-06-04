@@ -48,3 +48,12 @@ export const ControlledPagination: Story = {
     },
 };
 ControlledPagination.parameters = rawCodeParameters;
+
+export const OnePage: Story = {
+    ...PaginationMeta,
+    args: {
+        resultsPerPage: 10,
+        numberOfResults: 8,
+        pagesShown: 2,
+    },
+};
