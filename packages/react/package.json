@@ -70,7 +70,6 @@
     "@typescript-eslint/parser": "7.18.0",
     "cross-env": "^7.0.3",
     "css-loader": "^7.0.0",
-    "enzyme-to-json": "~3.6.2",
     "eslint": "8.57.1",
     "eslint-import-resolver-node": "0.3.9",
     "eslint-import-resolver-typescript": "4.4.2",
