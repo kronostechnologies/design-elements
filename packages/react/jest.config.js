@@ -50,7 +50,6 @@ module.exports = {
     ],
     setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
     snapshotResolver: '<rootDir>/test/snapshot-resolver.js',
-    snapshotSerializers: ['enzyme-to-json/serializer'],
     testMatch: ['**/*.test.{ts,tsx}'],
     transform: {
         '\\.m?[t]sx?$': ['@swc/jest', {

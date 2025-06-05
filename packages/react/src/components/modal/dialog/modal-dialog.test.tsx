@@ -1,11 +1,9 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { doNothing } from '../../../test-utils/callbacks';
-import { getByTestId as enzymeGetByTestId } from '../../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../../test-utils/renderer';
+import { renderWithProviders } from '../../../test-utils/renderer';
 import { DeviceType } from '../../device-context-provider/device-context-provider';
-import { IconName } from '../../icon/icon';
 import { ModalDialog } from './modal-dialog';
-import { DialogType, ModalDialogProps } from './types';
+import { ModalDialogProps } from './types';
 
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose' | 'title'>;
 
@@ -65,20 +63,6 @@ describe('Modal-Dialog', () => {
         expect(callback).toHaveBeenCalled();
     });
 
-    test('has title-icon when titleIcon prop is defined', () => {
-        const attachTo = document.createElement('div');
-        document.body.replaceChildren(attachTo);
-        const wrapper = mountWithProviders(
-            <ModalDialog ariaHideApp={false} title="test" titleIcon="home" isOpen onRequestClose={jest.fn()}>
-                <p id="modal-description">Test Content</p>
-            </ModalDialog>,
-            { attachTo },
-        );
-
-        expect(enzymeGetByTestId(wrapper, 'title-icon').exists()).toBe(true);
-        wrapper.detach();
-    });
-
     test('Matches snapshot (opened, desktop)', () => {
         const { baseElement } = renderModal({ ...withSubtitle, isOpen: true }, 'desktop');
 
@@ -127,41 +111,4 @@ describe('Modal-Dialog', () => {
 
         expect(baseElement).toMatchSnapshot();
     });
-
-    test.each([
-        ['information', 'alertFilled', 'primary', false],
-        ['action', 'home', 'primary', true],
-        ['alert', 'alertOctagon', 'destructive-primary', true],
-    ])(
-        'should respect %s dialogType with proper titleIcon and buttons',
-        (modalType, expectedIcon, expectedButtonType, hasCancelButton) => {
-            const attachTo = document.createElement('div');
-            document.body.replaceChildren(attachTo);
-            const wrapper = mountWithProviders(
-                <ModalDialog
-                    ariaHideApp={false}
-                    title="test"
-                    titleIcon={expectedIcon as IconName}
-                    isOpen
-                    dialogType={modalType as DialogType}
-                    onRequestClose={jest.fn()}
-                >
-                    <p id="modal-description">Test Content</p>
-                </ModalDialog>,
-                { attachTo },
-            );
-
-            const titleIcon = enzymeGetByTestId(wrapper, 'title-icon');
-            expect(titleIcon.exists()).toBe(true);
-            expect(titleIcon.prop('name')).toBe(expectedIcon);
-
-            const confirmButton = enzymeGetByTestId(wrapper, 'confirm-button');
-            expect(confirmButton.prop('buttonType')).toBe(expectedButtonType);
-
-            const cancelButton = enzymeGetByTestId(wrapper, 'cancel-button');
-            expect(cancelButton.exists()).toBe(hasCancelButton);
-
-            wrapper.detach();
-        },
-    );
 });

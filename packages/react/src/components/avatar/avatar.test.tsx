@@ -1,16 +1,7 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Avatar } from './avatar';
 
 describe('Avatar', () => {
-    test('should display expected username initials', () => {
-        const wrapper = mountWithProviders(<Avatar username="John Doe" />);
-
-        const avatarInitials = getByTestId(wrapper, 'avatar-initials');
-
-        expect(avatarInitials.prop('children')).toBe('JD');
-    });
-
     test('Matches Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" />);
 
