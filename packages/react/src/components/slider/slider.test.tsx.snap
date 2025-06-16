@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Slider matches snapshot (range values) 1`] = `
 .c2 {
@@ -270,7 +270,7 @@ input + .c1 {
           max="100"
           min="0"
           step="1"
-          style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+          style="border: 0px; height: 100%; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
           type="range"
           value="10"
         />
@@ -295,7 +295,7 @@ input + .c1 {
           max="100"
           min="0"
           step="1"
-          style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+          style="border: 0px; height: 100%; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
           type="range"
           value="30"
         />
@@ -590,7 +590,7 @@ input + .c1 {
           max="100"
           min="0"
           step="1"
-          style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+          style="border: 0px; height: 100%; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
           type="range"
           value="20"
         />
@@ -940,7 +940,7 @@ input + .c1 {
           max="100"
           min="0"
           step="10"
-          style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+          style="border: 0px; height: 100%; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
           type="range"
           value="30"
         />

@@ -9,7 +9,7 @@ describe('useFont', () => {
     it('should inject fonts in header when styles are isolated', () => {
         renderHook(useFont, { initialProps: true });
 
-        expect(fonts.use).toBeCalled();
+        expect(fonts.use).toHaveBeenCalled();
     });
 
     it('should remove fonts on unmount when styles are isolated', () => {
@@ -17,12 +17,12 @@ describe('useFont', () => {
 
         unmount();
 
-        expect(fonts.unuse).toBeCalled();
+        expect(fonts.unuse).toHaveBeenCalled();
     });
 
     it('should not inject fonts when styles are not isolated', () => {
         renderHook(useFont, { initialProps: false });
 
-        expect(fonts.use).not.toBeCalled();
+        expect(fonts.use).not.toHaveBeenCalled();
     });
 });
