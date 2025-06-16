@@ -16,7 +16,7 @@
     "conventional-changelog-cli": "5.0.0",
     "conventional-changelog-conventionalcommits": "9.0.0",
     "eslint": "8.57.1",
-    "postcss": "8.5.4",
+    "postcss": "8.5.6",
     "postcss-styled-syntax": "0.7.1",
     "stylelint": "16.20.0",
     "typescript": "5.8.3",
