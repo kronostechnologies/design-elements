@@ -27,8 +27,8 @@ describe('useBreadcrumbLayoutEffect', () => {
                 },
             });
 
-            expect(setShownRoutes).toBeCalledWith([firstElement, secondElement, thirdElement, fifthElement]);
-            expect(setHiddenRoutes).toBeCalledWith([fourthElement]);
+            expect(setShownRoutes).toHaveBeenCalledWith([firstElement, secondElement, thirdElement, fifthElement]);
+            expect(setHiddenRoutes).toHaveBeenCalledWith([fourthElement]);
         });
 
         it('should hide two routes', () => {
@@ -48,8 +48,8 @@ describe('useBreadcrumbLayoutEffect', () => {
                 },
             });
 
-            expect(setShownRoutes).toBeCalledWith([firstElement, secondElement, fifthElement]);
-            expect(setHiddenRoutes).toBeCalledWith([thirdElement, fourthElement]);
+            expect(setShownRoutes).toHaveBeenCalledWith([firstElement, secondElement, fifthElement]);
+            expect(setHiddenRoutes).toHaveBeenCalledWith([thirdElement, fourthElement]);
         });
 
         it('should hide three routes', () => {
@@ -69,8 +69,8 @@ describe('useBreadcrumbLayoutEffect', () => {
                 },
             });
 
-            expect(setShownRoutes).toBeCalledWith([firstElement, fifthElement]);
-            expect(setHiddenRoutes).toBeCalledWith([secondElement, thirdElement, fourthElement]);
+            expect(setShownRoutes).toHaveBeenCalledWith([firstElement, fifthElement]);
+            expect(setHiddenRoutes).toHaveBeenCalledWith([secondElement, thirdElement, fourthElement]);
         });
 
         it('should hide all routes', () => {
@@ -90,8 +90,8 @@ describe('useBreadcrumbLayoutEffect', () => {
                 },
             });
 
-            expect(setShownRoutes).toBeCalledWith([]);
-            expect(setHiddenRoutes).toBeCalledWith([
+            expect(setShownRoutes).toHaveBeenCalledWith([]);
+            expect(setHiddenRoutes).toHaveBeenCalledWith([
                 firstElement,
                 secondElement,
                 thirdElement,
