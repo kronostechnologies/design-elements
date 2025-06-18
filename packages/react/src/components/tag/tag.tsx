@@ -35,6 +35,7 @@ export interface TagValue {
 
 export interface TagProps {
     className?: string;
+    labelRef?: Ref<HTMLSpanElement>;
     size?: TagSize;
     value: TagValue;
     iconName?: IconName;
@@ -147,6 +148,7 @@ const RemoveButton = styled(IconButton)<TagStylingProps>`
 
 export const Tag = forwardRef(({
     className,
+    labelRef,
     iconName,
     size = 'medium',
     color = 'default',
@@ -193,6 +195,7 @@ export const Tag = forwardRef(({
             )}
 
             <TagLabel
+                ref={labelRef}
                 $isMobile={isMobile}
                 $tagSize={size}
                 $tagColor={color}

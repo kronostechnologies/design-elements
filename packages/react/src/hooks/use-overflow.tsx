@@ -1,41 +1,51 @@
-import { RefObject, useLayoutEffect, useState } from 'react';
+import { RefObject, useCallback, useLayoutEffect, useState } from 'react';
 
 export interface Overflow {
     vertical: boolean;
     horizontal: boolean;
 }
 
-interface OverflowRequest<T> {
-    ref: RefObject<T>;
+export function getOverflow(childElement: HTMLElement, parentElement: HTMLElement): Overflow {
+    return {
+        vertical: childElement.scrollHeight > childElement.clientHeight
+            || childElement.scrollHeight > parentElement.clientHeight,
+        horizontal: childElement.scrollWidth > childElement.clientWidth
+            || childElement.scrollWidth > parentElement.clientWidth,
+    };
 }
 
-export function useOverflow<T extends HTMLElement>({
-    ref,
-}: OverflowRequest<T>): Overflow {
-    const [overflow, setOverflow] = useState<Overflow>({
-        vertical: false,
-        horizontal: false,
-    });
+export function useOverflow(
+    childRef: RefObject<HTMLElement>,
+    parentRef: RefObject<HTMLElement>,
+): boolean {
+    const [isOverflowing, setIsOverflowing] = useState(false);
+
+    const checkOverflow = useCallback(() => {
+        const childElement = childRef.current;
+        const parentElement = parentRef.current;
+
+        if (childElement && parentElement) {
+            const overflow = getOverflow(childElement, parentElement);
+            setIsOverflowing(overflow.vertical || overflow.horizontal);
+        }
+    }, [childRef, parentRef]);
 
     useLayoutEffect(() => {
-        const { current } = ref;
-
-        const trigger = (): void => {
-            if (current) {
-                const verticalOverflow = current.offsetHeight < current.scrollHeight;
-                const horizontalOverflow = current.offsetWidth < current.scrollWidth;
-
-                setOverflow({
-                    vertical: verticalOverflow,
-                    horizontal: horizontalOverflow,
-                });
-            }
-        };
-
-        if (current) {
-            trigger();
+        const childElement = childRef.current;
+        if (!childElement) {
+            return;
         }
-    }, [ref]);
 
-    return overflow;
+        checkOverflow();
+        const resizeObserver = new ResizeObserver(checkOverflow);
+        resizeObserver.observe(childElement);
+        window.addEventListener('resize', checkOverflow);
+
+        return () => {
+            window.removeEventListener('resize', checkOverflow);
+            resizeObserver.disconnect();
+        };
+    }, [checkOverflow, childRef]);
+
+    return isOverflowing;
 }
