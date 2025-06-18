@@ -1,7 +1,9 @@
 import {
+    FC,
     FocusEvent,
     KeyboardEvent,
     ReactNode,
+    RefObject,
     useCallback,
     useEffect,
     useMemo,
@@ -30,8 +32,7 @@ import { Listbox } from '../listbox/listbox';
 import { findOptionsByValue } from '../listbox/listbox-option';
 import { Tag } from '../tag/tag';
 import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
-import { DropdownListOption } from './dropdown-list-option';
+import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import {
     addUniqueOption,
     disableNonSelectedOptions,
@@ -41,6 +42,8 @@ import {
     isOptionSelected,
     removeOption,
 } from './utils/dropdown-list-utils';
+import { DropdownListOption } from './dropdown-list-option';
+import { useOverflow } from '../../hooks/use-overflow';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -109,7 +112,7 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     position: absolute;
     top: ${(props) => `${props.$top}px`};
     width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
-    z-index: 99999;
+    z-index: 99998;
 `;
 
 const Textbox = styled.div<TextboxProps>`
@@ -140,11 +143,25 @@ const TextWrapper = styled.span`
 const TagWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     user-select: none;
 `;
 
-const ListBoxTag = styled(Tag)`
+const TagTooltipWrapper = styled.div`
+    overflow: hidden;
+    [role='tooltip'] {
+        z-index: 99999;
+    }
+`;
+
+const TagTooltip = styled(Tooltip)`
+    overflow: hidden;
+    width: auto;
+`;
+
+const StyledTag = styled(Tag)`
     margin: 2px;
+    overflow: hidden;
 
     & + & {
         margin-left: 2px;
@@ -259,6 +276,39 @@ function getListboxPosition(textbox: HTMLDivElement, shadowHost: Element | undef
         width: rect.width,
     };
 }
+
+interface ListBoxTagProps {
+    handleTagRemove: (tag: TagValue) => void;
+    option: DropdownListOption;
+    readOnly?: boolean;
+    textboxRef: RefObject<HTMLDivElement>;
+}
+
+const ListboxTag: FC<ListBoxTagProps> = ({
+ handleTagRemove, option, readOnly, textboxRef,
+}) => {
+    const tagLabelRef = useRef<HTMLSpanElement>(null);
+    const isOverflowing = useOverflow(tagLabelRef, textboxRef);
+
+    return (
+        <TagTooltipWrapper>
+            <TagTooltip
+                key={option.value}
+                label={option.label}
+                disabled={!isOverflowing}
+                mode="normal"
+            >
+                <StyledTag
+                    aria-hidden="true"
+                    data-testid={`listboxtag-${option.value}`}
+                    labelRef={tagLabelRef}
+                    onRemove={readOnly ? undefined : handleTagRemove}
+                    value={{ id: option.value, label: option.label }}
+                />
+            </TagTooltip>
+        </TagTooltipWrapper>
+    );
+};
 
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
@@ -548,12 +598,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: DropdownListOption) => (
-        <ListBoxTag
-            aria-hidden="true"
-            data-testid={`listboxtag-${option.value}`}
+        <ListboxTag
             key={option.value}
-            onRemove={readOnly ? undefined : handleTagRemove}
-            value={{ id: option.value, label: option.label }}
+            option={option}
+            readOnly={readOnly}
+            handleTagRemove={handleTagRemove}
+            textboxRef={textboxRef}
         />
     ));
 
