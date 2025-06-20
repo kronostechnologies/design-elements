@@ -43,7 +43,7 @@ import {
     removeOption,
 } from './utils/dropdown-list-utils';
 import { DropdownListOption } from './dropdown-list-option';
-import { useOverflow } from '../../hooks/use-overflow';
+import { Overflow, useOverflow } from '../../hooks/use-overflow';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -288,7 +288,8 @@ const ListboxTag: FC<ListBoxTagProps> = ({
  handleTagRemove, option, readOnly, textboxRef,
 }) => {
     const tagLabelRef = useRef<HTMLSpanElement>(null);
-    const isOverflowing = useOverflow(tagLabelRef, textboxRef);
+    const overflow: Overflow = useOverflow(tagLabelRef, textboxRef);
+    const isOverflowing = overflow.horizontal || overflow.vertical;
 
     return (
         <TagTooltipWrapper>
