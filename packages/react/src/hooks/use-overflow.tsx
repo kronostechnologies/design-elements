@@ -17,16 +17,18 @@ export function getOverflow(childElement: HTMLElement, parentElement: HTMLElemen
 export function useOverflow(
     childRef: RefObject<HTMLElement>,
     parentRef: RefObject<HTMLElement>,
-): boolean {
-    const [isOverflowing, setIsOverflowing] = useState(false);
+): Overflow {
+    const [overflow, setOverflow] = useState<Overflow>({
+        vertical: false,
+        horizontal: false,
+    });
 
     const checkOverflow = useCallback(() => {
         const childElement = childRef.current;
         const parentElement = parentRef.current;
 
         if (childElement && parentElement) {
-            const overflow = getOverflow(childElement, parentElement);
-            setIsOverflowing(overflow.vertical || overflow.horizontal);
+            setOverflow(getOverflow(childElement, parentElement));
         }
     }, [childRef, parentRef]);
 
@@ -47,5 +49,5 @@ export function useOverflow(
         };
     }, [checkOverflow, childRef]);
 
-    return isOverflowing;
+    return overflow;
 }
