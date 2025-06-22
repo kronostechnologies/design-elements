@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "0.8.0",
-    "@swc/core": "1.12.1",
+    "@swc/core": "1.12.5",
     "@swc/jest": "0.2.38",
     "@types/cheerio": "1.0.0",
     "@types/enzyme": "3.10.19",
