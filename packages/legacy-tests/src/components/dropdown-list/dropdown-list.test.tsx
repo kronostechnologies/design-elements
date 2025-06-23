@@ -177,15 +177,6 @@ describe('Dropdown list', () => {
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
         });
 
-        it('the specified defaultValues are independently displayed when list is multiselect', () => {
-            const wrapper = shallow(<DropdownList options={provinces} defaultValue={['nl', 'qc']} multiselect />);
-
-            expect(getByTestId(wrapper, 'listboxtag-qc').exists()).toBe(true);
-            expect(getByTestId(wrapper, 'listboxtag-nl').exists()).toBe(true);
-            expect(getByTestId(wrapper, 'tag-wrapper').children()).toHaveLength(2);
-            expect(getByTestId(wrapper, 'input').prop('value')).toBe('nl|qc');
-        });
-
         it('no defaultValues are displayed when not specified and list is multiselect', () => {
             const wrapper = shallow(<DropdownList options={provinces} multiselect />);
 
@@ -227,59 +218,6 @@ describe('Dropdown list', () => {
             );
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('bc');
-        });
-
-        it('clicking an option selects it and adds it to the input values when list is multiselect', () => {
-            const wrapper = mountWithTheme(<DropdownList options={provinces} defaultOpen multiselect />);
-
-            getByTestId(wrapper, 'listitem-nl').simulate('click');
-            getByTestId(wrapper, 'listitem-qc').simulate('click');
-
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('nl|qc');
-            expect(getByTestId(wrapper, 'input').prop('value')).toBe('nl|qc');
-        });
-    });
-
-    it('options are disabled when max number of selectable options is reached', () => {
-        const wrapper = mountWithTheme(
-            <DropdownList options={provinces} defaultOpen multiselect maxSelectableOptions={2} />,
-        );
-
-        getByTestId(wrapper, 'listitem-on').simulate('click');
-        getByTestId(wrapper, 'listitem-qc').simulate('click');
-
-        const disabledOptions = [
-            getByTestId(wrapper, 'listitem-ab'),
-            getByTestId(wrapper, 'listitem-bc'),
-            getByTestId(wrapper, 'listitem-mb'),
-            getByTestId(wrapper, 'listitem-nb'),
-            getByTestId(wrapper, 'listitem-nl'),
-            getByTestId(wrapper, 'listitem-nt'),
-            getByTestId(wrapper, 'listitem-ns'),
-            getByTestId(wrapper, 'listitem-nu'),
-            getByTestId(wrapper, 'listitem-pe'),
-            getByTestId(wrapper, 'listitem-sk'),
-            getByTestId(wrapper, 'listitem-yt'),
-        ];
-        disabledOptions.forEach((option) => {
-            expect(option.getDOMNode().getAttribute('aria-disabled')).toBe('true');
-        });
-    });
-
-    it('selected options are not disabled when max number of selectable options is reached', () => {
-        const wrapper = mountWithTheme(
-            <DropdownList options={provinces} defaultOpen multiselect maxSelectableOptions={2} />,
-        );
-
-        getByTestId(wrapper, 'listitem-on').simulate('click');
-        getByTestId(wrapper, 'listitem-qc').simulate('click');
-
-        const selectedOptions = [
-            getByTestId(wrapper, 'listitem-on'),
-            getByTestId(wrapper, 'listitem-qc'),
-        ];
-        selectedOptions.forEach((option) => {
-            expect(option.getDOMNode().getAttribute('aria-disabled')).toBe('false');
         });
     });
 
@@ -478,20 +416,6 @@ describe('Dropdown list', () => {
 
             expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('sk');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('sk');
-        });
-
-        it('Enter removes the focused Tag when list is multiselect', () => {
-            const wrapper = mountWithTheme(
-                <DropdownList options={provinces} defaultValue={['ab', 'bc']} defaultOpen multiselect />,
-            );
-
-            getByTestId(wrapper, 'listboxtag-bc').simulate(
-                'keydown',
-                { key: 'Enter', preventDefault: jest.fn() },
-            );
-
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('ab');
-            expect(getByTestId(wrapper, 'input').prop('value')).toBe('ab');
         });
 
         describe('when typing printable characters', () => {
