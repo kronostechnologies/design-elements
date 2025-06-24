@@ -1,6 +1,7 @@
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { configure } from 'enzyme';
 // tslint:disable-next-line:no-import-side-effect
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
 configure({ adapter: new Adapter() });
