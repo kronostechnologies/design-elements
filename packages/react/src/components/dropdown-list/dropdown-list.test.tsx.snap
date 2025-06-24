@@ -145,7 +145,7 @@ input + .c2 {
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c4 {
@@ -598,7 +598,7 @@ input + .c2 {
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c5 {
@@ -1086,7 +1086,7 @@ input + .c2 {
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c6 {
@@ -1520,7 +1520,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c2 {
@@ -1936,7 +1936,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c2 {
@@ -1986,6 +1986,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2540,7 +2541,7 @@ input + .c2 {
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 99999;
+  z-index: 99998;
 }
 
 .c5 {

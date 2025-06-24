@@ -1,5 +1,6 @@
 import { TextEncoder } from 'util';
 // tslint:disable-next-line:no-import-side-effect
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
 globalThis.TextEncoder = TextEncoder;
