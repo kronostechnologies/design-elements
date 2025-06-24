@@ -1,15 +1,10 @@
-import {
-    forwardRef,
-    MouseEventHandler,
-    Ref,
-    SVGProps,
-    useCallback,
-} from 'react';
+import { forwardRef, MouseEventHandler, Ref, SVGProps, useCallback } from 'react';
 import styled, { StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { IconButton } from '../buttons/icon-button';
+import { IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 export type TagColor =
     | 'default'
@@ -35,6 +30,7 @@ export interface TagValue {
 
 export interface TagProps {
     className?: string;
+    labelRef?: Ref<HTMLSpanElement>;
     size?: TagSize;
     value: TagValue;
     iconName?: IconName;
@@ -147,14 +143,17 @@ const RemoveButton = styled(IconButton)<TagStylingProps>`
 
 export const Tag = forwardRef(({
     className,
+    labelRef,
     iconName,
     size = 'medium',
     color = 'default',
     value,
     onRemove,
+    ...otherProps
 }: TagProps, ref: Ref<HTMLDivElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
+    const dataAttributes = useDataAttributes(otherProps);
 
     const isRemovable = !!onRemove;
     const hasIcon = !!iconName;
@@ -174,6 +173,7 @@ export const Tag = forwardRef(({
             $removable={isRemovable}
             $hasIcon={hasIcon}
             $tagColor={color}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {hasIcon && (
                 <StyledIcon
@@ -193,6 +193,7 @@ export const Tag = forwardRef(({
             )}
 
             <TagLabel
+                ref={labelRef}
                 $isMobile={isMobile}
                 $tagSize={size}
                 $tagColor={color}
