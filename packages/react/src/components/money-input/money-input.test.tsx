@@ -94,7 +94,7 @@ describe('MoneyInput Component', () => {
         const input = getInputElement(container);
 
         simulateValueChange(input, '12.345');
-        expect(handleChange).toBeCalledWith(12, '$12');
+        expect(handleChange).toHaveBeenCalledWith(12, '$12');
     });
 
     it('should allow 0 as a value', () => {

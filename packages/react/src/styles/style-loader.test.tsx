@@ -7,7 +7,7 @@ describe('useMainCss', () => {
     it('should inject css when styles are not isolated', () => {
         renderHook(useMainCss, { initialProps: false });
 
-        expect(fonts.use).toBeCalled();
+        expect(fonts.use).toHaveBeenCalled();
     });
 
     it('should remove css on unmount when styles are not isolated', () => {
@@ -15,12 +15,12 @@ describe('useMainCss', () => {
 
         unmount();
 
-        expect(fonts.unuse).toBeCalled();
+        expect(fonts.unuse).toHaveBeenCalled();
     });
 
     it('should not inject css when styles are isolated', () => {
         renderHook(useMainCss, { initialProps: true });
 
-        expect(fonts.use).not.toBeCalled();
+        expect(fonts.use).not.toHaveBeenCalled();
     });
 });
