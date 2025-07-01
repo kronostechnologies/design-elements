@@ -432,12 +432,21 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             }
         }
 
+        let resizeObserver: ResizeObserver | undefined;
+        if (textboxRef.current) {
+            resizeObserver = new ResizeObserver(() => {
+                updatePosition();
+            });
+            resizeObserver.observe(textboxRef.current);
+        }
+
         window.addEventListener('resize', updatePosition);
         window.addEventListener('scroll', updatePosition, true);
 
         return () => {
             window.removeEventListener('resize', updatePosition);
             window.removeEventListener('scroll', updatePosition, true);
+            resizeObserver?.disconnect();
         };
     }, [open, shadowRoot?.host]);
 
