@@ -13,7 +13,7 @@ function getConfig(file) {
 
     const environment = envFiles
         .map((fileName) => path.resolve(process.cwd(), fileName))
-        .map((fileName) => dotenv.config({ path: fileName }).parsed)
+        .map((fileName) => dotenv.config({ path: fileName, quiet: true }).parsed)
         .reduce((mergedConfigs, config) => Object.assign(mergedConfigs, config, processEnv), {});
 
     return Object.fromEntries(
