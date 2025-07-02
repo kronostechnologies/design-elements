@@ -33,3 +33,12 @@ jest.mock('react', () => ({
 Object.defineProperty(HTMLElement.prototype, 'offsetParent', {
     get() { return this.parentElement; },
 });
+
+global.ResizeObserver = class {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    observe(): void {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    unobserve(): void {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    disconnect(): void {}
+};
