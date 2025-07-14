@@ -51,6 +51,27 @@ Menu Button allows users to open a menu with a list of interactive options (acti
 ## Properties
 <ArgTypes of={MenuButton} />
 
+### Custom Content
+You can pass a custom React node to the `content` prop of a menu option to fully control its rendering. This allows you to use custom labels, icons, or any other React elements inside a menu item.
+
+**Example:**
+```jsx
+<MenuButton
+  options={[
+    {
+      content: <><MyCustomIcon /> <span>Custom Label</span></>,
+      onClick: () => alert('Custom!'),
+    },
+    {
+      label: 'Default Label',
+      iconName: 'star',
+      onClick: () => alert('Default!'),
+    },
+  ]}
+/>
+```
+If `content` is provided, it will be rendered instead of the default label and icon.
+
 ## References
 1. [https://carbondesignsystem.com/components/menu-buttons/usage/](https://carbondesignsystem.com/components/menu-buttons/usage/)
 2. [https://medium.com/@h_locke/links-vs-buttons-e8b523660fb3](https://medium.com/@h_locke/links-vs-buttons-e8b523660fb3)

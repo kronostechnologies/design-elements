@@ -292,4 +292,23 @@ describe('Menu', () => {
         />);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders custom content when content prop is provided', () => {
+        const CustomContent = () => <span data-testid="custom-content">Custom!</span>;
+        const tree = renderWithTheme(<Menu
+            options={[
+                {
+                    label: 'Custom',
+                    content: <CustomContent />,
+                    onClick: jest.fn(),
+                },
+                {
+                    label: 'Default',
+                    onClick: jest.fn(),
+                },
+            ]}
+        />);
+        expect(tree.find('[data-testid="custom-content"]').length).toBe(1);
+        expect(tree.text()).toContain('Default');
+    });
 });
