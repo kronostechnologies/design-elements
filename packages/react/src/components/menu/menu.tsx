@@ -134,6 +134,7 @@ export interface MenuOption {
     options?: MenuItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
     disabled?: boolean;
     onClick?(): void;
+    content?: React.ReactNode;
 }
 
 export interface MenuGroup {
@@ -368,15 +369,21 @@ export const Menu = forwardRef(({
                             ref={opt.ref}
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
-                            {opt.iconName && (
-                                <StyledIcon
-                                    focusable={false}
-                                    aria-hidden
-                                    name={opt.iconName}
-                                    size="1rem"
-                                />
+                            {opt.content ? (
+                                opt.content
+                            ) : (
+                                <>
+                                    {opt.iconName && (
+                                        <StyledIcon
+                                            focusable={false}
+                                            aria-hidden
+                                            name={opt.iconName}
+                                            size="1rem"
+                                        />
+                                    )}
+                                    <Label>{opt.label}</Label>
+                                </>
                             )}
-                            <Label>{opt.label}</Label>
                             {opt.options && <Icon aria-hidden name="chevronRight" size="1rem" />}
                         </Button>
                         {opt.options && isSubMenuOpen(opt) && (
