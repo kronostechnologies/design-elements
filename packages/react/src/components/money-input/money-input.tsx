@@ -148,8 +148,9 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         const nextDisplayValue = rawValue.replace(mask, '');
 
         event.preventDefault();
+        updateFormattedValue(nextDisplayValue);
         setDisplayValue(nextDisplayValue);
-    }, []);
+    }, [updateFormattedValue]);
 
     return (
         <StyledTextInput
