@@ -149,6 +149,14 @@ interface Props {
     defaultSelectedId?: string;
     addButton?: AddButtonProps;
     onRemove?(tabId: string): void;
+    /**
+     * If provided, Tabs is controlled. The id of the active tab.
+     */
+    activeTabId?: string;
+    /**
+     * Callback when the active tab changes (controlled mode)
+     */
+    onTabChange?(tabId: string): void;
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
@@ -159,6 +167,8 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     defaultSelectedId,
     addButton: providedAddButtonProps,
     onRemove,
+    activeTabId,
+    onTabChange,
 }) => {
     const { t } = useTranslation('tabs');
     const tabsListRef = createRef<HTMLDivElement>();
@@ -209,8 +219,14 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
 
+    // Controlled or uncontrolled selected tab
     const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
-    const [selectedTab, setSelectedTab] = useState<TabItem | undefined>(defaultSelectedTab ?? tabItems[0]);
+    const [uncontrolledSelectedTab, setUncontrolledSelectedTab] = useState<TabItem | undefined>(
+        defaultSelectedTab ?? tabItems[0],
+    );
+    const selectedTab = activeTabId
+        ? tabItems.find((tab) => tab.id === activeTabId) || tabItems[0]
+        : uncontrolledSelectedTab;
 
     function isTabSelected(tabId: string): boolean {
         return selectedTab?.id === tabId;
@@ -223,21 +239,27 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
             if (nextSelectedTab) {
                 nextSelectedTab.buttonRef.current?.focus();
-                setSelectedTab(nextSelectedTab);
+                if (!activeTabId) setUncontrolledSelectedTab(nextSelectedTab);
             }
         }
 
         onRemove?.(tabId);
-    }, [onRemove, tabItems, selectedTab]);
+    }, [onRemove, tabItems, selectedTab, activeTabId]);
 
     async function handleTabSelected(tabItem: TabItem): Promise<void> {
         if (selectedTab?.onBeforeUnload) {
             const isConfirmed = await selectedTab.onBeforeUnload();
             if (isConfirmed) {
-                setSelectedTab(tabItem);
+                if (activeTabId) {
+                    onTabChange?.(tabItem.id);
+                } else {
+                    setUncontrolledSelectedTab(tabItem);
+                }
             }
+        } else if (activeTabId) {
+            onTabChange?.(tabItem.id);
         } else {
-            setSelectedTab(tabItem);
+            setUncontrolledSelectedTab(tabItem);
         }
     }
 

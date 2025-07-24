@@ -223,3 +223,36 @@ export const DefaultSelectedTab: Story = {
         );
     },
 };
+
+export const ControlledTabs: Story = {
+    ...TabsMeta,
+    render: () => {
+        const [activeTabId, setActiveTabId] = useState('tab1');
+
+        const controlledTabs: Tab[] = [
+            {
+                id: 'tab1',
+                title: 'First Button',
+                panelContent: <StyledDiv>First tab content</StyledDiv>,
+            },
+            {
+                id: 'tab2',
+                title: 'Second Button',
+                panelContent: <StyledDiv>Second tab content</StyledDiv>,
+            },
+            {
+                id: 'tab3',
+                title: 'Third Button',
+                panelContent: <StyledDiv>Third tab content</StyledDiv>,
+            },
+        ];
+
+        return (
+            <Tabs
+                tabs={controlledTabs}
+                activeTabId={activeTabId}
+                onTabChange={setActiveTabId}
+            />
+        );
+    },
+};
