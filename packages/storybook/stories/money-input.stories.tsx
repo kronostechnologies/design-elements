@@ -1,5 +1,6 @@
-import { MoneyInput } from '@equisoft/design-elements-react';
+import { MoneyInput, type MoneyInputProps } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import { useCallback, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 const MoneyInputMeta: Meta<typeof MoneyInput> = {
@@ -46,6 +47,24 @@ export const OnChangeCallback: Story = {
             console.info('value:', value);
             console.info('formattedValue: ', formattedValue);
         },
+    },
+};
+OnChangeCallback.parameters = rawCodeParameters;
+
+export const Controlled: Story = {
+    ...MoneyInputMeta,
+    render: (args) => {
+        const [value, setValue] = useState<number | null>(null);
+        const handleChange: MoneyInputProps['onChange'] = useCallback((
+            newValue: number | null,
+            formattedValue: string,
+        ): void => {
+            setValue(newValue);
+            console.info({ value: newValue, formattedValue });
+        }, []);
+
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <MoneyInput {...args} value={value} onChange={handleChange} />;
     },
 };
 OnChangeCallback.parameters = rawCodeParameters;
