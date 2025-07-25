@@ -1,12 +1,15 @@
+import { act, screen } from '@testing-library/react';
 import { ReactWrapper } from 'enzyme';
 import ReactDOM from 'react-dom';
-import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { findByTestId, getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
 import {
     actAndWaitForEffects,
     mountWithProviders,
     mountWithTheme,
+    renderPortalWithProviders,
     renderWithProviders,
+    rerenderPortalWithProviders,
 } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
@@ -23,13 +26,29 @@ function givenTabs(amount: number): Tab[] {
     return tabs;
 }
 
+function makeTabsWithContent(count = 3): Tab[] {
+    return Array.from({ length: count }, (_, i) => ({
+        id: `tab-${i + 1}`,
+        title: `Tab ${i + 1}`,
+        panelContent: <div>{`Content ${i + 1}`}</div>,
+    }));
+}
+
+function expectTabWithTabIndexToBeRendered(tabIndex: number): void {
+    expect(screen.queryByText(`Content ${tabIndex + 1}`)).toBeInTheDocument();
+}
+
+function expectTabWithTabIndexToNotBeRendered(tabIndex: number): void {
+    expect(screen.queryByText(`Content ${tabIndex + 1}`)).not.toBeInTheDocument();
+}
+
 function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string): void {
     const tabPanel = findByTestId(wrapper, tabPanelTestId);
     expect(tabPanel.isEmptyRender()).toBe(false);
 }
 
 function getActionButton<W extends ReactWrapper>(wrapper: W, index: number): W {
-    return getByTestId(wrapper, `tab-${index}-button`, { htmlNodesOnly: true });
+    return enzymeGetByTestId(wrapper, `tab-${index}-button`, { htmlNodesOnly: true });
 }
 
 describe('Tabs', () => {
@@ -46,7 +65,7 @@ describe('Tabs', () => {
         const tabs: Tab[] = givenTabs(1);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        const tabPanel = getByTestId(wrapper, 'tab-panel-1');
+        const tabPanel = enzymeGetByTestId(wrapper, 'tab-panel-1');
 
         expect(tabPanel.prop('children')).toBe(expectedTabPanel);
     });
@@ -58,7 +77,7 @@ describe('Tabs', () => {
 
         expectPanelToBeRendered(wrapper, 'tab-panel-1');
 
-        expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBe(false);
+        expect(enzymeGetByTestId(wrapper, 'tab-panel-2').exists()).toBe(false);
     });
 
     test('tab panel should be rendered when tab is selected', () => {
@@ -87,7 +106,7 @@ describe('Tabs', () => {
 
         getActionButton(wrapper, 2).simulate('click');
 
-        expect(getByTestId(wrapper, 'tab-', { modifier: '^', htmlNodesOnly: true }).length).toBe(1);
+        expect(enzymeGetByTestId(wrapper, 'tab-', { modifier: '^', htmlNodesOnly: true }).length).toBe(1);
     });
 
     test('tab panel should unmount when another tab is selected', () => {
@@ -96,7 +115,7 @@ describe('Tabs', () => {
 
         getActionButton(wrapper, 2).simulate('click');
 
-        expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
+        expect(enzymeGetByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
     });
 
     test('tab panel should not change if onBeforeUnload cancels tab selection', async () => {
@@ -112,7 +131,7 @@ describe('Tabs', () => {
             getActionButton(wrapper, 2).prop('onClick')();
         });
 
-        expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(true);
+        expect(enzymeGetByTestId(wrapper, 'tab-panel-1').exists()).toBe(true);
     });
 
     test('tab panel should change if no onBeforeUnload callback was provided', async () => {
@@ -126,7 +145,7 @@ describe('Tabs', () => {
             getActionButton(wrapper, 2).prop('onClick')();
         });
 
-        expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
+        expect(enzymeGetByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
     });
 
     test('tab panel should change if onBeforeUnload confirms tab selection', async () => {
@@ -142,7 +161,7 @@ describe('Tabs', () => {
             getActionButton(wrapper, 2).prop('onClick')();
         });
 
-        expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
+        expect(enzymeGetByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
     });
 
     test('tab-panels should all be initially mounted when forceRenderTabPanels is set to true', () => {
@@ -282,6 +301,144 @@ describe('Tabs', () => {
             getActionButton(wrapper, 1).simulate('keydown', { key: 'End' });
 
             expectFocusToBeOn(getActionButton(wrapper, 3));
+        });
+    });
+
+    describe('controlled mode', () => {
+        test('renders with activeTabId', () => {
+            const tabs = makeTabsWithContent(3);
+
+            renderPortalWithProviders(
+                <Tabs tabs={tabs} activeTabId="tab-2" onTabChange={jest.fn()} />,
+            );
+
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
+        });
+
+        test('onTabChange is called when tab is clicked', () => {
+            const tabs: Tab[] = givenTabs(2);
+            const onTabChange = jest.fn();
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs tabs={tabs} activeTabId="tab-1" onTabChange={onTabChange} />,
+            );
+
+            getByTestId('tab-2-button').click();
+
+            expect(onTabChange).toHaveBeenCalledWith('tab-2');
+        });
+
+        test('does not change tab visually if activeTabId does not change', () => {
+            const tabs: Tab[] = givenTabs(2);
+            const onTabChange = jest.fn();
+            const { getByTestId, rerender } = renderPortalWithProviders(
+                <Tabs tabs={tabs} activeTabId="tab-1" onTabChange={onTabChange} />,
+            );
+            getByTestId('tab-2-button').click();
+
+            expect(getByTestId('tab-1-button')).toHaveAttribute('aria-selected', 'true');
+            expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'false');
+
+            rerenderPortalWithProviders(<Tabs tabs={tabs} activeTabId="tab-2" onTabChange={onTabChange} />, rerender);
+
+            expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        test('calls onRemove when a tab is removed', () => {
+            const currentTabs = makeTabsWithContent(3);
+            const activeTabId = 'tab-2';
+            const onRemove = jest.fn();
+
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs
+                    tabs={currentTabs}
+                    activeTabId={activeTabId}
+                    onRemove={onRemove}
+                    onTabChange={() => {}}
+                />,
+            );
+
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
+
+            act(() => getByTestId('tab-2-delete').click());
+
+            expect(onRemove).toHaveBeenCalledTimes(1);
+            expect(onRemove).toHaveBeenCalledWith('tab-2');
+        });
+    });
+
+    describe('uncontrolled mode', () => {
+        test('renders with defaultSelectedId', () => {
+            const tabs = makeTabsWithContent(3);
+
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs tabs={tabs} defaultSelectedId="tab-2" />,
+            );
+
+            expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
+        });
+
+        test('changes tab visually when tab is clicked', () => {
+            const tabs = makeTabsWithContent(2);
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs tabs={tabs} defaultSelectedId="tab-1" />,
+            );
+
+            act(() => getByTestId('tab-2-button').click());
+
+            expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+        });
+
+        test('defaults to first tab if no defaultSelectedId', () => {
+            const tabs = makeTabsWithContent(2);
+
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs tabs={tabs} />,
+            );
+
+            expect(getByTestId('tab-1-button')).toHaveAttribute('aria-selected', 'true');
+            expectTabWithTabIndexToBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(1);
+        });
+
+        test('removes tab and selects next tab', async () => {
+            let tabs = makeTabsWithContent(3);
+            const onRemove = jest.fn();
+            const { getByTestId, rerender } = renderPortalWithProviders(
+                <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />,
+            );
+
+            act(() => getByTestId('tab-2-delete').click());
+            tabs = tabs.filter((t) => t.id !== 'tab-2');
+            rerenderPortalWithProviders(<Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />, rerender);
+
+            expectTabWithTabIndexToBeRendered(2);
+            expectTabWithTabIndexToNotBeRendered(1);
+        });
+
+        test('calls onRemove when a tab is removed', () => {
+            const currentTabs = makeTabsWithContent(3);
+            const onRemove = jest.fn();
+            const { getByTestId } = renderPortalWithProviders(
+                <Tabs tabs={currentTabs} defaultSelectedId="tab-2" onRemove={onRemove} />,
+            );
+
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
+
+            act(() => getByTestId('tab-2-delete').click());
+
+            expect(onRemove).toHaveBeenCalledTimes(1);
+            expect(onRemove).toHaveBeenCalledWith('tab-2');
         });
     });
 });
