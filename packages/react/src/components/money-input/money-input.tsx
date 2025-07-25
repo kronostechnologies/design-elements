@@ -142,7 +142,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         event.preventDefault();
         setDisplayValue(nextDisplayValue);
 
-        const roundedValue = parseAndRound(rawValue, precision);
+        const roundedValue = parseAndRound(nextDisplayValue, precision);
         const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
         onChange?.(roundedValue, newMaskedValue);
     }, [currency, locale, onChange, precision]);
