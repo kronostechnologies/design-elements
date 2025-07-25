@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import { AllProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
@@ -13,6 +13,22 @@ function givenTabs(amount: number): Tab[] {
     }
 
     return tabs;
+}
+
+function makeTabsWithContent(count = 3): Tab[] {
+    return Array.from({ length: count }, (_, i) => ({
+        id: `tab-${i + 1}`,
+        title: `Tab ${i + 1}`,
+        panelContent: <div>{`Content ${i + 1}`}</div>,
+    }));
+}
+
+function expectTabWithTabIndexToBeRendered(tabIndex: number): void {
+    expect(screen.queryByText(`Content ${tabIndex + 1}`)).toBeInTheDocument();
+}
+
+function expectTabWithTabIndexToNotBeRendered(tabIndex: number): void {
+    expect(screen.queryByText(`Content ${tabIndex + 1}`)).not.toBeInTheDocument();
 }
 
 describe('Tabs', () => {
@@ -56,16 +72,15 @@ describe('Tabs', () => {
 
     describe('controlled mode', () => {
         test('renders with activeTabId', () => {
-            const tabs: Tab[] = givenTabs(3);
+            const tabs = makeTabsWithContent(3);
 
-            const { getByTestId } = renderWithProviders(
-                <Tabs tabs={tabs} activeTabId="tab-2" forceRenderTabPanels />,
+            renderWithProviders(
+                <Tabs tabs={tabs} activeTabId="tab-2" onTabChange={jest.fn()} />,
             );
 
-            expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
-            expect(document.getElementById('tab-2-panel')).toHaveAttribute('aria-hidden', 'false');
-            expect(document.getElementById('tab-1-panel')).toHaveAttribute('aria-hidden', 'true');
-            expect(document.getElementById('tab-3-panel')).toHaveAttribute('aria-hidden', 'true');
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
         });
 
         test('onTabChange is called when tab is clicked', () => {
@@ -99,18 +114,22 @@ describe('Tabs', () => {
         });
 
         test('calls onRemove when a tab is removed', () => {
-            const currentTabs = givenTabs(3);
+            const currentTabs = makeTabsWithContent(3);
             const activeTabId = 'tab-2';
             const onRemove = jest.fn();
+
             const { getByTestId } = renderWithProviders(
                 <Tabs
                     tabs={currentTabs}
                     activeTabId={activeTabId}
                     onRemove={onRemove}
                     onTabChange={() => {}}
-                    forceRenderTabPanels
                 />,
             );
+
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
 
             act(() => getByTestId('tab-2-delete').click());
 
@@ -121,69 +140,72 @@ describe('Tabs', () => {
 
     describe('uncontrolled mode', () => {
         test('renders with defaultSelectedId', () => {
-            const tabs: Tab[] = givenTabs(3);
+            const tabs = makeTabsWithContent(3);
 
             const { getByTestId } = renderWithProviders(
-                <Tabs tabs={tabs} defaultSelectedId="tab-2" forceRenderTabPanels />,
+                <Tabs tabs={tabs} defaultSelectedId="tab-2" />,
             );
 
             expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
-            expect(document.getElementById('tab-2-panel')).toHaveAttribute('aria-hidden', 'false');
-            expect(document.getElementById('tab-1-panel')).toHaveAttribute('aria-hidden', 'true');
-            expect(document.getElementById('tab-3-panel')).toHaveAttribute('aria-hidden', 'true');
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
         });
 
         test('changes tab visually when tab is clicked', () => {
-            const tabs: Tab[] = givenTabs(2);
-
+            const tabs = makeTabsWithContent(2);
             const { getByTestId } = renderWithProviders(
-                <Tabs tabs={tabs} defaultSelectedId="tab-1" forceRenderTabPanels />,
+                <Tabs tabs={tabs} defaultSelectedId="tab-1" />,
             );
+
             act(() => getByTestId('tab-2-button').click());
 
             expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
-            expect(document.getElementById('tab-2-panel')).toHaveAttribute('aria-hidden', 'false');
-            expect(document.getElementById('tab-1-panel')).toHaveAttribute('aria-hidden', 'true');
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
         });
 
         test('defaults to first tab if no defaultSelectedId', () => {
-            const tabs: Tab[] = givenTabs(2);
+            const tabs = makeTabsWithContent(2);
 
             const { getByTestId } = renderWithProviders(
-                <Tabs tabs={tabs} forceRenderTabPanels />,
+                <Tabs tabs={tabs} />,
             );
 
             expect(getByTestId('tab-1-button')).toHaveAttribute('aria-selected', 'true');
-            expect(document.getElementById('tab-1-panel')).toHaveAttribute('aria-hidden', 'false');
-            expect(document.getElementById('tab-2-panel')).toHaveAttribute('aria-hidden', 'true');
+            expectTabWithTabIndexToBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(1);
         });
 
         test('removes tab and selects next tab', async () => {
-            const tabs: Tab[] = givenTabs(3);
+            let tabs = makeTabsWithContent(3);
             const onRemove = jest.fn();
             const { getByTestId, rerender } = renderWithProviders(
-                <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} forceRenderTabPanels />,
+                <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />,
             );
 
             act(() => getByTestId('tab-2-delete').click());
-            const newTabs = tabs.filter((t: Tab) => t.id !== 'tab-2');
+            tabs = tabs.filter((t) => t.id !== 'tab-2');
             rerender(
                 <AllProviders>
-                    <Tabs tabs={newTabs} defaultSelectedId="tab-2" onRemove={onRemove} forceRenderTabPanels />
+                    <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />
                 </AllProviders>,
             );
 
-            expect(document.getElementById('tab-3')).toHaveAttribute('aria-selected', 'true');
-            expect(document.getElementById('tab-3-panel')).toHaveAttribute('aria-hidden', 'false');
-            expect(document.getElementById('tab-2-panel')).toBeNull();
+            expectTabWithTabIndexToBeRendered(2);
+            expectTabWithTabIndexToNotBeRendered(1);
         });
 
         test('calls onRemove when a tab is removed', () => {
-            const tabs: Tab[] = givenTabs(3);
+            const currentTabs = makeTabsWithContent(3);
             const onRemove = jest.fn();
             const { getByTestId } = renderWithProviders(
-                <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} forceRenderTabPanels />,
+                <Tabs tabs={currentTabs} defaultSelectedId="tab-2" onRemove={onRemove} />,
             );
+
+            expectTabWithTabIndexToBeRendered(1);
+            expectTabWithTabIndexToNotBeRendered(0);
+            expectTabWithTabIndexToNotBeRendered(2);
 
             act(() => getByTestId('tab-2-delete').click());
 

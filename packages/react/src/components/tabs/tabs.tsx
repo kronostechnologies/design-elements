@@ -150,11 +150,11 @@ interface Props {
     addButton?: AddButtonProps;
     onRemove?(tabId: string): void;
     /**
-     * If provided, Tabs is controlled. The id of the active tab.
+     * If provided, Tabs is controlled.
      */
     activeTabId?: string;
     /**
-     * Callback when the active tab changes (controlled mode)
+     * Callback when the active tab changes. Called only in controlled mode.
      */
     onTabChange?(tabId: string): void;
 }
@@ -219,13 +219,13 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
 
-    // Controlled or uncontrolled selected tab
     const defaultSelectedTab = tabItems.find((tab) => tab.id === defaultSelectedId);
     const [uncontrolledSelectedTab, setUncontrolledSelectedTab] = useState<TabItem | undefined>(
         defaultSelectedTab ?? tabItems[0],
     );
+    const controlled = activeTabId !== undefined && onTabChange !== undefined;
     const activeTabItem = tabItems.find((tab) => tab.id === activeTabId);
-    const selectedTab = (activeTabId && activeTabItem) ? activeTabItem : uncontrolledSelectedTab;
+    const selectedTab = (controlled && activeTabItem) || uncontrolledSelectedTab;
 
     function isTabSelected(tabId: string): boolean {
         return selectedTab?.id === tabId;
@@ -238,26 +238,26 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
             if (nextSelectedTab) {
                 nextSelectedTab.buttonRef.current?.focus();
-                if (!activeTabId) {
+                if (!controlled) {
                     setUncontrolledSelectedTab(nextSelectedTab);
                 }
             }
         }
 
         onRemove?.(tabId);
-    }, [onRemove, tabItems, selectedTab, activeTabId]);
+    }, [selectedTab?.id, onRemove, tabItems, controlled]);
 
     async function handleTabSelected(tabItem: TabItem): Promise<void> {
         if (selectedTab?.onBeforeUnload) {
             const isConfirmed = await selectedTab.onBeforeUnload();
             if (isConfirmed) {
-                if (activeTabId) {
+                if (controlled) {
                     onTabChange?.(tabItem.id);
                 } else {
                     setUncontrolledSelectedTab(tabItem);
                 }
             }
-        } else if (activeTabId) {
+        } else if (controlled) {
             onTabChange?.(tabItem.id);
         } else {
             setUncontrolledSelectedTab(tabItem);
