@@ -105,9 +105,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         setDisplayValue(newMaskedValue);
         if (maskedValue !== newMaskedValue) {
             setMaskedValue(newMaskedValue);
-            if (onChange) {
-                onChange(roundedValue, newMaskedValue);
-            }
+            onChange?.(roundedValue, newMaskedValue);
         }
     }, [currency, locale, maskedValue, onChange, precision]);
 
@@ -124,12 +122,6 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             inputElement.current?.select();
         }
     }, [hasFocus]);
-
-    useEffect(() => {
-        const newValue = safeFormatCurrency(value, precision, locale, currency);
-        setDisplayValue(newValue);
-        setMaskedValue(newValue);
-    }, [currency, locale, precision, value]);
 
     const handleBlurEvent: () => void = useCallback(() => {
         setHasFocus(false);
@@ -148,9 +140,12 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         const nextDisplayValue = rawValue.replace(mask, '');
 
         event.preventDefault();
-        updateFormattedValue(nextDisplayValue);
         setDisplayValue(nextDisplayValue);
-    }, [updateFormattedValue]);
+
+        const roundedValue = parseAndRound(rawValue, precision);
+        const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
+        onChange?.(roundedValue, newMaskedValue);
+    }, [currency, locale, onChange, precision]);
 
     return (
         <StyledTextInput
