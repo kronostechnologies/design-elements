@@ -65,7 +65,7 @@ export const TextAsAdornment: Story = {
     },
 };
 
-export const EventCallbacks: Story = {
+export const WithEventCallbacks: Story = {
     ...TextInputMeta,
     parameters: rawCodeParameters,
     args: {
