@@ -110,6 +110,12 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     }, [currency, locale, maskedValue, onChange, precision]);
 
     useEffect(() => {
+        if (value && !hasFocus) {
+            updateFormattedValue(value.toString());
+        }
+    }, [value, hasFocus, updateFormattedValue]);
+
+    useEffect(() => {
         if (inputElement.current != null) {
             if (!hasFocus && displayValue !== maskedValue) {
                 updateFormattedValue(inputElement.current.value);
