@@ -1651,7 +1651,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@equisoft/design-elements-react@workspace:packages/react"
   dependencies:
-    "@equisoft/eslint-config": "npm:4.0.2"
+    "@equisoft/eslint-config": "npm:5.0.0"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.2"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
@@ -1732,7 +1732,7 @@ __metadata:
     "@babel/preset-react": "npm:7.27.1"
     "@babel/preset-typescript": "npm:7.27.1"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:4.0.2"
+    "@equisoft/eslint-config": "npm:5.0.0"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.2"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@mdx-js/react": "npm:3.1.0"
@@ -1867,6 +1867,24 @@ __metadata:
   bin:
     eq-eslint: eslint.js
   checksum: 10c0/525fbe88615ad4ece9283077787388f191ca95dca3b1687b37506f6f5b35546ac09bc5d355af3b005c84d1c903778872056ca326b2e89593e0905f5eeed3ab58
+  languageName: node
+  linkType: hard
+
+"@equisoft/eslint-config@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@equisoft/eslint-config@npm:5.0.0"
+  dependencies:
+    eslint-config-airbnb-base: "npm:^15.0.0"
+  peerDependencies:
+    "@microsoft/eslint-formatter-sarif": ^3
+    "@stylistic/eslint-plugin": ^5
+    eslint: ^8
+    eslint-import-resolver-node: ^0.3
+    eslint-plugin-import: ^2
+    yargs: ^17 || ^18.0.0
+  bin:
+    eq-eslint: eslint.js
+  checksum: 10c0/9077333b04e208d464ea8f8127f664380719d616e1830503b2518d5b9e63e387c44d97661702167d805e38badcac87a3975c5ec276df61acdbb37fb452184e8c
   languageName: node
   linkType: hard
 
@@ -7509,7 +7527,7 @@ __metadata:
     "@babel/preset-env": "npm:7.28.0"
     "@babel/preset-react": "npm:7.27.1"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:4.0.2"
+    "@equisoft/eslint-config": "npm:5.0.0"
     "@equisoft/eslint-config-typescript-react": "npm:4.0.2"
     "@equisoft/jest-utils": "npm:1.7.1"
     "@equisoft/react-test-utils": "npm:1.7.1"

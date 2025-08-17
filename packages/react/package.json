@@ -50,7 +50,7 @@
     "styled-components": "^5"
   },
   "devDependencies": {
-    "@equisoft/eslint-config": "4.0.2",
+    "@equisoft/eslint-config": "5.0.0",
     "@equisoft/eslint-config-typescript-react": "4.0.2",
     "@equisoft/typescript-config": "2.0.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
