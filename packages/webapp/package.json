@@ -42,7 +42,7 @@
     "@babel/preset-env": "7.28.0",
     "@babel/preset-react": "7.27.1",
     "@equisoft/eslint-config": "4.0.2",
-    "@equisoft/eslint-config-typescript-react": "4.0.2",
+    "@equisoft/eslint-config-typescript-react": "5.0.0",
     "@equisoft/jest-utils": "1.7.1",
     "@equisoft/react-test-utils": "1.7.1",
     "@equisoft/stylelint-config": "4.0.20",
