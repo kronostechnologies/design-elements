@@ -57,10 +57,10 @@ const TabsWrapper = styled.div<TabsWrapperProps>`
         linear-gradient(
             90deg,
             ${(props) => (props.$hasLeftScroll
-            ? `transparent 0px, transparent ${buttonSize}, #000 ${buttonSize},` : '#000 0px,')}
-            #000 calc(100% - ${buttonSize}),
+                ? `transparent 0px, transparent ${buttonSize}, #000 ${buttonSize},`
+                : '#000 0px,')} #000 calc(100% - ${buttonSize}),
             ${(props) => (props.$hasRightScroll
-            ? `transparent calc(100% - ${buttonSize}), transparent 100%` : '#000 100%')}
+                ? `transparent calc(100% - ${buttonSize}), transparent 100%` : '#000 100%')}
         );
     overflow: hidden;
 `;
