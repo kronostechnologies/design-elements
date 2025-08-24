@@ -80,7 +80,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "expect": "30.0.5",
-    "i18next": "25.3.2",
+    "i18next": "25.4.2",
     "jest": "30.0.5",
     "jest-environment-jsdom": "30.0.5",
     "jest-junit": "16.0.0",
