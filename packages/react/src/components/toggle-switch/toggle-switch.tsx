@@ -18,12 +18,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
     color: ${({ theme }) => theme.component['toggle-switch-label-text-color']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
-    margin:
- ${({ labelPosition }) => (
-            labelPosition === 'left'
-                    ? '0 var(--spacing-1x) 0 0'
-                    : '0 0 0 var(--spacing-1x)'
-    )};
+    margin: ${({ labelPosition }) => (labelPosition === 'left' ? '0 var(--spacing-1x) 0 0' : '0 0 0 var(--spacing-1x)')};
     user-select: none;
 `;
 

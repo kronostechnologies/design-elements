@@ -285,7 +285,10 @@ interface ListBoxTagProps {
 }
 
 const ListboxTag: FC<ListBoxTagProps> = ({
- handleTagRemove, option, readOnly, textboxRef,
+    handleTagRemove,
+    option,
+    readOnly,
+    textboxRef,
 }) => {
     const tagLabelRef = useRef<HTMLSpanElement>(null);
     const overflow: Overflow = useOverflow(tagLabelRef, textboxRef);
