@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@equisoft/design-elements-react": "workspace:*",
-    "core-js": "3.44.0",
+    "core-js": "3.45.1",
     "i18next": "25.4.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -23,8 +23,8 @@
     "styled-components": "5.3.11"
   },
   "devDependencies": {
-    "@babel/core": "7.28.0",
-    "@babel/preset-env": "7.28.0",
+    "@babel/core": "7.28.3",
+    "@babel/preset-env": "7.28.3",
     "@babel/preset-react": "7.27.1",
     "@babel/preset-typescript": "7.27.1",
     "@equisoft/eslint-config": "5.0.0",
@@ -46,8 +46,8 @@
     "@storybook/react-webpack5": "8.6.14",
     "@storybook/theming": "8.6.14",
     "@stylistic/eslint-plugin": "5.2.3",
-    "@types/node": "22.16.5",
-    "@types/react": "18.3.23",
+    "@types/node": "22.18.0",
+    "@types/react": "18.3.24",
     "@types/react-color": "3.0.13",
     "@types/react-table": "7.7.20",
     "@types/styled-components": "5.1.34",
@@ -65,14 +65,14 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.12.0",
     "react-docgen-typescript": "2.4.0",
-    "sass": "1.89.2",
+    "sass": "1.91.0",
     "sass-loader": "16.0.5",
     "storybook": "8.6.14",
     "style-loader": "4.0.0",
-    "stylelint": "16.22.0",
-    "ts-loader": "9.5.2",
-    "typescript": "5.8.3",
-    "webpack": "5.100.2",
+    "stylelint": "16.23.1",
+    "ts-loader": "9.5.4",
+    "typescript": "5.9.2",
+    "webpack": "5.101.3",
     "yargs": "18.0.0"
   }
 }
