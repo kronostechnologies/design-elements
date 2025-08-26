@@ -4,7 +4,7 @@ import { TextEncoder } from 'util';
 // tslint:disable-next-line:no-import-side-effect
 import 'jest-styled-components';
 
-globalThis.TextEncoder = TextEncoder;
+globalThis.TextEncoder = TextEncoder as typeof globalThis.TextEncoder;
 
 configure({ adapter: new Adapter() });
 

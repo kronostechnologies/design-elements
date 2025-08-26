@@ -3,7 +3,7 @@ import { TextEncoder } from 'util';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
-globalThis.TextEncoder = TextEncoder;
+globalThis.TextEncoder = TextEncoder as typeof globalThis.TextEncoder;
 
 jest.mock('any.scss', () => ({
     use: jest.fn(),
