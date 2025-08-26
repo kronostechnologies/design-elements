@@ -19,6 +19,7 @@ import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
+import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton, Button } from '../buttons';
@@ -537,6 +538,7 @@ export const Datepicker = forwardRef(({
                         )}
                         calendarContainer={CalendarContainer}
                         className="datePickerInput"
+                        outsideClickIgnoreClass={IGNORE_CLICK_OUTSIDE}
                         dateFormat={dateFormats}
                         disabled={disabled}
                         locale={locale}
