@@ -1,7 +1,6 @@
-import { MoneyInput, type MoneyInputProps } from '@equisoft/design-elements-react';
+import { Button, MoneyInput, type MoneyInputProps } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useCallback, useState } from 'react';
-import { rawCodeParameters } from './utils/parameters';
 
 const MoneyInputMeta: Meta<typeof MoneyInput> = {
     title: 'Components/Money Input',
@@ -49,9 +48,8 @@ export const OnChangeCallback: Story = {
         },
     },
 };
-OnChangeCallback.parameters = rawCodeParameters;
 
-export const Controlled: Story = {
+export const WithControlledValue: Story = {
     ...MoneyInputMeta,
     render: (args) => {
         const [value, setValue] = useState<number | null>(null);
@@ -63,11 +61,15 @@ export const Controlled: Story = {
             console.info({ value: newValue, formattedValue });
         }, []);
 
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        return <MoneyInput {...args} value={value} onChange={handleChange} />;
+        return (
+            <>
+                <Button label="+1" buttonType="primary" onClick={() => setValue((value || 0) + 1)} />
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <MoneyInput {...args} value={value} onChange={handleChange} />
+            </>
+        );
     },
 };
-OnChangeCallback.parameters = rawCodeParameters;
 
 export const WithToggletip: Story = {
     ...MoneyInputMeta,
