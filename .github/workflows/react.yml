@@ -48,7 +48,6 @@ jobs:
       deploy: ${{ steps.versions.outputs.deploy }}
       next-version: ${{ steps.versions.outputs.next-version }}
       qualifier: ${{ steps.versions.outputs.qualifier }}
-      is-hotfix: ${{ steps.metadata.outputs.is-hotfix }}
       is-pr: ${{ steps.versions.outputs.is-pr }}
 
     steps:
@@ -61,6 +60,16 @@ jobs:
       - name: Fetch origin/master (for action-metadata commit check)
         run: |
           git fetch --no-tags --prune --depth=1000 origin +refs/heads/master:refs/remotes/origin/master '+refs/heads/release/*:refs/remotes/origin/release/*'
+
+      - name: Find latest released version
+        id: latest
+        uses: oprypin/find-latest-tag@v1.1.2
+        with:
+          repository: ${{ github.repository }}
+          releases-only: false
+          prefix: v
+          regex: '^v\d+\.\d+\.\d+$'
+          sort-tags: true
 
       - name: Find application metadata
         id: metadata
@@ -82,6 +91,10 @@ jobs:
           DEPLOY=false
           IS_PR=false
 
+          LATEST_VERSION=${{ steps.latest.outputs.tag }}
+          LATEST_VERSION=${LATEST_VERSION#v}
+          LATEST_VERSION=${LATEST_VERSION:-0.0.0}
+
           if [[ $GITHUB_REF == refs/tags/v*.*.* ]]; then
             NEXT_VERSION=${GITHUB_REF#refs/tags/v}
             DEPLOY=true
@@ -89,7 +102,11 @@ jobs:
             if [[ $NEXT_VERSION == *-*.* ]]; then
               QUALIFIER=$(echo "${NEXT_VERSION}" | sed -n 's/.*-\(.*\)\..*/\1/p')
             else
-              QUALIFIER=latest
+              if [[ ${NEXT_VERSION} == ${LATEST_VERSION} ]]; then
+                QUALIFIER=latest
+              else
+                QUALIFIER=v${NEXT_VERSION%%.*}
+              fi
             fi
           elif [[ $GITHUB_REF == refs/heads/* ]]; then
             BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}" | sed -r 's#/+#-#g')
@@ -451,7 +468,7 @@ jobs:
           token: ${{ secrets.GH_REPO_TOKEN }}
 
       - name: Update latest
-        if: ${{ needs.setup.outputs.qualifier == 'latest' && needs.setup.outputs.is-hotfix != 'true' }}
+        if: ${{ needs.setup.outputs.qualifier == 'latest' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
@@ -642,7 +659,7 @@ jobs:
           token: ${{ secrets.GH_REPO_TOKEN }}
 
       - name: Update latest
-        if: ${{ needs.setup.outputs.qualifier == 'latest' && needs.setup.outputs.is-hotfix != 'true' }}
+        if: ${{ needs.setup.outputs.qualifier == 'latest' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
