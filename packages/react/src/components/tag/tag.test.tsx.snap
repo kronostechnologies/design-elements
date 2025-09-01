@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop removable) 1`] = `
 .c3 {
