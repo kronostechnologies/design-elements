@@ -69,6 +69,15 @@ describe('MoneyInput Component', () => {
         expect(normalizeSpaces(input.value)).toEqual('12 345,25 $');
     });
 
+    it('should format controlled value', () => {
+        const { container, rerender } = renderWithProviders(<MoneyInput value={12345.25} />);
+
+        rerender(<MoneyInput value={55555.50} />);
+
+        const input = getInputElement(container);
+        expect(normalizeSpaces(input.value)).toEqual('55 555,50 $');
+    });
+
     it('should format to provided currency', () => {
         const { container } = renderWithProviders(<MoneyInput value={12345.25} currency="USD" />);
         const input = getInputElement(container);
