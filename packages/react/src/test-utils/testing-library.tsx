@@ -24,7 +24,7 @@ export function renderWithProviders(
         {
             ...renderOptions,
             wrapper: ({ children }) => (
-                <MemoryRouter>
+                <MemoryRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
                     <DesignSystem
                         isolateStyles={isolateStyles}
                         language={language}
