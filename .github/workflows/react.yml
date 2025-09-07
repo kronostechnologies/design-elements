@@ -524,7 +524,7 @@ jobs:
       - name: Comment the summary on the PR
         if: ${{ needs.setup.outputs.is-pr == 'true' }}
         continue-on-error: true
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const pr = {
@@ -715,7 +715,7 @@ jobs:
       - name: Comment the summary on the PR
         if: ${{ needs.setup.outputs.is-pr == 'true' }}
         continue-on-error: true
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const pr = {
