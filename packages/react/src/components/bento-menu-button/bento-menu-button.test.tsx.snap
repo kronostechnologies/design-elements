@@ -281,6 +281,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c9 {
+  font-size: 0.875rem;
   margin: 0;
   padding: 0 var(--spacing-2x);
   padding-bottom: var(--spacing-1x);
@@ -309,8 +310,8 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px var(--spacing-1x) 2px 0;
-  padding: var(--spacing-1x);
+  margin: 0 var(--spacing-half) 2px 0;
+  padding: var(--spacing-half);
 }
 
 .c14 {
@@ -346,7 +347,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
@@ -439,21 +439,21 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 384px;
+  max-width: 280px;
   min-width: 200px;
-  padding: var(--spacing-3x) 0;
+  padding: var(--spacing-1halfx) 0;
   right: 0;
   width: initial;
 }
 
 .c1 .c5 .c20 {
   line-height: 1.5rem;
-  padding: var(--spacing-half) var(--spacing-4x);
+  padding: var(--spacing-half) var(--spacing-2x);
 }
 
 .c1 .c5 .c8 {
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-4x);
+  padding: 0 var(--spacing-2x);
 }
 
 .c1 .c5 ul:not(:last-child)::after,
@@ -461,8 +461,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
-  margin: var(--spacing-2x) var(--spacing-4x);
-  margin-bottom: var(--spacing-3x);
+  margin: var(--spacing-1x) var(--spacing-2x);
 }
 
 <div
@@ -1098,6 +1097,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c9 {
+  font-size: 0.875rem;
   margin: 0;
   padding: 0 var(--spacing-2x);
   padding-bottom: var(--spacing-1x);
@@ -1126,8 +1126,8 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px var(--spacing-1x) 2px 0;
-  padding: var(--spacing-1x);
+  margin: 0 var(--spacing-half) 2px 0;
+  padding: var(--spacing-half);
 }
 
 .c14 {
@@ -1163,7 +1163,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
@@ -1256,21 +1255,21 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 384px;
+  max-width: 280px;
   min-width: 200px;
-  padding: var(--spacing-3x) 0;
+  padding: var(--spacing-1halfx) 0;
   right: 0;
   width: initial;
 }
 
 .c1 .c5 .c20 {
   line-height: 1.5rem;
-  padding: var(--spacing-half) var(--spacing-4x);
+  padding: var(--spacing-half) var(--spacing-2x);
 }
 
 .c1 .c5 .c8 {
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-4x);
+  padding: 0 var(--spacing-2x);
 }
 
 .c1 .c5 ul:not(:last-child)::after,
@@ -1278,8 +1277,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
-  margin: var(--spacing-2x) var(--spacing-4x);
-  margin-bottom: var(--spacing-3x);
+  margin: var(--spacing-1x) var(--spacing-2x);
 }
 
 <div
@@ -1827,6 +1825,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c9 {
+  font-size: 0.875rem;
   margin: 0;
   padding: 0 var(--spacing-2x);
   padding-bottom: var(--spacing-1x);
@@ -1855,8 +1854,8 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px var(--spacing-1x) 2px 0;
-  padding: var(--spacing-1x);
+  margin: 0 var(--spacing-half) 2px 0;
+  padding: var(--spacing-half);
 }
 
 .c14 {
@@ -1892,7 +1891,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
@@ -1985,21 +1983,21 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 384px;
+  max-width: 280px;
   min-width: 200px;
-  padding: var(--spacing-3x) 0;
+  padding: var(--spacing-1halfx) 0;
   right: 0;
   width: initial;
 }
 
 .c1 .c5 .c20 {
   line-height: 1.5rem;
-  padding: var(--spacing-half) var(--spacing-4x);
+  padding: var(--spacing-half) var(--spacing-2x);
 }
 
 .c1 .c5 .c8 {
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-4x);
+  padding: 0 var(--spacing-2x);
 }
 
 .c1 .c5 ul:not(:last-child)::after,
@@ -2007,8 +2005,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
-  margin: var(--spacing-2x) var(--spacing-4x);
-  margin-bottom: var(--spacing-3x);
+  margin: var(--spacing-1x) var(--spacing-2x);
 }
 
 <nav

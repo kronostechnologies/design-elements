@@ -12,6 +12,7 @@ export interface GroupItemProps {
 }
 
 export const StyledHeading = styled(Heading)<HeadingProps>`
+    font-size: 0.875rem;
     margin: 0;
     padding: 0 var(--spacing-2x);
     padding-bottom: var(--spacing-1x);
