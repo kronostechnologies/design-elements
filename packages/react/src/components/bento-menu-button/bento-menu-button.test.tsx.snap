@@ -439,7 +439,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 280px;
+  max-width: 350px;
   min-width: 200px;
   padding: var(--spacing-1halfx) 0;
   right: 0;
@@ -1255,7 +1255,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 280px;
+  max-width: 350px;
   min-width: 200px;
   padding: var(--spacing-1halfx) 0;
   right: 0;
@@ -1983,7 +1983,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c1 .c5 {
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  max-width: 280px;
+  max-width: 350px;
   min-width: 200px;
   padding: var(--spacing-1halfx) 0;
   right: 0;

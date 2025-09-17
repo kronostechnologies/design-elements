@@ -15,7 +15,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
     ${StyledDropdownMenu} {
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
-        max-width: 280px;
+        max-width: 350px;
         min-width: 200px;
         padding: var(--spacing-1halfx) 0;
         right: 0;
