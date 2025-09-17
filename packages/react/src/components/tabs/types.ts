@@ -1,5 +1,5 @@
-import { ReactNode, KeyboardEvent } from 'react';
-import { IconName } from '../icon/icon';
+import type { KeyboardEvent, ReactNode } from 'react';
+import type { IconName } from '../icon';
 
 export type TabSize = 'medium' | 'small';
 

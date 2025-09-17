@@ -1,7 +1,7 @@
+import { flexRender, type HeaderGroup } from '@tanstack/react-table';
 import { ReactElement } from 'react';
 import styled, { css } from 'styled-components';
-import { HeaderGroup, flexRender } from '@tanstack/react-table';
-import { CustomHeader } from './types';
+import type { CustomHeader } from './types';
 
 const StyledFooter = styled.td<{ $sticky: boolean }>`
     background-color: inherit;

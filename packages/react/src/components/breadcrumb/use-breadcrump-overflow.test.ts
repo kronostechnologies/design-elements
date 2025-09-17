@@ -6,7 +6,7 @@ const secondElement = { label: 'ROUTE', value: 'route', href: '/route' };
 const thirdElement = { label: 'THREE', value: 'three', href: '/three' };
 const defaultHistory = [firstElement, secondElement, thirdElement];
 
-describe('useBreadcrumpOverflow', () => {
+describe('useBreadcrumbOverflow', () => {
     it('no vertical overflow if scroll height < offset height', () => {
         const { result } = renderHook(useBreadcrumbOverflow, {
             initialProps: {

@@ -1,12 +1,13 @@
 import { MouseEvent, RefObject, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { StyledLink } from '../route-link/styles/styled-link';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { SectionalBanner } from '../sectional-banner/sectional-banner';
+import { useDeviceContext } from '../device-context-provider';
+import { type DeviceContextProps } from '../device-context-provider/device-context-provider';
+import { StyledLink } from '../route-link/styles';
+import { SectionalBanner } from '../sectional-banner';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>;
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type ErrorSummaryHeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
@@ -32,12 +33,12 @@ export interface ErrorMessage {
     target: RefObject<HTMLElement> | string;
 }
 
-interface ErrorSummaryProps {
+export interface ErrorSummaryProps {
     className?: string;
     /**
      * @default h2
      */
-    headingTag?: HeadingTag;
+    headingTag?: ErrorSummaryHeadingTag;
     /**
      * Array of objects with a `text` attribute containing the error message and a `target`
      * referencing the target input that will get the focus when clicking the error. The

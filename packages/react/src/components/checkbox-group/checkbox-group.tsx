@@ -1,7 +1,7 @@
 import { ChangeEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Checkbox } from '../checkbox/checkbox';
+import { Checkbox } from '../checkbox';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -10,21 +10,23 @@ const Legend = styled.legend`
     padding: 0;
 `;
 
-interface CheckboxProps {
+export interface CheckboxGroupItem {
+    label: string,
+    name: string,
+    value: string,
+    defaultChecked?: boolean,
+    disabled?: boolean,
+}
+
+export interface CheckboxGroupProps {
     label?: string;
     checkedValues?: string[];
-    checkboxGroup: {
-        label: string,
-        name: string,
-        value: string,
-        defaultChecked?: boolean,
-        disabled?: boolean,
-    }[];
+    checkboxGroup: CheckboxGroupItem[];
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const CheckboxGroup: VoidFunctionComponent<CheckboxProps> = ({
+export const CheckboxGroup: VoidFunctionComponent<CheckboxGroupProps> = ({
     label,
     checkedValues,
     checkboxGroup,

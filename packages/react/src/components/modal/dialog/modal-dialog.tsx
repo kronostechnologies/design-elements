@@ -1,22 +1,34 @@
 import { Fragment, ReactElement, Ref, useRef, VoidFunctionComponent } from 'react';
 import { useId } from '../../../hooks/use-id';
 import { useTranslation } from '../../../i18n/use-translation';
-import { Button } from '../../buttons/button';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { Heading } from '../../heading/heading';
+import { Button } from '../../buttons';
+import { useDeviceContext } from '../../device-context-provider';
+import { Heading } from '../../heading';
+import { type IconName } from '../../icon';
 import { Modal } from '../modal';
-import {
-    ButtonContainer,
-    StyledHeadingWrapperComponent,
-    TitleIcon,
-} from './styled';
-import { DialogType, ModalDialogProps } from './types';
+import type { BaseModalProps } from '../types';
+import { ButtonContainer, StyledHeadingWrapperComponent, TitleIcon } from './styled';
+
+export type DialogType =
+    | 'information'
+    | 'action'
+    | 'alert';
 
 const modalRoles: Record<DialogType, string> = {
     information: 'dialog',
     action: 'dialog',
     alert: 'alertdialog',
 };
+
+export interface ModalDialogProps extends BaseModalProps {
+    title: string;
+    titleIcon?: IconName;
+    subtitle?: string;
+    footerContent?: ReactElement;
+    dialogType?: DialogType;
+    confirmButton?: { label?: string, onConfirm?(): void };
+    cancelButton?: { label?: string, onCancel?(): void };
+}
 
 export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     appElement,

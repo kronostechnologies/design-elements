@@ -1,5 +1,5 @@
 import { MouseEvent } from 'react';
-import { IconName } from '../icon/icon';
+import { type IconName } from '../icon';
 
 export interface NavListOption {
     disabled?: boolean;

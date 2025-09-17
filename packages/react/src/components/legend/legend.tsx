@@ -42,7 +42,7 @@ const Description = styled.span`
     line-height: 1.25rem;
 `;
 
-interface LegendProps {
+export interface LegendProps {
     className?: string;
     items: LegendItem[];
 }

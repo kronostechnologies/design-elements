@@ -3,8 +3,8 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { eventIsInside } from '../../utils/events';
-import { IconButton, IconButtonProps } from '../buttons/icon-button';
-import { Icon, IconName } from '../icon/icon';
+import { IconButton, type IconButtonProps } from '../buttons/icon-button';
+import { Icon, type IconName } from '../icon';
 
 const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.component['global-navigation-background-color']};
@@ -157,7 +157,7 @@ export interface GlobalNavigationItem {
     onClick?(): void;
 }
 
-interface GlobalNavigationProps {
+export interface GlobalNavigationProps {
     className?: string;
     coreActionButton?: IconButtonProps;
     /** Item has an icon name, a name, and a href */

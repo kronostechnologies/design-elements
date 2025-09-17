@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren, useCallback, useMemo } from 'react';
 import { v4 as uuid } from '../../utils/uuid';
 import { ToastContext } from './toast-context';
-import { ToastType } from './toast-type';
+import type { ToastType } from './toast-type';
 import { ToastsContainer } from './toasts-container';
 import { useToastsReducer } from './toasts-reducer';
 

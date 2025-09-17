@@ -2,7 +2,7 @@ import { forwardRef, KeyboardEvent, ReactElement, Ref, useMemo } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
-import { GroupItemProps } from './list-items';
+import { type GroupItemProps } from './list-items';
 
 const List = styled.div`
     background-color: ${({ theme }) => theme.component['dropdown-menu-background-color']};

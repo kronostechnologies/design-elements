@@ -4,7 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput, textInputClasses } from '../text-input';
-import { ToggletipProps } from '../toggletip/toggletip';
+import { ToggletipProps } from '../toggletip';
 import { toLocale } from './toLocale';
 
 type TextAlignment = 'left' | 'right';

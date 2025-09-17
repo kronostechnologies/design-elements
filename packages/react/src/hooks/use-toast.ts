@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { ToastType } from '../components/toast/toast-type';
+import { ToastType } from '../components';
 import { useToasts } from './use-toasts';
 
 export interface UseToastResponse {

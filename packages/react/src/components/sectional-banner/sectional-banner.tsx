@@ -10,12 +10,12 @@ import {
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { Button, IconButton } from '../buttons';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Heading, Tag } from '../heading/heading';
-import { Icon, IconName } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Heading, type HeadingTag } from '../heading';
+import { Icon, type IconName } from '../icon';
 
 type MobileDeviceContext = { $isMobile: boolean };
 export type SectionalBannerType = 'neutral' | 'info' | 'discovery' | 'success' | 'warning' | 'alert';
@@ -181,12 +181,12 @@ function handleType(type: SectionalBannerType): BannerTypeProps {
     }
 }
 
-interface SectionalBannerProps {
+export interface SectionalBannerProps {
     buttonLabel?: string;
     className?: string;
     children: ReactNode;
     focusable?: boolean;
-    headingTag?: Tag;
+    headingTag?: HeadingTag;
     id?: string;
     /** Sets custom message title */
     title?: string;

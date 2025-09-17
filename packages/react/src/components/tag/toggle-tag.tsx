@@ -1,8 +1,8 @@
 import { forwardRef, MouseEventHandler, Ref, SVGProps, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 export type ToggleTagSize =
     | 'small'

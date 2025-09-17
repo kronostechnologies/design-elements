@@ -1,8 +1,8 @@
 import React, { VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
 import { useTranslation } from '../../i18n/use-translation';
-import { Icon } from '../icon/icon';
+import { focus } from '../../utils/css-state';
+import { Icon } from '../icon';
 
 const Wrapper = styled.div`
     display: flex;

@@ -1,7 +1,8 @@
 import {
     FunctionComponent,
     KeyboardEvent,
-    MouseEvent as ReactMouseEvent, PropsWithChildren,
+    MouseEvent as ReactMouseEvent,
+    PropsWithChildren,
     ReactNode,
     useCallback,
     useEffect,
@@ -16,13 +17,10 @@ import { menuDimensions } from '../../legacy-constants/menuDimensions';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { ButtonType } from '../buttons/types';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { NavList } from '../nav-list/nav-list';
-import { NavListOption } from '../nav-list/nav-list-option';
+import { Button, type ButtonType, IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
+import { NavList, type NavListOption } from '../nav-list';
 
 const StyledDiv = styled.div`
     position: relative;
@@ -54,7 +52,7 @@ function getFirstFocusableElement(array: NavListOption[]): NavListOption {
     return focusableElements[0];
 }
 
-interface NavButtonProps {
+export interface DropdownNavigationProps {
     /**
      * Sets nav's description
      * @default 'Menu'
@@ -86,7 +84,7 @@ interface NavButtonProps {
     onLinkSelected?(option: NavListOption): void;
 }
 
-export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonProps>> = ({
+export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNavigationProps>> = ({
     tag,
     ariaLabel,
     autofocus,

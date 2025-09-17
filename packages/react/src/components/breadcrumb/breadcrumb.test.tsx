@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { DesignSystem } from '../design-system';
-import { NavListOption } from '../nav-list/nav-list-option';
+import { type NavListOption } from '../nav-list';
 import { Breadcrumb } from './breadcrumb';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 

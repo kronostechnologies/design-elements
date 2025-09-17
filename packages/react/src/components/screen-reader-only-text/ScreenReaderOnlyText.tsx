@@ -13,11 +13,11 @@ const StyledSpan = styled.span`
     width: 1px;
 `;
 
-interface Props {
+export interface ScreenReaderOnlyTextProps {
     label: string;
 }
 
-export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label, ...otherProps }) => {
+export const ScreenReaderOnlyText: VoidFunctionComponent<ScreenReaderOnlyTextProps> = ({ label, ...otherProps }) => {
     const dataAttributes = useDataAttributes(otherProps);
 
     return (

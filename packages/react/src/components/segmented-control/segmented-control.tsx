@@ -1,8 +1,8 @@
 import { MouseEvent, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { Icon, IconName } from '../icon/icon';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 const Container = styled.div`
     background-color: ${({ theme }) => (theme.component['segmented-control-list-background-color'])};
@@ -76,7 +76,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     }
 `;
 
-interface SegmentedControlProps {
+export interface SegmentedControlProps {
     /**
      * Takes an array of objects containing all the buttons needed
      */

@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
-import { DropdownList } from './dropdown-list';
+import { ReactNode } from 'react';
+import { type Overflow } from '../../hooks/use-overflow';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { Overflow } from '../../hooks/use-overflow';
+import { DropdownList } from './dropdown-list';
 
 jest.mock('react-dom', () => ({
     ...jest.requireActual('react-dom'),

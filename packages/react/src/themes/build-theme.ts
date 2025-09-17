@@ -1,15 +1,15 @@
 import { devConsole } from '../utils/dev-console';
-import { ResolvedTheme, ThemeCustomization, ThemeDeclaration } from './theme';
+import type { ResolvedTheme, ThemeCustomization, ThemeDeclaration } from './theme';
 import {
-    AliasToken,
-    ComponentToken,
+    type AliasToken,
+    type ComponentToken,
     defaultAliasTokens,
     defaultComponentTokens,
     defaultRefTokens,
-    RefToken,
-    ResolvedTokenMap,
-    TokenValue,
-    TokenName,
+    type RefToken,
+    type ResolvedTokenMap,
+    type TokenName,
+    type TokenValue,
 } from './tokens';
 
 function isRefToken(tokenName: TokenName): tokenName is RefToken {

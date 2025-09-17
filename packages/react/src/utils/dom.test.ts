@@ -1,4 +1,4 @@
-import { getRootElement, sanitizeId, findNearestRelativeParent } from './dom';
+import { findNearestRelativeParent, getRootElement, sanitizeId } from './dom';
 
 describe('DOM utilities', () => {
     describe('sanitizeId', () => {

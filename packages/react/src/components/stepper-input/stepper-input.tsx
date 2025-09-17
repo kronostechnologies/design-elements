@@ -1,13 +1,14 @@
 import React, {
     ChangeEvent,
-    DetailedHTMLProps, FormEventHandler,
+    DetailedHTMLProps,
+    FocusEvent,
+    FormEventHandler,
     InputHTMLAttributes,
     RefObject,
     useCallback,
     useEffect,
     useRef,
     useState,
-    FocusEvent,
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
@@ -15,10 +16,10 @@ import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { responsiveInputsStyle } from '../text-input/styles/inputs';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
+import { FieldContainer } from '../field-container';
+import { responsiveInputsStyle } from '../text-input/styles';
+import { ToggletipProps } from '../toggletip';
+import { TooltipProps } from '../tooltip';
 import { StepperButtons } from './stepper-buttons';
 
 const Wrapper = styled.div`
@@ -55,7 +56,7 @@ type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLI
 
 type Value = undefined | number | null;
 
-interface StepperInputProps extends PartialStepperInputProps {
+export interface StepperInputProps extends PartialStepperInputProps {
     defaultValue?: number;
     hint?: string;
     id?: string;

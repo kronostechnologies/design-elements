@@ -1,11 +1,11 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { InvalidField } from '../feedbacks/invalid-field';
-import { Label } from '../label/label';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
+import { type ResolvedTheme } from '../../themes';
+import { useDeviceContext } from '../device-context-provider';
+import { InvalidField } from '../feedbacks';
+import { Label } from '../label';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
 
 interface StyledDivProps {
     theme: ResolvedTheme;

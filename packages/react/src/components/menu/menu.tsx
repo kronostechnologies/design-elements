@@ -13,11 +13,11 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { getNextElement, getPreviousElement } from '../../utils/array';
+import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { focus } from '../../utils/css-state';
+import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
@@ -155,7 +155,7 @@ interface ListGroup extends MenuGroup {
 
 type ListItem = ListGroup | ListOption;
 
-interface Props {
+export interface MenuProps {
     className?: string;
     id?: string;
     initialFocusIndex?: number;
@@ -225,7 +225,7 @@ export const Menu = forwardRef(({
     onKeyDown,
     onOptionSelect,
     ...props
-}: Props, ref: Ref<HTMLDivElement>): ReactElement => {
+}: MenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const menuId = useMemo(() => id || uuid(), [id]);
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);

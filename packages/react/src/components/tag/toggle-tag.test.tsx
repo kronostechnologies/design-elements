@@ -1,5 +1,5 @@
 import { renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { DeviceType } from '../device-context-provider';
 import { ToggleTag, ToggleTagProps } from './toggle-tag';
 
 describe('ToggleTag', () => {

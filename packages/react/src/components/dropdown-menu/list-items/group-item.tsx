@@ -1,8 +1,8 @@
 import { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../../hooks/use-data-attributes';
-import { Heading, HeadingProps } from '../../heading/heading';
-import { NavItemProps } from './nav-item';
+import { Heading, type HeadingProps } from '../../heading';
+import { type NavItemProps } from './nav-item';
 
 export interface GroupItemProps {
     id?: string;

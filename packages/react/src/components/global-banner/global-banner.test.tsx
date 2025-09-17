@@ -1,5 +1,5 @@
 import { renderWithProviders } from '../../test-utils/renderer';
-import { ActionButton, GlobalBanner, GlobalBannerType } from './global-banner';
+import { type ActionButton, GlobalBanner, type GlobalBannerType } from './global-banner';
 
 const defaultActionButton: ActionButton = {
     label: 'Test button',

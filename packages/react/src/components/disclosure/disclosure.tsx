@@ -1,22 +1,17 @@
 import { FunctionComponent, PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import {
-    Size,
-    Button,
-    IconButton,
-    ButtonProps,
-} from '../buttons';
-import { IconName } from '../icon/icon';
+import { Button, type ButtonProps, type ButtonSize, IconButton } from '../buttons';
+import { type IconName } from '../icon';
 
-export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
+export type DisclosureButtonProps = Omit<ButtonProps, 'onClick'> & {
     iconName?: IconName;
-    size?: Size;
+    size?: ButtonSize;
 }
 
-interface DisclosureWidgetProps {
+export interface DisclosureProps {
     idContent?: string;
-    buttonProps: ButtonPropsWithoutOnClick;
+    buttonProps: DisclosureButtonProps;
 }
 
 export const Container = styled.div<{ $expanded: boolean; }>`
@@ -40,7 +35,7 @@ const DisclosureContainer = styled.div`
     position: relative;
 `;
 
-export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetProps>> = ({
+export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureProps>> = ({
     idContent: providedIdContent,
     buttonProps,
     children,

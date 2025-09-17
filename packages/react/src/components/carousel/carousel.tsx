@@ -1,14 +1,8 @@
-import {
-    AriaAttributes,
-    FunctionComponent,
-    PropsWithChildren,
-    ReactElement,
-    ReactNode,
-} from 'react';
+import { AriaAttributes, FunctionComponent, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
-import { IconButton } from '../buttons/icon-button';
+import { IconButton } from '../buttons';
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`

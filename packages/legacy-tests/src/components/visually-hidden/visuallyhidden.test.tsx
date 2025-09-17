@@ -1,5 +1,5 @@
 import { render } from 'enzyme';
-import { VisuallyHidden } from '~/components/visually-hidden/visuallyhidden';
+import { VisuallyHidden } from '~/components/visually-hidden/visually-hidden';
 
 describe('Visually hidden', () => {
     it('Matches the snapshot', () => {

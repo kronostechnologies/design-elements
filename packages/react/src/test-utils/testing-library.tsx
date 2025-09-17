@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { DesignSystem, DesignSystemProps } from '../components/design-system';
+import { DesignSystem, DesignSystemProps } from '../components';
 import { equisoftTheme } from '../theme';
 
 export function renderWithProviders(

@@ -1,9 +1,9 @@
-import { ReactElement, VoidFunctionComponent } from 'react';
+import { MouseEvent, ReactElement, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Icon } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { clamp } from '../../utils/math';
+import { Icon } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 
 const Container = styled.section`
     padding: var(--spacing-2x) 0;
@@ -149,14 +149,6 @@ export interface ProgressTrackerStep {
     onClick?: (stepNumber: number) => void;
 }
 
-interface ProgressTrackerProps {
-    ariaLabel?: string;
-    className?: string;
-    linear?: boolean;
-    steps: ProgressTrackerStep[];
-    value: number;
-}
-
 interface StepProps {
     step: ProgressTrackerStep,
     stepNumber: number,
@@ -196,7 +188,7 @@ const Step: VoidFunctionComponent<StepProps> = ({
         </>
     );
 
-    const linkClickHandler = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+    const linkClickHandler = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (!step.href) {
             event.preventDefault();
         }
@@ -220,6 +212,14 @@ const Step: VoidFunctionComponent<StepProps> = ({
         </StepComponent>
     );
 };
+
+export interface ProgressTrackerProps {
+    ariaLabel?: string;
+    className?: string;
+    linear?: boolean;
+    steps: ProgressTrackerStep[];
+    value: number;
+}
 
 export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
     ariaLabel,

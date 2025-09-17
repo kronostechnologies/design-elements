@@ -1,10 +1,10 @@
 import { useRef, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Avatar } from '../avatar/avatar';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownMenuButton } from '../dropdown-menu-button/dropdown-menu-button';
-import { GroupItem, LabelItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
+import { Avatar } from '../avatar';
+import { useDeviceContext } from '../device-context-provider';
+import { DropdownMenuButton } from '../dropdown-menu-button';
+import { GroupItem, LabelItem, NavItem, type NavItemProps } from '../dropdown-menu/list-items';
 
 const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean }>`
     button {
@@ -23,7 +23,7 @@ export function getFirstFocusableItem(options: NavItemProps[]): NavItemProps | u
     return options.find((opt) => !opt.disabled);
 }
 
-interface UserProfileProps {
+export interface UserProfileProps {
     /**
      * Sets nav's description
      * @default 'User menu'

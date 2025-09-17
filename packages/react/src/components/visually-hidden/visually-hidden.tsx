@@ -1,12 +1,14 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { hiddenStyle } from './styles/visuallyhidden';
+import { hiddenStyle } from './visually-hidden.style';
 
 const Hidden = styled.span`
     ${hiddenStyle}
 `;
 
-export const VisuallyHidden: FunctionComponent<PropsWithChildren<{}>> = ({ children }) => (
+export type VisuallyHiddenProps = PropsWithChildren<{}>;
+
+export const VisuallyHidden: FunctionComponent<VisuallyHiddenProps> = ({ children }) => (
     <Hidden aria-hidden="false">
         {children}
     </Hidden>

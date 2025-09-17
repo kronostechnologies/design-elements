@@ -89,6 +89,39 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   pointer-events: none;
 }
 
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  z-index: 700;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -380,39 +413,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-  z-index: 700;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 <div
@@ -753,6 +753,39 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   pointer-events: none;
 }
 
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  z-index: 700;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1044,39 +1077,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-  z-index: 700;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 <div

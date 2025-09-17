@@ -1,5 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import { useCarousel, UseCarouselOptions, UseCarouselResponse } from './use-carousel';
+import { useCarousel, type UseCarouselOptions, type UseCarouselResponse } from './use-carousel';
 
 describe('useCarousel', () => {
     describe('Initial options', () => {

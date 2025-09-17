@@ -1,8 +1,8 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { type ResolvedTheme } from '../../themes';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 const MAXIMUM_LENGTH = '312px';
 
@@ -52,14 +52,14 @@ const StyledIcon = styled(Icon)<{ $isMobile: boolean }>`
     width: 0.75rem;
 `;
 
-interface Props {
+export interface LozengeProps {
     className?: string;
     variant?: LozengeVariant;
     icon?: IconName;
     subtle?: boolean;
 }
 
-export const Lozenge: FunctionComponent<PropsWithChildren<Props>> = ({
+export const Lozenge: FunctionComponent<PropsWithChildren<LozengeProps>> = ({
     children,
     className,
     icon,

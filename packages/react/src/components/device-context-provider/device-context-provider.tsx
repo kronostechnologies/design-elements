@@ -1,5 +1,5 @@
 import { createContext, FunctionComponent, PropsWithChildren, useContext, useEffect, useState } from 'react';
-import { breakpoints, Breakpoints } from '../../legacy-constants/breakpoints';
+import { breakpoints, type Breakpoints } from '../../legacy-constants/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';
 

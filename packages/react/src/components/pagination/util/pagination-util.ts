@@ -1,4 +1,4 @@
-interface PageRange {
+export interface PageRange {
     begin: number;
     end: number;
 }

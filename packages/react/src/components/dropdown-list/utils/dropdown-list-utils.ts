@@ -1,6 +1,6 @@
-import { findOptionsByValue } from '../../listbox/listbox-option';
 import { includes, unique } from '../../../utils/array';
-import { DropdownListOption } from '../dropdown-list-option';
+import { findOptionsByValue } from '../../listbox/listbox-option';
+import type { DropdownListOption } from '../dropdown-list';
 
 export function optionsAreEqual(
     option: DropdownListOption,

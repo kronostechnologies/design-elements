@@ -1,10 +1,10 @@
 import { forwardRef, MouseEventHandler, Ref, SVGProps, useCallback } from 'react';
-import styled, { StyledProps } from 'styled-components';
+import styled, { type StyledProps } from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 export type TagColor =
     | 'default'
@@ -30,12 +30,12 @@ export interface TagValue {
 
 export interface TagProps {
     className?: string;
+    color?: TagColor;
+    iconName?: IconName;
     labelRef?: Ref<HTMLSpanElement>;
     size?: TagSize;
     value: TagValue;
-    iconName?: IconName;
 
-    color?: TagColor;
     onRemove?(tag: TagValue): void;
 }
 

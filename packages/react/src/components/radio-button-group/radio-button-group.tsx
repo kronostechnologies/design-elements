@@ -1,10 +1,19 @@
-import { ChangeEvent, Fragment, TransitionEvent, useCallback, useRef, useState, VoidFunctionComponent } from 'react';
+import {
+    ChangeEvent,
+    Fragment,
+    ReactElement,
+    TransitionEvent,
+    useCallback,
+    useRef,
+    useState,
+    VoidFunctionComponent,
+} from 'react';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { Toggletip, ToggletipProps } from '../toggletip/toggletip';
-import { Tooltip, TooltipProps } from '../tooltip/tooltip';
-import { RadioButton } from '../radio-button/radio-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
+import { RadioButton } from '../radio-button';
+import { Toggletip, ToggletipProps } from '../toggletip';
+import { Tooltip, TooltipProps } from '../tooltip';
 
 const StyledFieldset = styled.fieldset`
     border: none;
@@ -74,19 +83,19 @@ const InnerContent = styled.div<{ $isExpanded: boolean, $transitionStarted: bool
     display: ${$isExpanded || $transitionStarted ? 'block' : 'none'};
 `);
 
-interface RadioButtonProps {
+export interface RadioButtonGroupButtonProps {
     label: string;
     value: string;
     id?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
     content?: {
-        element: React.ReactElement;
+        element: ReactElement;
         maxHeight?: number;
     };
 }
 
-interface RadioButtonGroupProps {
+export interface RadioButtonGroupProps {
     ariaLabel?: string;
     ariaLabelledBy?: string[];
     className?: string;
@@ -97,7 +106,7 @@ interface RadioButtonGroupProps {
     /** Sets the name property of all buttons */
     groupName: string;
     checkedValue?: string;
-    buttons: RadioButtonProps[];
+    buttons: RadioButtonGroupButtonProps[];
     /** Duration in milliseconds */
     transitionDuration?: number;
 

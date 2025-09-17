@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import { useTheme } from '../../hooks/use-theme';
-import { Icon } from '../icon/icon';
+import { Icon } from '../icon';
 
 export type SortState = 'ascending' | 'descending' | 'none';
 

@@ -52,7 +52,7 @@ const StyledCircle = styled(Circle)`
     width: 100%;
 `;
 
-interface Props {
+export interface ProgressCircleProps {
     className?: string;
     color: string;
     /** Bottom label */
@@ -63,7 +63,7 @@ interface Props {
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-export const ProgressCircle: VoidFunctionComponent<Props> = ({
+export const ProgressCircle: VoidFunctionComponent<ProgressCircleProps> = ({
     className, color, descriptionLabel, percent, resultLabel,
 }) => (
     <Container className={className}>

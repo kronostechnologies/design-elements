@@ -1,8 +1,8 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../../icon/icon';
-import { Lozenge } from '../../lozenge/lozenge';
+import { type DeviceContextProps } from '../../device-context-provider/device-context-provider';
+import { Icon, type IconName } from '../../icon';
+import { Lozenge } from '../../lozenge';
 
 export interface ItemContentProps {
     device: DeviceContextProps;

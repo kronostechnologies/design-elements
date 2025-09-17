@@ -2,10 +2,9 @@ import { getMonth, getYear } from 'date-fns';
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownList } from '../dropdown-list/dropdown-list';
-import { DropdownListOption } from '../dropdown-list/dropdown-list-option';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { DropdownList, type DropdownListOption } from '../dropdown-list';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;

@@ -1,9 +1,9 @@
-import { Heading, Tag, Type } from '~/components/heading/heading';
+import { Heading, HeadingTag, HeadingType } from '~/components/heading/heading';
 import { mountWithTheme } from '../../test-utils/renderer';
 
 interface TestCases {
-    type: Type;
-    tag: Tag;
+    type: HeadingType;
+    tag: HeadingTag;
 }
 
 const testCases: TestCases[] = [

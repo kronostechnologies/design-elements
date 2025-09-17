@@ -1,8 +1,8 @@
-export { Size } from './abstract/types';
-export { ButtonProps, ButtonType, Type } from './types';
-export { getBaseButtonStyles } from './abstract/styled';
-export { getButtonTypeStyles, getButtonStyles } from './styled';
+export type { ButtonSize } from './abstract';
 export { AbstractButton } from './abstract/abstract-button';
+export { getBaseButtonStyles } from './abstract/styles';
 export { Button } from './button';
-export { SearchButton } from './search-button';
+export type { ButtonProps, ButtonType, Type } from './button';
 export { IconButton } from './icon-button';
+export { SearchButton } from './search-button';
+export { getButtonTypeStyles, getButtonStyles } from './styled';

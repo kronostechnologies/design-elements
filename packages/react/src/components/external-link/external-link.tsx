@@ -1,10 +1,10 @@
 import { MouseEvent, useCallback, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { StyledLink } from '../route-link/styles/styled-link';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
+import { StyledLink } from '../route-link/styles';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 
 const LeftIcon = styled(Icon)`
     align-self: center;

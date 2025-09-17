@@ -1,6 +1,5 @@
-import { IconName } from '~/components/icon/icon';
-import { ModalDialog } from '~/components/modal/dialog/modal-dialog';
-import { DialogType } from '~/components/modal/dialog/types';
+import { type IconName } from '~/components/icon/icon';
+import { type DialogType, ModalDialog } from '~/components/modal';
 import { getByTestId as enzymeGetByTestId } from '../../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../../test-utils/renderer';
 

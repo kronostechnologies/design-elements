@@ -1,22 +1,15 @@
-import {
-    ChangeEvent,
-    useState,
-    VoidFunctionComponent,
-    useMemo,
-    FocusEvent,
-    useCallback,
-} from 'react';
+import { ChangeEvent, FocusEvent, useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { Tooltip } from '../tooltip/tooltip';
-import { inputsStyle } from '../text-input/styles/inputs';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { inputsStyle } from '../text-input/styles';
+import { Tooltip } from '../tooltip';
 
-interface PasswordInputProps {
+export interface PasswordInputProps {
     id?: string;
     name?: string;
     label?: string;

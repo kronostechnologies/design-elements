@@ -1,9 +1,9 @@
 import { HTMLProps, ReactNode, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { TextInput, textInputClasses, TextInputProps } from '../text-input';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
-import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import { useNumericInput, type UseNumericInputParams } from './use-numeric-input';
 
 interface StyledInputProps extends TextInputProps {
     $textAlign: 'left' | 'right';

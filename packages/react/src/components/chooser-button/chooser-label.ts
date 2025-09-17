@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { focus } from '../../../utils/css-state';
+import { focus } from '../../utils/css-state';
 
-export const Label = styled.label`
+export const ChooserLabel = styled.label`
     --border-radius: 8px;
 
     align-items: center;

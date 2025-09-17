@@ -1,14 +1,10 @@
-import {
-    FunctionComponent,
-    ReactNode,
-    useMemo, useState,
-} from 'react';
-import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
+import { FunctionComponent, ReactNode, useMemo, useState } from 'react';
+import { type PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { IconButton } from '../buttons/icon-button';
-import { IconName } from '../icon/icon';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { type IconName } from '../icon';
 
 type Size = 'small' | 'medium';
 type MaxWidth = 'small' | 'medium' | 'large';

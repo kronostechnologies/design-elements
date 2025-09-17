@@ -1,14 +1,14 @@
 import { useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { ChooserButton } from '../chooser-button/chooser-button';
+import { ChooserButton } from '../chooser-button';
 
 export interface ChooserButtonOption {
     label: string;
     value?: string
 }
 
-interface ChooserButtonGroupProps {
+export interface ChooserButtonGroupProps {
     groupName: string;
     options: ChooserButtonOption[];
     /** Optional button to allow user to skip question */

@@ -1,5 +1,5 @@
 import { renderWithProviders } from '../../test-utils/renderer';
-import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
+import { ExternalItemProps, NavItemProps } from '../dropdown-menu';
 import { BentoMenuButton } from './bento-menu-button';
 
 function givenProducts(): NavItemProps[] {

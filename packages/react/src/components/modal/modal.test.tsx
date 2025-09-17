@@ -2,7 +2,7 @@ import { fireEvent, RenderResult } from '@testing-library/react';
 import { ReactElement } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderWithProviders, rerenderPortalWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { DeviceType } from '../device-context-provider';
 import { Modal } from './modal';
 import { ModalProps } from './types';
 

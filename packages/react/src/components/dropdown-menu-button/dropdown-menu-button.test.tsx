@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { ExternalItem, GroupItem, GroupItemProps, NavItem } from '../dropdown-menu/list-items';
+import { type GroupItemProps } from '../dropdown-menu';
+import { ExternalItem, GroupItem, NavItem } from '../dropdown-menu/list-items';
 import { DropdownMenuButton } from './dropdown-menu-button';
 
 const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemProps> => (

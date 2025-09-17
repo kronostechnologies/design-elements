@@ -1,10 +1,10 @@
-import { CSSProperties, ReactElement, useMemo } from 'react';
 import { flexRender, Row } from '@tanstack/react-table';
+import { CSSProperties, ReactElement, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { findNearestTextAlign, isLastColumnInAGroup } from './utils/table-utils';
 import { CustomCell } from './types';
+import { findNearestTextAlign, isLastColumnInAGroup } from './utils';
 
 interface StyledTableRowProps {
     $clickable?: boolean;
