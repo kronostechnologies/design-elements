@@ -1,6 +1,6 @@
 import { RenderResult } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { DeviceType } from '../device-context-provider';
 import { Table, TableProps } from './table';
 import { TableColumn } from './types';
 

@@ -1,10 +1,10 @@
-import { FC, ReactElement, MouseEvent } from 'react';
+import { FC, MouseEvent, ReactElement } from 'react';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { Tooltip } from '../tooltip/tooltip';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { Tooltip } from '../tooltip';
 import { StyledLink } from './styled';
 import { LinkProps } from './types';
 

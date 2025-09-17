@@ -1,15 +1,15 @@
-import React, { useMemo, useState, useCallback, createRef } from 'react';
+import React, { createRef, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
-import { Type, Tag } from '../heading/heading';
+import { type HeadingTag, type HeadingType } from '../heading';
 import { AccordionItem } from './accordion-item';
 
 export interface ItemsProps {
     title: string;
     content: React.ReactNode | React.ReactElement;
     id?: string;
-    headingType?: Type | undefined;
-    headingTag?: Tag | undefined;
+    headingType?: HeadingType | undefined;
+    headingTag?: HeadingTag | undefined;
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;

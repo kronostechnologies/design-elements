@@ -19,16 +19,16 @@ import {
     useState,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
-import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
+import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { ToggletipProps } from '../toggletip';
+import { TooltipProps } from '../tooltip';
+import { inputsStyle } from './styles';
 import { textInputClasses } from './text-input-classes';
 
 const StyledInput = styled.input<{ isMobile: boolean }>`

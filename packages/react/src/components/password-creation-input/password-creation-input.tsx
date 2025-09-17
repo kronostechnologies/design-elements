@@ -1,17 +1,17 @@
-import { ChangeEvent, useState, VoidFunctionComponent, useMemo } from 'react';
+import { ChangeEvent, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { IconButton } from '../buttons/icon-button';
-import { FieldContainer } from '../field-container/field-container';
-import { useTranslation } from '../../i18n/use-translation';
-import { Tooltip } from '../tooltip/tooltip';
-import { getPasswordStrength } from './password-strength';
-import { PasswordRule } from './password-rule';
-import { getDefaultValidationConditions, ValidationCondition } from './validation-condition';
-import { v4 as uuid } from '../../utils/uuid';
-import { PasswordStrengthContainer } from './password-strength-container';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { inputsStyle } from '../text-input/styles/inputs';
+import { useTranslation } from '../../i18n/use-translation';
+import { v4 as uuid } from '../../utils/uuid';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { inputsStyle } from '../text-input/styles';
+import { Tooltip } from '../tooltip';
+import { PasswordRule } from './password-rule';
+import { getPasswordStrength } from './password-strength';
+import { PasswordStrengthContainer } from './password-strength-container';
+import { getDefaultValidationConditions, ValidationCondition } from './validation-condition';
 
 const StyledUl = styled.ul`
     font-size: 0.75rem;
@@ -36,7 +36,7 @@ const ShowPasswordButton = styled.div`
     right: 0.25rem;
 `;
 
-interface PasswordCreationInputProps {
+export interface PasswordCreationInputProps {
     name?: string;
     id?: string;
     onChange(newPassword: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>): void;

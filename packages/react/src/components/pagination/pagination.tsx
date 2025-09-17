@@ -5,11 +5,11 @@ import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
 import { clamp } from '../../utils/math';
 import { range } from '../../utils/range';
-import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { IconName } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { calculateShownPageRange } from './util/pagination-util';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { type IconName } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { calculateShownPageRange } from './util';
 
 type SelectionSuffix = '-selected' | '';
 
@@ -100,7 +100,7 @@ const Navigation = styled.nav`
     display: flex;
 `;
 
-interface PaginationProps {
+export interface PaginationProps {
     className?: string;
     /**
      * Number of results to display per page

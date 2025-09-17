@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons';
-import { Icon } from '../icon/icon';
-import { NavList } from '../nav-list/nav-list';
-import { NavListOption } from '../nav-list/nav-list-option';
-import { RouteLink } from '../route-link/route-link';
+import { Icon } from '../icon';
+import { NavList, type NavListOption } from '../nav-list';
+import { RouteLink } from '../route-link';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
 export type BreadcrumbElement = NavListOption;
 
-interface BreadcrumbProps {
+export interface BreadcrumbProps {
     className?: string;
     history: BreadcrumbElement[];
 }

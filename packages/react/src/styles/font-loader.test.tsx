@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
+import { useFont } from './font-loader';
 // eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
 import fonts from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./_fonts.scss';
-import { useFont } from './font-loader';
 
 jest.mock('!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./_fonts.scss');
 

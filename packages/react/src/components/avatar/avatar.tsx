@@ -1,20 +1,12 @@
 import { useMemo, VoidFunctionComponent } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon } from '../icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
-
-export interface AvatarProps {
-    className?: string;
-    username?: string;
-    bgColor?: string;
-    imgSrc?: string;
-    size?: AvatarSize;
-}
 
 interface SizeStyleProps {
     size: AvatarSize;
@@ -74,8 +66,20 @@ const StyledImg = styled.img<SizeStyleProps>`
     ${getSpecificSizeStyle}
 `;
 
+export interface AvatarProps {
+    className?: string;
+    username?: string;
+    bgColor?: string;
+    imgSrc?: string;
+    size?: AvatarSize;
+}
+
 export const Avatar: VoidFunctionComponent<AvatarProps> = ({
-    className, username, bgColor, imgSrc, size = 'xsmall',
+    bgColor,
+    className,
+    username,
+    imgSrc,
+    size = 'xsmall',
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();

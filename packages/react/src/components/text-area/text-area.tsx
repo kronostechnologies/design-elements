@@ -8,16 +8,16 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
-import { FieldContainer } from '../field-container/field-container';
-import { inputsStyle } from '../text-input/styles/inputs';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { type ResolvedTheme } from '../../themes';
+import { FieldContainer } from '../field-container';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { inputsStyle } from '../text-input/styles';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
 
 const StyledTextArea = styled.textarea`
     ${inputsStyle};

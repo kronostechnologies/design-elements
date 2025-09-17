@@ -1,26 +1,26 @@
 import {
+    cloneElement,
     FunctionComponent,
+    isValidElement,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
     PropsWithChildren,
-    useCallback,
-    useEffect,
-    useRef,
-    useMemo,
-    useState,
-    cloneElement,
-    isValidElement,
     ReactElement,
     ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
 } from 'react';
-import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
+import { type PopperOptions, type TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon } from '../icon';
 
 export type TooltipMode = 'normal' | 'confirm';
 export type TooltipVariant = 'normal' | 'success';

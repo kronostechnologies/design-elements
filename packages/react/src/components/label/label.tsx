@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Toggletip, ToggletipProps } from '../toggletip/toggletip';
-import { Tooltip, TooltipProps } from '../tooltip/tooltip';
 import { useTranslation } from '../../i18n/use-translation';
+import { useDeviceContext } from '../device-context-provider';
+import { Toggletip, type ToggletipProps } from '../toggletip';
+import { Tooltip, type TooltipProps } from '../tooltip';
 
 const StyledDiv = styled.div`
     align-items: center;
@@ -27,7 +27,7 @@ const StyledLabel = styled.label<{isMobile: boolean}>`
     }
 `;
 
-interface LabelProps {
+export interface LabelProps {
     className?: string;
     forId: string;
     id?: string;

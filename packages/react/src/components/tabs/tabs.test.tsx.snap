@@ -314,7 +314,7 @@ exports[`Tabs has small styles 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: 3px 0 3px -2px rgba(0,0,0,0.1);
   left: 0;
 }
 
@@ -359,7 +359,7 @@ exports[`Tabs has small styles 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: -3px 0 3px -2px rgba(0,0,0,0.1);
   right: 0;
 }
 
@@ -820,7 +820,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: 3px 0 3px -2px rgba(0,0,0,0.1);
   left: 0;
 }
 
@@ -865,7 +865,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: -3px 0 3px -2px rgba(0,0,0,0.1);
   right: 0;
 }
 
@@ -1326,7 +1326,7 @@ exports[`Tabs matches snapshot 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: 3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: 3px 0 3px -2px rgba(0,0,0,0.1);
   left: 0;
 }
 
@@ -1371,7 +1371,7 @@ exports[`Tabs matches snapshot 1`] = `
   position: absolute;
   width: var(--size-2x);
   z-index: 1;
-  box-shadow: -3px 0px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: -3px 0 3px -2px rgba(0,0,0,0.1);
   right: 0;
 }
 

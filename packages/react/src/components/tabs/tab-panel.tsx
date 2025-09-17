@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { TabSize, TabPanelProps } from './types';
+import type { TabPanelProps, TabSize } from './types';
 
 const StyledDiv = styled.div<{ $size?: TabSize }>`
     border-top: none;

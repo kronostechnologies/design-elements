@@ -12,14 +12,14 @@ import styled, { css } from 'styled-components';
 import { useScrollable } from '../../hooks/use-scrollable';
 import { useTranslation } from '../../i18n/use-translation';
 import { getNextElement, getPreviousElement } from '../../utils/array';
-import { Icon, IconName } from '../icon/icon';
-import { Tooltip } from '../tooltip/tooltip';
-import { Button } from '../buttons/button';
+import { focus } from '../../utils/css-state';
+import { Button } from '../buttons';
+import { Icon, IconName } from '../icon';
+import { Tooltip } from '../tooltip';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
-import { TabSize } from './types';
 import { tabsClasses } from './tabs-classes';
-import { focus } from '../../utils/css-state';
+import { TabSize } from './types';
 
 const buttonSize = 'var(--size-2x)';
 
@@ -98,12 +98,12 @@ const ScrollButton = styled(Button) <{ $position: 'left' | 'right'; }>`
     ${({ theme }) => focus({ theme }, { insideOnly: true })};
 
     ${({ $position }) => $position === 'left' && css`
-        box-shadow: 3px 0px 3px -2px rgba(0, 0, 0, 0.1);
+        box-shadow: 3px 0 3px -2px rgba(0, 0, 0, 0.1);
         left: 0;
     `};
 
     ${({ $position }) => $position === 'right' && css`
-        box-shadow: -3px 0px 3px -2px rgba(0, 0, 0, 0.1);
+        box-shadow: -3px 0 3px -2px rgba(0, 0, 0, 0.1);
         right: 0;
     `};
 
@@ -133,7 +133,7 @@ interface TabItem extends Tab {
     onBeforeUnload?(): Promise<boolean>;
 }
 
-interface AddButtonProps {
+export interface AddButtonProps {
     label?: string;
     disabled?: boolean;
     loading?: boolean;
@@ -141,7 +141,7 @@ interface AddButtonProps {
     onClick(): void;
 }
 
-interface Props {
+export interface TabsProps {
     className?: string;
     forceRenderTabPanels?: boolean;
     size?: TabSize;
@@ -159,7 +159,7 @@ interface Props {
     onTabChange?(tabId: string): void;
 }
 
-export const Tabs: VoidFunctionComponent<Props> = ({
+export const Tabs: VoidFunctionComponent<TabsProps> = ({
     className,
     size = 'medium',
     forceRenderTabPanels,

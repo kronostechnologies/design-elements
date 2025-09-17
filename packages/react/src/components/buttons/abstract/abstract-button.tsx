@@ -1,7 +1,20 @@
-import { forwardRef, PropsWithChildren, Ref, MouseEvent, useCallback } from 'react';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { StyledAbstractButton } from './styled';
-import { AbstractButtonProps } from './types';
+import { ButtonHTMLAttributes, forwardRef, MouseEvent, PropsWithChildren, Ref, useCallback } from 'react';
+import styled from 'styled-components';
+import { useDeviceContext } from '../../device-context-provider';
+import { type BaseButtonStyles, getBaseButtonStyles } from './styles';
+
+export const StyledAbstractButton = styled.button<BaseButtonStyles>`
+    ${getBaseButtonStyles};
+`;
+
+export type ButtonSize = 'small' | 'medium';
+
+export interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    focusable?: boolean;
+    isMobile: boolean;
+    size?: ButtonSize;
+    tabIndex?: number;
+}
 
 export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<AbstractButtonProps>>(({
     children,

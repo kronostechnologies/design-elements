@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { Button } from '../buttons';
-import { Icon } from '../icon/icon';
-import { Heading, Type, Tag } from '../heading/heading';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { Button } from '../buttons';
+import { Heading, type HeadingTag, type HeadingType } from '../heading';
+import { Icon } from '../icon';
 import { accordionClasses } from './accordion-classes';
 
 export interface AccordionItemProps {
     title: string;
     id?: string;
-    headingType?: Type | undefined;
-    headingTag?: Tag | undefined;
+    headingType?: HeadingType | undefined;
+    headingTag?: HeadingTag | undefined;
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     onToggle?: () => void;

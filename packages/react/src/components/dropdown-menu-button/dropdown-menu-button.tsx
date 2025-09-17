@@ -16,14 +16,11 @@ import { useTranslation } from '../../i18n/use-translation';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { AvatarProps } from '../avatar/avatar';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { ButtonType } from '../buttons/types';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownMenu } from '../dropdown-menu/dropdown-menu';
-import { GroupItemProps } from '../dropdown-menu/list-items';
-import { Icon, IconProps } from '../icon/icon';
+import { AvatarProps } from '../avatar';
+import { Button, type ButtonType, IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { DropdownMenu, type GroupItemProps } from '../dropdown-menu';
+import { Icon, type IconProps } from '../icon';
 
 const StyledDiv = styled.div`
     position: relative;
@@ -46,7 +43,7 @@ export const StyledDropdownMenu = styled(DropdownMenu)`
     width: initial;
 `;
 
-interface MenuButtonProps {
+export interface DropdownMenuButtonProps {
     label?: string;
     title?: string;
     /**
@@ -77,7 +74,7 @@ interface MenuButtonProps {
     render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
+export const DropdownMenuButton: VoidFunctionComponent<DropdownMenuButtonProps> = ({
     ariaLabel,
     tag,
     buttonAriaLabel,

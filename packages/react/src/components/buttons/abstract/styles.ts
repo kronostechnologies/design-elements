@@ -1,10 +1,10 @@
-import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../../themes';
+import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import type { ResolvedTheme } from '../../../themes';
 import { focus } from '../../../utils/css-state';
-import { Size } from './types';
+import type { ButtonSize } from './abstract-button';
 
 export interface BaseButtonStyles {
-    $size?: Size;
+    $size?: ButtonSize;
     $isMobile: boolean;
     $focusable?: boolean;
     $inverted?: boolean;
@@ -63,8 +63,4 @@ export const getBaseButtonStyles = ({
         height: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
         width: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};
     }
-`;
-
-export const StyledAbstractButton = styled.button<BaseButtonStyles>`
-    ${getBaseButtonStyles};
 `;

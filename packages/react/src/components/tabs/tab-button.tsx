@@ -1,11 +1,11 @@
 import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
-import { Icon } from '../icon/icon';
-import { TabButtonProps, TabSize } from './types';
+import { IconButton } from '../buttons';
+import { Icon } from '../icon';
+import type { TabButtonProps, TabSize } from './types';
 
 const StyledButton = styled.button<{ $size?: TabSize; $selected?: boolean; $removable?: boolean; }>`
     align-items: center;

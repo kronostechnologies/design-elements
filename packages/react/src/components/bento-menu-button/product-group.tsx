@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, RefObject } from 'react';
-import { GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { GroupItem, NavItem, type NavItemProps } from '../dropdown-menu/list-items';
 
 export interface ProductGroupProps {
     onClick?(): void;

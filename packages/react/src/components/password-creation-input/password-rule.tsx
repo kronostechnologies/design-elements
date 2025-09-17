@@ -1,7 +1,7 @@
 import { VoidFunctionComponent } from 'react';
 import styled, { StyledProps } from 'styled-components';
-import { Icon } from '../icon/icon';
 import { useTranslation } from '../../i18n/use-translation';
+import { Icon } from '../icon';
 
 interface StyledLiProps {
     isEmpty: boolean;

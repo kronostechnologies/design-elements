@@ -1,6 +1,5 @@
 import { DeviceContextProviderProps } from '~/components/device-context-provider/device-context-provider';
-import { Legend } from '~/components/fieldset/legend';
-import { LegendSize } from '~/components/fieldset/types';
+import { Legend, type LegendSize } from '~/components/fieldset/legend';
 import { mountWithProviders } from '../../test-utils/renderer';
 
 describe('Legend Component', () => {

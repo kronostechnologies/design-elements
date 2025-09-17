@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 
 type Origin = 'right' | 'left';
 
@@ -41,7 +41,7 @@ const Container = styled.div<ContainerProps>`
     }
 `;
 
-interface SideDrawerProps {
+export interface SideDrawerProps {
     children: ReactNode;
     className?: string;
     /**

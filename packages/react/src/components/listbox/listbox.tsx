@@ -18,8 +18,8 @@ import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
 import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
 import { mergeRefs } from '../../utils/react-merge-refs';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon } from '../icon';
 import { findOptionsByValue } from './listbox-option';
 
 type Value = string | string[];

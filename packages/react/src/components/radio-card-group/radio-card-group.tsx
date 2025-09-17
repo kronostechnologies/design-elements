@@ -1,9 +1,9 @@
 import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
-import { RadioCardProps, isRadioCard } from './radio-card';
+import { useDeviceContext } from '../device-context-provider';
+import { isRadioCard, RadioCardProps } from './radio-card';
 import { Fieldset, Legend } from './styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-interface RadioCardGroupProps {
+export interface RadioCardGroupProps {
     children: ReactElement<RadioCardProps> | ReactElement<RadioCardProps>[];
     className?: string,
     label?: string;

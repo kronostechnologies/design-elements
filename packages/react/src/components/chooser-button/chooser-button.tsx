@@ -1,15 +1,15 @@
 import { ChangeEvent, ChangeEventHandler, forwardRef, ReactNode, Ref, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
-import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
-import { Label } from './styles/choose';
+import { v4 as uuid } from '../../utils/uuid';
+import { hiddenStyle } from '../visually-hidden/visually-hidden.style';
+import { ChooserLabel } from './chooser-label';
 
 const Input = styled.input`
     ${hiddenStyle}
 `;
 
-interface ChooserButtonProps {
+export interface ChooserButtonProps {
     defaultChecked?: boolean;
     checked?: boolean;
     children: ReactNode;
@@ -54,7 +54,7 @@ export const ChooserButton = forwardRef(
                     value={value}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                <Label htmlFor={id}>{children}</Label>
+                <ChooserLabel htmlFor={id}>{children}</ChooserLabel>
             </>
         );
     },

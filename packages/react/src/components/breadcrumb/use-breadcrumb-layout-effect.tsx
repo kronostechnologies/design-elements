@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { Overflow } from '../../hooks/use-overflow';
-import { NavListOption } from '../nav-list/nav-list-option';
+import { type Overflow } from '../../hooks/use-overflow';
+import { type NavListOption } from '../nav-list';
 
 interface UseBreadcrumbLayoutEffectRequest {
     overflow: Overflow;

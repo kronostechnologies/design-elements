@@ -2,13 +2,13 @@
 import { FunctionComponent, PropsWithChildren, useRef } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 import { DropdownMenuButton, StyledDropdownMenu } from '../dropdown-menu-button/dropdown-menu-button';
 import { ExternalItem, ExternalItemProps, GroupItem, NavItemProps } from '../dropdown-menu/list-items';
 import { StyledExternalLink } from '../dropdown-menu/list-items/external-item';
 import { StyledHeading } from '../dropdown-menu/list-items/group-item';
 import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
-import { Icon } from '../icon/icon';
+import { Icon } from '../icon';
 import { ProductGroup, ProductGroupProps } from './product-group';
 
 const StyledDropdownMenuButton = styled(DropdownMenuButton)`
@@ -48,7 +48,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
     }
 `;
 
-interface BentoMenuButtonProps {
+export interface BentoMenuButtonProps {
     ariaLabel?: string;
     buttonAriaLabel?: string;
     externalLinks: ExternalItemProps[];
@@ -86,7 +86,8 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
                 label: t('productsLabel'),
                 name: 'product',
                 productLinks,
-            }];
+            },
+            ];
         }
     }
 

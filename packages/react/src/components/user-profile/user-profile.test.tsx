@@ -1,5 +1,5 @@
 import { renderWithProviders } from '../../test-utils/renderer';
-import { NavItemProps } from '../dropdown-menu/list-items';
+import { NavItemProps } from '../dropdown-menu';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
 
 const onClick = jest.fn();

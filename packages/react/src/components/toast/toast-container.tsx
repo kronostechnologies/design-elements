@@ -1,19 +1,13 @@
 import { useMemo, VoidFunctionComponent } from 'react';
-import styled, {
-    css,
-    FlattenInterpolation,
-    keyframes,
-    ThemedStyledProps,
-    ThemeProps,
-} from 'styled-components';
+import styled, { css, FlattenInterpolation, keyframes, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
-import { IconButton, IconButtonProps } from '../buttons/icon-button';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName, IconProps } from '../icon/icon';
-import { ToastPosition } from './toast-position';
-import { ToastType } from './toast-type';
+import { IconButton, type IconButtonProps } from '../buttons/icon-button';
+import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon, type IconName, type IconProps } from '../icon';
+import type { ToastPosition } from './toast-position';
+import type { ToastType } from './toast-type';
 
 interface ToastWrapperProps {
     isMobile: boolean;

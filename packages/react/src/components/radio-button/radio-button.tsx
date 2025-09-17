@@ -1,7 +1,7 @@
 import { ChangeEvent, FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { RadioInput } from './radio-input';
 import { useId } from '../../hooks/use-id';
+import { RadioInput } from './radio-input';
 
 const StyledLabel = styled.label`
     font-size: 0.875rem;
@@ -19,7 +19,7 @@ const StyledRadioInput = styled(RadioInput)`
     margin-top: var(--spacing-quarter);
 `;
 
-interface RadioButtonProps {
+export interface RadioButtonProps {
     ariaLabel?: string;
     ariaLabelledBy?: string[];
     checked?: boolean;

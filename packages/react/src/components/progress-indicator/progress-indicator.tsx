@@ -1,4 +1,4 @@
-import { ReactText, VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Bar } from './bar';
 
@@ -17,18 +17,18 @@ const Container = styled.div`
     }
 `;
 
-interface Props {
+export interface ProgressIndicatorProps {
     className?: string;
     /** [0 - 100] */
     percent: number;
     color: string;
     /** End label */
-    resultLabel: ReactText;
+    resultLabel: string | number;
     /** Top label */
     descriptionLabel?: string;
 }
 
-export const ProgressIndicator: VoidFunctionComponent<Props> = ({
+export const ProgressIndicator: VoidFunctionComponent<ProgressIndicatorProps> = ({
     className, color, descriptionLabel, resultLabel, percent,
 }) => (
     <Container className={className}>

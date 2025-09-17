@@ -10,22 +10,22 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
-import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { IconButton } from '../buttons';
-import { Listbox, ListboxOption } from '../listbox/listbox';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
+import { useListSelect } from '../../hooks/use-list-select';
+import { useTranslation } from '../../i18n/use-translation';
+import { type ResolvedTheme } from '../../themes';
+import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
-import { useListSelect } from '../../hooks/use-list-select';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { Listbox, type ListboxOption } from '../listbox';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
 
 interface TextboxProps {
     disabled?: boolean;
@@ -124,7 +124,7 @@ color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-clear-bu
     }
 `;
 
-interface ComboboxProps {
+export interface ComboboxProps {
     /**
      * If true, the input can have a value not included in the list of options
      */

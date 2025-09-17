@@ -2,9 +2,11 @@ import { type ClipboardEvent } from 'react';
 import {
     cleanIncompleteNumber,
     convertDecimalSeparator,
-    DECIMAL_SEPARATORS, getDecimalSeparator,
+    DECIMAL_SEPARATORS,
+    getDecimalSeparator,
     isValidValueForInput,
-    replacePastedValue, toStandardFormat,
+    replacePastedValue,
+    toStandardFormat,
 } from './utils';
 
 describe('NumericInput utils', () => {

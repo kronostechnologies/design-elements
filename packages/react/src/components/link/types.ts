@@ -1,7 +1,7 @@
-import { AnchorHTMLAttributes } from 'react';
-import { NavLink, Link as ReactRouterLink, NavLinkProps } from 'react-router-dom';
-import { ButtonProps } from '../buttons';
-import { IconName } from '../icon/icon';
+import { type AnchorHTMLAttributes } from 'react';
+import { Link as ReactRouterLink, NavLink, type NavLinkProps } from 'react-router-dom';
+import { type ButtonProps } from '../buttons';
+import { type IconName } from '../icon';
 
 type BaseLinkProps = Pick<AnchorHTMLAttributes<HTMLAnchorElement>,
     | 'id'
@@ -18,7 +18,7 @@ type BaseLinkProps = Pick<AnchorHTMLAttributes<HTMLAnchorElement>,
     | 'onKeyDown'
 > & Pick<NavLinkProps, 'end'>;
 
-type LinkButtonProps = Pick<ButtonProps,
+export type LinkButtonProps = Pick<ButtonProps,
     | 'autofocus'
     | 'buttonType'
     | 'disabled'

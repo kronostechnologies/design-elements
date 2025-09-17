@@ -1,4 +1,4 @@
-import { hasMinLength, hasALowerCaseLetter, hasAnUpperCaseLetter } from './validation-condition';
+import { hasALowerCaseLetter, hasAnUpperCaseLetter, hasMinLength } from './validation-condition';
 
 describe('hasMinLength', () => {
     test('should return false if length is smaller then min length', () => {

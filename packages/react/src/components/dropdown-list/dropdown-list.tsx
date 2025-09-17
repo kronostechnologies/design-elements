@@ -20,19 +20,20 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSearch } from '../../hooks/use-list-search';
+import { Overflow, useOverflow } from '../../hooks/use-overflow';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { findNearestRelativeParent, getRootElement, sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { Icon, IconName } from '../icon/icon';
-import { Listbox } from '../listbox/listbox';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { Icon, type IconName } from '../icon';
+import { Listbox, type ListboxOption } from '../listbox';
 import { findOptionsByValue } from '../listbox/listbox-option';
-import { Tag } from '../tag/tag';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+import { Tag } from '../tag';
+import { type ToggletipProps } from '../toggletip';
+import { Tooltip, type TooltipProps } from '../tooltip';
 import {
     addUniqueOption,
     disableNonSelectedOptions,
@@ -41,9 +42,7 @@ import {
     isOptionEnabled,
     isOptionSelected,
     removeOption,
-} from './utils/dropdown-list-utils';
-import { DropdownListOption } from './dropdown-list-option';
-import { Overflow, useOverflow } from '../../hooks/use-overflow';
+} from './utils';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -195,6 +194,10 @@ interface ListboxPosition {
     left: number;
     top: number;
     width: number;
+}
+
+export interface DropdownListOption extends ListboxOption {
+    label: string;
 }
 
 export interface DropdownListProps<M extends boolean | undefined> {

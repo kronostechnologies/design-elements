@@ -1,4 +1,4 @@
-import { DropdownListOption } from '../dropdown-list-option';
+import type { DropdownListOption } from '../dropdown-list';
 import {
     disableNonSelectedOptions,
     getDefaultOptions,

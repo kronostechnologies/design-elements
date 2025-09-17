@@ -11,8 +11,8 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { TextInput } from '../text-input/text-input';
+import { useDeviceContext } from '../device-context-provider';
+import { TextInput } from '../text-input';
 import {
     findNextInsertPositionFromPatternInputDiff,
     getPreviousPlaceholderIndex,
@@ -21,7 +21,7 @@ import {
 import { formatFromPattern, removeDigitOnMaskCharRemoval, removeNonDigits } from './phone-input-value-formater';
 import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
 
-interface PhoneInputProps {
+export interface PhoneInputProps {
     pattern: string;
     defaultValue?: string;
     readOnly?: boolean;

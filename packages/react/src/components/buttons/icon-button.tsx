@@ -1,13 +1,12 @@
 import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { AvatarProps } from '../avatar/avatar';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName, IconProps } from '../icon/icon';
-import { AbstractButton } from './abstract/abstract-button';
-import { Size } from './abstract/types';
+import { type ResolvedTheme } from '../../themes';
+import { type AvatarProps } from '../avatar';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName, type IconProps } from '../icon';
+import { AbstractButton, type ButtonSize } from './abstract';
+import { type ButtonProps } from './button';
 import { getButtonTypeStyles } from './styled';
-import { ButtonProps } from './types';
 
 export interface IconButtonProps extends ButtonProps {
     children?: ReactElement<IconProps | AvatarProps>;
@@ -15,11 +14,11 @@ export interface IconButtonProps extends ButtonProps {
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
-    size?: Size;
+    size?: ButtonSize;
 }
 
 const getButtonSizeStyles = (
-    { isMobile, size }: { isMobile: boolean, size?: Size },
+    { isMobile, size }: { isMobile: boolean, size?: ButtonSize },
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> => {
     switch (size) {
         case 'small':

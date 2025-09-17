@@ -1,12 +1,8 @@
 import { shallow } from 'enzyme';
-import { useId } from '~/hooks/use-id';
 import { Button } from '~/components/buttons/button';
 import { IconButton } from '~/components/buttons/icon-button';
-import {
-    ButtonPropsWithoutOnClick,
-    Container,
-    Disclosure,
-} from '~/components/disclosure/disclosure';
+import { Container, Disclosure, type DisclosureButtonProps } from '~/components/disclosure/disclosure';
+import { useId } from '~/hooks/use-id';
 import { mountWithProviders } from '../../test-utils/renderer';
 
 jest.mock('~/hooks/use-id');
@@ -21,7 +17,7 @@ describe('Disclosure', () => {
             props: {
                 buttonType: 'primary',
                 label: 'disclose content',
-            } as ButtonPropsWithoutOnClick,
+            } as DisclosureButtonProps,
         },
         {
             describeName: 'IconButton',
@@ -30,7 +26,7 @@ describe('Disclosure', () => {
                 iconName: 'home',
                 buttonType: 'primary',
                 label: 'disclose content',
-            } as ButtonPropsWithoutOnClick,
+            } as DisclosureButtonProps,
         },
     ];
 

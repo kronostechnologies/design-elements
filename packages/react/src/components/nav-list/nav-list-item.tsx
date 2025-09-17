@@ -11,11 +11,11 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { NavListOption } from './nav-list-option';
 import { focus } from '../../utils/css-state';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { NavListOption } from './nav-list-option';
 
 type DisabledSuffix = '-disabled' | '';
 

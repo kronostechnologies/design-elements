@@ -91,6 +91,14 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   pointer-events: none;
 }
 
+.c7 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
@@ -270,14 +278,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c7 {
-  color: #1B1C1E;
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5rem;
-  margin: var(--spacing-3x) 0;
 }
 
 .c9 {
@@ -907,6 +907,14 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   pointer-events: none;
 }
 
+.c7 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
@@ -1086,14 +1094,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c7 {
-  color: #1B1C1E;
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5rem;
-  margin: var(--spacing-3x) 0;
 }
 
 .c9 {
@@ -1635,6 +1635,14 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   pointer-events: none;
 }
 
+.c7 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
@@ -1814,14 +1822,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c7 {
-  color: #1B1C1E;
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5rem;
-  margin: var(--spacing-3x) 0;
 }
 
 .c9 {

@@ -1,7 +1,8 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { IconName } from '../../icon/icon';
+import { useDeviceContext } from '../../device-context-provider';
+import { type DeviceContextProps } from '../../device-context-provider/device-context-provider';
+import { type IconName } from '../../icon';
 import { ItemContent } from './item-content';
 
 interface LabelItemProps {

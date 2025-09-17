@@ -6,7 +6,7 @@ import { focus } from '../../utils/css-state';
 import { devConsole } from '../../utils/dev-console';
 import { SortButtonIcon, SortState } from './sort-button-icon';
 import { CustomHeader } from './types';
-import { findNearestTextAlign, isAGroupColumn, isLastColumnInAGroup } from './utils/table-utils';
+import { findNearestTextAlign, isAGroupColumn, isLastColumnInAGroup } from './utils';
 
 interface SortButtonProps {
     $textAlign: CSSProperties['textAlign'];

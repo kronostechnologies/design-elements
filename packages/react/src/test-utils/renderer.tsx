@@ -1,8 +1,7 @@
 import { render as testingLibRender, RenderResult } from '@testing-library/react';
 import { FunctionComponent, PropsWithChildren, ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { DesignSystem, DesignSystemProps } from '../components/design-system';
-import { DeviceType } from '../components/device-context-provider/device-context-provider';
+import { DesignSystem, type DesignSystemProps, type DeviceType } from '../components';
 
 export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps>> = ({
     children,

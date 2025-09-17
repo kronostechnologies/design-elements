@@ -19,15 +19,15 @@ import { useTranslation } from '../../i18n/use-translation';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconButton } from '../buttons';
-import { Checkbox } from '../checkbox/checkbox';
-import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Checkbox } from '../checkbox';
+import { DeviceType, useDeviceContext } from '../device-context-provider';
 import { RadioInput } from '../radio-button/radio-input';
+import { TableCaption, TableCaptionSize } from './table-caption';
 import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
-import { TableCaption, TableCaptionSize } from './table-caption';
 import { StyledTableRow, TableRow } from './table-row';
 import { type TableColumn, type TableData } from './types';
-import { createRowSelectionStateFromSelectedRowIds } from './utils/table-utils';
+import { createRowSelectionStateFromSelectedRowIds } from './utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 

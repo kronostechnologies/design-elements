@@ -4,7 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 
 export type LabelPosition = 'left' | 'right';
 
@@ -14,6 +14,7 @@ interface StyledLabelProps {
     disabled: boolean;
     labelPosition: LabelPosition;
 }
+
 const StyledLabel = styled.label<StyledLabelProps>`
     color: ${({ theme }) => theme.component['toggle-switch-label-text-color']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
@@ -80,7 +81,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 `;
 
-interface ToggleSwitchProps {
+export interface ToggleSwitchProps {
     label: string;
     labelPosition?: LabelPosition;
     disabled?: boolean;

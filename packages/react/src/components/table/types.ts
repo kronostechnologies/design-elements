@@ -1,10 +1,10 @@
-import { Cell, Column, ColumnDef, Header } from '@tanstack/react-table';
-import { CSSProperties } from 'react';
+import type { Cell, Column, ColumnDef, Header } from '@tanstack/react-table';
+import type { CSSProperties, ReactNode } from 'react';
 
 export type TableData<TData> = TData & {
     error?: boolean;
     subRows?: TableData<TData>[];
-    subContent?: React.ReactNode;
+    subContent?: ReactNode;
 }
 
 export type TableColumn<TData> = ColumnDef<TData> & {

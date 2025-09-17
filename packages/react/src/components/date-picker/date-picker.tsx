@@ -18,17 +18,18 @@ import DatePicker, { DatePickerProps, ReactDatePickerCustomHeaderProps, register
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
+import { focus } from '../../utils/css-state';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton, Button } from '../buttons';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { Icon } from '../icon/icon';
-import { inputsStyle } from '../text-input/styles/inputs';
-import { ToggletipProps } from '../toggletip/toggletip';
-import { TooltipProps } from '../tooltip/tooltip';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { Icon } from '../icon';
+import { inputsStyle } from '../text-input/styles';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
 import { CalendarHeader } from './calendar-header';
 import {
     DayOfWeek,
@@ -41,8 +42,7 @@ import {
     getYearsOptions,
     setLocaleFirstDayOfWeek,
     SupportedLocale,
-} from './utils/datepicker-utils';
-import { focus } from '../../utils/css-state';
+} from './utils';
 
 type StyledDatePickerProps = DatePickerProps & {
     isMobile: boolean;
@@ -240,7 +240,7 @@ export interface DatepickerHandles {
     setDate(date: Date): void;
 }
 
-interface DatepickerProps {
+export interface DatepickerProps {
     className?: string;
     /** Sets default selected date */
     defaultDate?: Date;

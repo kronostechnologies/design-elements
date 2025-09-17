@@ -13,12 +13,12 @@ const StyledDiv = styled.div<{ $noPadding?: boolean }>`
     padding: ${({ $noPadding }) => ($noPadding ? '0' : 'var(--spacing-3x) var(--spacing-4x) var(--spacing-4x)')};
 `;
 
-interface Props {
+export interface CardProps {
     className?: string;
     noPadding?: boolean;
 }
 
-export const Card: FunctionComponent<PropsWithChildren<Props>> = ({
+export const Card: FunctionComponent<PropsWithChildren<CardProps>> = ({
     children,
     className,
     noPadding,

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
 import { eventIsInside } from '../../utils/events';
-import { Button, ButtonType, IconButton } from '../buttons';
-import { Icon, IconName } from '../icon/icon';
-import { Menu, MenuItem } from '../menu/menu';
-import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+import { Button, type ButtonType, IconButton } from '../buttons';
+import { Icon, type IconName } from '../icon';
+import { Menu, type MenuItem } from '../menu';
+import { Tooltip, type TooltipProps } from '../tooltip';
 
 export type MenuPlacement = 'right' | 'left';
 

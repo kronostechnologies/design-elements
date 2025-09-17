@@ -50,7 +50,7 @@ const StyledInput = styled.input<{ disabled?: boolean; isMobile?: boolean }>`
     }
 `;
 
-interface RadioInputProps {
+export interface RadioInputProps {
     ariaLabel?: string;
     ariaLabelledBy?: string[];
     checked?: boolean;

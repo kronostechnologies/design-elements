@@ -1,8 +1,8 @@
 import { CSSProperties } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
-import { CommonStyledProps, FooterProps, HeaderProps, MainProps, StyledModalProps } from './types';
+import { IconButton } from '../buttons';
+import type { CommonStyledProps, FooterProps, HeaderProps, MainProps, StyledModalProps } from './types';
 
 function getWidthPadding({ $noPadding, isMobile }: CommonStyledProps): string {
     if ($noPadding) {

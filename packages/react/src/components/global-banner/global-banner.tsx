@@ -9,12 +9,12 @@ import {
     useCallback,
     useState,
 } from 'react';
-import styled, { css, FlattenSimpleInterpolation, StyledProps } from 'styled-components';
-import { useTranslation } from '../../i18n/use-translation';
-import { Button } from '../buttons/button';
+import styled, { css, type FlattenSimpleInterpolation, type StyledProps } from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { useTranslation } from '../../i18n/use-translation';
+import { Button } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 export type GlobalBannerType = 'neutral' | 'discovery' | 'warning' | 'alert';
 
@@ -137,7 +137,7 @@ const StyledButton = styled(Button)<{ bannerType: GlobalBannerType }>`
     )};
 `;
 
-interface GlobalBannerProps {
+export interface GlobalBannerProps {
     actionButton?: ActionButton;
     secondaryActionButton?: ActionButton;
     className?: string;
