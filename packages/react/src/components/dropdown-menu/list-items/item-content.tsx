@@ -19,8 +19,8 @@ const StyledIcon = styled(Icon)`
     border: 1px solid ${({ theme }) => theme.component['dropdown-menu-item-content-icon-border-color']};
     border-radius: var(--border-radius);
     flex-shrink: 0;
-    margin: 2px var(--spacing-1x) 2px 0;
-    padding: var(--spacing-1x);
+    margin: 0 var(--spacing-half) 2px 0;
+    padding: var(--spacing-half);
 `;
 
 const StyledDiv = styled.div`
@@ -66,7 +66,6 @@ const LabelContainer = styled.div<{ $smallLabel: boolean, $device: DeviceContext
     display: flex;
     flex-flow: row wrap;
     font-size: ${getFontSize};
-    height: 100%;
     margin: 0;
     overflow: hidden;
     padding: 0 0 0 var(--spacing-half);

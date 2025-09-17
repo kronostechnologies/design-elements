@@ -1,5 +1,6 @@
 import { BentoMenuButton, ExternalItemProps, GlobalHeader, NavItemProps } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import type { ComponentProps } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
@@ -9,25 +10,36 @@ const StyledDiv = styled.div`
     height: 540px;
 `;
 
+const adminProducts: NavItemProps[] = [
+    {
+        value: 'control-panel-legacy',
+        href: 'control-panel-legacy',
+        label: 'Control Panel [legacy]',
+    },
+    {
+        value: 'control-panel',
+        href: 'control-panel',
+        label: 'Control Panel',
+    },
+];
+
 const products: NavItemProps[] = [
     {
         value: 'connect',
         href: 'connect',
-        label: 'Equisoft/Connect',
-        description: 'Short app description',
+        label: 'Equisoft/connect',
     },
     {
         value: 'plan',
         href: 'plan',
-        label: 'Equisoft/Plan',
+        label: 'Equisoft/plan',
         description: 'Way to long app description to bust the max-width limit of the dropdown',
         lozenge: 'Discover',
     },
     {
         value: 'analyze',
         href: 'analyze',
-        label: 'Equisoft/Analyze',
-        description: 'Short app description',
+        label: 'Equisoft/analyze [legacy]',
         disabled: true,
     },
     {
@@ -37,6 +49,30 @@ const products: NavItemProps[] = [
         description: 'Search Engine',
         iconName: 'search',
         isHtmlLink: true,
+    },
+    {
+        value: 'analyze2',
+        href: 'analyze2',
+        label: 'Equisoft/analyze',
+        description: 'Portfolio Optimizer',
+    },
+    {
+        value: 'analyze3',
+        href: 'analyze3',
+        label: 'Equisoft/centralize',
+    },
+];
+
+const productGroups: ComponentProps<typeof BentoMenuButton>['productGroups'] = [
+    {
+        label: 'Administration',
+        name: 'administration',
+        productLinks: adminProducts,
+    },
+    {
+        label: 'Products',
+        name: 'products',
+        productLinks: products,
     },
 ];
 
@@ -71,8 +107,8 @@ const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
         <GlobalHeader>
             <BentoMenuButton
                 {...args /* eslint-disable-line react/jsx-props-no-spreading */}
+                productGroups={productGroups}
                 data-testid="some-bento-data-testid"
-                productLinks={products}
                 externalLinks={resources}
             />
         </GlobalHeader>

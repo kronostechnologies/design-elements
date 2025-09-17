@@ -15,26 +15,27 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
     ${StyledDropdownMenu} {
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
-        max-width: 384px;
+        max-width: 280px;
         min-width: 200px;
-        padding: var(--spacing-3x) 0;
+        padding: var(--spacing-1halfx) 0;
         right: 0;
         width: initial;
 
         ${StyledNavItem},
         ${HtmlLink} {
-            height: 2.75rem;
-            padding: var(--spacing-1x) var(--spacing-4x);
+            height: 2rem;
+            overflow: visible;
+            padding: var(--spacing-1x) var(--spacing-2x);
         }
 
         ${StyledExternalLink} {
             line-height: 1.5rem;
-            padding: var(--spacing-half) var(--spacing-4x);
+            padding: var(--spacing-half) var(--spacing-2x);
         }
 
         ${StyledHeading} {
             margin: 0 0 var(--spacing-1x);
-            padding: 0 var(--spacing-4x);
+            padding: 0 var(--spacing-2x);
         }
 
         ul:not(:last-child)::after,
@@ -42,8 +43,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
             border-bottom: 1px solid ${({ theme }) => theme.component['bento-menu-separator-color']};
             content: '';
             display: block;
-            margin: var(--spacing-2x) var(--spacing-4x);
-            margin-bottom: var(--spacing-3x);
+            margin: var(--spacing-1x) var(--spacing-2x);
         }
     }
 `;
