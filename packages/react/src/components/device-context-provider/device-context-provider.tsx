@@ -63,7 +63,7 @@ const getDevice = (screenWidth: number): DeviceType => {
 const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
 
 /**
- * @deprecated Use {@link DesignSystem} instead
+ * @internal Use {@link DesignSystem} instead
  */
 export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceContextProviderProps>> = ({
     children,
