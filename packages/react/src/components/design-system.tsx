@@ -4,6 +4,7 @@ import { IntlProvider, IntlProviderProps } from './internationalization-provider
 import { ThemeWrapper, ThemeWrapperProps } from './theme-wrapper';
 import { ToastProvider } from './toast';
 
+export type { DeviceType } from './device-context-provider';
 export type DesignSystemProps = ThemeWrapperProps & DeviceContextProviderProps & IntlProviderProps;
 
 export const DesignSystem: FunctionComponent<PropsWithChildren<DesignSystemProps>> = (props) => (

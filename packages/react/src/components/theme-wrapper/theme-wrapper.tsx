@@ -15,7 +15,7 @@ export interface ThemeWrapperProps {
 }
 
 /**
- * @deprecated Use {@link DesignSystem} instead
+ * @internal Use {@link DesignSystem} instead
  */
 export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps>> = ({
     children,
