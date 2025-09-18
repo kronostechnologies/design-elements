@@ -314,11 +314,11 @@ export const Combobox: FC<ComboboxProps> = ({
         );
     }
 
-    const changeInputValue: (newValue: string) => void = useCallback((newValue) => {
-        setInputValue(newValue);
+    const changeInputValue: (newValue: ComboboxOption | undefined) => void = useCallback((newValue) => {
+        setInputValue(newValue?.label || newValue?.value || '');
         setSuggestedInputValue('');
 
-        onChange?.(newValue);
+        onChange?.(newValue?.value || '');
     }, [onChange]);
 
     const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
@@ -337,7 +337,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const revertInputValue: () => void = useCallback(() => {
         revertPreviousSelectedOption();
-        changeInputValue(previousSelectedOption?.value ?? '');
+        changeInputValue(previousSelectedOption);
     }, [changeInputValue, previousSelectedOption, revertPreviousSelectedOption]);
 
     const {
@@ -360,7 +360,7 @@ export const Combobox: FC<ComboboxProps> = ({
         const newOption = findOptionByValue(value);
 
         if (newOption) {
-            setInputValue(newOption.value);
+            setInputValue(newOption.label || newOption.value);
             selectOption(newOption);
             setSuggestedInputValue('');
             setFocusedOption(newOption);
@@ -396,7 +396,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const handleComponentBlur: () => void = useCallback(() => {
         if (focusedOption && (focusedOption !== selectedOption || inputValue !== focusedOption.value)) {
-            changeInputValue(focusedOption.value);
+            changeInputValue(focusedOption);
             selectOption(focusedOption);
         } else if (!(allowCustomValue || inputValue === '')) {
             revertInputValue();
@@ -454,7 +454,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     function handleClearButtonClick(): void {
-        changeInputValue('');
+        changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
@@ -468,7 +468,7 @@ export const Combobox: FC<ComboboxProps> = ({
             }
 
             if (option !== selectedOption) {
-                changeInputValue(option.value);
+                changeInputValue(option);
                 selectOption(option);
             }
 
@@ -521,7 +521,7 @@ export const Combobox: FC<ComboboxProps> = ({
                 event.preventDefault();
                 if (focusedOption) {
                     if (focusedOption !== selectedOption || inputValue !== focusedOption.value) {
-                        changeInputValue(focusedOption.value);
+                        changeInputValue(focusedOption);
                         selectOption(focusedOption);
                     }
                     closeListbox();
@@ -533,7 +533,7 @@ export const Combobox: FC<ComboboxProps> = ({
                 if (open) {
                     closeListbox();
                 } else {
-                    changeInputValue('');
+                    changeInputValue(undefined);
                     clearSelectedOptions();
                 }
                 break;
@@ -550,7 +550,7 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         const newInputValue = event.target.value;
-        changeInputValue(newInputValue);
+        changeInputValue({ value: newInputValue });
 
         // Always clear the focused option to prevent unwanted selection on textbox blur
         setSuggestedInputValue('');

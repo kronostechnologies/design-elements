@@ -10,19 +10,19 @@ const Container = styled.div`
 `;
 
 const provinces = [
-    { value: 'Alberta' },
-    { value: 'British Columbia' },
-    { value: 'Manitoba', disabled: true },
-    { value: 'New Brunswick' },
-    { value: 'Newfoundland and Labrador' },
-    { value: 'Northwest Territories' },
-    { value: 'Nova Scotia' },
-    { value: 'Nunavut' },
-    { value: 'Ontario', disabled: true },
-    { value: 'Prince Edward Island' },
-    { value: 'Quebec' },
-    { value: 'Saskatchewan' },
-    { value: 'Yukon' },
+    { value: 'alberta', label: 'Alberta' },
+    { value: 'british_columbia', label: 'British Columbia' },
+    { value: 'manitoba', label: 'Manitoba', disabled: true },
+    { value: 'new_brunswick', label: 'New Brunswick' },
+    { value: 'newfoundland_and_labrador', label: 'Newfoundland and Labrador' },
+    { value: 'northwest_territories', label: 'Northwest Territories' },
+    { value: 'nova_scotia', label: 'Nova Scotia' },
+    { value: 'nunavut', label: 'Nunavut' },
+    { value: 'ontario', label: 'Ontario', disabled: true },
+    { value: 'prince_edward_island', label: 'Prince Edward Island' },
+    { value: 'quebec', label: 'Quebec' },
+    { value: 'saskatchewan', label: 'Saskatchewan' },
+    { value: 'yukon', label: 'Yukon' },
 ];
 
 const comboboxMeta: Meta<typeof Combobox> = {
@@ -33,6 +33,7 @@ const comboboxMeta: Meta<typeof Combobox> = {
         label: 'Select an option',
         hint: 'Hint',
         options: provinces,
+        onChange: console.info,
     },
 };
 
