@@ -236,27 +236,32 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const [open, setOpen] = useState(defaultOpen);
 
-    function findOptionByValue(searchValue?: string): ComboboxOption | undefined {
-        return options.find((option) => option.value.toLowerCase() === searchValue?.toLowerCase());
-    }
+    const findOptionByValue = useCallback(
+        (searchValue?: string): ComboboxOption | undefined => options.find(
+            (option) => option.value.toLowerCase() === searchValue?.toLowerCase(),
+        ),
+        [options],
+    );
 
-    function findOptionByLabel(searchLabel?: string): ComboboxOption | undefined {
-        return options.find(
+    const findOptionByLabel = useCallback(
+        (searchLabel?: string): ComboboxOption | undefined => options.find(
             (option) => option.label?.toLowerCase() === searchLabel?.toLowerCase(),
-        );
-    }
+        ),
+        [options],
+    );
 
-    function validateInputValue(newValue: string): string {
+    const validateInputValue = useCallback((newValue: string): string => {
         if (allowCustomValue || newValue === '') {
             return newValue;
         }
 
         return findOptionByLabel(newValue)?.label ?? findOptionByValue(newValue)?.value ?? '';
-    }
+    }, [allowCustomValue, findOptionByValue, findOptionByLabel]);
 
-    function getOptionInputValue(option: ComboboxOption | undefined): string {
-        return validateInputValue(option?.label ?? option?.value ?? '');
-    }
+    const getOptionInputValue = useCallback(
+        (option: ComboboxOption | undefined): string => validateInputValue(option?.label ?? option?.value ?? ''),
+        [validateInputValue],
+    );
 
     function getInitialInputValue(): string {
         const defaultOption = findOptionByValue(value) ?? findOptionByValue(defaultValue ?? '');
@@ -298,8 +303,8 @@ export const Combobox: FC<ComboboxProps> = ({
 
         const filtered = options.filter(
             (option) => getOptionInputValue(
-                option
-            ).toLowerCase().startsWith(inputValue.toLowerCase())
+                option,
+            ).toLowerCase().startsWith(inputValue.toLowerCase()),
         );
 
         if (filtered.length === 1 && filtered[0].value === inputValue) {
@@ -315,7 +320,16 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         return filtered;
-    }, [allowCustomValue, disableListFiltering, getEmptyListMessage, inputValue, isLoading, options, t]);
+    }, [
+        allowCustomValue,
+        getOptionInputValue,
+        disableListFiltering,
+        getEmptyListMessage,
+        inputValue,
+        isLoading,
+        options,
+        t,
+    ]);
 
     const [suggestedInputValue, setSuggestedInputValue] = useState('');
 
@@ -334,7 +348,7 @@ export const Combobox: FC<ComboboxProps> = ({
         setSuggestedInputValue('');
 
         onChange?.(newValue?.value || '');
-    }, [onChange]);
+    }, [onChange, getOptionInputValue]);
 
     const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
         value ?? defaultValue,
@@ -410,7 +424,12 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (focusedOption && (focusedOption !== selectedOption || inputValue !== (getOptionInputValue(focusedOption)))) {
+        if (
+            focusedOption && (
+                focusedOption !== selectedOption
+                || inputValue !== (getOptionInputValue(focusedOption))
+            )
+        ) {
             changeInputValue(focusedOption);
             selectOption(focusedOption);
         } else if (!(allowCustomValue || inputValue === '')) {
@@ -430,6 +449,7 @@ export const Combobox: FC<ComboboxProps> = ({
         revertInputValue,
         selectOption,
         selectedOption,
+        getOptionInputValue,
     ]);
 
     const componentTargets = [textboxRef, listboxRef, arrowButtonRef, clearButtonRef];

@@ -77,7 +77,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox defaultValue="bar" options={options} />
+            <Combobox defaultValue="bar" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('Bar Label');
@@ -90,7 +90,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox value="foo" options={options} />
+            <Combobox value="foo" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('Foo Label');
@@ -103,7 +103,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox defaultValue="bar" options={options} />
+            <Combobox defaultValue="bar" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('bar');
@@ -116,7 +116,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox value="foo" options={options} />
+            <Combobox value="foo" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('foo');
@@ -130,7 +130,7 @@ describe('Combobox', () => {
         const onChange = jest.fn();
 
         const { getByTestId, getByText } = renderWithProviders(
-            <Combobox options={options} onChange={onChange} />
+            <Combobox options={options} onChange={onChange} />,
         );
         getByTestId('textbox').focus();
         await act(() => getByTestId('arrow').click());
@@ -147,7 +147,7 @@ describe('Combobox', () => {
         const onChange = jest.fn();
 
         const { getByTestId, getByText } = renderWithProviders(
-            <Combobox options={options} onChange={onChange} />
+            <Combobox options={options} onChange={onChange} />,
         );
         getByTestId('textbox').focus();
         await act(() => getByTestId('arrow').click());
@@ -163,7 +163,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox value="foo" options={options} />
+            <Combobox value="foo" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('Foo Label');
@@ -176,7 +176,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox value="foo" options={options} />
+            <Combobox value="foo" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('foo');
@@ -189,7 +189,7 @@ describe('Combobox', () => {
         ];
 
         const { getByTestId } = renderWithProviders(
-            <Combobox value="baz" options={options} />
+            <Combobox value="baz" options={options} />,
         );
 
         expect(getByTestId('textbox')).toHaveValue('');
@@ -203,7 +203,7 @@ describe('Combobox', () => {
 
         const onChange = jest.fn();
         const { getByTestId } = renderWithProviders(
-            <Combobox value="foo" options={options} onChange={onChange} />
+            <Combobox value="foo" options={options} onChange={onChange} />,
         );
         getByTestId('clear').click();
 
@@ -218,7 +218,7 @@ describe('Combobox', () => {
         const onChange = jest.fn();
 
         const { getByTestId, getByText } = renderWithProviders(
-            <Combobox options={options} onChange={onChange} />
+            <Combobox options={options} onChange={onChange} />,
         );
         getByTestId('textbox').focus();
         await act(() => getByTestId('arrow').click());
