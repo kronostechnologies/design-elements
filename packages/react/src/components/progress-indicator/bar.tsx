@@ -1,11 +1,11 @@
-import { type FC, ReactText } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 
 interface BarProps {
     className?: string;
     color: string;
     percent: number;
-    endLabel: ReactText;
+    endLabel: string | number;
 }
 
 const Container = styled.div`

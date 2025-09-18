@@ -31,5 +31,5 @@ export function getMaskFromSplitIndex(
 }
 
 export function trimCharAfterMaxLength(value: string, phoneNumberMaxLength: number): string {
-    return value.substr(0, phoneNumberMaxLength);
+    return value.substring(0, phoneNumberMaxLength);
 }
