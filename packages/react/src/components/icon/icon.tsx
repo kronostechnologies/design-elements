@@ -47,7 +47,7 @@ import UploadCloud from 'feather-icons/dist/icons/upload-cloud.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import AlertFilled from '../../icons/alert-filled.svg';
 import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
 import ArrowUpCircle from '../../icons/arrow-up-circle.svg';
@@ -163,7 +163,7 @@ export interface IconProps {
     role?: string;
 }
 
-export const Icon: VoidFunctionComponent<IconProps> = ({
+export const Icon: FC<IconProps> = ({
     className,
     name,
     size = '24',

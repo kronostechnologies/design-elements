@@ -1,9 +1,9 @@
 import { mount, ReactWrapper } from 'enzyme';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from '~/components/../i18n/use-translation';
 import { IntlProvider } from '~/components/internationalization-provider/internationalization-provider';
 
-const TestButton: VoidFunctionComponent = () => {
+const TestButton: FC = () => {
     const { i18n } = useTranslation();
     return <button type="button" value={i18n.language} />;
 };

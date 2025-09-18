@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { Circle } from './circle';
 
@@ -63,7 +63,7 @@ export interface ProgressCircleProps {
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-export const ProgressCircle: VoidFunctionComponent<ProgressCircleProps> = ({
+export const ProgressCircle: FC<ProgressCircleProps> = ({
     className, color, descriptionLabel, percent, resultLabel,
 }) => (
     <Container className={className}>

@@ -9,7 +9,6 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
@@ -317,7 +316,7 @@ const ListboxTag: FC<ListBoxTagProps> = ({
     );
 };
 
-export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
+export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
     defaultOpen = false,

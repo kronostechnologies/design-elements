@@ -1,4 +1,4 @@
-import { useRef, VoidFunctionComponent } from 'react';
+import { type FC, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar';
@@ -46,7 +46,7 @@ export interface UserProfileProps {
     onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
-export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
+export const UserProfile: FC<UserProfileProps> = ({
     ariaLabel,
     buttonAriaLabel,
     className,

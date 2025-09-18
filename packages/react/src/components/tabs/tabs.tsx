@@ -1,13 +1,4 @@
-import {
-    createRef,
-    KeyboardEvent,
-    ReactNode,
-    RefObject,
-    useCallback,
-    useMemo,
-    useState,
-    VoidFunctionComponent,
-} from 'react';
+import { createRef, type FC, KeyboardEvent, ReactNode, RefObject, useCallback, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useScrollable } from '../../hooks/use-scrollable';
 import { useTranslation } from '../../i18n/use-translation';
@@ -159,7 +150,7 @@ export interface TabsProps {
     onTabChange?(tabId: string): void;
 }
 
-export const Tabs: VoidFunctionComponent<TabsProps> = ({
+export const Tabs: FC<TabsProps> = ({
     className,
     size = 'medium',
     forceRenderTabPanels,

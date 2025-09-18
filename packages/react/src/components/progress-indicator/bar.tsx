@@ -1,4 +1,4 @@
-import { ReactText, VoidFunctionComponent } from 'react';
+import { type FC, ReactText } from 'react';
 import styled from 'styled-components';
 
 interface BarProps {
@@ -33,7 +33,7 @@ const StyledBar = styled.div<Omit<BarProps, 'endLabel'>>`
     width: ${({ percent }) => Math.min(Math.max(percent, 0), 100)}%;
 `;
 
-export const Bar: VoidFunctionComponent<BarProps> = ({
+export const Bar: FC<BarProps> = ({
     className, color, percent, endLabel,
 }) => (
     <Container className={className}>

@@ -1,4 +1,4 @@
-import React, { VoidFunctionComponent } from 'react';
+import React, { type FC } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
@@ -70,7 +70,7 @@ interface StepperButtonsProps {
     onStop?(): void;
 }
 
-export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
+export const StepperButtons: FC<StepperButtonsProps> = ({
     disabled,
     onIncrement,
     onDecrement,

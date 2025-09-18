@@ -1,13 +1,4 @@
-import {
-    ChangeEvent,
-    Fragment,
-    ReactElement,
-    TransitionEvent,
-    useCallback,
-    useRef,
-    useState,
-    VoidFunctionComponent,
-} from 'react';
+import { ChangeEvent, type FC, Fragment, ReactElement, TransitionEvent, useCallback, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider';
@@ -113,7 +104,7 @@ export interface RadioButtonGroupProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
+export const RadioButtonGroup: FC<RadioButtonGroupProps> = ({
     ariaLabel,
     ariaLabelledBy,
     buttons,

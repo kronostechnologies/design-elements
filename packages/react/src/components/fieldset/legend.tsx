@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from 'react';
+import { type FC, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider';
 

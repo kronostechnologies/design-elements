@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { Bar } from './bar';
 
@@ -28,7 +28,7 @@ export interface ProgressIndicatorProps {
     descriptionLabel?: string;
 }
 
-export const ProgressIndicator: VoidFunctionComponent<ProgressIndicatorProps> = ({
+export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
     className, color, descriptionLabel, resultLabel, percent,
 }) => (
     <Container className={className}>

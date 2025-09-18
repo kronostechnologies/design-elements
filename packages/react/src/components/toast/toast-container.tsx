@@ -1,4 +1,4 @@
-import { useMemo, VoidFunctionComponent } from 'react';
+import { type FC, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, keyframes, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
@@ -165,7 +165,7 @@ interface ToastContainerProps {
     position: ToastPosition;
 }
 
-export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
+export const ToastContainer: FC<ToastContainerProps> = ({
     id,
     className,
     type = 'neutral',

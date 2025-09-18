@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode, useRef, VoidFunctionComponent } from 'react';
+import { type FC, HTMLProps, ReactNode, useRef } from 'react';
 import styled from 'styled-components';
 import { TextInput, textInputClasses, TextInputProps } from '../text-input';
 import { type ToggletipProps } from '../toggletip';
@@ -46,7 +46,7 @@ export interface NumericInputProps extends NativeInputProps {
     value?: number | string;
 }
 
-export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
+export const NumericInput: FC<NumericInputProps> = ({
     adornment,
     adornmentPosition = 'start',
     className,

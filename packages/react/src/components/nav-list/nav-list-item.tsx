@@ -1,12 +1,4 @@
-import {
-    KeyboardEvent,
-    KeyboardEventHandler,
-    memo,
-    MouseEventHandler,
-    RefObject,
-    useCallback,
-    VoidFunctionComponent,
-} from 'react';
+import { FC, KeyboardEvent, KeyboardEventHandler, memo, MouseEventHandler, RefObject, useCallback } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -98,7 +90,7 @@ export interface NavListItemProps {
     onSelect?(option: NavListOption): void;
 }
 
-const LinkContent: VoidFunctionComponent<NavListItemProps> = memo<NavListItemProps>(
+const LinkContent: FC<NavListItemProps> = memo<NavListItemProps>(
     ({ option }) => (
         <>
             {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
@@ -116,7 +108,7 @@ interface WithTestId {
     testId: string;
 }
 
-const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
+const ScreenReaderMessage: FC<WithTestId> = ({ testId }) => {
     const { t } = useTranslation('common');
 
     return (
@@ -127,7 +119,7 @@ const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
     );
 };
 
-export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
+export const NavListItem: FC<NavListItemProps> = ({
     option,
     onKeyDown,
     onSelect,

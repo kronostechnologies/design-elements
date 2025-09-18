@@ -1,12 +1,4 @@
-import {
-    ChangeEvent,
-    FocusEvent,
-    FormEventHandler,
-    useCallback,
-    useEffect,
-    useState,
-    VoidFunctionComponent,
-} from 'react';
+import { ChangeEvent, type FC, FocusEvent, FormEventHandler, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -76,7 +68,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
     return 0;
 }
 
-export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
+export const TextArea: FC<TextAreaProps> = ({
     id: providedId,
     className,
     noMargin,

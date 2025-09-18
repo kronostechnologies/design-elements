@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { ResolvedTheme } from '../../themes';
 
@@ -33,7 +33,7 @@ export interface StatusProps {
     type: StatusType;
 }
 
-export const Status: VoidFunctionComponent<StatusProps> = ({ className, label, type }) => (
+export const Status: FC<StatusProps> = ({ className, label, type }) => (
     <Wrapper className={className} type={type}>
         <Circle type={type} />
         <span>{label}</span>

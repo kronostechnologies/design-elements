@@ -1,4 +1,4 @@
-import { MouseEvent, RefObject, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, RefObject } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider';
@@ -58,7 +58,7 @@ const handleErrorClick = (target: RefObject<HTMLElement> | string, event: MouseE
     targetElement?.focus();
 };
 
-export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
+export const ErrorSummary: FC<ErrorSummaryProps> = ({
     className,
     headingTag,
     messages,

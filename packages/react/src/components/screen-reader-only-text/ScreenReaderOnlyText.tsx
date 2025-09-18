@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
@@ -17,7 +17,7 @@ export interface ScreenReaderOnlyTextProps {
     label: string;
 }
 
-export const ScreenReaderOnlyText: VoidFunctionComponent<ScreenReaderOnlyTextProps> = ({ label, ...otherProps }) => {
+export const ScreenReaderOnlyText: FC<ScreenReaderOnlyTextProps> = ({ label, ...otherProps }) => {
     const dataAttributes = useDataAttributes(otherProps);
 
     return (

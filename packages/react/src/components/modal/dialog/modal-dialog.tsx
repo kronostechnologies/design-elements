@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, Ref, useRef, VoidFunctionComponent } from 'react';
+import { type FC, Fragment, ReactElement, Ref, useRef } from 'react';
 import { useId } from '../../../hooks/use-id';
 import { useTranslation } from '../../../i18n/use-translation';
 import { Button } from '../../buttons';
@@ -30,7 +30,7 @@ export interface ModalDialogProps extends BaseModalProps {
     cancelButton?: { label?: string, onCancel?(): void };
 }
 
-export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
+export const ModalDialog: FC<ModalDialogProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp,

@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
@@ -49,7 +49,7 @@ export interface CardLinkProps {
     replace?: boolean;
 }
 
-export const CardLink: VoidFunctionComponent<CardLinkProps> = ({
+export const CardLink: FC<CardLinkProps> = ({
     className,
     href,
     label,

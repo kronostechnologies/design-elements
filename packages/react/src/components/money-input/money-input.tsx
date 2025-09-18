@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -71,7 +71,7 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
+export const MoneyInput: FC<MoneyInputProps> = ({
     id: providedId,
     className,
     readOnly,

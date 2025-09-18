@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren, VoidFunctionComponent } from 'react';
+import { type FC, type FunctionComponent, PropsWithChildren } from 'react';
 import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
@@ -75,7 +75,7 @@ const Portal: FunctionComponent<PropsWithChildren<PortalProps>> = ({ children, s
     return ReactDOM.createPortal(children, rootDocument);
 };
 
-export const ToastsContainer: VoidFunctionComponent<ToastProps> = ({
+export const ToastsContainer: FC<ToastProps> = ({
     position,
 }) => {
     const { toasts } = useToasts();

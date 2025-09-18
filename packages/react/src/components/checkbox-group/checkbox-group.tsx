@@ -1,4 +1,4 @@
-import { ChangeEvent, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Checkbox } from '../checkbox';
@@ -26,7 +26,7 @@ export interface CheckboxGroupProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const CheckboxGroup: VoidFunctionComponent<CheckboxGroupProps> = ({
+export const CheckboxGroup: FC<CheckboxGroupProps> = ({
     label,
     checkedValues,
     checkboxGroup,

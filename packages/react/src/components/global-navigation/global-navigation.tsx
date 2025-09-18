@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { type FC, ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
@@ -166,7 +166,7 @@ export interface GlobalNavigationProps {
     footerItems: GlobalNavigationItem[];
 }
 
-export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
+export const GlobalNavigation: FC<GlobalNavigationProps> = ({
     className,
     mainItems,
     footerItems,
