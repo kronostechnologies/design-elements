@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
@@ -24,7 +24,7 @@ export interface InvalidFieldProps {
     noIcon?: boolean;
 }
 
-export const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
+export const InvalidField: FC<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
     const { isMobile } = useDeviceContext();
 
     return (

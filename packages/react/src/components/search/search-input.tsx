@@ -1,6 +1,6 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
@@ -139,7 +139,7 @@ export interface SearchInputProps extends CommonSearchProps {
     hasIcon?: boolean;
 }
 
-export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
+export const SearchInput: FC<SearchInputProps> = ({
     defaultValue,
     id: providedId,
     onChange,

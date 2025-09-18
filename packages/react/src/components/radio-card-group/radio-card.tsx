@@ -1,5 +1,6 @@
 import {
     ChangeEvent,
+    FC,
     isValidElement,
     ReactElement,
     ReactNode,
@@ -8,7 +9,6 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -37,7 +37,7 @@ const StyledRadioInput = styled(RadioInput)`
     margin-top: var(--spacing-half);
 `;
 
-export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
+export const RadioCard: FC<RadioCardProps> = ({
     checked,
     children,
     className,

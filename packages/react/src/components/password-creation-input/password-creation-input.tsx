@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -47,7 +47,7 @@ function isPasswordValid(conditions: ValidationCondition[], value: string): bool
     return conditions.every((condition) => condition.isValid(value));
 }
 
-export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputProps> = ({
+export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
     id: providedId,
     name,
     onChange,

@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { clamp } from '../../utils/math';
@@ -156,7 +156,7 @@ interface StepProps {
     linear: boolean
 }
 
-const Step: VoidFunctionComponent<StepProps> = ({
+const Step: FC<StepProps> = ({
     step, stepNumber, value, linear,
 }): ReactElement => {
     const { t } = useTranslation('progress-tracker');
@@ -221,7 +221,7 @@ export interface ProgressTrackerProps {
     value: number;
 }
 
-export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
+export const ProgressTracker: FC<ProgressTrackerProps> = ({
     ariaLabel,
     linear = true,
     className,

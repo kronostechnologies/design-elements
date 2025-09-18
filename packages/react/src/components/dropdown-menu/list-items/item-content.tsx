@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { type DeviceContextProps } from '../../device-context-provider/device-context-provider';
 import { Icon, type IconName } from '../../icon';
@@ -71,7 +71,7 @@ const LabelContainer = styled.div<{ $smallLabel: boolean, $device: DeviceContext
     padding: 0 0 0 var(--spacing-half);
 `;
 
-export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
+export const ItemContent: FC<ItemContentProps> = ({
     device,
     description,
     iconName,

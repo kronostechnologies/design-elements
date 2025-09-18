@@ -1,4 +1,4 @@
-import { useEffect, useState, VoidFunctionComponent } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
@@ -57,7 +57,7 @@ interface NavButtonProps {
     onClick(): void;
 }
 
-const NavButton: VoidFunctionComponent<NavButtonProps> = ({
+const NavButton: FC<NavButtonProps> = ({
     enabled,
     iconName,
     label,
@@ -132,7 +132,7 @@ export interface PaginationProps {
     activePage?: number;
 }
 
-export const Pagination: VoidFunctionComponent<PaginationProps> = ({
+export const Pagination: FC<PaginationProps> = ({
     className,
     resultsPerPage,
     numberOfResults,

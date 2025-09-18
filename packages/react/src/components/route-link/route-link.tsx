@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, MouseEvent, VoidFunctionComponent } from 'react';
+import { ComponentPropsWithoutRef, type FC, MouseEvent } from 'react';
 import { Link as ReactRouterLink, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider';
@@ -44,7 +44,7 @@ export interface RouteLinkProps extends RouterLinkProps {
 /**
  * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
  */
-export const RouteLink: VoidFunctionComponent<RouteLinkProps> = ({
+export const RouteLink: FC<RouteLinkProps> = ({
     className,
     disabled,
     end,

@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { PasswordStrengthMeter } from './password-strength-meter';
@@ -31,7 +31,7 @@ function getPasswordStrengthLabel(strength: PasswordStrengthEnum, t: TFunction):
     }
 }
 
-export const PasswordStrengthContainer: VoidFunctionComponent<PasswordStrengthContainerProps> = ({
+export const PasswordStrengthContainer: FC<PasswordStrengthContainerProps> = ({
     strength,
     id,
 }) => {

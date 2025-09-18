@@ -1,4 +1,4 @@
-import { MouseEvent, useCallback, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, useCallback } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider';
@@ -51,7 +51,7 @@ export interface ExternalLinkProps {
 /**
  * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
  */
-export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
+export const ExternalLink: FC<ExternalLinkProps> = ({
     className,
     disabled,
     href = '',

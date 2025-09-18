@@ -1,4 +1,4 @@
-import { MouseEvent, useState, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider';
@@ -97,7 +97,7 @@ export interface SegmentedControlProps {
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
+export const SegmentedControl: FC<SegmentedControlProps> = ({
     buttonGroup,
     className,
     groupName,

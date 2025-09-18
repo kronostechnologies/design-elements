@@ -1,4 +1,4 @@
-import { ReactElement, useMemo, VoidFunctionComponent } from 'react';
+import { type FC, ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { ResolvedTheme } from '../../themes';
@@ -89,7 +89,7 @@ export interface ToggleSwitchProps {
     onToggle(value: boolean): void;
 }
 
-export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
+export const ToggleSwitch: FC<ToggleSwitchProps> = ({
     label,
     labelPosition = 'right',
     disabled,

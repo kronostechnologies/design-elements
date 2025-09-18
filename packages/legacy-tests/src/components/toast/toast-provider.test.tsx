@@ -1,11 +1,11 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { useToasts } from '~//hooks/use-toasts';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithProviders } from '../../test-utils/renderer';
 
 const MESSAGE = 'A message';
 
-const TestConsumer: VoidFunctionComponent = () => {
+const TestConsumer: FC = () => {
     const { addToast, removeToast, toasts } = useToasts();
 
     return (

@@ -1,5 +1,5 @@
 import { Heading } from '@equisoft/design-elements-react';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 
 export default {
     title: 'Foundations/Typography/Heading',
@@ -7,7 +7,7 @@ export default {
     tags: ['autodocs'],
 };
 
-export const Normal: VoidFunctionComponent = () => (
+export const Normal: FC = () => (
     <>
         <Heading type="xlarge">Heading (Xlarge)</Heading>
         <Heading type="large">Heading (Large)</Heading>
@@ -21,10 +21,10 @@ export const Normal: VoidFunctionComponent = () => (
     </>
 );
 
-export const WithoutMargins: VoidFunctionComponent = () => (
+export const WithoutMargins: FC = () => (
     <Heading type="medium" noMargin>Heading (Medium)</Heading>
 );
 
-export const WithDifferentTag: VoidFunctionComponent = () => (
+export const WithDifferentTag: FC = () => (
     <Heading type="medium" tag="h4">Heading (Medium)</Heading>
 );

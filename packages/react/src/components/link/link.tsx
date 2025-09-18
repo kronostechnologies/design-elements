@@ -1,4 +1,4 @@
-import { FC, MouseEvent, ReactElement } from 'react';
+import { type FC, MouseEvent, ReactElement } from 'react';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider';

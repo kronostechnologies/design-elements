@@ -1,5 +1,6 @@
 import {
     ChangeEvent,
+    FC,
     KeyboardEvent,
     MouseEvent,
     useCallback,
@@ -7,7 +8,6 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -70,7 +70,7 @@ function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMa
     return formatFromPattern(pattern, PLACEHOLDER_CHAR, trimmedInputValue);
 }
 
-export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
+export const PhoneInput: FC<PhoneInputProps> = ({
     id: providedId,
     pattern,
     defaultValue,

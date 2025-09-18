@@ -1,4 +1,5 @@
 import {
+    FC,
     KeyboardEvent,
     MouseEvent as ReactMouseEvent,
     ReactElement,
@@ -8,7 +9,6 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -74,7 +74,7 @@ export interface DropdownMenuButtonProps {
     render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-export const DropdownMenuButton: VoidFunctionComponent<DropdownMenuButtonProps> = ({
+export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     ariaLabel,
     tag,
     buttonAriaLabel,

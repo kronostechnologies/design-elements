@@ -1,5 +1,5 @@
 import { getMonth, getYear } from 'date-fns';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons';
@@ -55,7 +55,7 @@ interface CalendarHeaderProps {
     increaseMonth(): void;
 }
 
-export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
+export const CalendarHeader: FC<CalendarHeaderProps> = ({
     changeMonth,
     changeYear,
     date,

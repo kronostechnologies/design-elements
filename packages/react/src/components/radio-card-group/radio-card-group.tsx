@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
+import React, { type FC, ReactElement, useMemo } from 'react';
 import { useDeviceContext } from '../device-context-provider';
 import { isRadioCard, RadioCardProps } from './radio-card';
 import { Fieldset, Legend } from './styled-components';
@@ -10,7 +10,7 @@ export interface RadioCardGroupProps {
     orientation?: 'horizontal' | 'vertical';
 }
 
-export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
+export const RadioCardGroup: FC<RadioCardGroupProps> = ({
     children,
     className,
     orientation = 'vertical',

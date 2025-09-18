@@ -1,5 +1,6 @@
 import {
     ChangeEvent,
+    type FC,
     FocusEvent,
     KeyboardEvent,
     useCallback,
@@ -7,7 +8,6 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
@@ -197,7 +197,7 @@ export interface ComboboxProps {
 
 const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
 
-export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
+export const Combobox: FC<ComboboxProps> = ({
     allowCustomValue = false,
     ariaLabel,
     className,

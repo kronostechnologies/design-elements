@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled, { StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon';
@@ -55,7 +55,7 @@ interface PasswordConditionProps {
     isValid: boolean;
 }
 
-export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
+export const PasswordRule: FC<PasswordConditionProps> = ({
     label,
     isValid,
     isEmpty,

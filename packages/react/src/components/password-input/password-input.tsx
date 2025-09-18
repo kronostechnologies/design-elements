@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent, useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC, FocusEvent, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -40,7 +40,7 @@ export const ShowPasswordButton = styled.div`
     right: 0.25rem;
 `;
 
-export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
+export const PasswordInput: FC<PasswordInputProps> = ({
     id: providedId,
     name,
     label,

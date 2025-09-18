@@ -1,4 +1,4 @@
-import { ReactElement, VoidFunctionComponent } from 'react';
+import { type FC, ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../../hooks/use-data-attributes';
 import { Heading, type HeadingProps } from '../../heading';
@@ -31,7 +31,7 @@ const StyledGroup = styled.ul`
     }
 `;
 
-export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
+export const GroupItem: FC<GroupItemProps> = ({
     id,
     children,
     ordered,

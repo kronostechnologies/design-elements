@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled, { useTheme } from 'styled-components';
 
 const Svg = styled.svg`
@@ -19,7 +19,7 @@ interface CircleProps {
     stroke: number;
 }
 
-export const Circle: VoidFunctionComponent<CircleProps> = ({
+export const Circle: FC<CircleProps> = ({
     color, percent, radius, stroke,
 }) => {
     const normalizedRadius = radius - (stroke / 2);

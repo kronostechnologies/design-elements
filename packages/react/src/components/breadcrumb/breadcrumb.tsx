@@ -1,4 +1,4 @@
-import { KeyboardEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { type FC, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
@@ -82,7 +82,7 @@ function truncateLabel(label: string): string {
     return label;
 }
 
-export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, history }) => {
+export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
     const [isOpen, setOpen] = useState(false);
     const [focusedValue, setFocusedValue] = useState('');
 

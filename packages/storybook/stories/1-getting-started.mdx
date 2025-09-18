@@ -15,11 +15,11 @@ import * as GettingStartedStories from './1-getting-started.stories';
 Simply add the provider in your App component. It should be something like this:
 ```typescript jsx
 import { DesignSystem } from '@equisoft/design-elements-react';
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { Router } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 
-export const App: VoidFunctionComponent = () => (
+export const App: FC = () => (
     <DesignSystem>
         <Router>
             <Switch>

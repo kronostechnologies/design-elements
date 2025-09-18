@@ -1,9 +1,9 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { CommonSearchProps, SearchInput } from './search-input';
 
 export type SearchContextualProps = CommonSearchProps
 
-export const SearchContextual: VoidFunctionComponent<SearchContextualProps> = (props) => (
+export const SearchContextual: FC<SearchContextualProps> = (props) => (
     <SearchInput
         {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         hasIcon

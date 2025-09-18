@@ -1,15 +1,15 @@
 import React, {
-    ChangeEvent,
-    DetailedHTMLProps,
-    FocusEvent,
-    FormEventHandler,
-    InputHTMLAttributes,
-    RefObject,
+    type ChangeEvent,
+    type DetailedHTMLProps,
+    type FC,
+    type FocusEvent,
+    type FormEventHandler,
+    type InputHTMLAttributes,
+    type RefObject,
     useCallback,
     useEffect,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
@@ -79,7 +79,7 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
     ref.current?.dispatchEvent(new Event('change', { bubbles: true }));
 }
 
-export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
+export const StepperInput: FC<StepperInputProps> = ({
     defaultValue,
     disabled,
     hint,

@@ -1,4 +1,4 @@
-import { useMemo, VoidFunctionComponent } from 'react';
+import { type FC, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
@@ -74,7 +74,7 @@ export interface AvatarProps {
     size?: AvatarSize;
 }
 
-export const Avatar: VoidFunctionComponent<AvatarProps> = ({
+export const Avatar: FC<AvatarProps> = ({
     bgColor,
     className,
     username,

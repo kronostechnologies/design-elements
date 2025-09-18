@@ -1,11 +1,11 @@
 import {
     ComponentProps,
     ComponentType,
+    type FC,
     FunctionComponent,
     PropsWithChildren,
     ReactNode,
     useMemo,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
@@ -126,7 +126,7 @@ type ActionButtonProps = {
     onClick?(): void;
 }
 
-const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
+const ActionButton: FC<ActionButtonProps> = ({
     label,
     isAlertType,
     onClick,
@@ -202,7 +202,7 @@ function isAlert(bannerType: SectionalBannerType): bannerType is 'alert' {
     return bannerType === 'alert';
 }
 
-export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
+export const SectionalBanner: FC<SectionalBannerProps> = ({
     buttonLabel,
     className,
     children,
