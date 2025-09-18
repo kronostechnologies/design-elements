@@ -240,19 +240,32 @@ export const Combobox: FC<ComboboxProps> = ({
         return options.find((option) => option.value.toLowerCase() === searchValue?.toLowerCase());
     }
 
+    function findOptionByLabel(searchLabel?: string): ComboboxOption | undefined {
+        return options.find(
+            (option) => option.label?.toLowerCase() === searchLabel?.toLowerCase(),
+        );
+    }
+
     function validateInputValue(newValue: string): string {
         if (allowCustomValue || newValue === '') {
             return newValue;
         }
 
-        return findOptionByValue(newValue)?.value ?? '';
+        return findOptionByLabel(newValue)?.label ?? findOptionByValue(newValue)?.value ?? '';
+    }
+
+    function getOptionInputValue(option: ComboboxOption | undefined): string {
+        return validateInputValue(option?.label ?? option?.value ?? '');
     }
 
     function getInitialInputValue(): string {
-        return validateInputValue(value ?? defaultValue ?? '');
+        const defaultOption = findOptionByValue(value) ?? findOptionByValue(defaultValue ?? '');
+        const defaultOptionValue = getOptionInputValue(defaultOption);
+        return validateInputValue(defaultOptionValue);
     }
 
-    const [inputValue, setInputValue] = useState(getInitialInputValue);
+    const initialInputValue = getInitialInputValue();
+    const [inputValue, setInputValue] = useState(initialInputValue);
 
     const getEmptyListMessage: (query: string) => string = useCallback((query) => {
         if (emptyListMessage) {
@@ -284,7 +297,9 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         const filtered = options.filter(
-            (option) => option.value.toLowerCase().startsWith(inputValue.toLowerCase()),
+            (option) => getOptionInputValue(
+                option
+            ).toLowerCase().startsWith(inputValue.toLowerCase())
         );
 
         if (filtered.length === 1 && filtered[0].value === inputValue) {
@@ -306,7 +321,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     function getSuggestedOption(searchValue: string): ComboboxOption | undefined {
         return options.find(
-            (option) => stripDiacritics(option.value)
+            (option) => stripDiacritics(getOptionInputValue(option))
                 .toLowerCase()
                 .startsWith(
                     stripDiacritics(searchValue).toLowerCase(),
@@ -315,7 +330,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const changeInputValue: (newValue: ComboboxOption | undefined) => void = useCallback((newValue) => {
-        setInputValue(newValue?.label || newValue?.value || '');
+        setInputValue(getOptionInputValue(newValue));
         setSuggestedInputValue('');
 
         onChange?.(newValue?.value || '');
@@ -360,7 +375,7 @@ export const Combobox: FC<ComboboxProps> = ({
         const newOption = findOptionByValue(value);
 
         if (newOption) {
-            setInputValue(newOption.label || newOption.value);
+            setInputValue(getOptionInputValue(newOption));
             selectOption(newOption);
             setSuggestedInputValue('');
             setFocusedOption(newOption);
@@ -395,7 +410,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (focusedOption && (focusedOption !== selectedOption || inputValue !== focusedOption.value)) {
+        if (focusedOption && (focusedOption !== selectedOption || inputValue !== (getOptionInputValue(focusedOption)))) {
             changeInputValue(focusedOption);
             selectOption(focusedOption);
         } else if (!(allowCustomValue || inputValue === '')) {
@@ -498,7 +513,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusNextOption() : focusFirstOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getOptionInputValue(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
@@ -512,7 +527,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusPreviousOption() : focusLastOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getOptionInputValue(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
@@ -520,7 +535,7 @@ export const Combobox: FC<ComboboxProps> = ({
             case 'Enter':
                 event.preventDefault();
                 if (focusedOption) {
-                    if (focusedOption !== selectedOption || inputValue !== focusedOption.value) {
+                    if (focusedOption !== selectedOption || inputValue !== (getOptionInputValue(focusedOption))) {
                         changeInputValue(focusedOption);
                         selectOption(focusedOption);
                     }
@@ -558,7 +573,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
         if (inlineAutoComplete && !hideInlineAutoComplete.current) {
             const newSuggestedOption = getSuggestedOption(newInputValue);
-            setSuggestedInputValue(newSuggestedOption?.value ?? '');
+            setSuggestedInputValue(getOptionInputValue(newSuggestedOption));
 
             if (newSuggestedOption) {
                 suggestionSource.current = 'textbox';
