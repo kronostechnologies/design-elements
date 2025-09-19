@@ -351,7 +351,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         setSuggestedInputValue('');
 
         onChange?.(newValue?.value || '');
-    }, [onChange, getOptionInputValue]);
+    }, [onChange]);
 
     const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
         value ?? defaultValue,
