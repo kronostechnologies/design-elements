@@ -236,23 +236,44 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const [open, setOpen] = useState(defaultOpen);
 
-    function findOptionByValue(searchValue?: string): ComboboxOption | undefined {
-        return options.find((option) => option.value.toLowerCase() === searchValue?.toLowerCase());
-    }
+    const findOptionByValue = useCallback(
+        (searchValue?: string): ComboboxOption | undefined => options.find(
+            (option) => option.value.toLowerCase() === searchValue?.toLowerCase(),
+        ),
+        [options],
+    );
 
-    function validateInputValue(newValue: string): string {
+    const findOptionByLabel = useCallback(
+        (searchLabel?: string): ComboboxOption | undefined => options.find(
+            (option) => option.label?.toLowerCase() === searchLabel?.toLowerCase(),
+        ),
+        [options],
+    );
+
+    const validateInputValue = useCallback((newValue: string): string => {
         if (allowCustomValue || newValue === '') {
             return newValue;
         }
 
-        return findOptionByValue(newValue)?.value ?? '';
-    }
+        return findOptionByLabel(newValue)?.label ?? findOptionByValue(newValue)?.value ?? '';
+    }, [allowCustomValue, findOptionByValue, findOptionByLabel]);
+
+    const getOptionInputValue = useCallback(
+        (option: ComboboxOption | undefined): string => validateInputValue(option?.label ?? option?.value ?? ''),
+        [validateInputValue],
+    );
 
     function getInitialInputValue(): string {
-        return validateInputValue(value ?? defaultValue ?? '');
+        if (allowCustomValue && defaultValue && !findOptionByValue(defaultValue)) {
+            return defaultValue;
+        }
+        const defaultOption = findOptionByValue(value) ?? findOptionByValue(defaultValue ?? '');
+        const defaultOptionValue = getOptionInputValue(defaultOption);
+        return validateInputValue(defaultOptionValue);
     }
 
-    const [inputValue, setInputValue] = useState(getInitialInputValue);
+    const initialInputValue = getInitialInputValue();
+    const [inputValue, setInputValue] = useState(initialInputValue);
 
     const getEmptyListMessage: (query: string) => string = useCallback((query) => {
         if (emptyListMessage) {
@@ -284,7 +305,9 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         const filtered = options.filter(
-            (option) => option.value.toLowerCase().startsWith(inputValue.toLowerCase()),
+            (option) => getOptionInputValue(
+                option,
+            ).toLowerCase().startsWith(inputValue.toLowerCase()),
         );
 
         if (filtered.length === 1 && filtered[0].value === inputValue) {
@@ -300,13 +323,22 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         return filtered;
-    }, [allowCustomValue, disableListFiltering, getEmptyListMessage, inputValue, isLoading, options, t]);
+    }, [
+        allowCustomValue,
+        getOptionInputValue,
+        disableListFiltering,
+        getEmptyListMessage,
+        inputValue,
+        isLoading,
+        options,
+        t,
+    ]);
 
     const [suggestedInputValue, setSuggestedInputValue] = useState('');
 
     function getSuggestedOption(searchValue: string): ComboboxOption | undefined {
         return options.find(
-            (option) => stripDiacritics(option.value)
+            (option) => stripDiacritics(getOptionInputValue(option))
                 .toLowerCase()
                 .startsWith(
                     stripDiacritics(searchValue).toLowerCase(),
@@ -314,11 +346,11 @@ export const Combobox: FC<ComboboxProps> = ({
         );
     }
 
-    const changeInputValue: (newValue: string) => void = useCallback((newValue) => {
-        setInputValue(newValue);
+    const changeInputValue: (newValue: ComboboxOption | undefined) => void = useCallback((newValue) => {
+        setInputValue(newValue?.label ?? newValue?.value ?? '');
         setSuggestedInputValue('');
 
-        onChange?.(newValue);
+        onChange?.(newValue?.value || '');
     }, [onChange]);
 
     const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
@@ -337,7 +369,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const revertInputValue: () => void = useCallback(() => {
         revertPreviousSelectedOption();
-        changeInputValue(previousSelectedOption?.value ?? '');
+        changeInputValue(previousSelectedOption);
     }, [changeInputValue, previousSelectedOption, revertPreviousSelectedOption]);
 
     const {
@@ -360,7 +392,7 @@ export const Combobox: FC<ComboboxProps> = ({
         const newOption = findOptionByValue(value);
 
         if (newOption) {
-            setInputValue(newOption.value);
+            setInputValue(getOptionInputValue(newOption));
             selectOption(newOption);
             setSuggestedInputValue('');
             setFocusedOption(newOption);
@@ -395,8 +427,13 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (focusedOption && (focusedOption !== selectedOption || inputValue !== focusedOption.value)) {
-            changeInputValue(focusedOption.value);
+        if (
+            focusedOption && (
+                focusedOption !== selectedOption
+                || inputValue !== (getOptionInputValue(focusedOption))
+            )
+        ) {
+            changeInputValue(focusedOption);
             selectOption(focusedOption);
         } else if (!(allowCustomValue || inputValue === '')) {
             revertInputValue();
@@ -415,6 +452,7 @@ export const Combobox: FC<ComboboxProps> = ({
         revertInputValue,
         selectOption,
         selectedOption,
+        getOptionInputValue,
     ]);
 
     const componentTargets = [textboxRef, listboxRef, arrowButtonRef, clearButtonRef];
@@ -454,7 +492,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     function handleClearButtonClick(): void {
-        changeInputValue('');
+        changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
@@ -468,7 +506,7 @@ export const Combobox: FC<ComboboxProps> = ({
             }
 
             if (option !== selectedOption) {
-                changeInputValue(option.value);
+                changeInputValue(option);
                 selectOption(option);
             }
 
@@ -498,7 +536,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusNextOption() : focusFirstOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getOptionInputValue(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
@@ -512,7 +550,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusPreviousOption() : focusLastOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getOptionInputValue(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
@@ -520,8 +558,8 @@ export const Combobox: FC<ComboboxProps> = ({
             case 'Enter':
                 event.preventDefault();
                 if (focusedOption) {
-                    if (focusedOption !== selectedOption || inputValue !== focusedOption.value) {
-                        changeInputValue(focusedOption.value);
+                    if (focusedOption !== selectedOption || inputValue !== (getOptionInputValue(focusedOption))) {
+                        changeInputValue(focusedOption);
                         selectOption(focusedOption);
                     }
                     closeListbox();
@@ -533,7 +571,7 @@ export const Combobox: FC<ComboboxProps> = ({
                 if (open) {
                     closeListbox();
                 } else {
-                    changeInputValue('');
+                    changeInputValue(undefined);
                     clearSelectedOptions();
                 }
                 break;
@@ -550,7 +588,7 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         const newInputValue = event.target.value;
-        changeInputValue(newInputValue);
+        changeInputValue({ value: newInputValue, label: newInputValue });
 
         // Always clear the focused option to prevent unwanted selection on textbox blur
         setSuggestedInputValue('');
@@ -558,7 +596,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
         if (inlineAutoComplete && !hideInlineAutoComplete.current) {
             const newSuggestedOption = getSuggestedOption(newInputValue);
-            setSuggestedInputValue(newSuggestedOption?.value ?? '');
+            setSuggestedInputValue(getOptionInputValue(newSuggestedOption));
 
             if (newSuggestedOption) {
                 suggestionSource.current = 'textbox';
