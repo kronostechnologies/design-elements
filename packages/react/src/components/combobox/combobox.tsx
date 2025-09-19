@@ -264,6 +264,9 @@ export const Combobox: FC<ComboboxProps> = ({
     );
 
     function getInitialInputValue(): string {
+        if (allowCustomValue && defaultValue && !findOptionByValue(defaultValue)) {
+            return defaultValue;
+        }
         const defaultOption = findOptionByValue(value) ?? findOptionByValue(defaultValue ?? '');
         const defaultOptionValue = getOptionInputValue(defaultOption);
         return validateInputValue(defaultOptionValue);
@@ -344,7 +347,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const changeInputValue: (newValue: ComboboxOption | undefined) => void = useCallback((newValue) => {
-        setInputValue(getOptionInputValue(newValue));
+        setInputValue(newValue?.label ?? newValue?.value ?? '');
         setSuggestedInputValue('');
 
         onChange?.(newValue?.value || '');
@@ -585,7 +588,7 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         const newInputValue = event.target.value;
-        changeInputValue({ value: newInputValue });
+        changeInputValue({ value: newInputValue, label: newInputValue });
 
         // Always clear the focused option to prevent unwanted selection on textbox blur
         setSuggestedInputValue('');
