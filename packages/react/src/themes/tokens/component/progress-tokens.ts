@@ -16,19 +16,9 @@ export type ProgressToken =
     | 'progress-tracker-step-completed-background-color'
     | 'progress-tracker-step-completed-border-color'
     | 'progress-tracker-step-completed-text-color'
-    | 'progress-tracker-step-completed-label-text-color'
-    | 'progress-circle-empty-track-color'
-    | 'progress-circle-label-text-color'
-    | 'progress-circle-result-text-color'
-    | 'progress-indicator-empty-track-color'
-    | 'progress-indicator-label-text-color';
+    | 'progress-tracker-step-completed-label-text-color';
 
 export const defaultProgressTokens: ComponentTokenMap<ProgressToken> = {
-    'progress-circle-empty-track-color': 'color-background-empty',
-    'progress-circle-label-text-color': 'color-content',
-    'progress-circle-result-text-color': 'color-content',
-    'progress-indicator-label-text-color': 'color-content',
-    'progress-indicator-empty-track-color': 'color-background-empty',
     'progress-tracker-notification-badge-color': 'color-content-inverse',
     'progress-tracker-notification-badge-fill-color': 'color-feedback-background-alert-bold',
     'progress-tracker-bridge-empty-background-color': 'color-background-empty',

@@ -1,42 +1,8 @@
-import { type FC } from 'react';
 import styled from 'styled-components';
-import { Bar } from './bar';
+import Enso from '../../icons/enso.svg';
 
-const Label = styled.label`
-    color: ${({ theme }) => theme.component['progress-indicator-label-text-color']};
-    display: block;
-    font-size: 0.875rem;
-    letter-spacing: 0.02875rem;
-    line-height: 1.5rem;
-    margin-bottom: var(--spacing-half);
+export const ProgressIndicator = styled(Enso)`
+    color: ${(props) => props.theme.component['spinner-fill-color']};
+    height: 64px;
+    width: 64px;
 `;
-
-const Container = styled.div`
-    & + & {
-        margin-top: var(--spacing-half);
-    }
-`;
-
-export interface ProgressIndicatorProps {
-    className?: string;
-    /** [0 - 100] */
-    percent: number;
-    color: string;
-    /** End label */
-    resultLabel: string | number;
-    /** Top label */
-    descriptionLabel?: string;
-}
-
-export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
-    className, color, descriptionLabel, resultLabel, percent,
-}) => (
-    <Container className={className}>
-        <Label>{descriptionLabel}</Label>
-        <Bar
-            color={color}
-            endLabel={resultLabel}
-            percent={percent}
-        />
-    </Container>
-);

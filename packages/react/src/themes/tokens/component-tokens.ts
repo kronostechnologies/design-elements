@@ -18,7 +18,6 @@ import { defaultFieldTokens, FieldToken } from './component/field-tokens';
 import { defaultFocusTokens, FocusToken } from './component/focus-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerToken } from './component/global-banner-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderToken } from './component/global-header-tokens';
-import { defaultGlobalNavigationTokens, GlobalNavigationToken } from './component/global-navigation-tokens';
 import { defaultHeadingTokens, HeadingToken } from './component/heading-tokens';
 import { defaultLabelTokens, LabelToken } from './component/label-tokens';
 import { defaultLegendTokens, LegendToken } from './component/legend-tokens';
@@ -33,6 +32,7 @@ import { defaultPaginationTokens, PaginationToken } from './component/pagination
 import { defaultPasswordInputTokens, PasswordInputToken } from './component/password-input-tokens';
 import { defaultPhoneInputTokens, PhoneInputToken } from './component/phone-input-tokens';
 import { defaultProgressCircularTokens, ProgressCircularToken } from './component/progress-circular-tokens';
+import { defaultProgressIndicatorTokens, ProgressIndicatorToken } from './component/progress-indicator-tokens';
 import { defaultProgressTokens, ProgressToken } from './component/progress-tokens';
 import { defaultRadioButtonGroupTokens, RadioButtonGroupToken } from './component/radio-button-group-tokens';
 import { defaultRadioCardTokens, RadioCardToken } from './component/radio-card-tokens';
@@ -42,7 +42,6 @@ import { defaultSegmentedControlTokens, SegmentedControlToken } from './componen
 import { defaultSideDrawerTokens, SideDrawerToken } from './component/side-drawer-tokens';
 import { defaultSliderTokens, SliderToken } from './component/slider-tokens';
 import { defaultSpinnerTokens, SpinnerToken } from './component/spinner-tokens';
-import { defaultStatusTokens, StatusToken } from './component/status-tokens';
 import { defaultStepperTokens, StepperToken } from './component/stepper-tokens';
 import { defaultTabTokens, TabToken } from './component/tab-tokens';
 import { defaultTableTokens, TableToken } from './component/table-tokens';
@@ -75,7 +74,6 @@ export type ComponentToken =
     | FocusToken
     | GlobalBannerToken
     | GlobalHeaderToken
-    | GlobalNavigationToken
     | HeadingToken
     | LabelToken
     | LegendToken
@@ -89,6 +87,7 @@ export type ComponentToken =
     | PaginationToken
     | PasswordInputToken
     | ProgressCircularToken
+    | ProgressIndicatorToken
     | ProgressToken
     | PhoneInputToken
     | RadioButtonGroupToken
@@ -99,7 +98,6 @@ export type ComponentToken =
     | SideDrawerToken
     | SliderToken
     | SpinnerToken
-    | StatusToken
     | StepperToken
     | TableToken
     | TabToken
@@ -132,7 +130,6 @@ export const defaultComponentTokens = {
     ...defaultFocusTokens,
     ...defaultGlobalBannerTokens,
     ...defaultGlobalHeaderTokens,
-    ...defaultGlobalNavigationTokens,
     ...defaultHeadingTokens,
     ...defaultLabelTokens,
     ...defaultLegendTokens,
@@ -147,6 +144,7 @@ export const defaultComponentTokens = {
     ...defaultPasswordInputTokens,
     ...defaultPhoneInputTokens,
     ...defaultProgressCircularTokens,
+    ...defaultProgressIndicatorTokens,
     ...defaultProgressTokens,
     ...defaultRadioButtonGroupTokens,
     ...defaultRadioCardTokens,
@@ -156,7 +154,6 @@ export const defaultComponentTokens = {
     ...defaultSideDrawerTokens,
     ...defaultSliderTokens,
     ...defaultSpinnerTokens,
-    ...defaultStatusTokens,
     ...defaultStepperTokens,
     ...defaultTableTokens,
     ...defaultTabTokens,
