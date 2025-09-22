@@ -1,4 +1,10 @@
+import { renderWithProviders } from '../../test-utils/testing-library';
+import { ProgressIndicator } from './progress-indicator';
+
 describe('ProgressIndicator', () => {
-    it.skip('All the tests were moved to legacy-tests. RTL tests only here', () => {
+    it('matches snapshot', () => {
+        const { asFragment } = renderWithProviders(<ProgressIndicator />);
+
+        expect(asFragment()).toMatchSnapshot();
     });
 });

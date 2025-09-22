@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Spinner Matches the snapshot 1`] = `
-.c0 {
+exports[`ProgressIndicator matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
   color: #006296;
   height: 64px;
   width: 64px;
 }
 
 <svg
-  class="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;
