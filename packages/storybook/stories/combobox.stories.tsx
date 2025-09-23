@@ -33,7 +33,8 @@ const comboboxMeta: Meta<typeof Combobox> = {
         label: 'Select an option',
         hint: 'Hint',
         options: provinces,
-        onChange: console.info,
+        onChange: (value) => console.info('onChange', value),
+        onInputChange: (value) => console.info('onInputChange', value),
     },
 };
 
