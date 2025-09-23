@@ -248,6 +248,14 @@ export const Combobox: FC<ComboboxProps> = ({
         [options],
     );
 
+    const findOptionByLabelOrValue = useCallback(
+        (searchValue?: string): ComboboxOption | undefined => options.find((option) => {
+            const lowerCaseSearch = searchValue?.toLowerCase();
+            return option.label?.toLowerCase() === lowerCaseSearch || option.value.toLowerCase() === lowerCaseSearch;
+        }),
+        [options],
+    );
+
     const getInputValueFromOption = useCallback(
         (option: ComboboxOption | undefined): string => option?.label ?? option?.value ?? '',
         [],
@@ -296,7 +304,7 @@ export const Combobox: FC<ComboboxProps> = ({
             (option) => getInputValueFromOption(option).toLowerCase().startsWith(inputValue.toLowerCase()),
         );
 
-        if (filtered.length === 1 && filtered[0].value === inputValue) {
+        if (filtered.length === 1 && getInputValueFromOption(filtered[0]) === inputValue) {
             return options;
         }
 
@@ -593,7 +601,7 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         // Select option if the input text is an exact match
-        const matchingOption = findOptionByValue(newInputValue);
+        const matchingOption: ListboxOption | undefined = findOptionByLabelOrValue(newInputValue);
 
         if (matchingOption) {
             selectOption(matchingOption);
