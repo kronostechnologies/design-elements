@@ -9,6 +9,7 @@ import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
 import Bell from 'feather-icons/dist/icons/bell.svg';
 import Calendar from 'feather-icons/dist/icons/calendar.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
+import CheckCircle from 'feather-icons/dist/icons/check-circle.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
 import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
 import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
@@ -88,6 +89,7 @@ const iconMapping = {
     caretDown: CaretDown,
     caretRight: CaretRight,
     check: Check,
+    checkCircle: CheckCircle,
     chevronDown: ChevronDown,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
