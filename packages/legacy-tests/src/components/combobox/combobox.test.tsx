@@ -498,16 +498,20 @@ describe('Combobox', () => {
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        it('callback is fired when characters are typed in the input', () => {
-            const callback = jest.fn();
-            const wrapper = mountWithTheme(<Combobox options={provinces} onChange={callback} />);
+        it('callback should not be fired when characters are typed in the input and does not match an option', () => {
+            const onChange = jest.fn();
+            const onInputChange = jest.fn();
+            const wrapper = mountWithTheme(
+                <Combobox options={provinces} onChange={onChange} onInputChange={onInputChange} />
+            );
 
             getByTestId(wrapper, 'textbox').simulate(
                 'change',
                 { target: { value: 'q' } },
             );
 
-            expect(callback).toHaveBeenCalledTimes(1);
+            expect(onChange).toHaveBeenCalledTimes(0);
+            expect(onInputChange).toHaveBeenCalledWith('q');
         });
 
         it('callback received the input value when fired', () => {
@@ -520,9 +524,10 @@ describe('Combobox', () => {
         });
 
         it('callback does not receive the suggestion when fired', () => {
-            const callback = jest.fn();
+            const onChange = jest.fn();
+            const onInputChange = jest.fn();
             const wrapper = mountWithTheme(
-                <Combobox options={provinces} inlineAutoComplete onChange={callback} />,
+                <Combobox options={provinces} inlineAutoComplete onChange={onChange} onInputChange={onInputChange} />,
             );
 
             getByTestId(wrapper, 'textbox').simulate(
@@ -530,7 +535,8 @@ describe('Combobox', () => {
                 { target: { value: 'q' } },
             );
 
-            expect(callback).toHaveBeenCalledWith('q');
+            expect(onChange).toHaveBeenCalledTimes(0);
+            expect(onInputChange).toHaveBeenCalledWith('q');
         });
     });
 
