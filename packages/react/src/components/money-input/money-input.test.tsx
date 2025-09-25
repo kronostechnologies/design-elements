@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/testing-library';
 import { MoneyInput } from './money-input';
 
-function simulateValueChange(input: HTMLInputElement, value: String): void {
+function simulateValueChange(input: HTMLInputElement, value: string): void {
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value } });
     fireEvent.blur(input);

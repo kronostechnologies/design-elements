@@ -236,16 +236,7 @@ jobs:
         uses: equisoft-actions/yarn-jest@v2
         with:
           report-name: typescript-test-results-enzyme.junit.xml
-          coverage-report-name: typescript-test-coverage-enzyme.clover.xml
           working-directory: ./packages/legacy-tests
-
-      - name: Upload test coverage results
-        uses: actions/upload-artifact@v4
-        if: ${{ success() || failure() }}
-        with:
-          name: react-test-coverage-enzyme.clover.xml
-          path: packages/legacy-tests/build/jest/coverage/clover.xml
-          if-no-files-found: error
 
 
   react_compile:
