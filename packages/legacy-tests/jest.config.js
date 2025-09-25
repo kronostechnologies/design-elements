@@ -20,20 +20,7 @@ module.exports = {
         ],
     ].filter(Boolean),
 
-    collectCoverage: true,
-    collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}'],
-    coverageDirectory: 'build/jest/coverage',
-    coveragePathIgnorePatterns: [
-        '.+\\.d\\.ts$',
-    ],
-    coverageProvider: 'v8',
-    coverageReporters: [
-        // Supported reporters: https://istanbul.js.org/docs/advanced/alternative-reporters/
-        'text',
-        'html',
-        'clover', // ADR-05
-    ],
-
+    collectCoverage: false,
     clearMocks: true,
     resetMocks: true,
     restoreMocks: true,
