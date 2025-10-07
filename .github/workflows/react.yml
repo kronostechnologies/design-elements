@@ -298,6 +298,12 @@ jobs:
           name: react_dist
           path: packages/react/dist/
 
+      - name: Setup Node.js for publishing
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.tool-versions'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Update package version
         env:
           VERSION: ${{ needs.setup.outputs.next-version }}
@@ -307,10 +313,8 @@ jobs:
       - name: Publish to npmjs
         working-directory: ./packages/react
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TAG: ${{ needs.setup.outputs.qualifier }}
         run: |
-          echo -e "npmRegistries: \n  //registry.yarnpkg.com:\n    npmAlwaysAuth: true\n    npmAuthToken: ${NPM_TOKEN}" >> ~/.yarnrc.yml
           yarn npm publish --tag "${NPM_TAG}" --tolerate-republish
 
   storybook_eslint:
