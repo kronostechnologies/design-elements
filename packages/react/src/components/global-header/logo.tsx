@@ -6,7 +6,6 @@ import EquisoftApplyMobile from '../../logos/apply/apply-reverse-mobile.svg';
 import EquisoftApply from '../../logos/apply/apply-reverse.svg';
 import EquisoftCentralizeMobile from '../../logos/centralize/centralize-reverse-mobile.svg';
 import EquisoftCentralize from '../../logos/centralize/centralize-reverse.svg';
-import EquisoftConnectMobile from '../../logos/connect/connect-reverse-mobile.svg';
 import EquisoftConnect from '../../logos/connect/connect-reverse.svg';
 import EquisoftDesignMobile from '../../logos/design/design-reverse-mobile.svg';
 import EquisoftDesign from '../../logos/design/design-reverse.svg';
@@ -15,7 +14,6 @@ import EquisoftIllustrate from '../../logos/illustrate/illustrate-reverse.svg';
 import EquisoftDefault from '../../logos/logo-equisoft-reversed.svg';
 import EquisoftManageMobile from '../../logos/manage/manage-reverse-mobile.svg';
 import EquisoftManage from '../../logos/manage/manage-reverse.svg';
-import EquisoftPlanMobile from '../../logos/plan/plan-reverse-mobile.svg';
 import EquisoftPlan from '../../logos/plan/plan-reverse.svg';
 
 const logoMapping = {
@@ -37,7 +35,7 @@ const logoMapping = {
     },
     connect: {
         desktop: EquisoftConnect,
-        mobile: EquisoftConnectMobile,
+        mobile: EquisoftConnect,
     },
     design: {
         desktop: EquisoftDesign,
@@ -53,7 +51,7 @@ const logoMapping = {
     },
     plan: {
         desktop: EquisoftPlan,
-        mobile: EquisoftPlanMobile,
+        mobile: EquisoftPlan,
     },
 };
 
@@ -64,8 +62,19 @@ interface LogoProps {
     mobile?: boolean;
 }
 
+const smallLogos: LogoName[] = ['default', 'plan', 'connect'];
+
+function getLogoHeight({ name, mobile }: Required<LogoProps>): string {
+    if (!mobile && smallLogos.includes(name)) {
+        return '24px';
+    }
+    return '100%';
+}
+
 export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElement | null => {
     const Component = logoMapping[name][mobile ? 'mobile' : 'desktop'];
 
-    return <Component style={{ height: '100%' }} focusable="false" aria-hidden="true" />;
+    const height = getLogoHeight({ name, mobile });
+
+    return <Component style={{ height }} focusable="false" aria-hidden="true" />;
 };
