@@ -280,6 +280,9 @@ jobs:
     name: "React: Deploy"
     runs-on: ubuntu-latest
     environment: npm-deployment
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - setup
       - react_eslint
