@@ -112,7 +112,7 @@ const BentoMenuMeta: Meta<typeof BentoMenuButton> = {
                 externalLinks={resources}
             />
         </GlobalHeader>
-        ),
+    ),
 };
 
 export default BentoMenuMeta;

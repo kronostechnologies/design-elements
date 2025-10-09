@@ -81,8 +81,7 @@ export const StyledLink = styled.a<{
                 $disabled,
                 $isMobile,
                 theme,
-            }))
-};
+            }))};
 
     display: inline-flex;
     flex-direction: row;

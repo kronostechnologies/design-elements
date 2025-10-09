@@ -28,7 +28,7 @@ function getTable(): HTMLTableElement {
 function getTableValues(): {
     headerCells: NodeListOf<HTMLTableCellElement>,
     rows: NodeListOf<HTMLTableRowElement>,
-    } {
+} {
     const table = getTable();
 
     return {

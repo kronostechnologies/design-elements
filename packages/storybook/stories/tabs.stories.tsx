@@ -154,7 +154,7 @@ export const Scrollable: Story = {
 };
 
 export const WithForceRenderTabPanels: Story = {
-   ...TabsMeta,
+    ...TabsMeta,
     args: {
         forceRenderTabPanels: true,
     },
