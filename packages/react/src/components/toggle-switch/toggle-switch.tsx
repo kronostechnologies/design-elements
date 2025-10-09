@@ -20,9 +20,9 @@ const StyledLabel = styled.label<StyledLabelProps>`
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin:
  ${({ labelPosition }) => (
-            labelPosition === 'left'
-                    ? '0 var(--spacing-1x) 0 0'
-                    : '0 0 0 var(--spacing-1x)'
+        labelPosition === 'left'
+            ? '0 var(--spacing-1x) 0 0'
+            : '0 0 0 var(--spacing-1x)'
     )};
     user-select: none;
 `;

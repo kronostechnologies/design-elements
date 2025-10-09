@@ -71,10 +71,10 @@ interface StepperButtonsProps {
 }
 
 export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
-   disabled,
-   onIncrement,
-   onDecrement,
-   onStop,
+    disabled,
+    onIncrement,
+    onDecrement,
+    onStop,
 }) => {
     const { t } = useTranslation('stepper-buttons');
 

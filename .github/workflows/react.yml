@@ -52,7 +52,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -136,7 +136,7 @@ jobs:
       - setup
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -159,7 +159,7 @@ jobs:
       - setup
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -191,7 +191,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -223,7 +223,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -269,10 +269,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -305,10 +305,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -336,10 +336,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -375,10 +375,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -431,10 +431,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: storybook_dist
           path: packages/storybook/dist/
@@ -525,7 +525,7 @@ jobs:
       - react_compile
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -536,7 +536,7 @@ jobs:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -555,7 +555,7 @@ jobs:
       - react_compile
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
@@ -566,7 +566,7 @@ jobs:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
@@ -604,10 +604,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download React Dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: react_dist
           path: packages/react/dist/
