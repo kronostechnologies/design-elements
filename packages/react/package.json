@@ -29,6 +29,9 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
+    "@floating-ui/react": "0.27.16",
+    "@floating-ui/react-dom": "2.1.6",
+    "@floating-ui/utils": "0.2.10",
     "@mui/base": "5.0.0-beta.70",
     "@tanstack/react-table": "8.21.3",
     "date-fns": "4.1.0",

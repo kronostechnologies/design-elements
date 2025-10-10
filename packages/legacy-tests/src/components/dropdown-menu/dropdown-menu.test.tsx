@@ -31,7 +31,7 @@ describe('DropdownMenu', () => {
 
     it('has controllable data-testid', () => {
         const tree = shallow(
-            <DropdownMenu data-testid="some-data-testid" hidden>{TestGroups}</DropdownMenu>,
+            <DropdownMenu data-testid="some-data-testid">{TestGroups}</DropdownMenu>,
         );
 
         expect(getByTestId(tree, 'some-data-testid').exists()).toBe(true);

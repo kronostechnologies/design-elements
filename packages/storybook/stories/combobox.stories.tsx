@@ -6,7 +6,7 @@ import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const Container = styled.div`
-    height: 240px;
+    height: 100px;
 `;
 
 const provinces = [
