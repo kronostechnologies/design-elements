@@ -44,7 +44,7 @@ describe('DropdownMenuButton', () => {
             <DropdownMenuButton defaultOpen render={TestGroups} />,
         );
 
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(false);
+        expect(getByTestId(wrapper, 'menu-dropdownMenu').exists()).toBe(true);
     });
 
     it('Opens dropdown-menu when menu-button is clicked', () => {
@@ -54,7 +54,7 @@ describe('DropdownMenuButton', () => {
 
         getByTestId(wrapper, 'menu-button').simulate('click');
 
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(false);
+        expect(getByTestId(wrapper, 'menu-dropdownMenu').exists()).toBe(true);
     });
 
     it('Should close nav-menu when escape key is pressed in dropdown-menu', () => {
@@ -64,7 +64,7 @@ describe('DropdownMenuButton', () => {
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
 
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(true);
+        expect(getByTestId(wrapper, 'menu-dropdownMenu').exists()).toBe(false);
     });
 
     it('Focuses menu-button when escape key is pressed in dropdown-menu', () => {

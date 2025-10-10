@@ -25,12 +25,4 @@ describe('DropdownMenu', () => {
 
         expect(container.firstChild).toMatchSnapshot();
     });
-
-    test('Is hidden', () => {
-        const { container } = renderWithProviders(
-            <DropdownMenu hidden>{TestGroups}</DropdownMenu>,
-        );
-
-        expect(container.firstChild).toMatchSnapshot();
-    });
 });

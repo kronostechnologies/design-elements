@@ -144,7 +144,6 @@ input + .c2 {
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 
@@ -597,7 +596,6 @@ input + .c2 {
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 
@@ -1085,7 +1083,6 @@ input + .c2 {
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 
@@ -1519,7 +1516,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 
@@ -1935,7 +1931,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 
@@ -2540,7 +2535,6 @@ input + .c2 {
   margin-top: var(--spacing-half);
   position: absolute;
   top: 0px;
-  width: 100%;
   z-index: 99998;
 }
 

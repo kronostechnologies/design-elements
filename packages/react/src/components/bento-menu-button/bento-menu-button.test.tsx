@@ -1,3 +1,4 @@
+import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu';
 import { BentoMenuButton } from './bento-menu-button';
@@ -105,11 +106,13 @@ describe('BentoMenuButton', () => {
     });
 
     test('Matches Snapshot (productLinks and externalLinks)', () => {
-        const { container } = renderWithProviders(
+        const { baseElement, getByTestId } = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
+        const menuButton = getByTestId('menu-button');
+        fireEvent.click(menuButton);
 
-        expect(container.firstChild).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches Snapshot (productGroups and externalLinks)', () => {
@@ -119,18 +122,20 @@ describe('BentoMenuButton', () => {
             productLinks: products,
         };
         const productGroupB = {
-            label: 'Product Group A',
-            name: 'A',
+            label: 'Product Group B',
+            name: 'B',
             productLinks: givenOtherProducts(),
         };
 
-        const { container } = renderWithProviders(
+        const { baseElement, getByTestId } = renderWithProviders(
             <BentoMenuButton
                 productGroups={[productGroupA, productGroupB]}
                 externalLinks={externals}
             />,
         );
+        const menuButton = getByTestId('menu-button');
+        fireEvent.click(menuButton);
 
-        expect(container.firstChild).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 });

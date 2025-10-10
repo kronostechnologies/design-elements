@@ -1,21 +1,11 @@
-import {
-    FC,
-    FocusEvent,
-    KeyboardEvent,
-    ReactNode,
-    RefObject,
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { FC, FocusEvent, KeyboardEvent, ReactNode, RefObject, useCallback, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSearch } from '../../hooks/use-list-search';
@@ -23,7 +13,7 @@ import { Overflow, useOverflow } from '../../hooks/use-overflow';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { findNearestRelativeParent, getRootElement, sanitizeId } from '../../utils/dom';
+import { getRootElement, sanitizeId } from '../../utils/dom';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider';
 import { FieldContainer } from '../field-container';
@@ -99,17 +89,15 @@ const StyledFieldContainer = styled(FieldContainer)`
 `;
 
 interface StyledListboxProps {
-    $left?: number;
-    $top?: number;
-    $width?: number;
+    $left?: string;
+    $top?: string;
 }
 
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
-    left: ${(props: StyledListboxProps) => `${props.$left}px`};
+    left: ${(props) => props.$left};
     margin-top: var(--spacing-half);
     position: absolute;
-    top: ${(props) => `${props.$top}px`};
-    width: ${(props) => (props.$width ? `${props.$width}px` : '100%')};
+    top: ${(props) => props.$top};
     z-index: 99998;
 `;
 
@@ -189,12 +177,6 @@ export interface TagValue {
     label: string;
 }
 
-interface ListboxPosition {
-    left: number;
-    top: number;
-    width: number;
-}
-
 export interface DropdownListOption extends ListboxOption {
     label: string;
 }
@@ -258,25 +240,6 @@ export interface DropdownListProps<M extends boolean | undefined> {
      * OnChange callback function, invoked when options are selected
      */
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
-}
-
-function getListboxPosition(textbox: HTMLDivElement, shadowHost: Element | undefined): ListboxPosition {
-    const rect = textbox.getBoundingClientRect();
-    const offsetParent: Element | null = shadowHost ? findNearestRelativeParent(shadowHost as HTMLElement) : null;
-    const offsetParentRect = offsetParent?.getBoundingClientRect();
-    let topOffset = window.scrollY;
-    let leftOffset = window.scrollX;
-
-    if (offsetParent && offsetParentRect) {
-        topOffset = -offsetParentRect.top;
-        leftOffset = -offsetParentRect.left;
-    }
-
-    return {
-        top: rect.bottom + topOffset,
-        left: rect.left + leftOffset,
-        width: rect.width,
-    };
 }
 
 interface ListBoxTagProps {
@@ -348,11 +311,12 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     const dataAttributes = useDataAttributes(otherProps);
     const shadowRoot = useShadowRoot();
 
-    const textboxRef = useRef<HTMLDivElement>(null);
-    const listboxRef = useRef<HTMLDivElement>(null);
-
     const [open, setOpen] = useState(defaultOpen);
-    const [listboxPosition, setListboxPosition] = useState<ListboxPosition>({ top: 0, left: 0, width: 0 });
+    const {
+        x,
+        y,
+        refs: { reference: textboxRef, floating: listboxRef, ...refs },
+    } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
     const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
@@ -420,40 +384,9 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
             return;
         }
 
-        if (textboxRef.current) {
-            const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
-            setListboxPosition(newListboxPosition);
-        }
-
         setFocusedOption(getLastSelectedOption(selectedOptions));
         setOpen(true);
     }
-
-    useEffect(() => {
-        function updatePosition(): void {
-            if (open && textboxRef.current) {
-                const newListboxPosition = getListboxPosition(textboxRef.current, shadowRoot?.host);
-                setListboxPosition(newListboxPosition);
-            }
-        }
-
-        let resizeObserver: ResizeObserver | undefined;
-        if (textboxRef.current) {
-            resizeObserver = new ResizeObserver(() => {
-                updatePosition();
-            });
-            resizeObserver.observe(textboxRef.current);
-        }
-
-        window.addEventListener('resize', updatePosition);
-        window.addEventListener('scroll', updatePosition, true);
-
-        return () => {
-            window.removeEventListener('resize', updatePosition);
-            window.removeEventListener('scroll', updatePosition, true);
-            resizeObserver?.disconnect();
-        };
-    }, [open, shadowRoot?.host]);
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
@@ -677,7 +610,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                 onBlur={handleTextboxBlur}
                 onClick={handleTextboxClick}
                 onKeyDown={handleTextboxKeyDown}
-                ref={textboxRef}
+                ref={refs.setReference}
                 $readOnly={readOnly}
                 role="combobox"
                 tabIndex={0}
@@ -710,7 +643,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
             {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
-                    ref={listboxRef}
+                    ref={refs.setFloating}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
@@ -719,9 +652,8 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                     options={options}
                     value={getListboxSelectedOptionValues()}
                     multiselect={multiselect}
-                    $left={listboxPosition.left}
-                    $top={listboxPosition.top}
-                    $width={listboxPosition.width}
+                    $left={`${x}px`}
+                    $top={`${y}px`}
                 />,
                 rootElement,
             )}
