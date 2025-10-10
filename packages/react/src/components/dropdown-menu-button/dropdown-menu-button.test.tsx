@@ -1,3 +1,4 @@
+import { fireEvent } from '@testing-library/react';
 import { ReactElement } from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { type GroupItemProps } from '../dropdown-menu';
@@ -23,18 +24,20 @@ const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemPr
 
 describe('DropdownMenuButton', () => {
     test('Matches Snapshot', () => {
-        const { container } = renderWithProviders(
+        const { baseElement, getByTestId } = renderWithProviders(
             <DropdownMenuButton render={TestGroups} />,
         );
+        const element = getByTestId('menu-button');
+        fireEvent.click(element);
 
-        expect(container.firstChild).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const { container } = renderWithProviders(
+        const { baseElement } = renderWithProviders(
             <DropdownMenuButton defaultOpen render={TestGroups} />,
         );
 
-        expect(container.firstChild).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 });

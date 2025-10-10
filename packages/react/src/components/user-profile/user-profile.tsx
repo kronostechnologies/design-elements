@@ -71,6 +71,7 @@ export const UserProfile: FC<UserProfileProps> = ({
             className={className}
             data-testid="user-profile"
             defaultOpen={defaultOpen}
+            dropdownMenuWidth="auto"
             hasCaret={!isMobile}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}

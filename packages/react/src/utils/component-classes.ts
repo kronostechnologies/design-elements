@@ -1,4 +1,4 @@
-const DS_CLASS_PREFIX = 'eds-';
+export const DS_CLASS_PREFIX = 'eds-';
 
 export const IGNORE_CLICK_OUTSIDE = 'react-datepicker-ignore-onclickoutside';
 

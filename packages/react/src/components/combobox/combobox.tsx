@@ -9,16 +9,19 @@ import {
     useRef,
     useState,
 } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSelect } from '../../hooks/use-list-select';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { sanitizeId } from '../../utils/dom';
+import { getRootElement, sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
 import { IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
@@ -60,10 +63,17 @@ const StyledContainer = styled.div`
     width: 100%;
 `;
 
-const StyledListbox = styled(Listbox)`
+interface StyledListboxProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledListbox = styled(Listbox)<StyledListboxProps>`
+    left: ${(props) => props.$left};
     margin-top: var(--spacing-half);
     position: absolute;
-    width: 100%;
+    top: ${(props) => props.$top};
+    z-index: 99998;
 `;
 
 const Textbox = styled.input<TextboxProps>`
@@ -235,12 +245,18 @@ export const Combobox: FC<ComboboxProps> = ({
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const textboxRef = useRef<HTMLInputElement>(null);
-    const listboxRef = useRef<HTMLDivElement>(null);
     const arrowButtonRef = useRef<HTMLButtonElement>(null);
     const clearButtonRef = useRef<HTMLButtonElement>(null);
 
+    const shadowRoot = useShadowRoot();
     const [open, setOpen] = useState(defaultOpen);
+    const {
+        x,
+        y,
+        update,
+        refs: { reference: textboxRef, floating: listboxRef, ...refs },
+    } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
+    const rootElement = getRootElement(shadowRoot) as HTMLElement;
 
     const findOptionByValue = useCallback(
         (searchValue?: string): ComboboxOption | undefined => options.find(
@@ -297,6 +313,7 @@ export const Combobox: FC<ComboboxProps> = ({
             }];
         }
 
+        update();
         if (inputValue === '' || disableListFiltering) {
             return options;
         }
@@ -326,6 +343,7 @@ export const Combobox: FC<ComboboxProps> = ({
         inputValue,
         isLoading,
         options,
+        update,
         t,
     ]);
 
@@ -621,7 +639,7 @@ export const Combobox: FC<ComboboxProps> = ({
         } else if (textboxRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
             textboxRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
-    }, [inputValue.length, suggestedInputValue.length]);
+    }, [inputValue.length, suggestedInputValue.length, textboxRef]);
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
@@ -644,7 +662,9 @@ export const Combobox: FC<ComboboxProps> = ({
             <StyledContainer>
                 <Textbox
                     aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                    aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
+                    aria-activedescendant={open && focusedOption
+                        ? sanitizeId(`${id}_${focusedOption.value}`)
+                        : undefined}
                     aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
                     aria-controls={`${id}_listbox`}
                     aria-describedby={ariaDescribedBy}
@@ -661,7 +681,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     onClick={handleTextboxClick}
                     onKeyDown={handleTextboxKeyDown}
                     placeholder={placeholder}
-                    ref={textboxRef}
+                    ref={refs.setReference}
                     role="combobox"
                     tabIndex={0}
                     $valid={valid}
@@ -693,10 +713,10 @@ export const Combobox: FC<ComboboxProps> = ({
                 />
             </StyledContainer>
 
-            {open && (
+            {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
-                    ref={listboxRef}
+                    ref={refs.setFloating}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
@@ -704,7 +724,10 @@ export const Combobox: FC<ComboboxProps> = ({
                     onOptionClick={handleListboxOptionClick}
                     options={filteredOptions}
                     value={selectedOption ? [selectedOption.value] : undefined}
-                />
+                    $left={`${x}px`}
+                    $top={`${y}px`}
+                />,
+                rootElement,
             )}
         </StyledFieldContainer>
     );

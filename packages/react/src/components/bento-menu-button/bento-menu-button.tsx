@@ -1,9 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { FunctionComponent, PropsWithChildren, useRef } from 'react';
-import styled from 'styled-components';
+import { FunctionComponent, PropsWithChildren, useMemo, useRef } from 'react';
+import { createGlobalStyle } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { DS_CLASS_PREFIX } from '../../utils/component-classes';
+import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider';
-import { DropdownMenuButton, StyledDropdownMenu } from '../dropdown-menu-button/dropdown-menu-button';
+import { DropdownMenuButton } from '../dropdown-menu-button';
 import { ExternalItem, ExternalItemProps, GroupItem, NavItemProps } from '../dropdown-menu/list-items';
 import { StyledExternalLink } from '../dropdown-menu/list-items/external-item';
 import { StyledHeading } from '../dropdown-menu/list-items/group-item';
@@ -11,14 +13,17 @@ import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
 import { Icon } from '../icon';
 import { ProductGroup, ProductGroupProps } from './product-group';
 
-const StyledDropdownMenuButton = styled(DropdownMenuButton)`
-    ${StyledDropdownMenu} {
+interface PortalDropdownMenuProps {
+    $dropdownMenuId: string;
+}
+
+const PortalDropdownMenuStyle = createGlobalStyle<PortalDropdownMenuProps>`
+    #${({ $dropdownMenuId }) => $dropdownMenuId} {
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         max-width: 350px;
         min-width: 200px;
         padding: var(--spacing-1halfx) 0;
-        right: 0;
         width: initial;
 
         ${StyledNavItem},
@@ -73,6 +78,7 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
     title,
 }) => {
     const { isMobile } = useDeviceContext();
+    const dropdownMenuId = useMemo(() => `${DS_CLASS_PREFIX}${uuid()}`, []);
     const { t } = useTranslation('bento');
     const firstItemRef = useRef<HTMLAnchorElement>(null);
     if (productGroups && productLinks) {
@@ -92,50 +98,55 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
     }
 
     return (
-        <StyledDropdownMenuButton
-            render={(close) => (
-                <>
-                    {productLinkGroups.length > 0 && (
-                        productLinkGroups.map((productLinkGroup) => (
-                            <ProductGroup
-                                key={productLinkGroup.name}
-                                firstItemRef={firstItemRef}
-                                label={productLinkGroup.label}
-                                name={productLinkGroup.name}
-                                onClick={close}
-                                productLinks={productLinkGroup.productLinks}
-                            />
-                        ))
-                    )}
-                    {externalLinks.length > 0 && (
-                        <GroupItem label={t('externalsLabel')} id="external-links" data-testid="resources-group">
-                            {externalLinks.map((external) => (
-                                <ExternalItem
-                                    data-testid={`external-${external.label}`}
-                                    key={`external-${external.label}`}
-                                    href={external.href}
-                                    label={external.label}
-                                    disabled={external.disabled}
-                                    onClick={external.disabled ? undefined : () => {
-                                        external.onClick?.();
-                                        close();
-                                    }}
+        <>
+            <PortalDropdownMenuStyle $dropdownMenuId={dropdownMenuId} />
+            <DropdownMenuButton
+                render={(close) => (
+                    <>
+                        {productLinkGroups.length > 0 && (
+                            productLinkGroups.map((productLinkGroup) => (
+                                <ProductGroup
+                                    key={productLinkGroup.name}
+                                    firstItemRef={firstItemRef}
+                                    label={productLinkGroup.label}
+                                    name={productLinkGroup.name}
+                                    onClick={close}
+                                    productLinks={productLinkGroup.productLinks}
                                 />
-                            ))}
-                        </GroupItem>
-                    )}
-                </>
-            )}
-            ariaLabel={ariaLabel}
-            buttonAriaLabel={buttonAriaLabel}
-            tag={tag}
-            title={title}
-            hasCaret={false}
-            icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}
-            buttonType="tertiary"
-            inverted={inverted}
-            firstItemRef={firstItemRef}
-            onMenuVisibilityChanged={onMenuVisibilityChanged}
-        />
+                            ))
+                        )}
+                        {externalLinks.length > 0 && (
+                            <GroupItem label={t('externalsLabel')} id="external-links" data-testid="resources-group">
+                                {externalLinks.map((external) => (
+                                    <ExternalItem
+                                        data-testid={`external-${external.label}`}
+                                        key={`external-${external.label}`}
+                                        href={external.href}
+                                        label={external.label}
+                                        disabled={external.disabled}
+                                        onClick={external.disabled ? undefined : () => {
+                                            external.onClick?.();
+                                            close();
+                                        }}
+                                    />
+                                ))}
+                            </GroupItem>
+                        )}
+                    </>
+                )}
+                ariaLabel={ariaLabel}
+                buttonAriaLabel={buttonAriaLabel}
+                dropdownMenuId={dropdownMenuId}
+                dropdownMenuWidth="initial"
+                tag={tag}
+                title={title}
+                hasCaret={false}
+                icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}
+                buttonType="tertiary"
+                inverted={inverted}
+                firstItemRef={firstItemRef}
+                onMenuVisibilityChanged={onMenuVisibilityChanged}
+            />
+        </>
     );
 };

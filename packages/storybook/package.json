@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "storybook build -c .storybook -o ./dist",
-    "start": "storybook dev -c .storybook",
+    "start": "NODE_OPTIONS=--max-old-space-size=4096 storybook dev -c .storybook",
     "start-docs": "storybook dev -c .storybook --docs",
     "lint": "yarn eslint && yarn stylelint",
     "eslint": "eq-eslint stories/",
