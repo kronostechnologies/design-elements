@@ -302,7 +302,7 @@ jobs:
           path: packages/react/dist/
 
       - name: Setup Node.js for publishing
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: '.tool-versions'
           registry-url: 'https://registry.npmjs.org'
