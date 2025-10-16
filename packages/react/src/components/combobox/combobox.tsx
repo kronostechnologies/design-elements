@@ -72,6 +72,7 @@ const Textbox = styled.input<TextboxProps>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
