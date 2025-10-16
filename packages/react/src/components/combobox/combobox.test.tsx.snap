@@ -197,6 +197,7 @@ input + .c2 {
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #B7BBC2;
+  font-family: inherit;
   font-size: 0.875rem;
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
@@ -697,6 +698,7 @@ input + .c2 {
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  font-family: inherit;
   font-size: 0.875rem;
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
@@ -1163,6 +1165,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  font-family: inherit;
   font-size: 1rem;
   height: var(--size-2halfx);
   padding: 0 var(--spacing-1x);
@@ -1641,6 +1644,7 @@ input + .c2 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  font-family: inherit;
   font-size: 0.875rem;
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
