@@ -41,11 +41,6 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -61,11 +56,6 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -118,6 +108,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c0 {
   position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 {
@@ -227,11 +223,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -247,11 +238,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -318,6 +304,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -362,11 +354,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c20:visited {
   color: #006296;
-}
-
-.c20 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c20:focus-visible {
@@ -521,11 +508,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -561,11 +543,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c17:focus-visible {
@@ -605,11 +582,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c18:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -646,11 +618,6 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   text-decoration: none;
   white-space: nowrap;
   padding: 0 var(--spacing-2x);
-}
-
-.c22 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c22:focus-visible {
@@ -938,11 +905,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -960,11 +922,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {
@@ -1031,6 +988,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c8 {
   left: 0px;
   max-width: 350px;
@@ -1065,11 +1028,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c19:visited {
   color: #006296;
-}
-
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c19:focus-visible {
@@ -1224,11 +1182,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c14:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1264,11 +1217,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c16:focus-visible {
@@ -1308,11 +1256,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c17:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1349,11 +1292,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   text-decoration: none;
   white-space: nowrap;
   padding: 0 var(--spacing-2x);
-}
-
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c21:focus-visible {
@@ -1639,11 +1577,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1659,11 +1592,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -1730,6 +1658,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -1774,11 +1708,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 
 .c20:visited {
   color: #006296;
-}
-
-.c20 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c20:focus-visible {
@@ -1933,11 +1862,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1973,11 +1897,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c17:focus-visible {
@@ -2017,11 +1936,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c18:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -2058,11 +1972,6 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   text-decoration: none;
   white-space: nowrap;
   padding: 0 var(--spacing-2x);
-}
-
-.c22 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c22:focus-visible {

@@ -26,11 +26,6 @@ HTMLCollection [
   width: var(--size-2halfx);
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -123,11 +118,6 @@ HTMLCollection [
   position: relative;
   vertical-align: middle;
   width: var(--size-3x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

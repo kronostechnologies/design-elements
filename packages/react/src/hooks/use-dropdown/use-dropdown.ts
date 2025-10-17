@@ -1,13 +1,23 @@
 import {
+    autoUpdate,
     type Dimensions,
+    flip,
+    type MiddlewareState,
     offset,
     type Placement,
     type ReferenceType,
     size,
+    useFloating,
     type UseFloatingOptions,
-} from '@floating-ui/react';
-import { autoUpdate, flip, type MiddlewareState, useFloating } from '@floating-ui/react-dom';
+} from '@floating-ui/react-dom';
 import { type MutableRefObject, useMemo } from 'react';
+import {
+    type BoxShadow,
+    findMaxBottomBoxShadow,
+    findMaxTopBoxShadow,
+    parseBoxShadow,
+    parseSize,
+} from '../../utils/css-values';
 
 export interface DropdownRefs<T> {
     floating: MutableRefObject<HTMLElement | null>;
@@ -45,14 +55,23 @@ function getWidthValue(dimensions: Dimensions, width: UseDropdownOptions['width'
     }
 }
 
-const BASE_OFFSET = 4;
+const SPACING = 2;
 
 function computeOffset(element: HTMLElement, placement: Placement): number {
+    const isTopPlacement = placement.includes('top');
     const style = window.getComputedStyle(element);
-    const outlineOffset = style.outlineOffset;
-    const outlineWidth = style.outlineWidth;
-    const factor = placement.includes('top') ? -1 : 1;
-    return BASE_OFFSET - (factor * (parseFloat(outlineWidth) - parseFloat(outlineOffset)));
+    const boxShadows: BoxShadow[] = parseBoxShadow(style.boxShadow);
+    const isTransparent = style.outlineColor === 'transparent' || style.outlineColor === 'rgba(0, 0, 0, 0)';
+    if (isTransparent || style.outlineStyle === 'none' || parseSize(style.outlineWidth) === 0) {
+        return isTopPlacement
+            ? SPACING + findMaxTopBoxShadow(boxShadows)
+            : SPACING + findMaxBottomBoxShadow(boxShadows);
+    }
+
+    const outlineSpace = parseSize(style.outlineWidth) + parseSize(style.outlineOffset);
+    return isTopPlacement
+        ? SPACING + Math.max(findMaxTopBoxShadow(boxShadows), outlineSpace)
+        : SPACING + Math.max(findMaxBottomBoxShadow(boxShadows), outlineSpace);
 }
 
 export function useDropdown<T extends ReferenceType>({
@@ -67,10 +86,6 @@ export function useDropdown<T extends ReferenceType>({
         refs,
     } = useFloating<T>({
         middleware: [
-            offset((state: MiddlewareState) => {
-                const element = state.elements.reference as HTMLElement;
-                return computeOffset(element, state.placement);
-            }),
             flip({ fallbackStrategy: 'initialPlacement' }),
             size({
                 apply({ rects, elements }) {
@@ -78,6 +93,10 @@ export function useDropdown<T extends ReferenceType>({
                         width: getWidthValue(rects.reference, width),
                     });
                 },
+            }, [width]),
+            offset((state: MiddlewareState) => {
+                const element = state.elements.reference as HTMLElement;
+                return computeOffset(element, state.placement);
             }),
         ],
         open,

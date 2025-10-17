@@ -54,7 +54,7 @@ describe('DropdownNavigation', () => {
 
             getByTestId(wrapper, 'navigation-button').simulate('click');
 
-            expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(false);
+            expect(getByTestId(wrapper, 'dropdown-navDropdown').exists()).toBe(true)
         });
 
         it(`Focuses the first navigation-item when navigation opens with Enter (${type})`, () => {
@@ -154,7 +154,7 @@ describe('DropdownNavigation', () => {
             </DropdownNavigation>,
         );
 
-        expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(false);
+        expect(getByTestId(wrapper, 'dropdown-navDropdown').exists()).toBe(true)
     });
 
     it('Should close navigation-dropdown when escape key is pressed in navigation-dropdown', () => {
@@ -166,7 +166,7 @@ describe('DropdownNavigation', () => {
 
         getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
 
-        expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(true);
+        expect(getByTestId(wrapper, 'dropdown-navDropdown').exists()).toBe(false)
     });
 
     it('Should call onLinkSelected when an option is selected in the navigation-dropdown', () => {
@@ -176,6 +176,7 @@ describe('DropdownNavigation', () => {
                 Test Button
             </DropdownNavigation>,
         );
+        getByTestId(wrapper, 'navigation-button').simulate('click');
 
         const navLink = getByTestId(wrapper, `listitem-${options[0].value}-link`);
         navLink.simulate('click');

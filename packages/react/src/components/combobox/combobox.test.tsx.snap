@@ -137,11 +137,6 @@ input + .c2 {
   width: 100%;
 }
 
-.c5 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -400,11 +395,6 @@ input + .c2 {
   width: 100%;
 }
 
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -628,11 +618,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   height: var(--size-2halfx);
   padding: 0 var(--spacing-1x);
   width: 100%;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {
@@ -869,11 +854,6 @@ input + .c2 {
   height: var(--size-2x);
   padding: 0 var(--spacing-1x);
   width: 100%;
-}
-
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c6:focus-visible {

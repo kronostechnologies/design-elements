@@ -41,11 +41,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -63,11 +58,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -318,11 +308,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -340,11 +325,6 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -595,11 +575,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -617,11 +592,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -872,11 +842,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -894,11 +859,6 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -1149,11 +1109,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1171,11 +1126,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -1426,11 +1376,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1448,11 +1393,6 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -1703,11 +1643,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1726,11 +1661,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
   min-width: var(--size-1halfx);
   padding: 0;
   width: var(--size-1halfx);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -1981,11 +1911,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -2003,11 +1928,6 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -2258,11 +2178,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -2281,11 +2196,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
   min-width: var(--size-1halfx);
   padding: 0;
   width: var(--size-1halfx);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -2536,11 +2446,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -2558,11 +2463,6 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -2813,11 +2713,6 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -2836,11 +2731,6 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
   min-width: var(--size-1halfx);
   padding: 0;
   width: var(--size-1halfx);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -3091,11 +2981,6 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   user-select: none;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -3113,11 +2998,6 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {

@@ -70,7 +70,6 @@ interface StyledListboxProps {
 
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
     left: ${(props) => props.$left};
-    margin-top: var(--spacing-half);
     position: absolute;
     top: ${(props) => props.$top};
     z-index: 99998;

@@ -40,7 +40,6 @@ interface TextboxProps {
     $readOnly?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
-    value: string;
 }
 
 function getBackgroundColor({ $disabled, $readOnly, theme }: TextboxProps): string {
@@ -95,7 +94,6 @@ interface StyledListboxProps {
 
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
     left: ${(props) => props.$left};
-    margin-top: var(--spacing-half);
     position: absolute;
     top: ${(props) => props.$top};
     z-index: 99998;
@@ -615,7 +613,6 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                 role="combobox"
                 tabIndex={0}
                 $valid={valid}
-                value={getValues()}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {iconName && (

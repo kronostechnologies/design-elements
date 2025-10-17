@@ -106,14 +106,4 @@ describe('NavList', () => {
 
         expect(tree).toMatchSnapshot();
     });
-
-    it('Is hidden', () => {
-        const tree = renderWithTheme(
-            <Router>
-                <NavList options={options} hidden />
-            </Router>,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
 });

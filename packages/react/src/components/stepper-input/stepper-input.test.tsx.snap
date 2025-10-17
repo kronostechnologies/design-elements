@@ -80,11 +80,6 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -131,11 +126,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
-}
-
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c7:focus-visible {
@@ -226,11 +216,6 @@ input + .c1 {
 .c4:disabled,
 .c4:disabled::placeholder {
   color: #B7BBC2;
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {
@@ -418,11 +403,6 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c8 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -469,11 +449,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
-}
-
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c9:focus-visible {
@@ -564,11 +539,6 @@ input + .c1 {
 .c6:disabled,
 .c6:disabled::placeholder {
   color: #B7BBC2;
-}
-
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c6:focus-visible {
@@ -771,11 +741,6 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -898,11 +863,6 @@ input + .c1 {
   color: #B7BBC2;
 }
 
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -949,11 +909,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
-}
-
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c7:focus-visible {
@@ -1044,11 +999,6 @@ input + .c1 {
 .c4:disabled,
 .c4:disabled::placeholder {
   color: #B7BBC2;
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {

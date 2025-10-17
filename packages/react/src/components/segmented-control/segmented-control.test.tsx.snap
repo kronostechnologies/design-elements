@@ -62,11 +62,6 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
   z-index: 1;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -140,11 +135,6 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 
 .c2:focus {
   z-index: 1;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -296,11 +286,6 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
   z-index: 1;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -374,11 +359,6 @@ exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
 
 .c2:focus {
   z-index: 1;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {

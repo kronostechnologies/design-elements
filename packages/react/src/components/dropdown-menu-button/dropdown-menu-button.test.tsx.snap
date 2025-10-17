@@ -41,11 +41,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -61,11 +56,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -103,6 +93,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c0 {
   position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 {
@@ -151,11 +147,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #006296;
 }
 
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -178,11 +169,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c20 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c20:focus-visible {
@@ -250,11 +236,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c16:focus-visible {
@@ -353,11 +334,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -393,11 +369,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c13:focus-visible {
@@ -724,11 +695,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -744,11 +710,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -786,6 +747,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c0 {
   position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c3 {
@@ -834,11 +801,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #006296;
 }
 
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -861,11 +823,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c20 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c20:focus-visible {
@@ -933,11 +890,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c16:focus-visible {
@@ -1036,11 +988,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1076,11 +1023,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c13:focus-visible {

@@ -27,11 +27,6 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   color: #006296;
 }
 
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -64,11 +59,6 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   grid-template-areas: 'icon content dismiss';
   grid-template-columns: auto 1fr auto;
   padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

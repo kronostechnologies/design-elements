@@ -16,6 +16,7 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
+import { focus } from '../../utils/css-state';
 import { getRootDocument, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
@@ -27,6 +28,7 @@ import { Icon, type IconProps } from '../icon';
 
 const StyledDiv = styled.div`
     position: relative;
+    ${focus};
 `;
 
 const StyledButton = styled(Button)<{ isMobile: boolean }>`

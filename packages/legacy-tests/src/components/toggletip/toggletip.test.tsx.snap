@@ -41,11 +41,6 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -63,11 +58,6 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -403,11 +393,6 @@ exports[`Toggletip Has default desktop styles 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -425,11 +410,6 @@ exports[`Toggletip Has default desktop styles 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -578,11 +558,6 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -600,11 +575,6 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -940,11 +910,6 @@ exports[`Toggletip Has mobile styles 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -962,11 +927,6 @@ exports[`Toggletip Has mobile styles 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

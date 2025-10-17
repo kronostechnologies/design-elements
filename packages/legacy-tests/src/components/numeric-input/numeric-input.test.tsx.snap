@@ -137,11 +137,6 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   border-color: #B7BBC2;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -348,11 +343,6 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   border-color: #CD2C23;
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -543,11 +533,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -720,11 +705,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-within {

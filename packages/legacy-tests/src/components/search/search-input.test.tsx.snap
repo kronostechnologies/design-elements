@@ -41,11 +41,6 @@ exports[`SearchInput should match the snapshot 1`] = `
   user-select: none;
 }
 
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c13:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -237,11 +232,6 @@ input + .c2 {
   color: #1B1C1E;
 }
 
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -274,11 +264,6 @@ label + .c6 {
   right: 0.25rem;
   top: 0.5rem;
   width: 1.25rem;
-}
-
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c9:focus-visible {

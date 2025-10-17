@@ -39,11 +39,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   color: #006296;
 }
 
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -109,11 +104,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.c8 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c8:focus-visible {
@@ -210,11 +200,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {

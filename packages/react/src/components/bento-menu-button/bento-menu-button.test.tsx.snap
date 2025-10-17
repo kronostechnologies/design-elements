@@ -41,11 +41,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -63,11 +58,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -115,6 +105,12 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c5 {
   left: 0px;
   max-width: 350px;
@@ -151,11 +147,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #006296;
 }
 
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c16:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -178,11 +169,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c21:focus-visible {
@@ -250,11 +236,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c18:focus-visible {
@@ -374,11 +355,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -414,11 +390,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c15:focus-visible {
@@ -847,11 +818,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -869,11 +835,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -921,6 +882,12 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c5 {
   left: 0px;
   max-width: 350px;
@@ -957,11 +924,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #006296;
 }
 
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c16:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -984,11 +946,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c21:focus-visible {
@@ -1056,11 +1013,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c18:focus-visible {
@@ -1180,11 +1132,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1220,11 +1167,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c15:focus-visible {
@@ -1565,11 +1507,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1587,11 +1524,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -1617,6 +1549,12 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c0 {
   position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 <nav

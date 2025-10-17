@@ -52,7 +52,7 @@ describe('Breadcrumb', () => {
                 hiddenRoutes: [],
                 overflow: { horizontal: false, vertical: false },
             });
-            const breadcrumb = render(
+            const { baseElement } = render(
                 <BrowserRouter>
                     <DesignSystem>
                         <Breadcrumb history={history} />
@@ -60,7 +60,7 @@ describe('Breadcrumb', () => {
                 </BrowserRouter>,
             );
 
-            expect(breadcrumb).toMatchSnapshot();
+            expect(baseElement).toMatchSnapshot();
         });
 
         test('Matches snapshot (double entries)', () => {
@@ -72,7 +72,7 @@ describe('Breadcrumb', () => {
                 overflow: { horizontal: false, vertical: false },
             });
 
-            const breadcrumb = render(
+            const { baseElement } = render(
                 <BrowserRouter>
                     <DesignSystem>
                         <Breadcrumb history={history} />
@@ -80,7 +80,7 @@ describe('Breadcrumb', () => {
                 </BrowserRouter>,
             );
 
-            expect(breadcrumb).toMatchSnapshot();
+            expect(baseElement).toMatchSnapshot();
         });
 
         test('Matches snapshot (Three or more entries)', () => {
@@ -134,7 +134,7 @@ describe('Breadcrumb', () => {
             hiddenRoutes: hiddenOverflowHistory,
             overflow: { horizontal: true, vertical: false },
         });
-        const { getByTestId } = render(
+        const { queryByTestId } = render(
             <BrowserRouter>
                 <DesignSystem>
                     <Breadcrumb
@@ -144,7 +144,7 @@ describe('Breadcrumb', () => {
             </BrowserRouter>,
         );
 
-        expect(getByTestId('nav-list').getAttribute('hidden')).toBe('');
+        expect(queryByTestId('nav-list')).not.toBeInTheDocument();
     });
 
     test('Menu should be displayed when button is clicked', async () => {
@@ -163,6 +163,6 @@ describe('Breadcrumb', () => {
         await waitFor(() => expect(queryByTestId('ellipse-button')).toBeTruthy());
         fireEvent.click(getByTestId('ellipse-button'));
 
-        expect(getByTestId('nav-list').getAttribute('hidden')).toBe(null);
+        expect(getByTestId('nav-list')).toBeInTheDocument();
     });
 });
