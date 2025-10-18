@@ -134,6 +134,7 @@ export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
             {children}
             {visible && (
                 <BadgeShape
+                    key="badge-shape"
                     className={className}
                     $animate={animate}
                     $position={position}

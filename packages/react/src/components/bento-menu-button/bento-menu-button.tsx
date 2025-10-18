@@ -98,6 +98,7 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
                     {productLinkGroups.length > 0 && (
                         productLinkGroups.map((productLinkGroup) => (
                             <ProductGroup
+                                key={productLinkGroup.name}
                                 firstItemRef={firstItemRef}
                                 label={productLinkGroup.label}
                                 name={productLinkGroup.name}
