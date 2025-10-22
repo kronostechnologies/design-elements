@@ -63,6 +63,13 @@ export const Desktop: Story = {
     decorators: [DesktopDecorator],
 };
 
+export const Simplified: Story = {
+    args: {
+        simplified: true,
+    },
+    decorators: [DesktopDecorator],
+};
+
 export const Mobile: Story = {
     decorators: [MobileDecorator],
 };

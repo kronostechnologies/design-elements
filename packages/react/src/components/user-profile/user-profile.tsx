@@ -44,6 +44,7 @@ export interface UserProfileProps {
     username: string;
     userEmail?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    simplified?: boolean;
 }
 
 export const UserProfile: FC<UserProfileProps> = ({
@@ -58,11 +59,13 @@ export const UserProfile: FC<UserProfileProps> = ({
     options,
     userEmail,
     username,
+    simplified = false,
 }) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
+    const hasCaret = !isMobile && !simplified;
 
     return (
         <StyledDropdownMenuButton
@@ -71,14 +74,14 @@ export const UserProfile: FC<UserProfileProps> = ({
             className={className}
             data-testid="user-profile"
             defaultOpen={defaultOpen}
-            hasCaret={!isMobile}
+            hasCaret={hasCaret}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
             inverted={inverted}
             tag={tag}
             isMobile={isMobile}
             // eslint-disable-next-line react/jsx-props-no-spreading
-            {...(isMobile ? {} : {
+            {...(!hasCaret ? {} : {
                 label: username,
             })}
             onMenuVisibilityChanged={onMenuVisibilityChanged}

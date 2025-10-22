@@ -67,4 +67,50 @@ describe('UserProfile', () => {
         const actionB = getByTestId(wrapper, 'action-optionB');
         expect(actionB.prop('onClick')).toBe(undefined);
     });
+
+    it('should have caret and label when simplified equals false', () => {
+        const simplified = false;
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+                simplified={simplified}
+            />
+        );
+        const componentProperties = wrapper.childAt(0).props();
+
+        expect(componentProperties.hasCaret).toEqual(!simplified);
+        expect(componentProperties.label).toEqual(username);
+    });
+
+    it('should have caret and label when simplified is default', () => {
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+            />
+        );
+        const componentProperties = wrapper.childAt(0).props();
+
+        expect(componentProperties.hasCaret).toEqual(true);
+        expect(componentProperties.label).toEqual(username);
+    });
+
+    it('should not have caret or label when simplified equals true', () => {
+        const simplified = true;
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+                simplified={simplified}
+            />
+        );
+        const componentProperties = wrapper.childAt(0).props();
+
+        expect(componentProperties.hasCaret).toEqual(!simplified);
+        expect(componentProperties.label).toEqual(undefined);
+    });
 });
