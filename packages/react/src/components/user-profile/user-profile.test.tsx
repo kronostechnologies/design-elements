@@ -97,6 +97,19 @@ describe('UserProfile', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    test('Matches Snapshot (simplified=true)', () => {
+        const simplified = true;
+        const { container } = renderWithProviders(
+            <UserProfile
+                simplified={simplified}
+                username="Test Button"
+                options={options}
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     test('Matches Snapshot (mobile)', () => {
         const { container } = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'mobile');
 
