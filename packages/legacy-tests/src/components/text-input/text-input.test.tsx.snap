@@ -134,11 +134,6 @@ input + .c1 {
   border-color: #B7BBC2;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -305,11 +300,6 @@ input + .c1 {
   height: var(--size-2x);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -474,11 +464,6 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: var(--size-2x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-within {
@@ -667,11 +652,6 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: var(--size-2x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-within {
@@ -872,11 +852,6 @@ input + .c1 {
   height: var(--size-2x);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1072,11 +1047,6 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: var(--size-2x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-within {

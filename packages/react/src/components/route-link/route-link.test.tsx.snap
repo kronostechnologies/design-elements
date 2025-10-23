@@ -19,11 +19,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -76,11 +71,6 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 
 .c0:visited {
   color: #006296;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -146,11 +136,6 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -213,11 +198,6 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -264,11 +244,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -323,11 +298,6 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 
 .c0:visited {
   color: #006296;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -393,11 +363,6 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -458,11 +423,6 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 .c0:visited {
   color: #006296;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

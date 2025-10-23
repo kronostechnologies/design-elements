@@ -63,11 +63,6 @@ exports[`Link Component Styling matches NavLink snapshot 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -200,11 +195,6 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -326,11 +316,6 @@ exports[`Link Component Styling matches default snapshot 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -424,11 +409,6 @@ exports[`Link Component Styling matches with children snapshot 1`] = `
 .c0:disabled {
   cursor: not-allowed;
   pointer-events: none;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

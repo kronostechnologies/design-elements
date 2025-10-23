@@ -51,7 +51,7 @@ describe('Dropdown list', () => {
             expect(screen.queryByTestId('listboxtag-qc')).toBeInTheDocument();
             expect(screen.queryByTestId('listboxtag-nl')).toBeInTheDocument();
             expect(screen.getByTestId('tag-wrapper').children).toHaveLength(2);
-            expect(screen.getByTestId('input')).toHaveProperty('value', 'nl|qc');
+            expect(screen.getByTestId('input')).toHaveValue('nl|qc');
         });
     });
 
@@ -62,7 +62,6 @@ describe('Dropdown list', () => {
             clickDropdownListOption('listitem-nl');
             clickDropdownListOption('listitem-qc');
 
-            expect(screen.getByTestId('textbox')).toHaveAttribute('value', 'nl|qc');
             expect(screen.getByTestId('input')).toHaveValue('nl|qc');
         });
 
@@ -121,8 +120,7 @@ describe('Dropdown list', () => {
                 { key: 'Enter', preventDefault: jest.fn() },
             );
 
-            expect(screen.getByTestId('textbox')).toHaveAttribute('value', 'ab');
-            expect(screen.getByTestId('input')).toHaveAttribute('value', 'ab');
+            expect(screen.getByTestId('input')).toHaveValue('ab');
         });
     });
 

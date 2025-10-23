@@ -185,11 +185,6 @@ exports[`Table has clickable rows styles 1`] = `
   border-top: 1px solid #DBDEE1;
 }
 
-.c5 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1531,11 +1526,6 @@ exports[`Table has selectable rows styles 1`] = `
   display: block;
 }
 
-.c5 + .c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c5:focus-visible + .c6 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -2039,11 +2029,6 @@ exports[`Table has sorting styles 1`] = `
   display: flex;
   font: inherit;
   justify-self: flex-start;
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c4:focus-visible {

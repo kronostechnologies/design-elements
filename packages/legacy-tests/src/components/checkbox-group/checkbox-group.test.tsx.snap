@@ -78,11 +78,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1 + .c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible + .c2 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -202,11 +197,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c1:indeterminate + .c2 > .c6 {
   display: block;
-}
-
-.c1 + .c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c1:focus-visible + .c2 {
@@ -331,11 +321,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
   display: block;
 }
 
-.c1 + .c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible + .c2 {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -458,11 +443,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
 
 .c1:indeterminate + .c2 > .c6 {
   display: block;
-}
-
-.c1 + .c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c1:focus-visible + .c2 {

@@ -37,11 +37,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   color: #006296;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -207,11 +202,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 
 .c2:visited {
   color: #006296;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -404,9 +394,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 `;
 
 exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": .c7 {
+.c7 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -438,11 +426,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 
 .c2:visited {
   color: #006296;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -526,160 +509,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 <body>
-    <div>
-      <nav
-        aria-label="breadcrumb"
-      >
-        <ol
-          class="c0"
-        >
-          <li
-            class="c1"
-          >
-            <a
-              class="c2 c3 c4"
-              href="/index"
-              tabindex="0"
-            >
-              HOME
-            </a>
-            <svg
-              class="c5"
-              color="currentColor"
-              focusable="false"
-              height="20"
-              width="20"
-            />
-          </li>
-          <li
-            class="c1"
-          >
-            <span
-              class="c6"
-            >
-              ROUTE
-            </span>
-          </li>
-        </ol>
-      </nav>
-    </div>
-    <div
-      class="c7"
-      data-testid="toasts"
-    />
-  </body>,
-  "container": .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: var(--border-radius);
-  color: #006296;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c2:hover {
-  color: #003A5A;
-}
-
-.c2:visited {
-  color: #006296;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3 svg {
-  height: 1rem;
-  margin-right: var(--spacing-1x);
-  width: 1rem;
-}
-
-.c3:visited svg {
-  color: #006296;
-}
-
-.c3[disabled] {
-  pointer-events: none;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 0;
-  max-width: 100%;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.c4 {
-  color: #60666E;
-}
-
-.c4:hover {
-  color: #000000;
-}
-
-.c4[disabled] {
-  color: #B7BBC2;
-}
-
-.c6 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  color: #1B1C1E;
-  margin: 0 var(--spacing-1x);
-}
-
-.c5 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  color: #60666E;
-  margin: 0 var(--spacing-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-}
-
-.c1 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-<div>
+  <div>
     <nav
       aria-label="breadcrumb"
     >
@@ -715,65 +545,16 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
         </li>
       </ol>
     </nav>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+  <div
+    class="c7"
+    data-testid="toasts"
+  />
+</body>
 `;
 
 exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": .c3 {
+.c3 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -822,71 +603,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
 }
 
 <body>
-    <div>
-      <nav
-        aria-label="breadcrumb"
-      >
-        <ol
-          class="c0"
-        >
-          <li
-            class="c1"
-          >
-            <span
-              class="c2"
-            >
-              HOME
-            </span>
-          </li>
-        </ol>
-      </nav>
-    </div>
-    <div
-      class="c3"
-      data-testid="toasts"
-    />
-  </body>,
-  "container": .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 0;
-  max-width: 100%;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.c2 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  color: #1B1C1E;
-  margin: 0 var(--spacing-1x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-}
-
-.c1 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-<div>
+  <div>
     <nav
       aria-label="breadcrumb"
     >
@@ -904,57 +621,10 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
         </li>
       </ol>
     </nav>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+  <div
+    class="c3"
+    data-testid="toasts"
+  />
+</body>
 `;

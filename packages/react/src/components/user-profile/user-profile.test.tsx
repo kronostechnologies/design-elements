@@ -1,3 +1,4 @@
+import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { NavItemProps } from '../dropdown-menu';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
@@ -86,15 +87,26 @@ describe('UserProfile', () => {
     });
 
     test('Matches Snapshot (desktop)', () => {
-        const { container } = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'desktop');
+        const { baseElement, getByTestId } = renderWithProviders(
+            <UserProfile username="Test Button" options={options} />,
+            'desktop',
+        );
 
-        expect(container.firstChild).toMatchSnapshot();
+        const element = getByTestId('menu-button');
+        fireEvent.click(element);
+
+        expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches Snapshot (tag="nav")', () => {
-        const { container } = renderWithProviders(<UserProfile tag="nav" username="Test Button" options={options} />);
+        const { baseElement, getByTestId } = renderWithProviders(
+            <UserProfile tag="nav" username="Test Button" options={options} />,
+        );
 
-        expect(container.firstChild).toMatchSnapshot();
+        const element = getByTestId('menu-button');
+        fireEvent.click(element);
+
+        expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches Snapshot (simplified=true)', () => {
@@ -111,14 +123,25 @@ describe('UserProfile', () => {
     });
 
     test('Matches Snapshot (mobile)', () => {
-        const { container } = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'mobile');
+        const { baseElement, getByTestId } = renderWithProviders(
+            <UserProfile username="Test Button" options={options} />,
+            'mobile',
+        );
 
-        expect(container.firstChild).toMatchSnapshot();
+        const element = getByTestId('menu-button');
+        fireEvent.click(element);
+
+        expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const { container } = renderWithProviders(<UserProfile defaultOpen username="Test Button" options={options} />);
+        const { baseElement, getByTestId } = renderWithProviders(
+            <UserProfile defaultOpen username="Test Button" options={options} />,
+        );
 
-        expect(container.firstChild).toMatchSnapshot();
+        const element = getByTestId('menu-button');
+        fireEvent.click(element);
+
+        expect(baseElement).toMatchSnapshot();
     });
 });

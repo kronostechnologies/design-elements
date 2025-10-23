@@ -7,7 +7,7 @@ import { DesktopDecorator, MobileDecorator } from './utils/device-context-decora
 import { RouterDecorator } from './utils/router-decorator';
 
 const StyledDiv = styled.div`
-    height: 540px;
+    height: 600px;
 `;
 
 const adminProducts: NavItemProps[] = [
@@ -41,14 +41,6 @@ const products: NavItemProps[] = [
         href: 'analyze',
         label: 'Equisoft/analyze [legacy]',
         disabled: true,
-    },
-    {
-        value: 'google',
-        href: 'https://google.ca/',
-        label: 'Google',
-        description: 'Search Engine',
-        iconName: 'search',
-        isHtmlLink: true,
     },
     {
         value: 'analyze2',

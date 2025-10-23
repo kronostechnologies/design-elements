@@ -60,6 +60,7 @@ describe('BentoMenuButton', () => {
         const wrapper = mountWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
+        getByTestId(wrapper, 'menu-button').simulate('click');
 
         const productA = getByTestId(wrapper, 'product-optionA');
         productA.invoke('onClick')();
@@ -71,6 +72,7 @@ describe('BentoMenuButton', () => {
         const wrapper = mountWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
+        getByTestId(wrapper, 'menu-button').simulate('click');
 
         const productB = getByTestId(wrapper, 'product-optionB');
         expect(productB.prop('onClick')).toBe(undefined);
@@ -80,6 +82,7 @@ describe('BentoMenuButton', () => {
         const wrapper = mountWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
+        getByTestId(wrapper, 'menu-button').simulate('click');
 
         const externalA = getByTestId(wrapper, 'external-Option A');
         externalA.invoke('onClick')();
@@ -91,6 +94,7 @@ describe('BentoMenuButton', () => {
         const wrapper = mountWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
+        getByTestId(wrapper, 'menu-button').simulate('click');
 
         const externalB = getByTestId(wrapper, 'external-Option B');
         expect(externalB.prop('onClick')).toBe(undefined);
@@ -100,6 +104,7 @@ describe('BentoMenuButton', () => {
         const wrapper = mountWithProviders(
             <BentoMenuButton productLinks={[]} externalLinks={externals} />,
         );
+        getByTestId(wrapper, 'menu-button').simulate('click');
 
         expect(getByTestId(wrapper, 'products-group').exists()).toBe(false);
     });

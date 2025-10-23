@@ -41,11 +41,6 @@ exports[`Carousel should match snapshot 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -63,11 +58,6 @@ exports[`Carousel should match snapshot 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-visible {
@@ -157,11 +147,6 @@ exports[`Carousel should match snapshot 1`] = `
   width: 12px;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -183,11 +168,6 @@ exports[`Carousel should match snapshot 1`] = `
   width: 12px;
 }
 
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -202,11 +182,6 @@ exports[`Carousel should match snapshot 1`] = `
   visibility: hidden;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -215,11 +190,6 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c11 {
   visibility: visible;
-}
-
-.c11 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c11:focus-visible {

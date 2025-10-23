@@ -41,11 +41,6 @@ exports[`Tabs has small styles 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -61,11 +56,6 @@ exports[`Tabs has small styles 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {
@@ -125,11 +115,6 @@ exports[`Tabs has small styles 1`] = `
   width: 100%;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -173,11 +158,6 @@ exports[`Tabs has small styles 1`] = `
   left: 0;
   position: absolute;
   width: 100%;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c12:focus-visible {
@@ -226,11 +206,6 @@ exports[`Tabs has small styles 1`] = `
 
 .c14 {
   border-top: none;
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c14:focus-visible {
@@ -322,11 +297,6 @@ exports[`Tabs has small styles 1`] = `
   background: #DBDEE1;
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -365,11 +335,6 @@ exports[`Tabs has small styles 1`] = `
 
 .c13:hover {
   background: #DBDEE1;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c13:focus-visible {
@@ -547,11 +512,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -567,11 +527,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {
@@ -631,11 +586,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -679,11 +629,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   left: 0;
   position: absolute;
   width: 100%;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c12:focus-visible {
@@ -732,11 +677,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c14 {
   border-top: none;
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c14:focus-visible {
@@ -828,11 +768,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   background: #DBDEE1;
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -871,11 +806,6 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 .c13:hover {
   background: #DBDEE1;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c13:focus-visible {
@@ -1053,11 +983,6 @@ exports[`Tabs matches snapshot 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -1073,11 +998,6 @@ exports[`Tabs matches snapshot 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {
@@ -1137,11 +1057,6 @@ exports[`Tabs matches snapshot 1`] = `
   width: 100%;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1185,11 +1100,6 @@ exports[`Tabs matches snapshot 1`] = `
   left: 0;
   position: absolute;
   width: 100%;
-}
-
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c12:focus-visible {
@@ -1238,11 +1148,6 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c14 {
   border-top: none;
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c14:focus-visible {
@@ -1334,11 +1239,6 @@ exports[`Tabs matches snapshot 1`] = `
   background: #DBDEE1;
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -1377,11 +1277,6 @@ exports[`Tabs matches snapshot 1`] = `
 
 .c13:hover {
   background: #DBDEE1;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c13:focus-visible {

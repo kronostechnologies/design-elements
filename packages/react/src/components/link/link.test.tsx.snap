@@ -54,11 +54,6 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -68,11 +63,6 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
 .c0 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -178,11 +168,6 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
   color: #8FCEF0;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -274,11 +259,6 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 .c0:disabled {
   cursor: not-allowed;
   pointer-events: none;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -379,11 +359,6 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -425,11 +400,6 @@ HTMLCollection [
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {
@@ -498,11 +468,6 @@ HTMLCollection [
 .c1:disabled {
   cursor: not-allowed;
   pointer-events: none;
-}
-
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c1:focus-visible {

@@ -41,11 +41,6 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   width: 100%;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
@@ -208,11 +203,6 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   width: 100%;
-}
-
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c1:focus-visible {
