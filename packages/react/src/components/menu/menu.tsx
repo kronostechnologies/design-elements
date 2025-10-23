@@ -161,7 +161,6 @@ export interface MenuProps {
     initialFocusIndex?: number;
     numberOfVisibleItems?: number;
     options: MenuItem[];
-    $placement?: 'left' | 'right';
 
     onKeyDown?(event: KeyboardEvent): void;
     onOptionSelect?(option: ListOption): void;
