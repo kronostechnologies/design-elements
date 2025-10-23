@@ -19,11 +19,6 @@ exports[`Radio button Matches the snapshot 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -65,11 +60,6 @@ exports[`Radio button Matches the snapshot 1`] = `
   margin: 0;
   position: relative;
   width: var(--size-1x);
-}
-
-.c7 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c7:focus-visible {

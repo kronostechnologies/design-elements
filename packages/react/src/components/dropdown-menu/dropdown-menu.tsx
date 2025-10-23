@@ -20,7 +20,6 @@ export interface DropdownMenuProps {
     children?: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
     id?: string;
     className?: string;
-    hidden?: boolean;
     onKeyDown?(event: KeyboardEvent): void;
 }
 
@@ -28,7 +27,6 @@ export const DropdownMenu = forwardRef(({
     children,
     className,
     id: providedId,
-    hidden,
     onKeyDown,
     ...otherProps
 }: DropdownMenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
@@ -41,7 +39,6 @@ export const DropdownMenu = forwardRef(({
             className={className}
             data-testid="menu-list"
             id={id}
-            hidden={hidden}
             onKeyDownCapture={(event: KeyboardEvent<HTMLDivElement>) => onKeyDown?.(event)}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >

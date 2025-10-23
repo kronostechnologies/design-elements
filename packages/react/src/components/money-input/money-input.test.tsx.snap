@@ -112,11 +112,6 @@ exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -259,11 +254,6 @@ exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -404,11 +394,6 @@ exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: var(--size-2x);
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c2:focus-within {

@@ -1,6 +1,10 @@
 import { type FC, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { useDropdown } from '../../hooks/use-dropdown';
+import { getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons';
 import { Icon } from '../icon';
@@ -66,9 +70,18 @@ const StyledListWrapper = styled.div`
     z-index: 1;
 `;
 
-const StyledNavList = styled(NavList)`
+interface StyledNavListProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledNavList = styled(NavList)<StyledNavListProps>`
+    left: ${(props) => props.$left};
     max-width: 350px;
+    position: absolute;
+    top: ${(props) => props.$top};
     width: initial;
+    z-index: 99998;
 `;
 
 const StyledIconButton = styled(IconButton)`
@@ -86,9 +99,15 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
     const [isOpen, setOpen] = useState(false);
     const [focusedValue, setFocusedValue] = useState('');
 
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const navListRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
+    const shadowRoot = useShadowRoot();
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, floating: navListRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({ open: isOpen, placement: 'bottom-end' });
+    const rootElement = getRootElement(shadowRoot);
+
     const {
         shownRoutes,
         hiddenRoutes,
@@ -104,7 +123,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
         if (shouldClose) {
             setOpen(false);
         }
-    }, [isOpen]);
+    }, [buttonRef, isOpen, navListRef]);
 
     useEffect(() => {
         if (history.length > 0) {
@@ -154,7 +173,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
                     <StyledLi>
                         <StyledListWrapper>
                             <StyledIconButton
-                                ref={buttonRef}
+                                ref={refs.setReference}
                                 aria-expanded={isOpen}
                                 type="button"
                                 data-testid="ellipse-button"
@@ -163,16 +182,20 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
                                 label="breadcrumb-list"
                                 onClick={() => setOpen(!isOpen)}
                             />
-                            <StyledNavList
-                                ordered
-                                data-testid="nav-list"
-                                ref={navListRef}
-                                hidden={!isOpen}
-                                focusedValue={focusedValue}
-                                onChange={() => setOpen(false)}
-                                onKeyDown={handleNavListKeyDown}
-                                options={hiddenRoutes}
-                            />
+                            {isOpen && createPortal(
+                                <StyledNavList
+                                    ordered
+                                    data-testid="nav-list"
+                                    ref={refs.setFloating}
+                                    focusedValue={focusedValue}
+                                    onChange={() => setOpen(false)}
+                                    onKeyDown={handleNavListKeyDown}
+                                    options={hiddenRoutes}
+                                    $left={`${x}px`}
+                                    $top={`${y}px`}
+                                />,
+                                rootElement,
+                            )}
                         </StyledListWrapper>
                         <StyledSeparatorIcon name="chevronRight" size="20" />
                     </StyledLi>

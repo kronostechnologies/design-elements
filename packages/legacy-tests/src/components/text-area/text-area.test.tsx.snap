@@ -114,11 +114,6 @@ input + .c1 {
   color: #1B1C1E;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -261,11 +256,6 @@ input + .c1 {
   background-color: rgb(0 0 0 / 0.03);
   border-color: transparent;
   color: #1B1C1E;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c3:focus-visible {

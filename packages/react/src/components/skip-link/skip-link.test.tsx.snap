@@ -53,11 +53,6 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
@@ -139,11 +134,6 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   position: absolute;
   text-transform: unset;
   white-space: nowrap;
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .c0:focus-visible {

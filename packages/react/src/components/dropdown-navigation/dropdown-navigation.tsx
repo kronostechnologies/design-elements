@@ -10,11 +10,14 @@ import {
     useRef,
     useState,
 } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
-import { getRootDocument } from '../../utils/dom';
+import { getRootDocument, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button, type ButtonType, IconButton } from '../buttons';
@@ -40,11 +43,19 @@ const StyledLeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
 `;
 
-const StyledNavDropdown = styled(NavList)`
+interface StyledNavListProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledNavDropdown = styled(NavList)<StyledNavListProps>`
+    left: ${(props) => props.$left};
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
-    right: 0;
+    position: absolute;
+    top: ${(props) => props.$top};
     width: initial;
+    z-index: 99998;
 `;
 
 function getFirstFocusableElement(array: NavListOption[]): NavListOption {
@@ -111,23 +122,28 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
     const [isOpen, setOpen] = useState(defaultOpen);
     const containerAriaLabel = tag === 'div' ? '' : ariaLabel || t('ariaLabel');
     const dataAttributes = useDataAttributes(props);
+    const shadowRoot = useShadowRoot();
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, floating: navListRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({ open: isOpen, placement: 'bottom-end' });
+    const rootElement = getRootElement(shadowRoot);
 
     useEffect(() => {
         onDropdownVisibilityChanged?.(isOpen);
     }, [isOpen, onDropdownVisibilityChanged]);
 
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const NavListRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, buttonRef.current, NavListRef.current);
-        const shouldClose = (NavListRef.current === null || clickIsOutside) && isOpen;
+        const clickIsOutside = !eventIsInside(event, buttonRef.current, navListRef.current);
+        const shouldClose = (navListRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
             setOpen(false);
         }
-    }, [isOpen]);
+    }, [navListRef, buttonRef, isOpen]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -193,7 +209,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
                     data-testid="navigation-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
-                    ref={buttonRef}
+                    ref={refs.setReference}
                     title={title}
                     type="button"
                     buttonType={buttonType}
@@ -220,22 +236,26 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
                     data-testid="navigation-button"
                     iconName={iconName}
                     onClick={handleButtonClick}
-                    ref={buttonRef}
+                    ref={refs.setReference}
                     title={title}
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
                 />
             )}
-            <StyledNavDropdown
-                data-testid="dropdown-navDropdown"
-                focusedValue={focusedValue}
-                onChange={handleOnLinkSelected}
-                onKeyDown={handleNavDropdownKeyDown}
-                options={options}
-                ref={NavListRef}
-                hidden={!isOpen}
-            />
+            {isOpen && createPortal(
+                <StyledNavDropdown
+                    data-testid="dropdown-navDropdown"
+                    focusedValue={focusedValue}
+                    onChange={handleOnLinkSelected}
+                    onKeyDown={handleNavDropdownKeyDown}
+                    options={options}
+                    ref={refs.setFloating}
+                    $left={`${x}px`}
+                    $top={`${y}px`}
+                />,
+                rootElement,
+            )}
         </StyledDiv>
     );
 };

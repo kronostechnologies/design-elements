@@ -157,7 +157,6 @@ describe('Dropdown list', () => {
         it('defaultValue assigns this value to the input', () => {
             const wrapper = shallow(<DropdownList options={provinces} defaultValue="qc" />);
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('qc');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('qc');
         });
 
@@ -174,7 +173,7 @@ describe('Dropdown list', () => {
             const options = provinces.concat([{ value: '', label: '' }]);
             const wrapper = shallow(<DropdownList options={options} defaultValue="" />);
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
+            expect(getByTestId(wrapper, 'input').prop('value')).toBe('');
         });
 
         it('no defaultValues are displayed when not specified and list is multiselect', () => {
@@ -191,7 +190,6 @@ describe('Dropdown list', () => {
 
             getByTestId(wrapper, 'listitem-qc').simulate('click');
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('qc');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('qc');
         });
 
@@ -217,7 +215,7 @@ describe('Dropdown list', () => {
                 { relatedTarget: document.createElement('div') },
             );
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('bc');
+            expect(getByTestId(wrapper, 'input').prop('value')).toBe('bc');
         });
     });
 
@@ -225,7 +223,6 @@ describe('Dropdown list', () => {
         it('the input value is set according to the value prop', () => {
             const wrapper = shallow(<DropdownList options={provinces} value="qc" />);
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('qc');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('qc');
         });
 
@@ -234,7 +231,6 @@ describe('Dropdown list', () => {
 
             wrapper.setProps({ value: 'ns' }).update();
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('ns');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('ns');
         });
 
@@ -242,7 +238,6 @@ describe('Dropdown list', () => {
             const options = provinces.concat([{ value: '', label: '' }]);
             const wrapper = shallow(<DropdownList options={options} defaultValue="qc" value="" />);
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('');
         });
     });
@@ -414,7 +409,6 @@ describe('Dropdown list', () => {
                 { key: 'Enter', preventDefault: jest.fn() },
             );
 
-            expect(getByTestId(wrapper, 'textbox').prop('value')).toBe('sk');
             expect(getByTestId(wrapper, 'input').prop('value')).toBe('sk');
         });
 
@@ -479,6 +473,6 @@ describe('Dropdown list', () => {
             <DropdownList data-testid="a-controlled-id" options={provinces} defaultValue="qc" />,
         );
 
-        expect(getByTestId(wrapper, 'a-controlled-id').prop('value')).toBe('qc');
+        expect(getByTestId(wrapper, 'a-controlled-id').prop('role')).toBe('combobox');
     });
 });

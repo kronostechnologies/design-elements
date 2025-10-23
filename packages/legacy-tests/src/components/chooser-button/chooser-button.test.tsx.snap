@@ -64,13 +64,6 @@ input[type='radio']:checked + .c1 {
   color: #003A5A;
 }
 
-.c1,
-input[type="checkbox"]:focus-visible + .c1,
-input[type="radio"]:focus-visible + .c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c1:focus-visible,
 input[type="checkbox"]:focus-visible + .c1,
 input[type="radio"]:focus-visible + .c1 {

@@ -30,11 +30,6 @@ export const focus = (
     const baseSelector = selector ?? '';
 
     return css`
-        ${baseSelector} {
-            outline: ${insideFocusBorderWeight} solid transparent;
-            outline-offset: ${insideFocusBorderOffset};
-        };
-
         &:${focusType} ${baseSelector} {
             box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
             outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};

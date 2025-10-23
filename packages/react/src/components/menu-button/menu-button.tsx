@@ -1,7 +1,11 @@
 import React, { FunctionComponent, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
+import { getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { Button, type ButtonType, IconButton } from '../buttons';
 import { Icon, type IconName } from '../icon';
@@ -14,12 +18,18 @@ const StyledContainer = styled.div`
     position: relative;
 `;
 
-const StyledMenu = styled(Menu)`
+interface StyledMenuProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledMenu = styled(Menu)<StyledMenuProps>`
+    left: ${(props) => props.$left};
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     position: absolute;
-    z-index: 1;
-    ${({ $placement }) => ($placement === 'left' ? 'right: 0;' : 'left: 0;')}
+    top: ${(props) => props.$top};
+    z-index: 99998;
 `;
 
 const StyledIcon = styled(Icon)`
@@ -61,8 +71,16 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
 
     const [visible, setVisible] = useState(!!defaultOpen);
     const [initialFocusIndex, setInitialFocusIndex] = useState(0);
-    const buttonRef = useRef<HTMLButtonElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const placement = menuPlacement === 'right' ? 'bottom-start' : 'bottom-end';
+    const shadowRoot = useShadowRoot();
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({ open: visible, placement });
+    const rootElement = getRootElement(shadowRoot);
 
     /**
      * Hide menu when user clicks outside container
@@ -109,7 +127,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
             buttonRef.current?.blur();
         }
         setVisible(!visible);
-    }, [visible, setVisible]);
+    }, [visible, buttonRef]);
 
     useEffect(() => {
         onMenuVisibilityChanged?.(visible);
@@ -122,7 +140,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
 
     const button = iconName ? (
         <IconButton
-            ref={buttonRef}
+            ref={refs.setReference}
             autofocus={autofocus}
             data-testid="menu-button"
             type="button"
@@ -137,7 +155,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         />
     ) : (
         <Button
-            ref={buttonRef}
+            ref={refs.setReference}
             autofocus={autofocus}
             data-testid="menu-button"
             type="button"
@@ -172,13 +190,16 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
             onKeyDown={handleTabKeyDown}
         >
             {wrappedButton}
-            {visible && (
+            {visible && createPortal(
                 <StyledMenu
-                    $placement={menuPlacement}
+                    ref={refs.setFloating}
                     options={options}
                     initialFocusIndex={initialFocusIndex}
                     onOptionSelect={handleOnOptionSelect}
-                />
+                    $left={`${x}px`}
+                    $top={`${y}px`}
+                />,
+                rootElement,
             )}
         </StyledContainer>
     );
