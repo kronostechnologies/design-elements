@@ -1,188 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c1:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2:focus-visible {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c2:hover,
-.c2[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #006296;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F1F2F2;
-  border-radius: 50%;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: var(--font-semi-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 0.625rem;
-  height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
-  width: var(--size-1halfx);
-}
-
-.c0 {
-  position: relative;
-}
-
-.c0:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c6 {
-  margin-left: var(--spacing-1x);
-}
-
-.c7 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c5 {
-  margin-right: var(--spacing-1x);
-}
-
-<body>
-  <div>
-    <div
-      aria-label=""
-      class="c0 "
-      data-testid="dropdown-container"
-      id="uuid1"
-    >
-      <button
-        aria-expanded="false"
-        class="c1 c2 c3"
-        data-testid="menu-button"
-        type="button"
-      >
-        <div
-          aria-label="Test Button avatar"
-          class="c4 c5"
-          role="img"
-        >
-          <span
-            data-testid="avatar-initials"
-          >
-            TB
-          </span>
-        </div>
-        Test Button
-        <svg
-          aria-hidden="true"
-          class="c6"
-          color="currentColor"
-          focusable="false"
-          height="16"
-          width="16"
-        />
-      </button>
-    </div>
-  </div>
-  <div
-    class="c7"
-    data-testid="toasts"
-  />
-</body>
-`;
-
-exports[`UserProfile Matches Snapshot (desktop) 1`] = `
+exports[`UserProfile Matches Snapshot (\`full-name\`) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -861,6 +679,188 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       </li>
     </ul>
   </div>
+</body>
+`;
+
+exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c6 {
+  margin-left: var(--spacing-1x);
+}
+
+.c7 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c5 {
+  margin-right: var(--spacing-1x);
+}
+
+<body>
+  <div>
+    <div
+      aria-label=""
+      class="c0 "
+      data-testid="dropdown-container"
+      id="uuid1"
+    >
+      <button
+        aria-expanded="false"
+        class="c1 c2 c3"
+        data-testid="menu-button"
+        type="button"
+      >
+        <div
+          aria-label="Test Button avatar"
+          class="c4 c5"
+          role="img"
+        >
+          <span
+            data-testid="avatar-initials"
+          >
+            TB
+          </span>
+        </div>
+        Test Button
+        <svg
+          aria-hidden="true"
+          class="c6"
+          color="currentColor"
+          focusable="false"
+          height="16"
+          width="16"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    class="c7"
+    data-testid="toasts"
+  />
 </body>
 `;
 
@@ -2216,4 +2216,153 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
     </ul>
   </div>
 </body>
+`;
+
+exports[`UserProfile Matches Snapshot (variant=\`avatar-only\`) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 {
+  margin-right: 0;
+}
+
+<div
+  aria-label=""
+  class="c0 "
+  data-testid="dropdown-container"
+  id="uuid1"
+>
+  <button
+    aria-expanded="false"
+    class="c1 c2"
+    data-testid="menu-button"
+    type="button"
+  >
+    <div
+      aria-label="Test Button avatar"
+      class="c3 c4"
+      role="img"
+    >
+      <span
+        data-testid="avatar-initials"
+      >
+        TB
+      </span>
+    </div>
+  </button>
+</div>
 `;
