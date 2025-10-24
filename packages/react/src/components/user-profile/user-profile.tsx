@@ -15,8 +15,8 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean 
     }
 `;
 
-const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
-    margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
+const StyledAvatar = styled(Avatar)<{ avatarOnly: boolean }>`
+    margin-right: ${({ avatarOnly }) => (avatarOnly ? 0 : 'var(--spacing-1x)')};
 `;
 
 export function getFirstFocusableItem(options: NavItemProps[]): NavItemProps | undefined {
@@ -65,7 +65,7 @@ export const UserProfile: FC<UserProfileProps> = ({
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
-    const hasCaret = !isMobile && !(variant === 'avatar-only');
+    const avatarOnly = isMobile || (variant === 'avatar-only');
 
     return (
         <StyledDropdownMenuButton
@@ -75,14 +75,14 @@ export const UserProfile: FC<UserProfileProps> = ({
             data-testid="user-profile"
             defaultOpen={defaultOpen}
             dropdownMenuWidth="auto"
-            hasCaret={hasCaret}
+            hasCaret={!avatarOnly}
             id={id}
-            icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            icon={<StyledAvatar avatarOnly={avatarOnly} username={username} />}
             inverted={inverted}
             tag={tag}
             isMobile={isMobile}
             // eslint-disable-next-line react/jsx-props-no-spreading
-            {...(!hasCaret ? {} : {
+            {...(avatarOnly ? {} : {
                 label: username,
             })}
             onMenuVisibilityChanged={onMenuVisibilityChanged}
