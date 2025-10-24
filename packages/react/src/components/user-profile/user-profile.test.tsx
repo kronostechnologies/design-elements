@@ -86,9 +86,9 @@ describe('UserProfile', () => {
         });
     });
 
-    test('Matches Snapshot (desktop)', () => {
+    test('Matches Snapshot (`full-name`)', () => {
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile username="Test Button" options={options} />,
+            <UserProfile username="Test Button" options={options} variant='full-name' />,
             'desktop',
         );
 
@@ -100,7 +100,7 @@ describe('UserProfile', () => {
 
     test('Matches Snapshot (tag="nav")', () => {
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile tag="nav" username="Test Button" options={options} />,
+            <UserProfile tag="nav" username="Test Button" options={options} variant='full-name' />,
         );
 
         const element = getByTestId('menu-button');
@@ -109,11 +109,10 @@ describe('UserProfile', () => {
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (simplified=true)', () => {
-        const simplified = true;
+    test('Matches Snapshot (variant=`avatar-only`)', () => {
         const { container } = renderWithProviders(
             <UserProfile
-                simplified={simplified}
+                variant='avatar-only'
                 username="Test Button"
                 options={options}
             />,
@@ -136,7 +135,7 @@ describe('UserProfile', () => {
 
     test('Matches Snapshot (defaultOpen)', () => {
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile defaultOpen username="Test Button" options={options} />,
+            <UserProfile defaultOpen username="Test Button" options={options} variant='full-name' />,
         );
 
         const element = getByTestId('menu-button');

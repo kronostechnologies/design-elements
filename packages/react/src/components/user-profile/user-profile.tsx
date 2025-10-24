@@ -44,7 +44,7 @@ export interface UserProfileProps {
     username: string;
     userEmail?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
-    simplified?: boolean;
+    variant?: 'avatar-only' | 'full-name';
 }
 
 export const UserProfile: FC<UserProfileProps> = ({
@@ -59,13 +59,13 @@ export const UserProfile: FC<UserProfileProps> = ({
     options,
     userEmail,
     username,
-    simplified = false,
+    variant = 'avatar-only',
 }) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
-    const hasCaret = !isMobile && !simplified;
+    const hasCaret = !isMobile && !(variant === 'avatar-only');
 
     return (
         <StyledDropdownMenuButton

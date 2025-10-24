@@ -46,7 +46,7 @@ describe('UserProfile', () => {
 
     it('should contain username', () => {
         const username = 'John Doe';
-        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
+        const wrapper = mountWithProviders(<UserProfile username={username} options={options} variant='full-name' />);
 
         expect(getByTestId(wrapper, 'menu-button').contains(username)).toBe(true);
     });
@@ -72,28 +72,13 @@ describe('UserProfile', () => {
         expect(actionB.prop('onClick')).toBe(undefined);
     });
 
-    it('should have caret and label when simplified equals false', () => {
-        const simplified = false;
+    it('should have caret and label when variant is `full-name`', () => {
         const username = 'John Doe';
         const wrapper = mountWithProviders(
             <UserProfile
                 username={username}
                 options={options}
-                simplified={simplified}
-            />
-        );
-        const componentProperties = wrapper.childAt(0).props();
-
-        expect(componentProperties.hasCaret).toEqual(!simplified);
-        expect(componentProperties.label).toEqual(username);
-    });
-
-    it('should have caret and label when simplified is default', () => {
-        const username = 'John Doe';
-        const wrapper = mountWithProviders(
-            <UserProfile
-                username={username}
-                options={options}
+                variant='full-name'
             />
         );
         const componentProperties = wrapper.childAt(0).props();
@@ -102,14 +87,28 @@ describe('UserProfile', () => {
         expect(componentProperties.label).toEqual(username);
     });
 
-    it('should not have caret or label when simplified equals true', () => {
+    it('should not have caret or label when variant is null', () => {
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+            />
+        );
+        const componentProperties = wrapper.childAt(0).props();
+
+        expect(componentProperties.hasCaret).toEqual(false);
+        expect(componentProperties.label).toEqual(undefined);
+    });
+
+    it('should not have caret or label when variant is `avatar-only`', () => {
         const simplified = true;
         const username = 'John Doe';
         const wrapper = mountWithProviders(
             <UserProfile
                 username={username}
                 options={options}
-                simplified={simplified}
+                variant='avatar-only'
             />
         );
         const componentProperties = wrapper.childAt(0).props();

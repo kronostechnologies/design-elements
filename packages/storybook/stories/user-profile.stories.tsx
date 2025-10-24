@@ -59,14 +59,14 @@ const UserProfileMeta: Meta<typeof UserProfile> = {
 export default UserProfileMeta;
 type Story = StoryObj<typeof UserProfile>;
 
-export const Desktop: Story = {
+export const FullName: Story = {
+    args: {
+        variant: 'full-name',
+    },
     decorators: [DesktopDecorator],
 };
 
-export const Simplified: Story = {
-    args: {
-        simplified: true,
-    },
+export const AvatarOnly: Story = {
     decorators: [DesktopDecorator],
 };
 
