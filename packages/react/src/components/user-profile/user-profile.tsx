@@ -15,8 +15,8 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean 
     }
 `;
 
-const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
-    margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
+const StyledAvatar = styled(Avatar)<{ avatarOnly: boolean }>`
+    margin-right: ${({ avatarOnly }) => (avatarOnly ? 0 : 'var(--spacing-1x)')};
 `;
 
 export function getFirstFocusableItem(options: NavItemProps[]): NavItemProps | undefined {
@@ -44,6 +44,7 @@ interface UserProfileProps {
     username: string;
     userEmail?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    variant?: 'avatar-only' | 'full-name';
 }
 
 export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
@@ -58,11 +59,13 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
     options,
     userEmail,
     username,
+    variant = 'avatar-only',
 }) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
+    const avatarOnly = isMobile || (variant === 'avatar-only');
 
     return (
         <StyledDropdownMenuButton
@@ -71,14 +74,14 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
             className={className}
             data-testid="user-profile"
             defaultOpen={defaultOpen}
-            hasCaret={!isMobile}
+            hasCaret={!avatarOnly}
             id={id}
-            icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            icon={<StyledAvatar avatarOnly={avatarOnly} username={username} />}
             inverted={inverted}
             tag={tag}
             isMobile={isMobile}
             // eslint-disable-next-line react/jsx-props-no-spreading
-            {...(isMobile ? {} : {
+            {...(avatarOnly ? {} : {
                 label: username,
             })}
             onMenuVisibilityChanged={onMenuVisibilityChanged}

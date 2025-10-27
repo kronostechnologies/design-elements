@@ -207,14 +207,6 @@ jobs:
         with:
           working-directory: ./packages/react
 
-      - name: Upload test coverage results
-        uses: actions/upload-artifact@v4
-        if: ${{ success() || failure() }}
-        with:
-          name: react-test-coverage.clover.xml
-          path: packages/react/build/jest/coverage/clover.xml
-          if-no-files-found: error
-
   react_compile:
     name: "React: Compile"
     runs-on: ubuntu-latest

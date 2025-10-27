@@ -61,6 +61,8 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
 }
 
 .c2 {
@@ -89,7 +91,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -116,7 +118,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c7 {
+.c5 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -132,24 +134,14 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   position: relative;
 }
 
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
 .c6 {
-  margin-left: var(--spacing-1x);
-}
-
-.c8 {
   max-width: 350px;
   min-width: 200px;
   right: 0;
   width: initial;
 }
 
-.c19 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -167,26 +159,26 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c19:hover {
+.c17:hover {
   color: #003A5A;
 }
 
-.c19:visited {
+.c17:visited {
   color: #006296;
 }
 
-.c19 {
+.c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c19:focus-visible {
+.c17:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c18 {
+.c16 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -198,7 +190,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: 1px;
 }
 
-.c23 {
+.c21 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -211,7 +203,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c20 {
+.c18 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -222,30 +214,30 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
 }
 
-.c20:visited svg {
+.c18:visited svg {
   color: #006296;
 }
 
-.c22 {
+.c20 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c9 {
+.c7 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c9:not(:last-child)::after {
+.c7:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c12 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -257,7 +249,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   max-width: 100%;
 }
 
-.c13 {
+.c11 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -265,7 +257,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c11 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -283,7 +275,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c15 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -301,7 +293,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c10 {
+.c8 {
   color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
@@ -311,6 +303,48 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
 }
 
 .c14 {
@@ -344,7 +378,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c14:hover {
-  background-color: #DBDEE1;
+  background-color: transparent;
 }
 
 .c14[disabled],
@@ -355,7 +389,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   pointer-events: none;
 }
 
-.c16 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -374,72 +408,30 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c16 {
+.c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c16:focus-visible {
+.c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c16:hover {
-  background-color: transparent;
-}
-
-.c16[disabled],
-.c16[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c17 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c17:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c17[disabled],
-.c17[disabled] * {
+.c15[disabled],
+.c15[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -459,40 +451,40 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21 {
+.c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c21:focus-visible {
+.c19:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c21:hover {
+.c19:hover {
   background-color: #DBDEE1;
 }
 
-.c21[disabled],
-.c21[disabled] * {
+.c19[disabled],
+.c19[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21:visited svg {
+.c19:visited svg {
   color: #1B1C1E;
 }
 
-.c21 span {
+.c19 span {
   color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c5 {
-  margin-right: var(--spacing-1x);
+.c4 {
+  margin-right: 0;
 }
 
 <div
@@ -503,13 +495,13 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 >
   <button
     aria-expanded="true"
-    class="c1 c2 c3"
+    class="c1 c2"
     data-testid="menu-button"
     type="button"
   >
     <div
       aria-label="Test Button avatar"
-      class="c4 c5"
+      class="c3 c4"
       role="img"
     >
       <span
@@ -518,36 +510,27 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
         TB
       </span>
     </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
   </button>
   <div
-    class="c7 c8"
+    class="c5 c6"
     data-testid="user-profile"
     id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
-      class="c9"
+      class="c7"
     >
       <li
-        class="c10"
+        class="c8"
       >
         <div
-          class="c11"
+          class="c9"
         >
           <div
-            class="c12"
+            class="c10"
           >
             <span
-              class="c13"
+              class="c11"
             >
               Test Button
             </span>
@@ -557,24 +540,24 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
     </ul>
     <ul
       aria-labelledby="user-actions"
-      class="c9"
+      class="c7"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionA"
           href="/testa"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option A
               </span>
@@ -585,20 +568,20 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c14"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
           tabindex="-1"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option B
               </span>
@@ -609,19 +592,19 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionC"
           href="/testc"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option C
               </span>
@@ -632,26 +615,26 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17"
+          class="c15"
           href="www.test.ca"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option D
               </span>
             </div>
           </div>
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -661,18 +644,18 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c19 c20 c21"
+          class="c17 c18 c19"
           href="www.test.ca"
           target="_blank"
         >
           <span
-            class="c22"
+            class="c20"
           >
             Option E
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c23"
+            class="c21"
             color="currentColor"
             focusable="false"
             height="16"
@@ -680,7 +663,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
             width="16"
           />
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -753,6 +736,8 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
 }
 
 .c2 {
@@ -781,7 +766,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -808,7 +793,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c7 {
+.c5 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -824,24 +809,14 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   position: relative;
 }
 
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
 .c6 {
-  margin-left: var(--spacing-1x);
-}
-
-.c8 {
   max-width: 350px;
   min-width: 200px;
   right: 0;
   width: initial;
 }
 
-.c19 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -859,26 +834,26 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   text-decoration: underline;
 }
 
-.c19:hover {
+.c17:hover {
   color: #003A5A;
 }
 
-.c19:visited {
+.c17:visited {
   color: #006296;
 }
 
-.c19 {
+.c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c19:focus-visible {
+.c17:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c18 {
+.c16 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -890,7 +865,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: 1px;
 }
 
-.c23 {
+.c21 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -903,7 +878,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: 1rem;
 }
 
-.c20 {
+.c18 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -914,30 +889,30 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   display: inline-flex;
 }
 
-.c20:visited svg {
+.c18:visited svg {
   color: #006296;
 }
 
-.c22 {
+.c20 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c9 {
+.c7 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c9:not(:last-child)::after {
+.c7:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c12 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -949,7 +924,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   max-width: 100%;
 }
 
-.c13 {
+.c11 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -957,7 +932,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c11 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -975,7 +950,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c15 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -993,7 +968,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c10 {
+.c8 {
   color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
@@ -1003,6 +978,48 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
 }
 
 .c14 {
@@ -1036,7 +1053,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c14:hover {
-  background-color: #DBDEE1;
+  background-color: transparent;
 }
 
 .c14[disabled],
@@ -1047,7 +1064,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   pointer-events: none;
 }
 
-.c16 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1066,72 +1083,30 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c16 {
+.c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c16:focus-visible {
+.c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c16:hover {
-  background-color: transparent;
-}
-
-.c16[disabled],
-.c16[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c17 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c17:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c17[disabled],
-.c17[disabled] * {
+.c15[disabled],
+.c15[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1151,40 +1126,40 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21 {
+.c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c21:focus-visible {
+.c19:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c21:hover {
+.c19:hover {
   background-color: #DBDEE1;
 }
 
-.c21[disabled],
-.c21[disabled] * {
+.c19[disabled],
+.c19[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21:visited svg {
+.c19:visited svg {
   color: #1B1C1E;
 }
 
-.c21 span {
+.c19 span {
   color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c5 {
-  margin-right: var(--spacing-1x);
+.c4 {
+  margin-right: 0;
 }
 
 <div
@@ -1195,13 +1170,13 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 >
   <button
     aria-expanded="false"
-    class="c1 c2 c3"
+    class="c1 c2"
     data-testid="menu-button"
     type="button"
   >
     <div
       aria-label="Test Button avatar"
-      class="c4 c5"
+      class="c3 c4"
       role="img"
     >
       <span
@@ -1210,37 +1185,28 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
         TB
       </span>
     </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
   </button>
   <div
-    class="c7 c8"
+    class="c5 c6"
     data-testid="user-profile"
     hidden=""
     id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
-      class="c9"
+      class="c7"
     >
       <li
-        class="c10"
+        class="c8"
       >
         <div
-          class="c11"
+          class="c9"
         >
           <div
-            class="c12"
+            class="c10"
           >
             <span
-              class="c13"
+              class="c11"
             >
               Test Button
             </span>
@@ -1250,24 +1216,24 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
     </ul>
     <ul
       aria-labelledby="user-actions"
-      class="c9"
+      class="c7"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionA"
           href="/testa"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option A
               </span>
@@ -1278,20 +1244,20 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c14"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
           tabindex="-1"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option B
               </span>
@@ -1302,19 +1268,19 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionC"
           href="/testc"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option C
               </span>
@@ -1325,26 +1291,26 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17"
+          class="c15"
           href="www.test.ca"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option D
               </span>
             </div>
           </div>
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -1354,18 +1320,18 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c19 c20 c21"
+          class="c17 c18 c19"
           href="www.test.ca"
           target="_blank"
         >
           <span
-            class="c22"
+            class="c20"
           >
             Option E
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c23"
+            class="c21"
             color="currentColor"
             focusable="false"
             height="16"
@@ -1373,7 +1339,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
             width="16"
           />
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -2129,6 +2095,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
 }
 
 .c2 {
@@ -2157,7 +2125,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2184,7 +2152,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   width: var(--size-1halfx);
 }
 
-.c7 {
+.c5 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -2200,24 +2168,14 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   position: relative;
 }
 
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
 .c6 {
-  margin-left: var(--spacing-1x);
-}
-
-.c8 {
   max-width: 350px;
   min-width: 200px;
   right: 0;
   width: initial;
 }
 
-.c19 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2235,26 +2193,26 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   text-decoration: underline;
 }
 
-.c19:hover {
+.c17:hover {
   color: #003A5A;
 }
 
-.c19:visited {
+.c17:visited {
   color: #006296;
 }
 
-.c19 {
+.c17 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c19:focus-visible {
+.c17:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c18 {
+.c16 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -2266,7 +2224,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   width: 1px;
 }
 
-.c23 {
+.c21 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -2279,7 +2237,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   width: 1rem;
 }
 
-.c20 {
+.c18 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -2290,30 +2248,30 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: inline-flex;
 }
 
-.c20:visited svg {
+.c18:visited svg {
   color: #006296;
 }
 
-.c22 {
+.c20 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c9 {
+.c7 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c9:not(:last-child)::after {
+.c7:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c12 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2325,7 +2283,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   max-width: 100%;
 }
 
-.c13 {
+.c11 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -2333,7 +2291,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c11 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2351,7 +2309,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c15 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2369,7 +2327,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c10 {
+.c8 {
   color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
@@ -2379,6 +2337,48 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c12 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c12:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
 }
 
 .c14 {
@@ -2412,7 +2412,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c14:hover {
-  background-color: #DBDEE1;
+  background-color: transparent;
 }
 
 .c14[disabled],
@@ -2423,7 +2423,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   pointer-events: none;
 }
 
-.c16 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2442,72 +2442,30 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c16 {
+.c15 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c16:focus-visible {
+.c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c16:hover {
-  background-color: transparent;
-}
-
-.c16[disabled],
-.c16[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c17 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus-visible {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c17:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c17[disabled],
-.c17[disabled] * {
+.c15[disabled],
+.c15[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2527,40 +2485,40 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21 {
+.c19 {
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
-.c21:focus-visible {
+.c19:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c21:hover {
+.c19:hover {
   background-color: #DBDEE1;
 }
 
-.c21[disabled],
-.c21[disabled] * {
+.c19[disabled],
+.c19[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21:visited svg {
+.c19:visited svg {
   color: #1B1C1E;
 }
 
-.c21 span {
+.c19 span {
   color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c5 {
-  margin-right: var(--spacing-1x);
+.c4 {
+  margin-right: 0;
 }
 
 <nav
@@ -2571,13 +2529,13 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 >
   <button
     aria-expanded="false"
-    class="c1 c2 c3"
+    class="c1 c2"
     data-testid="menu-button"
     type="button"
   >
     <div
       aria-label="Test Button avatar"
-      class="c4 c5"
+      class="c3 c4"
       role="img"
     >
       <span
@@ -2586,37 +2544,28 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
         TB
       </span>
     </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
   </button>
   <div
-    class="c7 c8"
+    class="c5 c6"
     data-testid="user-profile"
     hidden=""
     id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
-      class="c9"
+      class="c7"
     >
       <li
-        class="c10"
+        class="c8"
       >
         <div
-          class="c11"
+          class="c9"
         >
           <div
-            class="c12"
+            class="c10"
           >
             <span
-              class="c13"
+              class="c11"
             >
               Test Button
             </span>
@@ -2626,24 +2575,24 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
     </ul>
     <ul
       aria-labelledby="user-actions"
-      class="c9"
+      class="c7"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionA"
           href="/testa"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option A
               </span>
@@ -2654,20 +2603,20 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c14"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
           tabindex="-1"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option B
               </span>
@@ -2678,19 +2627,19 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c12"
           data-testid="listitem-optionC"
           href="/testc"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option C
               </span>
@@ -2701,26 +2650,26 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17"
+          class="c15"
           href="www.test.ca"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="c15"
+            class="c13"
           >
             <div
-              class="c12"
+              class="c10"
             >
               <span
-                class="c13"
+                class="c11"
               >
                 Option D
               </span>
             </div>
           </div>
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -2730,18 +2679,18 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c19 c20 c21"
+          class="c17 c18 c19"
           href="www.test.ca"
           target="_blank"
         >
           <span
-            class="c22"
+            class="c20"
           >
             Option E
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c23"
+            class="c21"
             color="currentColor"
             focusable="false"
             height="16"
@@ -2749,7 +2698,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
             width="16"
           />
           <span
-            class="c18"
+            class="c16"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)

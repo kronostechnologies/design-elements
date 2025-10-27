@@ -19,7 +19,7 @@ module.exports = {
         ],
     ].filter(Boolean),
 
-    collectCoverage: true,
+    collectCoverage: false,
     collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}'],
     coverageDirectory: 'build/jest/coverage',
     coveragePathIgnorePatterns: [

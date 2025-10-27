@@ -86,9 +86,16 @@ describe('UserProfile', () => {
         });
     });
 
-    test('should contain username', () => {
+    test('should contain initials only by default', () => {
         const username = 'John Doe';
         const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
+
+        expect(getByTestId(wrapper, 'menu-button').contains('JD')).toBe(true);
+    });
+
+    test('should contain username with full-name variant', () => {
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(<UserProfile username={username} options={options} variant="full-name" />);
 
         expect(getByTestId(wrapper, 'menu-button').contains(username)).toBe(true);
     });
