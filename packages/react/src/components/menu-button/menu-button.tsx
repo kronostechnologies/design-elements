@@ -70,7 +70,6 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     const { t } = useTranslation('menu-button');
 
     const [visible, setVisible] = useState(!!defaultOpen);
-    const [initialFocusIndex, setInitialFocusIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const placement = menuPlacement === 'right' ? 'bottom-start' : 'bottom-end';
@@ -105,16 +104,8 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         }
     };
 
-    /**
-     * Set focus on first menu item conditionally
-     * depending on whether it's a keypress, or a mouse event
-     */
-    const handleClickInside = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickInside = useCallback(() => {
         setVisible(!visible);
-        // event.detail returns an integer, indicating how many clicks there were
-        // If it's 0, no click was made and onClick was fired by a keypress
-        const focusIndex = event.detail === 0 ? 0 : -1;
-        setInitialFocusIndex(focusIndex);
     }, [visible]);
 
     /**
@@ -194,7 +185,6 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                 <StyledMenu
                     ref={refs.setFloating}
                     options={options}
-                    initialFocusIndex={initialFocusIndex}
                     onOptionSelect={handleOnOptionSelect}
                     $left={`${x}px`}
                     $top={`${y}px`}

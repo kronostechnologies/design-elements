@@ -13,7 +13,7 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { getNextElement, getPreviousElement } from '../../utils/array';
-import { focus } from '../../utils/css-state';
+import { addFocusVisibleActive, focus, removeFocusVisibleActive } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -87,7 +87,7 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, { insideOnly: true })};
+    ${({ theme }) => focus({ theme }, { focusTypeClass: true, insideOnly: true })};
 
     &:hover {
         background-color: ${({ theme }) => theme.component['menu-item-hover-background-color']};
@@ -158,7 +158,6 @@ type ListItem = ListGroup | ListOption;
 export interface MenuProps {
     className?: string;
     id?: string;
-    initialFocusIndex?: number;
     numberOfVisibleItems?: number;
     options: MenuItem[];
 
@@ -218,7 +217,6 @@ function getSubMenuPosition(parentOption: ListOption): { top: number, left: numb
 export const Menu = forwardRef(({
     className,
     id,
-    initialFocusIndex = -1,
     numberOfVisibleItems = 4,
     options,
     onKeyDown,
@@ -228,12 +226,21 @@ export const Menu = forwardRef(({
     const menuId = useMemo(() => id || uuid(), [id]);
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
-    const [focusedIndex, setFocusedIndex] = useState(initialFocusIndex);
+    const [focusedIndex, setFocusedIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
+    const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
 
     const focusElementAtIndex = useCallback((index: number): void => {
-        getAllOptionsInLevel(activeMenuList)[index]?.ref.current?.focus();
+        const option = getAllOptionsInLevel(activeMenuList)[index]?.ref.current;
+        if (option) {
+            setFocusedElement((previousFocused) => {
+                addFocusVisibleActive(option);
+                option.focus();
+                removeFocusVisibleActive(previousFocused);
+                return option;
+            });
+        }
     }, [activeMenuList]);
 
     useEffect(() => {

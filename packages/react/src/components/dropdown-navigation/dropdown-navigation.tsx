@@ -17,7 +17,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../legacy-constants/menuDimensions';
-import { getRootDocument, getRootElement } from '../../utils/dom';
+import { activeElementIsInside, getRootDocument, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button, type ButtonType, IconButton } from '../buttons';
@@ -91,7 +91,9 @@ export interface DropdownNavigationProps {
     title?: string;
     buttonType?: ButtonType;
     inverted?: boolean;
+
     onDropdownVisibilityChanged?(isOpen: boolean): void;
+
     onLinkSelected?(option: NavListOption): void;
 }
 
@@ -165,8 +167,8 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
 
         if (isOpen) {
             setTimeout(() => {
-                const focusedElement = getRootDocument(navRef.current)?.activeElement;
-                const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
+                const focusedElement = getRootDocument(navListRef.current)?.activeElement;
+                const isFocusInsideNav = navListRef.current?.contains(focusedElement || null);
 
                 if (!isFocusInsideNav) {
                     setOpen(false);
@@ -180,17 +182,26 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
         setOpen(false);
     };
 
+    const focusOnFirstFocusableElement = useCallback((): void => {
+        const firstFocusableElement = getFirstFocusableElement(options);
+        setFocusedValue(firstFocusableElement.value);
+    }, [options]);
+
     const handleButtonClick = (event: ReactMouseEvent<HTMLButtonElement>): void => {
         const isKeyboardActivated = event.detail === 0;
 
         if (isKeyboardActivated) {
-            setTimeout(() => {
-                const firstFocusableElement = getFirstFocusableElement(options);
-                setFocusedValue(firstFocusableElement.value);
-            });
+            focusOnFirstFocusableElement();
         }
         setOpen(!isOpen);
     };
+
+    const handleButtonKeyDown = useCallback((event: KeyboardEvent<HTMLElement>) => {
+        if (event.key === 'Tab' && isOpen && activeElementIsInside(buttonRef.current)) {
+            event.preventDefault();
+            focusOnFirstFocusableElement();
+        }
+    }, [buttonRef, focusOnFirstFocusableElement, isOpen]);
 
     return (
         <StyledDiv
@@ -209,6 +220,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
                     data-testid="navigation-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
+                    onKeyDown={handleButtonKeyDown}
                     ref={refs.setReference}
                     title={title}
                     type="button"
@@ -236,6 +248,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
                     data-testid="navigation-button"
                     iconName={iconName}
                     onClick={handleButtonClick}
+                    onKeyDown={handleButtonKeyDown}
                     ref={refs.setReference}
                     title={title}
                     type="button"

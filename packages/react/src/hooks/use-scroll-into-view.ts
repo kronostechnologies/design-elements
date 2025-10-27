@@ -2,6 +2,7 @@ import { MutableRefObject, RefObject, useCallback } from 'react';
 
 interface UseScrollIntoViewRequest {
     container: RefObject<HTMLElement> | MutableRefObject<HTMLElement>;
+    scrollingContainer: RefObject<HTMLElement> | MutableRefObject<HTMLElement>;
 }
 
 interface UseScrollIntoViewResponse<T> {
@@ -10,33 +11,38 @@ interface UseScrollIntoViewResponse<T> {
 
 export function useScrollIntoView<TElement extends HTMLElement>({
     container,
+    scrollingContainer,
 }: UseScrollIntoViewRequest): UseScrollIntoViewResponse<TElement> {
     const scrollIntoView: (element: TElement, forceAlignToTop?: boolean) => void = useCallback(
         (element, forceAlignToTop = false) => {
-            if (!container.current) {
+            if (!container.current || !scrollingContainer.current) {
                 return;
             }
 
             const { offsetHeight: elementOffsetHeight, offsetTop: elementOffsetTop } = element;
-            const { offsetHeight: parentOffsetHeight, scrollTop: parentScrollTop } = container.current;
+            const { offsetTop: parentOffsetTop } = container.current;
+            const { offsetHeight: scrollingOffsetHeight, scrollTop: parentScrollTop } = scrollingContainer.current;
 
             const computedStyle = getComputedStyle(container.current);
             const paddingTop = parseFloat(computedStyle.paddingTop);
             const paddingBottom = parseFloat(computedStyle.paddingBottom);
 
-            const topScrollPosition = elementOffsetTop - paddingTop;
-            const bottomScrollPosition = elementOffsetTop - parentOffsetHeight + elementOffsetHeight + paddingBottom;
+            const realParentOffsetTop = container === scrollingContainer ? 0 : parentOffsetTop;
+            const topScrollPosition = realParentOffsetTop + elementOffsetTop - paddingTop;
+            const bottomScrollPosition = (
+                realParentOffsetTop + elementOffsetTop - scrollingOffsetHeight + elementOffsetHeight + paddingBottom
+            );
 
             const isAbove = topScrollPosition < parentScrollTop;
             const isBelow = bottomScrollPosition > parentScrollTop;
 
             if (isAbove || (isBelow && forceAlignToTop)) {
-                container.current.scrollTo(0, topScrollPosition);
+                scrollingContainer.current.scrollTo(0, topScrollPosition);
             } else if (isBelow) {
-                container.current.scrollTo(0, bottomScrollPosition);
+                scrollingContainer.current.scrollTo(0, bottomScrollPosition);
             }
         },
-        [container],
+        [container, scrollingContainer],
     );
 
     return {

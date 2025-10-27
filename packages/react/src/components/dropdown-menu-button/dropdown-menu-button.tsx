@@ -17,7 +17,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
-import { getRootDocument, getRootElement } from '../../utils/dom';
+import { activeElementIsInside, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AvatarProps } from '../avatar';
@@ -25,6 +25,7 @@ import { Button, type ButtonType, IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
 import { DropdownMenu, type GroupItemProps } from '../dropdown-menu';
 import { Icon, type IconProps } from '../icon';
+import { dropdownMenuButtonClasses } from './dropdown-menu-button-classes';
 
 const StyledDiv = styled.div`
     position: relative;
@@ -55,6 +56,8 @@ export const StyledDropdownMenu = styled(DropdownMenu)<StyledListboxProps>`
     width: auto;
     z-index: 99998;
 `;
+
+export type DropdownMenuCloseFunction = () => void;
 
 export interface DropdownMenuButtonProps {
     align?: 'left' | 'right';
@@ -161,18 +164,20 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
 
     function handleCurrentFocus(): void {
         setTimeout(() => {
-            const focusedElement = getRootDocument(navRef.current)?.activeElement;
-            const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
+            const isFocusInside = activeElementIsInside(navRef.current) || activeElementIsInside(navMenuRef.current);
 
-            if (!isFocusInsideNav) {
+            if (!isFocusInside) {
                 setOpen(false);
             }
         });
     }
 
     function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-        if (isOpen && event.key === 'Tab') {
-            handleCurrentFocus();
+        if (isOpen && event.key === 'Tab' && !event.shiftKey && activeElementIsInside(buttonRef.current)) {
+            event.preventDefault();
+            firstItemRef?.current?.focus();
+        } else if (isOpen && event.key === 'Tab' && event.shiftKey) {
+            setOpen(false);
         }
     }
 
@@ -211,6 +216,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
@@ -238,6 +244,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     iconName="moreHorizontal"
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
@@ -260,7 +267,10 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     $left={`${x}px`}
                     $top={`${y}px`}
                 >
-                    {render?.(() => setOpen(false))}
+                    {render?.(() => {
+                        buttonRef.current?.focus();
+                        setOpen(false);
+                    })}
                 </StyledDropdownMenu>,
                 rootElement,
             )}

@@ -1,13 +1,33 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 import { ResolvedTheme } from '../themes';
+import { DS_CLASS_PREFIX } from './component-classes';
 
 type FocusType = 'focus' | 'focus-visible' | 'focus-within';
 
 export interface FocusOptions {
     selector?: string;
     focusType?: FocusType;
+    focusTypeClass?: boolean;
     inverted?: boolean;
     insideOnly?: boolean;
+}
+
+function generateFocusClass(focusType: FocusType): string {
+    return `${DS_CLASS_PREFIX}util-${focusType}`;
+}
+
+const focusVisibleClass = generateFocusClass('focus-visible');
+
+export function addFocusVisibleActive(element: HTMLElement | null): void {
+    if (element) {
+        element?.classList?.add(focusVisibleClass);
+    }
+}
+
+export function removeFocusVisibleActive(element: HTMLElement | null): void {
+    if (element) {
+        element?.classList.remove(focusVisibleClass);
+    }
 }
 
 export const focus = (
@@ -15,6 +35,7 @@ export const focus = (
     options: FocusOptions = {},
 ): FlattenSimpleInterpolation => {
     const {
+        focusTypeClass = false,
         selector,
         focusType = 'focus-visible',
         inverted = false,
@@ -30,6 +51,7 @@ export const focus = (
     const baseSelector = selector ?? '';
 
     return css`
+        ${focusTypeClass ? `&.${generateFocusClass(focusType)} ${baseSelector},` : ''}
         &:${focusType} ${baseSelector} {
             box-shadow: 0 0 0 ${outsideFocusBorderWeight} ${outsideFocusBorderColor};
             outline: ${insideFocusBorderWeight} solid ${insideFocusBorderColor};
