@@ -428,7 +428,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
     >
       <button
         aria-expanded="true"
-        class="c1 c2"
+        class="c1 c2 eds-DropdownMenuButton-button"
         data-testid="menu-button"
         type="button"
       >
@@ -1205,7 +1205,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
     >
       <button
         aria-expanded="true"
-        class="c1 c2"
+        class="c1 c2 eds-DropdownMenuButton-button"
         data-testid="menu-button"
         type="button"
       >
@@ -1565,7 +1565,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 >
   <button
     aria-expanded="false"
-    class="c1 c2"
+    class="c1 c2 eds-DropdownMenuButton-button"
     data-testid="menu-button"
     type="button"
   >

@@ -4,6 +4,7 @@ import {
     KeyboardEvent,
     Ref,
     RefAttributes,
+    RefObject,
     useCallback,
     useLayoutEffect,
     useRef,
@@ -36,6 +37,7 @@ export interface ListboxProps {
     id?: string;
     options: ListboxOption[];
     className?: string;
+    containerRef?: RefObject<HTMLElement>;
     /**
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
@@ -209,6 +211,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     ariaLabelledBy,
     id: providedId,
     className,
+    containerRef: providedContainerRef,
     defaultValue,
     focusable = true,
     focusedValue,
@@ -281,7 +284,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         onChange?.(newSelectedOptions);
     }
 
-    const { scrollIntoView } = useScrollIntoView({ container: containerRef });
+    const { scrollIntoView } = useScrollIntoView({
+        container: containerRef,
+        scrollingContainer: providedContainerRef || containerRef,
+    });
 
     const scrollToOption: (
         option?: ListboxOption,

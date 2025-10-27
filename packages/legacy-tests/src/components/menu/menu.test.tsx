@@ -1,3 +1,4 @@
+import type { ReactWrapper } from 'enzyme';
 import { Menu, MenuOption } from '~/components/menu/menu';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
@@ -49,6 +50,12 @@ describe('Menu', () => {
         optionsWithSubMenu = givenOptionsWithSubMenu(options);
     });
 
+    function sendKeyTimes(wrapper: ReactWrapper, times: number, key: 'ArrowUp' | 'ArrowDown'): void {
+        for (let i = 0; i < times; i += 1) {
+            getByTestId(wrapper, 'menu').simulate('keydown', { key });
+        }
+    }
+
     it('should call onClick callback when option is clicked', () => {
         const wrapper = mountWithTheme(<Menu options={options} />);
 
@@ -84,7 +91,7 @@ describe('Menu', () => {
     });
 
     it('should open subMenu when ArrowRight key is pressed given option as subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} initialFocusIndex={0} />);
+        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
 
         getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
 
@@ -127,7 +134,7 @@ describe('Menu', () => {
     });
 
     it('should collapse subMenu when ArrowLeft key is pressed inside subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} initialFocusIndex={0} />);
+        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
 
         getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
         getByTestId(wrapper, 'menu-option-0-sub-menu').simulate('keydown', { key: 'ArrowLeft' });
@@ -149,7 +156,7 @@ describe('Menu', () => {
         it('should be on the first option when initialFocus is set to 0', () => {
             const wrapper = mountWithTheme(
                 <div id="root">
-                    <Menu options={options} initialFocusIndex={0} />
+                    <Menu options={options} />
                 </div>,
                 { attachTo: divElement },
             );
@@ -159,7 +166,7 @@ describe('Menu', () => {
 
         it('should be on the next option when ArrowDown key is pressed', () => {
             const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
+                <Menu options={options} />,
                 { attachTo: divElement },
             );
 
@@ -170,9 +177,10 @@ describe('Menu', () => {
 
         it('should be on the first option when ArrowDown key is pressed on last option', () => {
             const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={options.length - 1} />,
+                <Menu options={options} />,
                 { attachTo: divElement },
             );
+            sendKeyTimes(wrapper, options.length - 1, 'ArrowDown');
 
             getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowDown' });
 
@@ -181,18 +189,19 @@ describe('Menu', () => {
 
         it('should be on the previous option when ArrowUp key is pressed', () => {
             const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={1} />,
+                <Menu options={options} />,
                 { attachTo: divElement },
             );
+            sendKeyTimes(wrapper, 2, 'ArrowDown');
 
             getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowUp' });
 
-            expectFocusToBeOn(getByTestId(wrapper, `menu-option-${0}`));
+            expectFocusToBeOn(getByTestId(wrapper, `menu-option-1`));
         });
 
         it('should be on the last option when ArrowUp key is pressed on first option', () => {
             const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
+                <Menu options={options} />,
                 { attachTo: divElement },
             );
 
@@ -203,7 +212,7 @@ describe('Menu', () => {
 
         it('should be on the first option starting with typed character', () => {
             const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
+                <Menu options={options} />,
                 { attachTo: divElement },
             );
 
@@ -214,7 +223,7 @@ describe('Menu', () => {
 
         it('should be on the first element of subMenu when ArrowRight key is pressed given option as subMenu', () => {
             const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
+                <Menu options={optionsWithSubMenu} />,
                 { attachTo: divElement },
             );
 
@@ -225,7 +234,7 @@ describe('Menu', () => {
 
         it('should be on the subMenu parent option when ArrowLeft key is pressed inside subMenu', () => {
             const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
+                <Menu options={optionsWithSubMenu} />,
                 { attachTo: divElement },
             );
 
@@ -237,7 +246,7 @@ describe('Menu', () => {
 
         it('should stay inside the menu when the subMenu is open by hovering with the mouse', () => {
             const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
+                <Menu options={optionsWithSubMenu} />,
                 { attachTo: divElement },
             );
 

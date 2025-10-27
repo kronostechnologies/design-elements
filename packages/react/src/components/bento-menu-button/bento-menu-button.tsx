@@ -104,10 +104,10 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
                 render={(close) => (
                     <>
                         {productLinkGroups.length > 0 && (
-                            productLinkGroups.map((productLinkGroup) => (
+                            productLinkGroups.map((productLinkGroup, i) => (
                                 <ProductGroup
                                     key={productLinkGroup.name}
-                                    firstItemRef={firstItemRef}
+                                    firstItemRef={i === 0 ? firstItemRef : undefined}
                                     label={productLinkGroup.label}
                                     name={productLinkGroup.name}
                                     onClick={close}

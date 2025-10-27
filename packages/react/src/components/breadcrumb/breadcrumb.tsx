@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useDropdown } from '../../hooks/use-dropdown';
-import { getRootElement } from '../../utils/dom';
+import { activeElementIsInside, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons';
 import { Icon } from '../icon';
@@ -97,8 +97,6 @@ function truncateLabel(label: string): string {
 
 export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
     const [isOpen, setOpen] = useState(false);
-    const [focusedValue, setFocusedValue] = useState('');
-
     const navRef = useRef<HTMLDivElement>(null);
     const shadowRoot = useShadowRoot();
     const {
@@ -126,13 +124,10 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
     }, [buttonRef, isOpen, navListRef]);
 
     useEffect(() => {
-        if (history.length > 0) {
-            setFocusedValue(isOpen ? history[1].value : '');
-        }
         document.addEventListener('mouseup', handleClickOutside);
 
         return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [handleClickOutside, isOpen, history]);
+    }, [handleClickOutside]);
 
     function handleNavListKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
@@ -142,7 +137,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
 
         if (isOpen) {
             setTimeout(() => {
-                const isFocusInsideNav = navRef.current?.contains(document.activeElement);
+                const isFocusInsideNav = activeElementIsInside(navListRef.current);
 
                 if (!isFocusInsideNav) {
                     setOpen(false);
@@ -187,7 +182,6 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
                                     ordered
                                     data-testid="nav-list"
                                     ref={refs.setFloating}
-                                    focusedValue={focusedValue}
                                     onChange={() => setOpen(false)}
                                     onKeyDown={handleNavListKeyDown}
                                     options={hiddenRoutes}

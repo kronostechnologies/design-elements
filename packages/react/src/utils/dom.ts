@@ -15,6 +15,11 @@ export function getRootElement(shadowRoot: ShadowRoot | null): Element {
     return document.body;
 }
 
+export function activeElementIsInside(element: HTMLElement | null): boolean {
+    const focusedElement = getRootDocument(element)?.activeElement;
+    return element?.contains(focusedElement || null) ?? false;
+}
+
 export function sanitizeId(id: string): string {
     return id.replace(/\s/g, '_');
 }
