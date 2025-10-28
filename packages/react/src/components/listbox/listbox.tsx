@@ -402,18 +402,20 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
     function handleListItemClick(option: ListboxOption): () => void {
         return () => {
-            onOptionClick?.(option);
+            if (!option.disabled) {
+                onOptionClick?.(option);
 
-            if (optionPredicate(option)) {
-                if (option !== focusedOption) {
-                    setFocusedOption(option);
-                    onFocusChange?.(option);
-                }
+                if (optionPredicate(option)) {
+                    if (option !== focusedOption) {
+                        setFocusedOption(option);
+                        onFocusChange?.(option);
+                    }
 
-                if (multiselect) {
-                    toggleOptionSelection(option);
-                } else {
-                    selectSingleOption(option);
+                    if (multiselect) {
+                        toggleOptionSelection(option);
+                    } else {
+                        selectSingleOption(option);
+                    }
                 }
             }
         };

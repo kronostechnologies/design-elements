@@ -425,16 +425,14 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (isOptionEnabled(option)) {
-            if (multiselect) {
-                toggleOptionSelection(option);
-            } else {
-                if (option !== selectedOptions?.[0]) {
-                    selectOption(option);
-                }
-
-                closeListbox();
+        if (multiselect) {
+            toggleOptionSelection(option);
+        } else {
+            if (option !== selectedOptions?.[0]) {
+                selectOption(option);
             }
+
+            closeListbox();
         }
     }
 
