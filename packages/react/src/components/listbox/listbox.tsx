@@ -4,8 +4,9 @@ import {
     KeyboardEvent,
     Ref,
     RefAttributes,
-    RefObject,
+    type RefObject,
     useCallback,
+    useImperativeHandle,
     useLayoutEffect,
     useRef,
     useState,
@@ -47,6 +48,11 @@ export interface ListboxProps {
      * @default true
      */
     focusable?: boolean;
+    /**
+     * Set to true to enable keyboard navigation managed by the listbox
+     * @default Same value as focusable
+     */
+    keyboardNav?: boolean;
     /**
      * Activates multiple selection feature
      * @default false
@@ -207,7 +213,13 @@ const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>
 
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
 
-export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
+export interface ListboxRef extends HTMLDivElement {
+    focusFirstOption(): void;
+
+    focusLastOption(): void;
+}
+
+export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<ListboxRef>> = forwardRef(({
     ariaLabelledBy,
     id: providedId,
     className,
@@ -215,6 +227,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     defaultValue,
     focusable = true,
     focusedValue,
+    keyboardNav = focusable,
     multiselect = false,
     options,
     onChange,
@@ -222,7 +235,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     onKeyDown,
     onOptionClick,
     value,
-}, ref: Ref<HTMLDivElement>) => {
+}, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
 
@@ -244,6 +257,37 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
         () => findOptionsByValue(options, value ?? defaultValue),
+    );
+
+    const focusFirstSelectedOrFirst = useCallback(() => {
+        const firstSelected: ListboxOption = selectedOptions[0];
+        if (firstSelected) {
+            setFocusedOption(firstSelected);
+        } else {
+            focusFirstOption();
+        }
+    }, [focusFirstOption, selectedOptions, setFocusedOption]);
+
+    useImperativeHandle<HTMLDivElement | null, ListboxRef | null>(
+        ref,
+        () => {
+            if (containerRef.current === null) {
+                return null;
+            }
+            return Object.assign(
+                containerRef.current,
+                {
+                    focusFirstOption: () => {
+                        containerRef?.current?.focus();
+                    },
+                    focusLastOption: () => {
+                        containerRef?.current?.focus();
+                        focusLastOption();
+                    },
+                },
+            );
+        },
+        [focusLastOption, containerRef],
     );
 
     function isOptionSelected(option: ListboxOption): boolean {
@@ -345,8 +389,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function handleListboxFocus(): void {
-        if (!focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
+        if (focusable && !focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
             setFocusedOption(selectedOptions[0]);
+        } else {
+            focusFirstSelectedOrFirst();
         }
     }
 
@@ -377,6 +423,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         let newFocusedOption: ListboxOption | undefined;
 
         switch (event.key) {
+            case 'Enter':
+                event.preventDefault();
+                if (focusedOption) {
+                    handleListItemClick(focusedOption)();
+                }
+                break;
             case ' ':
                 event.preventDefault();
                 if (multiselect && focusedOption) {
@@ -465,13 +517,13 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             data-testid="listbox-container"
             $focusable={focusable}
             id={id}
-            onBlur={focusable ? handleListboxBlur : undefined}
-            onFocus={focusable ? handleListboxFocus : undefined}
-            onKeyDown={focusable ? handleListboxKeyDown : undefined}
+            onBlur={handleListboxBlur}
+            onFocus={handleListboxFocus}
+            onKeyDown={keyboardNav ? handleListboxKeyDown : undefined}
             onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
             ref={mergeRefs(ref, containerRef)}
             role="listbox"
-            tabIndex={focusable ? 0 : -1}
+            tabIndex={focusable || keyboardNav ? 0 : -1}
         >
             <List
                 data-testid="listbox-list"
