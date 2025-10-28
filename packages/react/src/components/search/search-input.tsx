@@ -1,6 +1,15 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import { ChangeEvent, type FC, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef } from 'react';
+import {
+    type ChangeEvent,
+    type FocusEvent,
+    forwardRef,
+    type KeyboardEvent,
+    useCallback,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+} from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
@@ -139,7 +148,7 @@ export interface SearchInputProps extends CommonSearchProps {
     hasIcon?: boolean;
 }
 
-export const SearchInput: FC<SearchInputProps> = ({
+export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
     defaultValue,
     id: providedId,
     onChange,
@@ -148,10 +157,12 @@ export const SearchInput: FC<SearchInputProps> = ({
     value,
     onInputFocus,
     ...props
-}: SearchInputProps) => {
+}: SearchInputProps, ref) => {
     const { t } = useTranslation('search-input');
     const id = useMemo(() => providedId || uuid(), [providedId]);
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement >(null);
+
+    useImperativeHandle<HTMLInputElement | null, HTMLInputElement | null>(ref, () => inputRef.current);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         const newValue = event.currentTarget.value;
@@ -226,4 +237,6 @@ export const SearchInput: FC<SearchInputProps> = ({
             )}
         </SearchWrapper>
     );
-};
+});
+
+SearchInput.displayName = 'SearchInput';
