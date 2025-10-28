@@ -80,8 +80,8 @@ export interface DropdownMenuButtonProps {
      * Sets chevron icon
      * @default true
      * */
-    firstItemRef?: RefObject<HTMLAnchorElement>;
     hasCaret?: boolean;
+    firstItemRef?: RefObject<HTMLElement>;
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
     inverted?: boolean;
@@ -120,6 +120,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [isOpen, setOpen] = useState(defaultOpen);
+    const previousOpen = useRef(isOpen);
     const navRef = useRef<HTMLDivElement>(null);
     const isIconOnly = icon && !label && !hasCaret;
     const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
@@ -148,7 +149,11 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     }, [buttonRef, isOpen, navMenuRef]);
 
     useEffect(() => {
-        onMenuVisibilityChanged?.(isOpen);
+        // This needs to be in a useEffect to avoid calling the callback during render
+        if (previousOpen.current !== isOpen) {
+            previousOpen.current = isOpen;
+            onMenuVisibilityChanged?.(isOpen);
+        }
     }, [isOpen, onMenuVisibilityChanged]);
 
     useEffect(() => {

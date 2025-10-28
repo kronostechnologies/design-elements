@@ -24,6 +24,7 @@ export * from './external-link';
 export * from './feedbacks';
 export * from './field-container';
 export * from './fieldset';
+export * from './filters';
 export * from './global-banner';
 export * from './global-header';
 export * from './heading';

@@ -15,6 +15,7 @@ import { defaultDisclosureTokens, DisclosureToken } from './component/disclosure
 import { defaultDropdownListTokens, DropdownListToken } from './component/dropdown-list-tokens';
 import { defaultDropdownMenuTokens, DropdownMenuToken } from './component/dropdown-menu-tokens';
 import { defaultFieldTokens, FieldToken } from './component/field-tokens';
+import { defaultFilterTokens, type FilterToken } from './component/filter-tokens';
 import { defaultFocusTokens, FocusToken } from './component/focus-tokens';
 import { defaultGlobalBannerTokens, GlobalBannerToken } from './component/global-banner-tokens';
 import { defaultGlobalHeaderTokens, GlobalHeaderToken } from './component/global-header-tokens';
@@ -71,6 +72,7 @@ export type ComponentToken =
     | DropdownListToken
     | DropdownMenuToken
     | FieldToken
+    | FilterToken
     | FocusToken
     | GlobalBannerToken
     | GlobalHeaderToken
@@ -127,6 +129,7 @@ export const defaultComponentTokens = {
     ...defaultDropdownListTokens,
     ...defaultDropdownMenuTokens,
     ...defaultFieldTokens,
+    ...defaultFilterTokens,
     ...defaultFocusTokens,
     ...defaultGlobalBannerTokens,
     ...defaultGlobalHeaderTokens,

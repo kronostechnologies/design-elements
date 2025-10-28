@@ -43,6 +43,15 @@ export const Translations = {
             title: 'The form contains one or more errors',
             message: 'Please correct them to proceed to the next step.',
         },
+        filter: {
+            clearFilter_zero: 'Clear filter',
+            clearFilter_one: 'Clear filter',
+            clearFilter_other: 'Clear filters',
+            displayValue_zero: 'All',
+            displayValue_one: '{{value}}',
+            displayValue_other: '({{count}})',
+            searchNoResults: ' No matching results',
+        },
         'global-banner': {
             ignore: 'Ignore',
         },
@@ -183,6 +192,15 @@ export const Translations = {
         'error-summary': {
             title: 'Le formulaire contient une ou plusieurs erreurs',
             message: 'Veuillez les corriger avant de passer à l\'étape suivante.',
+        },
+        filter: {
+            clearFilter_zero: 'Réinitialiser le filtre',
+            clearFilter_one: 'Réinitialiser le filtre',
+            clearFilter_other: 'Réinitialiser les filtres',
+            displayValue_zero: 'Tout',
+            displayValue_one: '{{value}}',
+            displayValue_other: '({{count}})',
+            searchNoResults: 'Aucun résultat correspondant',
         },
         'global-banner': {
             ignore: 'Ignorer',
