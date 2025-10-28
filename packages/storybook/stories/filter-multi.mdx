@@ -1,0 +1,52 @@
+import { FilterMulti } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Story } from '@storybook/blocks';
+import * as FilterMultiStories  from './filter-multi.stories';
+
+<Meta of={FilterMultiStories} />
+
+# FilterMulti
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The Filter Multi-Select component allows users to filter a category by choosing multiple options.
+
+<Canvas of={FilterMultiStories.Default} />
+
+## Usage
+
+### When to use
+- Use to filter content from a predefined set of options.
+- Use when users must view or analyze results based on several selected options simultaneously.
+- Use when users deal with large datasets, as it offers precise filtering options [10].
+- Use when your app struggles with speed. The "Apply" button gives users control over when to trigger searches. This prevents frustration from frequent loading delays and allows users to set multiple filters before searching [10].
+
+### When not to use
+- Do not use if users need to select single options (use a filter single-select instead).
+
+
+## Variants
+### Default
+This variant is used when the list of options is 10 or less.
+<Canvas of={FilterMultiStories.Default} />
+
+### With Search
+This variant is used automatically when the list of options exceeds 10.
+<Canvas of={FilterMultiStories.WithSearch} />
+
+## Properties
+<ArgTypes of={FilterMulti} />
+
+## References
+[1] [https://www.linkedin.com/pulse/designing-filter-sort-better-ux-muslimbek-vosidiy/](https://www.linkedin.com/pulse/designing-filter-sort-better-ux-muslimbek-vosidiy/)
+[2] [https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432](https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432)
+[3] [https://baymard.com/blog/autocomplete-design](https://baymard.com/blog/autocomplete-design)
+[4] [https://www.smashingmagazine.com/2021/07/frustrating-design-patterns-broken-frozen-filters/](https://www.smashingmagazine.com/2021/07/frustrating-design-patterns-broken-frozen-filters/)
+[5] [https://setproduct.com/blog/filter-ui-design](https://setproduct.com/blog/filter-ui-design)
+[6] [https://m3.material.io/components/menus/guidelines](https://m3.material.io/components/menus/guidelines)
+[7] [https://www.nngroup.com/articles/listbox-dropdown/](https://www.nngroup.com/articles/listbox-dropdown/)
+[8] [https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-filtering/](https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-filtering/)
+[9] [https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037](https://uxplanet.org/ux-design-drop-downs-in-forms-c6943ec30037)
+[10] [https://www.eleken.co/blog-posts/filter-ux-and-ui-for-saas](https://www.eleken.co/blog-posts/filter-ux-and-ui-for-saas)
