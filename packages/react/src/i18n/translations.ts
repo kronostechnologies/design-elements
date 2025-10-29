@@ -44,6 +44,10 @@ export const Translations = {
             message: 'Please correct them to proceed to the next step.',
         },
         filter: {
+            cancel: 'Cancel',
+            apply_zero: 'Apply filter',
+            apply_one: 'Apply filter',
+            apply_other: 'Apply filters',
             clearFilter_zero: 'Clear filter',
             clearFilter_one: 'Clear filter',
             clearFilter_other: 'Clear filters',
@@ -194,6 +198,10 @@ export const Translations = {
             message: 'Veuillez les corriger avant de passer à l\'étape suivante.',
         },
         filter: {
+            cancel: 'Annuler',
+            apply_zero: 'Appliquer',
+            apply_one: 'Appliquer',
+            apply_other: 'Appliquer',
             clearFilter_zero: 'Réinitialiser le filtre',
             clearFilter_one: 'Réinitialiser le filtre',
             clearFilter_other: 'Réinitialiser les filtres',
