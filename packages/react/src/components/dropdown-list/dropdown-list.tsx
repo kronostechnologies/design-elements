@@ -1,7 +1,8 @@
-import { FC, FocusEvent, KeyboardEvent, ReactNode, RefObject, useCallback, useMemo, useRef, useState } from 'react';
+import { FC, FocusEvent, KeyboardEvent, ReactNode, useCallback, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -9,7 +10,6 @@ import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSearch } from '../../hooks/use-list-search';
-import { Overflow, useOverflow } from '../../hooks/use-overflow';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
@@ -19,19 +19,18 @@ import { useDeviceContext } from '../device-context-provider';
 import { FieldContainer } from '../field-container';
 import { Icon, type IconName } from '../icon';
 import { Listbox, type ListboxOption } from '../listbox';
-import { findOptionsByValue } from '../listbox/listbox-option';
-import { Tag } from '../tag';
 import { type ToggletipProps } from '../toggletip';
-import { Tooltip, type TooltipProps } from '../tooltip';
+import { type TooltipProps } from '../tooltip';
 import {
-    addUniqueOption,
     disableNonSelectedOptions,
+    findOptionsByValue,
     getDefaultOptions,
+    getNewOptionSelection,
+    getJoinedValues,
     getOptionLabel,
     isOptionEnabled,
-    isOptionSelected,
-    removeOption,
-} from './utils';
+    getSelectedOptionValues,
+} from '../listbox/utils';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -131,27 +130,6 @@ const TagWrapper = styled.div`
     user-select: none;
 `;
 
-const TagTooltipWrapper = styled.div`
-    overflow: hidden;
-    [role='tooltip'] {
-        z-index: 99999;
-    }
-`;
-
-const TagTooltip = styled(Tooltip)`
-    overflow: hidden;
-    width: auto;
-`;
-
-const StyledTag = styled(Tag)`
-    margin: 2px;
-    overflow: hidden;
-
-    & + & {
-        margin-left: 2px;
-    }
-`;
-
 const Arrow = styled(Icon)<{ $disabled?: boolean, $readOnly?: boolean }>`
     align-items: center;
     color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
@@ -169,11 +147,6 @@ const TextIcon = styled(Icon)`
 `;
 
 type Value = string | string[];
-
-export interface TagValue {
-    id?: string;
-    label: string;
-}
 
 export interface DropdownListOption extends ListboxOption {
     label: string;
@@ -240,43 +213,6 @@ export interface DropdownListProps<M extends boolean | undefined> {
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
-interface ListBoxTagProps {
-    handleTagRemove: (tag: TagValue) => void;
-    option: DropdownListOption;
-    readOnly?: boolean;
-    textboxRef: RefObject<HTMLDivElement>;
-}
-
-const ListboxTag: FC<ListBoxTagProps> = ({
-    handleTagRemove,
-    option,
-    readOnly,
-    textboxRef,
-}) => {
-    const tagLabelRef = useRef<HTMLSpanElement>(null);
-    const overflow: Overflow = useOverflow(tagLabelRef, textboxRef);
-    const isOverflowing = overflow.horizontal || overflow.vertical;
-
-    return (
-        <TagTooltipWrapper>
-            <TagTooltip
-                key={option.value}
-                label={option.label}
-                disabled={!isOverflowing}
-                mode="normal"
-            >
-                <StyledTag
-                    aria-hidden="true"
-                    data-testid={`listboxtag-${option.value}`}
-                    labelRef={tagLabelRef}
-                    onRemove={readOnly ? undefined : handleTagRemove}
-                    value={{ id: option.value, label: option.label }}
-                />
-            </TagTooltip>
-        </TagTooltipWrapper>
-    );
-};
-
 export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
@@ -318,7 +254,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
-        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
+        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect, true),
     );
 
     const options = useMemo(() => {
@@ -335,9 +271,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     }, [multiselect, maxSelectableOptions, providedOptions, selectedOptions]);
 
     function toggleOptionSelection(option: DropdownListOption, forceSelected?: boolean): void {
-        const newSelectedOptions = !isOptionSelected(option, selectedOptions) || forceSelected
-            ? addUniqueOption(option, selectedOptions)
-            : removeOption(option, selectedOptions);
+        const newSelectedOptions = getNewOptionSelection(option, selectedOptions, forceSelected);
 
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
@@ -551,14 +485,6 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
         />
     ));
 
-    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
-        (option) => option.value ?? '',
-    );
-
-    function getValues(): string {
-        return getListboxSelectedOptionValues()?.join('|') ?? '';
-    }
-
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
         { id: `${id}_invalid`, include: !valid },
@@ -621,7 +547,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                         data-testid="textbox-icon"
                     />
                 )}
-                <input type="hidden" name={name} value={getValues()} data-testid="input" />
+                <input type="hidden" name={name} value={getJoinedValues(selectedOptions)} data-testid="input" />
                 {multiselect
                     ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
                     : <TextWrapper>{firstSelectedOption?.label ?? ''}</TextWrapper>}
@@ -645,7 +571,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                     id={`${id}_listbox`}
                     onOptionClick={handleListboxOptionClick}
                     options={options}
-                    value={getListboxSelectedOptionValues()}
+                    value={getSelectedOptionValues(selectedOptions)}
                     multiselect={multiselect}
                     $left={`${x}px`}
                     $top={`${y}px`}

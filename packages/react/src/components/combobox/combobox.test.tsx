@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, RenderResult, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { Combobox } from './combobox';
@@ -66,6 +66,34 @@ describe('Combobox', () => {
                 options={provinces}
             />,
             'mobile',
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches the snapshot (multiselect)', () => {
+        const { container } = renderWithProviders(
+            <Combobox
+                defaultOpen
+                label="Select options"
+                hint="Hint"
+                options={provinces}
+                multiselect
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches the snapshot (readOnly)', () => {
+        const { container } = renderWithProviders(
+            <Combobox
+                defaultOpen
+                label="Select an option"
+                hint="Hint"
+                options={provinces}
+                readOnly
+            />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
@@ -237,5 +265,149 @@ describe('Combobox', () => {
         await userEvent.type(getByTestId('textbox'), 'some option');
 
         expect(onInputChange).toHaveBeenCalledWith('some option');
+    });
+
+    describe('multiselect', () => {
+        const options = [
+            { value: 'foo', label: 'Foo Label' },
+            { value: 'bar', label: 'Bar Label' },
+            { value: 'baz', label: 'Baz Label' },
+        ];
+
+        const onChange = jest.fn();
+
+        function renderCombo(props = {}): RenderResult {
+            return renderWithProviders(
+                <Combobox onChange={onChange} options={options} {...props} />,
+            );
+        }
+
+        it('renders with defaultValue as array', () => {
+            const { getByTestId } = renderCombo({ multiselect: true, defaultValue: ['foo', 'baz'] });
+
+            expect(getByTestId('listboxtag-foo')).toBeInTheDocument();
+            expect(getByTestId('listboxtag-baz')).toBeInTheDocument();
+            expect(screen.queryByTestId('listboxtag-bar')).toBeNull();
+        });
+
+        it('renders with values overriding defaultValue as array', () => {
+            const { getByTestId } = renderCombo({ multiselect: true, defaultValue: ['foo', 'baz'], value: ['bar'] });
+
+            expect(getByTestId('listboxtag-bar')).toBeInTheDocument();
+            expect(screen.queryByTestId('listboxtag-foo')).toBeNull();
+            expect(screen.queryByTestId('listboxtag-baz')).toBeNull();
+        });
+
+        it('calls onChange with array of values when selecting multiple options (multiselect)', async () => {
+            const { getByTestId, getByText } = renderCombo({ multiselect: true });
+
+            getByTestId('textbox').focus();
+            act(() => getByTestId('arrow').click());
+            getByText('Foo Label').click();
+
+            expect(onChange).toHaveBeenCalledWith([
+                { value: 'foo', label: 'Foo Label' },
+            ]);
+        });
+
+        it('removes tag when clicking the remove button (multiselect)', async () => {
+            const { getByTestId } = renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'] });
+
+            const tagRemoveButton = getByTestId('Foo Label-remove-button');
+            await userEvent.click(tagRemoveButton);
+
+            expect(onChange).toHaveBeenLastCalledWith([
+                { value: 'bar', label: 'Bar Label' },
+            ]);
+        });
+
+        it('does not remove tag when clicking the remove button when readOnly (multiselect)', async () => {
+            renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'], readOnly: true });
+
+            expect(screen.queryByTestId('Foo Label-remove-button')).toBeNull();
+            expect(screen.queryByTestId('Bar Label-remove-button')).toBeNull();
+        });
+
+        it('adds a custom value as a tag when allowCustomValue is true (multiselect)', async () => {
+            const { getByTestId } = renderCombo({ multiselect: true, allowCustomValue: true });
+
+            const textbox = getByTestId('textbox');
+            await userEvent.type(textbox, 'custom');
+            await userEvent.keyboard('{Enter}');
+
+            expect(onChange).toHaveBeenLastCalledWith([
+                { value: 'custom', label: 'custom' },
+            ]);
+        });
+
+        it('does not add a custom value as a tag when allowCustomValue is false (multiselect)', async () => {
+            const { getByTestId, queryByText } = renderCombo({ multiselect: true, allowCustomValue: false });
+
+            const textbox = getByTestId('textbox');
+            await userEvent.type(textbox, 'custom');
+            await userEvent.keyboard('{Enter}');
+
+            expect(onChange).not.toHaveBeenCalledWith(
+                expect.arrayContaining([
+                    expect.objectContaining({ value: 'custom' }),
+                ]),
+            );
+            expect(queryByText('custom')).toBeNull();
+        });
+
+        it('does not add duplicate tags when the same option is selected multiple times (multiselect)', async () => {
+            const { getByTestId, getByText } = renderCombo({ multiselect: true });
+
+            getByTestId('textbox').focus();
+            act(() => getByTestId('arrow').click());
+
+            getByText('Foo Label').click();
+            getByText('Foo Label').click();
+
+            expect(onChange).toHaveBeenLastCalledWith([
+                { value: 'foo', label: 'Foo Label' },
+            ]);
+        });
+
+        it('auto selects matching option when typing in input (multiselect)', async () => {
+            const { getByTestId } = renderCombo({ multiselect: true, autoSelectMatchingOption: true });
+
+            const textbox = getByTestId('textbox');
+            await userEvent.type(textbox, 'Foo Label');
+
+            expect(onChange).toHaveBeenLastCalledWith([
+                { value: 'foo', label: 'Foo Label' },
+            ]);
+        });
+
+        it('does not auto select matching option when typing in input if already selected (multiselect)', async () => {
+            const { getByTestId } = renderCombo({
+                multiselect: true,
+                defaultValue: ['foo'],
+                autoSelectMatchingOption: true,
+            });
+
+            const textbox = getByTestId('textbox');
+            await userEvent.type(textbox, 'Foo Label');
+
+            expect(onChange).not.toHaveBeenCalledWith(
+                expect.arrayContaining([
+                    expect.objectContaining({ value: 'foo' }),
+                ]),
+            );
+        });
+
+        it('does not auto select matching option when autoSelectMatchingOption is false (multiselect)', async () => {
+            const { getByTestId } = renderCombo({ multiselect: true, autoSelectMatchingOption: false });
+
+            const textbox = getByTestId('textbox');
+            await userEvent.type(textbox, 'Foo Label');
+
+            expect(onChange).not.toHaveBeenCalledWith(
+                expect.arrayContaining([
+                    expect.objectContaining({ value: 'foo' }),
+                ]),
+            );
+        });
     });
 });

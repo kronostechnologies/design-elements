@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ListboxTag matches the snapshot 1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c9:hover,
+.c9[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c9[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c13 {
+  height: 1.25rem;
+  position: absolute;
+  width: 1rem;
+}
+
+.c13::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.c13::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.c11 {
+  background-color: #60666E;
+  border: 1px solid #FFFFFF;
+  border-radius: var(--border-radius-half);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.75rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.25rem;
+  margin: 0;
+  max-width: 327px;
+  min-height: 24px;
+  padding: 1px var(--spacing-1x);
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  z-index: 1000;
+}
+
+.c11[data-popper-placement*="bottom"] > .c12 {
+  height: 1rem;
+  left: 0;
+  margin-top: -0.375rem;
+  top: 0;
+  width: 1rem;
+}
+
+.c11[data-popper-placement*="bottom"] > .c12::before {
+  border-color: transparent transparent #FFFFFF transparent;
+  border-width: 0 0.5rem 0.5rem;
+  position: absolute;
+  top: -2px;
+}
+
+.c11[data-popper-placement*="bottom"] > .c12::after {
+  border-color: transparent transparent #60666E transparent;
+  border-width: 0 0.5rem 0.5rem;
+}
+
+.c11[data-popper-placement*="top"] > .c12 {
+  bottom: 0;
+  height: 0;
+  left: 0;
+  margin-bottom: 0;
+  width: 1rem;
+}
+
+.c11[data-popper-placement*="top"] > .c12::before {
+  border-color: #FFFFFF transparent transparent transparent;
+  border-width: 0.5rem 0.5rem 0;
+  position: absolute;
+  top: 0;
+}
+
+.c11[data-popper-placement*="top"] > .c12::after {
+  border-color: #60666E transparent transparent transparent;
+  border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
+}
+
+.c11[data-popper-placement*="right"] > .c12 {
+  height: 1rem;
+  left: 0;
+  margin-left: -0.8rem;
+  width: 1rem;
+}
+
+.c11[data-popper-placement*="right"] > .c12::before {
+  border-color: transparent #FFFFFF transparent transparent;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.c11[data-popper-placement*="right"] > .c12::after {
+  border-color: transparent #60666E transparent transparent;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  left: 0.375rem;
+  top: 0;
+}
+
+.c11[data-popper-placement*="left"] > .c12 {
+  height: 1rem;
+  margin-right: -0.7rem;
+  right: -1px;
+  width: 1rem;
+}
+
+.c11[data-popper-placement*="left"] > .c12::before {
+  border-color: transparent transparent transparent #FFFFFF;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.c11[data-popper-placement*="left"] > .c12::after {
+  border-color: transparent transparent transparent #60666E;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  left: 0.17rem;
+  top: 0;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c3 + .c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c7 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c10 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c0 {
+  overflow: hidden;
+}
+
+.c0 [role='tooltip'] {
+  z-index: 99999;
+}
+
+.c2 {
+  overflow: hidden;
+  width: auto;
+}
+
+.c6 {
+  margin: 2px;
+  overflow: hidden;
+}
+
+.c5 + .c5 {
+  margin-left: 2px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1 c2"
+    data-testid="tooltip"
+    id="tooltip-trigger-uuid1"
+    tabindex="-1"
+  >
+    <div
+      class="c3 c4 c5 c6"
+      data-testid="listboxtag-test"
+    >
+      <span
+        class="c7"
+      >
+        Test Label
+      </span>
+      <button
+        aria-label="Remove tag Test Label"
+        class="c8 c9 c10"
+        data-testid="Test Label-remove-button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          color="currentColor"
+          focusable="false"
+          height="16"
+          width="16"
+        />
+      </button>
+    </div>
+  </span>
+  <div
+    aria-hidden="true"
+    class="c11"
+    data-popper-interactive="false"
+    data-testid="tooltip-content-container"
+    id="uuid1"
+    role="tooltip"
+    style="position: absolute; left: 0px; top: 0px;"
+  >
+    <div
+      class="c12 c13"
+      data-popper-arrow="true"
+      style="position: absolute;"
+    />
+    <div
+      class="c14"
+    >
+      Test Label
+    </div>
+  </div>
+</div>
+`;
