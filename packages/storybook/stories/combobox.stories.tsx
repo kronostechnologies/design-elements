@@ -103,3 +103,11 @@ export const WithToggletip: Story = {
         },
     },
 };
+
+export const WithMultiselect: Story = {
+    ...comboboxMeta,
+    args: {
+        multiselect: true,
+        onChangeMs: (opts: ComboboxOption[]) => console.log(opts), /* eslint-disable-line no-console */
+    },
+};
