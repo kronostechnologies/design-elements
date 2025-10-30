@@ -82,6 +82,8 @@ export const ToastsContainer: FC<ToastProps> = ({
     const { isMobile } = useDeviceContext();
     const shadowRoot = useShadowRoot();
 
+    console.log('allo dans le toast containerino');
+
     return (
         <Portal shadowRoot={shadowRoot}>
             <ToastListWrapper position={position} isMobile={isMobile} data-testid="toasts">
