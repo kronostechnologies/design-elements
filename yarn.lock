@@ -2089,7 +2089,7 @@ __metadata:
     "@storybook/react-webpack5": "npm:8.6.14"
     "@storybook/theming": "npm:8.6.14"
     "@stylistic/eslint-plugin": "npm:5.5.0"
-    "@types/node": "npm:22.19.0"
+    "@types/node": "npm:24.10.0"
     "@types/react": "npm:18.3.26"
     "@types/react-color": "npm:3.0.13"
     "@types/react-table": "npm:7.7.20"
@@ -4751,12 +4751,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.19.0":
-  version: 22.19.0
-  resolution: "@types/node@npm:22.19.0"
+"@types/node@npm:24.10.0":
+  version: 24.10.0
+  resolution: "@types/node@npm:24.10.0"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/66b98fcd38efb4ae58c628d61fed2b8f17c830eb665d8bceabc4174cae1dd81b8e4caac4c70d7dc929f9f76a3dc46cb21f480e904d0b898297bd12c0a2d1571a
+    undici-types: "npm:~7.16.0"
+  checksum: 10c0/f82ed7194e16f5590ef7afdc20c6d09068c76d50278b485ede8f0c5749683536e3064ffa8def8db76915196afb3724b854aa5723c64d6571b890b14492943b46
   languageName: node
   linkType: hard
 
@@ -7844,7 +7844,7 @@ __metadata:
     "@equisoft/typescript-config": "npm:2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@stylistic/eslint-plugin": "npm:5.5.0"
-    "@types/node": "npm:22.19.0"
+    "@types/node": "npm:24.10.0"
     "@types/react": "npm:18.3.26"
     "@types/react-dom": "npm:18.3.7"
     "@types/react-table": "npm:7.7.20"
@@ -15124,13 +15124,6 @@ __metadata:
     has-symbols: "npm:^1.1.0"
     which-boxed-primitive: "npm:^1.1.1"
   checksum: 10c0/7dbd35ab02b0e05fe07136c72cb9355091242455473ec15057c11430129bab38b7b3624019b8778d02a881c13de44d63cd02d122ee782fb519e1de7775b5b982
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
