@@ -309,10 +309,12 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                             )}
 
                             <ClearFiltersContainer
+                                aria-disabled={!hasSelectedFilters}
                                 tabIndex={hasSelectedFilters ? 0 : -1}
                                 onKeyDown={handleClearFilterOnKeyDown}
                                 onClick={hasSelectedFilters ? clearFilters : undefined}
                                 $hasFilters={hasSelectedFilters}
+                                role="button"
                             >
                                 <Icon name="x" size="16" />
                                 <span>{t('clearFilter', { count: selectedFiltersCount })}</span>
