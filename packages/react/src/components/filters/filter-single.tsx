@@ -235,10 +235,12 @@ export const FilterSingle: FC<FilterSingleProps> = ({
                         )}
 
                         <ClearFiltersContainer
+                            aria-disabled={!hasSelectedFilters}
                             tabIndex={hasSelectedFilters ? 0 : -1}
                             onKeyDown={handleClearFilterOnKeyDown.bind(null, close)}
                             onClick={hasSelectedFilters ? clearFilters.bind(null, close) : undefined}
                             $hasFilters={hasSelectedFilters}
+                            role="button"
                         >
                             <Icon name="x" size="16" />
                             <span>{t('clearFilter', { count: hasSelectedFilters ? 1 : 0 })}</span>
