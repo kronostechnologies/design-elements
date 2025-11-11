@@ -158,13 +158,10 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-        const removeEventListenerCallback = (): void => document.removeEventListener('mouseup', handleClickOutside);
 
-        if (!isOpen) {
-            return removeEventListenerCallback;
-        }
-
-        return removeEventListenerCallback;
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
     }, [buttonRef, handleClickOutside, isOpen]);
 
     function handleCurrentFocus(): void {
