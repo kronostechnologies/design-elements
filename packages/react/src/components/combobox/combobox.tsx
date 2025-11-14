@@ -515,6 +515,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         if (
             focusedOption
             && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
+            && !multiselect
         ) {
             changeInputValue(focusedOption);
             selectOption(focusedOption);
@@ -536,6 +537,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         selectOption,
         selectedOption,
         getInputValueFromOption,
+        multiselect,
     ]);
 
     const componentTargets = [textboxRef, listboxRef, arrowButtonRef, clearButtonRef];
@@ -743,13 +745,22 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                 }
                 break;
             case 'Enter':
-                event.preventDefault();
+                if (!multiselect) {
+                    event.preventDefault();
+                }
                 if (focusedOption) {
                     if (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption)) {
-                        changeInputValue(focusedOption);
-                        selectOption(focusedOption);
+                        if (multiselect) {
+                            toggleOptionSelection(focusedOption);
+                        } else {
+                            changeInputValue(focusedOption);
+                            selectOption(focusedOption);
+                        }
                     }
-                    closeListbox();
+
+                    if (!multiselect) {
+                        closeListbox();
+                    }
                 } else if (open && (allowCustomValue || inputValue === '')) {
                     closeListbox();
                 }
@@ -820,6 +831,16 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         { id: `${id}_hint`, include: !!hint },
         { id: `${id}_invalid`, include: !valid },
     ]);
+
+    function getListBoxValues(): string[] | undefined {
+        if (multiselect) {
+            return getListboxSelectedOptionValues();
+        }
+        if (selectedOption) {
+            return [selectedOption.value];
+        }
+        return undefined;
+    }
 
     return (
         <StyledFieldContainer
@@ -902,7 +923,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                     multiselect={multiselect}
                     onOptionClick={handleListboxOptionClick}
                     options={filteredOptions}
-                    value={selectedOption ? [selectedOption.value] : undefined}
+                    value={getListBoxValues()}
                     $left={`${x}px`}
                     $top={`${y}px`}
                 />,
