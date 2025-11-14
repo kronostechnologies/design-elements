@@ -78,13 +78,8 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     position: absolute;
     top: ${(props) => props.$top};
     z-index: 99998;
-`;
-
-const TagWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    user-select: none;
+    width: 100%;
+    min-width: 0;
 `;
 
 const TagTooltipWrapper = styled.div`
@@ -169,6 +164,39 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
     }
 `;
 
+const TagInputContainer = styled.div<TextboxProps>`
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
+    border: 1px solid ${getBorderColor};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    width: 100%;
+    min-height: 30px;
+    padding-right: calc(var(--size-1x) + var(--spacing-half));
+
+    ${focus};
+`;
+
+const MsInput = styled.input<TextboxProps>`
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    min-width: 0;
+    min-height: 30px;
+    height: auto;
+    outline: none;
+    padding: 0 2px;
+    flex: 1 1 0;
+    align-self: flex-start;
+`;
 export interface ComboboxProps<M extends boolean | undefined> {
     /**
      * If true, the input can have a value not included in the list of options
@@ -390,7 +418,9 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         }
 
         const filtered = options.filter(
-            (option: ComboboxOption) => getInputValueFromOption(option).toLowerCase().startsWith(inputValue.toLowerCase()),
+            (
+                option: ComboboxOption,
+            ) => getInputValueFromOption(option).toLowerCase().startsWith(inputValue.toLowerCase()),
         );
 
         if (filtered.length === 1 && getInputValueFromOption(filtered[0]) === inputValue) {
@@ -751,6 +781,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                 if (focusedOption) {
                     if (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption)) {
                         if (multiselect) {
+                            changeInputValue(undefined);
                             toggleOptionSelection(focusedOption);
                         } else {
                             changeInputValue(focusedOption);
@@ -809,7 +840,12 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         const matchingOption: ListboxOption | undefined = findOptionByLabelOrValue(newInputValue);
 
         if (matchingOption) {
-            selectOption(matchingOption);
+            if (multiselect) {
+                changeInputValue(undefined);
+                toggleOptionSelection(matchingOption);
+            } else {
+                selectOption(matchingOption);
+            }
         } else if (allowCustomValue || newInputValue === '') {
             clearSelectedOptions();
         }
@@ -856,38 +892,73 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
             hint={hint}
         >
             <StyledContainer>
-                <input type="hidden" name={name} value={getValues()} data-testid="input" />
-                {multiselect
-                    && <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>}
-                <Textbox
-                    aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                    aria-activedescendant={open && focusedOption
-                        ? sanitizeId(`${id}_${focusedOption.value}`)
-                        : undefined}
-                    aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
-                    aria-controls={`${id}_listbox`}
-                    aria-describedby={ariaDescribedBy}
-                    aria-expanded={open}
-                    aria-invalid={!valid ? 'true' : 'false'}
-                    aria-required={required ? 'true' : 'false'}
-                    data-testid="textbox"
-                    id={id}
-                    $isMobile={isMobile}
-                    disabled={disabled}
-                    name={name}
-                    onBlur={handleTextboxBlur}
-                    onChange={handleTextboxChange}
-                    onClick={handleTextboxClick}
-                    onKeyDown={handleTextboxKeyDown}
-                    placeholder={placeholder}
-                    ref={refs.setReference}
-                    role="combobox"
-                    tabIndex={0}
-                    $valid={valid}
-                    value={suggestedInputValue || inputValue}
-                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                />
-                {inputValue !== '' && !disabled && (
+                {multiselect ? (
+                    <TagInputContainer
+                        $valid={valid}
+                        $isMobile={isMobile}
+                        value={''}
+                        ref={refs.setReference}
+                    >
+                        <input type="hidden" name={name} value={getValues()} data-testid="input" />
+                        {renderSelectedOptionsTags()}
+                        <MsInput
+                            aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
+                            aria-activedescendant={open && focusedOption
+                                ? sanitizeId(`${id}_${focusedOption.value}`)
+                                : undefined}
+                            aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
+                            aria-controls={`${id}_listbox`}
+                            aria-describedby={ariaDescribedBy}
+                            aria-expanded={open}
+                            aria-invalid={!valid ? 'true' : 'false'}
+                            aria-required={required ? 'true' : 'false'}
+                            data-testid="textbox"
+                            id={id}
+                            disabled={disabled}
+                            name={name}
+                            onBlur={handleTextboxBlur}
+                            onChange={handleTextboxChange}
+                            onClick={handleTextboxClick}
+                            onKeyDown={handleTextboxKeyDown}
+                            placeholder={placeholder}
+                            role="combobox"
+                            tabIndex={0}
+                            $valid={valid}
+                            $isMobile={isMobile}
+                            value={suggestedInputValue || inputValue}
+                            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+                        />
+                    </TagInputContainer>
+                ) : (
+                    <Textbox
+                        aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
+                        aria-activedescendant={open && focusedOption
+                            ? sanitizeId(`${id}_${focusedOption.value}`)
+                            : undefined}
+                        aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
+                        aria-controls={`${id}_listbox`}
+                        aria-describedby={ariaDescribedBy}
+                        aria-expanded={open}
+                        aria-invalid={!valid ? 'true' : 'false'}
+                        aria-required={required ? 'true' : 'false'}
+                        data-testid="textbox"
+                        id={id}
+                        $isMobile={isMobile}
+                        disabled={disabled}
+                        name={name}
+                        onBlur={handleTextboxBlur}
+                        onChange={handleTextboxChange}
+                        onClick={handleTextboxClick}
+                        onKeyDown={handleTextboxKeyDown}
+                        placeholder={placeholder}
+                        role="combobox"
+                        tabIndex={0}
+                        $valid={valid}
+                        value={suggestedInputValue || inputValue}
+                        {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+                    />
+                )}
+                {inputValue !== '' && !disabled && !multiselect && (
                     <ClearButton
                         aria-label={t('clearInput')}
                         buttonType="tertiary"
