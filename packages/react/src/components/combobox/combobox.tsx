@@ -33,10 +33,10 @@ import { ListboxTag } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
-    addUniqueOption,
     getDefaultOptions,
-    isOptionSelected,
-    removeOption,
+    getJoinedValues,
+    getNewOptionSelection,
+    getSelectedOptionValues,
 } from '../listbox/utils';
 
 interface TextboxProps {
@@ -79,11 +79,11 @@ interface StyledListboxProps {
 
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
     left: ${(props) => props.$left};
+    min-width: 0;
     position: absolute;
     top: ${(props) => props.$top};
-    z-index: 99998;
     width: 100%;
-    min-width: 0;
+    z-index: 99998;
 `;
 
 const Textbox = styled.input<TextboxProps>`
@@ -148,37 +148,37 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
 `;
 
 const TagInputContainer = styled.div<TextboxProps>`
-    display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
     background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    display: flex;
+    flex-wrap: wrap;
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    width: 100%;
     min-height: 30px;
     padding-right: calc(var(--size-1x) + var(--spacing-half));
+    width: 100%;
 
     ${focus};
 `;
 
 const MsInput = styled.input<TextboxProps>`
+    align-self: flex-start;
     background: transparent;
     border: none;
     box-sizing: border-box;
     color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    flex: 1 1 0;
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    min-width: 0;
-    min-height: 30px;
     height: auto;
+    min-height: 30px;
+    min-width: 0;
     outline: none;
     padding: 0 2px;
-    flex: 1 1 0;
-    align-self: flex-start;
 `;
 export interface ComboboxProps<M extends boolean | undefined> {
     /**
@@ -250,8 +250,10 @@ export interface ComboboxProps<M extends boolean | undefined> {
     /**
      * OnChange callback function, invoked when the value is changed
      */
-    onChange?(value: string): void;
-    onChangeMs?(option: M extends true ? ComboboxOption[] : ComboboxOption): void;
+    onChange?(
+        value: string,
+        option?: M extends true ? ComboboxOption[] : ComboboxOption
+    ): void;
 
     onInputChange?(value: string): void;
 }
@@ -275,7 +277,6 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
     label,
     multiselect,
     onChange,
-    onChangeMs,
     onInputChange,
     options,
     placeholder,
@@ -569,12 +570,10 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
     );
 
     function toggleOptionSelection(opt: ComboboxOption, forceSelected?: boolean): void {
-        const newSelectedOptions = !isOptionSelected(opt, selectedOptions) || forceSelected
-            ? addUniqueOption(opt, selectedOptions)
-            : removeOption(opt, selectedOptions);
+        const newSelectedOptions = getNewOptionSelection(opt, selectedOptions, forceSelected);
 
         setSelectedOptions(newSelectedOptions);
-        onChangeMs?.(newSelectedOptions ?? []);
+        onChange?.('', newSelectedOptions ?? []);
     }
 
     function handleTagRemove(tag: TagValue): void {
@@ -593,14 +592,6 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
             textboxRef={textboxRef}
         />
     ));
-
-    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
-        (opt) => opt.value ?? '',
-    );
-
-    function getValues(): string {
-        return getListboxSelectedOptionValues()?.join('|') ?? '';
-    }
 
     function handleListboxOptionClick(option: ComboboxOption): void {
         if (optionPredicate(option)) {
@@ -756,16 +747,6 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         { id: `${id}_invalid`, include: !valid },
     ]);
 
-    function getListBoxValues(): string[] | undefined {
-        if (multiselect) {
-            return getListboxSelectedOptionValues();
-        }
-        if (selectedOption) {
-            return [selectedOption.value];
-        }
-        return undefined;
-    }
-
     return (
         <StyledFieldContainer
             className={className}
@@ -784,10 +765,10 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                     <TagInputContainer
                         $valid={valid}
                         $isMobile={isMobile}
-                        value={''}
+                        value=''
                         ref={refs.setReference}
                     >
-                        <input type="hidden" name={name} value={getValues()} data-testid="input" />
+                        <input type="hidden" name={name} value={getJoinedValues(selectedOptions)} data-testid="input" />
                         {renderSelectedOptionsTags()}
                         <MsInput
                             aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
@@ -839,6 +820,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                         onClick={handleTextboxClick}
                         onKeyDown={handleTextboxKeyDown}
                         placeholder={placeholder}
+                        ref={refs.setReference}
                         role="combobox"
                         tabIndex={0}
                         $valid={valid}
@@ -882,7 +864,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                     multiselect={multiselect}
                     onOptionClick={handleListboxOptionClick}
                     options={filteredOptions}
-                    value={getListBoxValues()}
+                    value={multiselect ? getSelectedOptionValues(selectedOptions) : selectedOption?.value}
                     $left={`${x}px`}
                     $top={`${y}px`}
                 />,

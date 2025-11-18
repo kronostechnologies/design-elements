@@ -64,7 +64,7 @@ export function findOptionsByValue<T extends { value: string }>(
     );
 }
 
-export function getDefaultOptions<T extends { label?: string, value: string }>(
+export function getDefaultOptions<T extends { value: string, label?: string, disabled?: boolean }>(
     searchValue: Value | undefined,
     options: T[],
     multiselect?: boolean,
@@ -76,8 +76,7 @@ export function getDefaultOptions<T extends { label?: string, value: string }>(
     }
 
     if (defaultOptions === undefined && !multiselect) {
-        const firstEnabled = options.find(isOptionEnabled as (option: T) => boolean);
-        defaultOptions = firstEnabled ? [firstEnabled] : undefined;
+        defaultOptions = [options.find(isOptionEnabled) ?? { value: '', label: '' } as T];
     }
 
     return defaultOptions;
@@ -96,4 +95,28 @@ export function isOptionSelected<T extends { value: string }>(
     }
 
     return includes(selectedOptions, option, optionsAreEqual);
+}
+
+export function getNewOptionSelection<T extends { value: string }>(
+    option: T,
+    selectedOptions?: T[],
+    forceSelected?: boolean,
+): T[] {
+    return !isOptionSelected(option, selectedOptions) || forceSelected
+        ? addUniqueOption(option, selectedOptions)
+        : removeOption(option, selectedOptions);
+}
+
+export function getSelectedOptionValues<T extends { value: string }>(
+    selectedOptions?: T[],
+): string[] | undefined {
+    return selectedOptions?.map(
+        (option) => option.value ?? '',
+    );
+}
+
+export function getJoinedValues<T extends { value: string }>(
+    selectedOptions?: T[],
+): string {
+    return getSelectedOptionValues(selectedOptions)?.join('|') ?? '';
 }

@@ -109,6 +109,9 @@ export const WithMultiselect: Story = {
     args: {
         autoSelectMatchingOption: false,
         multiselect: true,
-        onChangeMs: (opts: ComboboxOption[]) => console.log(opts), /* eslint-disable-line no-console */
+        onChange: (
+            value: string,
+            opts: ComboboxOption[],
+        ) => console.log(opts, value), /* eslint-disable-line no-console */
     },
 };
