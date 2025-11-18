@@ -2,7 +2,8 @@ import {
     ChangeEvent,
     type FC,
     FocusEvent,
-    KeyboardEvent, ReactNode, RefObject,
+    KeyboardEvent,
+    ReactNode,
     useCallback,
     useEffect,
     useMemo,
@@ -18,10 +19,8 @@ import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSelect } from '../../hooks/use-list-select';
-import { Overflow, useOverflow } from '../../hooks/use-overflow';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
-import { includes, unique } from '../../utils/array';
 import { focus } from '../../utils/css-state';
 import { getRootElement, sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
@@ -30,10 +29,15 @@ import { useDeviceContext } from '../device-context-provider';
 import { TagValue } from '../dropdown-list/dropdown-list';
 import { FieldContainer } from '../field-container';
 import { Listbox, type ListboxOption } from '../listbox';
-import { findOptionsByValue } from '../listbox/listbox-option';
-import { Tag } from '../tag';
+import { ListboxTag } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
-import { Tooltip, type TooltipProps } from '../tooltip';
+import { type TooltipProps } from '../tooltip';
+import {
+    addUniqueOption,
+    getDefaultOptions,
+    isOptionSelected,
+    removeOption,
+} from '../listbox/utils';
 
 interface TextboxProps {
     disabled?: boolean;
@@ -80,27 +84,6 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     z-index: 99998;
     width: 100%;
     min-width: 0;
-`;
-
-const TagTooltipWrapper = styled.div`
-    overflow: hidden;
-    [role='tooltip'] {
-        z-index: 99999;
-    }
-`;
-
-const TagTooltip = styled(Tooltip)`
-    overflow: hidden;
-    width: auto;
-`;
-
-const StyledTag = styled(Tag)`
-    margin: 2px;
-    overflow: hidden;
-
-    & + & {
-        margin-left: 2px;
-    }
 `;
 
 const Textbox = styled.input<TextboxProps>`
@@ -206,6 +189,7 @@ export interface ComboboxProps<M extends boolean | undefined> {
      * Aria label for the input (used when no visual label is present)
      */
     ariaLabel?: string;
+    autoSelectMatchingOption?: boolean;
     className?: string;
     /**
      * @default false
@@ -274,43 +258,9 @@ export interface ComboboxProps<M extends boolean | undefined> {
 
 const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
 
-interface ListBoxTagProps {
-    handleTagRemove: (tag: TagValue) => void;
-    opt: ComboboxOption;
-    textboxRef: RefObject<HTMLDivElement>;
-}
-
-const ListboxTag: FC<ListBoxTagProps> = ({
-    handleTagRemove,
-    opt,
-    textboxRef,
-}) => {
-    const tagLabelRef = useRef<HTMLSpanElement>(null);
-    const overflow: Overflow = useOverflow(tagLabelRef, textboxRef);
-    const isOverflowing = overflow.horizontal || overflow.vertical;
-
-    return (
-        <TagTooltipWrapper>
-            <TagTooltip
-                key={opt.value}
-                label={opt?.label ?? ''}
-                disabled={!isOverflowing}
-                mode="normal"
-            >
-                <StyledTag
-                    aria-hidden="true"
-                    data-testid={`listboxtag-${opt.value}`}
-                    labelRef={tagLabelRef}
-                    onRemove={handleTagRemove}
-                    value={{ id: opt.value, label: opt?.label ?? '' }}
-                />
-            </TagTooltip>
-        </TagTooltipWrapper>
-    );
-};
-
 export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
     allowCustomValue = false,
+    autoSelectMatchingOption = true,
     ariaLabel,
     className,
     defaultOpen = false,
@@ -614,71 +564,9 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         textboxRef.current?.focus();
     }
 
-    function optionsAreEqual(
-        opt: ComboboxOption,
-        optToCompare: ComboboxOption,
-    ): boolean {
-        return opt.value === optToCompare.value;
-    }
-
-    function addUniqueOption(
-        newOption: ComboboxOption,
-        opts?: ComboboxOption[],
-    ): ComboboxOption[] {
-        if (!opts) {
-            return [newOption];
-        }
-
-        return unique([...opts, newOption], optionsAreEqual);
-    }
-
-    function removeOption(
-        optToRemove: ComboboxOption,
-        opts?: ComboboxOption[],
-    ): ComboboxOption[] {
-        if (!opts) {
-            return [];
-        }
-
-        return opts.filter((opt) => !optionsAreEqual(opt, optToRemove));
-    }
-
-    function isOptionEnabled(option: ComboboxOption): boolean {
-        return !option.disabled;
-    }
-
-    function getDefaultOptions(
-        val: string | string[] | undefined,
-        opts: ComboboxOption[],
-        isMultiSelect?: boolean,
-    ): ComboboxOption[] | undefined {
-        let defaultOptions: ComboboxOption[] | undefined;
-
-        if (value !== undefined) {
-            defaultOptions = findOptionsByValue(opts, val);
-        }
-
-        if (defaultOptions === undefined && !isMultiSelect) {
-            defaultOptions = [options.find(isOptionEnabled) ?? { value: '', label: '' }];
-        }
-
-        return defaultOptions;
-    }
-
     const [selectedOptions, setSelectedOptions] = useState<ComboboxOption[] | undefined>(
         () => getDefaultOptions(value ?? defaultValue, options, multiselect),
     );
-
-    function isOptionSelected(
-        opt: ComboboxOption,
-        selectedOpts?: ComboboxOption[],
-    ): boolean {
-        if (!selectedOpts) {
-            return false;
-        }
-
-        return includes(selectedOpts, opt, optionsAreEqual);
-    }
 
     function toggleOptionSelection(opt: ComboboxOption, forceSelected?: boolean): void {
         const newSelectedOptions = !isOptionSelected(opt, selectedOptions) || forceSelected
@@ -687,6 +575,31 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
 
         setSelectedOptions(newSelectedOptions);
         onChangeMs?.(newSelectedOptions ?? []);
+    }
+
+    function handleTagRemove(tag: TagValue): void {
+        const removedOption = selectedOptions?.find((option) => option.value === tag.id);
+
+        if (removedOption !== undefined) {
+            toggleOptionSelection(removedOption);
+        }
+    }
+
+    const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: ComboboxOption) => (
+        <ListboxTag
+            key={option.value}
+            option={option}
+            handleTagRemove={handleTagRemove}
+            textboxRef={textboxRef}
+        />
+    ));
+
+    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
+        (opt) => opt.value ?? '',
+    );
+
+    function getValues(): string {
+        return getListboxSelectedOptionValues()?.join('|') ?? '';
     }
 
     function handleListboxOptionClick(option: ComboboxOption): void {
@@ -708,31 +621,6 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         }
 
         textboxRef.current?.focus();
-    }
-
-    function handleTagRemove(tag: TagValue): void {
-        const removedOption = selectedOptions?.find((option) => option.value === tag.id);
-
-        if (removedOption !== undefined) {
-            toggleOptionSelection(removedOption);
-        }
-    }
-
-    const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: ComboboxOption) => (
-        <ListboxTag
-            key={option.value}
-            opt={option}
-            handleTagRemove={handleTagRemove}
-            textboxRef={textboxRef}
-        />
-    ));
-
-    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
-        (opt) => opt.value ?? '',
-    );
-
-    function getValues(): string {
-        return getListboxSelectedOptionValues()?.join('|') ?? '';
     }
 
     // With inline autocomplete, the suggestion gets highlighted only when text is entered in
@@ -839,7 +727,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         // Select option if the input text is an exact match
         const matchingOption: ListboxOption | undefined = findOptionByLabelOrValue(newInputValue);
 
-        if (matchingOption) {
+        if (autoSelectMatchingOption && matchingOption) {
             if (multiselect) {
                 changeInputValue(undefined);
                 toggleOptionSelection(matchingOption);

@@ -19,19 +19,19 @@ import { useDeviceContext } from '../device-context-provider';
 import { FieldContainer } from '../field-container';
 import { Icon, type IconName } from '../icon';
 import { Listbox, type ListboxOption } from '../listbox';
-import { findOptionsByValue } from '../listbox/listbox-option';
 import { Tag } from '../tag';
 import { type ToggletipProps } from '../toggletip';
 import { Tooltip, type TooltipProps } from '../tooltip';
 import {
     addUniqueOption,
     disableNonSelectedOptions,
+    findOptionsByValue,
     getDefaultOptions,
     getOptionLabel,
     isOptionEnabled,
     isOptionSelected,
     removeOption,
-} from './utils';
+} from '../listbox/utils';
 
 interface TextboxProps {
     $disabled?: boolean;
