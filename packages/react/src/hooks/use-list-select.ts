@@ -8,6 +8,7 @@ interface UseListSelectRequest<T> {
     deselectElement: (element: T) => void;
     revertPreviousSelectedElement: () => void;
     clearSelection: () => void;
+    toggleSelectedElements: (element: T) => void;
 }
 
 export function useListSelect<T>(
@@ -49,6 +50,17 @@ export function useListSelect<T>(
         }
     }, [isMultiSelect, previousSelectedElement]);
 
+    const toggleSelectedElements: (element: T) => void = useCallback((element: T) => {
+        const isAlreadySelected = !!selectedElements.find(
+            (currentElement: T) => predicate(currentElement, element),
+        );
+        if (isAlreadySelected) {
+            deselectElement(element);
+        } else {
+            selectElement(element);
+        }
+    }, [deselectElement, predicate, selectElement, selectedElements]);
+
     const clearSelection: () => void = useCallback(() => {
         setSelectedElements([]);
         setPreviousSelectedElement(undefined);
@@ -62,5 +74,6 @@ export function useListSelect<T>(
         deselectElement,
         revertPreviousSelectedElement,
         clearSelection,
+        toggleSelectedElements,
     };
 }

@@ -33,9 +33,7 @@ import { ListboxTag } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
-    getDefaultOptions,
     getJoinedValues,
-    getNewOptionSelection,
     getSelectedOptionValues,
 } from '../listbox/utils';
 
@@ -411,14 +409,17 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
 
     const findInitialSelectedOption: () => ListboxOption | undefined = () => findOptionByValue(value ?? defaultValue);
     const {
+        clearSelection: clearSelectedOptions,
         currentSelectedElement: selectedOption,
         previousSelectedElement: previousSelectedOption,
-        selectElement: selectOption,
-        clearSelection: clearSelectedOptions,
         revertPreviousSelectedElement: revertPreviousSelectedOption,
+        selectElement: selectOption,
+        selectedElements: selectedOptions,
+        toggleSelectedElements: toggleSelectedOptions,
     } = useListSelect<ComboboxOption>(
         (option: ComboboxOption, optionToCompare: ComboboxOption) => option.value === optionToCompare.value,
         findInitialSelectedOption,
+        multiselect,
     );
 
     const changeInputValue: (newOption: ComboboxOption | undefined) => void = useCallback((newOption) => {
@@ -493,15 +494,16 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (
-            focusedOption
-            && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
-            && !multiselect
-        ) {
-            changeInputValue(focusedOption);
-            selectOption(focusedOption);
-        } else if (!allowCustomValue && inputValue !== getInputValueFromOption(selectedOption)) {
-            revertInputValue();
+        if (!multiselect) {
+            if (
+                focusedOption
+                && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
+            ) {
+                changeInputValue(focusedOption);
+                selectOption(focusedOption);
+            } else if (!allowCustomValue && inputValue !== getInputValueFromOption(selectedOption)) {
+                revertInputValue();
+            }
         }
 
         if (open) {
@@ -565,15 +567,11 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         textboxRef.current?.focus();
     }
 
-    const [selectedOptions, setSelectedOptions] = useState<ComboboxOption[] | undefined>(
-        () => getDefaultOptions(value ?? defaultValue, options, multiselect),
-    );
+    console.log(selectedOptions);
 
-    function toggleOptionSelection(opt: ComboboxOption, forceSelected?: boolean): void {
-        const newSelectedOptions = getNewOptionSelection(opt, selectedOptions, forceSelected);
-
-        setSelectedOptions(newSelectedOptions);
-        onChange?.('', newSelectedOptions ?? []);
+    function toggleOptionSelection(option: ComboboxOption): void {
+        toggleSelectedOptions(option);
+        onChange?.('', selectedOptions ?? []);
     }
 
     function handleTagRemove(tag: TagValue): void {
@@ -725,6 +723,9 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
             } else {
                 selectOption(matchingOption);
             }
+        } else if (multiselect && matchingOption) {
+            // If not auto-selecting, focus the matching option in multiselect mode
+            setFocusedOption(matchingOption);
         } else if (allowCustomValue || newInputValue === '') {
             clearSelectedOptions();
         }
@@ -768,7 +769,12 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                         value=''
                         ref={refs.setReference}
                     >
-                        <input type="hidden" name={name} value={getJoinedValues(selectedOptions)} data-testid="input" />
+                        <input
+                            type="hidden"
+                            name={name}
+                            value={getJoinedValues(selectedOptions)}
+                            data-testid="input"
+                        />
                         {renderSelectedOptionsTags()}
                         <MsInput
                             aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
