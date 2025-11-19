@@ -33,8 +33,11 @@ import { ListboxTag } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
+    addUniqueOption,
     getJoinedValues,
     getSelectedOptionValues,
+    isOptionSelected,
+    removeOption,
 } from '../listbox/utils';
 
 interface TextboxProps {
@@ -163,7 +166,7 @@ const TagInputContainer = styled.div<TextboxProps>`
     ${focus};
 `;
 
-const MsInput = styled.input<TextboxProps>`
+const MsInput = styled.input<TextboxProps & { $hasTags?: boolean }>`
     align-self: flex-start;
     background: transparent;
     border: none;
@@ -176,9 +179,9 @@ const MsInput = styled.input<TextboxProps>`
     min-height: 30px;
     min-width: 0;
     outline: none;
-    padding: 0 2px;
+    padding: 0 ${({ $hasTags }) => ($hasTags ? '2px' : '8px')};
 `;
-export interface ComboboxProps<M extends boolean | undefined> {
+export interface ComboboxProps {
     /**
      * If true, the input can have a value not included in the list of options
      */
@@ -248,17 +251,14 @@ export interface ComboboxProps<M extends boolean | undefined> {
     /**
      * OnChange callback function, invoked when the value is changed
      */
-    onChange?(
-        value: string,
-        option?: M extends true ? ComboboxOption[] : ComboboxOption
-    ): void;
+    onChange?(value: string | ComboboxOption | ComboboxOption[]): void;
 
     onInputChange?(value: string): void;
 }
 
 const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
 
-export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
+export const Combobox: FC<ComboboxProps> = ({
     allowCustomValue = false,
     autoSelectMatchingOption = true,
     ariaLabel,
@@ -567,11 +567,13 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         textboxRef.current?.focus();
     }
 
-    console.log(selectedOptions);
-
     function toggleOptionSelection(option: ComboboxOption): void {
+        const newSelectedOptions = !isOptionSelected(option, selectedOptions)
+            ? addUniqueOption(option, selectedOptions)
+            : removeOption(option, selectedOptions);
+
         toggleSelectedOptions(option);
-        onChange?.('', selectedOptions ?? []);
+        onChange?.(newSelectedOptions);
     }
 
     function handleTagRemove(tag: TagValue): void {
@@ -716,17 +718,19 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
         // Select option if the input text is an exact match
         const matchingOption: ListboxOption | undefined = findOptionByLabelOrValue(newInputValue);
 
-        if (autoSelectMatchingOption && matchingOption) {
-            if (multiselect) {
-                changeInputValue(undefined);
-                toggleOptionSelection(matchingOption);
-            } else {
-                selectOption(matchingOption);
+        if (matchingOption) {
+            if (autoSelectMatchingOption) {
+                if (multiselect) {
+                    changeInputValue(undefined);
+                    toggleOptionSelection(matchingOption);
+                } else {
+                    selectOption(matchingOption);
+                }
+            } else if (multiselect) {
+                // If not auto-selecting, focus the matching option in multiselect mode
+                setFocusedOption(matchingOption);
             }
-        } else if (multiselect && matchingOption) {
-            // If not auto-selecting, focus the matching option in multiselect mode
-            setFocusedOption(matchingOption);
-        } else if (allowCustomValue || newInputValue === '') {
+        } else if (!multiselect && (allowCustomValue || newInputValue === '')) {
             clearSelectedOptions();
         }
     }
@@ -800,6 +804,7 @@ export const Combobox: FC<ComboboxProps<boolean | undefined>> = ({
                             tabIndex={0}
                             $valid={valid}
                             $isMobile={isMobile}
+                            $hasTags={selectedOptions.length > 0}
                             value={suggestedInputValue || inputValue}
                             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                         />

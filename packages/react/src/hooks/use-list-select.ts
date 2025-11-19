@@ -67,13 +67,13 @@ export function useListSelect<T>(
     }, []);
 
     return {
-        selectedElements,
-        currentSelectedElement,
-        previousSelectedElement,
-        selectElement,
-        deselectElement,
-        revertPreviousSelectedElement,
         clearSelection,
+        currentSelectedElement,
+        deselectElement,
+        previousSelectedElement,
+        revertPreviousSelectedElement,
+        selectElement,
+        selectedElements,
         toggleSelectedElements,
     };
 }

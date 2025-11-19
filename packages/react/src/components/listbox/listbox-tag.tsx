@@ -1,9 +1,7 @@
-import { FC, useRef } from 'react';
+import { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
-import { DropdownListOption } from '../dropdown-list';
 import { Tag } from '../tag';
 import { Tooltip } from '../tooltip';
-import { ListboxOption } from './listbox';
 import { Overflow, useOverflow } from '../../hooks/use-overflow';
 
 const TagTooltipWrapper = styled.div`
@@ -27,19 +25,21 @@ const StyledTag = styled(Tag)`
     }
 `;
 
+type ListOption = { value: string; label?: string }
+
 export interface TagValue {
     id?: string;
     label: string;
 }
 
-export interface ListBoxTagProps {
+export interface ListBoxTagProps<T extends ListOption> {
     handleTagRemove: (tag: TagValue) => void;
-    option: ListboxOption | DropdownListOption;
+    option: T;
     readOnly?: boolean;
-    textboxRef: React.RefObject<HTMLDivElement>;
+    textboxRef: RefObject<HTMLDivElement>;
 }
 
-export const ListboxTag: FC<ListBoxTagProps> = ({
+export const ListboxTag: FC<ListBoxTagProps<ListOption>> = ({
     handleTagRemove,
     option,
     readOnly,
