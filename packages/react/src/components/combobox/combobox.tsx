@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import {
     ChangeEvent,
     type FC,
@@ -48,9 +49,20 @@ interface TextboxProps {
     value: string;
 }
 
+interface MultiSelectInputProps extends TextboxProps {
+    $hasTags?: boolean;
+}
+
+interface TagInputContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
+
 export type ComboboxOption = ListboxOption;
 
-function getBorderColor({ disabled, theme, $valid }: TextboxProps): string {
+function getBorderColor({ disabled, theme, $valid }: TextboxProps | TagInputContainerProps): string {
     if (disabled) {
         return theme.component['combobox-disabled-border-color'];
     }
@@ -85,26 +97,6 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     top: ${(props) => props.$top};
     width: 100%;
     z-index: 99998;
-`;
-
-const Textbox = styled.input<TextboxProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
-    border: 1px solid ${getBorderColor};
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
-    font-family: inherit;
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: 0 var(--spacing-1x);
-    width: 100%;
-
-    ${focus};
-
-    &::placeholder {
-        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
-        font-style: italic;
-    }
 `;
 
 const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
@@ -148,7 +140,42 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
     }
 `;
 
-const TagInputContainer = styled.div<TextboxProps>`
+const BaseInput = styled.input<TextboxProps>`
+    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+`;
+
+const Textbox = styled(BaseInput)<TextboxProps>`
+    border: 1px solid ${getBorderColor};
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    padding: 0 var(--spacing-1x);
+    width: 100%;
+
+    ${focus};
+
+    &::placeholder {
+        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
+        font-style: italic;
+    }
+`;
+
+const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    flex: 1 1 0;
+    height: auto;
+    min-height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 0 ${({ $hasTags }) => ($hasTags ? '2px' : '8px')};
+`;
+
+const TagInputContainer = styled.div<TagInputContainerProps>`
     align-items: flex-start;
     background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
     border: 1px solid ${getBorderColor};
@@ -166,21 +193,6 @@ const TagInputContainer = styled.div<TextboxProps>`
     ${focus};
 `;
 
-const MsInput = styled.input<TextboxProps & { $hasTags?: boolean }>`
-    align-self: flex-start;
-    background: transparent;
-    border: none;
-    box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
-    flex: 1 1 0;
-    font-family: inherit;
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    height: auto;
-    min-height: 30px;
-    min-width: 0;
-    outline: none;
-    padding: 0 ${({ $hasTags }) => ($hasTags ? '2px' : '8px')};
-`;
 export interface ComboboxProps {
     /**
      * If true, the input can have a value not included in the list of options
@@ -752,6 +764,32 @@ export const Combobox: FC<ComboboxProps> = ({
         { id: `${id}_invalid`, include: !valid },
     ]);
 
+    const sharedInputProps = {
+        'aria-label': !label ? ariaLabel || t('inputAriaLabel') : undefined,
+        'aria-activedescendant': open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined,
+        'aria-autocomplete': (inlineAutoComplete ? 'both' : 'list') as 'both' | 'list',
+        'aria-controls': `${id}_listbox`,
+        'aria-describedby': ariaDescribedBy,
+        'aria-expanded': open,
+        'aria-invalid': !valid,
+        'aria-required': required,
+        'data-testid': 'textbox',
+        id,
+        $isMobile: isMobile,
+        disabled,
+        name,
+        onBlur: handleTextboxBlur,
+        onChange: handleTextboxChange,
+        onClick: handleTextboxClick,
+        onKeyDown: handleTextboxKeyDown,
+        placeholder,
+        role: 'combobox',
+        tabIndex: 0,
+        $valid: valid,
+        value: suggestedInputValue || inputValue,
+        ...dataAttributes,
+    };
+
     return (
         <StyledFieldContainer
             className={className}
@@ -768,10 +806,10 @@ export const Combobox: FC<ComboboxProps> = ({
             <StyledContainer>
                 {multiselect ? (
                     <TagInputContainer
-                        $valid={valid}
+                        disabled={disabled}
                         $isMobile={isMobile}
-                        value=''
                         ref={refs.setReference}
+                        $valid={valid}
                     >
                         <input
                             type="hidden"
@@ -780,64 +818,10 @@ export const Combobox: FC<ComboboxProps> = ({
                             data-testid="input"
                         />
                         {renderSelectedOptionsTags()}
-                        <MsInput
-                            aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                            aria-activedescendant={open && focusedOption
-                                ? sanitizeId(`${id}_${focusedOption.value}`)
-                                : undefined}
-                            aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
-                            aria-controls={`${id}_listbox`}
-                            aria-describedby={ariaDescribedBy}
-                            aria-expanded={open}
-                            aria-invalid={!valid ? 'true' : 'false'}
-                            aria-required={required ? 'true' : 'false'}
-                            data-testid="textbox"
-                            id={id}
-                            disabled={disabled}
-                            name={name}
-                            onBlur={handleTextboxBlur}
-                            onChange={handleTextboxChange}
-                            onClick={handleTextboxClick}
-                            onKeyDown={handleTextboxKeyDown}
-                            placeholder={placeholder}
-                            role="combobox"
-                            tabIndex={0}
-                            $valid={valid}
-                            $isMobile={isMobile}
-                            $hasTags={selectedOptions.length > 0}
-                            value={suggestedInputValue || inputValue}
-                            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                        />
+                        <MultiSelectInput {...sharedInputProps} $hasTags={selectedOptions.length > 0} />
                     </TagInputContainer>
                 ) : (
-                    <Textbox
-                        aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                        aria-activedescendant={open && focusedOption
-                            ? sanitizeId(`${id}_${focusedOption.value}`)
-                            : undefined}
-                        aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
-                        aria-controls={`${id}_listbox`}
-                        aria-describedby={ariaDescribedBy}
-                        aria-expanded={open}
-                        aria-invalid={!valid ? 'true' : 'false'}
-                        aria-required={required ? 'true' : 'false'}
-                        data-testid="textbox"
-                        id={id}
-                        $isMobile={isMobile}
-                        disabled={disabled}
-                        name={name}
-                        onBlur={handleTextboxBlur}
-                        onChange={handleTextboxChange}
-                        onClick={handleTextboxClick}
-                        onKeyDown={handleTextboxKeyDown}
-                        placeholder={placeholder}
-                        ref={refs.setReference}
-                        role="combobox"
-                        tabIndex={0}
-                        $valid={valid}
-                        value={suggestedInputValue || inputValue}
-                        {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                    />
+                    <Textbox {...sharedInputProps} ref={refs.setReference} />
                 )}
                 {inputValue !== '' && !disabled && !multiselect && (
                     <ClearButton
