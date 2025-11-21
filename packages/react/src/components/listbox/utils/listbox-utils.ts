@@ -86,6 +86,20 @@ export function getOptionLabel<T extends { label?: string }>(option: T): string 
     return option.label ?? '';
 }
 
+export function getValueAsString(value: Value | undefined): string {
+    return Array.isArray(value) ? value[0] : value ?? '';
+}
+
+export function getValueAsStringArray(value: Value | undefined): string[] {
+    if (Array.isArray(value)) {
+        return value;
+    }
+    if (value) {
+        return [value];
+    }
+    return [];
+}
+
 export function isOptionSelected<T extends { value: string }>(
     option: T,
     selectedOptions?: T[],
@@ -111,7 +125,7 @@ export function getSelectedOptionValues<T extends { value: string }>(
     selectedOptions?: T[],
 ): string[] | undefined {
     return selectedOptions?.map(
-        (option) => option.value ?? '',
+        (option) => option?.value ?? '',
     );
 }
 

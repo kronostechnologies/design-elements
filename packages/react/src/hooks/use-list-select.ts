@@ -9,21 +9,27 @@ interface UseListSelectRequest<T> {
     revertPreviousSelectedElement: () => void;
     clearSelection: () => void;
     toggleSelectedElements: (element: T) => void;
+    setSelectedElements: (elements: T[]) => void;
 }
 
 export function useListSelect<T>(
     predicate: (element: T, elementToCompare: T) => boolean,
-    initialSelectedElementCallback: () => T | undefined = () => undefined,
+    initialSelectedElementCallback: () => T | T[] | undefined = () => undefined,
     isMultiSelect = false,
 ): UseListSelectRequest<T> {
     const [selectedElements, setSelectedElements] = useState<T[]>(() => {
-        const initialSelectedElement = initialSelectedElementCallback();
-        return initialSelectedElement ? [initialSelectedElement] : [];
+        const initial = initialSelectedElementCallback();
+        if (Array.isArray(initial)) return initial;
+        if (initial !== undefined) return [initial];
+        return [];
     });
     const [
         previousSelectedElement,
         setPreviousSelectedElement,
-    ] = useState<T | undefined>(initialSelectedElementCallback);
+    ] = useState<T | undefined>(() => {
+        const initialSelectedElement = initialSelectedElementCallback();
+        return Array.isArray(initialSelectedElement) ? initialSelectedElement[0] : undefined;
+    });
     const currentSelectedElement: T | undefined = selectedElements[selectedElements.length - 1];
 
     const selectElement: (element: T) => void = useCallback((element: T) => {
@@ -74,6 +80,7 @@ export function useListSelect<T>(
         revertPreviousSelectedElement,
         selectElement,
         selectedElements,
+        setSelectedElements,
         toggleSelectedElements,
     };
 }

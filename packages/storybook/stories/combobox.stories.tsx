@@ -109,6 +109,7 @@ export const WithMultiselect: Story = {
     args: {
         autoSelectMatchingOption: false,
         multiselect: true,
+        defaultValue: ['alberta', 'quebec'],
         onChange: (options: ComboboxOption[]) => console.log(options), /* eslint-disable-line no-console */
     },
 };

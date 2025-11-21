@@ -203,6 +203,7 @@ input + .c2 {
     class="c4"
   >
     <input
+      aria-activedescendant="uuid1_Alberta"
       aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-expanded="true"
@@ -477,6 +478,7 @@ input + .c2 {
     class="c6"
   >
     <input
+      aria-activedescendant="uuid1_Alberta"
       aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-describedby="uuid1_invalid"
@@ -683,6 +685,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
     class="c2"
   >
     <input
+      aria-activedescendant="uuid1_Alberta"
       aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-expanded="true"
@@ -934,6 +937,7 @@ input + .c2 {
     class="c5"
   >
     <input
+      aria-activedescendant="uuid1_Alberta"
       aria-autocomplete="list"
       aria-controls="uuid1_listbox"
       aria-describedby="uuid1_hint"
