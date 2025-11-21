@@ -68,6 +68,7 @@ export function getDefaultOptions<T extends { value: string, label?: string, dis
     searchValue: Value | undefined,
     options: T[],
     multiselect?: boolean,
+    forceSelectDefaultOption: boolean = false,
 ): T[] | undefined {
     let defaultOptions: T[] | undefined;
 
@@ -75,7 +76,7 @@ export function getDefaultOptions<T extends { value: string, label?: string, dis
         defaultOptions = findOptionsByValue(options, searchValue);
     }
 
-    if (defaultOptions === undefined && !multiselect) {
+    if (defaultOptions === undefined && !multiselect && forceSelectDefaultOption) {
         defaultOptions = [options.find(isOptionEnabled) ?? { value: '', label: '' } as T];
     }
 

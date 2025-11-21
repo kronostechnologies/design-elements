@@ -254,7 +254,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
-        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect),
+        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect, true),
     );
 
     const options = useMemo(() => {
