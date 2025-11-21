@@ -755,7 +755,7 @@ export const Combobox: FC<ComboboxProps> = ({
                 if (!multiselect) {
                     event.preventDefault();
                 }
-                
+
                 if (focusedOption) {
                     if (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption)) {
                         if (multiselect) {

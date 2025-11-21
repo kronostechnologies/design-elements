@@ -109,7 +109,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions('1', options);
+            const result = getDefaultOptions('1', options, false, true);
 
             expect(result).toEqual([{ value: '1', label: 'Option 1' }]);
         });
@@ -120,7 +120,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions(['1', '2'], options);
+            const result = getDefaultOptions(['1', '2'], options, false, true);
 
             expect(result).toEqual([
                 { value: '1', label: 'Option 1' },
@@ -134,7 +134,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2', disabled: false },
             ];
 
-            const result = getDefaultOptions(undefined, options, false);
+            const result = getDefaultOptions(undefined, options, false, true);
 
             expect(result).toEqual([{ value: '2', label: 'Option 2', disabled: false }]);
         });
@@ -145,7 +145,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2', disabled: true },
             ];
 
-            const result = getDefaultOptions(undefined, options, false);
+            const result = getDefaultOptions(undefined, options, false, true);
 
             expect(result).toEqual([{ value: '', label: '' }]);
         });
@@ -156,7 +156,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2', disabled: false },
             ];
 
-            const result = getDefaultOptions(undefined, options, true);
+            const result = getDefaultOptions(undefined, options, true, true);
 
             expect(result).toBeUndefined();
         });
@@ -167,7 +167,7 @@ describe('Dropdown List utils', () => {
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions('3', options);
+            const result = getDefaultOptions('3', options, false, true);
 
             expect(result).toEqual([]);
         });
