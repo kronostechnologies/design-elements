@@ -2,7 +2,7 @@ import { FC, FocusEvent, KeyboardEvent, ReactNode, useCallback, useMemo, useStat
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
-import { ListboxTag } from '../listbox/listbox-tag';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -147,11 +147,6 @@ const TextIcon = styled(Icon)`
 `;
 
 type Value = string | string[];
-
-export interface TagValue {
-    id?: string;
-    label: string;
-}
 
 export interface DropdownListOption extends ListboxOption {
     label: string;

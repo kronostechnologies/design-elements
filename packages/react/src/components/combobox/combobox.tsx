@@ -27,10 +27,9 @@ import { getRootElement, sanitizeId } from '../../utils/dom';
 import { stripDiacritics } from '../../utils/string';
 import { IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
-import { TagValue } from '../dropdown-list/dropdown-list';
 import { FieldContainer } from '../field-container';
 import { Listbox, ListboxOption } from '../listbox';
-import { ListboxTag } from '../listbox/listbox-tag';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
@@ -79,7 +78,7 @@ interface MultiSelectInputProps extends TextboxProps {
 
 function getBackgroundColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
     if ($readOnly) {
-        return theme.component['dropdown-list-input-readonly-background-color'];
+        return theme.component['combobox-readonly-background-color'];
     }
 
     if (disabled) {
@@ -93,7 +92,7 @@ function getBorderColor({
     disabled, $readOnly, theme, $valid,
 }: TextboxProps | TagInputContainerProps): string {
     if ($readOnly) {
-        return theme.component['dropdown-list-input-readonly-border-color'];
+        return theme.component['combobox-readonly-border-color'];
     }
 
     if (disabled) {
@@ -109,14 +108,14 @@ function getBorderColor({
 
 function getTextColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
     if ($readOnly) {
-        return theme.component['dropdown-list-input-readonly-text-color'];
+        return theme.component['combobox-readonly-text-color'];
     }
 
     if (disabled) {
         return theme.component['combobox-disabled-text-color'];
     }
 
-    return theme.component['dropdown-list-input-text-color'];
+    return theme.component['combobox-text-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
