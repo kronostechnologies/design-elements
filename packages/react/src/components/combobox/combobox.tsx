@@ -29,50 +29,94 @@ import { IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
 import { TagValue } from '../dropdown-list/dropdown-list';
 import { FieldContainer } from '../field-container';
-import { Listbox, type ListboxOption } from '../listbox';
+import { Listbox, ListboxOption } from '../listbox';
 import { ListboxTag } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
-    addUniqueOption, findOptionsByValue, getDefaultOptions,
+    addUniqueOption,
+    findOptionsByValue,
+    getDefaultOptions,
     getJoinedValues,
-    getSelectedOptionValues, getValueAsString, getValueAsStringArray, isOptionEnabled,
+    getSelectedOptionValues,
+    getValueAsString,
+    getValueAsStringArray,
+    isOptionEnabled,
     isOptionSelected,
     removeOption,
 } from '../listbox/utils';
 
 type Value = string | string[];
 
+export type ComboboxOption = ListboxOption;
+
+interface StyledListboxProps {
+    $left?: string;
+    $top?: string;
+}
+
+interface TagInputContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    $readOnly?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
+
 interface TextboxProps {
     disabled?: boolean;
     $isMobile: boolean;
+    $readOnly?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
     value: Value;
 }
 
 interface MultiSelectInputProps extends TextboxProps {
+    $readOnly?: boolean;
     $hasTags?: boolean;
 }
 
-interface TagInputContainerProps {
-    disabled?: boolean;
-    $isMobile: boolean;
-    theme: ResolvedTheme;
-    $valid: boolean;
+function getBackgroundColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-background-color'];
+    }
+
+    if (disabled) {
+        return theme.component['combobox-disabled-background-color'];
+    }
+
+    return theme.component['combobox-background-color'];
 }
 
-export type ComboboxOption = ListboxOption;
+function getBorderColor({
+    disabled, $readOnly, theme, $valid,
+}: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-border-color'];
+    }
 
-function getBorderColor({ disabled, theme, $valid }: TextboxProps | TagInputContainerProps): string {
     if (disabled) {
         return theme.component['combobox-disabled-border-color'];
     }
+
     if (!$valid) {
         return theme.component['combobox-error-border-color'];
     }
 
     return theme.component['combobox-border-color'];
+}
+
+function getTextColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-text-color'];
+    }
+
+    if (disabled) {
+        return theme.component['combobox-disabled-text-color'];
+    }
+
+    return theme.component['dropdown-list-input-text-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -87,11 +131,6 @@ const StyledContainer = styled.div`
     width: 100%;
 `;
 
-interface StyledListboxProps {
-    $left?: string;
-    $top?: string;
-}
-
 const StyledListbox = styled(Listbox)<StyledListboxProps>`
     left: ${(props) => props.$left};
     min-width: 0;
@@ -101,12 +140,12 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     z-index: 99998;
 `;
 
-const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
+const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
     align-items: center;
     background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
-    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};
-    display: flex;
+    color: ${({ disabled, $readOnly, theme }) => theme.component[`combobox-arrow-button${(disabled || $readOnly) ? '-disabled' : ''}-icon-color`]};
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
@@ -118,12 +157,12 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     }
 `;
 
-const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
+const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
     align-items: center;
     background-color: transparent;
     border: 0;
-    color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};
-    display: flex;
+    color: ${({ disabled, $readOnly, theme }) => ((disabled || $readOnly) ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
@@ -143,21 +182,21 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
 `;
 
 const BaseInput = styled.input<TextboxProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
+    background-color: ${getBackgroundColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    color: ${getTextColor};
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
 `;
 
 const Textbox = styled(BaseInput)<TextboxProps>`
-    border: 1px solid ${getBorderColor};
+    border: 1px solid ${getBorderColor} !important;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     padding: 0 var(--spacing-1x);
     width: 100%;
 
-    ${focus};
+    ${({ theme }) => focus({ theme }, { focusType: 'focus' })};
 
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
@@ -179,11 +218,11 @@ const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
 
 const TagInputContainer = styled.div<TagInputContainerProps>`
     align-items: flex-start;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
+    background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
+    color: ${getTextColor};
     display: flex;
     flex-wrap: wrap;
     font-family: inherit;
@@ -244,6 +283,7 @@ export interface ComboboxProps {
     name?: string;
     options: ComboboxOption[];
     placeholder?: string;
+    readOnly?: boolean;
     required?: boolean;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
@@ -291,6 +331,7 @@ export const Combobox: FC<ComboboxProps> = ({
     options,
     placeholder,
     name,
+    readOnly,
     required,
     tooltip,
     toggletip,
@@ -531,7 +572,7 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     function openListbox(): void {
-        if (disabled) {
+        if (disabled || readOnly) {
             return;
         }
 
@@ -638,6 +679,7 @@ export const Combobox: FC<ComboboxProps> = ({
             key={option.value}
             option={option}
             handleTagRemove={handleTagRemove}
+            readOnly={readOnly}
             textboxRef={textboxRef}
         />
     ));
@@ -809,17 +851,19 @@ export const Combobox: FC<ComboboxProps> = ({
         'aria-describedby': ariaDescribedBy,
         'aria-expanded': open,
         'aria-invalid': !valid,
+        'aria-readonly': readOnly,
         'aria-required': required,
         'data-testid': 'textbox',
         id,
         $isMobile: isMobile,
-        disabled,
+        disabled: disabled || readOnly,
         name,
         onBlur: handleTextboxBlur,
         onChange: handleTextboxChange,
         onClick: handleTextboxClick,
         onKeyDown: handleTextboxKeyDown,
-        placeholder,
+        placeholder: !readOnly ? placeholder : undefined,
+        $readOnly: readOnly,
         role: 'combobox',
         tabIndex: 0,
         $valid: valid,
@@ -845,6 +889,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     <TagInputContainer
                         disabled={disabled}
                         $isMobile={isMobile}
+                        $readOnly={readOnly}
                         ref={refs.setReference}
                         $valid={valid}
                     >
@@ -868,6 +913,7 @@ export const Combobox: FC<ComboboxProps> = ({
                         focusable={false}
                         iconName="x"
                         onClick={handleClearButtonClick}
+                        $readOnly={readOnly}
                         ref={clearButtonRef}
                         type="button"
                     />
@@ -880,6 +926,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     focusable={false}
                     iconName={open ? 'chevronUp' : 'chevronDown'}
                     onClick={handleArrowButtonClick}
+                    $readOnly={readOnly}
                     ref={arrowButtonRef}
                     type="button"
                 />
