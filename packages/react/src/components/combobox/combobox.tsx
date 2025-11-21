@@ -33,7 +33,7 @@ import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import {
-    addUniqueOption,
+    addUniqueOption, createCustomOption,
     findOptionsByValue,
     getDefaultOptions,
     getJoinedValues,
@@ -41,7 +41,7 @@ import {
     getValueAsString,
     getValueAsStringArray,
     isOptionEnabled,
-    isOptionSelected,
+    isOptionSelected, optionsAreEqual,
     removeOption,
 } from '../listbox/utils';
 
@@ -376,7 +376,11 @@ export const Combobox: FC<ComboboxProps> = ({
             return '';
         }
 
-        if (allowCustomValue && defaultValue && findOptionsByValue(options, defaultValue).length === 0) {
+        if (
+            allowCustomValue
+            && defaultValue
+            && findOptionsByValue(options, defaultValue).length === 0
+        ) {
             return getValueAsString(defaultValue);
         }
 
@@ -463,7 +467,11 @@ export const Combobox: FC<ComboboxProps> = ({
         );
     }
 
-    const findInitialSelectedOptions: () => ListboxOption[] | undefined = () => getDefaultOptions(value ?? defaultValue, options); // eslint-disable-line max-len
+    const findInitialSelectedOptions = useMemo(
+        () => getDefaultOptions(value ?? defaultValue, options),
+        [value, defaultValue, options],
+    );
+
     const {
         clearSelection: clearSelectedOptions,
         currentSelectedElement: selectedOption,
@@ -474,8 +482,8 @@ export const Combobox: FC<ComboboxProps> = ({
         toggleSelectedElements: toggleSelectedOptions,
         revertPreviousSelectedElement: revertPreviousSelectedOption,
     } = useListSelect<ComboboxOption>(
-        (option: ComboboxOption, optionToCompare: ComboboxOption) => option.value === optionToCompare.value,
-        findInitialSelectedOptions,
+        optionsAreEqual,
+        () => findInitialSelectedOptions,
         multiselect,
     );
 
@@ -550,7 +558,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     const values = getValueAsStringArray(value);
                     const customOptions = values
                         .filter((v) => !selectedOptions.some((opt) => opt.value === v))
-                        .map((v) => ({ value: v, label: v } as ComboboxOption));
+                        .map((v) => (createCustomOption(v, v) as ComboboxOption));
                     const newSelectedOptions = customOptions.reduce(
                         (acc, customOption) => addUniqueOption(customOption, acc),
                         selectedOptions,
@@ -747,6 +755,7 @@ export const Combobox: FC<ComboboxProps> = ({
                 if (!multiselect) {
                     event.preventDefault();
                 }
+                
                 if (focusedOption) {
                     if (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption)) {
                         if (multiselect) {
@@ -761,6 +770,11 @@ export const Combobox: FC<ComboboxProps> = ({
                     if (!multiselect) {
                         closeListbox();
                     }
+                } else if (multiselect && allowCustomValue && inputValue.trim() !== '') {
+                    const customOption = createCustomOption(inputValue, inputValue) as ComboboxOption;
+                    changeInputValue(undefined);
+                    toggleOptionSelection(customOption);
+                    closeListbox();
                 } else if (open && (allowCustomValue || inputValue === '')) {
                     closeListbox();
                 }

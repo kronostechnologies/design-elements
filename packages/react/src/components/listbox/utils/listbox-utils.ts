@@ -64,6 +64,13 @@ export function findOptionsByValue<T extends { value: string }>(
     );
 }
 
+export function createCustomOption<T extends { value: string; label?: string }>(
+    value: string,
+    label?: string,
+): T {
+    return { value, label } as T;
+}
+
 export function getDefaultOptions<T extends { value: string, label?: string, disabled?: boolean }>(
     searchValue: Value | undefined,
     options: T[],
@@ -77,7 +84,7 @@ export function getDefaultOptions<T extends { value: string, label?: string, dis
     }
 
     if (defaultOptions === undefined && !multiselect && forceSelectDefaultOption) {
-        defaultOptions = [options.find(isOptionEnabled) ?? { value: '', label: '' } as T];
+        defaultOptions = [options.find(isOptionEnabled) ?? createCustomOption('', '')];
     }
 
     return defaultOptions;

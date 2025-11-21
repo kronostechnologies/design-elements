@@ -19,10 +19,15 @@ export function useListSelect<T>(
 ): UseListSelectRequest<T> {
     const [selectedElements, setSelectedElements] = useState<T[]>(() => {
         const initial = initialSelectedElementCallback();
-        if (Array.isArray(initial)) return initial;
-        if (initial !== undefined) return [initial];
+        if (Array.isArray(initial)) {
+            return initial;
+        }
+        if (initial !== undefined) {
+            return [initial];
+        }
         return [];
     });
+
     const [
         previousSelectedElement,
         setPreviousSelectedElement,
@@ -30,6 +35,7 @@ export function useListSelect<T>(
         const initialSelectedElement = initialSelectedElementCallback();
         return Array.isArray(initialSelectedElement) ? initialSelectedElement[0] : undefined;
     });
+
     const currentSelectedElement: T | undefined = selectedElements[selectedElements.length - 1];
 
     const selectElement: (element: T) => void = useCallback((element: T) => {
