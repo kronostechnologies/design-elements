@@ -18,7 +18,7 @@
     "eslint": "8.57.1",
     "postcss": "8.5.6",
     "postcss-styled-syntax": "0.7.1",
-    "stylelint": "16.25.0",
+    "stylelint": "16.26.0",
     "typescript": "5.9.3",
     "xmlbuilder": "15.1.1",
     "yargs": "18.0.0"
@@ -35,5 +35,5 @@
     "react-docgen-typescript-plugin": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch",
     "webpack": "^5"
   },
-  "packageManager": "yarn@4.11.0"
+  "packageManager": "yarn@4.12.0"
 }
