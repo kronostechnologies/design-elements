@@ -1,7 +1,7 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { ReactElement } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
-import { renderWithProviders, rerenderPortalWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, rerenderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider';
 import { Modal } from './modal';
 import { ModalProps } from './types';
@@ -89,7 +89,7 @@ describe('Modal', () => {
 
         expect(getComputedStyle(modal).width).toBe(initialWidth);
 
-        rerenderPortalWithProviders(<TestComponent width={newWidth} />, rerender, 'desktop');
+        rerenderWithProviders(<TestComponent width={newWidth} />, rerender, 'desktop');
 
         expect(getComputedStyle(modal).width).toBe(newWidth);
     });

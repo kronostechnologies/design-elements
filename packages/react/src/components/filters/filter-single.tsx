@@ -31,6 +31,7 @@ export const FilterSingle: FC<FilterSingleProps> = ({
     const listboxRef = useRef<ListboxRef>(null);
     const dropdownMenuId = useMemo(() => `${DS_CLASS_PREFIX}${uuid()}`, []);
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
+    const previousValuePropRef = useRef<Value | undefined>(value);
     const searchRef = useRef<HTMLInputElement>(null);
     const {
         searchEnabled,
@@ -38,6 +39,11 @@ export const FilterSingle: FC<FilterSingleProps> = ({
         handleSearchChange,
         setSearchValue,
     } = useSearch({ optionsCount: options.length });
+
+    if (previousValuePropRef.current !== value) {
+        previousValuePropRef.current = value;
+        setPreviousValue(value);
+    }
 
     const clearFilters = useCallback((close: DropdownMenuCloseFunction): void => {
         setPreviousValue(null);

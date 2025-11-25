@@ -23,7 +23,7 @@ export function renderWithProviders(
     return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }
 
-export function rerenderPortalWithProviders(
+export function rerenderWithProviders(
     component: ReactElement,
     rerender: RenderResult['rerender'],
     device?: DeviceType,

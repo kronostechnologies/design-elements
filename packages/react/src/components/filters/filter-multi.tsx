@@ -67,6 +67,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         return providedOptions;
     }, [maxSelectableOptions, providedOptions, selectedOptions]);
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
+    const previousValuePropRef = useRef<Value | undefined>(value);
     const selectedFiltersCount = selectedOptions?.length ?? 0;
     const searchRef = useRef<HTMLInputElement>(null);
     const {
@@ -75,6 +76,11 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         handleSearchChange,
         setSearchValue,
     } = useSearch({ optionsCount: providedOptions.length });
+
+    if (previousValuePropRef.current !== value) {
+        previousValuePropRef.current = value;
+        setPreviousValue(value);
+    }
 
     const toggleOptionSelection = useCallback((option: FilterOption, forceSelected?: boolean) => {
         const newSelectedOptions = !isOptionSelected(option, selectedOptions) || forceSelected
