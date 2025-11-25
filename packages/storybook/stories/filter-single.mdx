@@ -1,0 +1,46 @@
+import { FilterSingle } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas, Story } from '@storybook/blocks';
+import * as FilterSingleStories  from './filter-single.stories';
+
+<Meta of={FilterSingleStories} />
+
+# FilterSingle
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The Filter Single-Select component allows users to filter a category by choosing one mutually exclusive option.
+
+<Canvas of={FilterSingleStories.Default} />
+
+## Usage
+
+### When to use
+- Use to filter content from a predefined set of options.
+- When users need to make a quick selection from a predefined set of options.
+- Use when users can only choose between mutually exclusive options [1].
+    - Ex: Gender = Female, Male, Unknown.
+
+### When not to use
+- Do not use if users need to select multiple options simultaneously (use a filter multi-select instead).
+
+## Variants
+### Default
+This variant is used when the list of options is 10 or less.
+<Canvas of={FilterSingleStories.Default} />
+
+### With Search
+This variant is used automatically when the list of options exceeds 10.
+<Canvas of={FilterSingleStories.WithSearch} />
+
+## Properties
+<ArgTypes of={FilterSingle} />
+
+## References
+1. [https://medium.com/design-bootcamp/designing-filter-sort-for-better-ux-9b88f40081db](https://medium.com/design-bootcamp/designing-filter-sort-for-better-ux-9b88f40081db)
+2. [https://uxdesign.cc/3-ways-to-improve-filtering-for-enterprise-solutions-ux-286b5a39b34d](https://uxdesign.cc/3-ways-to-improve-filtering-for-enterprise-solutions-ux-286b5a39b34d)
+3. [https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-filtering/](https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-filtering/)
+4. [https://m3.material.io/components/menus/guidelines](https://m3.material.io/components/menus/guidelines)
+

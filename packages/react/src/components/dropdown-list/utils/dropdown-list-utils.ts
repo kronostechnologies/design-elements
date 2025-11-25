@@ -77,7 +77,7 @@ export function getOptionLabel(option: DropdownListOption): string {
 
 export function isOptionSelected(
     option: DropdownListOption,
-    selectedOptions?: DropdownListOption[],
+    selectedOptions: DropdownListOption[] | undefined,
 ): boolean {
     if (!selectedOptions) {
         return false;
