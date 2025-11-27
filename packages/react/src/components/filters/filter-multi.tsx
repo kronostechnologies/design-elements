@@ -143,7 +143,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
             if (searchEnabled) {
                 searchRef.current?.focus();
             } else {
-                listboxRef.current?.focusFirstOption();
+                listboxRef.current?.focus();
             }
         } else {
             setSearchValue('');
