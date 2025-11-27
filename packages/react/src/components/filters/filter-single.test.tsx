@@ -1,6 +1,6 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, rerenderWithProviders } from '../../test-utils/renderer';
 import type { FilterOption } from './filter-option';
 import { FilterSingle } from './filter-single';
 
@@ -55,6 +55,19 @@ describe('FilterSingle', () => {
             );
 
             expect(container).toMatchSnapshot();
+        });
+
+        it('updates value when props change', () => {
+            const { rerender } = renderWithProviders(
+                <FilterSingle label="Status" options={options} value="option1" />,
+            );
+            expect(getDropdownButton()).toHaveTextContent('Option 1');
+
+            rerenderWithProviders(<FilterSingle label="Status" options={options} value="option2" />, rerender);
+            expect(getDropdownButton()).toHaveTextContent('Option 2');
+
+            rerenderWithProviders(<FilterSingle label="Status" options={options} value={undefined} />, rerender);
+            expect(getDropdownButton()).toHaveTextContent('All');
         });
     });
 

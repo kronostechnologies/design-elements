@@ -6,7 +6,6 @@ import {
     RefAttributes,
     type RefObject,
     useCallback,
-    useImperativeHandle,
     useLayoutEffect,
     useRef,
     useState,
@@ -214,9 +213,6 @@ const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
 
 export interface ListboxRef extends HTMLDivElement {
-    focusFirstOption(): void;
-
-    focusLastOption(): void;
 }
 
 export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<ListboxRef>> = forwardRef(({
@@ -267,28 +263,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
             focusFirstOption();
         }
     }, [focusFirstOption, selectedOptions, setFocusedOption]);
-
-    useImperativeHandle<HTMLDivElement | null, ListboxRef | null>(
-        ref,
-        () => {
-            if (containerRef.current === null) {
-                return null;
-            }
-            return Object.assign(
-                containerRef.current,
-                {
-                    focusFirstOption: () => {
-                        containerRef?.current?.focus();
-                    },
-                    focusLastOption: () => {
-                        containerRef?.current?.focus();
-                        focusLastOption();
-                    },
-                },
-            );
-        },
-        [focusLastOption, containerRef],
-    );
 
     function isOptionSelected(option: ListboxOption): boolean {
         return multiselect ? selectedOptions.includes(option) : selectedOptions[0] === option;

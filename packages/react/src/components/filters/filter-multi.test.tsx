@@ -1,6 +1,6 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, rerenderWithProviders } from '../../test-utils/renderer';
 import { FilterMulti } from './filter-multi';
 import type { FilterOption } from './filter-option';
 
@@ -61,6 +61,25 @@ describe('FilterMulti', () => {
             );
 
             expect(container).toMatchSnapshot();
+        });
+
+        it('updates value when props change', () => {
+            const { rerender } = renderWithProviders(
+                <FilterMulti label="Status" options={options} value={['option1']} />,
+            );
+            expect(getDropdownButton()).toHaveTextContent('Option 1');
+
+            rerenderWithProviders(<FilterMulti label="Status" options={options} value={['option2']} />, rerender);
+            expect(getDropdownButton()).toHaveTextContent('Option 2');
+
+            rerenderWithProviders(
+                <FilterMulti label="Status" options={options} value={['option2', 'option3']} />,
+                rerender,
+            );
+            expect(getDropdownButton()).toHaveTextContent('(2)');
+
+            rerenderWithProviders(<FilterMulti label="Status" options={options} value={undefined} />, rerender);
+            expect(getDropdownButton()).toHaveTextContent('All');
         });
     });
 
