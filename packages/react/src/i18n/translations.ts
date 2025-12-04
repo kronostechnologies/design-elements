@@ -207,7 +207,7 @@ export const Translations = {
             clearFilter_other: 'Réinitialiser les filtres',
             displayValue_zero: 'Tout',
             displayValue_one: '{{value}}',
-            displayValue_other: '{{value[0]}} (+{{additionalCount}})',
+            displayValue_other: '{{value}} (+{{additionalCount}})',
             searchNoResults: 'Aucun résultat correspondant',
         },
         'global-banner': {
