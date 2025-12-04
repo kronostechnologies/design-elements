@@ -46,7 +46,7 @@ export interface ListContainerProps {
 
     onClearFilters(): void;
 
-    onOptionClick(option: FilterOption): void;
+    onOptionClick?(option: FilterOption): void;
 
     onSearchChange?(search: string): void;
 }

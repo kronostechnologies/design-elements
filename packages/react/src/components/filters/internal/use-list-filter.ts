@@ -75,7 +75,7 @@ export function useListFilter<T extends Value>({
     const selectedValuesCount: number = valuesCount(value);
     const displayValue = useMemo(() => t(
         'displayValue',
-        { count: selectedValuesCount, value: getOptionByValue(value)?.label },
+        { count: selectedValuesCount, additionalCount: selectedValuesCount - 1, value: getOptionByValue(value)?.label },
     ), [getOptionByValue, selectedValuesCount, t, value]);
 
     return {

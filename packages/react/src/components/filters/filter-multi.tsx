@@ -4,13 +4,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons';
-import {
-    addUniqueOption,
-    disableNonSelectedOptions,
-    getDefaultOptions,
-    isOptionSelected,
-    removeOption,
-} from '../dropdown-list/utils';
+import { disableNonSelectedOptions, getDefaultOptions } from '../dropdown-list/utils';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
 import { type ListboxRef } from '../listbox/listbox';
 import type { FilterOption } from './filter-option';
@@ -82,22 +76,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         setPreviousValue(value);
     }
 
-    const toggleOptionSelection = useCallback((option: FilterOption, forceSelected?: boolean) => {
-        const newSelectedOptions = !isOptionSelected(option, selectedOptions) || forceSelected
-            ? addUniqueOption(option, selectedOptions)
-            : removeOption(option, selectedOptions);
-
-        setSelectedOptions(newSelectedOptions);
-
-        if (!async) {
-            const selectedValue = newSelectedOptions?.map((o) => o.value);
-            if (selectedValue) {
-                onChange?.(selectedValue);
-            }
-            setPreviousValue(selectedValue);
-        }
-    }, [async, onChange, selectedOptions]);
-
     const clearFilters = useCallback((): void => {
         const emptyValue: Value & FilterOption[] = [];
         setSelectedOptions(emptyValue);
@@ -121,10 +99,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         close();
     }, [onChange, previousValue, selectedOptions]);
 
-    const handleItemSelected = useCallback((option: FilterOption): void => {
-        toggleOptionSelection(option);
-    }, [toggleOptionSelection]);
-
     const handleItemsSelectionChange = useCallback((newSelectedOptions: FilterOption[]) => {
         setSelectedOptions(newSelectedOptions);
         if (!async) {
@@ -141,9 +115,9 @@ export const FilterMulti: FC<FilterMultiProps> = ({
             setPreviousValue(value);
             setSelectedOptions(options.filter((option) => value?.includes(option.value)));
             if (searchEnabled) {
-                searchRef.current?.focus();
+                searchRef.current?.focus({ preventScroll: true });
             } else {
-                listboxRef.current?.focus();
+                listboxRef.current?.focus({ preventScroll: true });
             }
         } else {
             setSearchValue('');
@@ -175,7 +149,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                             listboxRef={listboxRef}
                             multiselect
                             onChange={handleItemsSelectionChange}
-                            onOptionClick={handleItemSelected}
                             onSearchChange={handleSearchChange}
                             options={filteredOptions}
                             searchRef={searchRef}

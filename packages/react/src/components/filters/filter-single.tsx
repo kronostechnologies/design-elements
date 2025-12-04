@@ -55,9 +55,9 @@ export const FilterSingle: FC<FilterSingleProps> = ({
         if (isOpen) {
             setPreviousValue(value);
             if (searchEnabled) {
-                searchRef.current?.focus();
+                searchRef.current?.focus({ preventScroll: true });
             } else {
-                listboxRef.current?.focus();
+                listboxRef.current?.focus({ preventScroll: true });
             }
         } else {
             setSearchValue('');

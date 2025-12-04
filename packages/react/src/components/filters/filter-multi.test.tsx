@@ -49,10 +49,10 @@ describe('FilterMulti', () => {
             expect(getDropdownButton()).toHaveTextContent('Option 1');
         });
 
-        it('shows count when multiple values selected', () => {
+        it('shows additional count aside first value label when multiple values selected', () => {
             renderWithProviders(<FilterMulti label="Status" options={options} value={['option1', 'option2']} />);
 
-            expect(getDropdownButton()).toHaveTextContent('(2)');
+            expect(getDropdownButton()).toHaveTextContent('Option 1 (+1)');
         });
 
         it('applies active styling when filters are applied', () => {
@@ -76,7 +76,7 @@ describe('FilterMulti', () => {
                 <FilterMulti label="Status" options={options} value={['option2', 'option3']} />,
                 rerender,
             );
-            expect(getDropdownButton()).toHaveTextContent('(2)');
+            expect(getDropdownButton()).toHaveTextContent('Option 2 (+1)');
 
             rerenderWithProviders(<FilterMulti label="Status" options={options} value={undefined} />, rerender);
             expect(getDropdownButton()).toHaveTextContent('All');

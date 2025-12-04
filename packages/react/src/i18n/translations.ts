@@ -53,7 +53,7 @@ export const Translations = {
             clearFilter_other: 'Clear filters',
             displayValue_zero: 'All',
             displayValue_one: '{{value}}',
-            displayValue_other: '({{count}})',
+            displayValue_other: '{{value}} (+{{additionalCount}})',
             searchNoResults: ' No matching results',
         },
         'global-banner': {
@@ -207,7 +207,7 @@ export const Translations = {
             clearFilter_other: 'Réinitialiser les filtres',
             displayValue_zero: 'Tout',
             displayValue_one: '{{value}}',
-            displayValue_other: '({{count}})',
+            displayValue_other: '{{value[0]}} (+{{additionalCount}})',
             searchNoResults: 'Aucun résultat correspondant',
         },
         'global-banner': {
