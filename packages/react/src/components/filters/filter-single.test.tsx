@@ -56,6 +56,19 @@ describe('FilterSingle', () => {
 
             expect(container).toMatchSnapshot();
         });
+
+        it('updates value when props change', () => {
+            const { rerender } = renderWithProviders(
+                <FilterSingle label="Status" options={options} value="option1" />,
+            );
+            expect(getDropdownButton()).toHaveTextContent('Option 1');
+
+            rerender(<FilterSingle label="Status" options={options} value="option2" />);
+            expect(getDropdownButton()).toHaveTextContent('Option 2');
+
+            rerender(<FilterSingle label="Status" options={options} value={undefined} />);
+            expect(getDropdownButton()).toHaveTextContent('All');
+        });
     });
 
     describe('dropdown menu', () => {
