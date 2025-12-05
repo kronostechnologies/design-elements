@@ -3069,16 +3069,16 @@ label + .c3 {
                               class="c12 c13"
                             >
                               <div
-                                aria-controls="uuid2_listbox"
+                                aria-controls="uuid4_listbox"
                                 aria-expanded="false"
                                 aria-invalid="false"
                                 aria-label="Select a month"
-                                aria-labelledby="uuid2_label uuid2_listbox_october_label"
+                                aria-labelledby="uuid4_label uuid4_listbox_october_label"
                                 aria-readonly="false"
                                 aria-required="false"
                                 class="c14"
                                 data-testid="month-select"
-                                id="uuid2"
+                                id="uuid4"
                                 role="combobox"
                                 tabindex="0"
                               >
@@ -3111,16 +3111,16 @@ label + .c3 {
                               class="c12 c13"
                             >
                               <div
-                                aria-controls="uuid3_listbox"
+                                aria-controls="uuid5_listbox"
                                 aria-expanded="false"
                                 aria-invalid="false"
                                 aria-label="Select a year"
-                                aria-labelledby="uuid3_label uuid3_listbox_2010_label"
+                                aria-labelledby="uuid5_label uuid5_listbox_2010_label"
                                 aria-readonly="false"
                                 aria-required="false"
                                 class="c14"
                                 data-testid="year-select"
-                                id="uuid3"
+                                id="uuid5"
                                 role="combobox"
                                 tabindex="0"
                               >
@@ -4448,16 +4448,16 @@ label + .c3 {
                               class="c12 c13"
                             >
                               <div
-                                aria-controls="uuid2_listbox"
+                                aria-controls="uuid4_listbox"
                                 aria-expanded="false"
                                 aria-invalid="false"
                                 aria-label="Select a month"
-                                aria-labelledby="uuid2_label uuid2_listbox_october_label"
+                                aria-labelledby="uuid4_label uuid4_listbox_october_label"
                                 aria-readonly="false"
                                 aria-required="false"
                                 class="c14"
                                 data-testid="month-select"
-                                id="uuid2"
+                                id="uuid4"
                                 role="combobox"
                                 tabindex="0"
                               >
@@ -4490,16 +4490,16 @@ label + .c3 {
                               class="c12 c13"
                             >
                               <div
-                                aria-controls="uuid3_listbox"
+                                aria-controls="uuid5_listbox"
                                 aria-expanded="false"
                                 aria-invalid="false"
                                 aria-label="Select a year"
-                                aria-labelledby="uuid3_label uuid3_listbox_2010_label"
+                                aria-labelledby="uuid5_label uuid5_listbox_2010_label"
                                 aria-readonly="false"
                                 aria-required="false"
                                 class="c14"
                                 data-testid="year-select"
-                                id="uuid3"
+                                id="uuid5"
                                 role="combobox"
                                 tabindex="0"
                               >
@@ -5802,16 +5802,16 @@ label + .c3 {
                                 class="c12 c13"
                               >
                                 <div
-                                  aria-controls="uuid2_listbox"
+                                  aria-controls="uuid4_listbox"
                                   aria-expanded="false"
                                   aria-invalid="false"
                                   aria-label="Select a month"
-                                  aria-labelledby="uuid2_label uuid2_listbox_october_label"
+                                  aria-labelledby="uuid4_label uuid4_listbox_october_label"
                                   aria-readonly="false"
                                   aria-required="false"
                                   class="c14"
                                   data-testid="month-select"
-                                  id="uuid2"
+                                  id="uuid4"
                                   role="combobox"
                                   tabindex="0"
                                 >
@@ -5844,16 +5844,16 @@ label + .c3 {
                                 class="c12 c13"
                               >
                                 <div
-                                  aria-controls="uuid3_listbox"
+                                  aria-controls="uuid5_listbox"
                                   aria-expanded="false"
                                   aria-invalid="false"
                                   aria-label="Select a year"
-                                  aria-labelledby="uuid3_label uuid3_listbox_2010_label"
+                                  aria-labelledby="uuid5_label uuid5_listbox_2010_label"
                                   aria-readonly="false"
                                   aria-required="false"
                                   class="c14"
                                   data-testid="year-select"
-                                  id="uuid3"
+                                  id="uuid5"
                                   role="combobox"
                                   tabindex="0"
                                 >

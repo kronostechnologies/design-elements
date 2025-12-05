@@ -1,5 +1,5 @@
 import { act, screen } from '@testing-library/react';
-import { AllProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
 function givenTabs(amount: number): Tab[] {
@@ -105,11 +105,7 @@ describe('Tabs', () => {
             expect(getByTestId('tab-1-button')).toHaveAttribute('aria-selected', 'true');
             expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'false');
 
-            rerender(
-                <AllProviders>
-                    <Tabs tabs={tabs} activeTabId="tab-2" />
-                </AllProviders>,
-            );
+            rerender(<Tabs tabs={tabs} activeTabId="tab-2" />);
             expect(getByTestId('tab-2-button')).toHaveAttribute('aria-selected', 'true');
         });
 
@@ -186,11 +182,7 @@ describe('Tabs', () => {
 
             act(() => getByTestId('tab-2-delete').click());
             tabs = tabs.filter((t) => t.id !== 'tab-2');
-            rerender(
-                <AllProviders>
-                    <Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />
-                </AllProviders>,
-            );
+            rerender(<Tabs tabs={tabs} defaultSelectedId="tab-2" onRemove={onRemove} />);
 
             expectTabWithTabIndexToBeRendered(2);
             expectTabWithTabIndexToNotBeRendered(1);

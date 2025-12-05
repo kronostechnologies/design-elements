@@ -86,11 +86,11 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
      * @type {() => void}
      */
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, containerRef.current);
+        const clickIsOutside = !eventIsInside(event, containerRef.current, refs.floating.current);
         if (visible && clickIsOutside) {
             setVisible(false);
         }
-    }, [containerRef, visible, setVisible]);
+    }, [refs.floating, visible]);
 
     /**
      * Close menu list item

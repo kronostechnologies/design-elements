@@ -49,10 +49,10 @@ describe('FilterMulti', () => {
             expect(getDropdownButton()).toHaveTextContent('Option 1');
         });
 
-        it('shows count when multiple values selected', () => {
+        it('shows additional count aside first value label when multiple values selected', () => {
             renderWithProviders(<FilterMulti label="Status" options={options} value={['option1', 'option2']} />);
 
-            expect(getDropdownButton()).toHaveTextContent('(2)');
+            expect(getDropdownButton()).toHaveTextContent('Option 1 (+1)');
         });
 
         it('applies active styling when filters are applied', () => {
@@ -61,6 +61,22 @@ describe('FilterMulti', () => {
             );
 
             expect(container).toMatchSnapshot();
+        });
+
+        it('updates value when props change', () => {
+            const { rerender } = renderWithProviders(
+                <FilterMulti label="Status" options={options} value={['option1']} />,
+            );
+            expect(getDropdownButton()).toHaveTextContent('Option 1');
+
+            rerender(<FilterMulti label="Status" options={options} value={['option2']} />);
+            expect(getDropdownButton()).toHaveTextContent('Option 2');
+
+            rerender(<FilterMulti label="Status" options={options} value={['option2', 'option3']} />);
+            expect(getDropdownButton()).toHaveTextContent('Option 2 (+1)');
+
+            rerender(<FilterMulti label="Status" options={options} value={undefined} />);
+            expect(getDropdownButton()).toHaveTextContent('All');
         });
     });
 
