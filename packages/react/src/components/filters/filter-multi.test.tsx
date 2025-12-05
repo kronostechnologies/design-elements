@@ -1,6 +1,6 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
-import { renderWithProviders, rerenderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { FilterMulti } from './filter-multi';
 import type { FilterOption } from './filter-option';
 
@@ -69,16 +69,13 @@ describe('FilterMulti', () => {
             );
             expect(getDropdownButton()).toHaveTextContent('Option 1');
 
-            rerenderWithProviders(<FilterMulti label="Status" options={options} value={['option2']} />, rerender);
+            rerender(<FilterMulti label="Status" options={options} value={['option2']} />);
             expect(getDropdownButton()).toHaveTextContent('Option 2');
 
-            rerenderWithProviders(
-                <FilterMulti label="Status" options={options} value={['option2', 'option3']} />,
-                rerender,
-            );
+            rerender(<FilterMulti label="Status" options={options} value={['option2', 'option3']} />);
             expect(getDropdownButton()).toHaveTextContent('Option 2 (+1)');
 
-            rerenderWithProviders(<FilterMulti label="Status" options={options} value={undefined} />, rerender);
+            rerender(<FilterMulti label="Status" options={options} value={undefined} />);
             expect(getDropdownButton()).toHaveTextContent('All');
         });
     });

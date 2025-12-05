@@ -1,6 +1,6 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
-import { renderWithProviders, rerenderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import type { FilterOption } from './filter-option';
 import { FilterSingle } from './filter-single';
 
@@ -63,10 +63,10 @@ describe('FilterSingle', () => {
             );
             expect(getDropdownButton()).toHaveTextContent('Option 1');
 
-            rerenderWithProviders(<FilterSingle label="Status" options={options} value="option2" />, rerender);
+            rerender(<FilterSingle label="Status" options={options} value="option2" />);
             expect(getDropdownButton()).toHaveTextContent('Option 2');
 
-            rerenderWithProviders(<FilterSingle label="Status" options={options} value={undefined} />, rerender);
+            rerender(<FilterSingle label="Status" options={options} value={undefined} />);
             expect(getDropdownButton()).toHaveTextContent('All');
         });
     });
