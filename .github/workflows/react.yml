@@ -456,6 +456,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Download
         uses: actions/download-artifact@v6
@@ -629,6 +631,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Download React Dist
         uses: actions/download-artifact@v6
