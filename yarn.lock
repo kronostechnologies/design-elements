@@ -1698,7 +1698,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:7.0.1"
     expect: "npm:30.2.0"
     feather-icons: "npm:4.29.2"
-    i18next: "npm:25.6.3"
+    i18next: "npm:25.7.2"
     jest: "npm:30.2.0"
     jest-environment-jsdom: "npm:30.2.0"
     jest-junit: "npm:16.0.0"
@@ -1784,7 +1784,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:25.6.3"
+    i18next: "npm:25.7.2"
     react: "npm:18.3.1"
     react-docgen-typescript: "npm:2.4.0"
     react-dom: "npm:18.3.1"
@@ -7655,7 +7655,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
     html-webpack-plugin: "npm:5.6.5"
-    i18next: "npm:25.6.3"
+    i18next: "npm:25.7.2"
     i18next-browser-languagedetector: "npm:8.2.0"
     postcss: "npm:8.5.6"
     postcss-styled-syntax: "npm:0.7.1"
@@ -7664,7 +7664,7 @@ __metadata:
     pretty-format: "npm:30.2.0"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    react-i18next: "npm:16.3.5"
+    react-i18next: "npm:16.4.0"
     react-is: "npm:18.3.1"
     react-router: "npm:6.30.2"
     react-router-dom: "npm:6.30.2"
@@ -9587,9 +9587,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:25.6.3":
-  version: 25.6.3
-  resolution: "i18next@npm:25.6.3"
+"i18next@npm:25.7.2":
+  version: 25.7.2
+  resolution: "i18next@npm:25.7.2"
   dependencies:
     "@babel/runtime": "npm:^7.28.4"
   peerDependencies:
@@ -9597,7 +9597,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/cbeaff5641247ef724dbf1b609df2bc24306b610cfefc6afab1f574e3c6e4171731a1959915c82c606bdb9a535da374ac14d43c7849e680482e9b0d8a93c19fb
+  checksum: 10c0/137782fdd8fc166fa5f74088db52c80ea7b2dc60fb8da7486d0213b28f41d68947041b6466489cfceb5c439630618a2b709a3c2d6b098740e3be9ce58e6ec1fd
   languageName: node
   linkType: hard
 
@@ -12775,9 +12775,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:16.3.5":
-  version: 16.3.5
-  resolution: "react-i18next@npm:16.3.5"
+"react-i18next@npm:16.4.0":
+  version: 16.4.0
+  resolution: "react-i18next@npm:16.4.0"
   dependencies:
     "@babel/runtime": "npm:^7.27.6"
     html-parse-stringify: "npm:^3.0.1"
@@ -12793,7 +12793,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/ceea27b62bd2e231d9ee260cd367e3af720e741df52d94d86bf6a7265d1b2f8aa95d050f5747dda1f687fa77e11f4f8fa0062a30eb6cb61d70dab7db6c7a71f4
+  checksum: 10c0/055a5baf15cf90e87578fb3a7438bab925c7bbbfe86be517ffe3928555d772dcc72a7c3e58255a1a0cf774a04555402d9066fadc487a5c05a95735f738df1b30
   languageName: node
   linkType: hard
 

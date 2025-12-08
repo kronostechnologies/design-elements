@@ -15,7 +15,7 @@
   "dependencies": {
     "@equisoft/design-elements-react": "workspace:*",
     "core-js": "3.47.0",
-    "i18next": "25.6.3",
+    "i18next": "25.7.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
