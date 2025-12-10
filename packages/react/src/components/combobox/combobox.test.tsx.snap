@@ -897,7 +897,7 @@ input + .c2 {
   min-height: 30px;
   min-width: 0;
   outline: none;
-  padding: 0 8px;
+  padding: 0 var(--spacing-1x);
 }
 
 .c6 {
@@ -920,7 +920,7 @@ input + .c2 {
   font-family: inherit;
   font-size: 0.875rem;
   min-height: 30px;
-  padding-right: calc(var(--size-1x) + var(--spacing-half));
+  padding-right: var(--spacing-2halfx);
   width: 100%;
 }
 
@@ -951,6 +951,7 @@ input + .c2 {
   >
     <div
       class="c6"
+      data-testid="tags"
       tabindex="0"
     >
       <input

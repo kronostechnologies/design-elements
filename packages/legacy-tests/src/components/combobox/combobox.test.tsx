@@ -171,7 +171,7 @@ describe('Combobox', () => {
             expect(getByTestId(wrapper, 'listitem-Quebec').prop('$focused')).toBe(false);
         });
 
-        it('typing an exact match selects the corresponding option', () => {
+        it('typing an exact match does not select the corresponding option', () => {
             const wrapper = mountWithTheme(<Combobox options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'textbox').simulate(
@@ -179,7 +179,7 @@ describe('Combobox', () => {
                 { target: { value: 'quebec' } },
             );
 
-            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(true);
+            expect(getByTestId(wrapper, 'listitem-Quebec').prop('$selected')).toBe(false);
         });
     });
 
@@ -239,7 +239,7 @@ describe('Combobox', () => {
             ]);
         });
 
-        it('when a value is selected the list is not filtered', () => {
+        it('when a value is selected the list contains all options on open', () => {
             const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
 
             expect(getByTestId(wrapper, 'listbox').prop('options')).toEqual(provinces);
@@ -502,7 +502,7 @@ describe('Combobox', () => {
             const onChange = jest.fn();
             const onInputChange = jest.fn();
             const wrapper = mountWithTheme(
-                <Combobox options={provinces} onChange={onChange} onInputChange={onInputChange} />
+                <Combobox options={provinces} onChange={onChange} onInputChange={onInputChange} />,
             );
 
             getByTestId(wrapper, 'textbox').simulate(

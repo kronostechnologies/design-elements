@@ -1,15 +1,16 @@
 import { includes, unique } from '../../../utils/array';
 
+type HasValue = { value: string };
 type Value = string | string[];
 
-export function optionsAreEqual<T extends { value: string }>(
+export function optionsAreEqual<T extends HasValue>(
     option: T,
     optionToCompare: T,
 ): boolean {
     return option.value?.toLowerCase() === optionToCompare.value?.toLowerCase();
 }
 
-export function addUniqueOption<T extends { value: string }>(
+export function addUniqueOption<T extends HasValue>(
     newOption: T,
     options?: T[],
 ): T[] {
@@ -20,7 +21,7 @@ export function addUniqueOption<T extends { value: string }>(
     return unique([...options, newOption], optionsAreEqual);
 }
 
-export function removeOption<T extends { value: string }>(
+export function removeOption<T extends HasValue>(
     optionToRemove: T,
     options?: T[],
 ): T[] {
@@ -53,7 +54,7 @@ export function disableNonSelectedOptions<T extends { disabled?: boolean, value:
     });
 }
 
-export function findOptionsByValue<T extends { value: string }>(
+export function findOptionsByValue<T extends HasValue>(
     options: T[],
     searchValue?: Value | undefined,
 ): T[] {
@@ -108,9 +109,9 @@ export function getValueAsStringArray(value: Value | undefined): string[] {
     return [];
 }
 
-export function isOptionSelected<T extends { value: string }>(
+export function isOptionSelected<T extends HasValue>(
     option: T,
-    selectedOptions?: T[],
+    selectedOptions: T[] | undefined,
 ): boolean {
     if (!selectedOptions) {
         return false;
@@ -119,9 +120,9 @@ export function isOptionSelected<T extends { value: string }>(
     return includes(selectedOptions, option, optionsAreEqual);
 }
 
-export function getNewOptionSelection<T extends { value: string }>(
+export function getNewOptionSelection<T extends HasValue>(
     option: T,
-    selectedOptions?: T[],
+    selectedOptions: T[] | undefined,
     forceSelected?: boolean,
 ): T[] {
     return !isOptionSelected(option, selectedOptions) || forceSelected
@@ -129,16 +130,16 @@ export function getNewOptionSelection<T extends { value: string }>(
         : removeOption(option, selectedOptions);
 }
 
-export function getSelectedOptionValues<T extends { value: string }>(
-    selectedOptions?: T[],
+export function getSelectedOptionValues<T extends HasValue>(
+    selectedOptions: T[] | undefined,
 ): string[] | undefined {
     return selectedOptions?.map(
         (option) => option?.value ?? '',
     );
 }
 
-export function getJoinedValues<T extends { value: string }>(
-    selectedOptions?: T[],
+export function getJoinedValues<T extends HasValue>(
+    selectedOptions: T[] | undefined,
 ): string {
     return getSelectedOptionValues(selectedOptions)?.join('|') ?? '';
 }

@@ -165,13 +165,13 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
     height: var(--size-1x);
     padding: var(--spacing-half);
     position: absolute;
-    right: calc(var(--size-1x) + var(--spacing-1halfx));
+    right: var(--spacing-3halfx);
     width: var(--size-1x);
 
     &::after {
         border-right: ${({ theme }) => `1px solid ${theme.component['combobox-clear-button-border-right-color']}`};
         content: '';
-        height: calc(var(--size-2x) - var(--spacing-2x));
+        height: var(--size-1x);
         margin-left: var(--spacing-1x);
     }
 
@@ -212,7 +212,7 @@ const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
     min-height: 30px;
     min-width: 0;
     outline: none;
-    padding: 0 ${({ $hasTags }) => ($hasTags ? '2px' : '8px')};
+    padding: 0 ${({ $hasTags }) => ($hasTags ? 'var(--spacing-quarter)' : 'var(--spacing-1x)')};
 `;
 
 const TagInputContainer = styled.div<TagInputContainerProps>`
@@ -227,7 +227,7 @@ const TagInputContainer = styled.div<TagInputContainerProps>`
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     min-height: 30px;
-    padding-right: calc(var(--size-1x) + var(--spacing-half));
+    padding-right: var(--spacing-2halfx);
     width: 100%;
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
@@ -317,7 +317,7 @@ export interface ComboboxProps {
 
 export const Combobox: FC<ComboboxProps> = ({
     allowCustomValue = false,
-    autoSelectMatchingOption = true,
+    autoSelectMatchingOption = false,
     ariaLabel,
     className,
     defaultOpen = false,
@@ -351,9 +351,9 @@ export const Combobox: FC<ComboboxProps> = ({
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
+    const [showAllOptions, setShowAllOptions] = useState(defaultOpen);
     const arrowButtonRef = useRef<HTMLButtonElement>(null);
     const clearButtonRef = useRef<HTMLButtonElement>(null);
-    const multiSelectInputRef = useRef<HTMLInputElement>(null);
 
     const shadowRoot = useShadowRoot();
     const [open, setOpen] = useState(defaultOpen);
@@ -361,9 +361,14 @@ export const Combobox: FC<ComboboxProps> = ({
         x,
         y,
         update,
-        refs: { reference: textboxRef, floating: listboxRef, ...refs },
+        refs: { reference: floatingReferenceRef, floating: listboxRef, ...refs },
     } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
     const rootElement = getRootElement(shadowRoot) as HTMLElement;
+
+    let inputRef = useRef<HTMLInputElement>(null);
+    if (!multiselect) {
+        inputRef = floatingReferenceRef;
+    }
 
     const findOptionByLabelOrValue = useCallback(
         (searchValue?: string): ComboboxOption | undefined => options.find((option: ComboboxOption) => {
@@ -427,19 +432,17 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         update();
-        if (inputValue === '' || disableListFiltering || typeof inputValue !== 'string') {
+        if (inputValue === '' || disableListFiltering) {
             return options;
         }
 
         const filtered = options.filter(
             (option: ComboboxOption) => getInputValueFromOption(option)
                 .toLowerCase()
-                .startsWith(
-                    inputValue.toLowerCase(),
-                ),
+                .startsWith(inputValue.toLowerCase()),
         );
 
-        if (filtered.length === 1 && getInputValueFromOption(filtered[0]) === inputValue) {
+        if (showAllOptions && filtered.length === 1 && getInputValueFromOption(filtered[0]) === inputValue) {
             return options;
         }
 
@@ -453,15 +456,16 @@ export const Combobox: FC<ComboboxProps> = ({
 
         return filtered;
     }, [
-        allowCustomValue,
-        getInputValueFromOption,
-        disableListFiltering,
-        getEmptyListMessage,
-        inputValue,
         isLoading,
         options,
+        inputValue,
         update,
+        disableListFiltering,
+        showAllOptions,
+        getInputValueFromOption,
+        allowCustomValue,
         t,
+        getEmptyListMessage,
     ]);
 
     const [suggestedInputValue, setSuggestedInputValue] = useState<string>('');
@@ -474,7 +478,7 @@ export const Combobox: FC<ComboboxProps> = ({
         );
     }
 
-    const findInitialSelectedOptions = useMemo(
+    const initialSelectedOptions = useMemo(
         () => getDefaultOptions(value ?? defaultValue, options),
         [value, defaultValue, options],
     );
@@ -490,7 +494,7 @@ export const Combobox: FC<ComboboxProps> = ({
         revertPreviousSelectedElement: revertPreviousSelectedOption,
     } = useListSelect<ComboboxOption>(
         optionsAreEqual,
-        () => findInitialSelectedOptions,
+        () => initialSelectedOptions,
         multiselect,
     );
 
@@ -525,18 +529,14 @@ export const Combobox: FC<ComboboxProps> = ({
         wrapAround: true,
     });
 
-    function isValueType(val: unknown): val is Value {
-        return typeof val === 'string' || (Array.isArray(val) && val.every((v) => typeof v === 'string'));
-    }
-
-    function toggleOptionSelection(option: ComboboxOption): void {
+    const toggleOptionSelection = useCallback((option: ComboboxOption): void => {
         const newSelectedOptions = !isOptionSelected(option, selectedOptions)
             ? addUniqueOption(option, selectedOptions)
             : removeOption(option, selectedOptions);
 
         toggleSelectedOptions(option);
         onChange?.(newSelectedOptions);
-    }
+    }, [onChange, selectedOptions, toggleSelectedOptions]);
 
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
@@ -561,19 +561,17 @@ export const Combobox: FC<ComboboxProps> = ({
                 setInputValue('');
                 clearSelectedOptions();
 
-                if (isValueType(value)) {
-                    const values = getValueAsStringArray(value);
-                    const customOptions = values
-                        .filter((v) => !selectedOptions.some((opt) => opt.value === v))
-                        .map((v) => (createCustomOption(v, v) as ComboboxOption));
-                    const newSelectedOptions = customOptions.reduce(
-                        (acc, customOption) => addUniqueOption(customOption, acc),
-                        selectedOptions,
-                    );
-                    setSelectedOptions(newSelectedOptions);
-                }
+                const values = getValueAsStringArray(value);
+                const customOptions = values
+                    .filter((v) => !selectedOptions.some((opt) => opt.value === v))
+                    .map((v) => (createCustomOption(v, v) as ComboboxOption));
+                const newSelectedOptions = customOptions.reduce(
+                    (acc, customOption) => addUniqueOption(customOption, acc),
+                    selectedOptions,
+                );
+                setSelectedOptions(newSelectedOptions);
             } else {
-                setInputValue(isValueType(value) ? getValueAsString(value) : '');
+                setInputValue(getValueAsString(value));
             }
         } else {
             if (multiselect) {
@@ -585,19 +583,22 @@ export const Combobox: FC<ComboboxProps> = ({
         setPreviousValue(value);
     }
 
-    function openListbox(): void {
+    const openListbox = useCallback((): void => {
         if (disabled || readOnly) {
             return;
         }
+
+        setShowAllOptions(true);
 
         if (selectedOption && (!focusedOption || !filteredOptions.includes(focusedOption))) {
             setFocusedOption(selectedOption);
         }
 
         setOpen(true);
-    }
+    }, [disabled, filteredOptions, focusedOption, readOnly, selectedOption, setFocusedOption]);
 
     const closeListbox: () => void = useCallback(() => {
+        setShowAllOptions(false);
         setFocusedOption(undefined);
         setOpen(false);
     }, [setFocusedOption]);
@@ -607,16 +608,16 @@ export const Combobox: FC<ComboboxProps> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (!multiselect) {
-            if (
-                focusedOption
-                && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
-            ) {
-                changeInputValue(focusedOption);
-                selectOption(focusedOption);
-            } else if (!allowCustomValue && inputValue !== getInputValueFromOption(selectedOption)) {
-                revertInputValue();
-            }
+        if (multiselect) {
+            changeInputValue(undefined);
+        } else if (
+            focusedOption
+            && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
+        ) {
+            changeInputValue(focusedOption);
+            selectOption(focusedOption);
+        } else if (!allowCustomValue && inputValue !== getInputValueFromOption(selectedOption)) {
+            revertInputValue();
         }
 
         if (open) {
@@ -636,9 +637,12 @@ export const Combobox: FC<ComboboxProps> = ({
         multiselect,
     ]);
 
-    const componentTargets = [textboxRef, listboxRef, arrowButtonRef, clearButtonRef];
+    const componentTargets = useMemo(
+        () => [floatingReferenceRef, listboxRef, arrowButtonRef, clearButtonRef],
+        [listboxRef, floatingReferenceRef],
+    );
 
-    function handleTextboxBlur(event: FocusEvent): void {
+    const handleTextboxBlur = useCallback((event: FocusEvent): void => {
         let outsideComponent = true;
 
         if (event.relatedTarget !== null) {
@@ -652,45 +656,41 @@ export const Combobox: FC<ComboboxProps> = ({
         if (outsideComponent) {
             handleComponentBlur();
         }
-    }
+    }, [componentTargets, handleComponentBlur]);
 
-    function handleTextboxClick(): void {
+    const handleTextboxClick = useCallback((): void => {
         if (open) {
             closeListbox();
         } else {
             openListbox();
         }
-    }
+    }, [closeListbox, open, openListbox]);
 
-    function handleArrowButtonClick(): void {
+    const handleArrowButtonClick = useCallback((): void => {
         if (open) {
             closeListbox();
         } else {
             openListbox();
         }
 
-        if (multiselect) {
-            multiSelectInputRef.current?.focus();
-        } else {
-            textboxRef.current?.focus();
-        }
-    }
+        floatingReferenceRef.current?.focus();
+    }, [closeListbox, open, openListbox, floatingReferenceRef]);
 
-    function handleClearButtonClick(): void {
+    const handleClearButtonClick = useCallback((): void => {
         changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
-        textboxRef.current?.focus();
-    }
+        floatingReferenceRef.current?.focus();
+    }, [changeInputValue, clearSelectedOptions, setFocusedOption, floatingReferenceRef]);
 
-    function handleTagRemove(tag: TagValue): void {
+    const handleTagRemove = useCallback((tag: TagValue): void => {
         const removedOption = selectedOptions?.find((option) => option.value === tag.id);
 
         if (removedOption !== undefined) {
             toggleOptionSelection(removedOption);
         }
-    }
+    }, [selectedOptions, toggleOptionSelection]);
 
     const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: ComboboxOption) => (
         <ListboxTag
@@ -698,7 +698,7 @@ export const Combobox: FC<ComboboxProps> = ({
             option={option}
             handleTagRemove={handleTagRemove}
             readOnly={readOnly}
-            textboxRef={textboxRef}
+            textboxRef={floatingReferenceRef}
         />
     ));
 
@@ -706,6 +706,7 @@ export const Combobox: FC<ComboboxProps> = ({
         if (isOptionEnabled(option)) {
             if (multiselect) {
                 toggleOptionSelection(option);
+                setInputValue('');
             } else {
                 if (option !== focusedOption) {
                     setFocusedOption(option);
@@ -720,11 +721,7 @@ export const Combobox: FC<ComboboxProps> = ({
             }
         }
 
-        if (multiselect) {
-            multiSelectInputRef.current?.focus();
-        } else {
-            textboxRef.current?.focus();
-        }
+        inputRef.current?.focus();
     }
 
     // With inline autocomplete, the suggestion gets highlighted only when text is entered in
@@ -736,7 +733,6 @@ export const Combobox: FC<ComboboxProps> = ({
 
     function handleTextboxKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         let newFocusedOption: ComboboxOption | undefined;
-
         switch (event.key) {
             case 'ArrowDown':
                 event.preventDefault();
@@ -801,7 +797,9 @@ export const Combobox: FC<ComboboxProps> = ({
                     closeListbox();
                 } else {
                     changeInputValue(undefined);
-                    clearSelectedOptions();
+                    if (!multiselect) {
+                        clearSelectedOptions();
+                    }
                 }
                 break;
             case 'Backspace':
@@ -815,6 +813,7 @@ export const Combobox: FC<ComboboxProps> = ({
         if (!open) {
             openListbox();
         }
+        setShowAllOptions(false);
 
         const newInputValue = event.target.value;
         onInputChange?.(newInputValue);
@@ -862,11 +861,11 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         if (suggestedInputValue.length > inputValue.length) {
-            textboxRef.current?.setSelectionRange(inputValue.length, suggestedInputValue.length);
-        } else if (textboxRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
-            textboxRef.current?.setSelectionRange(inputValue.length, inputValue.length);
+            inputRef.current?.setSelectionRange(inputValue.length, suggestedInputValue.length);
+        } else if (inputRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
+            inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
-    }, [inputValue.length, suggestedInputValue.length, textboxRef]);
+    }, [inputValue.length, suggestedInputValue.length, floatingReferenceRef]);
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
@@ -917,6 +916,7 @@ export const Combobox: FC<ComboboxProps> = ({
             <StyledContainer>
                 {multiselect ? (
                     <TagInputContainer
+                        data-testid="tags"
                         disabled={disabled}
                         $isMobile={isMobile}
                         $readOnly={readOnly}
@@ -934,12 +934,13 @@ export const Combobox: FC<ComboboxProps> = ({
                         <MultiSelectInput
                             {...sharedInputProps}
                             $hasTags={selectedOptions.length > 0}
-                            ref={multiSelectInputRef}
+                            ref={inputRef}
                         />
                     </TagInputContainer>
                 ) : (
                     <Textbox {...sharedInputProps} ref={refs.setReference} />
                 )}
+
                 {inputValue !== '' && !disabled && !multiselect && (
                     <ClearButton
                         aria-label={t('clearInput')}
@@ -953,6 +954,7 @@ export const Combobox: FC<ComboboxProps> = ({
                         type="button"
                     />
                 )}
+
                 <ArrowButton
                     aria-label={t('showOptions', { label: label || ariaLabel })}
                     buttonType="tertiary"

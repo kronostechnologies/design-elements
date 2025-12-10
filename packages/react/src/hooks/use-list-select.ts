@@ -41,7 +41,7 @@ export function useListSelect<T>(
     const selectElement: (element: T) => void = useCallback((element: T) => {
         setPreviousSelectedElement(element);
         if (isMultiSelect) {
-            const isAlreadySelected = !!selectedElements.find(
+            const isAlreadySelected = selectedElements.find(
                 (currentElement: T) => predicate(currentElement, element),
             );
             if (!isAlreadySelected) {
@@ -63,7 +63,7 @@ export function useListSelect<T>(
     }, [isMultiSelect, previousSelectedElement]);
 
     const toggleSelectedElements: (element: T) => void = useCallback((element: T) => {
-        const isAlreadySelected = !!selectedElements.find(
+        const isAlreadySelected = selectedElements.find(
             (currentElement: T) => predicate(currentElement, element),
         );
         if (isAlreadySelected) {
