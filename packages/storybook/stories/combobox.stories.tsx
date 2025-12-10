@@ -103,3 +103,14 @@ export const WithToggletip: Story = {
         },
     },
 };
+
+export const WithMultiselect: Story = {
+    ...comboboxMeta,
+    args: {
+        autoSelectMatchingOption: false,
+        defaultValue: ['alberta', 'quebec'],
+        label: 'Select options',
+        multiselect: true,
+        onChange: (options: ComboboxOption[]) => console.log(options), /* eslint-disable-line no-console */
+    },
+};

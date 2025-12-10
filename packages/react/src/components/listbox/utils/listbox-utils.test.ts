@@ -1,4 +1,5 @@
-import type { DropdownListOption } from '../dropdown-list';
+import { DropdownListOption } from '../../dropdown-list';
+import { ListboxOption } from '../listbox';
 import {
     disableNonSelectedOptions,
     getDefaultOptions,
@@ -6,7 +7,9 @@ import {
     isOptionEnabled,
     isOptionSelected,
     optionsAreEqual,
-} from './dropdown-list-utils';
+} from './listbox-utils';
+
+type ListOption = ListboxOption | DropdownListOption;
 
 describe('Dropdown List utils', () => {
     describe('optionAreEqual', () => {
@@ -101,23 +104,23 @@ describe('Dropdown List utils', () => {
 
     describe('getDefaultOptions', () => {
         test('should return options matching the provided value when value is a string', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1' },
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions('1', options);
+            const result = getDefaultOptions('1', options, false, true);
 
             expect(result).toEqual([{ value: '1', label: 'Option 1' }]);
         });
 
         test('should return options matching the provided value when value is an array of strings', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1' },
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions(['1', '2'], options);
+            const result = getDefaultOptions(['1', '2'], options, false, true);
 
             expect(result).toEqual([
                 { value: '1', label: 'Option 1' },
@@ -126,45 +129,45 @@ describe('Dropdown List utils', () => {
         });
 
         test('should return the first enabled option when value is undefined and multiselect is false', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1', disabled: true },
                 { value: '2', label: 'Option 2', disabled: false },
             ];
 
-            const result = getDefaultOptions(undefined, options, false);
+            const result = getDefaultOptions(undefined, options, false, true);
 
             expect(result).toEqual([{ value: '2', label: 'Option 2', disabled: false }]);
         });
 
         test('should return an empty option when no enabled options exist and value is undefined', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1', disabled: true },
                 { value: '2', label: 'Option 2', disabled: true },
             ];
 
-            const result = getDefaultOptions(undefined, options, false);
+            const result = getDefaultOptions(undefined, options, false, true);
 
             expect(result).toEqual([{ value: '', label: '' }]);
         });
 
         test('should return undefined when value is undefined and multiselect is true', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1', disabled: false },
                 { value: '2', label: 'Option 2', disabled: false },
             ];
 
-            const result = getDefaultOptions(undefined, options, true);
+            const result = getDefaultOptions(undefined, options, true, true);
 
             expect(result).toBeUndefined();
         });
 
         test('should return empty list when no matching options are found for the provided value', () => {
-            const options: DropdownListOption[] = [
+            const options: ListOption[] = [
                 { value: '1', label: 'Option 1' },
                 { value: '2', label: 'Option 2' },
             ];
 
-            const result = getDefaultOptions('3', options);
+            const result = getDefaultOptions('3', options, false, true);
 
             expect(result).toEqual([]);
         });
@@ -172,7 +175,7 @@ describe('Dropdown List utils', () => {
 
     describe('getOptionLabel', () => {
         test('should return the label of the option', () => {
-            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const option: ListOption = { value: '1', label: 'Option 1' };
 
             const result = getOptionLabel(option);
 
@@ -182,8 +185,8 @@ describe('Dropdown List utils', () => {
 
     describe('isOptionSelected', () => {
         test('should return true when the option is selected', () => {
-            const option: DropdownListOption = { value: '1', label: 'Option 1' };
-            const selectedOptions: DropdownListOption[] = [{ value: '1', label: 'Option 1' }];
+            const option: ListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: ListOption[] = [{ value: '1', label: 'Option 1' }];
 
             const result = isOptionSelected(option, selectedOptions);
 
@@ -191,8 +194,8 @@ describe('Dropdown List utils', () => {
         });
 
         test('should return false when the option is not selected', () => {
-            const option: DropdownListOption = { value: '1', label: 'Option 1' };
-            const selectedOptions: DropdownListOption[] = [{ value: '2', label: 'Option 2' }];
+            const option: ListOption = { value: '1', label: 'Option 1' };
+            const selectedOptions: ListOption[] = [{ value: '2', label: 'Option 2' }];
 
             const result = isOptionSelected(option, selectedOptions);
 
@@ -200,7 +203,7 @@ describe('Dropdown List utils', () => {
         });
 
         test('should return false when selectedOptions is undefined', () => {
-            const option: DropdownListOption = { value: '1', label: 'Option 1' };
+            const option: ListOption = { value: '1', label: 'Option 1' };
 
             const result = isOptionSelected(option, undefined);
 
