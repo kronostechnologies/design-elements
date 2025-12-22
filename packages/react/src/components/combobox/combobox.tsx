@@ -230,7 +230,7 @@ const TagInputContainer = styled.div<TagInputContainerProps>`
     padding-right: var(--spacing-2halfx);
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
+    ${({ disabled, theme }) => !disabled && focus({ theme }, { focusType: 'focus-within' })};
 `;
 
 export interface ComboboxProps {
@@ -694,6 +694,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: ComboboxOption) => (
         <ListboxTag
+            disabled={disabled}
             key={option.value}
             option={option}
             handleTagRemove={handleTagRemove}

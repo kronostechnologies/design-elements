@@ -174,12 +174,6 @@ input + .c2 {
   width: 100%;
 }
 
-.c4:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
 .c5 {
   overflow: hidden;
   text-overflow: ellipsis;

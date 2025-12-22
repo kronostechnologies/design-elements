@@ -1,4 +1,4 @@
-import { FC, RefObject, useRef } from 'react';
+import { FC, type JSX, RefObject, useRef } from 'react';
 import styled from 'styled-components';
 import { Tag } from '../tag';
 import { Tooltip } from '../tooltip';
@@ -6,6 +6,7 @@ import { Overflow, useOverflow } from '../../hooks/use-overflow';
 
 const TagTooltipWrapper = styled.div`
     overflow: hidden;
+
     [role='tooltip'] {
         z-index: 99999;
     }
@@ -17,11 +18,16 @@ const TagTooltip = styled(Tooltip)`
 `;
 
 const StyledTag = styled(Tag)`
-    margin: 2px;
+    margin: var(--spacing-quarter);
     overflow: hidden;
 
+    &[aria-disabled='true'] {
+        pointer-events: none;
+        user-select: none;
+    }
+
     & + & {
-        margin-left: 2px;
+        margin-left: var(--spacing-quarter);
     }
 `;
 
@@ -33,13 +39,16 @@ export interface TagValue {
 }
 
 export interface ListBoxTagProps<T extends ListOption> {
-    handleTagRemove: (tag: TagValue) => void;
+    disabled?: boolean;
     option: T;
     readOnly?: boolean;
     textboxRef: RefObject<HTMLDivElement>;
+
+    handleTagRemove?(tag: TagValue): void;
 }
 
 export const ListboxTag: FC<ListBoxTagProps<ListOption>> = ({
+    disabled,
     handleTagRemove,
     option,
     readOnly,
@@ -49,22 +58,31 @@ export const ListboxTag: FC<ListBoxTagProps<ListOption>> = ({
     const overflow: Overflow = useOverflow(tagLabelRef, textboxRef);
     const isOverflowing = overflow.horizontal || overflow.vertical;
 
-    return (
-        <TagTooltipWrapper>
-            <TagTooltip
-                key={option.value}
-                label={option?.label ?? ''}
-                disabled={!isOverflowing}
-                mode="normal"
-            >
-                <StyledTag
-                    aria-hidden="true"
-                    data-testid={`listboxtag-${option.value}`}
-                    labelRef={tagLabelRef}
-                    onRemove={readOnly ? undefined : handleTagRemove}
-                    value={{ id: option.value, label: option?.label ?? '' }}
-                />
-            </TagTooltip>
-        </TagTooltipWrapper>
+    const tag: JSX.Element = (
+        <StyledTag
+            aria-disabled={disabled}
+            aria-hidden="true"
+            data-testid={`listboxtag-${option.value}`}
+            labelRef={tagLabelRef}
+            onRemove={readOnly || disabled ? undefined : handleTagRemove}
+            value={{ id: option.value, label: option?.label ?? '' }}
+        />
     );
+
+    if (isOverflowing) {
+        return (
+            <TagTooltipWrapper>
+                <TagTooltip
+                    key={option.value}
+                    label={option?.label ?? ''}
+                    disabled={!isOverflowing}
+                    mode="normal"
+                >
+                    {tag}
+                </TagTooltip>
+            </TagTooltipWrapper>
+        );
+    }
+
+    return tag;
 };

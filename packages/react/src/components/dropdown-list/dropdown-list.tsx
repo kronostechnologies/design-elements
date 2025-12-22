@@ -2,7 +2,6 @@ import { FC, FocusEvent, KeyboardEvent, ReactNode, useCallback, useMemo, useStat
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
-import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -19,18 +18,19 @@ import { useDeviceContext } from '../device-context-provider';
 import { FieldContainer } from '../field-container';
 import { Icon, type IconName } from '../icon';
 import { Listbox, type ListboxOption } from '../listbox';
-import { type ToggletipProps } from '../toggletip';
-import { type TooltipProps } from '../tooltip';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
 import {
     disableNonSelectedOptions,
     findOptionsByValue,
     getDefaultOptions,
-    getNewOptionSelection,
     getJoinedValues,
+    getNewOptionSelection,
     getOptionLabel,
-    isOptionEnabled,
     getSelectedOptionValues,
+    isOptionEnabled,
 } from '../listbox/utils';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -113,7 +113,7 @@ const Textbox = styled.div<TextboxProps>`
     user-select: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, { focusType: 'focus' })};
+    ${({ $disabled, theme }) => !$disabled && focus({ theme }, { focusType: 'focus' })};
 `;
 
 const TextWrapper = styled.span`
@@ -478,6 +478,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: DropdownListOption) => (
         <ListboxTag
             key={option.value}
+            disabled={disabled}
             option={option}
             readOnly={readOnly}
             handleTagRemove={handleTagRemove}

@@ -291,7 +291,6 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={-1}
@@ -304,7 +303,6 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
             onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={-1}
