@@ -1,714 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Combobox matches the snapshot (disabled) 1`] = `
-.c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c6 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c7 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c7:hover,
-.c7[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c7[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c3 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c1 {
-  position: relative;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-}
-
-.c5 {
-  background-color: #F1F2F2;
-  border: 1px solid #B7BBC2;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #B7BBC2;
-  font-family: inherit;
-  font-size: 0.875rem;
-  height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-}
-
-.c5:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c5::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c5::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c5:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c5::placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  color: #B7BBC2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-1x);
-  padding: var(--spacing-half);
-  position: absolute;
-  right: 0;
-  width: var(--size-1x);
-}
-
-.c8:hover {
-  background-color: transparent;
-}
-
-<div
-  class="c0 c1"
->
-  <label
-    class="c2 c3"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Select an option
-  </label>
-  <div
-    class="c4"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-expanded="true"
-      aria-invalid="false"
-      aria-required="false"
-      class="c5"
-      data-testid="textbox"
-      disabled=""
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-disabled="true"
-      aria-label="Show Select an option options"
-      class="c6 c7 c8"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        color="currentColor"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Combobox matches the snapshot (invalid) 1`] = `
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c8 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c9 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c9:hover,
-.c9[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c9[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c4 {
-  color: #CD2C23;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-}
-
-.c5 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: var(--spacing-base);
-}
-
-.c3 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #CD2C23;
-}
-
-.c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c1 {
-  position: relative;
-}
-
-.c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-}
-
-.c7 {
-  background-color: #FFFFFF;
-  border: 1px solid #CD2C23;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 0.875rem;
-  height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c7::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-1x);
-  padding: var(--spacing-half);
-  position: absolute;
-  right: 0;
-  width: var(--size-1x);
-}
-
-.c10:hover {
-  background-color: transparent;
-}
-
-<div
-  class="c0 c1"
->
-  <label
-    class="c2 c3"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Select an option
-  </label>
-  <span
-    class="c4"
-    data-testid="invalid-field"
-    id="uuid1_invalid"
-  >
-    <svg
-      class="c5"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-    You must select an option
-  </span>
-  <div
-    class="c6"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-describedby="uuid1_invalid"
-      aria-expanded="true"
-      aria-invalid="true"
-      aria-required="false"
-      class="c7"
-      data-testid="textbox"
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show Select an option options"
-      class="c8 c9 c10"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        color="currentColor"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Combobox matches the snapshot (mobile) 1`] = `
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.033125rem;
-  -moz-letter-spacing: 0.033125rem;
-  -ms-letter-spacing: 0.033125rem;
-  letter-spacing: 0.033125rem;
-  line-height: 1.5rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-3x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c4 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c5 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c5:hover,
-.c5[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c5[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 1rem;
-  height: var(--size-2halfx);
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-}
-
-.c3:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c3::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c3:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c3::placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-1x);
-  padding: var(--spacing-half);
-  position: absolute;
-  right: 0;
-  width: var(--size-1x);
-}
-
-.c6:hover {
-  background-color: transparent;
-}
-
-<div
-  class="c0 c1"
->
-  <div
-    class="c2"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-expanded="true"
-      aria-invalid="false"
-      aria-label="inputAriaLabel"
-      aria-required="false"
-      class="c3"
-      data-testid="textbox"
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show  options"
-      class="c4 c5 c6"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        color="currentColor"
-        focusable="false"
-        height="20"
-        width="20"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Combobox matches the snapshot 1`] = `
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -807,6 +99,722 @@ input + .c2 {
   border-color: #60666E;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c1 {
+  position: relative;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #B7BBC2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: 0;
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  background-color: transparent;
+}
+
+.c5 {
+  background-color: #F1F2F2;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #B7BBC2;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.c6 {
+  border: 1px solid #B7BBC2 !important;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c6::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c6:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c6::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <div
+    class="c4"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="uuid1_listbox"
+      aria-expanded="true"
+      aria-invalid="false"
+      class="c5 c6"
+      data-testid="textbox"
+      disabled=""
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-disabled="true"
+      aria-label="Show Select an option options"
+      class="c7 c8 c9"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (invalid) 1`] = `
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c10 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c10:hover,
+.c10[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c10[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c4 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: var(--spacing-base);
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #CD2C23;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c1 {
+  position: relative;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: 0;
+  width: var(--size-1x);
+}
+
+.c11:hover {
+  background-color: transparent;
+}
+
+.c7 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.c8 {
+  border: 1px solid #CD2C23 !important;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <span
+    class="c4"
+    data-testid="invalid-field"
+    id="uuid1_invalid"
+  >
+    <svg
+      class="c5"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    You must select an option
+  </span>
+  <div
+    class="c6"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="uuid1_listbox"
+      aria-describedby="uuid1_invalid"
+      aria-expanded="true"
+      aria-invalid="true"
+      class="c7 c8"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show Select an option options"
+      class="c9 c10 c11"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (mobile) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c6 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c6:hover,
+.c6[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c6[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: 0;
+  width: var(--size-1x);
+}
+
+.c7:hover {
+  background-color: transparent;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.c4 {
+  border: 1px solid #60666E !important;
+  height: var(--size-2halfx);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c4::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c4:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c4::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+<div
+  class="c0 c1"
+>
+  <div
+    class="c2"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="uuid1_listbox"
+      aria-expanded="true"
+      aria-invalid="false"
+      aria-label="inputAriaLabel"
+      class="c3 c4"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show  options"
+      class="c5 c6 c7"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (multiselect) 1`] = `
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c10 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c10:hover,
+.c10[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c10[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-quarter);
 }
@@ -844,45 +852,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c6 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 0.875rem;
-  height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-}
-
-.c6:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6::placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c9 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -901,8 +871,323 @@ input + .c2 {
   width: var(--size-1x);
 }
 
-.c9:hover {
+.c11:hover {
   background-color: transparent;
+}
+
+.c7 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.c8 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  height: auto;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 0 var(--spacing-1x);
+}
+
+.c6 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 30px;
+  padding-right: var(--spacing-2halfx);
+  width: 100%;
+}
+
+.c6:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select options
+  </label>
+  <span
+    class="c4"
+    id="uuid1_hint"
+  >
+    Hint
+  </span>
+  <div
+    class="c5"
+  >
+    <div
+      class="c6"
+      data-testid="tags"
+      tabindex="0"
+    >
+      <input
+        data-testid="input"
+        type="hidden"
+        value=""
+      />
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-describedby="uuid1_hint"
+        aria-expanded="true"
+        aria-invalid="false"
+        class="c7 c8"
+        data-testid="textbox"
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+    </div>
+    <button
+      aria-label="Show Select options options"
+      class="c9 c10 c11"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (readOnly) 1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c9:hover,
+.c9[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c9[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #B7BBC2;
+  display: none;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: 0;
+  width: var(--size-1x);
+}
+
+.c10:hover {
+  background-color: transparent;
+}
+
+.c6 {
+  background-color: rgb(0 0 0 / 0.03);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.c7 {
+  border: 1px solid transparent !important;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::placeholder {
+  color: #60666E;
+  font-style: italic;
 }
 
 <div
@@ -930,8 +1215,261 @@ input + .c2 {
       aria-describedby="uuid1_hint"
       aria-expanded="true"
       aria-invalid="false"
-      aria-required="false"
-      class="c6"
+      aria-readonly="true"
+      class="c6 c7"
+      data-testid="textbox"
+      disabled=""
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show Select an option options"
+      class="c8 c9 c10"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot 1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c9:hover,
+.c9[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c9[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: 0;
+  width: var(--size-1x);
+}
+
+.c10:hover {
+  background-color: transparent;
+}
+
+.c6 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.c7 {
+  border: 1px solid #60666E !important;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <span
+    class="c4"
+    id="uuid1_hint"
+  >
+    Hint
+  </span>
+  <div
+    class="c5"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="uuid1_listbox"
+      aria-describedby="uuid1_hint"
+      aria-expanded="true"
+      aria-invalid="false"
+      class="c6 c7"
       data-testid="textbox"
       id="uuid1"
       role="combobox"
@@ -940,7 +1478,7 @@ input + .c2 {
     />
     <button
       aria-label="Show Select an option options"
-      class="c7 c8 c9"
+      class="c8 c9 c10"
       data-testid="arrow"
       tabindex="-1"
       type="button"

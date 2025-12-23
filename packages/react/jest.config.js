@@ -46,7 +46,7 @@ module.exports = {
     roots: [
         '<rootDir>/src',
     ],
-    setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+    setupFilesAfterEnv: ['<rootDir>/test/setup.ts', 'jest-extended/all'],
     snapshotResolver: '<rootDir>/test/snapshot-resolver.js',
     testMatch: ['**/*.test.{ts,tsx}'],
     transform: {

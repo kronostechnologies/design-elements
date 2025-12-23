@@ -21,7 +21,7 @@ import { sanitizeId } from '../../utils/dom';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
-import { findOptionsByValue } from './listbox-option';
+import { findOptionsByValue } from './utils';
 
 type Value = string | string[];
 

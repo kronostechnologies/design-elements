@@ -4,6 +4,7 @@
   --font-normal: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
+
   // var for spacing margin & padding
   --spacing-base: 8px;
   --spacing-quarter: calc(0.25 * var(--spacing-base));
@@ -13,12 +14,14 @@
   --spacing-2x: calc(2 * var(--spacing-base));
   --spacing-2halfx: calc(2.5 * var(--spacing-base));
   --spacing-3x: calc(3 * var(--spacing-base));
+  --spacing-3halfx: calc(3.5 * var(--spacing-base));
   --spacing-4x: calc(4 * var(--spacing-base));
   --spacing-4halfx: calc(4.5 * var(--spacing-base));
   --spacing-5x: calc(5 * var(--spacing-base));
   --spacing-5halfx: calc(5.5 * var(--spacing-base));
   --spacing-6x: calc(6 * var(--spacing-base));
   --spacing-7x: calc(7 * var(--spacing-base));
+
   // var for border-radius
   --border-radius-half: calc(0.5 * var(--border-radius));
   --border-radius: 4px;
@@ -27,7 +30,8 @@
   --border-radius-2halfx: calc(2.5 * var(--border-radius));
   --border-radius-3x: calc(3 * var(--border-radius));
   --border-radius-4x: calc(4 * var(--border-radius));
-    // var for heights
+
+  // var for heights
   --size-base: 1rem;
   --size-half: calc(0.5 * var(--size-base));
   --size-1x: var(--size-base);

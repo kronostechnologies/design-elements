@@ -1,3 +1,4 @@
+/// <reference types="jest-extended" />
 import { TextEncoder } from 'util';
 // tslint:disable-next-line:no-import-side-effect
 import '@testing-library/jest-dom';

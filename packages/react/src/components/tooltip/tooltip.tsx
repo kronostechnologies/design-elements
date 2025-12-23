@@ -3,7 +3,6 @@ import {
     FunctionComponent,
     isValidElement,
     KeyboardEvent as ReactKeyboardEvent,
-    MouseEvent,
     PropsWithChildren,
     ReactElement,
     ReactNode,
@@ -324,10 +323,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, openTooltip]);
 
-    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
-        event.preventDefault();
-    }, []);
-
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
@@ -375,7 +370,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 onClick={handleOnClick}
                 onFocus={handleFocus}
                 onKeyDown={handleKeyDown}
-                onMouseDown={handleMouseDown}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 ref={popperTooltip.setTriggerRef}
