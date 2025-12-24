@@ -436,6 +436,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="bento"
           width="16"
         />
       </button>
@@ -476,6 +477,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -515,6 +517,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -553,6 +556,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -591,6 +595,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -641,6 +646,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -679,6 +685,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -732,6 +739,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -761,6 +769,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1213,6 +1222,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="bento"
           width="16"
         />
       </button>
@@ -1253,6 +1263,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -1292,6 +1303,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -1330,6 +1342,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -1368,6 +1381,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="22"
+            icon-name="logo-equisoft-ico"
             width="22"
           />
           <div
@@ -1421,6 +1435,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1450,6 +1465,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1573,6 +1589,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="bento"
       width="16"
     />
   </button>

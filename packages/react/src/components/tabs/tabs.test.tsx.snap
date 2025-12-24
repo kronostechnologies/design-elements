@@ -365,6 +365,7 @@ exports[`Tabs has small styles 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-left"
           width="16"
         />
       </button>
@@ -434,6 +435,7 @@ exports[`Tabs has small styles 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-right"
           width="16"
         />
       </button>
@@ -836,6 +838,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-left"
           width="16"
         />
       </button>
@@ -905,6 +908,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-right"
           width="16"
         />
       </button>
@@ -1307,6 +1311,7 @@ exports[`Tabs matches snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-left"
           width="16"
         />
       </button>
@@ -1376,6 +1381,7 @@ exports[`Tabs matches snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-right"
           width="16"
         />
       </button>

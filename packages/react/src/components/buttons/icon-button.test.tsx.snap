@@ -91,6 +91,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>
@@ -188,6 +189,7 @@ exports[`Icon Button Has disabled styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>
@@ -284,6 +286,7 @@ exports[`Icon Button Has mobile styles 1`] = `
     color="currentColor"
     focusable="false"
     height="20"
+    icon-name="home"
     width="20"
   />
 </button>
@@ -380,6 +383,7 @@ exports[`Icon Button Has primary styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>
@@ -476,6 +480,7 @@ exports[`Icon Button Has secondary styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>
@@ -573,6 +578,7 @@ exports[`Icon Button Has small styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>
@@ -669,6 +675,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="home"
     width="16"
   />
 </button>

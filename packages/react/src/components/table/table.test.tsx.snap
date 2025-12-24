@@ -1676,6 +1676,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
             <svg
@@ -1683,6 +1684,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="minus"
               width="24"
             />
           </span>
@@ -1730,6 +1732,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
             <svg
@@ -1737,6 +1740,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="minus"
               width="24"
             />
           </span>
@@ -1780,6 +1784,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
             <svg
@@ -1787,6 +1792,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="minus"
               width="24"
             />
           </span>
@@ -1830,6 +1836,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
             <svg
@@ -1837,6 +1844,7 @@ exports[`Table has selectable rows styles 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="minus"
               width="24"
             />
           </span>
@@ -2138,6 +2146,7 @@ exports[`Table has sorting styles 1`] = `
             color="#60666E"
             focusable="false"
             height="16"
+            icon-name="arrow-down"
             width="16"
           />
         </button>
@@ -2156,6 +2165,7 @@ exports[`Table has sorting styles 1`] = `
             color="#60666E"
             focusable="false"
             height="16"
+            icon-name="reorder"
             width="16"
           />
         </button>

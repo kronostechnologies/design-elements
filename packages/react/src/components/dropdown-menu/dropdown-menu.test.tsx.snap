@@ -321,6 +321,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />
@@ -350,6 +351,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />
@@ -379,6 +381,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />

@@ -103,6 +103,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   Navigation Link
@@ -166,6 +167,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
 </a>
@@ -330,6 +332,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   Navigation Link
@@ -393,6 +396,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
 </a>

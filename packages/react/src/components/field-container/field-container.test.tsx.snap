@@ -130,6 +130,7 @@ input + .c1 {
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="alert-octagon"
       width="16"
     />
     This text area input is invalid

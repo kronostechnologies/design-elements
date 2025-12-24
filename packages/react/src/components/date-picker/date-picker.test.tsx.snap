@@ -390,6 +390,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="24"
+            icon-name="calendar"
             width="24"
           />
         </button>
@@ -795,6 +796,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -1200,6 +1202,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -1607,6 +1610,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -2018,6 +2022,7 @@ label + .c5 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="alert-octagon"
           width="16"
         />
         Invalid date
@@ -2052,6 +2057,7 @@ label + .c5 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -2455,6 +2461,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="24"
+            icon-name="calendar"
             width="24"
           />
         </button>
@@ -3055,6 +3062,7 @@ label + .c3 {
                             color="currentColor"
                             focusable="false"
                             height="16"
+                            icon-name="chevron-left"
                             width="16"
                           />
                         </button>
@@ -3099,6 +3107,7 @@ label + .c3 {
                                   data-testid="arrow"
                                   focusable="false"
                                   height="16"
+                                  icon-name="chevron-down"
                                   width="16"
                                 />
                               </div>
@@ -3141,6 +3150,7 @@ label + .c3 {
                                   data-testid="arrow"
                                   focusable="false"
                                   height="16"
+                                  icon-name="chevron-down"
                                   width="16"
                                 />
                               </div>
@@ -3159,6 +3169,7 @@ label + .c3 {
                             color="currentColor"
                             focusable="false"
                             height="16"
+                            icon-name="chevron-right"
                             width="16"
                           />
                         </button>
@@ -3801,6 +3812,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -4434,6 +4446,7 @@ label + .c3 {
                             color="currentColor"
                             focusable="false"
                             height="16"
+                            icon-name="chevron-left"
                             width="16"
                           />
                         </button>
@@ -4478,6 +4491,7 @@ label + .c3 {
                                   data-testid="arrow"
                                   focusable="false"
                                   height="16"
+                                  icon-name="chevron-down"
                                   width="16"
                                 />
                               </div>
@@ -4520,6 +4534,7 @@ label + .c3 {
                                   data-testid="arrow"
                                   focusable="false"
                                   height="16"
+                                  icon-name="chevron-down"
                                   width="16"
                                 />
                               </div>
@@ -4538,6 +4553,7 @@ label + .c3 {
                             color="currentColor"
                             focusable="false"
                             height="16"
+                            icon-name="chevron-right"
                             width="16"
                           />
                         </button>
@@ -5192,6 +5208,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="calendar"
             width="16"
           />
         </button>
@@ -5788,6 +5805,7 @@ label + .c3 {
                               color="currentColor"
                               focusable="false"
                               height="20"
+                              icon-name="chevron-left"
                               width="20"
                             />
                           </button>
@@ -5832,6 +5850,7 @@ label + .c3 {
                                     data-testid="arrow"
                                     focusable="false"
                                     height="24"
+                                    icon-name="chevron-down"
                                     width="24"
                                   />
                                 </div>
@@ -5874,6 +5893,7 @@ label + .c3 {
                                     data-testid="arrow"
                                     focusable="false"
                                     height="24"
+                                    icon-name="chevron-down"
                                     width="24"
                                   />
                                 </div>
@@ -5892,6 +5912,7 @@ label + .c3 {
                               color="currentColor"
                               focusable="false"
                               height="20"
+                              icon-name="chevron-right"
                               width="20"
                             />
                           </button>
@@ -6535,6 +6556,7 @@ label + .c3 {
             color="currentColor"
             focusable="false"
             height="24"
+            icon-name="calendar"
             width="24"
           />
         </button>

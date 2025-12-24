@@ -80,6 +80,7 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
     <svg
       aria-hidden="true"
       focusable="false"
+      icon-name="logo-equisoft-reversed"
       style="height: 24px;"
     />
   </a>
@@ -259,6 +260,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
     <svg
       aria-hidden="true"
       focusable="false"
+      icon-name="logo-equisoft-reversed"
       style="height: 100%;"
     />
   </a>
@@ -274,6 +276,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
       color="currentColor"
       focusable="false"
       height="20"
+      icon-name="menu"
       width="20"
     />
   </button>
@@ -459,6 +462,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
     <svg
       aria-hidden="true"
       focusable="false"
+      icon-name="logo-equisoft-reversed"
       style="height: 100%;"
     />
   </a>
@@ -474,6 +478,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
       color="currentColor"
       focusable="false"
       height="20"
+      icon-name="menu"
       width="20"
     />
   </button>
