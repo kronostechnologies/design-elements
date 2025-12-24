@@ -88,6 +88,7 @@ exports[`External Link matches snapshot (disabled) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />
@@ -198,6 +199,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   <span
@@ -211,6 +213,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />
@@ -321,6 +324,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   <span
@@ -332,6 +336,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />
@@ -442,6 +447,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   <span
@@ -455,6 +461,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />
@@ -563,6 +570,7 @@ exports[`External Link matches snapshot 1`] = `
     color="currentColor"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />

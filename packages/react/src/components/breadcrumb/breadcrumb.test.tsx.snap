@@ -140,6 +140,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
               color="currentColor"
               focusable="false"
               height="20"
+              icon-name="chevron-right"
               width="20"
             />
           </li>
@@ -158,6 +159,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
               color="currentColor"
               focusable="false"
               height="20"
+              icon-name="chevron-right"
               width="20"
             />
           </li>
@@ -306,6 +308,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
             color="currentColor"
             focusable="false"
             height="20"
+            icon-name="chevron-right"
             width="20"
           />
         </li>
@@ -324,6 +327,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
             color="currentColor"
             focusable="false"
             height="20"
+            icon-name="chevron-right"
             width="20"
           />
         </li>
@@ -531,6 +535,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
             color="currentColor"
             focusable="false"
             height="20"
+            icon-name="chevron-right"
             width="20"
           />
         </li>

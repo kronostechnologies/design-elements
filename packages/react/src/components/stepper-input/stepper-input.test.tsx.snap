@@ -273,6 +273,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -289,6 +290,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-down"
           width="16"
         />
       </button>
@@ -577,6 +579,7 @@ input + .c1 {
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="alert-octagon"
       width="16"
     />
     Invalid number
@@ -608,6 +611,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -623,6 +627,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-down"
           width="16"
         />
       </button>
@@ -1054,6 +1059,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -1069,6 +1075,7 @@ input + .c1 {
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-down"
           width="16"
         />
       </button>
