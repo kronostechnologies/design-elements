@@ -12,9 +12,11 @@ exports[`Card Matches the snapshot 1`] = `
   padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-4x);
 }
 
-<div
-  class="c0"
->
-  Hello World
+<div>
+  <div
+    class="c0"
+  >
+    Hello World
+  </div>
 </div>
 `;
