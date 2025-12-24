@@ -317,31 +317,31 @@ exports[`Carousel should match snapshot 1`] = `
     >
       <button
         aria-controls="uuid1"
-        aria-disabled="true"
+        aria-current="true"
         class="c8 c9"
         data-testid="carousel-dot-0"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-1"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-2"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-3"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-4"
       />
