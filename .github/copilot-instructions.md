@@ -4,3 +4,4 @@ This project uses yarn as package manager.
 This project uses Jest.
 For React component tests, use `@testing-library/react`.
 For React hooks tests, use hook testing from `@testing-library/react`.
+Do not write useless comments.
