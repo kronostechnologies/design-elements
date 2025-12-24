@@ -1,4 +1,5 @@
-import { fireEvent } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu';
 import { BentoMenuButton } from './bento-menu-button';
@@ -63,6 +64,10 @@ function givenExternals(): ExternalItemProps[] {
     ];
 }
 
+function clickOnMenuButton(): Promise<void> {
+    return userEvent.click(screen.getByTestId('menu-button'));
+}
+
 describe('BentoMenuButton', () => {
     let products: NavItemProps[];
     let externals: ExternalItemProps[];
@@ -72,7 +77,7 @@ describe('BentoMenuButton', () => {
         externals = givenExternals();
     });
 
-    test('should throw exception if both productGroups and productLinks are passed', () => {
+    it('should throw exception if both productGroups and productLinks are passed', () => {
         const productGroupA = {
             label: 'Product Group A',
             name: 'A',
@@ -97,7 +102,7 @@ describe('BentoMenuButton', () => {
         expect(callback).toThrow(Error);
     });
 
-    test('Matches Snapshot (tag="nav")', () => {
+    it('Matches Snapshot (tag="nav")', () => {
         const { container } = renderWithProviders(
             <BentoMenuButton tag="nav" productLinks={products} externalLinks={externals} />,
         );
@@ -105,17 +110,17 @@ describe('BentoMenuButton', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (productLinks and externalLinks)', () => {
-        const { baseElement, getByTestId } = renderWithProviders(
+    it('Matches Snapshot (productLinks and externalLinks)', async () => {
+        const { baseElement } = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
         );
-        const menuButton = getByTestId('menu-button');
-        fireEvent.click(menuButton);
+        const menuButton = screen.getByTestId('menu-button');
+        await userEvent.click(menuButton);
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (productGroups and externalLinks)', () => {
+    it('Matches Snapshot (productGroups and externalLinks)', async () => {
         const productGroupA = {
             label: 'Product Group A',
             name: 'A',
@@ -127,15 +132,83 @@ describe('BentoMenuButton', () => {
             productLinks: givenOtherProducts(),
         };
 
-        const { baseElement, getByTestId } = renderWithProviders(
+        const { baseElement } = renderWithProviders(
             <BentoMenuButton
                 productGroups={[productGroupA, productGroupB]}
                 externalLinks={externals}
             />,
         );
-        const menuButton = getByTestId('menu-button');
-        fireEvent.click(menuButton);
+        const menuButton = screen.getByTestId('menu-button');
+        await userEvent.click(menuButton);
 
         expect(baseElement).toMatchSnapshot();
+    });
+
+    it('should call product on click when a product is clicked', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+        await clickOnMenuButton();
+
+        const productA = screen.getByTestId('listitem-optionA');
+        await userEvent.click(productA);
+
+        expect(products[0].onClick).toHaveBeenCalled();
+    });
+
+    it('should not call product on click when a product is disabled', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+        await clickOnMenuButton();
+
+        const productB = screen.getByTestId('listitem-optionB');
+
+        await expect(userEvent.click(productB)).toReject();
+        expect(products[1].onClick).not.toHaveBeenCalled();
+    });
+
+    it('should call external on click when a external is clicked', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+        await clickOnMenuButton();
+
+        const resourcesGroup = screen.getByTestId('resources-group');
+        const externalA = within(resourcesGroup).getByText('Option A');
+        await userEvent.click(externalA);
+
+        expect(externals[0].onClick).toHaveBeenCalled();
+    });
+
+    it('should not call external on click when a external is disabled', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+        await clickOnMenuButton();
+
+        const resourcesGroup = screen.getByTestId('resources-group');
+        const externalB = within(resourcesGroup).getByText('Option B');
+
+        await expect(userEvent.click(externalB)).toReject();
+        expect(externals[1].onClick).not.toHaveBeenCalled();
+    });
+
+    it('should not show Products section when productLinks array is empty', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={[]} externalLinks={externals} />,
+        );
+        await clickOnMenuButton();
+
+        expect(screen.queryByTestId('products-group')).not.toBeInTheDocument();
+    });
+
+    it('should not show Resources section when externalLinks array is empty', async () => {
+        renderWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={[]} />,
+        );
+        await clickOnMenuButton();
+
+        expect(screen.queryByTestId('resources-group')).not.toBeInTheDocument();
     });
 });

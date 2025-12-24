@@ -116,7 +116,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   max-width: 350px;
   min-width: 200px;
   position: absolute;
-  top: 0px;
+  top: 4px;
   width: auto;
   z-index: 99998;
 }
@@ -450,6 +450,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
     class="c4 c5"
     data-testid="menu-dropdownMenu"
     id="eds-uuid1"
+    style="width: initial;"
   >
     <h3
       class="c6 c7"
@@ -902,7 +903,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   max-width: 350px;
   min-width: 200px;
   position: absolute;
-  top: 0px;
+  top: 4px;
   width: auto;
   z-index: 99998;
 }
@@ -1236,6 +1237,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
     class="c4 c5"
     data-testid="menu-dropdownMenu"
     id="eds-uuid1"
+    style="width: initial;"
   >
     <h3
       class="c6 c7"
