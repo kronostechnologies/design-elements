@@ -207,7 +207,7 @@ jobs:
           working-directory: ./packages/react
 
       - name: Upload test coverage results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: ${{ success() || failure() }}
         with:
           name: react-test-coverage.clover.xml
@@ -269,7 +269,7 @@ jobs:
         run: yarn build
 
       - name: Store react package
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: react_dist
           path: packages/react/dist/
@@ -296,7 +296,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -332,7 +332,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -363,7 +363,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -402,7 +402,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -428,7 +428,7 @@ jobs:
         run: yarn build
 
       - name: Store storybook package
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: storybook_dist
           path: packages/storybook/dist/
@@ -460,7 +460,7 @@ jobs:
           persist-credentials: false
 
       - name: Download
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: storybook_dist
           path: packages/storybook/dist/
@@ -562,7 +562,7 @@ jobs:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -592,7 +592,7 @@ jobs:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
@@ -635,7 +635,7 @@ jobs:
           persist-credentials: false
 
       - name: Download React Dist
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: react_dist
           path: packages/react/dist/
