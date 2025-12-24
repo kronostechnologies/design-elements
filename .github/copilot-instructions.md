@@ -2,7 +2,7 @@ This project uses yarn as package manager.
 
 ### Tests
 This project uses Jest.
-Group blocks within a test closure into given-when-then structure (without comments).
+Group blocks within a test closure into given-when-then structure, separated with an empty line (without comments).
 For React component tests, use `@testing-library/react` (RTL).
     - Use method `renderWithProviders` instead of `render`. 
     - Use `it` for test closures.
