@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`CardLink Matches Snapshot 1`] = `
-.c1 {
+exports[`CardLink matches snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
   color: currentColor;
   height: var(--size-1x);
   position: absolute;
@@ -46,18 +47,20 @@ exports[`CardLink Matches Snapshot 1`] = `
 }
 
 <a
-  class="c0"
-  href="/"
-  title="Link Label"
->
-  Link Label
-  <svg
-    aria-hidden="true"
-    class="c1"
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-</a>
+    class="c0"
+    href="/"
+    title="Link Label"
+  >
+    Link Label
+    <svg
+      aria-hidden="true"
+      class="c1"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      icon-name="chevron-right"
+      width="16"
+    />
+  </a>
+</DocumentFragment>
 `;
