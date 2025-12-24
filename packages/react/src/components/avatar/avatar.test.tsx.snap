@@ -476,6 +476,7 @@ exports[`Avatar Should use bigger user icon when username is empty on mobile 1`]
       color="currentColor"
       focusable="false"
       height="24"
+      icon-name="user"
       width="24"
     />
   </span>
@@ -522,6 +523,7 @@ exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="user"
       width="16"
     />
   </span>
@@ -568,6 +570,7 @@ exports[`Avatar Should use user icon when username is undefined 1`] = `
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="user"
       width="16"
     />
   </span>

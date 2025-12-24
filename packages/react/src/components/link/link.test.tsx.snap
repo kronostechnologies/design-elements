@@ -284,6 +284,7 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
     data-testid="external-link-icon"
     focusable="false"
     height="16"
+    icon-name="external-link"
     role="img"
     width="16"
   />
@@ -380,6 +381,7 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
     data-testid="link-icon"
     focusable="false"
     height="16"
+    icon-name="mail"
     width="16"
   />
   Navigation Link
@@ -499,6 +501,7 @@ HTMLCollection [
         data-testid="link-icon"
         focusable="false"
         height="16"
+        icon-name="mail"
         width="16"
       />
     </a>

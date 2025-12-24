@@ -134,6 +134,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
     data-testid="Test-icon"
     focusable="true"
     height="12"
+    icon-name="home"
     role="img"
     width="12"
   />
@@ -401,6 +402,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
     data-testid="Test-icon"
     focusable="true"
     height="12"
+    icon-name="home"
     role="img"
     width="12"
   />
@@ -668,6 +670,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
     data-testid="Test-icon"
     focusable="true"
     height="12"
+    icon-name="home"
     role="img"
     width="12"
   />
@@ -935,6 +938,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
     data-testid="Test-icon"
     focusable="true"
     height="12"
+    icon-name="home"
     role="img"
     width="12"
   />

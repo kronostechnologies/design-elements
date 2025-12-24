@@ -470,6 +470,7 @@ exports[`Button has left and right icons 1`] = `
     data-testid="left-icon"
     focusable="false"
     height="24"
+    icon-name="chevron-left"
     width="24"
   />
   Primary Button
@@ -480,6 +481,7 @@ exports[`Button has left and right icons 1`] = `
     data-testid="right-icon"
     focusable="false"
     height="24"
+    icon-name="chevron-right"
     width="24"
   />
 </button>

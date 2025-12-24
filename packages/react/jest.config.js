@@ -40,7 +40,6 @@ module.exports = {
         'node_modules',
     ],
     moduleNameMapper: {
-        '\\.svg': '<rootDir>/test/__mocks__/svg-mock.js',
         '\\.s?css': '<rootDir>/test/__mocks__/style-mock.js',
     },
     roots: [
@@ -50,6 +49,7 @@ module.exports = {
     snapshotResolver: '<rootDir>/test/snapshot-resolver.js',
     testMatch: ['**/*.test.{ts,tsx}'],
     transform: {
+        '\\.svg$': '<rootDir>/test/__mocks__/svg-mock.js',
         '\\.m?[t]sx?$': ['@swc/jest', {
             jsc: {
                 transform: {
@@ -61,4 +61,7 @@ module.exports = {
         },
         ],
     },
+    transformIgnorePatterns: [
+        'node_modules/(?!.*\\.svg$)',
+    ],
 };

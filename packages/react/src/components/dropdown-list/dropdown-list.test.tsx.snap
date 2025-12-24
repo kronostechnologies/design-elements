@@ -244,6 +244,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -691,6 +692,7 @@ input + .c2 {
       data-testid="textbox-icon"
       focusable="false"
       height="16"
+      icon-name="menu"
       width="16"
     />
     <input
@@ -710,6 +712,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -1148,6 +1151,7 @@ input + .c2 {
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="alert-octagon"
       width="16"
     />
     You must select an option
@@ -1184,6 +1188,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -1589,6 +1594,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
       data-testid="arrow"
       focusable="false"
       height="24"
+      icon-name="chevron-up"
       width="24"
     />
   </div>
@@ -2000,6 +2006,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -2035,6 +2042,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2059,6 +2067,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2083,6 +2092,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2107,6 +2117,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2131,6 +2142,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2155,6 +2167,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2179,6 +2192,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2203,6 +2217,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2227,6 +2242,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2251,6 +2267,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2275,6 +2292,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2299,6 +2317,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2323,6 +2342,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2607,6 +2627,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>

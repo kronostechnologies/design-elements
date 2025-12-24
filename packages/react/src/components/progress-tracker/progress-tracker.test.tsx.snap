@@ -390,6 +390,7 @@ exports[`Progress Component Snapshots non linear 1`] = `
         color="currentColor"
         focusable="false"
         height="16"
+        icon-name="alert-circle"
         width="16"
       />
       <span

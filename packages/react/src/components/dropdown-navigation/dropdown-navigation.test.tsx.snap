@@ -186,6 +186,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -380,6 +381,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="chevron-down"
       width="16"
     />
   </button>
@@ -572,6 +574,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>

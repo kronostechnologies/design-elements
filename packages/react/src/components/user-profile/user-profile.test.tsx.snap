@@ -509,6 +509,7 @@ exports[`UserProfile Matches Snapshot (\`full-name\`) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -666,6 +667,7 @@ exports[`UserProfile Matches Snapshot (\`full-name\`) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -852,6 +854,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-down"
           width="16"
         />
       </button>
@@ -1520,6 +1523,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -2045,6 +2049,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -2202,6 +2207,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
