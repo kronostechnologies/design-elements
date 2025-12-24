@@ -1,63 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Badge matches the snapshot 1`] = `
-[
-  .c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.c1 {
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #CD2C23;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.75rem;
-  font-weight: 400;
-  height: 1rem;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1;
-  min-width: 1rem;
-  padding: 0 0.25rem;
-  position: absolute;
-  text-align: center;
-  right: 0;
-  top: 0;
-  -webkit-transform: translate(50%,-50%);
-  -ms-transform: translate(50%,-50%);
-  transform: translate(50%,-50%);
-}
-
-<span
-    class="c0"
-  >
-    <span
-      class="c1"
-    >
-      1
-    </span>
-  </span>,
-  .c0 {
+.c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -109,12 +53,22 @@ exports[`Badge matches the snapshot 1`] = `
   padding: 0;
 }
 
-<span
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      1
+    </span>
+  </span>
+  <span
     class="c0"
   >
     <span
       class="c1 c2"
     />
-  </span>,
-]
+  </span>
+</div>
 `;
