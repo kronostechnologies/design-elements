@@ -140,7 +140,7 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
                             key={i /* eslint-disable-line react/no-array-index-key */}
                             active={isActive}
                             aria-controls={carouselId}
-                            aria-disabled={isActive}
+                            aria-current={isActive}
                             onClick={() => setActive(i)}
                         />
                     );
