@@ -1,2 +1,2 @@
-export { Accordion, type ItemsProps } from './accordion';
+export { Accordion, type ItemsProps as AccordionItem } from './accordion';
 export { accordionClasses, type AccordionClasses } from './accordion-classes';
