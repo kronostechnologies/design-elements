@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Chooser Button Matches the snapshot 1`] = `
-[
+<DocumentFragment>
   .c0 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -20,7 +20,7 @@ exports[`Chooser Button Matches the snapshot 1`] = `
     name="maritalStatus"
     type="radio"
     value="test value"
-  />,
+  />
   .c1 {
   --border-radius: 8px;
   -webkit-align-items: center;
@@ -96,6 +96,6 @@ input[type='radio']:disabled + .c1 {
     for="uuid1"
   >
     Children
-  </label>,
-]
+  </label>
+</DocumentFragment>
 `;
