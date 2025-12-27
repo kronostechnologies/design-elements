@@ -92,66 +92,37 @@ exports[`Checkbox matches snapshot 1`] = `
   margin-top: var(--spacing-1x);
 }
 
-<Checkbox
-  label="Boat"
-  name="vehicule"
-  value="boat"
->
-  <styled.label
-    hasLabel={true}
-    key="vehicule-boat"
+<div>
+  <label
+    class="c0"
   >
-    <label
-      className="c0"
+    <input
+      class="c1"
+      name="vehicule"
+      type="checkbox"
+      value="boat"
+    />
+    <span
+      class="c2 c3"
     >
-      <styled.input
-        name="vehicule"
-        type="checkbox"
-        value="boat"
-      >
-        <input
-          className="c1"
-          name="vehicule"
-          type="checkbox"
-          value="boat"
-        />
-      </styled.input>
-      <styled.span>
-        <span
-          className="c2 c3"
-        >
-          <Styled(Icon)>
-            <Icon
-              className="c4 c5"
-              name="check"
-            >
-              <svg
-                className="c4 c5"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </Styled(Icon)>
-          <Styled(Icon)>
-            <Icon
-              className="c6 c7"
-              name="minus"
-            >
-              <svg
-                className="c6 c7"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </Styled(Icon)>
-        </span>
-      </styled.span>
-      Boat
-    </label>
-  </styled.label>
-</Checkbox>
+      <svg
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        icon-name="check"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        icon-name="minus"
+        width="24"
+      />
+    </span>
+    Boat
+  </label>
+</div>
 `;
