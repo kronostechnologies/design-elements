@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Chooser Button GroupItem Matches the snapshot 1`] = `
-[
+<DocumentFragment>
   .c3 {
   --border-radius: 8px;
   -webkit-align-items: center;
@@ -125,7 +125,7 @@ input[type='radio']:disabled + .c3 {
     >
       Married or living with a spouse
     </label>
-  </div>,
+  </div>
   .c3 {
   --border-radius: 8px;
   -webkit-align-items: center;
@@ -228,6 +228,6 @@ input[type='radio']:disabled + .c3 {
     >
       Would rather not say
     </label>
-  </div>,
-]
+  </div>
+</DocumentFragment>
 `;
