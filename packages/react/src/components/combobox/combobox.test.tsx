@@ -28,6 +28,10 @@ function expectOptionToBeFocused(optionText: string): void {
         .toHaveTextContent(optionText);
 }
 
+function focusInTextbox(): void {
+    screen.getByTestId('textbox').focus();
+}
+
 describe('Combobox', () => {
     it('matches the snapshot', () => {
         const { container } = renderWithProviders(
@@ -253,6 +257,556 @@ describe('Combobox', () => {
         expect(onInputChange).toHaveBeenCalledWith('some option');
     });
 
+    describe('opening and closing the listbox', () => {
+        it('is closed by default', () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('is open when defaultOpen is true', () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+
+            expect(getListbox()).toBeInTheDocument();
+        });
+
+        it('opens when clicking the arrow button', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            await userEvent.click(screen.getByTestId('arrow'));
+
+            expect(getListbox()).toBeInTheDocument();
+        });
+
+        it('closes when clicking the arrow button', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+
+            await userEvent.click(screen.getByTestId('arrow'));
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('opens when clicking the textbox', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            expect(getListbox()).toBeInTheDocument();
+        });
+
+        it('closes when clicking the textbox', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+            expect(getListbox()).toBeInTheDocument();
+
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('closes when clicking outside', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+            focusInTextbox();
+            expect(getListbox()).toBeInTheDocument();
+
+            await userEvent.click(document.body);
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('doesn\'t open when disabled', async () => {
+            renderWithProviders(<Combobox options={provinces} disabled />);
+
+            await expect(userEvent.click(screen.getByTestId('arrow'))).toReject();
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+    });
+
+    describe('default value', () => {
+        it('setting the prop assigns this value to the input', () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Quebec" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Quebec');
+        });
+
+        it('the corresponding option is selected and focused when expanding the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Quebec" />);
+
+            await userEvent.click(screen.getByTestId('arrow'));
+
+            const option = screen.getByRole('option', { name: 'Quebec' });
+            expect(option).toHaveAttribute('aria-selected', 'true');
+            expectOptionToBeFocused('Quebec');
+        });
+
+        it('setting the prop to an arbitrary value rejects the input', () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Nowhere" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('');
+        });
+
+        describe('when allowing a custom value', () => {
+            it('setting the prop to an arbitrary value assigns this value to the input', () => {
+                renderWithProviders(<Combobox options={provinces} allowCustomValue defaultValue="Nowhere" />);
+
+                expect(screen.getByTestId('textbox')).toHaveValue('Nowhere');
+            });
+        });
+    });
+
+    describe('option selection', () => {
+        it('clicking an option selects it and updates the input value', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+
+            await userEvent.click(screen.getByText('Quebec'));
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Quebec');
+        });
+
+        it('the selected value is still focused when expanding the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+            await userEvent.click(screen.getByText('Quebec'));
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            const option = screen.getByRole('option', { name: 'Quebec' });
+            expect(option).toHaveAttribute('aria-selected', 'true');
+            expectOptionToBeFocused('Quebec');
+        });
+
+        it('the focused option is selected when clicking outside', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+
+            const textbox = screen.getByTestId('textbox');
+            await userEvent.type(textbox, '{ArrowDown}{ArrowDown}');
+            await userEvent.click(document.body);
+
+            expect(textbox).toHaveValue('British Columbia');
+        });
+
+        it('clearing the input removes the value from textbox', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Quebec" />);
+
+            await userEvent.click(screen.getByTestId('clear'));
+
+            expect(screen.getByTestId('textbox')).toHaveValue('');
+        });
+
+        it('clearing the input deselects the corresponding option', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+            await userEvent.click(screen.getByTestId('clear'));
+
+            const option = screen.getByRole('option', { name: 'Quebec' });
+            expect(option).toHaveAttribute('aria-selected', 'false');
+        });
+
+        it('does not select the corresponding option when typing an exact match', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+            await userEvent.type(screen.getByTestId('textbox'), 'quebec');
+
+            const option = screen.getByRole('option', { name: 'Quebec' });
+            expect(option).toHaveAttribute('aria-selected', 'false');
+        });
+
+        it('selects the corresponding option when typing an exact match with autoSelectMatchingOption', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen autoSelectMatchingOption />);
+            await userEvent.type(screen.getByTestId('textbox'), 'quebec');
+
+            const option = screen.getByRole('option', { name: 'Quebec' });
+            expect(option).toHaveAttribute('aria-selected', 'true');
+        });
+    });
+
+    describe('list filtering', () => {
+        it('typing a valid letter opens the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            expect(getListbox()).toBeInTheDocument();
+        });
+
+        it('typing an invalid letter opens the listbox with the no option placeholder', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+            await userEvent.type(screen.getByTestId('textbox'), 'z');
+
+            const listbox = getListbox();
+            expect(listbox).toBeInTheDocument();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(1);
+            expect(options[0]).toHaveAttribute('aria-disabled', 'true');
+            expect(options[0]).toHaveTextContent('No result for "z"');
+        });
+
+        it('typing a letter filters the list', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(1);
+            expect(options[0]).toHaveTextContent('Quebec');
+        });
+
+        it('erasing characters updates the list to match the remaining input', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="New B" />);
+            const textbox = screen.getByTestId('textbox');
+
+            await userEvent.clear(textbox);
+            await userEvent.type(textbox, 'New');
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(2);
+            expect(options[0]).toHaveTextContent('New Brunswick');
+            expect(options[1]).toHaveTextContent('Newfoundland and Labrador');
+        });
+
+        it('when a value is selected the list contains all options on open', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(provinces.length);
+        });
+
+        describe('disabled filtering', () => {
+            it('typing a letter does not filter the list', async () => {
+                renderWithProviders(<Combobox options={provinces} disableListFiltering defaultOpen />);
+                await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+                const listbox = getListbox();
+                const options = within(listbox).getAllByRole('option');
+                expect(options).toHaveLength(provinces.length);
+            });
+        });
+    });
+
+    describe('empty options list', () => {
+        it('the listbox contains the empty message', () => {
+            const emptyListMessage = 'The list is empty';
+            renderWithProviders(<Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen />);
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(1);
+            expect(options[0]).toHaveTextContent(emptyListMessage);
+            expect(options[0]).toHaveAttribute('aria-disabled', 'true');
+        });
+
+        it('the empty message is not removed if custom values are not allowed', async () => {
+            const emptyListMessage = 'The list is empty';
+            renderWithProviders(<Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen />);
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(1);
+            expect(options[0]).toHaveTextContent(emptyListMessage);
+        });
+
+        it('the empty message is removed if custom values are allowed', async () => {
+            const emptyListMessage = 'The list is empty';
+            renderWithProviders(
+                <Combobox options={[]} emptyListMessage={emptyListMessage} defaultOpen allowCustomValue />,
+            );
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+    });
+
+    describe('loading state', () => {
+        it('when active the listbox only contains the loading message', () => {
+            renderWithProviders(<Combobox options={provinces} isLoading defaultOpen />);
+
+            const listbox = getListbox();
+            const options = within(listbox).getAllByRole('option');
+            expect(options).toHaveLength(1);
+            expect(options[0]).toHaveTextContent('Loading...');
+            expect(options[0]).toHaveAttribute('aria-disabled', 'true');
+        });
+    });
+
+    describe('value handling', () => {
+        it('clicking outside reverts to previous valid value', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Quebec" />);
+            focusInTextbox();
+
+            await userEvent.keyboard('z');
+            await userEvent.click(document.body);
+
+            await waitFor(() => expect(screen.getByTestId('textbox')).toHaveValue('Quebec'));
+        });
+
+        it('arbitrary value is kept when allowing custom values', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Quebec" allowCustomValue />);
+            const textbox = screen.getByTestId('textbox');
+
+            await userEvent.clear(textbox);
+            await userEvent.type(textbox, 'z');
+            await userEvent.click(document.body);
+
+            expect(textbox).toHaveValue('z');
+        });
+    });
+
+    describe('inline autocomplete', () => {
+        it('typing a valid letter opens the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete />);
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            expect(getListbox()).toBeInTheDocument();
+        });
+
+        it('typing the first letter of an existing option autocompletes the input', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete />);
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Quebec');
+        });
+
+        it('the suggested part of the input is highlighted', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete />);
+            const textbox = screen.getByTestId('textbox') as HTMLInputElement;
+            await userEvent.type(textbox, 'q');
+
+            expect(textbox.selectionStart).toBe(1);
+            expect(textbox.selectionEnd).toBe(6);
+        });
+
+        it('erasing characters removes the suggestion', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete defaultValue="Que" />);
+            const textbox = screen.getByTestId('textbox') as HTMLInputElement;
+
+            await userEvent.clear(textbox);
+            await userEvent.type(textbox, 'Qu');
+            await userEvent.keyboard('{backspace}');
+
+            expect(textbox).toHaveValue('Qu');
+            expect(textbox.selectionStart).toBe(2);
+            expect(textbox.selectionEnd).toBe(2);
+        });
+
+        it('focusing an option with ArrowUp fills the input with its value', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete />);
+            const textbox = screen.getByTestId('textbox');
+            await userEvent.click(textbox);
+            await waitFor(() => expect(getListbox()).toBeInTheDocument());
+
+            await userEvent.keyboard('{ArrowUp}');
+
+            await waitFor(() => expect(textbox).toHaveValue('Yukon'));
+        });
+
+        it('focusing an option with ArrowDown fills the input with its value', async () => {
+            renderWithProviders(<Combobox options={provinces} inlineAutoComplete />);
+            const textbox = screen.getByTestId('textbox');
+            await userEvent.click(textbox);
+            await waitFor(() => expect(getListbox()).toBeInTheDocument());
+
+            await userEvent.keyboard('{ArrowDown}');
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Alberta');
+        });
+    });
+
+    describe('component is controlled', () => {
+        it('the input value is set according to the value prop', () => {
+            renderWithProviders(<Combobox options={provinces} value="Quebec" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Quebec');
+        });
+
+        it('the input value is updated when the value prop changes', () => {
+            const { rerender } = renderWithProviders(<Combobox options={provinces} value="Quebec" />);
+
+            rerender(<Combobox options={provinces} value="Nova Scotia" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Nova Scotia');
+        });
+
+        it('the input value is updated when the value prop changes to an arbitrary value', () => {
+            const { rerender } = renderWithProviders(<Combobox options={provinces} allowCustomValue value="Quebec" />);
+
+            rerender(<Combobox options={provinces} allowCustomValue value="Nowhere" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Nowhere');
+        });
+
+        it('the input value is set according to the value prop using an empty value', () => {
+            const options = provinces.concat([{ value: '' }]);
+
+            renderWithProviders(<Combobox options={options} defaultValue="Quebec" value="" />);
+
+            expect(screen.getByTestId('textbox')).toHaveValue('');
+        });
+    });
+
+    describe('onChange callback', () => {
+        it('callback is not fired when setting default value', () => {
+            const callback = jest.fn();
+
+            renderWithProviders(<Combobox options={provinces} onChange={callback} defaultValue="Quebec" />);
+
+            expect(callback).not.toHaveBeenCalled();
+        });
+
+        it('callback is not fired when the value prop is changed', () => {
+            const callback = jest.fn();
+            const { rerender } = renderWithProviders(
+                <Combobox options={provinces} onChange={callback} value="Quebec" />,
+            );
+
+            rerender(<Combobox options={provinces} onChange={callback} value="Nova Scotia" />);
+
+            expect(callback).not.toHaveBeenCalled();
+        });
+
+        it('callback is not fired when the option is already selected', async () => {
+            const callback = jest.fn();
+            renderWithProviders(<Combobox options={provinces} onChange={callback} defaultValue="Quebec" defaultOpen />);
+
+            await userEvent.click(screen.getByText('Quebec'));
+
+            expect(callback).not.toHaveBeenCalled();
+        });
+
+        it(
+            'callback should not be fired when characters are typed in the input and does not match an option',
+            async () => {
+                const onChange = jest.fn();
+                const onInputChange = jest.fn();
+                renderWithProviders(
+                    <Combobox options={provinces} onChange={onChange} onInputChange={onInputChange} />,
+                );
+
+                await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+                expect(onChange).not.toHaveBeenCalled();
+                expect(onInputChange).toHaveBeenCalledWith('q');
+            },
+        );
+
+        it('callback does not receive the suggestion when fired', async () => {
+            const onChange = jest.fn();
+            const onInputChange = jest.fn();
+            renderWithProviders(
+                <Combobox
+                    options={provinces}
+                    inlineAutoComplete
+                    onChange={onChange}
+                    onInputChange={onInputChange}
+                />,
+            );
+
+            await userEvent.type(screen.getByTestId('textbox'), 'q');
+
+            expect(onChange).not.toHaveBeenCalled();
+            expect(onInputChange).toHaveBeenCalledWith('q');
+        });
+    });
+
+    describe('keyboard navigation', () => {
+        ['ArrowUp', 'ArrowDown'].forEach((key) => {
+            it(`${key} opens the listbox`, async () => {
+                renderWithProviders(<Combobox options={provinces} />);
+
+                await userEvent.type(screen.getByTestId('textbox'), `{${key}}`);
+
+                expect(getListbox()).toBeInTheDocument();
+            });
+        });
+
+        it('ArrowDown focuses the first option when it opens the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            await userEvent.type(screen.getByTestId('textbox'), '{ArrowDown}');
+
+            expectOptionToBeFocused('Alberta');
+        });
+
+        it('ArrowUp focuses the last option when it opens the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} />);
+
+            await userEvent.type(screen.getByTestId('textbox'), '{ArrowUp}');
+
+            expectOptionToBeFocused('Yukon');
+        });
+
+        it('ArrowUp focuses the previous option', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+            screen.getByTestId('textbox').focus();
+
+            await userEvent.keyboard('{ArrowUp}');
+
+            expectOptionToBeFocused('Prince Edward Island');
+        });
+
+        it('ArrowDown focuses the next option', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+            focusInTextbox();
+
+            await userEvent.keyboard('{ArrowDown}');
+
+            expectOptionToBeFocused('Saskatchewan');
+        });
+
+        it('Escape closes the listbox', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen />);
+            focusInTextbox();
+            expect(getListbox()).toBeInTheDocument();
+
+            await userEvent.keyboard('{Escape}');
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('Escape does not clear the value when the listbox is open', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+            focusInTextbox();
+            expect(getListbox()).toBeInTheDocument();
+
+            await userEvent.keyboard('{Escape}');
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Quebec');
+        });
+
+        it('Escape clears the textbox when the listbox is closed', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultValue="Test" />);
+
+            await userEvent.type(screen.getByTestId('textbox'), '{Escape}');
+
+            expect(screen.getByTestId('textbox')).toHaveValue('');
+        });
+
+        it('Enter selects the focused option', async () => {
+            renderWithProviders(<Combobox options={provinces} defaultOpen defaultValue="Quebec" />);
+            focusInTextbox();
+
+            await userEvent.keyboard('{ArrowDown}{Enter}');
+
+            expect(screen.getByTestId('textbox')).toHaveValue('Saskatchewan');
+        });
+
+        it('Enter closes the listbox if custom values are allowed', async () => {
+            renderWithProviders(<Combobox options={provinces} allowCustomValue defaultOpen defaultValue="New" />);
+
+            await userEvent.type(screen.getByTestId('textbox'), '{Enter}');
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+    });
+
+    it('input should have controllable data-test-id', () => {
+        renderWithProviders(<Combobox data-testid="a-controlled-id" options={provinces} defaultValue="Quebec" />);
+
+        expect(screen.getByTestId('a-controlled-id')).toHaveValue('Quebec');
+    });
+
     describe('multiselect', () => {
         const options: ComboboxOption[] = [
             { value: 'foo', label: 'Foo Label' },
@@ -262,14 +816,14 @@ describe('Combobox', () => {
 
         const onChange = jest.fn();
 
-        function renderCombo(props: Partial<ComboboxProps> = {}): RenderResult {
+        function renderMultiselectCombobox(props: Partial<ComboboxProps> = {}): RenderResult {
             return renderWithProviders(
                 <Combobox multiselect onChange={onChange} options={options} {...props} />,
             );
         }
 
         it('renders with defaultValue as array', () => {
-            renderCombo({ defaultValue: ['foo', 'baz'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'baz'] });
 
             expect(screen.getByTestId('listboxtag-foo')).toBeInTheDocument();
             expect(screen.getByTestId('listboxtag-baz')).toBeInTheDocument();
@@ -277,7 +831,7 @@ describe('Combobox', () => {
         });
 
         it('renders with values overriding defaultValue as array', () => {
-            renderCombo({ defaultValue: ['foo', 'baz'], value: ['bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'baz'], value: ['bar'] });
 
             expect(screen.getByTestId('listboxtag-bar')).toBeInTheDocument();
             expect(screen.queryByTestId('listboxtag-foo')).toBeNull();
@@ -285,7 +839,7 @@ describe('Combobox', () => {
         });
 
         it('calls onChange with array of values when selecting multiple options (multiselect)', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             screen.getByTestId('textbox').focus();
             await userEvent.click(screen.getByTestId('arrow'));
@@ -297,7 +851,7 @@ describe('Combobox', () => {
         });
 
         it('removes tag when clicking the remove button (multiselect)', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
 
             const tagRemoveButton = screen.getByTestId('Foo Label-remove-button');
             await userEvent.click(tagRemoveButton);
@@ -308,14 +862,14 @@ describe('Combobox', () => {
         });
 
         it('does not remove tag when clicking the remove button when readOnly (multiselect)', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'], readOnly: true });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'], readOnly: true });
 
             expect(screen.queryByTestId('Foo Label-remove-button')).toBeNull();
             expect(screen.queryByTestId('Bar Label-remove-button')).toBeNull();
         });
 
         it('adds a custom value as a tag when allowCustomValue is true (multiselect)', async () => {
-            renderCombo({ allowCustomValue: true });
+            renderMultiselectCombobox({ allowCustomValue: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'custom');
@@ -327,7 +881,7 @@ describe('Combobox', () => {
         });
 
         it('does not add a custom value as a tag when allowCustomValue is false (multiselect)', async () => {
-            renderCombo({ allowCustomValue: false });
+            renderMultiselectCombobox({ allowCustomValue: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'custom');
@@ -342,7 +896,7 @@ describe('Combobox', () => {
         });
 
         it('does not add duplicate tags when the same option is selected multiple times (multiselect)', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             screen.getByTestId('textbox').focus();
             await userEvent.click(screen.getByTestId('arrow'));
@@ -352,17 +906,13 @@ describe('Combobox', () => {
             await userEvent.click(fooLabel);
 
             expect(onChange.mock.calls).toEqual([
-                [
-                    [{ value: 'foo', label: 'Foo Label' }],
-                ],
-                [
-                    [],
-                ],
+                [[{ value: 'foo', label: 'Foo Label' }]],
+                [[]],
             ]);
         });
 
         it('auto selects matching option when typing in input (multiselect)', async () => {
-            renderCombo({ autoSelectMatchingOption: true });
+            renderMultiselectCombobox({ autoSelectMatchingOption: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo Label');
@@ -373,7 +923,7 @@ describe('Combobox', () => {
         });
 
         it('unselect matching option when typing in input if already selected (multiselect)', async () => {
-            renderCombo({
+            renderMultiselectCombobox({
                 defaultValue: ['foo'],
                 autoSelectMatchingOption: true,
             });
@@ -385,7 +935,7 @@ describe('Combobox', () => {
         });
 
         it('does not auto select matching option when autoSelectMatchingOption is false (multiselect)', async () => {
-            renderCombo({ autoSelectMatchingOption: false });
+            renderMultiselectCombobox({ autoSelectMatchingOption: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo Label');
@@ -394,7 +944,7 @@ describe('Combobox', () => {
         });
 
         it('opens listbox when pressing Enter key with closed listbox', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             textbox.focus();
@@ -407,7 +957,7 @@ describe('Combobox', () => {
         });
 
         it('keeps listbox open after selecting an option', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             textbox.focus();
@@ -421,7 +971,7 @@ describe('Combobox', () => {
         });
 
         it('clears input value after selecting an option', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo');
@@ -432,7 +982,7 @@ describe('Combobox', () => {
         });
 
         it('allows multiple sequential selections without closing listbox', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             await userEvent.click(screen.getByTestId('textbox'));
 
@@ -446,7 +996,7 @@ describe('Combobox', () => {
         });
 
         it('does not show clear button in multiselect mode', async () => {
-            renderCombo({ defaultValue: ['foo'] });
+            renderMultiselectCombobox({ defaultValue: ['foo'] });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'test');
@@ -459,7 +1009,7 @@ describe('Combobox', () => {
                 { value: 'foo', label: 'Foo Label', disabled: true },
                 { value: 'bar', label: 'Bar Label' },
             ];
-            renderCombo({
+            renderMultiselectCombobox({
                 options: optionsWithDisabled,
             });
 
@@ -474,7 +1024,7 @@ describe('Combobox', () => {
         });
 
         it('filters options when typing in input', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -487,10 +1037,10 @@ describe('Combobox', () => {
         });
 
         it('closes listbox when pressing Escape key', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             await userEvent.click(screen.getByRole('combobox'));
-            expect(screen.getByRole('listbox')).toBeInTheDocument();
+            expect(getListbox()).toBeInTheDocument();
 
             await userEvent.keyboard('{Escape}');
 
@@ -498,7 +1048,7 @@ describe('Combobox', () => {
         });
 
         it('clears input but keeps tags when pressing Escape with text', async () => {
-            renderCombo({ defaultValue: ['foo'] });
+            renderMultiselectCombobox({ defaultValue: ['foo'] });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'some text');
@@ -514,7 +1064,7 @@ describe('Combobox', () => {
         });
 
         it('navigates options with ArrowDown key', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -528,7 +1078,7 @@ describe('Combobox', () => {
         });
 
         it('navigates options with ArrowUp key', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -542,7 +1092,7 @@ describe('Combobox', () => {
         });
 
         it('selects focused option with Enter key', async () => {
-            renderCombo({ });
+            renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -555,7 +1105,7 @@ describe('Combobox', () => {
         });
 
         it('updates tags when controlled value prop changes', () => {
-            const { rerender } = renderCombo({
+            const { rerender } = renderMultiselectCombobox({
                 value: ['foo'],
             });
 
@@ -577,7 +1127,7 @@ describe('Combobox', () => {
         });
 
         it('updates available options when options prop changes', () => {
-            const { rerender } = renderCombo({ });
+            const { rerender } = renderMultiselectCombobox({ });
 
             const textbox = screen.getByTestId('textbox');
             userEvent.click(textbox);
@@ -606,7 +1156,7 @@ describe('Combobox', () => {
         });
 
         it('adds custom value with allowCustomValue on Enter when no option is focused', async () => {
-            renderCombo({ allowCustomValue: true });
+            renderMultiselectCombobox({ allowCustomValue: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'my custom value');
@@ -618,7 +1168,7 @@ describe('Combobox', () => {
         });
 
         it('does not add custom value when allowCustomValue is false and Enter is pressed', async () => {
-            renderCombo({ allowCustomValue: false });
+            renderMultiselectCombobox({ allowCustomValue: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'my custom value');
@@ -632,7 +1182,7 @@ describe('Combobox', () => {
         });
 
         it('removes tag and updates onChange when tag remove button is clicked', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
 
             expect(screen.getByTestId('listboxtag-foo')).toBeInTheDocument();
             expect(screen.getByTestId('listboxtag-bar')).toBeInTheDocument();
@@ -646,7 +1196,7 @@ describe('Combobox', () => {
         });
 
         it('deselects option when clicking on a selected option', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
             await userEvent.click(screen.getByTestId('textbox'));
 
             await userEvent.click(within(getListbox()).getByText('Foo Label'));
@@ -657,7 +1207,7 @@ describe('Combobox', () => {
         });
 
         it('does not trigger onChange when closing the listbox', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
             await userEvent.click(screen.getByTestId('textbox'));
 
             await userEvent.click(document.body);
@@ -666,7 +1216,7 @@ describe('Combobox', () => {
         });
 
         it('does not trigger onChange when typing into the input', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'] });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
             await userEvent.click(screen.getByTestId('textbox'));
 
             const textbox = screen.getByTestId('textbox');
@@ -677,7 +1227,7 @@ describe('Combobox', () => {
         });
 
         it('does not trigger onChange when closing the listbox with allowCustomValue', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
             await userEvent.click(screen.getByTestId('textbox'));
 
             await userEvent.click(document.body);
@@ -686,7 +1236,7 @@ describe('Combobox', () => {
         });
 
         it('does not trigger onChange when typing into the input with allowCustomValue', async () => {
-            renderCombo({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
+            renderMultiselectCombobox({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
             await userEvent.click(screen.getByTestId('textbox'));
 
             const textbox = screen.getByTestId('textbox');

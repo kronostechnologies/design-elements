@@ -508,7 +508,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 {options.map((option) => (
                     <ListItem
                         aria-disabled={option.disabled}
-                        aria-selected={isOptionSelected(option) ? 'true' : undefined}
+                        aria-selected={isOptionSelected(option) ? 'true' : 'false'}
                         className={IGNORE_CLICK_OUTSIDE}
                         data-testid={sanitizeId(`listitem-${option.value}`)}
                         $disabled={option.disabled}
