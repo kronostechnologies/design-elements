@@ -282,6 +282,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       </span>
     </li>
     <li
+      aria-selected="false"
       class="c9 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
@@ -333,6 +334,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
     </li>
     <li
       aria-disabled="true"
+      aria-selected="false"
       class="c11 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionD"
       id="uuid1_optionD"
@@ -358,6 +360,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       </span>
     </li>
     <li
+      aria-selected="false"
       class="c9 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionE"
       id="uuid1_optionE"
@@ -536,6 +539,7 @@ exports[`Listbox Matches the snapshot 1`] = `
     role="presentation"
   >
     <li
+      aria-selected="false"
       class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionA"
       id="uuid1_optionA"
@@ -566,6 +570,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
+      aria-selected="false"
       class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionC"
       id="uuid1_optionC"
@@ -579,6 +584,7 @@ exports[`Listbox Matches the snapshot 1`] = `
     </li>
     <li
       aria-disabled="true"
+      aria-selected="false"
       class="c6 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionD"
       id="uuid1_optionD"
@@ -591,6 +597,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
+      aria-selected="false"
       class="c2 react-datepicker-ignore-onclickoutside"
       data-testid="listitem-optionE"
       id="uuid1_optionE"
