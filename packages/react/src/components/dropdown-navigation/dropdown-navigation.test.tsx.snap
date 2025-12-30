@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
+exports[`DropdownNavigation matches snapshot (defaultOpen) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -269,7 +269,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 </body>
 `;
 
-exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
+exports[`DropdownNavigation matches snapshot (tag="nav") 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -388,7 +388,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 </nav>
 `;
 
-exports[`DropdownNavigation Matches Snapshot 1`] = `
+exports[`DropdownNavigation matches snapshot 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
