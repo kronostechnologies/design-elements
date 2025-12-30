@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Label Matches the snapshot 1`] = `
-.c1 {
+exports[`Label matches the snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -22,9 +23,10 @@ input + .c0 {
 }
 
 <label
-  class="c0 c1"
-  for="test-id"
->
-  Children
-</label>
+    class="c0 c1"
+    for="test-id"
+  >
+    Children
+  </label>
+</DocumentFragment>
 `;
