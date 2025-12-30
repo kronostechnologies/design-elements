@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Heading matches snapshot (large) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #1B1C1E;
   font-size: 1.5rem;
   font-weight: var(--font-normal);
@@ -9,21 +10,17 @@ exports[`Heading matches snapshot (large) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<Heading
-  type="large"
->
-  <styled.h2>
-    <h2
-      className="c0"
-    >
-      Heading
-    </h2>
-  </styled.h2>
-</Heading>
+<h2
+    class="c0"
+  >
+    Heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Heading matches snapshot (medium) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
@@ -31,21 +28,17 @@ exports[`Heading matches snapshot (medium) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<Heading
-  type="medium"
->
-  <styled.h3>
-    <h3
-      className="c0"
-    >
-      Heading
-    </h3>
-  </styled.h3>
-</Heading>
+<h3
+    class="c0"
+  >
+    Heading
+  </h3>
+</DocumentFragment>
 `;
 
 exports[`Heading matches snapshot (no margin) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #1B1C1E;
   font-size: 1.25rem;
   font-weight: var(--font-normal);
@@ -53,24 +46,17 @@ exports[`Heading matches snapshot (no margin) 1`] = `
   margin: 0;
 }
 
-<Heading
-  noMargin={true}
-  type="medium"
->
-  <styled.h3
-    noMargin={true}
+<h3
+    class="c0"
   >
-    <h3
-      className="c0"
-    >
-      Heading
-    </h3>
-  </styled.h3>
-</Heading>
+    Heading
+  </h3>
+</DocumentFragment>
 `;
 
 exports[`Heading matches snapshot (small) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #1B1C1E;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -78,21 +64,17 @@ exports[`Heading matches snapshot (small) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<Heading
-  type="small"
->
-  <styled.h4>
-    <h4
-      className="c0"
-    >
-      Heading
-    </h4>
-  </styled.h4>
-</Heading>
+<h4
+    class="c0"
+  >
+    Heading
+  </h4>
+</DocumentFragment>
 `;
 
 exports[`Heading matches snapshot (subtitle) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #60666E;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -100,21 +82,17 @@ exports[`Heading matches snapshot (subtitle) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<Heading
-  type="subtitle"
->
-  <styled.h2>
-    <h2
-      className="c0"
-    >
-      Heading
-    </h2>
-  </styled.h2>
-</Heading>
+<h2
+    class="c0"
+  >
+    Heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Heading matches snapshot (xlarge) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   color: #1B1C1E;
   font-size: 2rem;
   font-weight: var(--font-normal);
@@ -122,15 +100,10 @@ exports[`Heading matches snapshot (xlarge) 1`] = `
   margin: var(--spacing-4x) 0;
 }
 
-<Heading
-  type="xlarge"
->
-  <styled.h1>
-    <h1
-      className="c0"
-    >
-      Heading
-    </h1>
-  </styled.h1>
-</Heading>
+<h1
+    class="c0"
+  >
+    Heading
+  </h1>
+</DocumentFragment>
 `;
