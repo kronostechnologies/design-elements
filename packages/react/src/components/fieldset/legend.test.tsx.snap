@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Legend Styling Device: desktop Size: large Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: desktop Size: large Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: desktop Size: medium Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: desktop Size: medium Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: desktop Size: small Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.625rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: desktop Size: small Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.625rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: large Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: large Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: medium Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: medium Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: small Bold: false 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
+
+exports[`Legend Styling Device: mobile Size: small Bold: true 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+<legend
+    class="c0"
+  >
+    Sample Legend
+  </legend>
+</DocumentFragment>
+`;
