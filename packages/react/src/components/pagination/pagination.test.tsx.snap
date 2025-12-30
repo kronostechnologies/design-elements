@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Pagination Matches the desktop snapshot 1`] = `
+exports[`Pagination matches the desktop snapshot 1`] = `
 .c4 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -97,7 +97,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 </div>
 `;
 
-exports[`Pagination Matches the desktop snapshot with multiples digits page numbers 1`] = `
+exports[`Pagination matches the desktop snapshot with multiples digits page numbers 1`] = `
 .c4 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -194,7 +194,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 </div>
 `;
 
-exports[`Pagination Matches the mobile snapshot 1`] = `
+exports[`Pagination matches the mobile snapshot 1`] = `
 .c4 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -291,7 +291,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 </div>
 `;
 
-exports[`Pagination Matches the mobile snapshot with multiples digits page numbers 1`] = `
+exports[`Pagination matches the mobile snapshot with multiples digits page numbers 1`] = `
 .c4 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
