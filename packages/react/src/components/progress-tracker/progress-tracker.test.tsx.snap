@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Progress Component Snapshots linear 1`] = `
+exports[`ProgressTracker Snapshots linear 1`] = `
 .c6 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
@@ -206,7 +206,7 @@ exports[`Progress Component Snapshots linear 1`] = `
 </section>
 `;
 
-exports[`Progress Component Snapshots non linear 1`] = `
+exports[`ProgressTracker Snapshots non linear 1`] = `
 .c6 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
