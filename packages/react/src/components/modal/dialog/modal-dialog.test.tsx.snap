@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
+exports[`ModalDialog matches snapshot (closed) 1`] = `
 .c0 {
   box-sizing: border-box;
   position: fixed;
@@ -24,7 +24,7 @@ exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
+exports[`ModalDialog matches snapshot (custom button labels) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -74,111 +74,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c11:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c13[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #FFFFFF;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 .c3 {
@@ -367,12 +262,8 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
           type="button"
         >
           <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            icon-name="x"
-            width="16"
+            data-name="x"
+            data-testid="icon"
           />
         </button>
         <header
@@ -406,14 +297,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
             class="c10"
           >
             <button
-              class="c11 c12"
+              data-button-type="tertiary"
               data-testid="cancel-button"
               type="button"
             >
               Test Cancel
             </button>
             <button
-              class="c11 c13"
+              data-button-type="primary"
               data-testid="confirm-button"
               type="button"
             >
@@ -427,7 +318,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
+exports[`ModalDialog matches snapshot (custom footer content) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -642,12 +533,8 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
           type="button"
         >
           <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            icon-name="x"
-            width="16"
+            data-name="x"
+            data-testid="icon"
           />
         </button>
         <header
@@ -682,7 +569,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
+exports[`ModalDialog matches snapshot (only subtitle) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -732,111 +619,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c11:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c13[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #FFFFFF;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 .c3 {
@@ -1025,12 +807,8 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
           type="button"
         >
           <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            icon-name="x"
-            width="16"
+            data-name="x"
+            data-testid="icon"
           />
         </button>
         <header
@@ -1064,14 +842,14 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
             class="c10"
           >
             <button
-              class="c11 c12"
+              data-button-type="tertiary"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c11 c13"
+              data-button-type="primary"
               data-testid="confirm-button"
               type="button"
             >
@@ -1085,7 +863,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
+exports[`ModalDialog matches snapshot (opened, desktop) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1135,111 +913,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c2 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c11:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c13 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c13:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c13:hover,
-.c13[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c13[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #FFFFFF;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 .c3 {
@@ -1428,12 +1101,8 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
           type="button"
         >
           <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            icon-name="x"
-            width="16"
+            data-name="x"
+            data-testid="icon"
           />
         </button>
         <header
@@ -1467,14 +1136,14 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
             class="c10"
           >
             <button
-              class="c11 c12"
+              data-button-type="tertiary"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c11 c13"
+              data-button-type="primary"
               data-testid="confirm-button"
               type="button"
             >
@@ -1488,7 +1157,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
+exports[`ModalDialog matches snapshot (opened, mobile) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1538,60 +1207,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c2 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
-}
-
-.c11 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c11:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c11[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c12 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c12:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c12[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #FFFFFF;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 .c3 {
@@ -1779,12 +1394,8 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
           type="button"
         >
           <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="20"
-            icon-name="x"
-            width="20"
+            data-name="x"
+            data-testid="icon"
           />
         </button>
         <header
@@ -1818,14 +1429,14 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
             class="c10"
           >
             <button
-              class="c2 c11"
+              data-button-type="tertiary"
               data-testid="cancel-button"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="c2 c12"
+              data-button-type="primary"
               data-testid="confirm-button"
               type="button"
             >
