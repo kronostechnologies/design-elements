@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Global Header Matches the snapshot (desktop) 1`] = `
+exports[`Global Header matches the snapshot (desktop) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -92,7 +92,7 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
 </header>
 `;
 
-exports[`Global Header Matches the snapshot (mobile) 1`] = `
+exports[`Global Header matches the snapshot (mobile) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
