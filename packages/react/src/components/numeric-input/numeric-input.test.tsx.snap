@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NumericInput matches the snapshot (Disabled) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
@@ -157,32 +158,34 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
 }
 
 <div
-  class="c0 c1"
-  data-testid="field-container"
->
-  <div
-    class="c2 eds-TextInput-control"
+    class="c0 c1"
+    data-testid="field-container"
   >
-    <span
-      class="c3 c4 c5 eds-TextInput-leftAdornment"
+    <div
+      class="c2 eds-TextInput-control"
     >
-      %
-    </span>
-    <input
-      class="c6"
-      data-testid="numeric-input"
-      disabled=""
-      id="uuid1"
-      inputmode="numeric"
-      type="text"
-      value="50"
-    />
+      <span
+        class="c3 c4 c5 eds-TextInput-leftAdornment"
+      >
+        %
+      </span>
+      <input
+        class="c6"
+        data-testid="numeric-input"
+        disabled=""
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="50"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`NumericInput matches the snapshot (Invalid) 1`] = `
-.c2 {
+<DocumentFragment>
+  .c2 {
   color: #CD2C23;
   display: -webkit-box;
   display: -webkit-flex;
@@ -359,47 +362,50 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 }
 
 <div
-  class="c0 c1"
-  data-testid="field-container"
->
-  <span
-    class="c2"
-    data-testid="invalid-field"
-    id="uuid1_invalid"
-  >
-    <svg
-      class="c3"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-    This is an error message
-  </span>
-  <div
-    class="c4 eds-TextInput-control"
+    class="c0 c1"
+    data-testid="field-container"
   >
     <span
-      class="c5 c6 eds-TextInput-leftAdornment"
+      class="c2"
+      data-testid="invalid-field"
+      id="uuid1_invalid"
     >
-      %
+      <svg
+        class="c3"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        icon-name="alert-octagon"
+        width="16"
+      />
+      This is an error message
     </span>
-    <input
-      aria-describedby="uuid1_invalid"
-      aria-invalid="true"
-      class="c7"
-      data-testid="numeric-input"
-      id="uuid1"
-      inputmode="numeric"
-      type="text"
-      value="50"
-    />
+    <div
+      class="c4 eds-TextInput-control"
+    >
+      <span
+        class="c5 c6 eds-TextInput-leftAdornment"
+      >
+        %
+      </span>
+      <input
+        aria-describedby="uuid1_invalid"
+        aria-invalid="true"
+        class="c7"
+        data-testid="numeric-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="50"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
@@ -549,31 +555,33 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
 }
 
 <div
-  class="c0 c1"
-  data-testid="field-container"
->
-  <div
-    class="c2 eds-TextInput-control"
+    class="c0 c1"
+    data-testid="field-container"
   >
-    <input
-      class="c3"
-      data-testid="numeric-input"
-      id="uuid1"
-      inputmode="numeric"
-      type="text"
-      value="50"
-    />
-    <span
-      class="c4 c5 eds-TextInput-rightAdornment"
+    <div
+      class="c2 eds-TextInput-control"
     >
-      %
-    </span>
+      <input
+        class="c3"
+        data-testid="numeric-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="50"
+      />
+      <span
+        class="c4 c5 eds-TextInput-rightAdornment"
+      >
+        %
+      </span>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   margin: 0 0 var(--spacing-3x);
 }
 
@@ -723,25 +731,26 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 }
 
 <div
-  class="c0 c1"
-  data-testid="field-container"
->
-  <div
-    class="c2 eds-TextInput-control"
+    class="c0 c1"
+    data-testid="field-container"
   >
-    <span
-      class="c3 c4 eds-TextInput-leftAdornment"
+    <div
+      class="c2 eds-TextInput-control"
     >
-      %
-    </span>
-    <input
-      class="c5"
-      data-testid="numeric-input"
-      id="uuid1"
-      inputmode="numeric"
-      type="text"
-      value="50"
-    />
+      <span
+        class="c3 c4 eds-TextInput-leftAdornment"
+      >
+        %
+      </span>
+      <input
+        class="c5"
+        data-testid="numeric-input"
+        id="uuid1"
+        inputmode="numeric"
+        type="text"
+        value="50"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

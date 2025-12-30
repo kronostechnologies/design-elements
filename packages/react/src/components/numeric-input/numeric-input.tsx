@@ -92,7 +92,6 @@ export const NumericInput: FC<NumericInputProps> = ({
             $textAlign={textAlign}
             className={className}
             data-testid="numeric-input"
-            defaultValue={defaultValue?.toString()}
             disabled={disabled}
             hint={hint}
             id={id}
