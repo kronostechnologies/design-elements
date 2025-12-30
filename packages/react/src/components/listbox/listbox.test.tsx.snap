@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Listbox Matches the snapshot (multiselect) 1`] = `
-.c0 {
+exports[`Listbox matches the snapshot (multiselect) 1`] = `
+<DocumentFragment>
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -238,158 +239,163 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 }
 
 <div
-  aria-multiselectable="true"
-  class="c0 react-datepicker-ignore-onclickoutside"
-  data-testid="listbox-container"
-  id="uuid1"
-  role="listbox"
-  tabindex="0"
->
-  <ul
-    class="c1"
-    data-testid="listbox-list"
-    role="presentation"
+    aria-multiselectable="true"
+    class="c0 react-datepicker-ignore-onclickoutside"
+    data-testid="listbox-container"
+    id="uuid1"
+    role="listbox"
+    tabindex="0"
   >
-    <li
-      aria-selected="true"
-      class="c2 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionA"
-      id="uuid1_optionA"
-      role="option"
+    <ul
+      class="c1"
+      data-testid="listbox-list"
+      role="presentation"
     >
-      <span
-        aria-hidden="true"
-        checked=""
-        class="c3 c4"
+      <li
+        aria-selected="true"
+        class="c2 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionA"
+        id="uuid1_optionA"
+        role="option"
       >
-        <svg
-          class="c5 c6"
-          color="currentColor"
-          focusable="false"
-          height="24"
-          width="24"
-        />
-      </span>
-      <span
-        class="c7 react-datepicker-ignore-onclickoutside"
-      >
-        Option A
         <span
-          class="c8 react-datepicker-ignore-onclickoutside"
+          aria-hidden="true"
+          class="c3 c4"
         >
-          The first one
+          <svg
+            class="c5 c6"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="check"
+            width="24"
+          />
         </span>
-      </span>
-    </li>
-    <li
-      aria-selected="false"
-      class="c9 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionB"
-      id="uuid1_optionB"
-      role="option"
-    >
-      <span
-        aria-hidden="true"
-        class="c3 c10"
+        <span
+          class="c7 react-datepicker-ignore-onclickoutside"
+        >
+          Option A
+          <span
+            class="c8 react-datepicker-ignore-onclickoutside"
+          >
+            The first one
+          </span>
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="c9 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionB"
+        id="uuid1_optionB"
+        role="option"
       >
-        <svg
-          class="c5 c6"
-          color="currentColor"
-          focusable="false"
-          height="24"
-          width="24"
-        />
-      </span>
-      <span
-        class="c7 react-datepicker-ignore-onclickoutside"
+        <span
+          aria-hidden="true"
+          class="c3 c10"
+        >
+          <svg
+            class="c5 c6"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="check"
+            width="24"
+          />
+        </span>
+        <span
+          class="c7 react-datepicker-ignore-onclickoutside"
+        >
+          Option B
+        </span>
+      </li>
+      <li
+        aria-selected="true"
+        class="c2 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionC"
+        id="uuid1_optionC"
+        role="option"
       >
-        Option B
-      </span>
-    </li>
-    <li
-      aria-selected="true"
-      class="c2 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionC"
-      id="uuid1_optionC"
-      role="option"
-    >
-      <span
-        aria-hidden="true"
-        checked=""
-        class="c3 c4"
+        <span
+          aria-hidden="true"
+          class="c3 c4"
+        >
+          <svg
+            class="c5 c6"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="check"
+            width="24"
+          />
+        </span>
+        <span
+          class="c7 react-datepicker-ignore-onclickoutside"
+        >
+          Option C
+        </span>
+      </li>
+      <li
+        aria-disabled="true"
+        aria-selected="false"
+        class="c11 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionD"
+        id="uuid1_optionD"
+        role="option"
       >
-        <svg
-          class="c5 c6"
-          color="currentColor"
-          focusable="false"
-          height="24"
-          width="24"
-        />
-      </span>
-      <span
-        class="c7 react-datepicker-ignore-onclickoutside"
+        <span
+          aria-hidden="true"
+          class="c3 c12"
+          disabled=""
+        >
+          <svg
+            class="c5 c6"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="check"
+            width="24"
+          />
+        </span>
+        <span
+          class="c7 react-datepicker-ignore-onclickoutside"
+        >
+          Option D
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="c9 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionE"
+        id="uuid1_optionE"
+        role="option"
       >
-        Option C
-      </span>
-    </li>
-    <li
-      aria-disabled="true"
-      aria-selected="false"
-      class="c11 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionD"
-      id="uuid1_optionD"
-      role="option"
-    >
-      <span
-        aria-hidden="true"
-        class="c3 c12"
-        disabled=""
-      >
-        <svg
-          class="c5 c6"
-          color="currentColor"
-          focusable="false"
-          height="24"
-          width="24"
-        />
-      </span>
-      <span
-        class="c7 react-datepicker-ignore-onclickoutside"
-      >
-        Option D
-      </span>
-    </li>
-    <li
-      aria-selected="false"
-      class="c9 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionE"
-      id="uuid1_optionE"
-      role="option"
-    >
-      <span
-        aria-hidden="true"
-        class="c3 c10"
-      >
-        <svg
-          class="c5 c6"
-          color="currentColor"
-          focusable="false"
-          height="24"
-          width="24"
-        />
-      </span>
-      <span
-        class="c7 react-datepicker-ignore-onclickoutside"
-      >
-        Option E
-      </span>
-    </li>
-  </ul>
-</div>
+        <span
+          aria-hidden="true"
+          class="c3 c10"
+        >
+          <svg
+            class="c5 c6"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="check"
+            width="24"
+          />
+        </span>
+        <span
+          class="c7 react-datepicker-ignore-onclickoutside"
+        >
+          Option E
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Listbox Matches the snapshot 1`] = `
-.c0 {
+exports[`Listbox matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -527,88 +533,89 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 <div
-  class="c0 react-datepicker-ignore-onclickoutside"
-  data-testid="listbox-container"
-  id="uuid1"
-  role="listbox"
-  tabindex="0"
->
-  <ul
-    class="c1"
-    data-testid="listbox-list"
-    role="presentation"
+    class="c0 react-datepicker-ignore-onclickoutside"
+    data-testid="listbox-container"
+    id="uuid1"
+    role="listbox"
+    tabindex="0"
   >
-    <li
-      aria-selected="false"
-      class="c2 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionA"
-      id="uuid1_optionA"
-      role="option"
+    <ul
+      class="c1"
+      data-testid="listbox-list"
+      role="presentation"
     >
-      <span
-        class="c3 react-datepicker-ignore-onclickoutside"
+      <li
+        aria-selected="false"
+        class="c2 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionA"
+        id="uuid1_optionA"
+        role="option"
       >
-        Option A
         <span
-          class="c4 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside"
         >
-          The first one
+          Option A
+          <span
+            class="c4 react-datepicker-ignore-onclickoutside"
+          >
+            The first one
+          </span>
         </span>
-      </span>
-    </li>
-    <li
-      aria-selected="true"
-      class="c5 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionB"
-      id="uuid1_optionB"
-      role="option"
-    >
-      <span
-        class="c3 react-datepicker-ignore-onclickoutside"
+      </li>
+      <li
+        aria-selected="true"
+        class="c5 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionB"
+        id="uuid1_optionB"
+        role="option"
       >
-        Option B
-      </span>
-    </li>
-    <li
-      aria-selected="false"
-      class="c2 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionC"
-      id="uuid1_optionC"
-      role="option"
-    >
-      <span
-        class="c3 react-datepicker-ignore-onclickoutside"
+        <span
+          class="c3 react-datepicker-ignore-onclickoutside"
+        >
+          Option B
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="c2 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionC"
+        id="uuid1_optionC"
+        role="option"
       >
-        Option C
-      </span>
-    </li>
-    <li
-      aria-disabled="true"
-      aria-selected="false"
-      class="c6 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionD"
-      id="uuid1_optionD"
-      role="option"
-    >
-      <span
-        class="c3 react-datepicker-ignore-onclickoutside"
+        <span
+          class="c3 react-datepicker-ignore-onclickoutside"
+        >
+          Option C
+        </span>
+      </li>
+      <li
+        aria-disabled="true"
+        aria-selected="false"
+        class="c6 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionD"
+        id="uuid1_optionD"
+        role="option"
       >
-        Option D
-      </span>
-    </li>
-    <li
-      aria-selected="false"
-      class="c2 react-datepicker-ignore-onclickoutside"
-      data-testid="listitem-optionE"
-      id="uuid1_optionE"
-      role="option"
-    >
-      <span
-        class="c3 react-datepicker-ignore-onclickoutside"
+        <span
+          class="c3 react-datepicker-ignore-onclickoutside"
+        >
+          Option D
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="c2 react-datepicker-ignore-onclickoutside"
+        data-testid="listitem-optionE"
+        id="uuid1_optionE"
+        role="option"
       >
-        Option E
-      </span>
-    </li>
-  </ul>
-</div>
+        <span
+          class="c3 react-datepicker-ignore-onclickoutside"
+        >
+          Option E
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
 `;
