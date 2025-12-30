@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Lozenge alert matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -33,18 +34,20 @@ exports[`Lozenge alert matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    alert
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      alert
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Lozenge default matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -76,18 +79,20 @@ exports[`Lozenge default matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    default
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      default
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Lozenge info matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -119,18 +124,20 @@ exports[`Lozenge info matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    info
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      info
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Lozenge matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -162,18 +169,20 @@ exports[`Lozenge matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    Hello World
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      Hello World
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Lozenge success matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -205,18 +214,20 @@ exports[`Lozenge success matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    success
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      success
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Lozenge warning matches the snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -248,12 +259,13 @@ exports[`Lozenge warning matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
+    class="c0"
   >
-    warning
-  </span>
-</div>
+    <span
+      class="c1"
+    >
+      warning
+    </span>
+  </div>
+</DocumentFragment>
 `;
