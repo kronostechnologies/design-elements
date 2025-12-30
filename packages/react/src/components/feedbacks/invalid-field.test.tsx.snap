@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Invalid field Matches the snapshot 1`] = `
-.c0 {
+exports[`Invalid field matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
   color: #CD2C23;
   display: -webkit-box;
   display: -webkit-flex;
@@ -28,17 +29,19 @@ exports[`Invalid field Matches the snapshot 1`] = `
 }
 
 <span
-  class="c0"
-  data-testid="invalid-field"
-  id="test-id_invalid"
->
-  <svg
-    class="c1"
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-  Feedback Message
-</span>
+    class="c0"
+    data-testid="invalid-field"
+    id="test-id_invalid"
+  >
+    <svg
+      class="c1"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      icon-name="alert-octagon"
+      width="16"
+    />
+    Feedback Message
+  </span>
+</DocumentFragment>
 `;
