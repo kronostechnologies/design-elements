@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ErrorSummary matches the snapshot 1`] = `
+<DocumentFragment>
+  .c4 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
 .c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -31,14 +40,6 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c4 {
-  color: #1B1C1E;
-  font-size: 1rem;
-  font-weight: var(--font-semi-bold);
-  line-height: 1.5rem;
-  margin: var(--spacing-3x) 0;
 }
 
 .c2 {
@@ -119,59 +120,61 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
-  tabindex="-1"
->
-  <svg
-    aria-hidden="true"
-    class="c1 c2"
-    color="currentColor"
-    focusable="false"
-    height="20"
-    width="20"
-  />
-  <div
-    class="c3"
+    class="c0"
+    tabindex="-1"
   >
-    <h2
-      class="c4 c5"
-      id="uuid1"
-    >
-      The form contains one or more errors
-    </h2>
+    <svg
+      aria-hidden="true"
+      class="c1 c2"
+      color="currentColor"
+      focusable="false"
+      height="20"
+      icon-name="alert-octagon"
+      width="20"
+    />
     <div
-      class="c6"
+      class="c3"
     >
-      <p
-        class="c7"
+      <h2
+        class="c4 c5"
+        id="uuid1"
       >
-        Please correct them to proceed to the next step.
-      </p>
-      <ul
-        class="c8"
+        The form contains one or more errors
+      </h2>
+      <div
+        class="c6"
       >
-        <li
-          class="c9"
+        <p
+          class="c7"
         >
-          <a
-            class="c10"
-            href="#error-input"
-          >
-            This is an error
-          </a>
-        </li>
-        <li
-          class="c9"
+          Please correct them to proceed to the next step.
+        </p>
+        <ul
+          class="c8"
         >
-          <a
-            class="c10"
-            href="#error-input-2"
+          <li
+            class="c9"
           >
-            Another error!
-          </a>
-        </li>
-      </ul>
+            <a
+              class="c10"
+              href="#error-input"
+            >
+              This is an error
+            </a>
+          </li>
+          <li
+            class="c9"
+          >
+            <a
+              class="c10"
+              href="#error-input-2"
+            >
+              Another error!
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
