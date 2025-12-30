@@ -1,4 +1,10 @@
+import { renderWithProviders } from '../../test-utils/renderer';
+import { Icon } from './icon';
+
 describe('Icon', () => {
-    it.skip('All the tests were moved to legacy-tests. RTL tests only here', () => {
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Icon name="home" />);
+
+        expect(asFragment()).toMatchSnapshot();
     });
 });

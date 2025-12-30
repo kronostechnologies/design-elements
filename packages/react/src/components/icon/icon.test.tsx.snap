@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Icon matches the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="24"
+    icon-name="home"
+    width="24"
+  />
+</DocumentFragment>
+`;
