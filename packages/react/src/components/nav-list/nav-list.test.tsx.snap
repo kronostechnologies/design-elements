@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`NavList matches the snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  margin: 2px;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c1[disabled] {
+  color: #B7BBC2;
+  pointer-events: none;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  list-style-type: none;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+<ul
+    class="c0"
+    data-testid="menu-list"
+    id="uuid1"
+  >
+    <li
+      data-testid="listitem-optionA"
+    >
+      <a
+        class="c1"
+        data-testid="listitem-optionA-link"
+        href="/testA"
+        tabindex="0"
+      >
+        <span
+          class="c2"
+        >
+          Option A
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionB"
+    >
+      <a
+        class="c1"
+        data-testid="listitem-optionB-link"
+        href="/testB"
+        tabindex="0"
+      >
+        <span
+          class="c2"
+        >
+          Option B
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionC"
+    >
+      <a
+        class="c1"
+        data-testid="listitem-optionC-link"
+        href="/testC"
+        tabindex="0"
+      >
+        <span
+          class="c2"
+        >
+          Option C
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionD"
+    >
+      <a
+        class="c1"
+        data-testid="listitem-optionD-link"
+        href="/testD"
+        tabindex="0"
+      >
+        <span
+          class="c2"
+        >
+          Option D
+        </span>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
