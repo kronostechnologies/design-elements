@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Menu matches the snapshot (menu with groups) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -83,90 +84,92 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
 }
 
 <div
-  class="c0"
-  data-testid="menu"
-  id="uuid1"
-  role="menu"
->
-  <div
-    aria-labelledby="menu-group-0"
-    role="group"
+    class="c0"
+    data-testid="menu"
+    id="00000000-0000-0000-0000-000000000000"
+    role="menu"
   >
-    <span
-      class="c1"
-      id="menu-group-0"
-    >
-      Group 1
-    </span>
-    <button
-      class="c2"
-      data-testid="sub-menu-option-0"
-      role="menuitem"
-      tabindex="-1"
-      type="button"
+    <div
+      aria-labelledby="menu-group-0"
+      role="group"
     >
       <span
-        class="c3"
+        class="c1"
+        id="menu-group-0"
       >
-        Option 1.1
+        Group 1
       </span>
-    </button>
-    <button
-      class="c2"
-      data-testid="sub-menu-option-1"
-      role="menuitem"
-      tabindex="-1"
-      type="button"
+      <button
+        class="c2 eds-util-focus-visible"
+        data-testid="sub-menu-option-0"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="c3"
+        >
+          Option 1.1
+        </span>
+      </button>
+      <button
+        class="c2"
+        data-testid="sub-menu-option-1"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="c3"
+        >
+          Option 1.2
+        </span>
+      </button>
+    </div>
+    <div
+      aria-labelledby="menu-group-1"
+      role="group"
     >
       <span
-        class="c3"
+        class="c1"
+        id="menu-group-1"
       >
-        Option 1.2
+        Group 2
       </span>
-    </button>
+      <button
+        class="c2"
+        data-testid="sub-menu-option-0"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="c3"
+        >
+          Option 2.1
+        </span>
+      </button>
+      <button
+        class="c2"
+        data-testid="sub-menu-option-1"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="c3"
+        >
+          Option 2.2
+        </span>
+      </button>
+    </div>
   </div>
-  <div
-    aria-labelledby="menu-group-1"
-    role="group"
-  >
-    <span
-      class="c1"
-      id="menu-group-1"
-    >
-      Group 2
-    </span>
-    <button
-      class="c2"
-      data-testid="sub-menu-option-0"
-      role="menuitem"
-      tabindex="-1"
-      type="button"
-    >
-      <span
-        class="c3"
-      >
-        Option 2.1
-      </span>
-    </button>
-    <button
-      class="c2"
-      data-testid="sub-menu-option-1"
-      role="menuitem"
-      tabindex="-1"
-      type="button"
-    >
-      <span
-        class="c3"
-      >
-        Option 2.2
-      </span>
-    </button>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Menu matches the snapshot (menu with icons) 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -245,52 +248,55 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 }
 
 <div
-  class="c0"
-  data-testid="menu"
-  id="uuid1"
-  role="menu"
->
-  <button
-    class="c1"
-    data-testid="menu-option-0"
-    role="menuitem"
-    tabindex="-1"
-    type="button"
+    class="c0"
+    data-testid="menu"
+    id="00000000-0000-0000-0000-000000000000"
+    role="menu"
   >
-    <svg
-      aria-hidden="true"
-      class="c2"
-      color="currentColor"
-      focusable="false"
-      height="1rem"
-      width="1rem"
-    />
-    <span
-      class="c3"
+    <button
+      class="c1 eds-util-focus-visible"
+      data-testid="menu-option-0"
+      role="menuitem"
+      tabindex="-1"
+      type="button"
     >
-      Option 1
-    </span>
-  </button>
-  <button
-    class="c1"
-    data-testid="menu-option-1"
-    role="menuitem"
-    tabindex="-1"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      class="c2"
-      color="currentColor"
-      focusable="false"
-      height="1rem"
-      width="1rem"
-    />
-    <span
-      class="c3"
+      <svg
+        aria-hidden="true"
+        class="c2"
+        color="currentColor"
+        focusable="false"
+        height="1rem"
+        icon-name="check"
+        width="1rem"
+      />
+      <span
+        class="c3"
+      >
+        Option 1
+      </span>
+    </button>
+    <button
+      class="c1"
+      data-testid="menu-option-1"
+      role="menuitem"
+      tabindex="-1"
+      type="button"
     >
-      Option 2
-    </span>
-  </button>
-</div>
+      <svg
+        aria-hidden="true"
+        class="c2"
+        color="currentColor"
+        focusable="false"
+        height="1rem"
+        icon-name="settings"
+        width="1rem"
+      />
+      <span
+        class="c3"
+      >
+        Option 2
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
 `;
