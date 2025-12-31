@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Radio button Matches the snapshot 1`] = `
-.c4 {
+exports[`Radio button matches the snapshot 1`] = `
+<DocumentFragment>
+  .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -144,90 +145,91 @@ exports[`Radio button Matches the snapshot 1`] = `
 }
 
 <fieldset
-  class="c0"
->
-  <legend
-    class="c1"
+    class="c0"
   >
-    Planets
-  </legend>
-  <div
-    class="c2 c3"
-  >
-    <input
-      class="c4 c5"
-      data-testid="radiobutton-uuid1"
-      id="uuid1"
-      name="planets"
-      type="radio"
-      value="earth"
-    />
-    <label
-      class="c6"
-      data-testid="radiobutton-uuid1_label"
-      for="uuid1"
+    <legend
+      class="c1"
     >
-      Earth
-    </label>
-  </div>
-  <div
-    class="c2 c3"
-  >
-    <input
-      checked=""
-      class="c4 c5"
-      data-testid="radiobutton-uuid2"
-      id="uuid2"
-      name="planets"
-      type="radio"
-      value="mars"
-    />
-    <label
-      class="c6"
-      data-testid="radiobutton-uuid2_label"
-      for="uuid2"
+      Planets
+    </legend>
+    <div
+      class="c2 c3"
     >
-      Mars
-    </label>
-  </div>
-  <div
-    class="c2 c3"
-  >
-    <input
-      class="c7 c5"
-      data-testid="radiobutton-uuid3"
-      disabled=""
-      id="uuid3"
-      name="planets"
-      type="radio"
-      value="pluto"
-    />
-    <label
-      class="c6"
-      data-testid="radiobutton-uuid3_label"
-      for="uuid3"
+      <input
+        class="c4 c5"
+        data-testid="radiobutton-uuid1"
+        id="uuid1"
+        name="planets"
+        type="radio"
+        value="earth"
+      />
+      <label
+        class="c6"
+        data-testid="radiobutton-uuid1_label"
+        for="uuid1"
+      >
+        Earth
+      </label>
+    </div>
+    <div
+      class="c2 c3"
     >
-      Pluto
-    </label>
-  </div>
-  <div
-    class="c2 c3"
-  >
-    <input
-      class="c4 c5"
-      data-testid="radiobutton-uuid4"
-      id="uuid4"
-      name="planets"
-      type="radio"
-      value="saturn"
-    />
-    <label
-      class="c6"
-      data-testid="radiobutton-uuid4_label"
-      for="uuid4"
+      <input
+        checked=""
+        class="c4 c5"
+        data-testid="radiobutton-uuid2"
+        id="uuid2"
+        name="planets"
+        type="radio"
+        value="mars"
+      />
+      <label
+        class="c6"
+        data-testid="radiobutton-uuid2_label"
+        for="uuid2"
+      >
+        Mars
+      </label>
+    </div>
+    <div
+      class="c2 c3"
     >
-      Saturn
-    </label>
-  </div>
-</fieldset>
+      <input
+        class="c7 c5"
+        data-testid="radiobutton-uuid3"
+        disabled=""
+        id="uuid3"
+        name="planets"
+        type="radio"
+        value="pluto"
+      />
+      <label
+        class="c6"
+        data-testid="radiobutton-uuid3_label"
+        for="uuid3"
+      >
+        Pluto
+      </label>
+    </div>
+    <div
+      class="c2 c3"
+    >
+      <input
+        class="c4 c5"
+        data-testid="radiobutton-uuid4"
+        id="uuid4"
+        name="planets"
+        type="radio"
+        value="saturn"
+      />
+      <label
+        class="c6"
+        data-testid="radiobutton-uuid4_label"
+        for="uuid4"
+      >
+        Saturn
+      </label>
+    </div>
+  </fieldset>
+</DocumentFragment>
 `;
