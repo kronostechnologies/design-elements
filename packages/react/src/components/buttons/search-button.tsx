@@ -4,7 +4,7 @@ import { Icon } from '../icon';
 import { AbstractButton } from './abstract';
 
 interface ButtonProps {
-    className: string;
+    className?: string;
     disabled?: boolean;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
@@ -41,9 +41,15 @@ const SearchIcon = styled(Icon).attrs({ name: 'search' })`
 `;
 
 export const SearchButton: FC<ButtonProps> = ({
-    className, disabled, onClick,
+    className, disabled, onClick, ...rest
 }) => (
-    <StyledButton isMobile={false} className={className} disabled={disabled} onClick={onClick}>
+    <StyledButton
+        isMobile={false}
+        className={className}
+        disabled={disabled}
+        onClick={onClick}
+        {...rest /* eslint-disable-line react/jsx-props-no-spreading */}
+    >
         <SearchIcon />
     </StyledButton>
 );

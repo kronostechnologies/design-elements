@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`SearchGlobal matches the snapshot 1`] = `
+<DocumentFragment>
+  .c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background: #FFFFFF;
+  border-color: #60666E;
+  color: #60666E;
+  height: 2rem;
+  padding: 0 var(--spacing-1x);
+  width: 2rem;
+}
+
+.c5:hover {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c5:disabled,
+.c5:disabled:focus,
+.c5:disabled:hover {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c7 {
+  height: 16px;
+  width: 16px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 label {
+  bottom: 0.5rem;
+  color: #60666E;
+  display: inline-block;
+  height: 1rem;
+  left: 0.5rem;
+  margin: auto;
+  position: absolute;
+  top: 0.5rem;
+  width: 1rem;
+}
+
+.c1 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  height: 2rem;
+  padding-bottom: var(--spacing-half);
+  padding-left: var(--spacing-1x);
+  padding-right: var(--spacing-1x);
+  padding-top: var(--spacing-half);
+}
+
+.c3::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c3::-moz-placeholder {
+  color: #60666E;
+}
+
+.c3:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c3::placeholder {
+  color: #60666E;
+}
+
+.c3:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c3:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c3:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+label + .c2 {
+  margin-top: 0;
+}
+
+.c3::-webkit-search-decoration,
+.c3::-webkit-search-cancel-button,
+.c3::-webkit-search-results-button,
+.c3::-webkit-search-results-decoration {
+  display: none;
+}
+
+.c6 {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  position: relative;
+}
+
+.c6:focus {
+  z-index: 2;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="on"
+        class="c2 c3"
+        data-testid="search-input"
+        id="uuid1"
+        type="search"
+        value="foo"
+      />
+    </div>
+    <button
+      class="c4 c5 c6 primary"
+      data-testid="search-button"
+    >
+      <svg
+        class="c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        icon-name="search"
+        width="24"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;

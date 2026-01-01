@@ -1,4 +1,5 @@
 This project uses yarn as package manager.
+Do no use `npm` or `npx` commands.
 
 ### Tests
 This project uses Jest.
