@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
+exports[`SkipLink matches Snapshot (Desktop) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -83,7 +83,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 </a>
 `;
 
-exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
+exports[`SkipLink matches Snapshot (Mobile) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
