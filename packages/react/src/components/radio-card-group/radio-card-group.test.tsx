@@ -1,9 +1,11 @@
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { RadioCard } from './radio-card';
 import { RadioCardGroup } from './radio-card-group';
 
 describe('Radio Card', () => {
-    test('Matches snapshot (Default, Desktop)', () => {
+    it('matches snapshot (Default, Desktop)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test">
@@ -16,7 +18,7 @@ describe('Radio Card', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches snapshot (Label, Desktop)', () => {
+    it('matches snapshot (Label, Desktop)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup label="Test">
                 <RadioCard name="test" label="Test" value="test">
@@ -29,7 +31,7 @@ describe('Radio Card', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches snapshot (Checked, Desktop)', () => {
+    it('matches snapshot (Checked, Desktop)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test" checked>
@@ -42,7 +44,7 @@ describe('Radio Card', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches snapshot (Disabled, Desktop)', () => {
+    it('matches snapshot (Disabled, Desktop)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test" disabled>
@@ -55,7 +57,7 @@ describe('Radio Card', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches snapshot (Default, Mobile)', () => {
+    it('matches snapshot (Default, Mobile)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup>
                 <RadioCard name="test" label="Test" value="test">
@@ -68,7 +70,7 @@ describe('Radio Card', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches snapshot (Label, Mobile)', () => {
+    it('matches snapshot (Label, Mobile)', () => {
         const { container } = renderWithProviders(
             <RadioCardGroup label="Test">
                 <RadioCard name="test" label="Test" value="test">
@@ -79,5 +81,39 @@ describe('Radio Card', () => {
         );
 
         expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('onChange callback is called when input is changed', async () => {
+        const callback = jest.fn();
+        const user = userEvent.setup();
+
+        renderWithProviders(
+            <RadioCardGroup>
+                <RadioCard name="test" label="Test" value="test" onChange={callback}>
+                    Test description
+                </RadioCard>
+            </RadioCardGroup>,
+        );
+
+        await user.click(screen.getByRole('radio', { name: /Test/ }));
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    it('onChange callback is called when label is clicked', async () => {
+        const callback = jest.fn();
+        const user = userEvent.setup();
+
+        renderWithProviders(
+            <RadioCardGroup>
+                <RadioCard name="test" label="Test" value="test" onChange={callback}>
+                    Test description
+                </RadioCard>
+            </RadioCardGroup>,
+        );
+
+        await user.click(screen.getByText('Test'));
+
+        expect(callback).toHaveBeenCalledTimes(1);
     });
 });
