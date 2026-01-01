@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
+exports[`SegmentedControl matches snapshot (desktop) 1`] = `
 .c0 {
   background-color: rgb(0 0 0 / 0.05);
   border-radius: var(--border-radius);
@@ -224,7 +224,7 @@ exports[`SegmentedControl Matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`SegmentedControl Matches snapshot (mobile) 1`] = `
+exports[`SegmentedControl matches snapshot (mobile) 1`] = `
 .c0 {
   background-color: rgb(0 0 0 / 0.05);
   border-radius: var(--border-radius);
