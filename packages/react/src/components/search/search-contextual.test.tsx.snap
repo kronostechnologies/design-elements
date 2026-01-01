@@ -174,6 +174,7 @@ label + .c6 {
       >
         <svg
           class="c4"
+          data-testid="search-icon"
           disabled=""
           icon-name="search"
         />
@@ -372,6 +373,7 @@ label + .c6 {
       >
         <svg
           class="c4"
+          data-testid="search-icon"
           icon-name="search"
         />
         <span

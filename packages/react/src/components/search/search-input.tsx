@@ -196,8 +196,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
         <SearchWrapper className={className}>
             <InnerWrapper>
                 {hasIcon && (
-                    <Label forId={id} data-testid="search-icon">
-                        <IcoSearch disabled={disabled} />
+                    <Label forId={id}>
+                        <IcoSearch data-testid="search-icon" disabled={disabled} />
                         <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                     </Label>
                 )}
