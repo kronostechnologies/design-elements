@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ScreenReaderOnlyText matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -13,15 +14,10 @@ exports[`ScreenReaderOnlyText matches snapshot 1`] = `
   width: 1px;
 }
 
-<ScreenReaderOnlyText
-  label="test"
->
-  <styled.span>
-    <span
-      className="c0"
-    >
-      test
-    </span>
-  </styled.span>
-</ScreenReaderOnlyText>
+<span
+    class="c0"
+  >
+    test
+  </span>
+</DocumentFragment>
 `;
