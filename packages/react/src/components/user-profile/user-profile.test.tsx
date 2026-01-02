@@ -1,4 +1,5 @@
-import { fireEvent } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { NavItemProps } from '../dropdown-menu';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
@@ -44,7 +45,7 @@ describe('UserProfile', () => {
     });
 
     describe('getFirstFocusableItem', () => {
-        test('should return first item that is not disabled', () => {
+        it('should return first item that is not disabled', () => {
             const testOptions: NavItemProps[] = [
                 {
                     label: 'Option A',
@@ -64,7 +65,7 @@ describe('UserProfile', () => {
             expect(result).toBe(testOptions[1]);
         });
 
-        test('should return undefined when every items are disabled', () => {
+        it('should return undefined when every items are disabled', () => {
             const testOptions: NavItemProps[] = [
                 {
                     label: 'Option A',
@@ -86,33 +87,35 @@ describe('UserProfile', () => {
         });
     });
 
-    test('Matches Snapshot (`full-name`)', () => {
+    it('matches Snapshot (`full-name`)', async () => {
+        const user = userEvent.setup();
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile username="Test Button" options={options} variant='full-name' />,
+            <UserProfile username="Test Button" options={options} variant="full-name" />,
             'desktop',
         );
 
         const element = getByTestId('menu-button');
-        fireEvent.click(element);
+        await user.click(element);
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (tag="nav")', () => {
+    it('matches Snapshot (tag="nav")', async () => {
+        const user = userEvent.setup();
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile tag="nav" username="Test Button" options={options} variant='full-name' />,
+            <UserProfile tag="nav" username="Test Button" options={options} variant="full-name" />,
         );
 
         const element = getByTestId('menu-button');
-        fireEvent.click(element);
+        await user.click(element);
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (variant=`avatar-only`)', () => {
+    it('matches Snapshot (variant=`avatar-only`)', () => {
         const { container } = renderWithProviders(
             <UserProfile
-                variant='avatar-only'
+                variant="avatar-only"
                 username="Test Button"
                 options={options}
             />,
@@ -121,26 +124,102 @@ describe('UserProfile', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (mobile)', () => {
+    it('matches Snapshot (mobile)', async () => {
+        const user = userEvent.setup();
         const { baseElement, getByTestId } = renderWithProviders(
             <UserProfile username="Test Button" options={options} />,
             'mobile',
         );
 
         const element = getByTestId('menu-button');
-        fireEvent.click(element);
+        await user.click(element);
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (defaultOpen)', () => {
+    it('matches Snapshot (defaultOpen)', async () => {
+        const user = userEvent.setup();
         const { baseElement, getByTestId } = renderWithProviders(
-            <UserProfile defaultOpen username="Test Button" options={options} variant='full-name' />,
+            <UserProfile defaultOpen username="Test Button" options={options} variant="full-name" />,
         );
 
         const element = getByTestId('menu-button');
-        fireEvent.click(element);
+        await user.click(element);
 
         expect(baseElement).toMatchSnapshot();
+    });
+
+    it('should contain username', () => {
+        const username = 'John Doe';
+        renderWithProviders(<UserProfile username={username} options={options} variant="full-name" />);
+
+        expect(screen.getByTestId('menu-button')).toHaveTextContent(username);
+    });
+
+    it('should call on click when an option is clicked', async () => {
+        const user = userEvent.setup();
+        const username = 'John Doe';
+        renderWithProviders(<UserProfile username={username} options={options} />);
+
+        await user.click(screen.getByTestId('menu-button'));
+
+        const actionA = screen.getByTestId('listitem-optionA');
+        await user.click(actionA);
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should not call on click when an option is disabled', async () => {
+        const user = userEvent.setup();
+        const username = 'John Doe';
+        renderWithProviders(<UserProfile username={username} options={options} />);
+
+        await user.click(screen.getByTestId('menu-button'));
+
+        const actionB = screen.getByTestId('listitem-optionB');
+        await expect(user.click(actionB)).toReject();
+
+        expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it('should have caret and label when variant is "full-name"', () => {
+        const username = 'John Doe';
+        renderWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+                variant="full-name"
+            />,
+        );
+
+        const button = screen.getByTestId('menu-button');
+        expect(button).toHaveTextContent(username);
+    });
+
+    it('should not have caret or label when variant is null', () => {
+        const username = 'John Doe';
+        renderWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+            />,
+        );
+
+        const button = screen.getByTestId('menu-button');
+        expect(button).not.toHaveTextContent(username);
+    });
+
+    it('should not have caret or label when variant is "avatar-only"', () => {
+        const username = 'John Doe';
+        renderWithProviders(
+            <UserProfile
+                username={username}
+                options={options}
+                variant="avatar-only"
+            />,
+        );
+
+        const button = screen.getByTestId('menu-button');
+        expect(button).not.toHaveTextContent(username);
     });
 });
