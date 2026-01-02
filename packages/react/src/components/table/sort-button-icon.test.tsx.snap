@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`SortButtonIcon should display arrow down when sort is descending 1`] = `
+<DocumentFragment>
+  <svg
+    color="#60666E"
+    focusable="false"
+    height="16"
+    icon-name="arrow-up"
+    width="16"
+  />
+</DocumentFragment>
+`;
+
+exports[`SortButtonIcon should display arrow up when sort is ascending 1`] = `
+<DocumentFragment>
+  <svg
+    color="#60666E"
+    focusable="false"
+    height="16"
+    icon-name="arrow-down"
+    width="16"
+  />
+</DocumentFragment>
+`;
+
+exports[`SortButtonIcon should display reorder when no sort 1`] = `
+<DocumentFragment>
+  <svg
+    color="#60666E"
+    focusable="false"
+    height="16"
+    icon-name="reorder"
+    width="16"
+  />
+</DocumentFragment>
+`;
