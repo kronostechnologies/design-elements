@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
+exports[`ToggleSwitch matches snapshot (desktop) 1`] = `
 HTMLCollection [
   .c2 {
   background: #FFFFFF;
@@ -94,7 +94,7 @@ HTMLCollection [
 ]
 `;
 
-exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
+exports[`ToggleSwitch matches snapshot (mobile) 1`] = `
 HTMLCollection [
   .c2 {
   background: #FFFFFF;
@@ -180,6 +180,102 @@ HTMLCollection [
 <label
     class="c0"
     data-testid="switch-label"
+    for="uuid2"
+    id="uuid1"
+  >
+    Switch
+  </label>,
+]
+`;
+
+exports[`ToggleSwitch matches snapshot when disabled 1`] = `
+HTMLCollection [
+  .c2 {
+  background: #FFFFFF;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 1rem;
+  position: absolute;
+  right: calc(100% - 1.1875rem);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1rem;
+}
+
+.c0 {
+  background: #008533;
+  border: 1px solid #008533;
+  border-radius: 0.75rem;
+  height: var(--size-1halfx);
+  position: relative;
+  vertical-align: middle;
+  width: var(--size-2halfx);
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0[aria-checked='false'] {
+  background: #60666E;
+  border-color: #60666E;
+}
+
+.c0[aria-checked='false'] .c1 {
+  -webkit-transition: right 0.1s ease-in-out;
+  transition: right 0.1s ease-in-out;
+}
+
+.c0[aria-checked='true'] > .c1 {
+  right: 3px;
+  -webkit-transition: right 0.1s ease-in-out;
+  transition: right 0.1s ease-in-out;
+}
+
+.c0:disabled {
+  background: #B7BBC2;
+  border-color: #B7BBC2;
+}
+
+.c0:disabled[aria-checked='true'] {
+  background: #8ADDA9;
+  border-color: #8ADDA9;
+}
+
+<button
+    aria-checked="true"
+    aria-labelledby="uuid1"
+    aria-readonly="true"
+    class="c0"
+    data-testid="toggle-switch"
+    disabled=""
+    id="uuid2"
+    role="switch"
+    type="button"
+  >
+    <span
+      class="c1 c2"
+    />
+  </button>,
+  .c0 {
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0 0 0 var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<label
+    class="c0"
+    data-testid="switch-label"
+    disabled=""
     for="uuid2"
     id="uuid1"
   >
