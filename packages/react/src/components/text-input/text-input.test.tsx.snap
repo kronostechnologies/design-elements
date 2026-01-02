@@ -1,897 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
-.c2 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c4::-moz-placeholder {
-  color: #60666E;
-}
-
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:-moz-read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:focus,
-.c4:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Telephone
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <input
-      class="c4"
-      data-testid="text-input"
-      disabled=""
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      type="tel"
-      value="foo"
-    />
-  </div>
-</div>
-`;
-
-exports[`TextInput Matches the snapshot [required = true] 1`] = `
-.c2 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c4::-moz-placeholder {
-  color: #60666E;
-}
-
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:-moz-read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:focus,
-.c4:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Telephone (required)
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <input
-      class="c4"
-      data-testid="text-input"
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      required=""
-      type="tel"
-      value="foo"
-    />
-  </div>
-</div>
-`;
-
-exports[`TextInput Matches the snapshot 1`] = `
-.c2 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c4::-moz-placeholder {
-  color: #60666E;
-}
-
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:-moz-read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c4:focus,
-.c4:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Telephone
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <input
-      class="c4"
-      data-testid="text-input"
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      type="tel"
-      value="foo"
-    />
-  </div>
-</div>
-`;
-
-exports[`TextInput Matches the snapshot adornment icon 1`] = `
-.c2 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c6 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c6::-moz-placeholder {
-  color: #60666E;
-}
-
-.c6:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c6::placeholder {
-  color: #60666E;
-}
-
-.c6:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c6:-moz-read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c6:read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c6:focus,
-.c6:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c4 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 > svg {
-  height: 16px;
-  width: 16px;
-}
-
-.c5 {
-  padding-left: var(--spacing-1x);
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Telephone
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <span
-      class="c4 c5 eds-TextInput-leftAdornment"
-    >
-      <svg
-        color="currentColor"
-        focusable="false"
-        height="24"
-        width="24"
-      />
-    </span>
-    <input
-      class="c6"
-      data-testid="text-input"
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      type="tel"
-      value="foo"
-    />
-  </div>
-</div>
-`;
-
-exports[`TextInput Matches the snapshot adornment text 1`] = `
-.c2 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.5rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #60666E;
-}
-
-.c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-quarter);
-}
-
-.c6 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: #1B1C1E;
-  font-family: inherit;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  line-height: 1.5rem;
-  margin: 0;
-  min-height: var(--size-2x);
-  outline: none;
-  padding: 0 var(--spacing-1x);
-  width: 100%;
-  border: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 100%;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c6::-moz-placeholder {
-  color: #60666E;
-}
-
-.c6:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c6::placeholder {
-  color: #60666E;
-}
-
-.c6:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c6:-moz-read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c6:read-only {
-  background-color: rgb(0 0 0 / 0.03);
-  border-color: transparent;
-  color: #1B1C1E;
-}
-
-.c6:focus,
-.c6:disabled {
-  border: 0;
-  box-shadow: none;
-}
-
-.c4 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 > svg {
-  height: 16px;
-  width: 16px;
-}
-
-.c5 {
-  padding-left: var(--spacing-1x);
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: var(--size-2x);
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-<div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
-  >
-    Telephone
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <span
-      class="c4 c5 eds-TextInput-leftAdornment"
-    >
-      #
-    </span>
-    <input
-      class="c6"
-      data-testid="text-input"
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      type="tel"
-      value="foo"
-    />
-  </div>
-</div>
-`;
-
 exports[`TextInput matches the snapshot (Normal - Adornment at end) 1`] = `
-.c2 {
+<DocumentFragment>
+  .c2 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -1056,38 +167,940 @@ input + .c1 {
 }
 
 <div
-  class="c0"
-  data-testid="field-container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    class="c0"
+    data-testid="field-container"
   >
-    Telephone
-  </label>
-  <div
-    class="c3 eds-TextInput-control"
-  >
-    <span
-      class="c4 c5 eds-TextInput-leftAdornment"
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
     >
-      #
-    </span>
-    <input
-      class="c6"
-      data-testid="text-input"
-      id="uuid1"
-      pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-      placeholder="Ex.: 555-123-4567"
-      type="tel"
-      value="foo"
-    />
-    <span
-      class="c4 c7 eds-TextInput-rightAdornment"
+      Telephone
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
     >
-      end
-    </span>
+      <span
+        class="c4 c5 eds-TextInput-leftAdornment"
+      >
+        #
+      </span>
+      <input
+        class="c6"
+        data-testid="text-input"
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        type="tel"
+        value="foo"
+      />
+      <span
+        class="c4 c7 eds-TextInput-rightAdornment"
+      >
+        end
+      </span>
+    </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`TextInput matches the snapshot [disabled = true] 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c4::-moz-placeholder {
+  color: #60666E;
+}
+
+.c4:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c4::placeholder {
+  color: #60666E;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:focus,
+.c4:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+}
+
+.c3:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+    class="c0"
+    data-testid="field-container"
+  >
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Telephone
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
+    >
+      <input
+        class="c4"
+        data-testid="text-input"
+        disabled=""
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        type="tel"
+        value="foo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput matches the snapshot [required = true] 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c4::-moz-placeholder {
+  color: #60666E;
+}
+
+.c4:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c4::placeholder {
+  color: #60666E;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:focus,
+.c4:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+}
+
+.c3:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+    class="c0"
+    data-testid="field-container"
+  >
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Telephone (required)
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
+    >
+      <input
+        class="c4"
+        data-testid="text-input"
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        required=""
+        type="tel"
+        value="foo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput matches the snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c4::-moz-placeholder {
+  color: #60666E;
+}
+
+.c4:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c4::placeholder {
+  color: #60666E;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:focus,
+.c4:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+}
+
+.c3:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+    class="c0"
+    data-testid="field-container"
+  >
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Telephone
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
+    >
+      <input
+        class="c4"
+        data-testid="text-input"
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        type="tel"
+        value="foo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput matches the snapshot adornment icon 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c6 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c6::-moz-placeholder {
+  color: #60666E;
+}
+
+.c6:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c6::placeholder {
+  color: #60666E;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c6:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:focus,
+.c6:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c5 {
+  padding-left: var(--spacing-1x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+}
+
+.c3:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+    class="c0"
+    data-testid="field-container"
+  >
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Telephone
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
+    >
+      <span
+        class="c4 c5 eds-TextInput-leftAdornment"
+      >
+        <svg
+          color="currentColor"
+          focusable="false"
+          height="24"
+          icon-name="phone"
+          width="24"
+        />
+      </span>
+      <input
+        class="c6"
+        data-testid="text-input"
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        type="tel"
+        value="foo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput matches the snapshot adornment text 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c6 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c6::-moz-placeholder {
+  color: #60666E;
+}
+
+.c6:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c6::placeholder {
+  color: #60666E;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c6:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c6:focus,
+.c6:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c4 > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.c5 {
+  padding-left: var(--spacing-1x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+}
+
+.c3:focus-within {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+<div
+    class="c0"
+    data-testid="field-container"
+  >
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Telephone
+    </label>
+    <div
+      class="c3 eds-TextInput-control"
+    >
+      <span
+        class="c4 c5 eds-TextInput-leftAdornment"
+      >
+        #
+      </span>
+      <input
+        class="c6"
+        data-testid="text-input"
+        id="uuid1"
+        pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        placeholder="Ex.: 555-123-4567"
+        type="tel"
+        value="foo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
 `;
