@@ -1,10 +1,11 @@
 import { type FC, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, keyframes, ThemedStyledProps, ThemeProps } from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { IconButton, type IconButtonProps } from '../buttons/icon-button';
-import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconName, type IconProps } from '../icon';
 import type { ToastPosition } from './toast-position';
 import type { ToastType } from './toast-type';
@@ -130,15 +131,16 @@ function getMessageLabel(type: ToastType): string {
     }
 }
 
-type MessageIconProps = IconProps & Pick<ToastWrapperProps, 'type'> & Pick<DeviceContextProps, 'isMobile'>;
+type MessageIconProps = IconProps & Pick<ToastWrapperProps, 'type'> & { $isMobile: boolean };
+
 const MessageIcon = styled(Icon).attrs(({ type }: MessageIconProps) => ({
     focusable: true,
     'aria-label': getMessageLabel(type),
 }))<MessageIconProps>`
     align-self: flex-start;
-    height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     margin-top: 0.25rem;
-    width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
 function getToastIconName(type: ToastType): IconName {
@@ -171,20 +173,30 @@ export const ToastContainer: FC<ToastContainerProps> = ({
     type = 'neutral',
     message,
     position,
+    ...rest
 }) => {
     const { t } = useTranslation('toast');
     const toastIconName = useMemo(() => getToastIconName(type), [type]);
     const { removeToast } = useToasts();
     const { isMobile } = useDeviceContext();
+    const dataAttributes = useDataAttributes(rest);
 
     return (
-        <ToastWrapper isMobile={isMobile} className={className} type={type} position={position} role="status">
+        <ToastWrapper
+            isMobile={isMobile}
+            className={className}
+            type={type}
+            position={position}
+            role="status"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...dataAttributes}
+        >
             <MessageIcon
                 name={toastIconName}
                 size="16"
                 role="img"
                 type={type}
-                isMobile={isMobile}
+                $isMobile={isMobile}
             />
             <StyledMessage $isMobile={isMobile}>
                 {message}
