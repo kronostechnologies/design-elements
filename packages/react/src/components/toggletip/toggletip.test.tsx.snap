@@ -1,0 +1,717 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Toggletip has default desktop styles (defaultOpen) 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="true"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      icon-name="info"
+      width="16"
+    />
+  </button>
+  .c2 {
+  height: 1rem;
+  position: absolute;
+  width: 1rem;
+}
+
+.c2::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.c2::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.875rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.25rem;
+  margin: 0;
+  max-width: 22rem;
+  min-height: 2rem;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  z-index: 1000;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-top: -0.35rem;
+  top: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::before {
+  border-color: transparent transparent #878F9A transparent;
+  border-width: 0 0.5rem 0.6rem;
+  position: absolute;
+  top: -0.25rem;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::after {
+  border-color: transparent transparent #FFFFFF transparent;
+  border-width: 0 0.5rem 0.6rem;
+  top: -0.15rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1 {
+  bottom: 0;
+  height: 1rem;
+  left: 0;
+  margin-bottom: -1rem;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1::before {
+  border-color: #878F9A transparent transparent transparent;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: 0.05rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1::after {
+  border-color: #FFFFFF transparent transparent transparent;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: -0.02rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-left: -0.7rem;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1::before {
+  border-color: transparent #878F9A transparent transparent;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.15rem;
+  position: absolute;
+}
+
+.c0[data-popper-placement*="right"] > .c1::after {
+  border-color: transparent #FFFFFF transparent transparent;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.23rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1 {
+  height: 1rem;
+  margin-right: -0.7rem;
+  right: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1::before {
+  border-color: transparent transparent transparent #878F9A;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.33rem;
+  position: absolute;
+}
+
+.c0[data-popper-placement*="left"] > .c1::after {
+  border-color: transparent transparent transparent #FFFFFF;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.25rem;
+}
+
+<div
+    class="c0"
+    data-popper-escaped="true"
+    data-popper-interactive="false"
+    data-popper-placement="right"
+    data-popper-reference-hidden="true"
+    data-testid="toggletip-content-container"
+    id="uuid1"
+    style="position: absolute; left: 0px; top: 0px; right: auto; bottom: auto; transform: translate(12px, 0px);"
+  >
+    <div
+      class="c1 c2"
+      data-popper-arrow="true"
+      style="position: absolute; top: 0px; transform: translate(0px, 0px);"
+    />
+    Test Content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Toggletip has default desktop styles 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="false"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      icon-name="info"
+      width="16"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Toggletip has mobile styles (defaultOpen) 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="true"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      color="currentColor"
+      focusable="false"
+      height="20"
+      icon-name="info"
+      width="20"
+    />
+  </button>
+  .c2 {
+  height: 1rem;
+  position: absolute;
+  width: 1rem;
+}
+
+.c2::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.c2::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 1rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  margin: 0;
+  max-width: 22rem;
+  min-height: 4.5rem;
+  padding: var(--spacing-3x);
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  z-index: 1000;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-top: -0.35rem;
+  top: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::before {
+  border-color: transparent transparent #878F9A transparent;
+  border-width: 0 0.5rem 0.6rem;
+  position: absolute;
+  top: -0.25rem;
+}
+
+.c0[data-popper-placement*="bottom"] > .c1::after {
+  border-color: transparent transparent #FFFFFF transparent;
+  border-width: 0 0.5rem 0.6rem;
+  top: -0.15rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1 {
+  bottom: 0;
+  height: 1rem;
+  left: 0;
+  margin-bottom: -1rem;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1::before {
+  border-color: #878F9A transparent transparent transparent;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: 0.05rem;
+}
+
+.c0[data-popper-placement*="top"] > .c1::after {
+  border-color: #FFFFFF transparent transparent transparent;
+  border-width: 0.5rem 0.45rem 0;
+  position: absolute;
+  top: -0.02rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1 {
+  height: 1rem;
+  left: 0;
+  margin-left: -0.7rem;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="right"] > .c1::before {
+  border-color: transparent #878F9A transparent transparent;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.15rem;
+  position: absolute;
+}
+
+.c0[data-popper-placement*="right"] > .c1::after {
+  border-color: transparent #FFFFFF transparent transparent;
+  border-width: 0.45rem 0.5rem 0.45rem 0;
+  left: 0.23rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1 {
+  height: 1rem;
+  margin-right: -0.7rem;
+  right: 0;
+  width: 1rem;
+}
+
+.c0[data-popper-placement*="left"] > .c1::before {
+  border-color: transparent transparent transparent #878F9A;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.33rem;
+  position: absolute;
+}
+
+.c0[data-popper-placement*="left"] > .c1::after {
+  border-color: transparent transparent transparent #FFFFFF;
+  border-width: 0.45rem 0 0.45rem 0.5rem;
+  left: 0.25rem;
+}
+
+<div
+    class="c0"
+    data-popper-escaped="true"
+    data-popper-interactive="false"
+    data-popper-placement="top"
+    data-popper-reference-hidden="true"
+    data-testid="toggletip-content-container"
+    id="uuid1"
+    style="position: absolute; left: 0px; top: auto; right: auto; bottom: 0px; transform: translate(0px, -12px);"
+  >
+    <div
+      class="c1 c2"
+      data-popper-arrow="true"
+      style="position: absolute; left: 0px; transform: translate(0px, 0px);"
+    />
+    Test Content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Toggletip has mobile styles 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="false"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      color="currentColor"
+      focusable="false"
+      height="20"
+      icon-name="info"
+      width="20"
+    />
+  </button>
+</DocumentFragment>
+`;
