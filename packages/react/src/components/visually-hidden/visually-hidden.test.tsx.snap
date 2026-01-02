@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Visually hidden Matches the snapshot 1`] = `
-.c0 {
+exports[`VisuallyHidden matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);
   clip: rect(1px,1px,1px,1px);
@@ -13,9 +14,10 @@ exports[`Visually hidden Matches the snapshot 1`] = `
 }
 
 <span
-  aria-hidden="false"
-  class="c0"
->
-  Hidden
-</span>
+    aria-hidden="false"
+    class="c0"
+  >
+    Hidden
+  </span>
+</DocumentFragment>
 `;
