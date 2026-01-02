@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`TextArea Is disabled 1`] = `
-.c2 {
+exports[`TextArea matches the snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -121,31 +122,32 @@ input + .c1 {
 }
 
 <div
-  class="c0"
-  data-testid="container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    class="c0"
+    data-testid="container"
   >
-    Comment (required)
-  </label>
-  <textarea
-    class="c3"
-    data-testid="textarea"
-    disabled=""
-    id="uuid1"
-    placeholder="Enter your comment"
-    required=""
-  >
-    foo
-  </textarea>
-</div>
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Comment (required)
+    </label>
+    <textarea
+      class="c3"
+      data-testid="some-data-testid"
+      id="uuid1"
+      placeholder="Enter your comment"
+      required=""
+    >
+      foo
+    </textarea>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`TextArea Matches the snapshot 1`] = `
-.c2 {
+exports[`TextArea matches the snapshot when disabled 1`] = `
+<DocumentFragment>
+  .c2 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -265,24 +267,26 @@ input + .c1 {
 }
 
 <div
-  class="c0"
-  data-testid="container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    class="c0"
+    data-testid="container"
   >
-    Comment (required)
-  </label>
-  <textarea
-    class="c3"
-    data-testid="some-data-testid"
-    id="uuid1"
-    placeholder="Enter your comment"
-    required=""
-  >
-    foo
-  </textarea>
-</div>
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Comment (required)
+    </label>
+    <textarea
+      class="c3"
+      data-testid="textarea"
+      disabled=""
+      id="uuid1"
+      placeholder="Enter your comment"
+      required=""
+    >
+      foo
+    </textarea>
+  </div>
+</DocumentFragment>
 `;
