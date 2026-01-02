@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Theme Wrapper Returns component with custom theme 1`] = `
-.c0 {
+exports[`Theme Wrapper returns component with custom theme 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -80,13 +81,15 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
 }
 
 <button
-  class="c0 c1"
-  type="button"
-/>
+    class="c0 c1"
+    type="button"
+  />
+</DocumentFragment>
 `;
 
-exports[`Theme Wrapper Returns component with default theme 1`] = `
-.c0 {
+exports[`Theme Wrapper returns component with default theme 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -165,7 +168,8 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 }
 
 <button
-  class="c0 c1"
-  type="button"
-/>
+    class="c0 c1"
+    type="button"
+  />
+</DocumentFragment>
 `;
