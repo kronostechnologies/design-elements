@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
+exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
 {
   "asFragment": [Function],
   "baseElement": .c7 {
@@ -397,7 +397,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 `;
 
-exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
+exports[`Breadcrumb Snapshots matches snapshot (double entries) 1`] = `
 .c7 {
   box-sizing: border-box;
   position: fixed;
@@ -558,7 +558,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 </body>
 `;
 
-exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
+exports[`Breadcrumb Snapshots matches snapshot (single entry) 1`] = `
 .c3 {
   box-sizing: border-box;
   position: fixed;

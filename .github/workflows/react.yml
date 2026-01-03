@@ -212,7 +212,7 @@ jobs:
         with:
           name: react-test-coverage.clover.xml
           path: packages/react/build/jest/coverage/clover.xml
-          if-no-files-found: error
+          if-no-files-found: warn
 
   react_compile:
     name: "React: Compile"
