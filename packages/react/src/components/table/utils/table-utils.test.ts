@@ -39,7 +39,7 @@ function getTableValues(): {
 
 describe('Table utils', () => {
     describe('calculateStickyColumns', () => {
-        test('should set header cell z-index when column is sticky', () => {
+        it('should set header cell z-index when column is sticky', () => {
             const { headerCells, rows } = getTableValues();
 
             calculateStickyColumns([true, true, false], headerCells, rows);
@@ -49,7 +49,7 @@ describe('Table utils', () => {
             expect(headerCells[2].style.getPropertyValue('z-index')).toEqual('');
         });
 
-        test('should set all rows column z-index when column is sticky', () => {
+        it('should set all rows column z-index when column is sticky', () => {
             const { headerCells, rows } = getTableValues();
 
             calculateStickyColumns([true, true, false], headerCells, rows);
@@ -61,7 +61,7 @@ describe('Table utils', () => {
             });
         });
 
-        test('should set header cell left when column is sticky', () => {
+        it('should set header cell left when column is sticky', () => {
             const { headerCells, rows } = getTableValues();
 
             calculateStickyColumns([true, true, false], headerCells, rows);
@@ -72,7 +72,7 @@ describe('Table utils', () => {
             expect(headerCells[2].style.getPropertyValue('left')).toEqual('');
         });
 
-        test('should set all rows column left when column is sticky', () => {
+        it('should set all rows column left when column is sticky', () => {
             const { headerCells, rows } = getTableValues();
 
             calculateStickyColumns([true, true, false], headerCells, rows);
@@ -87,7 +87,7 @@ describe('Table utils', () => {
     });
 
     describe('calculateStickyRows', () => {
-        test('should set header cell z-index when header is sticky', () => {
+        it('should set header cell z-index when header is sticky', () => {
             const { headerCells } = getTableValues();
 
             calculateStickyHeader([false, false, false], headerCells);
@@ -97,7 +97,7 @@ describe('Table utils', () => {
             expect(headerCells[2].style.getPropertyValue('z-index')).toEqual('4');
         });
 
-        test('should set header cell z-index higher when both header and column are sticky', () => {
+        it('should set header cell z-index higher when both header and column are sticky', () => {
             const { headerCells } = getTableValues();
 
             // first column is sticky
@@ -108,7 +108,7 @@ describe('Table utils', () => {
             expect(headerCells[2].style.getPropertyValue('z-index')).toEqual('4');
         });
 
-        test('should set header cell top when header is sticky', () => {
+        it('should set header cell top when header is sticky', () => {
             const { headerCells } = getTableValues();
 
             calculateStickyHeader([true, false, false], headerCells);

@@ -4,7 +4,7 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { ExternalLink } from './external-link';
 
 describe('External Link', () => {
-    test('matches snapshot', () => {
+    it('matches snapshot', () => {
         const { container } = renderWithProviders(
             <ExternalLink href="https://www.google.ca/" label="External Link" />,
         );
@@ -12,7 +12,7 @@ describe('External Link', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (label and icon)', () => {
+    it('matches snapshot (label and icon)', () => {
         const { container } = renderWithProviders(
             <ExternalLink href="#" label="External Link" iconName="mail" />,
         );
@@ -20,7 +20,7 @@ describe('External Link', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (only icon)', () => {
+    it('matches snapshot (only icon)', () => {
         const { container } = renderWithProviders(
             <ExternalLink href="#" iconName="mail" />,
         );
@@ -28,7 +28,7 @@ describe('External Link', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (without href)', () => {
+    it('matches snapshot (without href)', () => {
         const { container } = renderWithProviders(
             <ExternalLink label="External Link" iconName="mail" />,
         );
@@ -36,7 +36,7 @@ describe('External Link', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (disabled)', () => {
+    it('matches snapshot (disabled)', () => {
         const { container } = renderWithProviders(
             <ExternalLink href="#" label="External Link" disabled />,
         );

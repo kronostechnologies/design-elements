@@ -16,13 +16,13 @@ const localeArray = [enUS, enCA, frCA];
 
 describe('Datepicker utils', () => {
     describe('get locale', () => {
-        test('should return frCA locale', () => {
+        it('should return frCA locale', () => {
             const result = getLocale(localeArray, 'fr-CA');
 
             expect(result).toEqual(frCA);
         });
 
-        test('should return enCA when no locale is passed', () => {
+        it('should return enCA when no locale is passed', () => {
             const result = getLocale(localeArray);
 
             expect(result).toEqual(enCA);
@@ -30,13 +30,13 @@ describe('Datepicker utils', () => {
     });
 
     describe('get locale date format', () => {
-        test('should return en-US date format', () => {
+        it('should return en-US date format', () => {
             const result = getLocaleDateFormat(enUS);
 
             expect(result).toEqual('MM/dd/yyyy');
         });
 
-        test('should return en-CA date format when no locale is passed', () => {
+        it('should return en-CA date format when no locale is passed', () => {
             const result = getLocaleDateFormat();
 
             expect(result).toEqual('yyyy-MM-dd');
@@ -44,13 +44,13 @@ describe('Datepicker utils', () => {
     });
 
     describe('get locale date placeholder', () => {
-        test('should return en-US date placeholder', () => {
+        it('should return en-US date placeholder', () => {
             const result = getLocaleDatePlaceholder(enUS);
 
             expect(result).toEqual('MM/DD/YYYY');
         });
 
-        test('should return en-CA date placeholder when no locale is passed', () => {
+        it('should return en-CA date placeholder when no locale is passed', () => {
             const result = getLocaleDatePlaceholder();
 
             expect(result).toEqual('YYYY-MM-DD');
@@ -58,7 +58,7 @@ describe('Datepicker utils', () => {
     });
 
     describe('get locale months', () => {
-        test('should return an array of abreviated months', () => {
+        it('should return an array of abreviated months', () => {
             const result = getLocaleMonthsShort(enCA);
 
             expect(result)
@@ -67,7 +67,7 @@ describe('Datepicker utils', () => {
     });
 
     describe('get locale months options', () => {
-        test('should return an array month objects', () => {
+        it('should return an array month objects', () => {
             const result = getLocaleMonthsOptions(enCA);
 
             expect(result).toEqual([
@@ -88,13 +88,13 @@ describe('Datepicker utils', () => {
     });
 
     describe('get years options', () => {
-        test('should return an array year objects', () => {
+        it('should return an array year objects', () => {
             const result = getYearsOptions(minDate, maxDate);
 
             expect(result).toEqual([{ value: '2020', label: '2020' }]);
         });
 
-        test('should return an empty array when minDate > maxDate', () => {
+        it('should return an empty array when minDate > maxDate', () => {
             const result = getYearsOptions(maxDate, minDate);
 
             expect(result).toEqual([]);
@@ -102,7 +102,7 @@ describe('Datepicker utils', () => {
     });
 
     describe('set locale first day of week', () => {
-        test('should return locale with adjusted day of week', () => {
+        it('should return locale with adjusted day of week', () => {
             setLocaleFirstDayOfWeek(enCA, 4);
 
             expect(enCA.options?.weekStartsOn).toEqual(4);
