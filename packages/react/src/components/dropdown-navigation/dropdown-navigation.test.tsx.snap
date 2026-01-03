@@ -548,7 +548,7 @@ exports[`DropdownNavigation matches snapshot 1`] = `
   max-width: 350px;
   min-width: 200px;
   position: absolute;
-  top: 0px;
+  top: 4px;
   width: initial;
   z-index: 99998;
 }

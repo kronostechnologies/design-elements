@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { DropdownNavigation } from './dropdown-navigation';
@@ -27,13 +27,14 @@ const options = [
 ];
 
 describe('DropdownNavigation', () => {
-    it('matches snapshot', () => {
-        const { baseElement, getByTestId } = renderWithProviders(
+    it('matches snapshot', async () => {
+        const user = userEvent.setup();
+        const { baseElement } = renderWithProviders(
             <DropdownNavigation options={options}>
                 Test Button
             </DropdownNavigation>,
         );
-        fireEvent.click(getByTestId('navigation-button'));
+        await user.click(screen.getByTestId('navigation-button'));
 
         expect(baseElement).toMatchSnapshot();
     });

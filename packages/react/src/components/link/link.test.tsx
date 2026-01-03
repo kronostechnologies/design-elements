@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Link as RouteLink, NavLink } from 'react-router-dom';
 import { renderWithProviders } from '../../test-utils/renderer';
@@ -87,7 +87,8 @@ describe('Link Component', () => {
             const disabledLink = screen.getByTestId('link');
             expect(disabledLink).toHaveAttribute('aria-disabled', 'true');
 
-            fireEvent.click(disabledLink);
+            await expect(user.click(disabledLink)).toReject();
+
             expect(onClickMock).toHaveBeenCalledTimes(1);
         });
     });

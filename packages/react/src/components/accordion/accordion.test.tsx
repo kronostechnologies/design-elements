@@ -1,9 +1,11 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Accordion, type AccordionItem } from '.';
 import { renderWithProviders } from '../../test-utils/testing-library';
 
 describe('Accordion', () => {
-    it('should toggle expansion in single mode', () => {
+    it('should toggle expansion in single mode', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -27,14 +29,15 @@ describe('Accordion', () => {
         expect(buttons[1]).toHaveAttribute('aria-expanded', 'false');
         expect(buttons[2]).toHaveAttribute('aria-expanded', 'false');
 
-        fireEvent.click(buttons[0]);
+        await user.click(buttons[0]);
 
         expect(buttons[0]).toHaveAttribute('aria-expanded', 'true');
         expect(buttons[1]).toHaveAttribute('aria-expanded', 'false');
         expect(buttons[2]).toHaveAttribute('aria-expanded', 'false');
     });
 
-    it('should toggle expansion in multi mode and allow multiple expanded items', () => {
+    it('should toggle expansion in multi mode and allow multiple expanded items', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -53,17 +56,18 @@ describe('Accordion', () => {
         expect(buttons[0]).toHaveAttribute('aria-expanded', 'false');
         expect(buttons[1]).toHaveAttribute('aria-expanded', 'false');
 
-        fireEvent.click(buttons[0]);
-        fireEvent.click(buttons[1]);
+        await user.click(buttons[0]);
+        await user.click(buttons[1]);
         expect(buttons[0]).toHaveAttribute('aria-expanded', 'true');
         expect(buttons[1]).toHaveAttribute('aria-expanded', 'true');
 
-        fireEvent.click(buttons[1]);
+        await user.click(buttons[1]);
         expect(buttons[0]).toHaveAttribute('aria-expanded', 'true');
         expect(buttons[1]).toHaveAttribute('aria-expanded', 'false');
     });
 
-    it('should handle ArrowUp key press', () => {
+    it('should handle ArrowUp key press', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -84,12 +88,13 @@ describe('Accordion', () => {
         const buttons = screen.getAllByRole('button');
 
         buttons[0].focus();
-        fireEvent.keyDown(buttons[0], { key: 'ArrowUp' });
+        await user.keyboard('{ArrowUp}');
 
         expect(buttons[2]).toHaveFocus();
     });
 
-    it('should handle ArrowDown key press', () => {
+    it('should handle ArrowDown key press', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -110,12 +115,13 @@ describe('Accordion', () => {
         const buttons = screen.getAllByRole('button');
 
         buttons[2].focus();
-        fireEvent.keyDown(buttons[2], { key: 'ArrowDown' });
+        await user.keyboard('{ArrowDown}');
 
         expect(buttons[0]).toHaveFocus();
     });
 
-    it('should handle ArrowDown key press with disabled items', () => {
+    it('should handle ArrowDown key press with disabled items', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -137,12 +143,13 @@ describe('Accordion', () => {
         const buttons = screen.getAllByRole('button');
 
         buttons[0].focus();
-        fireEvent.keyDown(buttons[0], { key: 'ArrowDown' });
+        await user.keyboard('{ArrowDown}');
 
         expect(buttons[2]).toHaveFocus();
     });
 
-    it('should handle ArrowUp key press with disabled items', () => {
+    it('should handle ArrowUp key press with disabled items', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -164,12 +171,13 @@ describe('Accordion', () => {
         const buttons = screen.getAllByRole('button');
 
         buttons[2].focus();
-        fireEvent.keyDown(buttons[2], { key: 'ArrowUp' });
+        await user.keyboard('{ArrowUp}');
 
         expect(buttons[0]).toHaveFocus();
     });
 
-    it('should toggle the icon when the button is clicked and `expanded` is updated', () => {
+    it('should toggle the icon when the button is clicked and `expanded` is updated', async () => {
+        const user = userEvent.setup();
         const items: AccordionItem[] = [
             {
                 title: 'Panel Title 1',
@@ -182,7 +190,7 @@ describe('Accordion', () => {
         const button = screen.getByRole('button', { name: 'Panel Title 1' });
         expect(container).toMatchSnapshot();
 
-        fireEvent.click(button);
+        await user.click(button);
         expect(container).toMatchSnapshot();
     });
 });

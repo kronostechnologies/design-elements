@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { Icon } from '../icon';
@@ -38,11 +38,18 @@ describe('TextInput', () => {
         expect(input).not.toHaveAttribute('aria-invalid');
     });
 
-    it('should set as invalid when invalid event is triggered', () => {
-        renderWithProviders(<TextInput {...initialProps} />);
+    it('should set as invalid when invalid event is triggered', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(
+            <form>
+                <TextInput {...initialProps} defaultValue="" />
+                <button type="submit">Submit</button>
+            </form>,
+        );
+
+        await user.click(screen.getByRole('button', { name: 'Submit' }));
 
         const input = screen.getByTestId('text-input');
-        fireEvent.invalid(input);
 
         expect(input).toBeInvalid();
     });

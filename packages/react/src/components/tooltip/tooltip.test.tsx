@@ -1,4 +1,4 @@
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IconButton } from '../buttons';
 import { Icon } from '../icon';
@@ -40,24 +40,27 @@ describe('Tooltip', () => {
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
 
-        it('opens on focus', () => {
+        it('opens on focus', async () => {
+            const user = userEvent.setup();
             renderWithProviders(
                 <Tooltip label="Test Content" />,
                 'desktop',
             );
 
-            fireEvent.focus(screen.getByTestId('tooltip'));
+            await user.tab();
 
             expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
         });
 
-        it('closes on blur given tooltip is open', () => {
+        it('closes on blur given tooltip is open', async () => {
+            const user = userEvent.setup();
             renderWithProviders(
                 <Tooltip label="Test Content" defaultOpen />,
                 'desktop',
             );
 
-            fireEvent.blur(screen.getByTestId('tooltip'));
+            await user.tab();
+            await user.tab();
 
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
@@ -100,13 +103,14 @@ describe('Tooltip', () => {
             expect(screen.getByTestId('tooltip-content-container')).toHaveTextContent(confirmationLabel);
         });
 
-        it('does not open on focus given tooltip is disabled', () => {
+        it('does not open on focus given tooltip is disabled', async () => {
+            const user = userEvent.setup();
             renderWithProviders(
                 <Tooltip label="Test Content" disabled />,
                 'desktop',
             );
 
-            fireEvent.focus(screen.getByTestId('tooltip'));
+            await user.tab();
 
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
