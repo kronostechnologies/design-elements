@@ -5,10 +5,11 @@ import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
 import ArrowUp from 'feather-icons/dist/icons/arrow-up.svg';
+import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
 import Bell from 'feather-icons/dist/icons/bell.svg';
 import Calendar from 'feather-icons/dist/icons/calendar.svg';
-import Check from 'feather-icons/dist/icons/check.svg';
 import CheckCircle from 'feather-icons/dist/icons/check-circle.svg';
+import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
 import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
 import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
@@ -20,12 +21,13 @@ import Copy from 'feather-icons/dist/icons/copy.svg';
 import Download from 'feather-icons/dist/icons/download.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
-import Eye from 'feather-icons/dist/icons/eye.svg';
 import EyeOff from 'feather-icons/dist/icons/eye-off.svg';
-import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
+import Eye from 'feather-icons/dist/icons/eye.svg';
+import FileText from 'feather-icons/dist/icons/file-text.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
+import List from 'feather-icons/dist/icons/list.svg';
 import Lock from 'feather-icons/dist/icons/lock.svg';
 import Mail from 'feather-icons/dist/icons/mail.svg';
 import MapPin from 'feather-icons/dist/icons/map-pin.svg';
@@ -41,6 +43,7 @@ import Search from 'feather-icons/dist/icons/search.svg';
 import Send from 'feather-icons/dist/icons/send.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Share2 from 'feather-icons/dist/icons/share-2.svg';
+import Shield from 'feather-icons/dist/icons/shield.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
 import Unlock from 'feather-icons/dist/icons/unlock.svg';
@@ -53,23 +56,25 @@ import AlertFilled from '../../icons/alert-filled.svg';
 import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
 import ArrowUpCircle from '../../icons/arrow-up-circle.svg';
 import Bento from '../../icons/bento.svg';
-import Contracts from '../../icons/contracts.svg';
 import CalendarAdd from '../../icons/calendar-add.svg';
+import CaretDown from '../../icons/caret-down.svg';
+import CaretRight from '../../icons/caret-right.svg';
+import Contracts from '../../icons/contracts.svg';
+import Export from '../../icons/export.svg';
 import Files from '../../icons/files.svg';
 import History from '../../icons/history.svg';
-import Link from '../../icons/link.svg';
 import Lightbulb from '../../icons/lightbulb.svg';
+import Link from '../../icons/link.svg';
 import Megaphone from '../../icons/megaphone.svg';
 import Open from '../../icons/open.svg';
 import Organization from '../../icons/organization.svg';
+import PanelLeft from '../../icons/panel-left.svg';
+import PanelRight from '../../icons/panel-right.svg';
 import Reorder from '../../icons/reorder.svg';
+import Table from '../../icons/table.svg';
+import Unlink from '../../icons/unlink.svg';
 import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
-import CaretDown from '../../icons/caret-down.svg';
-import CaretRight from '../../icons/caret-right.svg';
-import Unlink from '../../icons/unlink.svg';
-import Export from '../../icons/export.svg';
-import Table from '../../icons/table.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
@@ -107,6 +112,7 @@ const iconMapping = {
     eye: Eye,
     eyeOff: EyeOff,
     files: Files,
+    fileText: FileText,
     graph: Graph,
     helpCircle: HelpCircle,
     history: History,
@@ -114,6 +120,7 @@ const iconMapping = {
     info: Info,
     link: Link,
     lightbulb: Lightbulb,
+    list: List,
     lock: Lock,
     mail: Mail,
     mapPin: MapPin,
@@ -125,6 +132,8 @@ const iconMapping = {
     moreVertical: MoreVertical,
     organization: Organization,
     open: Open,
+    panelLeft: PanelLeft,
+    panelRight: PanelRight,
     phone: Phone,
     plusSign: PlusSign,
     reorder: Reorder,
@@ -132,6 +141,7 @@ const iconMapping = {
     send: Send,
     settings: Settings,
     share: Share2,
+    shield: Shield,
     star: Star,
     table: Table,
     transfer: Transfer,
