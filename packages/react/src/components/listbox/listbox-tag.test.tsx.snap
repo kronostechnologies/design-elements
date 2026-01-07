@@ -176,6 +176,7 @@ exports[`ListboxTag matches the snapshot 1`] = `
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="x"
       width="16"
     />
   </button>

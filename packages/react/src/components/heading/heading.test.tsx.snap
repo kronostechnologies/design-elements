@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Heading matches snapshot (large) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1.5rem;
+  font-weight: var(--font-normal);
+  line-height: 2.25rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h2
+    class="c0"
+  >
+    Heading
+  </h2>
+</DocumentFragment>
+`;
+
+exports[`Heading matches snapshot (medium) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h3
+    class="c0"
+  >
+    Heading
+  </h3>
+</DocumentFragment>
+`;
+
+exports[`Heading matches snapshot (no margin) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
+<h3
+    class="c0"
+  >
+    Heading
+  </h3>
+</DocumentFragment>
+`;
+
+exports[`Heading matches snapshot (small) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h4
+    class="c0"
+  >
+    Heading
+  </h4>
+</DocumentFragment>
+`;
+
+exports[`Heading matches snapshot (subtitle) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #60666E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h2
+    class="c0"
+  >
+    Heading
+  </h2>
+</DocumentFragment>
+`;
+
+exports[`Heading matches snapshot (xlarge) 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #1B1C1E;
+  font-size: 2rem;
+  font-weight: var(--font-normal);
+  line-height: 3rem;
+  margin: var(--spacing-4x) 0;
+}
+
+<h1
+    class="c0"
+  >
+    Heading
+  </h1>
+</DocumentFragment>
+`;

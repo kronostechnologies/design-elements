@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Checkbox matches snapshot 1`] = `
+.c5 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  left: 0;
+  margin: var(--spacing-half) var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+  border: 1px solid #000000;
+}
+
+.c1 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus-visible + .c2 {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
+}
+
+<div>
+  <label
+    class="c0"
+  >
+    <input
+      class="c1"
+      name="vehicule"
+      type="checkbox"
+      value="boat"
+    />
+    <span
+      class="c2 c3"
+    >
+      <svg
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        icon-name="check"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        icon-name="minus"
+        width="24"
+      />
+    </span>
+    Boat
+  </label>
+</div>
+`;

@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Fieldset Styling matches default 1`] = `
+<DocumentFragment>
+  .c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<fieldset
+    class="c0"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    Test Content
+  </fieldset>
+</DocumentFragment>
+`;
+
+exports[`Fieldset Styling matches horizontal orientation 1`] = `
+<DocumentFragment>
+  .c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<fieldset
+    class="c0"
+    data-orientation="horizontal"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    Test Content
+  </fieldset>
+</DocumentFragment>
+`;
+
+exports[`Fieldset Styling matches vertical orientation 1`] = `
+<DocumentFragment>
+  .c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<fieldset
+    class="c0"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    Test Content
+  </fieldset>
+</DocumentFragment>
+`;
+
+exports[`Fieldset Styling matches with bold legend 1`] = `
+<DocumentFragment>
+  .c1 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--spacing-1x);
+}
+
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<fieldset
+    class="c0"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    id="uuid1"
+  >
+    <legend
+      class="c1"
+      id="uuid1-legend"
+    >
+      Text Legend
+    </legend>
+    Test Content
+  </fieldset>
+</DocumentFragment>
+`;
+
+exports[`Fieldset Styling matches with disabled legend 1`] = `
+<DocumentFragment>
+  .c1 {
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  margin: 0 0 var(--spacing-1x);
+}
+
+.c0 {
+  border: 0;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin: 0;
+  min-inline-size: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.c0:disabled legend,
+.c0[aria-disabled='true'] legend {
+  color: #B7BBC2;
+}
+
+<fieldset
+    aria-disabled="true"
+    class="c0"
+    data-orientation="vertical"
+    data-testid="fieldset"
+    disabled=""
+    id="uuid1"
+  >
+    <legend
+      class="c1"
+      id="uuid1-legend"
+    >
+      Text Legend
+    </legend>
+    Test Content
+  </fieldset>
+</DocumentFragment>
+`;

@@ -8,7 +8,7 @@ const defaultProps = {
 };
 
 describe('Field Container', () => {
-    test('matches snapshot', () => {
+    it('matches snapshot', () => {
         const { container } = renderWithProviders(
             <FieldContainer valid {...defaultProps}>
                 Children
@@ -18,7 +18,7 @@ describe('Field Container', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('should have invalid styles given valid prop is set to false', () => {
+    it('should have invalid styles given valid prop is set to false', () => {
         const { container } = renderWithProviders(
             <FieldContainer valid={false} {...defaultProps}>
                 Children
@@ -28,7 +28,7 @@ describe('Field Container', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('should not have margins given noMargin prop is set to true', () => {
+    it('should not have margins given noMargin prop is set to true', () => {
         const { container } = renderWithProviders(
             <FieldContainer valid noMargin {...defaultProps}>
                 Children

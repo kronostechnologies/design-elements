@@ -184,6 +184,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
       class="c2"
       color="currentColor"
       height="16"
+      icon-name="alert-octagon"
       role="img"
       width="16"
     />
@@ -422,6 +423,7 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
       class="c2"
       color="currentColor"
       height="16"
+      icon-name="lightbulb"
       role="img"
       width="16"
     />
@@ -667,6 +669,7 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
       class="c2"
       color="currentColor"
       height="16"
+      icon-name="info"
       role="img"
       width="16"
     />
@@ -916,6 +919,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
       class="c2"
       color="currentColor"
       height="16"
+      icon-name="alert-triangle"
       role="img"
       width="16"
     />
@@ -1138,6 +1142,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
       class="c2"
       color="currentColor"
       height="24"
+      icon-name="alert-octagon"
       role="img"
       width="24"
     />
@@ -1380,6 +1385,7 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
       class="c2"
       color="currentColor"
       height="24"
+      icon-name="lightbulb"
       role="img"
       width="24"
     />
@@ -1629,6 +1635,7 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
       class="c2"
       color="currentColor"
       height="24"
+      icon-name="info"
       role="img"
       width="24"
     />
@@ -1882,6 +1889,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
       class="c2"
       color="currentColor"
       height="24"
+      icon-name="alert-triangle"
       role="img"
       width="24"
     />

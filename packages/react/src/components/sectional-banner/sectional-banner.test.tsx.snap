@@ -63,6 +63,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
     color="currentColor"
     focusable="false"
     height="20"
+    icon-name="info"
     width="20"
   />
   <div
@@ -147,6 +148,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
     color="currentColor"
     focusable="false"
     height="20"
+    icon-name="info"
     width="20"
   />
   <div
@@ -224,6 +226,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
     color="currentColor"
     focusable="false"
     height="24"
+    icon-name="info"
     width="24"
   />
   <div

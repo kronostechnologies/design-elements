@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Card Matches the snapshot 1`] = `
+.c0 {
+  background: #FFFFFF;
+  border: 1px solid #F1F2F2;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.2);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  margin-bottom: var(--spacing-3x);
+  padding: var(--spacing-3x) var(--spacing-4x) var(--spacing-4x);
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    Hello World
+  </div>
+</div>
+`;

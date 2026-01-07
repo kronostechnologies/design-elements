@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
+exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -417,6 +417,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -551,6 +552,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -580,6 +582,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -609,6 +612,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -638,6 +642,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -654,7 +659,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 </body>
 `;
 
-exports[`DropdownMenuButton Matches Snapshot 1`] = `
+exports[`DropdownMenuButton matches Snapshot 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -770,7 +775,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   max-width: 350px;
   min-width: 200px;
   position: absolute;
-  top: 0px;
+  top: 4px;
   width: auto;
   z-index: 99998;
 }
@@ -1071,6 +1076,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="chevron-up"
           width="16"
         />
       </button>
@@ -1084,6 +1090,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
     class="c6 c7"
     data-testid="menu-dropdownMenu"
     id="uuid2"
+    style="width: 0px;"
   >
     <ul
       aria-labelledby="firstGroup"
@@ -1205,6 +1212,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1234,6 +1242,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1263,6 +1272,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />
@@ -1292,6 +1302,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="external-link"
             role="img"
             width="16"
           />

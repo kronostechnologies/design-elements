@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Invalid field matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c1 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: var(--spacing-base);
+}
+
+<span
+    class="c0"
+    data-testid="invalid-field"
+    id="test-id_invalid"
+  >
+    <svg
+      class="c1"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      icon-name="alert-octagon"
+      width="16"
+    />
+    Feedback Message
+  </span>
+</DocumentFragment>
+`;

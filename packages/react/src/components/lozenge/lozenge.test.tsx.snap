@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Lozenge alert matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #CD2C23;
+  border: 2px solid #CD2C23;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      alert
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Lozenge default matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #60666E;
+  border: 2px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      default
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Lozenge info matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #006296;
+  border: 2px solid #006296;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      info
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Lozenge matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #60666E;
+  border: 2px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      Hello World
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Lozenge success matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #008533;
+  border: 2px solid #008533;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      success
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Lozenge warning matches the snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F5A200;
+  border: 2px solid #F5A200;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  padding: 0 var(--spacing-half);
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      warning
+    </span>
+  </div>
+</DocumentFragment>
+`;

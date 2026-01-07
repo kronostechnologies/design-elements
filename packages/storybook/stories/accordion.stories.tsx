@@ -1,4 +1,4 @@
-import { Accordion } from '@equisoft/design-elements-react';
+import { Accordion, AccordionItem } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Accordion> = {
@@ -33,7 +33,7 @@ export const SingleSelect: Story = {
                 title: 'Panel Title 3',
                 content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
             },
-        ],
+        ] satisfies AccordionItem[],
     },
 };
 
@@ -52,7 +52,7 @@ export const MultiSelect: Story = {
                 title: 'Panel Title 3',
                 content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
             },
-        ],
+        ] satisfies AccordionItem[],
         mode: 'multi',
     },
 };

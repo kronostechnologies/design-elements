@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Accordion should toggle the icon when the button is clicked and \`expanded\` is updated 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
+.c1:not(:first-child) {
+  margin-top: var(--spacing-1x);
+}
+
+.c7 {
+  background: #FAFAFA;
+  border-color: #DBDEE1;
+  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
+  border-style: solid;
+  border-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease,border-width 0.5s ease;
+  transition: max-height 0.5s ease,border-width 0.5s ease;
+}
+
+.c7[aria-expanded='true'] {
+  border-width: 0 1px 1px 1px;
+  max-height: 1000px;
+  overflow-y: auto;
+  -webkit-transition: max-height 0.5s ease,border-width 0s ease;
+  transition: max-height 0.5s ease,border-width 0s ease;
+  will-change: max-height,border-width;
+}
+
+.c8 {
+  background: #FAFAFA;
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.7;
+  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
+}
+
+.c8 > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.c8 > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x);
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5;
+  min-height: var(--spacing-5x);
+  padding: var(--spacing-1x);
+  text-align: left;
+  text-transform: none;
+  -webkit-transition: border-radius 0.2s ease 0.5s;
+  transition: border-radius 0.2s ease 0.5s;
+  width: 100%;
+}
+
+.c6[aria-expanded='true'] {
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1B1C1E;
+  -webkit-transition: border-radius 0.1s ease;
+  transition: border-radius 0.1s ease;
+}
+
+.c6:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:hover {
+  background: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c6 > svg {
+  height: 1rem;
+  margin: 3px var(--spacing-1halfx) 0 3px;
+  width: 1rem;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+}
+
+.c6:disabled:hover {
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c6:disabled > svg {
+  color: #B7BBC2;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2 c3 eds-Accordion-heading"
+      >
+        <button
+          aria-controls="panel-test-Panel-Title-1"
+          aria-expanded="false"
+          class="c4 c5 c6 eds-Accordion-button"
+          id="test-Panel-Title-1"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="eds-Accordion-buttonIcon"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="caret-right"
+            width="24"
+          />
+          Panel Title 1
+        </button>
+      </h3>
+      <section
+        aria-expanded="false"
+        aria-labelledby="test-Panel-Title-1"
+        class="c7 eds-Accordion-panel"
+        id="panel-test-Panel-Title-1"
+      >
+        <div
+          class="c8 eds-Accordion-content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion should toggle the icon when the button is clicked and \`expanded\` is updated 2`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c5[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  color: #1B1C1E;
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
+.c1:not(:first-child) {
+  margin-top: var(--spacing-1x);
+}
+
+.c7 {
+  background: #FAFAFA;
+  border-color: #DBDEE1;
+  border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
+  border-style: solid;
+  border-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease,border-width 0.5s ease;
+  transition: max-height 0.5s ease,border-width 0.5s ease;
+}
+
+.c7[aria-expanded='true'] {
+  border-width: 0 1px 1px 1px;
+  max-height: 1000px;
+  overflow-y: auto;
+  -webkit-transition: max-height 0.5s ease,border-width 0s ease;
+  transition: max-height 0.5s ease,border-width 0s ease;
+  will-change: max-height,border-width;
+}
+
+.c8 {
+  background: #FAFAFA;
+  color: #1B1C1E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.7;
+  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
+}
+
+.c8 > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.c8 > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x);
+  color: #1B1C1E;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5;
+  min-height: var(--spacing-5x);
+  padding: var(--spacing-1x);
+  text-align: left;
+  text-transform: none;
+  -webkit-transition: border-radius 0.2s ease 0.5s;
+  transition: border-radius 0.2s ease 0.5s;
+  width: 100%;
+}
+
+.c6[aria-expanded='true'] {
+  background: #FFFFFF;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1B1C1E;
+  -webkit-transition: border-radius 0.1s ease;
+  transition: border-radius 0.1s ease;
+}
+
+.c6:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c6:hover {
+  background: #DBDEE1;
+  border-color: #000000;
+  color: #000000;
+}
+
+.c6 > svg {
+  height: 1rem;
+  margin: 3px var(--spacing-1halfx) 0 3px;
+  width: 1rem;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+}
+
+.c6:disabled:hover {
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+}
+
+.c6:disabled > svg {
+  color: #B7BBC2;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2 c3 eds-Accordion-heading"
+      >
+        <button
+          aria-controls="panel-test-Panel-Title-1"
+          aria-expanded="true"
+          class="c4 c5 c6 eds-Accordion-button"
+          id="test-Panel-Title-1"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="eds-Accordion-buttonIcon"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            icon-name="caret-down"
+            width="24"
+          />
+          Panel Title 1
+        </button>
+      </h3>
+      <section
+        aria-expanded="true"
+        aria-labelledby="test-Panel-Title-1"
+        class="c7 eds-Accordion-panel"
+        id="panel-test-Panel-Title-1"
+      >
+        <div
+          class="c8 eds-Accordion-content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

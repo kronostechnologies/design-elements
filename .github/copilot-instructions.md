@@ -1,6 +1,14 @@
 This project uses yarn as package manager.
+Do no use `npm` or `npx` commands.
 
 ### Tests
 This project uses Jest.
-For React component tests, use `@testing-library/react`.
-For React hooks tests, use hook testing from `@testing-library/react`.
+Group blocks within a test closure into given-when-then structure, separated with an empty line (without comments).
+For React component tests, use `@testing-library/react` (RTL).
+    - Use method `renderWithProviders` instead of `render`. 
+    - Use `it` for test closures.
+    - Use `screen` for queries.
+    - Use `userEvent` for user interactions.
+
+For React hooks tests, use hook testing from `@testing-library/react` (RTL).
+Do not write useless comments.

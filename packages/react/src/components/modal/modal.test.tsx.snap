@@ -407,6 +407,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="x"
             width="16"
           />
         </button>
@@ -612,6 +613,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
             color="currentColor"
             focusable="false"
             height="16"
+            icon-name="x"
             width="16"
           />
         </button>
@@ -816,6 +818,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
             color="currentColor"
             focusable="false"
             height="20"
+            icon-name="x"
             width="20"
           />
         </button>

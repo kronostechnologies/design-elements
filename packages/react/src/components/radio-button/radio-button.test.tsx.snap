@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RadioButton matches snapshot 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: inline-block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-1x);
+  margin: 0;
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:checked {
+  background-image: url('data:image/svg+xml;utf8,%0A%20%20%20%20%20%20%20%20%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%228%22%20cy%3D%228%22%20r%3D%224%22%20fill%3D%22%23006296%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fsvg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #006296;
+}
+
+.c1:disabled + label {
+  color: #B7BBC2;
+}
+
+.c1:hover:checked:not(:disabled) {
+  border: 1px solid #000000;
+}
+
+.c1:hover:not(:checked) {
+  border: 1px solid #000000;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c2 {
+  margin-top: var(--spacing-quarter);
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1 c2"
+      data-testid="radiobutton-uuid1"
+      id="uuid1"
+      type="radio"
+      value=""
+    />
+    <label
+      class="c3"
+      data-testid="radiobutton-uuid1_label"
+      for="uuid1"
+    >
+      This is a label
+    </label>
+  </div>
+</div>
+`;

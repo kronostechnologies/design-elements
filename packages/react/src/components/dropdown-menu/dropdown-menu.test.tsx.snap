@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`DropdownMenu Matches the snapshot 1`] = `
+exports[`DropdownMenu matches the snapshot 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
@@ -321,6 +321,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />
@@ -350,6 +351,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />
@@ -379,6 +381,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           color="currentColor"
           focusable="false"
           height="16"
+          icon-name="external-link"
           role="img"
           width="16"
         />

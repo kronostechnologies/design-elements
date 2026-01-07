@@ -244,6 +244,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -278,6 +279,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -290,6 +292,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -302,6 +305,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -314,6 +318,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -326,6 +331,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -338,6 +344,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -350,6 +357,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -362,6 +370,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -374,6 +383,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -386,6 +396,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -398,6 +409,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -410,6 +422,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c12 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
@@ -691,6 +704,7 @@ input + .c2 {
       data-testid="textbox-icon"
       focusable="false"
       height="16"
+      icon-name="menu"
       width="16"
     />
     <input
@@ -710,6 +724,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -744,6 +759,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -756,6 +772,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -768,6 +785,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -780,6 +798,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -792,6 +811,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -804,6 +824,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -816,6 +837,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -828,6 +850,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -840,6 +863,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -852,6 +876,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -864,6 +889,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -876,6 +902,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
@@ -1148,6 +1175,7 @@ input + .c2 {
       color="currentColor"
       focusable="false"
       height="16"
+      icon-name="alert-octagon"
       width="16"
     />
     You must select an option
@@ -1184,6 +1212,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -1218,6 +1247,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -1230,6 +1260,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -1242,6 +1273,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -1254,6 +1286,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -1266,6 +1299,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -1278,6 +1312,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -1290,6 +1325,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -1302,6 +1338,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -1314,6 +1351,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -1326,6 +1364,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -1338,6 +1377,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -1350,6 +1390,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c14 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
@@ -1589,6 +1630,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
       data-testid="arrow"
       focusable="false"
       height="24"
+      icon-name="chevron-up"
       width="24"
     />
   </div>
@@ -1623,6 +1665,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -1635,6 +1678,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -1647,6 +1691,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -1659,6 +1704,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -1671,6 +1717,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -1683,6 +1730,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -1695,6 +1743,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -1707,6 +1756,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -1719,6 +1769,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -1731,6 +1782,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -1743,6 +1795,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -1755,6 +1808,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c10 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
@@ -2000,6 +2054,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -2021,6 +2076,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
         role="presentation"
       >
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ab"
           id="uuid1_listbox_ab"
@@ -2035,6 +2091,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2045,6 +2102,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -2059,6 +2117,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2069,6 +2128,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -2083,6 +2143,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2093,6 +2154,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -2107,6 +2169,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2117,6 +2180,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -2131,6 +2195,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2141,6 +2206,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -2155,6 +2221,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2165,6 +2232,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -2179,6 +2247,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2189,6 +2258,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -2203,6 +2273,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2213,6 +2284,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -2227,6 +2299,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2237,6 +2310,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -2251,6 +2325,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2261,6 +2336,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -2275,6 +2351,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2285,6 +2362,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -2299,6 +2377,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2309,6 +2388,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c8 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
@@ -2323,6 +2403,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
               color="currentColor"
               focusable="false"
               height="24"
+              icon-name="check"
               width="24"
             />
           </span>
@@ -2607,6 +2688,7 @@ input + .c2 {
       data-testid="arrow"
       focusable="false"
       height="16"
+      icon-name="chevron-up"
       width="16"
     />
   </div>
@@ -2641,6 +2723,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-bc"
           id="uuid1_listbox_bc"
@@ -2653,6 +2736,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-mb"
           id="uuid1_listbox_mb"
@@ -2665,6 +2749,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nb"
           id="uuid1_listbox_nb"
@@ -2677,6 +2762,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nl"
           id="uuid1_listbox_nl"
@@ -2689,6 +2775,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nt"
           id="uuid1_listbox_nt"
@@ -2701,6 +2788,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-ns"
           id="uuid1_listbox_ns"
@@ -2713,6 +2801,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-nu"
           id="uuid1_listbox_nu"
@@ -2725,6 +2814,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-on"
           id="uuid1_listbox_on"
@@ -2737,6 +2827,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-pe"
           id="uuid1_listbox_pe"
@@ -2749,6 +2840,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-qc"
           id="uuid1_listbox_qc"
@@ -2761,6 +2853,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-sk"
           id="uuid1_listbox_sk"
@@ -2773,6 +2866,7 @@ input + .c2 {
           </span>
         </li>
         <li
+          aria-selected="false"
           class="c13 react-datepicker-ignore-onclickoutside"
           data-testid="listitem-yt"
           id="uuid1_listbox_yt"
