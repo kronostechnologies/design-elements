@@ -501,14 +501,15 @@ export const Combobox: FC<ComboboxProps> = ({
     const changeInputValue: (newOption: ComboboxOption | undefined) => void = useCallback((newOption) => {
         setInputValue(getInputValueFromOption(newOption));
         setSuggestedInputValue('');
-
-        const newValue: string | undefined = newOption?.value;
-        const existingOption: ListboxOption | undefined = findOptionsByValue(options, newValue)[0];
-        const isNotAlreadySelectedOption = existingOption !== undefined && selectedOption?.value !== newValue;
-        if (allowCustomValue || newOption === undefined || isNotAlreadySelectedOption) {
-            onChange?.(newValue || '');
+        if (!multiselect) {
+            const newValue: string | undefined = newOption?.value;
+            const existingOption: ListboxOption | undefined = findOptionsByValue(options, newValue)[0];
+            const isNotAlreadySelectedOption = existingOption !== undefined && selectedOption?.value !== newValue;
+            if (allowCustomValue || newOption === undefined || isNotAlreadySelectedOption) {
+                onChange?.(newValue || '');
+            }
         }
-    }, [allowCustomValue, getInputValueFromOption, onChange, options, selectedOption?.value]);
+    }, [allowCustomValue, getInputValueFromOption, multiselect, onChange, options, selectedOption?.value]);
 
     const revertInputValue: () => void = useCallback(() => {
         revertPreviousSelectedOption();

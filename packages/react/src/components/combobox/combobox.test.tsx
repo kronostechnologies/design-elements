@@ -161,8 +161,9 @@ describe('Combobox', () => {
         renderWithProviders(<Combobox options={options} onChange={onChange} />);
 
         screen.getByTestId('textbox').focus();
-        act(() => screen.getByTestId('arrow').click());
-        screen.getByText('Bar Label').click();
+
+        await userEvent.click(screen.getByTestId('arrow'));
+        await userEvent.click(screen.getByText('Bar Label'));
 
         expect(onChange).toHaveBeenCalledWith('bar');
     });
@@ -176,8 +177,8 @@ describe('Combobox', () => {
         renderWithProviders(<Combobox options={options} onChange={onChange} />);
 
         screen.getByTestId('textbox').focus();
-        act(() => screen.getByTestId('arrow').click());
-        screen.getByText('bar').click();
+        await userEvent.click(screen.getByTestId('arrow'));
+        await userEvent.click(screen.getByText('bar'));
 
         expect(onChange).toHaveBeenCalledWith('bar');
     });
@@ -215,7 +216,7 @@ describe('Combobox', () => {
         expect(screen.getByTestId('textbox')).toHaveValue('');
     });
 
-    it('calls onChange with empty string when cleared', () => {
+    it('calls onChange with empty string when cleared', async () => {
         const options: ComboboxOption[] = [
             { value: 'foo', label: 'Foo Label' },
             { value: 'bar', label: 'Bar Label' },
@@ -223,7 +224,7 @@ describe('Combobox', () => {
         const onChange = jest.fn();
         renderWithProviders(<Combobox value="foo" options={options} onChange={onChange} />);
 
-        screen.getByTestId('clear').click();
+        await userEvent.click(screen.getByTestId('clear'));
 
         expect(onChange).toHaveBeenCalledWith('');
     });
@@ -237,8 +238,8 @@ describe('Combobox', () => {
         renderWithProviders(<Combobox options={options} onChange={onChange} />);
 
         screen.getByTestId('textbox').focus();
-        act(() => screen.getByTestId('arrow').click());
-        screen.getByText('Foo Label').click();
+        await userEvent.click(screen.getByTestId('arrow'));
+        await userEvent.click(screen.getByText('Foo Label'));
 
         expect(onChange).not.toHaveBeenCalledWith('foo');
     });
@@ -263,12 +264,12 @@ describe('Combobox', () => {
 
         function renderCombo(props: Partial<ComboboxProps> = {}): RenderResult {
             return renderWithProviders(
-                <Combobox onChange={onChange} options={options} {...props} />,
+                <Combobox multiselect onChange={onChange} options={options} {...props} />,
             );
         }
 
         it('renders with defaultValue as array', () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'baz'] });
+            renderCombo({ defaultValue: ['foo', 'baz'] });
 
             expect(screen.getByTestId('listboxtag-foo')).toBeInTheDocument();
             expect(screen.getByTestId('listboxtag-baz')).toBeInTheDocument();
@@ -276,7 +277,7 @@ describe('Combobox', () => {
         });
 
         it('renders with values overriding defaultValue as array', () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'baz'], value: ['bar'] });
+            renderCombo({ defaultValue: ['foo', 'baz'], value: ['bar'] });
 
             expect(screen.getByTestId('listboxtag-bar')).toBeInTheDocument();
             expect(screen.queryByTestId('listboxtag-foo')).toBeNull();
@@ -284,11 +285,11 @@ describe('Combobox', () => {
         });
 
         it('calls onChange with array of values when selecting multiple options (multiselect)', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             screen.getByTestId('textbox').focus();
-            act(() => screen.getByTestId('arrow').click());
-            screen.getByText('Foo Label').click();
+            await userEvent.click(screen.getByTestId('arrow'));
+            await userEvent.click(screen.getByText('Foo Label'));
 
             expect(onChange).toHaveBeenCalledWith([
                 { value: 'foo', label: 'Foo Label' },
@@ -296,7 +297,7 @@ describe('Combobox', () => {
         });
 
         it('removes tag when clicking the remove button (multiselect)', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'] });
+            renderCombo({ defaultValue: ['foo', 'bar'] });
 
             const tagRemoveButton = screen.getByTestId('Foo Label-remove-button');
             await userEvent.click(tagRemoveButton);
@@ -307,14 +308,14 @@ describe('Combobox', () => {
         });
 
         it('does not remove tag when clicking the remove button when readOnly (multiselect)', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'], readOnly: true });
+            renderCombo({ defaultValue: ['foo', 'bar'], readOnly: true });
 
             expect(screen.queryByTestId('Foo Label-remove-button')).toBeNull();
             expect(screen.queryByTestId('Bar Label-remove-button')).toBeNull();
         });
 
         it('adds a custom value as a tag when allowCustomValue is true (multiselect)', async () => {
-            renderCombo({ multiselect: true, allowCustomValue: true });
+            renderCombo({ allowCustomValue: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'custom');
@@ -326,7 +327,7 @@ describe('Combobox', () => {
         });
 
         it('does not add a custom value as a tag when allowCustomValue is false (multiselect)', async () => {
-            renderCombo({ multiselect: true, allowCustomValue: false });
+            renderCombo({ allowCustomValue: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'custom');
@@ -341,21 +342,27 @@ describe('Combobox', () => {
         });
 
         it('does not add duplicate tags when the same option is selected multiple times (multiselect)', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             screen.getByTestId('textbox').focus();
-            act(() => screen.getByTestId('arrow').click());
+            await userEvent.click(screen.getByTestId('arrow'));
 
-            screen.getByText('Foo Label').click();
-            screen.getByText('Foo Label').click();
+            const fooLabel = screen.getByText('Foo Label');
+            await userEvent.click(fooLabel);
+            await userEvent.click(fooLabel);
 
-            expect(onChange).toHaveBeenLastCalledWith([
-                { value: 'foo', label: 'Foo Label' },
+            expect(onChange.mock.calls).toEqual([
+                [
+                    [{ value: 'foo', label: 'Foo Label' }],
+                ],
+                [
+                    [],
+                ],
             ]);
         });
 
         it('auto selects matching option when typing in input (multiselect)', async () => {
-            renderCombo({ multiselect: true, autoSelectMatchingOption: true });
+            renderCombo({ autoSelectMatchingOption: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo Label');
@@ -367,7 +374,6 @@ describe('Combobox', () => {
 
         it('unselect matching option when typing in input if already selected (multiselect)', async () => {
             renderCombo({
-                multiselect: true,
                 defaultValue: ['foo'],
                 autoSelectMatchingOption: true,
             });
@@ -379,7 +385,7 @@ describe('Combobox', () => {
         });
 
         it('does not auto select matching option when autoSelectMatchingOption is false (multiselect)', async () => {
-            renderCombo({ multiselect: true, autoSelectMatchingOption: false });
+            renderCombo({ autoSelectMatchingOption: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo Label');
@@ -388,7 +394,7 @@ describe('Combobox', () => {
         });
 
         it('opens listbox when pressing Enter key with closed listbox', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             textbox.focus();
@@ -401,7 +407,7 @@ describe('Combobox', () => {
         });
 
         it('keeps listbox open after selecting an option', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             textbox.focus();
@@ -415,7 +421,7 @@ describe('Combobox', () => {
         });
 
         it('clears input value after selecting an option', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'Foo');
@@ -426,7 +432,7 @@ describe('Combobox', () => {
         });
 
         it('allows multiple sequential selections without closing listbox', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             await userEvent.click(screen.getByTestId('textbox'));
 
@@ -440,7 +446,7 @@ describe('Combobox', () => {
         });
 
         it('does not show clear button in multiselect mode', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo'] });
+            renderCombo({ defaultValue: ['foo'] });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'test');
@@ -454,7 +460,6 @@ describe('Combobox', () => {
                 { value: 'bar', label: 'Bar Label' },
             ];
             renderCombo({
-                multiselect: true,
                 options: optionsWithDisabled,
             });
 
@@ -469,7 +474,7 @@ describe('Combobox', () => {
         });
 
         it('filters options when typing in input', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -482,7 +487,7 @@ describe('Combobox', () => {
         });
 
         it('closes listbox when pressing Escape key', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             await userEvent.click(screen.getByRole('combobox'));
             expect(screen.getByRole('listbox')).toBeInTheDocument();
@@ -493,7 +498,7 @@ describe('Combobox', () => {
         });
 
         it('clears input but keeps tags when pressing Escape with text', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo'] });
+            renderCombo({ defaultValue: ['foo'] });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'some text');
@@ -509,7 +514,7 @@ describe('Combobox', () => {
         });
 
         it('navigates options with ArrowDown key', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -523,7 +528,7 @@ describe('Combobox', () => {
         });
 
         it('navigates options with ArrowUp key', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -537,7 +542,7 @@ describe('Combobox', () => {
         });
 
         it('selects focused option with Enter key', async () => {
-            renderCombo({ multiselect: true });
+            renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.click(textbox);
@@ -551,7 +556,6 @@ describe('Combobox', () => {
 
         it('updates tags when controlled value prop changes', () => {
             const { rerender } = renderCombo({
-                multiselect: true,
                 value: ['foo'],
             });
 
@@ -573,7 +577,7 @@ describe('Combobox', () => {
         });
 
         it('updates available options when options prop changes', () => {
-            const { rerender } = renderCombo({ multiselect: true });
+            const { rerender } = renderCombo({ });
 
             const textbox = screen.getByTestId('textbox');
             userEvent.click(textbox);
@@ -602,7 +606,7 @@ describe('Combobox', () => {
         });
 
         it('adds custom value with allowCustomValue on Enter when no option is focused', async () => {
-            renderCombo({ multiselect: true, allowCustomValue: true });
+            renderCombo({ allowCustomValue: true });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'my custom value');
@@ -614,7 +618,7 @@ describe('Combobox', () => {
         });
 
         it('does not add custom value when allowCustomValue is false and Enter is pressed', async () => {
-            renderCombo({ multiselect: true, allowCustomValue: false });
+            renderCombo({ allowCustomValue: false });
 
             const textbox = screen.getByTestId('textbox');
             await userEvent.type(textbox, 'my custom value');
@@ -628,7 +632,7 @@ describe('Combobox', () => {
         });
 
         it('removes tag and updates onChange when tag remove button is clicked', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'] });
+            renderCombo({ defaultValue: ['foo', 'bar'] });
 
             expect(screen.getByTestId('listboxtag-foo')).toBeInTheDocument();
             expect(screen.getByTestId('listboxtag-bar')).toBeInTheDocument();
@@ -642,7 +646,7 @@ describe('Combobox', () => {
         });
 
         it('deselects option when clicking on a selected option', async () => {
-            renderCombo({ multiselect: true, defaultValue: ['foo', 'bar'] });
+            renderCombo({ defaultValue: ['foo', 'bar'] });
             await userEvent.click(screen.getByTestId('textbox'));
 
             await userEvent.click(within(getListbox()).getByText('Foo Label'));
@@ -650,6 +654,46 @@ describe('Combobox', () => {
             expect(onChange).toHaveBeenCalledWith([
                 { value: 'bar', label: 'Bar Label' },
             ]);
+        });
+
+        it('does not trigger onChange when closing the listbox', async () => {
+            renderCombo({ defaultValue: ['foo', 'bar'] });
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            await userEvent.click(document.body);
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
+
+        it('does not trigger onChange when typing into the input', async () => {
+            renderCombo({ defaultValue: ['foo', 'bar'] });
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            const textbox = screen.getByTestId('textbox');
+            await userEvent.type(textbox, 'a');
+            await userEvent.type(textbox, 'b');
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
+
+        it('does not trigger onChange when closing the listbox with allowCustomValue', async () => {
+            renderCombo({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            await userEvent.click(document.body);
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
+
+        it('does not trigger onChange when typing into the input with allowCustomValue', async () => {
+            renderCombo({ defaultValue: ['foo', 'bar'], allowCustomValue: true });
+            await userEvent.click(screen.getByTestId('textbox'));
+
+            const textbox = screen.getByTestId('textbox');
+            await userEvent.type(textbox, 'a');
+            await userEvent.type(textbox, 'b');
+
+            expect(onChange).not.toHaveBeenCalled();
         });
     });
 });
