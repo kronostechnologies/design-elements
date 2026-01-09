@@ -111,6 +111,20 @@ export const WithMultiselect: Story = {
         defaultValue: ['alberta', 'quebec'],
         label: 'Select options',
         multiselect: true,
-        onChange: (options: ComboboxOption[]) => console.log(options), /* eslint-disable-line no-console */
+        onChange: (options: ComboboxOption[]) => console.log('onChange', options), /* eslint-disable-line no-console */
+        onInputChange: (value) => console.info('onInputChange', value), /* eslint-disable-line no-console */
+    },
+};
+
+export const WithMultiselectCustomValue: Story = {
+    ...comboboxMeta,
+    args: {
+        autoSelectMatchingOption: false,
+        defaultValue: ['alberta', 'quebec'],
+        label: 'Select options',
+        multiselect: true,
+        allowCustomValue: true,
+        onChange: (options: ComboboxOption[]) => console.log('onChange', options), /* eslint-disable-line no-console */
+        onInputChange: (value) => console.info('onInputChange', value), /* eslint-disable-line no-console */
     },
 };
