@@ -66,10 +66,18 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
     Object.assign(locale.options || {}, optionsOverride);
 }
 
-// Allow input values of contiguous or space-separated numbers (without dashes or slashes)
+// Allow input values of contiguous, space-, dash- or slash-separated numbers.
+// Formats with a separator also allow single-digit month and day.
 export function getAlternateDateFormats(dateFormat: string): string[] {
-    return [
+    return [...new Set([
+        // The first format entry is used for formatting the input
+        dateFormat,
         dateFormat.replace(/[^yMd]/g, ''),
         dateFormat.replace(/[^yMd]/g, ' '),
-    ].filter((format) => format !== dateFormat);
+        dateFormat.replace(/[^yMd]/g, '-'),
+        dateFormat.replace(/[^yMd]/g, '/'),
+        dateFormat.replace(/[^yMd]/g, ' ').replace('MM', 'M').replace('dd', 'd'),
+        dateFormat.replace(/[^yMd]/g, '-').replace('MM', 'M').replace('dd', 'd'),
+        dateFormat.replace(/[^yMd]/g, '/').replace('MM', 'M').replace('dd', 'd'),
+    ])];
 }

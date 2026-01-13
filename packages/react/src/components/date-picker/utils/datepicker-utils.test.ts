@@ -109,23 +109,59 @@ describe('Datepicker utils', () => {
         });
     });
 
-    describe('allow variations of a given date format', () => {
+    describe('provide variations of a given date format', () => {
+        test('the user-provided format is at the beginning of the list', () => {
+            const providedDateFormat = 'yyyy-MM-dd';
+            const result = getAlternateDateFormats(providedDateFormat);
+
+            expect(result[0]).toEqual(providedDateFormat);
+        });
+
         const tests = [
             {
                 format: 'yyyy-MM-dd',
-                result: ['yyyyMMdd', 'yyyy MM dd'],
+                result: [
+                    'yyyy-MM-dd',
+                    'yyyyMMdd',
+                    'yyyy MM dd',
+                    'yyyy/MM/dd',
+                    'yyyy M d',
+                    'yyyy-M-d',
+                    'yyyy/M/d',
+                ],
             },
             {
                 format: 'yyyy/d/M',
-                result: ['yyyydM', 'yyyy d M'],
+                result: [
+                    'yyyy/d/M',
+                    'yyyydM',
+                    'yyyy d M',
+                    'yyyy-d-M',
+                ],
             },
             {
                 format: 'dd/MM/yyyy',
-                result: ['ddMMyyyy', 'dd MM yyyy'],
+                result: [
+                    'dd/MM/yyyy',
+                    'ddMMyyyy',
+                    'dd MM yyyy',
+                    'dd-MM-yyyy',
+                    'd M yyyy',
+                    'd-M-yyyy',
+                    'd/M/yyyy',
+                ],
             },
             {
                 format: 'yy-MM-dd',
-                result: ['yyMMdd', 'yy MM dd'],
+                result: [
+                    'yy-MM-dd',
+                    'yyMMdd',
+                    'yy MM dd',
+                    'yy/MM/dd',
+                    'yy M d',
+                    'yy-M-d',
+                    'yy/M/d',
+                ],
             },
         ];
 

@@ -275,6 +275,11 @@ export interface DatepickerProps {
     openToDate?: Date | null;
     /** Sets calendar initially open (uncontrolled) */
     startOpen?: boolean;
+    /**
+     * Only allow input that strictly conforms to dateFormat
+     * @default false
+     */
+    strictDateFormat?: boolean;
     tabIndex?: number;
     /**
      * Sets input validity
@@ -328,6 +333,7 @@ export const Datepicker = forwardRef(({
     required,
     openToDate,
     startOpen,
+    strictDateFormat = false,
     tooltip,
     toggletip,
     valid = true,
@@ -500,8 +506,8 @@ export const Datepicker = forwardRef(({
 
     const dateFormats = useMemo(() => {
         const dateFormat = providedDateFormat || getLocaleDateFormat(currentLocale);
-        return [dateFormat, ...getAlternateDateFormats(dateFormat)];
-    }, [currentLocale, providedDateFormat]);
+        return strictDateFormat ? [dateFormat] : getAlternateDateFormats(dateFormat);
+    }, [currentLocale, providedDateFormat, strictDateFormat]);
 
     return (
         <>
@@ -561,6 +567,7 @@ export const Datepicker = forwardRef(({
                         selected={selectedDate}
                         showPopperArrow={false}
                         startOpen={startOpen}
+                        strictParsing
                         required={required}
                         valid={valid}
                         withPortal={isMobile}
