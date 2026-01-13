@@ -436,7 +436,7 @@ export const Datepicker = forwardRef(({
             && calendarButtonRef.current
             && eventIsInside(event as unknown as Event, calendarButtonRef.current)
         ) {
-            dateInputRef.current.setOpen(true);
+            event.preventDefault();
         }
     };
 
