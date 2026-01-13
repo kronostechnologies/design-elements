@@ -37,7 +37,7 @@
     "date-fns": "4.1.0",
     "feather-icons": "4.29.2",
     "prop-types": "15.8.1",
-    "react-datepicker": "8.8.0",
+    "react-datepicker": "8.10.0",
     "react-is": "18.3.1",
     "react-modal": "3.16.3",
     "react-popper-tooltip": "4.4.2",
