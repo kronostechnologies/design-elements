@@ -1,8 +1,6 @@
 name: Lint Commit Messages
 on:
-  push: {}
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
+  push: { }
 
 jobs:
   commitlint:
@@ -12,11 +10,3 @@ jobs:
         with:
           fetch-depth: 0
       - uses: equisoft-actions/lint-commits@v4
-
-      - name: Lint pull request title
-        if: ${{ !contains(github.event.pull_request.user.login, '[bot]') && github.event_name == 'pull_request' }}
-        uses: equisoft-actions/action-pr-title@v1
-        with:
-          allowed_prefixes: 'feat,fix,deps,docs,chore,style,refactor,perf,test,ci'
-          disallowed_prefixes: 'DS'
-          format: 'scope(Component)!: description (DS-0000)'
