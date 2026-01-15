@@ -83,7 +83,8 @@ describe('Datepicker', () => {
             await user.type(input, '2002-02-02');
 
             expect(callback).toHaveBeenCalled();
-            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2002-02-02');
+            const lastCallbackValue = callback.mock.calls[callback.mock.calls.length - 1][0];
+            expect(lastCallbackValue.toISOString()).toStartWith('2002-02-02');
         });
 
         it('onFocus callback is called when input focused', async () => {
