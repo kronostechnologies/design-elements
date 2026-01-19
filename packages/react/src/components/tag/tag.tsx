@@ -32,6 +32,7 @@ export interface TagProps {
     className?: string;
     labelRef?: Ref<HTMLSpanElement>;
     size?: TagSize;
+    subtle?: boolean;
     value: TagValue;
     iconName?: IconName;
 
@@ -40,11 +41,12 @@ export interface TagProps {
 }
 
 interface TagStylingProps {
-    $isMobile: boolean;
-    $tagSize: TagSize;
     $hasIcon: boolean;
-    $tagColor: TagColor;
+    $isMobile: boolean;
     $removable: boolean;
+    $subtle?: boolean;
+    $tagColor: TagColor;
+    $tagSize: TagSize;
 }
 
 function getFontSize({ $isMobile }: TagStylingProps): number {
@@ -90,10 +92,17 @@ function getTagColors(
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
+function getBorder(props: StyledProps<TagStylingProps>): string {
+    if (props.$subtle) {
+        return 'none';
+    }
+    return `1px solid ${getTagColors(props, 'border-color')}`;
+}
+
 const TagContainer = styled.div<TagStylingProps>`
     align-items: center;
     background-color: ${(props) => getTagColors(props, 'background-color')};
-    border: 1px solid ${(props) => getTagColors(props, 'border-color')};
+    border: ${getBorder};
     border-radius: ${({ $tagSize, $isMobile }) => ($isMobile || isMedium($tagSize) ? 'var(--border-radius-1halfx)' : 'var(--border-radius)')};
     display: inline-flex;
     padding: ${getPadding};
@@ -146,6 +155,7 @@ export const Tag = forwardRef(({
     labelRef,
     iconName,
     size = 'medium',
+    subtle = false,
     color = 'default',
     value,
     onRemove,
@@ -173,6 +183,7 @@ export const Tag = forwardRef(({
             $removable={isRemovable}
             $hasIcon={hasIcon}
             $tagColor={color}
+            $subtle={subtle}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {hasIcon && (

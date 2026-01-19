@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -188,7 +188,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop remov
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -262,7 +262,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop with 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -304,7 +304,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (desktop) 1`] 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -492,7 +492,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile remova
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -566,7 +566,7 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile with i
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -608,7 +608,615 @@ exports[`Tag Tag size=medium color=decorative-01 matches snapshot (mobile) 1`] =
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #220123;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #220123;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #220123;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #220123;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -796,7 +1404,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop remov
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -870,7 +1478,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop with 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -912,7 +1520,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (desktop) 1`] 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1100,7 +1708,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile remova
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1174,7 +1782,7 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile with i
 </div>
 `;
 
-exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1216,7 +1824,615 @@ exports[`Tag Tag size=medium color=decorative-02 matches snapshot (mobile) 1`] =
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #7D520B;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #7D520B;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #7D520B;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #7D520B;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1404,7 +2620,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop removable) 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1478,7 +2694,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop with icons)
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1520,7 +2736,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1708,7 +2924,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile removable) 1
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1782,7 +2998,7 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile with icons) 
 </div>
 `;
 
-exports[`Tag Tag size=medium color=default matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1824,7 +3040,615 @@ exports[`Tag Tag size=medium color=default matches snapshot (mobile) 1`] = `
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #1B1C1E;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #1B1C1E;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2013,7 +3837,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop remova
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2087,7 +3911,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop with i
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2129,7 +3953,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (desktop) 1`] =
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2317,7 +4141,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile removab
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2391,7 +4215,7 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile with ic
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2433,7 +4257,616 @@ exports[`Tag Tag size=small color=decorative-01 matches snapshot (mobile) 1`] = 
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #220123;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #220123;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #220123;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #220123;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EBE6EB;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #220123;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2622,7 +5055,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop remova
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2696,7 +5129,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop with i
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2738,7 +5171,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (desktop) 1`] =
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2926,7 +5359,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile removab
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3000,7 +5433,7 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile with ic
 </div>
 `;
 
-exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3042,7 +5475,616 @@ exports[`Tag Tag size=small color=decorative-02 matches snapshot (mobile) 1`] = 
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1`] = `
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #7D520B;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #7D520B;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #7D520B;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #7D520B;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3E7;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #7D520B;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3231,7 +6273,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop removable) 1
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (desktop with icons) 1`] = `
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3305,7 +6347,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop with icons) 
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (desktop) 1`] = `
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3347,7 +6389,7 @@ exports[`Tag Tag size=small color=default matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`] = `
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile removable) 1`] = `
 .c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3535,7 +6577,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile removable) 1`
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (mobile with icons) 1`] = `
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile with icons) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3609,7 +6651,7 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile with icons) 1
 </div>
 `;
 
-exports[`Tag Tag size=small color=default matches snapshot (mobile) 1`] = `
+exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3617,6 +6659,615 @@ exports[`Tag Tag size=small color=default matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #F1F2F2;
   border: 1px solid #878F9A;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-1halfx);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  min-width: var(--size-1halfx);
+  padding: 0;
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #1B1C1E;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="12"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile removable) 1`] = `
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4 {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #1B1C1E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  margin-right: calc(-1 * var(--spacing-half));
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.c5 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+<div
+  class="c0 c1"
+>
+  <span
+    class="c2"
+  >
+    Test
+  </span>
+  <button
+    aria-label="Remove tag Test"
+    class="c3 c4 c5"
+    data-testid="Test-remove-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile with icons) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
+  border-radius: var(--border-radius-1halfx);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 var(--spacing-1x);
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #1B1C1E;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  color: #1B1C1E;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+<div
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="lucide lucide-house c2"
+    data-testid="Test-icon"
+    fill="none"
+    focusable="true"
+    height="20"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
+  <span
+    class="c3"
+  >
+    Test
+  </span>
+</div>
+`;
+
+exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: none;
   border-radius: var(--border-radius-1halfx);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
