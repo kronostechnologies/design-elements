@@ -28,6 +28,7 @@ export type ButtonType =
 export interface ButtonProps {
     id?: string;
     autofocus?: boolean;
+    ariaLabel?: string;
     /**
      * Visual style
      * @default primary
@@ -46,6 +47,7 @@ export interface ButtonProps {
      * @default Loading...
      */
     loadingLabel?: string;
+    pressed?: boolean;
     /**
      * Size variant
      * @default medium
@@ -62,10 +64,13 @@ export interface ButtonProps {
     onFocus?: FocusEventHandler<HTMLButtonElement>;
     onBlur?: FocusEventHandler<HTMLButtonElement>;
     onKeyDown?: KeyboardEventHandler<HTMLButtonElement>;
+
+    value?: string;
 }
 
 export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
     autofocus,
+    ariaLabel,
     buttonType,
     children,
     className,
@@ -78,10 +83,12 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
     onFocus,
     onBlur,
     onKeyDown,
+    pressed,
     title,
     leftIconName,
     rightIconName,
     type = 'button',
+    value,
     ...props
 }: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -108,6 +115,9 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
 
     return (
         <StyledButton
+            aria-disabled={disabled ? 'true' : undefined}
+            aria-label={ariaLabel || undefined}
+            aria-pressed={pressed}
             autoFocus={autofocus}
             ref={ref}
             title={title}
@@ -115,12 +125,12 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             type={type}
             buttonType={buttonType}
             className={className}
-            aria-disabled={disabled ? 'true' : undefined}
             focusable={focusable}
             onClick={handleClick}
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={handleKeyDown}
+            value={value}
             {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
         >
             {children}
