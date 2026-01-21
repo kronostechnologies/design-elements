@@ -115,8 +115,8 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
 
     return (
         <StyledButton
-            aria-disabled={disabled ? 'true' : undefined}
-            aria-label={ariaLabel || undefined}
+            aria-disabled={disabled}
+            aria-label={ariaLabel}
             aria-pressed={pressed}
             autoFocus={autofocus}
             ref={ref}
