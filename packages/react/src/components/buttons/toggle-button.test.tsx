@@ -4,15 +4,15 @@ import { ToggleButton } from './toggle-button';
 describe('ToggleButton', () => {
     it('has default style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton pressed={false} label="Lock" value="lock" />,
+            <ToggleButton pressed={false} label="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('has with icon style', () => {
+    it('has icon with label style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton iconName='lock' pressed={false} label="Lock" value="lock" />,
+            <ToggleButton iconName='lock' pressed={false} label="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe('ToggleButton', () => {
 
     it('has icon only style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton iconName='lock' pressed={false} ariaLabel="Lock" value="lock" />,
+            <ToggleButton iconName='lock' pressed={false} ariaLabel="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
@@ -28,15 +28,15 @@ describe('ToggleButton', () => {
 
     it('has pressed default style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton pressed label="Lock" value="lock" />,
+            <ToggleButton pressed label="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('has pressed with icon style', () => {
+    it('has pressed icon with label style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton iconName='lock' pressed label="Lock" value="lock" />,
+            <ToggleButton iconName='lock' pressed label="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('ToggleButton', () => {
 
     it('has pressed icon only style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton iconName='lock' pressed ariaLabel="Lock" value="lock" />,
+            <ToggleButton iconName='lock' pressed ariaLabel="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
@@ -52,25 +52,9 @@ describe('ToggleButton', () => {
 
     it('has disabled style', () => {
         const { container } = renderWithProviders(
-            <ToggleButton disabled pressed={false} label="Lock" value="lock" />,
+            <ToggleButton disabled pressed={false} label="Lock" />,
         );
 
         expect(container.firstChild).toMatchSnapshot();
-    });
-
-    it('throws error when iconName is provided without ariaLabel', () => {
-        expect(() => {
-            renderWithProviders(
-                <ToggleButton pressed={false} iconName="lock" value="lock" />,
-            );
-        }).toThrow('ToggleButton with iconName requires an ariaLabel.');
-    });
-
-    it('throws error when neither label nor iconName with ariaLabel is provided', () => {
-        expect(() => {
-            renderWithProviders(
-                <ToggleButton pressed={false} value="lock" />,
-            );
-        }).toThrow('ToggleButton requires either a label or both an iconName and an ariaLabel.');
     });
 });

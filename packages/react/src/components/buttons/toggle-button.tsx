@@ -1,11 +1,21 @@
-import { type FC, MouseEvent } from 'react';
+import { type FC, MouseEvent, useCallback, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { IconName } from '../icon';
-import { Button, ButtonProps } from './button';
+import { Button } from './button';
 import { IconButton } from './icon-button';
 import { Tooltip } from '../tooltip';
 
-const PressButtonStyle = css<ButtonProps>`
+type IconOnly = { iconName: IconName, ariaLabel: string }
+type LabelOnly = { label: string, ariaLabel?: string }
+type IconWithLabel = { iconName: IconName, label: string, ariaLabel?: string }
+
+export type ToggleButtonProps = {
+    disabled?: boolean;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
+    pressed: boolean;
+} & (IconOnly | LabelOnly | IconWithLabel);
+
+const PressButtonStyle = css<ToggleButtonProps>`
     background-color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-background-color'] : theme.component['toggle-button-background-color'])};
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
     color: ${({ theme, pressed }) => (pressed ? theme.component['toggle-button-pressed-text-color'] : theme.component['toggle-button-text-color'])};
@@ -29,61 +39,55 @@ const PressButton = styled(Button)`
     ${PressButtonStyle}
 `;
 
-export interface ToggleButtonProps {
-    ariaLabel?: string;
-    disabled?: boolean;
-    iconName?: IconName;
-    label?: string;
-    onClick?(event: MouseEvent<HTMLButtonElement>): void;
-    pressed: boolean;
-    value: string;
-}
+export const ToggleButton: FC<ToggleButtonProps> = (props) => {
+    const {
+        disabled, onClick, pressed,
+    } = props;
+    const [isPressed, setIsPressed] = useState<boolean>(pressed);
+    const handleClick = useCallback((event: MouseEvent<HTMLButtonElement>): void => {
+        setIsPressed((prev) => !prev);
 
-export const ToggleButton: FC<ToggleButtonProps> = ({
-    ariaLabel,
-    disabled,
-    iconName,
-    label,
-    onClick,
-    pressed,
-    value,
-}) => {
-    if (label) {
-        return (
-            <PressButton
-                ariaLabel={ariaLabel ?? label}
-                buttonType="primary"
+        if (onClick) {
+            onClick(event);
+        }
+    }, [onClick]);
+
+    const hasIconName = 'iconName' in props;
+    const hasLabel = 'label' in props;
+    const hasAriaLabel = 'ariaLabel' in props;
+
+    if (!hasIconName && !hasLabel) {
+        throw new Error('ToggleButton requires either iconName or label prop');
+    }
+
+    const isIconOnly = hasIconName && !hasLabel;
+
+    if (isIconOnly && !hasAriaLabel) {
+        throw new Error('ToggleButton with iconName only requires ariaLabel prop');
+    }
+
+    return isIconOnly ? (
+        <Tooltip label={props.ariaLabel}>
+            <PressIconButton
+                label={props.ariaLabel}
+                aria-pressed={isPressed}
+                buttonType='primary'
                 disabled={disabled}
-                onClick={onClick}
-                pressed={pressed}
-                value={value}
-                label={label}
-                leftIconName={iconName}
+                iconName={props.iconName}
+                onClick={handleClick}
+                pressed={isPressed}
             />
-        );
-    }
-
-    if (iconName && ariaLabel) {
-        return (
-            <Tooltip
-                label={ariaLabel}
-            >
-                <PressIconButton
-                    ariaLabel={ariaLabel}
-                    buttonType='primary'
-                    disabled={disabled}
-                    iconName={iconName}
-                    onClick={onClick}
-                    pressed={pressed}
-                    value={value}
-                />
-            </Tooltip>
-        );
-    }
-
-    if (iconName) {
-        throw new Error('ToggleButton with iconName requires an ariaLabel.');
-    }
-
-    throw new Error('ToggleButton requires either a label or both an iconName and an ariaLabel.');
+        </Tooltip>
+    ) : (
+        <PressButton
+            aria-label={props.ariaLabel ?? props.label}
+            aria-pressed={isPressed}
+            buttonType="primary"
+            disabled={disabled}
+            label={props.label}
+            leftIconName={hasIconName ? props.iconName : undefined}
+            onClick={handleClick}
+            pressed={isPressed}
+        />
+    );
 };

@@ -100,7 +100,6 @@ exports[`ToggleButton has default style 1`] = `
   aria-pressed="false"
   class="c0 c1 c2"
   type="button"
-  value="lock"
 >
   Lock
 </button>
@@ -207,7 +206,6 @@ exports[`ToggleButton has disabled style 1`] = `
   aria-pressed="false"
   class="c0 c1 c2"
   type="button"
-  value="lock"
 >
   Lock
 </button>
@@ -338,9 +336,10 @@ exports[`ToggleButton has icon only style 1`] = `
 >
   <button
     aria-describedby="uuid1"
+    aria-label="Lock"
+    aria-pressed="false"
     class="c1 c2 c3"
     type="submit"
-    value="lock"
   >
     <svg
       aria-hidden="true"
@@ -352,6 +351,125 @@ exports[`ToggleButton has icon only style 1`] = `
     />
   </button>
 </span>
+`;
+
+exports[`ToggleButton has icon with label style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border: transparent;
+  color: #60666E;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="lock"
+    width="24"
+  />
+  Lock
+</button>
 `;
 
 exports[`ToggleButton has pressed default style 1`] = `
@@ -454,7 +572,6 @@ exports[`ToggleButton has pressed default style 1`] = `
   aria-pressed="true"
   class="c0 c1 c2"
   type="button"
-  value="lock"
 >
   Lock
 </button>
@@ -585,9 +702,10 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 >
   <button
     aria-describedby="uuid1"
+    aria-label="Lock"
+    aria-pressed="true"
     class="c1 c2 c3"
     type="submit"
-    value="lock"
   >
     <svg
       aria-hidden="true"
@@ -601,7 +719,7 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 </span>
 `;
 
-exports[`ToggleButton has pressed with icon style 1`] = `
+exports[`ToggleButton has pressed icon with label style 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -705,127 +823,6 @@ exports[`ToggleButton has pressed with icon style 1`] = `
   aria-pressed="true"
   class="c0 c1 c2"
   type="button"
-  value="lock"
->
-  <svg
-    aria-hidden="true"
-    class="c3"
-    color="currentColor"
-    data-testid="left-icon"
-    focusable="false"
-    height="24"
-    icon-name="lock"
-    width="24"
-  />
-  Lock
-</button>
-`;
-
-exports[`ToggleButton has with icon style 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c0 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c1 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c1:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c1:hover,
-.c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #FFFFFF;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.c3 {
-  margin-right: var(--spacing-1x);
-}
-
-.c2 {
-  background-color: transparent;
-  border: transparent;
-  color: #60666E;
-}
-
-.c2:hover {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-<button
-  aria-label="Lock"
-  aria-pressed="false"
-  class="c0 c1 c2"
-  type="button"
-  value="lock"
 >
   <svg
     aria-hidden="true"
