@@ -212,7 +212,7 @@ exports[`ToggleButton has disabled style 1`] = `
 `;
 
 exports[`ToggleButton has icon only style 1`] = `
-.c1 {
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -252,18 +252,18 @@ exports[`ToggleButton has icon only style 1`] = `
   user-select: none;
 }
 
-.c1:focus-visible {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1 > svg {
+.c0 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c2 {
+.c1 {
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
@@ -271,20 +271,20 @@ exports[`ToggleButton has icon only style 1`] = `
   width: var(--size-2x);
 }
 
-.c2:focus-visible {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c2:hover,
-.c2[aria-expanded='true'] {
+.c1:hover,
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c2[aria-disabled='true'] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -292,65 +292,37 @@ exports[`ToggleButton has icon only style 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.c0:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3 {
+.c2 {
   background-color: transparent;
   border: transparent;
   color: #60666E;
 }
 
-.c3:hover {
+.c2:hover {
   background-color: #DBDEE1;
   color: #000000;
 }
 
-.c3[aria-disabled='true'] {
+.c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
 }
 
-<span
-  class="c0"
-  data-testid="tooltip"
-  id="tooltip-trigger-uuid1"
-  tabindex="-1"
+<button
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="submit"
 >
-  <button
-    aria-describedby="uuid1"
-    aria-label="Lock"
-    aria-pressed="false"
-    class="c1 c2 c3"
-    type="submit"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      icon-name="lock"
-      width="16"
-    />
-  </button>
-</span>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    icon-name="lock"
+    width="16"
+  />
+</button>
 `;
 
 exports[`ToggleButton has icon with label style 1`] = `
@@ -578,7 +550,7 @@ exports[`ToggleButton has pressed default style 1`] = `
 `;
 
 exports[`ToggleButton has pressed icon only style 1`] = `
-.c1 {
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -618,18 +590,18 @@ exports[`ToggleButton has pressed icon only style 1`] = `
   user-select: none;
 }
 
-.c1:focus-visible {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1 > svg {
+.c0 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c2 {
+.c1 {
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
@@ -637,20 +609,20 @@ exports[`ToggleButton has pressed icon only style 1`] = `
   width: var(--size-2x);
 }
 
-.c2:focus-visible {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c2:hover,
-.c2[aria-expanded='true'] {
+.c1:hover,
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c2[aria-disabled='true'] {
+.c1[aria-disabled='true'] {
   background-color: #84C6EA;
   border-color: #84C6EA;
   color: #FFFFFF;
@@ -658,65 +630,37 @@ exports[`ToggleButton has pressed icon only style 1`] = `
   pointer-events: none;
 }
 
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.c0:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c3 {
+.c2 {
   background-color: #E0F0F9;
   border: transparent;
   color: #003A5A;
 }
 
-.c3:hover {
+.c2:hover {
   background-color: #C2E2F4;
   color: #003A5A;
 }
 
-.c3[aria-disabled='true'] {
+.c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
 }
 
-<span
-  class="c0"
-  data-testid="tooltip"
-  id="tooltip-trigger-uuid1"
-  tabindex="-1"
+<button
+  aria-label="Lock"
+  aria-pressed="true"
+  class="c0 c1 c2"
+  type="submit"
 >
-  <button
-    aria-describedby="uuid1"
-    aria-label="Lock"
-    aria-pressed="true"
-    class="c1 c2 c3"
-    type="submit"
-  >
-    <svg
-      aria-hidden="true"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      icon-name="lock"
-      width="16"
-    />
-  </button>
-</span>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    icon-name="lock"
+    width="16"
+  />
+</button>
 `;
 
 exports[`ToggleButton has pressed icon with label style 1`] = `

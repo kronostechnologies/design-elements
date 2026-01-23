@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { IconName } from '../icon';
 import { Button } from './button';
 import { IconButton } from './icon-button';
-import { Tooltip } from '../tooltip';
 import { devConsole } from '../../utils/dev-console';
 import type { ResolvedTheme } from '../../themes';
 
@@ -77,17 +76,15 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     }
 
     return isIconOnly && hasAriaLabel ? (
-        <Tooltip label={ariaLabel}>
-            <InnerIconButton
-                label={ariaLabel}
-                aria-pressed={isPressed}
-                buttonType='primary'
-                disabled={disabled}
-                iconName={iconName}
-                onClick={handleClick}
-                $pressed={isPressed}
-            />
-        </Tooltip>
+        <InnerIconButton
+            label={ariaLabel}
+            aria-pressed={isPressed}
+            buttonType='primary'
+            disabled={disabled}
+            iconName={iconName}
+            onClick={handleClick}
+            $pressed={isPressed}
+        />
     ) : (
         <InnerButton
             aria-label={ariaLabel ?? label}
