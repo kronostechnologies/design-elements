@@ -56,9 +56,15 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     const label = 'label' in props ? props.label : undefined;
 
     const [isPressed, setIsPressed] = useState(pressed);
+
+    if (pressed !== isPressed) {
+        setIsPressed(pressed);
+    }
+
     const handleClick = useCallback((): void => {
-        setIsPressed(!isPressed);
-        onChange?.(!isPressed);
+        const newIsPressed = !isPressed;
+        setIsPressed(newIsPressed);
+        onChange?.(newIsPressed);
     }, [isPressed, onChange]);
 
     const hasIconName = iconName;
@@ -66,13 +72,13 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     const hasAriaLabel = ariaLabel;
 
     if (!hasIconName && !hasLabel) {
-        devConsole.error(('ToggleButton requires either iconName or label prop'));
+        devConsole.error('ToggleButton requires either iconName or label prop');
     }
 
     const isIconOnly = hasIconName && !hasLabel;
 
     if (isIconOnly && !hasAriaLabel) {
-        devConsole.error(('ToggleButton with iconName only requires ariaLabel prop'));
+        devConsole.error('ToggleButton with iconName only requires ariaLabel prop');
     }
 
     return isIconOnly && hasAriaLabel ? (

@@ -1,3 +1,4 @@
+import { ReactElement, useState } from 'react';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/renderer';
@@ -61,10 +62,21 @@ describe('ToggleButton', () => {
     });
 
     it('toggles the pressed state on each click', async () => {
-        const { container } = renderWithProviders(
-            <ToggleButton pressed={false} label="Lock" />,
-        );
+        const ParentComponent = (): ReactElement => {
+            const [pressed, setPressed] = useState(false);
+
+            return (
+                <ToggleButton
+                    pressed={pressed}
+                    label="Lock"
+                    onChange={setPressed}
+                />
+            );
+        };
+
+        const { container } = renderWithProviders(<ParentComponent />);
         const toggleButton = container.firstChild;
+
         expect(toggleButton).not.toBePressed();
 
         await userEvent.click(screen.getByRole('button'));
