@@ -5,7 +5,7 @@ const ToggleButtonMeta: Meta<typeof ToggleButton> = {
     title: 'Components/Toggle Button',
     component: ToggleButton,
     argTypes: {
-        onClick: {
+        onChange: {
             control: { disable: true },
         },
     },
@@ -19,9 +19,9 @@ export const Default: Story = {
     args: {
         ariaLabel: 'Lock',
         label: 'Lock',
-        onClick: (event) => {
+        onChange: (pressed) => {
             // eslint-disable-next-line no-console
-            console.log('Toggle changed:', !event.currentTarget.ariaPressed);
+            console.log('Toggle changed:', pressed);
         },
         pressed: false,
     },
@@ -32,9 +32,9 @@ export const IconWithLabel: Story = {
         ariaLabel: 'Lock',
         iconName: 'lock',
         label: 'Lock',
-        onClick: (event) => {
+        onChange: (pressed) => {
             // eslint-disable-next-line no-console
-            console.log('Toggle changed:', !event.currentTarget.ariaPressed);
+            console.log('Toggle changed:', pressed);
         },
         pressed: false,
     },
@@ -44,9 +44,9 @@ export const IconOnly: Story = {
     args: {
         ariaLabel: 'Lock',
         iconName: 'lock',
-        onClick: (event) => {
+        onChange: (pressed) => {
             // eslint-disable-next-line no-console
-            console.log('Toggle changed:', !event.currentTarget.ariaPressed);
+            console.log('Toggle changed:', pressed);
         },
         pressed: false,
     },
