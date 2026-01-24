@@ -1,14 +1,17 @@
 import styled, { createGlobalStyle, css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../../themes';
+import { badgeClasses } from '../../badge';
 import { DropdownMenuButton, dropdownMenuButtonClasses } from '../../dropdown-menu-button';
 
 interface FilterDropdownButtonProps extends ThemeProps<ResolvedTheme> {
-    $label: string;
+    $labelPrefix?: string;
     $hasFilters: boolean;
+    $multiselect?: boolean;
 }
 
 function computeTokenStyles({
     $hasFilters,
+    $multiselect,
     theme,
 }: FilterDropdownButtonProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     const tokenKeyword = $hasFilters ? 'active-' : '';
@@ -16,7 +19,7 @@ function computeTokenStyles({
         background-color: ${theme.component[`filter-button-${tokenKeyword}background-color`]};
         border: 1px solid ${theme.component[`filter-button-${tokenKeyword}border-color`]};
         color: ${theme.component[`filter-button-${tokenKeyword}value-color`]};
-        font-weight: ${$hasFilters ? theme.ref['font-weight-semibold'] : theme.ref['font-weight-regular']};
+        font-weight: ${$hasFilters && !$multiselect ? theme.ref['font-weight-semibold'] : theme.ref['font-weight-regular']};
 
         &::before {
             color: ${theme.component[`filter-button-${tokenKeyword}label-color`]};
@@ -34,6 +37,21 @@ export const PortalFilterDropdownMenuStyle = createGlobalStyle<PortalDropdownMen
     }
 `;
 
+function displayLabelPrefixAsBeforePseudo(
+    { $labelPrefix, $hasFilters }: FilterDropdownButtonProps,
+): FlattenInterpolation<ThemeProps<ResolvedTheme>> | null {
+    if ($labelPrefix && $hasFilters) {
+        return css`
+            &::before {
+                content: '${$labelPrefix} : ';
+                font-weight: ${({ theme }) => theme.ref['font-weight-regular']};
+                margin-right: var(--spacing-half);
+            }
+        `;
+    }
+    return null;
+}
+
 export const FilterDropdownButton = styled(DropdownMenuButton)
     .attrs<FilterDropdownButtonProps>(() => ({ align: 'left' }))`
     .${dropdownMenuButtonClasses.button} {
@@ -41,11 +59,14 @@ export const FilterDropdownButton = styled(DropdownMenuButton)
         border-radius: var(--border-radius);
         padding: 0 var(--spacing-1x);
 
-        &::before {
-            content: '${({ $label }) => `${$label} : `}';
-            font-weight: ${({ theme }) => theme.ref['font-weight-regular']};
-            margin-right: var(--spacing-half);
-        }
+        ${({ $multiselect }) => $multiselect && css`
+            .${badgeClasses.root} {
+                margin-right: var(--spacing-1x);
+                width: 0.75rem;
+            }
+        `}
+
+        ${displayLabelPrefixAsBeforePseudo};
 
         &:hover {
             background-color: ${({ theme }) => theme.component['filter-button-hover-background-color']};

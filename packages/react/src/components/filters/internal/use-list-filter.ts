@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from '../../../i18n/use-translation';
 import type { FilterOption } from '../filter-option';
 
@@ -7,9 +7,9 @@ type Nullable<T> = T | null | undefined;
 type Value = string | string[];
 
 export interface UseListFilterResponse {
-    displayValue: string;
     filteredOptions: FilterOption[];
     hasFiltersApplied: boolean;
+    selectedValuesCount: number;
 }
 
 export interface UseListFilterOptions<T extends Value> {
@@ -39,18 +39,6 @@ export function useListFilter<T extends Value>({
     value,
 }: UseListFilterOptions<T>): UseListFilterResponse {
     const { t } = useTranslation('filter');
-    const getOptionByValue = useCallback(
-        (val: Nullable<T>): FilterOption | undefined => {
-            let optionValueToFind: string | undefined | null;
-            if (Array.isArray(val)) {
-                optionValueToFind = val?.[0];
-            } else {
-                optionValueToFind = val;
-            }
-            return options.find((option) => option.value === optionValueToFind);
-        },
-        [options],
-    );
 
     const filteredOptions = useMemo(() => {
         if (options.length === 0 && searchValue === '') {
@@ -73,14 +61,10 @@ export function useListFilter<T extends Value>({
     }, [searchValue, options, t]);
 
     const selectedValuesCount: number = valuesCount(value);
-    const displayValue = useMemo(() => t(
-        'displayValue',
-        { count: selectedValuesCount, additionalCount: selectedValuesCount - 1, value: getOptionByValue(value)?.label },
-    ), [getOptionByValue, selectedValuesCount, t, value]);
 
     return {
-        displayValue,
         filteredOptions,
         hasFiltersApplied: selectedValuesCount > 0,
+        selectedValuesCount,
     };
 }

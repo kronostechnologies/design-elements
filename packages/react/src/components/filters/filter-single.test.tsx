@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import type { FilterOption } from './filter-option';
@@ -25,22 +25,12 @@ async function openDropdown(user: UserEvent): Promise<void> {
     await user.click(getDropdownButton());
 }
 
-async function getClearButton(): Promise<HTMLElement> {
-    return screen.findByText('Clear filter');
-}
-
 describe('FilterSingle', () => {
     describe('rendering', () => {
         it('renders button with label', () => {
             const { container } = renderWithProviders(<FilterSingle label="Status" options={options} />);
 
             expect(container).toMatchSnapshot();
-        });
-
-        it('shows \'All\' when no selected value', () => {
-            renderWithProviders(<FilterSingle label="Status" options={options} />);
-
-            expect(getDropdownButton()).toHaveTextContent('All');
         });
 
         it('shows option label when value is selected', () => {
@@ -67,7 +57,7 @@ describe('FilterSingle', () => {
             expect(getDropdownButton()).toHaveTextContent('Option 2');
 
             rerender(<FilterSingle label="Status" options={options} value={undefined} />);
-            expect(getDropdownButton()).toHaveTextContent('All');
+            expect(getDropdownButton()).toHaveTextContent('Status');
         });
     });
 
@@ -78,9 +68,7 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
         });
 
         it('displays all options in dropdown', async () => {
@@ -89,12 +77,24 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getAllByRole('option')).toHaveLength(options.length);
-                options.forEach((option) => {
-                    expect(screen.getByText(option.label)).toBeInTheDocument();
-                });
+            const items = screen.getAllByRole('option');
+            expect(items).toHaveLength(options.length + 1);
+            expect(items[0]).toHaveTextContent('All');
+            options.forEach((option, i) => {
+                expect(items[i + 1]).toHaveTextContent(option.label);
             });
+        });
+
+        it('allows customizing "All" option label', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
+                <FilterSingle label="Status" options={options} allOptionLabel="Everything" />,
+            );
+
+            await openDropdown(user);
+
+            const allOption = screen.getByRole('option', { name: 'Everything' });
+            expect(allOption).toBeInTheDocument();
         });
 
         it('displays search box when more than 10 options', async () => {
@@ -103,9 +103,7 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getByRole('searchbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('searchbox')).toBeInTheDocument();
         });
 
         it('does not display search box when 10 or fewer options', async () => {
@@ -114,9 +112,7 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
         });
 
         it('closes dropdown when clicking outside', async () => {
@@ -124,14 +120,10 @@ describe('FilterSingle', () => {
             const { baseElement } = renderWithProviders(<FilterSingle label="Status" options={options} />);
 
             await openDropdown(user);
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
 
             await user.click(baseElement);
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
     });
 
@@ -145,9 +137,7 @@ describe('FilterSingle', () => {
             await user.click(screen.getByText('Option 1'));
 
             expect(onChange).toHaveBeenCalledWith('option1');
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
 
         it('replaces previous selection when selecting new option', async () => {
@@ -169,11 +159,9 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                const listbox = screen.getByRole('listbox');
-                const option1 = within(listbox).getByText('Option 1').closest('[role="option"]');
-                expect(option1).toHaveAttribute('aria-selected', 'true');
-            });
+            const listbox = screen.getByRole('listbox');
+            const option1 = within(listbox).getByText('Option 1').closest('[role="option"]');
+            expect(option1).toHaveAttribute('aria-selected', 'true');
         });
     });
 
@@ -187,12 +175,10 @@ describe('FilterSingle', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, '1');
 
-            await waitFor(() => {
-                expect(screen.getByText('Option 1')).toBeInTheDocument();
-                expect(screen.getByText('Option 10')).toBeInTheDocument();
-                expect(screen.getByText('Option 11')).toBeInTheDocument();
-                expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
-            });
+            expect(screen.getByText('Option 1')).toBeInTheDocument();
+            expect(screen.getByText('Option 10')).toBeInTheDocument();
+            expect(screen.getByText('Option 11')).toBeInTheDocument();
+            expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
         });
 
         it('shows no results message when search matches nothing', async () => {
@@ -204,9 +190,7 @@ describe('FilterSingle', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, 'nonexistent');
 
-            await waitFor(() => {
-                expect(screen.getByText('No matching results')).toBeInTheDocument();
-            });
+            expect(screen.getByText('No matching results')).toBeInTheDocument();
         });
 
         it('search is case insensitive', async () => {
@@ -218,9 +202,7 @@ describe('FilterSingle', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, 'option 1');
 
-            await waitFor(() => {
-                expect(screen.getByText('Option 1')).toBeInTheDocument();
-            });
+            expect(screen.getByText('Option 1')).toBeInTheDocument();
         });
 
         it('clears search when dropdown is closed', async () => {
@@ -241,54 +223,18 @@ describe('FilterSingle', () => {
     });
 
     describe('clear filters', () => {
-        it('clears selected filter when clear button is clicked', async () => {
+        it('clears selected filter when "All" option is selected', async () => {
             const user = userEvent.setup();
             const onChange = jest.fn();
             renderWithProviders(<FilterSingle label="Status" options={options} value="option1" onChange={onChange} />);
 
             await openDropdown(user);
 
-            const clearButton = await screen.findByText('Clear filter');
-            await user.click(clearButton);
+            const allOption = await screen.findByText('All');
+            await user.click(allOption);
 
             expect(onChange).toHaveBeenCalledWith(null);
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
-        });
-
-        it('clear button is disabled when no filter selected', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<FilterSingle label="Status" options={options} />);
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            expect(clearButton.closest('[role=button]')).toHaveAttribute('aria-disabled', 'true');
-        });
-
-        it('clear button is enabled when filter is selected', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<FilterSingle label="Status" options={options} value="option1" />);
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            expect(clearButton.closest('[role=button]')).toHaveAttribute('aria-disabled', 'false');
-        });
-
-        it.each([['[Enter]'], ['[Space]']])('clear button can be activated with %s key', async (key) => {
-            const user = userEvent.setup();
-            const onChange = jest.fn();
-            renderWithProviders(<FilterSingle label="Status" options={options} value="option1" onChange={onChange} />);
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            clearButton.closest('div')!.focus();
-            await user.keyboard(key);
-
-            expect(onChange).toHaveBeenCalledWith(null);
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
     });
 
@@ -304,10 +250,8 @@ describe('FilterSingle', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                const disabledOption = screen.getByText('Disabled Option').closest('[role="option"]');
-                expect(disabledOption).toHaveAttribute('aria-disabled', 'true');
-            });
+            const disabledOption = screen.getByText('Disabled Option').closest('[role="option"]');
+            expect(disabledOption).toHaveAttribute('aria-disabled', 'true');
         });
 
         it('does not select disabled options when clicked', async () => {
@@ -337,9 +281,7 @@ describe('FilterSingle', () => {
             getDropdownButton().focus();
             await user.keyboard(key);
 
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
         });
     });
 });

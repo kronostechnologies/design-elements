@@ -101,3 +101,15 @@ export function includes<T>(
 ): boolean {
     return list.some((listItem: T) => predicate(listItem, item));
 }
+
+export function hasExactSameValues<T>(
+    listA: T[],
+    listB: T[],
+    predicate: (item: T, itemToCompared: T) => boolean = defaultPredicate,
+): boolean {
+    if (listA.length !== listB.length) {
+        return false;
+    }
+
+    return listA.every((itemA: T) => includes(listB, itemA, predicate));
+}

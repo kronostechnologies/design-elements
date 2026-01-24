@@ -281,12 +281,6 @@ exports[`FilterSingle rendering renders button with label 1`] = `
   color: #1B1C1E;
 }
 
-.c1 .eds-DropdownMenuButton-button::before {
-  content: 'Status : ';
-  font-weight: 400;
-  margin-right: var(--spacing-half);
-}
-
 .c1 .eds-DropdownMenuButton-button:hover {
   background-color: #DBDEE1;
   border-color: #000000;
@@ -314,7 +308,7 @@ exports[`FilterSingle rendering renders button with label 1`] = `
       data-testid="menu-button"
       type="button"
     >
-      All
+      Status
       <svg
         aria-hidden="true"
         class="lucide lucide-chevron-down c5"
