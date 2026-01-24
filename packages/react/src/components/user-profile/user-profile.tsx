@@ -72,7 +72,6 @@ export const UserProfile: FC<UserProfileProps> = ({
             ariaLabel={ariaLabel || t('ariaLabel')}
             buttonAriaLabel={buttonAriaLabel}
             className={className}
-            data-testid="user-profile"
             defaultOpen={defaultOpen}
             dropdownMenuWidth="auto"
             hasCaret={!avatarOnly}

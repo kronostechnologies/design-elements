@@ -44,6 +44,7 @@ export const Translations = {
             message: 'Please correct them to proceed to the next step.',
         },
         filter: {
+            all: 'All',
             cancel: 'Cancel',
             apply_zero: 'Apply filter',
             apply_one: 'Apply filter',
@@ -51,9 +52,6 @@ export const Translations = {
             clearFilter_zero: 'Clear filter',
             clearFilter_one: 'Clear filter',
             clearFilter_other: 'Clear filters',
-            displayValue_zero: 'All',
-            displayValue_one: '{{value}}',
-            displayValue_other: '{{value}} (+{{additionalCount}})',
             searchNoResults: ' No matching results',
         },
         'global-banner': {
@@ -198,6 +196,7 @@ export const Translations = {
             message: 'Veuillez les corriger avant de passer à l\'étape suivante.',
         },
         filter: {
+            all: 'Tout',
             cancel: 'Annuler',
             apply_zero: 'Appliquer',
             apply_one: 'Appliquer',
@@ -205,9 +204,6 @@ export const Translations = {
             clearFilter_zero: 'Réinitialiser le filtre',
             clearFilter_one: 'Réinitialiser le filtre',
             clearFilter_other: 'Réinitialiser les filtres',
-            displayValue_zero: 'Tout',
-            displayValue_one: '{{value}}',
-            displayValue_other: '{{value}} (+{{additionalCount}})',
             searchNoResults: 'Aucun résultat correspondant',
         },
         'global-banner': {

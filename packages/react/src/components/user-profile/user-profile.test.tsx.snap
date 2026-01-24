@@ -530,7 +530,7 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
   />
   <div
     class="c8 c9"
-    data-testid="user-profile"
+    data-testid="menu-dropdownMenu"
     id="uuid2"
     style="width: auto;"
   >
@@ -1411,7 +1411,7 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
   />
   <div
     class="c7 c8"
-    data-testid="user-profile"
+    data-testid="menu-dropdownMenu"
     id="uuid2"
     style="width: auto;"
   >
@@ -2120,7 +2120,7 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
   />
   <div
     class="c8 c9"
-    data-testid="user-profile"
+    data-testid="menu-dropdownMenu"
     id="uuid2"
     style="width: auto;"
   >
