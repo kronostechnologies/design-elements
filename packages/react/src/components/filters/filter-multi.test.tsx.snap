@@ -79,6 +79,52 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
   pointer-events: none;
 }
 
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.c6 {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #CD2C23;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 400;
+  height: 1rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  min-width: 1rem;
+  padding: 0 0.25rem;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(50%,-50%);
+  -ms-transform: translate(50%,-50%);
+  transform: translate(50%,-50%);
+}
+
 .c0 {
   position: relative;
 }
@@ -95,7 +141,7 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
   text-transform: unset;
 }
 
-.c5 {
+.c8 {
   margin-left: var(--spacing-1x);
 }
 
@@ -103,7 +149,7 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: var(--border-radius);
   padding: 0 var(--spacing-1x);
 }
@@ -112,10 +158,9 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
   color: #003A5A;
 }
 
-.c1 .eds-DropdownMenuButton-button::before {
-  content: 'Status : ';
-  font-weight: 400;
-  margin-right: var(--spacing-half);
+.c1 .eds-DropdownMenuButton-button .eds-Badge-root {
+  margin-right: var(--spacing-1x);
+  width: 0.75rem;
 }
 
 .c1 .eds-DropdownMenuButton-button:hover {
@@ -132,6 +177,10 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
   color: #60666E;
 }
 
+.c7 {
+  background-color: #006296;
+}
+
 <div>
   <div
     aria-label=""
@@ -142,13 +191,25 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
     <button
       aria-expanded="false"
       class="c2 c3 c4 eds-DropdownMenuButton-button"
+      data-selected-count="1"
       data-testid="menu-button"
       type="button"
     >
-      Option 1
+      <span>
+        Status
+      </span>
+      <span
+        class="c5 eds-Badge-root"
+      >
+        <span
+          class="c6 c7"
+        >
+          1
+        </span>
+      </span>
       <svg
         aria-hidden="true"
-        class="lucide lucide-chevron-down c5"
+        class="lucide lucide-chevron-down c8"
         fill="none"
         focusable="false"
         height="16"
@@ -281,10 +342,9 @@ exports[`FilterMulti rendering renders button with label 1`] = `
   color: #1B1C1E;
 }
 
-.c1 .eds-DropdownMenuButton-button::before {
-  content: 'Status : ';
-  font-weight: 400;
-  margin-right: var(--spacing-half);
+.c1 .eds-DropdownMenuButton-button .eds-Badge-root {
+  margin-right: var(--spacing-1x);
+  width: 0.75rem;
 }
 
 .c1 .eds-DropdownMenuButton-button:hover {
@@ -311,10 +371,13 @@ exports[`FilterMulti rendering renders button with label 1`] = `
     <button
       aria-expanded="false"
       class="c2 c3 c4 eds-DropdownMenuButton-button"
+      data-selected-count="0"
       data-testid="menu-button"
       type="button"
     >
-      All
+      <span>
+        Status
+      </span>
       <svg
         aria-hidden="true"
         class="lucide lucide-chevron-down c5"

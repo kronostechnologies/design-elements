@@ -41,10 +41,11 @@ export interface ListContainerProps {
     searchRef: Ref<HTMLInputElement>;
     selectedFiltersCount: number;
     value: string | string[] | null | undefined;
+    valueOnFirstDisplay?: string | string[] | null | undefined;
 
     onChange?(options: FilterOption[]): void;
 
-    onClearFilters(): void;
+    onClearFilters?(): void;
 
     onOptionClick?(option: FilterOption): void;
 
@@ -61,6 +62,7 @@ export const ListContainer = forwardRef(({
     options,
     searchRef,
     selectedFiltersCount,
+    valueOnFirstDisplay,
     value,
 }: ListContainerProps, ref: Ref<HTMLDivElement>) => (
     <Container ref={ref}>
@@ -68,12 +70,14 @@ export const ListContainer = forwardRef(({
             <SearchBox ref={searchRef} onChange={onSearchChange} />
         )}
 
-        <ClearFilters
-            selectedFiltersCount={selectedFiltersCount}
-            onClearFilters={onClearFilters}
-        />
+        {onClearFilters && (
+            <ClearFilters
+                selectedFiltersCount={selectedFiltersCount}
+                onClearFilters={onClearFilters}
+            />
+        )}
 
-        <Divider />
+        {(onSearchChange || onClearFilters) && <Divider />}
 
         <StyledListbox
             ref={listboxRef}
@@ -84,6 +88,7 @@ export const ListContainer = forwardRef(({
             onChange={onChange}
             onOptionClick={onOptionClick}
             options={options}
+            valueOnFirstDisplay={valueOnFirstDisplay ?? undefined}
             value={value ?? undefined}
         />
     </Container>

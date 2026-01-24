@@ -85,7 +85,7 @@ export interface DropdownMenuButtonProps {
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
     inverted?: boolean;
-    label?: string;
+    label?: string | ReactElement;
     title?: string;
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';
@@ -125,7 +125,6 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const isIconOnly = icon && !label && !hasCaret;
     const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
     const dataAttributes = useDataAttributes(otherProps);
-    const dataTestId = dataAttributes['data-testid'] ?? 'menu-dropdownMenu';
 
     const shadowRoot = useShadowRoot();
     const rootElement = getRootElement(shadowRoot);
@@ -228,6 +227,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}
                     {label}
@@ -255,6 +255,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}
                 </IconButton>
@@ -264,7 +265,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 <StyledDropdownMenu
                     id={dropdownMenuId}
                     ref={refs.setFloating}
-                    data-testid={dataTestId}
+                    data-testid="menu-dropdownMenu"
                     onKeyDown={handleNavMenuKeyDown}
                     $left={`${x}px`}
                     $top={`${y}px`}

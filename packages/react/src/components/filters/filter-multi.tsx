@@ -1,8 +1,10 @@
 import { type FC, useCallback, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { hasExactSameValues } from '../../utils/array';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
+import { Badge } from '../badge';
 import { Button } from '../buttons';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
 import { type ListboxRef } from '../listbox/listbox';
@@ -13,7 +15,11 @@ import { ListContainer } from './internal/list-container';
 import { useListFilter } from './internal/use-list-filter';
 import { useSearch } from './internal/use.search';
 
-export const Footer = styled.div`
+const AppliedFiltersCount = styled(Badge)`
+    background-color: ${({ theme }) => theme.alias['color-background-indicator-selected']};
+`;
+
+const Footer = styled.div`
     display: flex;
     gap: var(--spacing-1x);
     justify-content: flex-end;
@@ -61,6 +67,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         return providedOptions;
     }, [maxSelectableOptions, providedOptions, selectedOptions]);
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
+    const [valueOnOpen, setValueOnOpen] = useState<Value | undefined>(value);
     const previousValuePropRef = useRef<Value | undefined>(value);
     const selectedFiltersCount = selectedOptions?.length ?? 0;
     const searchRef = useRef<HTMLInputElement>(null);
@@ -92,7 +99,11 @@ export const FilterMulti: FC<FilterMultiProps> = ({
 
     const handleApply = useCallback((close: DropdownMenuCloseFunction): void => {
         const selectedValue = selectedOptions?.map((option) => option.value);
-        if (selectedValue !== previousValue && selectedValue !== undefined) {
+        if (
+            selectedValue !== previousValue
+            && selectedValue !== undefined
+            && (previousValue === undefined || !hasExactSameValues(selectedValue, previousValue))
+        ) {
             onChange?.(selectedValue);
         }
         setPreviousValue(selectedValue);
@@ -113,6 +124,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
     const handleMenuVisibilityChanged = useCallback((isOpen: boolean): void => {
         if (isOpen) {
             setPreviousValue(value);
+            setValueOnOpen(value);
             setSelectedOptions(options.filter((option) => value?.includes(option.value)));
             if (searchEnabled) {
                 searchRef.current?.focus({ preventScroll: true });
@@ -124,7 +136,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         }
     }, [options, searchEnabled, setSearchValue, value]);
 
-    const { displayValue, filteredOptions, hasFiltersApplied } = useListFilter<string[]>({
+    const { filteredOptions, hasFiltersApplied, selectedValuesCount } = useListFilter<string[]>({
         searchValue,
         options,
         value: previousValue,
@@ -135,12 +147,19 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         [selectedOptions],
     );
 
+    const filterLabel = (
+        <>
+            <span>{label}</span>
+            {hasFiltersApplied && (<AppliedFiltersCount value={selectedValuesCount} />)}
+        </>
+    );
+
     return (
         <>
             <PortalFilterDropdownMenuStyle $dropdownMenuId={dropdownMenuId} />
             <FilterDropdownButton
                 firstItemRef={searchRef}
-                label={displayValue}
+                label={filterLabel}
                 onMenuVisibilityChanged={handleMenuVisibilityChanged}
                 render={(close: DropdownMenuCloseFunction) => (
                     <div>
@@ -151,6 +170,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                             onChange={handleItemsSelectionChange}
                             onSearchChange={handleSearchChange}
                             options={filteredOptions}
+                            valueOnFirstDisplay={valueOnOpen}
                             searchRef={searchRef}
                             selectedFiltersCount={selectedFiltersCount}
                             value={selectedOptionsValues}
@@ -175,8 +195,9 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                     </div>
                 )}
                 dropdownMenuId={dropdownMenuId}
-                $label={label}
+                data-selected-count={selectedValuesCount}
                 $hasFilters={hasFiltersApplied}
+                $multiselect
             />
         </>
     );
