@@ -80,19 +80,32 @@ exports[`ToggleButton has default style 1`] = `
 }
 
 .c2 {
-  background-color: transparent;
   border: transparent;
-  color: #60666E;
-}
-
-.c2:hover {
-  background-color: #DBDEE1;
-  color: #000000;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -185,19 +198,32 @@ exports[`ToggleButton has disabled style 1`] = `
 }
 
 .c2 {
-  background-color: transparent;
   border: transparent;
-  color: #60666E;
-}
-
-.c2:hover {
-  background-color: #DBDEE1;
-  color: #000000;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -293,19 +319,32 @@ exports[`ToggleButton has icon only style 1`] = `
 }
 
 .c2 {
-  background-color: transparent;
   border: transparent;
-  color: #60666E;
-}
-
-.c2:hover {
-  background-color: #DBDEE1;
-  color: #000000;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -409,19 +448,32 @@ exports[`ToggleButton has icon with label style 1`] = `
 }
 
 .c2 {
-  background-color: transparent;
   border: transparent;
-  color: #60666E;
-}
-
-.c2:hover {
-  background-color: #DBDEE1;
-  color: #000000;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -524,19 +576,32 @@ exports[`ToggleButton has pressed default style 1`] = `
 }
 
 .c2 {
-  background-color: #E0F0F9;
   border: transparent;
-  color: #003A5A;
-}
-
-.c2:hover {
-  background-color: #C2E2F4;
-  color: #003A5A;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -631,19 +696,32 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 }
 
 .c2 {
-  background-color: #E0F0F9;
   border: transparent;
-  color: #003A5A;
-}
-
-.c2:hover {
-  background-color: #C2E2F4;
-  color: #003A5A;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button
@@ -747,19 +825,32 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
 }
 
 .c2 {
-  background-color: #E0F0F9;
   border: transparent;
-  color: #003A5A;
-}
-
-.c2:hover {
-  background-color: #C2E2F4;
-  color: #003A5A;
 }
 
 .c2[aria-disabled='true'] {
   background-color: #F1F2F2;
   color: #B7BBC2;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 <button

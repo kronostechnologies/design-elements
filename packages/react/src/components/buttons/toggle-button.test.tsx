@@ -69,7 +69,7 @@ describe('ToggleButton', () => {
                 <ToggleButton
                     pressed={pressed}
                     label="Lock"
-                    onChange={setPressed}
+                    onChange={() => setPressed(!pressed)}
                 />
             );
         };

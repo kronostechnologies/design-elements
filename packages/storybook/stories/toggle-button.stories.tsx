@@ -1,11 +1,15 @@
 import { ToggleButton } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
 const ToggleButtonMeta: Meta<typeof ToggleButton> = {
     title: 'Components/Toggle Button',
     component: ToggleButton,
     argTypes: {
         onChange: {
+            control: { disable: true },
+        },
+        pressed: {
             control: { disable: true },
         },
     },
@@ -17,37 +21,49 @@ type Story = StoryObj<typeof ToggleButton>;
 
 export const Default: Story = {
     args: {
-        ariaLabel: 'Lock',
-        label: 'Lock',
-        onChange: (pressed) => {
-            // eslint-disable-next-line no-console
-            console.log('Toggle changed:', pressed);
-        },
-        pressed: false,
+    },
+    render: () => {
+        const [pressed, setPressed] = useState(false);
+        return (
+            <ToggleButton
+                ariaLabel='Lock'
+                label='Lock'
+                onChange={() => setPressed(!pressed)}
+                pressed={pressed}
+            />
+        );
     },
 };
 
 export const IconWithLabel: Story = {
     args: {
-        ariaLabel: 'Lock',
-        iconName: 'lock',
-        label: 'Lock',
-        onChange: (pressed) => {
-            // eslint-disable-next-line no-console
-            console.log('Toggle changed:', pressed);
-        },
-        pressed: false,
+    },
+    render: () => {
+        const [pressed, setPressed] = useState(false);
+        return (
+            <ToggleButton
+                ariaLabel='Lock'
+                iconName='lock'
+                label='Lock'
+                onChange={() => setPressed(!pressed)}
+                pressed={pressed}
+            />
+        );
     },
 };
 
 export const IconOnly: Story = {
     args: {
-        ariaLabel: 'Lock',
-        iconName: 'lock',
-        onChange: (pressed) => {
-            // eslint-disable-next-line no-console
-            console.log('Toggle changed:', pressed);
-        },
-        pressed: false,
+    },
+    render: () => {
+        const [pressed, setPressed] = useState(false);
+        return (
+            <ToggleButton
+                ariaLabel='Lock'
+                iconName='lock'
+                onChange={() => setPressed(!pressed)}
+                pressed={pressed}
+            />
+        );
     },
 };

@@ -1,10 +1,9 @@
-import { type FC, useCallback, useState } from 'react';
+import { type FC } from 'react';
 import styled, { css } from 'styled-components';
 import { IconName } from '../icon';
 import { Button } from './button';
 import { IconButton } from './icon-button';
 import { devConsole } from '../../utils/dev-console';
-import type { ResolvedTheme } from '../../themes';
 
 type IconOnly = { iconName: IconName, ariaLabel: string }
 type LabelOnly = { label: string, ariaLabel?: string }
@@ -13,27 +12,35 @@ type IconWithLabel = { iconName: IconName, label: string, ariaLabel?: string }
 export type ToggleButtonProps = {
     disabled?: boolean;
     onChange?(pressed: boolean): void;
-    pressed: boolean;
+    pressed?: boolean;
 } & (IconOnly | LabelOnly | IconWithLabel);
 
-interface InnerButtonProps {
-    theme: ResolvedTheme;
-    $pressed: boolean;
-}
-
-const InnerButtonStyle = css<InnerButtonProps>`
-    background-color: ${({ theme, $pressed }) => ($pressed ? theme.component['toggle-button-pressed-background-color'] : theme.component['toggle-button-background-color'])};
+const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
-    color: ${({ theme, $pressed }) => ($pressed ? theme.component['toggle-button-pressed-text-color'] : theme.component['toggle-button-text-color'])};
-    
-    &:hover {
-        background-color: ${({ theme, $pressed }) => ($pressed ? theme.component['toggle-button-pressed-hover-background-color'] : theme.component['toggle-button-hover-background-color'])};
-        color: ${({ theme, $pressed }) => ($pressed ? theme.component['toggle-button-pressed-hover-text-color'] : theme.component['toggle-button-hover-text-color'])};
-    }
 
     &[aria-disabled='true'] {
         background-color: ${({ theme }) => theme.component['toggle-button-disabled-background-color']};
         color: ${({ theme }) => theme.component['toggle-button-disabled-text-color']};
+    }
+
+    &[aria-pressed='true'] {
+        background-color: ${({ theme }) => theme.component['toggle-button-pressed-background-color']};
+        color: ${({ theme }) => theme.component['toggle-button-pressed-text-color']};
+
+        &:hover {
+            background-color: ${({ theme }) => theme.component['toggle-button-pressed-hover-background-color']};
+            color: ${({ theme }) => theme.component['toggle-button-pressed-hover-text-color']};
+        }
+    }
+
+    &[aria-pressed='false'] {
+        background-color: ${({ theme }) => theme.component['toggle-button-background-color']};
+        color: ${({ theme }) => theme.component['toggle-button-text-color']};
+
+        &:hover {
+            background-color: ${({ theme }) => theme.component['toggle-button-hover-background-color']};
+            color: ${({ theme }) => theme.component['toggle-button-hover-text-color']};
+        }
     }
 `;
 
@@ -49,23 +56,11 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     ariaLabel,
     disabled,
     onChange,
-    pressed,
+    pressed = false,
     ...props
 }) => {
     const iconName = 'iconName' in props ? props.iconName : undefined;
     const label = 'label' in props ? props.label : undefined;
-
-    const [isPressed, setIsPressed] = useState(pressed);
-
-    if (pressed !== isPressed) {
-        setIsPressed(pressed);
-    }
-
-    const handleClick = useCallback((): void => {
-        const newIsPressed = !isPressed;
-        setIsPressed(newIsPressed);
-        onChange?.(newIsPressed);
-    }, [isPressed, onChange]);
 
     const hasIconName = iconName;
     const hasLabel = label;
@@ -81,26 +76,28 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
         devConsole.error('ToggleButton with iconName only requires ariaLabel prop');
     }
 
+    const handleClick: () => void = () => {
+        onChange?.(!pressed);
+    };
+
     return isIconOnly && hasAriaLabel ? (
         <InnerIconButton
             label={ariaLabel}
-            aria-pressed={isPressed}
+            aria-pressed={pressed}
             buttonType='primary'
             disabled={disabled}
             iconName={iconName}
             onClick={handleClick}
-            $pressed={isPressed}
         />
     ) : (
         <InnerButton
             aria-label={ariaLabel ?? label}
-            aria-pressed={isPressed}
+            aria-pressed={pressed}
             buttonType='primary'
             disabled={disabled}
             label={label}
             leftIconName={hasIconName ? iconName : undefined}
             onClick={handleClick}
-            $pressed={isPressed}
         />
     );
 };
