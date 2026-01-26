@@ -74,9 +74,9 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     const iconName = 'iconName' in props ? props.iconName : undefined;
     const label = 'label' in props ? props.label : undefined;
 
-    const hasIconName = iconName;
-    const hasLabel = label;
-    const hasAriaLabel = ariaLabel;
+    const hasIconName = Boolean(iconName);
+    const hasLabel = Boolean(label);
+    const hasAriaLabel = Boolean(ariaLabel);
 
     if (!hasIconName && !hasLabel) {
         devConsole.error('ToggleButton requires either iconName or label prop');
@@ -98,8 +98,9 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
             aria-pressed={pressed}
             buttonType='primary'
             disabled={disabled}
-            iconName={iconName}
+            iconName={iconName!}
             onClick={handleClick}
+            type='button'
         />
     ) : (
         <InnerButton
@@ -110,6 +111,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
             label={label}
             leftIconName={hasIconName ? iconName : undefined}
             onClick={handleClick}
+            type='button'
         />
     );
 };

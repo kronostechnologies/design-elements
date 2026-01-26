@@ -37,8 +37,6 @@ export default ToggleButtonMeta;
 type Story = StoryObj<typeof ToggleButton>;
 
 export const Default: Story = {
-    args: {
-    },
     render: () => {
         const [pressed, setPressed] = useState(false);
         return (
@@ -53,8 +51,6 @@ export const Default: Story = {
 };
 
 export const IconWithLabel: Story = {
-    args: {
-    },
     render: () => {
         const [pressed, setPressed] = useState(false);
         return (
@@ -70,8 +66,6 @@ export const IconWithLabel: Story = {
 };
 
 export const IconOnly: Story = {
-    args: {
-    },
     render: () => {
         const [pressed, setPressed] = useState(false);
         return (
