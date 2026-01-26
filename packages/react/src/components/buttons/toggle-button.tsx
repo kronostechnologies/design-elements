@@ -12,7 +12,7 @@ type IconWithLabelProps = { iconName: IconName, label: string, ariaLabel?: strin
 export type ToggleButtonProps = {
     disabled?: boolean;
     onChange?(pressed: boolean): void;
-    pressed?: boolean;
+    pressed: boolean;
 } & (IconOnlyProps | LabelOnlyProps | IconWithLabelProps);
 
 const InnerButtonStyle = css`
@@ -56,7 +56,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
     ariaLabel,
     disabled,
     onChange,
-    pressed = false,
+    pressed,
     ...props
 }) => {
     const iconName = 'iconName' in props ? props.iconName : undefined;
