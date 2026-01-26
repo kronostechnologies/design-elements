@@ -5,9 +5,21 @@ import { Button } from './button';
 import { IconButton } from './icon-button';
 import { devConsole } from '../../utils/dev-console';
 
-type IconOnlyProps = { iconName: IconName, ariaLabel: string }
-type LabelOnlyProps = { label: string, ariaLabel?: string }
-type IconWithLabelProps = { iconName: IconName, label: string, ariaLabel?: string }
+type IconOnlyProps = {
+    iconName: IconName;
+    ariaLabel: string;
+}
+
+type LabelOnlyProps = {
+    label: string;
+    ariaLabel?: string;
+}
+
+type IconWithLabelProps = {
+    iconName: IconName;
+    label: string;
+    ariaLabel?: string;
+}
 
 export type ToggleButtonProps = {
     disabled?: boolean;
