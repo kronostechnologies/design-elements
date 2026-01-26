@@ -5,15 +5,15 @@ import { Button } from './button';
 import { IconButton } from './icon-button';
 import { devConsole } from '../../utils/dev-console';
 
-type IconOnly = { iconName: IconName, ariaLabel: string }
-type LabelOnly = { label: string, ariaLabel?: string }
-type IconWithLabel = { iconName: IconName, label: string, ariaLabel?: string }
+type IconOnlyProps = { iconName: IconName, ariaLabel: string }
+type LabelOnlyProps = { label: string, ariaLabel?: string }
+type IconWithLabelProps = { iconName: IconName, label: string, ariaLabel?: string }
 
 export type ToggleButtonProps = {
     disabled?: boolean;
     onChange?(pressed: boolean): void;
     pressed?: boolean;
-} & (IconOnly | LabelOnly | IconWithLabel);
+} & (IconOnlyProps | LabelOnlyProps | IconWithLabelProps);
 
 const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
@@ -101,3 +101,5 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
         />
     );
 };
+
+ToggleButton.displayName = 'ToggleButton';

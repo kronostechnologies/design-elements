@@ -13,6 +13,23 @@ const ToggleButtonMeta: Meta<typeof ToggleButton> = {
             control: { disable: true },
         },
     },
+    parameters: {
+        docs: {
+            source: {
+                code: `
+const [pressed, setPressed] = useState(false);
+return (
+    <ToggleButton
+        ariaLabel='Lock'
+        label='Lock'
+        onChange={setPressed}
+        pressed={pressed}
+    />
+);
+                `,
+            },
+        },
+    },
 };
 
 export default ToggleButtonMeta;
@@ -28,7 +45,7 @@ export const Default: Story = {
             <ToggleButton
                 ariaLabel='Lock'
                 label='Lock'
-                onChange={() => setPressed(!pressed)}
+                onChange={setPressed}
                 pressed={pressed}
             />
         );
@@ -45,7 +62,7 @@ export const IconWithLabel: Story = {
                 ariaLabel='Lock'
                 iconName='lock'
                 label='Lock'
-                onChange={() => setPressed(!pressed)}
+                onChange={setPressed}
                 pressed={pressed}
             />
         );
@@ -61,7 +78,7 @@ export const IconOnly: Story = {
             <ToggleButton
                 ariaLabel='Lock'
                 iconName='lock'
-                onChange={() => setPressed(!pressed)}
+                onChange={setPressed}
                 pressed={pressed}
             />
         );

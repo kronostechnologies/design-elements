@@ -6,4 +6,5 @@ export type { ButtonProps, ButtonType, Type } from './button';
 export { IconButton } from './icon-button';
 export { SearchButton } from './search-button';
 export { ToggleButton } from './toggle-button';
+export type { ToggleButtonProps } from './toggle-button';
 export { getButtonTypeStyles, getButtonStyles } from './styled';
