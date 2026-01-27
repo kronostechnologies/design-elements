@@ -1,5 +1,3 @@
-import SearchIcon from 'feather-icons/dist/icons/search.svg';
-import XIcon from 'feather-icons/dist/icons/x.svg';
 import {
     type ChangeEvent,
     type FocusEvent,
@@ -19,6 +17,7 @@ import { SearchButton } from '../buttons';
 import { Label } from '../label';
 import { inputsStyle } from '../text-input/styles';
 import { VisuallyHidden } from '../visually-hidden';
+import { Icon } from '../icon';
 
 const SearchWrapper = styled.div`
     display: flex;
@@ -42,21 +41,21 @@ const InnerWrapper = styled.div`
     z-index: 1;
 `;
 
-function iconColor(props: { theme: ResolvedTheme, disabled?: boolean }): string {
-    if (props.disabled) {
+function iconColor(props: { theme: ResolvedTheme, $disabled?: boolean }): string {
+    if (props.$disabled) {
         return props.theme.component['search-input-disabled-icon-color'];
     }
 
     return props.theme.component['search-input-icon-color'];
 }
 
-const IcoSearch = styled(SearchIcon)`
+const StyledSearchIcon = styled(Icon)<{ $disabled?: boolean }>`
     color: ${iconColor};
     height: 1rem;
     width: 1rem;
 `;
 
-const IcoReset = styled(XIcon)`
+const StyledResetIcon = styled(Icon)<{ $disabled?: boolean }>`
     color: ${(props) => props.theme.component['search-input-icon-color']};
     height: 1.25rem;
     margin: -1px;
@@ -197,7 +196,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
             <InnerWrapper>
                 {hasIcon && (
                     <Label forId={id}>
-                        <IcoSearch data-testid="search-icon" disabled={disabled} />
+                        <StyledSearchIcon name="search" data-testid="search-icon" $disabled={disabled} />
                         <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                     </Label>
                 )}
@@ -222,7 +221,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
 
                 {(onReset && value) && (
                     <Reset onClick={handleReset} data-testid="search-reset">
-                        <IcoReset />
+                        <StyledResetIcon name="x" />
                         <VisuallyHidden>Reset</VisuallyHidden>
                     </Reset>
                 )}
