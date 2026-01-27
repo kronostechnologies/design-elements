@@ -13,23 +13,6 @@ const ToggleButtonMeta: Meta<typeof ToggleButton> = {
             control: { disable: true },
         },
     },
-    parameters: {
-        docs: {
-            source: {
-                code: `
-const [pressed, setPressed] = useState(false);
-return (
-    <ToggleButton
-        ariaLabel='Lock'
-        label='Lock'
-        onChange={setPressed}
-        pressed={pressed}
-    />
-);
-                `,
-            },
-        },
-    },
     render: (args) => {
         const [pressed, setPressed] = useState(false);
         return (
@@ -53,6 +36,23 @@ export const Default: Story = {
         ariaLabel: 'Lock',
         label: 'Lock',
     },
+    parameters: {
+        docs: {
+            source: {
+                code: `
+const [pressed, setPressed] = useState(false);
+return (
+    <ToggleButton
+        ariaLabel='Lock'
+        label='Lock'
+        onChange={setPressed}
+        pressed={pressed}
+    />
+);
+                `,
+            },
+        },
+    },
 };
 
 export const IconWithLabel: Story = {
@@ -62,6 +62,24 @@ export const IconWithLabel: Story = {
         iconName: 'lock',
         label: 'Lock',
     },
+    parameters: {
+        docs: {
+            source: {
+                code: `
+const [pressed, setPressed] = useState(false);
+return (
+    <ToggleButton
+        ariaLabel='Lock'
+        iconName='lock'
+        label='Lock'
+        onChange={setPressed}
+        pressed={pressed}
+    />
+);
+                `,
+            },
+        },
+    },
 };
 
 export const IconOnly: Story = {
@@ -69,5 +87,22 @@ export const IconOnly: Story = {
     args: {
         ariaLabel: 'Lock',
         iconName: 'lock',
+    },
+    parameters: {
+        docs: {
+            source: {
+                code: `
+const [pressed, setPressed] = useState(false);
+return (
+    <ToggleButton
+        ariaLabel='Lock'
+        iconName='lock'
+        onChange={setPressed}
+        pressed={pressed}
+    />
+);
+                `,
+            },
+        },
     },
 };

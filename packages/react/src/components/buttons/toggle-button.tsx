@@ -5,20 +5,18 @@ import { Button } from './button';
 import { IconButton } from './icon-button';
 import { devConsole } from '../../utils/dev-console';
 
-type IconOnlyProps = {
+interface IconOnlyProps {
     iconName: IconName;
     ariaLabel: string;
 }
 
-type LabelOnlyProps = {
+interface LabelOnlyProps {
     label: string;
     ariaLabel?: string;
 }
 
-type IconWithLabelProps = {
+interface IconWithLabelProps extends LabelOnlyProps {
     iconName: IconName;
-    label: string;
-    ariaLabel?: string;
 }
 
 export type ToggleButtonProps = {
@@ -29,10 +27,12 @@ export type ToggleButtonProps = {
 
 const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
+    letter-spacing: ${({ theme }) => theme.component['toggle-button-letter-spacing']};
 
     &[aria-pressed='true'] {
         background-color: ${({ theme }) => theme.component['toggle-button-pressed-background-color']};
         color: ${({ theme }) => theme.component['toggle-button-pressed-text-color']};
+        font-weight: ${({ theme }) => theme.component['toggle-button-pressed-font-weight']};
 
         &:hover {
             background-color: ${({ theme }) => theme.component['toggle-button-pressed-hover-background-color']};
@@ -43,6 +43,7 @@ const InnerButtonStyle = css`
     &[aria-pressed='false'] {
         background-color: ${({ theme }) => theme.component['toggle-button-background-color']};
         color: ${({ theme }) => theme.component['toggle-button-text-color']};
+        font-weight: ${({ theme }) => theme.component['toggle-button-font-weight']};
 
         &:hover {
             background-color: ${({ theme }) => theme.component['toggle-button-hover-background-color']};
@@ -58,11 +59,12 @@ const InnerButtonStyle = css`
 `;
 
 const InnerIconButton = styled(IconButton)`
-    ${InnerButtonStyle}
+    ${InnerButtonStyle};
 `;
 
 const InnerButton = styled(Button)`
-    ${InnerButtonStyle}
+    ${InnerButtonStyle};
+    padding: var(--spacing-half) var(--spacing-2x);
 `;
 
 export const ToggleButton: FC<ToggleButtonProps> = ({
