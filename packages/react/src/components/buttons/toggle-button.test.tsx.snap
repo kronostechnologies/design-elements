@@ -83,11 +83,6 @@ exports[`ToggleButton has default style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -106,6 +101,11 @@ exports[`ToggleButton has default style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -201,11 +201,6 @@ exports[`ToggleButton has disabled style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -224,6 +219,11 @@ exports[`ToggleButton has disabled style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -322,11 +322,6 @@ exports[`ToggleButton has icon only style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -345,6 +340,11 @@ exports[`ToggleButton has icon only style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -451,11 +451,6 @@ exports[`ToggleButton has icon with label style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -474,6 +469,11 @@ exports[`ToggleButton has icon with label style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -579,11 +579,6 @@ exports[`ToggleButton has pressed default style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -602,6 +597,11 @@ exports[`ToggleButton has pressed default style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -699,11 +699,6 @@ exports[`ToggleButton has pressed icon only style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -722,6 +717,11 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button
@@ -828,11 +828,6 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
   border: transparent;
 }
 
-.c2[aria-disabled='true'] {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
 .c2[aria-pressed='true'] {
   background-color: #E0F0F9;
   color: #003A5A;
@@ -851,6 +846,11 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
 .c2[aria-pressed='false']:hover {
   background-color: #DBDEE1;
   color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
 }
 
 <button

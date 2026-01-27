@@ -30,11 +30,6 @@ export type ToggleButtonProps = {
 const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
 
-    &[aria-disabled='true'] {
-        background-color: ${({ theme }) => theme.component['toggle-button-disabled-background-color']};
-        color: ${({ theme }) => theme.component['toggle-button-disabled-text-color']};
-    }
-
     &[aria-pressed='true'] {
         background-color: ${({ theme }) => theme.component['toggle-button-pressed-background-color']};
         color: ${({ theme }) => theme.component['toggle-button-pressed-text-color']};
@@ -53,6 +48,12 @@ const InnerButtonStyle = css`
             background-color: ${({ theme }) => theme.component['toggle-button-hover-background-color']};
             color: ${({ theme }) => theme.component['toggle-button-hover-text-color']};
         }
+    }
+
+    // Disabled styles must override pressed/unpressed states
+    &[aria-disabled='true'] {
+        background-color: ${({ theme }) => theme.component['toggle-button-disabled-background-color']};
+        color: ${({ theme }) => theme.component['toggle-button-disabled-text-color']};
     }
 `;
 

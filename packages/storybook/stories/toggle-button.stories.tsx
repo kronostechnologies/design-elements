@@ -30,6 +30,17 @@ return (
             },
         },
     },
+    render: (args) => {
+        const [pressed, setPressed] = useState(false);
+        return (
+            <ToggleButton
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...args}
+                onChange={setPressed}
+                pressed={pressed}
+            />
+        );
+    },
 };
 
 export default ToggleButtonMeta;
@@ -37,44 +48,26 @@ export default ToggleButtonMeta;
 type Story = StoryObj<typeof ToggleButton>;
 
 export const Default: Story = {
-    render: () => {
-        const [pressed, setPressed] = useState(false);
-        return (
-            <ToggleButton
-                ariaLabel='Lock'
-                label='Lock'
-                onChange={setPressed}
-                pressed={pressed}
-            />
-        );
+    ...ToggleButtonMeta,
+    args: {
+        ariaLabel: 'Lock',
+        label: 'Lock',
     },
 };
 
 export const IconWithLabel: Story = {
-    render: () => {
-        const [pressed, setPressed] = useState(false);
-        return (
-            <ToggleButton
-                ariaLabel='Lock'
-                iconName='lock'
-                label='Lock'
-                onChange={setPressed}
-                pressed={pressed}
-            />
-        );
+    ...ToggleButtonMeta,
+    args: {
+        ariaLabel: 'Lock',
+        iconName: 'lock',
+        label: 'Lock',
     },
 };
 
 export const IconOnly: Story = {
-    render: () => {
-        const [pressed, setPressed] = useState(false);
-        return (
-            <ToggleButton
-                ariaLabel='Lock'
-                iconName='lock'
-                onChange={setPressed}
-                pressed={pressed}
-            />
-        );
+    ...ToggleButtonMeta,
+    args: {
+        ariaLabel: 'Lock',
+        iconName: 'lock',
     },
 };
