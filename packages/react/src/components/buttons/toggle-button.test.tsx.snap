@@ -1,0 +1,923 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ToggleButton has default style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  border: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="button"
+>
+  Lock
+</button>
+`;
+
+exports[`ToggleButton has disabled style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  border: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-disabled="true"
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="button"
+>
+  Lock
+</button>
+`;
+
+exports[`ToggleButton has icon only style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  border: transparent;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    icon-name="lock"
+    width="16"
+  />
+</button>
+`;
+
+exports[`ToggleButton has icon with label style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c2 {
+  border: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="false"
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="lock"
+    width="24"
+  />
+  Lock
+</button>
+`;
+
+exports[`ToggleButton has pressed default style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  border: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="true"
+  class="c0 c1 c2"
+  type="button"
+>
+  Lock
+</button>
+`;
+
+exports[`ToggleButton has pressed icon only style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c2 {
+  border: transparent;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="true"
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    icon-name="lock"
+    width="16"
+  />
+</button>
+`;
+
+exports[`ToggleButton has pressed icon with label style 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c2 {
+  border: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
+}
+
+.c2[aria-pressed='true'] {
+  background-color: #E0F0F9;
+  color: #003A5A;
+  font-weight: 600;
+}
+
+.c2[aria-pressed='true']:hover {
+  background-color: #C2E2F4;
+  color: #003A5A;
+}
+
+.c2[aria-pressed='false'] {
+  background-color: transparent;
+  color: #60666E;
+  font-weight: 400;
+}
+
+.c2[aria-pressed='false']:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: #F1F2F2;
+  color: #B7BBC2;
+}
+
+<button
+  aria-label="Lock"
+  aria-pressed="true"
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="lock"
+    width="24"
+  />
+  Lock
+</button>
+`;

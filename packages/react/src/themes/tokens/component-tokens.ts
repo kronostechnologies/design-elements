@@ -51,6 +51,7 @@ import { defaultTextAreaTokens, TextAreaToken } from './component/text-area-toke
 import { defaultTextInputTokens, TextInputToken } from './component/text-input-tokens';
 import { defaultToastTokens, ToastToken } from './component/toast-tokens';
 import { defaultToggleSwitchTokens, ToggleSwitchToken } from './component/toggle-switch-tokens';
+import { defaultToggleButtonTokens, ToggleButtonToken } from './component/toggle-button-tokens';
 import { defaultToggleTipTokens, ToggleTipToken } from './component/toggletip-tokens';
 import { defaultTooltipTokens, TooltipToken } from './component/tooltip-tokens';
 
@@ -108,6 +109,7 @@ export type ComponentToken =
     | TextInputToken
     | ToastToken
     | ToggleSwitchToken
+    | ToggleButtonToken
     | ToggleTipToken
     | TooltipToken;
 
@@ -165,6 +167,7 @@ export const defaultComponentTokens = {
     ...defaultTextInputTokens,
     ...defaultToastTokens,
     ...defaultToggleSwitchTokens,
+    ...defaultToggleButtonTokens,
     ...defaultToggleTipTokens,
     ...defaultTooltipTokens,
 };
