@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ReactElement, SVGProps } from 'react';
+import { FC, SVGProps } from 'react';
 
-const Spinner: () => ReactElement<SVGProps<SVGSVGElement>> = () => (
+const Spinner: FC<SVGProps<SVGSVGElement>> = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="16" height="16">
         <radialGradient id="a4" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
             <stop offset="0" stopColor="currentColor" stopOpacity="0" />
