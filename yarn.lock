@@ -12722,12 +12722,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript-plugin@npm:1.0.6":
-  version: 1.0.6
-  resolution: "react-docgen-typescript-plugin@npm:1.0.6"
+"react-docgen-typescript-plugin@npm:1.0.8":
+  version: 1.0.8
+  resolution: "react-docgen-typescript-plugin@npm:1.0.8"
   dependencies:
     debug: "npm:^4.1.1"
-    endent: "npm:^2.0.1"
     find-cache-dir: "npm:^3.3.1"
     flat-cache: "npm:^3.0.4"
     micromatch: "npm:^4.0.2"
@@ -12736,25 +12735,7 @@ __metadata:
   peerDependencies:
     typescript: ">= 4.x"
     webpack: ">= 4"
-  checksum: 10c0/8dd7ad600f0aa64308fec9efaadef9faea7bd9febe48ff2334c8be73cc8ca4ee7bdee0155eebb95766ba8c174a448e434b088d269f7f9e2b4ab3b71c421f70a1
-  languageName: node
-  linkType: hard
-
-"react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch":
-  version: 1.0.6
-  resolution: "react-docgen-typescript-plugin@patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch::version=1.0.6&hash=7e6c8b"
-  dependencies:
-    debug: "npm:^4.1.1"
-    endent: "npm:^2.0.1"
-    find-cache-dir: "npm:^3.3.1"
-    flat-cache: "npm:^3.0.4"
-    micromatch: "npm:^4.0.2"
-    react-docgen-typescript: "npm:^2.2.2"
-    tslib: "npm:^2.6.2"
-  peerDependencies:
-    typescript: ">= 4.x"
-    webpack: ">= 4"
-  checksum: 10c0/2dfcd8173446dba0674f8396850afcd834332821f58f69700e935c83f25e4aa75b72459d7c4a9a1f5f51b8af9891fa01571d94da549ca2f054daa3802ce8be2b
+  checksum: 10c0/9abd1e7c71e2ba7fad080ef17fd262c89aa59509c69a5d34f2a8b63f7e33271e49ab82274c79393f704f387eb09247de6f32605439835237dacf4e31de6859a6
   languageName: node
   linkType: hard
 
