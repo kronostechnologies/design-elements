@@ -19,7 +19,7 @@
     "postcss": "^8.4.35",
     "postcss-styled-syntax": "^0.6.4",
     "stylelint": "^16.2.1",
-    "typescript": "~5.5.0",
+    "typescript": "~5.9.3",
     "xmlbuilder": "^15.1.1",
     "yargs": "^17.7.2"
   },
@@ -28,8 +28,10 @@
     "react-docgen-typescript": "^2.0.0",
     "@types/react-router-dom": "5.3.3",
     "cheerio": "1.0.0-rc.12",
-    "webpack": "^5",
-    "react-docgen-typescript-plugin": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch"
+    "react": "^17",
+    "react-dom": "^17",
+    "react-is": "^17",
+    "webpack": "^5"
   },
   "packageManager": "yarn@4.12.0"
 }

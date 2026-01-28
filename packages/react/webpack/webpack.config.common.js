@@ -2,6 +2,8 @@ const path = require('path');
 const ReactDocgenTypescriptPlugin = require('react-docgen-typescript-plugin').default;
 const pkg = require('../package');
 
+const enableDocgen = process.env.DISABLE_REACT_DOCGEN !== 'true';
+
 module.exports = {
     entry: {
         bundle: './src/index.ts',
@@ -53,6 +55,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            'react/jsx-runtime': require.resolve('react/jsx-runtime'),
+        },
         fallback: {
             buffer: false,
             events: false,
@@ -60,12 +65,12 @@ module.exports = {
         },
     },
     plugins: [
-        new ReactDocgenTypescriptPlugin({
+        enableDocgen && new ReactDocgenTypescriptPlugin({
             shouldExtractLiteralValuesFromEnum: true,
             shouldRemoveUndefinedFromOptional: true,
             tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
         }),
-    ],
+    ].filter(Boolean),
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),

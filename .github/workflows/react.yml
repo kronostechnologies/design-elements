@@ -234,6 +234,9 @@ jobs:
 
       - name: Compile
         working-directory: ./packages/react
+        shell: bash
+        env:
+          DISABLE_REACT_DOCGEN: 'true'
         run: yarn build
 
       - name: Store react package
@@ -369,12 +372,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Download React Dist
-        uses: actions/download-artifact@v5
-        with:
-          name: react_dist
-          path: packages/react/dist/
-
       - name: Setup asdf-vm
         uses: equisoft-actions/with-asdf-vm@v2
 
@@ -383,13 +380,17 @@ jobs:
         with:
           working-directory: ${{ env.WORKING_DIRECTORY }}
 
-      # Compile
       - name: Update package version
         env:
           VERSION: ${{ needs.setup.outputs.next-version }}
         run: |
           contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
           contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
+
+      - name: Compile React package with docgen
+        working-directory: ./packages/react
+        shell: bash
+        run: yarn build
 
       - name: Compile
         working-directory: ./packages/storybook
