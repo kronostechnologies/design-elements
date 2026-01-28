@@ -81,6 +81,7 @@ exports[`ToggleButton has default style 1`] = `
 
 .c2 {
   border: transparent;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -206,6 +207,7 @@ exports[`ToggleButton has disabled style 1`] = `
 
 .c2 {
   border: transparent;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -334,10 +336,6 @@ exports[`ToggleButton has icon only style 1`] = `
 
 .c2 {
   border: transparent;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
 }
 
 .c2[aria-pressed='true'] {
@@ -469,6 +467,7 @@ exports[`ToggleButton has icon with label style 1`] = `
 
 .c2 {
   border: transparent;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -604,6 +603,7 @@ exports[`ToggleButton has pressed default style 1`] = `
 
 .c2 {
   border: transparent;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -731,10 +731,6 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 
 .c2 {
   border: transparent;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
 }
 
 .c2[aria-pressed='true'] {
@@ -866,6 +862,7 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
 
 .c2 {
   border: transparent;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;

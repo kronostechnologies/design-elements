@@ -27,7 +27,6 @@ export type ToggleButtonProps = {
 
 const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
-    letter-spacing: ${({ theme }) => theme.component['toggle-button-letter-spacing']};
 
     &[aria-pressed='true'] {
         background-color: ${({ theme }) => theme.component['toggle-button-pressed-background-color']};
@@ -64,6 +63,8 @@ const InnerIconButton = styled(IconButton)`
 
 const InnerButton = styled(Button)`
     ${InnerButtonStyle};
+    font-size: 0.875rem;
+    letter-spacing: ${({ theme }) => theme.component['toggle-button-letter-spacing']};
     padding: var(--spacing-half) var(--spacing-2x);
 `;
 
