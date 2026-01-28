@@ -173,7 +173,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
           size="16"
           type="alert"
         >
-          <svg
+          <OctagonAlert
             aria-label="alert"
             className="c1"
             color="currentColor"
@@ -183,7 +183,75 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
             role="img"
             type="alert"
             width="16"
-          />
+          >
+            <ForwardRef
+              aria-label="alert"
+              className="lucide-octagon-alert c1"
+              color="currentColor"
+              focusable={true}
+              height="16"
+              iconNode={
+                [
+                  [
+                    "path",
+                    {
+                      "d": "M12 16h.01",
+                      "key": "1drbdi",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M12 8v4",
+                      "key": "1got3b",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z",
+                      "key": "1fd625",
+                    },
+                  ],
+                ]
+              }
+              isMobile={false}
+              role="img"
+              type="alert"
+              width="16"
+            >
+              <svg
+                aria-label="alert"
+                className="lucide lucide-octagon-alert c1"
+                fill="none"
+                focusable={true}
+                height="16"
+                isMobile={false}
+                role="img"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                type="alert"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 16h.01"
+                  key="1drbdi"
+                />
+                <path
+                  d="M12 8v4"
+                  key="1got3b"
+                />
+                <path
+                  d="M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z"
+                  key="1fd625"
+                />
+              </svg>
+            </ForwardRef>
+          </OctagonAlert>
         </Icon>
       </Styled(Icon)>
       <styled.p
@@ -263,13 +331,64 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
                     name="x"
                     size="16"
                   >
-                    <svg
+                    <X
                       aria-hidden="true"
                       color="currentColor"
                       focusable={false}
                       height="16"
                       width="16"
-                    />
+                    >
+                      <ForwardRef
+                        aria-hidden="true"
+                        className="lucide-x"
+                        color="currentColor"
+                        focusable={false}
+                        height="16"
+                        iconNode={
+                          [
+                            [
+                              "path",
+                              {
+                                "d": "M18 6 6 18",
+                                "key": "1bl5f8",
+                              },
+                            ],
+                            [
+                              "path",
+                              {
+                                "d": "m6 6 12 12",
+                                "key": "d8bk6v",
+                              },
+                            ],
+                          ]
+                        }
+                        width="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="lucide lucide-x"
+                          fill="none"
+                          focusable={false}
+                          height="16"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18 6 6 18"
+                            key="1bl5f8"
+                          />
+                          <path
+                            d="m6 6 12 12"
+                            key="d8bk6v"
+                          />
+                        </svg>
+                      </ForwardRef>
+                    </X>
                   </Icon>
                 </button>
               </styled.button>
@@ -455,7 +574,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
           size="16"
           type="discovery"
         >
-          <svg
+          <Lightbulb
             aria-label="discovery"
             className="c1"
             color="currentColor"
@@ -465,7 +584,75 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
             role="img"
             type="discovery"
             width="16"
-          />
+          >
+            <ForwardRef
+              aria-label="discovery"
+              className="lucide-lightbulb c1"
+              color="currentColor"
+              focusable={true}
+              height="16"
+              iconNode={
+                [
+                  [
+                    "path",
+                    {
+                      "d": "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",
+                      "key": "1gvzjb",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M9 18h6",
+                      "key": "x1upvd",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M10 22h4",
+                      "key": "ceow96",
+                    },
+                  ],
+                ]
+              }
+              isMobile={false}
+              role="img"
+              type="discovery"
+              width="16"
+            >
+              <svg
+                aria-label="discovery"
+                className="lucide lucide-lightbulb c1"
+                fill="none"
+                focusable={true}
+                height="16"
+                isMobile={false}
+                role="img"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                type="discovery"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+                  key="1gvzjb"
+                />
+                <path
+                  d="M9 18h6"
+                  key="x1upvd"
+                />
+                <path
+                  d="M10 22h4"
+                  key="ceow96"
+                />
+              </svg>
+            </ForwardRef>
+          </Lightbulb>
         </Icon>
       </Styled(Icon)>
       <styled.p
@@ -545,13 +732,64 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
                     name="x"
                     size="16"
                   >
-                    <svg
+                    <X
                       aria-hidden="true"
                       color="currentColor"
                       focusable={false}
                       height="16"
                       width="16"
-                    />
+                    >
+                      <ForwardRef
+                        aria-hidden="true"
+                        className="lucide-x"
+                        color="currentColor"
+                        focusable={false}
+                        height="16"
+                        iconNode={
+                          [
+                            [
+                              "path",
+                              {
+                                "d": "M18 6 6 18",
+                                "key": "1bl5f8",
+                              },
+                            ],
+                            [
+                              "path",
+                              {
+                                "d": "m6 6 12 12",
+                                "key": "d8bk6v",
+                              },
+                            ],
+                          ]
+                        }
+                        width="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="lucide lucide-x"
+                          fill="none"
+                          focusable={false}
+                          height="16"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18 6 6 18"
+                            key="1bl5f8"
+                          />
+                          <path
+                            d="m6 6 12 12"
+                            key="d8bk6v"
+                          />
+                        </svg>
+                      </ForwardRef>
+                    </X>
                   </Icon>
                 </button>
               </styled.button>
@@ -737,7 +975,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
           size="16"
           type="neutral"
         >
-          <svg
+          <Info
             aria-label="information"
             className="c1"
             color="currentColor"
@@ -747,7 +985,79 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
             role="img"
             type="neutral"
             width="16"
-          />
+          >
+            <ForwardRef
+              aria-label="information"
+              className="lucide-info c1"
+              color="currentColor"
+              focusable={true}
+              height="16"
+              iconNode={
+                [
+                  [
+                    "circle",
+                    {
+                      "cx": "12",
+                      "cy": "12",
+                      "key": "1mglay",
+                      "r": "10",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M12 16v-4",
+                      "key": "1dtifu",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M12 8h.01",
+                      "key": "e9boi3",
+                    },
+                  ],
+                ]
+              }
+              isMobile={false}
+              role="img"
+              type="neutral"
+              width="16"
+            >
+              <svg
+                aria-label="information"
+                className="lucide lucide-info c1"
+                fill="none"
+                focusable={true}
+                height="16"
+                isMobile={false}
+                role="img"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                type="neutral"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  key="1mglay"
+                  r="10"
+                />
+                <path
+                  d="M12 16v-4"
+                  key="1dtifu"
+                />
+                <path
+                  d="M12 8h.01"
+                  key="e9boi3"
+                />
+              </svg>
+            </ForwardRef>
+          </Info>
         </Icon>
       </Styled(Icon)>
       <styled.p
@@ -827,13 +1137,64 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
                     name="x"
                     size="16"
                   >
-                    <svg
+                    <X
                       aria-hidden="true"
                       color="currentColor"
                       focusable={false}
                       height="16"
                       width="16"
-                    />
+                    >
+                      <ForwardRef
+                        aria-hidden="true"
+                        className="lucide-x"
+                        color="currentColor"
+                        focusable={false}
+                        height="16"
+                        iconNode={
+                          [
+                            [
+                              "path",
+                              {
+                                "d": "M18 6 6 18",
+                                "key": "1bl5f8",
+                              },
+                            ],
+                            [
+                              "path",
+                              {
+                                "d": "m6 6 12 12",
+                                "key": "d8bk6v",
+                              },
+                            ],
+                          ]
+                        }
+                        width="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="lucide lucide-x"
+                          fill="none"
+                          focusable={false}
+                          height="16"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18 6 6 18"
+                            key="1bl5f8"
+                          />
+                          <path
+                            d="m6 6 12 12"
+                            key="d8bk6v"
+                          />
+                        </svg>
+                      </ForwardRef>
+                    </X>
                   </Icon>
                 </button>
               </styled.button>
@@ -1019,7 +1380,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           size="16"
           type="success"
         >
-          <svg
+          <Check
             aria-label="success"
             className="c1"
             color="currentColor"
@@ -1029,7 +1390,53 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             role="img"
             type="success"
             width="16"
-          />
+          >
+            <ForwardRef
+              aria-label="success"
+              className="lucide-check c1"
+              color="currentColor"
+              focusable={true}
+              height="16"
+              iconNode={
+                [
+                  [
+                    "path",
+                    {
+                      "d": "M20 6 9 17l-5-5",
+                      "key": "1gmf2c",
+                    },
+                  ],
+                ]
+              }
+              isMobile={false}
+              role="img"
+              type="success"
+              width="16"
+            >
+              <svg
+                aria-label="success"
+                className="lucide lucide-check c1"
+                fill="none"
+                focusable={true}
+                height="16"
+                isMobile={false}
+                role="img"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                type="success"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6 9 17l-5-5"
+                  key="1gmf2c"
+                />
+              </svg>
+            </ForwardRef>
+          </Check>
         </Icon>
       </Styled(Icon)>
       <styled.p
@@ -1109,13 +1516,64 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                     name="x"
                     size="16"
                   >
-                    <svg
+                    <X
                       aria-hidden="true"
                       color="currentColor"
                       focusable={false}
                       height="16"
                       width="16"
-                    />
+                    >
+                      <ForwardRef
+                        aria-hidden="true"
+                        className="lucide-x"
+                        color="currentColor"
+                        focusable={false}
+                        height="16"
+                        iconNode={
+                          [
+                            [
+                              "path",
+                              {
+                                "d": "M18 6 6 18",
+                                "key": "1bl5f8",
+                              },
+                            ],
+                            [
+                              "path",
+                              {
+                                "d": "m6 6 12 12",
+                                "key": "d8bk6v",
+                              },
+                            ],
+                          ]
+                        }
+                        width="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="lucide lucide-x"
+                          fill="none"
+                          focusable={false}
+                          height="16"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18 6 6 18"
+                            key="1bl5f8"
+                          />
+                          <path
+                            d="m6 6 12 12"
+                            key="d8bk6v"
+                          />
+                        </svg>
+                      </ForwardRef>
+                    </X>
                   </Icon>
                 </button>
               </styled.button>
@@ -1301,7 +1759,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           size="16"
           type="warning"
         >
-          <svg
+          <TriangleAlert
             aria-label="warning"
             className="c1"
             color="currentColor"
@@ -1311,7 +1769,75 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             role="img"
             type="warning"
             width="16"
-          />
+          >
+            <ForwardRef
+              aria-label="warning"
+              className="lucide-triangle-alert c1"
+              color="currentColor"
+              focusable={true}
+              height="16"
+              iconNode={
+                [
+                  [
+                    "path",
+                    {
+                      "d": "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
+                      "key": "wmoenq",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M12 9v4",
+                      "key": "juzpu7",
+                    },
+                  ],
+                  [
+                    "path",
+                    {
+                      "d": "M12 17h.01",
+                      "key": "p32p05",
+                    },
+                  ],
+                ]
+              }
+              isMobile={false}
+              role="img"
+              type="warning"
+              width="16"
+            >
+              <svg
+                aria-label="warning"
+                className="lucide lucide-triangle-alert c1"
+                fill="none"
+                focusable={true}
+                height="16"
+                isMobile={false}
+                role="img"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                type="warning"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                  key="wmoenq"
+                />
+                <path
+                  d="M12 9v4"
+                  key="juzpu7"
+                />
+                <path
+                  d="M12 17h.01"
+                  key="p32p05"
+                />
+              </svg>
+            </ForwardRef>
+          </TriangleAlert>
         </Icon>
       </Styled(Icon)>
       <styled.p
@@ -1391,13 +1917,64 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                     name="x"
                     size="16"
                   >
-                    <svg
+                    <X
                       aria-hidden="true"
                       color="currentColor"
                       focusable={false}
                       height="16"
                       width="16"
-                    />
+                    >
+                      <ForwardRef
+                        aria-hidden="true"
+                        className="lucide-x"
+                        color="currentColor"
+                        focusable={false}
+                        height="16"
+                        iconNode={
+                          [
+                            [
+                              "path",
+                              {
+                                "d": "M18 6 6 18",
+                                "key": "1bl5f8",
+                              },
+                            ],
+                            [
+                              "path",
+                              {
+                                "d": "m6 6 12 12",
+                                "key": "d8bk6v",
+                              },
+                            ],
+                          ]
+                        }
+                        width="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="lucide lucide-x"
+                          fill="none"
+                          focusable={false}
+                          height="16"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18 6 6 18"
+                            key="1bl5f8"
+                          />
+                          <path
+                            d="m6 6 12 12"
+                            key="d8bk6v"
+                          />
+                        </svg>
+                      </ForwardRef>
+                    </X>
                   </Icon>
                 </button>
               </styled.button>

@@ -130,13 +130,51 @@ exports[`Checkbox matches snapshot 1`] = `
               className="c4 c5"
               name="check"
             >
-              <svg
+              <Check
                 className="c4 c5"
                 color="currentColor"
                 focusable={false}
                 height="24"
                 width="24"
-              />
+              >
+                <ForwardRef
+                  className="lucide-check c4 c5"
+                  color="currentColor"
+                  focusable={false}
+                  height="24"
+                  iconNode={
+                    [
+                      [
+                        "path",
+                        {
+                          "d": "M20 6 9 17l-5-5",
+                          "key": "1gmf2c",
+                        },
+                      ],
+                    ]
+                  }
+                  width="24"
+                >
+                  <svg
+                    className="lucide lucide-check c4 c5"
+                    fill="none"
+                    focusable={false}
+                    height="24"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                      key="1gmf2c"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Check>
             </Icon>
           </Styled(Icon)>
           <Styled(Icon)>
@@ -144,13 +182,51 @@ exports[`Checkbox matches snapshot 1`] = `
               className="c6 c7"
               name="minus"
             >
-              <svg
+              <Minus
                 className="c6 c7"
                 color="currentColor"
                 focusable={false}
                 height="24"
                 width="24"
-              />
+              >
+                <ForwardRef
+                  className="lucide-minus c6 c7"
+                  color="currentColor"
+                  focusable={false}
+                  height="24"
+                  iconNode={
+                    [
+                      [
+                        "path",
+                        {
+                          "d": "M5 12h14",
+                          "key": "1ays0h",
+                        },
+                      ],
+                    ]
+                  }
+                  width="24"
+                >
+                  <svg
+                    className="lucide lucide-minus c6 c7"
+                    fill="none"
+                    focusable={false}
+                    height="24"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12h14"
+                      key="1ays0h"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Minus>
             </Icon>
           </Styled(Icon)>
         </span>

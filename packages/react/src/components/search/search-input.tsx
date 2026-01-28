@@ -1,5 +1,3 @@
-import SearchIcon from 'feather-icons/dist/icons/search.svg';
-import XIcon from 'feather-icons/dist/icons/x.svg';
 import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -7,6 +5,7 @@ import { ResolvedTheme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons';
+import { Icon } from '../icon/icon';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
@@ -33,21 +32,21 @@ const InnerWrapper = styled.div`
     z-index: 1;
 `;
 
-function iconColor(props: { theme: ResolvedTheme, disabled?: boolean }): string {
-    if (props.disabled) {
+function iconColor(props: { theme: ResolvedTheme, $disabled?: boolean }): string {
+    if (props.$disabled) {
         return props.theme.component['search-input-disabled-icon-color'];
     }
 
     return props.theme.component['search-input-icon-color'];
 }
 
-const IcoSearch = styled(SearchIcon)`
+const StyledSearchIcon = styled(Icon)<{ $disabled?: boolean }>`
     color: ${iconColor};
     height: 1rem;
     width: 1rem;
 `;
 
-const IcoReset = styled(XIcon)`
+const StyledResetIcon = styled(Icon)<{ $disabled?: boolean }>`
     color: ${(props) => props.theme.component['search-input-icon-color']};
     height: 1.25rem;
     margin: -1px;
@@ -185,8 +184,8 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
         <SearchWrapper className={className}>
             <InnerWrapper>
                 {hasIcon && (
-                    <Label forId={id} data-testid="search-icon">
-                        <IcoSearch disabled={disabled} />
+                    <Label forId={id}>
+                        <StyledSearchIcon name="search" data-testid="search-icon" $disabled={disabled} />
                         <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                     </Label>
                 )}
@@ -211,7 +210,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
 
                 {(onReset && value) && (
                     <Reset onClick={handleReset} data-testid="search-reset">
-                        <IcoReset />
+                        <StyledResetIcon name="x" />
                         <VisuallyHidden>Reset</VisuallyHidden>
                     </Reset>
                 )}

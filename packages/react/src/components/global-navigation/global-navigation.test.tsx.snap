@@ -238,11 +238,25 @@ exports[`Global Navigation matches snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          color="currentColor"
+          class="lucide lucide-plus"
+          fill="none"
           focusable="false"
           height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12h14"
+          />
+          <path
+            d="M12 5v14"
+          />
+        </svg>
       </button>
       <nav
         aria-label="App Navigation"
@@ -260,11 +274,25 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-house"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+                />
+                <path
+                  d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -282,11 +310,25 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-pencil"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                />
+                <path
+                  d="m15 5 4 4"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -304,11 +346,27 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-map-pin"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="3"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -326,11 +384,29 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-mail"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                />
+                <rect
+                  height="16"
+                  rx="2"
+                  width="20"
+                  x="2"
+                  y="4"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -348,11 +424,22 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-phone"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -383,11 +470,30 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-info"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <path
+                  d="M12 16v-4"
+                />
+                <path
+                  d="M12 8h.01"
+                />
+              </svg>
               <span
                 class="c9"
               >
@@ -405,11 +511,30 @@ exports[`Global Navigation matches snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                color="currentColor"
+                class="lucide lucide-circle-question-mark"
+                fill="none"
                 focusable="false"
                 height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
                 width="20"
-              />
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <path
+                  d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                />
+                <path
+                  d="M12 17h.01"
+                />
+              </svg>
               <span
                 class="c9"
               >

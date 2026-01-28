@@ -15,10 +15,10 @@ describe('AccordionItem Component', () => {
         );
 
         // Initial icon state
-        expect(wrapper.find('Icon').prop('name')).toBe('caretRight');
+        expect(wrapper.find('Icon').prop('name')).toBe('chevronRight');
 
         // Simulate a button click
         wrapper.find('Button').simulate('click');
-        expect(wrapper.find('Icon').prop('name')).toBe('caretDown');
+        expect(wrapper.find('Icon').prop('name')).toBe('chevronDown');
     });
 });

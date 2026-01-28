@@ -392,7 +392,7 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
                           name="chevronDown"
                           size="16"
                         >
-                          <svg
+                          <ChevronDown
                             aria-hidden="true"
                             className="c4"
                             color="currentColor"
@@ -400,7 +400,49 @@ exports[`MenuButton should render a tooltip when the tooltip prop is provided 1`
                             focusable={false}
                             height="16"
                             width="16"
-                          />
+                          >
+                            <ForwardRef
+                              aria-hidden="true"
+                              className="lucide-chevron-down c4"
+                              color="currentColor"
+                              data-testid="chevron-icon"
+                              focusable={false}
+                              height="16"
+                              iconNode={
+                                [
+                                  [
+                                    "path",
+                                    {
+                                      "d": "m6 9 6 6 6-6",
+                                      "key": "qrunsl",
+                                    },
+                                  ],
+                                ]
+                              }
+                              width="16"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                className="lucide lucide-chevron-down c4"
+                                data-testid="chevron-icon"
+                                fill="none"
+                                focusable={false}
+                                height="16"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                viewBox="0 0 24 24"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m6 9 6 6 6-6"
+                                  key="qrunsl"
+                                />
+                              </svg>
+                            </ForwardRef>
+                          </ChevronDown>
                         </Icon>
                       </Styled(Icon)>
                     </button>

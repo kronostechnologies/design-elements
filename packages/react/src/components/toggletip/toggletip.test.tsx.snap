@@ -298,13 +298,79 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
               name="info"
               size="16"
             >
-              <svg
+              <Info
                 aria-hidden="true"
                 color="currentColor"
                 focusable={false}
                 height="16"
                 width="16"
-              />
+              >
+                <ForwardRef
+                  aria-hidden="true"
+                  className="lucide-info"
+                  color="currentColor"
+                  focusable={false}
+                  height="16"
+                  iconNode={
+                    [
+                      [
+                        "circle",
+                        {
+                          "cx": "12",
+                          "cy": "12",
+                          "key": "1mglay",
+                          "r": "10",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 16v-4",
+                          "key": "1dtifu",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 8h.01",
+                          "key": "e9boi3",
+                        },
+                      ],
+                    ]
+                  }
+                  width="16"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="lucide lucide-info"
+                    fill="none"
+                    focusable={false}
+                    height="16"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      key="1mglay"
+                      r="10"
+                    />
+                    <path
+                      d="M12 16v-4"
+                      key="1dtifu"
+                    />
+                    <path
+                      d="M12 8h.01"
+                      key="e9boi3"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Info>
             </Icon>
           </button>
         </styled.button>
@@ -521,13 +587,79 @@ exports[`Toggletip Has default desktop styles 1`] = `
               name="info"
               size="16"
             >
-              <svg
+              <Info
                 aria-hidden="true"
                 color="currentColor"
                 focusable={false}
                 height="16"
                 width="16"
-              />
+              >
+                <ForwardRef
+                  aria-hidden="true"
+                  className="lucide-info"
+                  color="currentColor"
+                  focusable={false}
+                  height="16"
+                  iconNode={
+                    [
+                      [
+                        "circle",
+                        {
+                          "cx": "12",
+                          "cy": "12",
+                          "key": "1mglay",
+                          "r": "10",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 16v-4",
+                          "key": "1dtifu",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 8h.01",
+                          "key": "e9boi3",
+                        },
+                      ],
+                    ]
+                  }
+                  width="16"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="lucide lucide-info"
+                    fill="none"
+                    focusable={false}
+                    height="16"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      key="1mglay"
+                      r="10"
+                    />
+                    <path
+                      d="M12 16v-4"
+                      key="1dtifu"
+                    />
+                    <path
+                      d="M12 8h.01"
+                      key="e9boi3"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Info>
             </Icon>
           </button>
         </styled.button>
@@ -835,13 +967,79 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
               name="info"
               size="20"
             >
-              <svg
+              <Info
                 aria-hidden="true"
                 color="currentColor"
                 focusable={false}
                 height="20"
                 width="20"
-              />
+              >
+                <ForwardRef
+                  aria-hidden="true"
+                  className="lucide-info"
+                  color="currentColor"
+                  focusable={false}
+                  height="20"
+                  iconNode={
+                    [
+                      [
+                        "circle",
+                        {
+                          "cx": "12",
+                          "cy": "12",
+                          "key": "1mglay",
+                          "r": "10",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 16v-4",
+                          "key": "1dtifu",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 8h.01",
+                          "key": "e9boi3",
+                        },
+                      ],
+                    ]
+                  }
+                  width="20"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="lucide lucide-info"
+                    fill="none"
+                    focusable={false}
+                    height="20"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      key="1mglay"
+                      r="10"
+                    />
+                    <path
+                      d="M12 16v-4"
+                      key="1dtifu"
+                    />
+                    <path
+                      d="M12 8h.01"
+                      key="e9boi3"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Info>
             </Icon>
           </button>
         </styled.button>
@@ -1058,13 +1256,79 @@ exports[`Toggletip Has mobile styles 1`] = `
               name="info"
               size="20"
             >
-              <svg
+              <Info
                 aria-hidden="true"
                 color="currentColor"
                 focusable={false}
                 height="20"
                 width="20"
-              />
+              >
+                <ForwardRef
+                  aria-hidden="true"
+                  className="lucide-info"
+                  color="currentColor"
+                  focusable={false}
+                  height="20"
+                  iconNode={
+                    [
+                      [
+                        "circle",
+                        {
+                          "cx": "12",
+                          "cy": "12",
+                          "key": "1mglay",
+                          "r": "10",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 16v-4",
+                          "key": "1dtifu",
+                        },
+                      ],
+                      [
+                        "path",
+                        {
+                          "d": "M12 8h.01",
+                          "key": "e9boi3",
+                        },
+                      ],
+                    ]
+                  }
+                  width="20"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="lucide lucide-info"
+                    fill="none"
+                    focusable={false}
+                    height="20"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      key="1mglay"
+                      r="10"
+                    />
+                    <path
+                      d="M12 16v-4"
+                      key="1dtifu"
+                    />
+                    <path
+                      d="M12 8h.01"
+                      key="e9boi3"
+                    />
+                  </svg>
+                </ForwardRef>
+              </Info>
             </Icon>
           </button>
         </styled.button>

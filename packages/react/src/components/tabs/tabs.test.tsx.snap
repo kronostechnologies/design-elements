@@ -347,11 +347,22 @@ exports[`Tabs matches snapshot (global) 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-left"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
     </button>
     <div
       aria-label="tabs label"
@@ -411,11 +422,22 @@ exports[`Tabs matches snapshot (global) 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-right"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
     </button>
   </div>
   <div
@@ -808,11 +830,22 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-left"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
     </button>
     <div
       aria-label="tabs label"
@@ -872,11 +905,22 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-right"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
     </button>
   </div>
   <div
@@ -1269,11 +1313,22 @@ exports[`Tabs matches snapshot 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-left"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
     </button>
     <div
       aria-label="tabs label"
@@ -1333,11 +1388,22 @@ exports[`Tabs matches snapshot 1`] = `
     >
       <svg
         aria-hidden="true"
-        color="currentColor"
+        class="lucide lucide-chevron-right"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
     </button>
   </div>
   <div

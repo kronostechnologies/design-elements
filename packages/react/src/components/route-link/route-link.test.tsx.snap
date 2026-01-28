@@ -110,11 +110,29 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-mail"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
   Navigation Link
 </a>
 `;
@@ -178,11 +196,29 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-mail"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
 </a>
 `;
 
@@ -357,11 +393,29 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-mail"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
   Navigation Link
 </a>
 `;
@@ -425,11 +479,29 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-mail"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
 </a>
 `;
 

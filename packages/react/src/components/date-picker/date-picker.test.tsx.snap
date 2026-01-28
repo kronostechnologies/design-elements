@@ -392,11 +392,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -796,11 +820,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -1200,11 +1248,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -1606,11 +1678,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -2015,12 +2111,28 @@ label + .c5 {
     id="uuid1_invalid"
   >
     <svg
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-octagon-alert c4"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 16h.01"
+      />
+      <path
+        d="M12 8v4"
+      />
+      <path
+        d="M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z"
+      />
+    </svg>
     Invalid date
   </span>
   <div
@@ -2050,11 +2162,35 @@ label + .c5 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -2452,11 +2588,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -3058,11 +3218,22 @@ label + .c3 {
                   >
                     <svg
                       aria-hidden="true"
-                      color="currentColor"
+                      class="lucide lucide-chevron-left"
+                      fill="none"
                       focusable="false"
                       height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
                       width="16"
-                    />
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m15 18-6-6 6-6"
+                      />
+                    </svg>
                   </button>
                   <div
                     class="c10"
@@ -3101,13 +3272,23 @@ label + .c3 {
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c16"
-                            color="currentColor"
+                            class="lucide lucide-chevron-down c16"
                             data-testid="arrow"
+                            fill="none"
                             focusable="false"
                             height="16"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
                             width="16"
-                          />
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m6 9 6 6 6-6"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -3144,13 +3325,23 @@ label + .c3 {
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c16"
-                            color="currentColor"
+                            class="lucide lucide-chevron-down c16"
                             data-testid="arrow"
+                            fill="none"
                             focusable="false"
                             height="16"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
                             width="16"
-                          />
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m6 9 6 6 6-6"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -3164,11 +3355,22 @@ label + .c3 {
                   >
                     <svg
                       aria-hidden="true"
-                      color="currentColor"
+                      class="lucide lucide-chevron-right"
+                      fill="none"
                       focusable="false"
                       height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
                       width="16"
-                    />
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m9 18 6-6-6-6"
+                      />
+                    </svg>
                   </button>
                 </div>
                 <div
@@ -3727,11 +3929,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -4371,11 +4597,22 @@ label + .c3 {
                   >
                     <svg
                       aria-hidden="true"
-                      color="currentColor"
+                      class="lucide lucide-chevron-left"
+                      fill="none"
                       focusable="false"
                       height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
                       width="16"
-                    />
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m15 18-6-6 6-6"
+                      />
+                    </svg>
                   </button>
                   <div
                     class="c10"
@@ -4414,13 +4651,23 @@ label + .c3 {
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c16"
-                            color="currentColor"
+                            class="lucide lucide-chevron-down c16"
                             data-testid="arrow"
+                            fill="none"
                             focusable="false"
                             height="16"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
                             width="16"
-                          />
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m6 9 6 6 6-6"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -4457,13 +4704,23 @@ label + .c3 {
                           </span>
                           <svg
                             aria-hidden="true"
-                            class="c16"
-                            color="currentColor"
+                            class="lucide lucide-chevron-down c16"
                             data-testid="arrow"
+                            fill="none"
                             focusable="false"
                             height="16"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
                             width="16"
-                          />
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m6 9 6 6 6-6"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -4477,11 +4734,22 @@ label + .c3 {
                   >
                     <svg
                       aria-hidden="true"
-                      color="currentColor"
+                      class="lucide lucide-chevron-right"
+                      fill="none"
                       focusable="false"
                       height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
                       width="16"
-                    />
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m9 18 6-6-6-6"
+                      />
+                    </svg>
                   </button>
                 </div>
                 <div
@@ -5052,11 +5320,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -5654,11 +5946,22 @@ label + .c3 {
                     >
                       <svg
                         aria-hidden="true"
-                        color="currentColor"
+                        class="lucide lucide-chevron-left"
+                        fill="none"
                         focusable="false"
                         height="20"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
                         width="20"
-                      />
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m15 18-6-6 6-6"
+                        />
+                      </svg>
                     </button>
                     <div
                       class="c10"
@@ -5697,13 +6000,23 @@ label + .c3 {
                             </span>
                             <svg
                               aria-hidden="true"
-                              class="c16"
-                              color="currentColor"
+                              class="lucide lucide-chevron-down c16"
                               data-testid="arrow"
+                              fill="none"
                               focusable="false"
                               height="24"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              viewBox="0 0 24 24"
                               width="24"
-                            />
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m6 9 6 6 6-6"
+                              />
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -5740,13 +6053,23 @@ label + .c3 {
                             </span>
                             <svg
                               aria-hidden="true"
-                              class="c16"
-                              color="currentColor"
+                              class="lucide lucide-chevron-down c16"
                               data-testid="arrow"
+                              fill="none"
                               focusable="false"
                               height="24"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              viewBox="0 0 24 24"
                               width="24"
-                            />
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m6 9 6 6 6-6"
+                              />
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -5760,11 +6083,22 @@ label + .c3 {
                     >
                       <svg
                         aria-hidden="true"
-                        color="currentColor"
+                        class="lucide lucide-chevron-right"
+                        fill="none"
                         focusable="false"
                         height="20"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
                         width="20"
-                      />
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m9 18 6-6-6-6"
+                        />
+                      </svg>
                     </button>
                   </div>
                   <div
@@ -6324,11 +6658,35 @@ label + .c3 {
       type="button"
     >
       <svg
-        color="currentColor"
+        class="lucide lucide-calendar"
+        fill="none"
         focusable="false"
         height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 2v4"
+        />
+        <path
+          d="M16 2v4"
+        />
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <path
+          d="M3 10h18"
+        />
+      </svg>
     </button>
   </div>
 </div>

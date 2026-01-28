@@ -655,13 +655,29 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c21"
-            color="currentColor"
+            class="lucide lucide-external-link c21"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -1331,13 +1347,29 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c21"
-            color="currentColor"
+            class="lucide lucide-external-link c21"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -2014,13 +2046,29 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c22"
-            color="currentColor"
+            class="lucide lucide-external-link c22"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c17"
             data-testid="screen-reader-text"
@@ -2690,13 +2738,29 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c21"
-            color="currentColor"
+            class="lucide lucide-external-link c21"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c16"
             data-testid="screen-reader-text"

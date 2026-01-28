@@ -316,7 +316,7 @@ function getExpandColumn<T extends object>(t: TFunction<'translation'>): TableCo
                 <ExpandButton
                     type="button"
                     buttonType="tertiary"
-                    iconName="caretRight"
+                    iconName="chevronRight"
                     onClick={row.getToggleExpandedHandler()}
                     aria-expanded={isExpanded}
                     $expanded={isExpanded}

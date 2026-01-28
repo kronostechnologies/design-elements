@@ -393,11 +393,25 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <header
           class="c5"
@@ -677,11 +691,25 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <header
           class="c5"
@@ -1084,11 +1112,25 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <header
           class="c5"
@@ -1511,11 +1553,25 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <header
           class="c5"
@@ -1881,11 +1937,25 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="20"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="20"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <header
           class="c5"

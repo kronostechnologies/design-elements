@@ -184,12 +184,22 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
     Test Button
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-up c4"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </button>
   <ul
     class="c5 c6"
@@ -448,12 +458,22 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
     Test Button
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-down c4"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m6 9 6 6 6-6"
+      />
+    </svg>
   </button>
   <ul
     class="c5 c6"
@@ -713,12 +733,22 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
     Test Button
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-down c4"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m6 9 6 6 6-6"
+      />
+    </svg>
   </button>
   <ul
     class="c5 c6"
