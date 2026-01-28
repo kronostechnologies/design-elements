@@ -323,7 +323,6 @@ describe('Dropdown list', () => {
 
             const icon = screen.getByTestId('textbox-icon');
             expect(icon).toBeInTheDocument();
-            expect(icon).toHaveAttribute('icon-name', 'menu');
         });
 
         it('the icon is not set when the iconName prop is undefined', () => {

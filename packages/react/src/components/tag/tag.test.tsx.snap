@@ -155,12 +155,25 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -210,15 +223,27 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -424,12 +449,25 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -479,15 +517,27 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -693,12 +743,25 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (d
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -748,15 +811,27 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -962,12 +1037,25 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (m
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -1017,15 +1105,27 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -1231,12 +1331,25 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -1286,15 +1399,27 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -1500,12 +1625,25 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -1555,15 +1693,27 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -1769,12 +1919,25 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (d
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -1824,15 +1987,27 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -2038,12 +2213,25 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (m
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -2093,15 +2281,27 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -2307,12 +2507,25 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (deskto
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -2362,15 +2575,27 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (deskto
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -2576,12 +2801,25 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -2631,15 +2869,27 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -2845,12 +3095,25 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -2900,15 +3163,27 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -3114,12 +3389,25 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile 
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -3169,15 +3457,27 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -3384,12 +3684,25 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (d
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -3439,15 +3752,27 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -3653,12 +3978,25 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (m
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -3708,15 +4046,27 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -3923,12 +4273,25 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (de
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -3978,15 +4341,27 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (de
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -4192,12 +4567,25 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mo
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -4247,15 +4635,27 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mo
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -4462,12 +4862,25 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (d
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -4517,15 +4930,27 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -4731,12 +5156,25 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (m
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -4786,15 +5224,27 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -5001,12 +5451,25 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (de
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -5056,15 +5519,27 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (de
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -5270,12 +5745,25 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mo
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -5325,15 +5813,27 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mo
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -5540,12 +6040,25 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -5595,15 +6108,27 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -5809,12 +6334,25 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile 
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -5864,15 +6402,27 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -6079,12 +6629,25 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop 
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -6134,15 +6697,27 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="12"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -6348,12 +6923,25 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile r
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-x"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="x"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -6403,15 +6991,27 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile w
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
+    fill="none"
     focusable="true"
     height="20"
-    icon-name="home"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >

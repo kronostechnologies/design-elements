@@ -106,21 +106,39 @@ exports[`Checkbox matches snapshot 1`] = `
       class="c2 c3"
     >
       <svg
-        class="c4 c5"
-        color="currentColor"
+        class="lucide lucide-check c4 c5"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="check"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 6 9 17l-5-5"
+        />
+      </svg>
       <svg
-        class="c6 c7"
-        color="currentColor"
+        class="lucide lucide-minus c6 c7"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="minus"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
     </span>
     Boat
   </label>

@@ -235,13 +235,27 @@ label + .c2 {
       data-testid="search-button"
     >
       <svg
-        class="c7"
-        color="currentColor"
+        class="lucide lucide-search c7"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="search"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m21 21-4.34-4.34"
+        />
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+      </svg>
     </button>
   </div>
 </DocumentFragment>

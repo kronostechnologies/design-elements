@@ -273,12 +273,28 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-menu"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="menu"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
   </button>
   <div
     aria-hidden="true"
@@ -475,12 +491,28 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-menu"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="menu"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
   </button>
   <div
     aria-hidden="true"

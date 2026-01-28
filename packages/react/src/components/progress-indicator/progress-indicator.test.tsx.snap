@@ -2,15 +2,67 @@
 
 exports[`ProgressIndicator matches snapshot 1`] = `
 <DocumentFragment>
-  .c0 {
-  color: #006296;
-  height: 64px;
-  width: 64px;
-}
-
-<svg
-    class="c0"
-    icon-name="enso"
-  />
+  <svg
+    height="16"
+    viewBox="0 0 200 200"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <radialgradient
+      cx=".66"
+      cy=".3125"
+      fx=".66"
+      fy=".3125"
+      gradientTransform="scale(1.5)"
+      id="a4"
+    >
+      <stop
+        offset="0"
+        stop-color="currentColor"
+        stop-opacity="0"
+      />
+      <stop
+        offset="0.5"
+        stop-color="currentColor"
+        stop-opacity="0.3"
+      />
+      <stop
+        offset="1"
+        stop-color="currentColor"
+      />
+    </radialgradient>
+    <circle
+      cx="100"
+      cy="100"
+      fill="none"
+      r="88"
+      stroke="url(#a4)"
+      stroke-dasharray="400 400"
+      stroke-dashoffset="0"
+      stroke-linecap="round"
+      stroke-width="24"
+    >
+      <animatetransform
+        attributeName="transform"
+        calcMode="spline"
+        dur="1s"
+        keySplines="0 0 1 1"
+        keyTimes="0;1"
+        repeatCount="indefinite"
+        type="rotate"
+        values="0;360"
+      />
+    </circle>
+    <circle
+      cx="100"
+      cy="100"
+      fill="none"
+      opacity=".2"
+      r="88"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-width="24"
+    />
+  </svg>
 </DocumentFragment>
 `;

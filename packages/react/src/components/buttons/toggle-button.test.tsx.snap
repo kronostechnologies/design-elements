@@ -375,12 +375,30 @@ exports[`ToggleButton has icon only style 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-lock"
+    fill="none"
     focusable="false"
     height="16"
-    icon-name="lock"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      height="11"
+      rx="2"
+      ry="2"
+      width="18"
+      x="3"
+      y="11"
+    />
+    <path
+      d="M7 11V7a5 5 0 0 1 10 0v4"
+    />
+  </svg>
 </button>
 `;
 
@@ -513,14 +531,31 @@ exports[`ToggleButton has icon with label style 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c3"
-    color="currentColor"
+    class="lucide lucide-lock c3"
     data-testid="left-icon"
+    fill="none"
     focusable="false"
     height="24"
-    icon-name="lock"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="24"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      height="11"
+      rx="2"
+      ry="2"
+      width="18"
+      x="3"
+      y="11"
+    />
+    <path
+      d="M7 11V7a5 5 0 0 1 10 0v4"
+    />
+  </svg>
   Lock
 </button>
 `;
@@ -772,12 +807,30 @@ exports[`ToggleButton has pressed icon only style 1`] = `
 >
   <svg
     aria-hidden="true"
-    color="currentColor"
+    class="lucide lucide-lock"
+    fill="none"
     focusable="false"
     height="16"
-    icon-name="lock"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      height="11"
+      rx="2"
+      ry="2"
+      width="18"
+      x="3"
+      y="11"
+    />
+    <path
+      d="M7 11V7a5 5 0 0 1 10 0v4"
+    />
+  </svg>
 </button>
 `;
 
@@ -910,14 +963,31 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c3"
-    color="currentColor"
+    class="lucide lucide-lock c3"
     data-testid="left-icon"
+    fill="none"
     focusable="false"
     height="24"
-    icon-name="lock"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="24"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      height="11"
+      rx="2"
+      ry="2"
+      width="18"
+      x="3"
+      y="11"
+    />
+    <path
+      d="M7 11V7a5 5 0 0 1 10 0v4"
+    />
+  </svg>
   Lock
 </button>
 `;

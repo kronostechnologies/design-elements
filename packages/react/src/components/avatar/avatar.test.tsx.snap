@@ -473,12 +473,27 @@ exports[`Avatar Should use bigger user icon when username is empty on mobile 1`]
     data-testid="avatar-initials"
   >
     <svg
-      color="currentColor"
+      class="lucide lucide-user"
+      fill="none"
       focusable="false"
       height="24"
-      icon-name="user"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="24"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
   </span>
 </div>
 `;
@@ -520,12 +535,27 @@ exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
     data-testid="avatar-initials"
   >
     <svg
-      color="currentColor"
+      class="lucide lucide-user"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="user"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
   </span>
 </div>
 `;
@@ -567,12 +597,27 @@ exports[`Avatar Should use user icon when username is undefined 1`] = `
     data-testid="avatar-initials"
   >
     <svg
-      color="currentColor"
+      class="lucide lucide-user"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="user"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
   </span>
 </div>
 `;

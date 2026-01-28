@@ -140,21 +140,39 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       class="c3 c4"
     >
       <svg
-        class="c5 c6"
-        color="currentColor"
+        class="lucide lucide-check c5 c6"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="check"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 6 9 17l-5-5"
+        />
+      </svg>
       <svg
-        class="c7 c8"
-        color="currentColor"
+        class="lucide lucide-minus c7 c8"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="minus"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
     </span>
     Boat
   </label>
@@ -173,21 +191,39 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       class="c3 c4"
     >
       <svg
-        class="c5 c6"
-        color="currentColor"
+        class="lucide lucide-check c5 c6"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="check"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 6 9 17l-5-5"
+        />
+      </svg>
       <svg
-        class="c7 c8"
-        color="currentColor"
+        class="lucide lucide-minus c7 c8"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="minus"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
     </span>
     Plane
   </label>
@@ -208,21 +244,39 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       disabled=""
     >
       <svg
-        class="c5 c6"
-        color="currentColor"
+        class="lucide lucide-check c5 c6"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="check"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 6 9 17l-5-5"
+        />
+      </svg>
       <svg
-        class="c7 c8"
-        color="currentColor"
+        class="lucide lucide-minus c7 c8"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="minus"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
     </span>
     Car
   </label>
@@ -240,21 +294,39 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       class="c3 c4"
     >
       <svg
-        class="c5 c6"
-        color="currentColor"
+        class="lucide lucide-check c5 c6"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="check"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 6 9 17l-5-5"
+        />
+      </svg>
       <svg
-        class="c7 c8"
-        color="currentColor"
+        class="lucide lucide-minus c7 c8"
+        fill="none"
         focusable="false"
         height="24"
-        icon-name="minus"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="24"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
     </span>
     Bike
   </label>
