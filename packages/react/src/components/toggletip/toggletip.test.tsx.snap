@@ -92,12 +92,30 @@ exports[`Toggletip has default desktop styles (defaultOpen) 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-info"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="info"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
   </button>
   .c2 {
   height: 1rem;
@@ -348,12 +366,30 @@ exports[`Toggletip has default desktop styles 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-info"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="info"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
   </button>
 </DocumentFragment>
 `;
@@ -450,12 +486,30 @@ exports[`Toggletip has mobile styles (defaultOpen) 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-info"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="info"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
   </button>
   .c2 {
   height: 1rem;
@@ -706,12 +760,30 @@ exports[`Toggletip has mobile styles 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-info"
+      fill="none"
       focusable="false"
       height="20"
-      icon-name="info"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="20"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
   </button>
 </DocumentFragment>
 `;

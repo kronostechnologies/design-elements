@@ -433,12 +433,64 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
         type="button"
       >
         <svg
-          color="currentColor"
+          class="lucide lucide-grip"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="bento"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="19"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="19"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="19"
+            r="1"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -736,14 +788,29 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c20"
-            color="currentColor"
+            class="lucide lucide-external-link c20"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c14"
             data-testid="screen-reader-text"
@@ -766,14 +833,29 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c20"
-            color="currentColor"
+            class="lucide lucide-external-link c20"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c14"
             data-testid="screen-reader-text"
@@ -1220,12 +1302,64 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
         type="button"
       >
         <svg
-          color="currentColor"
+          class="lucide lucide-grip"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="bento"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="19"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="19"
+            r="1"
+          />
+          <circle
+            cx="5"
+            cy="19"
+            r="1"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -1433,14 +1567,29 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c20"
-            color="currentColor"
+            class="lucide lucide-external-link c20"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c14"
             data-testid="screen-reader-text"
@@ -1463,14 +1612,29 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c20"
-            color="currentColor"
+            class="lucide lucide-external-link c20"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c14"
             data-testid="screen-reader-text"
@@ -1588,12 +1752,64 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
     type="button"
   >
     <svg
-      color="currentColor"
+      class="lucide lucide-grip"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="bento"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="5"
+        r="1"
+      />
+      <circle
+        cx="19"
+        cy="5"
+        r="1"
+      />
+      <circle
+        cx="5"
+        cy="5"
+        r="1"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="1"
+      />
+      <circle
+        cx="19"
+        cy="12"
+        r="1"
+      />
+      <circle
+        cx="5"
+        cy="12"
+        r="1"
+      />
+      <circle
+        cx="12"
+        cy="19"
+        r="1"
+      />
+      <circle
+        cx="19"
+        cy="19"
+        r="1"
+      />
+      <circle
+        cx="5"
+        cy="19"
+        r="1"
+      />
+    </svg>
   </button>
 </nav>
 `;

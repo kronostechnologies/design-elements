@@ -148,13 +148,22 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
       Option 1
       <svg
         aria-hidden="true"
-        class="c5"
-        color="currentColor"
+        class="lucide lucide-chevron-down c5"
+        fill="none"
         focusable="false"
         height="16"
-        icon-name="chevron-down"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m6 9 6 6 6-6"
+        />
+      </svg>
     </button>
   </div>
 </div>
@@ -308,13 +317,22 @@ exports[`FilterSingle rendering renders button with label 1`] = `
       All
       <svg
         aria-hidden="true"
-        class="c5"
-        color="currentColor"
+        class="lucide lucide-chevron-down c5"
+        fill="none"
         focusable="false"
         height="16"
-        icon-name="chevron-down"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
         width="16"
-      />
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m6 9 6 6 6-6"
+        />
+      </svg>
     </button>
   </div>
 </div>

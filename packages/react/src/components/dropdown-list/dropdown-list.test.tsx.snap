@@ -239,14 +239,23 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c6"
-      color="currentColor"
+      class="lucide lucide-chevron-up c6"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"
@@ -699,14 +708,29 @@ input + .c2 {
   >
     <svg
       aria-hidden="true"
-      class="c6"
-      color="currentColor"
+      class="lucide lucide-menu c6"
       data-testid="textbox-icon"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="menu"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
     <input
       data-testid="input"
       type="hidden"
@@ -719,14 +743,23 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c8"
-      color="currentColor"
+      class="lucide lucide-chevron-up c8"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"
@@ -1171,13 +1204,28 @@ input + .c2 {
     id="uuid1_invalid"
   >
     <svg
-      class="c5"
-      color="currentColor"
+      class="lucide lucide-octagon-alert c5"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="alert-octagon"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 16h.01"
+      />
+      <path
+        d="M12 8v4"
+      />
+      <path
+        d="M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z"
+      />
+    </svg>
     You must select an option
   </span>
   <div
@@ -1207,14 +1255,23 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c8"
-      color="currentColor"
+      class="lucide lucide-chevron-up c8"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"
@@ -1625,14 +1682,23 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     </span>
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-up c4"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="24"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="24"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"
@@ -2049,14 +2115,23 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
     />
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-up c4"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"
@@ -2087,13 +2162,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2113,13 +2197,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2139,13 +2232,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2165,13 +2267,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2191,13 +2302,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2217,13 +2337,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2243,13 +2372,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2269,13 +2407,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2295,13 +2442,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2321,13 +2477,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2347,13 +2512,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2373,13 +2547,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2399,13 +2582,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             class="c9"
           >
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-check c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
           </span>
           <span
             class="c12 react-datepicker-ignore-onclickoutside"
@@ -2683,14 +2875,23 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c7"
-      color="currentColor"
+      class="lucide lucide-chevron-up c7"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
-      icon-name="chevron-up"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
     data-testid="mock-portal"

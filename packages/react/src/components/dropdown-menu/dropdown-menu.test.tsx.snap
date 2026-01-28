@@ -317,14 +317,29 @@ exports[`DropdownMenu matches the snapshot 1`] = `
         </span>
         <svg
           aria-label="opens in a new tab"
-          class="c10"
-          color="currentColor"
+          class="lucide lucide-external-link c10"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="external-link"
           role="img"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 3h6v6"
+          />
+          <path
+            d="M10 14 21 3"
+          />
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          />
+        </svg>
         <span
           class="c11"
           data-testid="screen-reader-text"
@@ -347,14 +362,29 @@ exports[`DropdownMenu matches the snapshot 1`] = `
         </span>
         <svg
           aria-label="opens in a new tab"
-          class="c10"
-          color="currentColor"
+          class="lucide lucide-external-link c10"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="external-link"
           role="img"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 3h6v6"
+          />
+          <path
+            d="M10 14 21 3"
+          />
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          />
+        </svg>
         <span
           class="c11"
           data-testid="screen-reader-text"
@@ -377,14 +407,29 @@ exports[`DropdownMenu matches the snapshot 1`] = `
         </span>
         <svg
           aria-label="opens in a new tab"
-          class="c10"
-          color="currentColor"
+          class="lucide lucide-external-link c10"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="external-link"
           role="img"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 3h6v6"
+          />
+          <path
+            d="M10 14 21 3"
+          />
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          />
+        </svg>
         <span
           class="c11"
           data-testid="screen-reader-text"

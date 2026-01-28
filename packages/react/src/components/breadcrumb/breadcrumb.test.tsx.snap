@@ -136,13 +136,22 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
               HOME
             </a>
             <svg
-              class="c5"
-              color="currentColor"
+              class="lucide lucide-chevron-right c5"
+              fill="none"
               focusable="false"
               height="20"
-              icon-name="chevron-right"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="20"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
           </li>
           <li
             class="c1"
@@ -155,13 +164,22 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
               ROUTE
             </a>
             <svg
-              class="c5"
-              color="currentColor"
+              class="lucide lucide-chevron-right c5"
+              fill="none"
               focusable="false"
               height="20"
-              icon-name="chevron-right"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="20"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
           </li>
           <li
             class="c1"
@@ -304,13 +322,22 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             HOME
           </a>
           <svg
-            class="c5"
-            color="currentColor"
+            class="lucide lucide-chevron-right c5"
+            fill="none"
             focusable="false"
             height="20"
-            icon-name="chevron-right"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="20"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m9 18 6-6-6-6"
+            />
+          </svg>
         </li>
         <li
           class="c1"
@@ -323,13 +350,22 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             ROUTE
           </a>
           <svg
-            class="c5"
-            color="currentColor"
+            class="lucide lucide-chevron-right c5"
+            fill="none"
             focusable="false"
             height="20"
-            icon-name="chevron-right"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="20"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m9 18 6-6-6-6"
+            />
+          </svg>
         </li>
         <li
           class="c1"
@@ -531,13 +567,22 @@ exports[`Breadcrumb Snapshots matches snapshot (double entries) 1`] = `
             HOME
           </a>
           <svg
-            class="c5"
-            color="currentColor"
+            class="lucide lucide-chevron-right c5"
+            fill="none"
             focusable="false"
             height="20"
-            icon-name="chevron-right"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="20"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m9 18 6-6-6-6"
+            />
+          </svg>
         </li>
         <li
           class="c1"

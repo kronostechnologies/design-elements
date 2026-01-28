@@ -1672,21 +1672,39 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
-              class="c8 c9"
-              color="currentColor"
+              class="lucide lucide-check c8 c9"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-minus c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="minus"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+            </svg>
           </span>
         </label>
       </th>
@@ -1728,21 +1746,39 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
-              class="c8 c9"
-              color="currentColor"
+              class="lucide lucide-check c8 c9"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-minus c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="minus"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+            </svg>
           </span>
         </label>
       </td>
@@ -1780,21 +1816,39 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
-              class="c8 c9"
-              color="currentColor"
+              class="lucide lucide-check c8 c9"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-minus c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="minus"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+            </svg>
           </span>
         </label>
       </td>
@@ -1832,21 +1886,39 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
-              class="c8 c9"
-              color="currentColor"
+              class="lucide lucide-check c8 c9"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="check"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
             <svg
-              class="c10 c11"
-              color="currentColor"
+              class="lucide lucide-minus c10 c11"
+              fill="none"
               focusable="false"
               height="24"
-              icon-name="minus"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
               width="24"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+            </svg>
           </span>
         </label>
       </td>
@@ -2142,13 +2214,25 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 1
           <svg
-            class="c5"
-            color="#60666E"
+            class="lucide lucide-arrow-down c5"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="arrow-down"
+            stroke="#60666E"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 5v14"
+            />
+            <path
+              d="m19 12-7 7-7-7"
+            />
+          </svg>
         </button>
       </th>
       <th
@@ -2161,13 +2245,25 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 2
           <svg
-            class="c5"
-            color="#60666E"
+            class="lucide lucide-chevrons-up-down c5"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="reorder"
+            stroke="#60666E"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m7 15 5 5 5-5"
+            />
+            <path
+              d="m7 9 5-5 5 5"
+            />
+          </svg>
         </button>
       </th>
     </tr>

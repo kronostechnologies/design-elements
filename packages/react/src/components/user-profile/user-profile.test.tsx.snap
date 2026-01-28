@@ -505,13 +505,22 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
         Test Button
         <svg
           aria-hidden="true"
-          class="c6"
-          color="currentColor"
+          class="lucide lucide-chevron-up c6"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="chevron-up"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -664,14 +673,29 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c24"
-            color="currentColor"
+            class="lucide lucide-external-link c24"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c19"
             data-testid="screen-reader-text"
@@ -851,13 +875,22 @@ exports[`UserProfile matches Snapshot (defaultOpen) 1`] = `
         Test Button
         <svg
           aria-hidden="true"
-          class="c6"
-          color="currentColor"
+          class="lucide lucide-chevron-down c6"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="chevron-down"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m6 9 6 6 6-6"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -1521,14 +1554,29 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c23"
-            color="currentColor"
+            class="lucide lucide-external-link c23"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c18"
             data-testid="screen-reader-text"
@@ -2047,13 +2095,22 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
         Test Button
         <svg
           aria-hidden="true"
-          class="c6"
-          color="currentColor"
+          class="lucide lucide-chevron-up c6"
+          fill="none"
           focusable="false"
           height="16"
-          icon-name="chevron-up"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
           width="16"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
       </button>
     </nav>
   </div>
@@ -2206,14 +2263,29 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
           </span>
           <svg
             aria-label="opens in a new tab"
-            class="c24"
-            color="currentColor"
+            class="lucide lucide-external-link c24"
+            fill="none"
             focusable="false"
             height="16"
-            icon-name="external-link"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c19"
             data-testid="screen-reader-text"
