@@ -87,6 +87,7 @@ exports[`ToggleButton has default style 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
 }
 
 .c2[aria-pressed='true'] {
@@ -213,6 +214,7 @@ exports[`ToggleButton has disabled style 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
 }
 
 .c2[aria-pressed='true'] {
@@ -473,6 +475,7 @@ exports[`ToggleButton has icon with label style 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
 }
 
 .c2[aria-pressed='true'] {
@@ -609,6 +612,7 @@ exports[`ToggleButton has pressed default style 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
 }
 
 .c2[aria-pressed='true'] {
@@ -868,6 +872,7 @@ exports[`ToggleButton has pressed icon with label style 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: none;
 }
 
 .c2[aria-pressed='true'] {

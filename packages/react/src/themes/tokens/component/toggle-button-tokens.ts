@@ -3,6 +3,8 @@ import type { ComponentTokenMap } from '../tokens';
 export type ToggleButtonToken =
     | 'toggle-button-background-color'
     | 'toggle-button-border-color'
+    | 'toggle-button-font-size'
+    | 'toggle-button-text-transform'
     | 'toggle-button-font-weight'
     | 'toggle-button-letter-spacing'
     | 'toggle-button-text-color'
@@ -19,6 +21,8 @@ export type ToggleButtonToken =
 export const defaultToggleButtonTokens: ComponentTokenMap<ToggleButtonToken> = {
     'toggle-button-background-color': 'transparent-100',
     'toggle-button-border-color': 'transparent-100',
+    'toggle-button-font-size': 'text-body-medium-font-size',
+    'toggle-button-text-transform': 'text-body-transform',
     'toggle-button-font-weight': 'font-weight-regular',
     'toggle-button-letter-spacing': 'letter-spacing-normal',
     'toggle-button-text-color': 'color-control-auxiliary',

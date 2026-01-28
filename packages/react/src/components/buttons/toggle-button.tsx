@@ -63,9 +63,10 @@ const InnerIconButton = styled(IconButton)`
 
 const InnerButton = styled(Button)`
     ${InnerButtonStyle};
-    font-size: 0.875rem;
+    font-size: ${({ theme }) => theme.component['toggle-button-font-size']};
     letter-spacing: ${({ theme }) => theme.component['toggle-button-letter-spacing']};
     padding: var(--spacing-half) var(--spacing-2x);
+    text-transform: ${({ theme }) => theme.component['toggle-button-text-transform']};
 `;
 
 export const ToggleButton: FC<ToggleButtonProps> = ({
