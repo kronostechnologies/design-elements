@@ -5,4 +5,5 @@ export { getButtonTypeStyles, getButtonStyles } from './styled';
 export { AbstractButton } from './abstract/abstract-button';
 export { Button } from './button';
 export { SearchButton } from './search-button';
+export { ToggleButton, type ToggleButtonProps } from './toggle-button';
 export { IconButton } from './icon-button';

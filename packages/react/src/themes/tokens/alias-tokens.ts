@@ -144,7 +144,12 @@ export type AliasTokens =
     /**
      * BOX-SHADOW
      */
-    | 'color-box-shadow';
+    | 'color-box-shadow'
+    /**
+     * TEXT
+     */
+    | 'text-body-medium-font-size'
+    | 'text-body-transform';
 
 export type AliasTokenMap = {
     [Token in AliasTokens]: NoSelfReference<RefTokens | AliasTokens, Token>;
@@ -350,7 +355,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'color-background-empty': 'color-neutral-15',
     /**
      * Use for the background of elements in a selected state,
-     * such as naviaation elements like pagination pages or items like table rows.
+     * such as navigation elements like pagination pages or items like table rows.
      */
     'color-background-selected': 'color-brand-05',
     'color-background-selected-hover': 'color-brand-10', // should use transparency instead
@@ -447,6 +452,12 @@ export const defaultAliasTokens: AliasTokenMap = {
      * BOX-SHADOW
      */
     'color-box-shadow': 'transparent-dark-20',
+
+    /**
+     * TEXT
+     */
+    'text-body-medium-font-size': 'font-size-350',
+    'text-body-transform': 'font-transform-none',
 };
 
 export type ResolvedAliasTokenValue = RefTokenValue;

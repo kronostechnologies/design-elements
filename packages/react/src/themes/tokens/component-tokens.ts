@@ -51,6 +51,7 @@ import { AccordionTokens, defaultAccordionTokens } from './component/accordion-t
 import { CarouselTokens, defaultCarouselTokens } from './component/carousel-tokens';
 import { defaultModalTokens, ModalTokens } from './component/modal-tokens';
 import { defaultTooltipTokens, TooltipTokens } from './component/tooltip-tokens';
+import { defaultToggleButtonTokens, ToggleButtonToken } from './component/toggle-button-tokens';
 import { defaultToggleTipTokens, ToggleTipTokens } from './component/toggletip-tokens';
 import { defaultTabTokens, TabTokens } from './component/tab-tokens';
 import { defaultSliderTokens, SliderTokens } from './component/slider-tokens';
@@ -109,7 +110,8 @@ export type ComponentTokens =
     | DropdownMenuTokens
     | TabTokens
     | LozengeTokens
-    | GlobalNavigationTokens;
+    | GlobalNavigationTokens
+    | ToggleButtonToken;
 
 export type ComponentTokenValue = AliasTokens | RefTokens;
 
@@ -162,6 +164,7 @@ export const defaultComponentTokens: ComponentTokenMap = {
     ...defaultCarouselTokens,
     ...defaultModalTokens,
     ...defaultTooltipTokens,
+    ...defaultToggleButtonTokens,
     ...defaultToggleTipTokens,
     ...defaultTabTokens,
     ...defaultSideDrawerTokens,

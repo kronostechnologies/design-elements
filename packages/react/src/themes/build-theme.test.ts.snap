@@ -118,5 +118,7 @@ exports[`buildTheme should build the defaultAliasTokens theme with the customiza
   "color-menu-item-content-disabled": "#B7BBC2",
   "color-menu-item-content-hover": "#000000",
   "color-menu-item-subcontent": "green",
+  "text-body-medium-font-size": "0.875rem",
+  "text-body-transform": "none",
 }
 `;

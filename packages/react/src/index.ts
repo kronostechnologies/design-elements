@@ -12,6 +12,7 @@ export { MenuButton, MenuButtonProps } from './components/menu-button/menu-butto
 export { DropdownNavigation } from './components/dropdown-navigation/dropdown-navigation';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
 export { SegmentedControl } from './components/segmented-control/segmented-control';
+export { ToggleButton, type ToggleButtonProps } from './components/buttons/toggle-button';
 
 // Form Elements
 export { Avatar } from './components/avatar/avatar';
