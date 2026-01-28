@@ -72,9 +72,6 @@ import {
     X,
 } from 'lucide-react';
 import AlertFilled from '../../icons/alert-filled.svg';
-import CaretDown from '../../icons/caret-down.svg';
-import CaretRight from '../../icons/caret-right.svg';
-import Contracts from '../../icons/contracts.svg';
 import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 
@@ -93,8 +90,6 @@ const iconMapping = {
     bento: Grip,
     calendar: Calendar,
     calendarAdd: CalendarPlus2,
-    caretDown: CaretDown,
-    caretRight: CaretRight,
     check: Check,
     checkCircle: CheckCircle,
     chevronDown: ChevronDown,
@@ -104,7 +99,6 @@ const iconMapping = {
     chevronsLeft: ChevronsLeft,
     chevronsRight: ChevronsRight,
     circle: Circle,
-    contracts: Contracts,
     copy: Copy,
     download: Download,
     edit: Pencil,
