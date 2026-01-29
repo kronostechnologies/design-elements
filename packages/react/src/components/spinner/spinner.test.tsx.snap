@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Spinner Matches the snapshot 1`] = `
+.c0 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
 <svg
+  class="c0"
   height="16"
   viewBox="0 0 200 200"
   width="16"
@@ -40,6 +47,7 @@ exports[`Spinner Matches the snapshot 1`] = `
     stroke-dashoffset="0"
     stroke-linecap="round"
     stroke-width="24"
+    transform-origin="center"
   >
     <animateTransform
       attributeName="transform"
@@ -61,6 +69,7 @@ exports[`Spinner Matches the snapshot 1`] = `
     stroke="currentColor"
     stroke-linecap="round"
     stroke-width="24"
+    transform-origin="center"
   />
 </svg>
 `;
