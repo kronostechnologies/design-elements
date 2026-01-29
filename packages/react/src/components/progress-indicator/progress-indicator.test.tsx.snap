@@ -2,7 +2,14 @@
 
 exports[`ProgressIndicator matches snapshot 1`] = `
 <DocumentFragment>
-  <svg
+  .c0 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
+<svg
+    class="c0"
     height="16"
     viewBox="0 0 200 200"
     width="16"
