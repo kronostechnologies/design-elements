@@ -1,5 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled, { css, CSSObject, keyframes, SimpleInterpolation } from 'styled-components';
+import { badgeClasses } from './badge-classes';
 
 const BadgeRoot = styled.span`
     display: inline-flex;
@@ -130,7 +131,7 @@ export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
     const visible = value !== 0 || showZero;
 
     return (
-        <BadgeRoot>
+        <BadgeRoot className={badgeClasses.root}>
             {children}
             {visible && (
                 <BadgeShape
