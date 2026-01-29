@@ -2,7 +2,14 @@
 
 exports[`ProgressIndicator matches snapshot 1`] = `
 <DocumentFragment>
-  <svg
+  .c0 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
+<svg
+    class="c0"
     height="16"
     viewBox="0 0 200 200"
     width="16"
@@ -41,6 +48,7 @@ exports[`ProgressIndicator matches snapshot 1`] = `
       stroke-dashoffset="0"
       stroke-linecap="round"
       stroke-width="24"
+      transform-origin="center"
     >
       <animatetransform
         attributeName="transform"
@@ -62,6 +70,7 @@ exports[`ProgressIndicator matches snapshot 1`] = `
       stroke="currentColor"
       stroke-linecap="round"
       stroke-width="24"
+      transform-origin="center"
     />
   </svg>
 </DocumentFragment>
