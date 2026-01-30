@@ -1,4 +1,5 @@
 import { type FC, useCallback, useMemo, useRef, useState } from 'react';
+import { useTranslation } from '../../i18n/use-translation';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
@@ -12,6 +13,10 @@ import { useSearch } from './internal/use.search';
 type Value = string | null;
 
 export interface FilterSingleProps {
+    /**
+     * Override for the "All" label option shown in the list.
+     */
+    allOptionLabel?: string;
     label: string;
     options: FilterOption[];
     value?: Value;
@@ -19,13 +24,16 @@ export interface FilterSingleProps {
     onChange?(value: Value): void;
 }
 
+const ALL_OPTIONS_VALUE: string = '';
+
 /**
  * @alpha This component is experimental and may change without a major version bump.
  */
 export const FilterSingle: FC<FilterSingleProps> = ({
+    allOptionLabel,
     label,
     onChange,
-    options,
+    options: providedOptions,
     value,
 }) => {
     const listboxRef = useRef<ListboxRef>(null);
@@ -33,6 +41,11 @@ export const FilterSingle: FC<FilterSingleProps> = ({
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
     const previousValuePropRef = useRef<Value | undefined>(value);
     const searchRef = useRef<HTMLInputElement>(null);
+    const { t } = useTranslation('filter');
+    const options: FilterOption[] = useMemo(() => ([
+        { label: allOptionLabel || t('all'), value: ALL_OPTIONS_VALUE },
+        ...providedOptions,
+    ]), [allOptionLabel, providedOptions, t]);
     const {
         searchEnabled,
         searchValue,
@@ -44,12 +57,6 @@ export const FilterSingle: FC<FilterSingleProps> = ({
         previousValuePropRef.current = value;
         setPreviousValue(value);
     }
-
-    const clearFilters = useCallback((close: DropdownMenuCloseFunction): void => {
-        setPreviousValue(null);
-        onChange?.(null);
-        close();
-    }, [onChange]);
 
     const handleMenuVisibilityChanged = useCallback((isOpen: boolean): void => {
         if (isOpen) {
@@ -65,38 +72,45 @@ export const FilterSingle: FC<FilterSingleProps> = ({
     }, [searchEnabled, setSearchValue, value]);
 
     const handleItemSelected = useCallback((close: DropdownMenuCloseFunction, option: FilterOption): void => {
-        setPreviousValue(option.value);
-        onChange?.(option.value);
+        const outsideValue = option.value === ALL_OPTIONS_VALUE ? null : option.value;
+        setPreviousValue(outsideValue);
+        onChange?.(outsideValue);
         close();
     }, [onChange]);
 
-    const { displayValue, filteredOptions, hasFiltersApplied } = useListFilter<string>({
+    const { filteredOptions, hasFiltersApplied, selectedValuesCount } = useListFilter<string>({
         options,
         searchValue,
         value: previousValue,
     });
+
+    const getOptionByValue = useCallback(
+        (optionValueToFind: string | null | undefined): FilterOption | undefined => (
+            options.find((option) => option.value === optionValueToFind)
+        ),
+        [options],
+    );
 
     return (
         <>
             <PortalFilterDropdownMenuStyle $dropdownMenuId={dropdownMenuId} />
             <FilterDropdownButton
                 firstItemRef={searchRef}
-                label={displayValue}
+                label={value ? getOptionByValue(value)?.label : label}
                 onMenuVisibilityChanged={handleMenuVisibilityChanged}
                 render={(close: DropdownMenuCloseFunction) => (
                     <ListContainer
-                        onClearFilters={clearFilters.bind(null, close)}
                         listboxRef={listboxRef}
                         onOptionClick={handleItemSelected.bind(null, close)}
                         onSearchChange={handleSearchChange}
                         options={filteredOptions}
                         searchRef={searchRef}
-                        selectedFiltersCount={hasFiltersApplied ? 1 : 0}
-                        value={previousValue}
+                        selectedFiltersCount={selectedValuesCount}
+                        value={previousValue || ALL_OPTIONS_VALUE}
                     />
                 )}
                 dropdownMenuId={dropdownMenuId}
-                $label={label}
+                $labelPrefix={label}
                 $hasFilters={hasFiltersApplied}
             />
         </>

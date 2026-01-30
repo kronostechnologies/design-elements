@@ -85,7 +85,7 @@ export interface DropdownMenuButtonProps {
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
     inverted?: boolean;
-    label?: string;
+    label?: string | ReactElement;
     title?: string;
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';

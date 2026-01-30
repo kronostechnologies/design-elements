@@ -2,6 +2,7 @@ import {
     forwardRef,
     ForwardRefExoticComponent,
     KeyboardEvent,
+    type ReactElement,
     Ref,
     RefAttributes,
     type RefObject,
@@ -18,10 +19,18 @@ import { unique } from '../../utils/array';
 import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
 import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
+import { truthy } from '../../utils/predicate';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
 import { findOptionsByValue } from './utils';
+
+export const Divider = styled.li.attrs({ role: 'separator' })`
+    background-color: ${({ theme }) => theme.component['listbox-divider-color']};
+    display: flex;
+    height: 1px;
+    margin: var(--spacing-half) var(--spacing-2x);
+`;
 
 type Value = string | string[];
 
@@ -65,6 +74,10 @@ export interface ListboxProps {
      * Sets the selected value (controlled input)
      */
     value?: Value;
+    /**
+     * When provided, options with values included in this array are displayed at the top of the listbox
+     */
+    valueOnFirstDisplay?: Value;
 
     /**
      * Callback function, invoked when an option is selected
@@ -231,6 +244,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     onKeyDown,
     onOptionClick,
     value,
+    valueOnFirstDisplay,
 }, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
@@ -484,6 +498,77 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
     const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
 
+    function renderOptions(): ReactElement {
+        const top: ListboxOption[] = (Array.isArray(valueOnFirstDisplay) ? valueOnFirstDisplay : [])
+            .map((topOptionValue) => options.find((option) => option.value === topOptionValue))
+            .filter(truthy);
+        const bottom: ListboxOption[] = options.map((option) => {
+            if (Array.isArray(valueOnFirstDisplay) && valueOnFirstDisplay?.includes(option.value) === true) {
+                return null;
+            }
+            return option;
+        }).filter(truthy);
+
+        function renderOption(option: ListboxOption): ReactElement {
+            return (
+                <ListItem
+                    aria-disabled={option.disabled}
+                    aria-selected={isOptionSelected(option) ? 'true' : 'false'}
+                    className={IGNORE_CLICK_OUTSIDE}
+                    data-testid={sanitizeId(`listitem-${option.value}`)}
+                    $disabled={option.disabled}
+                    $focused={isOptionFocused(option)}
+                    id={sanitizeId(`${id}_${option.value}`)}
+                    $isMobile={isMobile}
+                    key={option.value}
+                    onClick={handleListItemClick(option)}
+                    onMouseDown={handleListItemMouseDown}
+                    ref={(node) => {
+                        const map = itemRefs.current;
+                        if (node) {
+                            map.set(option.value, node);
+                        } else {
+                            map.delete(option.value);
+                        }
+                    }}
+                    role="option"
+                    $selected={isOptionSelected(option)}
+                    $multiselect={multiselect}
+                >
+                    {multiselect ? (
+                        <CustomCheckbox
+                            aria-hidden="true"
+                            disabled={option.disabled}
+                            checked={isOptionSelected(option)}
+                        >
+                            <CheckMarkIcon />
+                        </CustomCheckbox>
+                    ) : null}
+                    <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
+                        {option.label || option.value}
+                        {option.caption && (
+                            <ListItemCaption
+                                className={IGNORE_CLICK_OUTSIDE}
+                                $disabled={option.disabled}
+                                $isMobile={isMobile}
+                            >
+                                {option.caption}
+                            </ListItemCaption>
+                        )}
+                    </ListItemTextContainer>
+                </ListItem>
+            );
+        }
+
+        return (
+            <>
+                {top.map((option) => renderOption(option))}
+                {top.length > 0 && bottom.length > 0 && (<Divider />)}
+                {bottom.map((option) => renderOption(option))}
+            </>
+        );
+    }
+
     return (
         <Container
             aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
@@ -505,54 +590,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 data-testid="listbox-list"
                 role="presentation"
             >
-                {options.map((option) => (
-                    <ListItem
-                        aria-disabled={option.disabled}
-                        aria-selected={isOptionSelected(option) ? 'true' : 'false'}
-                        className={IGNORE_CLICK_OUTSIDE}
-                        data-testid={sanitizeId(`listitem-${option.value}`)}
-                        $disabled={option.disabled}
-                        $focused={isOptionFocused(option)}
-                        id={sanitizeId(`${id}_${option.value}`)}
-                        $isMobile={isMobile}
-                        key={option.value}
-                        onClick={handleListItemClick(option)}
-                        onMouseDown={handleListItemMouseDown}
-                        ref={(node) => {
-                            const map = itemRefs.current;
-                            if (node) {
-                                map.set(option.value, node);
-                            } else {
-                                map.delete(option.value);
-                            }
-                        }}
-                        role="option"
-                        $selected={isOptionSelected(option)}
-                        $multiselect={multiselect}
-                    >
-                        {multiselect ? (
-                            <CustomCheckbox
-                                aria-hidden="true"
-                                disabled={option.disabled}
-                                checked={isOptionSelected(option)}
-                            >
-                                <CheckMarkIcon />
-                            </CustomCheckbox>
-                        ) : null}
-                        <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
-                            {option.label || option.value}
-                            {option.caption && (
-                                <ListItemCaption
-                                    className={IGNORE_CLICK_OUTSIDE}
-                                    $disabled={option.disabled}
-                                    $isMobile={isMobile}
-                                >
-                                    {option.caption}
-                                </ListItemCaption>
-                            )}
-                        </ListItemTextContainer>
-                    </ListItem>
-                ))}
+                {renderOptions()}
             </List>
         </Container>
     );
