@@ -189,3 +189,5 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
         </nav>
     );
 };
+
+Breadcrumb.displayName = 'Breadcrumb';

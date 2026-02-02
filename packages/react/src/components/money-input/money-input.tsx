@@ -175,3 +175,5 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         />
     );
 };
+
+MoneyInput.displayName = 'MoneyInput';

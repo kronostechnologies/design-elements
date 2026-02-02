@@ -44,11 +44,12 @@ const Enso: VFC<SVGProps<SVGSVGElement>> = ({ className }) => (
         />
     </svg>
 );
+Enso.displayName = 'Enso';
 
-const Spinner: VFC = styled(Enso)`
+export const Spinner: VFC = styled(Enso)`
     color: ${(props) => props.theme.component['spinner-fill-color']};
     height: 64px;
     width: 64px;
 `;
 
-export { Spinner };
+Spinner.displayName = 'Spinner';

@@ -111,6 +111,7 @@ const LinkContent: VoidFunctionComponent<NavListItemProps> = memo<NavListItemPro
         && prevOption.value === option.value && prevOption.endIcon === option.endIcon
     ),
 );
+LinkContent.displayName = 'LinkContent';
 
 interface WithTestId {
     testId: string;
@@ -126,6 +127,7 @@ const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
         />
     );
 };
+ScreenReaderMessage.displayName = 'ScreenReaderMessage';
 
 export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
     option,
@@ -183,3 +185,5 @@ export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
         </li>
     );
 };
+
+NavListItem.displayName = 'NavListItem';

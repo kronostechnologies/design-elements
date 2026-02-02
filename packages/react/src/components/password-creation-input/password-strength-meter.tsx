@@ -67,3 +67,5 @@ export const PasswordStrengthMeter: VoidFunctionComponent<PasswordStrengthMeterP
         />
     </PasswordMeterContainer>
 );
+
+PasswordStrengthMeter.displayName = 'PasswordStrengthMeter';

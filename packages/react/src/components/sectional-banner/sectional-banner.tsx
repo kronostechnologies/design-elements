@@ -140,6 +140,7 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
         size="small"
     />
 );
+ActionButton.displayName = 'ActionButton';
 
 interface BannerTypeProps {
     container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
@@ -263,3 +264,5 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
         </Container>
     );
 };
+
+SectionalBanner.displayName = 'SectionalBanner';

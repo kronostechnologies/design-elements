@@ -78,3 +78,5 @@ export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElem
 
     return <Component style={{ height }} focusable="false" aria-hidden="true" />;
 };
+
+Logo.displayName = 'Logo';

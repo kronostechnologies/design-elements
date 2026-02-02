@@ -178,3 +178,5 @@ export const TableHeader = <T extends object>({
         {headerGroup.headers.map((header) => getHeading(header))}
     </StyleHeaderRow>
 );
+
+TableHeader.displayName = 'TableHeader';

@@ -133,3 +133,5 @@ export const PasswordCreationInput: VoidFunctionComponent<PasswordCreationInputP
         </FieldContainer>
     );
 };
+
+PasswordCreationInput.displayName = 'PasswordCreationInput';

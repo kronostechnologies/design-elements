@@ -51,3 +51,5 @@ export const SkipLink: VoidFunctionComponent<SkipLinkProps> = ({
         </StyledLink>
     );
 };
+
+SkipLink.displayName = 'SkipLink';

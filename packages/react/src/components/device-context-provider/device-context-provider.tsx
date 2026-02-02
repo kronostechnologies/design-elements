@@ -96,6 +96,8 @@ export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceCo
     );
 };
 
+DeviceContextProvider.displayName = 'DeviceContextProvider';
+
 export function useDeviceContext(): DeviceContextProps {
     return useContext(DeviceContext);
 }

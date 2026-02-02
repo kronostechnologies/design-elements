@@ -39,3 +39,5 @@ export const Status: VoidFunctionComponent<Props> = ({ className, label, type })
         <span>{label}</span>
     </Wrapper>
 );
+
+Status.displayName = 'Status';

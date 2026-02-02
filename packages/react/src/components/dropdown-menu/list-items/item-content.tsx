@@ -90,3 +90,5 @@ export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
         </LabelContainer>
     </>
 );
+
+ItemContent.displayName = 'ItemContent';

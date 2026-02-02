@@ -53,3 +53,5 @@ export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
         </>
     );
 };
+
+GroupItem.displayName = 'GroupItem';

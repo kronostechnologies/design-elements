@@ -240,3 +240,5 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
         />
     );
 };
+
+Icon.displayName = 'Icon';

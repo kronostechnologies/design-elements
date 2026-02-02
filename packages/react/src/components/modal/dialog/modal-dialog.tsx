@@ -144,3 +144,5 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         </Modal>
     );
 };
+
+ModalDialog.displayName = 'ModalDialog';

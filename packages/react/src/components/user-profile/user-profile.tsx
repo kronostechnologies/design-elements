@@ -117,3 +117,5 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
         />
     );
 };
+
+UserProfile.displayName = 'UserProfile';

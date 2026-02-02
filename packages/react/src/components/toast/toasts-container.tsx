@@ -101,3 +101,5 @@ export const ToastsContainer: VoidFunctionComponent<ToastProps> = ({
         </Portal>
     );
 };
+
+ToastsContainer.displayName = 'ToastsContainer';

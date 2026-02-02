@@ -241,3 +241,5 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonPr
         </StyledDiv>
     );
 };
+
+DropdownNavigation.displayName = 'DropdownNavigation';

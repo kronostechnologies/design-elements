@@ -24,7 +24,7 @@ interface InvalidFieldProps {
     noIcon?: boolean;
 }
 
-const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
+export const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -41,4 +41,4 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
     );
 };
 
-export { InvalidField };
+InvalidField.displayName = 'InvalidField';

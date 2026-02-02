@@ -107,3 +107,5 @@ export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
         </Wrapper>
     );
 };
+
+StepperButtons.displayName = 'StepperButtons';

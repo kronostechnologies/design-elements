@@ -161,3 +161,5 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
         </Container>
     );
 };
+
+SegmentedControl.displayName = 'SegmentedControl';

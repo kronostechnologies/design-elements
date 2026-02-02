@@ -74,6 +74,7 @@ const NavButton: VoidFunctionComponent<NavButtonProps> = ({
         tab-index={enabled ? 0 : -1}
     />
 );
+NavButton.displayName = 'NavButton';
 
 const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
@@ -239,3 +240,5 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         </Container>
     );
 };
+
+Pagination.displayName = 'Pagination';

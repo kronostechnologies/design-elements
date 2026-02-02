@@ -37,3 +37,5 @@ export const Card: FunctionComponent<PropsWithChildren<Props>> = ({
         </StyledDiv>
     );
 };
+
+Card.displayName = 'Card';

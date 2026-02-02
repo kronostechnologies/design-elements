@@ -123,3 +123,5 @@ export const Accordion: React.FC<AccordionProps> = ({
         </StyledAccordionGroup>
     );
 };
+
+Accordion.displayName = 'Accordion';

@@ -50,3 +50,5 @@ export const PasswordStrengthContainer: VoidFunctionComponent<PasswordStrengthCo
         </>
     );
 };
+
+PasswordStrengthContainer.displayName = 'PasswordStrengthContainer';

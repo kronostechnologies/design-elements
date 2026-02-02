@@ -53,3 +53,5 @@ export const Circle: VoidFunctionComponent<CircleProps> = ({
         </Svg>
     );
 };
+
+Circle.displayName = 'Circle';

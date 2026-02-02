@@ -40,3 +40,5 @@ export const ProgressIndicator: VoidFunctionComponent<Props> = ({
         />
     </Container>
 );
+
+ProgressIndicator.displayName = 'ProgressIndicator';

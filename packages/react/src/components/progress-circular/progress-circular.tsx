@@ -63,3 +63,5 @@ export const ProgressCircular: VoidFunctionComponent<ProgressCircularProps> = ({
         </svg>
     );
 };
+
+ProgressCircular.displayName = 'ProgressCircular';

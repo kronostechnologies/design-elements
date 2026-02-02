@@ -56,8 +56,9 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
             );
     }
 };
+RequiredLabel.displayName = 'RequiredLabel';
 
-const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
+export const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
     className, children, forId, id, tooltip, toggletip, required, requiredLabelType = 'text',
 }) => {
     const WrapperComponent = tooltip || toggletip ? StyledDiv : Fragment;
@@ -75,4 +76,4 @@ const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
     );
 };
 
-export { Label };
+Label.displayName = 'Label';

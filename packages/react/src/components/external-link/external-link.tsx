@@ -90,3 +90,5 @@ export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
         </Link>
     );
 };
+
+ExternalLink.displayName = 'ExternalLink';

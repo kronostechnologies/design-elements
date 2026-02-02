@@ -81,3 +81,5 @@ export const ProgressCircle: VoidFunctionComponent<Props> = ({
         {descriptionLabel && <Label>{descriptionLabel}</Label>}
     </Container>
 );
+
+ProgressCircle.displayName = 'ProgressCircle';

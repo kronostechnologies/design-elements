@@ -75,3 +75,5 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetPro
         </DisclosureContainer>
     );
 };
+
+Disclosure.displayName = 'Disclosure';

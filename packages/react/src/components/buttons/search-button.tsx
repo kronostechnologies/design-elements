@@ -47,3 +47,5 @@ export const SearchButton: VoidFunctionComponent<ButtonProps> = ({
         <SearchIcon />
     </StyledButton>
 );
+
+SearchButton.displayName = 'SearchButton';

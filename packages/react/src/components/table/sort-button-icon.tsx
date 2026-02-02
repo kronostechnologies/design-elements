@@ -42,3 +42,5 @@ export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconP
             );
     }
 };
+
+SortButtonIcon.displayName = 'SortButtonIcon';

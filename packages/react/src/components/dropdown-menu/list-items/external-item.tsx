@@ -70,3 +70,5 @@ export const ExternalItem = ({
         </li>
     );
 };
+
+ExternalItem.displayName = 'ExternalItem';

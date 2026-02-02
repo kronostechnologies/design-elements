@@ -145,3 +145,5 @@ export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
         </>
     );
 };
+
+ToggleSwitch.displayName = 'ToggleSwitch';

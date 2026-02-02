@@ -93,3 +93,5 @@ export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
         </Container>
     );
 };
+
+PasswordRule.displayName = 'PasswordRule';

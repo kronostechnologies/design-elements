@@ -43,3 +43,5 @@ export const Bar: VoidFunctionComponent<BarProps> = ({
         <p>{endLabel}</p>
     </Container>
 );
+
+Bar.displayName = 'Bar';
