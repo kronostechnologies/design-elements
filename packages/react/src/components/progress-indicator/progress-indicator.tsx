@@ -13,7 +13,7 @@ const Spinner: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
         width="16"
         height="16"
         className={className}
-        {...props /* eslint-disable-line react/no-unknown-property */}
+        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
     >
         <radialGradient id="a4" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
             <stop offset="0" stopColor="currentColor" stopOpacity="0" />

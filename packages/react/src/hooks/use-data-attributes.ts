@@ -30,6 +30,6 @@ export function useDataAttributes(props: unknown): DataAttributes {
 
     return useMemo(
         () => filterProps(props),
-        [deps], // eslint-disable-line react-hooks/exhaustive-deps
+        deps, /* eslint-disable-line react-hooks/exhaustive-deps */
     );
 }
