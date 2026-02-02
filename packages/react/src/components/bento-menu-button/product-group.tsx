@@ -49,3 +49,5 @@ export const ProductGroup: FunctionComponent<PropsWithChildren<ProductGroupProps
         </GroupItem>
     );
 };
+
+ProductGroup.displayName = 'ProductGroup';

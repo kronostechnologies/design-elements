@@ -242,3 +242,5 @@ export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
         </Container>
     );
 };
+
+PhoneInput.displayName = 'PhoneInput';

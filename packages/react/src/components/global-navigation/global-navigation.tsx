@@ -309,3 +309,5 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
         </Wrapper>
     );
 };
+
+GlobalNavigation.displayName = 'GlobalNavigation';

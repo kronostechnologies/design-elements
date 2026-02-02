@@ -310,6 +310,7 @@ const ListboxTag: FC<ListBoxTagProps> = ({
         </TagTooltipWrapper>
     );
 };
+ListboxTag.displayName = 'ListboxTag';
 
 export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
@@ -723,3 +724,5 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         </StyledFieldContainer>
     );
 };
+
+DropdownList.displayName = 'DropdownList';

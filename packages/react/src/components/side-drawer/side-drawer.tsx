@@ -121,3 +121,5 @@ export const SideDrawer: FunctionComponent<PropsWithChildren<SideDrawerProps>> =
         </Container>
     );
 };
+
+SideDrawer.displayName = 'SideDrawer';

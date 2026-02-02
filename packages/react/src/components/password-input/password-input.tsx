@@ -126,3 +126,5 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
         </FieldContainer>
     );
 };
+
+PasswordInput.displayName = 'PasswordInput';

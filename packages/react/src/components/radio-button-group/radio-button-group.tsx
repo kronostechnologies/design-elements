@@ -218,3 +218,5 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         </StyledFieldset>
     );
 };
+
+RadioButtonGroup.displayName = 'RadioButtonGroup';

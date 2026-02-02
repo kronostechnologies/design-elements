@@ -118,3 +118,5 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
         </Wrapper>
     );
 };
+
+CalendarHeader.displayName = 'CalendarHeader';

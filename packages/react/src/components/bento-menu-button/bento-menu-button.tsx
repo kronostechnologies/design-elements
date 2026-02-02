@@ -137,3 +137,5 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
         />
     );
 };
+
+BentoMenuButton.displayName = 'BentoMenuButton';

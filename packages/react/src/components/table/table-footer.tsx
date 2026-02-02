@@ -71,3 +71,5 @@ export const TableFooter = <T extends object>({
         {footerGroup.headers.map((footer) => getFooter(footer, sticky))}
     </StyleFooterRow>
 );
+
+TableFooter.displayName = 'TableFooter';

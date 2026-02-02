@@ -23,7 +23,7 @@ exports[`Fieldset Component Styling matches default 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef>
+<Fieldset>
   <styled.fieldset
     $orientation="vertical"
     data-orientation="vertical"
@@ -39,7 +39,7 @@ exports[`Fieldset Component Styling matches default 1`] = `
       Test Content
     </fieldset>
   </styled.fieldset>
-</ForwardRef>
+</Fieldset>
 `;
 
 exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
@@ -65,7 +65,7 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
+<Fieldset
   orientation="horizontal"
 >
   <styled.fieldset
@@ -83,7 +83,7 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
       Test Content
     </fieldset>
   </styled.fieldset>
-</ForwardRef>
+</Fieldset>
 `;
 
 exports[`Fieldset Component Styling matches vertical orientation 1`] = `
@@ -109,7 +109,7 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
+<Fieldset
   orientation="vertical"
 >
   <styled.fieldset
@@ -127,7 +127,7 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
       Test Content
     </fieldset>
   </styled.fieldset>
-</ForwardRef>
+</Fieldset>
 `;
 
 exports[`Fieldset Component Styling matches with bold legend 1`] = `
@@ -160,7 +160,7 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
+<Fieldset
   legend={
     {
       "bold": true,
@@ -201,7 +201,7 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
       Test Content
     </fieldset>
   </styled.fieldset>
-</ForwardRef>
+</Fieldset>
 `;
 
 exports[`Fieldset Component Styling matches with disabled legend 1`] = `
@@ -234,7 +234,7 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
+<Fieldset
   disabled={true}
   legend={
     {
@@ -277,5 +277,5 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
       Test Content
     </fieldset>
   </styled.fieldset>
-</ForwardRef>
+</Fieldset>
 `;

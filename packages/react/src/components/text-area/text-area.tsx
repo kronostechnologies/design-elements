@@ -208,3 +208,5 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         </FieldContainer>
     );
 };
+
+TextArea.displayName = 'TextArea';

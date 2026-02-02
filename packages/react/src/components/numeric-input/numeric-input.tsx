@@ -119,3 +119,5 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         />
     );
 };
+
+NumericInput.displayName = 'NumericInput';

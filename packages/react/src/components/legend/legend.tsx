@@ -68,3 +68,5 @@ export const Legend: VoidFunctionComponent<LegendProps> = ({ className, items })
         </List>
     );
 };
+
+Legend.displayName = 'Legend';

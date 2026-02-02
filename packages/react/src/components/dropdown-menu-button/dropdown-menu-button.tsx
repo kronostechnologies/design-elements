@@ -232,3 +232,5 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         </StyledDiv>
     );
 };
+
+DropdownMenuButton.displayName = 'DropdownMenuButton';

@@ -43,3 +43,5 @@ export const LabelItem = ({
         </StyledListItem>
     );
 };
+
+LabelItem.displayName = 'LabelItem';

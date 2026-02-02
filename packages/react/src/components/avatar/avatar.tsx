@@ -106,3 +106,5 @@ export const Avatar: VoidFunctionComponent<AvatarProps> = ({
         </StyledDiv>
     );
 };
+
+Avatar.displayName = 'Avatar';

@@ -181,3 +181,5 @@ export const TabButton = forwardRef(({
         </StyledTab>
     );
 });
+
+TabButton.displayName = 'TabButton';

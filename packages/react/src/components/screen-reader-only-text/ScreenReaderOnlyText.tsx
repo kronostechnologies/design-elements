@@ -25,3 +25,5 @@ export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label, ...o
         <StyledSpan {...dataAttributes}>{label}</StyledSpan>
     );
 };
+
+ScreenReaderOnlyText.displayName = 'ScreenReaderOnlyText';

@@ -57,3 +57,5 @@ export const CardLink: VoidFunctionComponent<CardLinkProps> = ({
         <StyledIcon aria-hidden name="chevronRight" size="16" />
     </StyledLink>
 );
+
+CardLink.displayName = 'CardLink';

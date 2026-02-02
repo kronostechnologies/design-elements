@@ -10,3 +10,5 @@ export const SearchGlobal: VoidFunctionComponent<SearchGlobalProps> = (props) =>
         data-testid="search-input"
     />
 );
+
+SearchGlobal.displayName = 'SearchGlobal';

@@ -95,3 +95,5 @@ export const ChooserButtonGroup: VoidFunctionComponent<ChooserButtonGroupProps> 
         </>
     );
 };
+
+ChooserButtonGroup.displayName = 'ChooserButtonGroup';

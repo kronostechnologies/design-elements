@@ -676,3 +676,5 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         </StyledFieldContainer>
     );
 };
+
+Combobox.displayName = 'Combobox';

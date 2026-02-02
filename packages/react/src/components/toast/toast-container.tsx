@@ -208,3 +208,5 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
         </ToastWrapper>
     );
 };
+
+ToastContainer.displayName = 'ToastContainer';

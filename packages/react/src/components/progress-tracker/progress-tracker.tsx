@@ -1,4 +1,4 @@
-import { ReactElement, VoidFunctionComponent } from 'react';
+import { MouseEvent, ReactElement, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon/icon';
@@ -196,7 +196,7 @@ const Step: VoidFunctionComponent<StepProps> = ({
         </>
     );
 
-    const linkClickHandler = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+    const linkClickHandler = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (!step.href) {
             event.preventDefault();
         }
@@ -220,6 +220,7 @@ const Step: VoidFunctionComponent<StepProps> = ({
         </StepComponent>
     );
 };
+Step.displayName = 'Step';
 
 export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
     ariaLabel,
@@ -253,3 +254,5 @@ export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
         </Container>
     );
 };
+
+ProgressTracker.displayName = 'ProgressTracker';

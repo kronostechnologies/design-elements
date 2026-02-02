@@ -224,3 +224,5 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         </FieldContainer>
     );
 };
+
+StepperInput.displayName = 'StepperInput';

@@ -28,3 +28,5 @@ export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
         </Fieldset>
     );
 };
+
+RadioCardGroup.displayName = 'RadioCardGroup';

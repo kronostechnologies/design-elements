@@ -91,3 +91,5 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
         </SectionalBanner>
     );
 };
+
+ErrorSummary.displayName = 'ErrorSummary';

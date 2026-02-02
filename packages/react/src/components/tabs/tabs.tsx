@@ -371,3 +371,5 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         </TabsWrapper>
     );
 };
+
+Tabs.displayName = 'Tabs';

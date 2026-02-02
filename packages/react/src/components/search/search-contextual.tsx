@@ -10,3 +10,5 @@ export const SearchContextual: VoidFunctionComponent<SearchContextualProps> = (p
         data-testid="search-input"
     />
 );
+
+SearchContextual.displayName = 'SearchContextual';

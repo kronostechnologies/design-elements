@@ -226,3 +226,5 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
         </SearchWrapper>
     );
 };
+
+SearchInput.displayName = 'SearchInput';

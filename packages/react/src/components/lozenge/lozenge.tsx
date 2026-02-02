@@ -89,3 +89,5 @@ export const Lozenge: FunctionComponent<PropsWithChildren<Props>> = ({
         </StyledLozenge>
     );
 };
+
+Lozenge.displayName = 'Lozenge';

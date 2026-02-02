@@ -74,3 +74,5 @@ export const RouteLink: VoidFunctionComponent<LinkProps> = ({
         </Link>
     );
 };
+
+RouteLink.displayName = 'RouteLink';

@@ -36,3 +36,5 @@ export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
         {children}
     </StyledDiv>
 );
+
+TabPanel.displayName = 'TabPanel';

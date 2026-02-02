@@ -59,3 +59,5 @@ export const CheckboxGroup: VoidFunctionComponent<CheckboxProps> = ({
         </>
     );
 };
+
+CheckboxGroup.displayName = 'CheckboxGroup';

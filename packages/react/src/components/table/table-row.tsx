@@ -158,3 +158,5 @@ export const TableRow = <T extends object>({
         {row.getVisibleCells().map((cell) => getCell(cell))}
     </StyledTableRow>
 );
+
+TableRow.displayName = 'TableRow';

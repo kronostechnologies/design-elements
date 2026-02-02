@@ -389,3 +389,5 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         </>
     );
 };
+
+Tooltip.displayName = 'Tooltip';
