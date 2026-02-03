@@ -991,3 +991,5 @@ export const Combobox: FC<ComboboxProps> = ({
         </StyledFieldContainer>
     );
 };
+
+Combobox.displayName = 'Combobox';

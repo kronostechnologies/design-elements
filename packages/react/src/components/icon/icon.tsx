@@ -240,3 +240,5 @@ export const Icon: FC<IconProps> = ({
         />
     );
 };
+
+Icon.displayName = 'Icon';

@@ -45,3 +45,5 @@ export const ToastProvider: FunctionComponent<PropsWithChildren<{}>> = ({ childr
         </ToastContext.Provider>
     );
 };
+
+ToastProvider.displayName = 'ToastProvider';

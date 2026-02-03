@@ -28,3 +28,5 @@ export const RadioCardGroup: FC<RadioCardGroupProps> = ({
         </Fieldset>
     );
 };
+
+RadioCardGroup.displayName = 'RadioCardGroup';

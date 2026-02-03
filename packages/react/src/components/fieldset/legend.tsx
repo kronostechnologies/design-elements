@@ -48,3 +48,5 @@ export const Legend: FC<LegendProps> = ({
         </StyledLegend>
     );
 };
+
+Legend.displayName = 'Legend';

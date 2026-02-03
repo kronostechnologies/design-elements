@@ -36,3 +36,5 @@ export const ShadowWrapper: FunctionComponent<PropsWithChildren<ShadowWrapperPro
         </WrapperTag>
     );
 };
+
+ShadowWrapper.displayName = 'ShadowWrapper';

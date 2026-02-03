@@ -102,3 +102,5 @@ export const FilterSingle: FC<FilterSingleProps> = ({
         </>
     );
 };
+
+FilterSingle.displayName = 'FilterSingle';

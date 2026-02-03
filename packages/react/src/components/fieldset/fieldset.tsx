@@ -72,3 +72,5 @@ export const Fieldset = forwardRef(({
         </StyledFieldset>
     );
 });
+
+Fieldset.displayName = 'Fieldset';

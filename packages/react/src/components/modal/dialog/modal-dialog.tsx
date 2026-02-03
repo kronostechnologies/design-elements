@@ -156,3 +156,5 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </Modal>
     );
 };
+
+ModalDialog.displayName = 'ModalDialog';

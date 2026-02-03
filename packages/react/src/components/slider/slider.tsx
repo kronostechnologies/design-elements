@@ -86,3 +86,5 @@ export const Slider = <TValue extends number | number[]>({
         </FieldContainer>
     );
 };
+
+Slider.displayName = 'Slider';

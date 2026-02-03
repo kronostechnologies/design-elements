@@ -119,3 +119,5 @@ export const PasswordInput: FC<PasswordInputProps> = ({
         </FieldContainer>
     );
 };
+
+PasswordInput.displayName = 'PasswordInput';

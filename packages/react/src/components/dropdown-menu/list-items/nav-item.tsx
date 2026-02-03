@@ -178,3 +178,5 @@ export const NavItem = forwardRef(({
         </li>
     );
 });
+
+NavItem.displayName = 'NavItem';

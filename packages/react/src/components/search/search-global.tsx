@@ -10,3 +10,5 @@ export const SearchGlobal: FC<SearchGlobalProps> = (props) => (
         data-testid="search-input"
     />
 );
+
+SearchGlobal.displayName = 'SearchGlobal';

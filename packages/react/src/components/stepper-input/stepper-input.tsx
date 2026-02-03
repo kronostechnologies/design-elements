@@ -225,3 +225,5 @@ export const StepperInput: FC<StepperInputProps> = ({
         </FieldContainer>
     );
 };
+
+StepperInput.displayName = 'StepperInput';

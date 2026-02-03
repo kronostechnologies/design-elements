@@ -53,3 +53,5 @@ export const SearchButton: FC<ButtonProps> = ({
         <SearchIcon />
     </StyledButton>
 );
+
+SearchButton.displayName = 'SearchButton';

@@ -279,3 +279,5 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
         </StyledDiv>
     );
 };
+
+DropdownMenuButton.displayName = 'DropdownMenuButton';

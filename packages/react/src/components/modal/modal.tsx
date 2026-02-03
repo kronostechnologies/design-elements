@@ -152,3 +152,5 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
         </StyledModal>
     );
 };
+
+Modal.displayName = 'Modal';

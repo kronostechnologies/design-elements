@@ -147,3 +147,5 @@ export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
         </BadgeRoot>
     );
 };
+
+Badge.displayName = 'Badge';

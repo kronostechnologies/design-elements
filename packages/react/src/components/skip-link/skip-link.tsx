@@ -51,3 +51,5 @@ export const SkipLink: FC<SkipLinkProps> = ({
         </StyledLink>
     );
 };
+
+SkipLink.displayName = 'SkipLink';

@@ -90,3 +90,5 @@ export const ExternalLink: FC<ExternalLinkProps> = ({
         </Link>
     );
 };
+
+ExternalLink.displayName = 'ExternalLink';

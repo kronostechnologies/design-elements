@@ -428,3 +428,5 @@ export const Menu = forwardRef(({
         </StyledDiv>
     );
 });
+
+Menu.displayName = 'Menu';

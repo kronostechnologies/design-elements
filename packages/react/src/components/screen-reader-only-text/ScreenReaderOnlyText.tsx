@@ -25,3 +25,5 @@ export const ScreenReaderOnlyText: FC<ScreenReaderOnlyTextProps> = ({ label, ...
         <StyledSpan {...dataAttributes}>{label}</StyledSpan>
     );
 };
+
+ScreenReaderOnlyText.displayName = 'ScreenReaderOnlyText';

@@ -36,3 +36,5 @@ export const ValueTooltip: FunctionComponent<SliderValueLabelSlotProps> = ({ chi
         {children}
     </ValueTooltipContainer>
 );
+
+ValueTooltip.displayName = 'ValueTooltip';

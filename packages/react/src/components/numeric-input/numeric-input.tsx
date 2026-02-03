@@ -118,3 +118,5 @@ export const NumericInput: FC<NumericInputProps> = ({
         />
     );
 };
+
+NumericInput.displayName = 'NumericInput';

@@ -86,3 +86,5 @@ export const ListboxTag: FC<ListBoxTagProps<ListOption>> = ({
 
     return tag;
 };
+
+ListboxTag.displayName = 'ListboxTag';

@@ -75,6 +75,8 @@ const NavButton: FC<NavButtonProps> = ({
     />
 );
 
+NavButton.displayName = 'NavButton';
+
 const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
@@ -239,3 +241,5 @@ export const Pagination: FC<PaginationProps> = ({
         </Container>
     );
 };
+
+Pagination.displayName = 'Pagination';

@@ -161,3 +161,5 @@ export const SegmentedControl: FC<SegmentedControlProps> = ({
         </Container>
     );
 };
+
+SegmentedControl.displayName = 'SegmentedControl';

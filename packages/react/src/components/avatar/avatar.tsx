@@ -110,3 +110,5 @@ export const Avatar: FC<AvatarProps> = ({
         </StyledDiv>
     );
 };
+
+Avatar.displayName = 'Avatar';

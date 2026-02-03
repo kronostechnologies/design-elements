@@ -61,3 +61,5 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = ({
         </>
     );
 };
+
+CheckboxGroup.displayName = 'CheckboxGroup';

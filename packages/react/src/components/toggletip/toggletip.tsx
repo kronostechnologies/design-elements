@@ -244,3 +244,5 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
         </>
     );
 };
+
+Toggletip.displayName = 'Toggletip';

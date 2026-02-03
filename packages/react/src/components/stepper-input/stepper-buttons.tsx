@@ -107,3 +107,5 @@ export const StepperButtons: FC<StepperButtonsProps> = ({
         </Wrapper>
     );
 };
+
+StepperButtons.displayName = 'StepperButtons';

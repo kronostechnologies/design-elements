@@ -70,3 +70,5 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureProps>> =
         </DisclosureContainer>
     );
 };
+
+Disclosure.displayName = 'Disclosure';

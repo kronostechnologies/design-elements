@@ -141,3 +141,5 @@ export const ToggleSwitch: FC<ToggleSwitchProps> = ({
         </>
     );
 };
+
+ToggleSwitch.displayName = 'ToggleSwitch';

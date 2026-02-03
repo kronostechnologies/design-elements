@@ -95,3 +95,5 @@ export const ChooserButtonGroup: FC<ChooserButtonGroupProps> = ({
         </>
     );
 };
+
+ChooserButtonGroup.displayName = 'ChooserButtonGroup';

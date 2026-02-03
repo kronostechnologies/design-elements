@@ -200,3 +200,5 @@ export const TextArea: FC<TextAreaProps> = ({
         </FieldContainer>
     );
 };
+
+TextArea.displayName = 'TextArea';

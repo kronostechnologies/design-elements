@@ -117,3 +117,5 @@ export const CalendarHeader: FC<CalendarHeaderProps> = ({
         </Wrapper>
     );
 };
+
+CalendarHeader.displayName = 'CalendarHeader';

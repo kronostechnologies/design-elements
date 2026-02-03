@@ -125,6 +125,8 @@ export const RadioCard: FC<RadioCardProps> = ({
     );
 };
 
+RadioCard.displayName = 'RadioCard';
+
 export const isRadioCard = (child: unknown): child is ReactElement<RadioCardProps> => (
     isValidElement<RadioCardProps>(child) && child.type === RadioCard
 );

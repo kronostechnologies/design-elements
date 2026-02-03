@@ -388,7 +388,9 @@ export interface TableProps<T extends object> {
     onSort?(sort: ColumnSort | null): void;
 }
 
-export const Table = <T extends object>({
+type TableComponent = <T extends object>(props: TableProps<T>) => ReactElement;
+
+export const Table: TableComponent & { displayName?: string | undefined } = <T extends object>({
     ariaLabelledBy,
     ariaDescribedBy,
     ariaLabelledByColumnId,
@@ -591,3 +593,5 @@ export const Table = <T extends object>({
         </StyledTable>
     );
 };
+
+Table.displayName = 'Table';

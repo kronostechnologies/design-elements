@@ -194,3 +194,5 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         </StyledContainer>
     );
 };
+
+MenuButton.displayName = 'MenuButton';

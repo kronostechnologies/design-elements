@@ -90,3 +90,5 @@ export const ItemContent: FC<ItemContentProps> = ({
         </LabelContainer>
     </>
 );
+
+ItemContent.displayName = 'ItemContent';
