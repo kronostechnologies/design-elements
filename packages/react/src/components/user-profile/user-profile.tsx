@@ -118,3 +118,5 @@ export const UserProfile: FC<UserProfileProps> = ({
         />
     );
 };
+
+UserProfile.displayName = 'UserProfile';

@@ -13,3 +13,5 @@ export const VisuallyHidden: FunctionComponent<VisuallyHiddenProps> = ({ childre
         {children}
     </Hidden>
 );
+
+VisuallyHidden.displayName = 'VisuallyHidden';

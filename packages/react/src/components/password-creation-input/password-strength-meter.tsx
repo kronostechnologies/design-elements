@@ -67,3 +67,5 @@ export const PasswordStrengthMeter: FC<PasswordStrengthMeterProps> = ({ strength
         />
     </PasswordMeterContainer>
 );
+
+PasswordStrengthMeter.displayName = 'PasswordStrengthMeter';

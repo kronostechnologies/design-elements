@@ -37,3 +37,5 @@ export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps
         </ThemeProvider>
     );
 };
+
+ThemeWrapper.displayName = 'ThemeWrapper';

@@ -18,3 +18,5 @@ export const DesignSystem: FunctionComponent<PropsWithChildren<DesignSystemProps
         </ThemeWrapper>
     </DeviceContextProvider>
 );
+
+DesignSystem.displayName = 'DesignSystem';

@@ -218,3 +218,5 @@ export const RadioButtonGroup: FC<RadioButtonGroupProps> = ({
         </StyledFieldset>
     );
 };
+
+RadioButtonGroup.displayName = 'RadioButtonGroup';

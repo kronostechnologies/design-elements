@@ -54,3 +54,5 @@ export const ClearFilters: FC<ClearFiltersProps> = ({
         </ClearFiltersContainer>
     );
 };
+
+ClearFilters.displayName = 'ClearFilters';

@@ -141,6 +141,8 @@ const ActionButton: FC<ActionButtonProps> = ({
     />
 );
 
+ActionButton.displayName = 'ActionButton';
+
 interface BannerTypeProps {
     container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
     iconName: IconName;
@@ -263,3 +265,5 @@ export const SectionalBanner: FC<SectionalBannerProps> = ({
         </Container>
     );
 };
+
+SectionalBanner.displayName = 'SectionalBanner';

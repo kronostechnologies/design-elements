@@ -388,3 +388,5 @@ export const Tabs: FC<TabsProps> = ({
         </div>
     );
 };
+
+Tabs.displayName = 'Tabs';

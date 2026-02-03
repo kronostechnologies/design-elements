@@ -177,3 +177,5 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         </AccordionItemContainer>
     );
 };
+
+AccordionItem.displayName = 'AccordionItem';

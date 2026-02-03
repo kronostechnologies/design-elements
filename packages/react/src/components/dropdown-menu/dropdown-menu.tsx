@@ -46,3 +46,5 @@ export const DropdownMenu = forwardRef(({
         </List>
     );
 });
+
+DropdownMenu.displayName = 'DropdownMenu';

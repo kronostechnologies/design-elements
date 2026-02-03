@@ -220,3 +220,5 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
         </Main>
     );
 };
+
+Carousel.displayName = 'Carousel';

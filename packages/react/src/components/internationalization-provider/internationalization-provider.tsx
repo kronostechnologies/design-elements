@@ -37,6 +37,8 @@ export const IntlProvider: FunctionComponent<PropsWithChildren<IntlProviderProps
     );
 };
 
+IntlProvider.displayName = 'IntlProvider';
+
 export function useIntlContext(): IntlContextProps {
     return useContext(IntlContext);
 }

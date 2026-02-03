@@ -92,3 +92,5 @@ export const ErrorSummary: FC<ErrorSummaryProps> = ({
         </SectionalBanner>
     );
 };
+
+ErrorSummary.displayName = 'ErrorSummary';

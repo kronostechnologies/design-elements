@@ -205,3 +205,5 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
         </nav>
     );
 };
+
+Breadcrumb.displayName = 'Breadcrumb';

@@ -63,3 +63,5 @@ export const ProgressCircular: FC<ProgressCircularProps> = ({
         </svg>
     );
 };
+
+ProgressCircular.displayName = 'ProgressCircular';

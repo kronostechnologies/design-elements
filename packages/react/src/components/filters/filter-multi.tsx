@@ -181,3 +181,5 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         </>
     );
 };
+
+FilterMulti.displayName = 'FilterMulti';

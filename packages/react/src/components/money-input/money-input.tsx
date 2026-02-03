@@ -175,3 +175,5 @@ export const MoneyInput: FC<MoneyInputProps> = ({
         />
     );
 };
+
+MoneyInput.displayName = 'MoneyInput';

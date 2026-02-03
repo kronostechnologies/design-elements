@@ -50,3 +50,5 @@ export const PasswordStrengthContainer: FC<PasswordStrengthContainerProps> = ({
         </>
     );
 };
+
+PasswordStrengthContainer.displayName = 'PasswordStrengthContainer';

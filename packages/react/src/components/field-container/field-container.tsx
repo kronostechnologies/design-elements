@@ -91,3 +91,5 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
         </StyledDiv>
     );
 };
+
+FieldContainer.displayName = 'FieldContainer';

@@ -93,3 +93,5 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
         </Container>
     );
 };
+
+PasswordRule.displayName = 'PasswordRule';

@@ -242,3 +242,5 @@ export const PhoneInput: FC<PhoneInputProps> = ({
         </Container>
     );
 };
+
+PhoneInput.displayName = 'PhoneInput';

@@ -56,6 +56,7 @@ const Spinner: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
         />
     </svg>
 );
+Spinner.displayName = 'Spinner';
 
 const StyledSpinner = styled(Spinner)`
     color: ${(props) => props.theme.component['spinner-fill-color']};
@@ -73,3 +74,5 @@ export const ProgressIndicator: FC<ProgressIndicatorProps> = ({ className, ...pr
         />
     );
 };
+
+ProgressIndicator.displayName = 'ProgressIndicator';

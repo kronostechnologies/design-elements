@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { type DeviceType, useDeviceContext } from '../device-context-provider';
 import { SkipLink, type SkipLinkProps } from '../skip-link';
-import { Content } from './global-header-content';
+import { GlobalHeaderContent } from './global-header-content';
 import { Logo, LogoName } from './logo';
 
 const getPadding = (device: DeviceType): string => {
@@ -141,9 +141,11 @@ export const GlobalHeader: FunctionComponent<PropsWithChildren<GlobalHeaderProps
                 </HtmlLink>
             )}
 
-            <Content mobileDrawerContent={mobileDrawerContent}>
+            <GlobalHeaderContent mobileDrawerContent={mobileDrawerContent}>
                 {children}
-            </Content>
+            </GlobalHeaderContent>
         </Header>
     );
 };
+
+GlobalHeader.displayName = 'GlobalHeader';

@@ -582,3 +582,5 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
         </StyledFieldContainer>
     );
 };
+
+DropdownList.displayName = 'DropdownList';

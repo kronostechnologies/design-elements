@@ -101,3 +101,5 @@ export const ToastsContainer: FC<ToastProps> = ({
         </Portal>
     );
 };
+
+ToastsContainer.displayName = 'ToastsContainer';

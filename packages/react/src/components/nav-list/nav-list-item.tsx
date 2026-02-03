@@ -103,6 +103,7 @@ const LinkContent: FC<NavListItemProps> = memo<NavListItemProps>(
         && prevOption.value === option.value && prevOption.endIcon === option.endIcon
     ),
 );
+LinkContent.displayName = 'LinkContent';
 
 interface WithTestId {
     testId: string;
@@ -118,6 +119,8 @@ const ScreenReaderMessage: FC<WithTestId> = ({ testId }) => {
         />
     );
 };
+
+ScreenReaderMessage.displayName = 'ScreenReaderMessage';
 
 export const NavListItem: FC<NavListItemProps> = ({
     option,
@@ -175,3 +178,5 @@ export const NavListItem: FC<NavListItemProps> = ({
         </li>
     );
 };
+
+NavListItem.displayName = 'NavListItem';

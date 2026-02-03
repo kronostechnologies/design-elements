@@ -74,3 +74,5 @@ export const RouteLink: FC<RouteLinkProps> = ({
         </Link>
     );
 };
+
+RouteLink.displayName = 'RouteLink';

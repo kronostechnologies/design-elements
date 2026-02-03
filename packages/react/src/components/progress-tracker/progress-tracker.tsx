@@ -213,6 +213,8 @@ const Step: FC<StepProps> = ({
     );
 };
 
+Step.displayName = 'Step';
+
 export interface ProgressTrackerProps {
     ariaLabel?: string;
     className?: string;
@@ -253,3 +255,5 @@ export const ProgressTracker: FC<ProgressTrackerProps> = ({
         </Container>
     );
 };
+
+ProgressTracker.displayName = 'ProgressTracker';

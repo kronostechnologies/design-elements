@@ -133,3 +133,5 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
         </FieldContainer>
     );
 };
+
+PasswordCreationInput.displayName = 'PasswordCreationInput';

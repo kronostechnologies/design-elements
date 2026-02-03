@@ -471,7 +471,8 @@ export const Datepicker = forwardRef(({
         return getLocaleDatePlaceholder(currentLocale);
     }, [currentLocale, placeholder, providedDateFormat]);
 
-    // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components,react/display-name
     const CalendarContainer: FunctionComponent<PropsWithChildren<{}>> = useMemo(() => ({ children }) => (
         <div
             aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}

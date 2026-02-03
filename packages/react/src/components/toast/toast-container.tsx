@@ -214,3 +214,5 @@ export const ToastContainer: FC<ToastContainerProps> = ({
         </ToastWrapper>
     );
 };
+
+ToastContainer.displayName = 'ToastContainer';

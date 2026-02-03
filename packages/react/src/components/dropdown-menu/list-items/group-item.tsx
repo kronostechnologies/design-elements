@@ -53,3 +53,5 @@ export const GroupItem: FC<GroupItemProps> = ({
         </>
     );
 };
+
+GroupItem.displayName = 'GroupItem';

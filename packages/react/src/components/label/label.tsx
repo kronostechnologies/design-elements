@@ -57,6 +57,8 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
     }
 };
 
+RequiredLabel.displayName = 'RequiredLabel';
+
 const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
     className, children, forId, id, tooltip, toggletip, required, requiredLabelType = 'text',
 }) => {
@@ -74,5 +76,7 @@ const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
         </WrapperComponent>
     );
 };
+
+Label.displayName = 'Label';
 
 export { Label };
