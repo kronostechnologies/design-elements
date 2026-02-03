@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 import { FC, SVGProps } from 'react';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
-const Spinner: FC<SVGProps<SVGSVGElement>> = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="16" height="16" className={className}>
+export interface ProgressIndicatorProps {
+    className?: string;
+}
+
+const Spinner: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200"
+        width="16"
+        height="16"
+        className={className}
+        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+    >
         <radialGradient id="a4" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
             <stop offset="0" stopColor="currentColor" stopOpacity="0" />
             <stop offset="0.5" stopColor="currentColor" stopOpacity="0.3" />
@@ -45,8 +57,19 @@ const Spinner: FC<SVGProps<SVGSVGElement>> = ({ className }) => (
     </svg>
 );
 
-export const ProgressIndicator = styled(Spinner)`
+const StyledSpinner = styled(Spinner)`
     color: ${(props) => props.theme.component['spinner-fill-color']};
     height: 64px;
     width: 64px;
 `;
+
+export const ProgressIndicator: FC<ProgressIndicatorProps> = ({ className, ...props }) => {
+    const dataAttributes = useDataAttributes(props);
+
+    return (
+        <StyledSpinner
+            className={className}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
+    );
+};
