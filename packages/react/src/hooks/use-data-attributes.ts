@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 interface DataAttributes {
     [optName: `data-${string}`]: unknown;
@@ -26,12 +26,10 @@ function filterProps(props: unknown): DataAttributes {
 }
 
 export function useDataAttributes(props: unknown): DataAttributes {
-    const [dataAttributes, setDataAttributes] = useState(() => filterProps(props));
     const deps = isObject(props) ? [...Object.values(props)] : [props];
 
-    useEffect(() => {
-        setDataAttributes(filterProps(props));
-    }, deps); // eslint-disable-line react-hooks/exhaustive-deps
-
-    return dataAttributes;
+    return useMemo(
+        () => filterProps(props),
+        deps, /* eslint-disable-line react-hooks/exhaustive-deps */
+    );
 }
