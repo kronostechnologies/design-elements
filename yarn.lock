@@ -1677,7 +1677,7 @@ __metadata:
     lucide-react: "npm:0.563.0"
     prop-types: "npm:15.8.1"
     react: "npm:18.3.1"
-    react-datepicker: "npm:8.8.0"
+    react-datepicker: "npm:9.1.0"
     react-docgen-typescript-plugin: "npm:1.0.8"
     react-dom: "npm:18.3.1"
     react-is: "npm:18.3.1"
@@ -12580,17 +12580,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:8.8.0":
-  version: 8.8.0
-  resolution: "react-datepicker@npm:8.8.0"
+"react-datepicker@npm:9.1.0":
+  version: 9.1.0
+  resolution: "react-datepicker@npm:9.1.0"
   dependencies:
     "@floating-ui/react": "npm:^0.27.15"
     clsx: "npm:^2.1.1"
     date-fns: "npm:^4.1.0"
   peerDependencies:
+    date-fns-tz: ^3.0.0
     react: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
     react-dom: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
-  checksum: 10c0/741c533a7b063df9291b195f24f4b54c3b95615cc5a2295c8608fc5ce4c8af19df3b03316e3653ab19cbc9145265796dfb1ab91cf357c450460ac850952853a8
+  peerDependenciesMeta:
+    date-fns-tz:
+      optional: true
+  checksum: 10c0/43b58b08f9e4f289a31f2a2dbd0e246e396ad44ebfea4ed8d1393de2a6bded2dad9c2002cfcf70dfbe51aabf5f886b12b1aae8463c5bc35d67b1b22733a8a0f9
   languageName: node
   linkType: hard
 

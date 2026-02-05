@@ -82,7 +82,7 @@ describe('Datepicker', () => {
             const input = screen.getByTestId('text-input');
             await user.type(input, '2002-02-02');
 
-            expect(callback).toHaveBeenCalled();
+            expect(callback).toHaveBeenCalledOnce();
             expect(callback.mock.calls[0][0].toISOString()).toStartWith('2002-02-02');
         });
 
@@ -292,6 +292,101 @@ describe('Datepicker', () => {
 
             const input = screen.getByTestId('text-input');
             await waitFor(() => expect(input).toHaveValue('2002-02-02'));
+        });
+    });
+
+    describe('Input formats', () => {
+        test('with numbers only, onChange fires only on complete values', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003020');
+
+            expect(callback).not.toHaveBeenCalled();
+
+            await user.keyboard('1');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with numbers only and shorter format, onChange fires only on complete values', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="MM-dd-yy" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '02010');
+
+            expect(callback).not.toHaveBeenCalled();
+
+            await user.keyboard('3');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with dash-separated format, slash-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003/02/01');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with dash-separated format, space-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003 02 01');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with slash-separated format, dash-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="MM/dd/yyyy" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '02-01-2003');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('single-digit month and day input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003-2-1');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with strictDateFormat, alternate date formats are not accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(
+                <Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" strictDateFormat />,
+            );
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003/02/01');
+
+            expect(callback).not.toHaveBeenCalledOnce();
         });
     });
 });

@@ -365,19 +365,17 @@ label + .c3 {
       <div
         class="c3 c4"
       >
-        <div>
-          <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class="c5 datePickerInput"
-              data-testid="text-input"
-              id="uuid1"
-              placeholder="YYYY-MM-DD"
-              type="text"
-              value=""
-            />
-          </div>
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            class="c5 datePickerInput"
+            data-testid="text-input"
+            id="uuid1"
+            placeholder="YYYY-MM-DD"
+            type="text"
+            value=""
+          />
         </div>
         <button
           aria-label="Choose date"
@@ -2566,19 +2564,17 @@ label + .c3 {
       <div
         class="c3 c4"
       >
-        <div>
-          <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class="c5 datePickerInput"
-              data-testid="text-input"
-              id="uuid1"
-              placeholder="YYYY-MM-DD"
-              type="text"
-              value=""
-            />
-          </div>
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            class="c5 datePickerInput"
+            data-testid="text-input"
+            id="uuid1"
+            placeholder="YYYY-MM-DD"
+            type="text"
+            value=""
+          />
         </div>
         <button
           aria-label="Choose date"
@@ -3172,7 +3168,7 @@ label + .c3 {
             tabindex="0"
           />
           <div
-            class="react-datepicker-popper popper"
+            class="react-datepicker-popper react-datepicker-popper-offset popper"
             data-placement="bottom-start"
             style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
           >
@@ -4617,7 +4613,7 @@ label + .c3 {
             tabindex="0"
           />
           <div
-            class="react-datepicker-popper popper"
+            class="react-datepicker-popper react-datepicker-popper-offset popper"
             data-placement="bottom-start"
             style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
           >
@@ -6017,833 +6013,831 @@ label + .c3 {
       <div
         class="c3 c4"
       >
-        <div>
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
+            data-testid="text-input"
+            id="uuid1"
+            placeholder="YYYY-MM-DD"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="react-datepicker__tab-loop"
+        >
           <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
-              data-testid="text-input"
-              id="uuid1"
-              placeholder="YYYY-MM-DD"
-              type="text"
-              value=""
-            />
-          </div>
+            class="react-datepicker__tab-loop__start"
+            tabindex="0"
+          />
           <div
-            class="react-datepicker__tab-loop"
+            class="react-datepicker__portal"
+            tabindex="-1"
           >
             <div
-              class="react-datepicker__tab-loop__start"
-              tabindex="0"
-            />
-            <div
-              class="react-datepicker__portal"
-              tabindex="-1"
+              style="display: contents;"
             >
               <div
                 style="display: contents;"
               >
                 <div
-                  style="display: contents;"
+                  aria-label="Choose date"
+                  aria-live="polite"
+                  aria-modal="true"
+                  class="react-datepicker"
+                  role="dialog"
                 >
-                  <div
-                    aria-label="Choose date"
+                  <span
                     aria-live="polite"
-                    aria-modal="true"
-                    class="react-datepicker"
-                    role="dialog"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
+                  <div
+                    class="react-datepicker__month-container"
                   >
-                    <span
-                      aria-live="polite"
-                      class="react-datepicker__aria-live"
-                      role="alert"
-                    />
                     <div
-                      class="react-datepicker__month-container"
+                      class="react-datepicker__header react-datepicker__header--custom"
                     >
                       <div
-                        class="react-datepicker__header react-datepicker__header--custom"
+                        class="c6"
+                        data-testid="calendar-header"
                       >
-                        <div
-                          class="c6"
-                          data-testid="calendar-header"
+                        <button
+                          aria-label="Go to previous month"
+                          class="c7 c8 c9"
+                          data-testid="month-previous"
+                          type="button"
                         >
-                          <button
-                            aria-label="Go to previous month"
-                            class="c7 c8 c9"
-                            data-testid="month-previous"
-                            type="button"
+                          <svg
+                            aria-hidden="true"
+                            class="lucide lucide-chevron-left"
+                            fill="none"
+                            focusable="false"
+                            height="20"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              aria-hidden="true"
-                              class="lucide lucide-chevron-left"
-                              fill="none"
-                              focusable="false"
-                              height="20"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m15 18-6-6 6-6"
-                              />
-                            </svg>
-                          </button>
+                            <path
+                              d="m15 18-6-6 6-6"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="c10"
+                        >
                           <div
-                            class="c10"
+                            class="c11"
+                            style="margin-right: 8px;"
                           >
                             <div
-                              class="c11"
-                              style="margin-right: 8px;"
+                              class="c12 c13"
                             >
                               <div
-                                class="c12 c13"
+                                aria-controls="uuid4_listbox"
+                                aria-expanded="false"
+                                aria-invalid="false"
+                                aria-label="Select a month"
+                                aria-labelledby="uuid4_label uuid4_listbox_october_label"
+                                aria-readonly="false"
+                                aria-required="false"
+                                class="c14"
+                                data-testid="month-select"
+                                id="uuid4"
+                                role="combobox"
+                                tabindex="0"
                               >
-                                <div
-                                  aria-controls="uuid4_listbox"
-                                  aria-expanded="false"
-                                  aria-invalid="false"
-                                  aria-label="Select a month"
-                                  aria-labelledby="uuid4_label uuid4_listbox_october_label"
-                                  aria-readonly="false"
-                                  aria-required="false"
-                                  class="c14"
-                                  data-testid="month-select"
-                                  id="uuid4"
-                                  role="combobox"
-                                  tabindex="0"
+                                <input
+                                  data-testid="input"
+                                  type="hidden"
+                                  value="october"
+                                />
+                                <span
+                                  class="c15"
                                 >
-                                  <input
-                                    data-testid="input"
-                                    type="hidden"
-                                    value="october"
-                                  />
-                                  <span
-                                    class="c15"
-                                  >
-                                    Oct
-                                  </span>
-                                  <svg
-                                    aria-hidden="true"
-                                    class="lucide lucide-chevron-down c16"
-                                    data-testid="arrow"
-                                    fill="none"
-                                    focusable="false"
-                                    height="24"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="m6 9 6 6 6-6"
-                                    />
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="c11"
-                            >
-                              <div
-                                class="c12 c13"
-                              >
-                                <div
-                                  aria-controls="uuid5_listbox"
-                                  aria-expanded="false"
-                                  aria-invalid="false"
-                                  aria-label="Select a year"
-                                  aria-labelledby="uuid5_label uuid5_listbox_2010_label"
-                                  aria-readonly="false"
-                                  aria-required="false"
-                                  class="c14"
-                                  data-testid="year-select"
-                                  id="uuid5"
-                                  role="combobox"
-                                  tabindex="0"
+                                  Oct
+                                </span>
+                                <svg
+                                  aria-hidden="true"
+                                  class="lucide lucide-chevron-down c16"
+                                  data-testid="arrow"
+                                  fill="none"
+                                  focusable="false"
+                                  height="24"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  viewBox="0 0 24 24"
+                                  width="24"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <input
-                                    data-testid="input"
-                                    type="hidden"
-                                    value="2010"
+                                  <path
+                                    d="m6 9 6 6 6-6"
                                   />
-                                  <span
-                                    class="c15"
-                                  >
-                                    2010
-                                  </span>
-                                  <svg
-                                    aria-hidden="true"
-                                    class="lucide lucide-chevron-down c16"
-                                    data-testid="arrow"
-                                    fill="none"
-                                    focusable="false"
-                                    height="24"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="m6 9 6 6 6-6"
-                                    />
-                                  </svg>
-                                </div>
+                                </svg>
                               </div>
                             </div>
                           </div>
-                          <button
-                            aria-disabled="true"
-                            aria-label="Go to next month"
-                            class="c7 c8 c9"
-                            data-testid="month-next"
-                            type="button"
+                          <div
+                            class="c11"
                           >
-                            <svg
-                              aria-hidden="true"
-                              class="lucide lucide-chevron-right"
-                              fill="none"
-                              focusable="false"
-                              height="20"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <div
+                              class="c12 c13"
                             >
-                              <path
-                                d="m9 18 6-6-6-6"
-                              />
-                            </svg>
-                          </button>
+                              <div
+                                aria-controls="uuid5_listbox"
+                                aria-expanded="false"
+                                aria-invalid="false"
+                                aria-label="Select a year"
+                                aria-labelledby="uuid5_label uuid5_listbox_2010_label"
+                                aria-readonly="false"
+                                aria-required="false"
+                                class="c14"
+                                data-testid="year-select"
+                                id="uuid5"
+                                role="combobox"
+                                tabindex="0"
+                              >
+                                <input
+                                  data-testid="input"
+                                  type="hidden"
+                                  value="2010"
+                                />
+                                <span
+                                  class="c15"
+                                >
+                                  2010
+                                </span>
+                                <svg
+                                  aria-hidden="true"
+                                  class="lucide lucide-chevron-down c16"
+                                  data-testid="arrow"
+                                  fill="none"
+                                  focusable="false"
+                                  height="24"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  viewBox="0 0 24 24"
+                                  width="24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m6 9 6 6 6-6"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          aria-disabled="true"
+                          aria-label="Go to next month"
+                          class="c7 c8 c9"
+                          data-testid="month-next"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="lucide lucide-chevron-right"
+                            fill="none"
+                            focusable="false"
+                            height="20"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m9 18 6-6-6-6"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      role="table"
+                    >
+                      <div
+                        role="rowgroup"
+                      >
+                        <div
+                          class="react-datepicker__day-names"
+                          role="row"
+                        >
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Sunday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Su
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Monday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Mo
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Tuesday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Tu
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Wednesday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              We
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Thursday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Th
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Friday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Fr
+                            </span>
+                          </div>
+                          <div
+                            class="react-datepicker__day-name"
+                            role="columnheader"
+                          >
+                            <span
+                              class="react-datepicker__sr-only"
+                            >
+                              Saturday
+                            </span>
+                            <span
+                              aria-hidden="true"
+                            >
+                              Sa
+                            </span>
+                          </div>
                         </div>
                       </div>
                       <div
-                        role="table"
+                        aria-label="Month October, 2010"
+                        class="react-datepicker__month"
+                        role="rowgroup"
                       >
                         <div
-                          role="rowgroup"
+                          class="react-datepicker__week"
+                          role="row"
                         >
                           <div
-                            class="react-datepicker__day-names"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Sunday, September 26th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Sunday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Su
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Monday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Mo
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Tuesday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Tu
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Wednesday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                We
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Thursday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Th
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Friday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Fr
-                              </span>
-                            </div>
-                            <div
-                              class="react-datepicker__day-name"
-                              role="columnheader"
-                            >
-                              <span
-                                class="react-datepicker__sr-only"
-                              >
-                                Saturday
-                              </span>
-                              <span
-                                aria-hidden="true"
-                              >
-                                Sa
-                              </span>
-                            </div>
+                            26
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Monday, September 27th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            27
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Tuesday, September 28th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            28
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Wednesday, September 29th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            29
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Thursday, September 30th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            30
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Friday, October 1st, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--001"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            1
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Saturday, October 2nd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            2
                           </div>
                         </div>
                         <div
-                          aria-label="Month October, 2010"
-                          class="react-datepicker__month"
-                          role="rowgroup"
+                          class="react-datepicker__week"
+                          role="row"
                         >
                           <div
-                            class="react-datepicker__week"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Sunday, October 3rd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Sunday, September 26th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              26
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Monday, September 27th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              27
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Tuesday, September 28th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              28
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Wednesday, September 29th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              29
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Thursday, September 30th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              30
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Friday, October 1st, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--001"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              1
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Saturday, October 2nd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              2
-                            </div>
+                            3
                           </div>
                           <div
-                            class="react-datepicker__week"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Monday, October 4th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--004"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Sunday, October 3rd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              3
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Monday, October 4th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--004"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              4
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Tuesday, October 5th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--005"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              5
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Wednesday, October 6th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--006"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              6
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Thursday, October 7th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--007"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              7
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Friday, October 8th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--008"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              8
-                            </div>
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Saturday, October 9th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              9
-                            </div>
+                            4
                           </div>
                           <div
-                            class="react-datepicker__week react-datepicker__week--keyboard-selected"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Tuesday, October 5th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--005"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="false"
-                              aria-label="Choose Sunday, October 10th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="0"
-                              title=""
-                            >
-                              10
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Monday, October 11th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              11
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Tuesday, October 12th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              12
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Wednesday, October 13th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              13
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Thursday, October 14th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              14
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Friday, October 15th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              15
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Saturday, October 16th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              16
-                            </div>
+                            5
                           </div>
                           <div
-                            class="react-datepicker__week"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Wednesday, October 6th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--006"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Sunday, October 17th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              17
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Monday, October 18th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              18
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Tuesday, October 19th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              19
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Wednesday, October 20th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              20
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Thursday, October 21st, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              21
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Friday, October 22nd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              22
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Saturday, October 23rd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              23
-                            </div>
+                            6
                           </div>
                           <div
-                            class="react-datepicker__week"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Thursday, October 7th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--007"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Sunday, October 24th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              24
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Monday, October 25th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              25
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Tuesday, October 26th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              26
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Wednesday, October 27th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              27
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Thursday, October 28th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              28
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Friday, October 29th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              29
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Saturday, October 30th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              30
-                            </div>
+                            7
                           </div>
                           <div
-                            class="react-datepicker__week"
-                            role="row"
+                            aria-disabled="false"
+                            aria-label="Choose Friday, October 8th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--008"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
                           >
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Sunday, October 31st, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              31
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Monday, November 1st, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              1
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Tuesday, November 2nd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              2
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Wednesday, November 3rd, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              3
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Thursday, November 4th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              4
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Friday, November 5th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              5
-                            </div>
-                            <div
-                              aria-disabled="true"
-                              aria-label="Not available Saturday, November 6th, 2010"
-                              aria-selected="false"
-                              class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
-                              role="gridcell"
-                              tabindex="-1"
-                              title=""
-                            >
-                              6
-                            </div>
+                            8
+                          </div>
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Saturday, October 9th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            9
+                          </div>
+                        </div>
+                        <div
+                          class="react-datepicker__week react-datepicker__week--keyboard-selected"
+                          role="row"
+                        >
+                          <div
+                            aria-disabled="false"
+                            aria-label="Choose Sunday, October 10th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="0"
+                            title=""
+                          >
+                            10
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Monday, October 11th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            11
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Tuesday, October 12th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            12
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Wednesday, October 13th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            13
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Thursday, October 14th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            14
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Friday, October 15th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            15
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Saturday, October 16th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            16
+                          </div>
+                        </div>
+                        <div
+                          class="react-datepicker__week"
+                          role="row"
+                        >
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Sunday, October 17th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            17
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Monday, October 18th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            18
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Tuesday, October 19th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            19
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Wednesday, October 20th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            20
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Thursday, October 21st, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            21
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Friday, October 22nd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            22
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Saturday, October 23rd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            23
+                          </div>
+                        </div>
+                        <div
+                          class="react-datepicker__week"
+                          role="row"
+                        >
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Sunday, October 24th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            24
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Monday, October 25th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            25
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Tuesday, October 26th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            26
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Wednesday, October 27th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            27
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Thursday, October 28th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            28
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Friday, October 29th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            29
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Saturday, October 30th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            30
+                          </div>
+                        </div>
+                        <div
+                          class="react-datepicker__week"
+                          role="row"
+                        >
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Sunday, October 31st, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            31
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Monday, November 1st, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            1
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Tuesday, November 2nd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            2
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Wednesday, November 3rd, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            3
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Thursday, November 4th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            4
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Friday, November 5th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            5
+                          </div>
+                          <div
+                            aria-disabled="true"
+                            aria-label="Not available Saturday, November 6th, 2010"
+                            aria-selected="false"
+                            class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                            role="gridcell"
+                            tabindex="-1"
+                            title=""
+                          >
+                            6
                           </div>
                         </div>
                       </div>
@@ -6852,11 +6846,11 @@ label + .c3 {
                 </div>
               </div>
             </div>
-            <div
-              class="react-datepicker__tab-loop__end"
-              tabindex="0"
-            />
           </div>
+          <div
+            class="react-datepicker__tab-loop__end"
+            tabindex="0"
+          />
         </div>
         <button
           aria-label="Choose date"
