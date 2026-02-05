@@ -306,7 +306,7 @@ describe('Datepicker', () => {
 
             expect(callback).not.toHaveBeenCalled();
 
-            await user.type(input, '1', { skipClick: true });
+            await user.keyboard('1');
 
             expect(callback).toHaveBeenCalledOnce();
             expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
@@ -322,7 +322,7 @@ describe('Datepicker', () => {
 
             expect(callback).not.toHaveBeenCalled();
 
-            await user.type(input, '3', { skipClick: true });
+            await user.keyboard('3');
 
             expect(callback).toHaveBeenCalledOnce();
             expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
