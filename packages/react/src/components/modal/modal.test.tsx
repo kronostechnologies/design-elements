@@ -1,4 +1,4 @@
-import { RenderResult } from '@testing-library/react';
+import { RenderResult, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReactElement } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
@@ -41,6 +41,27 @@ describe('Modal', () => {
         await userEvent.click(icon);
 
         expect(callback).toHaveBeenCalled();
+    });
+
+    it('onAfterClose callback is called after modal is closed', async () => {
+        const onAfterClose = jest.fn();
+        const TestComponent = ({ isOpen }: { isOpen: boolean }): ReactElement => (
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={doNothing}
+                onAfterClose={onAfterClose}
+                ariaHideApp={false}
+            >
+                <p id="modal-description">Test Content</p>
+            </Modal>
+        );
+
+        const { rerender } = renderWithProviders(<TestComponent isOpen />, 'desktop');
+        rerender(<TestComponent isOpen={false} />);
+
+        await waitFor(() => {
+            expect(onAfterClose).toHaveBeenCalledTimes(1);
+        });
     });
 
     it('Matches snapshot (opened, desktop)', () => {

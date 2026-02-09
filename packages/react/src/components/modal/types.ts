@@ -53,6 +53,8 @@ export interface BaseModalProps {
     shouldCloseOnOverlayClick?: boolean;
     parentSelector?: () => HTMLElement;
     onRequestClose(): void;
+    /** Function that will run after the modal has closed */
+    onAfterClose?: () => void;
 }
 
 export interface ModalProps extends BaseModalProps {
