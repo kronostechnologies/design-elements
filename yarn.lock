@@ -1651,7 +1651,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.6.1"
     "@types/jest": "npm:30.0.0"
     "@types/lodash": "npm:4.17.23"
-    "@types/react": "npm:18.3.27"
+    "@types/react": "npm:18.3.28"
     "@types/react-dom": "npm:18.3.7"
     "@types/react-modal": "npm:3.16.3"
     "@types/styled-components": "npm:5.1.36"
@@ -1668,7 +1668,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
     expect: "npm:30.2.0"
-    i18next: "npm:25.8.0"
+    i18next: "npm:25.8.4"
     jest: "npm:30.2.0"
     jest-environment-jsdom: "npm:30.2.0"
     jest-extended: "npm:7.0.0"
@@ -1687,16 +1687,16 @@ __metadata:
     react-shadow: "npm:20.6.0"
     react-swipeable: "npm:7.0.2"
     sass: "npm:1.97.3"
-    sass-loader: "npm:16.0.6"
+    sass-loader: "npm:16.0.7"
     stream-browserify: "npm:3.0.0"
     style-loader: "npm:4.0.0"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.1.0"
+    stylelint: "npm:17.1.1"
     ts-jest: "npm:29.4.6"
     ts-loader: "npm:9.5.4"
     ts-mockito: "npm:2.6.1"
     typescript: "npm:5.9.3"
-    webpack: "npm:5.104.1"
+    webpack: "npm:5.105.0"
     webpack-cli: "npm:6.0.1"
     webpack-merge: "npm:6.0.1"
     yargs: "npm:18.0.0"
@@ -1737,8 +1737,8 @@ __metadata:
     "@storybook/react-webpack5": "npm:8.6.15"
     "@storybook/theming": "npm:8.6.14"
     "@stylistic/eslint-plugin": "npm:5.7.1"
-    "@types/node": "npm:24.10.9"
-    "@types/react": "npm:18.3.27"
+    "@types/node": "npm:24.10.12"
+    "@types/react": "npm:18.3.28"
     "@types/react-color": "npm:3.0.13"
     "@types/react-table": "npm:7.7.20"
     "@types/styled-components": "npm:5.1.36"
@@ -1756,21 +1756,21 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:25.8.0"
+    i18next: "npm:25.8.4"
     react: "npm:18.3.1"
     react-docgen-typescript: "npm:2.4.0"
     react-dom: "npm:18.3.1"
     react-is: "npm:18.3.1"
     react-router-dom: "npm:6.30.3"
     sass: "npm:1.97.3"
-    sass-loader: "npm:16.0.6"
+    sass-loader: "npm:16.0.7"
     storybook: "npm:8.6.15"
     style-loader: "npm:4.0.0"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.1.0"
+    stylelint: "npm:17.1.1"
     ts-loader: "npm:9.5.4"
     typescript: "npm:5.9.3"
-    webpack: "npm:5.104.1"
+    webpack: "npm:5.105.0"
     yargs: "npm:18.0.0"
   languageName: unknown
   linkType: soft
@@ -1900,9 +1900,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@equisoft/stylelint-config@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@equisoft/stylelint-config@npm:5.0.0"
+"@equisoft/stylelint-config@npm:5.0.1":
+  version: 5.0.1
+  resolution: "@equisoft/stylelint-config@npm:5.0.1"
   dependencies:
     "@stylistic/stylelint-config": "npm:^4.0.0"
     "@stylistic/stylelint-plugin": "npm:^5.0.0"
@@ -1918,7 +1918,7 @@ __metadata:
   peerDependenciesMeta:
     postcss-scss:
       optional: true
-  checksum: 10c0/fccd4d3854a86d635147bd4dd20ead933db82679ba7958101f4c1bbdc373fe4fd3afef83ebbf971049ff9ac7dde13840616ba976d2f153f4ef4e19e08a2ab902
+  checksum: 10c0/3f43076ff40764608d8eaacb06963625123b1ed9cdcaee4c26fd00c59435bd7df28d4a53e947d9efa67219e6d8c90b13798f571ea603df6a065e95cacd437222
   languageName: node
   linkType: hard
 
@@ -4739,12 +4739,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:24.10.9":
-  version: 24.10.9
-  resolution: "@types/node@npm:24.10.9"
+"@types/node@npm:24.10.12":
+  version: 24.10.12
+  resolution: "@types/node@npm:24.10.12"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/e9e436fcd2136bddb1bbe3271a89f4653910bcf6ee8047c4117f544c7905a106c039e2720ee48f28505ef2560e22fb9ead719f28bf5e075fdde0c1120e38e3b2
+  checksum: 10c0/fa39b88c8d82a2cec41544bee3426c4b78a13cc3c5ccf6fcb6c9528a68466ffcc73772833c612c7bb7e5fe1bc8e38002d1d543152e43b20b0600096cf6f210d1
   languageName: node
   linkType: hard
 
@@ -4822,12 +4822,12 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:^18":
-  version: 18.3.27
-  resolution: "@types/react@npm:18.3.27"
+  version: 18.3.28
+  resolution: "@types/react@npm:18.3.28"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.2.2"
-  checksum: 10c0/a761d2f58de03d0714806cc65d32bb3d73fb33a08dd030d255b47a295e5fff2a775cf1c20b786824d8deb6454eaccce9bc6998d9899c14fc04bbd1b0b0b72897
+  checksum: 10c0/683e19cd12b5c691215529af2e32b5ffbaccae3bf0ba93bfafa0e460e8dfee18423afed568be2b8eadf4b837c3749dd296a4f64e2d79f68fa66962c05f5af661
   languageName: node
   linkType: hard
 
@@ -7539,10 +7539,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:17.2.3":
-  version: 17.2.3
-  resolution: "dotenv@npm:17.2.3"
-  checksum: 10c0/c884403209f713214a1b64d4d1defa4934c2aa5b0002f5a670ae298a51e3c3ad3ba79dfee2f8df49f01ae74290fcd9acdb1ab1d09c7bfb42b539036108bb2ba0
+"dotenv@npm:17.2.4":
+  version: 17.2.4
+  resolution: "dotenv@npm:17.2.4"
+  checksum: 10c0/901aeee9cb40860291bdb452f6ca66aada78438331a026b0bd86fd41b94a79752dbc6a8971f4f26e6cafef11b4a27bb12ea99c0cbe7dfa61791f194727f799e5
   languageName: node
   linkType: hard
 
@@ -7633,13 +7633,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.17.4":
+"enhanced-resolve@npm:^5.0.0":
   version: 5.18.4
   resolution: "enhanced-resolve@npm:5.18.4"
   dependencies:
     graceful-fs: "npm:^4.2.4"
     tapable: "npm:^2.2.0"
   checksum: 10c0/8f6d42c8a0787a746c493e724c9de5d091cfe8e3f871f2464e2f78a6c55fa1a3aaba495334f923c8ea3ac23e1472491f79feef6fc0fb46a75169cb447ffbe2dc
+  languageName: node
+  linkType: hard
+
+"enhanced-resolve@npm:^5.19.0":
+  version: 5.19.0
+  resolution: "enhanced-resolve@npm:5.19.0"
+  dependencies:
+    graceful-fs: "npm:^4.2.4"
+    tapable: "npm:^2.3.0"
+  checksum: 10c0/966b1dffb82d5f6a4d6a86e904e812104a999066aa29f9223040aaa751e7c453b462a3f5ef91f8bd4408131ff6f7f90651dd1c804bdcb7944e2099a9c2e45ee2
   languageName: node
   linkType: hard
 
@@ -7700,19 +7710,19 @@ __metadata:
     "@equisoft/eslint-config-typescript-react": "npm:6.0.2"
     "@equisoft/jest-utils": "npm:1.8.1"
     "@equisoft/react-test-utils": "npm:1.8.1"
-    "@equisoft/stylelint-config": "npm:5.0.0"
+    "@equisoft/stylelint-config": "npm:5.0.1"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@stylistic/eslint-plugin": "npm:5.7.1"
-    "@types/node": "npm:24.10.9"
-    "@types/react": "npm:18.3.27"
+    "@types/node": "npm:24.10.12"
+    "@types/react": "npm:18.3.28"
     "@types/react-dom": "npm:18.3.7"
     "@types/react-table": "npm:7.7.20"
     "@types/styled-components": "npm:5.1.36"
     "@typescript-eslint/eslint-plugin": "npm:8.54.0"
     "@typescript-eslint/parser": "npm:8.54.0"
     babel-plugin-styled-components: "npm:2.1.4"
-    dotenv: "npm:17.2.3"
+    dotenv: "npm:17.2.4"
     eslint: "npm:8.57.1"
     eslint-import-resolver-node: "npm:0.3.9"
     eslint-import-resolver-typescript: "npm:4.4.4"
@@ -7721,7 +7731,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
     html-webpack-plugin: "npm:5.6.6"
-    i18next: "npm:25.8.0"
+    i18next: "npm:25.8.4"
     i18next-browser-languagedetector: "npm:8.2.0"
     postcss: "npm:8.5.6"
     postcss-styled-syntax: "npm:0.7.1"
@@ -7736,12 +7746,12 @@ __metadata:
     react-router-dom: "npm:6.30.3"
     serve-static: "npm:2.2.1"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.1.0"
+    stylelint: "npm:17.1.1"
     ts-loader: "npm:9.5.4"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.3"
     uuid: "npm:13.0.0"
-    webpack: "npm:5.104.1"
+    webpack: "npm:5.105.0"
     webpack-cli: "npm:6.0.1"
     webpack-dev-server: "npm:5.2.3"
     webpack-merge: "npm:6.0.1"
@@ -9589,9 +9599,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:25.8.0":
-  version: 25.8.0
-  resolution: "i18next@npm:25.8.0"
+"i18next@npm:25.8.4":
+  version: 25.8.4
+  resolution: "i18next@npm:25.8.4"
   dependencies:
     "@babel/runtime": "npm:^7.28.4"
   peerDependencies:
@@ -9599,7 +9609,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/20451fcaa86584b7395ee0375d2038270cce84e1541ec154bacfa32efbb420a2bafd1c71184242927f0eb8be6ec379ea132850f847b39b2eebcea6a49d746cac
+  checksum: 10c0/c2582bd97893b4417c06c5b5f8f3bb37cdf77fc5918d00ff3a0e79c856b94bf8bb52377754bb5d62ade88b457f8ac541471987d359c1adc67bcaeea18121a2b5
   languageName: node
   linkType: hard
 
@@ -13155,7 +13165,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@equisoft/stylelint-config": "npm:5.0.0"
+    "@equisoft/stylelint-config": "npm:5.0.1"
     "@types/eslint": "npm:^8.56.10"
     "@types/yargs": "npm:17.0.35"
     conventional-changelog-cli: "npm:5.0.0"
@@ -13163,7 +13173,7 @@ __metadata:
     eslint: "npm:8.57.1"
     postcss: "npm:8.5.6"
     postcss-styled-syntax: "npm:0.7.1"
-    stylelint: "npm:17.1.0"
+    stylelint: "npm:17.1.1"
     typescript: "npm:5.9.3"
     xmlbuilder: "npm:15.1.1"
     yargs: "npm:18.0.0"
@@ -13248,13 +13258,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:16.0.6":
-  version: 16.0.6
-  resolution: "sass-loader@npm:16.0.6"
+"sass-loader@npm:16.0.7":
+  version: 16.0.7
+  resolution: "sass-loader@npm:16.0.7"
   dependencies:
     neo-async: "npm:^2.6.2"
   peerDependencies:
-    "@rspack/core": 0.x || 1.x
+    "@rspack/core": 0.x || ^1.0.0 || ^2.0.0-0
     node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
     sass: ^1.3.0
     sass-embedded: "*"
@@ -13270,7 +13280,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 10c0/a66df6ecc01c80011a2bc9356d2b262753ad425382171d120ec5d4b5015d5131e919384a22cd148d48ecc1cb4fa598acaaa6308b260f8951f3558b5785816bb4
+  checksum: 10c0/eb352777cb3aff4bf0029c88e276a37ca10f415de0765eb1276f742455ebb152faffc2417770bf4a26da389d6115e27dd6c8e66c8b71396b21811f6e4d1b4eea
   languageName: node
   linkType: hard
 
@@ -14228,9 +14238,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:17.1.0":
-  version: 17.1.0
-  resolution: "stylelint@npm:17.1.0"
+"stylelint@npm:17.1.1":
+  version: 17.1.1
+  resolution: "stylelint@npm:17.1.1"
   dependencies:
     "@csstools/css-parser-algorithms": "npm:^4.0.0"
     "@csstools/css-syntax-patches-for-csstree": "npm:^1.0.25"
@@ -14272,7 +14282,7 @@ __metadata:
     write-file-atomic: "npm:^7.0.0"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10c0/c7f468122d1ccdebba6012963faa27320dcd48a9eeac389afed94a4adb4c9fce1d447eee996194523cb23ca81ff3fcc2a54ae94bcd3486dec205ede097917e25
+  checksum: 10c0/641d02449cfd8c3abd356cb38a9c7499a934015d7905fb78ef5af454f742527fb30c14e4084bebfb0b03ec0107659cc59020b0aebace2342604dade6b9a0a510
   languageName: node
   linkType: hard
 
@@ -15224,7 +15234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.4.4":
+"watchpack@npm:^2.5.1":
   version: 2.5.1
   resolution: "watchpack@npm:2.5.1"
   dependencies:
@@ -15399,8 +15409,8 @@ __metadata:
   linkType: hard
 
 "webpack@npm:^5":
-  version: 5.104.1
-  resolution: "webpack@npm:5.104.1"
+  version: 5.105.0
+  resolution: "webpack@npm:5.105.0"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.8"
@@ -15412,7 +15422,7 @@ __metadata:
     acorn-import-phases: "npm:^1.0.3"
     browserslist: "npm:^4.28.1"
     chrome-trace-event: "npm:^1.0.2"
-    enhanced-resolve: "npm:^5.17.4"
+    enhanced-resolve: "npm:^5.19.0"
     es-module-lexer: "npm:^2.0.0"
     eslint-scope: "npm:5.1.1"
     events: "npm:^3.2.0"
@@ -15425,14 +15435,14 @@ __metadata:
     schema-utils: "npm:^4.3.3"
     tapable: "npm:^2.3.0"
     terser-webpack-plugin: "npm:^5.3.16"
-    watchpack: "npm:^2.4.4"
+    watchpack: "npm:^2.5.1"
     webpack-sources: "npm:^3.3.3"
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/ea78c57f80bbd7684f4f1bb38a18408ab0ef4c5b962e25ad382c595d10b9e9701e077f5248a8cef5f127a55902698664c18837e64243bb972fbecf4e5d9aaab0
+  checksum: 10c0/4aea6b976485b5364e122f301c08f48efa84ddb2c0cb5d09f27445d1f2da0b9875cd889e41b58cac3ff05618a9c965be716df52586d151b5f52a7bbed7662174
   languageName: node
   linkType: hard
 
