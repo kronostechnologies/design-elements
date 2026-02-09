@@ -49,6 +49,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     title,
     titleIcon,
     onRequestClose,
+    onAfterClose,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
@@ -145,6 +146,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
             parentSelector={parentSelector}
             role={modalRoles[dialogType]}
             onAfterOpen={() => titleRef.current?.focus()}
+            onAfterClose={onAfterClose}
             onRequestClose={onRequestClose}
             isOpen={isOpen}
             appElement={appElement}
