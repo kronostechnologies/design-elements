@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Translations } from '../../i18n/translations';
 import { renderWithProviders } from '../../test-utils/renderer';
@@ -164,11 +164,15 @@ describe('PasswordCreationInput', () => {
             const user = userEvent.setup();
             const onChange = jest.fn();
 
-            renderWithProviders(<PasswordCreationInput onChange={onChange} liveValidation={false} />);
+            const { container } = renderWithProviders(
+                <PasswordCreationInput onChange={onChange} liveValidation={false} />,
+            );
             await user.type(screen.getByTestId('password-input'), 'a');
 
-            const validationRules = screen.getAllByRole('listitem');
-            expect(validationRules.every((rule) => !rule.querySelector('[aria-label*="error"]'))).toBe(true);
+            const validationRules = container.querySelectorAll('li');
+            const hasNoErrors = Array.from(validationRules)
+                .every((rule) => !rule.querySelector('[aria-label*="Error"]'));
+            expect(hasNoErrors).toBe(true);
         });
     });
 
@@ -178,7 +182,7 @@ describe('PasswordCreationInput', () => {
             const onChange = jest.fn();
             let triggerValidation: (() => void) | null = null;
 
-            renderWithProviders(
+            const { container } = renderWithProviders(
                 <PasswordCreationInput
                     onChange={onChange}
                     liveValidation={false}
@@ -191,8 +195,12 @@ describe('PasswordCreationInput', () => {
 
             triggerValidation!();
 
-            const validationRules = screen.getByRole('list').querySelectorAll('li');
-            expect(Array.from(validationRules).some((rule) => rule.querySelector('[aria-label*="error"]'))).toBe(true);
+            await waitFor(() => {
+                const validationRules = container.querySelectorAll('li');
+                const hasErrors = Array.from(validationRules)
+                    .some((rule) => rule.querySelector('[aria-label*="Error"]'));
+                expect(hasErrors).toBe(true);
+            });
         });
 
         it('freezes validation state after manual trigger', async () => {
@@ -200,7 +208,7 @@ describe('PasswordCreationInput', () => {
             const onChange = jest.fn();
             let triggerValidation: (() => void) | null = null;
 
-            renderWithProviders(
+            const { container } = renderWithProviders(
                 <PasswordCreationInput
                     onChange={onChange}
                     liveValidation={false}
@@ -211,18 +219,21 @@ describe('PasswordCreationInput', () => {
             );
             await user.type(screen.getByTestId('password-input'), 'short');
             triggerValidation!();
-            const validationRulesBefore = screen.getByRole('list').querySelectorAll('li');
-            const hasErrorsBefore = Array.from(validationRulesBefore).some(
-                (rule) => rule.querySelector('[aria-label*="error"]'),
-            );
+
+            await waitFor(() => {
+                const validationRulesBefore = container.querySelectorAll('li');
+                const hasErrorsBefore = Array.from(validationRulesBefore).some(
+                    (rule) => rule.querySelector('[aria-label*="Error"]'),
+                );
+                expect(hasErrorsBefore).toBe(true);
+            });
 
             await user.type(screen.getByTestId('password-input'), 'VeryLongPassword123');
 
-            const validationRulesAfter = screen.getByRole('list').querySelectorAll('li');
+            const validationRulesAfter = container.querySelectorAll('li');
             const hasErrorsAfter = Array.from(validationRulesAfter).some(
-                (rule) => rule.querySelector('[aria-label*="error"]'),
+                (rule) => rule.querySelector('[aria-label*="Error"]'),
             );
-            expect(hasErrorsBefore).toBe(true);
             expect(hasErrorsAfter).toBe(true);
         });
     });
