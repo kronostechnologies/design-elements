@@ -109,7 +109,7 @@ export const MoneyInput: FC<MoneyInputProps> = ({
         }
     }, [currency, locale, maskedValue, onChange, precision]);
 
-    if (value && !hasFocus && displayValue !== safeFormatCurrency(value, precision, locale, currency)) {
+    if (value !== null && !hasFocus && displayValue !== safeFormatCurrency(value, precision, locale, currency)) {
         updateFormattedValue(value.toString());
     }
 
