@@ -117,10 +117,27 @@ describe('MoneyInput Component', () => {
     });
 
     it('should allow to be empty', () => {
-        const { container } = renderWithProviders(<MoneyInput precision={0} value={0} />);
+        const { container } = renderWithProviders(<MoneyInput precision={0} />);
         const input = getInputElement(container);
+        simulateValueChange(input, '100');
+        expect(normalizeSpaces(input.value)).toEqual('100 $');
 
         simulateValueChange(input, '');
+
+        expect(normalizeSpaces(input.value)).toEqual('');
+    });
+
+    it('should format controlled value set to 0', () => {
+        const { container } = renderWithProviders(<MoneyInput precision={2} value={0} />);
+        const input = getInputElement(container);
+
+        expect(normalizeSpaces(input.value)).toEqual('0,00 $');
+    });
+
+    it('should be empty when no value', () => {
+        const { container } = renderWithProviders(<MoneyInput precision={2} value={null} />);
+        const input = getInputElement(container);
+
         expect(normalizeSpaces(input.value)).toEqual('');
     });
 
