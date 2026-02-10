@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Translations } from '../../i18n/translations';
 import { renderWithProviders } from '../../test-utils/renderer';
@@ -176,65 +176,83 @@ describe('PasswordCreationInput', () => {
         });
     });
 
-    describe('validateField', () => {
-        it('triggers validation when validateField callback is called', async () => {
-            const user = userEvent.setup();
+    describe('failedValidationConditions', () => {
+        it('shows validation when failedValidationConditions is provided', () => {
             const onChange = jest.fn();
-            let triggerValidation: (() => void) | null = null;
 
             const { container } = renderWithProviders(
                 <PasswordCreationInput
                     onChange={onChange}
                     liveValidation={false}
-                    validateField={(trigger) => {
-                        triggerValidation = trigger;
-                    }}
+                    failedValidationConditions={['Minimum 8 characters']}
                 />,
             );
-            await user.type(screen.getByTestId('password-input'), 'a');
 
-            triggerValidation!();
-
-            await waitFor(() => {
-                const validationRules = container.querySelectorAll('li');
-                const hasErrors = Array.from(validationRules)
-                    .some((rule) => rule.querySelector('[aria-label*="Error"]'));
-                expect(hasErrors).toBe(true);
-            });
+            const validationRules = container.querySelectorAll('li');
+            const hasErrors = Array.from(validationRules)
+                .some((rule) => rule.querySelector('[aria-label*="Error"]'));
+            expect(hasErrors).toBe(true);
         });
 
-        it('freezes validation state after manual trigger', async () => {
-            const user = userEvent.setup();
+        it('shows correct validation state based on failedValidationConditions', () => {
             const onChange = jest.fn();
-            let triggerValidation: (() => void) | null = null;
 
             const { container } = renderWithProviders(
                 <PasswordCreationInput
                     onChange={onChange}
                     liveValidation={false}
-                    validateField={(trigger) => {
-                        triggerValidation = trigger;
-                    }}
+                    failedValidationConditions={['Minimum 8 characters']}
+                />,
+            );
+
+            const validationRules = container.querySelectorAll('li');
+            const rulesArray = Array.from(validationRules);
+
+            const minLengthRule = rulesArray.find((rule) => rule.textContent?.includes('Minimum 8 characters'));
+            expect(minLengthRule?.querySelector('[aria-label*="Error"]')).toBeTruthy();
+
+            const upperCaseRule = rulesArray.find((rule) => rule.textContent?.includes('upper case'));
+            expect(upperCaseRule?.querySelector('[aria-label*="Error"]')).toBeFalsy();
+        });
+
+        it('does not show validation when failedValidationConditions is undefined', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+
+            const { container } = renderWithProviders(
+                <PasswordCreationInput
+                    onChange={onChange}
+                    liveValidation={false}
+                    failedValidationConditions={undefined}
                 />,
             );
             await user.type(screen.getByTestId('password-input'), 'short');
-            triggerValidation!();
 
-            await waitFor(() => {
-                const validationRulesBefore = container.querySelectorAll('li');
-                const hasErrorsBefore = Array.from(validationRulesBefore).some(
-                    (rule) => rule.querySelector('[aria-label*="Error"]'),
-                );
-                expect(hasErrorsBefore).toBe(true);
-            });
+            const validationRules = container.querySelectorAll('li');
+            const hasNoErrors = Array.from(validationRules)
+                .every((rule) => !rule.querySelector('[aria-label*="Error"]'));
+            expect(hasNoErrors).toBe(true);
+        });
 
-            await user.type(screen.getByTestId('password-input'), 'VeryLongPassword123');
+        it('shows all rules as valid when failedValidationConditions is empty array', () => {
+            const onChange = jest.fn();
 
-            const validationRulesAfter = container.querySelectorAll('li');
-            const hasErrorsAfter = Array.from(validationRulesAfter).some(
-                (rule) => rule.querySelector('[aria-label*="Error"]'),
+            const { container } = renderWithProviders(
+                <PasswordCreationInput
+                    onChange={onChange}
+                    liveValidation={false}
+                    failedValidationConditions={[]}
+                />,
             );
-            expect(hasErrorsAfter).toBe(true);
+
+            const validationRules = container.querySelectorAll('li');
+            const hasNoErrors = Array.from(validationRules)
+                .every((rule) => !rule.querySelector('[aria-label*="Error"]'));
+            expect(hasNoErrors).toBe(true);
+
+            const allHaveCheckmarks = Array.from(validationRules)
+                .every((rule) => rule.querySelector('[aria-hidden="true"]'));
+            expect(allHaveCheckmarks).toBe(true);
         });
     });
 });

@@ -1,4 +1,4 @@
-import { ChangeEvent, type FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, type FC, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -42,11 +42,7 @@ export interface PasswordCreationInputProps {
     onChange(newPassword: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>): void;
     validations?: ValidationCondition[];
     liveValidation?: boolean;
-    validateField?: (triggerValidation: () => void) => void;
-}
-
-function isPasswordValid(conditions: ValidationCondition[], value: string): boolean {
-    return conditions.every((condition) => condition.isValid(value));
+    failedValidationConditions?: string[];
 }
 
 export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
@@ -55,41 +51,34 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
     onChange,
     validations,
     liveValidation = true,
-    validateField,
+    failedValidationConditions,
     ...otherProps
 }) => {
     const { t } = useTranslation('password-creation-input');
     const { isMobile } = useDeviceContext();
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
-    const [manuallyTriggered, setManuallyTriggered] = useState(false);
-    const [frozenPassword, setFrozenPassword] = useState('');
     const isEmpty = password.length === 0;
     const strength = getPasswordStrength(password);
     const conditions = validations ?? getDefaultValidationConditions(t);
     const passwordStrengthId = useMemo(() => uuid(), []);
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const hintId = useMemo(() => uuid(), []);
-    const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const shouldShowValidation = liveValidation || manuallyTriggered;
+    const shouldShowValidation = liveValidation || failedValidationConditions !== undefined;
 
-    let passwordToValidate = password;
-    if (!liveValidation && manuallyTriggered) {
-        passwordToValidate = frozenPassword;
-    }
-
-    const triggerValidation = useCallback(() => {
-        setManuallyTriggered(true);
-        setFrozenPassword(password);
-    }, [password]);
-
-    useEffect(() => {
-        if (validateField) {
-            validateField(triggerValidation);
+    const getConditionValidity = (condition: ValidationCondition): boolean => {
+        if (liveValidation) {
+            return condition.isValid(password);
         }
-    }, [validateField, triggerValidation]);
+        if (failedValidationConditions) {
+            return !failedValidationConditions.includes(condition.label);
+        }
+        return true;
+    };
+
+    const isValid = conditions.every((condition) => condition.isValid(password));
 
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
@@ -98,7 +87,7 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         const newPassword = event.target.value;
         setPassword(newPassword);
-        const newPasswordIsValid = isPasswordValid(conditions, newPassword);
+        const newPasswordIsValid = conditions.every((condition) => condition.isValid(newPassword));
         onChange(newPassword, newPasswordIsValid, event);
     };
 
@@ -116,10 +105,10 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
                         <PasswordRule
                             key={condition.label}
                             label={condition.label}
-                            isValid={condition.isValid(passwordToValidate)}
-                            isEmpty={passwordToValidate.length === 0}
+                            isValid={getConditionValidity(condition)}
+                            isEmpty={isEmpty}
                             showValidation={shouldShowValidation}
-                            isManuallyTriggered={manuallyTriggered}
+                            isManuallyTriggered={!liveValidation && failedValidationConditions !== undefined}
                         />
                     ))}
                 </StyledUl>
