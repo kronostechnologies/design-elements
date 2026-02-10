@@ -53,17 +53,23 @@ interface PasswordConditionProps {
     label: string;
     isEmpty: boolean;
     isValid: boolean;
+    showValidation?: boolean;
+    isManuallyTriggered?: boolean;
 }
 
 export const PasswordRule: FC<PasswordConditionProps> = ({
     label,
     isValid,
     isEmpty,
+    showValidation = true,
+    isManuallyTriggered = false,
 }) => {
     const { t } = useTranslation('common');
 
+    const shouldShowState = showValidation && (!isEmpty || isManuallyTriggered);
+
     let icon = null;
-    if (!isEmpty) {
+    if (shouldShowState) {
         if (isValid) {
             icon = (
                 <StyledIcon
@@ -87,7 +93,7 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
     }
 
     return (
-        <Container isEmpty={isEmpty} isSuccess={isValid}>
+        <Container isEmpty={!shouldShowState} isSuccess={isValid}>
             {icon}
             <StyledSpan>{label}</StyledSpan>
         </Container>

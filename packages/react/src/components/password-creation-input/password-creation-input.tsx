@@ -1,4 +1,4 @@
-import { ChangeEvent, type FC, useMemo, useState } from 'react';
+import { ChangeEvent, type FC, useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
@@ -41,6 +41,8 @@ export interface PasswordCreationInputProps {
     id?: string;
     onChange(newPassword: string, isValid: boolean, event: ChangeEvent<HTMLInputElement>): void;
     validations?: ValidationCondition[];
+    liveValidation?: boolean;
+    validateField?: (triggerValidation: () => void) => void;
 }
 
 function isPasswordValid(conditions: ValidationCondition[], value: string): boolean {
@@ -52,12 +54,16 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
     name,
     onChange,
     validations,
+    liveValidation = true,
+    validateField,
     ...otherProps
 }) => {
     const { t } = useTranslation('password-creation-input');
     const { isMobile } = useDeviceContext();
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
+    const [manuallyTriggered, setManuallyTriggered] = useState(false);
+    const [frozenPassword, setFrozenPassword] = useState('');
     const isEmpty = password.length === 0;
     const strength = getPasswordStrength(password);
     const conditions = validations ?? getDefaultValidationConditions(t);
@@ -66,6 +72,24 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
     const hintId = useMemo(() => uuid(), []);
     const isValid = isPasswordValid(conditions, password);
     const dataAttributes = useDataAttributes(otherProps);
+
+    const shouldShowValidation = liveValidation || manuallyTriggered;
+
+    let passwordToValidate = password;
+    if (!liveValidation && manuallyTriggered) {
+        passwordToValidate = frozenPassword;
+    }
+
+    const triggerValidation = useCallback(() => {
+        setManuallyTriggered(true);
+        setFrozenPassword(password);
+    }, [password]);
+
+    useEffect(() => {
+        if (validateField) {
+            validateField(triggerValidation);
+        }
+    }, [validateField, triggerValidation]);
 
     const handleShowPassword = (): void => {
         setShowPassword(!showPassword);
@@ -92,8 +116,10 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
                         <PasswordRule
                             key={condition.label}
                             label={condition.label}
-                            isValid={condition.isValid(password)}
-                            isEmpty={isEmpty}
+                            isValid={condition.isValid(passwordToValidate)}
+                            isEmpty={passwordToValidate.length === 0}
+                            showValidation={shouldShowValidation}
+                            isManuallyTriggered={manuallyTriggered}
                         />
                     ))}
                 </StyledUl>
@@ -129,7 +155,9 @@ export const PasswordCreationInput: FC<PasswordCreationInputProps> = ({
                     </Tooltip>
                 </ShowPasswordButton>
             </PasswordInputContainer>
-            <PasswordStrengthContainer strength={strength} id={passwordStrengthId} />
+            {liveValidation && (
+                <PasswordStrengthContainer strength={strength} id={passwordStrengthId} />
+            )}
         </FieldContainer>
     );
 };

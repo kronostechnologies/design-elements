@@ -150,4 +150,80 @@ describe('PasswordCreationInput', () => {
 
         expect(screen.getByTestId('password-strength')).toHaveTextContent(expectedLabel);
     });
+
+    describe('liveValidation', () => {
+        it('hides strength bar when liveValidation is false', () => {
+            const onChange = jest.fn();
+
+            renderWithProviders(<PasswordCreationInput onChange={onChange} liveValidation={false} />);
+
+            expect(screen.queryByTestId('password-strength')).not.toBeInTheDocument();
+        });
+
+        it('does not show validation on keystroke when liveValidation is false', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+
+            renderWithProviders(<PasswordCreationInput onChange={onChange} liveValidation={false} />);
+            await user.type(screen.getByTestId('password-input'), 'a');
+
+            const validationRules = screen.getAllByRole('listitem');
+            expect(validationRules.every((rule) => !rule.querySelector('[aria-label*="error"]'))).toBe(true);
+        });
+    });
+
+    describe('validateField', () => {
+        it('triggers validation when validateField callback is called', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            let triggerValidation: (() => void) | null = null;
+
+            renderWithProviders(
+                <PasswordCreationInput
+                    onChange={onChange}
+                    liveValidation={false}
+                    validateField={(trigger) => {
+                        triggerValidation = trigger;
+                    }}
+                />,
+            );
+            await user.type(screen.getByTestId('password-input'), 'a');
+
+            triggerValidation!();
+
+            const validationRules = screen.getByRole('list').querySelectorAll('li');
+            expect(Array.from(validationRules).some((rule) => rule.querySelector('[aria-label*="error"]'))).toBe(true);
+        });
+
+        it('freezes validation state after manual trigger', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            let triggerValidation: (() => void) | null = null;
+
+            renderWithProviders(
+                <PasswordCreationInput
+                    onChange={onChange}
+                    liveValidation={false}
+                    validateField={(trigger) => {
+                        triggerValidation = trigger;
+                    }}
+                />,
+            );
+            await user.type(screen.getByTestId('password-input'), 'short');
+            triggerValidation!();
+            const validationRulesBefore = screen.getByRole('list').querySelectorAll('li');
+            const hasErrorsBefore = Array.from(validationRulesBefore).some(
+                (rule) => rule.querySelector('[aria-label*="error"]'),
+            );
+
+            await user.type(screen.getByTestId('password-input'), 'VeryLongPassword123');
+
+            const validationRulesAfter = screen.getByRole('list').querySelectorAll('li');
+            const hasErrorsAfter = Array.from(validationRulesAfter).some(
+                (rule) => rule.querySelector('[aria-label*="error"]'),
+            );
+            expect(hasErrorsBefore).toBe(true);
+            expect(hasErrorsAfter).toBe(true);
+        });
+    });
 });
