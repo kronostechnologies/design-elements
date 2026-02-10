@@ -63,6 +63,7 @@ export const WithControlledValue: Story = {
 
         return (
             <>
+                <Button label="0" buttonType="primary" onClick={() => setValue(0)} />
                 <Button label="+1" buttonType="primary" onClick={() => setValue((value || 0) + 1)} />
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <MoneyInput {...args} value={value} onChange={handleChange} />

@@ -81,6 +81,15 @@ describe('MoneyInput Component', () => {
         expect(normalizeSpaces(input.value)).toEqual('55 555,50 $');
     });
 
+    it('should format controlled value set to 0', () => {
+        const { rerender } = renderWithProviders(<MoneyInput value={12345.25} />);
+
+        rerender(<MoneyInput value={0} />);
+
+        const input = screen.getByRole('textbox') as HTMLInputElement;
+        expect(normalizeSpaces(input.value)).toEqual('0,00 $');
+    });
+
     it('should format to provided currency', () => {
         renderWithProviders(<MoneyInput value={12345.25} currency="USD" />);
         const input = screen.getByRole('textbox') as HTMLInputElement;
@@ -125,10 +134,23 @@ describe('MoneyInput Component', () => {
         expect(normalizeSpaces(input.value)).toEqual('0 $');
     });
 
+    it('should be empty when no value', async () => {
+        renderWithProviders(<MoneyInput precision={0} value={null} />);
+        const input = screen.getByRole('textbox') as HTMLInputElement;
+
+        expect(normalizeSpaces(input.value)).toEqual('');
+    });
+
     it('should allow to be empty', async () => {
-        renderWithProviders(<MoneyInput precision={0} value={0} />);
+        renderWithProviders(<MoneyInput precision={0} />);
         const input = screen.getByRole('textbox') as HTMLInputElement;
         const user = userEvent.setup();
+
+        await user.clear(input);
+        await user.type(input, '100');
+        await user.tab();
+
+        expect(normalizeSpaces(input.value)).toEqual('100 $');
 
         await user.clear(input);
         await user.tab();
