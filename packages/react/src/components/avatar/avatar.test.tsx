@@ -118,7 +118,7 @@ describe('Avatar', () => {
     });
 
     it('renders custom icon when iconName is provided', () => {
-        const { container } = renderWithProviders(<Avatar iconName="user" />);
+        const { container } = renderWithProviders(<Avatar iconName="organization" />);
 
         expect(container.firstChild).toMatchSnapshot();
     });

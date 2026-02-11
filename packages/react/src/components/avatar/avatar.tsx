@@ -66,26 +66,25 @@ const StyledImg = styled.img<SizeStyleProps>`
     ${getSpecificSizeStyle}
 `;
 
-interface IconAvatar {
-    iconName: IconName;
-}
-
-interface ImageAvatar {
-    imgSrc: string;
-}
-
-interface UsernameAvatar {
-    username?: string;
-}
-
-export type AvatarProps = {
+interface BaseAvatarProps {
     bgColor?: string;
     className?: string;
-    iconName?: IconName;
-    imgSrc?: string;
     size?: AvatarSize;
+}
+
+interface IconAvatar extends BaseAvatarProps {
+    iconName: IconName;
+    imgSrc?: never;
+    username?: never;
+}
+
+interface UserAvatar extends BaseAvatarProps {
+    iconName?: never;
+    imgSrc?: string;
     username?: string;
-} & (IconAvatar | ImageAvatar | UsernameAvatar);
+}
+
+export type AvatarProps = IconAvatar | UserAvatar;
 
 export const Avatar: FC<AvatarProps> = ({
     bgColor,
