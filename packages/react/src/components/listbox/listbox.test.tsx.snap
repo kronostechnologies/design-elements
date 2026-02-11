@@ -68,7 +68,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   border: 1px solid #000000;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -93,16 +93,16 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   width: var(--size-1x);
 }
 
-.c10:hover {
+.c11:hover {
   background-color: #DBDEE1;
   border: 1px solid #000000;
 }
 
-.c10 > .c5 {
+.c11 > .c5 {
   display: none;
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -127,12 +127,12 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   width: var(--size-1x);
 }
 
-.c12:hover {
+.c13:hover {
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2;
 }
 
-.c12 > .c5 {
+.c13 > .c5 {
   display: none;
 }
 
@@ -152,7 +152,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -168,7 +167,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   border: 1px solid #006296;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -184,18 +183,17 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c9:hover {
+.c10:hover {
   background-color: #DBDEE1;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -211,18 +209,32 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c11:hover {
+.c12:hover {
   background-color: transparent;
 }
 
 .c7 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -232,10 +244,11 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   color: #60666E;
   display: block;
   font-size: 0.75rem;
+  line-height: 2rem;
 }
 
 <div
@@ -253,7 +266,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
     >
       <li
         aria-selected="true"
-        class="c2 react-datepicker-ignore-onclickoutside"
+        class="c2 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionA"
         id="uuid1_optionA"
         role="option"
@@ -281,26 +294,30 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           </svg>
         </span>
         <span
-          class="c7 react-datepicker-ignore-onclickoutside"
+          class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option A
           <span
-            class="c8 react-datepicker-ignore-onclickoutside"
+            class="c8"
           >
-            The first one
+            Option A
+            <span
+              class="c9 react-datepicker-ignore-onclickoutside"
+            >
+              The first one
+            </span>
           </span>
         </span>
       </li>
       <li
         aria-selected="false"
-        class="c9 react-datepicker-ignore-onclickoutside"
+        class="c10 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionB"
         id="uuid1_optionB"
         role="option"
       >
         <span
           aria-hidden="true"
-          class="c3 c10"
+          class="c3 c11"
         >
           <svg
             class="lucide lucide-check c5 c6"
@@ -321,14 +338,18 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           </svg>
         </span>
         <span
-          class="c7 react-datepicker-ignore-onclickoutside"
+          class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option B
+          <span
+            class="c8"
+          >
+            Option B
+          </span>
         </span>
       </li>
       <li
         aria-selected="true"
-        class="c2 react-datepicker-ignore-onclickoutside"
+        class="c2 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionC"
         id="uuid1_optionC"
         role="option"
@@ -356,22 +377,26 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           </svg>
         </span>
         <span
-          class="c7 react-datepicker-ignore-onclickoutside"
+          class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option C
+          <span
+            class="c8"
+          >
+            Option C
+          </span>
         </span>
       </li>
       <li
         aria-disabled="true"
         aria-selected="false"
-        class="c11 react-datepicker-ignore-onclickoutside"
+        class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionD"
         id="uuid1_optionD"
         role="option"
       >
         <span
           aria-hidden="true"
-          class="c3 c12"
+          class="c3 c13"
           disabled=""
         >
           <svg
@@ -393,21 +418,25 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           </svg>
         </span>
         <span
-          class="c7 react-datepicker-ignore-onclickoutside"
+          class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option D
+          <span
+            class="c8"
+          >
+            Option D
+          </span>
         </span>
       </li>
       <li
         aria-selected="false"
-        class="c9 react-datepicker-ignore-onclickoutside"
+        class="c10 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionE"
         id="uuid1_optionE"
         role="option"
       >
         <span
           aria-hidden="true"
-          class="c3 c10"
+          class="c3 c11"
         >
           <svg
             class="lucide lucide-check c5 c6"
@@ -428,9 +457,13 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           </svg>
         </span>
         <span
-          class="c7 react-datepicker-ignore-onclickoutside"
+          class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option E
+          <span
+            class="c8"
+          >
+            Option E
+          </span>
         </span>
       </li>
     </ul>
@@ -486,7 +519,6 @@ exports[`Listbox matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -497,7 +529,7 @@ exports[`Listbox matches the snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -513,18 +545,17 @@ exports[`Listbox matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #DBDEE1;
 }
 
-.c5::before {
+.c6::before {
   background-color: #006296;
   content: '';
   display: block;
@@ -534,7 +565,7 @@ exports[`Listbox matches the snapshot 1`] = `
   width: 4px;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -550,18 +581,32 @@ exports[`Listbox matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   position: relative;
-  padding-right: var(--spacing-1x);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: transparent;
 }
 
 .c3 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -571,10 +616,11 @@ exports[`Listbox matches the snapshot 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   color: #60666E;
   display: block;
   font-size: 0.75rem;
+  line-height: 2rem;
 }
 
 <div
@@ -591,73 +637,93 @@ exports[`Listbox matches the snapshot 1`] = `
     >
       <li
         aria-selected="false"
-        class="c2 react-datepicker-ignore-onclickoutside"
+        class="c2 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionA"
         id="uuid1_optionA"
         role="option"
       >
         <span
-          class="c3 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option A
           <span
-            class="c4 react-datepicker-ignore-onclickoutside"
+            class="c4"
           >
-            The first one
+            Option A
+            <span
+              class="c5 react-datepicker-ignore-onclickoutside"
+            >
+              The first one
+            </span>
           </span>
         </span>
       </li>
       <li
         aria-selected="true"
-        class="c5 react-datepicker-ignore-onclickoutside"
+        class="c6 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionB"
         id="uuid1_optionB"
         role="option"
       >
         <span
-          class="c3 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option B
+          <span
+            class="c4"
+          >
+            Option B
+          </span>
         </span>
       </li>
       <li
         aria-selected="false"
-        class="c2 react-datepicker-ignore-onclickoutside"
+        class="c2 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionC"
         id="uuid1_optionC"
         role="option"
       >
         <span
-          class="c3 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option C
+          <span
+            class="c4"
+          >
+            Option C
+          </span>
         </span>
       </li>
       <li
         aria-disabled="true"
         aria-selected="false"
-        class="c6 react-datepicker-ignore-onclickoutside"
+        class="c7 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionD"
         id="uuid1_optionD"
         role="option"
       >
         <span
-          class="c3 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option D
+          <span
+            class="c4"
+          >
+            Option D
+          </span>
         </span>
       </li>
       <li
         aria-selected="false"
-        class="c2 react-datepicker-ignore-onclickoutside"
+        class="c2 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
         data-testid="listitem-optionE"
         id="uuid1_optionE"
         role="option"
       >
         <span
-          class="c3 react-datepicker-ignore-onclickoutside"
+          class="c3 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
         >
-          Option E
+          <span
+            class="c4"
+          >
+            Option E
+          </span>
         </span>
       </li>
     </ul>

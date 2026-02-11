@@ -4,7 +4,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider';
-import { Icon } from '../icon';
+import { Icon, type IconName } from '../icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
@@ -66,19 +66,33 @@ const StyledImg = styled.img<SizeStyleProps>`
     ${getSpecificSizeStyle}
 `;
 
-export interface AvatarProps {
-    className?: string;
+interface IconAvatar {
+    iconName: IconName;
+}
+
+interface ImageAvatar {
+    imgSrc: string;
+}
+
+interface UsernameAvatar {
     username?: string;
+}
+
+export type AvatarProps = {
     bgColor?: string;
+    className?: string;
+    iconName?: IconName;
     imgSrc?: string;
     size?: AvatarSize;
-}
+    username?: string;
+} & (IconAvatar | ImageAvatar | UsernameAvatar);
 
 export const Avatar: FC<AvatarProps> = ({
     bgColor,
     className,
-    username,
+    iconName,
     imgSrc,
+    username,
     size = 'xsmall',
 }) => {
     const { t } = useTranslation('avatar');
@@ -93,9 +107,11 @@ export const Avatar: FC<AvatarProps> = ({
     const ariaLabel = useMemo(() => t('ariaLabel', { username }), [username, t]);
     const hasInitials = initials.length <= 2 && initials.length > 0;
 
-    return imgSrc ? (
-        <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />
-    ) : (
+    if (imgSrc) {
+        return <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />;
+    }
+
+    return (
         <StyledDiv
             role="img"
             aria-label={ariaLabel}
@@ -104,9 +120,13 @@ export const Avatar: FC<AvatarProps> = ({
             size={size}
             isMobile={isMobile}
         >
-            <span data-testid="avatar-initials">
-                {hasInitials ? initials : <Icon name="user" size={isMobile ? '24' : '16'} />}
-            </span>
+            {iconName ? (
+                <Icon name={iconName} />
+            ) : (
+                <span data-testid="avatar-initials">
+                    {hasInitials ? initials : <Icon name="user" size={isMobile ? '24' : '16'} />}
+                </span>
+            )}
         </StyledDiv>
     );
 };
