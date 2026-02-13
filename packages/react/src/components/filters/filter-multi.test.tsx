@@ -306,6 +306,33 @@ describe('FilterMulti', () => {
             searchBox = await screen.findByRole('searchbox');
             expect(searchBox).toHaveValue('');
         });
+
+        it('filters both previously selected (top) and unselected (bottom) options', async () => {
+            const user = userEvent.setup();
+            const fruitOptions: FilterOption[] = [
+                { value: 'apple', label: 'Apple' },
+                { value: 'apricot', label: 'Apricot' },
+                { value: 'banana', label: 'Banana' },
+                ...moreThanTenOptions,
+            ];
+
+            renderWithProviders(<FilterMulti label="Fruits" options={fruitOptions} value={['apple']} />);
+
+            await openDropdown(user);
+
+            const initialListItems = screen.getAllByRole('option');
+            expect(initialListItems[0]).toHaveTextContent('Apple');
+            expect(initialListItems[0]).toHaveAttribute('aria-selected', 'true');
+            expect(screen.getByText('Apricot')).toBeInTheDocument();
+            expect(screen.getByText('Banana')).toBeInTheDocument();
+
+            const searchBox = await screen.findByRole('searchbox');
+            await user.type(searchBox, 'Ap');
+
+            expect(screen.getByText('Apple')).toBeInTheDocument();
+            expect(screen.getByText('Apricot')).toBeInTheDocument();
+            expect(screen.queryByText('Banana')).not.toBeInTheDocument();
+        });
     });
 
     describe('clear filters', () => {

@@ -19,7 +19,6 @@ import { unique } from '../../utils/array';
 import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
 import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
-import { truthy } from '../../utils/predicate';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
@@ -52,6 +51,10 @@ export interface ListboxProps {
      */
     defaultValue?: Value;
     /**
+     * When provided, options in this array are displayed at2 the top of the listbox
+     */
+    featuredOptions?: ListboxOption[];
+    /**
      * Set to false to prevent the listbox from receiving focus
      * @default true
      */
@@ -74,10 +77,6 @@ export interface ListboxProps {
      * Sets the selected value (controlled input)
      */
     value?: Value;
-    /**
-     * When provided, options with values included in this array are displayed at the top of the listbox
-     */
-    valueOnFirstDisplay?: Value;
 
     /**
      * Callback function, invoked when an option is selected
@@ -244,13 +243,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     onKeyDown,
     onOptionClick,
     value,
-    valueOnFirstDisplay,
+    featuredOptions = [],
 }, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
+    const allOptions: ListboxOption[] = [...(featuredOptions || []), ...(options || [])];
 
     const {
         selectedElement: focusedOption,
@@ -260,14 +260,15 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
         selectFirst: focusFirstOption,
         selectLast: focusLastOption,
     } = useListCursor({
-        elements: options,
-        initialElement: findOptionsByValue(options, focusedValue)[0],
+        elements: allOptions,
+        initialElement: findOptionsByValue(allOptions, focusedValue)[0],
         predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(options, value ?? defaultValue),
+        () => findOptionsByValue(allOptions, value ?? defaultValue),
     );
+    console.info(selectedOptions);
 
     const focusFirstSelectedOrFirst = useCallback(() => {
         const firstSelected: ListboxOption = selectedOptions[0];
@@ -309,7 +310,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     }
 
     function toggleAllOptions(): void {
-        const enabledOptions = options.filter(optionPredicate);
+        const enabledOptions = allOptions.filter(optionPredicate);
         const newSelectedOptions = selectedOptions.length === enabledOptions.length ? [] : enabledOptions;
 
         setSelectedOptions(newSelectedOptions);
@@ -359,7 +360,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        setSelectedOptions(findOptionsByValue(options, value));
+        setSelectedOptions(findOptionsByValue(allOptions, value));
         setPreviousValue(value);
     }
 
@@ -499,16 +500,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
 
     function renderOptions(): ReactElement {
-        const top: ListboxOption[] = (Array.isArray(valueOnFirstDisplay) ? valueOnFirstDisplay : [])
-            .map((topOptionValue) => options.find((option) => option.value === topOptionValue))
-            .filter(truthy);
-        const bottom: ListboxOption[] = options.map((option) => {
-            if (Array.isArray(valueOnFirstDisplay) && valueOnFirstDisplay?.includes(option.value) === true) {
-                return null;
-            }
-            return option;
-        }).filter(truthy);
-
         function renderOption(option: ListboxOption): ReactElement {
             return (
                 <ListItem
@@ -562,9 +553,9 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
         return (
             <>
-                {top.map((option) => renderOption(option))}
-                {top.length > 0 && bottom.length > 0 && (<Divider />)}
-                {bottom.map((option) => renderOption(option))}
+                {featuredOptions.map(renderOption)}
+                {featuredOptions.length > 0 && options.length > 0 && (<Divider />)}
+                {options.map(renderOption)}
             </>
         );
     }

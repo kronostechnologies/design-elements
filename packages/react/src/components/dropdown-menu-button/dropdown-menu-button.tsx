@@ -6,6 +6,7 @@ import {
     RefObject,
     useCallback,
     useEffect,
+    useLayoutEffect,
     useMemo,
     useRef,
     useState,
@@ -147,7 +148,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
         }
     }, [buttonRef, isOpen, navMenuRef]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // This needs to be in a useEffect to avoid calling the callback during render
         if (previousOpen.current !== isOpen) {
             previousOpen.current = isOpen;

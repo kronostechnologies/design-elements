@@ -533,8 +533,10 @@ describe('Listbox', () => {
     });
 
     describe('rendering options', () => {
-        it('should display values in valueOnFirstDisplay at the top', () => {
-            renderWithProviders(<Listbox options={options} valueOnFirstDisplay={['optionC', 'optionE']} />);
+        it('should display featuredOptions at the top', () => {
+            renderWithProviders(
+                <Listbox options={[options[0], options[1], options[3]]} featuredOptions={[options[2], options[4]]} />,
+            );
 
             const listOptions = screen.getAllByRole('option');
             expect(listOptions[0]).toHaveTextContent('Option C');
@@ -545,7 +547,9 @@ describe('Listbox', () => {
         });
 
         it('should display a separator between top and bottom items', () => {
-            renderWithProviders(<Listbox options={options} valueOnFirstDisplay={['optionC']} />);
+            renderWithProviders(
+                <Listbox options={[...options.slice(0, 2), ...options.slice(3)]} featuredOptions={[options[2]]} />,
+            );
 
             const list = screen.getByTestId('listbox-list');
             expect(list.children[0]).toHaveTextContent('Option C');
@@ -553,38 +557,27 @@ describe('Listbox', () => {
             expect(list.children[2]).toHaveTextContent('Option A');
         });
 
-        it('does not display a divider when valueOnFirstDisplay is empty', async () => {
-            renderWithProviders(<Listbox options={options} valueOnFirstDisplay={[]} />);
+        it('does not display a divider when featuredOptions is empty', async () => {
+            renderWithProviders(<Listbox options={options} featuredOptions={[]} />);
 
             expect(screen.queryByRole('separator')).not.toBeInTheDocument();
         });
 
-        it('does not display a divider when valueOnFirstDisplay contains all values', () => {
-            const allValues = options.map((o) => o.value);
-            renderWithProviders(<Listbox options={options} valueOnFirstDisplay={allValues} />);
+        it('does not display a divider when all options are featuredOptions', () => {
+            renderWithProviders(<Listbox options={[]} featuredOptions={options} />);
 
             expect(screen.queryByRole('separator')).not.toBeInTheDocument();
         });
 
-        it('displays options on top in the same order as valueOnFirstDisplay', () => {
+        it('displays options on top in the same order as featuredOptions', () => {
             renderWithProviders(
-                <Listbox options={options} valueOnFirstDisplay={['optionC', 'optionB']} />,
+                <Listbox options={[options[0], ...options.slice(3)]} featuredOptions={[options[2], options[1]]} />,
             );
 
             const listOptions = screen.getAllByRole('option');
             expect(listOptions[0]).toHaveTextContent('Option C');
             expect(listOptions[1]).toHaveTextContent('Option B');
             expect(listOptions[2]).toHaveTextContent('Option A');
-        });
-
-        it('ignores values in valueOnFirstDisplay that are not in options', () => {
-            renderWithProviders(
-                <Listbox options={options} valueOnFirstDisplay={['optionZ', 'optionC']} />,
-            );
-
-            const listOptions = screen.getAllByRole('option');
-            expect(listOptions[0]).toHaveTextContent('Option C');
-            expect(listOptions[1]).toHaveTextContent('Option A');
         });
     });
 

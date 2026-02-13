@@ -8,7 +8,7 @@ import { Badge } from '../badge';
 import { Button } from '../buttons';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
 import { type ListboxRef } from '../listbox/listbox';
-import { disableNonSelectedOptions, getDefaultOptions } from '../listbox/utils';
+import { disableNonSelectedOptions, findOptionByValue, getDefaultOptions } from '../listbox/utils';
 import type { FilterOption } from './filter-option';
 import { FilterDropdownButton, PortalFilterDropdownMenuStyle } from './internal/filter-dropdown-button';
 import { ListContainer } from './internal/list-container';
@@ -67,7 +67,7 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         return providedOptions;
     }, [maxSelectableOptions, providedOptions, selectedOptions]);
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
-    const [valueOnOpen, setValueOnOpen] = useState<Value | undefined>(value);
+    const [selectedOptionsOnOpen, setSelectedOptionsOnOpen] = useState<FilterOption[] | undefined>(selectedOptions);
     const previousValuePropRef = useRef<Value | undefined>(value);
     const selectedFiltersCount = selectedOptions?.length ?? 0;
     const searchRef = useRef<HTMLInputElement>(null);
@@ -123,9 +123,10 @@ export const FilterMulti: FC<FilterMultiProps> = ({
 
     const handleMenuVisibilityChanged = useCallback((isOpen: boolean): void => {
         if (isOpen) {
+            const newSelectedOptions: FilterOption[] = options.filter((option) => value?.includes(option.value));
             setPreviousValue(value);
-            setValueOnOpen(value);
-            setSelectedOptions(options.filter((option) => value?.includes(option.value)));
+            setSelectedOptionsOnOpen(newSelectedOptions);
+            setSelectedOptions(newSelectedOptions);
             if (searchEnabled) {
                 searchRef.current?.focus({ preventScroll: true });
             } else {
@@ -146,6 +147,24 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         () => selectedOptions?.map((option) => option.value) ?? undefined,
         [selectedOptions],
     );
+
+    const [filteredUnselectedOptionsOnOpen, filteredSelectedOptionsOnOpen] = useMemo(() => {
+        if (!selectedOptionsOnOpen) {
+            return [filteredOptions, []];
+        }
+
+        const unselected: FilterOption[] = [];
+        const selected: FilterOption[] = [];
+        filteredOptions.forEach((option) => {
+            if (findOptionByValue(selectedOptionsOnOpen, option.value)) {
+                selected.push(option);
+            } else {
+                unselected.push(option);
+            }
+        });
+
+        return [unselected, selected];
+    }, [filteredOptions, selectedOptionsOnOpen]);
 
     const filterLabel = (
         <>
@@ -169,8 +188,8 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                             multiselect
                             onChange={handleItemsSelectionChange}
                             onSearchChange={handleSearchChange}
-                            options={filteredOptions}
-                            valueOnFirstDisplay={valueOnOpen}
+                            options={filteredUnselectedOptionsOnOpen}
+                            featuredOptions={filteredSelectedOptionsOnOpen}
                             searchRef={searchRef}
                             selectedFiltersCount={selectedFiltersCount}
                             value={selectedOptionsValues}
