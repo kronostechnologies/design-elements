@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { FilterMulti } from './filter-multi';
@@ -29,6 +29,8 @@ async function getClearButton(): Promise<HTMLElement> {
     return screen.findByText('Clear filter');
 }
 
+const countDataAttribute: string = 'data-selected-count';
+
 describe('FilterMulti', () => {
     describe('rendering', () => {
         it('renders button with label', () => {
@@ -37,22 +39,16 @@ describe('FilterMulti', () => {
             expect(container).toMatchSnapshot();
         });
 
-        it('shows \'All\' when no selected values', () => {
-            renderWithProviders(<FilterMulti label="Status" options={options} />);
-
-            expect(getDropdownButton()).toHaveTextContent('All');
-        });
-
         it('shows option label when single selected value', () => {
             renderWithProviders(<FilterMulti label="Status" options={options} value={['option1']} />);
 
-            expect(getDropdownButton()).toHaveTextContent('Option 1');
+            expect(getDropdownButton()).toHaveTextContent('Status1');
         });
 
         it('shows additional count aside first value label when multiple values selected', () => {
             renderWithProviders(<FilterMulti label="Status" options={options} value={['option1', 'option2']} />);
 
-            expect(getDropdownButton()).toHaveTextContent('Option 1 (+1)');
+            expect(getDropdownButton()).toHaveTextContent('Status2');
         });
 
         it('applies active styling when filters are applied', () => {
@@ -67,16 +63,16 @@ describe('FilterMulti', () => {
             const { rerender } = renderWithProviders(
                 <FilterMulti label="Status" options={options} value={['option1']} />,
             );
-            expect(getDropdownButton()).toHaveTextContent('Option 1');
+            expect(getDropdownButton()).toHaveAttribute(countDataAttribute, '1');
 
             rerender(<FilterMulti label="Status" options={options} value={['option2']} />);
-            expect(getDropdownButton()).toHaveTextContent('Option 2');
+            expect(getDropdownButton()).toHaveAttribute(countDataAttribute, '1');
 
             rerender(<FilterMulti label="Status" options={options} value={['option2', 'option3']} />);
-            expect(getDropdownButton()).toHaveTextContent('Option 2 (+1)');
+            expect(getDropdownButton()).toHaveAttribute(countDataAttribute, '2');
 
             rerender(<FilterMulti label="Status" options={options} value={undefined} />);
-            expect(getDropdownButton()).toHaveTextContent('All');
+            expect(getDropdownButton()).toHaveAttribute(countDataAttribute, '0');
         });
     });
 
@@ -87,9 +83,7 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
         });
 
         it('displays all options in dropdown', async () => {
@@ -98,11 +92,9 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getAllByRole('option')).toHaveLength(options.length);
-                options.forEach((option) => {
-                    expect(screen.getByText(option.label)).toBeInTheDocument();
-                });
+            expect(screen.getAllByRole('option')).toHaveLength(options.length);
+            options.forEach((option) => {
+                expect(screen.getByText(option.label)).toBeInTheDocument();
             });
         });
 
@@ -112,9 +104,7 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getByRole('searchbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('searchbox')).toBeInTheDocument();
         });
 
         it('does not display search box when 10 or fewer options', async () => {
@@ -125,9 +115,7 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
         });
 
         it('closes dropdown when clicking outside', async () => {
@@ -137,14 +125,80 @@ describe('FilterMulti', () => {
             );
 
             await openDropdown(user);
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
 
             await user.click(baseElement);
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
+        it('renders options in order', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterMulti label="Status" options={options} />);
+
+            await openDropdown(user);
+
+            const listItems = screen.getAllByRole('option');
+            expect(listItems[0]).toHaveTextContent('Option 1');
+            expect(listItems[1]).toHaveTextContent('Option 2');
+            expect(listItems[2]).toHaveTextContent('Option 3');
+        });
+
+        it('moves selected options to the top of the list when opening', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterMulti label="Status" options={options} value={['option3']} />);
+
+            await openDropdown(user);
+
+            const listItems = screen.getAllByRole('option');
+            expect(listItems[0]).toHaveTextContent('Option 3');
+        });
+
+        it('does not move unselected options to the top of the list when already open', async () => {
+            const user = userEvent.setup();
+            const { rerender } = renderWithProviders(
+                <FilterMulti label="Status" options={options} value={['option3']} />,
+            );
+
+            await openDropdown(user);
+
+            rerender(<FilterMulti label="Status" options={options} value={[]} />);
+
+            const listItems = screen.getAllByRole('option');
+            expect(listItems[0]).toHaveTextContent('Option 3');
+        });
+
+        it('does not move newly selected options to the top of the list when already open', async () => {
+            const user = userEvent.setup();
+            const { rerender } = renderWithProviders(
+                <FilterMulti label="Status" options={options} value={[]} />,
+            );
+
+            await openDropdown(user);
+
+            rerender(<FilterMulti label="Status" options={options} value={['option3']} />);
+
+            const listItems = screen.getAllByRole('option');
+            expect(listItems[0]).toHaveTextContent('Option 1');
+        });
+    });
+
+    describe('focus management', () => {
+        it('focuses search input when dropdown opens and search is enabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterMulti label="Status" options={moreThanTenOptions} />);
+
+            await openDropdown(user);
+
+            expect(screen.getByRole('searchbox')).toHaveFocus();
+        });
+
+        it('focuses listbox when dropdown opens and search is disabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterMulti label="Status" options={options} />);
+
+            await openDropdown(user);
+
+            expect(screen.getByRole('listbox')).toHaveFocus();
         });
     });
 
@@ -186,12 +240,10 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                const option1 = screen.getByText('Option 1').closest('[role="option"]');
-                const option2 = screen.getByText('Option 2').closest('[role="option"]');
-                expect(option1).toHaveAttribute('aria-selected', 'true');
-                expect(option2).toHaveAttribute('aria-selected', 'true');
-            });
+            const option1 = screen.getByText('Option 1').closest('[role="option"]');
+            const option2 = screen.getByText('Option 2').closest('[role="option"]');
+            expect(option1).toHaveAttribute('aria-selected', 'true');
+            expect(option2).toHaveAttribute('aria-selected', 'true');
         });
     });
 
@@ -205,12 +257,10 @@ describe('FilterMulti', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, '1');
 
-            await waitFor(() => {
-                expect(screen.getByText('Option 1')).toBeInTheDocument();
-                expect(screen.getByText('Option 10')).toBeInTheDocument();
-                expect(screen.getByText('Option 11')).toBeInTheDocument();
-                expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
-            });
+            expect(screen.getByText('Option 1')).toBeInTheDocument();
+            expect(screen.getByText('Option 10')).toBeInTheDocument();
+            expect(screen.getByText('Option 11')).toBeInTheDocument();
+            expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
         });
 
         it('shows no results message when search matches nothing', async () => {
@@ -224,9 +274,7 @@ describe('FilterMulti', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, 'nonexistent');
 
-            await waitFor(() => {
-                expect(screen.getByText('No matching results')).toBeInTheDocument();
-            });
+            expect(screen.getByText('No matching results')).toBeInTheDocument();
         });
 
         it('search is case insensitive', async () => {
@@ -240,9 +288,7 @@ describe('FilterMulti', () => {
             const searchBox = await screen.findByRole('searchbox');
             await user.type(searchBox, 'option 1');
 
-            await waitFor(() => {
-                expect(screen.getByText('Option 1')).toBeInTheDocument();
-            });
+            expect(screen.getByText('Option 1')).toBeInTheDocument();
         });
 
         it('clears search when dropdown is closed', async () => {
@@ -259,6 +305,33 @@ describe('FilterMulti', () => {
 
             searchBox = await screen.findByRole('searchbox');
             expect(searchBox).toHaveValue('');
+        });
+
+        it('filters both previously selected (top) and unselected (bottom) options', async () => {
+            const user = userEvent.setup();
+            const fruitOptions: FilterOption[] = [
+                { value: 'apple', label: 'Apple' },
+                { value: 'apricot', label: 'Apricot' },
+                { value: 'banana', label: 'Banana' },
+                ...moreThanTenOptions,
+            ];
+
+            renderWithProviders(<FilterMulti label="Fruits" options={fruitOptions} value={['apple']} />);
+
+            await openDropdown(user);
+
+            const initialListItems = screen.getAllByRole('option');
+            expect(initialListItems[0]).toHaveTextContent('Apple');
+            expect(initialListItems[0]).toHaveAttribute('aria-selected', 'true');
+            expect(screen.getByText('Apricot')).toBeInTheDocument();
+            expect(screen.getByText('Banana')).toBeInTheDocument();
+
+            const searchBox = await screen.findByRole('searchbox');
+            await user.type(searchBox, 'Ap');
+
+            expect(screen.getByText('Apple')).toBeInTheDocument();
+            expect(screen.getByText('Apricot')).toBeInTheDocument();
+            expect(screen.queryByText('Banana')).not.toBeInTheDocument();
         });
     });
 
@@ -333,10 +406,8 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.getByTestId('apply-button')).toBeInTheDocument();
-                expect(screen.getByTestId('cancel-button')).toBeInTheDocument();
-            });
+            expect(screen.getByTestId('apply-button')).toBeInTheDocument();
+            expect(screen.getByTestId('cancel-button')).toBeInTheDocument();
         });
 
         it('calls onChange when Apply button is clicked', async () => {
@@ -361,9 +432,7 @@ describe('FilterMulti', () => {
             await user.click(screen.getByText('Option 1'));
             await user.click(screen.getByTestId('apply-button'));
 
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
 
         it('closes Dropdown without calling onChange when Cancel button is clicked', async () => {
@@ -380,9 +449,7 @@ describe('FilterMulti', () => {
 
             expect(onChange).not.toHaveBeenCalled();
 
-            await waitFor(() => {
-                expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
 
         it('does not show Apply and Cancel buttons in non-async mode', async () => {
@@ -391,10 +458,8 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                expect(screen.queryByTestId('apply-button')).not.toBeInTheDocument();
-                expect(screen.queryByTestId('cancel-button')).not.toBeInTheDocument();
-            });
+            expect(screen.queryByTestId('apply-button')).not.toBeInTheDocument();
+            expect(screen.queryByTestId('cancel-button')).not.toBeInTheDocument();
         });
 
         it('clear filters calls onChange only after apply', async () => {
@@ -420,6 +485,26 @@ describe('FilterMulti', () => {
 
             expect(onChange).toHaveBeenCalledWith([]);
         });
+
+        it('does not call onChange when Apply is clicked if selection did not change', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(
+                <FilterMulti
+                    label="Status"
+                    options={options}
+                    value={['option1']}
+                    onChange={onChange}
+                    async
+                />,
+            );
+
+            await openDropdown(user);
+
+            await user.click(screen.getByTestId('apply-button'));
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
     });
 
     describe('maxSelectableOptions', () => {
@@ -439,11 +524,9 @@ describe('FilterMulti', () => {
             await openDropdown(user);
             await user.click(screen.getByText('Option 3'));
 
-            await waitFor(() => {
-                ['Option 3', 'Option 4', 'Option 5'].forEach((label) => {
-                    const option = screen.getByText(label).closest('[role="option"]');
-                    expect(option).toHaveAttribute('aria-disabled', 'true');
-                });
+            ['Option 3', 'Option 4', 'Option 5'].forEach((label) => {
+                const option = screen.getByText(label).closest('[role="option"]');
+                expect(option).toHaveAttribute('aria-disabled', 'true');
             });
             expect(onChange).not.toHaveBeenCalled();
         });
@@ -484,17 +567,13 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(async () => {
-                const option3Before = screen.getByText('Option 3').closest('[role="option"]');
-                expect(option3Before).toHaveAttribute('aria-disabled', 'true');
-            });
+            const option3Before = screen.getByText('Option 3').closest('[role="option"]');
+            expect(option3Before).toHaveAttribute('aria-disabled', 'true');
 
             await user.click(screen.getByText('Option 1'));
 
-            await waitFor(() => {
-                const option3After = screen.getByText('Option 3').closest('[role="option"]');
-                expect(option3After).not.toHaveAttribute('aria-disabled', 'true');
-            });
+            const option3After = screen.getByText('Option 3').closest('[role="option"]');
+            expect(option3After).not.toHaveAttribute('aria-disabled', 'true');
         });
     });
 
@@ -510,10 +589,8 @@ describe('FilterMulti', () => {
 
             await openDropdown(user);
 
-            await waitFor(() => {
-                const disabledOption = screen.getByText('Disabled Option').closest('[role="option"]');
-                expect(disabledOption).toHaveAttribute('aria-disabled', 'true');
-            });
+            const disabledOption = screen.getByText('Disabled Option').closest('[role="option"]');
+            expect(disabledOption).toHaveAttribute('aria-disabled', 'true');
         });
 
         it('does not select disabled options when clicked', async () => {
@@ -545,9 +622,19 @@ describe('FilterMulti', () => {
             getDropdownButton().focus();
             await user.keyboard(key);
 
-            await waitFor(() => {
-                expect(screen.getByRole('listbox')).toBeInTheDocument();
-            });
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
+        });
+
+        it('closes dropdown when Escape key is pressed', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterMulti label="Status" options={options} />);
+
+            await openDropdown(user);
+            expect(screen.getByRole('listbox')).toBeInTheDocument();
+
+            await user.keyboard('[Escape]');
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
         });
     });
 });

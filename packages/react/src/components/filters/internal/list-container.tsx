@@ -35,6 +35,7 @@ const StyledListbox = styled(Listbox)`
 `;
 
 export interface ListContainerProps {
+    featuredOptions?: FilterOption[] | null | undefined;
     listboxRef: Ref<ListboxRef>;
     multiselect?: boolean;
     options: FilterOption[];
@@ -44,7 +45,7 @@ export interface ListContainerProps {
 
     onChange?(options: FilterOption[]): void;
 
-    onClearFilters(): void;
+    onClearFilters?(): void;
 
     onOptionClick?(option: FilterOption): void;
 
@@ -52,9 +53,10 @@ export interface ListContainerProps {
 }
 
 export const ListContainer = forwardRef(({
-    onClearFilters,
+    featuredOptions,
     listboxRef,
     multiselect = false,
+    onClearFilters,
     onChange,
     onOptionClick,
     onSearchChange,
@@ -68,12 +70,14 @@ export const ListContainer = forwardRef(({
             <SearchBox ref={searchRef} onChange={onSearchChange} />
         )}
 
-        <ClearFilters
-            selectedFiltersCount={selectedFiltersCount}
-            onClearFilters={onClearFilters}
-        />
+        {onClearFilters && (
+            <ClearFilters
+                selectedFiltersCount={selectedFiltersCount}
+                onClearFilters={onClearFilters}
+            />
+        )}
 
-        <Divider />
+        {(onSearchChange || onClearFilters) && <Divider />}
 
         <StyledListbox
             ref={listboxRef}
@@ -84,6 +88,7 @@ export const ListContainer = forwardRef(({
             onChange={onChange}
             onOptionClick={onOptionClick}
             options={options}
+            featuredOptions={featuredOptions ?? undefined}
             value={value ?? undefined}
         />
     </Container>

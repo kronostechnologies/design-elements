@@ -199,6 +199,32 @@ describe('Listbox', () => {
             expect(screen.getByTestId('listitem-optionD')).toHaveAttribute('aria-selected', 'false');
         });
 
+        it('Enter selects the focused option', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Listbox options={options} defaultValue="optionB" focusedValue="optionB" />);
+
+            const listbox = screen.getByRole('listbox');
+            act(() => listbox.focus());
+            await user.keyboard('{ArrowDown}');
+            await user.keyboard('{Enter}');
+
+            expect(screen.getByTestId('listitem-optionC')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        it('keyboard navigation is disabled when keyboardNav is disabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
+                <Listbox options={options} defaultValue="optionB" focusedValue="optionB" keyboardNav={false} />,
+            );
+
+            const listbox = screen.getByRole('listbox');
+            act(() => listbox.focus());
+            await user.keyboard('{ArrowDown}');
+
+            const optionB = screen.getByTestId('listitem-optionB');
+            expect(listbox).toHaveAttribute('aria-activedescendant', optionB.id);
+        });
+
         describe('with multiselect', () => {
             it('Space toggles the selection of the focused option', async () => {
                 const user = userEvent.setup();
@@ -245,6 +271,7 @@ describe('Listbox', () => {
 
                 await user.keyboard('{Control>}a{/Control}');
 
+                expect(enabledOptionValues).toHaveLength(4);
                 enabledOptionValues.forEach((value) => {
                     expect(screen.getByTestId(`listitem-${value}`)).toHaveAttribute('aria-selected', 'false');
                 });
@@ -477,6 +504,105 @@ describe('Listbox', () => {
 
             expect(callback).toHaveBeenCalledWith(options[1]);
         });
+    });
+
+    describe('onOptionClick callback', () => {
+        it('calls callback when an option is clicked', async () => {
+            const user = userEvent.setup();
+            const callback = jest.fn();
+            renderWithProviders(<Listbox options={options} onOptionClick={callback} />);
+
+            await user.click(screen.getByTestId('listitem-optionB'));
+
+            expect(callback).toHaveBeenCalledWith(options[1]);
+        });
+    });
+
+    describe('onKeyDown callback', () => {
+        it('calls callback when a key is pressed', async () => {
+            const user = userEvent.setup();
+            const callback = jest.fn();
+            renderWithProviders(<Listbox options={options} onKeyDown={callback} />);
+
+            const listbox = screen.getByRole('listbox');
+            act(() => listbox.focus());
+            await user.keyboard('a');
+
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('rendering options', () => {
+        it('should display featuredOptions at the top', () => {
+            renderWithProviders(
+                <Listbox options={[options[0], options[1], options[3]]} featuredOptions={[options[2], options[4]]} />,
+            );
+
+            const listOptions = screen.getAllByRole('option');
+            expect(listOptions[0]).toHaveTextContent('Option C');
+            expect(listOptions[1]).toHaveTextContent('Option E');
+            expect(listOptions[2]).toHaveTextContent('Option A');
+            expect(listOptions[3]).toHaveTextContent('Option B');
+            expect(listOptions[4]).toHaveTextContent('Option D');
+        });
+
+        it('should display a separator between top and bottom items', () => {
+            renderWithProviders(
+                <Listbox options={[...options.slice(0, 2), ...options.slice(3)]} featuredOptions={[options[2]]} />,
+            );
+
+            const list = screen.getByTestId('listbox-list');
+            expect(list.children[0]).toHaveTextContent('Option C');
+            expect(list.children[1]).toHaveRole('separator');
+            expect(list.children[2]).toHaveTextContent('Option A');
+        });
+
+        it('does not display a divider when featuredOptions is empty', async () => {
+            renderWithProviders(<Listbox options={options} featuredOptions={[]} />);
+
+            expect(screen.queryByRole('separator')).not.toBeInTheDocument();
+        });
+
+        it('does not display a divider when all options are featuredOptions', () => {
+            renderWithProviders(<Listbox options={[]} featuredOptions={options} />);
+
+            expect(screen.queryByRole('separator')).not.toBeInTheDocument();
+        });
+
+        it('displays options on top in the same order as featuredOptions', () => {
+            renderWithProviders(
+                <Listbox options={[options[0], ...options.slice(3)]} featuredOptions={[options[2], options[1]]} />,
+            );
+
+            const listOptions = screen.getAllByRole('option');
+            expect(listOptions[0]).toHaveTextContent('Option C');
+            expect(listOptions[1]).toHaveTextContent('Option B');
+            expect(listOptions[2]).toHaveTextContent('Option A');
+        });
+    });
+
+    it('sets aria-labelledby attribute', () => {
+        renderWithProviders(<Listbox options={options} ariaLabelledBy="label-id" />);
+
+        expect(screen.getByRole('listbox')).toHaveAttribute('aria-labelledby', 'label-id');
+    });
+
+    it('uses provided id', () => {
+        renderWithProviders(<Listbox options={options} id="my-listbox" />);
+
+        expect(screen.getByRole('listbox')).toHaveAttribute('id', 'my-listbox');
+    });
+
+    it('applies custom className', () => {
+        renderWithProviders(<Listbox options={options} className="custom-class" />);
+
+        expect(screen.getByTestId('listbox-container')).toHaveClass('custom-class');
+    });
+
+    it('sets tabIndex to -1 when focusable is false', () => {
+        renderWithProviders(<Listbox options={options} focusable={false} />);
+
+        expect(screen.getByRole('listbox')).toHaveAttribute('tabindex', '-1');
     });
 
     it('matches the snapshot', () => {

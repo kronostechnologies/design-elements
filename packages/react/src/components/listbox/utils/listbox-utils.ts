@@ -54,6 +54,13 @@ export function disableNonSelectedOptions<T extends { disabled?: boolean, value:
     });
 }
 
+export function findOptionByValue<T extends HasValue>(
+    options: T[],
+    searchValue: string | undefined,
+): T | undefined {
+    return options.find((option) => option.value === searchValue);
+}
+
 export function findOptionsByValue<T extends HasValue>(
     options: T[],
     searchValue?: Value | undefined,

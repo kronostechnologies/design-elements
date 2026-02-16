@@ -55,7 +55,7 @@ exports[`Badge matches the snapshot 1`] = `
 
 <div>
   <span
-    class="c0"
+    class="c0 eds-Badge-root"
   >
     <span
       class="c1"
@@ -64,7 +64,7 @@ exports[`Badge matches the snapshot 1`] = `
     </span>
   </span>
   <span
-    class="c0"
+    class="c0 eds-Badge-root"
   >
     <span
       class="c1 c2"

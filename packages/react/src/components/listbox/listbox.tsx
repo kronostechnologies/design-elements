@@ -2,6 +2,7 @@ import {
     forwardRef,
     ForwardRefExoticComponent,
     KeyboardEvent,
+    type ReactElement,
     Ref,
     RefAttributes,
     type RefObject,
@@ -23,6 +24,13 @@ import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
 import { findOptionsByValue } from './utils';
 
+export const Divider = styled.li.attrs({ role: 'separator' })`
+    background-color: ${({ theme }) => theme.component['listbox-divider-color']};
+    display: flex;
+    height: 1px;
+    margin: var(--spacing-half) var(--spacing-2x);
+`;
+
 type Value = string | string[];
 
 export interface ListboxOption {
@@ -42,6 +50,10 @@ export interface ListboxProps {
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
     defaultValue?: Value;
+    /**
+     * When provided, options in this array are displayed at the top of the listbox
+     */
+    featuredOptions?: ListboxOption[];
     /**
      * Set to false to prevent the listbox from receiving focus
      * @default true
@@ -231,12 +243,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     onKeyDown,
     onOptionClick,
     value,
+    featuredOptions = [],
 }, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
+    const allOptions: ListboxOption[] = [...(featuredOptions || []), ...(options || [])];
 
     const {
         selectedElement: focusedOption,
@@ -246,13 +260,13 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
         selectFirst: focusFirstOption,
         selectLast: focusLastOption,
     } = useListCursor({
-        elements: options,
-        initialElement: findOptionsByValue(options, focusedValue)[0],
+        elements: allOptions,
+        initialElement: findOptionsByValue(allOptions, focusedValue)[0],
         predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(options, value ?? defaultValue),
+        () => findOptionsByValue(allOptions, value ?? defaultValue),
     );
 
     const focusFirstSelectedOrFirst = useCallback(() => {
@@ -295,7 +309,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     }
 
     function toggleAllOptions(): void {
-        const enabledOptions = options.filter(optionPredicate);
+        const enabledOptions = allOptions.filter(optionPredicate);
         const newSelectedOptions = selectedOptions.length === enabledOptions.length ? [] : enabledOptions;
 
         setSelectedOptions(newSelectedOptions);
@@ -345,7 +359,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        setSelectedOptions(findOptionsByValue(options, value));
+        setSelectedOptions(findOptionsByValue(allOptions, value));
         setPreviousValue(value);
     }
 
@@ -484,6 +498,67 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
     const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
 
+    function renderOptions(): ReactElement {
+        function renderOption(option: ListboxOption): ReactElement {
+            return (
+                <ListItem
+                    aria-disabled={option.disabled}
+                    aria-selected={isOptionSelected(option) ? 'true' : 'false'}
+                    className={IGNORE_CLICK_OUTSIDE}
+                    data-testid={sanitizeId(`listitem-${option.value}`)}
+                    $disabled={option.disabled}
+                    $focused={isOptionFocused(option)}
+                    id={sanitizeId(`${id}_${option.value}`)}
+                    $isMobile={isMobile}
+                    key={option.value}
+                    onClick={handleListItemClick(option)}
+                    onMouseDown={handleListItemMouseDown}
+                    ref={(node) => {
+                        const map = itemRefs.current;
+                        if (node) {
+                            map.set(option.value, node);
+                        } else {
+                            map.delete(option.value);
+                        }
+                    }}
+                    role="option"
+                    $selected={isOptionSelected(option)}
+                    $multiselect={multiselect}
+                >
+                    {multiselect ? (
+                        <CustomCheckbox
+                            aria-hidden="true"
+                            disabled={option.disabled}
+                            checked={isOptionSelected(option)}
+                        >
+                            <CheckMarkIcon />
+                        </CustomCheckbox>
+                    ) : null}
+                    <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
+                        {option.label || option.value}
+                        {option.caption && (
+                            <ListItemCaption
+                                className={IGNORE_CLICK_OUTSIDE}
+                                $disabled={option.disabled}
+                                $isMobile={isMobile}
+                            >
+                                {option.caption}
+                            </ListItemCaption>
+                        )}
+                    </ListItemTextContainer>
+                </ListItem>
+            );
+        }
+
+        return (
+            <>
+                {featuredOptions.map(renderOption)}
+                {featuredOptions.length > 0 && options.length > 0 && (<Divider />)}
+                {options.map(renderOption)}
+            </>
+        );
+    }
+
     return (
         <Container
             aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
@@ -505,54 +580,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 data-testid="listbox-list"
                 role="presentation"
             >
-                {options.map((option) => (
-                    <ListItem
-                        aria-disabled={option.disabled}
-                        aria-selected={isOptionSelected(option) ? 'true' : 'false'}
-                        className={IGNORE_CLICK_OUTSIDE}
-                        data-testid={sanitizeId(`listitem-${option.value}`)}
-                        $disabled={option.disabled}
-                        $focused={isOptionFocused(option)}
-                        id={sanitizeId(`${id}_${option.value}`)}
-                        $isMobile={isMobile}
-                        key={option.value}
-                        onClick={handleListItemClick(option)}
-                        onMouseDown={handleListItemMouseDown}
-                        ref={(node) => {
-                            const map = itemRefs.current;
-                            if (node) {
-                                map.set(option.value, node);
-                            } else {
-                                map.delete(option.value);
-                            }
-                        }}
-                        role="option"
-                        $selected={isOptionSelected(option)}
-                        $multiselect={multiselect}
-                    >
-                        {multiselect ? (
-                            <CustomCheckbox
-                                aria-hidden="true"
-                                disabled={option.disabled}
-                                checked={isOptionSelected(option)}
-                            >
-                                <CheckMarkIcon />
-                            </CustomCheckbox>
-                        ) : null}
-                        <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
-                            {option.label || option.value}
-                            {option.caption && (
-                                <ListItemCaption
-                                    className={IGNORE_CLICK_OUTSIDE}
-                                    $disabled={option.disabled}
-                                    $isMobile={isMobile}
-                                >
-                                    {option.caption}
-                                </ListItemCaption>
-                            )}
-                        </ListItemTextContainer>
-                    </ListItem>
-                ))}
+                {renderOptions()}
             </List>
         </Container>
     );

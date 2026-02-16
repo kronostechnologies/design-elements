@@ -9,10 +9,12 @@ const ClearFiltersContainer = styled.div`
     border-radius: var(--border-radius);
     color: ${({ theme }) => theme.component['filter-clear-color']};
     column-gap: var(--spacing-1x);
+    cursor: pointer;
     display: flex;
     line-height: 1rem;
     margin: 0 var(--spacing-1x);
     padding: var(--spacing-1x) var(--spacing-1x);
+    user-select: none;
 
     &[aria-disabled='true'] {
         color: ${({ theme }) => theme.component['filter-clear-disabled-color']};
