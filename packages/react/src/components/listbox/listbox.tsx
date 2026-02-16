@@ -51,7 +51,7 @@ export interface ListboxProps {
      */
     defaultValue?: Value;
     /**
-     * When provided, options in this array are displayed at2 the top of the listbox
+     * When provided, options in this array are displayed at the top of the listbox
      */
     featuredOptions?: ListboxOption[];
     /**
@@ -268,7 +268,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
         () => findOptionsByValue(allOptions, value ?? defaultValue),
     );
-    console.info(selectedOptions);
 
     const focusFirstSelectedOrFirst = useCallback(() => {
         const firstSelected: ListboxOption = selectedOptions[0];
