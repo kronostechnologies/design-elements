@@ -189,6 +189,7 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
     id="uuid2"
   >
     <button
+      aria-controls="eds-uuid1"
       aria-expanded="false"
       class="c2 c3 c4 eds-DropdownMenuButton-button"
       data-selected-count="1"
@@ -369,6 +370,7 @@ exports[`FilterMulti rendering renders button with label 1`] = `
     id="uuid2"
   >
     <button
+      aria-controls="eds-uuid1"
       aria-expanded="false"
       class="c2 c3 c4 eds-DropdownMenuButton-button"
       data-selected-count="0"

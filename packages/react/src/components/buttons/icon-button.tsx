@@ -8,13 +8,12 @@ import { AbstractButton, type ButtonSize } from './abstract';
 import { type ButtonProps } from './button';
 import { getButtonTypeStyles } from './styled';
 
-export interface IconButtonProps extends ButtonProps {
+export interface IconButtonProps extends Omit<ButtonProps, 'leftIconName' | 'rightIconName'> {
     children?: ReactElement<IconProps | AvatarProps>;
     /**
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
-    size?: ButtonSize;
 }
 
 const getButtonSizeStyles = (

@@ -22,7 +22,7 @@ import { activeElementIsInside, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AvatarProps } from '../avatar';
-import { Button, type ButtonType, IconButton } from '../buttons';
+import { Button, type ButtonSize, type ButtonType, IconButton } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
 import { DropdownMenu, type GroupItemProps } from '../dropdown-menu';
 import { Icon, type IconProps } from '../icon';
@@ -75,6 +75,7 @@ export interface DropdownMenuButtonProps {
      * @default false
      * */
     defaultOpen?: boolean;
+    disabled?: boolean;
     dropdownMenuId?: string;
     dropdownMenuWidth?: 'auto' | 'initial' | 'reference' | number;
     /**
@@ -87,6 +88,7 @@ export interface DropdownMenuButtonProps {
     id?: string;
     inverted?: boolean;
     label?: string | ReactElement;
+    size?: ButtonSize;
     title?: string;
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';
@@ -103,6 +105,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     buttonType = 'tertiary',
     className,
     defaultOpen = false,
+    disabled,
     dropdownMenuId,
     dropdownMenuWidth = 'reference',
     firstItemRef,
@@ -115,6 +118,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     render,
     tag,
     title,
+    size,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
@@ -218,8 +222,10 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    aria-controls={dropdownMenuId}
                     className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
+                    disabled={disabled}
                     isMobile={isMobile}
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
@@ -228,6 +234,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    size={size}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}
@@ -247,8 +254,10 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     iconName="moreHorizontal"
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    aria-controls={dropdownMenuId}
                     className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
+                    disabled={disabled}
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
                     ref={refs.setReference}
@@ -256,6 +265,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    size={size}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}

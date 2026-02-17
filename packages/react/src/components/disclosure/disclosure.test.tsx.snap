@@ -80,38 +80,37 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
   pointer-events: none;
 }
 
-.c3 {
-  background-color: #FFFFFF;
-  border: 0;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  display: none;
-  position: absolute;
-  z-index: 700;
-}
-
 .c0 {
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
 <div
+    aria-label=""
     class="c0"
+    data-testid="dropdown-container"
+    id="uuid1"
   >
     <button
       aria-controls="mock-id"
       aria-expanded="false"
-      class="c1 c2"
+      class="c1 c2 c3 eds-DropdownMenuButton-button"
+      data-testid="menu-button"
       type="button"
     >
       disclose content
     </button>
-    <div
-      class="c3"
-      id="mock-id"
-    >
-      content
-    </div>
   </div>
 </DocumentFragment>
 `;
@@ -196,38 +195,37 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
   pointer-events: none;
 }
 
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  display: block;
-  position: absolute;
-  z-index: 700;
-}
-
 .c0 {
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
 <div
+    aria-label=""
     class="c0"
+    data-testid="dropdown-container"
+    id="uuid1"
   >
     <button
       aria-controls="mock-id"
       aria-expanded="true"
-      class="c1 c2"
+      class="c1 c2 c3 eds-DropdownMenuButton-button"
+      data-testid="menu-button"
       type="button"
     >
       disclose content
     </button>
-    <div
-      class="c3"
-      id="mock-id"
-    >
-      content
-    </div>
   </div>
 </DocumentFragment>
 `;
@@ -289,8 +287,6 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
-  padding: 0;
-  width: var(--size-2x);
 }
 
 .c2:focus-visible {
@@ -314,43 +310,46 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
   pointer-events: none;
 }
 
-.c3 {
-  background-color: #FFFFFF;
-  border: 0;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  display: none;
-  position: absolute;
-  z-index: 700;
-}
-
 .c0 {
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
 <div
+    aria-label=""
     class="c0"
+    data-testid="dropdown-container"
+    id="uuid1"
   >
     <button
       aria-controls="mock-id"
       aria-expanded="false"
-      aria-label="disclose content"
-      class="c1 c2"
-      type="submit"
+      class="c1 c2 c3 eds-DropdownMenuButton-button"
+      data-testid="menu-button"
+      type="button"
     >
       <svg
-        aria-hidden="true"
         class="lucide lucide-house"
         fill="none"
         focusable="false"
-        height="16"
+        height="24"
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
         viewBox="0 0 24 24"
-        width="16"
+        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -360,13 +359,8 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
           d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
         />
       </svg>
+      disclose content
     </button>
-    <div
-      class="c3"
-      id="mock-id"
-    >
-      content
-    </div>
   </div>
 </DocumentFragment>
 `;
@@ -428,8 +422,6 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
-  padding: 0;
-  width: var(--size-2x);
 }
 
 .c2:focus-visible {
@@ -453,43 +445,46 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
   pointer-events: none;
 }
 
-.c3 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  display: block;
-  position: absolute;
-  z-index: 700;
-}
-
 .c0 {
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
 <div
+    aria-label=""
     class="c0"
+    data-testid="dropdown-container"
+    id="uuid1"
   >
     <button
       aria-controls="mock-id"
       aria-expanded="true"
-      aria-label="disclose content"
-      class="c1 c2"
-      type="submit"
+      class="c1 c2 c3 eds-DropdownMenuButton-button"
+      data-testid="menu-button"
+      type="button"
     >
       <svg
-        aria-hidden="true"
         class="lucide lucide-house"
         fill="none"
         focusable="false"
-        height="16"
+        height="24"
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
         viewBox="0 0 24 24"
-        width="16"
+        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -499,13 +494,8 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
           d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
         />
       </svg>
+      disclose content
     </button>
-    <div
-      class="c3"
-      id="mock-id"
-    >
-      content
-    </div>
   </div>
 </DocumentFragment>
 `;
