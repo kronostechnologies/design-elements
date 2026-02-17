@@ -18,7 +18,7 @@ describe('SkipLink', () => {
 
     it('should call onClick callback when clicked', async () => {
         const callback = jest.fn();
-        renderWithProviders(<SkipLink href="test" onClick={callback} />);
+        renderWithProviders(<SkipLink href="#test" onClick={callback} />);
 
         await userEvent.click(screen.getByRole('link'));
 

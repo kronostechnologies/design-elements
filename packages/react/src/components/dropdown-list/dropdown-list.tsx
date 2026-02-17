@@ -148,7 +148,7 @@ const TextIcon = styled(Icon)`
 
 type Value = string | string[];
 
-export interface DropdownListOption extends ListboxOption {
+export type DropdownListOption = ListboxOption & {
     label: string;
 }
 

@@ -3,6 +3,7 @@ import {
     ForwardRefExoticComponent,
     KeyboardEvent,
     type ReactElement,
+    type ReactNode,
     Ref,
     RefAttributes,
     type RefObject,
@@ -20,9 +21,17 @@ import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
 import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
 import { mergeRefs } from '../../utils/react-merge-refs';
+import { Avatar, type AvatarProps } from '../avatar';
 import { useDeviceContext } from '../device-context-provider';
-import { Icon } from '../icon';
+import { Icon, type IconName } from '../icon';
+import { listboxClasses } from './listbox-classes';
 import { findOptionsByValue } from './utils';
+
+const OptionIcon = styled(Icon)`
+    flex-shrink: 0;
+    height: var(--size-1x);
+    width: var(--size-1x);
+`;
 
 export const Divider = styled.li.attrs({ role: 'separator' })`
     background-color: ${({ theme }) => theme.component['listbox-divider-color']};
@@ -33,12 +42,29 @@ export const Divider = styled.li.attrs({ role: 'separator' })`
 
 type Value = string | string[];
 
-export interface ListboxOption {
-    disabled?: boolean;
-    value: string;
-    label?: string;
-    caption?: string;
+interface AvatarLeadingVisual {
+    leadingVisualProps: AvatarProps;
+    leadingVisualType: 'avatar';
 }
+
+interface IconLeadingVisual {
+    leadingVisualProps: IconName;
+    leadingVisualType: 'icon';
+}
+
+interface NoLeadingVisual {
+    leadingVisualProps?: never;
+    leadingVisualType?: never;
+}
+
+type LeadingVisual = IconLeadingVisual | AvatarLeadingVisual | NoLeadingVisual;
+
+export type ListboxOption = {
+    caption?: string;
+    disabled?: boolean;
+    label?: string;
+    value: string;
+} & LeadingVisual;
 
 export interface ListboxProps {
     ariaLabelledBy?: string;
@@ -175,11 +201,6 @@ const ListItem = styled.li<ListItemProps>`
     min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
     position: relative;
-
-    ${({ $isMobile }) => (!$isMobile && css`
-        padding-right: var(--spacing-1x);
-    `)}
-
     user-select: none;
 
     &:hover {
@@ -212,6 +233,13 @@ const ListItem = styled.li<ListItemProps>`
 `;
 
 const ListItemTextContainer = styled.span`
+    align-items: anchor-center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-1quarterx);
+`;
+
+const ListItemText = styled.span`
     display: flex;
     flex-direction: column;
 `;
@@ -220,6 +248,7 @@ const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>
     color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-subcontent-disabled-text-color'] : theme.component['listbox-item-subcontent-text-color'])};
     display: block;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
+    line-height: 2rem;
 `;
 
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
@@ -498,13 +527,25 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
     const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
 
+    function renderLeadingVisual(option: ListboxOption): ReactNode {
+        switch (option.leadingVisualType) {
+            case 'avatar':
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                return <Avatar {...option.leadingVisualProps} />;
+            case 'icon':
+                return <OptionIcon name={option.leadingVisualProps} data-testid="icon" />;
+            default:
+                return null;
+        }
+    }
+
     function renderOptions(): ReactElement {
         function renderOption(option: ListboxOption): ReactElement {
             return (
                 <ListItem
                     aria-disabled={option.disabled}
                     aria-selected={isOptionSelected(option) ? 'true' : 'false'}
-                    className={IGNORE_CLICK_OUTSIDE}
+                    className={`${IGNORE_CLICK_OUTSIDE} ${listboxClasses.listItem}`}
                     data-testid={sanitizeId(`listitem-${option.value}`)}
                     $disabled={option.disabled}
                     $focused={isOptionFocused(option)}
@@ -534,17 +575,20 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                             <CheckMarkIcon />
                         </CustomCheckbox>
                     ) : null}
-                    <ListItemTextContainer className={IGNORE_CLICK_OUTSIDE}>
-                        {option.label || option.value}
-                        {option.caption && (
-                            <ListItemCaption
-                                className={IGNORE_CLICK_OUTSIDE}
-                                $disabled={option.disabled}
-                                $isMobile={isMobile}
-                            >
-                                {option.caption}
-                            </ListItemCaption>
-                        )}
+                    <ListItemTextContainer className={`${IGNORE_CLICK_OUTSIDE} ${listboxClasses.listItemContent}`}>
+                        {renderLeadingVisual(option)}
+                        <ListItemText>
+                            {option.label || option.value}
+                            {option.caption && (
+                                <ListItemCaption
+                                    className={IGNORE_CLICK_OUTSIDE}
+                                    $disabled={option.disabled}
+                                    $isMobile={isMobile}
+                                >
+                                    {option.caption}
+                                </ListItemCaption>
+                            )}
+                        </ListItemText>
                     </ListItemTextContainer>
                 </ListItem>
             );

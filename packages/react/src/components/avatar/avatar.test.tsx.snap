@@ -621,3 +621,90 @@ exports[`Avatar Should use user icon when username is undefined 1`] = `
   </span>
 </div>
 `;
+
+exports[`Avatar renders custom icon when iconName is provided 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <svg
+    class="lucide lucide-building"
+    fill="none"
+    focusable="false"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 10h.01"
+    />
+    <path
+      d="M12 14h.01"
+    />
+    <path
+      d="M12 6h.01"
+    />
+    <path
+      d="M16 10h.01"
+    />
+    <path
+      d="M16 14h.01"
+    />
+    <path
+      d="M16 6h.01"
+    />
+    <path
+      d="M8 10h.01"
+    />
+    <path
+      d="M8 14h.01"
+    />
+    <path
+      d="M8 6h.01"
+    />
+    <path
+      d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
+    />
+    <rect
+      height="20"
+      rx="2"
+      width="16"
+      x="4"
+      y="2"
+    />
+  </svg>
+</div>
+`;

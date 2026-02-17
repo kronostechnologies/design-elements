@@ -116,4 +116,10 @@ describe('Avatar', () => {
 
         expect(screen.getByTestId('avatar-initials')).toHaveTextContent('JD');
     });
+
+    it('renders custom icon when iconName is provided', () => {
+        const { container } = renderWithProviders(<Avatar iconName="organization" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });

@@ -13,6 +13,7 @@ export function createI18n(language = 'en'): i18nType {
             escapeValue: false,
         },
         returnNull: false,
+        showSupportNotice: false,
     }).catch(console.error);
 
     return i18n;

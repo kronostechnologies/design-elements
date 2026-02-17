@@ -1,7 +1,11 @@
-import { act, screen } from '@testing-library/react';
+import { act, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/testing-library';
-import { Listbox } from './listbox';
+import { Listbox, type ListboxOption } from './listbox';
+
+jest.mock('../avatar/avatar', () => ({
+    Avatar: () => <div data-testid="avatar" />,
+}));
 
 const options = [
     { label: 'Option A', value: 'optionA', caption: 'The first one' },
@@ -84,6 +88,12 @@ describe('Listbox', () => {
             await user.click(screen.getByTestId('listitem-optionD'));
 
             expect(screen.getByTestId('listitem-optionD')).toHaveAttribute('aria-selected', 'false');
+        });
+
+        it('marks disabled options with aria-disabled', () => {
+            renderWithProviders(<Listbox options={options} />);
+
+            expect(screen.getByTestId('listitem-optionD')).toHaveAttribute('aria-disabled', 'true');
         });
 
         it('the selected option is focused when the listbox gets the focus', async () => {
@@ -516,6 +526,16 @@ describe('Listbox', () => {
 
             expect(callback).toHaveBeenCalledWith(options[1]);
         });
+
+        it('does not call callback when a disabled option is clicked', async () => {
+            const user = userEvent.setup();
+            const callback = jest.fn();
+            renderWithProviders(<Listbox options={options} onOptionClick={callback} />);
+
+            await user.click(screen.getByTestId('listitem-optionD'));
+
+            expect(callback).not.toHaveBeenCalled();
+        });
     });
 
     describe('onKeyDown callback', () => {
@@ -529,6 +549,21 @@ describe('Listbox', () => {
             await user.keyboard('a');
 
             expect(callback).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not call callback when keyboard navigation is disabled', async () => {
+            const user = userEvent.setup();
+            const callback = jest.fn();
+            renderWithProviders(
+                <Listbox options={options} onKeyDown={callback} keyboardNav={false} />,
+            );
+
+            const listbox = screen.getByRole('listbox');
+            act(() => listbox.focus());
+
+            await user.keyboard('a');
+
+            expect(callback).not.toHaveBeenCalled();
         });
     });
 
@@ -578,6 +613,44 @@ describe('Listbox', () => {
             expect(listOptions[0]).toHaveTextContent('Option C');
             expect(listOptions[1]).toHaveTextContent('Option B');
             expect(listOptions[2]).toHaveTextContent('Option A');
+        });
+
+        it('renders captions when provided', () => {
+            renderWithProviders(<Listbox options={options} />);
+
+            expect(screen.getByText('The first one')).toBeInTheDocument();
+        });
+
+        it('renders icon leading visual', () => {
+            const visualOptions: ListboxOption[] = [
+                {
+                    label: 'Icon option',
+                    value: 'icon-option',
+                    leadingVisualType: 'icon',
+                    leadingVisualProps: 'x',
+                },
+            ];
+
+            renderWithProviders(<Listbox options={visualOptions} />);
+
+            const iconOption = screen.getByTestId('listitem-icon-option');
+            expect(within(iconOption).getByTestId('icon')).toBeInTheDocument();
+        });
+
+        it('renders Avatar leading visual', () => {
+            const visualOptions: ListboxOption[] = [
+                {
+                    label: 'Avatar option',
+                    value: 'avatar-option',
+                    leadingVisualType: 'avatar',
+                    leadingVisualProps: { username: 'John Doe' },
+                },
+            ];
+
+            renderWithProviders(<Listbox options={visualOptions} />);
+
+            const avatarOption = screen.getByTestId('listitem-avatar-option');
+            expect(within(avatarOption).getByTestId('avatar')).toBeInTheDocument();
         });
     });
 
