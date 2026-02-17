@@ -93,7 +93,9 @@ exports[`Disclosure Button matches the snapshot when collapsed 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 <div
@@ -208,7 +210,9 @@ exports[`Disclosure Button matches the snapshot when expanded 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 <div
@@ -323,7 +327,9 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 <div
@@ -458,7 +464,9 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 <div

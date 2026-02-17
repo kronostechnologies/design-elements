@@ -70,4 +70,5 @@ export * from './toggle-switch';
 export * from './toggletip';
 export * from './tooltip';
 export * from './user-profile';
+export * from './view-control';
 export * from './visually-hidden';

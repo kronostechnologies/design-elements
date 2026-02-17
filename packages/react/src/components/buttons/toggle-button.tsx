@@ -1,29 +1,29 @@
 import { type FC } from 'react';
 import styled, { css } from 'styled-components';
+import type { MutuallyExclusive } from '../../utils/types';
 import { IconName } from '../icon';
 import { Button } from './button';
 import { IconButton } from './icon-button';
 import { devConsole } from '../../utils/dev-console';
 
-interface IconOnlyProps {
-    iconName: IconName;
-    ariaLabel: string;
-}
-
-interface LabelOnlyProps {
-    label: string;
-    ariaLabel?: string;
-}
-
-interface IconWithLabelProps extends LabelOnlyProps {
-    iconName: IconName;
-}
-
-export type ToggleButtonProps = {
+interface BaseProps {
     disabled?: boolean;
     onChange?(pressed: boolean): void;
     pressed: boolean;
-} & (IconOnlyProps | LabelOnlyProps | IconWithLabelProps);
+}
+
+interface LabelProps extends BaseProps {
+    ariaLabel?: string;
+    label: string;
+    iconName?: IconName;
+}
+
+interface IconOnlyProps extends BaseProps {
+    ariaLabel: string;
+    iconName: IconName;
+}
+
+export type ToggleButtonProps = MutuallyExclusive<IconOnlyProps, LabelProps>;
 
 const InnerButtonStyle = css`
     border: ${({ theme }) => theme.component['toggle-button-border-color']};
@@ -72,11 +72,11 @@ const InnerButton = styled(Button)`
 export const ToggleButton: FC<ToggleButtonProps> = ({
     ariaLabel,
     disabled,
+    iconName,
     onChange,
     pressed,
     ...props
 }) => {
-    const iconName = 'iconName' in props ? props.iconName : undefined;
     const label = 'label' in props ? props.label : undefined;
 
     const hasIconName = Boolean(iconName);

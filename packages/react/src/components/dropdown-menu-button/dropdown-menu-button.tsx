@@ -36,7 +36,9 @@ const StyledDiv = styled.div`
 const StyledButton = styled(Button)<{ isMobile: boolean }>`
     font-size: 0.875rem;
     font-weight: var(--font-normal);
+    min-width: inherit;
     text-transform: unset;
+    width: inherit;
 `;
 
 const StyledRightIcon = styled(Icon)`
@@ -45,13 +47,14 @@ const StyledRightIcon = styled(Icon)`
 
 interface StyledListboxProps {
     $left?: number | string;
+    $referenceWidth?: number | undefined;
     $top?: number | string;
 }
 
 export const StyledDropdownMenu = styled(DropdownMenu)<StyledListboxProps>`
     left: ${({ $left }) => $left};
     max-width: 350px;
-    min-width: 200px;
+    min-width: ${({ $referenceWidth }) => $referenceWidth || 200}px;
     position: absolute;
     top: ${({ $top }) => $top};
     width: auto;
@@ -279,6 +282,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     data-testid="menu-dropdownMenu"
                     onKeyDown={handleNavMenuKeyDown}
                     $left={`${x}px`}
+                    $referenceWidth={buttonRef.current?.clientWidth}
                     $top={`${y}px`}
                 >
                     {render?.(() => {
