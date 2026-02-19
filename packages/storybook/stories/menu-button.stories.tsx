@@ -1,16 +1,7 @@
-import { MenuButton } from '@equisoft/design-elements-react';
+import { MenuButton, MenuOption } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import styled from 'styled-components';
-import { decorateWith } from './utils/decorator';
 
-const StyledDiv = styled.div`
-    display: flex;
-    height: 180px;
-    justify-content: center;
-    width: 100%;
-`;
-
-const options = [
+const options: MenuOption[] = [
     {
         label: 'Option 1',
         onClick: () => console.info('Option 1 clicked'),
@@ -28,7 +19,6 @@ const options = [
 const MenuButtonMeta: Meta<typeof MenuButton> = {
     title: 'Components/Menu Button',
     component: MenuButton,
-    decorators: [decorateWith(StyledDiv)],
     args: {
         buttonType: 'primary',
     },

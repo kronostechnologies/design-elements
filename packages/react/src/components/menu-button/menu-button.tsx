@@ -14,10 +14,6 @@ import { Tooltip, type TooltipProps } from '../tooltip';
 
 export type MenuPlacement = 'right' | 'left';
 
-const StyledContainer = styled.div`
-    position: relative;
-`;
-
 interface StyledMenuProps {
     $left?: string;
     $top?: string;
@@ -175,7 +171,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     );
 
     return (
-        <StyledContainer
+        <div
             className={className}
             ref={containerRef}
             onKeyDown={handleTabKeyDown}
@@ -191,7 +187,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                 />,
                 rootElement,
             )}
-        </StyledContainer>
+        </div>
     );
 };
 
