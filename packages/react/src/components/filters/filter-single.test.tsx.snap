@@ -92,7 +92,9 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
 .c4 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c5 {
@@ -262,7 +264,9 @@ exports[`FilterSingle rendering renders button with label 1`] = `
 .c4 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c5 {

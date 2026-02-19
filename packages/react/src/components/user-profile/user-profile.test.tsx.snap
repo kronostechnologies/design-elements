@@ -131,7 +131,9 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c6 {
@@ -828,7 +830,9 @@ exports[`UserProfile matches Snapshot (defaultOpen) 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c6 {
@@ -1721,7 +1725,9 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c6 {

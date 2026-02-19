@@ -57,7 +57,7 @@ interface NoLeadingVisual {
     leadingVisualType?: never;
 }
 
-type LeadingVisual = IconLeadingVisual | AvatarLeadingVisual | NoLeadingVisual;
+export type LeadingVisual = IconLeadingVisual | AvatarLeadingVisual | NoLeadingVisual;
 
 export type ListboxOption = {
     caption?: string;

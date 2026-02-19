@@ -1,0 +1,51 @@
+import {ViewControl} from '@equisoft/design-elements-react';
+import {ArgTypes, Meta, Canvas} from '@storybook/blocks';
+import * as ViewControlStories from './view-control.stories';
+
+<Meta of={ViewControlStories} />
+
+# ViewControl
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Definition
+The component View Control allows users to change how content is displayed in a list, grid, chart, etc. 
+It enables actions such as sorting items or adjusting the number of items shown per page.
+
+<Canvas of={ViewControlStories.Default} />
+
+## Usage
+
+### When to use
+- Sort content by different criteria (e.g., most recent, price, alphabetical, etc.)
+- Change the number of results displayed per page
+- Toggle between different display modes (e.g., week, work week, month, etc.)
+
+### When not to use
+- **Do not use for filtering** - View Control should not be used to reduce the number of results in a list or grid. Use dedicated filter controls instead, as filtering removes items from view while View Control reorganizes or reformats existing items.
+- **Do not use for primary navigation** - View Control is for adjusting display preferences, not for navigating between different pages or sections.
+- **Do not use for actions** - View Control should not trigger actions like delete, edit, or create. Use action buttons or menus instead.
+
+## Variants
+
+### Default
+<Canvas of={ViewControlStories.Default} />
+
+### With Hint
+<Canvas of={ViewControlStories.WithHint} />
+
+### With Icons
+<Canvas of={ViewControlStories.WithIcons} />
+
+### Inverted
+<Canvas of={ViewControlStories.Inverted} />
+
+
+## Properties
+<ArgTypes of={ViewControl} />
+
+## References
+
+

@@ -138,7 +138,9 @@ exports[`FilterMulti rendering applies active styling when filters are applied 1
 .c4 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c8 {
@@ -323,7 +325,9 @@ exports[`FilterMulti rendering renders button with label 1`] = `
 .c4 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c5 {

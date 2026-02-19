@@ -61,6 +61,13 @@ export function findOptionByValue<T extends HasValue>(
     return options.find((option) => option.value === searchValue);
 }
 
+export function getOptionByValueOrFirst<T extends HasValue>(
+    options: T[],
+    searchValue: string,
+): T {
+    return options.find((option) => option.value === searchValue) ?? options[0];
+}
+
 export function findOptionsByValue<T extends HasValue>(
     options: T[],
     searchValue?: Value | undefined,

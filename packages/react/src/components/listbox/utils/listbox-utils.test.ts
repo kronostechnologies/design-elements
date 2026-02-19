@@ -3,6 +3,7 @@ import { ListboxOption } from '../listbox';
 import {
     disableNonSelectedOptions,
     getDefaultOptions,
+    getOptionByValueOrFirst,
     getOptionLabel,
     isOptionEnabled,
     isOptionSelected,
@@ -170,6 +171,30 @@ describe('Dropdown List utils', () => {
             const result = getDefaultOptions('3', options, false, true);
 
             expect(result).toEqual([]);
+        });
+    });
+
+    describe('getOptionByValueOrFirst', () => {
+        it('should return the matching option when value exists', () => {
+            const options: ListOption[] = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ];
+
+            const result = getOptionByValueOrFirst(options, '2');
+
+            expect(result).toEqual({ value: '2', label: 'Option 2' });
+        });
+
+        it('should return the first option when no match exists', () => {
+            const options: ListOption[] = [
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+            ];
+
+            const result = getOptionByValueOrFirst(options, '3');
+
+            expect(result).toEqual({ value: '1', label: 'Option 1' });
         });
     });
 
