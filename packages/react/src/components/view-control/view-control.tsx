@@ -2,7 +2,7 @@ import { type FC, useCallback, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
-import type { DropdownMenuButtonProps, DropdownMenuCloseFunction } from '../dropdown-menu-button';
+import type { DropdownMenuCloseFunction } from '../dropdown-menu-button';
 import type { FilterOption } from '../filters';
 import { Icon } from '../icon';
 import { type LeadingVisual, Listbox, type ListboxOption, type ListboxRef } from '../listbox/listbox';
@@ -16,11 +16,6 @@ type Value = string;
 
 export type ViewControlProps = {
     className?: string;
-    /**
-     * Determines the width of the dropdown menu. 'auto' will size the menu based on its content,
-     * while 'reference' will match the width of the button. The default is 'reference'.
-     */
-    dropdownWidthMode?: Extract<DropdownMenuButtonProps['dropdownMenuWidth'], 'auto' | 'reference'>;
     hint?: string;
     options: ViewControlOption[];
     value: Value;
@@ -68,7 +63,6 @@ const Hint = styled.div`
  */
 export const ViewControl: FC<ViewControlProps> = ({
     className,
-    dropdownWidthMode = 'reference',
     hint,
     onChange,
     options,
@@ -115,7 +109,6 @@ export const ViewControl: FC<ViewControlProps> = ({
     return (
         <ViewControlDropdownButton
             className={className}
-            dropdownMenuWidth={dropdownWidthMode}
             label={controlLabel}
             onMenuVisibilityChanged={handleMenuVisibilityChanged}
             render={(close: DropdownMenuCloseFunction) => (
