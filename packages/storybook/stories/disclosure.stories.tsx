@@ -1,5 +1,7 @@
+import { Disclosure, Tooltip } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Disclosure } from '@equisoft/design-elements-react';
+import styled from 'styled-components';
+import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const disclosureMeta: Meta<typeof Disclosure> = {
@@ -17,19 +19,24 @@ export const Default: Story = {
         children: 'content to display',
         buttonProps: {
             label: 'Display content',
-            buttonType: 'tertiary',
         },
         idContent: 'someContentId',
     },
 };
 
-export const IconButton: Story = {
+const TooltipDecorator = styled(Tooltip).attrs({ label: 'Something' })``;
+const IconButtonDecorator = styled.div`
+    text-align: right;
+    width: 200px;
+`;
+
+export const IconButtonWithTooltip: Story = {
     args: {
         children: 'content to display',
         buttonProps: {
             iconName: 'home',
-            buttonType: 'primary',
         },
         idContent: 'someContentId',
     },
 };
+IconButtonWithTooltip.decorators = [decorateWith(IconButtonDecorator), decorateWith(TooltipDecorator)];
