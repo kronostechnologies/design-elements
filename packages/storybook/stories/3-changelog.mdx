@@ -4,7 +4,72 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog
 
-## v9.11.4 <mark>Latest</mark> (February 12, 2026)
+## 10.0.0 <mark>Latest</mark> (February 19, 2026)
+
+### ⚠ BREAKING CHANGES
+
+* **GlobalNavigation,Legend,ProgressCircle,ProgressLine,Status:** remove deprecated components (#1249)
+* **Tabs:** replaced global flag with size property (#1094)
+* expose only `DesignSystem` as root component (#1247)
+* update React to v18 (#1096)
+
+### New Components
+* **FilterMulti** (alpha stage)
+* **FilterSingle** (alpha stage)
+* **ViewControl** (alpha stage)
+
+### Features
+
+* **Combobox:** add support for multiselect and readonly modes ([#1310](https://github.com/kronostechnologies/design-elements/issues/1310)) ([8183c7f](https://github.com/kronostechnologies/design-elements/commit/8183c7fdd05c9effa5f313ca68794d4b2faa84f4))
+* **DataTable:** add caption and summary ([#1082](https://github.com/kronostechnologies/design-elements/issues/1082)) ([b249f3f](https://github.com/kronostechnologies/design-elements/commit/b249f3f8d4dc5c123fc0fc45df072a0be54803da))
+* **DataTable:** bind header checkbox to current page ([#1068](https://github.com/kronostechnologies/design-elements/issues/1068)) ([ed442d6](https://github.com/kronostechnologies/design-elements/commit/ed442d6c6f03b567dcb621103aec2e1b38b0d927))
+* **Disclosure:** use internal DropdownMenuButton to add missing features (DS-1486) ([#1376](https://github.com/kronostechnologies/design-elements/issues/1376)) ([1275a8b](https://github.com/kronostechnologies/design-elements/commit/1275a8bd0c7ee60219883de929c72abb4b51b06b))
+* **FilterMulti:** add multi-select filter ([85873ed](https://github.com/kronostechnologies/design-elements/commit/85873ed79697889d4471ebe4ae38b8f70bffb494))
+* **FilterSingle:** add single-select filter ([a437ac0](https://github.com/kronostechnologies/design-elements/commit/a437ac08a40d57eb4a79ad425dbe87e6eb39b482))
+* **Filters:** update behaviors (DS-1448) ([#1347](https://github.com/kronostechnologies/design-elements/issues/1347)) ([868be16](https://github.com/kronostechnologies/design-elements/commit/868be16de272c8508f9547e6815d04e4f8623d20))
+* **GlobalNavigation,Legend,ProgressCircle,ProgressLine,Status:** remove deprecated components ([#1249](https://github.com/kronostechnologies/design-elements/issues/1249)) ([172301f](https://github.com/kronostechnologies/design-elements/commit/172301f9c5cc551413eca36bbbdee23707d06541))
+* **Icon:** add send icon ([#1074](https://github.com/kronostechnologies/design-elements/issues/1074)) ([f8bf7e9](https://github.com/kronostechnologies/design-elements/commit/f8bf7e9ceeca67c36dae66fca7a23e4a8a046ae6))
+* **Listbox:** add leading visual (Icon and Avatar) (DS-1482) ([#1370](https://github.com/kronostechnologies/design-elements/issues/1370)) ([259a89c](https://github.com/kronostechnologies/design-elements/commit/259a89c6f3dde81dd1e9b4e9ba241e412d0a2fc4))
+* **ModalDialog:** add onAfterClose callback (DS-1478) ([#1366](https://github.com/kronostechnologies/design-elements/issues/1366)) ([d52ed18](https://github.com/kronostechnologies/design-elements/commit/d52ed18050da3e827cd460f907402bda952e9aba))
+* **Theme:** add text tokens ([#1051](https://github.com/kronostechnologies/design-elements/issues/1051)) ([3c27a05](https://github.com/kronostechnologies/design-elements/commit/3c27a056acfed113eff39761fc579bbc6159610b))
+* **Theme:** improve token typing ([#1053](https://github.com/kronostechnologies/design-elements/issues/1053)) ([6cf9af4](https://github.com/kronostechnologies/design-elements/commit/6cf9af48f4bc521e211df396ed863dca1dc6fd48))
+* **Tokens:** update text alias tokens ([#1081](https://github.com/kronostechnologies/design-elements/issues/1081)) ([8d5388f](https://github.com/kronostechnologies/design-elements/commit/8d5388f262cf9b2e568758fd54ea06a11d938c11))
+* **ViewControl:** add component (DS-1450) ([#1377](https://github.com/kronostechnologies/design-elements/issues/1377)) ([1196c7b](https://github.com/kronostechnologies/design-elements/commit/1196c7bd802e3266715419f5952a0fe1ad0d3384))
+* expose all components props types ([#1239](https://github.com/kronostechnologies/design-elements/issues/1239)) ([283ff8a](https://github.com/kronostechnologies/design-elements/commit/283ff8aa767e25bed99a9a2479790aeb356c724f))
+* expose only DesignSystem as root component ([#1247](https://github.com/kronostechnologies/design-elements/issues/1247)) ([e9dbefa](https://github.com/kronostechnologies/design-elements/commit/e9dbefa158c8fae708b8063ba752c2bd8065ae7d))
+
+### Bug Fixes
+
+* add displayName to React components ([#1359](https://github.com/kronostechnologies/design-elements/issues/1359)) ([375c158](https://github.com/kronostechnologies/design-elements/commit/375c1584606653e7b1d36858cd4b9f2efefb8d9a))
+* **Badge,BentoMenuButton:** add missing react keys ([#1277](https://github.com/kronostechnologies/design-elements/issues/1277)) ([0276aca](https://github.com/kronostechnologies/design-elements/commit/0276aca43f9171f2864023279af3dc37f1a2815a))
+* **BentoMenuButton,Breadcrumb,Combobox,DropdownList,DropdownMenuButton,DropdownNavigation,MenuButton,UserProfile:** use portal for all dropdowns (DS-1387) ([#1269](https://github.com/kronostechnologies/design-elements/issues/1269)) ([dc714de](https://github.com/kronostechnologies/design-elements/commit/dc714de3aee7998de72d8f42a2a19d0ace7b5595))
+* **Combobox:** apply font-family to input ([#1276](https://github.com/kronostechnologies/design-elements/issues/1276)) ([8522aa3](https://github.com/kronostechnologies/design-elements/commit/8522aa30166da951423f46c4f5a36df7cf5782d6))
+* **Combobox:** display label instead of value when available ([#1245](https://github.com/kronostechnologies/design-elements/issues/1245)) ([e148671](https://github.com/kronostechnologies/design-elements/commit/e148671f84815d1f45d5c35d12b2f4afb417cfde))
+* **Dropdowns:** fix keyboard interaction with all dropdowns ([#1289](https://github.com/kronostechnologies/design-elements/issues/1289)) ([0f7c606](https://github.com/kronostechnologies/design-elements/commit/0f7c6065d4d0e2a83343efd75ced5f1c8c744356))
+* **Link:** add aria-label icon only ([#1105](https://github.com/kronostechnologies/design-elements/issues/1105)) ([88de11f](https://github.com/kronostechnologies/design-elements/commit/88de11fb2efb0b68ab19a2375d12cc0e7ca54512))
+* **MenuButton:** onClick is not called ([#1306](https://github.com/kronostechnologies/design-elements/issues/1306)) ([695b0ed](https://github.com/kronostechnologies/design-elements/commit/695b0edc90e5ffafe872ea8d6b5af7ba393a863f))
+* **MenuButton:** prevent toolip content from being constrained by parent (DS-1488) ([#1378](https://github.com/kronostechnologies/design-elements/issues/1378)) ([f383095](https://github.com/kronostechnologies/design-elements/commit/f383095cd2158ccd5be3e58ee677d4d0b8a28b24))
+* **ProgressIndicator:** allow data attributes on the component (DS-1474) ([#1356](https://github.com/kronostechnologies/design-elements/issues/1356)) ([dd383ae](https://github.com/kronostechnologies/design-elements/commit/dd383ae49d9c4fab5ae6acafe8e8b604d0af0bb3))
+* **Table:** apply default text-align left to header ([#1167](https://github.com/kronostechnologies/design-elements/issues/1167)) ([8701fbe](https://github.com/kronostechnologies/design-elements/commit/8701fbeeae6b106ed8fd92e31199729dbab25398))
+* **Tabs:** update panelId de TabItem pour ne pas unmount le tab ([dc4de53](https://github.com/kronostechnologies/design-elements/commit/dc4de53475ec8e17b3fb39726baa4cf715a784e0))
+* **Tabs:** update visuel global vs section ([#1094](https://github.com/kronostechnologies/design-elements/issues/1094)) ([01c5eb4](https://github.com/kronostechnologies/design-elements/commit/01c5eb4d38d214ef9d95c89a650ef585500a55a5))
+* **Tooltip:** move aria-describedby to children ([#1104](https://github.com/kronostechnologies/design-elements/issues/1104)) ([a32ba77](https://github.com/kronostechnologies/design-elements/commit/a32ba77641fec8def6e67be83e74cb594b3db4f9))
+
+### Dependencies
+
+* update dependency react-datepicker to v9 ([#1321](https://github.com/kronostechnologies/design-elements/issues/1321)) ([4f21beb](https://github.com/kronostechnologies/design-elements/commit/4f21beb949cafded7819e4d0e83e265c185ae632))
+* update React to v18 ([#1096](https://github.com/kronostechnologies/design-elements/issues/1096)) ([3324567](https://github.com/kronostechnologies/design-elements/commit/33245672e43b8ddbcd24cafc0793b723ba9f00f3))
+
+### Docs
+
+* **storybook:** add form validation inline and on submit patterns ([#1064](https://github.com/kronostechnologies/design-elements/issues/1064)) ([3b3aa8e](https://github.com/kronostechnologies/design-elements/commit/3b3aa8edd19e10553216a71a09779a3424d64a07))
+
+### Other
+
+* remove legacy-tests package ([1dfc061](https://github.com/kronostechnologies/design-elements/commit/1dfc061a0f18176d96729e1dd218e539f7193497))
+
+
+## v9.11.4 (February 12, 2026)
 
 ### Bug Fixes
 
