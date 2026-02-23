@@ -1,28 +1,28 @@
-import { PhoneInput } from '@equisoft/design-elements-react';
+import { MaskedInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
-const PhoneInputMeta: Meta<typeof PhoneInput> = {
-    title: 'Components/Phone Input',
-    component: PhoneInput,
+const MaskedInputMeta: Meta<typeof MaskedInput> = {
+    title: 'Components/Masked Input',
+    component: MaskedInput,
     args: {
-        mask: '(___) ___-____',
-        pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}',
+        mask: 'YYYY-MM-DD',
+        pattern: '\\d{4}-\\d{1,2}-\\d{1,2}',
     },
 };
 
-export default PhoneInputMeta;
-type Story = StoryObj<typeof PhoneInput>;
+export default MaskedInputMeta;
+type Story = StoryObj<typeof MaskedInput>;
 
 export const Default: Story = {
-    ...PhoneInputMeta,
+    ...MaskedInputMeta,
     args: {
         hint: 'Hint',
         label: 'Label',
     },
     decorators: [DesktopDecorator],
     render: (args) => (
-        <PhoneInput
+        <MaskedInput
             data-testid='custom-data-test-id'
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...args}
@@ -31,6 +31,6 @@ export const Default: Story = {
 };
 
 export const Mobile: Story = {
-    ...PhoneInputMeta,
+    ...MaskedInputMeta,
     decorators: [MobileDecorator],
 };

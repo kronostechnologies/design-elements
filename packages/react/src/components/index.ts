@@ -42,6 +42,7 @@ export * from './numeric-input';
 export * from './pagination';
 export * from './password-creation-input';
 export * from './password-input';
+export * from './masked-input';
 export * from './phone-input';
 export * from './progress-circular';
 export * from './progress-indicator';

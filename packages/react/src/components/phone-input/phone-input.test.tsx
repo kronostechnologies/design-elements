@@ -3,13 +3,17 @@ import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { PhoneInput } from './phone-input';
 
+const PHONE_MASK = '(___) ___-____';
+const PHONE_PATTERN = '\\(\\d{3}\\) \\d{3}-\\d{4}';
+
 describe('PhoneInput', () => {
     it('should not show validation message when input is empty and required onBlur', async () => {
         const user = userEvent.setup();
         const { getByTestId: byTestId, queryByTestId } = renderWithProviders(
             <form>
                 <PhoneInput
-                    pattern="(___) ___-____"
+                    mask={PHONE_MASK}
+                    pattern={PHONE_PATTERN}
                     label="test"
                     required
                     validationErrorMessage="This field is required"
@@ -31,7 +35,8 @@ describe('PhoneInput', () => {
         renderWithProviders(
             <PhoneInput
                 data-testid={customDataTestId}
-                pattern="(___) ___-____"
+                mask={PHONE_MASK}
+                pattern={PHONE_PATTERN}
                 defaultValue="(123) 456-7890"
             />,
         );
@@ -40,7 +45,7 @@ describe('PhoneInput', () => {
     });
 
     it('should display the defaultValue', () => {
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input');
 
@@ -48,7 +53,7 @@ describe('PhoneInput', () => {
     });
 
     it('should trimmed defaultValue chars that exceed input max length', () => {
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890 123" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890 123" />);
 
         const phoneInput = screen.getByTestId('phone-text-input');
 
@@ -56,7 +61,7 @@ describe('PhoneInput', () => {
     });
 
     it('should format and display the first tab panel by default', () => {
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="1234567890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="1234567890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input');
 
@@ -65,7 +70,7 @@ describe('PhoneInput', () => {
 
     it('should format value on change', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} />);
 
         const phoneInput = screen.getByTestId('phone-text-input');
         await user.type(phoneInput, '123');
@@ -75,7 +80,7 @@ describe('PhoneInput', () => {
 
     it('should format new inserted value when phone input is already complete but trim last character', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input') as HTMLInputElement;
         phoneInput.focus();
@@ -87,7 +92,7 @@ describe('PhoneInput', () => {
 
     it('should remove previous digit following mask char removal when removing char with backspace', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input') as HTMLInputElement;
         phoneInput.focus();
@@ -99,7 +104,7 @@ describe('PhoneInput', () => {
 
     it('should remove next digit following mask char removal when removing char with delete', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input') as HTMLInputElement;
         phoneInput.focus();
@@ -111,7 +116,7 @@ describe('PhoneInput', () => {
 
     it('should reinsert mask char when removing a mask char at the beginning of the input', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input') as HTMLInputElement;
         phoneInput.focus();
