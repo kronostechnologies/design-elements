@@ -1,4 +1,12 @@
-import React, { FunctionComponent, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+    FunctionComponent,
+    PropsWithChildren,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
@@ -116,7 +124,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         setVisible(!visible);
     }, [visible, buttonRef]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         onMenuVisibilityChanged?.(visible);
     }, [visible, onMenuVisibilityChanged]);
 

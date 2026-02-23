@@ -236,7 +236,7 @@ export const Menu = forwardRef(({
         if (option) {
             setFocusedElement((previousFocused) => {
                 addFocusVisibleActive(option);
-                option.focus();
+                option.focus({ preventScroll: true });
                 removeFocusVisibleActive(previousFocused);
                 return option;
             });
