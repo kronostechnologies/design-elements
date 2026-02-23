@@ -349,10 +349,10 @@ exports[`Tabs has small styles 1`] = `
 
 <div>
   <div
-    class="c0"
+    class="c0 eds-Tabs-tablistContainer"
   >
     <div
-      class="c1 eds-Tabs-tablistContainer"
+      class="c1"
     >
       <button
         aria-hidden="true"
@@ -842,10 +842,10 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 
 <div>
   <div
-    class="c0"
+    class="c0 eds-Tabs-tablistContainer"
   >
     <div
-      class="c1 eds-Tabs-tablistContainer"
+      class="c1"
     >
       <button
         aria-hidden="true"
@@ -1335,10 +1335,10 @@ exports[`Tabs matches snapshot 1`] = `
 
 <div>
   <div
-    class="c0"
+    class="c0 eds-Tabs-tablistContainer"
   >
     <div
-      class="c1 eds-Tabs-tablistContainer"
+      class="c1"
     >
       <button
         aria-hidden="true"
