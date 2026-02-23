@@ -303,10 +303,8 @@ export const Tabs: FC<TabsProps> = ({
 
     return (
         <div className={className}>
-            <TabTopSection>
-                <TabButtonsContainer
-                    className={tabsClasses.tablistContainer}
-                >
+            <TabTopSection className={tabsClasses.tablistContainer}>
+                <TabButtonsContainer>
                     <ScrollButton
                         className="hidden"
                         buttonType="tertiary"
