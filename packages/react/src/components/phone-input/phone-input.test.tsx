@@ -4,7 +4,7 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { PhoneInput } from './phone-input';
 
 const PHONE_MASK = '(___) ___-____';
-const PHONE_PATTERN = '\\(\\d{3}\\) \\d{3}-\\d{4}';
+const PHONE_PATTERN = /\(\d{3}\) \d{3}-\d{4}/;
 
 describe('PhoneInput', () => {
     it('should not show validation message when input is empty and required onBlur', async () => {
@@ -80,7 +80,7 @@ describe('PhoneInput', () => {
 
     it('should format new inserted value when phone input is already complete but trim last character', async () => {
         const user = userEvent.setup();
-        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern="(___) ___-____" defaultValue="(123) 456-7890" />);
+        renderWithProviders(<PhoneInput mask={PHONE_MASK} pattern={/\(\d{3}\) \d{3}-\d{4}/} defaultValue="(123) 456-7890" />);
 
         const phoneInput = screen.getByTestId('phone-text-input') as HTMLInputElement;
         phoneInput.focus();

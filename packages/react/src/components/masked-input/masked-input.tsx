@@ -1,29 +1,15 @@
-import {
-    ChangeEvent,
-    FC,
-    KeyboardEvent,
-    MouseEvent,
-    useCallback,
-    useEffect,
-    useLayoutEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { useMaskito } from '@maskito/react';
+import { ChangeEvent, FC, type MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider';
 import { TextInput } from '../text-input';
 import {
-    buildSlotMap,
-    findNextInsertPositionFromMaskInputDiff,
-    getPreviousSlotIndex,
-    getSlotCount,
-    hasUserInput,
-    isValidInputChar,
-} from './masked-input-char-finder';
-import { buildSlotAtoms, extractUserInput, filterByPattern, formatFromMask, removeSlotCharsOnMaskCharRemoval } from './masked-input-value-formater';
-import { getFirstUnfilledSlotIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './masked-input-value-parser';
+    buildMaskitoOptions,
+    DEFAULT_SEPARATORS,
+    extractRawInput,
+    formatDefaultValue,
+} from './masked-input-utils';
 
 export interface MaskedInputProps {
     defaultValue?: string;
@@ -34,13 +20,12 @@ export interface MaskedInputProps {
     label?: string;
     mask: string;
     name?: string;
-    pattern: string;
+    onChange?(rawValue: string, formattedValue: string, event: ChangeEvent<HTMLInputElement>): void;
+    pattern: RegExp;
     readOnly?: boolean;
     required?: boolean;
     separators?: string;
     validationErrorMessage?: string;
-
-    onChange?(rawValue: string, formattedValue: string, event: ChangeEvent<HTMLInputElement>): void;
 }
 
 const MaskContainer = styled.div<{ $isMobile: boolean }>`
@@ -65,29 +50,6 @@ const InputDuplicatedValue = styled.span`
     color: transparent;
 `;
 
-function ensureValidRegex(pattern: string): void {
-    try {
-        // eslint-disable-next-line no-new
-        new RegExp(pattern);
-    } catch {
-        console.error(`Invalid regex pattern provided to MaskedInput: ${pattern}`);
-    }
-}
-
-function getFilledPart(hasInput: boolean, firstUnfilledSlot: number, inputValue: string): string {
-    if (!hasInput) {
-        return '';
-    }
-    return firstUnfilledSlot === -1 ? inputValue : inputValue.slice(0, firstUnfilledSlot);
-}
-
-function getUnfilledPart(hasInput: boolean, inputValue: string, firstUnfilledSlot: number): string {
-    if (!hasInput) {
-        return inputValue;
-    }
-    return firstUnfilledSlot === -1 ? '' : inputValue.slice(firstUnfilledSlot);
-}
-
 /**
  * @alpha This component is experimental and may change without a major version bump.
  */
@@ -104,172 +66,69 @@ export const MaskedInput: FC<MaskedInputProps> = ({
     pattern,
     readOnly,
     required,
-    separators = '()- /',
+    separators = DEFAULT_SEPARATORS,
     validationErrorMessage,
     ...otherProps
 }) => {
-    ensureValidRegex(pattern);
     const { isMobile } = useDeviceContext();
     const separatorSet = useMemo(() => new Set(separators), [separators]);
-    const slots = useMemo(() => buildSlotMap(mask, separators), [mask, separators]);
-    const slotAtoms = useMemo(() => buildSlotAtoms(pattern, separators), [pattern, separators]);
-    const maxLength = useMemo(() => getSlotCount(slots), [slots]);
 
-    const formatValue = useCallback(
-        (input: string) => {
-            const trimmedInput = trimCharAfterMaxLength(
-                filterByPattern(extractUserInput(input, separatorSet), slotAtoms),
-                maxLength,
-            );
-            return formatFromMask(mask, slots, trimmedInput);
-        },
-        [mask, slots, separatorSet, slotAtoms, maxLength],
+    const maskitoOptions = useMemo(
+        () => buildMaskitoOptions(mask, pattern, separators),
+        [mask, pattern, separators],
     );
 
-    const [inputValue, setInputValue] = useState(() => formatValue(defaultValue ?? ''));
-    const [valid, setValid] = useState(true);
-    const firstUnfilledSlot = getFirstUnfilledSlotIndex(inputValue, slots, mask);
-    const [selectionPosition, setSelectionPosition] = useState(0);
-    const [isTextHighlighted, setIsTextHighlighted] = useState(false);
-    const [lastEnteredKey, setLastEnteredKey] = useState('');
+    const maskitoRef = useMaskito({ options: maskitoOptions });
     const inputRef = useRef<HTMLInputElement>(null);
-    const [changeId, setChangeId] = useState(0);
 
-    const hasBackspaceJustBeenEntered = useCallback(() => lastEnteredKey === 'Backspace', [lastEnteredKey]);
-    const hasDeleteJustBeenEntered = useCallback(() => lastEnteredKey === 'Delete', [lastEnteredKey]);
-    const isLastKeyEnteredInvalid = useCallback(
-        () => !isValidInputChar(lastEnteredKey, separatorSet) && !hasBackspaceJustBeenEntered()
-            && !hasDeleteJustBeenEntered(),
-        [lastEnteredKey, separatorSet, hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered],
-    );
+    const formattedDefault = useMemo(() => {
+        if (!defaultValue) return '';
+        return formatDefaultValue(defaultValue, maskitoOptions);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-    useLayoutEffect(() => {
-        inputRef.current?.setSelectionRange(selectionPosition, selectionPosition);
-    }, [changeId, selectionPosition]);
+    const [displayValue, setDisplayValue] = useState(formattedDefault);
+    const [valid, setValid] = useState(true);
+
+    const mergedRef = useCallback((el: HTMLInputElement | null) => {
+        (inputRef as MutableRefObject<HTMLInputElement | null>).current = el;
+        maskitoRef(el);
+    }, [maskitoRef]);
+
+    const filledPart = displayValue;
+    const unfilledPart = mask.slice(displayValue.length);
+    const hasInput = displayValue.length > 0;
 
     useEffect(() => {
         if (required) {
-            inputRef.current?.setCustomValidity(hasUserInput(inputValue, slots, mask) ? '' : ' ');
+            inputRef.current?.setCustomValidity(hasInput ? '' : ' ');
         }
-    }, [inputValue, mask, required, slots]);
+    }, [hasInput, required]);
 
-    const formatChange = useCallback(
-        (currentValue: string, currentSelectionIndex: number) => {
-            const valueWithoutSeparators = filterByPattern(
-                extractUserInput(currentValue, separatorSet),
-                slotAtoms,
-            );
-            const trimmedValue = trimCharAfterMaxLength(valueWithoutSeparators, maxLength);
-            const isChangeACharRemoval = hasBackspaceJustBeenEntered() || hasDeleteJustBeenEntered();
-            const hasNoChangeAfterFormat = trimmedValue === extractUserInput(inputValue, separatorSet);
-
-            const newInput = (!isTextHighlighted && isChangeACharRemoval && hasNoChangeAfterFormat)
-                ? removeSlotCharsOnMaskCharRemoval(
-                    trimmedValue,
-                    inputValue,
-                    slots,
-                    mask,
-                    currentSelectionIndex,
-                    hasBackspaceJustBeenEntered(),
-                )
-                : trimmedValue;
-
-            return { rawValue: newInput, formattedValue: formatFromMask(mask, slots, newInput) };
-        },
-        [
-            hasBackspaceJustBeenEntered,
-            hasDeleteJustBeenEntered,
-            isTextHighlighted,
-            mask,
-            slotAtoms,
-            slots,
-            separatorSet,
-            inputValue,
-            maxLength,
-        ],
-    );
-
-    function isSelectionOnValueBorders(selection: number, value: string): boolean {
-        return selection === 0 || selection > value.length;
-    }
-
-    const isValidCharAtPosition = useCallback((selection: number, value: string): boolean => (
-        isValidInputChar(value[selection - 1], separatorSet)
-    ), [separatorSet]);
-
-    const getNewSelectionPosition = useCallback((
-        currentSelection: number,
-        currentValue: string,
-        newValue: string,
-    ) => {
-        if (isLastKeyEnteredInvalid()) {
-            return currentSelection - 1;
-        }
-        if (hasDeleteJustBeenEntered() || isTextHighlighted) {
-            return currentSelection;
-        }
-        if (hasBackspaceJustBeenEntered()) {
-            const previousSlot = getPreviousSlotIndex(slots, currentSelection + 1);
-            if (previousSlot === -1) {
-                return 0;
-            }
-            const deletedCharWasSeparator = !slots[currentSelection];
-            return deletedCharWasSeparator ? previousSlot + 1 : previousSlot;
-        }
-        if (isSelectionOnValueBorders(currentSelection, newValue)
-            || isValidCharAtPosition(currentSelection, newValue)) {
-            return currentSelection;
-        }
-        const newPosition = findNextInsertPositionFromMaskInputDiff(currentValue, slots, separatorSet);
-        return newPosition === -1 ? currentSelection : newPosition;
-    }, [
-        isLastKeyEnteredInvalid,
-        hasDeleteJustBeenEntered,
-        isTextHighlighted,
-        hasBackspaceJustBeenEntered,
-        isValidCharAtPosition,
-        slots,
-        separatorSet,
-    ]);
-
-    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-        const currentTarget = event.currentTarget;
-        const currentValue = currentTarget.value;
-        const currentSelection = currentTarget.selectionStart ?? 0;
-        const { rawValue, formattedValue: newFormattedValue } = formatChange(currentValue, currentSelection);
-
-        setInputValue(newFormattedValue);
+    const handleInput = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        setDisplayValue(newValue);
         setValid(true);
-        setSelectionPosition(getNewSelectionPosition(currentSelection, currentValue, newFormattedValue));
 
-        if (isTextHighlighted) {
-            setIsTextHighlighted(false);
-        }
-
-        onChange?.(rawValue, newFormattedValue, event);
-
-        setChangeId(changeId + 1);
-    }, [changeId, formatChange, getNewSelectionPosition, isTextHighlighted, onChange]);
-
-    const handleMouseUp = useCallback(({ currentTarget }: MouseEvent<HTMLInputElement>) => {
-        const selectionStart = currentTarget.selectionStart;
-        const selectionEnd = currentTarget.selectionEnd;
-        setIsTextHighlighted(selectionStart !== null && selectionEnd !== null && selectionStart !== selectionEnd);
-    }, []);
-
-    const handleKeyDown = useCallback(({ key }: KeyboardEvent<HTMLInputElement>) => {
-        setLastEnteredKey(key);
-    }, []);
+        const rawValue = extractRawInput(newValue, separatorSet);
+        onChange?.(rawValue, newValue, event as unknown as ChangeEvent<HTMLInputElement>);
+    }, [onChange, separatorSet]);
 
     const handleInvalid = useCallback(() => {
         setValid(false);
     }, []);
 
+    const handleFocus = useCallback(() => {
+        if (!inputRef.current) return;
+        const firstFillableIndex = Array.from(mask).findIndex((char) => !separatorSet.has(char));
+        if (firstFillableIndex > 0 && !displayValue) {
+            setTimeout(() => {
+                inputRef.current?.setSelectionRange(firstFillableIndex, firstFillableIndex);
+            }, 0);
+        }
+    }, [mask, separatorSet, displayValue]);
+
     const dataAttributes = useDataAttributes(otherProps);
-    const hasInput = hasUserInput(inputValue, slots, mask);
-    const filledPart = getFilledPart(hasInput, firstUnfilledSlot, inputValue);
-    const unfilledPart = getUnfilledPart(hasInput, inputValue, firstUnfilledSlot);
-    const textInputValue = getValueFromSplitIndex(inputValue, firstUnfilledSlot, slots, mask);
 
     return (
         <Container>
@@ -280,20 +139,19 @@ export const MaskedInput: FC<MaskedInputProps> = ({
 
             <TextInput
                 data-testid="masked-text-input"
-                ref={inputRef}
+                ref={mergedRef}
                 id={providedId}
                 type={inputType}
                 name={name}
-                pattern={pattern}
-                value={textInputValue}
+                pattern={pattern.source}
+                defaultValue={formattedDefault}
                 readOnly={readOnly}
                 required={required}
                 disabled={disabled}
                 hint={hint}
                 label={label}
-                onChange={handleChange}
-                onMouseUp={handleMouseUp}
-                onKeyDown={handleKeyDown}
+                onChange={handleInput}
+                onFocus={handleFocus}
                 onInvalid={handleInvalid}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage}

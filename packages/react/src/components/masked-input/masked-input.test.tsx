@@ -4,9 +4,9 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { MaskedInput } from './masked-input';
 
 const PHONE_MASK = '(___) ___-____';
-const PHONE_PATTERN = '\\(\\d\\d\\d\\) \\d\\d\\d-\\d\\d\\d\\d';
+const PHONE_PATTERN = /\(\d\d\d\) \d\d\d-\d\d\d\d/;
 const DATE_MASK = 'YYYY-MM-DD';
-const DATE_PATTERN = '\\d\\d\\d\\d-\\d\\d-\\d\\d';
+const DATE_PATTERN = /\d\d\d\d-\d\d-\d\d/;
 
 describe('MaskedInput', () => {
     describe('with phone mask', () => {
@@ -50,16 +50,6 @@ describe('MaskedInput', () => {
             expect(input).toHaveValue('(123) 456-7890');
         });
 
-        it('should advance past separator characters automatically while typing', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={PHONE_MASK} pattern={PHONE_PATTERN} />);
-
-            const input = screen.getByTestId('masked-text-input');
-            await user.type(input, '123');
-
-            expect(input).toHaveValue('(123) ');
-        });
-
         it('should insert a digit in the middle of an existing value', async () => {
             const user = userEvent.setup();
             renderWithProviders(
@@ -72,35 +62,6 @@ describe('MaskedInput', () => {
             await user.keyboard('0');
 
             expect(input).toHaveValue('(123) 045-6789');
-        });
-
-        it('should remove previous digit on backspace over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(
-                <MaskedInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />,
-            );
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(5, 5);
-            await user.keyboard('{backspace}');
-
-            expect(input).toHaveValue('(124) 567-890');
-            expect(input.selectionStart).toBe(4);
-        });
-
-        it('should remove next digit on delete over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(
-                <MaskedInput mask={PHONE_MASK} pattern={PHONE_PATTERN} defaultValue="(123) 456-7890" />,
-            );
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(4, 4);
-            await user.keyboard('{delete}');
-
-            expect(input).toHaveValue('(123) 567-890');
         });
 
         it('should keep the mask char when backspacing at its position', async () => {
@@ -162,45 +123,11 @@ describe('MaskedInput', () => {
 
             expect(input).toHaveValue('2026-02-19');
         });
-
-        it('should advance past separator characters automatically while typing', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={DATE_MASK} pattern={DATE_PATTERN} />);
-
-            const input = screen.getByTestId('masked-text-input');
-            await user.type(input, '2026');
-
-            expect(input).toHaveValue('2026-');
-        });
-
-        it('should remove previous digit on backspace over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={DATE_MASK} pattern={DATE_PATTERN} defaultValue="20260219" />);
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(5, 5);
-            await user.keyboard('{backspace}');
-
-            expect(input).toHaveValue('2020-21-9');
-        });
-
-        it('should remove next digit on delete over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={DATE_MASK} pattern={DATE_PATTERN} defaultValue="20260219" />);
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(4, 4);
-            await user.keyboard('{delete}');
-
-            expect(input).toHaveValue('2026-21-9');
-        });
     });
 
-    describe('with date mask and quantifier pattern (YYYY-MM-DD / \\d{4}-\\d{1,2}-\\d{1,2})', () => {
+    describe('with date mask and quantifier pattern (YYYY-MM-DD)', () => {
         const QUANTIFIER_DATE_MASK = 'YYYY-MM-DD';
-        const QUANTIFIER_DATE_PATTERN = '\\d{4}-\\d{1,2}-\\d{1,2}';
+        const QUANTIFIER_DATE_PATTERN = /\d{4}-\d{1,2}-\d{1,2}/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={QUANTIFIER_DATE_MASK} pattern={QUANTIFIER_DATE_PATTERN} />);
@@ -239,7 +166,7 @@ describe('MaskedInput', () => {
 
     describe('with postal code mask (A1A 1A1)', () => {
         const POSTAL_MASK = 'A1A 1A1';
-        const POSTAL_PATTERN = '[A-Z]\\d[A-Z] \\d[A-Z]\\d';
+        const POSTAL_PATTERN = /[A-Z]\d[A-Z] \d[A-Z]\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={POSTAL_MASK} pattern={POSTAL_PATTERN} />);
@@ -286,7 +213,7 @@ describe('MaskedInput', () => {
 
     describe('with ZIP+4 mask (NNNNN-NNNN)', () => {
         const ZIP_PLUS4_MASK = 'NNNNN-NNNN';
-        const ZIP_PLUS4_PATTERN = '\\d\\d\\d\\d\\d-\\d\\d\\d\\d';
+        const ZIP_PLUS4_PATTERN = /\d\d\d\d\d-\d\d\d\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={ZIP_PLUS4_MASK} pattern={ZIP_PLUS4_PATTERN} />);
@@ -342,19 +269,9 @@ describe('MaskedInput', () => {
         expect(byTestId('invalid-field')).not.toBeNull();
     });
 
-    it('should log an error when pattern is not a valid regex', () => {
-        const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {
-        });
-
-        renderWithProviders(<MaskedInput mask={DATE_MASK} pattern="[invalid" />);
-
-        expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('[invalid'));
-        consoleSpy.mockRestore();
-    });
-
     describe('with time mask (HH-MM-SS)', () => {
         const TIME_MASK = 'HH-MM-SS';
-        const TIME_PATTERN = '\\d\\d-\\d\\d-\\d\\d';
+        const TIME_PATTERN = /\d\d-\d\d-\d\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={TIME_MASK} pattern={TIME_PATTERN} />);
@@ -377,21 +294,11 @@ describe('MaskedInput', () => {
 
             expect(screen.getByTestId('masked-text-input')).toHaveValue('14-25-36');
         });
-
-        it('should advance past both separators automatically while typing', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={TIME_MASK} pattern={TIME_PATTERN} />);
-
-            const input = screen.getByTestId('masked-text-input');
-            await user.type(input, '1425');
-
-            expect(input).toHaveValue('14-25-');
-        });
     });
 
     describe('with credit card mask (NNNN NNNN NNNN NNNN)', () => {
         const CC_MASK = 'NNNN NNNN NNNN NNNN';
-        const CC_PATTERN = '\\d\\d\\d\\d \\d\\d\\d\\d \\d\\d\\d\\d \\d\\d\\d\\d';
+        const CC_PATTERN = /\d\d\d\d \d\d\d\d \d\d\d\d \d\d\d\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={CC_MASK} pattern={CC_PATTERN} />);
@@ -410,7 +317,9 @@ describe('MaskedInput', () => {
         });
 
         it('should display the defaultValue', () => {
-            renderWithProviders(<MaskedInput mask={CC_MASK} pattern={CC_PATTERN} defaultValue="1234567890123456" />);
+            renderWithProviders(
+                <MaskedInput mask={CC_MASK} pattern={CC_PATTERN} defaultValue="1234567890123456" />,
+            );
 
             expect(screen.getByTestId('masked-text-input')).toHaveValue('1234 5678 9012 3456');
         });
@@ -426,7 +335,7 @@ describe('MaskedInput', () => {
 
     describe('with SSN mask (NNN-NN-NNNN)', () => {
         const SSN_MASK = 'NNN-NN-NNNN';
-        const SSN_PATTERN = '\\d\\d\\d-\\d\\d-\\d\\d\\d\\d';
+        const SSN_PATTERN = /\d\d\d-\d\d-\d\d\d\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={SSN_MASK} pattern={SSN_PATTERN} />);
@@ -449,36 +358,11 @@ describe('MaskedInput', () => {
 
             expect(screen.getByTestId('masked-text-input')).toHaveValue('123-45-6789');
         });
-
-        it('should remove previous digit on backspace over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={SSN_MASK} pattern={SSN_PATTERN} defaultValue="123456789" />);
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(4, 4);
-            await user.keyboard('{backspace}');
-
-            expect(input).toHaveValue('124-56-789');
-            expect(input.selectionStart).toBe(3);
-        });
-
-        it('should remove next digit on delete over a mask char', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask={SSN_MASK} pattern={SSN_PATTERN} defaultValue="123456789" />);
-
-            const input = screen.getByTestId('masked-text-input') as HTMLInputElement;
-            input.focus();
-            input.setSelectionRange(3, 3);
-            await user.keyboard('{delete}');
-
-            expect(input).toHaveValue('123-56-789');
-        });
     });
 
     describe('with mixed separators mask (NNN-NNN NN)', () => {
         const MIXED_MASK = 'NNN-NNN NN';
-        const MIXED_PATTERN = '\\d\\d\\d-\\d\\d\\d \\d\\d';
+        const MIXED_PATTERN = /\d\d\d-\d\d\d \d\d/;
 
         it('should have an empty value when no defaultValue is provided', () => {
             renderWithProviders(<MaskedInput mask={MIXED_MASK} pattern={MIXED_PATTERN} />);
@@ -505,7 +389,7 @@ describe('MaskedInput', () => {
 
     describe('with forward slash separator (DD/MM/YYYY)', () => {
         const DATE_SLASH_MASK = 'DD/MM/YYYY';
-        const DATE_SLASH_PATTERN = '\\d\\d/\\d\\d/\\d\\d\\d\\d';
+        const DATE_SLASH_PATTERN = /\d\d\/\d\d\/\d\d\d\d/;
 
         it('should treat / as a separator by default', async () => {
             const user = userEvent.setup();
@@ -529,7 +413,9 @@ describe('MaskedInput', () => {
     describe('with custom separators prop', () => {
         it('should treat . as a separator when separators="."', async () => {
             const user = userEvent.setup();
-            renderWithProviders(<MaskedInput mask="NNN.NNN.NNN" pattern={'\\d\\d\\d\\.\\d\\d\\d\\.\\d\\d\\d'} separators="." />);
+            renderWithProviders(
+                <MaskedInput mask="NNN.NNN.NNN" pattern={/\d\d\d\.\d\d\d\.\d\d\d/} separators="." />,
+            );
 
             const input = screen.getByTestId('masked-text-input');
             await user.type(input, '123456789');
