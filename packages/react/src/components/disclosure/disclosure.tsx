@@ -56,6 +56,7 @@ export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureProps>> =
             buttonType={buttonType}
             className={className}
             dropdownMenuId={idContent}
+            dropdownMenuWidth="auto"
             hasCaret={false}
             icon={icon}
             inverted={inverted}
