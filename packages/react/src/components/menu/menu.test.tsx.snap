@@ -19,7 +19,6 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-  width: 100%;
 }
 
 .c2 {
@@ -186,7 +185,6 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-  width: 100%;
 }
 
 .c1 {
