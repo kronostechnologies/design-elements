@@ -39,7 +39,6 @@ const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
     overflow-y: ${({ numberOfVisibleItems }) => numberOfVisibleItems && 'auto'};
     padding: var(--spacing-half) 0;
     scroll-behavior: smooth;
-    width: 100%;
 `;
 
 interface SubMenuProps {
@@ -64,7 +63,6 @@ const SubMenu = styled.div<SubMenuProps>`
     scroll-behavior: smooth;
     top: ${({ top }) => top}px !important;
     transform: none !important;
-    width: 100%;
 `;
 
 interface ButtonProps {
