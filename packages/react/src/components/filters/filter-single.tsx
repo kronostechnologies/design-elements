@@ -3,16 +3,17 @@ import { useTranslation } from '../../i18n/use-translation';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
+import type { BaseDropdownProps } from '../dropdown-menu-button/dropdown-menu-button';
 import type { ListboxRef } from '../listbox/listbox';
 import type { FilterOption } from './filter-option';
-import { FilterDropdownButton, PortalFilterDropdownMenuStyle } from './internal/filter-dropdown-button';
+import { FilterDropdownButton, getFallbackContentWidth } from './internal/filter-dropdown-button';
 import { ListContainer } from './internal/list-container';
 import { useListFilter } from './internal/use-list-filter';
 import { useSearch } from './internal/use.search';
 
 type Value = string | null;
 
-export interface FilterSingleProps {
+export interface FilterSingleProps extends BaseDropdownProps {
     /**
      * Override for the "All" label option shown in the list.
      */
@@ -31,6 +32,7 @@ const ALL_OPTIONS_VALUE: string = '';
  */
 export const FilterSingle: FC<FilterSingleProps> = ({
     allOptionLabel,
+    contentWidth,
     label,
     onChange,
     options: providedOptions,
@@ -92,27 +94,25 @@ export const FilterSingle: FC<FilterSingleProps> = ({
     );
 
     return (
-        <>
-            <PortalFilterDropdownMenuStyle $dropdownMenuId={dropdownMenuId} />
-            <FilterDropdownButton
-                firstItemRef={searchRef}
-                label={value ? getOptionByValue(value)?.label : label}
-                onMenuVisibilityChanged={handleMenuVisibilityChanged}
-                render={(close: DropdownMenuCloseFunction) => (
-                    <ListContainer
-                        listboxRef={listboxRef}
-                        onOptionClick={handleItemSelected.bind(null, close)}
-                        onSearchChange={handleSearchChange}
-                        options={filteredOptions}
-                        searchRef={searchRef}
-                        value={previousValue || ALL_OPTIONS_VALUE}
-                    />
-                )}
-                dropdownMenuId={dropdownMenuId}
-                $labelPrefix={label}
-                $hasFilters={hasFiltersApplied}
-            />
-        </>
+        <FilterDropdownButton
+            contentWidth={contentWidth || getFallbackContentWidth({ search: searchEnabled })}
+            firstItemRef={searchRef}
+            label={value ? getOptionByValue(value)?.label : label}
+            onMenuVisibilityChanged={handleMenuVisibilityChanged}
+            render={(close: DropdownMenuCloseFunction) => (
+                <ListContainer
+                    listboxRef={listboxRef}
+                    onOptionClick={handleItemSelected.bind(null, close)}
+                    onSearchChange={handleSearchChange}
+                    options={filteredOptions}
+                    searchRef={searchRef}
+                    value={previousValue || ALL_OPTIONS_VALUE}
+                />
+            )}
+            dropdownMenuId={dropdownMenuId}
+            $labelPrefix={label}
+            $hasFilters={hasFiltersApplied}
+        />
     );
 };
 

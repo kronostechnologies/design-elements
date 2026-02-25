@@ -242,6 +242,17 @@ const ListItemTextContainer = styled.span`
 const ListItemText = styled.span`
     display: flex;
     flex-direction: column;
+
+    ::after {
+        content: attr(data-text);
+        display: block;
+        font-weight: var(--font-semi-bold);
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        visibility: hidden;
+    }
 `;
 
 const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
@@ -426,6 +437,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                     if (option !== focusedOption) {
                         setFocusedOption(option);
                         onFocusChange?.(option);
+                        containerRef.current?.focus({ preventScroll: true });
                     }
 
                     if (multiselect) {
@@ -541,6 +553,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
 
     function renderOptions(): ReactElement {
         function renderOption(option: ListboxOption): ReactElement {
+            const optionText = option.label || option.value;
             return (
                 <ListItem
                     aria-disabled={option.disabled}
@@ -577,8 +590,8 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                     ) : null}
                     <ListItemTextContainer className={`${IGNORE_CLICK_OUTSIDE} ${listboxClasses.listItemContent}`}>
                         {renderLeadingVisual(option)}
-                        <ListItemText>
-                            {option.label || option.value}
+                        <ListItemText data-text={optionText}>
+                            {optionText}
                             {option.caption && (
                                 <ListItemCaption
                                     className={IGNORE_CLICK_OUTSIDE}

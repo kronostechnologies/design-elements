@@ -142,8 +142,6 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
 
 .c9 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;
@@ -1037,8 +1035,6 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
 
 .c8 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;
@@ -1736,8 +1732,6 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
 
 .c9 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;

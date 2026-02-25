@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
+import styled, { css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../../themes';
 import { badgeClasses } from '../../badge';
 import { DropdownMenuButton, dropdownMenuButtonClasses } from '../../dropdown-menu-button';
@@ -27,16 +27,6 @@ function computeTokenStyles({
     `;
 }
 
-interface PortalDropdownMenuProps {
-    $dropdownMenuId: string;
-}
-
-export const PortalFilterDropdownMenuStyle = createGlobalStyle<PortalDropdownMenuProps>`
-    #${({ $dropdownMenuId }) => $dropdownMenuId} {
-        min-width: 250px;
-    }
-`;
-
 function displayLabelPrefixAsBeforePseudo(
     { $labelPrefix, $hasFilters }: FilterDropdownButtonProps,
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> | null {
@@ -50,6 +40,26 @@ function displayLabelPrefixAsBeforePseudo(
         `;
     }
     return null;
+}
+
+export const DEFAULT_CONTENT_WIDTH_SINGLE = 180;
+export const DEFAULT_CONTENT_WIDTH_MULTI = 200;
+export const DEFAULT_CONTENT_WIDTH_LARGE = 260;
+
+type DropdownFeatures = {
+    async?: boolean;
+    multi?: boolean
+    search?: boolean;
+}
+
+export function getFallbackContentWidth({ async, multi, search }: DropdownFeatures): number {
+    if (async || search) {
+        return DEFAULT_CONTENT_WIDTH_LARGE;
+    }
+    if (multi) {
+        return DEFAULT_CONTENT_WIDTH_MULTI;
+    }
+    return DEFAULT_CONTENT_WIDTH_SINGLE;
 }
 
 export const FilterDropdownButton = styled(DropdownMenuButton)

@@ -9,11 +9,14 @@ import {
     useCallback,
     useEffect,
     useMemo,
+    useRef,
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { addFocusVisibleActive, focus, removeFocusVisibleActive } from '../../utils/css-state';
+import { mergeRefs } from '../../utils/react-merge-refs';
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -23,16 +26,15 @@ function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
     const optionsHeight = menuOptionHeight * numberOfVisibleItems;
 
-    return `calc(var(--spacing-half) + ${optionsHeight.toString()}px)`;
+    return `${optionsHeight.toString()}px`;
 }
 
 const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
     background-color: ${({ theme }) => theme.component['menu-background-color']};
-
     border: 1px solid ${({ theme }) => theme.component['menu-border-color']};
     border-radius: var(--border-radius);
     box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-box-shadow-color']};
-    box-sizing: border-box;
+    box-sizing: content-box;
     flex-direction: column;
     margin: 0;
     max-height: ${({ numberOfVisibleItems }) => numberOfVisibleItems && getMaxHeight(numberOfVisibleItems)};
@@ -103,6 +105,8 @@ const Button = styled.button<ButtonProps>`
 
 const StyledIcon = styled(Icon)`
     color: ${({ theme }) => theme.component['menu-item-icon-color']};
+    flex-shrink: 0;
+
     &:hover {
         color: ${({ theme }) => theme.component['menu-item-hover-icon-color']};
     }
@@ -221,6 +225,7 @@ export const Menu = forwardRef(({
     onOptionSelect,
     ...props
 }: MenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
+    const containerRef = useRef<HTMLDivElement>(null);
     const menuId = useMemo(() => id || uuid(), [id]);
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
@@ -229,17 +234,23 @@ export const Menu = forwardRef(({
     const [isMouseNavigating, setMouseNavigating] = useState(false);
     const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
 
+    const { scrollIntoView } = useScrollIntoView({
+        container: containerRef,
+        scrollingContainer: containerRef,
+    });
+
     const focusElementAtIndex = useCallback((index: number): void => {
         const option = getAllOptionsInLevel(activeMenuList)[index]?.ref.current;
         if (option) {
             setFocusedElement((previousFocused) => {
                 addFocusVisibleActive(option);
                 option.focus({ preventScroll: true });
+                scrollIntoView(option);
                 removeFocusVisibleActive(previousFocused);
                 return option;
             });
         }
-    }, [activeMenuList]);
+    }, [activeMenuList, scrollIntoView]);
 
     useEffect(() => {
         if (!isMouseNavigating) {
@@ -418,7 +429,7 @@ export const Menu = forwardRef(({
                 : undefined}
             onKeyDown={handleKeyDown}
             role="menu"
-            ref={ref}
+            ref={mergeRefs(ref, containerRef)}
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...props}
         >

@@ -13,7 +13,7 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
-import styled from 'styled-components';
+import styled, { css, type SimpleInterpolation } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
@@ -45,25 +45,37 @@ const StyledRightIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
+export interface BaseDropdownProps {
+    contentWidth?: number;
+}
+
 interface StyledListboxProps {
     $left?: number | string;
     $referenceWidth?: number | undefined;
     $top?: number | string;
+    $width?: BaseDropdownProps['contentWidth'];
+}
+
+function getWidthStyles({ $width, $referenceWidth }: StyledListboxProps): SimpleInterpolation {
+    return css`
+        min-width: ${$referenceWidth ? `${$referenceWidth}px` : null};
+        width: ${$width && `${$width}px`};
+    `;
 }
 
 export const StyledDropdownMenu = styled(DropdownMenu)<StyledListboxProps>`
     left: ${({ $left }) => $left};
-    max-width: 350px;
-    min-width: ${({ $referenceWidth }) => $referenceWidth || 200}px;
     position: absolute;
     top: ${({ $top }) => $top};
     width: auto;
     z-index: 99998;
+
+    ${getWidthStyles};
 `;
 
 export type DropdownMenuCloseFunction = () => void;
 
-export interface DropdownMenuButtonProps {
+export interface DropdownMenuButtonProps extends BaseDropdownProps {
     align?: 'left' | 'right';
     /**
      * Sets nav's description
@@ -73,6 +85,11 @@ export interface DropdownMenuButtonProps {
     buttonAriaLabel?: string;
     buttonType?: ButtonType;
     className?: string;
+    /**
+     * Sets dropdown menu width.
+     * If not set, menu width will be determined by its content or the width of the button, whichever is greater.
+     */
+    contentWidth?: number;
     /**
      * Sets menu open by default
      * @default false
@@ -107,10 +124,11 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     buttonAriaLabel,
     buttonType = 'tertiary',
     className,
+    contentWidth,
     defaultOpen = false,
     disabled,
     dropdownMenuId,
-    dropdownMenuWidth = 'reference',
+    dropdownMenuWidth = 'auto',
     firstItemRef,
     hasCaret = true,
     icon,
@@ -143,7 +161,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     } = useDropdown<HTMLButtonElement>({
         open: isOpen,
         placement: align === 'right' ? 'bottom-end' : 'bottom-start',
-        width: dropdownMenuWidth,
+        width: contentWidth || dropdownMenuWidth,
     });
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
@@ -211,6 +229,11 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
             handleCurrentFocus();
         }
     }
+
+    const onClose = useCallback(() => {
+        buttonRef.current?.focus();
+        setOpen(false);
+    }, [buttonRef]);
 
     return (
         <StyledDiv
@@ -281,14 +304,12 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     ref={refs.setFloating}
                     data-testid="menu-dropdownMenu"
                     onKeyDown={handleNavMenuKeyDown}
+                    $width={contentWidth}
                     $left={`${x}px`}
-                    $referenceWidth={buttonRef.current?.clientWidth}
+                    $referenceWidth={buttonRef.current?.offsetWidth}
                     $top={`${y}px`}
                 >
-                    {render?.(() => {
-                        buttonRef.current?.focus();
-                        setOpen(false);
-                    })}
+                    {render?.(onClose)}
                 </StyledDropdownMenu>,
                 rootElement,
             )}

@@ -1,7 +1,66 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] = `
-.c1 {
+[
+  <head>
+    <style
+      data-styled="active"
+      data-styled-version="5.3.11"
+    >
+      .jHUdCd{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:inherit;border:1px solid;border-radius:1.5rem;box-sizing:border-box;color:inherit;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-family:inherit;font-size:0.75rem;font-weight:var(--font-bold);-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-letter-spacing:0.025rem;-moz-letter-spacing:0.025rem;-ms-letter-spacing:0.025rem;letter-spacing:0.025rem;line-height:1rem;min-height:var(--size-2x);min-width:2rem;outline:none;padding:0 var(--spacing-2x);text-transform:uppercase;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+      .jHUdCd:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .jHUdCd &gt; svg{height:var(--size-1x);width:var(--size-1x);}
+      .lcwguu{background-color:transparent;border-color:transparent;color:#FFFFFF;padding:0;width:var(--size-2x);}
+      .lcwguu:focus-visible{box-shadow:0 0 0 2px #84C6EA;outline:2px solid #006296;outline-offset:-2px;}
+      .lcwguu:hover,.lcwguu[aria-expanded='true']{background-color:rgb(0 0 0 / 0.5);border-color:transparent;color:#FFFFFF;}
+      .lcwguu[aria-disabled='true']{background-color:transparent;border-color:transparent;color:#006296;cursor:not-allowed;pointer-events:none;}
+      .dhIzcU{color:#1B1C1E;font-size:1rem;font-weight:var(--font-semi-bold);line-height:1.5rem;margin:var(--spacing-3x) 0;}
+      .gLYLlA{background-color:#FFFFFF;border:1px solid #878F9A;border-radius:var(--border-radius);box-shadow:0 10px 20px 0 rgb(0 0 0 / 0.2);color:#1B1C1E;list-style-type:none;position:absolute;width:100%;z-index:700;}
+      .ftElhy{position:relative;}
+      .ftElhy:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .fjguHq{left:0px;position:absolute;top:0px;width:auto;z-index:99998;}
+      .DPByW{left:0px;position:absolute;top:4px;width:auto;z-index:99998;}
+      .dSKJqS{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:var(--border-radius);color:#006296;cursor:pointer;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-size:0.875rem;line-height:1.5rem;-webkit-text-decoration:underline;text-decoration:underline;}
+      .dSKJqS:hover{color:#003A5A;}
+      .dSKJqS:visited{color:#006296;}
+      .dSKJqS:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .hanGZO{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:var(--border-radius);color:#8FCEF0;cursor:default;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-size:0.875rem;line-height:1.5rem;-webkit-text-decoration:underline;text-decoration:underline;}
+      .hanGZO:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .lkvuzC{border:0;-webkit-clip:rect(0,0,0,0);clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+      .sdqEb{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;height:1rem;margin-left:var(--spacing-half);margin-right:0;width:1rem;}
+      .kOsYsx{-webkit-align-items:baseline;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}
+      .kOsYsx:visited svg{color:#006296;}
+      .ciVfFT{display:block;overflow:hidden;text-overflow:ellipsis;}
+      .ehsVGk{color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;line-height:2rem;overflow:hidden;padding:0 var(--spacing-2x) 0 var(--spacing-3x);-webkit-text-decoration:none;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;}
+      .ehsVGk:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .ehsVGk:hover{background-color:#DBDEE1;}
+      .ehsVGk:visited{color:#006296;fill:#006296;}
+      .ehsVGk:visited svg{color:#006296;fill:#006296;}
+      .ehsVGk[disabled]{color:#B7BBC2;fill:#B7BBC2;pointer-events:none;}
+      .dwxJvL{font-size:0.875rem;margin:0;padding:0 var(--spacing-2x);padding-bottom:var(--spacing-1x);}
+      .cXBreE{margin:0;overflow-y:auto;padding:0;}
+      .cXBreE:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:0 var(--spacing-2x);}
+      .bKRBPp{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;background-color:#F1F2F2;border:1px solid #DBDEE1;border-radius:var(--border-radius);-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;margin:0 var(--spacing-half) 2px 0;padding:var(--spacing-half);}
+      .gnlfIO{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;max-width:100%;}
+      .jHQWUv{line-height:1.25rem;margin:auto var(--spacing-1x) auto 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+      .ejxtuV{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;font-size:0.875rem;margin:0;overflow:hidden;padding:0 0 0 var(--spacing-half);}
+      .kxIgwq{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.875rem;height:2.5rem;line-height:2rem;padding:0 var(--spacing-2x);-webkit-text-decoration:none;text-decoration:none;white-space:nowrap;}
+      .kxIgwq:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .kxIgwq:hover{background-color:#DBDEE1;}
+      .kxIgwq[disabled],.kxIgwq[disabled] *{color:#B7BBC2;cursor:default;fill:#B7BBC2;pointer-events:none;}
+      .giXGgg{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.875rem;height:2.5rem;line-height:2rem;padding:0 var(--spacing-2x);-webkit-text-decoration:none;text-decoration:none;white-space:nowrap;}
+      .giXGgg:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .giXGgg:hover{background-color:transparent;}
+      .giXGgg[disabled],.giXGgg[disabled] *{color:#B7BBC2;cursor:default;fill:#B7BBC2;pointer-events:none;}
+      #eds-uuid1{border-radius:var(--border-radius-2x);box-sizing:border-box;max-width:350px;min-width:200px;padding:var(--spacing-1halfx) 0;width:initial;}
+      #eds-uuid1 .sc-fBWQRz,#eds-uuid1 .sc-hknOHE{height:2rem;overflow:visible;padding:var(--spacing-1x) var(--spacing-2x);}
+      #eds-uuid1 .sc-cWSHoV{line-height:1.5rem;padding:var(--spacing-half) var(--spacing-2x);}
+      #eds-uuid1 .sc-eBMEME{margin:0 0 var(--spacing-1x);padding:0 var(--spacing-2x);}
+      #eds-uuid1 ul:not(:last-child)::after,#eds-uuid1 ol:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:var(--spacing-1x) var(--spacing-2x);}
+      .dUTmZL{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
+    </style>
+  </head>,
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -113,15 +172,13 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c5 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;
   z-index: 99998;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -139,21 +196,21 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   text-decoration: underline;
 }
 
-.c16:hover {
+.c17:hover {
   color: #003A5A;
 }
 
-.c16:visited {
+.c17:visited {
   color: #006296;
 }
 
-.c16:focus-visible {
+.c17:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c21 {
+.c23 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -171,13 +228,13 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   text-decoration: underline;
 }
 
-.c21:focus-visible {
+.c23:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c14 {
+.c15 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -189,7 +246,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   width: 1px;
 }
 
-.c20 {
+.c22 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -202,7 +259,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   width: 1rem;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -213,17 +270,17 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: inline-flex;
 }
 
-.c17:visited svg {
+.c18:visited svg {
   color: #006296;
 }
 
-.c19 {
+.c21 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c18 {
+.c20 {
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -238,53 +295,53 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c18:focus-visible {
+.c20:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c18:hover {
+.c20:hover {
   background-color: #DBDEE1;
 }
 
-.c18:visited {
+.c20:visited {
   color: #006296;
   fill: #006296;
 }
 
-.c18:visited svg {
+.c20:visited svg {
   color: #006296;
   fill: #006296;
 }
 
-.c18[disabled] {
+.c20[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c7 {
+.c8 {
   font-size: 0.875rem;
   margin: 0;
   padding: 0 var(--spacing-2x);
   padding-bottom: var(--spacing-1x);
 }
 
-.c8 {
+.c9 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c8:not(:last-child)::after {
+.c9:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -298,7 +355,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   padding: var(--spacing-half);
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -310,7 +367,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   max-width: 100%;
 }
 
-.c13 {
+.c14 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -318,7 +375,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -336,7 +393,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -355,25 +412,25 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c9:focus-visible {
+.c10:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c9:hover {
+.c10:hover {
   background-color: #DBDEE1;
 }
 
-.c9[disabled],
-.c9[disabled] * {
+.c10[disabled],
+.c10[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -392,22 +449,32 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   white-space: nowrap;
 }
 
-.c15:focus-visible {
+.c16:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: transparent;
 }
 
-.c15[disabled],
-.c15[disabled] * {
+.c16[disabled],
+.c16[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
+}
+
+#eds-uuid1 .c19 {
+  line-height: 1.5rem;
+  padding: var(--spacing-half) var(--spacing-2x);
+}
+
+#eds-uuid1 .c7 {
+  margin: 0 0 var(--spacing-1x);
+  padding: 0 var(--spacing-2x);
 }
 
 .c3 {
@@ -419,459 +486,519 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 <body>
-  <div>
-    <div
-      aria-label=""
-      class="c0"
-      data-testid="dropdown-container"
-      id="uuid2"
-    >
-      <button
-        aria-controls="eds-uuid1"
-        aria-expanded="true"
-        class="c1 c2 eds-DropdownMenuButton-button"
-        data-testid="menu-button"
-        type="button"
+    <div>
+      <div
+        aria-label=""
+        class="c0"
+        data-testid="dropdown-container"
+        id="uuid2"
       >
-        <svg
-          class="lucide lucide-grip"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          aria-controls="eds-uuid1"
+          aria-expanded="true"
+          class="c1 c2 eds-DropdownMenuButton-button"
+          data-testid="menu-button"
+          type="button"
         >
-          <circle
-            cx="12"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="12"
-            cy="19"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="19"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="19"
-            r="1"
-          />
-        </svg>
-      </button>
+          <svg
+            class="lucide lucide-grip"
+            fill="none"
+            focusable="false"
+            height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="12"
+              cy="19"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="19"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="19"
+              r="1"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    class="c3"
-    data-testid="toasts"
-  />
-  <div
-    class="c4 c5"
-    data-testid="menu-dropdownMenu"
-    id="eds-uuid1"
-    style="width: initial;"
-  >
-    <h3
-      class="c6 c7"
-      id="A-links"
+    <div
+      class="c3"
+      data-testid="toasts"
+    />
+    <div
+      class="c4 c5"
+      data-testid="menu-dropdownMenu"
+      id="eds-uuid1"
+      style="width: initial;"
     >
-      Product Group A
-    </h3>
-    <ul
-      aria-labelledby="A-links"
-      class="c8"
-      data-testid="products-group"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionA"
-          href="/testa"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+      <h3
+        class="c6 c7 c8"
+        id="A-links"
+      >
+        Product Group A
+      </h3>
+      <ul
+        aria-labelledby="A-links"
+        class="c9"
+        data-testid="products-group"
+      >
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionA"
+            href="/testa"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option A
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option A
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="true"
+            class="c16"
+            data-testid="listitem-optionB"
+            disabled=""
+            href="/testb"
+            tabindex="-1"
+            target="_blank"
           >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c15"
-          data-testid="listitem-optionB"
-          disabled=""
-          href="/testb"
-          tabindex="-1"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
-            class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
-          >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option B
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option B
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionC"
-          href="/testc"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionC"
+            href="/testc"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option C
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option C
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionD"
-          href="/testd"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionD"
+            href="/testd"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option D
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option D
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-    <h3
-      class="c6 c7"
-      id="B-links"
-    >
-      Product Group B
-    </h3>
-    <ul
-      aria-labelledby="B-links"
-      class="c8"
-      data-testid="products-group"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionE"
-          href="/teste"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+      </ul>
+      <h3
+        class="c6 c7 c8"
+        id="B-links"
+      >
+        Product Group B
+      </h3>
+      <ul
+        aria-labelledby="B-links"
+        class="c9"
+        data-testid="products-group"
+      >
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionE"
+            href="/teste"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option E
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option E
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionF"
-          href="/testf"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionF"
+            href="/testf"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option F
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option F
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+      </ul>
+      <h3
+        class="c6 c7 c8"
+        id="external-links"
+      >
+        Resources
+      </h3>
+      <ul
+        aria-labelledby="external-links"
+        class="c9"
+        data-testid="resources-group"
+      >
+        <li>
+          <a
+            aria-disabled="false"
+            class="c17 c18 c19 c20"
+            href="/testa"
+            target="_blank"
           >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-    <h3
-      class="c6 c7"
-      id="external-links"
-    >
-      Resources
-    </h3>
-    <ul
-      aria-labelledby="external-links"
-      class="c8"
-      data-testid="resources-group"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c16 c17 c18"
-          href="/testa"
-          target="_blank"
-        >
-          <span
-            class="c19"
+            <span
+              class="c21"
+            >
+              Option A
+            </span>
+            <svg
+              aria-label="opens in a new tab"
+              class="lucide lucide-external-link c22"
+              fill="none"
+              focusable="false"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3h6v6"
+              />
+              <path
+                d="M10 14 21 3"
+              />
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+            </svg>
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="true"
+            class="c23 c18 c19 c20"
+            disabled=""
+            target="_blank"
           >
-            Option A
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="lucide lucide-external-link c20"
-            fill="none"
-            focusable="false"
-            height="16"
-            role="img"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 3h6v6"
-            />
-            <path
-              d="M10 14 21 3"
-            />
-            <path
-              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            />
-          </svg>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c21 c17 c18"
-          disabled=""
-          target="_blank"
-        >
-          <span
-            class="c19"
-          >
-            Option B
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="lucide lucide-external-link c20"
-            fill="none"
-            focusable="false"
-            height="16"
-            role="img"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 3h6v6"
-            />
-            <path
-              d="M10 14 21 3"
-            />
-            <path
-              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            />
-          </svg>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</body>
+            <span
+              class="c21"
+            >
+              Option B
+            </span>
+            <svg
+              aria-label="opens in a new tab"
+              class="lucide lucide-external-link c22"
+              fill="none"
+              focusable="false"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3h6v6"
+              />
+              <path
+                d="M10 14 21 3"
+              />
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+            </svg>
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>,
+]
 `;
 
 exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] = `
-.c1 {
+[
+  <head>
+    <style
+      data-styled="active"
+      data-styled-version="5.3.11"
+    >
+      .jHUdCd{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:inherit;border:1px solid;border-radius:1.5rem;box-sizing:border-box;color:inherit;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-family:inherit;font-size:0.75rem;font-weight:var(--font-bold);-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-letter-spacing:0.025rem;-moz-letter-spacing:0.025rem;-ms-letter-spacing:0.025rem;letter-spacing:0.025rem;line-height:1rem;min-height:var(--size-2x);min-width:2rem;outline:none;padding:0 var(--spacing-2x);text-transform:uppercase;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+      .jHUdCd:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .jHUdCd &gt; svg{height:var(--size-1x);width:var(--size-1x);}
+      .lcwguu{background-color:transparent;border-color:transparent;color:#FFFFFF;padding:0;width:var(--size-2x);}
+      .lcwguu:focus-visible{box-shadow:0 0 0 2px #84C6EA;outline:2px solid #006296;outline-offset:-2px;}
+      .lcwguu:hover,.lcwguu[aria-expanded='true']{background-color:rgb(0 0 0 / 0.5);border-color:transparent;color:#FFFFFF;}
+      .lcwguu[aria-disabled='true']{background-color:transparent;border-color:transparent;color:#006296;cursor:not-allowed;pointer-events:none;}
+      .dhIzcU{color:#1B1C1E;font-size:1rem;font-weight:var(--font-semi-bold);line-height:1.5rem;margin:var(--spacing-3x) 0;}
+      .gLYLlA{background-color:#FFFFFF;border:1px solid #878F9A;border-radius:var(--border-radius);box-shadow:0 10px 20px 0 rgb(0 0 0 / 0.2);color:#1B1C1E;list-style-type:none;position:absolute;width:100%;z-index:700;}
+      .ftElhy{position:relative;}
+      .ftElhy:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .fjguHq{left:0px;position:absolute;top:0px;width:auto;z-index:99998;}
+      .DPByW{left:0px;position:absolute;top:4px;width:auto;z-index:99998;}
+      .dSKJqS{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:var(--border-radius);color:#006296;cursor:pointer;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-size:0.875rem;line-height:1.5rem;-webkit-text-decoration:underline;text-decoration:underline;}
+      .dSKJqS:hover{color:#003A5A;}
+      .dSKJqS:visited{color:#006296;}
+      .dSKJqS:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .hanGZO{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:var(--border-radius);color:#8FCEF0;cursor:default;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;font-size:0.875rem;line-height:1.5rem;-webkit-text-decoration:underline;text-decoration:underline;}
+      .hanGZO:focus-visible{box-shadow:0 0 0 2px #006296;outline:2px solid #84C6EA;outline-offset:-2px;}
+      .lkvuzC{border:0;-webkit-clip:rect(0,0,0,0);clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+      .sdqEb{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;height:1rem;margin-left:var(--spacing-half);margin-right:0;width:1rem;}
+      .kOsYsx{-webkit-align-items:baseline;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}
+      .kOsYsx:visited svg{color:#006296;}
+      .ciVfFT{display:block;overflow:hidden;text-overflow:ellipsis;}
+      .ehsVGk{color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;line-height:2rem;overflow:hidden;padding:0 var(--spacing-2x) 0 var(--spacing-3x);-webkit-text-decoration:none;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;}
+      .ehsVGk:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .ehsVGk:hover{background-color:#DBDEE1;}
+      .ehsVGk:visited{color:#006296;fill:#006296;}
+      .ehsVGk:visited svg{color:#006296;fill:#006296;}
+      .ehsVGk[disabled]{color:#B7BBC2;fill:#B7BBC2;pointer-events:none;}
+      .dwxJvL{font-size:0.875rem;margin:0;padding:0 var(--spacing-2x);padding-bottom:var(--spacing-1x);}
+      .cXBreE{margin:0;overflow-y:auto;padding:0;}
+      .cXBreE:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:0 var(--spacing-2x);}
+      .bKRBPp{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;background-color:#F1F2F2;border:1px solid #DBDEE1;border-radius:var(--border-radius);-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;margin:0 var(--spacing-half) 2px 0;padding:var(--spacing-half);}
+      .gnlfIO{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;max-width:100%;}
+      .jHQWUv{line-height:1.25rem;margin:auto var(--spacing-1x) auto 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+      .ejxtuV{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;font-size:0.875rem;margin:0;overflow:hidden;padding:0 0 0 var(--spacing-half);}
+      .kxIgwq{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.875rem;height:2.5rem;line-height:2rem;padding:0 var(--spacing-2x);-webkit-text-decoration:none;text-decoration:none;white-space:nowrap;}
+      .kxIgwq:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .kxIgwq:hover{background-color:#DBDEE1;}
+      .kxIgwq[disabled],.kxIgwq[disabled] *{color:#B7BBC2;cursor:default;fill:#B7BBC2;pointer-events:none;}
+      .giXGgg{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#1B1C1E;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.875rem;height:2.5rem;line-height:2rem;padding:0 var(--spacing-2x);-webkit-text-decoration:none;text-decoration:none;white-space:nowrap;}
+      .giXGgg:focus-visible{box-shadow:0 0 0 0 transparent;outline:2px solid #006296;outline-offset:-2px;}
+      .giXGgg:hover{background-color:transparent;}
+      .giXGgg[disabled],.giXGgg[disabled] *{color:#B7BBC2;cursor:default;fill:#B7BBC2;pointer-events:none;}
+      #eds-uuid1{border-radius:var(--border-radius-2x);box-sizing:border-box;max-width:350px;min-width:200px;padding:var(--spacing-1halfx) 0;width:initial;}
+      #eds-uuid1 .sc-fBWQRz,#eds-uuid1 .sc-hknOHE{height:2rem;overflow:visible;padding:var(--spacing-1x) var(--spacing-2x);}
+      #eds-uuid1 .sc-cWSHoV{line-height:1.5rem;padding:var(--spacing-half) var(--spacing-2x);}
+      #eds-uuid1 .sc-eBMEME{margin:0 0 var(--spacing-1x);padding:0 var(--spacing-2x);}
+      #eds-uuid1 ul:not(:last-child)::after,#eds-uuid1 ol:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:var(--spacing-1x) var(--spacing-2x);}
+      .dUTmZL{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
+    </style>
+  </head>,
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -983,15 +1110,13 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c5 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;
   z-index: 99998;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1009,21 +1134,21 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   text-decoration: underline;
 }
 
-.c16:hover {
+.c17:hover {
   color: #003A5A;
 }
 
-.c16:visited {
+.c17:visited {
   color: #006296;
 }
 
-.c16:focus-visible {
+.c17:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c21 {
+.c23 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1041,13 +1166,13 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   text-decoration: underline;
 }
 
-.c21:focus-visible {
+.c23:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c14 {
+.c15 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -1059,7 +1184,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   width: 1px;
 }
 
-.c20 {
+.c22 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -1072,7 +1197,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   width: 1rem;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -1083,17 +1208,17 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: inline-flex;
 }
 
-.c17:visited svg {
+.c18:visited svg {
   color: #006296;
 }
 
-.c19 {
+.c21 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c18 {
+.c20 {
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1108,53 +1233,53 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c18:focus-visible {
+.c20:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c18:hover {
+.c20:hover {
   background-color: #DBDEE1;
 }
 
-.c18:visited {
+.c20:visited {
   color: #006296;
   fill: #006296;
 }
 
-.c18:visited svg {
+.c20:visited svg {
   color: #006296;
   fill: #006296;
 }
 
-.c18[disabled] {
+.c20[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c7 {
+.c8 {
   font-size: 0.875rem;
   margin: 0;
   padding: 0 var(--spacing-2x);
   padding-bottom: var(--spacing-1x);
 }
 
-.c8 {
+.c9 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c8:not(:last-child)::after {
+.c9:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -1168,7 +1293,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   padding: var(--spacing-half);
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1180,7 +1305,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   max-width: 100%;
 }
 
-.c13 {
+.c14 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -1188,7 +1313,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1206,7 +1331,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1225,25 +1350,25 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c9:focus-visible {
+.c10:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c9:hover {
+.c10:hover {
   background-color: #DBDEE1;
 }
 
-.c9[disabled],
-.c9[disabled] * {
+.c10[disabled],
+.c10[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1262,22 +1387,32 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   white-space: nowrap;
 }
 
-.c15:focus-visible {
+.c16:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: transparent;
 }
 
-.c15[disabled],
-.c15[disabled] * {
+.c16[disabled],
+.c16[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
+}
+
+#eds-uuid1 .c19 {
+  line-height: 1.5rem;
+  padding: var(--spacing-half) var(--spacing-2x);
+}
+
+#eds-uuid1 .c7 {
+  margin: 0 0 var(--spacing-1x);
+  padding: 0 var(--spacing-2x);
 }
 
 .c3 {
@@ -1289,365 +1424,366 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 <body>
-  <div>
-    <div
-      aria-label=""
-      class="c0"
-      data-testid="dropdown-container"
-      id="uuid2"
-    >
-      <button
-        aria-controls="eds-uuid1"
-        aria-expanded="true"
-        class="c1 c2 eds-DropdownMenuButton-button"
-        data-testid="menu-button"
-        type="button"
+    <div>
+      <div
+        aria-label=""
+        class="c0"
+        data-testid="dropdown-container"
+        id="uuid2"
       >
-        <svg
-          class="lucide lucide-grip"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          aria-controls="eds-uuid1"
+          aria-expanded="true"
+          class="c1 c2 eds-DropdownMenuButton-button"
+          data-testid="menu-button"
+          type="button"
         >
-          <circle
-            cx="12"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="5"
-            r="1"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="12"
-            r="1"
-          />
-          <circle
-            cx="12"
-            cy="19"
-            r="1"
-          />
-          <circle
-            cx="19"
-            cy="19"
-            r="1"
-          />
-          <circle
-            cx="5"
-            cy="19"
-            r="1"
-          />
-        </svg>
-      </button>
+          <svg
+            class="lucide lucide-grip"
+            fill="none"
+            focusable="false"
+            height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="5"
+              r="1"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="12"
+              cy="19"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="19"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="19"
+              r="1"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    class="c3"
-    data-testid="toasts"
-  />
-  <div
-    class="c4 c5"
-    data-testid="menu-dropdownMenu"
-    id="eds-uuid1"
-    style="width: initial;"
-  >
-    <h3
-      class="c6 c7"
-      id="product-links"
+    <div
+      class="c3"
+      data-testid="toasts"
+    />
+    <div
+      class="c4 c5"
+      data-testid="menu-dropdownMenu"
+      id="eds-uuid1"
+      style="width: initial;"
     >
-      Products
-    </h3>
-    <ul
-      aria-labelledby="product-links"
-      class="c8"
-      data-testid="products-group"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionA"
-          href="/testa"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+      <h3
+        class="c6 c7 c8"
+        id="product-links"
+      >
+        Products
+      </h3>
+      <ul
+        aria-labelledby="product-links"
+        class="c9"
+        data-testid="products-group"
+      >
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionA"
+            href="/testa"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option A
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option A
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="true"
+            class="c16"
+            data-testid="listitem-optionB"
+            disabled=""
+            href="/testb"
+            tabindex="-1"
+            target="_blank"
           >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c15"
-          data-testid="listitem-optionB"
-          disabled=""
-          href="/testb"
-          tabindex="-1"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
-            class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
-          >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option B
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option B
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionC"
-          href="/testc"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionC"
+            href="/testc"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option C
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option C
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c9"
-          data-testid="listitem-optionD"
-          href="/testd"
-          tabindex="0"
-          target="_blank"
-        >
-          <svg
-            aria-hidden="true"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="false"
             class="c10"
-            color="currentColor"
-            focusable="false"
-            height="22"
-            icon-name="logo-equisoft-ico"
-            width="22"
-          />
-          <div
-            class="c11"
+            data-testid="listitem-optionD"
+            href="/testd"
+            tabindex="0"
+            target="_blank"
           >
+            <svg
+              aria-hidden="true"
+              class="c11"
+              color="currentColor"
+              focusable="false"
+              height="22"
+              icon-name="logo-equisoft-ico"
+              width="22"
+            />
             <div
               class="c12"
             >
-              <span
+              <div
                 class="c13"
               >
-                Option D
-              </span>
+                <span
+                  class="c14"
+                >
+                  Option D
+                </span>
+              </div>
             </div>
-          </div>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+      </ul>
+      <h3
+        class="c6 c7 c8"
+        id="external-links"
+      >
+        Resources
+      </h3>
+      <ul
+        aria-labelledby="external-links"
+        class="c9"
+        data-testid="resources-group"
+      >
+        <li>
+          <a
+            aria-disabled="false"
+            class="c17 c18 c19 c20"
+            href="/testa"
+            target="_blank"
           >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-    <h3
-      class="c6 c7"
-      id="external-links"
-    >
-      Resources
-    </h3>
-    <ul
-      aria-labelledby="external-links"
-      class="c8"
-      data-testid="resources-group"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c16 c17 c18"
-          href="/testa"
-          target="_blank"
-        >
-          <span
-            class="c19"
+            <span
+              class="c21"
+            >
+              Option A
+            </span>
+            <svg
+              aria-label="opens in a new tab"
+              class="lucide lucide-external-link c22"
+              fill="none"
+              focusable="false"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3h6v6"
+              />
+              <path
+                d="M10 14 21 3"
+              />
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+            </svg>
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-disabled="true"
+            class="c23 c18 c19 c20"
+            disabled=""
+            target="_blank"
           >
-            Option A
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="lucide lucide-external-link c20"
-            fill="none"
-            focusable="false"
-            height="16"
-            role="img"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 3h6v6"
-            />
-            <path
-              d="M10 14 21 3"
-            />
-            <path
-              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            />
-          </svg>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c21 c17 c18"
-          disabled=""
-          target="_blank"
-        >
-          <span
-            class="c19"
-          >
-            Option B
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="lucide lucide-external-link c20"
-            fill="none"
-            focusable="false"
-            height="16"
-            role="img"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 3h6v6"
-            />
-            <path
-              d="M10 14 21 3"
-            />
-            <path
-              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            />
-          </svg>
-          <span
-            class="c14"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</body>
+            <span
+              class="c21"
+            >
+              Option B
+            </span>
+            <svg
+              aria-label="opens in a new tab"
+              class="lucide lucide-external-link c22"
+              fill="none"
+              focusable="false"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3h6v6"
+              />
+              <path
+                d="M10 14 21 3"
+              />
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+            </svg>
+            <span
+              class="c15"
+              data-testid="screen-reader-text"
+            >
+              (opens in a new tab)
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>,
+]
 `;
 
 exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
