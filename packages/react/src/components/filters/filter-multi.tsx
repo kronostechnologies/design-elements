@@ -83,15 +83,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
         setPreviousValue(value);
     }
 
-    const clearFilters = useCallback((): void => {
-        const emptyValue: Value & FilterOption[] = [];
-        setSelectedOptions(emptyValue);
-        if (!async) {
-            onChange?.(emptyValue);
-            setPreviousValue(emptyValue);
-        }
-    }, [async, onChange]);
-
     const handleCancel = useCallback((close: DropdownMenuCloseFunction): void => {
         setSelectedOptions(options.filter((option) => previousValue?.includes(option.value)));
         close();
@@ -183,7 +174,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                 render={(close: DropdownMenuCloseFunction) => (
                     <div>
                         <ListContainer
-                            onClearFilters={clearFilters}
                             listboxRef={listboxRef}
                             multiselect
                             onChange={handleItemsSelectionChange}
@@ -191,7 +181,6 @@ export const FilterMulti: FC<FilterMultiProps> = ({
                             options={filteredUnselectedOptionsOnOpen}
                             featuredOptions={filteredSelectedOptionsOnOpen}
                             searchRef={searchRef}
-                            selectedFiltersCount={selectedFiltersCount}
                             value={selectedOptionsValues}
                         />
 
