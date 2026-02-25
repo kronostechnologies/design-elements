@@ -1,3 +1,5 @@
+import './styled-components-theme';
+
 // eslint-disable-next-line no-underscore-dangle, no-var, vars-on-top
 declare global { var __DS_DEV__: boolean; }
 // eslint-disable-next-line no-underscore-dangle
