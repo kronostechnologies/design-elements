@@ -49,9 +49,6 @@ export const Translations = {
             apply_zero: 'Apply filter',
             apply_one: 'Apply filter',
             apply_other: 'Apply filters',
-            clearFilter_zero: 'Clear filter',
-            clearFilter_one: 'Clear filter',
-            clearFilter_other: 'Clear filters',
             searchNoResults: ' No matching results',
         },
         'global-banner': {
@@ -201,9 +198,6 @@ export const Translations = {
             apply_zero: 'Appliquer',
             apply_one: 'Appliquer',
             apply_other: 'Appliquer',
-            clearFilter_zero: 'Réinitialiser le filtre',
-            clearFilter_one: 'Réinitialiser le filtre',
-            clearFilter_other: 'Réinitialiser les filtres',
             searchNoResults: 'Aucun résultat correspondant',
         },
         'global-banner': {
