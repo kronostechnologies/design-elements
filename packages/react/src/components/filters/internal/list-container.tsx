@@ -5,7 +5,6 @@ import { Listbox } from '../../listbox';
 import type { ListboxRef } from '../../listbox/listbox';
 import { SearchContextual } from '../../search';
 import type { FilterOption } from '../filter-option';
-import { ClearFilters } from './clear-filters';
 
 const Container = styled.div`
     max-height: 248px;
@@ -40,12 +39,9 @@ export interface ListContainerProps {
     multiselect?: boolean;
     options: FilterOption[];
     searchRef: Ref<HTMLInputElement>;
-    selectedFiltersCount: number;
     value: string | string[] | null | undefined;
 
     onChange?(options: FilterOption[]): void;
-
-    onClearFilters?(): void;
 
     onOptionClick?(option: FilterOption): void;
 
@@ -56,13 +52,11 @@ export const ListContainer = forwardRef(({
     featuredOptions,
     listboxRef,
     multiselect = false,
-    onClearFilters,
     onChange,
     onOptionClick,
     onSearchChange,
     options,
     searchRef,
-    selectedFiltersCount,
     value,
 }: ListContainerProps, ref: Ref<HTMLDivElement>) => (
     <Container ref={ref}>
@@ -70,14 +64,7 @@ export const ListContainer = forwardRef(({
             <SearchBox ref={searchRef} onChange={onSearchChange} />
         )}
 
-        {onClearFilters && (
-            <ClearFilters
-                selectedFiltersCount={selectedFiltersCount}
-                onClearFilters={onClearFilters}
-            />
-        )}
-
-        {(onSearchChange || onClearFilters) && <Divider />}
+        {(onSearchChange) && <Divider />}
 
         <StyledListbox
             ref={listboxRef}

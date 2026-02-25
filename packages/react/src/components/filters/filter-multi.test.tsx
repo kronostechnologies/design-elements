@@ -25,10 +25,6 @@ async function openDropdown(user: UserEvent): Promise<void> {
     await user.click(getDropdownButton());
 }
 
-async function getClearButton(): Promise<HTMLElement> {
-    return screen.findByText('Clear filter');
-}
-
 const countDataAttribute: string = 'data-selected-count';
 
 describe('FilterMulti', () => {
@@ -335,59 +331,6 @@ describe('FilterMulti', () => {
         });
     });
 
-    describe('clear filters', () => {
-        it('clears all selected filters when clear button is clicked', async () => {
-            const user = userEvent.setup();
-            const onChange = jest.fn();
-            renderWithProviders(
-                <FilterMulti label="Status" options={options} value={['option1', 'option2']} onChange={onChange} />,
-            );
-
-            await openDropdown(user);
-
-            const clearButton = await screen.findByText('Clear filters');
-            await user.click(clearButton);
-
-            expect(onChange).toHaveBeenCalledWith([]);
-        });
-
-        it('clear button is disabled when no filters selected', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<FilterMulti label="Status" options={options} />);
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            expect(clearButton.closest('[role=button]')).toHaveAttribute('aria-disabled', 'true');
-        });
-
-        it('clear button is enabled when filters are selected', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<FilterMulti label="Status" options={options} value={['option1']} />);
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            expect(clearButton.closest('[role=button]')).toHaveAttribute('aria-disabled', 'false');
-        });
-
-        it.each([['[Enter]'], ['[Space]']])('clear button can be activated with %s key', async (key) => {
-            const user = userEvent.setup();
-            const onChange = jest.fn();
-            renderWithProviders(
-                <FilterMulti label="Status" options={options} value={['option1']} onChange={onChange} />,
-            );
-
-            await openDropdown(user);
-
-            const clearButton = await getClearButton();
-            clearButton.focus();
-            await user.keyboard(key);
-
-            expect(onChange).toHaveBeenCalledWith([]);
-        });
-    });
-
     describe('async mode', () => {
         it('does not call onChange immediately when selecting options', async () => {
             const user = userEvent.setup();
@@ -460,30 +403,6 @@ describe('FilterMulti', () => {
 
             expect(screen.queryByTestId('apply-button')).not.toBeInTheDocument();
             expect(screen.queryByTestId('cancel-button')).not.toBeInTheDocument();
-        });
-
-        it('clear filters calls onChange only after apply', async () => {
-            const user = userEvent.setup();
-            const onChange = jest.fn();
-            renderWithProviders(
-                <FilterMulti
-                    label="Status"
-                    options={options}
-                    value={['option1', 'option2']}
-                    onChange={onChange}
-                    async
-                />,
-            );
-
-            await openDropdown(user);
-
-            const clearButton = await screen.findByText('Clear filters');
-            await user.click(clearButton);
-            expect(onChange).not.toHaveBeenCalled();
-
-            await user.click(screen.getByTestId('apply-button'));
-
-            expect(onChange).toHaveBeenCalledWith([]);
         });
 
         it('does not call onChange when Apply is clicked if selection did not change', async () => {

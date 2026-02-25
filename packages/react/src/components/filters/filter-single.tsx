@@ -78,7 +78,7 @@ export const FilterSingle: FC<FilterSingleProps> = ({
         close();
     }, [onChange]);
 
-    const { filteredOptions, hasFiltersApplied, selectedValuesCount } = useListFilter<string>({
+    const { filteredOptions, hasFiltersApplied } = useListFilter<string>({
         options,
         searchValue,
         value: previousValue,
@@ -105,7 +105,6 @@ export const FilterSingle: FC<FilterSingleProps> = ({
                         onSearchChange={handleSearchChange}
                         options={filteredOptions}
                         searchRef={searchRef}
-                        selectedFiltersCount={selectedValuesCount}
                         value={previousValue || ALL_OPTIONS_VALUE}
                     />
                 )}
