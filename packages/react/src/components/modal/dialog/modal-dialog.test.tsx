@@ -50,11 +50,6 @@ function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'
 }
 
 describe('ModalDialog', () => {
-    beforeEach(() => {
-        document.body.replaceChildren();
-        document.body.className = '';
-    });
-
     it('has title-icon when titleIcon prop is defined', () => {
         renderModal({
             titleIcon: 'home',

@@ -26,6 +26,26 @@ function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): Ren
 }
 
 describe('Modal', () => {
+    it('resets body overflow style on unmount', () => {
+        const { unmount } = renderModal({ isOpen: true });
+
+        expect(document.body.style.overflow).toBe('hidden');
+
+        unmount();
+
+        expect(document.body.style.overflow).toBe('');
+    });
+
+    it('resets body overflow style on close', () => {
+        const { rerender } = renderModal({ isOpen: true });
+
+        expect(document.body.style.overflow).toBe('hidden');
+
+        rerender(<Modal {...defaultTestProps} isOpen={false} />);
+
+        expect(document.body.style.overflow).toBe('');
+    });
+
     it('onRequestClose callback is called when close-button is clicked', async () => {
         const callback = jest.fn();
         const { getByTestId } = renderWithProviders(

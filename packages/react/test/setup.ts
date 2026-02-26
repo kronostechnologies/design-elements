@@ -26,6 +26,9 @@ jest.mock('react', () => ({
 
     beforeEach(() => {
         counter = 0;
+        document.body.replaceChildren();
+        document.body.removeAttribute('class');
+        document.body.removeAttribute('style');
     });
 }
 
