@@ -97,7 +97,6 @@ export interface DropdownMenuButtonProps extends BaseDropdownProps {
     defaultOpen?: boolean;
     disabled?: boolean;
     dropdownMenuId?: string;
-    dropdownMenuWidth?: 'auto' | 'initial' | 'reference' | number;
     /**
      * Sets chevron icon
      * @default true
@@ -128,7 +127,6 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     defaultOpen = false,
     disabled,
     dropdownMenuId,
-    dropdownMenuWidth = 'auto',
     firstItemRef,
     hasCaret = true,
     icon,
@@ -151,6 +149,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const isIconOnly = icon && !label && !hasCaret;
     const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
     const dataAttributes = useDataAttributes(otherProps);
+    const [initialReferenceWidth, setInitialReferenceWidth] = useState<number | undefined>(undefined);
 
     const shadowRoot = useShadowRoot();
     const rootElement = getRootElement(shadowRoot);
@@ -161,7 +160,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     } = useDropdown<HTMLButtonElement>({
         open: isOpen,
         placement: align === 'right' ? 'bottom-end' : 'bottom-start',
-        width: contentWidth || dropdownMenuWidth,
+        width: contentWidth || 'auto',
     });
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
@@ -176,10 +175,13 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     useLayoutEffect(() => {
         // This needs to be in a useEffect to avoid calling the callback during render
         if (previousOpen.current !== isOpen) {
+            if (isOpen) {
+                setInitialReferenceWidth(buttonRef.current?.offsetWidth);
+            }
             previousOpen.current = isOpen;
             onMenuVisibilityChanged?.(isOpen);
         }
-    }, [isOpen, onMenuVisibilityChanged]);
+    }, [buttonRef, isOpen, onMenuVisibilityChanged]);
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
@@ -306,7 +308,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     onKeyDown={handleNavMenuKeyDown}
                     $width={contentWidth}
                     $left={`${x}px`}
-                    $referenceWidth={buttonRef.current?.offsetWidth}
+                    $referenceWidth={initialReferenceWidth}
                     $top={`${y}px`}
                 >
                     {render?.(onClose)}

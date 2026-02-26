@@ -570,7 +570,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
       class="c4 c5"
       data-testid="menu-dropdownMenu"
       id="eds-uuid1"
-      style="width: initial;"
+      style="width: auto;"
     >
       <h3
         class="c6 c7 c8"
@@ -1508,7 +1508,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
       class="c4 c5"
       data-testid="menu-dropdownMenu"
       id="eds-uuid1"
-      style="width: initial;"
+      style="width: auto;"
     >
       <h3
         class="c6 c7 c8"
