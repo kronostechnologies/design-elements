@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, renderGlobalStylesSynchronously } from '../../test-utils/renderer';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu';
 import { BentoMenuButton } from './bento-menu-button';
 
@@ -77,6 +77,14 @@ describe('BentoMenuButton', () => {
         externals = givenExternals();
     });
 
+    beforeAll(() => {
+        renderGlobalStylesSynchronously(true);
+    });
+
+    afterAll(() => {
+        renderGlobalStylesSynchronously(false);
+    });
+
     it('should throw exception if both productGroups and productLinks are passed', () => {
         const productGroupA = {
             label: 'Product Group A',
@@ -117,7 +125,7 @@ describe('BentoMenuButton', () => {
         const menuButton = screen.getByTestId('menu-button');
         await userEvent.click(menuButton);
 
-        expect(baseElement).toMatchSnapshot();
+        expect([document.head, baseElement]).toMatchSnapshot();
     });
 
     it('Matches Snapshot (productGroups and externalLinks)', async () => {
@@ -141,7 +149,7 @@ describe('BentoMenuButton', () => {
         const menuButton = screen.getByTestId('menu-button');
         await userEvent.click(menuButton);
 
-        expect(baseElement).toMatchSnapshot();
+        expect([document.head, baseElement]).toMatchSnapshot();
     });
 
     it('should call product on click when a product is clicked', async () => {

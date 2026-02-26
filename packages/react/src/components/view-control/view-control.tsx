@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
 import type { DropdownMenuCloseFunction } from '../dropdown-menu-button';
+import type { BaseDropdownProps } from '../dropdown-menu-button/dropdown-menu-button';
 import type { FilterOption } from '../filters';
 import { Icon } from '../icon';
 import { type LeadingVisual, Listbox, type ListboxOption, type ListboxRef } from '../listbox/listbox';
@@ -14,7 +15,7 @@ export type ViewControlVariant = 'subtle' | 'inverted';
 
 type Value = string;
 
-export type ViewControlProps = {
+export interface ViewControlProps extends BaseDropdownProps {
     className?: string;
     hint?: string;
     options: ViewControlOption[];
@@ -22,7 +23,7 @@ export type ViewControlProps = {
     variant?: ViewControlVariant;
 
     onChange?(value: Value): void;
-};
+}
 
 const IconLabel = styled(Icon)`
     flex-shrink: 0;
@@ -63,6 +64,7 @@ const Hint = styled.div`
  */
 export const ViewControl: FC<ViewControlProps> = ({
     className,
+    contentWidth,
     hint,
     onChange,
     options,
@@ -109,6 +111,7 @@ export const ViewControl: FC<ViewControlProps> = ({
     return (
         <ViewControlDropdownButton
             className={className}
+            contentWidth={contentWidth}
             label={controlLabel}
             onMenuVisibilityChanged={handleMenuVisibilityChanged}
             render={(close: DropdownMenuCloseFunction) => (

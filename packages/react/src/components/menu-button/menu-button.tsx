@@ -9,13 +9,13 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
-import styled from 'styled-components';
+import styled, { css, type SimpleInterpolation } from 'styled-components';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
-import { menuDimensions } from '../../legacy-constants/menuDimensions';
 import { getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { Button, type ButtonType, IconButton } from '../buttons';
+import type { BaseDropdownProps } from '../dropdown-menu-button/dropdown-menu-button';
 import { Icon, type IconName } from '../icon';
 import { Menu, type MenuItem } from '../menu';
 import { Tooltip, type TooltipProps } from '../tooltip';
@@ -24,23 +24,32 @@ export type MenuPlacement = 'right' | 'left';
 
 interface StyledMenuProps {
     $left?: string;
+    $referenceWidth?: number;
     $top?: string;
+    $width?: BaseDropdownProps['contentWidth'];
+}
+
+function getWidthStyles({ $referenceWidth, $width }: StyledMenuProps): SimpleInterpolation {
+    return css`
+        min-width: ${$referenceWidth ? `${$referenceWidth}px` : null};
+        width: ${$width && `${$width}px`};
+    `;
 }
 
 const StyledMenu = styled(Menu)<StyledMenuProps>`
     left: ${(props) => props.$left};
-    max-width: ${menuDimensions.maxWidth};
-    min-width: ${menuDimensions.minWidth};
     position: absolute;
     top: ${(props) => props.$top};
     z-index: 99998;
+
+    ${getWidthStyles};
 `;
 
 const StyledIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
-export interface MenuButtonProps {
+export interface MenuButtonProps extends BaseDropdownProps {
     autofocus?: boolean;
     buttonType: ButtonType;
     className?: string;
@@ -50,6 +59,7 @@ export interface MenuButtonProps {
     iconLabel?: string;
     inverted?: boolean;
     menuPlacement?: MenuPlacement;
+    numberOfVisibleItems?: number;
     options: MenuItem[];
     tooltip?: TooltipProps;
 
@@ -61,11 +71,13 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     buttonType,
     children,
     className,
+    contentWidth,
     defaultOpen,
     disabled,
     iconName,
     iconLabel,
     inverted,
+    numberOfVisibleItems,
     options,
     onMenuVisibilityChanged,
     menuPlacement = 'right',
@@ -173,7 +185,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
 
     const wrappedButton = tooltip ? (
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <Tooltip {...tooltip}>{button}</Tooltip>
+        <Tooltip {...tooltip} disabled={visible}>{button}</Tooltip>
     ) : (
         button
     );
@@ -188,10 +200,13 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
             {visible && createPortal(
                 <StyledMenu
                     ref={refs.setFloating}
+                    numberOfVisibleItems={numberOfVisibleItems}
                     options={options}
                     onOptionSelect={handleOnOptionSelect}
                     $left={`${x}px`}
+                    $referenceWidth={buttonRef.current?.offsetWidth}
                     $top={`${y}px`}
+                    $width={contentWidth}
                 />,
                 rootElement,
             )}

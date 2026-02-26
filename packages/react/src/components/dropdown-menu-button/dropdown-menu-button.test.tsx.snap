@@ -115,8 +115,6 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 
 .c7 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 0px;
   width: auto;
@@ -845,8 +843,6 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 
 .c7 {
   left: 0px;
-  max-width: 350px;
-  min-width: 200px;
   position: absolute;
   top: 4px;
   width: auto;
@@ -1172,7 +1168,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
     class="c6 c7"
     data-testid="menu-dropdownMenu"
     id="uuid2"
-    style="width: 0px;"
+    style="width: auto;"
   >
     <ul
       aria-labelledby="firstGroup"
