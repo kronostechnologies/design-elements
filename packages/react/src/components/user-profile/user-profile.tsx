@@ -73,7 +73,6 @@ export const UserProfile: FC<UserProfileProps> = ({
             buttonAriaLabel={buttonAriaLabel}
             className={className}
             defaultOpen={defaultOpen}
-            dropdownMenuWidth="auto"
             hasCaret={!avatarOnly}
             id={id}
             icon={<StyledAvatar avatarOnly={avatarOnly} username={username} />}

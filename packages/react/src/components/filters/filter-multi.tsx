@@ -7,10 +7,11 @@ import { v4 as uuid } from '../../utils/uuid';
 import { Badge } from '../badge';
 import { Button } from '../buttons';
 import { type DropdownMenuCloseFunction } from '../dropdown-menu-button';
+import type { BaseDropdownProps } from '../dropdown-menu-button/dropdown-menu-button';
 import { type ListboxRef } from '../listbox/listbox';
 import { disableNonSelectedOptions, findOptionByValue, getDefaultOptions } from '../listbox/utils';
 import type { FilterOption } from './filter-option';
-import { FilterDropdownButton, PortalFilterDropdownMenuStyle } from './internal/filter-dropdown-button';
+import { FilterDropdownButton, getFallbackContentWidth } from './internal/filter-dropdown-button';
 import { ListContainer } from './internal/list-container';
 import { useListFilter } from './internal/use-list-filter';
 import { useSearch } from './internal/use.search';
@@ -28,7 +29,7 @@ const Footer = styled.div`
 
 type Value = string[];
 
-export interface FilterMultiProps {
+export interface FilterMultiProps extends BaseDropdownProps {
     async?: boolean;
     label: string;
     maxSelectableOptions?: number;
@@ -43,6 +44,7 @@ export interface FilterMultiProps {
  */
 export const FilterMulti: FC<FilterMultiProps> = ({
     async = false,
+    contentWidth,
     label,
     maxSelectableOptions,
     onChange,
@@ -165,49 +167,47 @@ export const FilterMulti: FC<FilterMultiProps> = ({
     );
 
     return (
-        <>
-            <PortalFilterDropdownMenuStyle $dropdownMenuId={dropdownMenuId} />
-            <FilterDropdownButton
-                firstItemRef={searchRef}
-                label={filterLabel}
-                onMenuVisibilityChanged={handleMenuVisibilityChanged}
-                render={(close: DropdownMenuCloseFunction) => (
-                    <div>
-                        <ListContainer
-                            listboxRef={listboxRef}
-                            multiselect
-                            onChange={handleItemsSelectionChange}
-                            onSearchChange={handleSearchChange}
-                            options={filteredUnselectedOptionsOnOpen}
-                            featuredOptions={filteredSelectedOptionsOnOpen}
-                            searchRef={searchRef}
-                            value={selectedOptionsValues}
-                        />
+        <FilterDropdownButton
+            contentWidth={contentWidth || getFallbackContentWidth({ async, search: searchEnabled })}
+            firstItemRef={searchRef}
+            label={filterLabel}
+            onMenuVisibilityChanged={handleMenuVisibilityChanged}
+            render={(close: DropdownMenuCloseFunction) => (
+                <div>
+                    <ListContainer
+                        listboxRef={listboxRef}
+                        multiselect
+                        onChange={handleItemsSelectionChange}
+                        onSearchChange={handleSearchChange}
+                        options={filteredUnselectedOptionsOnOpen}
+                        featuredOptions={filteredSelectedOptionsOnOpen}
+                        searchRef={searchRef}
+                        value={selectedOptionsValues}
+                    />
 
-                        {async && (
-                            <Footer>
-                                <Button
-                                    data-testid="cancel-button"
-                                    label={t('cancel')}
-                                    buttonType="tertiary"
-                                    onClick={() => handleCancel(close)}
-                                />
-                                <Button
-                                    data-testid="apply-button"
-                                    label={t('apply', { count: selectedFiltersCount })}
-                                    buttonType="primary"
-                                    onClick={() => handleApply(close)}
-                                />
-                            </Footer>
-                        )}
-                    </div>
-                )}
-                dropdownMenuId={dropdownMenuId}
-                data-selected-count={selectedValuesCount}
-                $hasFilters={hasFiltersApplied}
-                $multiselect
-            />
-        </>
+                    {async && (
+                        <Footer>
+                            <Button
+                                data-testid="cancel-button"
+                                label={t('cancel')}
+                                buttonType="tertiary"
+                                onClick={() => handleCancel(close)}
+                            />
+                            <Button
+                                data-testid="apply-button"
+                                label={t('apply', { count: selectedFiltersCount })}
+                                buttonType="primary"
+                                onClick={() => handleApply(close)}
+                            />
+                        </Footer>
+                    )}
+                </div>
+            )}
+            dropdownMenuId={dropdownMenuId}
+            data-selected-count={selectedValuesCount}
+            $hasFilters={hasFiltersApplied}
+            $multiselect
+        />
     );
 };
 

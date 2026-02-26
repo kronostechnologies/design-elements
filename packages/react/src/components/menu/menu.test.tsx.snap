@@ -7,12 +7,12 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 0.2);
-  box-sizing: border-box;
+  box-sizing: content-box;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
-  max-height: calc(var(--spacing-half) + 128px);
+  max-height: 128px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   -webkit-scroll-behavior: smooth;
@@ -173,12 +173,12 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 0.2);
-  box-sizing: border-box;
+  box-sizing: content-box;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
-  max-height: calc(var(--spacing-half) + 128px);
+  max-height: 128px;
   overflow-y: auto;
   padding: var(--spacing-half) 0;
   -webkit-scroll-behavior: smooth;
@@ -229,6 +229,9 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 
 .c2 {
   color: #1B1C1E;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c2:hover {

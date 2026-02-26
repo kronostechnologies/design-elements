@@ -137,7 +137,6 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
                 ariaLabel={ariaLabel}
                 buttonAriaLabel={buttonAriaLabel}
                 dropdownMenuId={dropdownMenuId}
-                dropdownMenuWidth="initial"
                 tag={tag}
                 title={title}
                 hasCaret={false}

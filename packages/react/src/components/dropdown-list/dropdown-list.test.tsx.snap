@@ -148,6 +148,20 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c12::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
@@ -299,6 +313,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -316,6 +331,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -333,6 +349,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -350,6 +367,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -367,6 +385,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -384,6 +403,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -401,6 +421,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -418,6 +439,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -435,6 +457,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -452,6 +475,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -469,6 +493,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -486,6 +511,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -503,6 +529,7 @@ input + .c2 {
           >
             <span
               class="c12"
+              data-text="Yukon"
             >
               Yukon
             </span>
@@ -672,6 +699,20 @@ input + .c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c14::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
 }
 
 .c1 {
@@ -868,6 +909,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -885,6 +927,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -902,6 +945,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -919,6 +963,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -936,6 +981,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -953,6 +999,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -970,6 +1017,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -987,6 +1035,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -1004,6 +1053,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -1021,6 +1071,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -1038,6 +1089,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -1055,6 +1107,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -1072,6 +1125,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Yukon"
             >
               Yukon
             </span>
@@ -1255,6 +1309,20 @@ input + .c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c14::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
 }
 
 .c1 {
@@ -1445,6 +1513,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -1462,6 +1531,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -1479,6 +1549,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -1496,6 +1567,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -1513,6 +1585,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -1530,6 +1603,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -1547,6 +1621,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -1564,6 +1639,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -1581,6 +1657,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -1598,6 +1675,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -1615,6 +1693,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -1632,6 +1711,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -1649,6 +1729,7 @@ input + .c2 {
           >
             <span
               class="c14"
+              data-text="Yukon"
             >
               Yukon
             </span>
@@ -1786,6 +1867,20 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c10::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
 }
 
 .c1 {
@@ -1939,6 +2034,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -1956,6 +2052,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -1973,6 +2070,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -1990,6 +2088,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -2007,6 +2106,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -2024,6 +2124,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -2041,6 +2142,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -2058,6 +2160,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -2075,6 +2178,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -2092,6 +2196,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -2109,6 +2214,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -2126,6 +2232,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -2143,6 +2250,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
           >
             <span
               class="c10"
+              data-text="Yukon"
             >
               Yukon
             </span>
@@ -2282,6 +2390,20 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c13::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
 }
 
 .c1 {
@@ -2460,6 +2582,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -2499,6 +2622,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -2538,6 +2662,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -2577,6 +2702,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -2616,6 +2742,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -2655,6 +2782,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -2694,6 +2822,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -2733,6 +2862,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -2772,6 +2902,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -2811,6 +2942,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -2850,6 +2982,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -2889,6 +3022,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -2928,6 +3062,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           >
             <span
               class="c13"
+              data-text="Yukon"
             >
               Yukon
             </span>
@@ -3099,6 +3234,20 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c13::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
@@ -3263,6 +3412,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Alberta"
             >
               Alberta
             </span>
@@ -3280,6 +3430,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="British Columbia"
             >
               British Columbia
             </span>
@@ -3297,6 +3448,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Manitoba"
             >
               Manitoba
             </span>
@@ -3314,6 +3466,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="New Brunswick"
             >
               New Brunswick
             </span>
@@ -3331,6 +3484,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Newfoundland and Labrador"
             >
               Newfoundland and Labrador
             </span>
@@ -3348,6 +3502,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Northwest Territories"
             >
               Northwest Territories
             </span>
@@ -3365,6 +3520,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Nova Scotia"
             >
               Nova Scotia
             </span>
@@ -3382,6 +3538,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Nunavut"
             >
               Nunavut
             </span>
@@ -3399,6 +3556,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Ontario"
             >
               Ontario
             </span>
@@ -3416,6 +3574,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Prince Edward Island"
             >
               Prince Edward Island
             </span>
@@ -3433,6 +3592,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Quebec"
             >
               Quebec
             </span>
@@ -3450,6 +3610,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Saskatchewan"
             >
               Saskatchewan
             </span>
@@ -3467,6 +3628,7 @@ input + .c2 {
           >
             <span
               class="c13"
+              data-text="Yukon"
             >
               Yukon
             </span>

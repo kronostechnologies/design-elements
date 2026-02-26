@@ -1,4 +1,4 @@
-import { forwardRef, type Ref, type RefObject } from 'react';
+import { type FC, type Ref, type RefObject, useRef } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../../utils/css-state';
 import { Listbox } from '../../listbox';
@@ -7,7 +7,7 @@ import { SearchContextual } from '../../search';
 import type { FilterOption } from '../filter-option';
 
 const Container = styled.div`
-    max-height: 248px;
+    max-height: 256px;
     overflow-y: auto;
     padding: var(--spacing-half) 0;
 
@@ -23,6 +23,11 @@ export const Divider = styled.span`
 
 const SearchBox = styled(SearchContextual)`
     margin: var(--spacing-1x);
+
+    input {
+        flex-grow: 1;
+        width: 0;
+    }
 `;
 
 const StyledListbox = styled(Listbox)`
@@ -48,7 +53,7 @@ export interface ListContainerProps {
     onSearchChange?(search: string): void;
 }
 
-export const ListContainer = forwardRef(({
+export const ListContainer: FC<ListContainerProps> = ({
     featuredOptions,
     listboxRef,
     multiselect = false,
@@ -58,27 +63,30 @@ export const ListContainer = forwardRef(({
     options,
     searchRef,
     value,
-}: ListContainerProps, ref: Ref<HTMLDivElement>) => (
-    <Container ref={ref}>
-        {onSearchChange && (
-            <SearchBox ref={searchRef} onChange={onSearchChange} />
-        )}
+}: ListContainerProps) => {
+    const ref = useRef<HTMLDivElement>(null);
+    return (
+        <Container ref={ref}>
+            {onSearchChange && (
+                <SearchBox ref={searchRef} onChange={onSearchChange} />
+            )}
 
-        {(onSearchChange) && <Divider />}
+            {(onSearchChange) && <Divider />}
 
-        <StyledListbox
-            ref={listboxRef}
-            containerRef={ref as RefObject<HTMLElement>}
-            focusable={false}
-            multiselect={multiselect}
-            keyboardNav
-            onChange={onChange}
-            onOptionClick={onOptionClick}
-            options={options}
-            featuredOptions={featuredOptions ?? undefined}
-            value={value ?? undefined}
-        />
-    </Container>
-));
+            <StyledListbox
+                ref={listboxRef}
+                containerRef={ref as RefObject<HTMLElement>}
+                focusable={false}
+                multiselect={multiselect}
+                keyboardNav
+                onChange={onChange}
+                onOptionClick={onOptionClick}
+                options={options}
+                featuredOptions={featuredOptions ?? undefined}
+                value={value ?? undefined}
+            />
+        </Container>
+    );
+};
 
 ListContainer.displayName = 'ListContainer';

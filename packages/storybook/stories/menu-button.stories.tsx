@@ -14,6 +14,10 @@ const options: MenuOption[] = [
         label: 'Option 3',
         onClick: () => console.info('Option 3 clicked'),
     },
+    {
+        label: 'Option 4',
+        onClick: () => console.info('Option 4 clicked'),
+    },
 ];
 
 const MenuButtonMeta: Meta<typeof MenuButton> = {

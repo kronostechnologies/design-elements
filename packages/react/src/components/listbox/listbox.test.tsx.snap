@@ -244,6 +244,20 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
   flex-direction: column;
 }
 
+.c8::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c9 {
   color: #60666E;
   display: block;
@@ -298,6 +312,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         >
           <span
             class="c8"
+            data-text="Option A"
           >
             Option A
             <span
@@ -342,6 +357,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         >
           <span
             class="c8"
+            data-text="Option B"
           >
             Option B
           </span>
@@ -381,6 +397,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         >
           <span
             class="c8"
+            data-text="Option C"
           >
             Option C
           </span>
@@ -422,6 +439,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         >
           <span
             class="c8"
+            data-text="Option D"
           >
             Option D
           </span>
@@ -461,6 +479,7 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         >
           <span
             class="c8"
+            data-text="Option E"
           >
             Option E
           </span>
@@ -616,6 +635,20 @@ exports[`Listbox matches the snapshot 1`] = `
   flex-direction: column;
 }
 
+.c4::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c5 {
   color: #60666E;
   display: block;
@@ -647,6 +680,7 @@ exports[`Listbox matches the snapshot 1`] = `
         >
           <span
             class="c4"
+            data-text="Option A"
           >
             Option A
             <span
@@ -669,6 +703,7 @@ exports[`Listbox matches the snapshot 1`] = `
         >
           <span
             class="c4"
+            data-text="Option B"
           >
             Option B
           </span>
@@ -686,6 +721,7 @@ exports[`Listbox matches the snapshot 1`] = `
         >
           <span
             class="c4"
+            data-text="Option C"
           >
             Option C
           </span>
@@ -704,6 +740,7 @@ exports[`Listbox matches the snapshot 1`] = `
         >
           <span
             class="c4"
+            data-text="Option D"
           >
             Option D
           </span>
@@ -721,6 +758,7 @@ exports[`Listbox matches the snapshot 1`] = `
         >
           <span
             class="c4"
+            data-text="Option E"
           >
             Option E
           </span>

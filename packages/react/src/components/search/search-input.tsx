@@ -36,6 +36,7 @@ const SearchWrapper = styled.div`
 `;
 
 const InnerWrapper = styled.div`
+    display: flex;
     flex: 1 1 auto;
     position: relative;
     z-index: 1;
