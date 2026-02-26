@@ -9,10 +9,7 @@ exports[`ModalDialog matches snapshot (closed) 1`] = `
   right: var(--spacing-2x);
 }
 
-<body
-  class=""
-  style="overflow: unset;"
->
+<body>
   <div />
   <div
     class="c0"
