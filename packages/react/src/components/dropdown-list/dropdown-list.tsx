@@ -339,7 +339,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
         }
     }, [closeListbox, focusedOption, open, selectedOptions, multiselect, selectOption]);
 
-    useClickOutside([textboxRef, listboxRef], handleClickOutside);
+    useClickOutside([textboxRef.current, listboxRef.current], handleClickOutside);
 
     function handleTextboxBlur(event: FocusEvent): void {
         if (open && event.relatedTarget !== listboxRef.current) {

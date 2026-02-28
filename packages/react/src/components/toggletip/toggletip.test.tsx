@@ -23,6 +23,22 @@ describe('Toggletip', () => {
             expect(screen.queryByTestId('toggletip-content-container')).not.toBeInTheDocument();
         });
 
+        it('closes on mouseClick outside of the toggletip', async () => {
+            renderWithProviders(<Toggletip defaultOpen>Test Content</Toggletip>, 'desktop');
+
+            await userEvent.click(document.body);
+
+            expect(screen.queryByTestId('toggletip-content-container')).not.toBeInTheDocument();
+        });
+
+        it('stays open on mouseClick outside of the toggletip using closeOnlClickOutside=false', async () => {
+            renderWithProviders(<Toggletip defaultOpen closeOnClickOutside={false}>Test Content</Toggletip>, 'desktop');
+
+            await userEvent.click(document.body);
+
+            expect(screen.queryByTestId('toggletip-content-container')).toBeInTheDocument();
+        });
+
         it('does not open on mouseClick given toggletip is disabled', async () => {
             renderWithProviders(<Toggletip disabled>Test Content</Toggletip>, 'desktop');
 
