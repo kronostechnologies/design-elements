@@ -14,7 +14,7 @@
     "@types/eslint": "^8.56.10",
     "@types/yargs": "17.0.35",
     "conventional-changelog-cli": "5.0.0",
-    "conventional-changelog-conventionalcommits": "9.1.0",
+    "conventional-changelog-conventionalcommits": "9.2.0",
     "eslint": "8.57.1",
     "postcss": "8.5.6",
     "postcss-styled-syntax": "0.7.1",
