@@ -1,13 +1,13 @@
-import { MutableRefObject, useEffect } from 'react';
+import { useEffect } from 'react';
 import { eventIsInside } from '../utils/events';
 
 export function useClickOutside(
-    targets: MutableRefObject<HTMLElement | null>[],
+    targets: (HTMLElement | null)[],
     callback: () => void,
 ): void {
     useEffect(() => {
         function handleClick(event: MouseEvent): void {
-            if (!eventIsInside(event, ...targets.map((ref) => ref.current))) {
+            if (!eventIsInside(event, ...targets)) {
                 callback();
             }
         }
