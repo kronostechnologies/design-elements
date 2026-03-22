@@ -37,7 +37,7 @@ jobs:
           done
 
       - name: Commit and push changes
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           pull: '--rebase --autostash'
           message: "docs: remove closed PRs"
