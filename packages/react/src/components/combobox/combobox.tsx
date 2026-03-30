@@ -71,6 +71,14 @@ interface TextboxProps {
     value: Value;
 }
 
+interface TextboxContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    $readOnly?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
+
 interface MultiSelectInputProps extends TextboxProps {
     $readOnly?: boolean;
     $hasTags?: boolean;
@@ -147,7 +155,6 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
     right: 0;
     width: var(--size-1x);
 
@@ -164,7 +171,6 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
     right: var(--spacing-3halfx);
     width: var(--size-1x);
 
@@ -190,17 +196,38 @@ const BaseInput = styled.input<TextboxProps>`
 `;
 
 const Textbox = styled(BaseInput)<TextboxProps>`
-    border: 1px solid ${getBorderColor} !important;
+    border: 0;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+    padding: 0 var(--spacing-1x);
     width: 100%;
-
-    ${({ theme }) => focus({ theme }, { focusType: 'focus' })};
 
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
     }
+
+    &:focus {
+        border: 0;
+        box-shadow: none;
+        outline: none;
+    }
+`;
+
+const TextboxContainer = styled.div<TextboxContainerProps>`
+    align-items: flex-start;
+    background-color: ${getBackgroundColor};
+    border: 1px solid ${getBorderColor} !important;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${getTextColor};
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    min-height: 30px;
+    width: 100%;
+
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
 `;
 
 const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
@@ -941,37 +968,55 @@ export const Combobox: FC<ComboboxProps> = ({
                             $hasTags={selectedOptions.length > 0}
                             ref={inputRef}
                         />
+                        <ArrowButton
+                            aria-label={t('showOptions', { label: label || ariaLabel })}
+                            buttonType="tertiary"
+                            data-testid="arrow"
+                            disabled={disabled}
+                            focusable={false}
+                            iconName={open ? 'chevronUp' : 'chevronDown'}
+                            onClick={handleArrowButtonClick}
+                            $readOnly={readOnly}
+                            ref={arrowButtonRef}
+                            type="button"
+                        />
                     </TagInputContainer>
                 ) : (
-                    <Textbox {...sharedInputProps} ref={refs.setReference} />
-                )}
-
-                {inputValue !== '' && !disabled && !multiselect && (
-                    <ClearButton
-                        aria-label={t('clearInput')}
-                        buttonType="tertiary"
-                        data-testid="clear"
-                        focusable={false}
-                        iconName="x"
-                        onClick={handleClearButtonClick}
+                    <TextboxContainer
+                        data-testid="textbox-container"
+                        disabled={disabled}
+                        $isMobile={isMobile}
                         $readOnly={readOnly}
-                        ref={clearButtonRef}
-                        type="button"
-                    />
+                        $valid={valid}
+                    >
+                        <Textbox {...sharedInputProps} ref={refs.setReference} />
+                        {inputValue !== '' && !disabled && !multiselect && (
+                            <ClearButton
+                                aria-label={t('clearInput')}
+                                buttonType="tertiary"
+                                data-testid="clear"
+                                focusable={false}
+                                iconName="x"
+                                onClick={handleClearButtonClick}
+                                $readOnly={readOnly}
+                                ref={clearButtonRef}
+                                type="button"
+                            />
+                        )}
+                        <ArrowButton
+                            aria-label={t('showOptions', { label: label || ariaLabel })}
+                            buttonType="tertiary"
+                            data-testid="arrow"
+                            disabled={disabled}
+                            focusable={false}
+                            iconName={open ? 'chevronUp' : 'chevronDown'}
+                            onClick={handleArrowButtonClick}
+                            $readOnly={readOnly}
+                            ref={arrowButtonRef}
+                            type="button"
+                        />
+                    </TextboxContainer>
                 )}
-
-                <ArrowButton
-                    aria-label={t('showOptions', { label: label || ariaLabel })}
-                    buttonType="tertiary"
-                    data-testid="arrow"
-                    disabled={disabled}
-                    focusable={false}
-                    iconName={open ? 'chevronUp' : 'chevronDown'}
-                    onClick={handleArrowButtonClick}
-                    $readOnly={readOnly}
-                    ref={arrowButtonRef}
-                    type="button"
-                />
             </StyledContainer>
 
             {open && createPortal(

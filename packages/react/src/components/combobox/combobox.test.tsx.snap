@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Combobox matches the snapshot (disabled) 1`] = `
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,12 +41,12 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   user-select: none;
 }
 
-.c7 > svg {
+.c8 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -54,14 +54,14 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   width: var(--size-2x);
 }
 
-.c8:hover,
-.c8[aria-expanded='true'] {
+.c9:hover,
+.c9[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c8[aria-disabled='true'] {
+.c9[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -124,7 +124,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -138,16 +138,15 @@ input + .c2 {
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
 
-.c9:hover {
+.c10:hover {
   background-color: transparent;
 }
 
-.c5 {
+.c6 {
   background-color: #F1F2F2;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -156,37 +155,66 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-.c6 {
-  border: 1px solid #B7BBC2 !important;
+.c7 {
+  border: 0;
   height: var(--size-2x);
-  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c6:focus {
+.c7::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c7:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.c5 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #F1F2F2;
+  border: 1px solid #B7BBC2 !important;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #B7BBC2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 30px;
+  width: 100%;
+}
+
+.c5:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c6::placeholder {
-  color: #60666E;
-  font-style: italic;
 }
 
 <div
@@ -202,52 +230,58 @@ input + .c2 {
   <div
     class="c4"
   >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-expanded="true"
-      aria-invalid="false"
-      class="c5 c6"
-      data-testid="textbox"
+    <div
+      class="c5"
+      data-testid="textbox-container"
       disabled=""
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-disabled="true"
-      aria-label="Show Select an option options"
-      class="c7 c8 c9"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="16"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-expanded="true"
+        aria-invalid="false"
+        class="c6 c7"
+        data-testid="textbox"
+        disabled=""
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+      <button
+        aria-disabled="true"
+        aria-label="Show Select an option options"
+        class="c8 c9 c10"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Combobox matches the snapshot (invalid) 1`] = `
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -287,12 +321,12 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   user-select: none;
 }
 
-.c9 > svg {
+.c10 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c10 {
+.c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -300,14 +334,14 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   width: var(--size-2x);
 }
 
-.c10:hover,
-.c10[aria-expanded='true'] {
+.c11:hover,
+.c11[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c10[aria-disabled='true'] {
+.c11[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -396,7 +430,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -410,16 +444,15 @@ input + .c2 {
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
 
-.c11:hover {
+.c12:hover {
   background-color: transparent;
 }
 
-.c7 {
+.c8 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -428,37 +461,66 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-.c8 {
-  border: 1px solid #CD2C23 !important;
+.c9 {
+  border: 0;
   height: var(--size-2x);
-  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c8:focus {
+.c9::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c9::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c9:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c9::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c9:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.c7 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #CD2C23 !important;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 30px;
+  width: 100%;
+}
+
+.c7:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c8::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c8::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c8:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c8::placeholder {
-  color: #60666E;
-  font-style: italic;
 }
 
 <div
@@ -504,51 +566,56 @@ input + .c2 {
   <div
     class="c6"
   >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-describedby="uuid1_invalid"
-      aria-expanded="true"
-      aria-invalid="true"
-      class="c7 c8"
-      data-testid="textbox"
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show Select an option options"
-      class="c9 c10 c11"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
+    <div
+      class="c7"
+      data-testid="textbox-container"
     >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="16"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-describedby="uuid1_invalid"
+        aria-expanded="true"
+        aria-invalid="true"
+        class="c8 c9"
+        data-testid="textbox"
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+      <button
+        aria-label="Show Select an option options"
+        class="c10 c11 c12"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Combobox matches the snapshot (mobile) 1`] = `
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -588,12 +655,12 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c5 > svg {
+.c6 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -601,14 +668,14 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   width: var(--size-2x);
 }
 
-.c6:hover,
-.c6[aria-expanded='true'] {
+.c7:hover,
+.c7[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c6[aria-disabled='true'] {
+.c7[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -651,7 +718,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -665,16 +732,15 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
 
-.c7:hover {
+.c8:hover {
   background-color: transparent;
 }
 
-.c3 {
+.c4 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -683,37 +749,66 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   font-size: 1rem;
 }
 
-.c4 {
-  border: 1px solid #60666E !important;
+.c5 {
+  border: 0;
   height: var(--size-2halfx);
-  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c4:focus {
+.c5::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c5::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c5:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c5::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c5:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.c3 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E !important;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-family: inherit;
+  font-size: 1rem;
+  min-height: 30px;
+  width: 100%;
+}
+
+.c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c4::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c4:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c4::placeholder {
-  color: #60666E;
-  font-style: italic;
 }
 
 <div
@@ -722,45 +817,50 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   <div
     class="c2"
   >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-expanded="true"
-      aria-invalid="false"
-      aria-label="inputAriaLabel"
-      class="c3 c4"
-      data-testid="textbox"
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show  options"
-      class="c5 c6 c7"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
+    <div
+      class="c3"
+      data-testid="textbox-container"
     >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="20"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="20"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-expanded="true"
+        aria-invalid="false"
+        aria-label="inputAriaLabel"
+        class="c4 c5"
+        data-testid="textbox"
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+      <button
+        aria-label="Show  options"
+        class="c6 c7 c8"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="20"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -915,7 +1015,6 @@ input + .c2 {
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
@@ -1021,39 +1120,39 @@ input + .c2 {
         tabindex="0"
         value=""
       />
-    </div>
-    <button
-      aria-label="Show Select options options"
-      class="c9 c10 c11"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="16"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <button
+        aria-label="Show Select options options"
+        class="c9 c10 c11"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Combobox matches the snapshot (readOnly) 1`] = `
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1093,12 +1192,12 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
   user-select: none;
 }
 
-.c8 > svg {
+.c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c9 {
+.c10 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -1106,14 +1205,14 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
   width: var(--size-2x);
 }
 
-.c9:hover,
-.c9[aria-expanded='true'] {
+.c10:hover,
+.c10[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c9[aria-disabled='true'] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1188,7 +1287,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1199,16 +1298,15 @@ input + .c2 {
   display: none;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
 
-.c10:hover {
+.c11:hover {
   background-color: transparent;
 }
 
-.c6 {
+.c7 {
   background-color: rgb(0 0 0 / 0.03);
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -1217,37 +1315,66 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-.c7 {
-  border: 1px solid transparent !important;
+.c8 {
+  border: 0;
   height: var(--size-2x);
-  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c7:focus {
+.c8::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: rgb(0 0 0 / 0.03);
+  border: 1px solid transparent !important;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 30px;
+  width: 100%;
+}
+
+.c6:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c7::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::placeholder {
-  color: #60666E;
-  font-style: italic;
 }
 
 <div
@@ -1269,53 +1396,58 @@ input + .c2 {
   <div
     class="c5"
   >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-describedby="uuid1_hint"
-      aria-expanded="true"
-      aria-invalid="false"
-      aria-readonly="true"
-      class="c6 c7"
-      data-testid="textbox"
-      disabled=""
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show Select an option options"
-      class="c8 c9 c10"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
+    <div
+      class="c6"
+      data-testid="textbox-container"
     >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="16"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-describedby="uuid1_hint"
+        aria-expanded="true"
+        aria-invalid="false"
+        aria-readonly="true"
+        class="c7 c8"
+        data-testid="textbox"
+        disabled=""
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+      <button
+        aria-label="Show Select an option options"
+        class="c9 c10 c11"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Combobox matches the snapshot 1`] = `
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1355,12 +1487,12 @@ exports[`Combobox matches the snapshot 1`] = `
   user-select: none;
 }
 
-.c8 > svg {
+.c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c9 {
+.c10 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
@@ -1368,14 +1500,14 @@ exports[`Combobox matches the snapshot 1`] = `
   width: var(--size-2x);
 }
 
-.c9:hover,
-.c9[aria-expanded='true'] {
+.c10:hover,
+.c10[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.15);
   border-color: transparent;
   color: #000000;
 }
 
-.c9[aria-disabled='true'] {
+.c10[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1450,7 +1582,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1464,16 +1596,15 @@ input + .c2 {
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
-  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
 
-.c10:hover {
+.c11:hover {
   background-color: transparent;
 }
 
-.c6 {
+.c7 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -1482,37 +1613,66 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-.c7 {
-  border: 1px solid #60666E !important;
+.c8 {
+  border: 0;
   height: var(--size-2x);
-  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c7:focus {
+.c8::-webkit-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::-moz-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8:-ms-input-placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8::placeholder {
+  color: #60666E;
+  font-style: italic;
+}
+
+.c8:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E !important;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 30px;
+  width: 100%;
+}
+
+.c6:focus-within {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
-}
-
-.c7::-webkit-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::-moz-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7:-ms-input-placeholder {
-  color: #60666E;
-  font-style: italic;
-}
-
-.c7::placeholder {
-  color: #60666E;
-  font-style: italic;
 }
 
 <div
@@ -1534,45 +1694,50 @@ input + .c2 {
   <div
     class="c5"
   >
-    <input
-      aria-autocomplete="list"
-      aria-controls="uuid1_listbox"
-      aria-describedby="uuid1_hint"
-      aria-expanded="true"
-      aria-invalid="false"
-      class="c6 c7"
-      data-testid="textbox"
-      id="uuid1"
-      role="combobox"
-      tabindex="0"
-      value=""
-    />
-    <button
-      aria-label="Show Select an option options"
-      class="c8 c9 c10"
-      data-testid="arrow"
-      tabindex="-1"
-      type="button"
+    <div
+      class="c6"
+      data-testid="textbox-container"
     >
-      <svg
-        aria-hidden="true"
-        class="lucide lucide-chevron-up"
-        fill="none"
-        focusable="false"
-        height="16"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        aria-autocomplete="list"
+        aria-controls="uuid1_listbox"
+        aria-describedby="uuid1_hint"
+        aria-expanded="true"
+        aria-invalid="false"
+        class="c7 c8"
+        data-testid="textbox"
+        id="uuid1"
+        role="combobox"
+        tabindex="0"
+        value=""
+      />
+      <button
+        aria-label="Show Select an option options"
+        class="c9 c10 c11"
+        data-testid="arrow"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          d="m18 15-6-6-6 6"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
