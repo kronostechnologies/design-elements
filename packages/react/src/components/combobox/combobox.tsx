@@ -192,7 +192,7 @@ const BaseInput = styled.input<TextboxProps>`
 const Textbox = styled(BaseInput)<TextboxProps>`
     border: 1px solid ${getBorderColor} !important;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: 0 var(--spacing-1x);
+    padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
     width: 100%;
 
     ${({ theme }) => focus({ theme }, { focusType: 'focus' })};

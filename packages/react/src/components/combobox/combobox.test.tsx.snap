@@ -159,7 +159,7 @@ input + .c2 {
 .c6 {
   border: 1px solid #B7BBC2 !important;
   height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
+  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
   width: 100%;
 }
 
@@ -431,7 +431,7 @@ input + .c2 {
 .c8 {
   border: 1px solid #CD2C23 !important;
   height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
+  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
   width: 100%;
 }
 
@@ -686,7 +686,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 .c4 {
   border: 1px solid #60666E !important;
   height: var(--size-2halfx);
-  padding: 0 var(--spacing-1x);
+  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
   width: 100%;
 }
 
@@ -1220,7 +1220,7 @@ input + .c2 {
 .c7 {
   border: 1px solid transparent !important;
   height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
+  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
   width: 100%;
 }
 
@@ -1485,7 +1485,7 @@ input + .c2 {
 .c7 {
   border: 1px solid #60666E !important;
   height: var(--size-2x);
-  padding: 0 var(--spacing-1x);
+  padding: 0 calc(var(--spacing-3halfx) + var(--size-1x) + var(--spacing-2x)) 0 var(--spacing-1x);
   width: 100%;
 }
 
