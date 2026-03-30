@@ -6,7 +6,8 @@ const PhoneInputMeta: Meta<typeof PhoneInput> = {
     title: 'Components/Phone Input',
     component: PhoneInput,
     args: {
-        pattern: '(___) ___-____',
+        mask: '(___) ___-____',
+        pattern: ['(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
     },
 };
 
@@ -22,7 +23,7 @@ export const Default: Story = {
     decorators: [DesktopDecorator],
     render: (args) => (
         <PhoneInput
-            data-testid='custom-data-test-id'
+            data-testid="custom-data-test-id"
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...args}
         />
