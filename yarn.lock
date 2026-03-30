@@ -1654,6 +1654,9 @@ __metadata:
     "@floating-ui/react": "npm:0.27.19"
     "@floating-ui/react-dom": "npm:2.1.8"
     "@floating-ui/utils": "npm:0.2.11"
+    "@maskito/core": "npm:5.2.2"
+    "@maskito/kit": "npm:5.2.2"
+    "@maskito/react": "npm:5.2.2"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@mui/base": "npm:5.0.0-beta.70"
     "@stylistic/eslint-plugin": "npm:5.10.0"
@@ -2914,6 +2917,33 @@ __metadata:
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
   checksum: 10c0/14a0112bd59615eef9e3446fea018045720cd3da85a98f801a685a818b0d96ef2a1f7227e8d271def546b2e2a0fe91ef915ba9dc912ab7967d2317b1a051d66b
+  languageName: node
+  linkType: hard
+
+"@maskito/core@npm:5.2.2":
+  version: 5.2.2
+  resolution: "@maskito/core@npm:5.2.2"
+  checksum: 10c0/6ebb53eb3c3a752bac9a3b4d8c21413bfc04a239e5438b6d520631baebb899697551dbe53a9f717441cc190a9b96c1301a7d778c9e732bfb0f8d87707ce4467a
+  languageName: node
+  linkType: hard
+
+"@maskito/kit@npm:5.2.2":
+  version: 5.2.2
+  resolution: "@maskito/kit@npm:5.2.2"
+  peerDependencies:
+    "@maskito/core": ^5.2.2
+  checksum: 10c0/817e7a28a74338d6ac28c07f0d1b84c69629e2406f052f3ff3835a59cad860f54de386d7815bb96442c5c9d9bb7b8f0c76d48da0d3b704b917619c162470a7eb
+  languageName: node
+  linkType: hard
+
+"@maskito/react@npm:5.2.2":
+  version: 5.2.2
+  resolution: "@maskito/react@npm:5.2.2"
+  peerDependencies:
+    "@maskito/core": ^5.2.2
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 10c0/d8c08a61a679ec57eb117e9eef869120817d1c5f31a902ebfe34a8163ed9dea588d744efe958805ec063b2dc69ded14ed371b8847a30a1908b59bc4681c6e17e
   languageName: node
   linkType: hard
 
