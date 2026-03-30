@@ -1,0 +1,45 @@
+import {MaskedInput, SectionalBanner} from '@equisoft/design-elements-react';
+import {ArgTypes, Canvas, Meta} from '@storybook/blocks';
+import * as MaskedInputStories from './masked-input.stories';
+
+<Meta of={MaskedInputStories} />
+
+# Masked Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+## Usage
+This component is based upon [Maskito](https://maskito.dev/). The basic usage is to provide a `mask` and a `pattern`, but we provide some predefined masks and patterns for common use cases such as postal code and dates (see below).
+The `mask` is a string that defines the format of the input, while the `pattern` is either a regular expression, or an array of regular expressions or strings that define each character individually.
+
+<SectionalBanner type="warning">
+    Make sure that pattern expression works with any of intermediate states, not just the final value.
+    For example, imagine that you have to create a pattern for a 4-digits PIN code.
+
+    <code>/^\d\{4\}\$/</code> is a wrong pattern expression. It does not match intermediate states (you cannot complete 4-digit string without possibility to type 1-, 2- or 3-digit string).
+
+    <code>/^\d\{0,4\}\$/</code> is the correct pattern.
+</SectionalBanner>
+<br/>
+
+### Basic
+<Canvas of={MaskedInputStories.Basic} />
+
+## Properties
+<ArgTypes of={MaskedInput} />
+
+### Postal Code
+The postal code mask is provided through the `usePostalCodeMask` hook, which returns the appropriate `mask` and `pattern` for postal codes.
+It also allows lowercase letters, and convert them to uppercase.
+
+<Canvas of={MaskedInputStories.PostalCodeMask} />
+
+### Date Mask
+The date mask is provided through the `useDateMask` hook. The hook allow to configure the date format and the separator character. 
+By default, the date format is `YYYY-MM-DD` and the separator is `-`. 
+
+You can also provide a minimum and maximum date (inclusive). The input will reset to the closest valid date if the user tries to enter a date that is out of range.
+
+<Canvas of={MaskedInputStories.DateMask} />
