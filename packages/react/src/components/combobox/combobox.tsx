@@ -307,6 +307,8 @@ export interface ComboboxProps {
     value?: Value;
     hint?: string;
 
+    portalContainer?: HTMLElement | null;
+
     /**
      * OnChange callback function, invoked when value/options change
      */
@@ -344,6 +346,7 @@ export const Combobox: FC<ComboboxProps> = ({
     validationErrorMessage,
     value,
     hint,
+    portalContainer,
     ...otherProps
 }) => {
     const { t } = useTranslation('combobox');
@@ -986,7 +989,7 @@ export const Combobox: FC<ComboboxProps> = ({
                     $left={`${x}px`}
                     $top={`${y}px`}
                 />,
-                rootElement,
+                portalContainer ?? rootElement,
             )}
         </StyledFieldContainer>
     );
