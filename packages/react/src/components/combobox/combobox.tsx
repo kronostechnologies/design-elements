@@ -147,7 +147,11 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     z-index: 99998;
 `;
 
-const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
+const ArrowButton = styled(IconButton)<{
+    disabled?: boolean,
+    $readOnly?: boolean,
+    $multiselect?: boolean
+}>`
     align-items: center;
     background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
@@ -155,6 +159,7 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
+    ${({ $multiselect }) => ($multiselect ? 'position: absolute;' : '')};
     right: 0;
     width: var(--size-1x);
 
@@ -249,6 +254,7 @@ const TagInputContainer = styled.div<TagInputContainerProps>`
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     min-height: 30px;
+    padding-right: var(--spacing-2halfx);
     width: 100%;
 
     ${({ disabled, theme }) => !disabled && focus({ theme }, { focusType: 'focus-within' })};
@@ -935,6 +941,7 @@ export const Combobox: FC<ComboboxProps> = ({
             focusable={false}
             iconName={open ? 'chevronUp' : 'chevronDown'}
             onClick={handleArrowButtonClick}
+            $multiselect={multiselect}
             $readOnly={readOnly}
             ref={arrowButtonRef}
             type="button"
@@ -956,29 +963,31 @@ export const Combobox: FC<ComboboxProps> = ({
         >
             <StyledContainer>
                 {multiselect ? (
-                    <TagInputContainer
-                        data-testid="tags"
-                        disabled={disabled}
-                        $isMobile={isMobile}
-                        $readOnly={readOnly}
-                        ref={refs.setReference}
-                        tabIndex={0}
-                        $valid={valid}
-                    >
-                        <input
-                            type="hidden"
-                            name={name}
-                            value={getJoinedValues(selectedOptions)}
-                            data-testid="input"
-                        />
-                        {renderSelectedOptionsTags()}
-                        <MultiSelectInput
-                            {...sharedInputProps}
-                            $hasTags={selectedOptions.length > 0}
-                            ref={inputRef}
-                        />
+                    <>
+                        <TagInputContainer
+                            data-testid="tags"
+                            disabled={disabled}
+                            $isMobile={isMobile}
+                            $readOnly={readOnly}
+                            ref={refs.setReference}
+                            tabIndex={0}
+                            $valid={valid}
+                        >
+                            <input
+                                type="hidden"
+                                name={name}
+                                value={getJoinedValues(selectedOptions)}
+                                data-testid="input"
+                            />
+                            {renderSelectedOptionsTags()}
+                            <MultiSelectInput
+                                {...sharedInputProps}
+                                $hasTags={selectedOptions.length > 0}
+                                ref={inputRef}
+                            />
+                        </TagInputContainer>
                         {arrowButton}
-                    </TagInputContainer>
+                    </>
                 ) : (
                     <TextboxContainer
                         data-testid="textbox-container"
