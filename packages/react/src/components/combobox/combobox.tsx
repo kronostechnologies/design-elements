@@ -171,7 +171,6 @@ const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    right: var(--spacing-3halfx);
     width: var(--size-1x);
 
     &::after {
@@ -197,19 +196,15 @@ const BaseInput = styled.input<TextboxProps>`
 
 const Textbox = styled(BaseInput)<TextboxProps>`
     border: 0;
+    box-shadow: none;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    outline: none;
     padding: 0 var(--spacing-1x);
     width: 100%;
 
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
         font-style: italic;
-    }
-
-    &:focus {
-        border: 0;
-        box-shadow: none;
-        outline: none;
     }
 `;
 
@@ -254,7 +249,6 @@ const TagInputContainer = styled.div<TagInputContainerProps>`
     font-family: inherit;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     min-height: 30px;
-    padding-right: var(--spacing-2halfx);
     width: 100%;
 
     ${({ disabled, theme }) => !disabled && focus({ theme }, { focusType: 'focus-within' })};
@@ -932,6 +926,21 @@ export const Combobox: FC<ComboboxProps> = ({
         ...dataAttributes,
     };
 
+    const arrowButton = (
+        <ArrowButton
+            aria-label={t('showOptions', { label: label || ariaLabel })}
+            buttonType="tertiary"
+            data-testid="arrow"
+            disabled={disabled}
+            focusable={false}
+            iconName={open ? 'chevronUp' : 'chevronDown'}
+            onClick={handleArrowButtonClick}
+            $readOnly={readOnly}
+            ref={arrowButtonRef}
+            type="button"
+        />
+    );
+
     return (
         <StyledFieldContainer
             className={className}
@@ -968,18 +977,7 @@ export const Combobox: FC<ComboboxProps> = ({
                             $hasTags={selectedOptions.length > 0}
                             ref={inputRef}
                         />
-                        <ArrowButton
-                            aria-label={t('showOptions', { label: label || ariaLabel })}
-                            buttonType="tertiary"
-                            data-testid="arrow"
-                            disabled={disabled}
-                            focusable={false}
-                            iconName={open ? 'chevronUp' : 'chevronDown'}
-                            onClick={handleArrowButtonClick}
-                            $readOnly={readOnly}
-                            ref={arrowButtonRef}
-                            type="button"
-                        />
+                        {arrowButton}
                     </TagInputContainer>
                 ) : (
                     <TextboxContainer
@@ -988,9 +986,10 @@ export const Combobox: FC<ComboboxProps> = ({
                         $isMobile={isMobile}
                         $readOnly={readOnly}
                         $valid={valid}
+                        ref={refs.setReference}
                     >
-                        <Textbox {...sharedInputProps} ref={refs.setReference} />
-                        {inputValue !== '' && !disabled && !multiselect && (
+                        <Textbox {...sharedInputProps} />
+                        {inputValue !== '' && !disabled && (
                             <ClearButton
                                 aria-label={t('clearInput')}
                                 buttonType="tertiary"
@@ -1003,18 +1002,7 @@ export const Combobox: FC<ComboboxProps> = ({
                                 type="button"
                             />
                         )}
-                        <ArrowButton
-                            aria-label={t('showOptions', { label: label || ariaLabel })}
-                            buttonType="tertiary"
-                            data-testid="arrow"
-                            disabled={disabled}
-                            focusable={false}
-                            iconName={open ? 'chevronUp' : 'chevronDown'}
-                            onClick={handleArrowButtonClick}
-                            $readOnly={readOnly}
-                            ref={arrowButtonRef}
-                            type="button"
-                        />
+                        {arrowButton}
                     </TextboxContainer>
                 )}
             </StyledContainer>
