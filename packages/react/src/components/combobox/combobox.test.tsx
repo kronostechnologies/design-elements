@@ -112,6 +112,23 @@ describe('Combobox', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('renders the listbox inside the custom portal container when slotProps.listBox.container is provided', () => {
+        const portalContainer = document.createElement('div');
+        document.body.appendChild(portalContainer);
+
+        renderWithProviders(
+            <Combobox
+                defaultOpen
+                label="Select an option"
+                options={provinces}
+                portalContainer={portalContainer}
+            />,
+        );
+
+        expect(within(portalContainer).getByRole('listbox')).toBeInTheDocument();
+        document.body.removeChild(portalContainer);
+    });
+
     it('with defaultValue and options with label renders default option label as input value', () => {
         const options: ComboboxOption[] = [
             { value: 'foo', label: 'Foo Label' },
