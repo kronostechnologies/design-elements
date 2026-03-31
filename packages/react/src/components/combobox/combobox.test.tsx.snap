@@ -157,7 +157,9 @@ input + .c2 {
 
 .c7 {
   border: 0;
+  box-shadow: none;
   height: var(--size-2x);
+  outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
 }
@@ -180,12 +182,6 @@ input + .c2 {
 .c7::placeholder {
   color: #60666E;
   font-style: italic;
-}
-
-.c7:focus {
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .c5 {
@@ -463,7 +459,9 @@ input + .c2 {
 
 .c9 {
   border: 0;
+  box-shadow: none;
   height: var(--size-2x);
+  outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
 }
@@ -486,12 +484,6 @@ input + .c2 {
 .c9::placeholder {
   color: #60666E;
   font-style: italic;
-}
-
-.c9:focus {
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .c7 {
@@ -751,7 +743,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c5 {
   border: 0;
+  box-shadow: none;
   height: var(--size-2halfx);
+  outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
 }
@@ -774,12 +768,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 .c5::placeholder {
   color: #60666E;
   font-style: italic;
-}
-
-.c5:focus {
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .c3 {
@@ -1015,6 +1003,7 @@ input + .c2 {
   display: flex;
   height: var(--size-1x);
   padding: var(--spacing-half);
+  position: absolute;
   right: 0;
   width: var(--size-1x);
 }
@@ -1120,33 +1109,33 @@ input + .c2 {
         tabindex="0"
         value=""
       />
-      <button
-        aria-label="Show Select options options"
-        class="c9 c10 c11"
-        data-testid="arrow"
-        tabindex="-1"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-up"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m18 15-6-6-6 6"
-          />
-        </svg>
-      </button>
     </div>
+    <button
+      aria-label="Show Select options options"
+      class="c9 c10 c11"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-up"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m18 15-6-6-6 6"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;
@@ -1317,7 +1306,9 @@ input + .c2 {
 
 .c8 {
   border: 0;
+  box-shadow: none;
   height: var(--size-2x);
+  outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
 }
@@ -1340,12 +1331,6 @@ input + .c2 {
 .c8::placeholder {
   color: #60666E;
   font-style: italic;
-}
-
-.c8:focus {
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .c6 {
@@ -1615,7 +1600,9 @@ input + .c2 {
 
 .c8 {
   border: 0;
+  box-shadow: none;
   height: var(--size-2x);
+  outline: none;
   padding: 0 var(--spacing-1x);
   width: 100%;
 }
@@ -1638,12 +1625,6 @@ input + .c2 {
 .c8::placeholder {
   color: #60666E;
   font-style: italic;
-}
-
-.c8:focus {
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .c6 {

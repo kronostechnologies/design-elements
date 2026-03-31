@@ -395,10 +395,7 @@ export const Combobox: FC<ComboboxProps> = ({
     } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
     const rootElement = getRootElement(shadowRoot) as HTMLElement;
 
-    let inputRef = useRef<HTMLInputElement>(null);
-    if (!multiselect) {
-        inputRef = floatingReferenceRef;
-    }
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const findOptionByLabelOrValue = useCallback(
         (searchValue?: string): ComboboxOption | undefined => options.find((option: ComboboxOption) => {
@@ -669,8 +666,8 @@ export const Combobox: FC<ComboboxProps> = ({
     ]);
 
     const componentTargets = useMemo(
-        () => [floatingReferenceRef, listboxRef, arrowButtonRef, clearButtonRef],
-        [listboxRef, floatingReferenceRef],
+        () => [floatingReferenceRef, inputRef, listboxRef, arrowButtonRef, clearButtonRef],
+        [listboxRef, floatingReferenceRef, inputRef],
     );
 
     const handleTextboxBlur = useCallback((event: FocusEvent): void => {
@@ -704,16 +701,16 @@ export const Combobox: FC<ComboboxProps> = ({
             openListbox();
         }
 
-        floatingReferenceRef.current?.focus();
-    }, [closeListbox, open, openListbox, floatingReferenceRef]);
+        inputRef.current?.focus();
+    }, [closeListbox, open, openListbox, inputRef]);
 
     const handleClearButtonClick = useCallback((): void => {
         changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
-        floatingReferenceRef.current?.focus();
-    }, [changeInputValue, clearSelectedOptions, setFocusedOption, floatingReferenceRef]);
+        inputRef.current?.focus();
+    }, [changeInputValue, clearSelectedOptions, setFocusedOption, inputRef]);
 
     const handleTagRemove = useCallback((tag: TagValue): void => {
         const removedOption = selectedOptions?.find((option) => option.value === tag.id);
@@ -897,7 +894,7 @@ export const Combobox: FC<ComboboxProps> = ({
         } else if (inputRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
             inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
-    }, [inputValue.length, suggestedInputValue.length, floatingReferenceRef]);
+    }, [inputValue.length, suggestedInputValue.length, inputRef]);
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
@@ -997,7 +994,7 @@ export const Combobox: FC<ComboboxProps> = ({
                         $valid={valid}
                         ref={refs.setReference}
                     >
-                        <Textbox {...sharedInputProps} />
+                        <Textbox {...sharedInputProps} ref={inputRef} />
                         {inputValue !== '' && !disabled && (
                             <ClearButton
                                 aria-label={t('clearInput')}
