@@ -125,10 +125,9 @@ input + .c2 {
 }
 
 .c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #B7BBC2;
@@ -185,10 +184,6 @@ input + .c2 {
 }
 
 .c5 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #F1F2F2;
   border: 1px solid #B7BBC2 !important;
   border-radius: var(--border-radius);
@@ -427,10 +422,9 @@ input + .c2 {
 }
 
 .c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #60666E;
@@ -487,10 +481,6 @@ input + .c2 {
 }
 
 .c7 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #FFFFFF;
   border: 1px solid #CD2C23 !important;
   border-radius: var(--border-radius);
@@ -711,10 +701,9 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #60666E;
@@ -771,10 +760,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 }
 
 .c3 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #FFFFFF;
   border: 1px solid #60666E !important;
   border-radius: var(--border-radius);
@@ -990,10 +975,9 @@ input + .c2 {
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #60666E;
@@ -1022,9 +1006,9 @@ input + .c2 {
 }
 
 .c8 {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background: transparent;
   border: none;
   -webkit-flex: 1 1 0;
@@ -1038,10 +1022,6 @@ input + .c2 {
 }
 
 .c6 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -1277,10 +1257,9 @@ input + .c2 {
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #B7BBC2;
@@ -1334,10 +1313,6 @@ input + .c2 {
 }
 
 .c6 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: rgb(0 0 0 / 0.03);
   border: 1px solid transparent !important;
   border-radius: var(--border-radius);
@@ -1568,10 +1543,9 @@ input + .c2 {
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: transparent;
   border: 0;
   color: #60666E;
@@ -1628,10 +1602,6 @@ input + .c2 {
 }
 
 .c6 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #FFFFFF;
   border: 1px solid #60666E !important;
   border-radius: var(--border-radius);
