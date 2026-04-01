@@ -215,7 +215,7 @@ const Textbox = styled(BaseInput)<TextboxProps>`
 
 const TextboxContainer = styled.div<TextboxContainerProps>`
     background-color: ${getBackgroundColor};
-    border: 1px solid ${getBorderColor} !important;
+    border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: ${getTextColor};
