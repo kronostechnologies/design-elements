@@ -71,6 +71,14 @@ interface TextboxProps {
     value: Value;
 }
 
+interface TextboxContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    $readOnly?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
+
 interface MultiSelectInputProps extends TextboxProps {
     $readOnly?: boolean;
     $hasTags?: boolean;
@@ -139,15 +147,19 @@ const StyledListbox = styled(Listbox)<StyledListboxProps>`
     z-index: 99998;
 `;
 
-const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
-    align-items: center;
+const ArrowButton = styled(IconButton)<{
+    disabled?: boolean,
+    $readOnly?: boolean,
+    $multiselect?: boolean
+}>`
+    align-self: center;
     background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
     color: ${({ disabled, $readOnly, theme }) => theme.component[`combobox-arrow-button${(disabled || $readOnly) ? '-disabled' : ''}-icon-color`]};
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
+    position: ${({ $multiselect }) => ($multiselect && 'absolute')};
     right: 0;
     width: var(--size-1x);
 
@@ -157,15 +169,13 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean
 `;
 
 const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
-    align-items: center;
+    align-self: center;
     background-color: transparent;
     border: 0;
     color: ${({ disabled, $readOnly, theme }) => ((disabled || $readOnly) ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
-    right: var(--spacing-3halfx);
     width: var(--size-1x);
 
     &::after {
@@ -190,12 +200,12 @@ const BaseInput = styled.input<TextboxProps>`
 `;
 
 const Textbox = styled(BaseInput)<TextboxProps>`
-    border: 1px solid ${getBorderColor} !important;
+    border: 0;
+    box-shadow: none;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    outline: none;
     padding: 0 var(--spacing-1x);
     width: 100%;
-
-    ${({ theme }) => focus({ theme }, { focusType: 'focus' })};
 
     &::placeholder {
         color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
@@ -203,8 +213,24 @@ const Textbox = styled(BaseInput)<TextboxProps>`
     }
 `;
 
+const TextboxContainer = styled.div<TextboxContainerProps>`
+    background-color: ${getBackgroundColor};
+    border: 1px solid ${getBorderColor};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${getTextColor};
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    min-height: 30px;
+    width: 100%;
+
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
+`;
+
 const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
-    align-self: flex-start;
+    align-self: center;
     background: transparent;
     border: none;
     flex: 1 1 0;
@@ -216,7 +242,6 @@ const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
 `;
 
 const TagInputContainer = styled.div<TagInputContainerProps>`
-    align-items: flex-start;
     background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
@@ -368,10 +393,7 @@ export const Combobox: FC<ComboboxProps> = ({
     } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
     const rootElement = getRootElement(shadowRoot) as HTMLElement;
 
-    let inputRef = useRef<HTMLInputElement>(null);
-    if (!multiselect) {
-        inputRef = floatingReferenceRef;
-    }
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const findOptionByLabelOrValue = useCallback(
         (searchValue?: string): ComboboxOption | undefined => options.find((option: ComboboxOption) => {
@@ -642,7 +664,7 @@ export const Combobox: FC<ComboboxProps> = ({
     ]);
 
     const componentTargets = useMemo(
-        () => [floatingReferenceRef, listboxRef, arrowButtonRef, clearButtonRef],
+        () => [floatingReferenceRef, inputRef, listboxRef, arrowButtonRef, clearButtonRef],
         [listboxRef, floatingReferenceRef],
     );
 
@@ -677,16 +699,16 @@ export const Combobox: FC<ComboboxProps> = ({
             openListbox();
         }
 
-        floatingReferenceRef.current?.focus();
-    }, [closeListbox, open, openListbox, floatingReferenceRef]);
+        inputRef.current?.focus();
+    }, [closeListbox, open, openListbox]);
 
     const handleClearButtonClick = useCallback((): void => {
         changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
-        floatingReferenceRef.current?.focus();
-    }, [changeInputValue, clearSelectedOptions, setFocusedOption, floatingReferenceRef]);
+        inputRef.current?.focus();
+    }, [changeInputValue, clearSelectedOptions, setFocusedOption]);
 
     const handleTagRemove = useCallback((tag: TagValue): void => {
         const removedOption = selectedOptions?.find((option) => option.value === tag.id);
@@ -870,7 +892,7 @@ export const Combobox: FC<ComboboxProps> = ({
         } else if (inputRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
             inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
-    }, [inputValue.length, suggestedInputValue.length, floatingReferenceRef]);
+    }, [inputValue.length, suggestedInputValue.length]);
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
@@ -905,6 +927,22 @@ export const Combobox: FC<ComboboxProps> = ({
         ...dataAttributes,
     };
 
+    const arrowButton = (
+        <ArrowButton
+            aria-label={t('showOptions', { label: label || ariaLabel })}
+            buttonType="tertiary"
+            data-testid="arrow"
+            disabled={disabled}
+            focusable={false}
+            iconName={open ? 'chevronUp' : 'chevronDown'}
+            onClick={handleArrowButtonClick}
+            $multiselect={multiselect}
+            $readOnly={readOnly}
+            ref={arrowButtonRef}
+            type="button"
+        />
+    );
+
     return (
         <StyledFieldContainer
             className={className}
@@ -920,58 +958,57 @@ export const Combobox: FC<ComboboxProps> = ({
         >
             <StyledContainer>
                 {multiselect ? (
-                    <TagInputContainer
-                        data-testid="tags"
+                    <>
+                        <TagInputContainer
+                            data-testid="tags"
+                            disabled={disabled}
+                            $isMobile={isMobile}
+                            $readOnly={readOnly}
+                            ref={refs.setReference}
+                            tabIndex={0}
+                            $valid={valid}
+                        >
+                            <input
+                                type="hidden"
+                                name={name}
+                                value={getJoinedValues(selectedOptions)}
+                                data-testid="input"
+                            />
+                            {renderSelectedOptionsTags()}
+                            <MultiSelectInput
+                                {...sharedInputProps}
+                                $hasTags={selectedOptions.length > 0}
+                                ref={inputRef}
+                            />
+                        </TagInputContainer>
+                        {arrowButton}
+                    </>
+                ) : (
+                    <TextboxContainer
+                        data-testid="textbox-container"
                         disabled={disabled}
                         $isMobile={isMobile}
                         $readOnly={readOnly}
-                        ref={refs.setReference}
-                        tabIndex={0}
                         $valid={valid}
+                        ref={refs.setReference}
                     >
-                        <input
-                            type="hidden"
-                            name={name}
-                            value={getJoinedValues(selectedOptions)}
-                            data-testid="input"
-                        />
-                        {renderSelectedOptionsTags()}
-                        <MultiSelectInput
-                            {...sharedInputProps}
-                            $hasTags={selectedOptions.length > 0}
-                            ref={inputRef}
-                        />
-                    </TagInputContainer>
-                ) : (
-                    <Textbox {...sharedInputProps} ref={refs.setReference} />
+                        <Textbox {...sharedInputProps} ref={inputRef} />
+                        {inputValue !== '' && !disabled && (
+                            <ClearButton
+                                aria-label={t('clearInput')}
+                                buttonType="tertiary"
+                                data-testid="clear"
+                                focusable={false}
+                                iconName="x"
+                                onClick={handleClearButtonClick}
+                                $readOnly={readOnly}
+                                ref={clearButtonRef}
+                                type="button"
+                            />
+                        )}
+                        {arrowButton}
+                    </TextboxContainer>
                 )}
-
-                {inputValue !== '' && !disabled && !multiselect && (
-                    <ClearButton
-                        aria-label={t('clearInput')}
-                        buttonType="tertiary"
-                        data-testid="clear"
-                        focusable={false}
-                        iconName="x"
-                        onClick={handleClearButtonClick}
-                        $readOnly={readOnly}
-                        ref={clearButtonRef}
-                        type="button"
-                    />
-                )}
-
-                <ArrowButton
-                    aria-label={t('showOptions', { label: label || ariaLabel })}
-                    buttonType="tertiary"
-                    data-testid="arrow"
-                    disabled={disabled}
-                    focusable={false}
-                    iconName={open ? 'chevronUp' : 'chevronDown'}
-                    onClick={handleArrowButtonClick}
-                    $readOnly={readOnly}
-                    ref={arrowButtonRef}
-                    type="button"
-                />
             </StyledContainer>
 
             {open && createPortal(
