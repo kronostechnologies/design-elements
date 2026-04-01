@@ -57,7 +57,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
       #eds-uuid1 .sc-cWSHoV{line-height:1.5rem;padding:var(--spacing-half) var(--spacing-2x);}
       #eds-uuid1 .sc-eBMEME{margin:0 0 var(--spacing-1x);padding:0 var(--spacing-2x);}
       #eds-uuid1 ul:not(:last-child)::after,#eds-uuid1 ol:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:var(--spacing-1x) var(--spacing-2x);}
-      .dUTmZL{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
+      .YQYXC{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
     </style>
   </head>,
   .c1 {
@@ -995,7 +995,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
       #eds-uuid1 .sc-cWSHoV{line-height:1.5rem;padding:var(--spacing-half) var(--spacing-2x);}
       #eds-uuid1 .sc-eBMEME{margin:0 0 var(--spacing-1x);padding:0 var(--spacing-2x);}
       #eds-uuid1 ul:not(:last-child)::after,#eds-uuid1 ol:not(:last-child)::after{border-bottom:1px solid #DBDEE1;content:'';display:block;margin:var(--spacing-1x) var(--spacing-2x);}
-      .dUTmZL{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
+      .YQYXC{box-sizing:border-box;position:fixed;z-index:100000;bottom:var(--spacing-2x);right:var(--spacing-2x);}
     </style>
   </head>,
   .c1 {
