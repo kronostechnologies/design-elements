@@ -152,14 +152,14 @@ const ArrowButton = styled(IconButton)<{
     $readOnly?: boolean,
     $multiselect?: boolean
 }>`
-    align-items: center;
+    align-self: center;
     background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
     color: ${({ disabled, $readOnly, theme }) => theme.component[`combobox-arrow-button${(disabled || $readOnly) ? '-disabled' : ''}-icon-color`]};
     display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    ${({ $multiselect }) => ($multiselect ? 'position: absolute;' : '')};
+    position: ${({ $multiselect }) => ($multiselect && 'absolute')};
     right: 0;
     width: var(--size-1x);
 
@@ -169,7 +169,7 @@ const ArrowButton = styled(IconButton)<{
 `;
 
 const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
-    align-items: center;
+    align-self: center;
     background-color: transparent;
     border: 0;
     color: ${({ disabled, $readOnly, theme }) => ((disabled || $readOnly) ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};
@@ -214,7 +214,6 @@ const Textbox = styled(BaseInput)<TextboxProps>`
 `;
 
 const TextboxContainer = styled.div<TextboxContainerProps>`
-    align-items: flex-start;
     background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor} !important;
     border-radius: var(--border-radius);
@@ -231,7 +230,7 @@ const TextboxContainer = styled.div<TextboxContainerProps>`
 `;
 
 const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
-    align-self: flex-start;
+    align-self: center;
     background: transparent;
     border: none;
     flex: 1 1 0;
@@ -243,7 +242,6 @@ const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
 `;
 
 const TagInputContainer = styled.div<TagInputContainerProps>`
-    align-items: flex-start;
     background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
@@ -667,7 +665,7 @@ export const Combobox: FC<ComboboxProps> = ({
 
     const componentTargets = useMemo(
         () => [floatingReferenceRef, inputRef, listboxRef, arrowButtonRef, clearButtonRef],
-        [listboxRef, floatingReferenceRef, inputRef],
+        [listboxRef, floatingReferenceRef],
     );
 
     const handleTextboxBlur = useCallback((event: FocusEvent): void => {
@@ -702,7 +700,7 @@ export const Combobox: FC<ComboboxProps> = ({
         }
 
         inputRef.current?.focus();
-    }, [closeListbox, open, openListbox, inputRef]);
+    }, [closeListbox, open, openListbox]);
 
     const handleClearButtonClick = useCallback((): void => {
         changeInputValue(undefined);
@@ -710,7 +708,7 @@ export const Combobox: FC<ComboboxProps> = ({
         clearSelectedOptions();
 
         inputRef.current?.focus();
-    }, [changeInputValue, clearSelectedOptions, setFocusedOption, inputRef]);
+    }, [changeInputValue, clearSelectedOptions, setFocusedOption]);
 
     const handleTagRemove = useCallback((tag: TagValue): void => {
         const removedOption = selectedOptions?.find((option) => option.value === tag.id);
@@ -894,7 +892,7 @@ export const Combobox: FC<ComboboxProps> = ({
         } else if (inputRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
             inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
-    }, [inputValue.length, suggestedInputValue.length, inputRef]);
+    }, [inputValue.length, suggestedInputValue.length]);
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
