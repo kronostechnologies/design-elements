@@ -46,7 +46,7 @@ const StyledAccordion = styled(Accordion)`
         margin-left: auto;
         order: 2;
     }
-    
+
     .${accordionClasses.panel} {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
@@ -58,7 +58,7 @@ const StyledAccordion = styled(Accordion)`
 
 const Envelope = styled.div`
     background: #fff;
-    border: 1px solid  #dbdee1;
+    border: 1px solid #dbdee1;
     border-radius: 0.25rem;
     display: grid;
     font-family: var(--font-family);
