@@ -73,7 +73,7 @@
     "pretty-format": "30.3.0",
     "serve-static": "2.2.1",
     "stylelint": "17.6.0",
-    "ts-loader": "9.5.4",
+    "ts-loader": "9.5.7",
     "typescript": "6.0.2",
     "webpack": "5.105.4",
     "webpack-cli": "7.0.2",

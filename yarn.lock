@@ -1709,7 +1709,7 @@ __metadata:
     styled-components: "npm:5.3.11"
     stylelint: "npm:17.6.0"
     ts-jest: "npm:29.4.6"
-    ts-loader: "npm:9.5.4"
+    ts-loader: "npm:9.5.7"
     ts-mockito: "npm:2.6.1"
     typescript: "npm:6.0.2"
     webpack: "npm:5.105.4"
@@ -1784,7 +1784,7 @@ __metadata:
     style-loader: "npm:4.0.0"
     styled-components: "npm:5.3.11"
     stylelint: "npm:17.6.0"
-    ts-loader: "npm:9.5.4"
+    ts-loader: "npm:9.5.7"
     typescript: "npm:6.0.2"
     webpack: "npm:5.105.4"
     yargs: "npm:18.0.0"
@@ -7753,7 +7753,7 @@ __metadata:
     serve-static: "npm:2.2.1"
     styled-components: "npm:5.3.11"
     stylelint: "npm:17.6.0"
-    ts-loader: "npm:9.5.4"
+    ts-loader: "npm:9.5.7"
     tslib: "npm:2.8.1"
     typescript: "npm:6.0.2"
     uuid: "npm:13.0.0"
@@ -14707,9 +14707,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:9.5.4":
-  version: 9.5.4
-  resolution: "ts-loader@npm:9.5.4"
+"ts-loader@npm:9.5.7":
+  version: 9.5.7
+  resolution: "ts-loader@npm:9.5.7"
   dependencies:
     chalk: "npm:^4.1.0"
     enhanced-resolve: "npm:^5.0.0"
@@ -14719,7 +14719,7 @@ __metadata:
   peerDependencies:
     typescript: "*"
     webpack: ^5.0.0
-  checksum: 10c0/f0982404b43628c335d3b3a60ac3f1738385da7b97c3f04cb5ad2ebad791597be39b25c8a4e158a66173f9bd9f5aa72e285b046b0573e4beed8ecd032d418e4d
+  checksum: 10c0/e68d997962046afc40fbb6131a5f329128691917bf288d18df4f95719ca1557e72f614bf078e06544ab0c970f734495a356f3eeb5f11ca18459944237b3635a1
   languageName: node
   linkType: hard
 

@@ -7,7 +7,10 @@
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./stories/"
+    "rootDir": "./stories",
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "stories", "custom.d.ts", "asset.d.ts"

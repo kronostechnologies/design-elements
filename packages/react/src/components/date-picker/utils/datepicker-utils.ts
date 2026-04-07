@@ -1,6 +1,5 @@
-import type { Locale } from 'date-fns';
+import type { Locale, Month } from 'date-fns';
 import { enCA } from 'date-fns/locale';
-import { Month } from 'date-fns/types';
 import { range } from '../../../utils/range';
 import { type DropdownListOption } from '../../dropdown-list';
 
