@@ -70,8 +70,8 @@
     "storybook": "8.6.18",
     "style-loader": "4.0.0",
     "stylelint": "17.6.0",
-    "ts-loader": "9.5.4",
-    "typescript": "5.9.3",
+    "ts-loader": "9.5.7",
+    "typescript": "6.0.2",
     "webpack": "5.105.4",
     "yargs": "18.0.0"
   }
