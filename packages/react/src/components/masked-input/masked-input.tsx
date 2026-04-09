@@ -137,7 +137,7 @@ export const MaskedInput: FC<MaskedInputProps> = ({
             <Container>
                 <MaskContainer aria-hidden="true" $isMobile={isMobile}>
                     <InputDuplicatedValue>{displayValue}</InputDuplicatedValue>
-                    <span>{unfilledPart}</span>
+                    <span data-testid="unfilled-mask">{unfilledPart}</span>
                 </MaskContainer>
 
                 <StyledTextInput

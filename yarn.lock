@@ -1747,9 +1747,11 @@ __metadata:
     "@storybook/addon-controls": "npm:8.6.18"
     "@storybook/addon-docs": "npm:8.6.18"
     "@storybook/addon-links": "npm:8.6.18"
+    "@storybook/addon-toolbars": "npm:8.6.18"
     "@storybook/addon-webpack5-compiler-babel": "npm:4.0.1"
     "@storybook/blocks": "npm:8.6.14"
     "@storybook/builder-webpack5": "npm:8.6.18"
+    "@storybook/core-events": "npm:8.6.18"
     "@storybook/manager-api": "npm:8.6.14"
     "@storybook/preview": "npm:8.6.14"
     "@storybook/react": "npm:8.6.18"
@@ -3557,6 +3559,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-toolbars@npm:8.6.18":
+  version: 8.6.18
+  resolution: "@storybook/addon-toolbars@npm:8.6.18"
+  peerDependencies:
+    storybook: ^8.6.18
+  checksum: 10c0/827f217db47a55ab293b3b9d501831c0cbf7d856934c1f6f236c43928f507f3b267778fedbbcf17cac80c474e60f2794ed5cd2a071c7c0827c001c3fd03314e3
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-webpack5-compiler-babel@npm:4.0.1":
   version: 4.0.1
   resolution: "@storybook/addon-webpack5-compiler-babel@npm:4.0.1"
@@ -3676,6 +3687,15 @@ __metadata:
   peerDependencies:
     storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
   checksum: 10c0/4e8952822e94ece61af08549ef1ed37093358bef9e87ce6cf09a2d6f4f13802a42d1e356fd287686d11959916cb164aa73fac557214351d2bee8cbc0521b6011
+  languageName: node
+  linkType: hard
+
+"@storybook/core-events@npm:8.6.18":
+  version: 8.6.18
+  resolution: "@storybook/core-events@npm:8.6.18"
+  peerDependencies:
+    storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+  checksum: 10c0/817d11c3f242ce199ea580c9a4b08001d694ab33e5a85e566daca575d34e782f16867f9e3b999e2dbaff428a19e059d7ed978ef71fe84329f671d3896cef4881
   languageName: node
   linkType: hard
 

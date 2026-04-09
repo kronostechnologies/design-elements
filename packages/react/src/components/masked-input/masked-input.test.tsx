@@ -267,6 +267,49 @@ describe('MaskedInput', () => {
         });
     });
 
+    describe('with locale-dependent date mask format', () => {
+        const LocaleDateMaskedInput: FC<Partial<MaskedInputProps>> = (props) => {
+            const { dateMask } = useDateMask({});
+            return <MaskedInput {...props} dateMask={dateMask} />;
+        };
+
+        it('uses YYYY-MM-DD mask format when locale is en', () => {
+            renderWithProviders(<LocaleDateMaskedInput />, undefined, 'en');
+
+            const maskText = screen.getByTestId('unfilled-mask');
+
+            expect(maskText).toHaveTextContent('YYYY-MM-DD');
+        });
+
+        it('can fill date when locale is en', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<LocaleDateMaskedInput />, undefined, 'en');
+
+            const input = getMaskedInput();
+            await user.type(input, '20241210');
+
+            expect(input).toHaveValue('2024-12-10');
+        });
+
+        it('uses AAAA-MM-JJ mask format when locale is fr', () => {
+            renderWithProviders(<LocaleDateMaskedInput />, undefined, 'fr');
+
+            const maskText = screen.getByTestId('unfilled-mask');
+
+            expect(maskText).toHaveTextContent('AAAA-MM-JJ');
+        });
+
+        it('can fill date when locale is fr', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<LocaleDateMaskedInput />, undefined, 'fr');
+
+            const input = getMaskedInput();
+            await user.type(input, '20241210');
+
+            expect(input).toHaveValue('2024-12-10');
+        });
+    });
+
     describe('with date mask (DD/MM/YYYY)', () => {
         const DateSlashMaskedInput: FC<Partial<MaskedInputProps>> = (props) => {
             const { dateMask } = useDateMask({ format: 'DD/MM/YYYY', separator: '/' });

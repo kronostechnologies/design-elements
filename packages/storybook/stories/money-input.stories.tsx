@@ -6,9 +6,7 @@ const MoneyInputMeta: Meta<typeof MoneyInput> = {
     title: 'Components/Money Input',
     component: MoneyInput,
     args: {
-        label: 'Entrez un montant',
         hint: 'Hint',
-        locale: 'fr-CA',
     },
     argTypes: {
         onChange: {
@@ -29,12 +27,16 @@ type Story = StoryObj<typeof MoneyInput>;
 
 export const FrenchLocale: Story = {
     ...MoneyInputMeta,
+    args: {
+        label: 'Entrez un montant',
+        locale: 'fr-CA',
+    },
 };
 
 export const EnglishLocale: Story = {
     ...MoneyInputMeta,
     args: {
-        label: 'Choose a number',
+        label: 'Enter a number',
         locale: 'en-CA',
     },
 };
