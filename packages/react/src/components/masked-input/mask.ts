@@ -31,7 +31,9 @@ export const DEFAULT_DATE_SEPARATOR = '-' as const;
 export type DefaultDateMaskSeparator = typeof DEFAULT_DATE_SEPARATOR;
 
 export interface DateMaskOptions<Separator extends string = DefaultDateMaskSeparator> {
-    mask: Replace<MaskitoDateMode, '/', Separator> | Uppercase<Replace<MaskitoDateMode, '/', Separator>>;
+    mask: Replace<MaskitoDateMode, '/', Separator>
+        | Uppercase<Replace<MaskitoDateMode, '/', Separator>>
+        | Uppercase<Replace<Replace<MaskitoDateMode, 'YYYY', 'AAAA'>, 'DD', 'JJ'>>;
     separator?: Separator;
     max?: Date;
     min?: Date;
@@ -70,6 +72,8 @@ export function createDateMode<Separator extends string = DefaultDateMaskSeparat
     separator,
 }: Pick<DateMaskOptions<Separator>, 'mask' | 'separator'>): MaskitoDateMode {
     return mask.toLocaleLowerCase()
+        .replace('aaaa', 'yyyy')
+        .replace('jj', 'dd')
         .replace(new RegExp(separator || DEFAULT_DATE_SEPARATOR as Separator, 'g'), '/') as MaskitoDateMode;
 }
 

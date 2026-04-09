@@ -52,8 +52,6 @@ export const DateMask: Story = {
         const { dateMask, parseDate } = useDateMask({
             min: new Date(2000, 0, 1),
             max: new Date(2050, 11, 31),
-            separator: '-',
-            format: 'YYYY-MM-DD',
         });
         const handleChange: MaskedInputProps['onChange'] = useCallback((rawValue: string, formattedValue: string) => {
             console.info(rawValue, parseDate(formattedValue));

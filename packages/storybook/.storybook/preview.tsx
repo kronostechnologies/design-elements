@@ -1,13 +1,15 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
-import { Decorator, Preview } from '@storybook/react';
 import { DocsContainer, type DocsContainerProps } from '@storybook/blocks';
-import { PropsWithChildren } from 'react';
+import { GLOBALS_UPDATED } from '@storybook/core-events';
+import { addons } from '@storybook/preview-api';
+import { Decorator, Preview } from '@storybook/react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
-    Story => (
-        <DesignSystem>
+    (Story, context) => (
+        <DesignSystem language={context.globals.locale}>
             <Story />
         </DesignSystem>
     ),
@@ -15,6 +17,23 @@ const decorators: Decorator[] = [
 
 const preview: Preview = {
     decorators,
+    globalTypes: {
+        locale: {
+            name: 'Locale',
+            description: 'Locale',
+            toolbar: {
+                dynamicTitle: true,
+                icon: 'globe',
+                items: [
+                    { value: 'en', title: 'English' },
+                    { value: 'fr', title: 'Français' },
+                ],
+            },
+        },
+    },
+    initialGlobals: {
+        locale: 'fr',
+    },
     parameters: {
         controls: {
             exclude: ['key', 'ref'],
@@ -22,17 +41,17 @@ const preview: Preview = {
             sort: 'alpha',
         },
         docs: {
-            /*
-             * The default container is set explicitly to prevent a bug that causes the "Show code/Hide code"
-             * button of stories in the .mdx file to do nothing. It can be removed once the bug is fixed.
-             */
-            container: ({ children, ...props }: PropsWithChildren<DocsContainerProps>) => (
-                <DocsContainer {...props}>
-                    <DesignSystem>
-                        {children}
-                    </DesignSystem>
-                </DocsContainer>
-            ),
+            container: ({ children, ...props }: PropsWithChildren<DocsContainerProps>) => {
+                const locale = props.context.store.userGlobals.globals.locale;
+
+                return (
+                    <DocsContainer {...props}>
+                        <DesignSystem language={locale}>
+                            {children}
+                        </DesignSystem>
+                    </DocsContainer>
+                );
+            },
             source: {
                 type: 'dynamic',
                 excludeDecorators: true,
@@ -43,7 +62,14 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Core', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
+                order: ['Introduction',
+                    'Getting started',
+                    'Foundations',
+                    'Components',
+                    ['*', 'Core', 'Deprecated'],
+                    'Patterns',
+                    'Atoms',
+                    'Changelog'],
             },
         },
     },
