@@ -1916,9 +1916,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@equisoft/stylelint-config@npm:5.2.1":
-  version: 5.2.1
-  resolution: "@equisoft/stylelint-config@npm:5.2.1"
+"@equisoft/stylelint-config@npm:5.2.2":
+  version: 5.2.2
+  resolution: "@equisoft/stylelint-config@npm:5.2.2"
   dependencies:
     "@stylistic/stylelint-config": "npm:^5.0.0"
     "@stylistic/stylelint-plugin": "npm:^5.0.0"
@@ -1934,7 +1934,7 @@ __metadata:
   peerDependenciesMeta:
     postcss-scss:
       optional: true
-  checksum: 10c0/cdbe922611a5eef04ac0ee06d19090174e56aea5f9fa717339f759975bfa03e328a746311281d5c1fc6fdc96a710efb59e22f92944b9366d03df1580f8ae48dc
+  checksum: 10c0/4064f53754bfdc384462cfca35774bf239bd8792b5959f2e35c30f94ed615491344c8de218a5186ea1f8c2ff22c777b6b478cceb0fa3949dee662977d36f64a3
   languageName: node
   linkType: hard
 
@@ -7716,7 +7716,7 @@ __metadata:
     "@equisoft/eslint-config-typescript-react": "npm:6.0.2"
     "@equisoft/jest-utils": "npm:1.8.2"
     "@equisoft/react-test-utils": "npm:1.8.2"
-    "@equisoft/stylelint-config": "npm:5.2.1"
+    "@equisoft/stylelint-config": "npm:5.2.2"
     "@equisoft/typescript-config": "npm:2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@stylistic/eslint-plugin": "npm:5.10.0"
@@ -13231,7 +13231,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@equisoft/stylelint-config": "npm:5.2.1"
+    "@equisoft/stylelint-config": "npm:5.2.2"
     "@types/eslint": "npm:^8.56.10"
     "@types/yargs": "npm:17.0.35"
     conventional-changelog-cli: "npm:5.0.0"
