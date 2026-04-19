@@ -34,7 +34,7 @@
     "react-router-dom": "6.30.3",
     "styled-components": "5.3.11",
     "tslib": "2.8.1",
-    "uuid": "13.0.0"
+    "uuid": "14.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.29.0",
