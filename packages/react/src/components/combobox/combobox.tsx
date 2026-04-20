@@ -15,6 +15,7 @@ import { createPortal } from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
@@ -893,6 +894,17 @@ export const Combobox: FC<ComboboxProps> = ({
             inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
     }, [inputValue.length, suggestedInputValue.length]);
+
+    const handleClickOutside = useCallback(() => {
+        if (multiselect && open) {
+            closeListbox();
+        }
+    }, [multiselect, open, closeListbox]);
+
+    useClickOutside(
+        [floatingReferenceRef.current, listboxRef.current, arrowButtonRef.current],
+        handleClickOutside,
+    );
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },

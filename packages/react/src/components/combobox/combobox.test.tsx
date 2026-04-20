@@ -1223,6 +1223,19 @@ describe('Combobox', () => {
             ]);
         });
 
+        it('closes the listbox when clicking outside after selecting an option', async () => {
+            renderMultiselectCombobox({ });
+
+            await userEvent.click(screen.getByTestId('textbox'));
+            await userEvent.click(within(getListbox()).getByText('Foo Label'));
+
+            expect(getListbox()).toBeInTheDocument();
+
+            await userEvent.click(document.body);
+
+            expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+        });
+
         it('does not trigger onChange when closing the listbox', async () => {
             renderMultiselectCombobox({ defaultValue: ['foo', 'bar'] });
             await userEvent.click(screen.getByTestId('textbox'));
