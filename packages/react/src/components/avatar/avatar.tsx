@@ -6,7 +6,7 @@ import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconName } from '../icon';
 
-export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
+export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
 
 interface SizeStyleProps {
     size: AvatarSize;
@@ -38,6 +38,12 @@ function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterp
         case 'large':
             return css`
                 font-size: 1.5rem;
+                height: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
+                width: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
+            `;
+        case 'xlarge':
+            return css`
+                font-size: 3rem;
                 height: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
                 width: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
             `;

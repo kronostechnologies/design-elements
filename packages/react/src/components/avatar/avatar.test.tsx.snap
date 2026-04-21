@@ -375,6 +375,59 @@ exports[`Avatar Matches mobile small avatar with image Snapshot 1`] = `
 />
 `;
 
+exports[`Avatar Matches mobile xlarge avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 3rem;
+  height: var(--size-4halfx);
+  width: var(--size-4halfx);
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile xlarge avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 3rem;
+  height: var(--size-4halfx);
+  width: var(--size-4halfx);
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
 exports[`Avatar Matches small avatar Snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
@@ -427,6 +480,59 @@ exports[`Avatar Matches small avatar with image Snapshot 1`] = `
   -ms-letter-spacing: 0.013rem;
   letter-spacing: 0.013rem;
   width: var(--size-2x);
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches xlarge avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 3rem;
+  height: var(--size-5x);
+  width: var(--size-5x);
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches xlarge avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 3rem;
+  height: var(--size-5x);
+  width: var(--size-5x);
 }
 
 <img
