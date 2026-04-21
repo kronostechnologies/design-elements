@@ -34,7 +34,7 @@ function getModalWidth({ $width, isMobile }: StyledModalProps): CSSProperties['w
 
 export const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.component['modal-background-color']};
-    border-radius: var(--border-radius-2x);
+    border-radius: var(--border-radius-4x);
     box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     display: flex;
