@@ -4,6 +4,7 @@ import { TextInput, textInputClasses, TextInputProps } from '../text-input';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
 import { useNumericInput, type UseNumericInputParams } from './use-numeric-input';
+import { type RequiredLabelProps } from '../label/label';
 
 interface StyledInputProps extends TextInputProps {
     $textAlign: 'left' | 'right';
@@ -37,6 +38,7 @@ export interface NumericInputProps extends NativeInputProps {
     onChange?: UseNumericInputParams['onChange'];
     precision?: number;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     readOnly?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
@@ -64,6 +66,7 @@ export const NumericInput: FC<NumericInputProps> = ({
     placeholder,
     precision,
     required,
+    requiredLabelType,
     readOnly,
     textAlign = 'left',
     tooltip,
@@ -108,6 +111,7 @@ export const NumericInput: FC<NumericInputProps> = ({
             placeholder={placeholder}
             readOnly={readOnly}
             required={numericInput.required}
+            requiredLabelType={requiredLabelType}
             ref={inputRef}
             rightAdornment={adornmentPosition === 'end' && adornment}
             tooltip={tooltip}

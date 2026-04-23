@@ -43,6 +43,7 @@ import {
     setLocaleFirstDayOfWeek,
     SupportedLocale,
 } from './utils';
+import { type RequiredLabelProps } from '../label/label';
 
 type StyledDatePickerProps = DatePickerProps & {
     isMobile: boolean;
@@ -271,6 +272,10 @@ export interface DatepickerProps {
     placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     /** Sets calendar date when initially open */
     openToDate?: Date | null;
     /** Sets calendar initially open (uncontrolled) */
@@ -331,6 +336,7 @@ export const Datepicker = forwardRef(({
     open,
     placeholder,
     required,
+    requiredLabelType,
     openToDate,
     startOpen,
     strictDateFormat = false,
@@ -518,6 +524,7 @@ export const Datepicker = forwardRef(({
                 fieldId={fieldId}
                 label={label}
                 required={required}
+                requiredLabelType={requiredLabelType}
                 tooltip={tooltip}
                 toggletip={toggletip}
                 hint={hint}

@@ -10,6 +10,7 @@ import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 import { inputsStyle } from '../text-input/styles';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
+import { type RequiredLabelProps } from '../label/label';
 
 const StyledTextArea = styled.textarea`
     ${inputsStyle};
@@ -40,6 +41,10 @@ export interface TextAreaProps {
     noMargin?: boolean;
     placeholder?: string;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     maxLength?: number;
     /**
      * Message displayed in case of validation error
@@ -81,6 +86,7 @@ export const TextArea: FC<TextAreaProps> = ({
     label,
     placeholder,
     required,
+    requiredLabelType,
     tooltip,
     toggletip,
     validationErrorMessage,
@@ -163,6 +169,7 @@ export const TextArea: FC<TextAreaProps> = ({
             fieldId={idTextArea}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
             toggletip={toggletip}
             hint={hint}

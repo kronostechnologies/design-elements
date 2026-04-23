@@ -45,6 +45,7 @@ import {
     isOptionSelected, optionsAreEqual,
     removeOption,
 } from '../listbox/utils';
+import { type RequiredLabelProps } from '../label/label';
 
 type Value = string | string[];
 
@@ -316,6 +317,10 @@ export interface ComboboxProps {
     placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
     /**
@@ -366,6 +371,7 @@ export const Combobox: FC<ComboboxProps> = ({
     name,
     readOnly,
     required,
+    requiredLabelType,
     tooltip,
     toggletip,
     valid = true,
@@ -962,6 +968,7 @@ export const Combobox: FC<ComboboxProps> = ({
             fieldId={id}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
             toggletip={toggletip}
             valid={valid}
