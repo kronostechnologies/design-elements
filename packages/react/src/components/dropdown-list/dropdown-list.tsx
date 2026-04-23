@@ -31,6 +31,7 @@ import {
 } from '../listbox/utils';
 import { type ToggletipProps } from '../toggletip';
 import { type TooltipProps } from '../tooltip';
+import { RequiredLabelProps } from '../label/label';
 
 interface TextboxProps {
     $disabled?: boolean;
@@ -177,6 +178,10 @@ export interface DropdownListProps<M extends boolean | undefined> {
     name?: string;
     options: DropdownListOption[];
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     readOnly?: boolean;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
@@ -228,6 +233,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     name,
     readOnly,
     required,
+    requiredLabelType,
     tooltip,
     toggletip,
     valid = true,
@@ -509,6 +515,7 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
             fieldId={id}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
             toggletip={toggletip}
             valid={valid}

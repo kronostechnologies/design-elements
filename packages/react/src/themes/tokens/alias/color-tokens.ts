@@ -66,6 +66,7 @@ export type ColorAliasToken =
     | 'color-control-auxiliary-success'
     | 'color-control-auxiliary-checked'
     | 'color-control-auxiliary-selected'
+    | 'color-control-important'
     | 'color-menu-background'
     | 'color-menu-border'
     | 'color-menu-item-background'
@@ -184,6 +185,7 @@ export const defaultColorAliasTokens: AliasTokenMap<ColorAliasToken> = {
     'color-control-auxiliary-success': 'color-success-50',
     'color-control-auxiliary-checked': 'color-white',
     'color-control-auxiliary-selected': 'color-brand-70',
+    'color-control-important': 'color-alert-50',
     'color-menu-background': 'color-background-overlay',
     'color-menu-border': 'color-border-overlay',
     'color-menu-item-background': 'transparent-100',

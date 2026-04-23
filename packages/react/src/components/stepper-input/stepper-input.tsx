@@ -21,6 +21,7 @@ import { responsiveInputsStyle } from '../text-input/styles';
 import { ToggletipProps } from '../toggletip';
 import { TooltipProps } from '../tooltip';
 import { StepperButtons } from './stepper-buttons';
+import { type RequiredLabelProps } from '../label/label';
 
 const Wrapper = styled.div`
     display: flex;
@@ -70,6 +71,7 @@ export interface StepperInputProps extends PartialStepperInputProps {
     validationErrorMessage?: string;
     value?: Value;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
 
     onChange?(value: Value): void
 }
@@ -92,6 +94,7 @@ export const StepperInput: FC<StepperInputProps> = ({
     tooltip,
     toggletip,
     required,
+    requiredLabelType,
     valid,
     validationErrorMessage,
     value,
@@ -189,6 +192,7 @@ export const StepperInput: FC<StepperInputProps> = ({
             toggletip={toggletip}
             noMargin={noMargin}
             required={required}
+            requiredLabelType={requiredLabelType}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >

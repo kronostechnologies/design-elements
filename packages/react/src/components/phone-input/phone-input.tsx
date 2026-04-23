@@ -20,12 +20,14 @@ import {
 } from './phone-input-char-finder';
 import { formatFromPattern, removeDigitOnMaskCharRemoval, removeNonDigits } from './phone-input-value-formater';
 import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
+import { type RequiredLabelProps } from '../label/label';
 
 export interface PhoneInputProps {
     pattern: string;
     defaultValue?: string;
     readOnly?: boolean;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     disabled?: boolean;
     label?: string;
     hint?: string;
@@ -76,6 +78,7 @@ export const PhoneInput: FC<PhoneInputProps> = ({
     defaultValue,
     readOnly,
     required,
+    requiredLabelType,
     disabled,
     label,
     hint,
@@ -230,6 +233,7 @@ export const PhoneInput: FC<PhoneInputProps> = ({
                 value={phoneInputValue}
                 readOnly={readOnly}
                 required={required}
+                requiredLabelType={requiredLabelType}
                 disabled={disabled}
                 hint={hint}
                 label={label}

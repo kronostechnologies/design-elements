@@ -27,24 +27,36 @@ const StyledLabel = styled.label<{isMobile: boolean}>`
     }
 `;
 
+const StyledRequired = styled.span`
+    color: ${(props) => props.theme.component['label-required-mark-color']};
+`;
+
+type RequiredLabelType = 'text' | 'asterisk';
+
 export interface LabelProps {
     className?: string;
     forId: string;
     id?: string;
     required?: boolean;
-    requiredLabelType?: 'text';
+    requiredLabelType?: RequiredLabelType;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
 }
 
-interface RequiredLabelProps {
-    type?: LabelProps['requiredLabelType'];
+export interface RequiredLabelProps {
+    type?: RequiredLabelType;
 }
 
 const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
     const { t } = useTranslation('text-input');
 
     switch (type) {
+        case 'asterisk':
+            return (
+                <StyledRequired data-testid="required-asterisk">
+                    &nbsp;*
+                </StyledRequired>
+            );
         case 'text':
         default:
             return (
@@ -60,7 +72,7 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
 RequiredLabel.displayName = 'RequiredLabel';
 
 const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
-    className, children, forId, id, tooltip, toggletip, required, requiredLabelType = 'text',
+    className, children, forId, id, tooltip, toggletip, required, requiredLabelType,
 }) => {
     const WrapperComponent = tooltip || toggletip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();

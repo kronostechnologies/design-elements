@@ -76,6 +76,7 @@ exports[`buildTheme should build the defaultAliasTokens theme with the customiza
   "color-control-border-hover": "#000000",
   "color-control-border-readonly": "transparent",
   "color-control-border-selected": "#006296",
+  "color-control-important": "#CD2C23",
   "color-control-value": "red",
   "color-control-value-disabled": "#B7BBC2",
   "color-control-value-hover": "#000000",

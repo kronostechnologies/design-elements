@@ -9,6 +9,12 @@ describe('Label', () => {
         expect(screen.getByTestId('tooltip')).toBeInTheDocument();
     });
 
+    it('contains asterisk when required', () => {
+        renderWithProviders(<Label forId="test" required requiredLabelType='asterisk'>Test</Label>);
+
+        expect(screen.getByTestId('required-asterisk')).toBeInTheDocument();
+    });
+
     it('matches the snapshot', () => {
         const { asFragment } = renderWithProviders(
             <Label forId="test-id">

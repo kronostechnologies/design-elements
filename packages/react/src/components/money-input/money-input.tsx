@@ -6,6 +6,7 @@ import { formatCurrency } from '../../utils/currency';
 import { TextInput, textInputClasses } from '../text-input';
 import { ToggletipProps } from '../toggletip';
 import { toLocale } from './toLocale';
+import { type RequiredLabelProps } from '../label/label';
 
 type TextAlignment = 'left' | 'right';
 
@@ -31,6 +32,10 @@ export interface MoneyInputProps {
     disabled?: boolean;
     readOnly?: boolean;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     /**
      * Message displayed in case of validation error
      * @default Invalid number.
@@ -76,6 +81,7 @@ export const MoneyInput: FC<MoneyInputProps> = ({
     className,
     readOnly,
     required,
+    requiredLabelType,
     disabled,
     label,
     onChange,
@@ -158,6 +164,7 @@ export const MoneyInput: FC<MoneyInputProps> = ({
             className={className}
             readOnly={readOnly}
             required={required}
+            requiredLabelType={requiredLabelType}
             disabled={disabled}
             ref={inputElement}
             type="text"

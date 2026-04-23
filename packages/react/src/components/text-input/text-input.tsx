@@ -30,6 +30,7 @@ import { ToggletipProps } from '../toggletip';
 import { TooltipProps } from '../tooltip';
 import { inputsStyle } from './styles';
 import { textInputClasses } from './text-input-classes';
+import { type RequiredLabelProps } from '../label/label';
 
 const StyledInput = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
@@ -131,6 +132,7 @@ export interface TextInputProps extends PartialInputProps {
     placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     rightAdornment?: ReactNode;
     type?: string;
     valid?: boolean;
@@ -173,6 +175,7 @@ export const TextInput = forwardRef(({
     placeholder,
     readOnly,
     required,
+    requiredLabelType,
     rightAdornment,
     type,
     valid,
@@ -246,6 +249,7 @@ export const TextInput = forwardRef(({
             fieldId={fieldId}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
             toggletip={toggletip}
             valid={validity}
