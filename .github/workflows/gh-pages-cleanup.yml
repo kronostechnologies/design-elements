@@ -10,7 +10,7 @@ jobs:
     environment: github-pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           ref: gh-pages
           token: ${{ secrets.GH_REPO_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
           done
 
       - name: Commit and push changes
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@290ea2c423ad77ca9c62ae0f5b224379612c0321 # v10
         with:
           pull: '--rebase --autostash'
           message: "docs: remove closed PRs"
