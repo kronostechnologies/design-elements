@@ -15,7 +15,7 @@
   "dependencies": {
     "@equisoft/design-elements-react": "workspace:*",
     "core-js": "3.49.0",
-    "i18next": "26.0.6",
+    "i18next": "26.0.8",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
@@ -69,7 +69,7 @@
     "sass-loader": "16.0.7",
     "storybook": "8.6.18",
     "style-loader": "4.0.0",
-    "stylelint": "17.8.0",
+    "stylelint": "17.9.0",
     "ts-loader": "9.5.7",
     "typescript": "6.0.3",
     "webpack": "5.106.2",
