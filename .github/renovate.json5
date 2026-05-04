@@ -7,6 +7,10 @@
   ],
   packageRules: [
     {
+      matchUpdateTypes: ['major'],
+      commitMessagePrefix: null,
+    },
+    {
       matchCategories: ["js"],
       matchPackageNames: [
         "react",
