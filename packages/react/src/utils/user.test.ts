@@ -7,11 +7,11 @@ describe('getInitialsFromUsername', () => {
         expect(initials).toBe('');
     });
 
-    it('should be both first alpha characters from username first and last name '
-        + 'given first and last name with non alpha characters', () => {
+    it('should be both first alphanumeric characters from username first and last name '
+        + 'given first and last name with non alphanumeric characters', () => {
         const initials = getInitialsFromUsername('_John 123Doe');
 
-        expect(initials).toBe('JD');
+        expect(initials).toBe('J1');
     });
 
     it('should be both first characters from username first and last name'
@@ -52,5 +52,23 @@ describe('getInitialsFromUsername', () => {
         const initials = getInitialsFromUsername('Édouard Åhlund');
 
         expect(initials).toBe('EA');
+    });
+
+    it('should be the two first characters given a numeric-only username', () => {
+        const initials = getInitialsFromUsername('42');
+
+        expect(initials).toBe('42');
+    });
+
+    it('should be both first characters given an alphanumeric first and last name', () => {
+        const initials = getInitialsFromUsername('Agent 007');
+
+        expect(initials).toBe('A0');
+    });
+
+    it('should be the two first characters given a single numeric word', () => {
+        const initials = getInitialsFromUsername('7');
+
+        expect(initials).toBe('7');
     });
 });
