@@ -1,0 +1,52 @@
+/*! For license information please see bundle.js.LICENSE.txt */
+
+Bundled license information:
+
+react-is/cjs/react-is.production.min.js:
+  /**
+   * @license React
+   * react-is.production.min.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+@remix-run/router/dist/router.cjs.js:
+  /**
+   * @remix-run/router v1.23.2
+   *
+   * Copyright (c) Remix Software Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.md file in the root directory of this source tree.
+   *
+   * @license MIT
+   */
+
+react-router/dist/umd/react-router.production.min.js:
+react-router/dist/main.js:
+  /**
+   * React Router v6.30.3
+   *
+   * Copyright (c) Remix Software Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.md file in the root directory of this source tree.
+   *
+   * @license MIT
+   */
+
+react-router-dom/dist/umd/react-router-dom.production.min.js:
+react-router-dom/dist/main.js:
+  /**
+   * React Router DOM v6.30.3
+   *
+   * Copyright (c) Remix Software Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.md file in the root directory of this source tree.
+   *
+   * @license MIT
+   */
