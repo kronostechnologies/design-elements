@@ -233,4 +233,28 @@ describe('Button', () => {
         expect(screen.queryByTestId('left-icon')).not.toBeInTheDocument();
         expect(screen.getByTestId('right-icon')).toBeInTheDocument();
     });
+
+    it('changes left equisoft icon color on hover', () => {
+        const { container } = renderWithProviders(
+            <Button
+                buttonType="secondary"
+                label="equisoft"
+                leftIconName="equisoft"
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('changes right equisoft icon color on hover', () => {
+        const { container } = renderWithProviders(
+            <Button
+                buttonType="secondary"
+                label="equisoft"
+                rightIconName="equisoft"
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });

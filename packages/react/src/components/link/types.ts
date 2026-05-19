@@ -29,7 +29,25 @@ export type LinkButtonProps = Pick<ButtonProps,
     | 'type'
 >;
 
-export interface LinkProps extends BaseLinkProps {
+export interface IconOnlyLink {
+    children: never;
+
+    /** Icon Only Variant (with a tooltip)
+     *  Make sure to provide an icon name and a label (for the tooltip)
+     */
+    icon: {
+        name: IconName;
+        label: string;
+    };
+}
+
+export interface WithIconLink {
+    icon?: {
+        name: IconName;
+    };
+}
+
+export type LinkProps = BaseLinkProps & {
     disabled?: boolean;
 
     /** Button Link Variant */
@@ -38,13 +56,5 @@ export interface LinkProps extends BaseLinkProps {
     /** External Link Variant */
     external?: boolean;
 
-    /** Icon Only Variant (with a tooltip)
-     *  Make sure to provide an icon name and a label (for the tooltip)
-     */
-    icon?: {
-        name: IconName;
-        label: string;
-    };
-
     routerLink?: typeof NavLink | typeof ReactRouterLink;
-}
+} & (IconOnlyLink | WithIconLink);

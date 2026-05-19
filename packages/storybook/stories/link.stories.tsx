@@ -48,7 +48,7 @@ External.decorators = [RouterDecorator];
 export const WithIcon: Story = {
     ...Default,
     args: {
-        icon: { name: 'mail', label: 'Link with icon' },
+        icon: { name: 'mail' },
         children: 'Link with icon',
     },
 };

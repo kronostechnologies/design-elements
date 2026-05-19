@@ -175,4 +175,27 @@ describe('Link Component', () => {
             expect(screen.getByTestId('screen-reader-text')).toBeInTheDocument();
         });
     });
+
+    describe('equisoft icon color on hover', () => {
+        it('changes equisoft icon color on hover', () => {
+            const { container } = renderWithProviders(
+                <Link icon={{ name: 'equisoft', label: 'equisoft' }}>A link</Link>,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
+
+        it('changes equisoft icon color on hover when used as button', () => {
+            const { container } = renderWithProviders(
+                <Link
+                    button={{ buttonType: 'secondary' }}
+                    icon={{ name: 'equisoft' }}
+                >
+                    A link
+                </Link>,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
+    });
 });

@@ -1,7 +1,8 @@
-import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import styled, { css, FlattenInterpolation, type SimpleInterpolation, ThemeProps } from 'styled-components';
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { Icon } from '../icon';
+import { Icon, type IconProps } from '../icon';
+import { darkenOnComponentHover } from '../icon/equisoft-logo';
 import { Spinner } from '../spinner';
 import { AbstractButton } from './abstract';
 import { type BaseButtonStyles, getBaseButtonStyles } from './abstract/styles';
@@ -55,7 +56,8 @@ export function getButtonTypeStyles({
     `;
 }
 
-interface ButtonStylesProps extends ButtonTypeStyles, BaseButtonStyles {}
+interface ButtonStylesProps extends ButtonTypeStyles, BaseButtonStyles {
+}
 
 export const getButtonStyles = ({
     buttonType, inverted, focusable, $size, $isMobile, theme,
@@ -80,10 +82,25 @@ export const StyledSpinner = styled(Spinner)`
     margin-right: var(--spacing-1x);
 `;
 
-export const LeftIcon = styled(Icon)`
+interface SideIconProps extends IconProps {
+    $buttonType: ButtonProps['buttonType'];
+}
+
+function getSideIconStyle({ $buttonType, name }: SideIconProps): readonly SimpleInterpolation[] | null {
+    if ($buttonType === 'secondary' && name === 'equisoft') {
+        return darkenOnComponentHover(StyledButton);
+    }
+    return null;
+}
+
+export const LeftIcon = styled(Icon)<SideIconProps>`
     margin-right: var(--spacing-1x);
+
+    ${getSideIconStyle};
 `;
 
-export const RightIcon = styled(Icon)`
+export const RightIcon = styled(Icon)<SideIconProps>`
     margin-left: var(--spacing-1x);
+
+    ${getSideIconStyle};
 `;

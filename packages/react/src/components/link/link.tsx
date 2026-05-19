@@ -1,12 +1,31 @@
 import { type FC, MouseEvent, ReactElement } from 'react';
+import styled, { type SimpleInterpolation } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider';
-import { Icon } from '../icon';
+import { Icon, type IconProps } from '../icon';
+import { darkenOnComponentHover } from '../icon/equisoft-logo';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 import { Tooltip } from '../tooltip';
 import { StyledLink } from './styled';
 import { LinkProps } from './types';
+
+function getSideIconStyle({ name }: IconProps): readonly SimpleInterpolation[] | null {
+    if (name === 'equisoft') {
+        return darkenOnComponentHover(StyledLink);
+    }
+    return null;
+}
+
+const StyledLeftIcon = styled(Icon)`${getSideIconStyle}`;
+
+function getIconLabel(icon: LinkProps['icon']): string | undefined {
+    if (icon !== undefined && 'label' in icon) {
+        return icon.label;
+    }
+
+    return undefined;
+}
 
 export const Link: FC<LinkProps> = ({
     button,
@@ -27,6 +46,7 @@ export const Link: FC<LinkProps> = ({
     const { t } = useTranslation('common');
     const opensInNewTab = external && target === '_blank';
     const isIconOnly = icon && !children;
+    const iconLabel = getIconLabel(icon);
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (disabled) {
@@ -43,7 +63,7 @@ export const Link: FC<LinkProps> = ({
             to={external ? undefined : href}
             data-testid="link"
             aria-disabled={disabled ? 'true' : 'false'}
-            aria-label={isIconOnly ? icon.label : undefined}
+            aria-label={isIconOnly ? iconLabel : undefined}
             id={id}
             href={disabled ? undefined : href}
             onClick={handleClick}
@@ -56,7 +76,7 @@ export const Link: FC<LinkProps> = ({
             {...linkProps /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {icon?.name && (
-                <Icon
+                <StyledLeftIcon
                     data-testid="link-icon"
                     aria-hidden="true"
                     name={icon.name}
@@ -83,10 +103,10 @@ export const Link: FC<LinkProps> = ({
         </StyledLink>
     );
 
-    return isIconOnly ? (
+    return isIconOnly && iconLabel !== undefined ? (
         <Tooltip
             aria-describedby={`${id}-tooltip`}
-            label={icon.label}
+            label={iconLabel}
         >
             {renderLink()}
         </Tooltip>
