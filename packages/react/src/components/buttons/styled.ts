@@ -2,7 +2,7 @@ import styled, { css, FlattenInterpolation, type SimpleInterpolation, ThemeProps
 import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { Icon, type IconProps } from '../icon';
-import { darkenOnComponentHover } from '../icon/equisoft-logo';
+import { buttonTypesToDarkenEquisoftLogo, darkenOnComponentHover } from '../icon/equisoft-logo';
 import { Spinner } from '../spinner';
 import { AbstractButton } from './abstract';
 import { type BaseButtonStyles, getBaseButtonStyles } from './abstract/styles';
@@ -87,7 +87,7 @@ interface SideIconProps extends IconProps {
 }
 
 function getSideIconStyle({ $buttonType, name }: SideIconProps): readonly SimpleInterpolation[] | null {
-    if (($buttonType === 'secondary' || $buttonType === 'tertiary') && name === 'equisoft') {
+    if (buttonTypesToDarkenEquisoftLogo.includes($buttonType) && name === 'equisoft') {
         return darkenOnComponentHover(StyledButton);
     }
     return null;

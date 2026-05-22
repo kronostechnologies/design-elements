@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Link as RouteLink, NavLink } from 'react-router-dom';
 import { renderWithProviders } from '../../test-utils/renderer';
+import { buttonTypesToDarkenEquisoftLogo } from '../icon/equisoft-logo';
 import { Link } from './link';
 
 describe('Link Component', () => {
@@ -185,17 +186,19 @@ describe('Link Component', () => {
             expect(container.firstChild).toMatchSnapshot();
         });
 
-        it('changes equisoft icon color on hover when used as button', () => {
-            const { container } = renderWithProviders(
-                <Link
-                    button={{ buttonType: 'secondary' }}
-                    icon={{ name: 'equisoft' }}
-                >
-                    A link
-                </Link>,
-            );
+        buttonTypesToDarkenEquisoftLogo.forEach((buttonType) => (
+            it(`changes equisoft icon color on hover when used as ${buttonType} button`, () => {
+                const { container } = renderWithProviders(
+                    <Link
+                        button={{ buttonType }}
+                        icon={{ name: 'equisoft' }}
+                    >
+                        A link
+                    </Link>,
+                );
 
-            expect(container.firstChild).toMatchSnapshot();
-        });
+                expect(container.firstChild).toMatchSnapshot();
+            })
+        ));
     });
 });

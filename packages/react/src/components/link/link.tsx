@@ -5,7 +5,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import type { ButtonProps } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconProps } from '../icon';
-import { darkenOnComponentHover } from '../icon/equisoft-logo';
+import { buttonTypesToDarkenEquisoftLogo, darkenOnComponentHover } from '../icon/equisoft-logo';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 import { Tooltip } from '../tooltip';
 import { StyledLink } from './styled';
@@ -16,7 +16,7 @@ interface LeftIconProps extends IconProps {
 }
 
 function getSideIconStyle({ $buttonType, name }: LeftIconProps): readonly SimpleInterpolation[] | null {
-    if (name === 'equisoft' && [undefined, 'secondary', 'tertiary'].includes($buttonType)) {
+    if (name === 'equisoft' && [undefined, ...buttonTypesToDarkenEquisoftLogo].includes($buttonType)) {
         return darkenOnComponentHover(StyledLink);
     }
     return null;
