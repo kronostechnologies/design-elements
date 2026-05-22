@@ -87,7 +87,7 @@ interface SideIconProps extends IconProps {
 }
 
 function getSideIconStyle({ $buttonType, name }: SideIconProps): readonly SimpleInterpolation[] | null {
-    if ($buttonType === 'secondary' && name === 'equisoft') {
+    if (($buttonType === 'secondary' || $buttonType === 'tertiary') && name === 'equisoft') {
         return darkenOnComponentHover(StyledButton);
     }
     return null;

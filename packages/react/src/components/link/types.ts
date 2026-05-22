@@ -29,7 +29,7 @@ export type LinkButtonProps = Pick<ButtonProps,
     | 'type'
 >;
 
-export interface IconOnlyLink {
+interface IconOnlyLink {
     children: never;
 
     /** Icon Only Variant (with a tooltip)
@@ -41,7 +41,7 @@ export interface IconOnlyLink {
     };
 }
 
-export interface WithIconLink {
+interface WithIconLink {
     icon?: {
         name: IconName;
     };

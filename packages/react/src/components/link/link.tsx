@@ -2,6 +2,7 @@ import { type FC, MouseEvent, ReactElement } from 'react';
 import styled, { type SimpleInterpolation } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
+import type { ButtonProps } from '../buttons';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconProps } from '../icon';
 import { darkenOnComponentHover } from '../icon/equisoft-logo';
@@ -10,14 +11,18 @@ import { Tooltip } from '../tooltip';
 import { StyledLink } from './styled';
 import { LinkProps } from './types';
 
-function getSideIconStyle({ name }: IconProps): readonly SimpleInterpolation[] | null {
-    if (name === 'equisoft') {
+interface LeftIconProps extends IconProps {
+    $buttonType: ButtonProps['buttonType'] | undefined;
+}
+
+function getSideIconStyle({ $buttonType, name }: LeftIconProps): readonly SimpleInterpolation[] | null {
+    if (name === 'equisoft' && [undefined, 'secondary', 'tertiary'].includes($buttonType)) {
         return darkenOnComponentHover(StyledLink);
     }
     return null;
 }
 
-const StyledLeftIcon = styled(Icon)`${getSideIconStyle}`;
+const StyledLeftIcon = styled(Icon)<LeftIconProps>`${getSideIconStyle}`;
 
 function getIconLabel(icon: LinkProps['icon']): string | undefined {
     if (icon !== undefined && 'label' in icon) {
@@ -81,6 +86,7 @@ export const Link: FC<LinkProps> = ({
                     aria-hidden="true"
                     name={icon.name}
                     size="16"
+                    $buttonType={button?.buttonType}
                 />
             )}
             {!isIconOnly && children}

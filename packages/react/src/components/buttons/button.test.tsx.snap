@@ -79,11 +79,11 @@ exports[`Button changes left equisoft icon color on hover 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c3 {
   margin-right: var(--spacing-1x);
 }
 
-.c1:hover .c3 > g {
+.c1:hover .c3.c3 > g {
   fill: #7b1a15;
 }
 
@@ -93,7 +93,7 @@ exports[`Button changes left equisoft icon color on hover 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c3 c4"
+    class="c3"
     color="currentColor"
     data-testid="left-icon"
     focusable="false"
@@ -184,11 +184,11 @@ exports[`Button changes right equisoft icon color on hover 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c3 {
   margin-left: var(--spacing-1x);
 }
 
-.c1:hover .c3 > g {
+.c1:hover .c3.c3 > g {
   fill: #7b1a15;
 }
 
@@ -199,7 +199,7 @@ exports[`Button changes right equisoft icon color on hover 1`] = `
   equisoft
   <svg
     aria-hidden="true"
-    class="c3 c4"
+    class="c3"
     color="currentColor"
     data-testid="right-icon"
     focusable="false"

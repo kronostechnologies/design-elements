@@ -3,7 +3,7 @@ import { equisoftColors } from '../../themes';
 
 export function darkenOnComponentHover(container: SimpleInterpolation): readonly SimpleInterpolation[] {
     return css`
-        ${container}:hover & {
+        ${container}:hover && {
             > g {
                 fill: ${equisoftColors['logo-fill-hover']};
             }
