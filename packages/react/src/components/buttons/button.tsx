@@ -137,6 +137,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                             data-testid="left-icon"
                             name={leftIconName}
                             size={iconSize}
+                            $buttonType={buttonType}
                         />
                     )}
                     {label}
@@ -146,6 +147,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                             data-testid="right-icon"
                             name={rightIconName}
                             size={iconSize}
+                            $buttonType={buttonType}
                         />
                     )}
                 </>

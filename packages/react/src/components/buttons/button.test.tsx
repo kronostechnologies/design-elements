@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderWithProviders } from '../../test-utils/renderer';
+import { buttonTypesToDarkenEquisoftLogo } from '../icon/equisoft-logo';
 import { Button } from './button';
 
 describe('Button', () => {
@@ -232,5 +233,31 @@ describe('Button', () => {
 
         expect(screen.queryByTestId('left-icon')).not.toBeInTheDocument();
         expect(screen.getByTestId('right-icon')).toBeInTheDocument();
+    });
+
+    buttonTypesToDarkenEquisoftLogo.forEach((buttonType) => {
+        it(`changes left equisoft icon color on hover ${buttonType} button`, () => {
+            const { container } = renderWithProviders(
+                <Button
+                    buttonType={buttonType}
+                    label="equisoft"
+                    leftIconName="equisoft"
+                />,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
+
+        it(`changes right equisoft icon color on hover ${buttonType} button`, () => {
+            const { container } = renderWithProviders(
+                <Button
+                    buttonType={buttonType}
+                    label="equisoft"
+                    rightIconName="equisoft"
+                />,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
     });
 });

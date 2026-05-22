@@ -131,8 +131,8 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   gap: var(--spacing-1x);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:focus-visible {
@@ -474,7 +474,7 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="lucide lucide-mail"
+    class="lucide lucide-mail "
     data-testid="link-icon"
     fill="none"
     focusable="false"
@@ -611,7 +611,7 @@ HTMLCollection [
     >
       <svg
         aria-hidden="true"
-        class="lucide lucide-mail"
+        class="lucide lucide-mail "
         data-testid="link-icon"
         fill="none"
         focusable="false"
@@ -799,4 +799,552 @@ HTMLCollection [
     </div>
   </div>,
 ]
+`;
+
+exports[`Link Component equisoft icon color on hover changes equisoft icon color on hover 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  padding: 0 var(--spacing-half);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-half);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 svg {
+  color: #006296;
+  height: 1rem;
+  width: 1rem;
+}
+
+.c1[visited],
+.c1:visited {
+  color: #006296;
+}
+
+.c1[visited] svg,
+.c1:visited svg {
+  color: #006296;
+}
+
+.c1[hover],
+.c1:hover {
+  color: #003A5A;
+}
+
+.c1[hover] svg,
+.c1:hover svg {
+  color: #003A5A;
+}
+
+.c1[disabled],
+.c1[aria-disabled='true'],
+.c1:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0:hover .c2.c2 > g {
+  fill: #7b1a15;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  data-testid="link"
+  href="#"
+  id="uuid1"
+  tabindex="0"
+  to="#"
+>
+  <svg
+    aria-hidden="true"
+    class="c2"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    icon-name="logo-equisoft-ico"
+    width="16"
+  />
+  A link
+</a>
+`;
+
+exports[`Link Component equisoft icon color on hover changes equisoft icon color on hover when used as destructive-secondary button 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #CD2C23;
+  color: #CD2C23;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #7B1A15;
+  color: #7B1A15;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #F99D99;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0:hover .c2.c2 > g {
+  fill: #7b1a15;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  data-testid="link"
+  href="#"
+  id="uuid1"
+  tabindex="0"
+  to="#"
+>
+  <svg
+    aria-hidden="true"
+    class="c2"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    icon-name="logo-equisoft-ico"
+    width="16"
+  />
+  A link
+</a>
+`;
+
+exports[`Link Component equisoft icon color on hover changes equisoft icon color on hover when used as destructive-tertiary button 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #CD2C23;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #FAEAE9;
+  border-color: transparent;
+  color: #7B1A15;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0:hover .c2.c2 > g {
+  fill: #7b1a15;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  data-testid="link"
+  href="#"
+  id="uuid1"
+  tabindex="0"
+  to="#"
+>
+  <svg
+    aria-hidden="true"
+    class="c2"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    icon-name="logo-equisoft-ico"
+    width="16"
+  />
+  A link
+</a>
+`;
+
+exports[`Link Component equisoft icon color on hover changes equisoft icon color on hover when used as secondary button 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0:hover .c2.c2 > g {
+  fill: #7b1a15;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  data-testid="link"
+  href="#"
+  id="uuid1"
+  tabindex="0"
+  to="#"
+>
+  <svg
+    aria-hidden="true"
+    class="c2"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    icon-name="logo-equisoft-ico"
+    width="16"
+  />
+  A link
+</a>
+`;
+
+exports[`Link Component equisoft icon color on hover changes equisoft icon color on hover when used as tertiary button 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0:hover .c2.c2 > g {
+  fill: #7b1a15;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  data-testid="link"
+  href="#"
+  id="uuid1"
+  tabindex="0"
+  to="#"
+>
+  <svg
+    aria-hidden="true"
+    class="c2"
+    color="currentColor"
+    data-testid="link-icon"
+    focusable="false"
+    height="16"
+    icon-name="logo-equisoft-ico"
+    width="16"
+  />
+  A link
+</a>
 `;
