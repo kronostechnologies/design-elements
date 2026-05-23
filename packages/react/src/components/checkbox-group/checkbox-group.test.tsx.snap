@@ -142,7 +142,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-check c5 c6"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -159,7 +158,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-minus c7 c8"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -193,7 +191,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-check c5 c6"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -210,7 +207,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-minus c7 c8"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -246,7 +242,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-check c5 c6"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -263,7 +258,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-minus c7 c8"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -296,7 +290,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-check c5 c6"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -313,7 +306,6 @@ exports[`CheckboxGroup matches the snapshot 1`] = `
       <svg
         class="lucide lucide-minus c7 c8"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"

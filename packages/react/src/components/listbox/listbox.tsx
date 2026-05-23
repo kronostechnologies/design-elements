@@ -125,10 +125,6 @@ export interface ListboxProps {
     onOptionClick?(option?: ListboxOption): void;
 }
 
-interface ContainerProps {
-    $focusable: boolean;
-}
-
 interface ListItemProps {
     $disabled?: boolean;
     $isMobile: boolean;
@@ -137,7 +133,7 @@ interface ListItemProps {
     $multiselect: boolean;
 }
 
-const Container = styled.div<ContainerProps>`
+const Container = styled.div`
     background-color: ${({ theme }) => theme.component['listbox-background-color']};
     border: 1px solid ${({ theme }) => theme.component['listbox-border-color']};
     border-radius: var(--border-radius);
@@ -149,7 +145,7 @@ const Container = styled.div<ContainerProps>`
     position: relative;
     z-index: 1000;
 
-    ${({ $focusable }) => $focusable && focus};
+    ${focus};
 `;
 
 const List = styled.ul`
@@ -623,7 +619,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
             aria-multiselectable={multiselect ? 'true' : undefined}
             className={containerClassNames}
             data-testid="listbox-container"
-            $focusable={focusable}
             id={id}
             onBlur={handleListboxBlur}
             onFocus={handleListboxFocus}

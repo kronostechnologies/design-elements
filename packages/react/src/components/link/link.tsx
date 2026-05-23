@@ -94,7 +94,6 @@ export const Link: FC<LinkProps> = ({
                 <Icon
                     data-testid="external-link-icon"
                     aria-hidden="true"
-                    focusable={false}
                     name="externalLink"
                     role="img"
                     size="16"

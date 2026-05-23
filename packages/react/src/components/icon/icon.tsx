@@ -378,7 +378,6 @@ export interface IconProps {
     className?: string;
     /** Name of the icon, has to be in IconName */
     name: IconName;
-    focusable?: boolean;
     /**
      * Size will affect both width and height
      * @default 24
@@ -410,7 +409,6 @@ export const Icon: FC<IconProps> = ({
         <Component
             className={className}
             height={size}
-            focusable={false}
             width={size}
             color={color}
             role={role}

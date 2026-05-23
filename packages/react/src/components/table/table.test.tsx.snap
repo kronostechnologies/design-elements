@@ -1674,7 +1674,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-check c8 c9"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1691,7 +1690,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-minus c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1748,7 +1746,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-check c8 c9"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1765,7 +1762,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-minus c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1818,7 +1814,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-check c8 c9"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1835,7 +1830,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-minus c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1888,7 +1882,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-check c8 c9"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -1905,7 +1898,6 @@ exports[`Table has selectable rows styles 1`] = `
             <svg
               class="lucide lucide-minus c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2216,7 +2208,6 @@ exports[`Table has sorting styles 1`] = `
           <svg
             class="lucide lucide-arrow-down c5"
             fill="none"
-            focusable="false"
             height="16"
             stroke="#60666E"
             stroke-linecap="round"
@@ -2247,7 +2238,6 @@ exports[`Table has sorting styles 1`] = `
           <svg
             class="lucide lucide-chevrons-up-down c5"
             fill="none"
-            focusable="false"
             height="16"
             stroke="#60666E"
             stroke-linecap="round"

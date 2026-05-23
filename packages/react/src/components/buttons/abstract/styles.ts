@@ -6,7 +6,6 @@ import type { ButtonSize } from './abstract-button';
 export interface BaseButtonStyles {
     $size?: ButtonSize;
     $isMobile: boolean;
-    $focusable?: boolean;
     $inverted?: boolean;
 }
 
@@ -33,7 +32,6 @@ function getButtonPadding({ $isMobile, $size }: BaseButtonStyles): string {
 export const getBaseButtonStyles = ({
     $size,
     $isMobile,
-    $focusable,
     $inverted,
 }: BaseButtonStyles): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     align-items: center;
@@ -57,7 +55,7 @@ export const getBaseButtonStyles = ({
     text-transform: uppercase;
     user-select: none;
 
-    ${({ theme }) => $focusable !== false && focus({ theme }, { inverted: $inverted })};
+    ${({ theme }) => focus({ theme }, { inverted: $inverted })};
 
     > svg {
         height: ${$isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)'};

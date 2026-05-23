@@ -891,7 +891,6 @@ input + .c1 {
         <svg
           class="lucide lucide-phone"
           fill="none"
-          focusable="false"
           height="24"
           stroke="currentColor"
           stroke-linecap="round"

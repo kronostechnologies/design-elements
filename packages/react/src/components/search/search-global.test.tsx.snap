@@ -241,7 +241,6 @@ label + .c2 {
       <svg
         class="lucide lucide-search c7"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"

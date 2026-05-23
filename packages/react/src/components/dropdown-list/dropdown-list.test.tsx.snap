@@ -51,6 +51,12 @@ input + .c2 {
   z-index: 1000;
 }
 
+.c7:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c9 {
   height: 100%;
   list-style-type: none;
@@ -269,7 +275,6 @@ input + .c2 {
       class="lucide lucide-chevron-up c6"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -604,6 +609,12 @@ input + .c2 {
   z-index: 1000;
 }
 
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c11 {
   height: 100%;
   list-style-type: none;
@@ -830,7 +841,6 @@ input + .c2 {
       class="lucide lucide-menu c6"
       data-testid="textbox-icon"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -865,7 +875,6 @@ input + .c2 {
       class="lucide lucide-chevron-up c8"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -1214,6 +1223,12 @@ input + .c2 {
   z-index: 1000;
 }
 
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c11 {
   height: 100%;
   list-style-type: none;
@@ -1417,7 +1432,6 @@ input + .c2 {
     <svg
       class="lucide lucide-octagon-alert c5"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -1469,7 +1483,6 @@ input + .c2 {
       class="lucide lucide-chevron-up c8"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -1772,6 +1785,12 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   z-index: 1000;
 }
 
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c7 {
   height: 100%;
   list-style-type: none;
@@ -1990,7 +2009,6 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
       class="lucide lucide-chevron-up c4"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="24"
       stroke="currentColor"
       stroke-linecap="round"
@@ -2293,6 +2311,12 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   z-index: 1000;
 }
 
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c7 {
   height: 100%;
   list-style-type: none;
@@ -2516,7 +2540,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
       class="lucide lucide-chevron-up c4"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -2562,7 +2585,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2602,7 +2624,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2642,7 +2663,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2682,7 +2702,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2722,7 +2741,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2762,7 +2780,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2802,7 +2819,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2842,7 +2858,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2882,7 +2897,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2922,7 +2936,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -2962,7 +2975,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -3002,7 +3014,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -3042,7 +3053,6 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
             <svg
               class="lucide lucide-check c10 c11"
               fill="none"
-              focusable="false"
               height="24"
               stroke="currentColor"
               stroke-linecap="round"
@@ -3135,6 +3145,12 @@ input + .c2 {
   padding: var(--spacing-half) 0;
   position: relative;
   z-index: 1000;
+}
+
+.c8:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10 {
@@ -3368,7 +3384,6 @@ input + .c2 {
       class="lucide lucide-chevron-up c7"
       data-testid="arrow"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"

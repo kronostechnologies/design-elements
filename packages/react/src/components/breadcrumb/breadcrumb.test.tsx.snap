@@ -138,7 +138,6 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             <svg
               class="lucide lucide-chevron-right c5"
               fill="none"
-              focusable="false"
               height="20"
               stroke="currentColor"
               stroke-linecap="round"
@@ -166,7 +165,6 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             <svg
               class="lucide lucide-chevron-right c5"
               fill="none"
-              focusable="false"
               height="20"
               stroke="currentColor"
               stroke-linecap="round"
@@ -324,7 +322,6 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
           <svg
             class="lucide lucide-chevron-right c5"
             fill="none"
-            focusable="false"
             height="20"
             stroke="currentColor"
             stroke-linecap="round"
@@ -352,7 +349,6 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
           <svg
             class="lucide lucide-chevron-right c5"
             fill="none"
-            focusable="false"
             height="20"
             stroke="currentColor"
             stroke-linecap="round"
@@ -569,7 +565,6 @@ exports[`Breadcrumb Snapshots matches snapshot (double entries) 1`] = `
           <svg
             class="lucide lucide-chevron-right c5"
             fill="none"
-            focusable="false"
             height="20"
             stroke="currentColor"
             stroke-linecap="round"

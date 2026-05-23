@@ -292,7 +292,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           <svg
             class="lucide lucide-check c5 c6"
             fill="none"
-            focusable="false"
             height="24"
             stroke="currentColor"
             stroke-linecap="round"
@@ -337,7 +336,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           <svg
             class="lucide lucide-check c5 c6"
             fill="none"
-            focusable="false"
             height="24"
             stroke="currentColor"
             stroke-linecap="round"
@@ -377,7 +375,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           <svg
             class="lucide lucide-check c5 c6"
             fill="none"
-            focusable="false"
             height="24"
             stroke="currentColor"
             stroke-linecap="round"
@@ -419,7 +416,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           <svg
             class="lucide lucide-check c5 c6"
             fill="none"
-            focusable="false"
             height="24"
             stroke="currentColor"
             stroke-linecap="round"
@@ -459,7 +455,6 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
           <svg
             class="lucide lucide-check c5 c6"
             fill="none"
-            focusable="false"
             height="24"
             stroke="currentColor"
             stroke-linecap="round"

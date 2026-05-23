@@ -68,7 +68,6 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
             icon = (
                 <StyledIcon
                     aria-hidden="true"
-                    focusable={false}
                     name="check"
                     size="16"
                 />
@@ -77,7 +76,6 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
             icon = (
                 <StyledIcon
                     aria-label={`${t('error')},`}
-                    focusable
                     name="alertOctagon"
                     role="img"
                     size="16"

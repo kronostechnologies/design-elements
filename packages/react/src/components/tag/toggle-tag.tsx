@@ -154,7 +154,6 @@ export const ToggleTag = forwardRef(({
                     role="img"
                     $isMobile={isMobile}
                     $tagSize={size}
-                    focusable
                     $selected={isSelected}
                     $hasIcon={hasIcon}
                 />

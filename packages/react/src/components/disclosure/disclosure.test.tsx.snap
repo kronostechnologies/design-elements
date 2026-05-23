@@ -348,7 +348,6 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
       <svg
         class="lucide lucide-house"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -485,7 +484,6 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
       <svg
         class="lucide lucide-house"
         fill="none"
-        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"

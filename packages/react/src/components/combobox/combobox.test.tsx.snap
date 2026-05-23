@@ -41,6 +41,12 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   user-select: none;
 }
 
+.c8:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c8 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -52,6 +58,12 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c9:hover,
@@ -251,7 +263,6 @@ input + .c2 {
           aria-hidden="true"
           class="lucide lucide-chevron-up"
           fill="none"
-          focusable="false"
           height="16"
           stroke="currentColor"
           stroke-linecap="round"
@@ -312,6 +323,12 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   user-select: none;
 }
 
+.c10:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c10 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -323,6 +340,12 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c11:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c11:hover,
@@ -523,7 +546,6 @@ input + .c2 {
     <svg
       class="lucide lucide-octagon-alert c5"
       fill="none"
-      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -576,7 +598,6 @@ input + .c2 {
           aria-hidden="true"
           class="lucide lucide-chevron-up"
           fill="none"
-          focusable="false"
           height="16"
           stroke="currentColor"
           stroke-linecap="round"
@@ -637,6 +658,12 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   user-select: none;
 }
 
+.c6:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c6 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
@@ -648,6 +675,12 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c7:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c7:hover,
@@ -818,7 +851,6 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
           aria-hidden="true"
           class="lucide lucide-chevron-up"
           fill="none"
-          focusable="false"
           height="20"
           stroke="currentColor"
           stroke-linecap="round"
@@ -879,6 +911,12 @@ exports[`Combobox matches the snapshot (multiselect) 1`] = `
   user-select: none;
 }
 
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -890,6 +928,12 @@ exports[`Combobox matches the snapshot (multiselect) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c10:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -1101,7 +1145,6 @@ input + .c2 {
         aria-hidden="true"
         class="lucide lucide-chevron-up"
         fill="none"
-        focusable="false"
         height="16"
         stroke="currentColor"
         stroke-linecap="round"
@@ -1161,6 +1204,12 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
   user-select: none;
 }
 
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -1172,6 +1221,12 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c10:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -1386,7 +1441,6 @@ input + .c2 {
           aria-hidden="true"
           class="lucide lucide-chevron-up"
           fill="none"
-          focusable="false"
           height="16"
           stroke="currentColor"
           stroke-linecap="round"
@@ -1447,6 +1501,12 @@ exports[`Combobox matches the snapshot 1`] = `
   user-select: none;
 }
 
+.c9:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
 .c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -1458,6 +1518,12 @@ exports[`Combobox matches the snapshot 1`] = `
   color: #60666E;
   padding: 0;
   width: var(--size-2x);
+}
+
+.c10:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
 }
 
 .c10:hover,
@@ -1673,7 +1739,6 @@ input + .c2 {
           aria-hidden="true"
           class="lucide lucide-chevron-up"
           fill="none"
-          focusable="false"
           height="16"
           stroke="currentColor"
           stroke-linecap="round"

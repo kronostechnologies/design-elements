@@ -385,7 +385,6 @@ export const Menu = forwardRef(({
                         >
                             {opt.iconName && (
                                 <StyledIcon
-                                    focusable={false}
                                     aria-hidden
                                     name={opt.iconName}
                                     size="1rem"
