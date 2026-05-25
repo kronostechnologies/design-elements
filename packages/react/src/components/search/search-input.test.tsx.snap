@@ -304,6 +304,7 @@ input:valid + .c8 {
           class="lucide lucide-search c4"
           data-testid="search-icon"
           fill="none"
+          focusable="false"
           height="24"
           stroke="currentColor"
           stroke-linecap="round"
@@ -346,6 +347,7 @@ input:valid + .c8 {
         <svg
           class="lucide lucide-x c10"
           fill="none"
+          focusable="false"
           height="24"
           stroke="currentColor"
           stroke-linecap="round"
@@ -378,6 +380,7 @@ input:valid + .c8 {
       <svg
         class="lucide lucide-search c14"
         fill="none"
+        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"

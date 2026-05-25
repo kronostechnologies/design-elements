@@ -128,6 +128,7 @@ input + .c1 {
     <svg
       class="lucide lucide-octagon-alert c4"
       fill="none"
+      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"

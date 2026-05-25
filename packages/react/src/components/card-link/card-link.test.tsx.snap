@@ -56,6 +56,7 @@ exports[`CardLink matches snapshot 1`] = `
       aria-hidden="true"
       class="lucide lucide-chevron-right c1"
       fill="none"
+      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"

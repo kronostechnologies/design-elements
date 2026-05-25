@@ -475,6 +475,7 @@ exports[`Avatar Should use bigger user icon when username is empty on mobile 1`]
     <svg
       class="lucide lucide-user"
       fill="none"
+      focusable="false"
       height="24"
       stroke="currentColor"
       stroke-linecap="round"
@@ -536,6 +537,7 @@ exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
     <svg
       class="lucide lucide-user"
       fill="none"
+      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -597,6 +599,7 @@ exports[`Avatar Should use user icon when username is undefined 1`] = `
     <svg
       class="lucide lucide-user"
       fill="none"
+      focusable="false"
       height="16"
       stroke="currentColor"
       stroke-linecap="round"
@@ -655,6 +658,7 @@ exports[`Avatar renders custom icon when iconName is provided 1`] = `
   <svg
     class="lucide lucide-building"
     fill="none"
+    focusable="false"
     height="24"
     stroke="currentColor"
     stroke-linecap="round"

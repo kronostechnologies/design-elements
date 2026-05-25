@@ -5,6 +5,7 @@ exports[`SortButtonIcon should display arrow down when sort is descending 1`] = 
   <svg
     class="lucide lucide-arrow-up"
     fill="none"
+    focusable="false"
     height="16"
     stroke="#60666E"
     stroke-linecap="round"
@@ -29,6 +30,7 @@ exports[`SortButtonIcon should display arrow up when sort is ascending 1`] = `
   <svg
     class="lucide lucide-arrow-down"
     fill="none"
+    focusable="false"
     height="16"
     stroke="#60666E"
     stroke-linecap="round"
@@ -53,6 +55,7 @@ exports[`SortButtonIcon should display reorder when no sort 1`] = `
   <svg
     class="lucide lucide-chevrons-up-down"
     fill="none"
+    focusable="false"
     height="16"
     stroke="#60666E"
     stroke-linecap="round"

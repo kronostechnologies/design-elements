@@ -409,6 +409,9 @@ export const Icon: FC<IconProps> = ({
         <Component
             className={className}
             height={size}
+            // This attribute is used to provide backward-compatibility with IE and early versions of Edge,
+            // in which SVG elements would receive focus by default. Using focusable="false" disabled this behavior.
+            focusable={false}
             width={size}
             color={color}
             role={role}

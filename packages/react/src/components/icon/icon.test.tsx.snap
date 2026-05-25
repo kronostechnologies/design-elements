@@ -5,6 +5,7 @@ exports[`Icon matches the snapshot 1`] = `
   <svg
     class="lucide lucide-house"
     fill="none"
+    focusable="false"
     height="24"
     stroke="currentColor"
     stroke-linecap="round"

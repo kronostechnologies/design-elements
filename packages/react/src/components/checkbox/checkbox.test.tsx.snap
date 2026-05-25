@@ -108,6 +108,7 @@ exports[`Checkbox matches snapshot 1`] = `
       <svg
         class="lucide lucide-check c4 c5"
         fill="none"
+        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"
@@ -124,6 +125,7 @@ exports[`Checkbox matches snapshot 1`] = `
       <svg
         class="lucide lucide-minus c6 c7"
         fill="none"
+        focusable="false"
         height="24"
         stroke="currentColor"
         stroke-linecap="round"

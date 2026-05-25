@@ -127,6 +127,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
       aria-hidden="true"
       class="lucide lucide-octagon-alert c1 c2"
       fill="none"
+      focusable="false"
       height="20"
       stroke="currentColor"
       stroke-linecap="round"
