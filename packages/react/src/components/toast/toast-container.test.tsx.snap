@@ -164,6 +164,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
     type="alert"
   >
     <svg
+      aria-hidden="true"
       aria-label="alert"
       class="lucide lucide-octagon-alert c1"
       fill="none"
@@ -390,6 +391,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
     type="discovery"
   >
     <svg
+      aria-hidden="true"
       aria-label="discovery"
       class="lucide lucide-lightbulb c1"
       fill="none"
@@ -616,6 +618,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
     type="neutral"
   >
     <svg
+      aria-hidden="true"
       aria-label="information"
       class="lucide lucide-info c1"
       fill="none"
@@ -844,6 +847,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
     type="success"
   >
     <svg
+      aria-hidden="true"
       aria-label="success"
       class="lucide lucide-check c1"
       fill="none"
@@ -1064,6 +1068,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
     type="warning"
   >
     <svg
+      aria-hidden="true"
       aria-label="warning"
       class="lucide lucide-triangle-alert c1"
       fill="none"

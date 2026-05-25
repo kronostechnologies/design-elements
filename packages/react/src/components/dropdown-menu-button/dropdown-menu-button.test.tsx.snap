@@ -556,7 +556,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
             ExternalA
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -601,7 +601,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
             ExternalB
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -646,7 +646,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
             ExternalC
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -691,7 +691,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
             ExternalD
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -1285,7 +1285,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
             ExternalA
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -1330,7 +1330,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
             ExternalB
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -1375,7 +1375,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
             ExternalC
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"
@@ -1420,7 +1420,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
             ExternalD
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c18"
             fill="none"
             focusable="false"

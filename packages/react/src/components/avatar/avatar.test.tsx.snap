@@ -473,6 +473,7 @@ exports[`Avatar Should use bigger user icon when username is empty on mobile 1`]
     data-testid="avatar-initials"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-user"
       fill="none"
       focusable="false"
@@ -535,6 +536,7 @@ exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
     data-testid="avatar-initials"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-user"
       fill="none"
       focusable="false"
@@ -597,6 +599,7 @@ exports[`Avatar Should use user icon when username is undefined 1`] = `
     data-testid="avatar-initials"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-user"
       fill="none"
       focusable="false"
@@ -656,6 +659,7 @@ exports[`Avatar renders custom icon when iconName is provided 1`] = `
   role="img"
 >
   <svg
+    aria-hidden="true"
     class="lucide lucide-building"
     fill="none"
     focusable="false"

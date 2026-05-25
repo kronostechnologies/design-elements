@@ -57,7 +57,7 @@ export const CardLink: FC<CardLinkProps> = ({
 }) => (
     <StyledLink className={className} replace={replace} title={label} to={href}>
         {label}
-        <StyledIcon aria-hidden name="chevronRight" size="16" />
+        <StyledIcon name="chevronRight" size="16" />
     </StyledLink>
 );
 

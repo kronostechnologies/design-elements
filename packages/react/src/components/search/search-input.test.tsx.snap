@@ -301,6 +301,7 @@ input:valid + .c8 {
         for="search-input"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-search c4"
           data-testid="search-icon"
           fill="none"
@@ -345,6 +346,7 @@ input:valid + .c8 {
         data-testid="search-reset"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-x c10"
           fill="none"
           focusable="false"
@@ -378,6 +380,7 @@ input:valid + .c8 {
       data-testid="search-button"
     >
       <svg
+        aria-hidden="true"
         class="lucide lucide-search c14"
         fill="none"
         focusable="false"

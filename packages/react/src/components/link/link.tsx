@@ -83,7 +83,6 @@ export const Link: FC<LinkProps> = ({
             {icon?.name && (
                 <StyledLeftIcon
                     data-testid="link-icon"
-                    aria-hidden="true"
                     name={icon.name}
                     size="16"
                     $buttonType={button?.buttonType}
@@ -93,7 +92,6 @@ export const Link: FC<LinkProps> = ({
             {external && (
                 <Icon
                     data-testid="external-link-icon"
-                    aria-hidden="true"
                     name="externalLink"
                     role="img"
                     size="16"

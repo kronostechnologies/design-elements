@@ -81,7 +81,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
                         name={titleIconName}
                         size="24"
                         data-testid="title-icon"
-                        aria-hidden="true"
                     />
                 )}
                 <Heading

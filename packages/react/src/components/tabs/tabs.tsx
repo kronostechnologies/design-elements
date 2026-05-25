@@ -315,7 +315,7 @@ export const Tabs: FC<TabsProps> = ({
                         ref={scrollLeftButtonRef}
                         tabIndex={-1}
                     >
-                        <Icon name='chevronLeft' size='16' aria-hidden="true" />
+                        <Icon name='chevronLeft' size='16' />
                     </ScrollButton>
                     <TabsWrapper
                         $hasLeftScroll={isLeftScrollVisible}
@@ -356,7 +356,7 @@ export const Tabs: FC<TabsProps> = ({
                         ref={scrollRightButtonRef}
                         tabIndex={-1}
                     >
-                        <Icon name='chevronRight' size='16' aria-hidden="true" />
+                        <Icon name='chevronRight' size='16' />
                     </ScrollButton>
                 </TabButtonsContainer>
                 {addButtonComponent && (

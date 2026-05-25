@@ -236,7 +236,6 @@ export const SectionalBanner: FC<SectionalBannerProps> = ({
             <BannerIcon
                 name={bannerType.iconName}
                 size={iconSize.toString()}
-                aria-hidden="true"
                 $isMobile={isMobile}
             />
 

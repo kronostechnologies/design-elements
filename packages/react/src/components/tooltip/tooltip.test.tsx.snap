@@ -30,6 +30,7 @@ exports[`Tooltip has default desktop styles (defaultOpen) 1`] = `
   >
     <svg
       aria-describedby="uuid1"
+      aria-hidden="true"
       class="lucide lucide-info"
       fill="none"
       focusable="false"
@@ -254,6 +255,7 @@ exports[`Tooltip has default desktop styles 1`] = `
     tabindex="0"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-info"
       fill="none"
       focusable="false"
@@ -473,6 +475,7 @@ exports[`Tooltip has mobile styles (defaultOpen) 1`] = `
   >
     <svg
       aria-describedby="uuid1"
+      aria-hidden="true"
       class="lucide lucide-info"
       fill="none"
       focusable="false"
@@ -697,6 +700,7 @@ exports[`Tooltip has mobile styles 1`] = `
     tabindex="0"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-info"
       fill="none"
       focusable="false"

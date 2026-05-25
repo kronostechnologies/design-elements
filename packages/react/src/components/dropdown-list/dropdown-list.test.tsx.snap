@@ -1433,6 +1433,7 @@ input + .c2 {
     id="uuid1_invalid"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-octagon-alert c5"
       fill="none"
       focusable="false"
@@ -2586,10 +2587,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2626,10 +2627,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2666,10 +2667,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2706,10 +2707,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2746,10 +2747,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2786,10 +2787,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2826,10 +2827,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2866,10 +2867,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2906,10 +2907,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2946,10 +2947,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -2986,10 +2987,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -3026,10 +3027,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"
@@ -3066,10 +3067,10 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
           role="option"
         >
           <span
-            aria-hidden="true"
             class="c9"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c10 c11"
               fill="none"
               focusable="false"

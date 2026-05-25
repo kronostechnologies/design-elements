@@ -133,7 +133,6 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                 <>
                     {leftIconName && (
                         <LeftIcon
-                            aria-hidden="true"
                             data-testid="left-icon"
                             name={leftIconName}
                             size={iconSize}
@@ -143,7 +142,6 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                     {label}
                     {rightIconName && (
                         <RightIcon
-                            aria-hidden="true"
                             data-testid="right-icon"
                             name={rightIconName}
                             size={iconSize}

@@ -66,11 +66,7 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
     if (!isEmpty) {
         if (isValid) {
             icon = (
-                <StyledIcon
-                    aria-hidden="true"
-                    name="check"
-                    size="16"
-                />
+                <StyledIcon name="check" size="16" />
             );
         } else {
             icon = (

@@ -126,6 +126,7 @@ input + .c1 {
     id="test-id_invalid"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-octagon-alert c4"
       fill="none"
       focusable="false"

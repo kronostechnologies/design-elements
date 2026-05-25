@@ -177,6 +177,7 @@ label + .c6 {
         for="uuid1"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-search c4"
           data-testid="search-icon"
           fill="none"
@@ -397,6 +398,7 @@ label + .c6 {
         for="uuid1"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-search c4"
           data-testid="search-icon"
           fill="none"

@@ -90,7 +90,7 @@ export const StepperButtons: FC<StepperButtonsProps> = ({
                 onMouseUp={onStop}
                 onMouseLeave={onStop}
             >
-                <Icon aria-hidden="true" name="chevronUp" size="16" />
+                <Icon name="chevronUp" size="16" />
             </IncrementButton>
             <DecrementButton
                 aria-label={t('decrement-button-aria-label')}
@@ -102,7 +102,7 @@ export const StepperButtons: FC<StepperButtonsProps> = ({
                 onMouseUp={onStop}
                 onMouseLeave={onStop}
             >
-                <Icon aria-hidden="true" name="chevronDown" size="16" />
+                <Icon name="chevronDown" size="16" />
             </DecrementButton>
         </Wrapper>
     );

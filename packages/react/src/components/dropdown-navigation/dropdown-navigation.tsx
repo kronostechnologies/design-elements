@@ -229,14 +229,10 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<DropdownNav
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...dataAttributes}
                 >
-                    {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
+                    {iconName && <StyledLeftIcon name={iconName} size="16" />}
                     {children}
                     {hasCaret && (
-                        <StyledRightIcon
-                            aria-hidden="true"
-                            name={isOpen ? 'chevronUp' : 'chevronDown'}
-                            size="16"
-                        />
+                        <StyledRightIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />
                     )}
                 </StyledButton>
             )}

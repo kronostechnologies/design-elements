@@ -577,7 +577,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 >
                     {multiselect ? (
                         <CustomCheckbox
-                            aria-hidden="true"
                             disabled={option.disabled}
                             checked={isOptionSelected(option)}
                         >

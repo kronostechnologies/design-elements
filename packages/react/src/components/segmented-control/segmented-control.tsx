@@ -145,11 +145,7 @@ export const SegmentedControl: FC<SegmentedControlProps> = ({
                     value={button.value}
                 >
                     {button.icon && (
-                        <Icon
-                            aria-hidden="true"
-                            name={button.icon}
-                            size="16"
-                        />
+                        <Icon name={button.icon} size="16" />
                     )}
                     {button.label && (
                         <span data-text={button.label}>

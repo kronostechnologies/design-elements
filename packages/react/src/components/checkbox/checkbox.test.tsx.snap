@@ -106,6 +106,7 @@ exports[`Checkbox matches snapshot 1`] = `
       class="c2 c3"
     >
       <svg
+        aria-hidden="true"
         class="lucide lucide-check c4 c5"
         fill="none"
         focusable="false"
@@ -123,6 +124,7 @@ exports[`Checkbox matches snapshot 1`] = `
         />
       </svg>
       <svg
+        aria-hidden="true"
         class="lucide lucide-minus c6 c7"
         fill="none"
         focusable="false"

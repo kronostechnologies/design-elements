@@ -134,7 +134,6 @@ export const TabButton = forwardRef(({
             >
                 {leftIcon && (
                     <StyledButtonIcon
-                        aria-hidden="true"
                         data-testid={`${dataTestId}-left-icon`}
                         name={leftIcon}
                         size="16"
@@ -145,7 +144,6 @@ export const TabButton = forwardRef(({
                 </ButtonLabel>
                 {rightIcon && (
                     <StyledButtonIcon
-                        aria-hidden="true"
                         data-testid={`${dataTestId}-right-icon`}
                         name={rightIcon}
                         size="16"

@@ -407,6 +407,9 @@ export const Icon: FC<IconProps> = ({
 
     return (
         <Component
+            // SVG icons are considered decorative by default and invisible to assistive technologies. Focusable
+            // components that use icons (such as IconButton) should provide their own role and aria attributes.
+            aria-hidden
             className={className}
             height={size}
             // This attribute is used to provide backward-compatibility with IE and early versions of Edge,
