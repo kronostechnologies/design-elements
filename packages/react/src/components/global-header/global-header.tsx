@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { type DeviceType, useDeviceContext } from '../device-context-provider';
+import { Logo, type LogoName } from '../logo';
 import { SkipLink, type SkipLinkProps } from '../skip-link';
 import { GlobalHeaderContent } from './global-header-content';
-import { Logo, LogoName } from './logo';
 
 const getPadding = (device: DeviceType): string => {
     if (device === 'tablet') {

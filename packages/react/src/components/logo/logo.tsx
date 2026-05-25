@@ -11,6 +11,7 @@ import EquisoftDesignMobile from '../../logos/design/design-reverse-mobile.svg';
 import EquisoftDesign from '../../logos/design/design-reverse.svg';
 import EquisoftIllustrateMobile from '../../logos/illustrate/illustrate-reverse-mobile.svg';
 import EquisoftIllustrate from '../../logos/illustrate/illustrate-reverse.svg';
+import EquisoftLifeguide from '../../logos/lifeguide/lifeguide.svg';
 import EquisoftDefault from '../../logos/logo-equisoft-reversed.svg';
 import EquisoftManageMobile from '../../logos/manage/manage-reverse-mobile.svg';
 import EquisoftManage from '../../logos/manage/manage-reverse.svg';
@@ -45,6 +46,10 @@ const logoMapping = {
         desktop: EquisoftIllustrate,
         mobile: EquisoftIllustrateMobile,
     },
+    lifeguide: {
+        desktop: EquisoftLifeguide,
+        mobile: EquisoftLifeguide,
+    },
     manage: {
         desktop: EquisoftManage,
         mobile: EquisoftManageMobile,
@@ -57,7 +62,7 @@ const logoMapping = {
 
 export type LogoName = keyof typeof logoMapping;
 
-interface LogoProps {
+export interface LogoProps {
     name?: LogoName;
     mobile?: boolean;
 }

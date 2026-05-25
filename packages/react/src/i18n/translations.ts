@@ -100,6 +100,9 @@ export const Translations = {
             completedAriaLabel: 'completed',
             uncompletedAriaLabel: 'not completed',
         },
+        'promotional-banner': {
+            close: 'Close',
+        },
         'search-input': {
             label: 'Search',
         },
@@ -248,6 +251,9 @@ export const Translations = {
         'progress-tracker': {
             completedAriaLabel: 'complété',
             uncompletedAriaLabel: 'non complété',
+        },
+        'promotional-banner': {
+            close: 'Fermer',
         },
         'search-input': {
             label: 'Rechercher',
