@@ -192,8 +192,6 @@ export const GlobalBanner = forwardRef(({
         >
             <Content $isMobile={isMobile}>
                 <StyledIcon
-                    aria-label={type}
-                    focusable={undefined}
                     $isMobile={isMobile}
                     name={getIconName(type)}
                     role="img"
