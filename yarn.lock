@@ -1688,22 +1688,22 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.59.3"
     cross-env: "npm:10.1.0"
     css-loader: "npm:7.1.4"
-    date-fns: "npm:4.1.0"
+    date-fns: "npm:4.2.1"
     eslint: "npm:8.57.1"
-    eslint-import-resolver-node: "npm:0.3.10"
+    eslint-import-resolver-node: "npm:0.4.0"
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jsx-a11y: "npm:6.10.2"
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     expect: "npm:30.4.1"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     jest: "npm:30.4.2"
     jest-environment-jsdom: "npm:30.4.1"
     jest-extended: "npm:7.0.0"
     jest-junit: "npm:17.0.0"
     jest-styled-components: "npm:7.4.0"
-    lucide-react: "npm:1.14.0"
+    lucide-react: "npm:1.16.0"
     prop-types: "npm:15.8.1"
     react: "npm:18.3.1"
     react-datepicker: "npm:9.1.0"
@@ -1720,7 +1720,7 @@ __metadata:
     stream-browserify: "npm:3.0.0"
     style-loader: "npm:4.0.0"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.11.0"
+    stylelint: "npm:17.11.1"
     ts-jest: "npm:29.4.9"
     ts-loader: "npm:9.5.7"
     ts-mockito: "npm:2.6.1"
@@ -1778,14 +1778,14 @@ __metadata:
     core-js: "npm:3.49.0"
     css-loader: "npm:7.1.4"
     eslint: "npm:8.57.1"
-    eslint-import-resolver-node: "npm:0.3.10"
+    eslint-import-resolver-node: "npm:0.4.0"
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jsx-a11y: "npm:6.10.2"
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     react: "npm:18.3.1"
     react-docgen-typescript: "npm:2.4.0"
     react-dom: "npm:18.3.1"
@@ -1796,7 +1796,7 @@ __metadata:
     storybook: "npm:8.6.18"
     style-loader: "npm:4.0.0"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.11.0"
+    stylelint: "npm:17.11.1"
     ts-loader: "npm:9.5.7"
     typescript: "npm:6.0.3"
     webpack: "npm:5.106.2"
@@ -1890,16 +1890,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@equisoft/jest-utils@npm:1.8.3":
-  version: 1.8.3
-  resolution: "@equisoft/jest-utils@npm:1.8.3"
+"@equisoft/jest-utils@npm:1.8.4":
+  version: 1.8.4
+  resolution: "@equisoft/jest-utils@npm:1.8.4"
   dependencies:
-    pretty-format: "npm:30.3.0"
+    pretty-format: "npm:30.4.1"
   peerDependencies:
     jest-junit: "*"
     jest-util: "*"
     ts-jest: "*"
-  checksum: 10c0/c05abc7f89ecf08c600012b13cb05c32a60a671ce19af211d832e981cee97644cf11b9e0c20dc9c6a3ec8064713cc08112ba0cb52b1ab73f0abe0f0d3b63315e
+  checksum: 10c0/c089151ea0422b3808faeb03dc7de6192f39c8ea888e4839c29212daed2cd62947c1ea6231da4647ceecf7605b0b2602270b48c89cae4bee2da29754347b5c26
   languageName: node
   linkType: hard
 
@@ -1919,19 +1919,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@equisoft/react-test-utils@npm:1.8.3":
-  version: 1.8.3
-  resolution: "@equisoft/react-test-utils@npm:1.8.3"
+"@equisoft/react-test-utils@npm:1.8.4":
+  version: 1.8.4
+  resolution: "@equisoft/react-test-utils@npm:1.8.4"
   peerDependencies:
     jest-mock: ">=29"
     react: "*"
-  checksum: 10c0/35276a78058d21988c3dcd76eadc024eb85edba08022a48972d63ded5cb3ad27ebf3c2c811d168bbff0bda0f7bd7f507f406df8749b85df8f010ec2ff52dd6b1
+  checksum: 10c0/3c06908f5df19cabd8df56c136968b4b1068a840a6e52f8471015452e9f08534600a001d42949f70f06078b60760b91d88a8027dfed713f3eb739b3df5871e93
   languageName: node
   linkType: hard
 
-"@equisoft/stylelint-config@npm:5.2.4":
-  version: 5.2.4
-  resolution: "@equisoft/stylelint-config@npm:5.2.4"
+"@equisoft/stylelint-config@npm:5.2.5":
+  version: 5.2.5
+  resolution: "@equisoft/stylelint-config@npm:5.2.5"
   dependencies:
     "@stylistic/stylelint-config": "npm:^5.0.0"
     "@stylistic/stylelint-plugin": "npm:^5.0.0"
@@ -1947,7 +1947,7 @@ __metadata:
   peerDependenciesMeta:
     postcss-scss:
       optional: true
-  checksum: 10c0/d98004a93d31fa3c1c0907e2761a49e338ad1dae8cfb2e251794d452068091efcb7ea1b1f8bf375afce8862772ae8e1445838c8b54484f875b58a259a2f558a2
+  checksum: 10c0/edb05378153455f62f5cda2c3b47d9b0d938d2c0151632dece0a5e889ba2a3115891d1f57035cd8d0c877be213e5b274b18b757717321568ca5db37e82d5c4b9
   languageName: node
   linkType: hard
 
@@ -2508,15 +2508,6 @@ __metadata:
     node-notifier:
       optional: true
   checksum: 10c0/cf5220462c6242fa564bbeb6d5988ebfd814e0351f3bddae07323b55c68c7ebd4aa4c23e717231ab4b2d63c4fc7fa4615b9dad8584be534bd44622981242dceb
-  languageName: node
-  linkType: hard
-
-"@jest/schemas@npm:30.0.5":
-  version: 30.0.5
-  resolution: "@jest/schemas@npm:30.0.5"
-  dependencies:
-    "@sinclair/typebox": "npm:^0.34.0"
-  checksum: 10c0/449dcd7ec5c6505e9ac3169d1143937e67044ae3e66a729ce4baf31812dfd30535f2b3b2934393c97cfdf5984ff581120e6b38f62b8560c8b5b7cc07f4175f65
   languageName: node
   linkType: hard
 
@@ -7324,14 +7315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:4.1.0":
-  version: 4.1.0
-  resolution: "date-fns@npm:4.1.0"
-  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^4.1.0":
+"date-fns@npm:4.2.1, date-fns@npm:^4.1.0":
   version: 4.2.1
   resolution: "date-fns@npm:4.2.1"
   checksum: 10c0/1694c57a180a76c1001401fde85925cebb3b89594d37625063be0a571eddde278a87d3c76ecad5759c3dbeabcc34a5c5757eb6b3487d89a9a61ef48571791166
@@ -7805,9 +7789,9 @@ __metadata:
     "@equisoft/design-elements-react": "workspace:*"
     "@equisoft/eslint-config": "npm:6.0.2"
     "@equisoft/eslint-config-typescript-react": "npm:6.0.2"
-    "@equisoft/jest-utils": "npm:1.8.3"
-    "@equisoft/react-test-utils": "npm:1.8.3"
-    "@equisoft/stylelint-config": "npm:5.2.4"
+    "@equisoft/jest-utils": "npm:1.8.4"
+    "@equisoft/react-test-utils": "npm:1.8.4"
+    "@equisoft/stylelint-config": "npm:5.2.5"
     "@equisoft/typescript-config": "npm:2.0.1"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@stylistic/eslint-plugin": "npm:5.10.0"
@@ -7821,14 +7805,14 @@ __metadata:
     babel-plugin-styled-components: "npm:2.1.4"
     dotenv: "npm:17.4.2"
     eslint: "npm:8.57.1"
-    eslint-import-resolver-node: "npm:0.3.10"
+    eslint-import-resolver-node: "npm:0.4.0"
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jsx-a11y: "npm:6.10.2"
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     html-webpack-plugin: "npm:5.6.7"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     i18next-browser-languagedetector: "npm:8.2.1"
     postcss: "npm:8.5.14"
     postcss-styled-syntax: "npm:0.7.1"
@@ -7837,13 +7821,13 @@ __metadata:
     pretty-format: "npm:30.4.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    react-i18next: "npm:17.0.7"
+    react-i18next: "npm:17.0.8"
     react-is: "npm:18.3.1"
     react-router: "npm:6.30.3"
     react-router-dom: "npm:6.30.3"
     serve-static: "npm:2.2.1"
     styled-components: "npm:5.3.11"
-    stylelint: "npm:17.11.0"
+    stylelint: "npm:17.11.1"
     ts-loader: "npm:9.5.7"
     tslib: "npm:2.8.1"
     typescript: "npm:6.0.3"
@@ -8195,7 +8179,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:0.3.10, eslint-import-resolver-node@npm:^0.3.9":
+"eslint-import-resolver-node@npm:0.4.0":
+  version: 0.4.0
+  resolution: "eslint-import-resolver-node@npm:0.4.0"
+  dependencies:
+    debug: "npm:^3.2.7"
+    is-core-module: "npm:^2.16.2"
+    resolve: "npm:^2.0.0-next.7"
+  checksum: 10c0/baaeb31e47001c3834b8d0f98aedeac4f1677fe4380f309232cf98a8ae2d2fb4df112266df58acd631e6166d3294cf64dc4760eb7dbd1a36ec11538fd9d66722
+  languageName: node
+  linkType: hard
+
+"eslint-import-resolver-node@npm:^0.3.9":
   version: 0.3.10
   resolution: "eslint-import-resolver-node@npm:0.3.10"
   dependencies:
@@ -9676,15 +9671,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:26.0.8":
-  version: 26.0.8
-  resolution: "i18next@npm:26.0.8"
+"i18next@npm:26.2.0":
+  version: 26.2.0
+  resolution: "i18next@npm:26.2.0"
   peerDependencies:
     typescript: ^5 || ^6
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/48bcb3f8731a17ab586d7371a6d4d155cd8eeaec1a237466d21ffe7b32a6e98432481171a53b0583b397b4ac65c3342b8a64d01cd672b6a1686028329d0c0d8e
+  checksum: 10c0/8ce453de86422503141ece62785089236894173d50c269d1b4ea1da5f362bc9a3023c1af25c90979decbddb007b35812726cd90de973c445785609ae3c775e75
   languageName: node
   linkType: hard
 
@@ -11230,12 +11225,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:1.14.0":
-  version: 1.14.0
-  resolution: "lucide-react@npm:1.14.0"
+"lucide-react@npm:1.16.0":
+  version: 1.16.0
+  resolution: "lucide-react@npm:1.16.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/25c5dd878945842ffb519532f1a66f59f2d461e7be7bd322091b0ecd3cd32561c1ae3d9b50161432d39a72bf8c8f1a039268f2f20a035e520dd3f49dd46ffaf2
+  checksum: 10c0/d1c4b7f1abdc8b5c729a5bd74d875f0b0db732b2e8d0cc8c76f9e167818b81a6b246a64986ab2fc1ae74cf9f8d16ce2cefe98fe5a6420b31f4fd6742b3181d5a
   languageName: node
   linkType: hard
 
@@ -11565,7 +11560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.11":
+"nanoid@npm:^3.3.11, nanoid@npm:^3.3.12":
   version: 3.3.12
   resolution: "nanoid@npm:3.3.12"
   bin:
@@ -12300,7 +12295,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.14, postcss@npm:^8.4.33, postcss@npm:^8.4.40, postcss@npm:^8.5.13, postcss@npm:^8.5.8":
+"postcss@npm:8.5.14, postcss@npm:^8.4.33, postcss@npm:^8.4.40, postcss@npm:^8.5.8":
   version: 8.5.14
   resolution: "postcss@npm:8.5.14"
   dependencies:
@@ -12308,6 +12303,17 @@ __metadata:
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
   checksum: 10c0/48138207cf5ef5581be1bfe2cb65ccfe0ac75e43888ba045afc8ed6043d7b56aeb3b9a9fe5b353ff554be943cd0cc15d826ccb991525159175971e5ee8ab0237
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.5.14":
+  version: 8.5.15
+  resolution: "postcss@npm:8.5.15"
+  dependencies:
+    nanoid: "npm:^3.3.12"
+    picocolors: "npm:^1.1.1"
+    source-map-js: "npm:^1.2.1"
+  checksum: 10c0/7f2e63ae22fbe43aace1bf652bd99da4e90737c64194d49e51ddc9cd0f9e51ff2861a7d734379b494deffa03a880a5c65eec70bc29ee9ebaa7136dde3eee8f31
   languageName: node
   linkType: hard
 
@@ -12384,17 +12390,6 @@ __metadata:
     lodash: "npm:^4.17.20"
     renderkid: "npm:^3.0.0"
   checksum: 10c0/dc292c087e2857b2e7592784ab31e37a40f3fa918caa11eba51f9fb2853e1d4d6e820b219917e35f5721d833cfd20fdf4f26ae931a90fd1ad0cae2125c345138
-  languageName: node
-  linkType: hard
-
-"pretty-format@npm:30.3.0":
-  version: 30.3.0
-  resolution: "pretty-format@npm:30.3.0"
-  dependencies:
-    "@jest/schemas": "npm:30.0.5"
-    ansi-styles: "npm:^5.2.0"
-    react-is: "npm:^18.3.1"
-  checksum: 10c0/719b27d70cd8b01013485054c5d094e1fe85e093b09ee73553e3b19302da3cf54fbd6a7ea9577d6471aeff8d372200e56979ffc4c831e2133520bd18060895fb
   languageName: node
   linkType: hard
 
@@ -12643,15 +12638,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:17.0.7":
-  version: 17.0.7
-  resolution: "react-i18next@npm:17.0.7"
+"react-i18next@npm:17.0.8":
+  version: 17.0.8
+  resolution: "react-i18next@npm:17.0.8"
   dependencies:
     "@babel/runtime": "npm:^7.29.2"
     html-parse-stringify: "npm:^3.0.1"
     use-sync-external-store: "npm:^1.6.0"
   peerDependencies:
-    i18next: ">= 26.0.10"
+    i18next: ">= 26.2.0"
     react: ">= 16.8.0"
     typescript: ^5 || ^6
   peerDependenciesMeta:
@@ -12661,7 +12656,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/4a1cee24696a3a27ca3642a12fc08ffe5d1ce21cab7ee908488805c90b4e15ab30f17452b39bec32a5b02375d4f6155cfd301d23f24506667b5bfc64fcb7e72f
+  checksum: 10c0/4d13d396208927ed3c80eb62db011a98dae16d93fc951bb4cb220fc5a3a5dd2f0046244fdbd197f627f595230d6fa05cc5d1c6f52b6241acd63ff818dff63acb
   languageName: node
   linkType: hard
 
@@ -13052,7 +13047,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^2.0.0-next.5, resolve@npm:^2.0.0-next.6":
+"resolve@npm:^2.0.0-next.5, resolve@npm:^2.0.0-next.6, resolve@npm:^2.0.0-next.7":
   version: 2.0.0-next.7
   resolution: "resolve@npm:2.0.0-next.7"
   dependencies:
@@ -13082,7 +13077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^2.0.0-next.5#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^2.0.0-next.6#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^2.0.0-next.5#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^2.0.0-next.6#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^2.0.0-next.7#optional!builtin<compat/resolve>":
   version: 2.0.0-next.7
   resolution: "resolve@patch:resolve@npm%3A2.0.0-next.7#optional!builtin<compat/resolve>::version=2.0.0-next.7&hash=c3c19d"
   dependencies:
@@ -13127,7 +13122,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@equisoft/stylelint-config": "npm:5.2.4"
+    "@equisoft/stylelint-config": "npm:5.2.5"
     "@types/eslint": "npm:^8.56.10"
     "@types/yargs": "npm:17.0.35"
     conventional-changelog-cli: "npm:5.0.0"
@@ -13135,7 +13130,7 @@ __metadata:
     eslint: "npm:8.57.1"
     postcss: "npm:8.5.14"
     postcss-styled-syntax: "npm:0.7.1"
-    stylelint: "npm:17.11.0"
+    stylelint: "npm:17.11.1"
     typescript: "npm:6.0.3"
     xmlbuilder: "npm:15.1.1"
     yargs: "npm:18.0.0"
@@ -14157,9 +14152,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:17.11.0":
-  version: 17.11.0
-  resolution: "stylelint@npm:17.11.0"
+"stylelint@npm:17.11.1":
+  version: 17.11.1
+  resolution: "stylelint@npm:17.11.1"
   dependencies:
     "@csstools/css-calc": "npm:^3.2.0"
     "@csstools/css-parser-algorithms": "npm:^4.0.0"
@@ -14182,13 +14177,12 @@ __metadata:
     html-tags: "npm:^5.1.0"
     ignore: "npm:^7.0.5"
     import-meta-resolve: "npm:^4.2.0"
-    is-plain-object: "npm:^5.0.0"
     mathml-tag-names: "npm:^4.0.0"
     meow: "npm:^14.1.0"
     micromatch: "npm:^4.0.8"
     normalize-path: "npm:^3.0.0"
     picocolors: "npm:^1.1.1"
-    postcss: "npm:^8.5.13"
+    postcss: "npm:^8.5.14"
     postcss-safe-parser: "npm:^7.0.1"
     postcss-selector-parser: "npm:^7.1.1"
     postcss-value-parser: "npm:^4.2.0"
@@ -14199,7 +14193,7 @@ __metadata:
     write-file-atomic: "npm:^7.0.1"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10c0/a494edaa51bc13b9765fe36106b5d165b20a49ca25960c478da1ca547937ad46f7880ac6149816b21e47def24ed434717b7481bd8560eb1705b19b3f42700b16
+  checksum: 10c0/72e4bcf29b4c69199c08a5081bafad024c6c7417ab3e19e26fec2ceca825e51dad20dc09099f94c7453cd6b13aa2b698f0a618a453e7847d3a413d8f4091e749
   languageName: node
   linkType: hard
 
