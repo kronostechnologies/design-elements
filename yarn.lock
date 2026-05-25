@@ -1697,7 +1697,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     expect: "npm:30.4.1"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     jest: "npm:30.4.2"
     jest-environment-jsdom: "npm:30.4.1"
     jest-extended: "npm:7.0.0"
@@ -1785,7 +1785,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     react: "npm:18.3.1"
     react-docgen-typescript: "npm:2.4.0"
     react-dom: "npm:18.3.1"
@@ -7828,7 +7828,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     html-webpack-plugin: "npm:5.6.7"
-    i18next: "npm:26.0.8"
+    i18next: "npm:26.2.0"
     i18next-browser-languagedetector: "npm:8.2.1"
     postcss: "npm:8.5.14"
     postcss-styled-syntax: "npm:0.7.1"
@@ -9676,15 +9676,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:26.0.8":
-  version: 26.0.8
-  resolution: "i18next@npm:26.0.8"
+"i18next@npm:26.2.0":
+  version: 26.2.0
+  resolution: "i18next@npm:26.2.0"
   peerDependencies:
     typescript: ^5 || ^6
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/48bcb3f8731a17ab586d7371a6d4d155cd8eeaec1a237466d21ffe7b32a6e98432481171a53b0583b397b4ac65c3342b8a64d01cd672b6a1686028329d0c0d8e
+  checksum: 10c0/8ce453de86422503141ece62785089236894173d50c269d1b4ea1da5f362bc9a3023c1af25c90979decbddb007b35812726cd90de973c445785609ae3c775e75
   languageName: node
   linkType: hard
 
