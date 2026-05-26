@@ -48,6 +48,7 @@ export * from './progress-circular';
 export * from './progress-indicator';
 export * from './progress-tracker';
 export * from './promotional-banner';
+export * from './promotional-button';
 export * from './radio-button';
 export * from './radio-button-group';
 export * from './radio-card-group';

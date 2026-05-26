@@ -4,12 +4,12 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { PromotionalBanner } from './promotional-banner';
 
 describe('PromotionalBanner', () => {
-    const someLink = { label: 'Learn more', onClick: jest.fn() };
+    const someButton = { label: 'Learn more', onClick: jest.fn() };
     const onDismiss = jest.fn();
 
     it('renders children', () => {
         renderWithProviders(
-            <PromotionalBanner link={someLink} onDismiss={onDismiss}>
+            <PromotionalBanner button={someButton} logo="lifeguide" onDismiss={onDismiss}>
                 <span>Banner content</span>
             </PromotionalBanner>,
         );
@@ -17,11 +17,11 @@ describe('PromotionalBanner', () => {
         expect(screen.getByText('Banner content')).toBeInTheDocument();
     });
 
-    it('renders the link with the given label', () => {
-        const link = { label: 'promo text', onClick: jest.fn() };
+    it('renders the button with the given label', () => {
+        const button = { label: 'promo text', onClick: jest.fn() };
 
         renderWithProviders(
-            <PromotionalBanner link={link} onDismiss={onDismiss} />,
+            <PromotionalBanner button={button} logo="lifeguide" onDismiss={onDismiss} />,
         );
 
         expect(screen.getByText('promo text')).toBeInTheDocument();
@@ -29,18 +29,19 @@ describe('PromotionalBanner', () => {
 
     it('does not render the dismiss button when onDismiss is not provided', () => {
         renderWithProviders(
-            <PromotionalBanner link={someLink} />,
+            <PromotionalBanner button={someButton} logo="lifeguide" />,
         );
 
-        expect(screen.queryByRole('button')).not.toBeInTheDocument();
+        expect(screen.getAllByRole('button')).toHaveLength(1);
     });
 
     it('calls onDismiss when the dismiss button is clicked', async () => {
         renderWithProviders(
-            <PromotionalBanner link={someLink} onDismiss={onDismiss} />,
+            <PromotionalBanner button={someButton} logo="lifeguide" onDismiss={onDismiss} />,
         );
 
-        await userEvent.click(screen.getByRole('button'));
+        const buttons = screen.getAllByRole('button');
+        await userEvent.click(buttons[buttons.length - 1]);
 
         expect(onDismiss).toHaveBeenCalledTimes(1);
     });

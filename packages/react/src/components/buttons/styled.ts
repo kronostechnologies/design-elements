@@ -3,7 +3,7 @@ import { ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { Icon, type IconProps } from '../icon';
 import { buttonTypesToDarkenEquisoftLogo, darkenOnComponentHover } from '../icon/equisoft-logo';
-import { Spinner } from '../spinner';
+import { ProgressIndicator } from '../progress-indicator';
 import { AbstractButton } from './abstract';
 import { type BaseButtonStyles, getBaseButtonStyles } from './abstract/styles';
 import type { ButtonProps, ButtonType } from './button';
@@ -75,7 +75,7 @@ export const StyledButton = styled(AbstractButton)<{ theme: ResolvedTheme } & Bu
     ${getButtonTypeStyles}
 `;
 
-export const StyledSpinner = styled(Spinner)`
+export const StyledSpinner = styled(ProgressIndicator)`
     margin-right: var(--spacing-1x);
 `;
 

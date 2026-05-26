@@ -106,6 +106,15 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
         }
     };
 
+    const rightIconElement: ReactElement | undefined = rightIconName && (
+        <RightIcon
+            data-testid="right-icon"
+            name={rightIconName}
+            size={iconSize}
+            $buttonType={buttonType}
+        />
+    );
+
     return (
         <StyledButton
             autoFocus={autofocus}
@@ -126,8 +135,9 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
             {children}
             {loading ? (
                 <>
-                    <StyledSpinner />
+                    <StyledSpinner data-testid="loading-indicator" />
                     {loadingLabel || t('loadingLabel')}
+                    {rightIconElement}
                 </>
             ) : (
                 <>
@@ -140,14 +150,7 @@ export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProp
                         />
                     )}
                     {label}
-                    {rightIconName && (
-                        <RightIcon
-                            data-testid="right-icon"
-                            name={rightIconName}
-                            size={iconSize}
-                            $buttonType={buttonType}
-                        />
-                    )}
+                    {rightIconElement}
                 </>
             )}
         </StyledButton>

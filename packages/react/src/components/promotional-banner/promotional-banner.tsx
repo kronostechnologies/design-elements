@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { equisoftColors } from '../../themes';
 import { IconButton } from '../buttons';
+import { Logo, type LogoName } from '../logo';
 import { Tooltip } from '../tooltip';
 import { backgroundGradientEnd, backgroundGradientStart } from './colors';
-import { PromotionalLink, type PromotionalLinkProps } from './promotional-link';
+import { PromotionalButton, type PromotionalButtonProps } from '../promotional-button';
 
 const Banner = styled.div`
     align-items: center;
@@ -44,28 +45,31 @@ const Buttons = styled.div`
 `;
 
 export interface PromotionalBannerProps {
-    link: PromotionalLinkProps;
+    button: PromotionalButtonProps;
+    logo: LogoName;
 
     onDismiss?(): void;
 }
 
 export const PromotionalBanner: FC<PropsWithChildren<PromotionalBannerProps>> = ({
     children,
-    link,
+    button,
+    logo,
     onDismiss,
 }) => {
     const { t } = useTranslation('promotional-banner');
     return (
         <Banner>
             <Text>
+                {logo && <Logo name={logo} />}
                 {children}
             </Text>
             <Buttons>
-                <PromotionalLink
-                    href={link.href}
-                    label={link.label}
-                    loading={link.loading}
-                    onClick={link.onClick}
+                <PromotionalButton
+                    label={button.label}
+                    loading={button.loading}
+                    loadingLabel={button.loadingLabel}
+                    onClick={button.onClick}
                 />
 
                 {onDismiss && (

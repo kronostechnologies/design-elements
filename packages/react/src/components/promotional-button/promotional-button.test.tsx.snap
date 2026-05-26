@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
-.c2 {
-  color: #006296;
-  height: 64px;
-  width: 64px;
-}
-
-.c4 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
+exports[`PromotionalButton does not render the left icon when loading 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -57,19 +39,6 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: var(--spacing-1x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c0:focus-visible {
@@ -83,20 +52,32 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
   width: var(--size-1x);
 }
 
-.c0:focus-visible {
+.c3 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c0:hover,
-.c0[aria-expanded='true'] {
+.c1:hover,
+.c1[aria-expanded='true'] {
   background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c0[aria-disabled='true'] {
+.c1[aria-disabled='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
@@ -104,21 +85,24 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
   pointer-events: none;
 }
 
-.c3 {
+.c4 {
   margin-right: var(--spacing-1x);
 }
 
-.c1 {
+.c5 {
+  margin-left: var(--spacing-1x);
+}
+
+.c2 {
   background: transparent;
   border: none;
-  color: #84C6EA;
   line-height: normal;
   padding: 2px var(--spacing-2x);
   position: relative;
   z-index: 0;
 }
 
-.c1::before {
+.c2::before {
   background: linear-gradient( 90deg, #f99d99, #84c6ea );
   border-radius: var(--border-radius-4x);
   content: '';
@@ -131,23 +115,19 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
   z-index: -1;
 }
 
-.c1:hover::before {
+.c2:hover::before {
   background: linear-gradient( 90deg, #7b1a15, #003a5a );
 }
 
 <div>
-  <a
+  <button
     aria-disabled="true"
-    class="c0 c1"
-    data-testid="link"
-    id="uuid1"
-    rel="noopener noreferrer"
-    tabindex="-1"
-    target="_blank"
+    class="c0 c1 c2"
+    type="button"
   >
     <svg
-      class="c2 c3"
-      data-testid="link-loading"
+      class="c3 c4"
+      data-testid="loading-indicator"
       height="16"
       viewBox="0 0 200 200"
       width="16"
@@ -211,21 +191,20 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
         transform-origin="center"
       />
     </svg>
-    Loading
+    Loading...
     <svg
       aria-hidden="true"
-      class="lucide lucide-external-link"
-      data-testid="external-link-icon"
+      class="lucide lucide-external-link c5"
+      data-testid="right-icon"
       fill="none"
       focusable="false"
-      height="16"
-      role="img"
+      height="24"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
       viewBox="0 0 24 24"
-      width="16"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -238,30 +217,12 @@ exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
         d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
       />
     </svg>
-    <span
-      class="c4"
-      data-testid="screen-reader-text"
-    >
-      (opens in a new tab)
-    </span>
-  </a>
+  </button>
 </div>
 `;
 
-exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
-.c4 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.c1 {
+exports[`PromotionalButton renders when not loading 1`] = `
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -299,46 +260,39 @@ exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: #006296;
-  color: #006296;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: var(--spacing-1x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
-.c1:focus-visible {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1 > svg {
+.c0 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c1:focus-visible {
+.c2 {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c1:hover,
-.c1[aria-expanded='true'] {
+.c2:hover,
+.c2[aria-expanded='true'] {
   background-color: transparent;
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c1[aria-disabled='true'] {
+.c2[aria-disabled='true'] {
   background-color: transparent;
   border-color: #84C6EA;
   color: #84C6EA;
@@ -346,11 +300,19 @@ exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
   pointer-events: none;
 }
 
-.c0:hover .c3.c3 > g {
+.c4 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1:hover .c4.c4 > g {
   fill: #7b1a15;
 }
 
-.c2 {
+.c5 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
   background: transparent;
   border: none;
   line-height: normal;
@@ -359,7 +321,7 @@ exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
   z-index: 0;
 }
 
-.c2::before {
+.c3::before {
   background: linear-gradient( 90deg, #cd2c23, #006296 );
   border-radius: var(--border-radius-4x);
   content: '';
@@ -372,46 +334,39 @@ exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
   z-index: -1;
 }
 
-.c2:hover::before {
+.c3:hover::before {
   background: linear-gradient( 90deg, #7b1a15, #003a5a );
 }
 
 <div>
-  <a
-    aria-disabled="false"
-    class="c0 c1 c2"
-    data-testid="link"
-    href="#"
-    id="uuid1"
-    rel="noopener noreferrer"
-    tabindex="0"
-    target="_blank"
+  <button
+    class="c0 c1 c2 c3"
+    type="button"
   >
     <svg
       aria-hidden="true"
-      class="c3"
+      class="c4"
       color="currentColor"
-      data-testid="link-icon"
+      data-testid="left-icon"
       focusable="false"
-      height="16"
+      height="24"
       icon-name="logo-equisoft-ico"
-      width="16"
+      width="24"
     />
-    Ready
+    Some promo
     <svg
       aria-hidden="true"
-      class="lucide lucide-external-link"
-      data-testid="external-link-icon"
+      class="lucide lucide-external-link c5"
+      data-testid="right-icon"
       fill="none"
       focusable="false"
-      height="16"
-      role="img"
+      height="24"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
       viewBox="0 0 24 24"
-      width="16"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -424,12 +379,6 @@ exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
         d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
       />
     </svg>
-    <span
-      class="c4"
-      data-testid="screen-reader-text"
-    >
-      (opens in a new tab)
-    </span>
-  </a>
+  </button>
 </div>
 `;
