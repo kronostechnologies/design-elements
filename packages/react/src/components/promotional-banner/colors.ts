@@ -1,3 +1,5 @@
+export const backgroundGradientStart = '#fbeeed';
+export const backgroundGradientEnd = '#ebf2f6';
 export const gradientStart = '#cd2c23';
 export const gradientStartHover = '#7b1a15';
 export const gradientStartLoading = '#f99d99';

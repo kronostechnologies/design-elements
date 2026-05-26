@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PromotionalLink does not render the equisoft icon when loading 1`] = `
+.c2 {
+  color: #006296;
+  height: 64px;
+  width: 64px;
+}
+
+.c4 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c0:hover,
+.c0[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c0[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1 {
+  background: transparent;
+  border: none;
+  color: #84C6EA;
+  line-height: normal;
+  padding: 2px var(--spacing-2x);
+  position: relative;
+  z-index: 0;
+}
+
+.c1::before {
+  background: linear-gradient( 90deg, #f99d99, #84c6ea );
+  border-radius: var(--border-radius-4x);
+  content: '';
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask-composite: exclude;
+  padding: 1px;
+  position: absolute;
+  z-index: -1;
+}
+
+.c1:hover::before {
+  background: linear-gradient( 90deg, #7b1a15, #003a5a );
+}
+
+<div>
+  <a
+    aria-disabled="true"
+    class="c0 c1"
+    data-testid="link"
+    id="uuid1"
+    rel="noopener noreferrer"
+    tabindex="-1"
+    target="_blank"
+  >
+    <svg
+      class="c2 c3"
+      data-testid="link-loading"
+      height="16"
+      viewBox="0 0 200 200"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <radialgradient
+        cx=".66"
+        cy=".3125"
+        fx=".66"
+        fy=".3125"
+        gradientTransform="scale(1.5)"
+        id="a4"
+      >
+        <stop
+          offset="0"
+          stop-color="currentColor"
+          stop-opacity="0"
+        />
+        <stop
+          offset="0.5"
+          stop-color="currentColor"
+          stop-opacity="0.3"
+        />
+        <stop
+          offset="1"
+          stop-color="currentColor"
+        />
+      </radialgradient>
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="88"
+        stroke="url(#a4)"
+        stroke-dasharray="400 400"
+        stroke-dashoffset="0"
+        stroke-linecap="round"
+        stroke-width="24"
+        transform-origin="center"
+      >
+        <animatetransform
+          attributeName="transform"
+          calcMode="spline"
+          dur="1s"
+          keySplines="0 0 1 1"
+          keyTimes="0;1"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0;360"
+        />
+      </circle>
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        opacity=".2"
+        r="88"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="24"
+        transform-origin="center"
+      />
+    </svg>
+    Loading
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-external-link"
+      data-testid="external-link-icon"
+      fill="none"
+      focusable="false"
+      height="16"
+      role="img"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 3h6v6"
+      />
+      <path
+        d="M10 14 21 3"
+      />
+      <path
+        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+      />
+    </svg>
+    <span
+      class="c4"
+      data-testid="screen-reader-text"
+    >
+      (opens in a new tab)
+    </span>
+  </a>
+</div>
+`;
+
+exports[`PromotionalLink renders the equisoft icon when not loading 1`] = `
+.c4 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #84C6EA;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #84C6EA;
+  color: #84C6EA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c0:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+.c2 {
+  background: transparent;
+  border: none;
+  line-height: normal;
+  padding: 2px var(--spacing-2x);
+  position: relative;
+  z-index: 0;
+}
+
+.c2::before {
+  background: linear-gradient( 90deg, #cd2c23, #006296 );
+  border-radius: var(--border-radius-4x);
+  content: '';
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask-composite: exclude;
+  padding: 1px;
+  position: absolute;
+  z-index: -1;
+}
+
+.c2:hover::before {
+  background: linear-gradient( 90deg, #7b1a15, #003a5a );
+}
+
+<div>
+  <a
+    aria-disabled="false"
+    class="c0 c1 c2"
+    data-testid="link"
+    href="#"
+    id="uuid1"
+    rel="noopener noreferrer"
+    tabindex="0"
+    target="_blank"
+  >
+    <svg
+      aria-hidden="true"
+      class="c3"
+      color="currentColor"
+      data-testid="link-icon"
+      focusable="false"
+      height="16"
+      icon-name="logo-equisoft-ico"
+      width="16"
+    />
+    Ready
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-external-link"
+      data-testid="external-link-icon"
+      fill="none"
+      focusable="false"
+      height="16"
+      role="img"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 3h6v6"
+      />
+      <path
+        d="M10 14 21 3"
+      />
+      <path
+        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+      />
+    </svg>
+    <span
+      class="c4"
+      data-testid="screen-reader-text"
+    >
+      (opens in a new tab)
+    </span>
+  </a>
+</div>
+`;

@@ -88,7 +88,7 @@ export const PromotionalLink: FC<PromotionalLinkProps> = ({
             onClick={handleClick}
             $loading={loading}
         >
-            {loading && <StyledLoading />}
+            {loading && <StyledLoading data-testid="link-loading" />}
             {label}
         </StyledLink>
     );

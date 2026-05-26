@@ -4,7 +4,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { equisoftColors } from '../../themes';
 import { IconButton } from '../buttons';
 import { Tooltip } from '../tooltip';
-import { gradientEnd, gradientStart } from './colors';
+import { backgroundGradientEnd, backgroundGradientStart } from './colors';
 import { PromotionalLink, type PromotionalLinkProps } from './promotional-link';
 
 const Banner = styled.div`
@@ -13,8 +13,8 @@ const Banner = styled.div`
     background:
         linear-gradient(
             90deg,
-            color-mix(${gradientStart} 8%, transparent) 0%,
-            color-mix(${gradientEnd} 8%, transparent) 100%
+            ${backgroundGradientStart} 0%,
+            ${backgroundGradientEnd} 100%
         );
     border: 1px solid #0062961a;
     border-radius: var(--border-radius-2x);
