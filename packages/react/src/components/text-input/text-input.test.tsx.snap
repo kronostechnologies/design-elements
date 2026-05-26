@@ -889,6 +889,7 @@ input + .c1 {
         class="c4 c5 eds-TextInput-leftAdornment"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-phone"
           fill="none"
           focusable="false"

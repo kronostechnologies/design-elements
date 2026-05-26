@@ -38,7 +38,6 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
     return (
         <StyledAbstractButton
-            $focusable={focusable}
             $isMobile={providedIsMobile !== undefined ? providedIsMobile : isMobile}
             $size={size}
             onClick={handleClick}

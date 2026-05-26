@@ -268,11 +268,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     {icon}
                     {label}
                     {hasCaret && (
-                        <StyledRightIcon
-                            aria-hidden="true"
-                            name={isOpen ? 'chevronUp' : 'chevronDown'}
-                            size="16"
-                        />
+                        <StyledRightIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />
                     )}
                 </StyledButton>
             )}

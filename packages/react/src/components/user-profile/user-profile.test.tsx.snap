@@ -672,7 +672,7 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
             Option E
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c24"
             fill="none"
             focusable="false"
@@ -1553,7 +1553,7 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
             Option E
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c23"
             fill="none"
             focusable="false"
@@ -2262,7 +2262,7 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
             Option E
           </span>
           <svg
-            aria-label="opens in a new tab"
+            aria-hidden="true"
             class="lucide lucide-external-link c24"
             fill="none"
             focusable="false"

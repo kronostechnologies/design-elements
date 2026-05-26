@@ -115,28 +115,9 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 `;
 
-function getMessageLabel(type: ToastType): string {
-    switch (type) {
-        case 'discovery':
-            return 'discovery';
-        case 'success':
-            return 'success';
-        case 'warning':
-            return 'warning';
-        case 'alert':
-            return 'alert';
-        case 'neutral':
-        default:
-            return 'information';
-    }
-}
-
 type MessageIconProps = IconProps & Pick<ToastWrapperProps, 'type'> & { $isMobile: boolean };
 
-const MessageIcon = styled(Icon).attrs(({ type }: MessageIconProps) => ({
-    focusable: true,
-    'aria-label': getMessageLabel(type),
-}))<MessageIconProps>`
+const MessageIcon = styled(Icon)<MessageIconProps>`
     align-self: flex-start;
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     margin-top: 0.25rem;

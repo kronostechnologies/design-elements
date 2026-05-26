@@ -384,15 +384,10 @@ export const Menu = forwardRef(({
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
                             {opt.iconName && (
-                                <StyledIcon
-                                    focusable={false}
-                                    aria-hidden
-                                    name={opt.iconName}
-                                    size="1rem"
-                                />
+                                <StyledIcon name={opt.iconName} size="1rem" />
                             )}
                             <Label>{opt.label}</Label>
-                            {opt.options && <Icon aria-hidden name="chevronRight" size="1rem" />}
+                            {opt.options && <Icon name="chevronRight" size="1rem" />}
                         </Button>
                         {opt.options && isSubMenuOpen(opt) && (
                             <SubMenu

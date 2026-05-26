@@ -501,6 +501,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-grip"
             fill="none"
             focusable="false"
@@ -855,7 +856,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
               Option A
             </span>
             <svg
-              aria-label="opens in a new tab"
+              aria-hidden="true"
               class="lucide lucide-external-link c22"
               fill="none"
               focusable="false"
@@ -900,7 +901,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
               Option B
             </span>
             <svg
-              aria-label="opens in a new tab"
+              aria-hidden="true"
               class="lucide lucide-external-link c22"
               fill="none"
               focusable="false"
@@ -1439,6 +1440,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-grip"
             fill="none"
             focusable="false"
@@ -1703,7 +1705,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
               Option A
             </span>
             <svg
-              aria-label="opens in a new tab"
+              aria-hidden="true"
               class="lucide lucide-external-link c22"
               fill="none"
               focusable="false"
@@ -1748,7 +1750,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
               Option B
             </span>
             <svg
-              aria-label="opens in a new tab"
+              aria-hidden="true"
               class="lucide lucide-external-link c22"
               fill="none"
               focusable="false"
@@ -1891,6 +1893,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="lucide lucide-grip"
       fill="none"
       focusable="false"

@@ -194,7 +194,6 @@ export const Tag = forwardRef(({
                     name={iconName}
                     size={getIconSize(isMobile)}
                     role="img"
-                    focusable
                     $isMobile={isMobile}
                     $tagSize={size}
                     $tagColor={color}

@@ -10,13 +10,11 @@ import type { ButtonProps, ButtonType } from './button';
 
 interface ButtonTypeStyles {
     buttonType: ButtonType;
-    focusable?: boolean;
     inverted?: boolean;
     theme: ResolvedTheme;
 }
 
 export function getButtonTypeStyles({
-    focusable,
     inverted,
     buttonType,
     theme,
@@ -24,7 +22,7 @@ export function getButtonTypeStyles({
     const inversionSuffix = inverted ? '-inverted' : '';
 
     return css`
-        ${focusable !== false && focus({ theme }, { inverted })};
+        ${focus({ theme }, { inverted })};
 
         background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-background-color`]};
         border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-border-color`]};
@@ -44,7 +42,7 @@ export function getButtonTypeStyles({
             cursor: not-allowed;
             ${buttonType === 'destructive-primary' && css`
                 &,
-                ${focusable !== false && '&:focus,'}
+                &:focus,
                 &:hover {
                     background-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-background-color`]};
                     border-color: ${theme.component[`button-${buttonType}${inversionSuffix}-disabled-border-color`]};
@@ -60,17 +58,16 @@ interface ButtonStylesProps extends ButtonTypeStyles, BaseButtonStyles {
 }
 
 export const getButtonStyles = ({
-    buttonType, inverted, focusable, $size, $isMobile, theme,
+    buttonType, inverted, $size, $isMobile, theme,
 }: ButtonStylesProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> => css`
     ${getBaseButtonStyles({
         $size,
         $isMobile,
-        $focusable: focusable,
         $inverted: inverted,
     })};
 
     ${getButtonTypeStyles({
-        buttonType, inverted, focusable, theme,
+        buttonType, inverted, theme,
     })};
 `;
 

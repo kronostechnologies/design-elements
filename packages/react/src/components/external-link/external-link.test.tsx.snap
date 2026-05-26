@@ -83,7 +83,7 @@ exports[`External Link matches snapshot (disabled) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     class="lucide lucide-external-link c3"
     fill="none"
     focusable="false"
@@ -239,7 +239,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     class="lucide lucide-external-link c4"
     fill="none"
     focusable="false"
@@ -393,7 +393,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     class="c3"
   />
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     class="lucide lucide-external-link c4"
     fill="none"
     focusable="false"
@@ -549,7 +549,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     class="lucide lucide-external-link c4"
     fill="none"
     focusable="false"
@@ -673,7 +673,7 @@ exports[`External Link matches snapshot 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
+    aria-hidden="true"
     class="lucide lucide-external-link c3"
     fill="none"
     focusable="false"

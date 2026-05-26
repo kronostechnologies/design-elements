@@ -549,7 +549,6 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
             >
                 {iconName && (
                     <TextIcon
-                        aria-hidden="true"
                         name={iconName}
                         size={isMobile ? '24' : '16'}
                         data-testid="textbox-icon"
@@ -560,7 +559,6 @@ export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
                     ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
                     : <TextWrapper>{firstSelectedOption?.label ?? ''}</TextWrapper>}
                 <Arrow
-                    aria-hidden="true"
                     data-testid="arrow"
                     $disabled={disabled}
                     $readOnly={readOnly}

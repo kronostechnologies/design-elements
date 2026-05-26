@@ -164,10 +164,10 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
     type="alert"
   >
     <svg
-      aria-label="alert"
+      aria-hidden="true"
       class="lucide lucide-octagon-alert c1"
       fill="none"
-      focusable="true"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -390,10 +390,10 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
     type="discovery"
   >
     <svg
-      aria-label="discovery"
+      aria-hidden="true"
       class="lucide lucide-lightbulb c1"
       fill="none"
-      focusable="true"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -616,10 +616,10 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
     type="neutral"
   >
     <svg
-      aria-label="information"
+      aria-hidden="true"
       class="lucide lucide-info c1"
       fill="none"
-      focusable="true"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -844,10 +844,10 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
     type="success"
   >
     <svg
-      aria-label="success"
+      aria-hidden="true"
       class="lucide lucide-check c1"
       fill="none"
-      focusable="true"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -1064,10 +1064,10 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
     type="warning"
   >
     <svg
-      aria-label="warning"
+      aria-hidden="true"
       class="lucide lucide-triangle-alert c1"
       fill="none"
-      focusable="true"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"

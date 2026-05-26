@@ -80,7 +80,7 @@ export const ItemContent: FC<ItemContentProps> = ({
     smallLabel = false,
 }) => (
     <>
-        { iconName && <StyledIcon aria-hidden="true" size="22" name={iconName} /> }
+        { iconName && <StyledIcon size="22" name={iconName} /> }
         <LabelContainer $device={device} $smallLabel={smallLabel}>
             <StyledDiv>
                 <StyledSpan>{label}</StyledSpan>

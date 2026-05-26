@@ -180,9 +180,10 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="alert"
+      aria-hidden="true"
       class="lucide lucide-octagon-alert c2"
       fill="none"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -434,9 +435,10 @@ exports[`GlobalBanner matches snapshot (desktop, discovery) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="discovery"
+      aria-hidden="true"
       class="lucide lucide-lightbulb c2"
       fill="none"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -695,9 +697,10 @@ exports[`GlobalBanner matches snapshot (desktop, neutral) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="neutral"
+      aria-hidden="true"
       class="lucide lucide-info c2"
       fill="none"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -962,9 +965,10 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="warning"
+      aria-hidden="true"
       class="lucide lucide-triangle-alert c2"
       fill="none"
+      focusable="false"
       height="16"
       role="img"
       stroke="currentColor"
@@ -1200,9 +1204,10 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="alert"
+      aria-hidden="true"
       class="lucide lucide-octagon-alert c2"
       fill="none"
+      focusable="false"
       height="24"
       role="img"
       stroke="currentColor"
@@ -1458,9 +1463,10 @@ exports[`GlobalBanner matches snapshot (mobile, discovery) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="discovery"
+      aria-hidden="true"
       class="lucide lucide-lightbulb c2"
       fill="none"
+      focusable="false"
       height="24"
       role="img"
       stroke="currentColor"
@@ -1723,9 +1729,10 @@ exports[`GlobalBanner matches snapshot (mobile, neutral) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="neutral"
+      aria-hidden="true"
       class="lucide lucide-info c2"
       fill="none"
+      focusable="false"
       height="24"
       role="img"
       stroke="currentColor"
@@ -1994,9 +2001,10 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
     class="c1"
   >
     <svg
-      aria-label="warning"
+      aria-hidden="true"
       class="lucide lucide-triangle-alert c2"
       fill="none"
+      focusable="false"
       height="24"
       role="img"
       stroke="currentColor"

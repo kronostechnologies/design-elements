@@ -82,7 +82,6 @@ export const IconButton = forwardRef(({
         >
             { children || (
                 <Icon
-                    aria-hidden="true"
                     name={iconName}
                     size={isMobile ? '20' : '16'}
                 />

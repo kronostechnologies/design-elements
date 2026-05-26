@@ -72,7 +72,6 @@ export const StyledLink = styled.a<{
             ? getButtonStyles({
                 $size: $buttonProps.size,
                 buttonType: $buttonProps.buttonType || 'secondary',
-                focusable: $buttonProps.focusable,
                 inverted: $buttonProps.inverted,
                 $isMobile,
                 theme,

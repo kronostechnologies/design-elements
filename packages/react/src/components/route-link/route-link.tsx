@@ -69,7 +69,7 @@ export const RouteLink: FC<RouteLinkProps> = ({
             to={href}
             onClick={onClick}
         >
-            {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
+            {iconName && <Icon name={iconName} size="16" />}
             {label}
         </Link>
     );

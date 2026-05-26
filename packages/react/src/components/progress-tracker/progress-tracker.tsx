@@ -182,7 +182,7 @@ const Step: FC<StepProps> = ({
 
     const content = (
         <>
-            {showUncompletedIcon && <NotificationBadgeIcon name='alertCircle' size='16' aria-hidden="true" />}
+            {showUncompletedIcon && <NotificationBadgeIcon name='alertCircle' size='16' />}
             {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
             {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
         </>

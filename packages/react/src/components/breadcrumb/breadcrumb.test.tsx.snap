@@ -136,6 +136,7 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
               HOME
             </a>
             <svg
+              aria-hidden="true"
               class="lucide lucide-chevron-right c5"
               fill="none"
               focusable="false"
@@ -164,6 +165,7 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
               ROUTE
             </a>
             <svg
+              aria-hidden="true"
               class="lucide lucide-chevron-right c5"
               fill="none"
               focusable="false"
@@ -322,6 +324,7 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             HOME
           </a>
           <svg
+            aria-hidden="true"
             class="lucide lucide-chevron-right c5"
             fill="none"
             focusable="false"
@@ -350,6 +353,7 @@ exports[`Breadcrumb Snapshots matches snapshot (Three or more entries) 1`] = `
             ROUTE
           </a>
           <svg
+            aria-hidden="true"
             class="lucide lucide-chevron-right c5"
             fill="none"
             focusable="false"
@@ -567,6 +571,7 @@ exports[`Breadcrumb Snapshots matches snapshot (double entries) 1`] = `
             HOME
           </a>
           <svg
+            aria-hidden="true"
             class="lucide lucide-chevron-right c5"
             fill="none"
             focusable="false"

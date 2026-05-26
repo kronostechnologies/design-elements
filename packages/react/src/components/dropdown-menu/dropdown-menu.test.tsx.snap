@@ -316,7 +316,7 @@ exports[`DropdownMenu matches the snapshot 1`] = `
           ExternalA
         </span>
         <svg
-          aria-label="opens in a new tab"
+          aria-hidden="true"
           class="lucide lucide-external-link c10"
           fill="none"
           focusable="false"
@@ -361,7 +361,7 @@ exports[`DropdownMenu matches the snapshot 1`] = `
           ExternalB
         </span>
         <svg
-          aria-label="opens in a new tab"
+          aria-hidden="true"
           class="lucide lucide-external-link c10"
           fill="none"
           focusable="false"
@@ -406,7 +406,7 @@ exports[`DropdownMenu matches the snapshot 1`] = `
           ExternalC
         </span>
         <svg
-          aria-label="opens in a new tab"
+          aria-hidden="true"
           class="lucide lucide-external-link c10"
           fill="none"
           focusable="false"

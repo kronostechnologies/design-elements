@@ -286,10 +286,10 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         role="option"
       >
         <span
-          aria-hidden="true"
           class="c3 c4"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-check c5 c6"
             fill="none"
             focusable="false"
@@ -331,10 +331,10 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         role="option"
       >
         <span
-          aria-hidden="true"
           class="c3 c11"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-check c5 c6"
             fill="none"
             focusable="false"
@@ -371,10 +371,10 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         role="option"
       >
         <span
-          aria-hidden="true"
           class="c3 c4"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-check c5 c6"
             fill="none"
             focusable="false"
@@ -412,11 +412,11 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         role="option"
       >
         <span
-          aria-hidden="true"
           class="c3 c13"
           disabled=""
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-check c5 c6"
             fill="none"
             focusable="false"
@@ -453,10 +453,10 @@ exports[`Listbox matches the snapshot (multiselect) 1`] = `
         role="option"
       >
         <span
-          aria-hidden="true"
           class="c3 c11"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-check c5 c6"
             fill="none"
             focusable="false"

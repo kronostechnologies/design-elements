@@ -175,7 +175,6 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         >
             {children}
             <StyledIcon
-                aria-hidden="true"
                 data-testid="chevron-icon"
                 name={visible ? 'chevronUp' : 'chevronDown'}
                 size="16"

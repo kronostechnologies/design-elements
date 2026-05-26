@@ -1672,6 +1672,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c8 c9"
               fill="none"
               focusable="false"
@@ -1689,6 +1690,7 @@ exports[`Table has selectable rows styles 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="lucide lucide-minus c10 c11"
               fill="none"
               focusable="false"
@@ -1746,6 +1748,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c8 c9"
               fill="none"
               focusable="false"
@@ -1763,6 +1766,7 @@ exports[`Table has selectable rows styles 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="lucide lucide-minus c10 c11"
               fill="none"
               focusable="false"
@@ -1816,6 +1820,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c8 c9"
               fill="none"
               focusable="false"
@@ -1833,6 +1838,7 @@ exports[`Table has selectable rows styles 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="lucide lucide-minus c10 c11"
               fill="none"
               focusable="false"
@@ -1886,6 +1892,7 @@ exports[`Table has selectable rows styles 1`] = `
             class="c6 c7"
           >
             <svg
+              aria-hidden="true"
               class="lucide lucide-check c8 c9"
               fill="none"
               focusable="false"
@@ -1903,6 +1910,7 @@ exports[`Table has selectable rows styles 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="lucide lucide-minus c10 c11"
               fill="none"
               focusable="false"
@@ -2214,6 +2222,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 1
           <svg
+            aria-hidden="true"
             class="lucide lucide-arrow-down c5"
             fill="none"
             focusable="false"
@@ -2245,6 +2254,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 2
           <svg
+            aria-hidden="true"
             class="lucide lucide-chevrons-up-down c5"
             fill="none"
             focusable="false"

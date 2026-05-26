@@ -66,18 +66,12 @@ export const PasswordRule: FC<PasswordConditionProps> = ({
     if (!isEmpty) {
         if (isValid) {
             icon = (
-                <StyledIcon
-                    aria-hidden="true"
-                    focusable={false}
-                    name="check"
-                    size="16"
-                />
+                <StyledIcon name="check" size="16" />
             );
         } else {
             icon = (
                 <StyledIcon
                     aria-label={`${t('error')},`}
-                    focusable
                     name="alertOctagon"
                     role="img"
                     size="16"

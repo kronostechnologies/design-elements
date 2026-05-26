@@ -346,6 +346,7 @@ exports[`Disclosure IconButton matches the snapshot when collapsed 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="lucide lucide-house"
         fill="none"
         focusable="false"
@@ -483,6 +484,7 @@ exports[`Disclosure IconButton matches the snapshot when expanded 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="lucide lucide-house"
         fill="none"
         focusable="false"

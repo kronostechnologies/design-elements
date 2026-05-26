@@ -81,9 +81,9 @@ export const ExternalLink: FC<ExternalLinkProps> = ({
             onClick={disabled ? undefined : handleClick}
             target={target}
         >
-            {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
+            {iconName && <LeftIcon name={iconName} size="16" />}
             <StyledLabel>{label}</StyledLabel>
-            <ExternalIcon aria-label={t('opensInNewTab')} name="externalLink" role="img" size="16" />
+            <ExternalIcon name="externalLink" role="img" size="16" />
             {opensInNewTab && (
                 <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
             )}

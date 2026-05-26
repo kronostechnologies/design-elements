@@ -8,6 +8,7 @@ import { devConsole } from '../../utils/dev-console';
 
 interface BaseProps {
     disabled?: boolean;
+    focusable?: boolean;
     onChange?(pressed: boolean): void;
     pressed: boolean;
 }
@@ -72,6 +73,7 @@ const InnerButton = styled(Button)`
 export const ToggleButton: FC<ToggleButtonProps> = ({
     ariaLabel,
     disabled,
+    focusable = true,
     iconName,
     onChange,
     pressed,
@@ -103,6 +105,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
             aria-pressed={pressed}
             buttonType='primary'
             disabled={disabled}
+            focusable={focusable}
             iconName={iconName!}
             onClick={handleClick}
             type='button'
@@ -113,6 +116,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
             aria-pressed={pressed}
             buttonType='primary'
             disabled={disabled}
+            focusable={focusable}
             label={label}
             leftIconName={hasIconName ? iconName : undefined}
             onClick={handleClick}
