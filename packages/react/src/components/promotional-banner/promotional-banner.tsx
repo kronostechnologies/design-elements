@@ -4,9 +4,9 @@ import { useTranslation } from '../../i18n/use-translation';
 import { equisoftColors } from '../../themes';
 import { IconButton } from '../buttons';
 import { Logo, type LogoName } from '../logo';
+import { PromotionalButton, type PromotionalButtonProps } from '../promotional-button';
 import { Tooltip } from '../tooltip';
 import { backgroundGradientEnd, backgroundGradientStart } from './colors';
-import { PromotionalButton, type PromotionalButtonProps } from '../promotional-button';
 
 const Banner = styled.div`
     align-items: center;
@@ -44,6 +44,10 @@ const Buttons = styled.div`
     gap: var(--spacing-half);
 `;
 
+const StyledLogo = styled(Logo)`
+    height: var(--size-1x);
+`;
+
 export interface PromotionalBannerProps {
     button: PromotionalButtonProps;
     logo: LogoName;
@@ -61,7 +65,7 @@ export const PromotionalBanner: FC<PropsWithChildren<PromotionalBannerProps>> = 
     return (
         <Banner>
             <Text>
-                {logo && <Logo name={logo} />}
+                {logo && <StyledLogo name={logo} />}
                 {children}
             </Text>
             <Buttons>

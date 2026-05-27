@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Global Header matches the snapshot (desktop) 1`] = `
-.c2 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -18,7 +18,7 @@ exports[`Global Header matches the snapshot (desktop) 1`] = `
   width: 100%;
 }
 
-.c2 > * + * {
+.c3 > * + * {
   margin-left: var(--spacing-1x);
 }
 
@@ -68,6 +68,10 @@ exports[`Global Header matches the snapshot (desktop) 1`] = `
   height: 100%;
 }
 
+.c2 {
+  height: 24px;
+}
+
 <header
   class="c0"
 >
@@ -79,13 +83,13 @@ exports[`Global Header matches the snapshot (desktop) 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
       icon-name="logo-equisoft-reversed"
-      style="height: 24px;"
     />
   </a>
   <div
-    class="c2"
+    class="c3"
   >
     Hello, World!
   </div>
@@ -93,7 +97,7 @@ exports[`Global Header matches the snapshot (desktop) 1`] = `
 `;
 
 exports[`Global Header matches the snapshot (mobile) 1`] = `
-.c2 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -133,18 +137,18 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2:focus-visible {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c2 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c3 {
+.c4 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
@@ -152,20 +156,20 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   width: var(--size-2x);
 }
 
-.c3:focus-visible {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c3:hover,
-.c3[aria-expanded='true'] {
+.c4:hover,
+.c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c3[aria-disabled='true'] {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -173,7 +177,7 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   pointer-events: none;
 }
 
-.c6 {
+.c7 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.2);
   height: calc(100vh - 56px);
@@ -192,12 +196,12 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   z-index: 100;
 }
 
-.c5 > .c5 {
+.c6 > .c6 {
   height: 100%;
   top: 0;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
 }
@@ -248,6 +252,10 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   height: 100%;
 }
 
+.c2 {
+  height: 100%;
+}
+
 <header
   class="c0"
 >
@@ -259,16 +267,16 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
       icon-name="logo-equisoft-reversed"
-      style="height: 100%;"
     />
   </a>
   <button
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2 c3 c4"
+    class="c3 c4 c5"
     type="button"
   >
     <svg
@@ -298,7 +306,7 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
   </button>
   <div
     aria-hidden="true"
-    class="c5 c6"
+    class="c6 c7"
     id="menu-drawer"
     origin="right"
     width="100%"
@@ -311,7 +319,7 @@ exports[`Global Header matches the snapshot (mobile) 1`] = `
 `;
 
 exports[`Global Header mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
-.c2 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -351,18 +359,18 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   user-select: none;
 }
 
-.c2:focus-visible {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #84C6EA;
   outline-offset: -2px;
 }
 
-.c2 > svg {
+.c3 > svg {
   height: var(--size-1halfx);
   width: var(--size-1halfx);
 }
 
-.c3 {
+.c4 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
@@ -370,20 +378,20 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   width: var(--size-2x);
 }
 
-.c3:focus-visible {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c3:hover,
-.c3[aria-expanded='true'] {
+.c4:hover,
+.c4[aria-expanded='true'] {
   background-color: rgb(0 0 0 / 0.5);
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c3[aria-disabled='true'] {
+.c4[aria-disabled='true'] {
   background-color: transparent;
   border-color: transparent;
   color: #006296;
@@ -391,7 +399,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   pointer-events: none;
 }
 
-.c6 {
+.c7 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.2);
   height: calc(100vh - 56px);
@@ -410,12 +418,12 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   z-index: 100;
 }
 
-.c5 > .c5 {
+.c6 > .c6 {
   height: 100%;
   top: 0;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
 }
@@ -466,6 +474,10 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   height: 100%;
 }
 
+.c2 {
+  height: 100%;
+}
+
 <header
   class="c0"
 >
@@ -477,16 +489,16 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
       icon-name="logo-equisoft-reversed"
-      style="height: 100%;"
     />
   </a>
   <button
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2 c3 c4"
+    class="c3 c4 c5"
     type="button"
   >
     <svg
@@ -516,7 +528,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   </button>
   <div
     aria-hidden="true"
-    class="c5 c6"
+    class="c6 c7"
     id="menu-drawer"
     origin="right"
     width="100%"

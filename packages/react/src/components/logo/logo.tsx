@@ -1,5 +1,4 @@
-import { ReactElement } from 'react';
-
+import { type FC } from 'react';
 import EquisoftAnalyzeMobile from '../../logos/analyze/analyze-reverse-mobile.svg';
 import EquisoftAnalyze from '../../logos/analyze/analyze-reverse.svg';
 import EquisoftApplyMobile from '../../logos/apply/apply-reverse-mobile.svg';
@@ -63,25 +62,19 @@ const logoMapping = {
 export type LogoName = keyof typeof logoMapping;
 
 export interface LogoProps {
+    className?: string;
     name?: LogoName;
     mobile?: boolean;
 }
 
-const smallLogos: LogoName[] = ['default', 'plan', 'connect'];
-
-function getLogoHeight({ name, mobile }: Required<LogoProps>): string {
-    if (!mobile && smallLogos.includes(name)) {
-        return '24px';
-    }
-    return '100%';
-}
-
-export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElement | null => {
+export const Logo: FC<LogoProps> = ({
+    className,
+    mobile = false,
+    name = 'default',
+}) => {
     const Component = logoMapping[name][mobile ? 'mobile' : 'desktop'];
 
-    const height = getLogoHeight({ name, mobile });
-
-    return <Component style={{ height }} focusable="false" aria-hidden="true" />;
+    return <Component className={className} focusable="false" aria-hidden="true" />;
 };
 
 Logo.displayName = 'Logo';
