@@ -13,4 +13,5 @@ export const equisoftTheme = buildTheme(equisoftThemeCustomization);
 export const equisoftColors = {
     'logo-fill': '#ff4338',
     'logo-fill-hover': '#7b1a15',
+    text: '#012638',
 } as const;

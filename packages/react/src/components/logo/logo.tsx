@@ -1,5 +1,4 @@
-import { ReactElement } from 'react';
-
+import { type FC } from 'react';
 import EquisoftAnalyzeMobile from '../../logos/analyze/analyze-reverse-mobile.svg';
 import EquisoftAnalyze from '../../logos/analyze/analyze-reverse.svg';
 import EquisoftApplyMobile from '../../logos/apply/apply-reverse-mobile.svg';
@@ -11,6 +10,7 @@ import EquisoftDesignMobile from '../../logos/design/design-reverse-mobile.svg';
 import EquisoftDesign from '../../logos/design/design-reverse.svg';
 import EquisoftIllustrateMobile from '../../logos/illustrate/illustrate-reverse-mobile.svg';
 import EquisoftIllustrate from '../../logos/illustrate/illustrate-reverse.svg';
+import EquisoftLifeguide from '../../logos/lifeguide/lifeguide.svg';
 import EquisoftDefault from '../../logos/logo-equisoft-reversed.svg';
 import EquisoftManageMobile from '../../logos/manage/manage-reverse-mobile.svg';
 import EquisoftManage from '../../logos/manage/manage-reverse.svg';
@@ -45,6 +45,10 @@ const logoMapping = {
         desktop: EquisoftIllustrate,
         mobile: EquisoftIllustrateMobile,
     },
+    lifeguide: {
+        desktop: EquisoftLifeguide,
+        mobile: EquisoftLifeguide,
+    },
     manage: {
         desktop: EquisoftManage,
         mobile: EquisoftManageMobile,
@@ -57,26 +61,20 @@ const logoMapping = {
 
 export type LogoName = keyof typeof logoMapping;
 
-interface LogoProps {
+export interface LogoProps {
+    className?: string;
     name?: LogoName;
     mobile?: boolean;
 }
 
-const smallLogos: LogoName[] = ['default', 'plan', 'connect'];
-
-function getLogoHeight({ name, mobile }: Required<LogoProps>): string {
-    if (!mobile && smallLogos.includes(name)) {
-        return '24px';
-    }
-    return '100%';
-}
-
-export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElement | null => {
+export const Logo: FC<LogoProps> = ({
+    className,
+    mobile = false,
+    name = 'default',
+}) => {
     const Component = logoMapping[name][mobile ? 'mobile' : 'desktop'];
 
-    const height = getLogoHeight({ name, mobile });
-
-    return <Component style={{ height }} focusable="false" aria-hidden="true" />;
+    return <Component className={className} focusable="false" aria-hidden="true" />;
 };
 
 Logo.displayName = 'Logo';
