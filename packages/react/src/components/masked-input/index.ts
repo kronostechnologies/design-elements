@@ -1,4 +1,2 @@
-export * from './common-masks';
-export { MaskedInput } from './masked-input';
-export type { MaskedInputProps } from './masked-input';
-export type { BasicMask, DateMask, MaskProps } from './mask';
+export { DateMaskedInput } from './date-mask/date-masked-input';
+export type { DateMaskedInputProps } from './date-mask/date-masked-input';

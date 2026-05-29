@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event/dist/cjs/index.js';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../../test-utils/renderer';
 import { MaskedInput } from './masked-input';
 
 const PHONE_MASK = '(___) ___-____';

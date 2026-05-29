@@ -1,11 +1,9 @@
 import { FC } from 'react';
-import { BasicMask, MaskedInput, type MaskedInputProps, MaskProps } from '../masked-input';
+import type { BasicMask, MaskProps } from '../masked-input/internal/mask';
+import { MaskedInput, type MaskedInputProps } from '../masked-input/internal/masked-input';
 
 export type PhoneInputProps = Omit<MaskedInputProps, 'inputType' | keyof MaskProps> & BasicMask;
 
-/**
- * @deprecated Use {@link MaskedInput} with inputType=tel and a phone mask instead.
- */
 export const PhoneInput: FC<PhoneInputProps> = (props) => (
     <MaskedInput
         data-testid="phone-text-input"

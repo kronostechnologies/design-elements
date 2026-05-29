@@ -1,37 +1,15 @@
 import { useMaskito } from '@maskito/react';
 import { ChangeEvent, FC, type MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useDeviceContext } from '../device-context-provider';
-import type { RequiredLabelProps } from '../label/label';
-import { TextInput } from '../text-input';
-import { convertToMaskitoOptions, getTextMask, type MaskProps } from './mask';
-import { extractRawInput, formatDefaultValue } from './masked-input-utils';
+import { useDataAttributes } from '../../../hooks/use-data-attributes';
+import { useDeviceContext } from '../../device-context-provider';
+import type { RequiredLabelProps } from '../../label/label';
+import { TextInput } from '../../text-input';
+import { getTextMask, type MaskProps } from './mask';
+import { extractRawInput, formatValue } from './masked-input-utils';
+import { convertToMaskitoOptions } from './maskito';
 
 export const DEFAULT_SEPARATORS = '()- /.';
-
-export type MaskedInputProps = {
-    className?: string;
-    defaultValue?: string;
-    disabled?: boolean;
-    hint?: string;
-    id?: string;
-    inputType?: string;
-    label?: string;
-    name?: string;
-
-    onChange?(rawValue: string, formattedValue: string, event: ChangeEvent<HTMLInputElement>): void;
-
-    readOnly?: boolean;
-    required?: boolean;
-    requiredLabelType?: RequiredLabelProps['type'];
-    /**
-     * Separators contained in the mask that should be ignored when extracting the raw value.
-     * @default '()- /.'.
-     */
-    separators?: string;
-    validationErrorMessage?: string;
-} & MaskProps;
 
 const MaskContainer = styled.div<{ $isMobile: boolean }>`
     background: ${({ theme }) => theme.component['masked-input-background-color']};
@@ -62,6 +40,25 @@ const StyledTextInput = styled(TextInput)`
     margin: 0;
 `;
 
+export type MaskedInputProps = {
+    className?: string;
+    defaultValue?: string;
+    disabled?: boolean;
+    hint?: string;
+    id?: string;
+    inputType?: string;
+    label?: string;
+    name?: string;
+
+    onChange?(rawValue: string, formattedValue: string, event: ChangeEvent<HTMLInputElement>): void;
+
+    readOnly?: boolean;
+    required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
+    validationErrorMessage?: string;
+    value?: string;
+} & MaskProps;
+
 /**
  * @alpha This component is experimental and may change without a major version bump.
  */
@@ -78,12 +75,13 @@ export const MaskedInput: FC<MaskedInputProps> = ({
     readOnly,
     required,
     requiredLabelType,
-    separators = DEFAULT_SEPARATORS,
+    ignoredSeparators = DEFAULT_SEPARATORS,
     validationErrorMessage,
+    value,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
-    const separatorsSet = useMemo(() => new Set(separators), [separators]);
+    const ignoredSeparatorsSet: Set<string> = useMemo(() => new Set(ignoredSeparators), [ignoredSeparators]);
 
     const mask = useMemo(() => getTextMask(otherProps), [otherProps]);
     const maskitoOptions = useMemo(
@@ -97,13 +95,13 @@ export const MaskedInput: FC<MaskedInputProps> = ({
 
     const formattedDefault = useMemo(() => {
         if (!defaultValue) {
-            return '';
+            return undefined;
         }
-        return formatDefaultValue(defaultValue, maskitoOptions);
+        return formatValue(defaultValue, maskitoOptions);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const [displayValue, setDisplayValue] = useState(formattedDefault);
+    const [displayValue, setDisplayValue] = useState(formattedDefault || '');
     const [valid, setValid] = useState(true);
 
     const mergedRef = useCallback((el: HTMLInputElement | null) => {
@@ -120,14 +118,20 @@ export const MaskedInput: FC<MaskedInputProps> = ({
         }
     }, [hasInput, required]);
 
+    useEffect(() => {
+        if (value !== undefined) {
+            setDisplayValue(formatValue(value, maskitoOptions));
+        }
+    }, [maskitoOptions, value]);
+
     const handleInput = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setDisplayValue(newValue);
         setValid(true);
 
-        const rawValue = extractRawInput(newValue, separatorsSet);
+        const rawValue = extractRawInput(newValue, ignoredSeparatorsSet);
         onChange?.(rawValue, newValue, event as unknown as ChangeEvent<HTMLInputElement>);
-    }, [onChange, separatorsSet]);
+    }, [onChange, ignoredSeparatorsSet]);
 
     const handleInvalid = useCallback(() => {
         setValid(false);
@@ -160,6 +164,7 @@ export const MaskedInput: FC<MaskedInputProps> = ({
                     onInvalid={handleInvalid}
                     valid={valid}
                     validationErrorMessage={validationErrorMessage}
+                    value={displayValue}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
             </Container>

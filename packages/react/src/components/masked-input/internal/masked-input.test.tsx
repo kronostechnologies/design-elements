@@ -1,8 +1,8 @@
 import { type RenderResult, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { FC } from 'react';
-import { renderWithProviders } from '../../test-utils/renderer';
-import { useDateMask, usePostalCodeMask } from './common-masks';
+import { renderWithProviders } from '../../../test-utils/renderer';
+import { useDateMask } from '../date-mask/use-date-mask';
 import { MaskedInput, type MaskedInputProps } from './masked-input';
 
 const PHONE_MASK = '(___) ___-____';
@@ -165,10 +165,10 @@ describe('MaskedInput', () => {
     });
 
     describe('with date mask (YYYY-MM-DD)', () => {
-        type DateMaskedInputProps = Partial<MaskedInputProps> & { min?: Date; max?: Date };
+        type DateMaskedInputProps = Partial<MaskedInputProps>;
 
-        const DateMaskedInput: FC<DateMaskedInputProps> = ({ min, max, ...props }) => {
-            const { dateMask } = useDateMask({ format: 'YYYY-MM-DD', min, max });
+        const DateMaskedInput: FC<DateMaskedInputProps> = (props) => {
+            const { dateMask } = useDateMask({ format: 'yyyy-mm-dd' });
             return <MaskedInput {...props} dateMask={dateMask} />;
         };
 
@@ -225,46 +225,6 @@ describe('MaskedInput', () => {
 
             expect(input).toHaveValue('2026-02-19');
         });
-
-        it('resets to min date when a fully entered date is before the minimum', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<DateMaskedInput min={new Date(2025, 0, 1)} />);
-
-            const input = getMaskedInput();
-            await user.type(input, '20241220');
-
-            expect(input).toHaveValue('2025-01-01');
-        });
-
-        it('does not reset to min date when a fully entered date is after the minimum', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<DateMaskedInput min={new Date(2025, 0, 1)} />);
-
-            const input = getMaskedInput();
-            await user.type(input, '20251220');
-
-            expect(input).toHaveValue('2025-12-20');
-        });
-
-        it('resets to max date when a fully entered date is after the max', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<DateMaskedInput max={new Date(2025, 0, 1)} />);
-
-            const input = getMaskedInput();
-            await user.type(input, '20250710');
-
-            expect(input).toHaveValue('2025-01-01');
-        });
-
-        it('does not reset to max date when a fully entered date is before the max', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<DateMaskedInput max={new Date(2025, 0, 1)} />);
-
-            const input = getMaskedInput();
-            await user.type(input, '20241210');
-
-            expect(input).toHaveValue('2024-12-10');
-        });
     });
 
     describe('with locale-dependent date mask format', () => {
@@ -310,9 +270,9 @@ describe('MaskedInput', () => {
         });
     });
 
-    describe('with date mask (DD/MM/YYYY)', () => {
+    describe('with date mask (dd/mm/yyyy)', () => {
         const DateSlashMaskedInput: FC<Partial<MaskedInputProps>> = (props) => {
-            const { dateMask } = useDateMask({ format: 'DD/MM/YYYY', separator: '/' });
+            const { dateMask } = useDateMask({ format: 'dd/mm/yyyy' });
             return <MaskedInput {...props} dateMask={dateMask} />;
         };
 
@@ -330,133 +290,6 @@ describe('MaskedInput', () => {
             renderWithProviders(<DateSlashMaskedInput defaultValue="20022026" />);
 
             expect(getMaskedInput()).toHaveValue('20/02/2026');
-        });
-    });
-
-    describe('with postal code mask (A1A 1A1)', () => {
-        const PostalCodeMaskedInput: FC<Partial<MaskedInputProps>> = (props) => {
-            const postalCodeProps = usePostalCodeMask();
-            return <MaskedInput {...props} {...postalCodeProps} />;
-        };
-
-        it('has an empty value when no defaultValue is provided', () => {
-            renderWithProviders(<PostalCodeMaskedInput />);
-
-            expect(getMaskedInput()).toHaveValue('');
-        });
-
-        it('formats alphanumeric input as it is typed', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<PostalCodeMaskedInput />);
-
-            const input = getMaskedInput();
-            await user.type(input, 'H3Z2Y7');
-
-            expect(input).toHaveValue('H3Z 2Y7');
-        });
-
-        it('rejects digits in letter slots', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<PostalCodeMaskedInput />);
-
-            const input = getMaskedInput();
-            await user.type(input, '13Z2Y7');
-
-            expect(input).toHaveValue('Z2Y 7');
-        });
-
-        it('rejects letters in digit slots', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<PostalCodeMaskedInput />);
-
-            const input = getMaskedInput();
-            await user.type(input, 'HXZ2Y7');
-
-            expect(input).toHaveValue('H2Y 7');
-        });
-
-        it('displays the defaultValue', () => {
-            renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z2Y7" />);
-
-            expect(getMaskedInput()).toHaveValue('H3Z 2Y7');
-        });
-
-        it('formats to uppercase as it is typed', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<PostalCodeMaskedInput />);
-
-            const input = getMaskedInput();
-            await user.type(input, 'h3z2y7');
-
-            expect(input).toHaveValue('H3Z 2Y7');
-        });
-
-        describe('character deletion', () => {
-            it(
-                'deletes the preceding non-fixed char when backspacing onto the fixed space and removes now invalid char', // eslint-disable-line max-len
-                async () => {
-                    const user = userEvent.setup();
-                    renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z2Y7" />);
-                    const input = getMaskedInput();
-                    input.focus();
-                    input.setSelectionRange(4, 4);
-
-                    await user.keyboard('{Backspace}');
-
-                    expect(input).toHaveValue('H3Y 7');
-                },
-            );
-
-            it(
-                'deletes the following non-fixed char when pressing Delete on the fixed space and removes now invalid char', // eslint-disable-line max-len
-                async () => {
-                    const user = userEvent.setup();
-                    renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z2Y7" />);
-                    const input = getMaskedInput();
-                    input.focus();
-                    input.setSelectionRange(3, 3);
-
-                    await user.keyboard('{Delete}');
-
-                    expect(input).toHaveValue('H3Z 7');
-                },
-            );
-
-            it('does not delete any real char when pressing Delete past the trailing fixed space', async () => {
-                const user = userEvent.setup();
-                renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z " />);
-                const input = getMaskedInput();
-                input.focus();
-                input.setSelectionRange(4, 4);
-
-                await user.keyboard('{Delete}');
-
-                expect(input).toHaveValue('H3Z ');
-            });
-
-            it('also deletes now invalid characters when backspacing on a non-fixed char', async () => {
-                const user = userEvent.setup();
-                renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z2Y7" />);
-                const input = getMaskedInput();
-                input.focus();
-                input.setSelectionRange(6, 6);
-
-                await user.keyboard('{Backspace}');
-
-                expect(input).toHaveValue('H3Z 2');
-            });
-
-            it('also deletes now invalid characters when backspacing on a selection', async () => {
-                const user = userEvent.setup();
-                renderWithProviders(<PostalCodeMaskedInput defaultValue="H3Z2Y7" />);
-                const input = getMaskedInput();
-                input.focus();
-                input.setSelectionRange(4, 7);
-
-                await user.keyboard('{Backspace}');
-
-                expect(input).toHaveValue('H3Z');
-            });
         });
     });
 
@@ -603,7 +436,7 @@ describe('MaskedInput', () => {
         it('treats x as a separator when separators="x"', async () => {
             const user = userEvent.setup();
             renderWithProviders(
-                <MaskedInput mask={DOT_MASK} pattern={DOT_PATTERN} separators="x" />,
+                <MaskedInput mask={DOT_MASK} pattern={DOT_PATTERN} ignoredSeparators="x" />,
             );
 
             const input = getMaskedInput();
@@ -616,7 +449,7 @@ describe('MaskedInput', () => {
             const user = userEvent.setup();
             const onChange = jest.fn();
             renderWithProviders(
-                <MaskedInput mask={DOT_MASK} pattern={DOT_PATTERN} separators="x" onChange={onChange} />,
+                <MaskedInput mask={DOT_MASK} pattern={DOT_PATTERN} ignoredSeparators="x" onChange={onChange} />,
             );
 
             const input = getMaskedInput();

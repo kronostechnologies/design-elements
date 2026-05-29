@@ -15,18 +15,27 @@ interface IntlContextProps {
 
 const IntlContext = createContext<IntlContextProps>({ i18n: createI18n() });
 
+function mapLanguageToLocale(language: string | undefined): string {
+    if (language?.startsWith('fr') || language?.startsWith('en')) {
+        return language.includes('-') ? language : `${language}-CA`;
+    }
+
+    return 'en-CA';
+}
+
 /**
  * @internal Use {@link DesignSystem} instead
  */
 export const IntlProvider: FunctionComponent<PropsWithChildren<IntlProviderProps>> = ({ children, language }) => {
-    const [i18n] = useState(() => createI18n(language));
+    const mappedLanguage = useMemo(() => mapLanguageToLocale(language), [language]);
+    const [i18n] = useState(() => createI18n(mappedLanguage));
 
     useEffect(() => {
-        if (language) {
+        if (mappedLanguage) {
             // noinspection JSIgnoredPromiseFromCall
-            i18n.changeLanguage(language);
+            i18n.changeLanguage(mappedLanguage);
         }
-    }, [i18n, language]);
+    }, [i18n, mappedLanguage]);
 
     const value = useMemo(() => ({ i18n }), [i18n]);
 
