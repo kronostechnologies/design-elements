@@ -1,5 +1,18 @@
 import { useMaskito } from '@maskito/react';
-import { ChangeEvent, FC, type MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+    ChangeEvent,
+    type ChangeEventHandler,
+    FC,
+    FocusEvent,
+    type FocusEventHandler,
+    FormEvent,
+    FormEventHandler,
+    type MutableRefObject,
+    useCallback,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../../hooks/use-data-attributes';
 import { useDeviceContext } from '../../device-context-provider';
@@ -50,11 +63,15 @@ export type MaskedInputProps = {
     label?: string;
     name?: string;
 
+    onBlur?(event: FocusEvent<HTMLInputElement>): void;
     onChange?(rawValue: string, formattedValue: string, event: ChangeEvent<HTMLInputElement>): void;
+    onFocus?(event: FocusEvent<HTMLInputElement>): void;
+    onInvalid?(event: FormEvent<HTMLInputElement>): void;
 
     readOnly?: boolean;
     required?: boolean;
     requiredLabelType?: RequiredLabelProps['type'];
+    valid?: boolean;
     validationErrorMessage?: string;
     value?: string;
 } & MaskProps;
@@ -71,18 +88,22 @@ export const MaskedInput: FC<MaskedInputProps> = ({
     inputType = 'text',
     label,
     name,
+    onBlur,
     onChange,
+    onFocus,
+    onInvalid,
     readOnly,
     required,
     requiredLabelType,
     ignoredSeparators = DEFAULT_SEPARATORS,
+    valid,
     validationErrorMessage,
     value,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
     const ignoredSeparatorsSet: Set<string> = useMemo(() => new Set(ignoredSeparators), [ignoredSeparators]);
-
+    const [validity, setValidity] = useState(valid ?? true);
     const mask = useMemo(() => getTextMask(otherProps), [otherProps]);
     const maskitoOptions = useMemo(
         () => convertToMaskitoOptions(otherProps),
@@ -102,7 +123,7 @@ export const MaskedInput: FC<MaskedInputProps> = ({
     }, []);
 
     const [displayValue, setDisplayValue] = useState(formattedDefault || '');
-    const [valid, setValid] = useState(true);
+    const [previousDisplayValue, setPreviousDisplayValue] = useState(displayValue);
 
     const mergedRef = useCallback((el: HTMLInputElement | null) => {
         (inputRef as MutableRefObject<HTMLInputElement | null>).current = el;
@@ -110,32 +131,46 @@ export const MaskedInput: FC<MaskedInputProps> = ({
     }, [maskitoRef]);
 
     const unfilledPart = mask.slice(displayValue.length);
-    const hasInput = displayValue.length > 0;
 
-    useEffect(() => {
-        if (required) {
-            inputRef.current?.setCustomValidity(hasInput ? '' : ' ');
+    if (value !== undefined && previousDisplayValue !== value) {
+        setDisplayValue(formatValue(value, maskitoOptions));
+        setPreviousDisplayValue(value);
+    }
+
+    const handleBlur: FocusEventHandler<HTMLInputElement> = useCallback((event) => {
+        if (valid === undefined) {
+            if (required && event.currentTarget.value === '') {
+                setValidity(true);
+            } else {
+                setValidity(event.currentTarget.checkValidity());
+            }
         }
-    }, [hasInput, required]);
 
-    useEffect(() => {
-        if (value !== undefined) {
-            setDisplayValue(formatValue(value, maskitoOptions));
-        }
-    }, [maskitoOptions, value]);
+        onBlur?.(event);
+    }, [onBlur, valid, required]);
 
-    const handleInput = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
         const newValue = event.target.value;
         setDisplayValue(newValue);
-        setValid(true);
 
         const rawValue = extractRawInput(newValue, ignoredSeparatorsSet);
         onChange?.(rawValue, newValue, event as unknown as ChangeEvent<HTMLInputElement>);
     }, [onChange, ignoredSeparatorsSet]);
 
-    const handleInvalid = useCallback(() => {
-        setValid(false);
-    }, []);
+    const handleFocus: FocusEventHandler<HTMLInputElement> = useCallback((event) => {
+        onFocus?.(event);
+    }, [onFocus]);
+
+    const handleInvalid: FormEventHandler<HTMLInputElement> = useCallback((event) => {
+        if (valid === undefined) {
+            setValidity(false);
+        }
+        onInvalid?.(event);
+    }, [onInvalid, valid]);
+
+    if (valid !== undefined && valid !== validity) {
+        setValidity(valid);
+    }
 
     const dataAttributes = useDataAttributes(otherProps);
 
@@ -160,11 +195,13 @@ export const MaskedInput: FC<MaskedInputProps> = ({
                     disabled={disabled}
                     hint={hint}
                     label={label}
-                    onChange={handleInput}
+                    onBlur={handleBlur}
+                    onFocus={handleFocus}
+                    onChange={handleChange}
                     onInvalid={handleInvalid}
-                    valid={valid}
+                    valid={validity}
                     validationErrorMessage={validationErrorMessage}
-                    value={displayValue}
+                    value={value !== undefined ? displayValue : undefined}
                     {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
             </Container>

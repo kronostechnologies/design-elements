@@ -41,7 +41,7 @@ export const ControlledDateMask: Story = {
         const [value, setValue] = useState<Date | string>('');
         const handleChange: DateMaskedInputProps['onChange'] = useCallback((date, rawValue, formattedValue) => {
             console.info(date, rawValue, formattedValue);
-            setValue(formattedValue);
+            setValue(date ?? formattedValue);
         }, []);
 
         return (
