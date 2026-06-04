@@ -23,6 +23,11 @@ export const Translations = {
             opensInNewTabScreenReader: '(opens in a new tab)',
             error: 'Error',
         },
+        'date-masked-input': {
+            dayPlaceholder: 'D',
+            monthPlaceholder: 'M',
+            yearPlaceholder: 'Y',
+        },
         datepicker: {
             calendarButtonLabel: 'Choose date',
             calendarButtonSelectedLabel: 'Choose date. The selected date is',
@@ -174,6 +179,11 @@ export const Translations = {
             opensInNewTab: 'ouvre dans un nouvel onglet',
             opensInNewTabScreenReader: '(ouvre dans un nouvel onglet)',
             error: 'Erreur',
+        },
+        'date-masked-input': {
+            dayPlaceholder: 'J',
+            monthPlaceholder: 'M',
+            yearPlaceholder: 'A',
         },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',

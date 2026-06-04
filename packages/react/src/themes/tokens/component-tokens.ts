@@ -25,13 +25,13 @@ import { defaultLegendTokens, LegendToken } from './component/legend-tokens';
 import { defaultLinkTokens, LinkToken } from './component/link-tokens';
 import { defaultListboxTokens, ListboxToken } from './component/listbox-tokens';
 import { defaultLozengeTokens, LozengeToken } from './component/lozenge-tokens';
+import { defaultMaskedInputTokens, MaskedInputToken } from './component/masked-input-tokens';
 import { defaultMenuTokens, MenuToken } from './component/menu-tokens';
 import { defaultModalTokens, ModalToken } from './component/modal-tokens';
 import { defaultNavListTokens, NavListToken } from './component/nav-list-tokens';
 import { defaultNumericInputTokens, NumericInputToken } from './component/numeric-input-tokens';
 import { defaultPaginationTokens, PaginationToken } from './component/pagination-tokens';
 import { defaultPasswordInputTokens, PasswordInputToken } from './component/password-input-tokens';
-import { defaultPhoneInputTokens, PhoneInputToken } from './component/phone-input-tokens';
 import { defaultProgressCircularTokens, ProgressCircularToken } from './component/progress-circular-tokens';
 import { defaultProgressIndicatorTokens, ProgressIndicatorToken } from './component/progress-indicator-tokens';
 import { defaultProgressTokens, ProgressToken } from './component/progress-tokens';
@@ -84,6 +84,7 @@ export type ComponentToken =
     | LinkToken
     | ListboxToken
     | LozengeToken
+    | MaskedInputToken
     | MenuToken
     | ModalToken
     | NavListToken
@@ -93,7 +94,6 @@ export type ComponentToken =
     | ProgressCircularToken
     | ProgressIndicatorToken
     | ProgressToken
-    | PhoneInputToken
     | RadioButtonGroupToken
     | RadioCardToken
     | SearchInputToken
@@ -143,13 +143,13 @@ export const defaultComponentTokens = {
     ...defaultLinkTokens,
     ...defaultListboxTokens,
     ...defaultLozengeTokens,
+    ...defaultMaskedInputTokens,
     ...defaultMenuTokens,
     ...defaultModalTokens,
     ...defaultNavListTokens,
     ...defaultNumericInputTokens,
     ...defaultPaginationTokens,
     ...defaultPasswordInputTokens,
-    ...defaultPhoneInputTokens,
     ...defaultProgressCircularTokens,
     ...defaultProgressIndicatorTokens,
     ...defaultProgressTokens,

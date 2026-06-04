@@ -34,6 +34,7 @@ export * from './link';
 export * from './listbox';
 export * from './logo';
 export * from './lozenge';
+export * from './masked-input';
 export * from './menu';
 export * from './menu-button';
 export * from './modal';

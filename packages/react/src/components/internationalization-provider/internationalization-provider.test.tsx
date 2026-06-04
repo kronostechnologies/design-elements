@@ -9,16 +9,20 @@ const TestButton: FC = () => {
 };
 
 describe('Internationalization Provider', () => {
-    it('language should be en', () => {
-        render(<IntlProvider><TestButton /></IntlProvider>);
+    it.each([
+        [undefined, 'en-CA'],
+        ['en', 'en-CA'],
+        ['en-CA', 'en-CA'],
+        ['en-US', 'en-US'],
+        ['fr', 'fr-CA'],
+        ['fr-CA', 'fr-CA'],
+        ['fr-FR', 'fr-FR'],
+        ['de', 'en-CA'],
+        ['de-DE', 'en-CA'],
+    ])('maps %s to %s', async (language, expected) => {
+        render(<IntlProvider language={language}><TestButton /></IntlProvider>);
 
-        expect(screen.getByRole('button')).toHaveValue('en');
-    });
-
-    it('language should be fr', () => {
-        render(<IntlProvider language="fr"><TestButton /></IntlProvider>);
-
-        expect(screen.getByRole('button')).toHaveValue('fr');
+        await waitFor(() => expect(screen.getByRole('button')).toHaveValue(expected));
     });
 
     it('language should switch', async () => {
@@ -26,6 +30,6 @@ describe('Internationalization Provider', () => {
 
         rerender(<IntlProvider language="en"><TestButton /></IntlProvider>);
 
-        await waitFor(() => expect(screen.getByRole('button')).toHaveValue('en'));
+        await waitFor(() => expect(screen.getByRole('button')).toHaveValue('en-CA'));
     });
 });
