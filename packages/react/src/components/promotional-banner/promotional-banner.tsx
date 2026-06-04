@@ -7,6 +7,7 @@ import { Logo, type LogoName } from '../logo';
 import { PromotionalButton, type PromotionalButtonProps } from '../promotional-button';
 import { Tooltip } from '../tooltip';
 import { backgroundGradientEnd, backgroundGradientStart } from './colors';
+import { promotionalBannerClasses } from './promotional-banner-classes';
 
 const Banner = styled.div`
     align-items: center;
@@ -49,6 +50,7 @@ const StyledLogo = styled(Logo)`
 `;
 
 export interface PromotionalBannerProps {
+    className?: string;
     button: PromotionalButtonProps;
     logo: LogoName;
 
@@ -56,6 +58,7 @@ export interface PromotionalBannerProps {
 }
 
 export const PromotionalBanner: FC<PropsWithChildren<PromotionalBannerProps>> = ({
+    className,
     children,
     button,
     logo,
@@ -63,13 +66,14 @@ export const PromotionalBanner: FC<PropsWithChildren<PromotionalBannerProps>> = 
 }) => {
     const { t } = useTranslation('promotional-banner');
     return (
-        <Banner>
+        <Banner className={className}>
             <Text>
                 {logo && <StyledLogo name={logo} />}
                 {children}
             </Text>
             <Buttons>
                 <PromotionalButton
+                    className={promotionalBannerClasses.button}
                     label={button.label}
                     loading={button.loading}
                     loadingLabel={button.loadingLabel}
