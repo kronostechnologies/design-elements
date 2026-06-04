@@ -46,6 +46,7 @@ const StyledButton = styled(Button)`
 `;
 
 export interface PromotionalButtonProps {
+    className?: string;
     label: string;
     loading?: boolean;
     loadingLabel?: string;
@@ -54,6 +55,7 @@ export interface PromotionalButtonProps {
 }
 
 export const PromotionalButton: FC<PromotionalButtonProps> = ({
+    className,
     label,
     loading = false,
     loadingLabel,
@@ -61,6 +63,7 @@ export const PromotionalButton: FC<PromotionalButtonProps> = ({
 }) => (
     <StyledButton
         buttonType="secondary"
+        className={className}
         disabled={loading}
         leftIconName="equisoft"
         loading={loading}
