@@ -19,14 +19,14 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
-    "react-router-dom": "6.30.3",
+    "react-router-dom": "6.30.4",
     "styled-components": "5.3.11"
   },
   "devDependencies": {
-    "@babel/core": "7.29.0",
-    "@babel/preset-env": "7.29.5",
-    "@babel/preset-react": "7.28.5",
-    "@babel/preset-typescript": "7.28.5",
+    "@babel/core": "7.29.7",
+    "@babel/preset-env": "7.29.7",
+    "@babel/preset-react": "7.29.7",
+    "@babel/preset-typescript": "7.29.7",
     "@equisoft/eslint-config": "6.0.3",
     "@equisoft/eslint-config-typescript-react": "6.0.3",
     "@equisoft/typescript-config": "2.0.1",
@@ -54,8 +54,8 @@
     "@types/react-table": "7.7.20",
     "@types/styled-components": "5.1.36",
     "@types/webpack-env": "1.18.8",
-    "@typescript-eslint/eslint-plugin": "8.59.4",
-    "@typescript-eslint/parser": "8.59.4",
+    "@typescript-eslint/eslint-plugin": "8.60.0",
+    "@typescript-eslint/parser": "8.60.0",
     "assert": "2.1.0",
     "css-loader": "7.1.4",
     "eslint": "8.57.1",
@@ -72,9 +72,9 @@
     "storybook": "8.6.18",
     "style-loader": "4.0.0",
     "stylelint": "17.12.0",
-    "ts-loader": "9.5.7",
+    "ts-loader": "9.6.0",
     "typescript": "6.0.3",
-    "webpack": "5.107.1",
+    "webpack": "5.107.2",
     "yargs": "18.0.0"
   }
 }
