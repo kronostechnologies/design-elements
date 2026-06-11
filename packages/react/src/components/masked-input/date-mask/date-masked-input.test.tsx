@@ -124,6 +124,42 @@ describe('DateMaskedInput', () => {
         });
     });
 
+    describe('controlled/uncontrolled value prop', () => {
+        it('displays the provided value', () => {
+            renderWithProviders(<DateMaskedInput value="2026-04-19" />);
+
+            expect(getInput()).toHaveValue('2026-04-19');
+        });
+
+        it('updates the displayed value when value prop changes', async () => {
+            const { rerender } = renderWithProviders(<DateMaskedInput value="2026-04-19" />);
+
+            rerender(<DateMaskedInput value="2025-01-01" />);
+
+            expect(getInput()).toHaveValue('2025-01-01');
+        });
+
+        it('keeps component uncontrolled when value is undefined', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<DateMaskedInput />);
+
+            const input = getInput();
+            await user.type(input, '20260419');
+
+            expect(input).toHaveValue('2026-04-19');
+        });
+
+        it('calls onChange when the user types', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<DateMaskedInput onChange={onChange} />);
+
+            await user.type(getInput(), '20260419');
+
+            expect(onChange).toHaveBeenLastCalledWith(expect.any(Date), '20260419', '2026-04-19');
+        });
+    });
+
     it('formats the updated value when used in controlled mode', () => {
         const { rerender } = renderWithProviders(<DateMaskedInput format="yyyy-mm-dd" value="2026" />);
 
