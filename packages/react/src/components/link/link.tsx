@@ -11,9 +11,9 @@ import { Tooltip } from '../tooltip';
 import { StyledLink } from './styled';
 import { LinkProps } from './types';
 
-interface LeftIconProps extends IconProps {
+type LeftIconProps = IconProps & {
     $buttonType: ButtonProps['buttonType'] | undefined;
-}
+};
 
 function getSideIconStyle({ $buttonType, name }: LeftIconProps): readonly SimpleInterpolation[] | null {
     if (name === 'equisoft' && [undefined, ...buttonTypesToDarkenEquisoftLogo].includes($buttonType)) {

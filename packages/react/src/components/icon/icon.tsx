@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type ComponentType, type FC, type SVGProps } from 'react';
 import {
     AlertCircle,
     AlertOctagon,
@@ -374,10 +374,15 @@ const iconMapping = {
 
 export type IconName = keyof typeof iconMapping;
 
-export interface IconProps {
+/**
+ * A custom SVG icon: either a `.svg` file imported as a component (via SVGR)
+ * or any React component that renders an `<svg>` element. Both `lucide-react`
+ * icons and SVGR imports satisfy this type.
+ */
+export type SvgIconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+interface BaseIconProps {
     className?: string;
-    /** Name of the icon, has to be in IconName */
-    name: IconName;
     /**
      * Size will affect both width and height
      * @default 24
@@ -391,15 +396,33 @@ export interface IconProps {
     role?: string;
 }
 
+interface NamedIconProps extends BaseIconProps {
+    /** Name of the icon, has to be in IconName */
+    name: IconName;
+    svg?: never;
+}
+
+interface CustomIconProps extends BaseIconProps {
+    /**
+     * A custom SVG to render instead of a library icon: a `.svg` import (SVGR)
+     * or any SVG React component. Mutually exclusive with `name`.
+     */
+    svg: SvgIconComponent;
+    name?: never;
+}
+
+export type IconProps = NamedIconProps | CustomIconProps;
+
 export const Icon: FC<IconProps> = ({
     className,
     name,
+    svg: SvgComponent,
     size = '24',
     color = 'currentColor',
     role,
     ...props
 }: IconProps) => {
-    const Component = iconMapping[name];
+    const Component = SvgComponent ?? (name !== undefined ? iconMapping[name] : undefined);
 
     if (!Component) {
         return null;
