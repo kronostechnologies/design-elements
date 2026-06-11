@@ -1,6 +1,7 @@
 import type { ComponentTokenMap } from '../tokens';
 
 export type FilterToken =
+    | 'filter-box-shadow-color'
     | 'filter-button-active-background-color'
     | 'filter-button-active-border-color'
     | 'filter-button-active-label-color'
@@ -19,6 +20,7 @@ export type FilterToken =
     | 'filter-expand-icon-color';
 
 export const defaultFilterTokens: ComponentTokenMap<FilterToken> = {
+    'filter-box-shadow-color': 'color-box-shadow',
     'filter-button-active-background-color': 'color-control-background-selected',
     'filter-button-active-border-color': 'color-control-border-selected',
     'filter-button-active-label-color': 'color-content-selected',

@@ -1,13 +1,13 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { DocsContainer, type DocsContainerProps } from '@storybook/blocks';
-import { GLOBALS_UPDATED } from '@storybook/core-events';
-import { addons } from '@storybook/preview-api';
 import { Decorator, Preview } from '@storybook/react';
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren } from 'react';
+import { i18nDecorator } from './i18n-decorator';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
+    i18nDecorator,
     (Story, context) => (
         <DesignSystem language={context.globals.locale}>
             <Story />
@@ -25,14 +25,14 @@ const preview: Preview = {
                 dynamicTitle: true,
                 icon: 'globe',
                 items: [
-                    { value: 'en', title: 'English' },
-                    { value: 'fr', title: 'Français' },
+                    { value: 'en-CA', title: 'English' },
+                    { value: 'fr-CA', title: 'Français' },
                 ],
             },
         },
     },
     initialGlobals: {
-        locale: 'fr',
+        locale: 'fr-CA',
     },
     parameters: {
         controls: {

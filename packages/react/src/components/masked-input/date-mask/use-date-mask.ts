@@ -30,10 +30,10 @@ export interface UseDateMaskResponse extends DateMask {
 }
 
 function isFormatSupported(localeFormat: string): boolean {
-    return SUPPORTED_DATE_FORMATS.includes(localeFormat);
+    return SUPPORTED_DATE_FORMATS.includes(localeFormat.toLowerCase());
 }
 
-function getLocaleDateMaskFormatOrDefault(locale: string): DateMaskFormat {
+export function getLocaleDateMaskFormatOrDefault(locale: string): DateMaskFormat {
     const formatObj = new Intl.DateTimeFormat(locale).formatToParts(new Date());
 
     const localeFormat = formatObj
@@ -42,7 +42,7 @@ function getLocaleDateMaskFormatOrDefault(locale: string): DateMaskFormat {
                 case 'day':
                     return 'dd';
                 case 'month':
-                    return 'mm';
+                    return 'MM';
                 case 'year':
                     return 'yyyy';
                 default:
