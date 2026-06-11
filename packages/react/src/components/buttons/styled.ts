@@ -79,9 +79,9 @@ export const StyledSpinner = styled(ProgressIndicator)`
     margin-right: var(--spacing-1x);
 `;
 
-interface SideIconProps extends IconProps {
+type SideIconProps = IconProps & {
     $buttonType: ButtonProps['buttonType'];
-}
+};
 
 function getSideIconStyle({ $buttonType, name }: SideIconProps): readonly SimpleInterpolation[] | null {
     if (buttonTypesToDarkenEquisoftLogo.includes($buttonType) && name === 'equisoft') {
