@@ -7,4 +7,6 @@ export type Replace<T extends string, From extends string, To extends string> =
         T extends `${infer Prefix}${From}${infer Suffix}` ? `${Prefix}${To}${Replace<Suffix, From, To>}` :
             T;
 
+export type NonNullableProperties<T> = { [K in keyof T]: NonNullable<T[K]> };
+
 export {};
