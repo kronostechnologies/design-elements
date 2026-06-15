@@ -126,7 +126,11 @@ export interface ListboxProps {
     onOptionClick?(option?: ListboxOption): void;
 }
 
-const Container = styled.div`
+interface ContainerProps {
+    $focusable: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
     background-color: ${({ theme }) => theme.component['listbox-background-color']};
     border: 1px solid ${({ theme }) => theme.component['listbox-border-color']};
     border-radius: var(--border-radius);
@@ -138,7 +142,7 @@ const Container = styled.div`
     position: relative;
     z-index: 1000;
 
-    ${focus};
+    ${({ $focusable }) => $focusable && focus};
 `;
 
 const List = styled.ul`
@@ -269,11 +273,16 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     const focusFirstSelectedOrFirst = useCallback(() => {
         const firstSelected: ListboxOption = selectedOptions[0];
         if (firstSelected) {
-            setFocusedOption(firstSelected);
+            setFocusedOption((prev) => {
+                if (prev?.value !== focusedOption?.value) {
+                    return prev;
+                }
+                return firstSelected;
+            });
         } else {
             focusFirstOption();
         }
-    }, [focusFirstOption, selectedOptions, setFocusedOption]);
+    }, [focusFirstOption, focusedOption, selectedOptions, setFocusedOption]);
 
     function isOptionSelected(option: ListboxOption): boolean {
         return multiselect ? selectedOptions.includes(option) : selectedOptions[0] === option;
@@ -587,6 +596,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
             ref={mergeRefs(ref, containerRef)}
             role="listbox"
             tabIndex={focusable || keyboardNav ? 0 : -1}
+            $focusable={focusable}
         >
             <List
                 data-testid="listbox-list"

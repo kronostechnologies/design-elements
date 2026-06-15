@@ -1,5 +1,5 @@
 import { format, isSameDay } from 'date-fns';
-import { type FC, useCallback, useMemo, useState } from 'react';
+import { type FC, useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
 import { DS_CLASS_PREFIX } from '../../utils/component-classes';
 import { v4 as uuid } from '../../utils/uuid';
@@ -13,18 +13,21 @@ export type FilterDateRangeValue = {
     to: Date | null;
 };
 
-interface RelativePreset {
-    days?: number;
-    months?: number;
-    years?: number;
-}
+type WithOptionalLabel<T> = T & { label?: string; };
 
-type EndRangePreset = { end?: Date; } | { endRelative?: RelativePreset; };
-type StartRangePreset = { start?: Date; } | { startRelative?: RelativePreset; };
+type RelativeRangePreset = WithOptionalLabel<
+    | { days: number; }
+    | { weeks: number; }
+    | { months: number; }
+    | { years: number; }
+>;
 
-export type FilterDateRangePreset = {
-    label: string;
-} & EndRangePreset & StartRangePreset;
+type CustomRangePreset = WithOptionalLabel<{
+    end?: Date;
+    start?: Date;
+}>;
+
+export type FilterDateRangePreset = CustomRangePreset | RelativeRangePreset;
 
 export interface FilterDateRangeProps {
     async?: boolean;
@@ -48,6 +51,7 @@ export const FilterDateRange: FC<FilterDateRangeProps> = ({
     const { i18n, t } = useTranslation('filter');
     const dropdownMenuId = useMemo(() => `${DS_CLASS_PREFIX}${uuid()}`, []);
     const [selectedPreset, setSelectedPreset] = useState<string | null>(null);
+    const dateRangePanelRef = useRef<HTMLDivElement>(null);
 
     const handleChange: DateRangePanelProps['onChange'] = useCallback((newValue) => {
         setSelectedPreset(null);
@@ -88,10 +92,12 @@ export const FilterDateRange: FC<FilterDateRangeProps> = ({
 
     return (
         <FilterDropdownButton
+            firstItemRef={dateRangePanelRef}
             label={hasFiltersApplied ? labelWithValues : label}
             render={(close: DropdownMenuCloseFunction) => (
                 <DateRangePanel
                     async={async}
+                    firstFocusableRef={dateRangePanelRef}
                     onApply={(newValue) => handleApply(newValue, close)}
                     onCancel={() => handleCancel(close)}
                     onChange={handleChange}

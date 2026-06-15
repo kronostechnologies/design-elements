@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { FilterDateRange, type FilterDateRangePreset, type FilterDateRangeValue } from './filter-date-range';
+import { FilterDateRangePresets } from './internal/date-range';
 
 function getDropdownButton(): HTMLElement {
     return screen.getByTestId('menu-button');
@@ -15,8 +16,8 @@ describe('FilterDateRange', () => {
     const A_LABEL = 'Some Date';
 
     const presets: FilterDateRangePreset[] = [
-        { label: 'Last 7 days', startRelative: { days: -7 }, endRelative: { days: 0 } },
-        { label: 'Last 30 days', startRelative: { days: -30 }, endRelative: { days: 0 } },
+        FilterDateRangePresets.lastDays(7),
+        FilterDateRangePresets.lastDays(30),
     ];
 
     describe('rendering', () => {
@@ -236,6 +237,105 @@ describe('FilterDateRange', () => {
         });
     });
 
+    describe('masked date inputs', () => {
+        it('shows start and end date inputs when dropdown is open', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} />);
+
+            await openDropdown(user);
+
+            expect(screen.getByTestId('start-date')).toBeInTheDocument();
+            expect(screen.getByTestId('end-date')).toBeInTheDocument();
+        });
+
+        it('calls onChange with the typed from date when a complete start date is entered', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+
+            expect(onChange).toHaveBeenLastCalledWith(expect.objectContaining({
+                from: new Date(2024, 5, 1),
+                to: null,
+            }));
+        });
+
+        it('calls onChange with the typed to date when a complete end date is entered', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('end-date'), '20240630');
+
+            expect(onChange).toHaveBeenLastCalledWith(expect.objectContaining({
+                from: null,
+                to: new Date(2024, 5, 30),
+            }));
+        });
+
+        it('calls onChange with null from when an incomplete start date is entered', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '202406');
+
+            expect(onChange).toHaveBeenLastCalledWith(expect.objectContaining({ from: null }));
+        });
+
+        it('does not call onChange when in async mode and a start date is typed', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} async />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
+
+        it('enables Apply button after typing a valid start date in async mode', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} async />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+
+            expect(screen.getByTestId('apply-button')).not.toHaveAttribute('aria-disabled', 'true');
+        });
+
+        it('calls onChange with the typed dates when Apply is clicked in async mode', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} async />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+            await user.type(screen.getByTestId('end-date'), '20240630');
+            await user.click(screen.getByTestId('apply-button'));
+
+            expect(onChange).toHaveBeenCalledWith({ from: new Date(2024, 5, 1), to: new Date(2024, 5, 30) });
+        });
+
+        it('updates the button label to "From {date}" after typing only a start date', async () => {
+            const user = userEvent.setup();
+            const onChange = jest.fn();
+            const { rerender } = renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+
+            const lastCalledValue = onChange.mock.calls.at(-1)![0] as FilterDateRangeValue;
+            rerender(<FilterDateRange label={A_LABEL} onChange={onChange} value={lastCalledValue} />);
+
+            expect(getDropdownButton()).toHaveTextContent('From 2024-06-01');
+        });
+    });
+
     describe('presets', () => {
         it('renders presets in the dropdown', async () => {
             const user = userEvent.setup();
@@ -283,9 +383,72 @@ describe('FilterDateRange', () => {
             expect(screen.getByText('Custom')).toBeInTheDocument();
         });
 
+        it('has "All" as the active preset by default', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+
+            expect(screen.getByTestId('listitem-all')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        it('sets the clicked preset as active', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+            await user.click(screen.getByText('Last 7 days'));
+
+            expect(screen.getByTestId('listitem-Last_7_days')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        it('shows a CSS outline on the clicked preset', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+            await user.click(screen.getByText('Last 7 days'));
+
+            expect(screen.getByTestId('listitem-Last_7_days')).toHaveStyleRule('outline', /solid/);
+        });
+
+        it('keeps the active preset outlined after closing and reopening the dropdown', async () => {
+            const user = userEvent.setup();
+            const { baseElement } = renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+            await user.click(screen.getByText('Last 7 days'));
+            await user.click(baseElement);
+
+            await openDropdown(user);
+
+            expect(screen.getByTestId('listitem-Last_7_days')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        it('deactivates the previously active preset when a new one is selected', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+            await user.click(screen.getByText('Last 7 days'));
+            await user.click(screen.getByText('Last 30 days'));
+
+            expect(screen.getByTestId('listitem-Last_7_days')).toHaveAttribute('aria-selected', 'false');
+            expect(screen.getByTestId('listitem-Last_30_days')).toHaveAttribute('aria-selected', 'true');
+        });
+
+        it('sets "Custom" as the active preset after typing in the start date input', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<FilterDateRange label={A_LABEL} presets={presets} />);
+
+            await openDropdown(user);
+            await user.type(screen.getByTestId('start-date'), '20240601');
+
+            expect(screen.getByTestId('listitem-custom')).toHaveAttribute('aria-selected', 'true');
+        });
+
         it('shows preset label on button after selecting a preset with a value', async () => {
             const user = userEvent.setup();
-            const last7DaysPreset = presets[0];
             const onChange = jest.fn();
             const emptyValue: FilterDateRangeValue = { from: null, to: null };
             const { rerender } = renderWithProviders(
@@ -293,7 +456,7 @@ describe('FilterDateRange', () => {
             );
 
             await openDropdown(user);
-            await user.click(screen.getByText(last7DaysPreset.label));
+            await user.click(screen.getByText('Last 7 days'));
 
             const calledValue = onChange.mock.calls[0][0] as FilterDateRangeValue;
             rerender(<FilterDateRange label={A_LABEL} presets={presets} onChange={onChange} value={calledValue} />);

@@ -2,21 +2,15 @@ export const Translations = {
     en: {
         filterDateRange: {
             label: 'Date',
-            lastSixMonths: 'Last 6 months',
-            lastYear: 'Last year ({{year}})',
-            past: 'Past',
-            today: 'Today',
-            upcoming: 'Upcoming',
+            pastLabel: 'Creation date',
+            upcomingLabel: 'Renewal date',
         },
     },
     fr: {
         filterDateRange: {
             label: 'Date',
-            lastSixMonths: 'Derniers 6 mois',
-            lastYear: 'Année dernière ({{year}})',
-            past: 'Passée',
-            today: 'Aujourd\'hui',
-            upcoming: 'À venir',
+            pastLabel: 'Date de création',
+            upcomingLabel: 'Date de renouvellement',
         },
     },
 };

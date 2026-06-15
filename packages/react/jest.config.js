@@ -35,6 +35,7 @@ module.exports = {
     resetMocks: true,
     restoreMocks: true,
     errorOnDeprecated: true,
+    globalSetup: '<rootDir>/test/global-setup.js',
     moduleDirectories: [
         'src',
         'node_modules',

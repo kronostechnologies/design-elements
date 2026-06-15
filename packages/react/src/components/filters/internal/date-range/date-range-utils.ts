@@ -1,5 +1,5 @@
-import { add } from 'date-fns';
 import type { FilterDateRangePreset, FilterDateRangeValue } from '../../filter-date-range';
+import type { ComputedPreset } from './presets';
 
 function isSameDay(date1: Date | null, date2: Date | null): boolean {
     if (date1 === null && date2 === null) {
@@ -19,24 +19,18 @@ export function hasSameRange(range1: FilterDateRangeValue, range2: FilterDateRan
     return isSameDay(range1.from, range2.from) && isSameDay(range1.to, range2.to);
 }
 
-export function getRangeFromPreset(preset: FilterDateRangePreset | null): FilterDateRangeValue {
+export function getRangeFromPreset(preset: ComputedPreset | FilterDateRangePreset | null): FilterDateRangeValue {
     if (!preset) {
         return { from: null, to: null };
     }
 
     let from: Date | null = null;
     let to: Date | null = null;
-    const today = new Date();
     if ('start' in preset && preset.start) {
         from = preset.start;
-    } else if ('startRelative' in preset && preset.startRelative) {
-        from = add(today, preset.startRelative);
     }
-
     if ('end' in preset && preset.end) {
         to = preset.end;
-    } else if ('endRelative' in preset && preset.endRelative) {
-        to = add(today, preset.endRelative);
     }
 
     return { from, to };

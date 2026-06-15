@@ -1,4 +1,4 @@
-import { type FC, forwardRef, PropsWithChildren, type ReactNode, useCallback, useRef, useState } from 'react';
+import { type FC, forwardRef, PropsWithChildren, type ReactNode, type Ref, useCallback, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -13,7 +13,8 @@ import { DateMaskedInput, DateMaskedInputProps } from '../../../masked-input';
 import type { FilterDateRangePreset, FilterDateRangeValue } from '../../filter-date-range';
 import { CalendarHeader } from './calendar-header';
 import { getRangeFromPreset, hasSameRange } from './date-range-utils';
-import { CUSTOM_PRESET, Presets } from './presets';
+import type { ComputedPreset } from './presets';
+import { CUSTOM_PRESET, PresetsList } from './presets-list';
 import { useLocale } from './use-locale';
 
 const Container = styled.div`
@@ -22,8 +23,9 @@ const Container = styled.div`
         'shortcuts inputs'
         'shortcuts calendars'
         'footer footer';
-    grid-template-columns: 1fr minmax(2fr, auto);
+    grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr auto;
+    height: 24rem;
 `;
 
 const Footer = styled.div`
@@ -144,7 +146,7 @@ const Calendars = styled.div<CalendarsProps>`
         }
     }
 
-    .react-datepicker__day--selected {
+    .react-datepicker__day {
         border: none;
     }
 
@@ -229,6 +231,7 @@ type DateMaskedInputOnChange = DateMaskedInputProps['onChange'];
 export interface DateRangePanelProps {
     async?: boolean;
     defaultValue?: NonNullableProperties<FilterDateRangeValue>;
+    firstFocusableRef?: Ref<HTMLDivElement>;
     locale?: SupportedLocale;
     presets: FilterDateRangePreset[];
     selectedPreset: string | null;
@@ -246,6 +249,7 @@ export interface DateRangePanelProps {
 export const DateRangePanel: FC<DateRangePanelProps> = ({
     async,
     defaultValue,
+    firstFocusableRef,
     locale: providedLocale,
     onApply,
     onCancel,
@@ -260,8 +264,8 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
     const isControlled = value !== undefined;
     const currentLocale = useLocale(providedLocale || language);
     const [internalValue, setInternalValue] = useState<FilterDateRangeValue>({
-        from: value?.from ?? null,
-        to: value?.to ?? null,
+        from: value?.from ?? defaultValue?.from ?? null,
+        to: value?.to ?? defaultValue?.to ?? null,
     });
     const currentValue = isControlled && !async ? value : internalValue;
     const previousValue = useRef<FilterDateRangeValue>(currentValue);
@@ -333,7 +337,7 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
         onApply?.(internalValue);
     }, [internalValue, onApply, onPresetChange, selectedPreset]);
 
-    const handlePresetClick = useCallback((preset: FilterDateRangePreset | null) => {
+    const handlePresetClick = useCallback((preset: ComputedPreset | null) => {
         const { from, to } = getRangeFromPreset(preset);
         updateValue({ from, to });
         setMaskedStartDate(from ?? '');
@@ -354,7 +358,8 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
         <Container data-testid="date-range-panel">
             <ReactDatePickerStyles />
             {presets && (
-                <Presets
+                <PresetsList
+                    firstFocusableRef={firstFocusableRef}
                     onCustomPresetClick={handleCustomPresetClick}
                     onPresetClick={handlePresetClick}
                     presets={presets}
@@ -364,14 +369,16 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
 
             <Inputs>
                 <StyledDateMaskedInput
-                    label={t('date.startDate')}
+                    data-testid="start-date"
                     defaultValue={defaultValue?.from}
+                    label={t('date.startDate')}
                     value={maskedStartDate}
                     onChange={handleStartDateChange}
                 />
                 <StyledDateMaskedInput
-                    label={t('date.endDate')}
+                    data-testid="end-date"
                     defaultValue={defaultValue?.to}
+                    label={t('date.endDate')}
                     value={maskedEndDate}
                     onChange={handleEndDateChange}
                 />

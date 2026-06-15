@@ -1,7 +1,6 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
-import { DocsContainer, type DocsContainerProps } from '@storybook/blocks';
+import { DocsContainer } from '@storybook/blocks';
 import { Decorator, Preview } from '@storybook/react';
-import { PropsWithChildren } from 'react';
 import { i18nDecorator } from './i18n-decorator';
 
 injectMainCss();
@@ -41,17 +40,7 @@ const preview: Preview = {
             sort: 'alpha',
         },
         docs: {
-            container: ({ children, ...props }: PropsWithChildren<DocsContainerProps>) => {
-                const locale = props.context.store.userGlobals.globals.locale;
-
-                return (
-                    <DocsContainer {...props}>
-                        <DesignSystem language={locale}>
-                            {children}
-                        </DesignSystem>
-                    </DocsContainer>
-                );
-            },
+            container: DocsContainer,
             source: {
                 type: 'dynamic',
                 excludeDecorators: true,

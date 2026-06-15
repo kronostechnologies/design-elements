@@ -1,6 +1,7 @@
 /* eslint-disable storybook/prefer-pascal-case */
 import { createInstance, type TFunction } from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { useMemo } from 'react';
 import { Translations } from './translations';
 
 interface UseTranslationResponse {
@@ -23,5 +24,6 @@ i18n.init({
 });
 
 export function useTranslation(ns?: string): UseTranslationResponse {
-    return { t: ns ? i18n.getFixedT(i18n.language, ns) : i18n.t };
+    const t = useMemo(() => (ns ? i18n.getFixedT(i18n.language, ns) : i18n.t), [ns]);
+    return { t };
 }
