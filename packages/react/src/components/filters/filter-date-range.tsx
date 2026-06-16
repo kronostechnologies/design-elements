@@ -32,6 +32,9 @@ export type FilterDateRangePreset = CustomRangePreset | RelativeRangePreset;
 export interface FilterDateRangeProps {
     async?: boolean;
     label: string;
+    /**
+     * Use FilterDateRangePresets to generate common presets.
+     */
     presets?: FilterDateRangePreset[];
     value?: FilterDateRangeValue;
 

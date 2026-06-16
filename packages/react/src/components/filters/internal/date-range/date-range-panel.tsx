@@ -105,24 +105,24 @@ const Calendars = styled.div<CalendarsProps>`
 
     .react-datepicker__day--in-range.react-datepicker__day--in-range,
     .react-datepicker__day--in-selecting-range.react-datepicker__day--in-selecting-range {
-        background-color: ${({ theme }) => theme.alias['color-background-selected']};
+        background-color: ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
         border-radius: 0;
         box-shadow:
-            calc(var(--spacing-half) / -2) 0 0 0 ${({ theme }) => theme.alias['color-background-selected']},
-            calc(var(--spacing-half) / 2) 0 0 0 ${({ theme }) => theme.alias['color-background-selected']};
-        color: ${({ theme }) => theme.alias['color-content-selected']};
-        font-weight: ${({ theme }) => theme.ref['font-weight-semibold']};
+            calc(var(--spacing-half) / -2) 0 0 0 ${({ theme }) => theme.component['datepicker-day-selected-background-color']},
+            calc(var(--spacing-half) / 2) 0 0 0 ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
+        color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
+        font-weight: ${({ theme }) => theme.component['datepicker-day-selected-font-weight']};
 
         &.react-datepicker__day--range-start,
         &.react-datepicker__day--selecting-range-start {
             border-color: transparent;
             border-radius: 50% 0 0 50%;
-            box-shadow: calc(var(--spacing-half) / 2) 0 0 0 ${({ theme }) => theme.alias['color-background-selected']};
+            box-shadow: calc(var(--spacing-half) / 2) 0 0 0 ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
 
             :hover {
-                background-color: ${({ theme }) => theme.alias['color-background-selected']};
+                background-color: ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
                 border-radius: 50% 0 0 50%;
-                color: ${({ theme }) => theme.alias['color-content-selected']};
+                color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
             }
         }
 
@@ -130,19 +130,19 @@ const Calendars = styled.div<CalendarsProps>`
         &.react-datepicker__day--selecting-range-end {
             border-color: transparent;
             border-radius: 0 50% 50% 0;
-            box-shadow: calc(var(--spacing-half) / -2) 0 0 0 ${({ theme }) => theme.alias['color-background-selected']};
+            box-shadow: calc(var(--spacing-half) / -2) 0 0 0 ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
 
             :hover {
-                background-color: ${({ theme }) => theme.alias['color-background-selected']};
+                background-color: ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
                 border-radius: 0 50% 50% 0;
-                color: ${({ theme }) => theme.alias['color-content-selected']};
+                color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
             }
         }
 
         :hover {
-            background-color: ${({ theme }) => theme.alias['color-background-selected']};
+            background-color: ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
             border-radius: 0;
-            color: ${({ theme }) => theme.alias['color-content-selected']};
+            color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
         }
     }
 
@@ -154,7 +154,7 @@ const Calendars = styled.div<CalendarsProps>`
     .react-datepicker__day--range-end,
     .react-datepicker__day--selected {
         > ${Day} {
-            border: 1px solid ${({ theme }) => theme.alias['color-border-selected']};
+            border: 1px solid ${({ theme }) => theme.component['datepicker-day-selected-border-color']};
             border-radius: 50%;
             box-sizing: border-box;
             height: calc(var(--size-2x) - var(--spacing-half));

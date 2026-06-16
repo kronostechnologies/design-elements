@@ -80,6 +80,7 @@ export const PresetsList: FC<PresetsProps> = ({
             onOptionClick={handleChange}
             options={options}
             ref={firstFocusableRef as Ref<ListboxRef>}
+            selectOnFocus={false}
             value={selectedPreset ?? 'all'}
         />
     );

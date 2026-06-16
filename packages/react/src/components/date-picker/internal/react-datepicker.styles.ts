@@ -49,7 +49,7 @@ export function reactDatepickerStyles({
             background-color: ${({ theme }) => theme.component['datepicker-day-selected-background-color']};
             border: 1px solid ${({ theme }) => theme.component['datepicker-day-selected-border-color']};
             color: ${({ theme }) => theme.component['datepicker-day-selected-text-color']};
-            font-weight: var(--font-semi-bold);
+            font-weight: ${({ theme }) => theme.component['datepicker-day-selected-font-weight']};
         }
 
         .react-datepicker__day--today {

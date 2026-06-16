@@ -32,6 +32,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 15, 23, 59, 59, 999));
             expect(result.label).toBe('date.presetToday');
         });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.today(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('tomorrow', () => {
@@ -40,9 +48,17 @@ describe('FilterDateRangePresets', () => {
 
             const result = computePreset(preset, t);
 
-            expect(result.start).toEqual(new Date(2026, 5, 16));
-            expect(result.end).toEqual(new Date(2026, 5, 16));
+            expect(result.start).toEqual(new Date(2026, 5, 16, 0, 0, 0));
+            expect(result.end).toEqual(new Date(2026, 5, 16, 23, 59, 59, 999));
             expect(result.label).toBe('date.presetTomorrow');
+        });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.tomorrow(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -56,6 +72,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 15));
             expect(result.label).toBe('date.presetPast');
         });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.past(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('upcoming', () => {
@@ -68,6 +92,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toBeUndefined();
             expect(result.label).toBe('date.presetUpcoming');
         });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.upcoming(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('yesterday', () => {
@@ -76,9 +108,17 @@ describe('FilterDateRangePresets', () => {
 
             const result = computePreset(preset, t);
 
-            expect(result.start).toEqual(new Date(2026, 5, 14));
-            expect(result.end).toEqual(new Date(2026, 5, 14));
+            expect(result.start).toEqual(new Date(2026, 5, 14, 0, 0, 0));
+            expect(result.end).toEqual(new Date(2026, 5, 14, 23, 59, 59, 999));
             expect(result.label).toBe('date.presetYesterday');
+        });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.yesterday(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -92,6 +132,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 15));
             expect(result.label).toBe('date.presetLastDays:{"count":10}');
         });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastDays(10), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('lastWeeks', () => {
@@ -103,6 +151,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.start).toEqual(new Date(2026, 4, 25));
             expect(result.end).toEqual(new Date(2026, 5, 15));
             expect(result.label).toBe('date.presetLastWeeks:{"count":3}');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastWeeks(3), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -116,6 +172,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 15));
             expect(result.label).toBe('date.presetLastMonths:{"count":6}');
         });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastMonths(6), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('lastYear', () => {
@@ -127,6 +191,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.start).toEqual(new Date(2025, 0, 1));
             expect(result.end).toEqual(new Date(2025, 11, 31, 23, 59, 59, 999));
             expect(result.label).toBe('date.presetLastYear:{"year":2025}');
+        });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.lastYear(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -140,6 +212,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 15));
             expect(result.label).toBe('date.presetLastYears:{"count":5}');
         });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastYears(5), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('nextDays', () => {
@@ -151,6 +231,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.start).toEqual(new Date(2026, 5, 15));
             expect(result.end).toEqual(new Date(2026, 5, 19));
             expect(result.label).toBe('date.presetNextDays:{"count":4}');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextDays(4), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -164,6 +252,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2026, 5, 29));
             expect(result.label).toBe('date.presetNextWeeks:{"count":2}');
         });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextWeeks(2), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('nextMonths', () => {
@@ -175,6 +271,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.start).toEqual(new Date(2026, 5, 15));
             expect(result.end).toEqual(new Date(2027, 5, 15));
             expect(result.label).toBe('date.presetNextMonths:{"count":12}');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextMonths(12), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 
@@ -188,6 +292,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.end).toEqual(new Date(2027, 11, 31, 23, 59, 59, 999));
             expect(result.label).toBe('date.presetNextYear:{"year":2027}');
         });
+
+        it('keeps provided label instead of generating one', () => {
+            const preset = { ...FilterDateRangePresets.nextYear(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
     });
 
     describe('nextYears', () => {
@@ -199,6 +311,14 @@ describe('FilterDateRangePresets', () => {
             expect(result.start).toEqual(new Date(2026, 5, 15));
             expect(result.end).toEqual(new Date(2028, 5, 15));
             expect(result.label).toBe('date.presetNextYears:{"count":2}');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextYears(2), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
         });
     });
 

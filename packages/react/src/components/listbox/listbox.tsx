@@ -8,7 +8,7 @@ import {
     RefAttributes,
     type RefObject,
     useCallback,
-    useLayoutEffect,
+    useLayoutEffect, useMemo,
     useRef,
     useState,
 } from 'react';
@@ -87,6 +87,10 @@ export interface ListboxProps {
      */
     focusable?: boolean;
     /**
+     * Sets the current focused element in the listbox
+     */
+    focusedValue?: string;
+    /**
      * Set to true to enable keyboard navigation managed by the listbox
      * @default Same value as focusable
      */
@@ -97,9 +101,10 @@ export interface ListboxProps {
      */
     multiselect?: boolean;
     /**
-     * Sets the current focused element in the listbox
+     * Selects value when it receives focus.
+     * @default true
      */
-    focusedValue?: string;
+    selectOnFocus?: boolean;
     /**
      * Sets the selected value (controlled input)
      */
@@ -234,6 +239,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     className,
     containerRef: providedContainerRef,
     defaultValue,
+    featuredOptions = [],
     focusable = true,
     focusedValue,
     keyboardNav = focusable,
@@ -243,15 +249,18 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
     onFocusChange,
     onKeyDown,
     onOptionClick,
+    selectOnFocus = true,
     value,
-    featuredOptions = [],
 }, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
-    const allOptions: ListboxOption[] = [...(featuredOptions || []), ...(options || [])];
+    const allOptions: ListboxOption[] = useMemo(
+        () => [...(featuredOptions || []), ...(options || [])],
+        [featuredOptions, options],
+    );
 
     const {
         selectedElement: focusedOption,
@@ -439,10 +448,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && focusedOption) {
-                        toggleOptionSelection(newFocusedOption, true);
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && focusedOption) {
+                            toggleOptionSelection(newFocusedOption, true);
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -453,10 +464,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && focusedOption) {
-                        toggleOptionSelection(newFocusedOption, true);
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && focusedOption) {
+                            toggleOptionSelection(newFocusedOption, true);
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -467,12 +480,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
-                        selectMultipleOptions(
-                            options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
-                        );
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                            selectMultipleOptions(
+                                options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
+                            );
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -483,12 +498,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<Lis
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
-                        selectMultipleOptions(
-                            options.slice(options.indexOf(focusedOption), options.indexOf(newFocusedOption) + 1),
-                        );
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                            selectMultipleOptions(
+                                options.slice(options.indexOf(focusedOption), options.indexOf(newFocusedOption) + 1),
+                            );
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;

@@ -5,9 +5,8 @@ import styled from 'styled-components';
 import { useTranslation } from '../../../../i18n/use-translation';
 import { IconButton } from '../../../buttons';
 import type { IconButtonProps } from '../../../buttons/icon-button';
-import { useDeviceContext } from '../../../device-context-provider';
 
-const Wrapper = styled.div<{ isMobile: boolean }>`
+const Wrapper = styled.div`
     align-items: center;
     display: flex;
     height: var(--size-1halfx);
@@ -42,11 +41,10 @@ export const CalendarHeader: FC<CalendarHeaderProps> = ({
     prevMonthButtonDisabled,
 }) => {
     const { t } = useTranslation('filter');
-    const { isMobile } = useDeviceContext();
     const month = locale.localize?.month(getMonth(monthDate) as Month);
 
     return (
-        <Wrapper isMobile={isMobile} data-testid="calendar-header">
+        <Wrapper data-testid="calendar-header">
             <StyledButton
                 aria-label={t('date.monthPreviousButtonLabel')}
                 data-testid="month-previous"

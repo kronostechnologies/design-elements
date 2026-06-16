@@ -209,16 +209,74 @@ describe('Listbox', () => {
             expect(screen.getByTestId('listitem-optionD')).toHaveAttribute('aria-selected', 'false');
         });
 
-        it('Enter selects the focused option', async () => {
-            const user = userEvent.setup();
-            renderWithProviders(<Listbox options={options} defaultValue="optionB" focusedValue="optionB" />);
+        describe('with selectOnFocus disabled', () => {
+            it('Enter selects the focused option', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(<Listbox options={options} defaultValue="optionB" focusedValue="optionB" />);
 
-            const listbox = screen.getByRole('listbox');
-            act(() => listbox.focus());
-            await user.keyboard('{ArrowDown}');
-            await user.keyboard('{Enter}');
+                const listbox = screen.getByRole('listbox');
+                act(() => listbox.focus());
+                await user.keyboard('{ArrowDown}');
+                await user.keyboard('{Enter}');
 
-            expect(screen.getByTestId('listitem-optionC')).toHaveAttribute('aria-selected', 'true');
+                expect(screen.getByTestId('listitem-optionC')).toHaveAttribute('aria-selected', 'true');
+            });
+
+            it('ArrowDown moves focus without selecting the option', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(
+                    <Listbox options={options} defaultValue="optionA" focusedValue="optionA" selectOnFocus={false} />,
+                );
+
+                const listbox = screen.getByRole('listbox');
+                act(() => listbox.focus());
+                await user.keyboard('{ArrowDown}');
+
+                expect(screen.getByTestId('listitem-optionB')).toHaveAttribute('aria-selected', 'false');
+                expect(screen.getByTestId('listitem-optionA')).toHaveAttribute('aria-selected', 'true');
+            });
+
+            it('ArrowUp moves focus without selecting the option', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(
+                    <Listbox options={options} defaultValue="optionC" focusedValue="optionC" selectOnFocus={false} />,
+                );
+
+                const listbox = screen.getByRole('listbox');
+                act(() => listbox.focus());
+                await user.keyboard('{ArrowUp}');
+
+                expect(screen.getByTestId('listitem-optionB')).toHaveAttribute('aria-selected', 'false');
+                expect(screen.getByTestId('listitem-optionC')).toHaveAttribute('aria-selected', 'true');
+            });
+
+            it('Home moves focus without selecting the option', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(
+                    <Listbox options={options} defaultValue="optionC" focusedValue="optionC" selectOnFocus={false} />,
+                );
+
+                const listbox = screen.getByRole('listbox');
+                act(() => listbox.focus());
+                await user.keyboard('{Home}');
+
+                expect(screen.getByTestId('listitem-optionA')).toHaveAttribute('aria-selected', 'false');
+                expect(screen.getByTestId('listitem-optionC')).toHaveAttribute('aria-selected', 'true');
+            });
+
+            it('End moves focus without selecting the option', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(
+                    <Listbox options={options} defaultValue="optionA" focusedValue="optionA" selectOnFocus={false} />,
+                );
+
+                const listbox = screen.getByRole('listbox');
+                act(() => listbox.focus());
+                await user.keyboard('{End}');
+
+                expect(screen.getByTestId('listitem-optionE')).toHaveAttribute('aria-selected', 'false');
+                expect(screen.getByTestId('listitem-optionA')).toHaveAttribute('aria-selected', 'true');
+            });
         });
 
         it('keyboard navigation is disabled when keyboardNav is disabled', async () => {

@@ -266,7 +266,7 @@ export const Translations = {
                 presetNextYears: '{{count}} prochaines années',
                 presetNextYears_one: 'Prochaine année',
                 presetLastDays: '{{count}} derniers jours',
-                presetLastDays_one: 'Hier',
+                presetLastDays_one: 'Depuis un jour',
                 presetLastMonths: '{{count}} derniers mois',
                 presetLastMonths_one: 'Mois dernier',
                 presetLastWeeks: '{{count}} dernières semaines',
