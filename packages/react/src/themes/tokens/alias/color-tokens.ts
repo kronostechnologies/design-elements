@@ -14,6 +14,8 @@ export type ColorAliasToken =
     | 'color-background-neutral-subtle'
     | 'color-background-neutral-bold'
     | 'color-background-neutral-bold-disabled'
+    | 'color-background-discovery'
+    | 'color-text-discovery'
     | 'color-feedback-background-success-subtle'
     | 'color-feedback-background-warning-subtle'
     | 'color-feedback-background-alert-subtle'
@@ -133,6 +135,8 @@ export const defaultColorAliasTokens: AliasTokenMap<ColorAliasToken> = {
     'color-background-neutral-subtle': 'color-neutral-05',
     'color-background-neutral-bold': 'color-neutral-65',
     'color-background-neutral-bold-disabled': 'color-neutral-30',
+    'color-background-discovery': 'color-discovery-02',
+    'color-text-discovery': 'color-discovery-70',
     'color-feedback-background-success-subtlest': 'color-success-02',
     'color-feedback-background-success-subtle': 'color-success-05',
     'color-feedback-background-success-bold': 'color-success-50',
