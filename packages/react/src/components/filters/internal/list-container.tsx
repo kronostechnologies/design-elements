@@ -83,6 +83,7 @@ export const ListContainer: FC<ListContainerProps> = ({
                 onOptionClick={onOptionClick}
                 options={options}
                 featuredOptions={featuredOptions ?? undefined}
+                selectOnFocus={false}
                 value={value ?? undefined}
             />
         </Container>

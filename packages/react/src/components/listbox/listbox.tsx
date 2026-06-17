@@ -8,7 +8,8 @@ import {
     RefAttributes,
     type RefObject,
     useCallback,
-    useLayoutEffect, useMemo,
+    useLayoutEffect,
+    useMemo,
     useRef,
     useState,
 } from 'react';
