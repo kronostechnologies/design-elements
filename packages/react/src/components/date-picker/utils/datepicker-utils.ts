@@ -1,5 +1,5 @@
 import type { Locale, Month } from 'date-fns';
-import { enCA } from 'date-fns/locale';
+import { enCA, frCA } from 'date-fns/locale';
 import { range } from '../../../utils/range';
 import { type DropdownListOption } from '../../dropdown-list';
 
@@ -8,9 +8,9 @@ const monthNumbers: Month[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
-    const findLocale = localeArray.find((locale) => locale.code === localeCode);
-    return findLocale || enCA;
+export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale | string): Locale {
+    const foundLocale = localeArray.find((locale) => locale.code === localeCode);
+    return foundLocale || (localeCode?.startsWith('fr') ? frCA : enCA);
 }
 
 export function getLocaleMonthsShort(locale: Locale): string[] {

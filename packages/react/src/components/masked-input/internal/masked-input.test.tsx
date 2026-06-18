@@ -2,7 +2,7 @@ import { type RenderResult, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { FC } from 'react';
 import { renderWithProviders } from '../../../test-utils/renderer';
-import { useDateMask } from '../date-mask/use-date-mask';
+import { useDateMask } from '../date-mask';
 import { MaskedInput, type MaskedInputProps } from './masked-input';
 
 const PHONE_MASK = '(___) ___-____';

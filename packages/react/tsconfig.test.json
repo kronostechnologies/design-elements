@@ -1,6 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2022"
+    ],
     "noEmit": true,
     "rootDir": "./",
     "skipLibCheck": true,

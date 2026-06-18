@@ -1,0 +1,41 @@
+import { FilterDateRange } from '@equisoft/design-elements-react';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
+import * as FilterDateRangeStories  from './filter-date-range.stories';
+
+<Meta of={FilterDateRangeStories} />
+
+# FilterDateRange
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Using presets](#using-presets)
+4. [Properties](#properties)
+
+## Definition
+
+<Canvas of={FilterDateRangeStories.Default} />
+
+## Usage
+
+### When to use
+- Use when users need to view content for a custom or predefined date range.
+- Use when date precision is critical to the functionality, such as reports.
+
+### When not to use
+- Do not use when the range of dates spans over decades, making manual selection complex.
+- Do not use to filter a calendar view. Use the Menu Button instead.
+
+
+## Using presets
+### Default
+<Canvas of={FilterDateRangeStories.Default} />
+
+### Past
+<Canvas of={FilterDateRangeStories.PastPresets} />
+
+### Upcoming
+<Canvas of={FilterDateRangeStories.UpcomingPresets} />
+
+## Properties
+<ArgTypes of={FilterDateRange} />
+
+## References

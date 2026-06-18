@@ -144,7 +144,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -570,7 +570,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -1000,7 +1000,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -1430,7 +1430,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -1888,7 +1888,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c6 .react-datepicker__day--today {
@@ -2349,7 +2349,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -2930,7 +2930,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -4370,7 +4370,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
@@ -5801,7 +5801,7 @@ input + .c1 {
   background-color: #E0F0F9;
   border: 1px solid #006296;
   color: #003A5A;
-  font-weight: var(--font-semi-bold);
+  font-weight: 600;
 }
 
 .c4 .react-datepicker__day--today {
