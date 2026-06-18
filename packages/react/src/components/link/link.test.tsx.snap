@@ -65,7 +65,7 @@ exports[`Link Component Styling matches RouteLink snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -137,7 +137,7 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -148,21 +148,21 @@ exports[`Link Component Styling matches button link snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c0[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -251,7 +251,7 @@ exports[`Link Component Styling matches disabled snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -344,7 +344,7 @@ exports[`Link Component Styling matches external link snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -459,7 +459,7 @@ exports[`Link Component Styling matches icon and label snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -520,7 +520,7 @@ HTMLCollection [
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -588,7 +588,7 @@ HTMLCollection [
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -866,7 +866,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -953,7 +953,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -964,7 +964,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1066,7 +1066,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1077,7 +1077,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1179,7 +1179,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1190,21 +1190,21 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c1[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -1292,7 +1292,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1303,7 +1303,7 @@ exports[`Link Component equisoft icon color on hover changes equisoft icon color
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

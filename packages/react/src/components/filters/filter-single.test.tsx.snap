@@ -43,7 +43,7 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -59,7 +59,7 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
 }
 
 .c3:focus-visible {
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -85,7 +85,7 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -102,16 +102,16 @@ exports[`FilterSingle rendering applies active styling when filter is applied 1`
 }
 
 .c1 .eds-DropdownMenuButton-button {
-  background-color: #E0F0F9;
+  background-color: #E6EFF5;
   border: 1px solid #006296;
-  color: #003A5A;
+  color: #003B5A;
   font-weight: 600;
   border-radius: var(--border-radius);
   padding: 0 var(--spacing-1x);
 }
 
 .c1 .eds-DropdownMenuButton-button::before {
-  color: #003A5A;
+  color: #003B5A;
 }
 
 .c1 .eds-DropdownMenuButton-button::before {
@@ -215,7 +215,7 @@ exports[`FilterSingle rendering renders button with label 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -231,7 +231,7 @@ exports[`FilterSingle rendering renders button with label 1`] = `
 }
 
 .c3:focus-visible {
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -257,7 +257,7 @@ exports[`FilterSingle rendering renders button with label 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

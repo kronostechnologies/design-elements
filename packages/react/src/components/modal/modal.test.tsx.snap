@@ -260,7 +260,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -280,7 +280,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -479,7 +479,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -499,7 +499,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -698,7 +698,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -717,7 +717,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

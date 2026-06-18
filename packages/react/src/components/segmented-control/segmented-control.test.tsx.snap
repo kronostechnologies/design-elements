@@ -64,7 +64,7 @@ exports[`SegmentedControl matches snapshot (desktop) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -93,10 +93,10 @@ exports[`SegmentedControl matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #E0F0F9;
+  background-color: #E6EFF5;
   border: 1px solid #006296;
   border-radius: var(--border-radius);
-  color: #003A5A;
+  color: #003B5A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,8 +116,8 @@ exports[`SegmentedControl matches snapshot (desktop) 1`] = `
 }
 
 .c2:hover {
-  background-color: #C2E2F4;
-  color: #003A5A;
+  background-color: #CCE0EA;
+  color: #003B5A;
 }
 
 .c2:hover::before {
@@ -139,7 +139,7 @@ exports[`SegmentedControl matches snapshot (desktop) 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -288,7 +288,7 @@ exports[`SegmentedControl matches snapshot (mobile) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -317,10 +317,10 @@ exports[`SegmentedControl matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #E0F0F9;
+  background-color: #E6EFF5;
   border: 1px solid #006296;
   border-radius: var(--border-radius);
-  color: #003A5A;
+  color: #003B5A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -340,8 +340,8 @@ exports[`SegmentedControl matches snapshot (mobile) 1`] = `
 }
 
 .c2:hover {
-  background-color: #C2E2F4;
-  color: #003A5A;
+  background-color: #CCE0EA;
+  color: #003B5A;
 }
 
 .c2:hover::before {
@@ -363,7 +363,7 @@ exports[`SegmentedControl matches snapshot (mobile) 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

@@ -1,8 +1,12 @@
 import type { RefTokenMap } from '../tokens';
 
 export type PaletteToken =
+    | 'color-brand-02'
+    | 'color-brand-03'
     | 'color-brand-05'
+    | 'color-brand-08'
     | 'color-brand-10'
+    | 'color-brand-15'
     | 'color-brand-20'
     | 'color-brand-30'
     | 'color-brand-40'
@@ -133,15 +137,19 @@ export type PaletteToken =
     | 'color-decorative-10-70';
 
 export const defaultPaletteTokens: RefTokenMap<PaletteToken> = {
-    'color-brand-05': '#E0F0F9',
-    'color-brand-10': '#C2E2F4',
-    'color-brand-20': '#84C6EA',
-    'color-brand-30': '#3F9DD1',
-    'color-brand-40': '#1582BD',
+    'color-brand-02': '#F5F9FB',
+    'color-brand-03': '#F0F5F9',
+    'color-brand-05': '#E6EFF5',
+    'color-brand-08': '#D6E6EE',
+    'color-brand-10': '#CCE0EA',
+    'color-brand-15': '#B3D0E0',
+    'color-brand-20': '#99C0D5',
+    'color-brand-30': '#66A1C0',
+    'color-brand-40': '#3381AB',
     'color-brand-50': '#006296',
     'color-brand-60': '#004E78',
-    'color-brand-70': '#003A5A',
-    'color-brand-80': '#012639',
+    'color-brand-70': '#003B5A',
+    'color-brand-80': '#00273C',
     'color-brand-90': '#00131E',
     'color-accent-05': '#FFECEB',
     'color-accent-10': '#FFD9D7',

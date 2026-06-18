@@ -177,7 +177,7 @@ input + .c1 {
 }
 
 .c4 .base-Slider-thumb.base--focusVisible::before {
-  box-shadow: inset 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #99C0D5;
 }
 
 .c4 .base-Slider-thumb.base--active::before {
@@ -497,7 +497,7 @@ input + .c1 {
 }
 
 .c4 .base-Slider-thumb.base--focusVisible::before {
-  box-shadow: inset 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #99C0D5;
 }
 
 .c4 .base-Slider-thumb.base--active::before {
@@ -792,7 +792,7 @@ input + .c1 {
 }
 
 .c4 .base-Slider-thumb.base--focusVisible::before {
-  box-shadow: inset 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #99C0D5;
 }
 
 .c4 .base-Slider-thumb.base--active::before {

@@ -43,7 +43,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -62,7 +62,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -337,7 +337,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -356,7 +356,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -631,7 +631,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (d
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -650,7 +650,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (d
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -925,7 +925,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (m
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -944,7 +944,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (m
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1219,7 +1219,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1238,7 +1238,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1513,7 +1513,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1532,7 +1532,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1807,7 +1807,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (d
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1826,7 +1826,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (d
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2101,7 +2101,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (m
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2120,7 +2120,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (m
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2395,7 +2395,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (deskto
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2414,7 +2414,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (deskto
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2689,7 +2689,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2708,7 +2708,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2983,7 +2983,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3002,7 +3002,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3277,7 +3277,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile 
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3296,7 +3296,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile 
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3571,7 +3571,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (d
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3591,7 +3591,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (d
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3866,7 +3866,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (m
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3885,7 +3885,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (m
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4160,7 +4160,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (de
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4180,7 +4180,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (de
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4455,7 +4455,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mo
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4474,7 +4474,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mo
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4749,7 +4749,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (d
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -4769,7 +4769,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (d
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5044,7 +5044,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (m
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5063,7 +5063,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (m
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5338,7 +5338,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (de
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5358,7 +5358,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (de
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5633,7 +5633,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mo
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5652,7 +5652,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mo
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5927,7 +5927,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -5947,7 +5947,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6222,7 +6222,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile 
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6241,7 +6241,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile 
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6516,7 +6516,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop 
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6536,7 +6536,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop 
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6811,7 +6811,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile r
 
 .c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -6830,7 +6830,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile r
 
 .c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

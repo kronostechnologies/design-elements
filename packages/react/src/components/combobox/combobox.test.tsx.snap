@@ -43,7 +43,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 
 .c8:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -62,7 +62,7 @@ exports[`Combobox matches the snapshot (disabled) 1`] = `
 
 .c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -216,7 +216,7 @@ input + .c2 {
 
 .c5:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -326,7 +326,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -345,7 +345,7 @@ exports[`Combobox matches the snapshot (invalid) 1`] = `
 
 .c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -525,7 +525,7 @@ input + .c2 {
 
 .c7:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -664,7 +664,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c6:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -683,7 +683,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -817,7 +817,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
 
 .c3:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -918,7 +918,7 @@ exports[`Combobox matches the snapshot (multiselect) 1`] = `
 
 .c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -937,7 +937,7 @@ exports[`Combobox matches the snapshot (multiselect) 1`] = `
 
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1092,7 +1092,7 @@ input + .c2 {
 
 .c6:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1212,7 +1212,7 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
 
 .c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1231,7 +1231,7 @@ exports[`Combobox matches the snapshot (readOnly) 1`] = `
 
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1394,7 +1394,7 @@ input + .c2 {
 
 .c6:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1510,7 +1510,7 @@ exports[`Combobox matches the snapshot 1`] = `
 
 .c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1529,7 +1529,7 @@ exports[`Combobox matches the snapshot 1`] = `
 
 .c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1695,7 +1695,7 @@ input + .c2 {
 
 .c6:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

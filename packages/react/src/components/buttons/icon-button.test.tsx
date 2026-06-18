@@ -131,7 +131,7 @@ describe('Icon Button', () => {
         await userEvent.tab();
 
         expect(button).toHaveFocus();
-        expect(button).toHaveStyleRule('outline', '2px solid #84C6EA', {
+        expect(button).toHaveStyleRule('outline', '2px solid #99C0D5', {
             modifier: ':focus-visible',
         });
     });

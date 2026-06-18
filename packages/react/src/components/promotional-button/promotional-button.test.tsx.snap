@@ -43,7 +43,7 @@ exports[`PromotionalButton does not render the left icon when loading 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -66,21 +66,21 @@ exports[`PromotionalButton does not render the left icon when loading 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c1[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -264,7 +264,7 @@ exports[`PromotionalButton renders when not loading 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -281,21 +281,21 @@ exports[`PromotionalButton renders when not loading 1`] = `
 
 .c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c2:hover,
 .c2[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c2[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
   pointer-events: none;
 }
