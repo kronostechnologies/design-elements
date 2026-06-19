@@ -126,7 +126,7 @@ exports[`ProgressTracker Snapshots linear 1`] = `
 .c7::before {
   border-color: #006296;
   border-width: 0.25rem;
-  color: #003A5A;
+  color: #003B5A;
   font-weight: var(--font-semi-bold);
   height: var(--size-2x);
   margin: -0.25rem auto 0;
@@ -138,7 +138,7 @@ exports[`ProgressTracker Snapshots linear 1`] = `
 }
 
 .c7 .c4 {
-  color: #003A5A;
+  color: #003B5A;
   font-weight: var(--font-semi-bold);
 }
 
@@ -328,7 +328,7 @@ exports[`ProgressTracker Snapshots non linear 1`] = `
 .c9::before {
   border-color: #006296;
   border-width: 0.25rem;
-  color: #003A5A;
+  color: #003B5A;
   font-weight: var(--font-semi-bold);
   height: var(--size-2x);
   margin: -0.25rem auto 0;
@@ -336,7 +336,7 @@ exports[`ProgressTracker Snapshots non linear 1`] = `
 }
 
 .c9 .c4 {
-  color: #003A5A;
+  color: #003B5A;
   font-weight: var(--font-semi-bold);
 }
 

@@ -59,16 +59,16 @@ exports[`Chooser Button Matches the snapshot 1`] = `
 
 input[type='checkbox']:checked + .c0,
 input[type='radio']:checked + .c1 {
-  background: #E0F0F9;
+  background: #E6EFF5;
   border-color: #006296;
-  color: #003A5A;
+  color: #003B5A;
 }
 
 .c1:focus-visible,
 input[type="checkbox"]:focus-visible + .c1,
 input[type="radio"]:focus-visible + .c1 {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

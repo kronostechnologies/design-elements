@@ -114,7 +114,7 @@ exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
 
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -256,7 +256,7 @@ exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
 
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -398,7 +398,7 @@ exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
 
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

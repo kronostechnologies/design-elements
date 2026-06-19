@@ -26,7 +26,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -87,7 +87,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -184,7 +184,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -245,7 +245,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 2`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -306,7 +306,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -367,7 +367,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -464,7 +464,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -525,7 +525,7 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 2`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -586,7 +586,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -647,7 +647,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -744,7 +744,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -805,7 +805,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 2`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -866,7 +866,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -927,7 +927,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1024,7 +1024,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1085,7 +1085,7 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 2`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

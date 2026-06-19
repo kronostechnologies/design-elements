@@ -43,7 +43,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -62,7 +62,7 @@ exports[`Icon Button Has destructive-secondary styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -153,7 +153,7 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -172,20 +172,20 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
   pointer-events: none;
@@ -264,7 +264,7 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -283,20 +283,20 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
   pointer-events: none;
@@ -374,7 +374,7 @@ exports[`Icon Button Has primary styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -393,20 +393,20 @@ exports[`Icon Button Has primary styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
   pointer-events: none;
@@ -484,7 +484,7 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -503,21 +503,21 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c1[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -594,7 +594,7 @@ exports[`Icon Button Has small styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -614,20 +614,20 @@ exports[`Icon Button Has small styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
   pointer-events: none;
@@ -705,7 +705,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -724,7 +724,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

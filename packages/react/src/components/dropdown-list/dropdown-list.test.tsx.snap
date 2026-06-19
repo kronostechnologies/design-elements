@@ -780,7 +780,7 @@ input + .c2 {
 
 .c5:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1402,7 +1402,7 @@ input + .c2 {
 
 .c6:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1973,7 +1973,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 
 .c2:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2496,7 +2496,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 
 .c2:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -3350,7 +3350,7 @@ input + .c2 {
 
 .c5:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

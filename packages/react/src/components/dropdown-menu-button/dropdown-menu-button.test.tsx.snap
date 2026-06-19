@@ -43,7 +43,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -59,7 +59,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c2:focus-visible {
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -97,7 +97,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -149,7 +149,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 
 .c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -173,7 +173,7 @@ exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 
 .c20:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -771,7 +771,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 
 .c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -787,7 +787,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 }
 
 .c2:focus-visible {
-  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -825,7 +825,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -877,7 +877,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 
 .c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -901,7 +901,7 @@ exports[`DropdownMenuButton matches Snapshot 1`] = `
 
 .c20:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
