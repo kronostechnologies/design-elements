@@ -27,7 +27,7 @@ export interface PresetsProps {
 
     onPresetClick(preset: ComputedPreset | null): void;
 
-    presets: FilterDateRangePreset[];
+    presets?: FilterDateRangePreset[];
     selectedPreset: string | null;
 }
 
@@ -42,26 +42,23 @@ export const PresetsList: FC<PresetsProps> = ({
 }) => {
     const { t } = useTranslation('filter');
     const presets: ComputedPreset[] = useMemo(
-        () => providedPresets.map((preset) => computePreset(preset, t)),
+        () => (providedPresets || []).map((preset) => computePreset(preset, t)),
         [providedPresets, t],
     );
-    const options: ListboxOption[] = useMemo(() => {
-        const items: ListboxOption[] = [{
+    const options: ListboxOption[] = useMemo(() => [
+        {
             label: t('all'),
             value: 'all',
-        }];
-        items.push(
-            ...presets.map((preset) => ({
-                label: preset.label,
-                value: preset.label,
-            })),
-            {
-                label: t('custom'),
-                value: CUSTOM_PRESET,
-            },
-        );
-        return items;
-    }, [presets, t]);
+        },
+        ...presets.map((preset) => ({
+            label: preset.label,
+            value: preset.label,
+        })),
+        {
+            label: t('custom'),
+            value: CUSTOM_PRESET,
+        },
+    ], [presets, t]);
 
     const handleChange = useCallback((listboxOption: ListboxOption) => {
         if (listboxOption.value === CUSTOM_PRESET) {
