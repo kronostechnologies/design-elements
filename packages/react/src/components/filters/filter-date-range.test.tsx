@@ -272,16 +272,18 @@ describe('FilterDateRange', () => {
 
             expect(onChange).toHaveBeenLastCalledWith(expect.objectContaining({
                 from: null,
-                to: new Date(2024, 5, 30),
+                to: new Date(2024, 5, 30, 23, 59, 59, 999),
             }));
         });
 
         it('calls onChange with null from when an incomplete start date is entered', async () => {
             const user = userEvent.setup();
             const onChange = jest.fn();
-            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+            const value: FilterDateRangeValue = { from: new Date(2025, 1, 1), to: null };
+            renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} value={value} />);
 
             await openDropdown(user);
+            await user.clear(screen.getByTestId('start-date'));
             await user.type(screen.getByTestId('start-date'), '202406');
 
             expect(onChange).toHaveBeenLastCalledWith(expect.objectContaining({ from: null }));
@@ -318,13 +320,18 @@ describe('FilterDateRange', () => {
             await user.type(screen.getByTestId('end-date'), '20240630');
             await user.click(screen.getByTestId('apply-button'));
 
-            expect(onChange).toHaveBeenCalledWith({ from: new Date(2024, 5, 1), to: new Date(2024, 5, 30) });
+            expect(onChange).toHaveBeenCalledWith({
+                from: new Date(2024, 5, 1),
+                to: new Date(2024, 5, 30, 23, 59, 59, 999),
+            });
         });
 
         it('updates the button label to "From {date}" after typing only a start date', async () => {
             const user = userEvent.setup();
             const onChange = jest.fn();
-            const { rerender } = renderWithProviders(<FilterDateRange label={A_LABEL} onChange={onChange} />);
+            const { rerender } = renderWithProviders(
+                <FilterDateRange label={A_LABEL} onChange={onChange} value={{ from: null, to: null }} />,
+            );
 
             await openDropdown(user);
             await user.type(screen.getByTestId('start-date'), '20240601');

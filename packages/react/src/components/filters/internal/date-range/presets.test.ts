@@ -33,7 +33,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetToday');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.today(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -53,7 +53,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetTomorrow');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.tomorrow(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -73,7 +73,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetPast');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.past(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -93,7 +93,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetUpcoming');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.upcoming(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -113,7 +113,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetYesterday');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.yesterday(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -142,6 +142,26 @@ describe('FilterDateRangePresets', () => {
         });
     });
 
+    describe('lastWeek', () => {
+        it('returns a preset for the previous full calendar week and computes last week label', () => {
+            const preset = FilterDateRangePresets.lastWeek();
+
+            const result = computePreset(preset, t);
+
+            expect(result.start).toEqual(new Date(2026, 5, 7));
+            expect(result.end).toEqual(new Date(2026, 5, 13, 23, 59, 59, 999));
+            expect(result.label).toBe('date.presetLastWeek');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastWeek(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
+    });
+
     describe('lastWeeks', () => {
         it('returns relative weeks preset and compute last weeks label', () => {
             const preset = FilterDateRangePresets.lastWeeks(3);
@@ -155,6 +175,26 @@ describe('FilterDateRangePresets', () => {
 
         it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.lastWeeks(3), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
+    });
+
+    describe('lastMonth', () => {
+        it('returns a preset for the previous full calendar month and computes last month label', () => {
+            const preset = FilterDateRangePresets.lastMonth();
+
+            const result = computePreset(preset, t);
+
+            expect(result.start).toEqual(new Date(2026, 4, 1));
+            expect(result.end).toEqual(new Date(2026, 4, 31, 23, 59, 59, 999));
+            expect(result.label).toBe('date.presetLastMonth');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.lastMonth(), label: 'My Label' };
 
             const result = computePreset(preset, t);
 
@@ -193,7 +233,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetLastYear:{"year":2025}');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.lastYear(), label: 'My Label' };
 
             const result = computePreset(preset, t);
@@ -242,6 +282,26 @@ describe('FilterDateRangePresets', () => {
         });
     });
 
+    describe('nextWeek', () => {
+        it('returns a preset for the next full calendar week and computes next week label', () => {
+            const preset = FilterDateRangePresets.nextWeek();
+
+            const result = computePreset(preset, t);
+
+            expect(result.start).toEqual(new Date(2026, 5, 21));
+            expect(result.end).toEqual(new Date(2026, 5, 27, 23, 59, 59, 999));
+            expect(result.label).toBe('date.presetNextWeek');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextWeek(), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
+    });
+
     describe('nextWeeks', () => {
         it('returns relative weeks preset and compute next weeks label', () => {
             const preset = FilterDateRangePresets.nextWeeks(2);
@@ -255,6 +315,26 @@ describe('FilterDateRangePresets', () => {
 
         it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.nextWeeks(2), label: 'My Label' };
+
+            const result = computePreset(preset, t);
+
+            expect(result.label).toBe('My Label');
+        });
+    });
+
+    describe('nextMonth', () => {
+        it('returns a preset for the next full calendar month and computes next month label', () => {
+            const preset = FilterDateRangePresets.nextMonth();
+
+            const result = computePreset(preset, t);
+
+            expect(result.start).toEqual(new Date(2026, 6, 1));
+            expect(result.end).toEqual(new Date(2026, 6, 31, 23, 59, 59, 999));
+            expect(result.label).toBe('date.presetNextMonth');
+        });
+
+        it('keeps provided label', () => {
+            const preset = { ...FilterDateRangePresets.nextMonth(), label: 'My Label' };
 
             const result = computePreset(preset, t);
 
@@ -293,7 +373,7 @@ describe('FilterDateRangePresets', () => {
             expect(result.label).toBe('date.presetNextYear:{"year":2027}');
         });
 
-        it('keeps provided label instead of generating one', () => {
+        it('keeps provided label', () => {
             const preset = { ...FilterDateRangePresets.nextYear(), label: 'My Label' };
 
             const result = computePreset(preset, t);

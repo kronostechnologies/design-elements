@@ -48,7 +48,7 @@ export const FilterDateRange: FC<FilterDateRangeProps> = ({
     async = false,
     label,
     onChange,
-    presets = [],
+    presets,
     value,
 }) => {
     const { i18n, t } = useTranslation('filter');
