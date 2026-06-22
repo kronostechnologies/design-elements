@@ -1,6 +1,6 @@
 import type { FilterDateRangePreset } from '../../filter-date-range';
 import type { ComputedPreset } from './presets';
-import { getRangeFromPreset, hasSameRange } from './date-range-utils';
+import { getRangeFromPreset, hasSameRange, isSameDateTime } from './date-range-utils';
 
 describe('hasSameRange', () => {
     it('returns true when both ranges have the same from and to dates', () => {
@@ -109,5 +109,42 @@ describe('getRangeFromPreset', () => {
         const result = getRangeFromPreset(preset);
 
         expect(result).toEqual({ from: null, to: null });
+    });
+});
+
+describe('isSameDateTime', () => {
+    it('returns true when both dates are the same instant', () => {
+        const date = new Date(2026, 0, 1, 12, 30, 0);
+
+        const result = isSameDateTime(date, new Date(2026, 0, 1, 12, 30, 0));
+
+        expect(result).toBe(true);
+    });
+
+    it('returns false when dates are different', () => {
+        const result = isSameDateTime(
+            new Date(2026, 0, 1, 12, 30, 0, 0),
+            new Date(2026, 0, 1, 12, 30, 0, 999),
+        );
+
+        expect(result).toBe(false);
+    });
+
+    it('returns true when both dates are null', () => {
+        const result = isSameDateTime(null, null);
+
+        expect(result).toBe(true);
+    });
+
+    it('returns false when only first date is null', () => {
+        const result = isSameDateTime(null, new Date(2026, 0, 1));
+
+        expect(result).toBe(false);
+    });
+
+    it('returns false when only second date is null', () => {
+        const result = isSameDateTime(new Date(2026, 0, 1), null);
+
+        expect(result).toBe(false);
     });
 });

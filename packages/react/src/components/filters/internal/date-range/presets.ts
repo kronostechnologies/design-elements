@@ -1,16 +1,26 @@
 import {
     add,
+    addMonths,
+    addWeeks,
     addYears,
     endOfDay,
+    endOfMonth,
+    endOfWeek,
     endOfYear,
     isSameDay,
+    isSameMonth,
+    isSameWeek,
     isSameYear,
     isToday,
     isTomorrow,
     isYesterday,
     startOfDay,
+    startOfMonth,
+    startOfWeek,
     startOfYear,
     subDays,
+    subMonths,
+    subWeeks,
     subYears,
 } from 'date-fns';
 import { type TFunction } from 'i18next';
@@ -72,12 +82,44 @@ function isLastYear(date: Date): boolean {
     return isSameYear(date, subYears(new Date(), 1));
 }
 
+function isNextWeek(date: Date): boolean {
+    return isSameWeek(date, addWeeks(new Date(), 1));
+}
+
+function isLastWeek(date: Date): boolean {
+    return isSameWeek(date, subWeeks(new Date(), 1));
+}
+
+function isNextMonth(date: Date): boolean {
+    return isSameMonth(date, addMonths(new Date(), 1));
+}
+
+function isLastMonth(date: Date): boolean {
+    return isSameMonth(date, subMonths(new Date(), 1));
+}
+
 function isFirstDayOfYear(date: Date): boolean {
     return isSameDay(date, startOfYear(date));
 }
 
 function isLastDayOfYear(date: Date): boolean {
     return isSameDay(date, endOfYear(date));
+}
+
+function isFirstDayOfWeek(date: Date): boolean {
+    return isSameDay(date, startOfWeek(date));
+}
+
+function isLastDayOfWeek(date: Date): boolean {
+    return isSameDay(date, endOfWeek(date));
+}
+
+function isFirstDayOfMonth(date: Date): boolean {
+    return isSameDay(date, startOfMonth(date));
+}
+
+function isLastDayOfMonth(date: Date): boolean {
+    return isSameDay(date, endOfMonth(date));
 }
 
 export function computePreset(preset: FilterDateRangePreset, t: TFunction): ComputedPreset {
@@ -102,6 +144,22 @@ export function computePreset(preset: FilterDateRangePreset, t: TFunction): Comp
     }
     if (!to && from && isToday(from)) {
         return { label: t('date.presetUpcoming'), ...preset };
+    }
+    if (from && to && isFirstDayOfWeek(from) && isLastDayOfWeek(to)) {
+        if (isLastWeek(from) && isLastWeek(to)) {
+            return { label: t('date.presetLastWeek'), ...preset };
+        }
+        if (isNextWeek(from) && isNextWeek(to)) {
+            return { label: t('date.presetNextWeek'), ...preset };
+        }
+    }
+    if (from && to && isFirstDayOfMonth(from) && isLastDayOfMonth(to)) {
+        if (isLastMonth(from) && isLastMonth(to)) {
+            return { label: t('date.presetLastMonth'), ...preset };
+        }
+        if (isNextMonth(from) && isNextMonth(to)) {
+            return { label: t('date.presetNextMonth'), ...preset };
+        }
     }
     if (from && to && isFirstDayOfYear(from) && isLastDayOfYear(to)) {
         if (isLastYear(from) && isLastYear(to)) {
@@ -143,9 +201,20 @@ export const FilterDateRangePresets = {
     lastDays(days: number): FilterDateRangePreset {
         return { days: -days };
     },
+    /** The full calendar week prior to the current week
+     * (from the start of the week at midnight to the end of the week at end of day). */
+    lastWeek(): FilterDateRangePreset {
+        const now = new Date();
+        return { end: endOfWeek(subWeeks(now, 1)), start: startOfWeek(subWeeks(now, 1)) };
+    },
     /** From `weeks` weeks ago to now, using the current time as boundaries. */
     lastWeeks(weeks: number): FilterDateRangePreset {
         return { weeks: -weeks };
+    },
+    /** The full calendar month prior to the current month (from the 1st at midnight to the last day at end of day). */
+    lastMonth(): FilterDateRangePreset {
+        const now = new Date();
+        return { end: endOfMonth(subMonths(now, 1)), start: startOfMonth(subMonths(now, 1)) };
     },
     /** From `months` months ago to now, using the current time as boundaries. */
     lastMonths(months: number): FilterDateRangePreset {
@@ -164,9 +233,19 @@ export const FilterDateRangePresets = {
     nextDays(days: number): FilterDateRangePreset {
         return { days };
     },
+    /** The full calendar week following the current week
+     * (from the start of the week at midnight to the end of the week at end of day). */
+    nextWeek(): FilterDateRangePreset {
+        const now = new Date();
+        return { end: endOfWeek(addWeeks(now, 1)), start: startOfWeek(addWeeks(now, 1)) };
+    },
     /** From now to `weeks` weeks ahead, using the current time as boundaries. */
     nextWeeks(weeks: number): FilterDateRangePreset {
         return { weeks };
+    },
+    nextMonth(): FilterDateRangePreset {
+        const now = new Date();
+        return { end: endOfMonth(addMonths(now, 1)), start: startOfMonth(addMonths(now, 1)) };
     },
     /** From now to `months` months ahead, using the current time as boundaries. */
     nextMonths(months: number): FilterDateRangePreset {

@@ -1,3 +1,4 @@
+import { endOfDay, startOfDay } from 'date-fns';
 import { type FC, forwardRef, PropsWithChildren, type ReactNode, type Ref, useCallback, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
@@ -12,7 +13,7 @@ import { useDeviceContext } from '../../../device-context-provider';
 import { DateMaskedInput, DateMaskedInputProps } from '../../../masked-input';
 import type { FilterDateRangePreset, FilterDateRangeValue } from '../../filter-date-range';
 import { CalendarHeader } from './calendar-header';
-import { getRangeFromPreset, hasSameRange } from './date-range-utils';
+import { getRangeFromPreset, hasSameRange, isSameDateTime } from './date-range-utils';
 import type { ComputedPreset } from './presets';
 import { CUSTOM_PRESET, PresetsList } from './presets-list';
 import { useLocale } from './use-locale';
@@ -233,7 +234,7 @@ export interface DateRangePanelProps {
     defaultValue?: NonNullableProperties<FilterDateRangeValue>;
     firstFocusableRef?: Ref<HTMLDivElement>;
     locale?: SupportedLocale;
-    presets: FilterDateRangePreset[];
+    presets?: FilterDateRangePreset[];
     selectedPreset: string | null;
     value?: FilterDateRangeValue;
 
@@ -294,7 +295,9 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
         _: string,
         newFormattedValue: string,
     ) => {
-        updateValue({ ...currentValue, from });
+        if (!isSameDateTime(currentValue.from, from)) {
+            updateValue({ ...currentValue, from: from ? startOfDay(from) : null });
+        }
         setMaskedStartDate(newFormattedValue);
         setSelectedPreset(CUSTOM_PRESET);
         if (!async) {
@@ -308,7 +311,9 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
         _: string,
         newFormattedValue: string,
     ) => {
-        updateValue({ ...currentValue, to });
+        if (!isSameDateTime(currentValue.to, to)) {
+            updateValue({ ...currentValue, to: to ? endOfDay(to) : null });
+        }
         setMaskedEndDate(newFormattedValue);
         setSelectedPreset(CUSTOM_PRESET);
         if (!async) {
@@ -319,11 +324,13 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
 
     const handleRangeChange = useCallback((dates: [Date | null, Date | null]): void => {
         const [start, end] = dates;
-        updateValue({ from: start, to: end || null });
+        if (!isSameDateTime(currentValue.from, start) || !isSameDateTime(currentValue.to, end)) {
+            updateValue({ from: start ? startOfDay(start) : null, to: end ? endOfDay(end) : null });
+        }
         setMaskedStartDate(start ?? '');
         setMaskedEndDate(end ?? '');
         setSelectedPreset(CUSTOM_PRESET);
-    }, [updateValue]);
+    }, [currentValue.from, currentValue.to, updateValue]);
 
     const handleCancel = useCallback((): void => {
         onCancel?.(previousValue.current);
@@ -357,15 +364,13 @@ export const DateRangePanel: FC<DateRangePanelProps> = ({
     return (
         <Container data-testid="date-range-panel">
             <ReactDatePickerStyles />
-            {presets && (
-                <PresetsList
-                    firstFocusableRef={firstFocusableRef}
-                    onCustomPresetClick={handleCustomPresetClick}
-                    onPresetClick={handlePresetClick}
-                    presets={presets}
-                    selectedPreset={selectedPreset}
-                />
-            )}
+            <PresetsList
+                firstFocusableRef={firstFocusableRef}
+                onCustomPresetClick={handleCustomPresetClick}
+                onPresetClick={handlePresetClick}
+                presets={presets}
+                selectedPreset={selectedPreset}
+            />
 
             <Inputs>
                 <StyledDateMaskedInput
