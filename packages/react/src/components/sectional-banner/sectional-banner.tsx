@@ -92,12 +92,12 @@ const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.$isMobile ? '1rem' : '0.875rem')};
     margin: 0;
 
-    & > *:first-child {
+    & *:first-child {
         margin-top: 0;
     }
 
     &:last-child,
-    & > *:last-child {
+    & *:last-child {
         margin-bottom: 0;
     }
 `;
