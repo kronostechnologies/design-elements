@@ -37,10 +37,10 @@
     "uuid": "14.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
-    "@babel/plugin-transform-react-display-name": "7.29.7",
-    "@babel/preset-env": "7.29.7",
-    "@babel/preset-react": "7.29.7",
+    "@babel/core": "8.0.1",
+    "@babel/plugin-transform-react-display-name": "8.0.1",
+    "@babel/preset-env": "8.0.2",
+    "@babel/preset-react": "8.0.1",
     "@equisoft/eslint-config": "6.0.3",
     "@equisoft/eslint-config-typescript-react": "6.0.3",
     "@equisoft/jest-utils": "1.8.4",
