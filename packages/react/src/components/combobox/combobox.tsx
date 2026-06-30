@@ -17,7 +17,7 @@ import styled from 'styled-components';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useClickOutside } from '../../hooks/use-click-outside';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useDropdown } from '../../hooks/use-dropdown';
+import { useDropdown, type UseDropdownOptions } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useListSelect } from '../../hooks/use-list-select';
@@ -308,6 +308,8 @@ export interface ComboboxProps {
     inlineAutoComplete?: boolean;
     isLoading?: boolean;
     label?: string;
+    listboxClassName?: string;
+    listboxPlacement?: UseDropdownOptions['placement'];
     /**
      * If true, multiple options can be selected and displayed as tags
      */
@@ -363,6 +365,8 @@ export const Combobox: FC<ComboboxProps> = ({
     inlineAutoComplete = false,
     isLoading = false,
     label,
+    listboxClassName,
+    listboxPlacement,
     multiselect,
     onChange,
     onInputChange,
@@ -397,7 +401,11 @@ export const Combobox: FC<ComboboxProps> = ({
         y,
         update,
         refs: { reference: floatingReferenceRef, floating: listboxRef, ...refs },
-    } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
+    } = useDropdown<HTMLInputElement>({
+        open,
+        placement: listboxPlacement,
+        width: 'reference',
+    });
     const rootElement = getRootElement(shadowRoot) as HTMLElement;
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -1033,6 +1041,7 @@ export const Combobox: FC<ComboboxProps> = ({
             {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
+                    className={listboxClassName}
                     ref={refs.setFloating}
                     data-testid="listbox"
                     focusable={false}
