@@ -2,7 +2,7 @@ import { FunctionComponent, PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { buildTheme, equisoftThemeCustomization, ThemeCustomization, TokenContext } from '../../themes';
-import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
+import { ShadowWrapper } from '../shadow-wrapper';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
 export interface DisplayPreferences {
@@ -43,6 +43,9 @@ function getTokenContext(
     return context;
 }
 
+/**
+ * @internal Use {@link DesignSystem} instead
+ */
 export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps>> = ({
     children,
     isolateStyles = false,
@@ -66,3 +69,5 @@ export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps
         </ThemeProvider>
     );
 };
+
+ThemeWrapper.displayName = 'ThemeWrapper';

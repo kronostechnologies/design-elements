@@ -1,5 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
-import styled, { css, keyframes, SimpleInterpolation, CSSObject } from 'styled-components';
+import styled, { css, CSSObject, keyframes, SimpleInterpolation } from 'styled-components';
+import { badgeClasses } from './badge-classes';
 
 const BadgeRoot = styled.span`
     display: inline-flex;
@@ -7,7 +8,7 @@ const BadgeRoot = styled.span`
     position: relative;
 `;
 
-type BadgePosition = 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left';
+export type BadgePosition = 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left';
 
 function capitalize(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -96,7 +97,7 @@ export const BadgeDot = styled(BadgeCircle)`
     padding: 0;
 `;
 
-interface BadgeProps {
+export interface BadgeProps {
     animate?: boolean;
     className?: string;
     /** The largest value to display, beyond which a + sign is shown */
@@ -130,10 +131,11 @@ export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
     const visible = value !== 0 || showZero;
 
     return (
-        <BadgeRoot>
+        <BadgeRoot className={badgeClasses.root}>
             {children}
             {visible && (
                 <BadgeShape
+                    key="badge-shape"
                     className={className}
                     $animate={animate}
                     $position={position}
@@ -146,3 +148,5 @@ export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
         </BadgeRoot>
     );
 };
+
+Badge.displayName = 'Badge';

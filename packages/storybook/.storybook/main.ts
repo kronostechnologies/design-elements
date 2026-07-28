@@ -18,7 +18,7 @@ const config: StorybookConfig = {
         reactDocgenTypescriptOptions: {
             shouldExtractLiteralValuesFromEnum: true,
             shouldRemoveUndefinedFromOptional: true,
-            tsconfigPath: path.resolve(__dirname, '../tsconfig.json')
+            tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
         },
     },
     stories: [
@@ -30,6 +30,7 @@ const config: StorybookConfig = {
         getAbsolutePath('@storybook/addon-actions'),
         getAbsolutePath('@storybook/addon-controls'),
         getAbsolutePath('@storybook/addon-links'),
+        getAbsolutePath('@storybook/addon-toolbars'),
         getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
     ],
     webpackFinal: async (config) => ({
@@ -38,8 +39,6 @@ const config: StorybookConfig = {
             ...config.resolve,
             alias: {
                 ...config.resolve?.alias,
-                // https://github.com/storybookjs/storybook/issues/12016#issuecomment-2040576735
-                '@storybook/theming': path.dirname(require.resolve('@storybook/theming/package.json')),
             },
             fallback: {
                 ...config.resolve?.fallback,

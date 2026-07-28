@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
@@ -13,11 +13,11 @@ const StyledSpan = styled.span`
     width: 1px;
 `;
 
-interface Props {
+export interface ScreenReaderOnlyTextProps {
     label: string;
 }
 
-export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label, ...otherProps }) => {
+export const ScreenReaderOnlyText: FC<ScreenReaderOnlyTextProps> = ({ label, ...otherProps }) => {
     const dataAttributes = useDataAttributes(otherProps);
 
     return (
@@ -25,3 +25,5 @@ export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label, ...o
         <StyledSpan {...dataAttributes}>{label}</StyledSpan>
     );
 };
+
+ScreenReaderOnlyText.displayName = 'ScreenReaderOnlyText';

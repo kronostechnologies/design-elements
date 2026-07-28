@@ -1,5 +1,5 @@
-import type { RefToken } from './ref-tokens';
 import type { AliasToken } from './alias-tokens';
+import type { RefToken } from './ref-tokens';
 
 export type TokenName = string;
 export type TokenValue = string;

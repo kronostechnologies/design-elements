@@ -1,26 +1,28 @@
-import { shallow } from 'enzyme';
+import { renderWithProviders } from '../../test-utils/testing-library';
 import { ShadowWrapper } from './shadow-wrapper';
 
 jest.mock('../../styles', () => ({
     mainCss: 'main css',
+    useStyle: jest.fn(),
 }));
 
-describe('Shadow Wrapper', () => {
-    test('is div element by default', () => {
-        const wrapper = shallow(<ShadowWrapper>Test</ShadowWrapper>);
+describe('ShadowWrapper', () => {
+    it('is div element by default', () => {
+        const { container } = renderWithProviders(<ShadowWrapper>Test</ShadowWrapper>);
 
-        expect(wrapper.html()).toBe('<div></div>');
+        expect(container.firstElementChild?.tagName).toBe('DIV');
     });
 
-    test('is set to tagName element', () => {
-        const wrapper = shallow(<ShadowWrapper tagName="section">Test</ShadowWrapper>);
+    it('is set to tagName element', () => {
+        const { container } = renderWithProviders(<ShadowWrapper tagName="section">Test</ShadowWrapper>);
 
-        expect(wrapper.html()).toBe('<section></section>');
+        expect(container.firstElementChild?.tagName).toBe('SECTION');
     });
 
-    test('should inject main css', () => {
-        const wrapper = shallow(<ShadowWrapper>Test</ShadowWrapper>);
+    it('should inject main css', () => {
+        const { container } = renderWithProviders(<ShadowWrapper>Test</ShadowWrapper>);
 
-        expect(wrapper.find('style').text()).toEqual('main css');
+        const shadowRoot = container.firstElementChild?.shadowRoot;
+        expect(shadowRoot?.querySelector('style')?.textContent).toEqual('main css');
     });
 });

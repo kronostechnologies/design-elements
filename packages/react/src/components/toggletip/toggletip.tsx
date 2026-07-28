@@ -1,14 +1,11 @@
-import {
-    FunctionComponent,
-    ReactNode,
-    useMemo, useState,
-} from 'react';
-import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
+import { FunctionComponent, ReactNode, useMemo, useState } from 'react';
+import { type PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
+import { useClickOutside } from '../../hooks/use-click-outside';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { IconButton } from '../buttons/icon-button';
-import { IconName } from '../icon/icon';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { type IconName } from '../icon';
 
 type Size = 'small' | 'medium';
 type MaxWidth = 'small' | 'medium' | 'large';
@@ -160,7 +157,15 @@ export interface ToggletipProps {
     iconName?: IconName,
     children?: ReactNode | ReactNode[];
     className?: string;
-    /** Set toggletip open by default */
+    /**
+     * Toggletip closes when clicking outside the content or the trigger
+     * @default true
+     */
+    closeOnClickOutside?: boolean;
+    /**
+     * Set whether the toggletip is initially open
+     * @default false
+     */
     defaultOpen?: boolean;
     /**
      * Toggletip placement on desktop (always top on mobile)
@@ -187,6 +192,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
     iconName = 'info',
     children,
     className,
+    closeOnClickOutside = true,
     defaultOpen = false,
     disabled,
     desktopPlacement = 'right',
@@ -200,10 +206,12 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
 
     const {
         visible,
-        setTooltipRef,
-        setTriggerRef,
         getTooltipProps,
         getArrowProps,
+        setTooltipRef,
+        setTriggerRef,
+        tooltipRef,
+        triggerRef,
     } = usePopperTooltip({
         defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
@@ -211,6 +219,12 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
         visible: disabled ? false : isVisible,
         closeOnOutsideClick: false,
     }, { modifiers });
+
+    useClickOutside([tooltipRef, triggerRef], () => {
+        if (closeOnClickOutside) {
+            setVisible(false);
+        }
+    });
 
     return (
         <>
@@ -248,3 +262,5 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
         </>
     );
 };
+
+Toggletip.displayName = 'Toggletip';

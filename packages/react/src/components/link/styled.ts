@@ -71,8 +71,7 @@ export const StyledLink = styled.a<{
         $buttonProps
             ? getButtonStyles({
                 $size: $buttonProps.size,
-                buttonType: $buttonProps.buttonType,
-                focusable: $buttonProps.focusable,
+                buttonType: $buttonProps.buttonType || 'secondary',
                 inverted: $buttonProps.inverted,
                 $isMobile,
                 theme,
@@ -81,11 +80,10 @@ export const StyledLink = styled.a<{
                 $disabled,
                 $isMobile,
                 theme,
-            }))
-};
+            }))};
 
     display: inline-flex;
     flex-direction: row;
     gap: ${({ $buttonProps }) => ($buttonProps ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
-    text-decoration: underline;
+    text-decoration: ${({ $buttonProps }) => ($buttonProps ? 'none' : 'underline')};
 `;

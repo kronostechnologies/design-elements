@@ -22,6 +22,7 @@ const HeaderArea = styled.div`
 
 const SidebarArea = styled.div`
     grid-area: sidebar;
+    min-width: 200px;
 `;
 
 const ContentArea = styled.main`

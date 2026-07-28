@@ -1,8 +1,10 @@
-import { HTMLProps, ReactNode, useRef, VoidFunctionComponent } from 'react';
+import { type FC, HTMLProps, ReactNode, useRef } from 'react';
 import styled from 'styled-components';
 import { TextInput, textInputClasses, TextInputProps } from '../text-input';
-import { TooltipProps } from '../tooltip/tooltip';
-import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import { useNumericInput, type UseNumericInputParams } from './use-numeric-input';
+import { type RequiredLabelProps } from '../label/label';
 
 interface StyledInputProps extends TextInputProps {
     $textAlign: 'left' | 'right';
@@ -21,7 +23,7 @@ const StyledTextInput = styled(TextInput)<StyledInputProps>`
 
 type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
-interface NumericInputProps extends NativeInputProps {
+export interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
     adornmentPosition?: 'start' | 'end';
     className?: string;
@@ -36,15 +38,17 @@ interface NumericInputProps extends NativeInputProps {
     onChange?: UseNumericInputParams['onChange'];
     precision?: number;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     readOnly?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     invalid?: boolean;
     validationErrorMessage?: string;
     value?: number | string;
 }
 
-export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
+export const NumericInput: FC<NumericInputProps> = ({
     adornment,
     adornmentPosition = 'start',
     className,
@@ -62,9 +66,11 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     placeholder,
     precision,
     required,
+    requiredLabelType,
     readOnly,
     textAlign = 'left',
     tooltip,
+    toggletip,
     invalid,
     validationErrorMessage,
     value,
@@ -89,7 +95,6 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             $textAlign={textAlign}
             className={className}
             data-testid="numeric-input"
-            defaultValue={defaultValue?.toString()}
             disabled={disabled}
             hint={hint}
             id={id}
@@ -106,12 +111,16 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             placeholder={placeholder}
             readOnly={readOnly}
             required={numericInput.required}
+            requiredLabelType={requiredLabelType}
             ref={inputRef}
             rightAdornment={adornmentPosition === 'end' && adornment}
             tooltip={tooltip}
+            toggletip={toggletip}
             type="text"
             value={numericInput.value}
             validationErrorMessage={numericInput.validationErrorMessage}
         />
     );
 };
+
+NumericInput.displayName = 'NumericInput';

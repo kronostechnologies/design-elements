@@ -1,8 +1,8 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { Icon } from '../icon/icon';
+import { Icon } from '../icon';
 
 const StyledIcon = styled(Icon)`
     color: currentColor;
@@ -41,7 +41,7 @@ const StyledLink = styled(Link)`
     ${focus};
 `;
 
-interface CardLinkProps {
+export interface CardLinkProps {
     className?: string;
     href: string;
     label: string;
@@ -49,11 +49,16 @@ interface CardLinkProps {
     replace?: boolean;
 }
 
-export const CardLink: VoidFunctionComponent<CardLinkProps> = ({
-    className, href, label, replace,
+export const CardLink: FC<CardLinkProps> = ({
+    className,
+    href,
+    label,
+    replace,
 }) => (
     <StyledLink className={className} replace={replace} title={label} to={href}>
         {label}
-        <StyledIcon aria-hidden name="chevronRight" size="16" />
+        <StyledIcon name="chevronRight" size="16" />
     </StyledLink>
 );
+
+CardLink.displayName = 'CardLink';

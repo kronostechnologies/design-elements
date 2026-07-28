@@ -1,18 +1,18 @@
 import { devConsole } from '../utils/dev-console';
-import { ResolvedTheme, ThemeCustomization, ThemeDeclaration } from './theme';
+import type { ResolvedTheme, ThemeCustomization, ThemeDeclaration } from './theme';
 import {
-    AliasToken,
-    AliasTokenMap,
-    ComponentToken,
+    type AliasToken,
+    type AliasTokenMap,
+    type ComponentToken,
     defaultAliasTokens,
     defaultComponentTokens,
     defaultRefTokens,
-    RefToken,
-    ResolvedTokenMap,
-    TokenContext,
-    TokenMap,
-    TokenName,
-    TokenValue,
+    type RefToken,
+    type ResolvedTokenMap,
+    type TokenContext,
+    type TokenMap,
+    type TokenName,
+    type TokenValue,
 } from './tokens';
 
 type ContextualizedAliasTokenMap = TokenMap<AliasToken, RefToken | AliasToken>;

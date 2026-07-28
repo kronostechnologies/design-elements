@@ -1,22 +1,16 @@
-import {
-    ChangeEvent,
-    FocusEvent,
-    FormEventHandler,
-    useCallback,
-    useEffect,
-    useState,
-    VoidFunctionComponent,
-} from 'react';
+import { ChangeEvent, type FC, FocusEvent, FormEventHandler, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
-import { FieldContainer } from '../field-container/field-container';
-import { inputsStyle } from '../text-input/styles/inputs';
-import { TooltipProps } from '../tooltip/tooltip';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { type ResolvedTheme } from '../../themes';
+import { FieldContainer } from '../field-container';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { inputsStyle } from '../text-input/styles';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import { type RequiredLabelProps } from '../label/label';
 
 const StyledTextArea = styled.textarea`
     ${inputsStyle};
@@ -40,12 +34,17 @@ export interface TextAreaProps {
     className?: string;
     label: string;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
     placeholder?: string;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     maxLength?: number;
     /**
      * Message displayed in case of validation error
@@ -74,7 +73,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
     return 0;
 }
 
-export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
+export const TextArea: FC<TextAreaProps> = ({
     id: providedId,
     className,
     noMargin,
@@ -87,7 +86,9 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     label,
     placeholder,
     required,
+    requiredLabelType,
     tooltip,
+    toggletip,
     validationErrorMessage,
     value,
     maxLength,
@@ -168,7 +169,9 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             fieldId={idTextArea}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
+            toggletip={toggletip}
             hint={hint}
             valid={validity}
             validationErrorMessage={getValidationErrorMessage()}
@@ -204,3 +207,5 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         </FieldContainer>
     );
 };
+
+TextArea.displayName = 'TextArea';

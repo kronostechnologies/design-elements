@@ -3,7 +3,7 @@ import { createProxy } from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
 import { mainCss } from '../../styles';
 
-interface ShadowWrapperProps {
+export interface ShadowWrapperProps {
     /**
      * Sets host element tag
      * @default div
@@ -36,3 +36,5 @@ export const ShadowWrapper: FunctionComponent<PropsWithChildren<ShadowWrapperPro
         </WrapperTag>
     );
 };
+
+ShadowWrapper.displayName = 'ShadowWrapper';

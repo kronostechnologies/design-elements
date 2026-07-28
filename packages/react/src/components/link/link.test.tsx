@@ -1,112 +1,102 @@
-import { act } from 'react-dom/test-utils';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Link as RouteLink, NavLink } from 'react-router-dom';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { buttonTypesToDarkenEquisoftLogo } from '../icon/equisoft-logo';
 import { Link } from './link';
 
 describe('Link Component', () => {
     describe('Features', () => {
-        it('internal link is valid and updates dynamically ', () => {
-            const wrapper = mountWithProviders(<Link href="/internal-page" />);
+        it('internal link is valid and updates dynamically', () => {
+            const { rerender } = renderWithProviders(<Link href="/internal-page" />);
+            const link = screen.getByRole('link');
+            expect(link).toHaveAttribute('href', '/internal-page');
 
-            expect(wrapper.find('a').prop('href')).toBe('/internal-page');
+            rerender(<Link href="/updated-page" />);
+
+            expect(link).toHaveAttribute('href', '/updated-page');
         });
 
         it('external link is valid', () => {
-            const wrapper = mountWithProviders(<Link external href="https://example.com" />);
+            renderWithProviders(<Link external href="https://example.com" />);
+            const link = screen.getByRole('link');
 
-            expect(wrapper.find('a').prop('href')).toBe('https://example.com');
-            expect(wrapper.find('a').prop('target')).toBe('_blank');
-            expect(wrapper.find('a').prop('rel')).toContain('noopener noreferrer');
+            expect(link).toHaveAttribute('href', 'https://example.com');
+            expect(link).toHaveAttribute('target', '_blank');
+            expect(link).toHaveAttribute('rel', expect.stringContaining('noopener noreferrer'));
         });
 
         it('renders icon', () => {
-            const wrapper = mountWithProviders(<Link icon={{ name: 'mail', label: 'This is a label' }}>Label</Link>);
+            renderWithProviders(<Link icon={{ name: 'mail', label: 'This is a label' }}>Label</Link>);
 
-            expect(wrapper.find('Icon').prop('name')).toBe('mail');
+            expect(screen.getByTestId('link-icon')).toBeInTheDocument();
         });
 
-        it('renders tooltip isIconOnly is provided', () => {
-            const tooltipWrapper = mountWithProviders(<Link icon={{ name: 'mail', label: 'Test Label' }} />);
+        it('renders tooltip if isIconOnly is provided', () => {
+            renderWithProviders(<Link icon={{ name: 'mail', label: 'Test Label' }} />);
 
-            expect(tooltipWrapper.find('Tooltip').prop('label')).toBe('Test Label');
-            expect(tooltipWrapper.find('Icon').exists()).toBe(true);
+            expect(screen.getByRole('link')).toHaveAttribute('aria-label', 'Test Label');
+            expect(screen.getByTestId('link-icon')).toBeInTheDocument();
         });
 
         it('renders children when provided', () => {
-            const childrenWrapper = mountWithProviders(<Link><div className="test-child">Child Content</div></Link>);
+            renderWithProviders(
+                <Link>
+                    <div>Child Content</div>
+                </Link>,
+            );
 
-            expect(childrenWrapper.contains(<div className="test-child">Child Content</div>)).toBe(true);
+            expect(screen.getByText('Child Content')).toBeInTheDocument();
         });
 
         it('renders NavLink when routerLink prop is NavLink', () => {
-            const wrapper = mountWithProviders(<Link routerLink={NavLink} href="/internal-page" />);
+            renderWithProviders(<Link routerLink={NavLink} href="/internal-page" />);
 
-            expect(wrapper.find(NavLink).exists()).toBe(true);
-            expect(wrapper.find(NavLink).prop('to')).toBe('/internal-page');
+            const link = screen.getByRole('link');
+
+            expect(link).toHaveAttribute('href', '/internal-page');
         });
 
         it('renders RouteLink when routerLink prop is RouteLink', () => {
-            const routeLinkWrapper = mountWithProviders(<Link routerLink={RouteLink} href="/internal-route" />);
+            renderWithProviders(<Link routerLink={RouteLink} href="/internal-route" />);
 
-            expect(routeLinkWrapper.find(RouteLink).exists()).toBe(true);
-            expect(routeLinkWrapper.find(NavLink).exists()).toBe(false);
-            expect(routeLinkWrapper.find(RouteLink).prop('to')).toBe('/internal-route');
+            const link = screen.getByRole('link');
+
+            expect(link).toHaveAttribute('href', '/internal-route');
         });
 
-        it('calls onClick callback when clicked', () => {
+        it('calls onClick callback when clicked', async () => {
+            const user = userEvent.setup();
             const onClickMock = jest.fn();
-            const wrapper = mountWithProviders(<Link href="/test" onClick={onClickMock} />);
+            renderWithProviders(<Link href="/test" onClick={onClickMock} />);
 
-            wrapper.find('a').simulate('click');
+            await user.click(screen.getByRole('link'));
 
-            expect(wrapper.find('a').prop('href')).toBeDefined();
             expect(onClickMock).toHaveBeenCalledTimes(1);
         });
 
-        it('prevent onClick callback when disabled', () => {
+        it('prevent onClick callback when disabled', async () => {
+            const user = userEvent.setup();
             const onClickMock = jest.fn();
-            const wrapper = mountWithProviders(<Link href="/test" onClick={onClickMock} />);
+            const { rerender } = renderWithProviders(<Link href="/test" onClick={onClickMock} />);
 
-            wrapper.find('a').simulate('click');
-            act(() => {
-                wrapper.setProps({ disabled: true });
-            });
-            wrapper.find('a').simulate('click');
-
-            expect(wrapper.find('a').prop('href')).toBeUndefined();
+            await user.click(screen.getByRole('link'));
             expect(onClickMock).toHaveBeenCalledTimes(1);
-        });
 
-        it('updates dynamically ', () => {
-            const wrapper = mountWithProviders(<Link href="/internal-page" />);
+            rerender(<Link href="/test" onClick={onClickMock} disabled />);
 
-            act(() => {
-                wrapper.setProps({ href: '/updated-page' });
-                wrapper.setProps({ icon: { name: 'bell', label: 'This is a label' } });
-            });
+            const disabledLink = screen.getByTestId('link');
+            expect(disabledLink).toHaveAttribute('aria-disabled', 'true');
 
-            expect(wrapper.find('a').prop('href')).toBe('/updated-page');
-            expect(wrapper.find('Icon').prop('name')).toBe('bell');
+            await expect(user.click(disabledLink)).toReject();
+
+            expect(onClickMock).toHaveBeenCalledTimes(1);
         });
     });
 
     describe('Styling', () => {
-        test('matches default snapshot', () => {
-            const tree = mountWithProviders(<Link />);
-
-            expect(tree).toMatchSnapshot();
-        });
-
-        test('matches with children snapshot', () => {
-            const tree = mountWithProviders(
-                <Link><span>Test</span></Link>,
-            );
-
-            expect(tree).toMatchSnapshot();
-        });
-
-        test('matches icon and label snapshot', () => {
-            const tree = renderWithProviders(
+        it('matches icon and label snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link
                     href="/test"
                     icon={{ name: 'mail', label: 'This is a label' }}
@@ -115,27 +105,27 @@ describe('Link Component', () => {
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
-        test('matches icon only snapshot', () => {
-            const tree = renderWithProviders(
+        it('matches icon only snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link icon={{ name: 'mail', label: 'Navigation Link' }} />,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.children).toMatchSnapshot();
         });
 
-        test('matches external link snapshot', () => {
-            const tree = renderWithProviders(
+        it('matches external link snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link href="/test" external>Navigation Link</Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
-        test('matches button link snapshot', () => {
-            const tree = renderWithProviders(
+        it('matches button link snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link
                     routerLink={NavLink}
                     href="/test"
@@ -147,54 +137,68 @@ describe('Link Component', () => {
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
-        test('matches disabled snapshot', () => {
-            const tree = renderWithProviders(
+        it('matches disabled snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link href="/test" disabled>
                     Navigation Link
                 </Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
-        test('matches NavLink snapshot', () => {
-            const tree = mountWithProviders(
-                <Link routerLink={NavLink} href="/test">Navigation Link</Link>,
-            );
-
-            expect(tree).toMatchSnapshot();
-        });
-
-        test('matches RouteLink snapshot', () => {
-            const tree = mountWithProviders(
+        it('matches RouteLink snapshot', () => {
+            const { container } = renderWithProviders(
                 <Link routerLink={RouteLink} href="/test">Navigation Link</Link>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
     });
 
     describe('Accessibility', () => {
         it('applies aria-disabled when link is disabled', () => {
-            const wrapper = mountWithProviders(<Link disabled />);
+            renderWithProviders(<Link disabled />);
 
-            expect(wrapper.find('a').prop('aria-disabled')).toBe('true');
+            expect(screen.getByTestId('link')).toHaveAttribute('aria-disabled', 'true');
         });
 
         it('displays screen-reader-only text only when external && target="_blank"', () => {
-            const wrapper = mountWithProviders(<Link external target='none' />);
+            const { rerender } = renderWithProviders(<Link external target="none" />);
 
-            expect(wrapper.find('ScreenReaderOnlyText').exists()).toBe(false);
+            expect(screen.queryByTestId('screen-reader-text')).not.toBeInTheDocument();
 
-            act(() => {
-                wrapper.setProps({ external: true, target: '_blank' });
-            });
+            rerender(<Link external target="_blank" />);
 
-            expect(wrapper.find('ScreenReaderOnlyText').exists()).toBe(true);
-            expect(wrapper.find('ScreenReaderOnlyText').text()).toContain('opens in a new tab');
+            expect(screen.getByTestId('screen-reader-text')).toBeInTheDocument();
         });
+    });
+
+    describe('equisoft icon color on hover', () => {
+        it('changes equisoft icon color on hover', () => {
+            const { container } = renderWithProviders(
+                <Link icon={{ name: 'equisoft', label: 'equisoft' }}>A link</Link>,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
+
+        buttonTypesToDarkenEquisoftLogo.forEach((buttonType) => (
+            it(`changes equisoft icon color on hover when used as ${buttonType} button`, () => {
+                const { container } = renderWithProviders(
+                    <Link
+                        button={{ buttonType }}
+                        icon={{ name: 'equisoft' }}
+                    >
+                        A link
+                    </Link>,
+                );
+
+                expect(container.firstChild).toMatchSnapshot();
+            })
+        ));
     });
 });

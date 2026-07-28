@@ -1,7 +1,7 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled, { StyledProps } from 'styled-components';
-import { Icon } from '../icon/icon';
 import { useTranslation } from '../../i18n/use-translation';
+import { Icon } from '../icon';
 
 interface StyledLiProps {
     isEmpty: boolean;
@@ -55,7 +55,7 @@ interface PasswordConditionProps {
     isValid: boolean;
 }
 
-export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
+export const PasswordRule: FC<PasswordConditionProps> = ({
     label,
     isValid,
     isEmpty,
@@ -66,18 +66,12 @@ export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
     if (!isEmpty) {
         if (isValid) {
             icon = (
-                <StyledIcon
-                    aria-hidden="true"
-                    focusable={false}
-                    name="check"
-                    size="16"
-                />
+                <StyledIcon name="check" size="16" />
             );
         } else {
             icon = (
                 <StyledIcon
                     aria-label={`${t('error')},`}
-                    focusable
                     name="alertOctagon"
                     role="img"
                     size="16"
@@ -93,3 +87,5 @@ export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
         </Container>
     );
 };
+
+PasswordRule.displayName = 'PasswordRule';

@@ -1,103 +1,19 @@
-import { render as testingLibRender, RenderResult } from '@testing-library/react';
-import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render } from 'enzyme';
-import { Component, FunctionComponent, PropsWithChildren, ReactElement, ReactPortal } from 'react';
-import ReactDOM from 'react-dom';
-import { act } from 'react-dom/test-utils';
-import { MemoryRouter } from 'react-router-dom';
-import { DesignSystem, DesignSystemProps } from '../components/design-system';
-import { DeviceType } from '../components/device-context-provider/device-context-provider';
-import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
+import { RenderResult } from '@testing-library/react';
+import { ReactElement } from 'react';
+// @ts-expect-error hidden export
+import { __PRIVATE__ } from 'styled-components';
+import { type DeviceType } from '../components';
+import { renderWithProviders as testingLibRender } from './testing-library';
 
-export const AllProviders: FunctionComponent<PropsWithChildren<DesignSystemProps>> = ({
-    children,
-    language,
-    themeCustomization,
-    staticDevice,
-}) => (
-    <MemoryRouter>
-        <DesignSystem language={language} staticDevice={staticDevice} themeCustomization={themeCustomization}>
-            {children}
-        </DesignSystem>
-    </MemoryRouter>
-);
-
-interface WrappingComponentProps {
-    wrappingComponentProps?: DesignSystemProps;
-}
-
-type Options = MountRendererProps & WrappingComponentProps;
-
-export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
-    component: ReactElement<P>,
-    options: Options = {},
-): ReactWrapper<P, S, C> {
-    return mount(component, {
-        ...options,
-        wrappingComponent: AllProviders,
-    });
-}
-
-export function mountWithTheme<C extends Component, P = C['props'], S = C['state']>(
-    component: ReactElement<P>,
-    options?: MountRendererProps,
-): ReactWrapper<P, S, C> {
-    return mount(component, {
-        wrappingComponent: ThemeWrapper,
-        ...options,
-    });
-}
-
+// TODO: merge with renderWithProviders from ./testing-library file
 export function renderWithProviders(
     component: ReactElement,
-    device?: DeviceType,
-): cheerio.Cheerio {
-    const oldPortal = ReactDOM.createPortal;
-    ReactDOM.createPortal = () => null as unknown as ReactPortal;
-    try {
-        return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
-    } finally {
-        ReactDOM.createPortal = oldPortal;
-    }
-}
-
-export function renderWithTheme(
-    component: ReactElement,
-): cheerio.Cheerio {
-    return render(
-        <ThemeWrapper>
-            {component}
-        </ThemeWrapper>,
-    );
-}
-
-export async function actUpdate<C extends Component, P = C['props'], S = C['state']>(
-    wrapper: CommonWrapper<P, S, C>,
-): Promise<void> {
-    await act(async () => {
-        wrapper.update();
-    });
-}
-
-export async function actAndWaitForEffects<C extends Component, P = C['props'], S = C['state']>(
-    wrapper: ReactWrapper<P, S, C>,
-    action: () => void,
-): Promise<ReactWrapper<P, S, C>> {
-    await act(async () => action());
-    await actUpdate(wrapper);
-    return wrapper;
-}
-
-export function renderPortalWithProviders(
-    component: ReactElement,
-    device?: DeviceType,
+    device: DeviceType | undefined = undefined,
+    language: string = 'en',
 ): RenderResult {
-    return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
+    return testingLibRender(component, {}, { language, staticDevice: device });
 }
 
-export function rerenderPortalWithProviders(
-    component: ReactElement,
-    rerender: RenderResult['rerender'],
-    device?: DeviceType,
-): void {
-    rerender(<AllProviders staticDevice={device}>{component}</AllProviders>);
+export function renderGlobalStylesSynchronously(enabled: boolean): void {
+    __PRIVATE__.masterSheet.server = enabled;
 }

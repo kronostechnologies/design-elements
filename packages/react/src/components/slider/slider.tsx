@@ -1,15 +1,16 @@
 import { ReactElement } from 'react';
-import { useTranslation } from '../../i18n/use-translation';
-import { TooltipProps } from '../tooltip/tooltip';
 import { useId } from '../../hooks/use-id';
-import { FieldContainer } from '../field-container/field-container';
-import { ValueTooltip } from './value-tooltip';
+import { useTranslation } from '../../i18n/use-translation';
+import { FieldContainer } from '../field-container';
+import { ToggletipProps } from '../toggletip';
+import { TooltipProps } from '../tooltip';
 import { Labels, SliderContainer, StyledSlider } from './styles';
+import { ValueTooltip } from './value-tooltip';
 
 // Widen the literal value to be number (ex: type '20' -> type 'number')
 type InferValueType<T> = T extends number ? number : number[];
 
-interface SliderProps<TValue extends number | number[]> {
+export interface SliderProps<TValue extends number | number[]> {
     className?: string;
     id?: string;
     max: number;
@@ -21,6 +22,7 @@ interface SliderProps<TValue extends number | number[]> {
     label?: string;
     noMargin?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     invalid?: boolean;
     validationErrorMessage?: string;
     step?: number;
@@ -39,6 +41,7 @@ export const Slider = <TValue extends number | number[]>({
     label,
     noMargin,
     tooltip,
+    toggletip,
     invalid,
     validationErrorMessage,
     step,
@@ -55,6 +58,7 @@ export const Slider = <TValue extends number | number[]>({
             hint={hint}
             label={label}
             tooltip={tooltip}
+            toggletip={toggletip}
             noMargin={noMargin}
             valid={!invalid}
             noInvalidFieldIcon={!validationErrorMessage}
@@ -82,3 +86,5 @@ export const Slider = <TValue extends number | number[]>({
         </FieldContainer>
     );
 };
+
+Slider.displayName = 'Slider';

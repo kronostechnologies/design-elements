@@ -1,5 +1,6 @@
 import {
     ChangeEvent,
+    FC,
     isValidElement,
     ReactElement,
     ReactNode,
@@ -8,13 +9,12 @@ import {
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 import { RadioInput } from '../radio-button/radio-input';
 import * as S from './styled-components';
 
@@ -37,7 +37,7 @@ const StyledRadioInput = styled(RadioInput)`
     margin-top: var(--spacing-half);
 `;
 
-export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
+export const RadioCard: FC<RadioCardProps> = ({
     checked,
     children,
     className,
@@ -124,6 +124,8 @@ export const RadioCard: VoidFunctionComponent<RadioCardProps> = ({
         </S.Label>
     );
 };
+
+RadioCard.displayName = 'RadioCard';
 
 export const isRadioCard = (child: unknown): child is ReactElement<RadioCardProps> => (
     isValidElement<RadioCardProps>(child) && child.type === RadioCard

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ToggleTag ToggleTag medium matches snapshot (desktop clickable) 1`] = `
 .c1 {
@@ -24,14 +24,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -90,14 +85,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -139,14 +129,27 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop with icons) 1`] = 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
-    focusable="true"
+    fill="none"
+    focusable="false"
     height="12"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -179,14 +182,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -245,14 +243,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (desktop) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -311,14 +304,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -377,14 +365,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -426,14 +409,27 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile with icons) 1`] = `
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
-    focusable="true"
+    fill="none"
+    focusable="false"
     height="12"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -466,14 +462,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -532,14 +523,9 @@ exports[`ToggleTag ToggleTag medium matches snapshot (mobile) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -598,14 +584,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -664,14 +645,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -713,14 +689,27 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop with icons) 1`] = `
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
-    focusable="true"
+    fill="none"
+    focusable="false"
     height="12"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -753,14 +742,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -819,14 +803,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (desktop) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -885,14 +864,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile clickable) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -951,14 +925,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1000,14 +969,27 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile with icons) 1`] = `
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-house c2"
     data-testid="Test-icon"
-    focusable="true"
+    fill="none"
+    focusable="false"
     height="12"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="12"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+    />
+    <path
+      d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </svg>
   <span
     class="c3"
   >
@@ -1040,14 +1022,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 1`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1106,14 +1083,9 @@ exports[`ToggleTag ToggleTag small matches snapshot (mobile) 2`] = `
   margin-left: var(--spacing-1x);
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

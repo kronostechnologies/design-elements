@@ -1,162 +1,135 @@
-import { mountWithProviders } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Fieldset } from './fieldset';
-import { Legend } from './legend';
 
-describe('Fieldset Component', () => {
+describe('Fieldset', () => {
     describe('Features', () => {
         it('applies provided ID to the fieldset', () => {
-            const tree = mountWithProviders(
-                <Fieldset id='customId' legend={{ text: 'Legend Text' }}>
+            renderWithProviders(
+                <Fieldset id="customId" legend={{ text: 'Legend Text' }}>
                     Test Content
                 </Fieldset>,
             );
 
-            const fieldset = tree.find('fieldset');
-            const legend = tree.find(Legend);
+            const fieldset = screen.getByRole('group');
+            const legend = screen.getByText('Legend Text');
 
-            expect(tree.find('#customId').exists()).toBeTruthy();
-            expect(fieldset.props()).toHaveProperty('id', 'customId');
-            expect(legend.props()).toHaveProperty('id', 'customId-legend');
+            expect(fieldset).toHaveAttribute('id', 'customId');
+            expect(legend).toHaveAttribute('id', 'customId-legend');
         });
 
         it('generates an ID if none is provided', () => {
-            const tree = mountWithProviders(
-                <Fieldset>
-                    Test Content
-                </Fieldset>,
-            );
+            renderWithProviders(<Fieldset>Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(fieldset.props()).toHaveProperty('id');
+            expect(fieldset).toHaveAttribute('id');
         });
 
         it('does not render a legend when not provided', () => {
-            const tree = mountWithProviders(
-                <Fieldset>
-                    Test Content
-                </Fieldset>,
-            );
+            const { container } = renderWithProviders(<Fieldset>Test Content</Fieldset>);
 
-            const legend = tree.find(Legend);
+            const legend = container.querySelector('legend');
 
-            expect(legend.exists()).toBeFalsy();
+            expect(legend).not.toBeInTheDocument();
         });
 
         it('renders a legend when props provided', () => {
-            const tree = mountWithProviders(
-                <Fieldset legend={{ text: 'Legend text' }}>
-                    Test Content
-                </Fieldset>,
-            );
+            renderWithProviders(<Fieldset legend={{ text: 'Legend text' }}>Test Content</Fieldset>);
 
-            const legend = tree.find(Legend);
-
-            expect(legend.prop('children')).toBe('Legend text');
+            const legend = screen.getByText('Legend text');
+            expect(legend).toBeInTheDocument();
+            expect(legend.tagName).toEqual('LEGEND');
         });
 
         it('updates legend text dynamically', () => {
-            const tree = mountWithProviders(
+            const { rerender } = renderWithProviders(
                 <Fieldset legend={{ text: 'Initial Legend Text' }}>
                     Test Content
                 </Fieldset>,
             );
 
-            tree.setProps({ legend: { text: 'Updated Legend Text' } });
+            expect(screen.getByText('Initial Legend Text')).toBeInTheDocument();
 
-            expect(tree.find(Legend).text()).toContain('Updated Legend Text');
+            rerender(
+                <Fieldset legend={{ text: 'Updated Legend Text' }}>
+                    Test Content
+                </Fieldset>,
+            );
+
+            expect(screen.getByText('Updated Legend Text')).toBeInTheDocument();
         });
     });
 
     describe('Styling', () => {
         it('matches default', () => {
-            const tree = mountWithProviders(
-                <Fieldset>
-                    Test Content
-                </Fieldset>,
-            );
+            const { asFragment } = renderWithProviders(<Fieldset>Test Content</Fieldset>);
 
-            expect(tree).toMatchSnapshot();
+            expect(asFragment()).toMatchSnapshot();
         });
 
         it('matches with bold legend', () => {
-            const tree = mountWithProviders(
+            const { asFragment } = renderWithProviders(
                 <Fieldset legend={{ text: 'Text Legend', bold: true }}>
                     Test Content
                 </Fieldset>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(asFragment()).toMatchSnapshot();
         });
 
         it('matches with disabled legend', () => {
-            const tree = mountWithProviders(
+            const { asFragment } = renderWithProviders(
                 <Fieldset disabled legend={{ text: 'Text Legend' }}>
                     Test Content
                 </Fieldset>,
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(asFragment()).toMatchSnapshot();
         });
 
         it('matches vertical orientation', () => {
-            const tree = mountWithProviders(
-                <Fieldset orientation='vertical'>
-                    Test Content
-                </Fieldset>,
-            );
+            const { asFragment } = renderWithProviders(<Fieldset orientation="vertical">Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(tree).toMatchSnapshot();
-            expect(fieldset.props()).toHaveProperty('data-orientation', 'vertical');
+            expect(asFragment()).toMatchSnapshot();
+            expect(fieldset).toHaveAttribute('data-orientation', 'vertical');
         });
 
         it('matches horizontal orientation', () => {
-            const tree = mountWithProviders(
-                <Fieldset orientation='horizontal'>
-                    Test Content
-                </Fieldset>,
-            );
+            const { asFragment } = renderWithProviders(<Fieldset orientation="horizontal">Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(tree).toMatchSnapshot();
-            expect(fieldset.props()).toHaveProperty('data-orientation', 'horizontal');
+            expect(asFragment()).toMatchSnapshot();
+            expect(fieldset).toHaveAttribute('data-orientation', 'horizontal');
         });
     });
 
     describe('Accessibility', () => {
         it('applies aria-label when provided', () => {
-            const tree = mountWithProviders(
-                <Fieldset aria-label="Test Fieldset">Test Content</Fieldset>,
-            );
+            renderWithProviders(<Fieldset aria-label="Test Fieldset">Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(fieldset.props()).toHaveProperty('aria-label', 'Test Fieldset');
+            expect(fieldset).toHaveAttribute('aria-label', 'Test Fieldset');
         });
 
         it('applies aria-disabled when provided', () => {
-            const tree = mountWithProviders(
-                <Fieldset disabled>Test Content</Fieldset>,
-            );
+            renderWithProviders(<Fieldset disabled>Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(fieldset.props()).toHaveProperty('aria-disabled', true);
+            expect(fieldset).toHaveAttribute('aria-disabled', 'true');
         });
 
         it('applies role to specified group role', () => {
-            const tree = mountWithProviders(
-                <Fieldset role='group'>
-                    Test Content
-                </Fieldset>,
-            );
+            renderWithProviders(<Fieldset role="group">Test Content</Fieldset>);
 
-            const fieldset = tree.find('fieldset');
+            const fieldset = screen.getByRole('group');
 
-            expect(fieldset.props()).toHaveProperty('role', 'group');
+            expect(fieldset).toBeInTheDocument();
         });
     });
 });

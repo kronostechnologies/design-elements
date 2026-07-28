@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
+exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -41,14 +41,9 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -63,13 +58,8 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -86,6 +76,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -115,7 +106,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c7 {
+.c8 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius);
@@ -124,30 +115,40 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
   position: relative;
 }
 
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c6 {
   margin-left: var(--spacing-1x);
 }
 
-.c8 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
+.c9 {
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: auto;
+  z-index: 99998;
 }
 
-.c19 {
+.c20 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -165,26 +166,21 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c19:hover {
+.c20:hover {
   color: #003A5A;
 }
 
-.c19:visited {
+.c20:visited {
   color: #006296;
 }
 
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c19:focus-visible {
+.c20:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
-.c18 {
+.c19 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -196,7 +192,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: 1px;
 }
 
-.c23 {
+.c24 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -209,7 +205,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c20 {
+.c21 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -220,30 +216,30 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
 }
 
-.c20:visited svg {
+.c21:visited svg {
   color: #006296;
 }
 
-.c22 {
+.c23 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c9:not(:last-child)::after {
+.c10:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -255,7 +251,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   max-width: 100%;
 }
 
-.c13 {
+.c14 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -263,7 +259,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -276,13 +272,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.75rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -295,13 +290,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c10 {
+.c11 {
   color: #1B1C1E;
   display: block;
   font-size: 0.875rem;
@@ -313,7 +307,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -332,65 +326,18 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
+.c15:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c14[disabled],
-.c14[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c16 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c16:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c16:hover {
-  background-color: transparent;
-}
-
-.c16[disabled],
-.c16[disabled] * {
+.c15[disabled],
+.c15[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -416,19 +363,14 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus {
+.c17:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
 .c17:hover {
-  background-color: #DBDEE1;
+  background-color: transparent;
 }
 
 .c17[disabled],
@@ -439,7 +381,44 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   pointer-events: none;
 }
 
-.c21 {
+.c18 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c18:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c18:hover {
+  background-color: #DBDEE1;
+}
+
+.c18[disabled],
+.c18[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
+.c22 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -459,95 +438,117 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c21:focus {
+.c22:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c21:hover {
+.c22:hover {
   background-color: #DBDEE1;
 }
 
-.c21[disabled],
-.c21[disabled] * {
+.c22[disabled],
+.c22[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c21:visited svg {
+.c22:visited svg {
   color: #1B1C1E;
 }
 
-.c21 span {
+.c22 span {
   color: #1B1C1E;
   padding: 0 0 0 var(--spacing-half);
+}
+
+.c7 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
 .c5 {
   margin-right: var(--spacing-1x);
 }
 
-<div
-  aria-label=""
-  class="c0 "
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="true"
-    class="c1 c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
+<body>
+  <div>
     <div
-      aria-label="Test Button avatar"
-      class="c4 c5"
-      role="img"
+      aria-label=""
+      class="c0 "
+      data-testid="dropdown-container"
+      id="uuid1"
     >
-      <span
-        data-testid="avatar-initials"
+      <button
+        aria-expanded="true"
+        class="c1 c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
       >
-        TB
-      </span>
+        <div
+          aria-label="Test Button avatar"
+          class="c4 c5"
+          role="img"
+        >
+          <span
+            data-testid="avatar-initials"
+          >
+            TB
+          </span>
+        </div>
+        Test Button
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up c6"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
     </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
+  </div>
   <div
-    class="c7 c8"
-    data-testid="user-profile"
+    class="c7"
+    data-testid="toasts"
+  />
+  <div
+    class="c8 c9"
+    data-testid="menu-dropdownMenu"
     id="uuid2"
+    style="width: auto;"
   >
     <ul
       aria-labelledby="user-label"
-      class="c9"
+      class="c10"
     >
       <li
-        class="c10"
+        class="c11"
       >
         <div
-          class="c11"
+          class="c12"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               Test Button
             </span>
@@ -557,24 +558,24 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
     </ul>
     <ul
       aria-labelledby="user-actions"
-      class="c9"
+      class="c10"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c15"
           data-testid="listitem-optionA"
           href="/testa"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c16"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 Option A
               </span>
@@ -585,20 +586,20 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c17"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
           tabindex="-1"
         >
           <div
-            class="c15"
+            class="c16"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 Option B
               </span>
@@ -609,19 +610,19 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c14"
+          class="c15"
           data-testid="listitem-optionC"
           href="/testc"
           tabindex="0"
         >
           <div
-            class="c15"
+            class="c16"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 Option C
               </span>
@@ -632,26 +633,26 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17"
+          class="c18"
           href="www.test.ca"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="c15"
+            class="c16"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 Option D
               </span>
             </div>
           </div>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -661,26 +662,42 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c19 c20 c21"
+          class="c20 c21 c22"
           href="www.test.ca"
           target="_blank"
         >
           <span
-            class="c22"
+            class="c23"
           >
             Option E
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c23"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c24"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -689,10 +706,10 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</body>
 `;
 
-exports[`UserProfile Matches Snapshot (desktop) 1`] = `
+exports[`UserProfile matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -733,14 +750,9 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -755,13 +767,8 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   color: #FFFFFF;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -778,6 +785,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c4 {
@@ -807,585 +815,95 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c7 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
 .c0 {
   position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
 }
 
 .c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
+  min-width: inherit;
   text-transform: unset;
+  width: inherit;
 }
 
 .c6 {
   margin-left: var(--spacing-1x);
 }
 
-.c8 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
-.c19 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: var(--border-radius);
-  color: #006296;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c19:hover {
-  color: #003A5A;
-}
-
-.c19:visited {
-  color: #006296;
-}
-
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c19:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c18 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.c23 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: 1rem;
-  margin-left: var(--spacing-half);
-  margin-right: 0;
-  width: 1rem;
-}
-
-.c20 {
-  -webkit-align-items: baseline;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.c20:visited svg {
-  color: #006296;
-}
-
-.c22 {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.c9 {
-  margin: 0;
-  overflow-y: auto;
-  padding: 0;
-}
-
-.c9:not(:last-child)::after {
-  border-bottom: 1px solid #DBDEE1;
-  content: '';
-  display: block;
-  margin: 0 var(--spacing-2x);
-}
-
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-}
-
-.c13 {
-  line-height: 1.25rem;
-  margin: auto var(--spacing-1x) auto 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  font-size: 0.75rem;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0 0 0 var(--spacing-half);
-}
-
-.c15 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  font-size: 0.875rem;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0 0 0 var(--spacing-half);
-}
-
-.c10 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 0.875rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: var(--spacing-1x) var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c14:hover {
-  background-color: #DBDEE1;
-}
-
-.c14[disabled],
-.c14[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c16 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c16:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c16:hover {
-  background-color: transparent;
-}
-
-.c16[disabled],
-.c16[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c17 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c17:hover {
-  background-color: #DBDEE1;
-}
-
-.c17[disabled],
-.c17[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c21 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-  padding: 0 var(--spacing-2x);
-}
-
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c21:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c21:hover {
-  background-color: #DBDEE1;
-}
-
-.c21[disabled],
-.c21[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c21:visited svg {
-  color: #1B1C1E;
-}
-
-.c21 span {
-  color: #1B1C1E;
-  padding: 0 0 0 var(--spacing-half);
+.c7 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
 .c5 {
   margin-right: var(--spacing-1x);
 }
 
-<div
-  aria-label=""
-  class="c0 "
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="false"
-    class="c1 c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
+<body>
+  <div>
     <div
-      aria-label="Test Button avatar"
-      class="c4 c5"
-      role="img"
+      aria-label=""
+      class="c0 "
+      data-testid="dropdown-container"
+      id="uuid1"
     >
-      <span
-        data-testid="avatar-initials"
-      >
-        TB
-      </span>
-    </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
-  <div
-    class="c7 c8"
-    data-testid="user-profile"
-    hidden=""
-    id="uuid2"
-  >
-    <ul
-      aria-labelledby="user-label"
-      class="c9"
-    >
-      <li
-        class="c10"
+      <button
+        aria-expanded="false"
+        class="c1 c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
       >
         <div
-          class="c11"
+          aria-label="Test Button avatar"
+          class="c4 c5"
+          role="img"
         >
-          <div
-            class="c12"
+          <span
+            data-testid="avatar-initials"
           >
-            <span
-              class="c13"
-            >
-              Test Button
-            </span>
-          </div>
+            TB
+          </span>
         </div>
-      </li>
-    </ul>
-    <ul
-      aria-labelledby="user-actions"
-      class="c9"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c14"
-          data-testid="listitem-optionA"
-          href="/testa"
-          tabindex="0"
+        Test Button
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-down c6"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            class="c15"
-          >
-            <div
-              class="c12"
-            >
-              <span
-                class="c13"
-              >
-                Option A
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c16"
-          data-testid="listitem-optionB"
-          disabled=""
-          href="/testb"
-          tabindex="-1"
-        >
-          <div
-            class="c15"
-          >
-            <div
-              class="c12"
-            >
-              <span
-                class="c13"
-              >
-                Option B
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c14"
-          data-testid="listitem-optionC"
-          href="/testc"
-          tabindex="0"
-        >
-          <div
-            class="c15"
-          >
-            <div
-              class="c12"
-            >
-              <span
-                class="c13"
-              >
-                Option C
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c17"
-          href="www.test.ca"
-          tabindex="0"
-          target="_blank"
-        >
-          <div
-            class="c15"
-          >
-            <div
-              class="c12"
-            >
-              <span
-                class="c13"
-              >
-                Option D
-              </span>
-            </div>
-          </div>
-          <span
-            class="c18"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c19 c20 c21"
-          href="www.test.ca"
-          target="_blank"
-        >
-          <span
-            class="c22"
-          >
-            Option E
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="c23"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            role="img"
-            width="16"
+          <path
+            d="m6 9 6 6 6-6"
           />
-          <span
-            class="c18"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
+        </svg>
+      </button>
+    </div>
   </div>
-</div>
+  <div
+    class="c7"
+    data-testid="toasts"
+  />
+</body>
 `;
 
-exports[`UserProfile Matches Snapshot (mobile) 1`] = `
+exports[`UserProfile matches Snapshot (mobile) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1415,7 +933,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1426,14 +944,9 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1447,16 +960,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #FFFFFF;
   padding: 0;
-  width: var(--size-3x);
+  width: var(--size-2x);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c3:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -1473,11 +981,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
+  pointer-events: none;
 }
 
 .c4 {
@@ -1507,687 +1011,6 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   width: var(--size-2x);
 }
 
-.c6 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c7 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
-.c18 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: var(--border-radius);
-  color: #006296;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c18:hover {
-  color: #003A5A;
-}
-
-.c18:visited {
-  color: #006296;
-}
-
-.c18 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c18:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c17 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.c22 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  height: 1rem;
-  margin-left: var(--spacing-half);
-  margin-right: 0;
-  width: 1rem;
-}
-
-.c19 {
-  -webkit-align-items: baseline;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.c19:visited svg {
-  color: #006296;
-}
-
-.c21 {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.c8 {
-  margin: 0;
-  overflow-y: auto;
-  padding: 0;
-}
-
-.c8:not(:last-child)::after {
-  border-bottom: 1px solid #DBDEE1;
-  content: '';
-  display: block;
-  margin: 0 var(--spacing-2x);
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-}
-
-.c12 {
-  line-height: 1.25rem;
-  margin: auto var(--spacing-1x) auto 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  font-size: 0.875rem;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0 0 0 var(--spacing-half);
-}
-
-.c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  font-size: 1rem;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0 0 0 var(--spacing-half);
-}
-
-.c9 {
-  color: #1B1C1E;
-  display: block;
-  font-size: 1rem;
-  line-height: 2.5rem;
-  overflow: hidden;
-  padding: var(--spacing-1x) var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  height: 2.5rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c13:hover {
-  background-color: #DBDEE1;
-}
-
-.c13[disabled],
-.c13[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c15 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  height: 2.5rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c15:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c15:hover {
-  background-color: transparent;
-}
-
-.c15[disabled],
-.c15[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c16 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  height: 2.5rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c16:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c16:hover {
-  background-color: #DBDEE1;
-}
-
-.c16[disabled],
-.c16[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c20 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  height: 2.5rem;
-  line-height: 2rem;
-  padding: 0 var(--spacing-2x);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-  padding: 0 var(--spacing-2x);
-}
-
-.c20 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c20:focus {
-  box-shadow: 0 0 0 0 transparent;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c20:hover {
-  background-color: #DBDEE1;
-}
-
-.c20[disabled],
-.c20[disabled] * {
-  color: #B7BBC2;
-  cursor: default;
-  fill: #B7BBC2;
-  pointer-events: none;
-}
-
-.c20:visited svg {
-  color: #1B1C1E;
-}
-
-.c20 span {
-  color: #1B1C1E;
-  padding: 0 0 0 var(--spacing-half);
-}
-
-.c1 button {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-
-.c5 {
-  margin-right: 0;
-}
-
-<div
-  aria-label=""
-  class="c0 c1"
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="false"
-    class="c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
-    <div
-      aria-label="Test Button avatar"
-      class="c4 c5"
-      role="img"
-    >
-      <span
-        data-testid="avatar-initials"
-      >
-        TB
-      </span>
-    </div>
-  </button>
-  <div
-    class="c6 c7"
-    data-testid="user-profile"
-    hidden=""
-    id="uuid2"
-  >
-    <ul
-      aria-labelledby="user-label"
-      class="c8"
-    >
-      <li
-        class="c9"
-      >
-        <div
-          class="c10"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              Test Button
-            </span>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <ul
-      aria-labelledby="user-actions"
-      class="c8"
-    >
-      <li>
-        <a
-          aria-disabled="false"
-          class="c13"
-          data-testid="listitem-optionA"
-          href="/testa"
-          tabindex="0"
-        >
-          <div
-            class="c14"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Option A
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="true"
-          class="c15"
-          data-testid="listitem-optionB"
-          disabled=""
-          href="/testb"
-          tabindex="-1"
-        >
-          <div
-            class="c14"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Option B
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c13"
-          data-testid="listitem-optionC"
-          href="/testc"
-          tabindex="0"
-        >
-          <div
-            class="c14"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Option C
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c16"
-          href="www.test.ca"
-          tabindex="0"
-          target="_blank"
-        >
-          <div
-            class="c14"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Option D
-              </span>
-            </div>
-          </div>
-          <span
-            class="c17"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          aria-disabled="false"
-          class="c18 c19 c20"
-          href="www.test.ca"
-          target="_blank"
-        >
-          <span
-            class="c21"
-          >
-            Option E
-          </span>
-          <svg
-            aria-label="opens in a new tab"
-            class="c22"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            role="img"
-            width="16"
-          />
-          <span
-            class="c17"
-            data-testid="screen-reader-text"
-          >
-            (opens in a new tab)
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: var(--size-2x);
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c2:hover,
-.c2[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #006296;
-  cursor: not-allowed;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F1F2F2;
-  border-radius: 50%;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: var(--font-semi-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 0.625rem;
-  height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
-  width: var(--size-1halfx);
-}
-
 .c7 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
@@ -2197,27 +1020,25 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   list-style-type: none;
   position: absolute;
   width: 100%;
+  z-index: 700;
 }
 
 .c0 {
   position: relative;
 }
 
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c6 {
-  margin-left: var(--spacing-1x);
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
 }
 
 .c8 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: auto;
+  z-index: 99998;
 }
 
 .c19 {
@@ -2232,7 +1053,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -2246,14 +1067,9 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   color: #006296;
 }
 
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c19:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2348,8 +1164,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  font-size: 0.75rem;
-  height: 100%;
+  font-size: 0.875rem;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
@@ -2367,8 +1182,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  font-size: 0.875rem;
-  height: 100%;
+  font-size: 1rem;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
@@ -2377,8 +1191,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 .c10 {
   color: #1B1C1E;
   display: block;
-  font-size: 0.875rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 2.5rem;
   overflow: hidden;
   padding: var(--spacing-1x) var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -2396,8 +1210,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
+  font-size: 1rem;
+  height: 2.5rem;
   line-height: 2rem;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -2405,12 +1219,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c14:focus {
+.c14:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -2438,8 +1247,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
+  font-size: 1rem;
+  height: 2.5rem;
   line-height: 2rem;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -2447,12 +1256,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c16 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c16:focus {
+.c16:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -2480,8 +1284,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
+  font-size: 1rem;
+  height: 2.5rem;
   line-height: 2rem;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -2489,12 +1293,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   white-space: nowrap;
 }
 
-.c17 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c17:focus {
+.c17:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -2522,8 +1321,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  height: 2rem;
+  font-size: 1rem;
+  height: 2.5rem;
   line-height: 2rem;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
@@ -2532,12 +1331,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c21 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c21:focus {
+.c21:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
@@ -2564,48 +1358,62 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c5 {
-  margin-right: var(--spacing-1x);
+.c6 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: 0;
 }
 
-<nav
-  aria-label="User menu"
-  class="c0 "
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="false"
-    class="c1 c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
+.c1 button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+
+.c5 {
+  margin-right: 0;
+}
+
+<body>
+  <div>
     <div
-      aria-label="Test Button avatar"
-      class="c4 c5"
-      role="img"
+      aria-label=""
+      class="c0 c1"
+      data-testid="dropdown-container"
+      id="uuid1"
     >
-      <span
-        data-testid="avatar-initials"
+      <button
+        aria-expanded="true"
+        class="c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
       >
-        TB
-      </span>
+        <div
+          aria-label="Test Button avatar"
+          class="c4 c5"
+          role="img"
+        >
+          <span
+            data-testid="avatar-initials"
+          >
+            TB
+          </span>
+        </div>
+      </button>
     </div>
-    Test Button
-    <svg
-      aria-hidden="true"
-      class="c6"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
+  </div>
+  <div
+    class="c6"
+    data-testid="toasts"
+  />
   <div
     class="c7 c8"
-    data-testid="user-profile"
-    hidden=""
+    data-testid="menu-dropdownMenu"
     id="uuid2"
+    style="width: auto;"
   >
     <ul
       aria-labelledby="user-label"
@@ -2745,14 +1553,30 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
             Option E
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c23"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c23"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
             class="c18"
             data-testid="screen-reader-text"
@@ -2763,5 +1587,863 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       </li>
     </ul>
   </div>
-</nav>
+</body>
+`;
+
+exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
+}
+
+.c8 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  z-index: 700;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  min-width: inherit;
+  text-transform: unset;
+  width: inherit;
+}
+
+.c6 {
+  margin-left: var(--spacing-1x);
+}
+
+.c9 {
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: auto;
+  z-index: 99998;
+}
+
+.c20 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c20:hover {
+  color: #003A5A;
+}
+
+.c20:visited {
+  color: #006296;
+}
+
+.c20:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c19 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c24 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1rem;
+  margin-left: var(--spacing-half);
+  margin-right: 0;
+  width: 1rem;
+}
+
+.c21 {
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c21:visited svg {
+  color: #006296;
+}
+
+.c23 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c10 {
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.c10:not(:last-child)::after {
+  border-bottom: 1px solid #DBDEE1;
+  content: '';
+  display: block;
+  margin: 0 var(--spacing-2x);
+}
+
+.c13 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+.c14 {
+  line-height: 1.25rem;
+  margin: auto var(--spacing-1x) auto 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-size: 0.75rem;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 0 0 var(--spacing-half);
+}
+
+.c16 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-size: 0.875rem;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 0 0 var(--spacing-half);
+}
+
+.c11 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: var(--spacing-1x) var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c15:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c15:hover {
+  background-color: #DBDEE1;
+}
+
+.c15[disabled],
+.c15[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
+.c17 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c17:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c17:hover {
+  background-color: transparent;
+}
+
+.c17[disabled],
+.c17[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
+.c18 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c18:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c18:hover {
+  background-color: #DBDEE1;
+}
+
+.c18[disabled],
+.c18[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
+.c22 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0 var(--spacing-2x);
+}
+
+.c22:focus-visible {
+  box-shadow: 0 0 0 0 transparent;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c22:hover {
+  background-color: #DBDEE1;
+}
+
+.c22[disabled],
+.c22[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
+.c22:visited svg {
+  color: #1B1C1E;
+}
+
+.c22 span {
+  color: #1B1C1E;
+  padding: 0 0 0 var(--spacing-half);
+}
+
+.c7 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c5 {
+  margin-right: var(--spacing-1x);
+}
+
+<body>
+  <div>
+    <nav
+      aria-label="User menu"
+      class="c0 "
+      data-testid="dropdown-container"
+      id="uuid1"
+    >
+      <button
+        aria-expanded="true"
+        class="c1 c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
+      >
+        <div
+          aria-label="Test Button avatar"
+          class="c4 c5"
+          role="img"
+        >
+          <span
+            data-testid="avatar-initials"
+          >
+            TB
+          </span>
+        </div>
+        Test Button
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up c6"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="c7"
+    data-testid="toasts"
+  />
+  <div
+    class="c8 c9"
+    data-testid="menu-dropdownMenu"
+    id="uuid2"
+    style="width: auto;"
+  >
+    <ul
+      aria-labelledby="user-label"
+      class="c10"
+    >
+      <li
+        class="c11"
+      >
+        <div
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <span
+              class="c14"
+            >
+              Test Button
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul
+      aria-labelledby="user-actions"
+      class="c10"
+    >
+      <li>
+        <a
+          aria-disabled="false"
+          class="c15"
+          data-testid="listitem-optionA"
+          href="/testa"
+          tabindex="0"
+        >
+          <div
+            class="c16"
+          >
+            <div
+              class="c13"
+            >
+              <span
+                class="c14"
+              >
+                Option A
+              </span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="true"
+          class="c17"
+          data-testid="listitem-optionB"
+          disabled=""
+          href="/testb"
+          tabindex="-1"
+        >
+          <div
+            class="c16"
+          >
+            <div
+              class="c13"
+            >
+              <span
+                class="c14"
+              >
+                Option B
+              </span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c15"
+          data-testid="listitem-optionC"
+          href="/testc"
+          tabindex="0"
+        >
+          <div
+            class="c16"
+          >
+            <div
+              class="c13"
+            >
+              <span
+                class="c14"
+              >
+                Option C
+              </span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c18"
+          href="www.test.ca"
+          tabindex="0"
+          target="_blank"
+        >
+          <div
+            class="c16"
+          >
+            <div
+              class="c13"
+            >
+              <span
+                class="c14"
+              >
+                Option D
+              </span>
+            </div>
+          </div>
+          <span
+            class="c19"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c20 c21 c22"
+          href="www.test.ca"
+          target="_blank"
+        >
+          <span
+            class="c23"
+          >
+            Option E
+          </span>
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-external-link c24"
+            fill="none"
+            focusable="false"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
+          <span
+            class="c19"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`UserProfile matches Snapshot (variant=\`avatar-only\`) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: var(--size-1halfx);
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: var(--size-1halfx);
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c4 {
+  margin-right: 0;
+}
+
+<div
+  aria-label=""
+  class="c0 "
+  data-testid="dropdown-container"
+  id="uuid1"
+>
+  <button
+    aria-expanded="false"
+    class="c1 c2 eds-DropdownMenuButton-button"
+    data-testid="menu-button"
+    type="button"
+  >
+    <div
+      aria-label="Test Button avatar"
+      class="c3 c4"
+      role="img"
+    >
+      <span
+        data-testid="avatar-initials"
+      >
+        TB
+      </span>
+    </div>
+  </button>
+</div>
 `;

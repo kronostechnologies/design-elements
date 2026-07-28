@@ -1,255 +1,392 @@
+import { act, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { createRef, RefObject } from 'react';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Datepicker, DatepickerHandles } from './date-picker';
 
 describe('Datepicker', () => {
-    test('onChange callback is called when input changed', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onChange={callback} label="date" />);
+    it('matches snapshot (data-testid)', () => {
+        const { baseElement } = renderWithProviders(
+            <Datepicker data-testid="some-data-test-id" label="date" />,
+            'desktop',
+        );
 
-        const inputTarget = document.createElement('input');
-        inputTarget.value = '2002-02-02';
-
-        getByTestId(wrapper, 'text-input').simulate('change', { target: inputTarget });
-
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('onFocus callback is called when input focused', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onFocus={callback} label="date" />);
+    it('matches snapshot (desktop)', () => {
+        const { baseElement } = renderWithProviders(<Datepicker label="date" />, 'desktop');
 
-        getByTestId(wrapper, 'text-input').simulate('focus');
-
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('onBlur callback is called when input blurred', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onBlur={callback} label="date" />);
+    it('matches snapshot (mobile)', () => {
+        const { baseElement } = renderWithProviders(<Datepicker label="date" />, 'mobile');
 
-        getByTestId(wrapper, 'text-input').simulate('blur');
-
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('onCalendarClose callback is called when calendar closes', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onCalendarClose={callback} startOpen label="date" />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
-
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
-
-    test('onCalendarOpen callback is called when calendar opens', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Datepicker onCalendarOpen={callback} label="date" />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
-
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
-
-    test('input value should format on blur', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        const inputTarget = document.createElement('input');
-        inputTarget.value = '2002 02 02';
-
-        getByTestId(wrapper, 'text-input').simulate('change', { target: inputTarget });
-        getByTestId(wrapper, 'text-input').simulate('blur');
-
-        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
-    });
-
-    test('calendar should be opened when startOpen prop is truthy', () => {
-        const wrapper = mountWithTheme(<Datepicker startOpen />);
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
-    });
-
-    test('calendar should not open when input is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'text-input').simulate('click');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
-    });
-
-    test('calendar should not open when input is focused', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'text-input').simulate('focus');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
-    });
-
-    test('calendar should open when calendar button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
-    });
-
-    test('calendar should close when calendar button is clicked (start open)', () => {
-        const wrapper = mountWithTheme(<Datepicker startOpen />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
-    });
-
-    test('calendar should open on calendar button keydown (Enter)', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: 'Enter' });
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
-    });
-
-    test('calendar should open on calendar button keydown (Space bar)', () => {
-        const wrapper = mountWithTheme(<Datepicker />);
-
-        getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: ' ' });
-
-        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
-    });
-
-    test('month select value should change when month-previous button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
-
-        getByTestId(wrapper, 'month-previous').simulate('click');
-
-        expect(getByTestId(wrapper, 'month-select').props().value).toBe('april');
-    });
-
-    test('month select value should change when month-next button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
-
-        getByTestId(wrapper, 'month-next').simulate('click');
-
-        expect(getByTestId(wrapper, 'month-select').props().value).toBe('june');
-    });
-
-    test('year select value should change when month-previous button is clicked on first month of the year', () => {
-        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-01-12')} label="date" open />);
-
-        getByTestId(wrapper, 'month-previous').simulate('click');
-
-        expect(getByTestId(wrapper, 'year-select').props().value).toBe('1999');
-    });
-
-    test('year select value should change when month-next button is clicked on last month of the year', () => {
-        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-12-12')} label="date" open />);
-
-        getByTestId(wrapper, 'month-next').simulate('click');
-
-        expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
-    });
-
-    test('today-button should select current date', () => {
-        const wrapper = mountWithTheme(<Datepicker startOpen hasTodayButton />);
-
-        getByTestId(wrapper, 'today-button').simulate('click');
-
-        expect(getByTestId(wrapper, 'text-input').props().value).toBe(new Date().toLocaleDateString('en-CA'));
-    });
-
-    test('should reset date to defaultDate when reset is called on ref', async () => {
-        const ref: RefObject<DatepickerHandles> = createRef();
-        const wrapper = mountWithTheme(<Datepicker ref={ref} defaultDate={new Date('2002-02-02, 12:00')} />);
-
-        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2010-07-07' } });
-
-        await actAndWaitForEffects(wrapper, () => {
-            ref.current?.reset();
-        });
-
-        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
-    });
-
-    test('should set date when setDate is called on ref', async () => {
-        const ref: RefObject<DatepickerHandles> = createRef();
-        const wrapper = mountWithTheme(<Datepicker ref={ref} />);
-
-        await actAndWaitForEffects(wrapper, () => {
-            ref.current?.setDate(new Date('2002-02-02, 12:00'));
-        });
-
-        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
-    });
-
-    test('has controllable data-testid)', () => {
-        const wrapper = mountWithTheme(<Datepicker data-testid="some-data-test-id" label="date" />);
-
-        expect(getByTestId(wrapper, 'some-data-test-id').exists()).toBeTruthy();
-    });
-
-    test('matches snapshot (data-testid)', () => {
-        const tree = renderWithProviders(<Datepicker data-testid="some-data-test-id" label="date" />, 'desktop');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('matches snapshot (desktop)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" />, 'desktop');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" />, 'mobile');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has openToDate', () => {
-        const tree = renderWithProviders(
+    it('has openToDate', () => {
+        const { baseElement } = renderWithProviders(
             <Datepicker label="date" openToDate={new Date('1995-05-05, 12:00')} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('matches snapshot (open, desktop)', () => {
-        const tree = renderWithProviders(
+    it('matches snapshot (open, desktop)', () => {
+        const { baseElement } = renderWithProviders(
             <Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')} />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('matches snapshot (open, mobile)', () => {
-        const tree = renderWithProviders(
+    it('matches snapshot (open, mobile)', () => {
+        const { baseElement } = renderWithProviders(
             <Datepicker label="date" startOpen maxDate={new Date('2010-10-10, 12:00')} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('matches snapshot (open, hasTodayButton)', () => {
-        const tree = renderWithProviders(
+    it('matches snapshot (open, hasTodayButton)', () => {
+        const { baseElement } = renderWithProviders(
             <Datepicker label="date" hasTodayButton startOpen maxDate={new Date('2010-10-10, 12:00')} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('matches snapshot (invalid)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" valid={false} />);
+    it('matches snapshot (invalid)', () => {
+        const { baseElement } = renderWithProviders(<Datepicker label="date" valid={false} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('matches snapshot (disabled)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" disabled />);
+    it('matches snapshot (disabled)', () => {
+        const { baseElement } = renderWithProviders(<Datepicker label="date" disabled />);
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
+    });
+
+    describe('Interactions', () => {
+        it('onChange callback is called when input changed', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2002-02-02');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2002-02-02');
+        });
+
+        it('onFocus callback is called when input focused', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onFocus={callback} label="date" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.click(input);
+
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
+
+        it('onBlur callback is called when input blurred', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onBlur={callback} label="date" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.click(input);
+            await user.tab();
+
+            expect(callback).toHaveBeenCalledTimes(1);
+        });
+
+        describe('Calendar button', () => {
+            it('onCalendarClose callback is called when calendar closes', async () => {
+                const callback = jest.fn();
+                const user = userEvent.setup();
+                renderWithProviders(<Datepicker onCalendarClose={callback} startOpen label="date" />);
+
+                const button = screen.getByTestId('calendar-button');
+                await user.click(button);
+
+                await waitFor(() => expect(callback).toHaveBeenCalledTimes(1));
+            });
+
+            it('onCalendarOpen callback is called when calendar opens', async () => {
+                const callback = jest.fn();
+                const user = userEvent.setup();
+                renderWithProviders(<Datepicker onCalendarOpen={callback} label="date" />);
+
+                const button = screen.getByTestId('calendar-button');
+                await user.click(button);
+
+                await waitFor(() => expect(callback).toHaveBeenCalledTimes(1));
+            });
+
+            it('calendar should open when calendar button is clicked', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(<Datepicker />);
+
+                const button = screen.getByTestId('calendar-button');
+                await user.click(button);
+
+                await waitFor(() => expect(screen.getByTestId('calendar-header')).toBeInTheDocument());
+            });
+
+            it('calendar should close when calendar button is clicked (start open)', async () => {
+                const user = userEvent.setup();
+                renderWithProviders(<Datepicker startOpen />);
+
+                const button = screen.getByTestId('calendar-button');
+                await user.click(button);
+
+                await waitFor(() => expect(screen.queryByTestId('calendar-header')).not.toBeInTheDocument());
+            });
+        });
+
+        it('input value should format on blur', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2002 02 02');
+            await user.tab();
+
+            expect(input).toHaveValue('2002-02-02');
+        });
+
+        it('calendar should be opened when startOpen prop is truthy', () => {
+            renderWithProviders(<Datepicker startOpen />);
+
+            expect(screen.getByTestId('calendar-header')).toBeInTheDocument();
+        });
+
+        it('calendar should not open when input is clicked', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker />);
+
+            const input = screen.getByTestId('text-input');
+            await user.click(input);
+
+            expect(screen.queryByTestId('calendar-header')).not.toBeInTheDocument();
+        });
+
+        it('calendar should not open when input is focused', async () => {
+            renderWithProviders(<Datepicker />);
+
+            const input = screen.getByTestId('text-input');
+            act(() => input.focus());
+
+            expect(screen.queryByTestId('calendar-header')).not.toBeInTheDocument();
+        });
+
+        it('calendar should open on calendar button keydown (Enter)', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker />);
+
+            const button = screen.getByTestId('calendar-button');
+            button.focus();
+            await user.keyboard('{Enter}');
+
+            await waitFor(() => expect(screen.getByTestId('calendar-header')).toBeInTheDocument());
+        });
+
+        it('calendar should open on calendar button keydown (Space bar)', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker />);
+
+            const button = screen.getByTestId('calendar-button');
+            button.focus();
+            await user.keyboard(' ');
+
+            await waitFor(() => expect(screen.getByTestId('calendar-header')).toBeInTheDocument());
+        });
+
+        it('month select value should change when month-previous button is clicked', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
+
+            const prevButton = screen.getByTestId('month-previous');
+            await user.click(prevButton);
+
+            expect(screen.getByTestId('month-select')).toHaveTextContent('Apr');
+        });
+
+        it('month select value should change when month-next button is clicked', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
+
+            const nextButton = screen.getByTestId('month-next');
+            await user.click(nextButton);
+
+            expect(screen.getByTestId('month-select')).toHaveTextContent('Jun');
+        });
+
+        it(
+            'year select value should change when month-previous button is clicked on first month of the year',
+            async () => {
+                const user = userEvent.setup();
+                renderWithProviders(<Datepicker openToDate={new Date('2000-01-12')} label="date" open />);
+
+                const prevButton = screen.getByTestId('month-previous');
+                await user.click(prevButton);
+
+                expect(screen.getByTestId('year-select')).toHaveTextContent('1999');
+            },
+        );
+
+        it('year select value should change when month-next button is clicked on last month of the year', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker openToDate={new Date('2000-12-12')} label="date" open />);
+
+            const nextButton = screen.getByTestId('month-next');
+            await user.click(nextButton);
+
+            expect(screen.getByTestId('year-select')).toHaveTextContent('2001');
+        });
+
+        it('today-button should select current date', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker startOpen hasTodayButton />);
+
+            const todayButton = screen.getByTestId('today-button');
+            await user.click(todayButton);
+
+            const input = screen.getByTestId('text-input');
+            const today = new Date().toLocaleDateString('en-CA');
+
+            expect(input).toHaveValue(today);
+        });
+
+        it('should reset date to defaultDate when reset is called on ref', async () => {
+            const ref: RefObject<DatepickerHandles> = createRef();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker ref={ref} defaultDate={new Date('2002-02-02, 12:00')} />);
+
+            const input = screen.getByTestId('text-input');
+            await user.clear(input);
+            await user.type(input, '2010-07-07');
+            await user.tab();
+
+            expect(input).toHaveValue('2010-07-07');
+
+            act(() => ref.current?.reset());
+
+            await waitFor(() => expect(input).toHaveValue('2002-02-02'));
+        });
+
+        it('should set date when setDate is called on ref', async () => {
+            const ref: RefObject<DatepickerHandles> = createRef();
+            renderWithProviders(<Datepicker ref={ref} />);
+
+            act(() => ref.current?.setDate(new Date('2002-02-02, 12:00')));
+
+            const input = screen.getByTestId('text-input');
+            await waitFor(() => expect(input).toHaveValue('2002-02-02'));
+        });
+    });
+
+    describe('Input formats', () => {
+        test('with numbers only, onChange fires only on complete values', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003020');
+
+            expect(callback).not.toHaveBeenCalled();
+
+            await user.keyboard('1');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with numbers only and shorter format, onChange fires only on complete values', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="MM-dd-yy" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '02010');
+
+            expect(callback).not.toHaveBeenCalled();
+
+            await user.keyboard('3');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with dash-separated format, slash-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003/02/01');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with dash-separated format, space-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003 02 01');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with slash-separated format, dash-separated input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="MM/dd/yyyy" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '02-01-2003');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('single-digit month and day input is accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(<Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003-2-1');
+
+            expect(callback).toHaveBeenCalledOnce();
+            expect(callback.mock.calls[0][0].toISOString()).toStartWith('2003-02-01');
+        });
+
+        test('with strictDateFormat, alternate date formats are not accepted', async () => {
+            const callback = jest.fn();
+            const user = userEvent.setup();
+            renderWithProviders(
+                <Datepicker onChange={callback} label="date" dateFormat="yyyy-MM-dd" strictDateFormat />,
+            );
+
+            const input = screen.getByTestId('text-input');
+            await user.type(input, '2003/02/01');
+
+            expect(callback).not.toHaveBeenCalledOnce();
+        });
     });
 });

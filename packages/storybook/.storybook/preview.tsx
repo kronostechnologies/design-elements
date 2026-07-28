@@ -1,12 +1,14 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
+import { DocsContainer } from '@storybook/blocks';
 import { Decorator, Preview } from '@storybook/react';
-import { DocsContainer } from "@storybook/blocks";
+import { i18nDecorator } from './i18n-decorator';
 
 injectMainCss();
 
 const decorators: Decorator[] = [
-    Story => (
-        <DesignSystem>
+    i18nDecorator,
+    (Story, context) => (
+        <DesignSystem language={context.globals.locale}>
             <Story />
         </DesignSystem>
     ),
@@ -14,6 +16,23 @@ const decorators: Decorator[] = [
 
 const preview: Preview = {
     decorators,
+    globalTypes: {
+        locale: {
+            name: 'Locale',
+            description: 'Locale',
+            toolbar: {
+                dynamicTitle: true,
+                icon: 'globe',
+                items: [
+                    { value: 'en-CA', title: 'English' },
+                    { value: 'fr-CA', title: 'Français' },
+                ],
+            },
+        },
+    },
+    initialGlobals: {
+        locale: 'fr-CA',
+    },
     parameters: {
         controls: {
             exclude: ['key', 'ref'],
@@ -21,10 +40,6 @@ const preview: Preview = {
             sort: 'alpha',
         },
         docs: {
-            /*
-             * The default container is set explicitly to prevent a bug that causes the "Show code/Hide code"
-             * button of stories in the .mdx file to do nothing. It can be removed once the bug is fixed.
-             */
             container: DocsContainer,
             source: {
                 type: 'dynamic',
@@ -36,7 +51,14 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ['Introduction', 'Getting started', 'Foundations', 'Components', ['*', 'Deprecated'], 'Patterns', 'Atoms', 'Changelog'],
+                order: ['Introduction',
+                    'Getting started',
+                    'Foundations',
+                    'Components',
+                    ['*', 'Core', 'Deprecated'],
+                    'Patterns',
+                    'Atoms',
+                    'Changelog'],
             },
         },
     },

@@ -1,57 +1,62 @@
-import { doNothing } from '../../test-utils/callbacks';
-import { mountWithTheme } from '../../test-utils/renderer';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { Checkbox } from './checkbox';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { Checkbox, type CheckboxProps } from './checkbox';
 
-const defaultProps = {
+const defaultProps: CheckboxProps = {
     label: 'Boat',
     name: 'vehicule',
     value: 'boat',
 };
 
+function targetChecked(checked: boolean): object {
+    return expect.objectContaining({ target: expect.objectContaining({ checked }) });
+}
+
 describe('Checkbox', () => {
-    test('has controllable data-testid', () => {
+    it('has controllable data-testid', () => {
+        renderWithProviders(<Checkbox data-testid="some-data-testid" {...defaultProps} />);
+
+        expect(screen.getByTestId('some-data-testid')).toBeInTheDocument();
+    });
+
+    it('calls onChange callback when checkbox is checked / unchecked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
-            <Checkbox data-testid="some-data-testid" {...defaultProps} onChange={callback} />,
-        );
+        renderWithProviders(<Checkbox {...defaultProps} onChange={callback} />);
 
-        expect(getByTestId(wrapper, 'some-data-testid').exists()).toBe(true);
+        const checkbox = screen.getByRole('checkbox');
+        await userEvent.click(checkbox);
+
+        expect(callback).toHaveBeenCalledWith(targetChecked(true));
+
+        await userEvent.click(checkbox);
+        expect(callback).toHaveBeenCalledWith(targetChecked(false));
     });
 
-    test('onChange callback should be called when checkbox is checked / unchecked', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(<Checkbox {...defaultProps} onChange={callback} />);
+    it('is checked when defaultChecked prop is set to true', () => {
+        renderWithProviders(<Checkbox {...defaultProps} defaultChecked />);
 
-        wrapper.find('input').simulate('change');
-
-        expect(callback).toHaveBeenCalledTimes(1);
+        const checkbox = screen.getByRole('checkbox');
+        expect(checkbox).toBeChecked();
     });
 
-    test('should be default checked when defaultChecked prop is set to true', () => {
-        const wrapper = mountWithTheme(<Checkbox {...defaultProps} defaultChecked />);
+    it('is checked when checked prop is set to true', () => {
+        renderWithProviders(<Checkbox {...defaultProps} checked onChange={jest.fn()} />);
 
-        const input = wrapper.find('input');
-        expect(input.prop('defaultChecked')).toBe(true);
+        const checkbox = screen.getByRole('checkbox');
+        expect(checkbox).toBeChecked();
     });
 
-    test('should be checked when checked prop is set to true', () => {
-        const wrapper = mountWithTheme(<Checkbox {...defaultProps} checked onChange={doNothing} />);
+    it('is disabled when disabled prop is set to true', () => {
+        renderWithProviders(<Checkbox {...defaultProps} disabled />);
 
-        const input = wrapper.find('input');
-        expect(input.prop('checked')).toBe(true);
+        const checkbox = screen.getByRole('checkbox');
+        expect(checkbox).toBeDisabled();
     });
 
-    test('should be disabled when disabled prop is set to true', () => {
-        const wrapper = mountWithTheme(<Checkbox {...defaultProps} disabled />);
+    it('matches snapshot', () => {
+        const { container } = renderWithProviders(<Checkbox {...defaultProps} />);
 
-        const input = wrapper.find('input');
-        expect(input.prop('disabled')).toBe(true);
-    });
-
-    test('matches snapshot', () => {
-        const tree = mountWithTheme(<Checkbox {...defaultProps} />);
-
-        expect(tree).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

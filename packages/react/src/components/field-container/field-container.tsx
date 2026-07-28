@@ -1,10 +1,12 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { InvalidField } from '../feedbacks/invalid-field';
-import { Label } from '../label/label';
-import { TooltipProps } from '../tooltip/tooltip';
+import { type ResolvedTheme } from '../../themes';
+import { useDeviceContext } from '../device-context-provider';
+import { InvalidField } from '../feedbacks';
+import { Label } from '../label';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import { type RequiredLabelProps } from '../label/label';
 
 interface StyledDivProps {
     theme: ResolvedTheme;
@@ -24,7 +26,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
-        margin-bottom: var(--spacing-half);
+        margin-bottom: var(--spacing-quarter);
     }
 `;
 
@@ -45,7 +47,9 @@ export interface FieldContainerProps {
     noInvalidFieldIcon?: boolean;
     noMargin?: boolean;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     valid: boolean;
     validationErrorMessage: string;
 }
@@ -59,7 +63,9 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
     noInvalidFieldIcon,
     noMargin,
     required,
+    requiredLabelType,
     tooltip,
+    toggletip,
     valid,
     validationErrorMessage,
     ...props
@@ -75,7 +81,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label id={`${fieldId}_label`} forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
+            {label && <Label id={`${fieldId}_label`} forId={fieldId} tooltip={tooltip} toggletip={toggletip} required={required} requiredLabelType={requiredLabelType}>{label}</Label>}
             {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
@@ -88,3 +94,5 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
         </StyledDiv>
     );
 };
+
+FieldContainer.displayName = 'FieldContainer';

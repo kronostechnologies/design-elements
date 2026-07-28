@@ -1,9 +1,9 @@
-import { ComponentPropsWithoutRef, MouseEvent, VoidFunctionComponent } from 'react';
-import { NavLink, Link as ReactRouterLink } from 'react-router-dom';
+import { ComponentPropsWithoutRef, type FC, MouseEvent } from 'react';
+import { Link as ReactRouterLink, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { StyledLink } from './styles/styled-link';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, IconName } from '../icon';
+import { StyledLink } from './styles';
 
 const Link = styled(StyledLink)`
     svg {
@@ -30,7 +30,7 @@ type RouterLinkProps = Pick<
     'end'
 >;
 
-interface LinkProps extends RouterLinkProps {
+export interface RouteLinkProps extends RouterLinkProps {
     className?: string;
     disabled?: boolean;
     href: string;
@@ -44,7 +44,7 @@ interface LinkProps extends RouterLinkProps {
 /**
  * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
  */
-export const RouteLink: VoidFunctionComponent<LinkProps> = ({
+export const RouteLink: FC<RouteLinkProps> = ({
     className,
     disabled,
     end,
@@ -69,8 +69,10 @@ export const RouteLink: VoidFunctionComponent<LinkProps> = ({
             to={href}
             onClick={onClick}
         >
-            {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
+            {iconName && <Icon name={iconName} size="16" />}
             {label}
         </Link>
     );
 };
+
+RouteLink.displayName = 'RouteLink';

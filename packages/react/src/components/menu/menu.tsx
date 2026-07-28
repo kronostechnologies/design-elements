@@ -9,37 +9,38 @@ import {
     useCallback,
     useEffect,
     useMemo,
+    useRef,
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { getNextElement, getPreviousElement } from '../../utils/array';
+import { addFocusVisibleActive, focus, removeFocusVisibleActive } from '../../utils/css-state';
+import { mergeRefs } from '../../utils/react-merge-refs';
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { focus } from '../../utils/css-state';
+import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
     const optionsHeight = menuOptionHeight * numberOfVisibleItems;
 
-    return `calc(var(--spacing-half) + ${optionsHeight.toString()}px)`;
+    return `${optionsHeight.toString()}px`;
 }
 
 const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
     background-color: ${({ theme }) => theme.component['menu-background-color']};
-
     border: 1px solid ${({ theme }) => theme.component['menu-border-color']};
     border-radius: var(--border-radius);
     box-shadow: 0 8px 16px 0 ${({ theme }) => theme.component['menu-box-shadow-color']};
-    box-sizing: border-box;
+    box-sizing: content-box;
     flex-direction: column;
     margin: 0;
     max-height: ${({ numberOfVisibleItems }) => numberOfVisibleItems && getMaxHeight(numberOfVisibleItems)};
     overflow-y: ${({ numberOfVisibleItems }) => numberOfVisibleItems && 'auto'};
     padding: var(--spacing-half) 0;
     scroll-behavior: smooth;
-    width: 100%;
 `;
 
 interface SubMenuProps {
@@ -64,7 +65,6 @@ const SubMenu = styled.div<SubMenuProps>`
     scroll-behavior: smooth;
     top: ${({ top }) => top}px !important;
     transform: none !important;
-    width: 100%;
 `;
 
 interface ButtonProps {
@@ -87,7 +87,7 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     width: 100%;
 
-    ${({ theme }) => focus({ theme }, { insideOnly: true })};
+    ${({ theme }) => focus({ theme }, { focusTypeClass: true, insideOnly: true })};
 
     &:hover {
         background-color: ${({ theme }) => theme.component['menu-item-hover-background-color']};
@@ -105,6 +105,8 @@ const Button = styled.button<ButtonProps>`
 
 const StyledIcon = styled(Icon)`
     color: ${({ theme }) => theme.component['menu-item-icon-color']};
+    flex-shrink: 0;
+
     &:hover {
         color: ${({ theme }) => theme.component['menu-item-hover-icon-color']};
     }
@@ -155,13 +157,11 @@ interface ListGroup extends MenuGroup {
 
 type ListItem = ListGroup | ListOption;
 
-interface Props {
+export interface MenuProps {
     className?: string;
     id?: string;
-    initialFocusIndex?: number;
     numberOfVisibleItems?: number;
     options: MenuItem[];
-    $placement?: 'left' | 'right';
 
     onKeyDown?(event: KeyboardEvent): void;
     onOptionSelect?(option: ListOption): void;
@@ -219,23 +219,38 @@ function getSubMenuPosition(parentOption: ListOption): { top: number, left: numb
 export const Menu = forwardRef(({
     className,
     id,
-    initialFocusIndex = -1,
     numberOfVisibleItems = 4,
     options,
     onKeyDown,
     onOptionSelect,
     ...props
-}: Props, ref: Ref<HTMLDivElement>): ReactElement => {
+}: MenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
+    const containerRef = useRef<HTMLDivElement>(null);
     const menuId = useMemo(() => id || uuid(), [id]);
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
-    const [focusedIndex, setFocusedIndex] = useState(initialFocusIndex);
+    const [focusedIndex, setFocusedIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
+    const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
+
+    const { scrollIntoView } = useScrollIntoView({
+        container: containerRef,
+        scrollingContainer: containerRef,
+    });
 
     const focusElementAtIndex = useCallback((index: number): void => {
-        getAllOptionsInLevel(activeMenuList)[index]?.ref.current?.focus();
-    }, [activeMenuList]);
+        const option = getAllOptionsInLevel(activeMenuList)[index]?.ref.current;
+        if (option) {
+            setFocusedElement((previousFocused) => {
+                addFocusVisibleActive(option);
+                option.focus({ preventScroll: true });
+                scrollIntoView(option);
+                removeFocusVisibleActive(previousFocused);
+                return option;
+            });
+        }
+    }, [activeMenuList, scrollIntoView]);
 
     useEffect(() => {
         if (!isMouseNavigating) {
@@ -369,15 +384,10 @@ export const Menu = forwardRef(({
                             $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
                             {opt.iconName && (
-                                <StyledIcon
-                                    focusable={false}
-                                    aria-hidden
-                                    name={opt.iconName}
-                                    size="1rem"
-                                />
+                                <StyledIcon name={opt.iconName} size="1rem" />
                             )}
                             <Label>{opt.label}</Label>
-                            {opt.options && <Icon aria-hidden name="chevronRight" size="1rem" />}
+                            {opt.options && <Icon name="chevronRight" size="1rem" />}
                         </Button>
                         {opt.options && isSubMenuOpen(opt) && (
                             <SubMenu
@@ -414,7 +424,7 @@ export const Menu = forwardRef(({
                 : undefined}
             onKeyDown={handleKeyDown}
             role="menu"
-            ref={ref}
+            ref={mergeRefs(ref, containerRef)}
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...props}
         >
@@ -422,3 +432,5 @@ export const Menu = forwardRef(({
         </StyledDiv>
     );
 });
+
+Menu.displayName = 'Menu';

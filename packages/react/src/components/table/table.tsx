@@ -19,14 +19,15 @@ import { useTranslation } from '../../i18n/use-translation';
 import { devConsole } from '../../utils/dev-console';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconButton } from '../buttons';
-import { Checkbox } from '../checkbox/checkbox';
-import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Checkbox } from '../checkbox';
+import { DeviceType, useDeviceContext } from '../device-context-provider';
 import { RadioInput } from '../radio-button/radio-input';
+import { TableCaption, TableCaptionSize } from './table-caption';
 import { TableFooter } from './table-footer';
 import { TableHeader } from './table-header';
 import { StyledTableRow, TableRow } from './table-row';
 import { type TableColumn, type TableData } from './types';
-import { createRowSelectionStateFromSelectedRowIds } from './utils/table-utils';
+import { createRowSelectionStateFromSelectedRowIds } from './utils';
 
 type RowSize = 'small' | 'medium' | 'large';
 
@@ -134,7 +135,6 @@ const StyledTable = styled.table<StyledTableProps>`
         line-height: 1.5rem;
         margin: 0;
         padding: ${({ $device, $rowSize }) => getTdPadding($device, $rowSize)};
-        text-align: left;
 
         &:last-child {
             border-right: 0;
@@ -317,7 +317,7 @@ function getExpandColumn<T extends object>(t: TFunction<'translation'>): TableCo
                 <ExpandButton
                     type="button"
                     buttonType="tertiary"
-                    iconName="caretRight"
+                    iconName="chevronRight"
                     onClick={row.getToggleExpandedHandler()}
                     aria-expanded={isExpanded}
                     $expanded={isExpanded}
@@ -344,9 +344,13 @@ export type TableRowId = string;
 type RowIdField<T> = { [K in keyof T]: T[K] extends TableRowId ? K : never }[keyof T]
 
 export interface TableProps<T extends object> {
+    ariaLabelledBy?: string;
+    ariaDescribedBy?: string;
     ariaLabelledByColumnId?: string,
     data: T[];
     defaultSort?: ColumnSort;
+    caption?: string;
+    captionSize?: TableCaptionSize;
     columns: TableColumn<T>[];
     expandableRows?: 'single' | 'multiple';
     expandChildrenOnRowSelection?: boolean;
@@ -384,8 +388,14 @@ export interface TableProps<T extends object> {
     onSort?(sort: ColumnSort | null): void;
 }
 
-export const Table = <T extends object>({
+type TableComponent = <T extends object>(props: TableProps<T>) => ReactElement;
+
+export const Table: TableComponent & { displayName?: string | undefined } = <T extends object>({
+    ariaLabelledBy,
+    ariaDescribedBy,
     ariaLabelledByColumnId,
+    caption,
+    captionSize = 'medium',
     className,
     data,
     rowIdField,
@@ -424,7 +434,10 @@ export const Table = <T extends object>({
 
     // extends columns with utility column if needed (for row numbers and row selection)
     const columns = useMemo(() => {
-        const cols = [...providedColumns];
+        const cols: TableColumn<T>[] = providedColumns.map((column) => ({
+            ...column,
+            textAlign: column.textAlign ?? 'left',
+        }));
 
         if (rowSelectionMode) {
             cols.unshift(getSelectionColumn<T>(
@@ -523,6 +536,8 @@ export const Table = <T extends object>({
 
     return (
         <StyledTable
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={ariaDescribedBy}
             className={className}
             $rowSize={rowSize}
             $striped={striped}
@@ -530,6 +545,7 @@ export const Table = <T extends object>({
             $clickableRows={onRowClick !== undefined}
             ref={tableRef}
         >
+            {caption && <TableCaption size={captionSize}>{caption}</TableCaption>}
             <StyledTHead>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeader<T>
@@ -577,3 +593,5 @@ export const Table = <T extends object>({
         </StyledTable>
     );
 };
+
+Table.displayName = 'Table';

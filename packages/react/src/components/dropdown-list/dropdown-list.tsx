@@ -1,49 +1,69 @@
-import {
-    FocusEvent,
-    KeyboardEvent,
-    useCallback,
-    useRef,
-    useState,
-    VoidFunctionComponent,
-    ReactNode,
-} from 'react';
+import { FC, FocusEvent, KeyboardEvent, ReactNode, useCallback, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
-import { focus } from '../../utils/css-state';
-import { isLetterOrNumber } from '../../utils/regex';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { Icon, IconName } from '../icon/icon';
-import { Listbox, ListboxOption } from '../listbox/listbox';
-import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useClickOutside } from '../../hooks/use-click-outside';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
-import { useClickOutside } from '../../hooks/use-click-outside';
 import { useListSearch } from '../../hooks/use-list-search';
-import { sanitizeId } from '../../utils/dom';
-import { unique } from '../../utils/array';
-import { Tag } from '../tag/tag';
-import { findOptionsByValue } from '../listbox/listbox-option';
+import { useTranslation } from '../../i18n/use-translation';
+import { type ResolvedTheme } from '../../themes';
+import { focus } from '../../utils/css-state';
+import { getRootElement, sanitizeId } from '../../utils/dom';
+import { isLetterOrNumber } from '../../utils/regex';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { Icon, type IconName } from '../icon';
+import { Listbox, type ListboxOption } from '../listbox';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
+import {
+    disableNonSelectedOptions,
+    findOptionsByValue,
+    getDefaultOptions,
+    getJoinedValues,
+    getNewOptionSelection,
+    getOptionLabel,
+    getSelectedOptionValues,
+    isOptionEnabled,
+} from '../listbox/utils';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import { RequiredLabelProps } from '../label/label';
 
 interface TextboxProps {
     $disabled?: boolean;
     $isMobile: boolean;
     $isMultiselect?: boolean;
+    $readOnly?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
-    value: string;
 }
 
-export interface DropdownListOption extends ListboxOption {
-    label: string;
+function getBackgroundColor({ $disabled, $readOnly, theme }: TextboxProps): string {
+    if ($disabled) {
+        return theme.component['dropdown-list-input-disabled-background-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-background-color'];
+    }
+
+    return theme.component['dropdown-list-input-background-color'];
 }
 
-function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
+function getBorderColor({
+    $disabled,
+    $readOnly,
+    theme,
+    $valid,
+}: TextboxProps): string {
     if ($disabled) {
         return theme.component['dropdown-list-input-disabled-border-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-border-color'];
     }
     if (!$valid) {
         return theme.component['dropdown-list-input-error-border-color'];
@@ -52,23 +72,40 @@ function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
     return theme.component['dropdown-list-input-border-color'];
 }
 
+function getTextColor({ $disabled, $readOnly, theme }: TextboxProps): string {
+    if ($disabled) {
+        return theme.component['dropdown-list-input-disabled-text-color'];
+    }
+    if ($readOnly) {
+        return theme.component['dropdown-list-input-readonly-text-color'];
+    }
+
+    return theme.component['dropdown-list-input-text-color'];
+}
+
 const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-const StyledListbox = styled(Listbox)`
-    margin-top: var(--spacing-half);
+interface StyledListboxProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledListbox = styled(Listbox)<StyledListboxProps>`
+    left: ${(props) => props.$left};
     position: absolute;
-    width: 100%;
+    top: ${(props) => props.$top};
+    z-index: 99998;
 `;
 
 const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-input-disabled-background-color'] : theme.component['dropdown-list-input-background-color'])};
+    background-color: ${getBackgroundColor};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${({ $disabled, theme }) => $disabled && theme.component['dropdown-list-input-disabled-text-color']};
+    color: ${getTextColor};
     display: flex;
     justify-content: space-between;
     min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
@@ -77,7 +114,7 @@ const Textbox = styled.div<TextboxProps>`
     user-select: none;
     width: 100%;
 
-    ${focus};
+    ${({ $disabled, theme }) => !$disabled && focus({ theme }, { focusType: 'focus' })};
 `;
 
 const TextWrapper = styled.span`
@@ -90,21 +127,14 @@ const TextWrapper = styled.span`
 const TagWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     user-select: none;
 `;
 
-const ListBoxTag = styled(Tag)`
-    margin: 2px;
-
-    & + & {
-        margin-left: 2px;
-    }
-`;
-
-const Arrow = styled(Icon)<{ $disabled?: boolean }>`
+const Arrow = styled(Icon)<{ $disabled?: boolean, $readOnly?: boolean }>`
     align-items: center;
     color: ${({ $disabled, theme }) => ($disabled ? theme.component['dropdown-list-arrow-disabled-color'] : theme.component['dropdown-list-arrow-color'])};
-    display: flex;
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     flex: none;
     height: var(--size-1x);
     margin-left: auto;
@@ -119,8 +149,7 @@ const TextIcon = styled(Icon)`
 
 type Value = string | string[];
 
-export interface TagValue {
-    id?: string;
+export type DropdownListOption = ListboxOption & {
     label: string;
 }
 
@@ -149,7 +178,13 @@ export interface DropdownListProps<M extends boolean | undefined> {
     name?: string;
     options: DropdownListOption[];
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
+    readOnly?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /**
      * Sets input validity
      */
@@ -165,6 +200,7 @@ export interface DropdownListProps<M extends boolean | undefined> {
     value?: Value;
     hint?: string;
     multiselect?: M;
+    maxSelectableOptions?: number;
 
     /**
      * Display an icon inside the Dropdown control
@@ -172,15 +208,17 @@ export interface DropdownListProps<M extends boolean | undefined> {
     iconName?: IconName;
 
     /**
+     * OnClose callback function, called when the dropdown is closed
+     */
+    onClose?(): void;
+
+    /**
      * OnChange callback function, invoked when options are selected
      */
     onChange?(option: M extends true ? DropdownListOption[] : DropdownListOption): void;
 }
 
-const optionPredicate: (option: DropdownListOption) => boolean = (option) => !option.disabled;
-const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
-
-export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | undefined>> = ({
+export const DropdownList: FC<DropdownListProps<boolean | undefined>> = ({
     ariaLabel,
     className,
     defaultOpen = false,
@@ -190,15 +228,20 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     id: providedId,
     label,
     onChange,
-    options,
+    onClose,
+    options: providedOptions,
     name,
+    readOnly,
     required,
+    requiredLabelType,
     tooltip,
+    toggletip,
     valid = true,
     validationErrorMessage,
     value,
     hint,
     multiselect,
+    maxSelectableOptions,
     iconName,
     ...otherProps
 }) => {
@@ -206,34 +249,36 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     const { device, isMobile } = useDeviceContext();
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
-
-    const textboxRef = useRef<HTMLDivElement>(null);
-    const listboxRef = useRef<HTMLDivElement>(null);
+    const shadowRoot = useShadowRoot();
 
     const [open, setOpen] = useState(defaultOpen);
-
-    function getDefaultOptions(): DropdownListOption[] | undefined {
-        let defaultOptions: DropdownListOption[] | undefined;
-
-        if (value !== undefined || defaultValue !== undefined) {
-            defaultOptions = findOptionsByValue(options, value ?? defaultValue);
-        }
-
-        if (defaultOptions === undefined && !multiselect) {
-            defaultOptions = [options.find(optionPredicate) ?? { value: '', label: '' }];
-        }
-
-        return defaultOptions;
-    }
+    const {
+        x,
+        y,
+        refs: { reference: textboxRef, floating: listboxRef, ...refs },
+    } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
+    const rootElement = getRootElement(shadowRoot);
 
     const [selectedOptions, setSelectedOptions] = useState<DropdownListOption[] | undefined>(
-        () => getDefaultOptions(),
+        () => getDefaultOptions(value ?? defaultValue, providedOptions, multiselect, true),
     );
 
+    const options = useMemo(() => {
+        const isMaxSelectableOptionsReached = multiselect
+            && maxSelectableOptions
+            && selectedOptions
+            && selectedOptions.length >= maxSelectableOptions;
+
+        if (isMaxSelectableOptionsReached) {
+            return disableNonSelectedOptions(providedOptions, selectedOptions);
+        }
+
+        return providedOptions;
+    }, [multiselect, maxSelectableOptions, providedOptions, selectedOptions]);
+
     function toggleOptionSelection(option: DropdownListOption, forceSelected?: boolean): void {
-        const newSelectedOptions = !selectedOptions?.includes(option) || forceSelected
-            ? unique([...selectedOptions ?? [], option])
-            : selectedOptions?.filter((opt) => opt !== option);
+        const newSelectedOptions = getNewOptionSelection(option, selectedOptions, forceSelected);
+
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
     }
@@ -260,7 +305,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     } = useListCursor({
         elements: options,
         initialElement: getLastSelectedOption(selectedOptions),
-        predicate: optionPredicate,
+        predicate: isOptionEnabled,
     });
 
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
@@ -273,7 +318,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     function openListbox(): void {
-        if (disabled) {
+        if (disabled || readOnly) {
             return;
         }
 
@@ -283,7 +328,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
 
     const closeListbox: () => void = useCallback(() => {
         setOpen(false);
-    }, []);
+        onClose?.();
+    }, [onClose]);
 
     const selectOption: (option: DropdownListOption) => void = useCallback((option) => {
         setSelectedOptions([option]);
@@ -299,7 +345,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         }
     }, [closeListbox, focusedOption, open, selectedOptions, multiselect, selectOption]);
 
-    useClickOutside([textboxRef, listboxRef], handleClickOutside);
+    useClickOutside([textboxRef.current, listboxRef.current], handleClickOutside);
 
     function handleTextboxBlur(event: FocusEvent): void {
         if (open && event.relatedTarget !== listboxRef.current) {
@@ -319,16 +365,14 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (optionPredicate(option)) {
-            if (multiselect) {
-                toggleOptionSelection(option);
-            } else {
-                if (option !== selectedOptions?.[0]) {
-                    selectOption(option);
-                }
-
-                closeListbox();
+        if (multiselect) {
+            toggleOptionSelection(option);
+        } else {
+            if (option !== selectedOptions?.[0]) {
+                selectOption(option);
             }
+
+            closeListbox();
         }
     }
 
@@ -346,8 +390,8 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
         elements: options,
         focusedElement: focusedOption,
         onFoundElementChange: handleFoundOption,
-        searchPropertyAccessor,
-        predicate: optionPredicate,
+        searchPropertyAccessor: getOptionLabel,
+        predicate: isOptionEnabled,
     });
 
     function handleTextboxKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
@@ -438,22 +482,15 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
     }
 
     const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: DropdownListOption) => (
-        <ListBoxTag
-            aria-hidden="true"
-            data-testid={`listboxtag-${option.value}`}
+        <ListboxTag
             key={option.value}
-            onRemove={handleTagRemove}
-            value={{ id: option.value, label: option.label }}
+            disabled={disabled}
+            option={option}
+            readOnly={readOnly}
+            handleTagRemove={handleTagRemove}
+            textboxRef={textboxRef}
         />
     ));
-
-    const getListboxSelectedOptionValues = (): string[] | undefined => selectedOptions?.map(
-        (option) => option.value ?? '',
-    );
-
-    function getValues(): string {
-        return getListboxSelectedOptionValues()?.join('|') ?? '';
-    }
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
@@ -478,7 +515,9 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
             fieldId={id}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
@@ -491,6 +530,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 aria-expanded={open}
                 aria-invalid={!valid ? 'true' : 'false'}
                 aria-labelledby={ariaLabelledBy}
+                aria-readonly={readOnly ? 'true' : 'false'}
                 aria-required={required ? 'true' : 'false'}
                 data-testid="textbox"
                 id={id}
@@ -500,48 +540,52 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps<boolean | und
                 onBlur={handleTextboxBlur}
                 onClick={handleTextboxClick}
                 onKeyDown={handleTextboxKeyDown}
-                ref={textboxRef}
+                ref={refs.setReference}
+                $readOnly={readOnly}
                 role="combobox"
                 tabIndex={0}
                 $valid={valid}
-                value={getValues()}
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {iconName && (
                     <TextIcon
-                        aria-hidden="true"
                         name={iconName}
                         size={isMobile ? '24' : '16'}
                         data-testid="textbox-icon"
                     />
                 )}
-                <input type="hidden" name={name} value={getValues()} data-testid="input" />
+                <input type="hidden" name={name} value={getJoinedValues(selectedOptions)} data-testid="input" />
                 {multiselect
                     ? <TagWrapper data-testid="tag-wrapper">{renderSelectedOptionsTags()}</TagWrapper>
                     : <TextWrapper>{firstSelectedOption?.label ?? ''}</TextWrapper>}
                 <Arrow
-                    aria-hidden="true"
                     data-testid="arrow"
                     $disabled={disabled}
+                    $readOnly={readOnly}
                     name={open ? 'chevronUp' : 'chevronDown'}
                     size={device === 'mobile' ? '24' : '16'}
                 />
             </Textbox>
 
-            {open && (
+            {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
-                    ref={listboxRef}
+                    ref={refs.setFloating}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
                     id={`${id}_listbox`}
                     onOptionClick={handleListboxOptionClick}
                     options={options}
-                    value={getListboxSelectedOptionValues()}
+                    value={getSelectedOptionValues(selectedOptions)}
                     multiselect={multiselect}
-                />
+                    $left={`${x}px`}
+                    $top={`${y}px`}
+                />,
+                rootElement,
             )}
         </StyledFieldContainer>
     );
 };
+
+DropdownList.displayName = 'DropdownList';

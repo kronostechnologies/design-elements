@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
 .c0 {
@@ -12,7 +12,7 @@ exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -112,14 +112,9 @@ exports[`MoneyInput Component matches snapshot (en-CA) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -159,7 +154,7 @@ exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -259,14 +254,9 @@ exports[`MoneyInput Component matches snapshot (en-US) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -306,7 +296,7 @@ exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -406,14 +396,9 @@ exports[`MoneyInput Component matches snapshot (fr-CA) 1`] = `
   height: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus-within {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

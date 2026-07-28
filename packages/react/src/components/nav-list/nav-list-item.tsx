@@ -1,21 +1,13 @@
-import {
-    KeyboardEvent,
-    KeyboardEventHandler,
-    memo,
-    MouseEventHandler,
-    RefObject,
-    useCallback,
-    VoidFunctionComponent,
-} from 'react';
+import { FC, KeyboardEvent, KeyboardEventHandler, memo, MouseEventHandler, RefObject, useCallback } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { NavListOption } from './nav-list-option';
 import { focus } from '../../utils/css-state';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { NavListOption } from './nav-list-option';
 
 type DisabledSuffix = '-disabled' | '';
 
@@ -98,7 +90,7 @@ export interface NavListItemProps {
     onSelect?(option: NavListOption): void;
 }
 
-const LinkContent: VoidFunctionComponent<NavListItemProps> = memo<NavListItemProps>(
+const LinkContent: FC<NavListItemProps> = memo<NavListItemProps>(
     ({ option }) => (
         <>
             {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
@@ -111,12 +103,13 @@ const LinkContent: VoidFunctionComponent<NavListItemProps> = memo<NavListItemPro
         && prevOption.value === option.value && prevOption.endIcon === option.endIcon
     ),
 );
+LinkContent.displayName = 'LinkContent';
 
 interface WithTestId {
     testId: string;
 }
 
-const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
+const ScreenReaderMessage: FC<WithTestId> = ({ testId }) => {
     const { t } = useTranslation('common');
 
     return (
@@ -127,7 +120,9 @@ const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
     );
 };
 
-export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
+ScreenReaderMessage.displayName = 'ScreenReaderMessage';
+
+export const NavListItem: FC<NavListItemProps> = ({
     option,
     onKeyDown,
     onSelect,
@@ -183,3 +178,5 @@ export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
         </li>
     );
 };
+
+NavListItem.displayName = 'NavListItem';

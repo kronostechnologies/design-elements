@@ -14,6 +14,7 @@ export type DatepickerToken =
     | 'datepicker-day-selected-outside-month-text-color'
     | 'datepicker-day-selected-background-color'
     | 'datepicker-day-selected-border-color'
+    | 'datepicker-day-selected-font-weight'
     | 'datepicker-day-selected-text-color'
     | 'datepicker-day-today-text-color'
     | 'datepicker-header-background-color'
@@ -37,6 +38,7 @@ export const defaultDatepickerTokens: ComponentTokenMap<DatepickerToken> = {
     'datepicker-day-selected-outside-month-text-color': 'color-content-selected',
     'datepicker-day-selected-background-color': 'color-background-selected',
     'datepicker-day-selected-border-color': 'color-border-selected',
+    'datepicker-day-selected-font-weight': 'text-body-strong-font-weight',
     'datepicker-day-selected-text-color': 'color-content-selected',
     'datepicker-day-today-text-color': 'color-content-selected',
 };

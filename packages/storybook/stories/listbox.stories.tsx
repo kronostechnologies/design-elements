@@ -4,15 +4,31 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Core/Listbox',
+    title: 'Components/Core/Listbox (core)',
     component: Listbox,
     tags: ['autodocs'],
 };
 
-const options = [
-    { label: 'Option A', value: 'optionA' },
-    { label: 'Option B', value: 'optionB' },
-    { label: 'Option C', value: 'optionC' },
+const options: ListboxOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        leadingVisualType: 'icon',
+        leadingVisualProps: 'x',
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        leadingVisualType: 'avatar',
+        leadingVisualProps: { username: 'Willy Wonka' },
+    },
+    {
+        caption: 'Additional text',
+        label: 'Option C',
+        value: 'optionC',
+        leadingVisualType: 'avatar',
+        leadingVisualProps: { iconName: 'organization', size: 'small' },
+    },
     { label: 'Option D', value: 'optionD', disabled: true },
     { label: 'Option E', value: 'optionE' },
     { label: 'Option F', value: 'optionF' },

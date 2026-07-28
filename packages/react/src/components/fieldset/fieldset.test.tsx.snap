@@ -1,7 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Fieldset Component Styling matches default 1`] = `
-.c0 {
+exports[`Fieldset Styling matches default 1`] = `
+<DocumentFragment>
+  .c0 {
   border: 0;
   border: none;
   display: -webkit-box;
@@ -23,27 +24,20 @@ exports[`Fieldset Component Styling matches default 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef>
-  <styled.fieldset
-    $orientation="vertical"
+<fieldset
+    class="c0"
     data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
   >
-    <fieldset
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      id="uuid1"
-    >
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
+    Test Content
+  </fieldset>
+</DocumentFragment>
 `;
 
-exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
-.c0 {
+exports[`Fieldset Styling matches horizontal orientation 1`] = `
+<DocumentFragment>
+  .c0 {
   border: 0;
   border: none;
   display: -webkit-box;
@@ -65,29 +59,20 @@ exports[`Fieldset Component Styling matches horizontal orientation 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
-  orientation="horizontal"
->
-  <styled.fieldset
-    $orientation="horizontal"
+<fieldset
+    class="c0"
     data-orientation="horizontal"
     data-testid="fieldset"
     id="uuid1"
   >
-    <fieldset
-      className="c0"
-      data-orientation="horizontal"
-      data-testid="fieldset"
-      id="uuid1"
-    >
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
+    Test Content
+  </fieldset>
+</DocumentFragment>
 `;
 
-exports[`Fieldset Component Styling matches vertical orientation 1`] = `
-.c0 {
+exports[`Fieldset Styling matches vertical orientation 1`] = `
+<DocumentFragment>
+  .c0 {
   border: 0;
   border: none;
   display: -webkit-box;
@@ -109,29 +94,20 @@ exports[`Fieldset Component Styling matches vertical orientation 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
-  orientation="vertical"
->
-  <styled.fieldset
-    $orientation="vertical"
+<fieldset
+    class="c0"
     data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
   >
-    <fieldset
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      id="uuid1"
-    >
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
+    Test Content
+  </fieldset>
+</DocumentFragment>
 `;
 
-exports[`Fieldset Component Styling matches with bold legend 1`] = `
-.c1 {
+exports[`Fieldset Styling matches with bold legend 1`] = `
+<DocumentFragment>
+  .c1 {
   color: #1B1C1E;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
@@ -160,52 +136,26 @@ exports[`Fieldset Component Styling matches with bold legend 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
-  legend={
-    {
-      "bold": true,
-      "text": "Text Legend",
-    }
-  }
->
-  <styled.fieldset
-    $orientation="vertical"
+<fieldset
+    class="c0"
     data-orientation="vertical"
     data-testid="fieldset"
     id="uuid1"
   >
-    <fieldset
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      id="uuid1"
+    <legend
+      class="c1"
+      id="uuid1-legend"
     >
-      <Legend
-        bold={true}
-        id="uuid1-legend"
-      >
-        <styled.legend
-          $bold={true}
-          $isMobile={false}
-          datatest-id="legend"
-          id="uuid1-legend"
-        >
-          <legend
-            className="c1"
-            id="uuid1-legend"
-          >
-            Text Legend
-          </legend>
-        </styled.legend>
-      </Legend>
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
+      Text Legend
+    </legend>
+    Test Content
+  </fieldset>
+</DocumentFragment>
 `;
 
-exports[`Fieldset Component Styling matches with disabled legend 1`] = `
-.c1 {
+exports[`Fieldset Styling matches with disabled legend 1`] = `
+<DocumentFragment>
+  .c1 {
   color: #1B1C1E;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -234,48 +184,21 @@ exports[`Fieldset Component Styling matches with disabled legend 1`] = `
   color: #B7BBC2;
 }
 
-<ForwardRef
-  disabled={true}
-  legend={
-    {
-      "text": "Text Legend",
-    }
-  }
->
-  <styled.fieldset
-    $orientation="vertical"
-    aria-disabled={true}
+<fieldset
+    aria-disabled="true"
+    class="c0"
     data-orientation="vertical"
     data-testid="fieldset"
-    disabled={true}
+    disabled=""
     id="uuid1"
   >
-    <fieldset
-      aria-disabled={true}
-      className="c0"
-      data-orientation="vertical"
-      data-testid="fieldset"
-      disabled={true}
-      id="uuid1"
+    <legend
+      class="c1"
+      id="uuid1-legend"
     >
-      <Legend
-        id="uuid1-legend"
-      >
-        <styled.legend
-          $isMobile={false}
-          datatest-id="legend"
-          id="uuid1-legend"
-        >
-          <legend
-            className="c1"
-            id="uuid1-legend"
-          >
-            Text Legend
-          </legend>
-        </styled.legend>
-      </Legend>
-      Test Content
-    </fieldset>
-  </styled.fieldset>
-</ForwardRef>
+      Text Legend
+    </legend>
+    Test Content
+  </fieldset>
+</DocumentFragment>
 `;

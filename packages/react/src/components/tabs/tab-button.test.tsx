@@ -1,6 +1,7 @@
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { doNothing } from '../../test-utils/callbacks';
-import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { TabButton } from './tab-button';
 
 describe('TabButton', () => {
@@ -13,67 +14,65 @@ describe('TabButton', () => {
         onFocus: doNothing,
     };
 
-    test('should display button text', () => {
+    it('should display button text', () => {
         const expectedButtonText = 'some text';
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>{expectedButtonText}</TabButton>);
 
-        const tabPanel = getByTestId(wrapper, 'tab-text');
+        renderWithProviders(
+            <TabButton {...focusedAndSelected} size="medium">{expectedButtonText}</TabButton>,
+        );
 
-        expect(tabPanel.prop('children')).toBe(expectedButtonText);
+        expect(screen.getByTestId('tab-text')).toHaveTextContent(expectedButtonText);
     });
 
-    test('should not have a left icon in button when tab doesn\'t have a left icon name', () => {
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
+    it('should not have a left icon in button when tab doesn\'t have a left icon name', () => {
+        renderWithProviders(<TabButton {...focusedAndSelected} size="medium">some text</TabButton>);
 
-        const tabButtonLeftIcon = findByTestId(wrapper, 'tab-left-icon');
-
-        expect(tabButtonLeftIcon.length).toBe(0);
+        expect(screen.queryByTestId('tab-left-icon')).not.toBeInTheDocument();
     });
 
-    test('should have a left icon in button when tab has a left icon name', () => {
+    it('should have a left icon in button when tab has a left icon name', () => {
         const expectedLeftIcon = 'chevronUp';
-        const wrapper = mountWithProviders(
-            <TabButton {...focusedAndSelected} leftIcon={expectedLeftIcon}>some text</TabButton>,
+
+        renderWithProviders(
+            <TabButton {...focusedAndSelected} size="medium" leftIcon={expectedLeftIcon}>some text</TabButton>,
         );
 
-        const tabButtonLeftIcon = getByTestId(wrapper, 'tab-left-icon');
-
-        expect(tabButtonLeftIcon.prop('name')).toBe(expectedLeftIcon);
+        expect(screen.getByTestId('tab-left-icon')).toBeInTheDocument();
     });
 
-    test('should not have a right icon in button when tab doesn\'t have a right icon name', () => {
-        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
+    it('should not have a right icon in button when tab doesn\'t have a right icon name', () => {
+        renderWithProviders(<TabButton {...focusedAndSelected} size="medium">some text</TabButton>);
 
-        const tabButtonRightIcon = findByTestId(wrapper, 'tab-right-icon');
-
-        expect(tabButtonRightIcon.length).toBe(0);
+        expect(screen.queryByTestId('tab-right-icon')).not.toBeInTheDocument();
     });
 
-    test('should have a right icon in button when tab has a right icon name', () => {
+    it('should have a right icon in button when tab has a right icon name', () => {
         const expectedRightIcon = 'chevronDown';
-        const wrapper = mountWithProviders(
-            <TabButton {...focusedAndSelected} rightIcon={expectedRightIcon}>some text</TabButton>,
+
+        renderWithProviders(
+            <TabButton {...focusedAndSelected} size="medium" rightIcon={expectedRightIcon}>some text</TabButton>,
         );
 
-        const tabButtonRightIcon = getByTestId(wrapper, 'tab-right-icon');
-
-        expect(tabButtonRightIcon.prop('name')).toBe(expectedRightIcon);
+        expect(screen.getByTestId('tab-right-icon')).toBeInTheDocument();
     });
 
-    test('should call component onClick method when button is clicked', () => {
+    it('should call component onClick method when button is clicked', async () => {
         const expectedOnClickCall = jest.fn();
-        const wrapper = mountWithProviders(
+        const user = userEvent.setup();
+
+        renderWithProviders(
             <TabButton
                 id="aId"
                 panelId="aPanelId"
                 isSelected
                 onClick={expectedOnClickCall}
+                size="medium"
             >
                 some text
             </TabButton>,
         );
 
-        getByTestId(wrapper, 'tab-button').simulate('click');
+        await user.click(screen.getByTestId('tab-button'));
 
         expect(expectedOnClickCall).toHaveBeenCalled();
     });

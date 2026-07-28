@@ -28,7 +28,7 @@ const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
             {...args}
             history={routeMap(5)}
         />
-        ),
+    ),
 };
 
 export default BreadcrumbMeta;

@@ -7,6 +7,10 @@
   ],
   packageRules: [
     {
+      matchUpdateTypes: ['major'],
+      commitMessagePrefix: null,
+    },
+    {
       matchCategories: ["js"],
       matchPackageNames: [
         "react",
@@ -38,6 +42,11 @@
       matchPackageNames: ["react-table"],
       groupName: "react-table",
       semanticCommitScope: "{{groupName}}",
+    },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["cheerio"],
+      enabled: false,
     },
   ],
 }

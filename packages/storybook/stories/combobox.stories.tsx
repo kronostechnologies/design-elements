@@ -6,23 +6,23 @@ import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const Container = styled.div`
-    height: 240px;
+    height: 100px;
 `;
 
 const provinces = [
-    { value: 'Alberta' },
-    { value: 'British Columbia' },
-    { value: 'Manitoba', disabled: true },
-    { value: 'New Brunswick' },
-    { value: 'Newfoundland and Labrador' },
-    { value: 'Northwest Territories' },
-    { value: 'Nova Scotia' },
-    { value: 'Nunavut' },
-    { value: 'Ontario', disabled: true },
-    { value: 'Prince Edward Island' },
-    { value: 'Quebec' },
-    { value: 'Saskatchewan' },
-    { value: 'Yukon' },
+    { value: 'alberta', label: 'Alberta' },
+    { value: 'british_columbia', label: 'British Columbia' },
+    { value: 'manitoba', label: 'Manitoba', disabled: true },
+    { value: 'new_brunswick', label: 'New Brunswick' },
+    { value: 'newfoundland_and_labrador', label: 'Newfoundland and Labrador' },
+    { value: 'northwest_territories', label: 'Northwest Territories' },
+    { value: 'nova_scotia', label: 'Nova Scotia' },
+    { value: 'nunavut', label: 'Nunavut' },
+    { value: 'ontario', label: 'Ontario', disabled: true },
+    { value: 'prince_edward_island', label: 'Prince Edward Island' },
+    { value: 'quebec', label: 'Quebec' },
+    { value: 'saskatchewan', label: 'Saskatchewan' },
+    { value: 'yukon', label: 'Yukon' },
 ];
 
 const comboboxMeta: Meta<typeof Combobox> = {
@@ -33,6 +33,8 @@ const comboboxMeta: Meta<typeof Combobox> = {
         label: 'Select an option',
         hint: 'Hint',
         options: provinces,
+        onChange: (value) => console.info('onChange', value),
+        onInputChange: (value) => console.info('onInputChange', value),
     },
 };
 
@@ -89,5 +91,40 @@ export const UsingAsyncDataSource: Story = {
                 onChange={handleChange}
             />
         );
+    },
+};
+
+export const WithToggletip: Story = {
+    ...comboboxMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};
+
+export const WithMultiselect: Story = {
+    ...comboboxMeta,
+    args: {
+        autoSelectMatchingOption: false,
+        defaultValue: ['alberta', 'quebec'],
+        label: 'Select options',
+        multiselect: true,
+        onChange: (options: ComboboxOption[]) => console.log('onChange', options), /* eslint-disable-line no-console */
+        onInputChange: (value) => console.info('onInputChange', value), /* eslint-disable-line no-console */
+    },
+};
+
+export const WithMultiselectCustomValue: Story = {
+    ...comboboxMeta,
+    args: {
+        autoSelectMatchingOption: false,
+        defaultValue: ['alberta', 'quebec'],
+        label: 'Select options',
+        multiselect: true,
+        allowCustomValue: true,
+        onChange: (options: ComboboxOption[]) => console.log('onChange', options), /* eslint-disable-line no-console */
+        onInputChange: (value) => console.info('onInputChange', value), /* eslint-disable-line no-console */
     },
 };

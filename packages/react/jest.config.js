@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
@@ -19,7 +17,7 @@ module.exports = {
         ],
     ].filter(Boolean),
 
-    collectCoverage: true,
+    collectCoverage: false,
     collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}'],
     coverageDirectory: 'build/jest/coverage',
     coveragePathIgnorePatterns: [
@@ -37,27 +35,34 @@ module.exports = {
     resetMocks: true,
     restoreMocks: true,
     errorOnDeprecated: true,
+    globalSetup: '<rootDir>/test/global-setup.js',
     moduleDirectories: [
         'src',
         'node_modules',
     ],
     moduleNameMapper: {
-        '\\.svg': '<rootDir>/test/__mocks__/svg-mock.js',
         '\\.s?css': '<rootDir>/test/__mocks__/style-mock.js',
     },
     roots: [
         '<rootDir>/src',
     ],
-    setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+    setupFilesAfterEnv: ['<rootDir>/test/setup.ts', 'jest-extended/all'],
     snapshotResolver: '<rootDir>/test/snapshot-resolver.js',
-    snapshotSerializers: ['enzyme-to-json/serializer'],
     testMatch: ['**/*.test.{ts,tsx}'],
     transform: {
-        '^.+\\.tsx?$': [
-            'ts-jest',
-            {
-                tsconfig: path.resolve(__dirname, 'tsconfig.test.json'),
+        '\\.svg$': '<rootDir>/test/__mocks__/svg-mock.js',
+        '\\.m?[t]sx?$': ['@swc/jest', {
+            jsc: {
+                transform: {
+                    react: {
+                        runtime: 'automatic',
+                    },
+                },
             },
+        },
         ],
     },
+    transformIgnorePatterns: [
+        'node_modules/(?!.*\\.svg$)',
+    ],
 };

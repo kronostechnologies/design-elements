@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Carousel should match snapshot 1`] = `
 .c1 {
@@ -41,14 +41,9 @@ exports[`Carousel should match snapshot 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -65,14 +60,9 @@ exports[`Carousel should match snapshot 1`] = `
   width: var(--size-2x);
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -88,11 +78,7 @@ exports[`Carousel should match snapshot 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
-}
-
-.c2 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c0 {
@@ -161,14 +147,9 @@ exports[`Carousel should match snapshot 1`] = `
   width: 12px;
 }
 
-.c9 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c9:focus {
+.c9:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -187,14 +168,9 @@ exports[`Carousel should match snapshot 1`] = `
   width: 12px;
 }
 
-.c10 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c10:focus {
+.c10:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -206,14 +182,9 @@ exports[`Carousel should match snapshot 1`] = `
   visibility: hidden;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -221,14 +192,9 @@ exports[`Carousel should match snapshot 1`] = `
   visibility: visible;
 }
 
-.c11 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c11:focus {
+.c11:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -238,19 +204,33 @@ exports[`Carousel should match snapshot 1`] = `
 >
   <button
     aria-controls="uuid1"
+    aria-disabled="true"
     aria-label="previous"
     class="c1 c2 c3"
     data-testid="carousel-previous"
-    disabled=""
     type="button"
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-arrow-left"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m12 19-7-7 7-7"
+      />
+      <path
+        d="M19 12H5"
+      />
+    </svg>
   </button>
   <div
     class="c4"
@@ -350,31 +330,31 @@ exports[`Carousel should match snapshot 1`] = `
     >
       <button
         aria-controls="uuid1"
-        aria-disabled="true"
+        aria-current="true"
         class="c8 c9"
         data-testid="carousel-dot-0"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-1"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-2"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-3"
       />
       <button
         aria-controls="uuid1"
-        aria-disabled="false"
+        aria-current="false"
         class="c8 c10"
         data-testid="carousel-dot-4"
       />
@@ -389,11 +369,25 @@ exports[`Carousel should match snapshot 1`] = `
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-arrow-right"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 12h14"
+      />
+      <path
+        d="m12 5 7 7-7 7"
+      />
+    </svg>
   </button>
 </section>
 `;

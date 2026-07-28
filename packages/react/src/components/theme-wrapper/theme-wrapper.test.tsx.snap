@@ -1,7 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Theme Wrapper Returns component with custom theme 1`] = `
-.c0 {
+exports[`Theme Wrapper returns component with custom theme 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,14 +42,9 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #00874E;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -63,39 +59,37 @@ exports[`Theme Wrapper Returns component with custom theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #00874E;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
-  class="c0 c1"
-  type="button"
-/>
+    class="c0 c1"
+    type="button"
+  />
+</DocumentFragment>
 `;
 
-exports[`Theme Wrapper Returns component with default theme 1`] = `
-.c0 {
+exports[`Theme Wrapper returns component with default theme 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -135,14 +129,9 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -157,33 +146,30 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
-  class="c0 c1"
-  type="button"
-/>
+    class="c0 c1"
+    type="button"
+  />
+</DocumentFragment>
 `;

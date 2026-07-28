@@ -1,16 +1,18 @@
-import { Fragment, ReactElement, Ref, useRef, VoidFunctionComponent } from 'react';
+import { type FC, Fragment, ReactElement, Ref, useRef } from 'react';
 import { useId } from '../../../hooks/use-id';
 import { useTranslation } from '../../../i18n/use-translation';
-import { Button } from '../../buttons/button';
-import { useDeviceContext } from '../../device-context-provider/device-context-provider';
-import { Heading } from '../../heading/heading';
+import { Button } from '../../buttons';
+import { useDeviceContext } from '../../device-context-provider';
+import { Heading } from '../../heading';
+import { type IconName } from '../../icon';
 import { Modal } from '../modal';
-import {
-    ButtonContainer,
-    StyledHeadingWrapperComponent,
-    TitleIcon,
-} from './styled';
-import { DialogType, ModalDialogProps } from './types';
+import type { BaseModalProps } from '../types';
+import { ButtonContainer, StyledHeadingWrapperComponent, TitleIcon } from './styled';
+
+export type DialogType =
+    | 'information'
+    | 'action'
+    | 'alert';
 
 const modalRoles: Record<DialogType, string> = {
     information: 'dialog',
@@ -18,7 +20,17 @@ const modalRoles: Record<DialogType, string> = {
     alert: 'alertdialog',
 };
 
-export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
+export interface ModalDialogProps extends BaseModalProps {
+    title: string;
+    titleIcon?: IconName;
+    subtitle?: string;
+    footerContent?: ReactElement;
+    dialogType?: DialogType;
+    confirmButton?: { label?: string, onConfirm?(): void };
+    cancelButton?: { label?: string, onCancel?(): void };
+}
+
+export const ModalDialog: FC<ModalDialogProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp,
@@ -37,6 +49,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     title,
     titleIcon,
     onRequestClose,
+    onAfterClose,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
@@ -68,7 +81,6 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                         name={titleIconName}
                         size="24"
                         data-testid="title-icon"
-                        aria-hidden="true"
                     />
                 )}
                 <Heading
@@ -133,6 +145,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             parentSelector={parentSelector}
             role={modalRoles[dialogType]}
             onAfterOpen={() => titleRef.current?.focus()}
+            onAfterClose={onAfterClose}
             onRequestClose={onRequestClose}
             isOpen={isOpen}
             appElement={appElement}
@@ -144,3 +157,5 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         </Modal>
     );
 };
+
+ModalDialog.displayName = 'ModalDialog';

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
+exports[`SkipLink matches Snapshot (Desktop) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -53,14 +53,9 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   white-space: nowrap;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -88,7 +83,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 </a>
 `;
 
-exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
+exports[`SkipLink matches Snapshot (Mobile) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -118,7 +113,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -141,14 +136,9 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   white-space: nowrap;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 

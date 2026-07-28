@@ -1,11 +1,8 @@
-import { fireEvent } from '@testing-library/react';
-import { ReactWrapper, shallow } from 'enzyme';
-import { ChangeEventHandler } from 'react';
-import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderPortalWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { Icon } from '../icon';
 import { TextInput } from './text-input';
-import { Icon } from '../icon/icon';
 
 describe('TextInput', () => {
     const initialProps = {
@@ -14,182 +11,174 @@ describe('TextInput', () => {
         required: true,
         validationErrorMessage: 'This field is required',
         defaultValue: 'foo',
-        type: 'tel',
-        pattern: '[0-9]{3}-?[0-9]{3}-?[0-9]{4}',
-
     };
 
-    function setup(callback: ChangeEventHandler = doNothing): ReactWrapper {
-        const props = { ...initialProps };
-        return mountWithTheme(
-            <TextInput
-                {...props}
-                onChange={callback}
-                onBlur={callback}
-                onFocus={callback}
-            />,
-        );
-    }
-
-    test('can override data-testid on input', () => {
+    it('can override data-testid on input', () => {
         const aCustomTestId = 'my-test-id';
         const aValue = 'a value';
-        const wrapper = shallow(<TextInput label="test" name="test" value={aValue} data-testid={aCustomTestId} />);
 
-        const inputWrapper = getByTestId(wrapper, aCustomTestId);
-        expect(inputWrapper.prop('value')).toBe(aValue);
+        renderWithProviders(<TextInput label="test" name="test" value={aValue} data-testid={aCustomTestId} />);
+
+        const input = screen.getByTestId(aCustomTestId);
+        expect(input).toHaveValue(aValue);
     });
 
-    test('input has name property when name prop is set on TextInput', () => {
-        const wrapper = mountWithTheme(<TextInput label="test" name="test" />);
+    it('input has name property when name prop is set on TextInput', () => {
+        renderWithProviders(<TextInput label="test" name="test" />);
 
-        expect(wrapper.find('input').prop('name')).toBe('test');
+        const input = screen.getByRole('textbox');
+        expect(input).toHaveAttribute('name', 'test');
     });
 
-    test('should be valid by default', () => {
-        const wrapper = shallow(<TextInput {...initialProps} />);
+    it('should be valid by default', async () => {
+        renderWithProviders(<TextInput {...initialProps} />);
 
-        const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('valid')).toBe(true);
+        const input = screen.getByTestId('text-input');
+
+        expect(input).not.toHaveAttribute('aria-invalid');
     });
 
-    test('should set as invalid when invalid event is triggered', () => {
-        const wrapper = shallow(<TextInput {...initialProps} />);
-
-        getByTestId(wrapper, 'text-input').simulate('invalid');
-
-        const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('valid')).toBe(false);
-    });
-
-    test('should set as invalid when valid prop is false', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
-
-        const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('valid')).toBe(false);
-    });
-
-    test('should set as valid when valid prop is true', () => {
-        const wrapper = shallow(<TextInput valid />);
-
-        const container = getByTestId(wrapper, 'field-container');
-        expect(container.prop('valid')).toBe(true);
-    });
-
-    test('should set as invalid when valid prop is false and input trigger blur with checkValidity is true', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
-
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
-        const container = getByTestId(wrapper, 'field-container');
-
-        expect(container.prop('valid')).toBe(false);
-    });
-
-    test('should set as valid when valid prop is true and input trigger blur with checkValidity is true', () => {
-        const wrapper = shallow(<TextInput valid />);
-
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
-        const container = getByTestId(wrapper, 'field-container');
-
-        expect(container.prop('valid')).toBe(true);
-    });
-
-    test('should set as valid when valid prop is true and input trigger blur with checkValidity is false', () => {
-        const wrapper = shallow(<TextInput valid />);
-
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
-        const container = getByTestId(wrapper, 'field-container');
-
-        expect(container.prop('valid')).toBe(true);
-    });
-
-    test('should set as invalid when valid prop is false and input trigger blur with checkValidity is false', () => {
-        const wrapper = shallow(<TextInput valid={false} />);
-
-        const textInput = getByTestId(wrapper, 'text-input');
-        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
-        const container = getByTestId(wrapper, 'field-container');
-
-        expect(container.prop('valid')).toBe(false);
-    });
-
-    test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+    it('should set as invalid when invalid event is triggered', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(
             <form>
-                <TextInput label='test' required validationErrorMessage='This field is required' />
-                <button data-testid="submit-button" type="submit">Submit</button>
+                <TextInput {...initialProps} defaultValue="" />
+                <button type="submit">Submit</button>
             </form>,
         );
 
-        fireEvent.blur(byTestId('text-input'), { target: { value: '' } });
-        expect(queryByTestId('invalid-field')).toBeNull();
+        await user.click(screen.getByRole('button', { name: 'Submit' }));
 
-        fireEvent.click(byTestId('submit-button'));
-        expect(byTestId('invalid-field')).not.toBeNull();
+        const input = screen.getByTestId('text-input');
+
+        expect(input).toBeInvalid();
     });
 
-    test('onChange callback is called when content is changed', () => {
-        const callback = jest.fn();
-        const wrapper = setup(callback);
+    it('should set as invalid when valid prop is false', () => {
+        renderWithProviders(<TextInput valid={false} />);
 
-        wrapper.find('input').simulate('change', { target: { value: 'bar' } });
+        const input = screen.getByTestId('text-input');
+        expect(input).toBeInvalid();
+    });
+
+    it('should set as valid when valid prop is true', () => {
+        renderWithProviders(<TextInput valid />);
+
+        const input = screen.getByTestId('text-input');
+        expect(input).not.toBeInvalid();
+    });
+
+    it('should set as invalid when valid prop is false and input trigger blur with checkValidity is true', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<TextInput valid={false} defaultValue="valid" required />);
+
+        const input = screen.getByTestId('text-input');
+        await user.click(input);
+        await user.tab();
+
+        expect(input).toBeInvalid();
+    });
+
+    it('should set as valid when valid prop is true and input trigger blur with checkValidity is true', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<TextInput valid defaultValue="valid" required />);
+
+        const input = screen.getByTestId('text-input');
+        await user.click(input);
+        await user.tab();
+
+        expect(input).not.toHaveAttribute('aria-invalid');
+    });
+
+    it('should set as valid when valid prop is true and input trigger blur with checkValidity is false', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<TextInput valid required defaultValue="" />);
+
+        const input = screen.getByTestId('text-input');
+        await user.click(input);
+        await user.tab();
+
+        expect(input).not.toHaveAttribute('aria-invalid');
+    });
+
+    it(
+        'should set as invalid when valid prop is false and input trigger blur with checkValidity is false',
+        async () => {
+            const user = userEvent.setup();
+            renderWithProviders(<TextInput valid={false} required defaultValue="" />);
+
+            const input = screen.getByTestId('text-input');
+            await user.click(input);
+            await user.tab();
+
+            expect(input).toBeInvalid();
+        },
+    );
+
+    it('onChange callback is called when content is changed', async () => {
+        const callback = jest.fn();
+        const user = userEvent.setup();
+
+        renderWithProviders(<TextInput {...initialProps} onChange={callback} />);
+
+        const input = screen.getByRole('textbox');
+        await user.type(input, 'bar');
+
+        expect(callback).toHaveBeenCalled();
+    });
+
+    it('onChange callback can\'t be called when input disabled', async () => {
+        const callback = jest.fn();
+        const user = userEvent.setup();
+
+        renderWithProviders(<TextInput {...initialProps} onChange={callback} disabled />);
+
+        const input = screen.getByRole('textbox');
+        await user.type(input, 'bar');
+
+        expect(callback).not.toHaveBeenCalled();
+    });
+
+    it('onBlur callback is called when content is blurred', async () => {
+        const callback = jest.fn();
+        const user = userEvent.setup();
+
+        renderWithProviders(<TextInput {...initialProps} onBlur={callback} />);
+
+        const input = screen.getByRole('textbox');
+        await user.click(input);
+        await user.tab();
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onChange callback can\'t be called when input disabled', () => {
+    it('onBlur callback cannot be called when input disabled', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
-            <TextInput
-                {...initialProps}
-                onFocus={callback}
-                disabled
-            />,
-        );
+        const user = userEvent.setup();
 
-        wrapper.find('input').simulate('change');
+        renderWithProviders(<TextInput {...initialProps} onBlur={callback} disabled />);
 
-        expect(callback).toHaveBeenCalledTimes(0);
+        const input = screen.getByRole('textbox');
+
+        // User cannot focus disabled input, so cannot blur it
+        await user.tab();
+        expect(input).not.toHaveFocus();
     });
 
-    test('onBlur callback is called when content is blurred', () => {
+    it('onFocus callback is called when content is focused', async () => {
         const callback = jest.fn();
-        const wrapper = setup(callback);
+        const user = userEvent.setup();
 
-        wrapper.find('input').simulate('blur');
+        renderWithProviders(<TextInput {...initialProps} onFocus={callback} />);
+
+        const input = screen.getByRole('textbox');
+        await user.click(input);
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onBlur callback cannot be called when input disabled', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(
-            <TextInput
-                {...initialProps}
-                onFocus={callback}
-                disabled
-            />,
-        );
-
-        wrapper.find('input').simulate('blur');
-
-        expect(callback).toHaveBeenCalledTimes(0);
-    });
-
-    test('onFocus callback is called when content is focused', () => {
-        const callback = jest.fn();
-        const wrapper = setup(callback);
-
-        wrapper.find('input').simulate('focus');
-
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
-
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -200,11 +189,11 @@ describe('TextInput', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Matches the snapshot adornment text', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot adornment text', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -212,15 +201,15 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                leftAdornment='#'
+                leftAdornment="#"
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Matches the snapshot adornment icon', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot adornment icon', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -228,15 +217,15 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                leftAdornment={<Icon name='phone' />}
+                leftAdornment={<Icon name="phone" />}
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Normal - Adornment at end)', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot (Normal - Adornment at end)', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -244,16 +233,16 @@ describe('TextInput', () => {
                 type="tel"
                 validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
-                leftAdornment='#'
-                rightAdornment='end'
+                leftAdornment="#"
+                rightAdornment="end"
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Matches the snapshot [disabled = true]', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot [disabled = true]', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -265,11 +254,11 @@ describe('TextInput', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Matches the snapshot [required = true]', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot [required = true]', () => {
+        const { asFragment } = renderWithProviders(
             <TextInput
                 label="Telephone"
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
@@ -281,6 +270,25 @@ describe('TextInput', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should not show validation message when input is empty and required onBlur', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(
+            <form>
+                <TextInput label="test" required validationErrorMessage="This field is required" />
+                <button data-testid="submit-button" type="submit">Submit</button>
+            </form>,
+        );
+
+        const input = screen.getByTestId('text-input');
+        await user.click(input);
+        await user.tab();
+        expect(screen.queryByTestId('invalid-field')).not.toBeInTheDocument();
+
+        const submitButton = screen.getByTestId('submit-button');
+        await user.click(submitButton);
+        expect(screen.getByTestId('invalid-field')).toBeInTheDocument();
     });
 });

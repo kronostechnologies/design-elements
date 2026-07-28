@@ -1,52 +1,62 @@
-import { shallow } from 'enzyme';
-import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { SearchContextual } from './search-contextual';
 
-describe('Search Contextual', () => {
-    it('should call onReset when search resets', () => {
+describe('SearchContextual', () => {
+    it('should call onReset when search resets', async () => {
         const onReset = jest.fn();
-        const wrapper = shallow(<SearchContextual onReset={onReset} />);
+        renderWithProviders(<SearchContextual onReset={onReset} value="test" />);
 
-        getByTestId(wrapper, 'search-input').invoke('onReset')();
+        await userEvent.click(screen.getByTestId('search-reset'));
 
         expect(onReset).toHaveBeenCalledTimes(1);
     });
 
-    it('should call onChange when search changes', () => {
+    it('should call onChange when search changes', async () => {
         const onChange = jest.fn();
-        const value = jest.fn();
-        const event = jest.fn();
-        const wrapper = shallow(<SearchContextual onChange={onChange} />);
+        renderWithProviders(<SearchContextual onChange={onChange} />);
 
-        getByTestId(wrapper, 'search-input').invoke('onChange')(value, event);
+        const input = screen.getByTestId('search-input');
+        await userEvent.type(input, 't');
 
-        expect(onChange).toHaveBeenCalledWith(value, event);
+        expect(onChange).toHaveBeenCalledWith('t', expect.anything());
     });
 
-    it('should call onSearch when search', () => {
+    it('should call onSearch when search', async () => {
         const onSearch = jest.fn();
-        const value = jest.fn();
-        const wrapper = shallow(<SearchContextual onSearch={onSearch} />);
+        renderWithProviders(<SearchContextual onSearch={onSearch} />);
 
-        getByTestId(wrapper, 'search-input').invoke('onSearch')(value);
+        const input = screen.getByTestId('search-input');
+        await userEvent.type(input, 'test{enter}');
 
-        expect(onSearch).toHaveBeenCalledWith(value);
+        expect(onSearch).toHaveBeenCalledWith('test');
     });
 
     it('matches the snapshot when disabled', () => {
-        const wrapper = shallow(
-            <SearchContextual label="Search" disabled onChange={doNothing} onReset={doNothing} onSearch={doNothing} />,
+        const { container } = renderWithProviders(
+            <SearchContextual
+                label="Search"
+                disabled
+                onChange={jest.fn()}
+                onReset={jest.fn()}
+                onSearch={jest.fn()}
+            />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('matches the snapshot when enabled', () => {
-        const wrapper = shallow(
-            <SearchContextual label="Search" onChange={doNothing} onReset={doNothing} onSearch={doNothing} />,
+        const { container } = renderWithProviders(
+            <SearchContextual
+                label="Search"
+                onChange={jest.fn()}
+                onReset={jest.fn()}
+                onSearch={jest.fn()}
+            />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

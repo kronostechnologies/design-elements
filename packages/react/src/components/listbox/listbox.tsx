@@ -2,57 +2,110 @@ import {
     forwardRef,
     ForwardRefExoticComponent,
     KeyboardEvent,
+    type ReactElement,
+    type ReactNode,
     Ref,
     RefAttributes,
+    type RefObject,
     useCallback,
     useLayoutEffect,
+    useMemo,
     useRef,
     useState,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
-import { mergeRefs } from '../../utils/react-merge-refs';
 import { unique } from '../../utils/array';
+import { IGNORE_CLICK_OUTSIDE } from '../../utils/component-classes';
+import { focus } from '../../utils/css-state';
 import { sanitizeId } from '../../utils/dom';
-import { findOptionsByValue } from './listbox-option';
+import { mergeRefs } from '../../utils/react-merge-refs';
+import { Avatar, type AvatarProps } from '../avatar';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
+import { ListItem } from './list-item';
+import { listboxClasses } from './listbox-classes';
+import { findOptionsByValue } from './utils';
+
+const OptionIcon = styled(Icon)`
+    flex-shrink: 0;
+    height: var(--size-1x);
+    width: var(--size-1x);
+`;
+
+export const Divider = styled.li.attrs({ role: 'separator' })`
+    background-color: ${({ theme }) => theme.component['listbox-divider-color']};
+    display: flex;
+    height: 1px;
+    margin: var(--spacing-half) var(--spacing-2x);
+`;
 
 type Value = string | string[];
 
-export interface ListboxOption {
-    disabled?: boolean;
-    value: string;
-    label?: string;
-    caption?: string;
+interface AvatarLeadingVisual {
+    leadingVisualProps: AvatarProps;
+    leadingVisualType: 'avatar';
 }
 
-interface ListboxProps {
+interface IconLeadingVisual {
+    leadingVisualProps: IconName;
+    leadingVisualType: 'icon';
+}
+
+interface NoLeadingVisual {
+    leadingVisualProps?: never;
+    leadingVisualType?: never;
+}
+
+export type LeadingVisual = IconLeadingVisual | AvatarLeadingVisual | NoLeadingVisual;
+
+export type ListboxOption = {
+    caption?: string;
+    disabled?: boolean;
+    label?: string;
+    value: string;
+} & LeadingVisual;
+
+export interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     options: ListboxOption[];
     className?: string;
+    containerRef?: RefObject<HTMLElement>;
     /**
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
     defaultValue?: Value;
+    /**
+     * When provided, options in this array are displayed at the top of the listbox
+     */
+    featuredOptions?: ListboxOption[];
     /**
      * Set to false to prevent the listbox from receiving focus
      * @default true
      */
     focusable?: boolean;
     /**
+     * Sets the current focused element in the listbox
+     */
+    focusedValue?: string;
+    /**
+     * Set to true to enable keyboard navigation managed by the listbox
+     * @default Same value as focusable
+     */
+    keyboardNav?: boolean;
+    /**
      * Activates multiple selection feature
      * @default false
      */
     multiselect?: boolean;
     /**
-     * Sets the current focused element in the listbox
+     * Selects value when it receives focus.
+     * @default true
      */
-    focusedValue?: string;
+    selectOnFocus?: boolean;
     /**
      * Sets the selected value (controlled input)
      */
@@ -81,14 +134,6 @@ interface ListboxProps {
 
 interface ContainerProps {
     $focusable: boolean;
-}
-
-interface ListItemProps {
-    $disabled?: boolean;
-    $isMobile: boolean;
-    $selected: boolean;
-    $focused: boolean;
-    $multiselect: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -127,6 +172,7 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
+    flex-shrink: 0;
     height: var(--size-1x);
     justify-content: center;
     margin-right: var(--spacing-1x);
@@ -144,85 +190,78 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
     `)}
 `;
 
-const ListItem = styled.li<ListItemProps>`
-    align-items: center;
-    color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-disabled-text-color'] : theme.component['listbox-item-text-color'])};
-    display: flex;
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    font-weight: ${({ $selected }) => ($selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    line-height: var(--size-1halfx);
-    min-height: var(--size-1halfx);
-    padding: var(--spacing-half) var(--spacing-2x);
-    position: relative;
-
-    ${({ $isMobile }) => (!$isMobile && css`
-        padding-right: var(--spacing-1x);
-    `)}
-
-    user-select: none;
-
-    &:hover {
-        background-color: ${({ theme, $disabled }) => ($disabled ? theme.component['listbox-item-disabled-background-color'] : theme.component['listbox-item-hover-background-color'])};
-    }
-
-    ${({ $focused, $disabled, theme }) => ($focused && css`
-        outline: 2px solid ${$disabled ? 'transparent' : theme.component['focus-outside-border-color']};
-        outline-offset: -2px;
-    `)}
-
+const StyledListItem = styled(ListItem)`
     ${({ $selected }) => ($selected && css`
         & ${CustomCheckbox} {
             background-color: ${({ theme }) => theme.component['checkbox-checked-background-color']};
             border: 1px solid ${({ theme }) => theme.component['checkbox-checked-border-color']};
         }
-    `)}
-
-    ${({ $selected, $multiselect }) => (!$multiselect && $selected && css`
-        &::before {
-            background-color: ${({ theme }) => theme.component['listbox-item-indicator-selected-color']};
-            content: '';
-            display: block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            width: 4px;
-        }
-    `)}
+    `)};
 `;
 
 const ListItemTextContainer = styled.span`
+    align-items: anchor-center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-1quarterx);
+`;
+
+const ListItemText = styled.span`
     display: flex;
     flex-direction: column;
+
+    ::after {
+        content: attr(data-text);
+        display: block;
+        font-weight: var(--font-semi-bold);
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        visibility: hidden;
+    }
 `;
 
 const ListItemCaption = styled.span<{ $disabled?: boolean, $isMobile: boolean }>`
     color: ${({ $disabled, theme }) => ($disabled ? theme.component['listbox-item-subcontent-disabled-text-color'] : theme.component['listbox-item-subcontent-text-color'])};
     display: block;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
+    line-height: 2rem;
 `;
 
 const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
 
-export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
+export interface ListboxRef extends HTMLDivElement {
+}
+
+export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<ListboxRef>> = forwardRef(({
     ariaLabelledBy,
     id: providedId,
     className,
+    containerRef: providedContainerRef,
     defaultValue,
+    featuredOptions = [],
     focusable = true,
     focusedValue,
+    keyboardNav = focusable,
     multiselect = false,
     options,
     onChange,
     onFocusChange,
     onKeyDown,
     onOptionClick,
+    selectOnFocus = true,
     value,
-}, ref: Ref<HTMLDivElement>) => {
+}, ref: Ref<ListboxRef>) => {
     const id = useId(providedId);
     const { isMobile } = useDeviceContext();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
+    const allOptions: ListboxOption[] = useMemo(
+        () => [...(featuredOptions || []), ...(options || [])],
+        [featuredOptions, options],
+    );
 
     const {
         selectedElement: focusedOption,
@@ -232,14 +271,28 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         selectFirst: focusFirstOption,
         selectLast: focusLastOption,
     } = useListCursor({
-        elements: options,
-        initialElement: findOptionsByValue(options, focusedValue)[0],
+        elements: allOptions,
+        initialElement: findOptionsByValue(allOptions, focusedValue)[0],
         predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(options, value ?? defaultValue),
+        () => findOptionsByValue(allOptions, value ?? defaultValue),
     );
+
+    const focusFirstSelectedOrFirst = useCallback(() => {
+        const firstSelected: ListboxOption = selectedOptions[0];
+        if (firstSelected) {
+            setFocusedOption((prev) => {
+                if (prev?.value !== focusedOption?.value) {
+                    return prev;
+                }
+                return firstSelected;
+            });
+        } else {
+            focusFirstOption();
+        }
+    }, [focusFirstOption, focusedOption, selectedOptions, setFocusedOption]);
 
     function isOptionSelected(option: ListboxOption): boolean {
         return multiselect ? selectedOptions.includes(option) : selectedOptions[0] === option;
@@ -272,14 +325,17 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function toggleAllOptions(): void {
-        const enabledOptions = options.filter(optionPredicate);
+        const enabledOptions = allOptions.filter(optionPredicate);
         const newSelectedOptions = selectedOptions.length === enabledOptions.length ? [] : enabledOptions;
 
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
     }
 
-    const { scrollIntoView } = useScrollIntoView({ container: containerRef });
+    const { scrollIntoView } = useScrollIntoView({
+        container: containerRef,
+        scrollingContainer: providedContainerRef || containerRef,
+    });
 
     const scrollToOption: (
         option?: ListboxOption,
@@ -319,7 +375,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        setSelectedOptions(findOptionsByValue(options, value));
+        setSelectedOptions(findOptionsByValue(allOptions, value));
         setPreviousValue(value);
     }
 
@@ -337,8 +393,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function handleListboxFocus(): void {
-        if (!focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
+        if (focusable && !focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
             setFocusedOption(selectedOptions[0]);
+        } else {
+            focusFirstSelectedOrFirst();
         }
     }
 
@@ -348,18 +406,21 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     function handleListItemClick(option: ListboxOption): () => void {
         return () => {
-            onOptionClick?.(option);
+            if (!option.disabled) {
+                onOptionClick?.(option);
 
-            if (optionPredicate(option)) {
-                if (option !== focusedOption) {
-                    setFocusedOption(option);
-                    onFocusChange?.(option);
-                }
+                if (optionPredicate(option)) {
+                    if (option !== focusedOption) {
+                        setFocusedOption(option);
+                        onFocusChange?.(option);
+                        containerRef.current?.focus({ preventScroll: true });
+                    }
 
-                if (multiselect) {
-                    toggleOptionSelection(option);
-                } else {
-                    selectSingleOption(option);
+                    if (multiselect) {
+                        toggleOptionSelection(option);
+                    } else {
+                        selectSingleOption(option);
+                    }
                 }
             }
         };
@@ -369,6 +430,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         let newFocusedOption: ListboxOption | undefined;
 
         switch (event.key) {
+            case 'Enter':
+                event.preventDefault();
+                if (focusedOption) {
+                    handleListItemClick(focusedOption)();
+                }
+                break;
             case ' ':
                 event.preventDefault();
                 if (multiselect && focusedOption) {
@@ -382,10 +449,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && focusedOption) {
-                        toggleOptionSelection(newFocusedOption, true);
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && focusedOption) {
+                            toggleOptionSelection(newFocusedOption, true);
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -396,10 +465,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && focusedOption) {
-                        toggleOptionSelection(newFocusedOption, true);
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && focusedOption) {
+                            toggleOptionSelection(newFocusedOption, true);
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -410,12 +481,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
-                        selectMultipleOptions(
-                            options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
-                        );
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                            selectMultipleOptions(
+                                options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
+                            );
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -426,12 +499,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 if (newFocusedOption) {
                     onFocusChange?.(newFocusedOption);
 
-                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
-                        selectMultipleOptions(
-                            options.slice(options.indexOf(focusedOption), options.indexOf(newFocusedOption) + 1),
-                        );
-                    } else if (!multiselect) {
-                        selectSingleOption(newFocusedOption);
+                    if (selectOnFocus) {
+                        if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                            selectMultipleOptions(
+                                options.slice(options.indexOf(focusedOption), options.indexOf(newFocusedOption) + 1),
+                            );
+                        } else if (!multiselect) {
+                            selectSingleOption(newFocusedOption);
+                        }
                     }
                 }
                 break;
@@ -446,73 +521,106 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         onKeyDown?.(event);
     }
 
-    return (
-        <Container
-            aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
-            aria-labelledby={ariaLabelledBy}
-            aria-multiselectable={multiselect ? 'true' : undefined}
-            className={className}
-            data-testid="listbox-container"
-            $focusable={focusable}
-            id={id}
-            onBlur={focusable ? handleListboxBlur : undefined}
-            onFocus={focusable ? handleListboxFocus : undefined}
-            onKeyDown={focusable ? handleListboxKeyDown : undefined}
-            onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
-            ref={mergeRefs(ref, containerRef)}
-            role="listbox"
-            tabIndex={focusable ? 0 : -1}
-        >
-            <List
-                data-testid="listbox-list"
-                role="presentation"
-            >
-                {options.map((option) => (
-                    <ListItem
-                        aria-disabled={option.disabled}
-                        aria-selected={isOptionSelected(option) ? 'true' : undefined}
-                        data-testid={sanitizeId(`listitem-${option.value}`)}
-                        $disabled={option.disabled}
-                        $focused={isOptionFocused(option)}
-                        id={sanitizeId(`${id}_${option.value}`)}
-                        $isMobile={isMobile}
-                        key={option.value}
-                        onClick={handleListItemClick(option)}
-                        onMouseDown={handleListItemMouseDown}
-                        ref={(node) => {
-                            const map = itemRefs.current;
-                            if (node) {
-                                map.set(option.value, node);
-                            } else {
-                                map.delete(option.value);
-                            }
-                        }}
-                        role="option"
-                        $selected={isOptionSelected(option)}
-                        $multiselect={multiselect}
-                    >
-                        {multiselect ? (
-                            <CustomCheckbox
-                                aria-hidden="true"
-                                disabled={option.disabled}
-                                checked={isOptionSelected(option)}
-                            >
-                                <CheckMarkIcon />
-                            </CustomCheckbox>
-                        ) : null}
-                        <ListItemTextContainer>
-                            {option.label || option.value}
+    const containerClassNames = [className, IGNORE_CLICK_OUTSIDE].filter(Boolean).join(' ');
+
+    function renderLeadingVisual(option: ListboxOption): ReactNode {
+        switch (option.leadingVisualType) {
+            case 'avatar':
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                return <Avatar {...option.leadingVisualProps} />;
+            case 'icon':
+                return <OptionIcon name={option.leadingVisualProps} data-testid="icon" />;
+            default:
+                return null;
+        }
+    }
+
+    function renderOptions(): ReactElement {
+        function renderOption(option: ListboxOption): ReactElement {
+            const optionText = option.label || option.value;
+            return (
+                <StyledListItem
+                    aria-disabled={option.disabled}
+                    aria-selected={isOptionSelected(option) ? 'true' : 'false'}
+                    className={`${IGNORE_CLICK_OUTSIDE} ${listboxClasses.listItem}`}
+                    data-testid={sanitizeId(`listitem-${option.value}`)}
+                    $disabled={option.disabled}
+                    $focused={isOptionFocused(option)}
+                    id={sanitizeId(`${id}_${option.value}`)}
+                    $isMobile={isMobile}
+                    key={option.value}
+                    onClick={handleListItemClick(option)}
+                    onMouseDown={handleListItemMouseDown}
+                    ref={(node) => {
+                        const map = itemRefs.current;
+                        if (node) {
+                            map.set(option.value, node);
+                        } else {
+                            map.delete(option.value);
+                        }
+                    }}
+                    role="option"
+                    $selected={isOptionSelected(option)}
+                    $multiselect={multiselect}
+                >
+                    {multiselect ? (
+                        <CustomCheckbox
+                            disabled={option.disabled}
+                            checked={isOptionSelected(option)}
+                        >
+                            <CheckMarkIcon />
+                        </CustomCheckbox>
+                    ) : null}
+                    <ListItemTextContainer className={`${IGNORE_CLICK_OUTSIDE} ${listboxClasses.listItemContent}`}>
+                        {renderLeadingVisual(option)}
+                        <ListItemText data-text={optionText}>
+                            {optionText}
                             {option.caption && (
                                 <ListItemCaption
+                                    className={IGNORE_CLICK_OUTSIDE}
                                     $disabled={option.disabled}
                                     $isMobile={isMobile}
                                 >
                                     {option.caption}
                                 </ListItemCaption>
                             )}
-                        </ListItemTextContainer>
-                    </ListItem>
-                ))}
+                        </ListItemText>
+                    </ListItemTextContainer>
+                </StyledListItem>
+            );
+        }
+
+        return (
+            <>
+                {featuredOptions.map(renderOption)}
+                {featuredOptions.length > 0 && options.length > 0 && (<Divider />)}
+                {options.map(renderOption)}
+            </>
+        );
+    }
+
+    return (
+        <Container
+            aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
+            aria-labelledby={ariaLabelledBy}
+            aria-multiselectable={multiselect ? 'true' : undefined}
+            className={containerClassNames}
+            data-testid="listbox-container"
+            id={id}
+            onBlur={handleListboxBlur}
+            onFocus={handleListboxFocus}
+            onKeyDown={keyboardNav ? handleListboxKeyDown : undefined}
+            onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
+            ref={mergeRefs(ref, containerRef)}
+            role="listbox"
+            tabIndex={focusable || keyboardNav ? 0 : -1}
+            $focusable={focusable}
+        >
+            <List
+                data-testid="listbox-list"
+                role="presentation"
+            >
+                {renderOptions()}
             </List>
         </Container>
     );

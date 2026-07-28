@@ -1,10 +1,10 @@
-import { useRef, VoidFunctionComponent } from 'react';
+import { type FC, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Avatar } from '../avatar/avatar';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownMenuButton } from '../dropdown-menu-button/dropdown-menu-button';
-import { GroupItem, LabelItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
+import { Avatar } from '../avatar';
+import { useDeviceContext } from '../device-context-provider';
+import { DropdownMenuButton } from '../dropdown-menu-button';
+import { GroupItem, LabelItem, NavItem, type NavItemProps } from '../dropdown-menu/list-items';
 
 const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean }>`
     button {
@@ -15,15 +15,15 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean 
     }
 `;
 
-const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
-    margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
+const StyledAvatar = styled(Avatar)<{ avatarOnly: boolean }>`
+    margin-right: ${({ avatarOnly }) => (avatarOnly ? 0 : 'var(--spacing-1x)')};
 `;
 
 export function getFirstFocusableItem(options: NavItemProps[]): NavItemProps | undefined {
     return options.find((opt) => !opt.disabled);
 }
 
-interface UserProfileProps {
+export interface UserProfileProps {
     /**
      * Sets nav's description
      * @default 'User menu'
@@ -44,9 +44,10 @@ interface UserProfileProps {
     username: string;
     userEmail?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    variant?: 'avatar-only' | 'full-name';
 }
 
-export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
+export const UserProfile: FC<UserProfileProps> = ({
     ariaLabel,
     buttonAriaLabel,
     className,
@@ -58,27 +59,28 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
     options,
     userEmail,
     username,
+    variant = 'avatar-only',
 }) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
+    const avatarOnly = isMobile || (variant === 'avatar-only');
 
     return (
         <StyledDropdownMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
             buttonAriaLabel={buttonAriaLabel}
             className={className}
-            data-testid="user-profile"
             defaultOpen={defaultOpen}
-            hasCaret={!isMobile}
+            hasCaret={!avatarOnly}
             id={id}
-            icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            icon={<StyledAvatar avatarOnly={avatarOnly} username={username} />}
             inverted={inverted}
             tag={tag}
             isMobile={isMobile}
             // eslint-disable-next-line react/jsx-props-no-spreading
-            {...(isMobile ? {} : {
+            {...(avatarOnly ? {} : {
                 label: username,
             })}
             onMenuVisibilityChanged={onMenuVisibilityChanged}
@@ -114,3 +116,5 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
         />
     );
 };
+
+UserProfile.displayName = 'UserProfile';

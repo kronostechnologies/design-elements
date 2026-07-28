@@ -1,4 +1,932 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Button changes left equisoft icon color on hover destructive-secondary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: #CD2C23;
+  color: #CD2C23;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #7B1A15;
+  color: #7B1A15;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #F99D99;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+  equisoft
+</button>
+`;
+
+exports[`Button changes left equisoft icon color on hover destructive-tertiary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #CD2C23;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #FAEAE9;
+  border-color: transparent;
+  color: #7B1A15;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+  equisoft
+</button>
+`;
+
+exports[`Button changes left equisoft icon color on hover secondary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003B5A;
+  color: #003B5A;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #99C0D5;
+  color: #99C0D5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+  equisoft
+</button>
+`;
+
+exports[`Button changes left equisoft icon color on hover tertiary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-right: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="left-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+  equisoft
+</button>
+`;
+
+exports[`Button changes right equisoft icon color on hover destructive-secondary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: #CD2C23;
+  color: #CD2C23;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #7B1A15;
+  color: #7B1A15;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #F99D99;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  equisoft
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="right-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+</button>
+`;
+
+exports[`Button changes right equisoft icon color on hover destructive-tertiary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #CD2C23;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #FAEAE9;
+  border-color: transparent;
+  color: #7B1A15;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #F99D99;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  equisoft
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="right-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+</button>
+`;
+
+exports[`Button changes right equisoft icon color on hover secondary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: transparent;
+  border-color: #003B5A;
+  color: #003B5A;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: #99C0D5;
+  color: #99C0D5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  equisoft
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="right-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+</button>
+`;
+
+exports[`Button changes right equisoft icon color on hover tertiary button 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c2[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover .c3.c3 > g {
+  fill: #7b1a15;
+}
+
+<button
+  class="c0 c1 c2"
+  type="button"
+>
+  equisoft
+  <svg
+    aria-hidden="true"
+    class="c3"
+    color="currentColor"
+    data-testid="right-icon"
+    focusable="false"
+    height="24"
+    icon-name="logo-equisoft-ico"
+    width="24"
+  />
+</button>
+`;
+
+exports[`Button does not have focus styles when non-focusable 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003B5A;
+  border-color: #003B5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #99C0D5;
+  border-color: #99C0D5;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+  class="c0 c1"
+  tabindex="-1"
+  type="button"
+>
+  Primary Button
+</button>
+`;
 
 exports[`Button has destructive styles (inverted) 1`] = `
 .c0 {
@@ -41,14 +969,9 @@ exports[`Button has destructive styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -63,13 +986,8 @@ exports[`Button has destructive styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -86,6 +1004,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
   border-color: #FFFFFF;
   color: #F99D99;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1[aria-disabled='true'],
@@ -145,14 +1064,9 @@ exports[`Button has destructive styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -167,14 +1081,9 @@ exports[`Button has destructive styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -190,6 +1099,7 @@ exports[`Button has destructive styles 1`] = `
   border-color: #F99D99;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1[aria-disabled='true'],
@@ -249,14 +1159,9 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -271,13 +1176,8 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   color: #CD2C23;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -294,6 +1194,7 @@ exports[`Button has destructive-secondary styles (inverted) 1`] = `
   border-color: #F99D99;
   color: #F99D99;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -345,14 +1246,9 @@ exports[`Button has destructive-secondary styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -367,14 +1263,9 @@ exports[`Button has destructive-secondary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -390,6 +1281,7 @@ exports[`Button has destructive-secondary styles 1`] = `
   border-color: #F99D99;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c1[aria-disabled='true'],
@@ -405,6 +1297,93 @@ exports[`Button has destructive-secondary styles 1`] = `
   type="button"
 >
   Destructive Button
+</button>
+`;
+
+exports[`Button has focus styles when focusable 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c0 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #003B5A;
+  border-color: #003B5A;
+  color: #FFFFFF;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: #99C0D5;
+  border-color: #99C0D5;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Primary Button
 </button>
 `;
 
@@ -449,14 +1428,9 @@ exports[`Button has left and right icons 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -471,29 +1445,25 @@ exports[`Button has left and right icons 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .c2 {
@@ -510,23 +1480,43 @@ exports[`Button has left and right icons 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-chevron-left c2"
     data-testid="left-icon"
+    fill="none"
     focusable="false"
     height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="24"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m15 18-6-6 6-6"
+    />
+  </svg>
   Primary Button
   <svg
     aria-hidden="true"
-    class="c3"
-    color="currentColor"
+    class="lucide lucide-chevron-right c3"
     data-testid="right-icon"
+    fill="none"
     focusable="false"
     height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="24"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m9 18 6-6-6-6"
+    />
+  </svg>
 </button>
 `;
 
@@ -560,7 +1550,7 @@ exports[`Button has mobile styles 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -571,14 +1561,9 @@ exports[`Button has mobile styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -593,29 +1578,25 @@ exports[`Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -667,14 +1648,9 @@ exports[`Button has primary disabled styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -689,29 +1665,25 @@ exports[`Button has primary disabled styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -764,14 +1736,9 @@ exports[`Button has primary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -786,29 +1753,25 @@ exports[`Button has primary styles (inverted) 1`] = `
   color: #006296;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-  color: #003A5A;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
+  color: #003B5A;
 }
 
 .c1[aria-disabled='true'] {
   background-color: #006296;
   border-color: #006296;
-  color: #84C6EA;
+  color: #99C0D5;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -860,14 +1823,9 @@ exports[`Button has primary styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -882,29 +1840,25 @@ exports[`Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -956,14 +1910,9 @@ exports[`Button has secondary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -978,13 +1927,8 @@ exports[`Button has secondary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -992,8 +1936,8 @@ exports[`Button has secondary styles (inverted) 1`] = `
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
 }
 
 .c1[aria-disabled='true'] {
@@ -1001,6 +1945,7 @@ exports[`Button has secondary styles (inverted) 1`] = `
   border-color: #006296;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -1052,14 +1997,9 @@ exports[`Button has secondary styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1074,29 +2014,25 @@ exports[`Button has secondary styles 1`] = `
   color: #006296;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: transparent;
-  border-color: #003A5A;
-  color: #003A5A;
+  border-color: #003B5A;
+  color: #003B5A;
 }
 
 .c1[aria-disabled='true'] {
   background-color: transparent;
-  border-color: #84C6EA;
-  color: #84C6EA;
+  border-color: #99C0D5;
+  color: #99C0D5;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -1148,14 +2084,9 @@ exports[`Button has small styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1170,29 +2101,25 @@ exports[`Button has small styles 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -1233,7 +2160,7 @@ exports[`Button has small styles on mobile 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1244,14 +2171,9 @@ exports[`Button has small styles on mobile 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1266,29 +2188,25 @@ exports[`Button has small styles on mobile 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #003B5A;
+  border-color: #003B5A;
   color: #FFFFFF;
 }
 
 .c1[aria-disabled='true'] {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: #99C0D5;
+  border-color: #99C0D5;
   color: #FFFFFF;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -1340,14 +2258,9 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1362,13 +2275,8 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   color: #FFFFFF;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -1385,6 +2293,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button
@@ -1436,14 +2345,9 @@ exports[`Button has tertiary styles 1`] = `
   user-select: none;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1458,14 +2362,9 @@ exports[`Button has tertiary styles 1`] = `
   color: #60666E;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1481,6 +2380,7 @@ exports[`Button has tertiary styles 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 <button

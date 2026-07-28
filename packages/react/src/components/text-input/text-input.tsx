@@ -19,16 +19,18 @@ import {
     useState,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { TooltipProps } from '../tooltip/tooltip';
-import { inputsStyle } from './styles/inputs';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useId } from '../../hooks/use-id';
+import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { ToggletipProps } from '../toggletip';
+import { TooltipProps } from '../tooltip';
+import { inputsStyle } from './styles';
 import { textInputClasses } from './text-input-classes';
+import { type RequiredLabelProps } from '../label/label';
 
 const StyledInput = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
@@ -125,10 +127,12 @@ export interface TextInputProps extends PartialInputProps {
     label?: string;
     leftAdornment?: ReactNode;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     pattern?: string;
     placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
     rightAdornment?: ReactNode;
     type?: string;
     valid?: boolean;
@@ -164,12 +168,14 @@ export const TextInput = forwardRef(({
     label,
     leftAdornment,
     tooltip,
+    toggletip,
     name,
     noMargin,
     pattern,
     placeholder,
     readOnly,
     required,
+    requiredLabelType,
     rightAdornment,
     type,
     valid,
@@ -243,7 +249,9 @@ export const TextInput = forwardRef(({
             fieldId={fieldId}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}

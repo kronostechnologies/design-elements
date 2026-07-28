@@ -1,42 +1,69 @@
-import React, { FunctionComponent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
-import styled from 'styled-components';
-import { menuDimensions } from '../../legacy-constants/menuDimensions';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { ButtonType } from '../buttons/types';
-import { Icon, IconName } from '../icon/icon';
-import { Menu, MenuItem } from '../menu/menu';
-import { eventIsInside } from '../../utils/events';
+import React, {
+    FunctionComponent,
+    PropsWithChildren,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
+import styled, { css, type SimpleInterpolation } from 'styled-components';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
+import { getRootElement } from '../../utils/dom';
+import { eventIsInside } from '../../utils/events';
+import { Button, type ButtonType, IconButton } from '../buttons';
+import type { BaseDropdownProps } from '../dropdown-menu-button/dropdown-menu-button';
+import { Icon, type IconName } from '../icon';
+import { Menu, type MenuItem } from '../menu';
+import { Tooltip, type TooltipProps } from '../tooltip';
 
 export type MenuPlacement = 'right' | 'left';
 
-const StyledContainer = styled.div`
-    position: relative;
-`;
+interface StyledMenuProps {
+    $left?: string;
+    $referenceWidth?: number;
+    $top?: string;
+    $width?: BaseDropdownProps['contentWidth'];
+}
 
-const StyledMenu = styled(Menu)`
-    max-width: ${menuDimensions.maxWidth};
-    min-width: ${menuDimensions.minWidth};
+function getWidthStyles({ $referenceWidth, $width }: StyledMenuProps): SimpleInterpolation {
+    return css`
+        min-width: ${$referenceWidth ? `${$referenceWidth}px` : null};
+        width: ${$width && `${$width}px`};
+    `;
+}
+
+const StyledMenu = styled(Menu)<StyledMenuProps>`
+    left: ${(props) => props.$left};
     position: absolute;
-    ${({ $placement }) => ($placement === 'left' ? 'right: 0;' : 'left: 0;')}
+    top: ${(props) => props.$top};
+    z-index: 99998;
+
+    ${getWidthStyles};
 `;
 
 const StyledIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
-export interface MenuButtonProps {
+export interface MenuButtonProps extends BaseDropdownProps {
     autofocus?: boolean;
     buttonType: ButtonType;
     className?: string;
     defaultOpen?: boolean;
+    disabled?: boolean;
     iconName?: IconName;
     iconLabel?: string;
     inverted?: boolean;
-    options: MenuItem[];
-    onMenuVisibilityChanged?(isOpen: boolean): void;
     menuPlacement?: MenuPlacement;
+    numberOfVisibleItems?: number;
+    options: MenuItem[];
+    tooltip?: TooltipProps;
+
+    onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
 export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
@@ -44,31 +71,42 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     buttonType,
     children,
     className,
+    contentWidth,
     defaultOpen,
+    disabled,
     iconName,
     iconLabel,
     inverted,
+    numberOfVisibleItems,
     options,
     onMenuVisibilityChanged,
     menuPlacement = 'right',
+    tooltip,
 }) => {
     const { t } = useTranslation('menu-button');
 
     const [visible, setVisible] = useState(!!defaultOpen);
-    const [initialFocusIndex, setInitialFocusIndex] = useState(0);
-    const buttonRef = useRef<HTMLButtonElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const placement = menuPlacement === 'right' ? 'bottom-start' : 'bottom-end';
+    const shadowRoot = useShadowRoot();
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({ open: visible, placement });
+    const rootElement = getRootElement(shadowRoot);
 
     /**
      * Hide menu when user clicks outside container
      * @type {() => void}
      */
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, containerRef.current);
+        const clickIsOutside = !eventIsInside(event, containerRef.current, refs.floating.current);
         if (visible && clickIsOutside) {
             setVisible(false);
         }
-    }, [containerRef, visible, setVisible]);
+    }, [refs.floating, visible]);
 
     /**
      * Close menu list item
@@ -82,22 +120,12 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         }
     };
 
-    /**
-     * Set focus on first menu item conditionally
-     * depending on whether it's a keypress, or a mouse event
-     * @type {() => void}
-     */
-    const handleClickInside = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickInside = useCallback(() => {
         setVisible(!visible);
-        // event.detail returns an integer, indicating how many clicks there were
-        // If it's 0, no click was made and onClick was fired by a keypress
-        const focusIndex = event.detail === 0 ? 0 : -1;
-        setInitialFocusIndex(focusIndex);
     }, [visible]);
 
     /**
      * Hide menu when option is clicked
-     * @type {() => void}
      */
     const handleOnOptionSelect: () => void = useCallback(() => {
         if (!visible) {
@@ -106,9 +134,9 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
             buttonRef.current?.blur();
         }
         setVisible(!visible);
-    }, [visible, setVisible]);
+    }, [visible, buttonRef]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         onMenuVisibilityChanged?.(visible);
     }, [visible, onMenuVisibilityChanged]);
 
@@ -117,55 +145,72 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside]);
 
+    const button = iconName ? (
+        <IconButton
+            ref={refs.setReference}
+            autofocus={autofocus}
+            data-testid="menu-button"
+            type="button"
+            label={iconLabel ?? t('buttonAriaLabel')}
+            aria-haspopup="menu"
+            aria-expanded={visible}
+            disabled={disabled}
+            buttonType={buttonType}
+            inverted={inverted}
+            iconName={iconName}
+            onClick={handleClickInside}
+        />
+    ) : (
+        <Button
+            ref={refs.setReference}
+            autofocus={autofocus}
+            data-testid="menu-button"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded={visible}
+            disabled={disabled}
+            buttonType={buttonType}
+            inverted={inverted}
+            onClick={handleClickInside}
+        >
+            {children}
+            <StyledIcon
+                data-testid="chevron-icon"
+                name={visible ? 'chevronUp' : 'chevronDown'}
+                size="16"
+            />
+        </Button>
+    );
+
+    const wrappedButton = tooltip ? (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <Tooltip {...tooltip} disabled={visible}>{button}</Tooltip>
+    ) : (
+        button
+    );
+
     return (
-        <StyledContainer
+        <div
             className={className}
             ref={containerRef}
             onKeyDown={handleTabKeyDown}
         >
-            {iconName ? (
-                <IconButton
-                    ref={buttonRef}
-                    autofocus={autofocus}
-                    data-testid="menu-button"
-                    type="button"
-                    label={iconLabel ?? t('buttonAriaLabel')}
-                    aria-haspopup="menu"
-                    aria-expanded={visible}
-                    buttonType={buttonType}
-                    inverted={inverted}
-                    iconName={iconName}
-                    onClick={handleClickInside}
-                />
-            ) : (
-                <Button
-                    ref={buttonRef}
-                    autofocus={autofocus}
-                    data-testid="menu-button"
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-expanded={visible}
-                    buttonType={buttonType}
-                    inverted={inverted}
-                    onClick={handleClickInside}
-                >
-                    {children}
-                    <StyledIcon
-                        aria-hidden="true"
-                        data-testid="chevron-icon"
-                        name={visible ? 'chevronUp' : 'chevronDown'}
-                        size="16"
-                    />
-                </Button>
-            )}
-            {visible && (
+            {wrappedButton}
+            {visible && createPortal(
                 <StyledMenu
-                    $placement={menuPlacement}
+                    ref={refs.setFloating}
+                    numberOfVisibleItems={numberOfVisibleItems}
                     options={options}
-                    initialFocusIndex={initialFocusIndex}
                     onOptionSelect={handleOnOptionSelect}
-                />
+                    $left={`${x}px`}
+                    $referenceWidth={buttonRef.current?.offsetWidth}
+                    $top={`${y}px`}
+                    $width={contentWidth}
+                />,
+                rootElement,
             )}
-        </StyledContainer>
+        </div>
     );
 };
+
+MenuButton.displayName = 'MenuButton';

@@ -1,89 +1,132 @@
 import {
+    FC,
     KeyboardEvent,
     MouseEvent as ReactMouseEvent,
     ReactElement,
     RefObject,
     useCallback,
     useEffect,
+    useLayoutEffect,
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
-import styled from 'styled-components';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
+import styled, { css, type SimpleInterpolation } from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useTranslation } from '../../i18n/use-translation';
-import { getRootDocument } from '../../utils/dom';
+import { focus } from '../../utils/css-state';
+import { activeElementIsInside, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { AvatarProps } from '../avatar/avatar';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { ButtonType } from '../buttons/types';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { DropdownMenu } from '../dropdown-menu/dropdown-menu';
-import { GroupItemProps } from '../dropdown-menu/list-items';
-import { Icon, IconProps } from '../icon/icon';
+import { AvatarProps } from '../avatar';
+import { Button, type ButtonSize, type ButtonType, IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { DropdownMenu, type GroupItemProps } from '../dropdown-menu';
+import { Icon, type IconProps } from '../icon';
+import { dropdownMenuButtonClasses } from './dropdown-menu-button-classes';
 
 const StyledDiv = styled.div`
     position: relative;
+    ${focus};
 `;
 
 const StyledButton = styled(Button)<{ isMobile: boolean }>`
     font-size: 0.875rem;
     font-weight: var(--font-normal);
+    min-width: inherit;
     text-transform: unset;
+    width: inherit;
 `;
 
 const StyledRightIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
-export const StyledDropdownMenu = styled(DropdownMenu)`
-    max-width: 350px;
-    min-width: 200px;
-    right: 0;
-    width: initial;
+export interface BaseDropdownProps {
+    contentWidth?: number;
+}
+
+interface StyledListboxProps {
+    $left?: number | string;
+    $referenceWidth?: number | undefined;
+    $top?: number | string;
+    $width?: BaseDropdownProps['contentWidth'];
+}
+
+function getWidthStyles({ $width, $referenceWidth }: StyledListboxProps): SimpleInterpolation {
+    return css`
+        min-width: ${$referenceWidth ? `${$referenceWidth}px` : null};
+        width: ${$width && `${$width}px`};
+    `;
+}
+
+export const StyledDropdownMenu = styled(DropdownMenu)<StyledListboxProps>`
+    left: ${({ $left }) => $left};
+    position: absolute;
+    top: ${({ $top }) => $top};
+    width: auto;
+    z-index: 99998;
+
+    ${getWidthStyles};
 `;
 
-interface MenuButtonProps {
-    label?: string;
-    title?: string;
+export type DropdownMenuCloseFunction = () => void;
+
+export interface DropdownMenuButtonProps extends BaseDropdownProps {
+    align?: 'left' | 'right';
     /**
      * Sets nav's description
      * @default 'Menu'
      * */
     ariaLabel?: string;
-    /** Set wrapper element tag */
-    tag?: 'div' | 'nav';
     buttonAriaLabel?: string;
+    buttonType?: ButtonType;
     className?: string;
+    /**
+     * Sets dropdown menu width.
+     * If not set, menu width will be determined by its content or the width of the button, whichever is greater.
+     */
+    contentWidth?: number;
     /**
      * Sets menu open by default
      * @default false
      * */
     defaultOpen?: boolean;
+    disabled?: boolean;
+    dropdownMenuId?: string;
     /**
      * Sets chevron icon
      * @default true
      * */
     hasCaret?: boolean;
-    buttonType?: ButtonType;
-    inverted?: boolean;
+    firstItemRef?: RefObject<HTMLElement>;
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
-    firstItemRef?: RefObject<HTMLAnchorElement>;
+    inverted?: boolean;
+    label?: string | ReactElement;
+    size?: ButtonSize;
+    title?: string;
+    /** Set wrapper element tag */
+    tag?: 'div' | 'nav';
+
     onMenuVisibilityChanged?(isOpen: boolean): void;
+
     render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
+export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
+    align = 'right',
     ariaLabel,
-    tag,
     buttonAriaLabel,
     buttonType = 'tertiary',
     className,
+    contentWidth,
     defaultOpen = false,
+    disabled,
+    dropdownMenuId,
     firstItemRef,
     hasCaret = true,
     icon,
@@ -92,20 +135,33 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     label,
     onMenuVisibilityChanged,
     render,
+    tag,
     title,
+    size,
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [isOpen, setOpen] = useState(defaultOpen);
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const navMenuRef = useRef<HTMLDivElement>(null);
+    const previousOpen = useRef(isOpen);
     const navRef = useRef<HTMLDivElement>(null);
     const isIconOnly = icon && !label && !hasCaret;
     const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
     const dataAttributes = useDataAttributes(otherProps);
-    const dataTestId = dataAttributes['data-testid'] ?? 'menu-dropdownMenu';
+    const [initialReferenceWidth, setInitialReferenceWidth] = useState<number | undefined>(undefined);
+
+    const shadowRoot = useShadowRoot();
+    const rootElement = getRootElement(shadowRoot);
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, floating: navMenuRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({
+        open: isOpen,
+        placement: align === 'right' ? 'bottom-end' : 'bottom-start',
+        width: contentWidth || 'auto',
+    });
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
@@ -114,37 +170,43 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         if (shouldClose) {
             setOpen(false);
         }
-    }, [isOpen]);
+    }, [buttonRef, isOpen, navMenuRef]);
 
-    useEffect(() => {
-        onMenuVisibilityChanged?.(isOpen);
-    }, [isOpen, onMenuVisibilityChanged]);
+    useLayoutEffect(() => {
+        // This needs to be in a useEffect to avoid calling the callback during render
+        if (previousOpen.current !== isOpen) {
+            if (isOpen) {
+                setInitialReferenceWidth(buttonRef.current?.offsetWidth);
+            }
+            previousOpen.current = isOpen;
+            onMenuVisibilityChanged?.(isOpen);
+        }
+    }, [buttonRef, isOpen, onMenuVisibilityChanged]);
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-        const removeEventListenerCallback = (): void => document.removeEventListener('mouseup', handleClickOutside);
 
-        if (!isOpen) {
-            return removeEventListenerCallback;
-        }
-
-        return removeEventListenerCallback;
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
     }, [buttonRef, handleClickOutside, isOpen]);
 
     function handleCurrentFocus(): void {
         setTimeout(() => {
-            const focusedElement = getRootDocument(navRef.current)?.activeElement;
-            const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
+            const isFocusInside = activeElementIsInside(navRef.current) || activeElementIsInside(navMenuRef.current);
 
-            if (!isFocusInsideNav) {
+            if (!isFocusInside) {
                 setOpen(false);
             }
         });
     }
 
     function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-        if (isOpen && event.key === 'Tab') {
-            handleCurrentFocus();
+        if (isOpen && event.key === 'Tab' && !event.shiftKey && activeElementIsInside(buttonRef.current)) {
+            event.preventDefault();
+            firstItemRef?.current?.focus();
+        } else if (isOpen && event.key === 'Tab' && event.shiftKey) {
+            setOpen(false);
         }
     }
 
@@ -170,6 +232,11 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         }
     }
 
+    const onClose = useCallback(() => {
+        buttonRef.current?.focus();
+        setOpen(false);
+    }, [buttonRef]);
+
     return (
         <StyledDiv
             data-testid="dropdown-container"
@@ -183,52 +250,69 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    aria-controls={dropdownMenuId}
+                    className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
+                    disabled={disabled}
                     isMobile={isMobile}
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
-                    ref={buttonRef}
+                    ref={refs.setReference}
                     title={title}
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    size={size}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}
                     {label}
                     {hasCaret && (
-                        <StyledRightIcon
-                            aria-hidden="true"
-                            name={isOpen ? 'chevronUp' : 'chevronDown'}
-                            size="16"
-                        />
+                        <StyledRightIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />
                     )}
                 </StyledButton>
             )}
+
             {isIconOnly && (
                 <IconButton
                     iconName="moreHorizontal"
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    aria-controls={dropdownMenuId}
+                    className={dropdownMenuButtonClasses.button}
                     data-testid="menu-button"
+                    disabled={disabled}
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
-                    ref={buttonRef}
+                    ref={refs.setReference}
                     title={title}
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    size={size}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {icon}
                 </IconButton>
             )}
-            <StyledDropdownMenu
-                ref={navMenuRef}
-                data-testid={dataTestId}
-                onKeyDown={handleNavMenuKeyDown}
-                hidden={!isOpen}
-            >
-                {render?.(() => setOpen(false))}
-            </StyledDropdownMenu>
+
+            {isOpen && createPortal(
+                <StyledDropdownMenu
+                    id={dropdownMenuId}
+                    ref={refs.setFloating}
+                    data-testid="menu-dropdownMenu"
+                    onKeyDown={handleNavMenuKeyDown}
+                    $width={contentWidth}
+                    $left={`${x}px`}
+                    $referenceWidth={initialReferenceWidth}
+                    $top={`${y}px`}
+                >
+                    {render?.(onClose)}
+                </StyledDropdownMenu>,
+                rootElement,
+            )}
         </StyledDiv>
     );
 };
+
+DropdownMenuButton.displayName = 'DropdownMenuButton';

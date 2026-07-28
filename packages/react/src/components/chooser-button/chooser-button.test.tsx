@@ -1,11 +1,14 @@
-import { doNothing } from '../../test-utils/callbacks';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { ChooserButton } from './chooser-button';
 
 describe('Chooser Button', () => {
-    test('onChange Callback is called when changed', () => {
+    it('onChange Callback is called when changed', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+
+        renderWithProviders(
             <ChooserButton
                 groupName="maritalStatus"
                 onChange={callback}
@@ -16,16 +19,16 @@ describe('Chooser Button', () => {
             </ChooserButton>,
         );
 
-        wrapper.find('input').simulate('change');
+        await user.click(screen.getByText('Children'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
+    it('Matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(
             <ChooserButton
                 groupName="maritalStatus"
-                onChange={doNothing}
+                onChange={jest.fn()}
                 type="radio"
                 value="test value"
                 defaultChecked
@@ -34,6 +37,6 @@ describe('Chooser Button', () => {
             </ChooserButton>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

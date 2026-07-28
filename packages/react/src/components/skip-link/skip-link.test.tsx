@@ -1,26 +1,27 @@
-import { shallow } from 'enzyme';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { SkipLink } from './skip-link';
 
 describe('SkipLink', () => {
-    test('should call onClick callback when clicked', () => {
-        const callback = jest.fn();
-        const wrapper = shallow(<SkipLink href="test" onClick={callback} />);
+    it('matches Snapshot (Desktop)', () => {
+        const { container } = renderWithProviders(<SkipLink href="test" />, 'desktop');
 
-        wrapper.simulate('click');
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches Snapshot (Mobile)', () => {
+        const { container } = renderWithProviders(<SkipLink href="test" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should call onClick callback when clicked', async () => {
+        const callback = jest.fn();
+        renderWithProviders(<SkipLink href="#test" onClick={callback} />);
+
+        await userEvent.click(screen.getByRole('link'));
 
         expect(callback).toHaveBeenCalled();
-    });
-
-    test('Matches Snapshot (Desktop)', () => {
-        const tree = renderWithProviders(<SkipLink href="test" />, 'desktop');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Matches Snapshot (Mobile)', () => {
-        const tree = renderWithProviders(<SkipLink href="test" />, 'mobile');
-
-        expect(tree).toMatchSnapshot();
     });
 });

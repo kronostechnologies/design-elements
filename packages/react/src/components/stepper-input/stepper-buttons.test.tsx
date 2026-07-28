@@ -1,71 +1,75 @@
-import { shallow } from 'enzyme';
-
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperButtons } from './stepper-buttons';
 
-describe('Stepper buttons', () => {
-    test('onIncrement callback should be called when button-increment is mouse down clicked', () => {
+describe('StepperButtons', () => {
+    it('onIncrement callback should be called when button-increment is mouse down clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onIncrement={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onIncrement={callback} />);
+        const incrementButton = screen.getByTestId('stepper-button-increment');
 
-        getByTestId(wrapper, 'stepper-button-increment').invoke('onMouseDown')(
-            new MouseEvent('mousedown'),
-        );
+        await user.pointer({ keys: '[MouseLeft>]', target: incrementButton });
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onDecrement callback should be called when button-decrement is mouse down clicked', () => {
+    it('onDecrement callback should be called when button-decrement is mouse down clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onDecrement={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onDecrement={callback} />);
+        const decrementButton = screen.getByTestId('stepper-button-decrement');
 
-        getByTestId(wrapper, 'stepper-button-decrement').invoke('onMouseDown')(
-            new MouseEvent('mousedown'),
-        );
+        await user.pointer({ keys: '[MouseLeft>]', target: decrementButton });
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onStop callback should be called when button-increment is mouse up clicked', () => {
+    it('onStop callback should be called when button-increment is mouse up clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onStop={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onStop={callback} />);
+        const incrementButton = screen.getByTestId('stepper-button-increment');
 
-        getByTestId(wrapper, 'stepper-button-increment').invoke('onMouseUp')(
-            new MouseEvent('mouseup'),
-        );
+        await user.pointer({ keys: '[MouseLeft>]', target: incrementButton });
+        await user.pointer({ keys: '[/MouseLeft]', target: incrementButton });
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onStop callback should be called when button-decrement is mouse up clicked', () => {
+    it('onStop callback should be called when button-decrement is mouse up clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onStop={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onStop={callback} />);
+        const decrementButton = screen.getByTestId('stepper-button-decrement');
 
-        getByTestId(wrapper, 'stepper-button-decrement').invoke('onMouseUp')(
-            new MouseEvent('mouseup'),
-        );
+        await user.pointer({ keys: '[MouseLeft>]', target: decrementButton });
+        await user.pointer({ keys: '[/MouseLeft]', target: decrementButton });
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onStop callback should be called when button-increment is mouse leave clicked', () => {
+    it('onStop callback should be called when button-increment is mouse leave clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onStop={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onStop={callback} />);
+        const incrementButton = screen.getByTestId('stepper-button-increment');
 
-        getByTestId(wrapper, 'stepper-button-increment').invoke('onMouseLeave')(
-            new MouseEvent('mouseLeave'),
-        );
+        await user.hover(incrementButton);
+        await user.unhover(incrementButton);
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onStop callback should be called when button-decrement is mouse leave clicked', () => {
+    it('onStop callback should be called when button-decrement is mouse leave clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperButtons onStop={callback} />);
+        const user = userEvent.setup();
+        renderWithProviders(<StepperButtons onStop={callback} />);
+        const decrementButton = screen.getByTestId('stepper-button-decrement');
 
-        getByTestId(wrapper, 'stepper-button-decrement').invoke('onMouseLeave')(
-            new MouseEvent('mouseLeave'),
-        );
+        await user.hover(decrementButton);
+        await user.unhover(decrementButton);
 
         expect(callback).toHaveBeenCalledTimes(1);
     });

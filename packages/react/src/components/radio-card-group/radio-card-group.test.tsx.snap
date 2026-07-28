@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
+exports[`Radio Card matches snapshot (Checked, Desktop) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -19,14 +19,9 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -81,7 +76,7 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 }
 
 .c3 {
-  background-color: #E0F0F9;
+  background-color: #E6EFF5;
   border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
@@ -93,17 +88,6 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
 }
 
 .c3:hover {
@@ -172,7 +156,7 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 </fieldset>
 `;
 
-exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
+exports[`Radio Card matches snapshot (Default, Desktop) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -191,14 +175,9 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -267,17 +246,6 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   width: 100%;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
 .c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
@@ -343,7 +311,7 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 </fieldset>
 `;
 
-exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
+exports[`Radio Card matches snapshot (Default, Mobile) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -362,14 +330,9 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -438,17 +401,6 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   width: 100%;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
 .c3:hover {
   background-color: #DBDEE1;
   border-color: #000000;
@@ -514,7 +466,7 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 </fieldset>
 `;
 
-exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
+exports[`Radio Card matches snapshot (Disabled, Desktop) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -533,14 +485,9 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -609,17 +556,6 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   width: 100%;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
 .c3:hover {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
@@ -686,7 +622,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 </fieldset>
 `;
 
-exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
+exports[`Radio Card matches snapshot (Label, Desktop) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -705,14 +641,9 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -779,17 +710,6 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
 }
 
 .c3:hover {
@@ -859,7 +779,7 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 </fieldset>
 `;
 
-exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
+exports[`Radio Card matches snapshot (Label, Mobile) 1`] = `
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -878,14 +798,9 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
+.c4:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -952,17 +867,6 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   gap: var(--spacing-2x);
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus-within {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
 }
 
 .c3:hover {

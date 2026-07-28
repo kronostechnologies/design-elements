@@ -1,8 +1,9 @@
-import { doNothing } from '../../test-utils/callbacks';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
-import { CheckboxGroup } from './checkbox-group';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { CheckboxGroup, type CheckboxGroupItem } from './checkbox-group';
 
-const checkboxGroup = [
+const checkboxGroupItems: CheckboxGroupItem[] = [
     { label: 'Boat', name: 'vehicule1', value: 'boat' },
     {
         label: 'Plane', name: 'vehicule2', value: 'plane', defaultChecked: true,
@@ -13,36 +14,51 @@ const checkboxGroup = [
     { label: 'Bike', name: 'vehicule4', value: 'bike' },
 ];
 
-describe('Checkbox', () => {
-    test('onChange callback is called when checkbox is checked / unchecked', () => {
+function targetChecked(checked: boolean): object {
+    return expect.objectContaining({ target: expect.objectContaining({ checked }) });
+}
+
+describe('CheckboxGroup', () => {
+    it('calls onChange callback when checkbox is checked / unchecked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+        renderWithProviders(
             <CheckboxGroup
-                checkboxGroup={checkboxGroup}
+                checkboxGroup={checkboxGroupItems}
                 onChange={callback}
             />,
         );
-        wrapper.find('input').at(0).simulate('change');
-        expect(callback).toHaveBeenCalledTimes(1);
+
+        const boatCheckbox = screen.getByLabelText('Boat');
+        await user.click(boatCheckbox);
+
+        expect(callback).toHaveBeenCalledWith(targetChecked(true));
+
+        await user.click(boatCheckbox);
+
+        expect(callback).toHaveBeenCalledWith(targetChecked(false));
     });
 
-    test('Can be used as a controlled value', () => {
-        const wrapper = mountWithTheme(
+    it('can be used as a controlled value', () => {
+        renderWithProviders(
             <CheckboxGroup
-                checkboxGroup={[{ label: 'Boat', name: 'vehicule1', value: 'boat' }]}
-                checkedValues={['boat']}
-                onChange={doNothing}
+                checkboxGroup={checkboxGroupItems.filter((x) => x.defaultChecked !== true)}
+                checkedValues={['boat', 'bike']}
+                onChange={jest.fn()}
             />,
         );
-        const input = wrapper.find('input').at(0);
-        expect(input.prop('checked')).toBe(true);
+
+        const boatCheckbox = screen.getByLabelText('Boat');
+        expect(boatCheckbox).toBeChecked();
+        const bikeCheckbox = screen.getByLabelText('Bike');
+        expect(bikeCheckbox).toBeChecked();
     });
 
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
-            <CheckboxGroup label="Vehicule" checkboxGroup={checkboxGroup} />,
+    it('matches the snapshot', () => {
+        const { container } = renderWithProviders(
+            <CheckboxGroup label="Vehicule" checkboxGroup={checkboxGroupItems} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

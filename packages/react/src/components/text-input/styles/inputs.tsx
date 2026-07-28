@@ -3,7 +3,7 @@ import { ResolvedTheme } from '../../../themes';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export interface InputStyleOptions {
+interface InputStyleOptions {
     theme: ResolvedTheme,
     isMobile?: boolean;
     isFocusable?: boolean;

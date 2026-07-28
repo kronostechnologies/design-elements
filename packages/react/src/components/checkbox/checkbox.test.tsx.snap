@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Checkbox matches snapshot 1`] = `
 .c5 {
@@ -65,14 +65,9 @@ exports[`Checkbox matches snapshot 1`] = `
   display: block;
 }
 
-.c1 + .c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus + .c2 {
+.c1:focus-visible + .c2 {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -97,66 +92,57 @@ exports[`Checkbox matches snapshot 1`] = `
   margin-top: var(--spacing-1x);
 }
 
-<Checkbox
-  label="Boat"
-  name="vehicule"
-  value="boat"
->
-  <styled.label
-    hasLabel={true}
-    key="vehicule-boat"
+<div>
+  <label
+    class="c0"
   >
-    <label
-      className="c0"
+    <input
+      class="c1"
+      name="vehicule"
+      type="checkbox"
+      value="boat"
+    />
+    <span
+      class="c2 c3"
     >
-      <styled.input
-        name="vehicule"
-        type="checkbox"
-        value="boat"
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-check c4 c5"
+        fill="none"
+        focusable="false"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <input
-          className="c1"
-          name="vehicule"
-          type="checkbox"
-          value="boat"
+        <path
+          d="M20 6 9 17l-5-5"
         />
-      </styled.input>
-      <styled.span>
-        <span
-          className="c2 c3"
-        >
-          <Styled(Icon)>
-            <Icon
-              className="c4 c5"
-              name="check"
-            >
-              <svg
-                className="c4 c5"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </Styled(Icon)>
-          <Styled(Icon)>
-            <Icon
-              className="c6 c7"
-              name="minus"
-            >
-              <svg
-                className="c6 c7"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </Styled(Icon)>
-        </span>
-      </styled.span>
-      Boat
-    </label>
-  </styled.label>
-</Checkbox>
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus c6 c7"
+        fill="none"
+        focusable="false"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </span>
+    Boat
+  </label>
+</div>
 `;

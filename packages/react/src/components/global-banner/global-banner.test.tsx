@@ -1,6 +1,7 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { ActionButton, GlobalBanner, GlobalBannerType } from './global-banner';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { type ActionButton, GlobalBanner, type GlobalBannerType } from './global-banner';
 
 const defaultActionButton: ActionButton = {
     label: 'Test button',
@@ -11,32 +12,32 @@ const bannerTypesArray: GlobalBannerType[] = ['alert', 'warning', 'discovery', '
 
 describe('GlobalBanner', () => {
     bannerTypesArray.forEach((type) => {
-        test(`matches snapshot (desktop, ${type})`, () => {
-            const tree = renderWithProviders(
+        it(`matches snapshot (desktop, ${type})`, () => {
+            const { container } = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'desktop',
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
 
-        test(`matches snapshot (mobile, ${type})`, () => {
-            const tree = renderWithProviders(
+        it(`matches snapshot (mobile, ${type})`, () => {
+            const { container } = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'mobile',
             );
 
-            expect(tree).toMatchSnapshot();
+            expect(container.firstChild).toMatchSnapshot();
         });
     });
 
-    test('should call action-button onClick callback when action-button is clicked', () => {
+    it('calls action-button onClick callback when action-button is clicked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        renderWithProviders(
             <GlobalBanner
                 actionButton={{
                     label: 'Test button',
@@ -48,14 +49,14 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        getByTestId(wrapper, 'action-button').simulate('click');
+        await userEvent.click(screen.getByTestId('action-button'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('should call secondary-action-button onClick callback when secondary-action-button is clicked', () => {
+    it('calls secondary-action-button onClick callback when secondary-action-button is clicked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        renderWithProviders(
             <GlobalBanner
                 secondaryActionButton={{
                     label: 'Test button',
@@ -67,13 +68,13 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        getByTestId(wrapper, 'secondary-action-button').simulate('click');
+        await userEvent.click(screen.getByTestId('secondary-action-button'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('dimiss-button hides the banner', () => {
-        const wrapper = mountWithTheme(
+    it('hides the banner when dismiss-button is clicked', async () => {
+        renderWithProviders(
             <GlobalBanner
                 actionButton={defaultActionButton}
                 label="Test"
@@ -83,14 +84,14 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        getByTestId(wrapper, 'dismiss-button').simulate('click');
+        await userEvent.click(screen.getByTestId('dismiss-button'));
 
-        expect(getByTestId(wrapper, 'container').exists()).toBe(false);
+        expect(screen.queryByTestId('container')).not.toBeInTheDocument();
     });
 
-    test('dimiss-button calls onDismiss', () => {
+    it('calls onDismiss when dismiss-button is clicked', async () => {
         const onDismiss = jest.fn();
-        const wrapper = mountWithTheme(
+        renderWithProviders(
             <GlobalBanner
                 actionButton={defaultActionButton}
                 label="Test"
@@ -101,13 +102,13 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        getByTestId(wrapper, 'dismiss-button').simulate('click');
+        await userEvent.click(screen.getByTestId('dismiss-button'));
 
         expect(onDismiss).toHaveBeenCalled();
     });
 
-    test('should not have dismiss-button when type is alert', () => {
-        const wrapper = mountWithTheme(
+    it('does not have dismiss-button when type is alert', () => {
+        renderWithProviders(
             <GlobalBanner
                 label="Test"
                 type="alert"
@@ -117,11 +118,11 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
+        expect(screen.queryByTestId('dismiss-button')).not.toBeInTheDocument();
     });
 
-    test('should not have dimiss-button when dismissable is set to false', () => {
-        const wrapper = mountWithTheme(
+    it('does not have dismiss-button when dismissable is set to false', () => {
+        renderWithProviders(
             <GlobalBanner
                 label="Test"
                 dismissable={false}
@@ -130,12 +131,12 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
+        expect(screen.queryByTestId('dismiss-button')).not.toBeInTheDocument();
     });
 
     describe('hidden property', () => {
-        test('hides the component', () => {
-            const wrapper = mountWithTheme(
+        it('hides the component', () => {
+            renderWithProviders(
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
@@ -145,11 +146,11 @@ describe('GlobalBanner', () => {
                 </GlobalBanner>,
             );
 
-            expect(getByTestId(wrapper, 'container').exists()).toBe(false);
+            expect(screen.queryByTestId('container')).not.toBeInTheDocument();
         });
 
-        test('does not hide by default', () => {
-            const wrapper = mountWithTheme(
+        it('does not hide by default', () => {
+            renderWithProviders(
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
@@ -158,7 +159,7 @@ describe('GlobalBanner', () => {
                 </GlobalBanner>,
             );
 
-            expect(getByTestId(wrapper, 'container').exists()).toBe(true);
+            expect(screen.getByTestId('container')).toBeInTheDocument();
         });
     });
 });

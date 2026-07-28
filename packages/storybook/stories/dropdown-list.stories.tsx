@@ -81,6 +81,15 @@ export const MultiSelect: Story = {
     },
 };
 
+export const MultiSelectWithMaximumOfSelectableOptions: Story = {
+    ...DropdownListMeta,
+    args: {
+        label: 'Select multiple options with a maximum of selectable options',
+        multiselect: true,
+        maxSelectableOptions: 2,
+    },
+};
+
 export const WithIcon: Story = {
     ...DropdownListMeta,
     args: {
@@ -94,6 +103,18 @@ export const WithCallback: Story = {
     args: {
         label: 'Select an option',
         onChange: (option: DropdownListOption) => console.info(`Label: ${option.label} | Value: ${option.value}`),
+        onClose: () => console.info('onClose event triggered'),
     },
 };
 WithCallback.parameters = rawCodeParameters;
+
+export const WithToggletip: Story = {
+    ...DropdownListMeta,
+    args: {
+        tooltip: undefined,
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

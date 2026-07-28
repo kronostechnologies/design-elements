@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
-import { SliderValueLabelSlotProps } from '@mui/base/Slider';
+import { type SliderValueLabelSlotProps } from '@mui/base/Slider';
+import { type FunctionComponent } from 'react';
 import styled from 'styled-components';
 
 export const ValueTooltipContainer = styled.div`
@@ -36,3 +36,5 @@ export const ValueTooltip: FunctionComponent<SliderValueLabelSlotProps> = ({ chi
         {children}
     </ValueTooltipContainer>
 );
+
+ValueTooltip.displayName = 'ValueTooltip';

@@ -1,9 +1,9 @@
-import { ReactElement, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Icon } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { clamp } from '../../utils/math';
+import { Icon } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 
 const Container = styled.section`
     padding: var(--spacing-2x) 0;
@@ -149,14 +149,6 @@ export interface ProgressTrackerStep {
     onClick?: (stepNumber: number) => void;
 }
 
-interface ProgressTrackerProps {
-    ariaLabel?: string;
-    className?: string;
-    linear?: boolean;
-    steps: ProgressTrackerStep[];
-    value: number;
-}
-
 interface StepProps {
     step: ProgressTrackerStep,
     stepNumber: number,
@@ -164,7 +156,7 @@ interface StepProps {
     linear: boolean
 }
 
-const Step: VoidFunctionComponent<StepProps> = ({
+const Step: FC<StepProps> = ({
     step, stepNumber, value, linear,
 }): ReactElement => {
     const { t } = useTranslation('progress-tracker');
@@ -190,13 +182,13 @@ const Step: VoidFunctionComponent<StepProps> = ({
 
     const content = (
         <>
-            {showUncompletedIcon && <NotificationBadgeIcon name='alertCircle' size='16' aria-hidden="true" />}
+            {showUncompletedIcon && <NotificationBadgeIcon name='alertCircle' size='16' />}
             {step.label && <Label data-testid="progress-tracker-label">{step.label}</Label>}
             {screenReaderText && <ScreenReaderOnlyText label={screenReaderText} />}
         </>
     );
 
-    const linkClickHandler = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+    const linkClickHandler = (event: MouseEvent<HTMLAnchorElement>): void => {
         if (!step.href) {
             event.preventDefault();
         }
@@ -221,7 +213,17 @@ const Step: VoidFunctionComponent<StepProps> = ({
     );
 };
 
-export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
+Step.displayName = 'Step';
+
+export interface ProgressTrackerProps {
+    ariaLabel?: string;
+    className?: string;
+    linear?: boolean;
+    steps: ProgressTrackerStep[];
+    value: number;
+}
+
+export const ProgressTracker: FC<ProgressTrackerProps> = ({
     ariaLabel,
     linear = true,
     className,
@@ -253,3 +255,5 @@ export const ProgressTracker: VoidFunctionComponent<ProgressTrackerProps> = ({
         </Container>
     );
 };
+
+ProgressTracker.displayName = 'ProgressTracker';

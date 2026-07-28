@@ -8,6 +8,7 @@ module.exports = {
             { devDependencies: ['src/**/*.test.{ts,tsx}', 'src/test-utils/**/*', 'test/**/*'] },
         ],
         'linebreak-style': 'off',
+        'react/display-name': ['error', { ignoreTranspilerName: true }],
         'react/jsx-no-bind': 'off',
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
@@ -17,6 +18,12 @@ module.exports = {
             files: ['*.tsx'],
             rules: {
                 indent: 'off', // buggy and conflicting with react/jsx-indent
+            },
+        },
+        {
+            files: ['src/test-utils/**/*', '**/*.{test,spec}.*'],
+            rules: {
+                'react/display-name': 'off',
             },
         },
     ],

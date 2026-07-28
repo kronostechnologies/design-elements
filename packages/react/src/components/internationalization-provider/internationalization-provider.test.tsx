@@ -1,39 +1,35 @@
-import { mount, ReactWrapper } from 'enzyme';
-import { VoidFunctionComponent } from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import { FC } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
 import { IntlProvider } from './internationalization-provider';
 
-const TestButton: VoidFunctionComponent = () => {
+const TestButton: FC = () => {
     const { i18n } = useTranslation();
     return <button type="button" value={i18n.language} />;
 };
 
-function mountComponentWithIntlProvider(language?: string): ReactWrapper {
-    return mount(
-        <IntlProvider language={language}>
-            <TestButton />
-        </IntlProvider>,
-    );
-}
-
 describe('Internationalization Provider', () => {
-    test('language should be en', () => {
-        const wrapper = mountComponentWithIntlProvider();
+    it.each([
+        [undefined, 'en-CA'],
+        ['en', 'en-CA'],
+        ['en-CA', 'en-CA'],
+        ['en-US', 'en-US'],
+        ['fr', 'fr-CA'],
+        ['fr-CA', 'fr-CA'],
+        ['fr-FR', 'fr-FR'],
+        ['de', 'en-CA'],
+        ['de-DE', 'en-CA'],
+    ])('maps %s to %s', async (language, expected) => {
+        render(<IntlProvider language={language}><TestButton /></IntlProvider>);
 
-        expect(wrapper.find('button').props().value).toBe('en');
+        await waitFor(() => expect(screen.getByRole('button')).toHaveValue(expected));
     });
 
-    test('language should be fr', () => {
-        const wrapper = mountComponentWithIntlProvider('fr');
+    it('language should switch', async () => {
+        const { rerender } = render(<IntlProvider language="fr"><TestButton /></IntlProvider>);
 
-        expect(wrapper.find('button').props().value).toBe('fr');
-    });
+        rerender(<IntlProvider language="en"><TestButton /></IntlProvider>);
 
-    test('language should switch', async () => {
-        const wrapper = mountComponentWithIntlProvider('fr');
-
-        wrapper.setProps({ language: 'en' }).update();
-
-        expect(wrapper.find('button').props().value).toBe('en');
+        await waitFor(() => expect(screen.getByRole('button')).toHaveValue('en-CA'));
     });
 });

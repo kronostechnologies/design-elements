@@ -1,8 +1,8 @@
 import { forwardRef, ReactNode } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
-export type Type = 'xlarge' | 'large' | 'medium' | 'small' | 'subtitle';
-export type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+export type HeadingType = 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall' | 'subtitle';
+export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export interface HeadingProps {
     bold?: boolean;
@@ -10,8 +10,8 @@ export interface HeadingProps {
     className?: string;
     id?: string;
     noMargin?: boolean;
-    tag?: Tag;
-    type: Type;
+    tag?: HeadingTag;
+    type: HeadingType;
 }
 
 interface StyledHeadingProps {
@@ -51,6 +51,14 @@ const HeadingSmall = styled.h4<StyledHeadingProps>`
     margin: ${({ noMargin }) => (noMargin ? '0' : 'var(--spacing-3x) 0')};
 `;
 
+const HeadingXsmall = styled.h5<StyledHeadingProps>`
+    color: ${({ theme }) => theme.component['heading-text-color']};
+    font-size: 0.875rem;
+    font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    line-height: 1.25rem;
+    margin: ${({ noMargin }) => (noMargin ? '0' : 'var(--spacing-3x) 0')};
+`;
+
 const HeadingSubtitle = styled.h2<StyledHeadingProps>`
     color: ${({ theme }) => theme.component['heading-subtitle-text-color']};
     font-size: 1rem;
@@ -59,7 +67,7 @@ const HeadingSubtitle = styled.h2<StyledHeadingProps>`
     margin: ${({ noMargin }) => (noMargin ? '0' : 'var(--spacing-3x) 0')};
 `;
 
-function getComponent(type: Type): StyledComponent<'h1' | 'h2' | 'h3' | 'h4', DefaultTheme, StyledHeadingProps> {
+function getComponent(type: HeadingType): StyledComponent<'h1' | 'h2' | 'h3' | 'h4', DefaultTheme, StyledHeadingProps> {
     switch (type) {
         case 'xlarge':
             return HeadingXlarge;
@@ -69,6 +77,8 @@ function getComponent(type: Type): StyledComponent<'h1' | 'h2' | 'h3' | 'h4', De
             return HeadingMedium;
         case 'small':
             return HeadingSmall;
+        case 'xsmall':
+            return HeadingXsmall;
         case 'subtitle':
             return HeadingSubtitle;
     }

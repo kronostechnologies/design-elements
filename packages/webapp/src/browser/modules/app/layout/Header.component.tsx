@@ -1,5 +1,5 @@
 import { Button, GlobalHeader, Tooltip, UserProfile } from '@equisoft/design-elements-react';
-import { FC } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const Header: FC = () => {

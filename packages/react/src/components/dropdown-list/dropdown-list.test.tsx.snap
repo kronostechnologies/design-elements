@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Dropdown list matches the snapshot (disabled) 1`] = `
 .c3 {
@@ -10,7 +10,7 @@ exports[`Dropdown list matches the snapshot (disabled) 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -32,7 +32,83 @@ input + .c2 {
 }
 
 .c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c10:hover {
+  background-color: #DBDEE1;
+}
+
+.c10::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: visible;
+  width: 4px;
+}
+
+.c13 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c13:hover {
+  background-color: #DBDEE1;
+}
+
+.c13::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 4px;
 }
 
 .c7 {
@@ -59,73 +135,22 @@ input + .c2 {
   width: 100%;
 }
 
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
+.c11 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c10:hover {
-  background-color: #DBDEE1;
-}
-
-.c10::before {
-  background-color: #006296;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
 }
 
 .c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c12:hover {
-  background-color: #DBDEE1;
-}
-
-.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,14 +160,29 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c12::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c8 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c4 {
@@ -171,17 +211,6 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-}
-
-.c4 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
 }
 
 .c5 {
@@ -229,13 +258,13 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c4"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value="ab"
   >
     <input
       data-testid="input"
@@ -249,186 +278,277 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c6"
-      color="currentColor"
+      class="lucide lucide-chevron-up c6"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c7 c8"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c9"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c7 c8 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c10"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c9"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c11"
+        <li
+          aria-selected="true"
+          class="c10 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c12"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c11"
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c12"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -443,7 +563,7 @@ exports[`Dropdown list matches the snapshot (icon) 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -465,7 +585,7 @@ input + .c2 {
 }
 
 .c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c4 {
@@ -478,6 +598,82 @@ input + .c2 {
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: visible;
+  width: 4px;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c15:hover {
+  background-color: #DBDEE1;
+}
+
+.c15::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 4px;
 }
 
 .c9 {
@@ -504,73 +700,22 @@ input + .c2 {
   width: 100%;
 }
 
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
+.c13 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c12:hover {
-  background-color: #DBDEE1;
-}
-
-.c12::before {
-  background-color: #006296;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
 }
 
 .c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c14:hover {
-  background-color: #DBDEE1;
-}
-
-.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -580,14 +725,29 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c14::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c10 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c5 {
@@ -599,6 +759,7 @@ input + .c2 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -617,14 +778,9 @@ input + .c2 {
   width: 100%;
 }
 
-.c5 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c5:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -685,23 +841,39 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c5"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value="ab"
   >
     <svg
       aria-hidden="true"
-      class="c6"
-      color="currentColor"
+      class="lucide lucide-menu c6"
       data-testid="textbox-icon"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
     <input
       data-testid="input"
       type="hidden"
@@ -714,186 +886,277 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c8"
-      color="currentColor"
+      class="lucide lucide-chevron-up c8"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c9 c10"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c11"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c9 c10 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c12"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c11"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c13"
+        <li
+          aria-selected="true"
+          class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -934,7 +1197,7 @@ exports[`Dropdown list matches the snapshot (invalid) 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -956,7 +1219,83 @@ input + .c2 {
 }
 
 .c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: visible;
+  width: 4px;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c15:hover {
+  background-color: #DBDEE1;
+}
+
+.c15::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 4px;
 }
 
 .c9 {
@@ -983,73 +1322,22 @@ input + .c2 {
   width: 100%;
 }
 
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
+.c13 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c12:hover {
-  background-color: #DBDEE1;
-}
-
-.c12::before {
-  background-color: #006296;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
 }
 
 .c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c14:hover {
-  background-color: #DBDEE1;
-}
-
-.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1059,14 +1347,29 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c14::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c10 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c6 {
@@ -1078,6 +1381,7 @@ input + .c2 {
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1096,14 +1400,9 @@ input + .c2 {
   width: 100%;
 }
 
-.c6 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c6:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1152,12 +1451,29 @@ input + .c2 {
     id="uuid1_invalid"
   >
     <svg
-      class="c5"
-      color="currentColor"
+      aria-hidden="true"
+      class="lucide lucide-octagon-alert c5"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 16h.01"
+      />
+      <path
+        d="M12 8v4"
+      />
+      <path
+        d="M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z"
+      />
+    </svg>
     You must select an option
   </span>
   <div
@@ -1167,13 +1483,13 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="true"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c6"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value="ab"
   >
     <input
       data-testid="input"
@@ -1187,186 +1503,277 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c8"
-      color="currentColor"
+      class="lucide lucide-chevron-up c8"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c9 c10"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c11"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c9 c10 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c12"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c11"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c13"
+        <li
+          aria-selected="true"
+          class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c14"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c13"
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c15 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c13 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c14"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -1383,31 +1790,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 160px;
-  overflow-y: auto;
-  padding: var(--spacing-half) 0;
-  position: relative;
-  z-index: 1000;
-}
-
-.c7 {
-  height: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c8 {
@@ -1445,10 +1828,11 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   height: 100%;
   left: 0;
   position: absolute;
+  visibility: visible;
   width: 4px;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1470,11 +1854,61 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c10:hover {
+.c11:hover {
   background-color: #DBDEE1;
 }
 
+.c11::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 4px;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c7 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 .c9 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1484,14 +1918,29 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   flex-direction: column;
 }
 
+.c10::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c6 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c2 {
@@ -1503,6 +1952,7 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1521,14 +1971,9 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
   width: 100%;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1571,13 +2016,13 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     aria-invalid="false"
     aria-label="Select an option"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c2"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value="ab"
   >
     <input
       data-testid="input"
@@ -1591,186 +2036,277 @@ exports[`Dropdown list matches the snapshot (mobile) 1`] = `
     </span>
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-up c4"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="24"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c5 c6"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c7"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c5 c6 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c8"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c7"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c9"
+        <li
+          aria-selected="true"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c10"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c9"
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c9 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c10"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -1787,7 +2323,33 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
 }
 
 .c0 > :nth-child(0) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8:hover {
+  background-color: #DBDEE1;
 }
 
 .c5 {
@@ -1833,6 +2395,9 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-1x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1851,34 +2416,22 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   display: none;
 }
 
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
+.c12 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
 }
 
-.c8:hover {
-  background-color: #DBDEE1;
-}
-
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1888,14 +2441,29 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   flex-direction: column;
 }
 
+.c13::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c6 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c2 {
@@ -1907,6 +2475,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1925,14 +2494,9 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   width: 100%;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c2:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -1944,6 +2508,7 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1978,13 +2543,13 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
     aria-invalid="false"
     aria-label="Select an option"
     aria-labelledby="uuid1_label"
+    aria-readonly="false"
     aria-required="false"
     class="c2"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value=""
   >
     <input
       data-testid="input"
@@ -1997,341 +2562,563 @@ exports[`Dropdown list matches the snapshot (multiselect) 1`] = `
     />
     <svg
       aria-hidden="true"
-      class="c4"
-      color="currentColor"
+      class="lucide lucide-chevron-up c4"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-labelledby="uuid1_label"
-    aria-multiselectable="true"
-    class="c5 c6"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c7"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-labelledby="uuid1_label"
+      aria-multiselectable="true"
+      class="c5 c6 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        class="c8"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c7"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          aria-hidden="true"
-          class="c9"
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c8 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c8"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          aria-hidden="true"
-          class="c9"
-        >
-          <svg
-            class="c10 c11"
-            color="currentColor"
-            focusable="false"
-            height="24"
-            width="24"
-          />
-        </span>
-        <span
-          class="c12"
-        >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check c10 c11"
+              fill="none"
+              focusable="false"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </span>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
@@ -2346,7 +3133,7 @@ exports[`Dropdown list matches the snapshot 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -2368,7 +3155,7 @@ input + .c2 {
 }
 
 .c0 > :nth-child(2) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c4 {
@@ -2381,6 +3168,82 @@ input + .c2 {
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c11:hover {
+  background-color: #DBDEE1;
+}
+
+.c11::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: visible;
+  width: 4px;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1B1C1E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14:hover {
+  background-color: #DBDEE1;
+}
+
+.c14::before {
+  background-color: #006296;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 4px;
 }
 
 .c8 {
@@ -2407,73 +3270,22 @@ input + .c2 {
   width: 100%;
 }
 
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
+.c12 {
+  -webkit-align-items: anchor-center;
+  -webkit-box-align: anchor-center;
+  -ms-flex-align: anchor-center;
+  align-items: anchor-center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c11:hover {
-  background-color: #DBDEE1;
-}
-
-.c11::before {
-  background-color: #006296;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: var(--spacing-1quarterx);
 }
 
 .c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1B1C1E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  line-height: var(--size-1halfx);
-  min-height: var(--size-1halfx);
-  padding: var(--spacing-half) var(--spacing-2x);
-  position: relative;
-  padding-right: var(--spacing-1x);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c13:hover {
-  background-color: #DBDEE1;
-}
-
-.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2483,14 +3295,29 @@ input + .c2 {
   flex-direction: column;
 }
 
+.c13::after {
+  content: attr(data-text);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 .c1 {
   position: relative;
 }
 
 .c9 {
-  margin-top: var(--spacing-half);
+  left: 0px;
   position: absolute;
-  width: 100%;
+  top: 0px;
+  z-index: 99998;
 }
 
 .c5 {
@@ -2502,6 +3329,7 @@ input + .c2 {
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2520,14 +3348,9 @@ input + .c2 {
   width: 100%;
 }
 
-.c5 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c5:focus {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -2583,13 +3406,13 @@ input + .c2 {
     aria-expanded="true"
     aria-invalid="false"
     aria-labelledby="uuid1_label uuid1_listbox_ab_label"
+    aria-readonly="false"
     aria-required="false"
     class="c5"
     data-testid="textbox"
     id="uuid1"
     role="combobox"
     tabindex="0"
-    value="ab"
   >
     <input
       data-testid="input"
@@ -2603,186 +3426,277 @@ input + .c2 {
     </span>
     <svg
       aria-hidden="true"
-      class="c7"
-      color="currentColor"
+      class="lucide lucide-chevron-up c7"
       data-testid="arrow"
+      fill="none"
       focusable="false"
       height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
       width="16"
-    />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m18 15-6-6-6 6"
+      />
+    </svg>
   </div>
   <div
-    aria-activedescendant="uuid1_listbox_ab"
-    aria-labelledby="uuid1_label"
-    class="c8 c9"
-    data-testid="listbox-container"
-    id="uuid1_listbox"
-    role="listbox"
-    tabindex="-1"
+    data-testid="mock-portal"
   >
-    <ul
-      class="c10"
-      data-testid="listbox-list"
-      role="presentation"
+    <div
+      aria-activedescendant="uuid1_listbox_ab"
+      aria-labelledby="uuid1_label"
+      class="c8 c9 react-datepicker-ignore-onclickoutside"
+      data-testid="listbox-container"
+      id="uuid1_listbox"
+      role="listbox"
+      tabindex="-1"
     >
-      <li
-        aria-selected="true"
-        class="c11"
-        data-testid="listitem-ab"
-        id="uuid1_listbox_ab"
-        role="option"
+      <ul
+        class="c10"
+        data-testid="listbox-list"
+        role="presentation"
       >
-        <span
-          class="c12"
+        <li
+          aria-selected="true"
+          class="c11 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ab"
+          id="uuid1_listbox_ab"
+          role="option"
         >
-          Alberta
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-bc"
-        id="uuid1_listbox_bc"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Alberta"
+            >
+              Alberta
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-bc"
+          id="uuid1_listbox_bc"
+          role="option"
         >
-          British Columbia
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-mb"
-        id="uuid1_listbox_mb"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="British Columbia"
+            >
+              British Columbia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-mb"
+          id="uuid1_listbox_mb"
+          role="option"
         >
-          Manitoba
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nb"
-        id="uuid1_listbox_nb"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Manitoba"
+            >
+              Manitoba
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nb"
+          id="uuid1_listbox_nb"
+          role="option"
         >
-          New Brunswick
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nl"
-        id="uuid1_listbox_nl"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="New Brunswick"
+            >
+              New Brunswick
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nl"
+          id="uuid1_listbox_nl"
+          role="option"
         >
-          Newfoundland and Labrador
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nt"
-        id="uuid1_listbox_nt"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Newfoundland and Labrador"
+            >
+              Newfoundland and Labrador
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nt"
+          id="uuid1_listbox_nt"
+          role="option"
         >
-          Northwest Territories
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-ns"
-        id="uuid1_listbox_ns"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Northwest Territories"
+            >
+              Northwest Territories
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-ns"
+          id="uuid1_listbox_ns"
+          role="option"
         >
-          Nova Scotia
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-nu"
-        id="uuid1_listbox_nu"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Nova Scotia"
+            >
+              Nova Scotia
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-nu"
+          id="uuid1_listbox_nu"
+          role="option"
         >
-          Nunavut
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-on"
-        id="uuid1_listbox_on"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Nunavut"
+            >
+              Nunavut
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-on"
+          id="uuid1_listbox_on"
+          role="option"
         >
-          Ontario
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-pe"
-        id="uuid1_listbox_pe"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Ontario"
+            >
+              Ontario
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-pe"
+          id="uuid1_listbox_pe"
+          role="option"
         >
-          Prince Edward Island
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-qc"
-        id="uuid1_listbox_qc"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Prince Edward Island"
+            >
+              Prince Edward Island
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-qc"
+          id="uuid1_listbox_qc"
+          role="option"
         >
-          Quebec
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-sk"
-        id="uuid1_listbox_sk"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Quebec"
+            >
+              Quebec
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-sk"
+          id="uuid1_listbox_sk"
+          role="option"
         >
-          Saskatchewan
-        </span>
-      </li>
-      <li
-        class="c13"
-        data-testid="listitem-yt"
-        id="uuid1_listbox_yt"
-        role="option"
-      >
-        <span
-          class="c12"
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Saskatchewan"
+            >
+              Saskatchewan
+            </span>
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="c14 react-datepicker-ignore-onclickoutside eds-Listbox-listItem"
+          data-testid="listitem-yt"
+          id="uuid1_listbox_yt"
+          role="option"
         >
-          Yukon
-        </span>
-      </li>
-    </ul>
+          <span
+            class="c12 react-datepicker-ignore-onclickoutside eds-Listbox-listItemContent"
+          >
+            <span
+              class="c13"
+              data-text="Yukon"
+            >
+              Yukon
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

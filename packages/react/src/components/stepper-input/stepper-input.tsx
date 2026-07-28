@@ -1,24 +1,27 @@
 import React, {
-    ChangeEvent,
-    DetailedHTMLProps, FormEventHandler,
-    InputHTMLAttributes,
-    RefObject,
+    type ChangeEvent,
+    type DetailedHTMLProps,
+    type FC,
+    type FocusEvent,
+    type FormEventHandler,
+    type InputHTMLAttributes,
+    type RefObject,
     useCallback,
     useEffect,
     useRef,
     useState,
-    FocusEvent,
-    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { responsiveInputsStyle } from '../text-input/styles/inputs';
-import { TooltipProps } from '../tooltip/tooltip';
+import { FieldContainer } from '../field-container';
+import { responsiveInputsStyle } from '../text-input/styles';
+import { ToggletipProps } from '../toggletip';
+import { TooltipProps } from '../tooltip';
 import { StepperButtons } from './stepper-buttons';
+import { type RequiredLabelProps } from '../label/label';
 
 const Wrapper = styled.div`
     display: flex;
@@ -54,7 +57,7 @@ type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLI
 
 type Value = undefined | number | null;
 
-interface StepperInputProps extends PartialStepperInputProps {
+export interface StepperInputProps extends PartialStepperInputProps {
     defaultValue?: number;
     hint?: string;
     id?: string;
@@ -63,10 +66,12 @@ interface StepperInputProps extends PartialStepperInputProps {
     min?: number;
     noMargin?: boolean;
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     valid?: boolean;
     validationErrorMessage?: string;
     value?: Value;
     required?: boolean;
+    requiredLabelType?: RequiredLabelProps['type'];
 
     onChange?(value: Value): void
 }
@@ -76,7 +81,7 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
     ref.current?.dispatchEvent(new Event('change', { bubbles: true }));
 }
 
-export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
+export const StepperInput: FC<StepperInputProps> = ({
     defaultValue,
     disabled,
     hint,
@@ -87,7 +92,9 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     noMargin,
     step,
     tooltip,
+    toggletip,
     required,
+    requiredLabelType,
     valid,
     validationErrorMessage,
     value,
@@ -182,8 +189,10 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
             hint={hint}
             label={label}
             tooltip={tooltip}
+            toggletip={toggletip}
             noMargin={noMargin}
             required={required}
+            requiredLabelType={requiredLabelType}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
@@ -220,3 +229,5 @@ export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
         </FieldContainer>
     );
 };
+
+StepperInput.displayName = 'StepperInput';

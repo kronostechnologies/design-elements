@@ -1,8 +1,8 @@
-import { ReactElement, VoidFunctionComponent } from 'react';
+import { type FC, ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../../hooks/use-data-attributes';
-import { Heading, HeadingProps } from '../../heading/heading';
-import { NavItemProps } from './nav-item';
+import { Heading, type HeadingProps } from '../../heading';
+import { type NavItemProps } from './nav-item';
 
 export interface GroupItemProps {
     id?: string;
@@ -12,6 +12,7 @@ export interface GroupItemProps {
 }
 
 export const StyledHeading = styled(Heading)<HeadingProps>`
+    font-size: 0.875rem;
     margin: 0;
     padding: 0 var(--spacing-2x);
     padding-bottom: var(--spacing-1x);
@@ -30,7 +31,7 @@ const StyledGroup = styled.ul`
     }
 `;
 
-export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
+export const GroupItem: FC<GroupItemProps> = ({
     id,
     children,
     ordered,
@@ -52,3 +53,5 @@ export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
         </>
     );
 };
+
+GroupItem.displayName = 'GroupItem';

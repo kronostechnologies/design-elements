@@ -2,7 +2,7 @@ import { forwardRef, KeyboardEvent, ReactElement, Ref, useMemo } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
-import { GroupItemProps } from './list-items';
+import { type GroupItemProps } from './list-items';
 
 const List = styled.div`
     background-color: ${({ theme }) => theme.component['dropdown-menu-background-color']};
@@ -13,13 +13,13 @@ const List = styled.div`
     list-style-type: none;
     position: absolute;
     width: 100%;
+    z-index: 700;
 `;
 
 export interface DropdownMenuProps {
     children?: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
     id?: string;
     className?: string;
-    hidden?: boolean;
     onKeyDown?(event: KeyboardEvent): void;
 }
 
@@ -27,7 +27,6 @@ export const DropdownMenu = forwardRef(({
     children,
     className,
     id: providedId,
-    hidden,
     onKeyDown,
     ...otherProps
 }: DropdownMenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
@@ -40,7 +39,6 @@ export const DropdownMenu = forwardRef(({
             className={className}
             data-testid="menu-list"
             id={id}
-            hidden={hidden}
             onKeyDownCapture={(event: KeyboardEvent<HTMLDivElement>) => onKeyDown?.(event)}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >
@@ -48,3 +46,5 @@ export const DropdownMenu = forwardRef(({
         </List>
     );
 });
+
+DropdownMenu.displayName = 'DropdownMenu';

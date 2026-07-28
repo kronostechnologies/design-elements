@@ -1,20 +1,12 @@
-import { useMemo, VoidFunctionComponent } from 'react';
+import { type FC, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
-
-export interface AvatarProps {
-    className?: string;
-    username?: string;
-    bgColor?: string;
-    imgSrc?: string;
-    size?: AvatarSize;
-}
 
 interface SizeStyleProps {
     size: AvatarSize;
@@ -74,8 +66,33 @@ const StyledImg = styled.img<SizeStyleProps>`
     ${getSpecificSizeStyle}
 `;
 
-export const Avatar: VoidFunctionComponent<AvatarProps> = ({
-    className, username, bgColor, imgSrc, size = 'xsmall',
+interface BaseAvatarProps {
+    bgColor?: string;
+    className?: string;
+    size?: AvatarSize;
+}
+
+interface IconAvatar extends BaseAvatarProps {
+    iconName: IconName;
+    imgSrc?: never;
+    username?: never;
+}
+
+interface UserAvatar extends BaseAvatarProps {
+    iconName?: never;
+    imgSrc?: string;
+    username?: string;
+}
+
+export type AvatarProps = IconAvatar | UserAvatar;
+
+export const Avatar: FC<AvatarProps> = ({
+    bgColor,
+    className,
+    iconName,
+    imgSrc,
+    username,
+    size = 'xsmall',
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
@@ -89,9 +106,11 @@ export const Avatar: VoidFunctionComponent<AvatarProps> = ({
     const ariaLabel = useMemo(() => t('ariaLabel', { username }), [username, t]);
     const hasInitials = initials.length <= 2 && initials.length > 0;
 
-    return imgSrc ? (
-        <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />
-    ) : (
+    if (imgSrc) {
+        return <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />;
+    }
+
+    return (
         <StyledDiv
             role="img"
             aria-label={ariaLabel}
@@ -100,9 +119,15 @@ export const Avatar: VoidFunctionComponent<AvatarProps> = ({
             size={size}
             isMobile={isMobile}
         >
-            <span data-testid="avatar-initials">
-                {hasInitials ? initials : <Icon name="user" size={isMobile ? '24' : '16'} />}
-            </span>
+            {iconName ? (
+                <Icon name={iconName} />
+            ) : (
+                <span data-testid="avatar-initials">
+                    {hasInitials ? initials : <Icon name="user" size={isMobile ? '24' : '16'} />}
+                </span>
+            )}
         </StyledDiv>
     );
 };
+
+Avatar.displayName = 'Avatar';

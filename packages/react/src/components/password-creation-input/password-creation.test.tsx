@@ -1,8 +1,8 @@
-import { shallow } from 'enzyme';
-import { PasswordCreationInput } from './password-creation-input';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Translations } from '../../i18n/translations';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { PasswordCreationInput } from './password-creation-input';
 import { getPasswordStrength } from './password-strength';
 import { PasswordStrengthEnum } from './password-strength.enum';
 
@@ -11,27 +11,24 @@ jest.mock('./password-strength', () => ({
 }));
 
 describe('PasswordCreationInput', () => {
-    test('has controllable data-test-id', () => {
+    it('has controllable data-test-id', () => {
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <PasswordCreationInput data-testid="a-password-input" onChange={onChange} />,
-        );
+        renderWithProviders(<PasswordCreationInput data-testid="a-password-input" onChange={onChange} />);
 
-        expect(getByTestId(wrapper, 'a-password-input').prop('type')).toBe('password');
+        expect(screen.getByTestId('a-password-input')).toHaveAttribute('type', 'password');
     });
 
-    test('sets password type to password when not showing password', () => {
+    it('sets password type to password when not showing password', () => {
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        expect(getByTestId(wrapper, 'password-input').prop('type')).toBe('password');
+        expect(screen.getByTestId('password-input')).toHaveAttribute('type', 'password');
     });
 
-    test('calls onChange with password and isValid to false when a custom validation is false', () => {
+    it('calls onChange with password and isValid to false when a custom validation is false', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
-        const wrapper = shallow(
+        renderWithProviders(
             <PasswordCreationInput
                 validations={[
                     {
@@ -43,16 +40,16 @@ describe('PasswordCreationInput', () => {
             />,
         );
         const password = 'abc';
-        const event = { target: { name: 'password', value: password } };
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')(event);
+        await user.type(screen.getByTestId('password-input'), password);
 
-        expect(onChange).toHaveBeenCalledWith(password, false, expect.objectContaining(event));
+        expect(onChange).toHaveBeenLastCalledWith(password, false, expect.anything());
     });
 
-    test('calls onChange with password and isValid to true when a custom validation is true', () => {
+    it('calls onChange with password and isValid to true when a custom validation is true', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
-        const wrapper = shallow(
+        renderWithProviders(
             <PasswordCreationInput
                 validations={[
                     {
@@ -64,103 +61,93 @@ describe('PasswordCreationInput', () => {
             />,
         );
         const password = '123';
-        const event = { target: { name: 'password', value: password } };
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')(event);
+        await user.type(screen.getByTestId('password-input'), password);
 
-        expect(onChange).toHaveBeenCalledWith(password, true, expect.objectContaining(event));
+        expect(onChange).toHaveBeenLastCalledWith(password, true, expect.anything());
     });
 
-    test('calls onChange with password and isValid to true when password changes to a valid password', () => {
+    it('calls onChange with password and isValid to true when password changes to a valid password', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
         const password = 'Pe2345678910';
-        const event = { target: { name: 'password', value: password } };
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')(event);
+        await user.type(screen.getByTestId('password-input'), password);
 
-        expect(onChange).toHaveBeenCalledWith(password, true, expect.objectContaining(event));
+        expect(onChange).toHaveBeenLastCalledWith(password, true, expect.anything());
     });
 
-    test('calls onChange with password and isValid to false when password changes to an invalid password', () => {
+    it('calls onChange with password and isValid to false when password changes to an invalid password', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
         const password = 'Pe23';
-        const event = { target: { name: 'password', value: password } };
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')(event);
+        await user.type(screen.getByTestId('password-input'), password);
 
-        expect(onChange).toHaveBeenCalledWith(password, false, expect.objectContaining(event));
+        expect(onChange).toHaveBeenLastCalledWith(password, false, expect.anything());
     });
 
-    test('sets password type to text when show password button is clicked', () => {
+    it('sets password type to text when show password button is clicked', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        getByTestId(wrapper, 'show-password-button').simulate('click');
+        await user.click(screen.getByTestId('show-password-button'));
 
-        expect(getByTestId(wrapper, 'password-input').prop('type')).toBe('text');
+        expect(screen.getByTestId('password-input')).toHaveAttribute('type', 'text');
     });
 
-    test('sets password strength text to weak when strength is weak', () => {
+    it('sets password strength text to weak when strength is weak', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
         jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.WEAK);
-        const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
-            Translations.en['password-creation-input'].weak);
-        const wrapper = mountWithProviders(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        const expectedLabel = Translations.en['password-creation-input']['password-strength']
+            + Translations.en['password-creation-input'].weak;
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')({ target: { value: '12345678' } });
+        await user.type(screen.getByTestId('password-input'), '12345678');
 
-        expect(getByTestId(wrapper, 'password-strength').text()).toBe(expectedLabel);
+        expect(screen.getByTestId('password-strength')).toHaveTextContent(expectedLabel);
     });
 
-    test('sets password strength text to fair when strength is fair', () => {
+    it('sets password strength text to fair when strength is fair', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
         jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.FAIR);
-        const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
-            Translations.en['password-creation-input'].fair);
-        const wrapper = mountWithProviders(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        const expectedLabel = Translations.en['password-creation-input']['password-strength']
+            + Translations.en['password-creation-input'].fair;
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')({ target: { value: 'P2345678' } });
+        await user.type(screen.getByTestId('password-input'), 'P2345678');
 
-        expect(getByTestId(wrapper, 'password-strength').text()).toBe(expectedLabel);
+        expect(screen.getByTestId('password-strength')).toHaveTextContent(expectedLabel);
     });
 
-    test('sets password strength text to good when strength is good', () => {
+    it('sets password strength text to good when strength is good', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
         jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.GOOD);
-        const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
-            Translations.en['password-creation-input'].good);
-        const wrapper = mountWithProviders(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        const expectedLabel = Translations.en['password-creation-input']['password-strength']
+            + Translations.en['password-creation-input'].good;
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')({ target: { value: 'Pe234567' } });
+        await user.type(screen.getByTestId('password-input'), 'Pe234567');
 
-        expect(getByTestId(wrapper, 'password-strength').text()).toBe(expectedLabel);
+        expect(screen.getByTestId('password-strength')).toHaveTextContent(expectedLabel);
     });
 
-    test('sets password strength to strong when strength is strong', () => {
+    it('sets password strength to strong when strength is strong', async () => {
+        const user = userEvent.setup();
         const onChange = jest.fn();
         jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.STRONG);
-        const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
-            Translations.en['password-creation-input'].strong);
-        const wrapper = mountWithProviders(
-            <PasswordCreationInput onChange={onChange} />,
-        );
+        const expectedLabel = Translations.en['password-creation-input']['password-strength']
+            + Translations.en['password-creation-input'].strong;
+        renderWithProviders(<PasswordCreationInput onChange={onChange} />);
 
-        getByTestId(wrapper, 'password-input').invoke('onChange')({ target: { value: 'Pe2345678910' } });
+        await user.type(screen.getByTestId('password-input'), 'Pe2345678910');
 
-        expect(getByTestId(wrapper, 'password-strength').text()).toBe(expectedLabel);
+        expect(screen.getByTestId('password-strength')).toHaveTextContent(expectedLabel);
     });
 });

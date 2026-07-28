@@ -1,5 +1,5 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
-import { NavListOption } from '../nav-list/nav-list-option';
+import { type NavListOption } from '../nav-list';
 
 export interface Overflow {
     vertical: boolean;

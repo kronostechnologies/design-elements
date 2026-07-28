@@ -1,14 +1,14 @@
-import { useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
+import { type FC, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { ChooserButton } from '../chooser-button/chooser-button';
+import { ChooserButton } from '../chooser-button';
 
 export interface ChooserButtonOption {
     label: string;
     value?: string
 }
 
-interface ChooserButtonGroupProps {
+export interface ChooserButtonGroupProps {
     groupName: string;
     options: ChooserButtonOption[];
     /** Optional button to allow user to skip question */
@@ -40,7 +40,7 @@ const Skip = styled.div`
     margin: var(--spacing-2x) 0 0;
 `;
 
-export const ChooserButtonGroup: VoidFunctionComponent<ChooserButtonGroupProps> = ({
+export const ChooserButtonGroup: FC<ChooserButtonGroupProps> = ({
     inColumns,
     groupName,
     onChange,
@@ -95,3 +95,5 @@ export const ChooserButtonGroup: VoidFunctionComponent<ChooserButtonGroupProps> 
         </>
     );
 };
+
+ChooserButtonGroup.displayName = 'ChooserButtonGroup';

@@ -1,21 +1,18 @@
-import { render, shallow } from 'enzyme';
-import { Button } from '../..';
-import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
-import { ThemeWrapper } from './theme-wrapper';
-import { ThemeCustomization } from '../../themes';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/testing-library';
+import { type ThemeCustomization } from '../../themes';
+import { Button } from '../buttons';
 
 describe('Theme Wrapper', () => {
-    test('Returns component with default theme', () => {
-        const tree = render(
-            <ThemeWrapper>
-                <Button buttonType="primary" />
-            </ThemeWrapper>,
+    it('returns component with default theme', () => {
+        const { asFragment } = renderWithProviders(
+            <Button buttonType="primary" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Returns component with custom theme', () => {
+    it('returns component with custom theme', () => {
         const themeCustomization: ThemeCustomization = {
             ref: {
                 'color-brand-50': '#00874E',
@@ -25,24 +22,33 @@ describe('Theme Wrapper', () => {
             },
         };
 
-        const tree1 = render(
-            <ThemeWrapper themeCustomization={themeCustomization}>
-                <Button buttonType="primary" />
-            </ThemeWrapper>,
+        const { asFragment } = renderWithProviders(
+            <Button buttonType="primary" />,
+            undefined,
+            { themeCustomization },
         );
 
-        expect(tree1).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('should not use ShadowWrapper by default', () => {
-        const wrapper = shallow(<ThemeWrapper />);
+    it('should not use ShadowWrapper by default', () => {
+        const { container } = renderWithProviders(<div data-testid="test-child">Child</div>);
 
-        expect(wrapper.find(ShadowWrapper)).toHaveLength(0);
+        expect(screen.getByTestId('test-child')).toBeInTheDocument();
+        expect(container.firstElementChild!.shadowRoot).toBeNull();
     });
 
-    test('should use ShadowWrapper when styles are isolated', () => {
-        const wrapper = shallow(<ThemeWrapper isolateStyles />);
+    it('should use ShadowWrapper when styles are isolated', () => {
+        const { container } = renderWithProviders(
+            <div data-testid="test-child">Child</div>,
+            undefined,
+            { isolateStyles: true },
+        );
 
-        expect(wrapper.find(ShadowWrapper)).toHaveLength(1);
+        expect(screen.queryByTestId('test-child')).not.toBeInTheDocument();
+
+        const shadowHost = container.firstElementChild;
+        expect(shadowHost?.shadowRoot).toBeTruthy();
+        expect(shadowHost?.shadowRoot?.textContent).toContain('Child');
     });
 });

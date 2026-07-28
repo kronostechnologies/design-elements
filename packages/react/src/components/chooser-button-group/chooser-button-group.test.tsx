@@ -1,20 +1,24 @@
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
-import { ChooserButtonGroup } from './chooser-button-group';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/testing-library';
+import { ChooserButtonGroup, type ChooserButtonOption } from './chooser-button-group';
 
 describe('Chooser Button GroupItem', () => {
-    const maritalStatus = [
+    const maritalStatus: ChooserButtonOption[] = [
         { value: 'single', label: 'Single, living alone or with a roommate' },
         { value: 'married', label: 'Married or living with a spouse' },
     ];
 
-    const skipOption = {
+    const skipOption: ChooserButtonOption = {
         label: 'Would rather not say',
         value: 'skip',
     };
 
-    test('onChange callback is called when chooser-button is changed', () => {
+    it('onChange callback is called when chooser-button is changed', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+
+        renderWithProviders(
             <ChooserButtonGroup
                 inColumns
                 groupName="maritalStatus"
@@ -24,13 +28,14 @@ describe('Chooser Button GroupItem', () => {
             />,
         );
 
-        wrapper.find('input').at(0).simulate('change');
+        await user.click(screen.getByLabelText('Single, living alone or with a roommate'));
 
         expect(callback).toHaveBeenCalledTimes(1);
+        expect(callback).toHaveBeenCalledWith(maritalStatus[0]);
     });
 
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
+    it('Matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(
             <ChooserButtonGroup
                 inColumns
                 groupName="maritalStatus"
@@ -40,6 +45,6 @@ describe('Chooser Button GroupItem', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

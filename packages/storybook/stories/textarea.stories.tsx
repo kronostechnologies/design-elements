@@ -40,14 +40,14 @@ export const Default: Story = {
 
 export const MaxLength: Story = {
     args: {
-      maxLength: 25,
-      hint: 'Hint',
+        maxLength: 25,
+        hint: 'Hint',
     },
 };
 
 export const ControlledValue: Story = {
     args: {
-      value: 'This is the value',
+        value: 'This is the value',
     },
 };
 
@@ -67,5 +67,15 @@ export const EventCallbacks: Story = {
                 onFocus={handleEvent}
             />
         );
+    },
+};
+
+export const WithToggletip: Story = {
+    ...TextAreaMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
     },
 };

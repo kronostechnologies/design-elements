@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Icon } from '../../icon/icon';
-import { MobileDeviceContextProps } from '../types';
-import { DialogType } from './types';
+import { Icon } from '../../icon';
+import type { MobileDeviceContextProps } from '../types';
+import type { DialogType } from './modal-dialog';
 
 export const ButtonContainer = styled.div<MobileDeviceContextProps>`
     display: flex;

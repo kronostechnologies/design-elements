@@ -1,8 +1,8 @@
-import { Spinner } from '@equisoft/design-elements-react';
+import { ProgressIndicator } from '@equisoft/design-elements-react';
 import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
-import * as SpinnerStories  from './progress-indicator.stories';
+import * as ProgressIndicatorStories  from './progress-indicator.stories';
 
-<Meta of={SpinnerStories} />
+<Meta of={ProgressIndicatorStories} />
 
 # Progress Indicator (Spinner)
 1. [Definition](#definition)
@@ -14,7 +14,7 @@ import * as SpinnerStories  from './progress-indicator.stories';
 The progress indicator represents the progress status of an ongoing process. It provides immediate feedback to users,
 signaling that the application or a specific element of the page is processing an action and requires some time to
 complete.
-<Canvas of={SpinnerStories.Default} />
+<Canvas of={ProgressIndicatorStories.Default} />
 
 ## Usage
 ### When to use
@@ -38,10 +38,10 @@ complete.
 - Use when the duration or progress of a process is unknown, variable, or of short duration.
 - Use for short durations, ranging from **1 to 9 seconds**, but preferably for very short wait times
   **(1 to 3 seconds)** [7-9].
-<Canvas of={SpinnerStories.Default} />
+<Canvas of={ProgressIndicatorStories.Default} />
 
 ## Properties
-<ArgTypes of={Spinner} />
+<ArgTypes of={ProgressIndicator} />
 
 ## References
 1. [https://m2.material.io/components/progress-indicators#usage](https://m2.material.io/components/progress-indicators#usage)

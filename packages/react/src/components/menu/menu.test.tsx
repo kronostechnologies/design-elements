@@ -1,10 +1,11 @@
-import ReactDOM from 'react-dom';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Menu, MenuOption } from './menu';
 
-jest.mock('../../utils/uuid');
+jest.mock('../../utils/uuid', () => ({
+    v4: () => '00000000-0000-0000-0000-000000000000',
+}));
 
 function givenOptions(): MenuOption[] {
     return [
@@ -50,247 +51,221 @@ describe('Menu', () => {
         optionsWithSubMenu = givenOptionsWithSubMenu(options);
     });
 
-    test('should call onClick callback when option is clicked', () => {
-        const wrapper = mountWithTheme(<Menu options={options} />);
+    it('should call onClick callback when option is clicked', async () => {
+        renderWithProviders(<Menu options={options} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('click');
+        await userEvent.click(screen.getByTestId('menu-option-0'));
 
         expect(options[0].onClick).toHaveBeenCalledTimes(1);
     });
 
-    test('should call onKeyDown callback when a key is pressed inside menu', () => {
+    it('should call onKeyDown callback when a key is pressed inside menu', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(<Menu options={options} onKeyDown={callback} />);
+        renderWithProviders(<Menu options={options} onKeyDown={callback} />);
 
-        getByTestId(wrapper, 'menu').simulate('keydown');
+        await userEvent.keyboard('{Enter}');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('should call onOptionSelect callback when an option is selected', () => {
+    it('should call onOptionSelect callback when an option is selected', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(<Menu options={options} onOptionSelect={callback} />);
+        renderWithProviders(<Menu options={options} onOptionSelect={callback} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('click');
+        await userEvent.click(screen.getByTestId('menu-option-0'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('should open subMenu when option is clicked given option as subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
+    it('should open subMenu when option is clicked given option as subMenu', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('click');
+        await userEvent.click(screen.getByTestId('menu-option-0'));
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu-option-0-sub-menu')).toBeInTheDocument();
     });
 
-    test('should open subMenu when ArrowRight key is pressed given option as subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} initialFocusIndex={0} />);
+    it('should open subMenu when ArrowRight key is pressed given option as subMenu', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
+        await userEvent.keyboard('{ArrowRight}');
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu-option-0-sub-menu')).toBeInTheDocument();
     });
 
-    test('should open subMenu when mouse enters given option as subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
+    it('should open subMenu when mouse enters given option as subMenu', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('mouseEnter');
+        await userEvent.hover(screen.getByTestId('menu-option-0'));
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu-option-0-sub-menu')).toBeInTheDocument();
     });
 
-    test('should collapse subMenu when mouse leaves given option as subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
+    it('should collapse subMenu when mouse leaves given option as subMenu', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('mouseEnter');
-        getByTestId(wrapper, 'menu-option-0').simulate('mouseLeave');
+        await userEvent.hover(screen.getByTestId('menu-option-0'));
+        await userEvent.unhover(screen.getByTestId('menu-option-0'));
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu-option-0-sub-menu')).not.toBeInTheDocument();
     });
 
-    test('subMenu should stay open when mouse enters', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
+    it('subMenu should stay open when mouse enters', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('mouseEnter');
-        getByTestId(wrapper, 'menu-option-0-sub-menu').simulate('mouseEnter');
+        await userEvent.hover(screen.getByTestId('menu-option-0'));
+        await userEvent.hover(screen.getByTestId('menu-option-0-sub-menu'));
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu-option-0-sub-menu')).toBeInTheDocument();
     });
 
-    test('subMenu should close when mouse leaves', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} />);
+    it('subMenu should close when mouse leaves', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu-option-0').simulate('mouseEnter');
-        getByTestId(wrapper, 'menu-option-0-sub-menu').simulate('mouseLeave');
+        await userEvent.hover(screen.getByTestId('menu-option-0'));
+        await userEvent.unhover(screen.getByTestId('menu-option-0-sub-menu'));
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu-option-0-sub-menu')).not.toBeInTheDocument();
     });
 
-    test('should collapse subMenu when ArrowLeft key is pressed inside subMenu', () => {
-        const wrapper = mountWithTheme(<Menu options={optionsWithSubMenu} initialFocusIndex={0} />);
+    it('should collapse subMenu when ArrowLeft key is pressed inside subMenu', async () => {
+        renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-        getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
-        getByTestId(wrapper, 'menu-option-0-sub-menu').simulate('keydown', { key: 'ArrowLeft' });
+        await userEvent.keyboard('{ArrowRight}');
+        await userEvent.keyboard('{ArrowLeft}');
 
-        expect(getByTestId(wrapper, 'menu-option-0-sub-menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu-option-0-sub-menu')).not.toBeInTheDocument();
     });
 
     describe('focus', () => {
-        const divElement = document.createElement('div');
+        it('should be on the first option when initialFocus is set to 0', () => {
+            renderWithProviders(<Menu options={options} />);
 
-        beforeAll(() => {
-            document.body.appendChild(divElement);
+            expect(screen.getByTestId('menu-option-0')).toHaveFocus();
         });
 
-        afterEach(() => {
-            ReactDOM.unmountComponentAtNode(divElement);
+        it('should be on the next option when ArrowDown key is pressed', async () => {
+            renderWithProviders(<Menu options={options} />);
+
+            await userEvent.keyboard('{ArrowDown}');
+
+            expect(screen.getByTestId('menu-option-1')).toHaveFocus();
         });
 
-        test('should be on the first option when initialFocus is set to 0', () => {
-            const wrapper = mountWithTheme(
-                <div id="root">
-                    <Menu options={options} initialFocusIndex={0} />
-                </div>,
-                { attachTo: divElement },
-            );
+        it('should be on the first option when ArrowDown key is pressed on last option', async () => {
+            renderWithProviders(<Menu options={options} />);
 
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-0'));
+            await userEvent.keyboard('{ArrowDown}'.repeat(options.length - 1));
+            await userEvent.keyboard('{ArrowDown}');
+
+            expect(screen.getByTestId('menu-option-0')).toHaveFocus();
         });
 
-        test('should be on the next option when ArrowDown key is pressed', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
+        it('should be on the previous option when ArrowUp key is pressed', async () => {
+            renderWithProviders(<Menu options={options} />);
 
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowDown' });
+            await userEvent.keyboard('{ArrowDown}');
+            await userEvent.keyboard('{ArrowDown}');
 
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-1'));
+            await userEvent.keyboard('{ArrowUp}');
+
+            expect(screen.getByTestId('menu-option-1')).toHaveFocus();
         });
 
-        test('should be on the first option when ArrowDown key is pressed on last option', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={options.length - 1} />,
-                { attachTo: divElement },
-            );
+        it('should be on the last option when ArrowUp key is pressed on first option', async () => {
+            renderWithProviders(<Menu options={options} />);
 
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowDown' });
+            await userEvent.keyboard('{ArrowUp}');
 
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-0'));
+            expect(screen.getByTestId(`menu-option-${options.length - 1}`)).toHaveFocus();
         });
 
-        test('should be on the previous option when ArrowUp key is pressed', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={1} />,
-                { attachTo: divElement },
-            );
+        it('should be on the first option starting with typed character', async () => {
+            renderWithProviders(<Menu options={options} />);
 
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowUp' });
+            await userEvent.keyboard('l');
 
-            expectFocusToBeOn(getByTestId(wrapper, `menu-option-${0}`));
+            expect(screen.getByTestId('menu-option-2')).toHaveFocus();
         });
 
-        test('should be on the last option when ArrowUp key is pressed on first option', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
+        it(
+            'should be on the first element of subMenu when ArrowRight key is pressed given option as subMenu',
+            async () => {
+                renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowUp' });
+                await userEvent.keyboard('{ArrowRight}');
 
-            expectFocusToBeOn(getByTestId(wrapper, `menu-option-${options.length - 1}`));
+                expect(screen.getByTestId('sub-menu-option-0')).toHaveFocus();
+            },
+        );
+
+        it('should be on the subMenu parent option when ArrowLeft key is pressed inside subMenu', async () => {
+            renderWithProviders(<Menu options={optionsWithSubMenu} />);
+
+            await userEvent.keyboard('{ArrowRight}');
+            await userEvent.keyboard('{ArrowLeft}');
+
+            expect(screen.getByTestId('menu-option-0')).toHaveFocus();
         });
 
-        test('should be on the first option starting with typed character', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={options} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
+        it('should stay inside the menu when the subMenu is open by hovering with the mouse', async () => {
+            renderWithProviders(<Menu options={optionsWithSubMenu} />);
 
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'l' });
+            await userEvent.hover(screen.getByTestId('menu-option-0'));
 
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-2'));
-        });
-
-        test('should be on the first element of subMenu when ArrowRight key is pressed given option as subMenu', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
-
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
-
-            expectFocusToBeOn(getByTestId(wrapper, 'sub-menu-option-0'));
-        });
-
-        test('should be on the subMenu parent option when ArrowLeft key is pressed inside subMenu', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
-
-            getByTestId(wrapper, 'menu').simulate('keydown', { key: 'ArrowRight' });
-            getByTestId(wrapper, 'menu-option-0-sub-menu').simulate('keydown', { key: 'ArrowLeft' });
-
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-0'));
-        });
-
-        test('should stay inside the menu when the subMenu is open by hovering with the mouse', () => {
-            const wrapper = mountWithTheme(
-                <Menu options={optionsWithSubMenu} initialFocusIndex={0} />,
-                { attachTo: divElement },
-            );
-
-            getByTestId(wrapper, 'menu-option-0').simulate('mouseEnter');
-
-            expectFocusToBeOn(getByTestId(wrapper, 'menu-option-0'));
+            expect(screen.getByTestId('menu-option-0')).toHaveFocus();
         });
     });
 
-    test('matches the snapshot (menu with icons)', () => {
-        const tree = renderWithTheme(<Menu
-            options={[
-                {
-                    label: 'Option 1',
-                    iconName: 'check',
-                },
-                {
-                    label: 'Option 2',
-                    iconName: 'settings',
-                },
-            ]}
-        />);
-        expect(tree).toMatchSnapshot();
+    it('matches the snapshot (menu with icons)', () => {
+        const { asFragment } = renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        label: 'Option 1',
+                        iconName: 'check',
+                    },
+                    {
+                        label: 'Option 2',
+                        iconName: 'settings',
+                    },
+                ]}
+            />,
+        );
+
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (menu with groups)', () => {
-        const tree = renderWithTheme(<Menu
-            options={[
-                {
-                    groupLabel: 'Group 1',
-                    groupOptions: [
-                        {
-                            label: 'Option 1.1',
-                        },
-                        {
-                            label: 'Option 1.2',
-                        },
-                    ],
-                },
-                {
-                    groupLabel: 'Group 2',
-                    groupOptions: [
-                        {
-                            label: 'Option 2.1',
-                        },
-                        {
-                            label: 'Option 2.2',
-                        },
-                    ],
-                },
-            ]}
-        />);
-        expect(tree).toMatchSnapshot();
+    it('matches the snapshot (menu with groups)', () => {
+        const { asFragment } = renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        groupLabel: 'Group 1',
+                        groupOptions: [
+                            {
+                                label: 'Option 1.1',
+                            },
+                            {
+                                label: 'Option 1.2',
+                            },
+                        ],
+                    },
+                    {
+                        groupLabel: 'Group 2',
+                        groupOptions: [
+                            {
+                                label: 'Option 2.1',
+                            },
+                            {
+                                label: 'Option 2.2',
+                            },
+                        ],
+                    },
+                ]}
+            />,
+        );
+
+        expect(asFragment()).toMatchSnapshot();
     });
 });

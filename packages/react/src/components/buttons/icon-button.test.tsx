@@ -1,41 +1,11 @@
-import { shallow } from 'enzyme';
-import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from './icon-button';
 
 describe('Icon Button', () => {
-    test('onClick callback is called when clicked', () => {
-        const callback = jest.fn();
-        const wrapper = shallow(
-            <IconButton
-                label="home"
-                iconName="home"
-                buttonType="primary"
-                onClick={callback}
-            />,
-        );
-
-        wrapper.simulate('click');
-        expect(callback).toHaveBeenCalled();
-    });
-
-    test('onClick callback cannot be called when disabled', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(
-            <IconButton
-                label="home"
-                iconName="home"
-                onClick={callback}
-                buttonType="primary"
-                disabled
-            />,
-        );
-
-        wrapper.simulate('click');
-        expect(callback).not.toHaveBeenCalled();
-    });
-
-    test('Has disabled styles', () => {
-        const tree = renderWithProviders(
+    it('Has disabled styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -44,11 +14,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has primary styles', () => {
-        const tree = renderWithProviders(
+    it('Has primary styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -56,11 +26,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has secondary styles', () => {
-        const tree = renderWithProviders(
+    it('Has secondary styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -68,11 +38,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has tertiary styles', () => {
-        const tree = renderWithProviders(
+    it('Has tertiary styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -80,11 +50,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has destructive-secondary styles', () => {
-        const tree = renderWithProviders(
+    it('Has destructive-secondary styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -92,11 +62,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has small styles', () => {
-        const tree = renderWithProviders(
+    it('Has small styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -105,11 +75,11 @@ describe('Icon Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Has mobile styles', () => {
-        const tree = renderWithProviders(
+    it('Has mobile styles', () => {
+        const { container } = renderWithProviders(
             <IconButton
                 label="home"
                 iconName="home"
@@ -118,51 +88,62 @@ describe('Icon Button', () => {
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('focusable button has no tabIndex prop', () => {
-        const wrapper = mountWithProviders(<IconButton
-            iconName="home"
-            buttonType="primary"
-            label="home"
-        />);
+    it('onClick callback is called when clicked', async () => {
+        const callback = jest.fn();
+        renderWithProviders(
+            <IconButton label="home" iconName="home" buttonType="primary" onClick={callback} />,
+        );
 
-        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
+        await userEvent.click(screen.getByRole('button', { name: 'home' }));
+
+        expect(callback).toHaveBeenCalled();
     });
 
-    test('non-focusable button has tabIndex=-1', () => {
-        const wrapper = mountWithProviders(<IconButton
-            iconName="home"
-            buttonType="primary"
-            label="home"
-            focusable={false}
-        />);
+    it('onClick callback cannot be called when disabled', async () => {
+        const callback = jest.fn();
+        renderWithProviders(
+            <IconButton label="home" iconName="home" onClick={callback} buttonType="primary" disabled />,
+        );
 
-        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
+        await expect(userEvent.click(screen.getByRole('button', { name: 'home' }))).toReject();
+        expect(callback).not.toHaveBeenCalled();
     });
 
-    test('focusable button has focus styles', () => {
-        const wrapper = mountWithProviders(<IconButton
-            iconName="home"
-            buttonType="primary"
-            label="home"
-        />);
+    it('focusable button has no tabIndex prop', () => {
+        renderWithProviders(<IconButton iconName="home" buttonType="primary" label="home" />);
 
-        expect(wrapper).toHaveStyleRule('outline', '2px solid #84C6EA', {
-            modifier: ':focus',
+        expect(screen.getByRole('button', { name: 'home' })).not.toHaveAttribute('tabIndex');
+    });
+
+    it('non-focusable button has tabIndex=-1', () => {
+        renderWithProviders(<IconButton iconName="home" buttonType="primary" label="home" focusable={false} />);
+
+        expect(screen.getByRole('button', { name: 'home' })).toHaveAttribute('tabIndex', '-1');
+    });
+
+    it('focusable button has focus styles', async () => {
+        renderWithProviders(<IconButton iconName="home" buttonType="primary" label="home" />);
+
+        const button = screen.getByRole('button', { name: 'home' });
+        await userEvent.tab();
+
+        expect(button).toHaveFocus();
+        expect(button).toHaveStyleRule('outline', '2px solid #99C0D5', {
+            modifier: ':focus-visible',
         });
     });
 
-    test('non-focusable button does not have focus styles', () => {
-        const wrapper = mountWithProviders(<IconButton
-            iconName="home"
-            buttonType="primary"
-            label="home"
-            focusable={false}
-        />);
+    it('non-focusable button does not have focus styles', async () => {
+        renderWithProviders(<IconButton iconName="home" buttonType="primary" label="home" focusable={false} />);
 
-        expect(wrapper).not.toHaveStyleRule('outline', 'none', {
+        const button = screen.getByRole('button', { name: 'home' });
+        await userEvent.tab();
+
+        expect(button).not.toHaveFocus();
+        expect(button).not.toHaveStyleRule('outline', 'none', {
             modifier: ':focus',
         });
     });

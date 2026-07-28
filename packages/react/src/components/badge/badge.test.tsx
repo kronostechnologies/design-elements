@@ -1,94 +1,74 @@
-import { shallow } from 'enzyme';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
-import { Badge, BadgeCircle, BadgeDot } from './badge';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { Badge } from './badge';
 
 describe('Badge', () => {
     it('is visible when the value is not zero', () => {
-        const wrapper = shallow(
-            <Badge value={1} />,
-        );
-
-        expect(wrapper.find(BadgeCircle).exists()).toBe(true);
+        renderWithProviders(<Badge value={1} />);
+        expect(screen.getByText('1')).toBeInTheDocument();
     });
 
     it('is not visible when the value is zero', () => {
-        const wrapper = shallow(
-            <Badge value={0} />,
-        );
+        renderWithProviders(<Badge value={0} />);
 
-        expect(wrapper.find(BadgeCircle).exists()).toBe(false);
-        expect(wrapper.find(BadgeDot).exists()).toBe(false);
+        expect(screen.queryByText('0')).not.toBeInTheDocument();
     });
 
     it('is visible when the value is zero and showZero is true', () => {
-        const wrapper = shallow(
-            <Badge value={0} showZero />,
-        );
+        renderWithProviders(<Badge value={0} showZero />);
 
-        expect(wrapper.find(BadgeCircle).exists()).toBe(true);
+        expect(screen.getByText('0')).toBeInTheDocument();
     });
 
     it('contains the value if below maxValue', () => {
-        const wrapper = shallow(
-            <Badge value={2} maxValue={9} />,
-        );
+        renderWithProviders(<Badge value={2} maxValue={9} />);
 
-        expect(wrapper.find(BadgeCircle).text()).toBe('2');
+        expect(screen.getByText('2')).toBeInTheDocument();
     });
 
     it('contains the max value and a plus sign if the value is above maxValue', () => {
-        const wrapper = shallow(
-            <Badge value={12} maxValue={9} />,
-        );
+        renderWithProviders(<Badge value={12} maxValue={9} />);
 
-        expect(wrapper.find(BadgeCircle).text()).toBe('9+');
+        expect(screen.getByText('9+')).toBeInTheDocument();
     });
 
-    it('shows as a dot if showValue is false', () => {
-        const wrapper = shallow(
-            <Badge value={1} showValue={false} />,
-        );
+    it('hides value when showValue is false', async () => {
+        const { container } = renderWithProviders(<Badge value={1} showValue={false} className="test-badge" />);
 
-        expect(wrapper.find(BadgeCircle).exists()).toBe(false);
-        expect(wrapper.find(BadgeDot).exists()).toBe(true);
+        const badge = container.querySelector('.test-badge');
+
+        expect(badge).toBeInTheDocument();
+        expect(badge).toBeEmptyDOMElement();
+        expect(screen.queryByText('1')).not.toBeInTheDocument();
     });
 
     it('is animated if animate is true', () => {
-        const wrapper = mountWithTheme(
-            <Badge value={1} animate />,
-        );
+        renderWithProviders(<Badge value={1} animate />);
 
-        const badgeNode = wrapper.find(BadgeCircle).getDOMNode();
-        const animationValue = getComputedStyle(badgeNode).getPropertyValue('animation');
+        const badge = screen.getByText('1');
 
-        expect(animationValue).not.toBe('');
+        expect(badge).toHaveStyleRule('animation', expect.stringContaining('2s ease-in infinite'));
     });
 
     it('is positioned according to the offset props', () => {
         const offsetX = 10;
         const offsetY = 10;
+        renderWithProviders(<Badge value={1} position="top-right" offsetX={offsetX} offsetY={offsetY} />);
 
-        const wrapper = mountWithTheme(
-            <Badge value={1} position="top-right" offsetX={offsetX} offsetY={offsetY} />,
-        );
+        const badge = screen.getByText('1');
 
-        const badgeNode = wrapper.find(BadgeCircle).getDOMNode();
-        const badgeStyle = getComputedStyle(badgeNode);
-
-        expect(badgeStyle.getPropertyValue('top')).toEqual(`${offsetY}px`);
-        expect(badgeStyle.getPropertyValue('right')).toEqual(`-${offsetX}px`);
-        expect(badgeStyle.getPropertyValue('bottom')).toEqual('');
-        expect(badgeStyle.getPropertyValue('left')).toEqual('');
+        expect(badge).toHaveStyleRule('top', `${offsetY}px`);
+        expect(badge).toHaveStyleRule('right', `-${offsetX}px`);
     });
 
-    test('matches the snapshot', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot', () => {
+        const { container } = renderWithProviders(
             <>
                 <Badge value={1} />
                 <Badge value={1} showValue={false} />
             </>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

@@ -1,7 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
-.c1 {
+exports[`Toggletip has default desktop styles (defaultOpen) 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,53 +42,10 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c0:hover,
-.c0[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c0[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -95,13 +53,77 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: var(--size-1x);
 }
 
-.c4 {
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="true"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-info"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
+  </button>
+  .c2 {
   height: 1rem;
   position: absolute;
   width: 1rem;
 }
 
-.c4::before {
+.c2::before {
   border-style: solid;
   content: '';
   display: block;
@@ -110,7 +132,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c4::after {
+.c2::after {
   border-style: solid;
   content: '';
   display: block;
@@ -120,7 +142,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c2 {
+.c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius-2x);
@@ -149,7 +171,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3 {
+.c0[data-popper-placement*="bottom"] > .c1 {
   height: 1rem;
   left: 0;
   margin-top: -0.35rem;
@@ -157,20 +179,20 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3::before {
+.c0[data-popper-placement*="bottom"] > .c1::before {
   border-color: transparent transparent #878F9A transparent;
   border-width: 0 0.5rem 0.6rem;
   position: absolute;
   top: -0.25rem;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3::after {
+.c0[data-popper-placement*="bottom"] > .c1::after {
   border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.6rem;
   top: -0.15rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3 {
+.c0[data-popper-placement*="top"] > .c1 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -178,196 +200,83 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3::before {
+.c0[data-popper-placement*="top"] > .c1::before {
   border-color: #878F9A transparent transparent transparent;
   border-width: 0.5rem 0.45rem 0;
   position: absolute;
   top: 0.05rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3::after {
+.c0[data-popper-placement*="top"] > .c1::after {
   border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.45rem 0;
   position: absolute;
   top: -0.02rem;
 }
 
-.c2[data-popper-placement*="right"] > .c3 {
+.c0[data-popper-placement*="right"] > .c1 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c2[data-popper-placement*="right"] > .c3::before {
+.c0[data-popper-placement*="right"] > .c1::before {
   border-color: transparent #878F9A transparent transparent;
   border-width: 0.45rem 0.5rem 0.45rem 0;
   left: 0.15rem;
   position: absolute;
 }
 
-.c2[data-popper-placement*="right"] > .c3::after {
+.c0[data-popper-placement*="right"] > .c1::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.45rem 0.5rem 0.45rem 0;
   left: 0.23rem;
 }
 
-.c2[data-popper-placement*="left"] > .c3 {
+.c0[data-popper-placement*="left"] > .c1 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c2[data-popper-placement*="left"] > .c3::before {
+.c0[data-popper-placement*="left"] > .c1::before {
   border-color: transparent transparent transparent #878F9A;
   border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.33rem;
   position: absolute;
 }
 
-.c2[data-popper-placement*="left"] > .c3::after {
+.c0[data-popper-placement*="left"] > .c1::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.25rem;
 }
 
-<Toggletip
-  defaultOpen={true}
->
-  <IconButton
-    aria-controls="uuid1"
-    aria-expanded={true}
-    buttonType="tertiary"
-    data-testid="toggletip"
-    iconName="info"
-    inverted={false}
-    label="info"
-    onClick={[Function]}
-    size="medium"
-    type="button"
-  >
-    <Styled(AbstractButton)
-      aria-controls="uuid1"
-      aria-expanded={true}
-      aria-label="info"
-      buttonType="tertiary"
-      data-testid="toggletip"
-      focusable={true}
-      inverted={false}
-      isMobile={false}
-      onClick={[Function]}
-      size="medium"
-      type="button"
-    >
-      <AbstractButton
-        aria-controls="uuid1"
-        aria-expanded={true}
-        aria-label="info"
-        buttonType="tertiary"
-        className="c0"
-        data-testid="toggletip"
-        focusable={true}
-        inverted={false}
-        isMobile={false}
-        onClick={[Function]}
-        size="medium"
-        type="button"
-      >
-        <styled.button
-          $focusable={true}
-          $isMobile={false}
-          $size="medium"
-          aria-controls="uuid1"
-          aria-expanded={true}
-          aria-label="info"
-          buttonType="tertiary"
-          className="c0"
-          data-testid="toggletip"
-          inverted={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <button
-            aria-controls="uuid1"
-            aria-expanded={true}
-            aria-label="info"
-            className="c1 c0"
-            data-testid="toggletip"
-            onClick={[Function]}
-            type="button"
-          >
-            <Icon
-              aria-hidden="true"
-              name="info"
-              size="16"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable={false}
-                height="16"
-                width="16"
-              />
-            </Icon>
-          </button>
-        </styled.button>
-      </AbstractButton>
-    </Styled(AbstractButton)>
-  </IconButton>
-  <styled.div
-    data-popper-interactive={false}
+<div
+    class="c0"
+    data-popper-escaped="true"
+    data-popper-interactive="false"
+    data-popper-placement="right"
+    data-popper-reference-hidden="true"
     data-testid="toggletip-content-container"
     id="uuid1"
-    isMobile={false}
-    maxWidth="medium"
-    style={
-      {
-        "left": "0",
-        "position": "absolute",
-        "top": "0",
-      }
-    }
+    style="position: absolute; left: 0px; top: 0px; right: auto; bottom: auto; transform: translate(12px, 0px);"
   >
     <div
-      className="c2"
-      data-popper-interactive={false}
-      data-testid="toggletip-content-container"
-      id="uuid1"
-      style={
-        {
-          "left": "0",
-          "position": "absolute",
-          "top": "0",
-        }
-      }
-    >
-      <styled.div
-        data-popper-arrow={true}
-        style={
-          {
-            "position": "absolute",
-          }
-        }
-      >
-        <div
-          className="c3 c4"
-          data-popper-arrow={true}
-          style={
-            {
-              "position": "absolute",
-            }
-          }
-        />
-      </styled.div>
-      Test Content
-    </div>
-  </styled.div>
-</Toggletip>
+      class="c1 c2"
+      data-popper-arrow="true"
+      style="position: absolute; top: 0px; transform: translate(0px, 0px);"
+    />
+    Test Content
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Toggletip Has default desktop styles 1`] = `
-.c1 {
+exports[`Toggletip has default desktop styles 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -407,53 +316,10 @@ exports[`Toggletip Has default desktop styles 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c0:hover,
-.c0[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c0[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -461,92 +327,76 @@ exports[`Toggletip Has default desktop styles 1`] = `
   width: var(--size-1x);
 }
 
-<Toggletip>
-  <IconButton
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
     aria-controls="uuid1"
-    aria-expanded={false}
-    buttonType="tertiary"
+    aria-expanded="false"
+    aria-label="info"
+    class="c0 c1"
     data-testid="toggletip"
-    iconName="info"
-    inverted={false}
-    label="info"
-    onClick={[Function]}
-    size="medium"
     type="button"
   >
-    <Styled(AbstractButton)
-      aria-controls="uuid1"
-      aria-expanded={false}
-      aria-label="info"
-      buttonType="tertiary"
-      data-testid="toggletip"
-      focusable={true}
-      inverted={false}
-      isMobile={false}
-      onClick={[Function]}
-      size="medium"
-      type="button"
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-info"
+      fill="none"
+      focusable="false"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <AbstractButton
-        aria-controls="uuid1"
-        aria-expanded={false}
-        aria-label="info"
-        buttonType="tertiary"
-        className="c0"
-        data-testid="toggletip"
-        focusable={true}
-        inverted={false}
-        isMobile={false}
-        onClick={[Function]}
-        size="medium"
-        type="button"
-      >
-        <styled.button
-          $focusable={true}
-          $isMobile={false}
-          $size="medium"
-          aria-controls="uuid1"
-          aria-expanded={false}
-          aria-label="info"
-          buttonType="tertiary"
-          className="c0"
-          data-testid="toggletip"
-          inverted={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <button
-            aria-controls="uuid1"
-            aria-expanded={false}
-            aria-label="info"
-            className="c1 c0"
-            data-testid="toggletip"
-            onClick={[Function]}
-            type="button"
-          >
-            <Icon
-              aria-hidden="true"
-              name="info"
-              size="16"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable={false}
-                height="16"
-                width="16"
-              />
-            </Icon>
-          </button>
-        </styled.button>
-      </AbstractButton>
-    </Styled(AbstractButton)>
-  </IconButton>
-</Toggletip>
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;
 
-exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
-.c1 {
+exports[`Toggletip has mobile styles (defaultOpen) 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -575,7 +425,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -586,53 +436,10 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c0 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c0:hover,
-.c0[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c0[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -640,13 +447,77 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c4 {
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
+    aria-controls="uuid1"
+    aria-expanded="true"
+    aria-label="info"
+    class="c0 c1"
+    data-testid="toggletip"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-info"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
+  </button>
+  .c2 {
   height: 1rem;
   position: absolute;
   width: 1rem;
 }
 
-.c4::before {
+.c2::before {
   border-style: solid;
   content: '';
   display: block;
@@ -655,7 +526,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c4::after {
+.c2::after {
   border-style: solid;
   content: '';
   display: block;
@@ -665,7 +536,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c2 {
+.c0 {
   background-color: #FFFFFF;
   border: 1px solid #878F9A;
   border-radius: var(--border-radius-2x);
@@ -694,7 +565,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3 {
+.c0[data-popper-placement*="bottom"] > .c1 {
   height: 1rem;
   left: 0;
   margin-top: -0.35rem;
@@ -702,20 +573,20 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3::before {
+.c0[data-popper-placement*="bottom"] > .c1::before {
   border-color: transparent transparent #878F9A transparent;
   border-width: 0 0.5rem 0.6rem;
   position: absolute;
   top: -0.25rem;
 }
 
-.c2[data-popper-placement*="bottom"] > .c3::after {
+.c0[data-popper-placement*="bottom"] > .c1::after {
   border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.6rem;
   top: -0.15rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3 {
+.c0[data-popper-placement*="top"] > .c1 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -723,196 +594,83 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3::before {
+.c0[data-popper-placement*="top"] > .c1::before {
   border-color: #878F9A transparent transparent transparent;
   border-width: 0.5rem 0.45rem 0;
   position: absolute;
   top: 0.05rem;
 }
 
-.c2[data-popper-placement*="top"] > .c3::after {
+.c0[data-popper-placement*="top"] > .c1::after {
   border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.45rem 0;
   position: absolute;
   top: -0.02rem;
 }
 
-.c2[data-popper-placement*="right"] > .c3 {
+.c0[data-popper-placement*="right"] > .c1 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c2[data-popper-placement*="right"] > .c3::before {
+.c0[data-popper-placement*="right"] > .c1::before {
   border-color: transparent #878F9A transparent transparent;
   border-width: 0.45rem 0.5rem 0.45rem 0;
   left: 0.15rem;
   position: absolute;
 }
 
-.c2[data-popper-placement*="right"] > .c3::after {
+.c0[data-popper-placement*="right"] > .c1::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.45rem 0.5rem 0.45rem 0;
   left: 0.23rem;
 }
 
-.c2[data-popper-placement*="left"] > .c3 {
+.c0[data-popper-placement*="left"] > .c1 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c2[data-popper-placement*="left"] > .c3::before {
+.c0[data-popper-placement*="left"] > .c1::before {
   border-color: transparent transparent transparent #878F9A;
   border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.33rem;
   position: absolute;
 }
 
-.c2[data-popper-placement*="left"] > .c3::after {
+.c0[data-popper-placement*="left"] > .c1::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.45rem 0 0.45rem 0.5rem;
   left: 0.25rem;
 }
 
-<Toggletip
-  defaultOpen={true}
->
-  <IconButton
-    aria-controls="uuid1"
-    aria-expanded={true}
-    buttonType="tertiary"
-    data-testid="toggletip"
-    iconName="info"
-    inverted={false}
-    label="info"
-    onClick={[Function]}
-    size="medium"
-    type="button"
-  >
-    <Styled(AbstractButton)
-      aria-controls="uuid1"
-      aria-expanded={true}
-      aria-label="info"
-      buttonType="tertiary"
-      data-testid="toggletip"
-      focusable={true}
-      inverted={false}
-      isMobile={true}
-      onClick={[Function]}
-      size="medium"
-      type="button"
-    >
-      <AbstractButton
-        aria-controls="uuid1"
-        aria-expanded={true}
-        aria-label="info"
-        buttonType="tertiary"
-        className="c0"
-        data-testid="toggletip"
-        focusable={true}
-        inverted={false}
-        isMobile={true}
-        onClick={[Function]}
-        size="medium"
-        type="button"
-      >
-        <styled.button
-          $focusable={true}
-          $isMobile={true}
-          $size="medium"
-          aria-controls="uuid1"
-          aria-expanded={true}
-          aria-label="info"
-          buttonType="tertiary"
-          className="c0"
-          data-testid="toggletip"
-          inverted={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <button
-            aria-controls="uuid1"
-            aria-expanded={true}
-            aria-label="info"
-            className="c1 c0"
-            data-testid="toggletip"
-            onClick={[Function]}
-            type="button"
-          >
-            <Icon
-              aria-hidden="true"
-              name="info"
-              size="24"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </button>
-        </styled.button>
-      </AbstractButton>
-    </Styled(AbstractButton)>
-  </IconButton>
-  <styled.div
-    data-popper-interactive={false}
+<div
+    class="c0"
+    data-popper-escaped="true"
+    data-popper-interactive="false"
+    data-popper-placement="top"
+    data-popper-reference-hidden="true"
     data-testid="toggletip-content-container"
     id="uuid1"
-    isMobile={true}
-    maxWidth="medium"
-    style={
-      {
-        "left": "0",
-        "position": "absolute",
-        "top": "0",
-      }
-    }
+    style="position: absolute; left: 0px; top: auto; right: auto; bottom: 0px; transform: translate(0px, -12px);"
   >
     <div
-      className="c2"
-      data-popper-interactive={false}
-      data-testid="toggletip-content-container"
-      id="uuid1"
-      style={
-        {
-          "left": "0",
-          "position": "absolute",
-          "top": "0",
-        }
-      }
-    >
-      <styled.div
-        data-popper-arrow={true}
-        style={
-          {
-            "position": "absolute",
-          }
-        }
-      >
-        <div
-          className="c3 c4"
-          data-popper-arrow={true}
-          style={
-            {
-              "position": "absolute",
-            }
-          }
-        />
-      </styled.div>
-      Test Content
-    </div>
-  </styled.div>
-</Toggletip>
+      class="c1 c2"
+      data-popper-arrow="true"
+      style="position: absolute; left: 0px; transform: translate(0px, 0px);"
+    />
+    Test Content
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Toggletip Has mobile styles 1`] = `
-.c1 {
+exports[`Toggletip has mobile styles 1`] = `
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -941,7 +699,7 @@ exports[`Toggletip Has mobile styles 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -952,53 +710,10 @@ exports[`Toggletip Has mobile styles 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c1 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c0 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
-  outline-offset: -2px;
-}
-
-.c0:hover,
-.c0[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.15);
-  border-color: transparent;
-  color: #000000;
-}
-
-.c0[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
-  cursor: not-allowed;
 }
 
 .c0 > svg {
@@ -1006,86 +721,69 @@ exports[`Toggletip Has mobile styles 1`] = `
   width: var(--size-1halfx);
 }
 
-<Toggletip>
-  <IconButton
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.15);
+  border-color: transparent;
+  color: #000000;
+}
+
+.c1[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+<button
     aria-controls="uuid1"
-    aria-expanded={false}
-    buttonType="tertiary"
+    aria-expanded="false"
+    aria-label="info"
+    class="c0 c1"
     data-testid="toggletip"
-    iconName="info"
-    inverted={false}
-    label="info"
-    onClick={[Function]}
-    size="medium"
     type="button"
   >
-    <Styled(AbstractButton)
-      aria-controls="uuid1"
-      aria-expanded={false}
-      aria-label="info"
-      buttonType="tertiary"
-      data-testid="toggletip"
-      focusable={true}
-      inverted={false}
-      isMobile={true}
-      onClick={[Function]}
-      size="medium"
-      type="button"
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-info"
+      fill="none"
+      focusable="false"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <AbstractButton
-        aria-controls="uuid1"
-        aria-expanded={false}
-        aria-label="info"
-        buttonType="tertiary"
-        className="c0"
-        data-testid="toggletip"
-        focusable={true}
-        inverted={false}
-        isMobile={true}
-        onClick={[Function]}
-        size="medium"
-        type="button"
-      >
-        <styled.button
-          $focusable={true}
-          $isMobile={true}
-          $size="medium"
-          aria-controls="uuid1"
-          aria-expanded={false}
-          aria-label="info"
-          buttonType="tertiary"
-          className="c0"
-          data-testid="toggletip"
-          inverted={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <button
-            aria-controls="uuid1"
-            aria-expanded={false}
-            aria-label="info"
-            className="c1 c0"
-            data-testid="toggletip"
-            onClick={[Function]}
-            type="button"
-          >
-            <Icon
-              aria-hidden="true"
-              name="info"
-              size="24"
-            >
-              <svg
-                aria-hidden="true"
-                color="currentColor"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </button>
-        </styled.button>
-      </AbstractButton>
-    </Styled(AbstractButton)>
-  </IconButton>
-</Toggletip>
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M12 16v-4"
+      />
+      <path
+        d="M12 8h.01"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;

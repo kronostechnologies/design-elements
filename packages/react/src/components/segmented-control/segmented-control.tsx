@@ -1,8 +1,8 @@
-import { MouseEvent, useState, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { Icon, IconName } from '../icon/icon';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 const Container = styled.div`
     background-color: ${({ theme }) => (theme.component['segmented-control-list-background-color'])};
@@ -76,7 +76,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     }
 `;
 
-interface SegmentedControlProps {
+export interface SegmentedControlProps {
     /**
      * Takes an array of objects containing all the buttons needed
      */
@@ -97,7 +97,7 @@ interface SegmentedControlProps {
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
+export const SegmentedControl: FC<SegmentedControlProps> = ({
     buttonGroup,
     className,
     groupName,
@@ -145,11 +145,7 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
                     value={button.value}
                 >
                     {button.icon && (
-                        <Icon
-                            aria-hidden="true"
-                            name={button.icon}
-                            size="16"
-                        />
+                        <Icon name={button.icon} size="16" />
                     )}
                     {button.label && (
                         <span data-text={button.label}>
@@ -161,3 +157,5 @@ export const SegmentedControl: VoidFunctionComponent<SegmentedControlProps> = ({
         </Container>
     );
 };
+
+SegmentedControl.displayName = 'SegmentedControl';

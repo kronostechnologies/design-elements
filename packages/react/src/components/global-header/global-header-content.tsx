@@ -1,8 +1,8 @@
 import { FunctionComponent, PropsWithChildren, ReactNode, useState } from 'react';
 import styled from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { SideDrawer } from '../side-drawer/side-drawer';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { SideDrawer } from '../side-drawer';
 
 const BurgerButton = styled(IconButton)`
     margin: 0;
@@ -25,7 +25,7 @@ interface Props {
     mobileDrawerContent: ReactNode;
 }
 
-export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children, mobileDrawerContent }) => {
+export const GlobalHeaderContent: FunctionComponent<PropsWithChildren<Props>> = ({ children, mobileDrawerContent }) => {
     const { isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -55,3 +55,5 @@ export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children,
         </Container>
     );
 };
+
+GlobalHeaderContent.displayName = 'GlobalHeaderContent';

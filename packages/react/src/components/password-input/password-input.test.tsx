@@ -1,56 +1,61 @@
-import { shallow } from 'enzyme';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { PasswordInput } from './password-input';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithTheme } from '../../test-utils/renderer';
 
-jest.mock('../../utils/uuid');
+jest.mock('../../utils/uuid', () => ({
+    v4: () => 'mocked-uuid',
+}));
 
 describe('PasswordInput', () => {
-    test('matches the snapshot (Normal)', () => {
-        const tree = renderWithTheme(<PasswordInput value="Pass123" />);
+    it('matches the snapshot (Normal)', () => {
+        const { asFragment } = renderWithProviders(<PasswordInput value="Pass123" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Disabled)', () => {
-        const tree = renderWithTheme(<PasswordInput value="Pass123" disabled />);
+    it('matches the snapshot (Disabled)', () => {
+        const { asFragment } = renderWithProviders(<PasswordInput value="Pass123" disabled />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Invalid)', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot (Invalid)', () => {
+        const { asFragment } = renderWithProviders(
             <PasswordInput value="Pass123" validationErrorMessage="This is an error message" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('has controllable data-test-id', () => {
-        const wrapper = shallow(<PasswordInput data-testid="a-password-input" />);
+    it('has controllable data-test-id', () => {
+        renderWithProviders(<PasswordInput data-testid="a-password-input" />);
 
-        expect(getByTestId(wrapper, 'a-password-input').exists()).toBe(true);
+        expect(screen.getByTestId('a-password-input')).toBeInTheDocument();
     });
 
-    test('has controllable value', () => {
-        const wrapper = shallow(<PasswordInput data-testid="a-password-input" value="Pass123" />);
+    it('has controllable value', () => {
+        renderWithProviders(<PasswordInput data-testid="a-password-input" value="Pass123" />);
 
-        expect(getByTestId(wrapper, 'a-password-input').prop('value')).toBe('Pass123');
+        expect(screen.getByTestId('a-password-input')).toHaveValue('Pass123');
     });
 
-    test('sets password type to password when not showing password', () => {
+    it('sets password type to password when not showing password', () => {
         const onChange = jest.fn();
-        const wrapper = shallow(<PasswordInput onChange={onChange} />);
 
-        expect(getByTestId(wrapper, 'password-input').prop('type')).toBe('password');
+        renderWithProviders(<PasswordInput onChange={onChange} />);
+
+        expect(screen.getByTestId('password-input')).toHaveAttribute('type', 'password');
     });
 
-    test('sets password type to text when show password button is clicked', () => {
+    it('sets password type to text when show password button is clicked', async () => {
         const onChange = jest.fn();
-        const wrapper = shallow(<PasswordInput onChange={onChange} />);
+        const user = userEvent.setup();
 
-        getByTestId(wrapper, 'show-password-button').simulate('click');
+        renderWithProviders(<PasswordInput onChange={onChange} />);
 
-        expect(getByTestId(wrapper, 'password-input').prop('type')).toBe('text');
+        await user.click(screen.getByTestId('show-password-button'));
+
+        expect(screen.getByTestId('password-input')).toHaveAttribute('type', 'text');
     });
 });

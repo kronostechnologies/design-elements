@@ -1,8 +1,9 @@
-import { shallow } from 'enzyme';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ReactElement } from 'react';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { ExternalItem, GroupItem, GroupItemProps, NavItem } from '../dropdown-menu/list-items';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { type GroupItemProps } from '../dropdown-menu';
+import { ExternalItem, GroupItem, NavItem } from '../dropdown-menu/list-items';
 import { DropdownMenuButton } from './dropdown-menu-button';
 
 const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemProps> => (
@@ -23,92 +24,85 @@ const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemPr
 );
 
 describe('DropdownMenuButton', () => {
-    test('adds aria-label to menu-button-wrapper when ariaLabel is defined', () => {
-        const ariaLabel = 'test-aria-label';
-
-        const wrapper = shallow(<DropdownMenuButton tag="nav" ariaLabel={ariaLabel} render={TestGroups} />);
-
-        expect(getByTestId(wrapper, 'dropdown-container').prop('aria-label')).toBe(ariaLabel);
-    });
-
-    test('adds aria-label to menu-button when buttonAriaLabel is defined', () => {
-        const ariaLabel = 'test-aria-label';
-
-        const wrapper = shallow(<DropdownMenuButton buttonAriaLabel={ariaLabel} render={TestGroups} />);
-
-        expect(getByTestId(wrapper, 'menu-button').prop('aria-label')).toBe(ariaLabel);
-    });
-
-    test('dropdown-menu is open when defaultOpen prop is set to true', () => {
-        const wrapper = shallow(
-            <DropdownMenuButton defaultOpen render={TestGroups} />,
-        );
-
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(false);
-    });
-
-    test('Opens dropdown-menu when menu-button is clicked', () => {
-        const wrapper = mountWithProviders(
-            <DropdownMenuButton render={() => <div />} />,
-        );
-
-        getByTestId(wrapper, 'menu-button').simulate('click');
-
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(false);
-    });
-
-    test('Should close nav-menu when escape key is pressed in dropdown-menu', () => {
-        const wrapper = mountWithProviders(
-            <DropdownMenuButton defaultOpen render={TestGroups} />,
-        );
-
-        getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
-
-        expect(getByTestId(wrapper, 'menu-dropdownMenu').prop('hidden')).toBe(true);
-    });
-
-    test('Focuses menu-button when escape key is pressed in dropdown-menu', () => {
-        const wrapper = mountWithProviders(
-            <DropdownMenuButton defaultOpen render={TestGroups} />,
-            { attachTo: document.body },
-        );
-
-        getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
-
-        expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
-    });
-
-    test('Renders nav container tag when "tag" prop is set to nav', () => {
-        const wrapper = mountWithProviders(
-            <DropdownMenuButton tag="nav" render={TestGroups} />,
-        );
-
-        const dropDownContainer = getByTestId(wrapper, 'dropdown-container');
-        expect(dropDownContainer.prop('as')).toEqual('nav');
-    });
-
-    test('Renders div container tag when "tag" prop is set to div', () => {
-        const wrapper = mountWithProviders(
-            <DropdownMenuButton tag="div" render={TestGroups} />,
-        );
-
-        const dropDownContainer = getByTestId(wrapper, 'dropdown-container');
-        expect(dropDownContainer.prop('as')).toEqual('div');
-    });
-
-    test('Matches Snapshot', () => {
-        const tree = renderWithProviders(
+    it('matches Snapshot', async () => {
+        const user = userEvent.setup();
+        const { baseElement } = renderWithProviders(
             <DropdownMenuButton render={TestGroups} />,
         );
+        const element = screen.getByTestId('menu-button');
+        await user.click(element);
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithProviders(
+    it('matches Snapshot (defaultOpen)', () => {
+        const { baseElement } = renderWithProviders(
             <DropdownMenuButton defaultOpen render={TestGroups} />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
+    });
+
+    it('adds aria-label to menu-button-wrapper when ariaLabel is defined', () => {
+        const ariaLabel = 'test-aria-label';
+        renderWithProviders(<DropdownMenuButton tag="nav" ariaLabel={ariaLabel} render={TestGroups} />);
+
+        expect(screen.getByTestId('dropdown-container')).toHaveAttribute('aria-label', ariaLabel);
+    });
+
+    it('adds aria-label to menu-button when buttonAriaLabel is defined', () => {
+        const ariaLabel = 'test-aria-label';
+        renderWithProviders(<DropdownMenuButton buttonAriaLabel={ariaLabel} render={TestGroups} />);
+
+        expect(screen.getByTestId('menu-button')).toHaveAttribute('aria-label', ariaLabel);
+    });
+
+    it('dropdown-menu is open when defaultOpen prop is set to true', () => {
+        renderWithProviders(<DropdownMenuButton defaultOpen render={TestGroups} />);
+
+        expect(screen.getByTestId('menu-dropdownMenu')).toBeInTheDocument();
+    });
+
+    it('opens dropdown-menu when menu-button is clicked', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<DropdownMenuButton render={() => <div />} />);
+
+        await user.click(screen.getByTestId('menu-button'));
+
+        expect(screen.getByTestId('menu-dropdownMenu')).toBeInTheDocument();
+    });
+
+    it('should close nav-menu when escape key is pressed in dropdown-menu', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<DropdownMenuButton defaultOpen render={TestGroups} />);
+
+        const item = screen.getByTestId('listitem-optionA');
+        item.focus();
+        await user.keyboard('{Escape}');
+
+        expect(screen.queryByTestId('menu-dropdownMenu')).not.toBeInTheDocument();
+    });
+
+    it('focuses menu-button when escape key is pressed in dropdown-menu', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<DropdownMenuButton defaultOpen render={TestGroups} />);
+
+        const item = screen.getByTestId('listitem-optionA');
+        item.focus();
+        await user.keyboard('{Escape}');
+
+        expect(screen.getByTestId('menu-button')).toHaveFocus();
+    });
+
+    it('renders nav container tag when "tag" prop is set to nav', () => {
+        renderWithProviders(<DropdownMenuButton tag="nav" render={TestGroups} />);
+
+        expect(screen.getByTestId('dropdown-container').tagName).toBe('NAV');
+    });
+
+    it('renders div container tag when "tag" prop is set to div', () => {
+        renderWithProviders(<DropdownMenuButton tag="div" render={TestGroups} />);
+
+        expect(screen.getByTestId('dropdown-container').tagName).toBe('DIV');
     });
 });

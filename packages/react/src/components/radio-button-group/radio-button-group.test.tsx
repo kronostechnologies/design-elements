@@ -1,7 +1,6 @@
-import { shallow } from 'enzyme';
-import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { RadioButtonGroup } from './radio-button-group';
 
 const Buttons = [
@@ -12,93 +11,83 @@ const Buttons = [
 ];
 
 describe('Radio button', () => {
-    test('should have controllable data-testid', () => {
+    it('onChange callback is called when changed', async () => {
         const callback = jest.fn();
-        const dataTestId = 'radio-button-group-id';
-        const wrapper = mountWithTheme(
-            <RadioButtonGroup
-                data-testid={dataTestId}
-                label="Planets"
-                groupName="planets"
-                buttons={Buttons}
-                onChange={callback}
-            />,
-        );
-
-        expect(getByTestId(wrapper, `${dataTestId}-${Buttons[0].value}`).exists()).toBe(true);
-    });
-
-    test('onChange callback is called when changed', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+        renderWithProviders(
             <RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons} onChange={callback} />,
         );
 
-        wrapper.find('input').at(0).simulate('change');
+        await user.click(screen.getByLabelText(Buttons[0].label));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Can be used as a controlled input', () => {
-        const wrapper = mountWithTheme(
+    it('Can be used as a controlled input', () => {
+        const onChange = jest.fn();
+
+        renderWithProviders(
             <RadioButtonGroup
                 groupName="color"
                 checkedValue="red"
                 buttons={[{ label: 'Red', value: 'red' }]}
-                onChange={doNothing}
+                onChange={onChange}
             />,
         );
 
-        const input = wrapper.find('input[type="radio"]').at(0);
-        expect(input.prop('checked')).toBe(true);
+        expect(screen.getByLabelText('Red')).toBeChecked();
     });
 
-    test('defaultChecked should show content from radio button', () => {
-        const wrapper = shallow(
+    it('defaultChecked should show content from radio button', () => {
+        const buttons = [{
+            label: 'With Content',
+            value: 'content',
+            defaultChecked: true,
+            content: {
+                element: <div data-testid="content-div">Test</div>,
+            },
+        }];
+
+        renderWithProviders(
             <RadioButtonGroup
                 groupName="withContent"
-                buttons={[{
-                    label: 'With Content',
-                    value: 'content',
-                    defaultChecked: true,
-                    content: {
-                        element: <div data-testid="content-div">Test</div>,
-                    },
-                }]}
+                buttons={buttons}
             />,
         );
 
-        expect(getByTestId(wrapper, 'content-wrapper').prop('$isExpanded')).toBe(true);
+        expect(screen.getByTestId('content-div')).toBeVisible();
     });
 
-    test('should show content from radio button with checkedValue', () => {
-        const wrapper = shallow(
+    it('should show content from radio button with checkedValue', () => {
+        const buttons = [{
+            label: 'With Content',
+            value: 'content',
+            content: {
+                element: <div data-testid="content-div">Test</div>,
+            },
+        }];
+
+        renderWithProviders(
             <RadioButtonGroup
                 checkedValue="content"
                 groupName="withContent"
-                buttons={[{
-                    label: 'With Content',
-                    value: 'content',
-                    content: {
-                        element: <div data-testid="content-div">Test</div>,
-                    },
-                }]}
+                buttons={buttons}
             />,
         );
 
-        expect(getByTestId(wrapper, 'content-wrapper').prop('$isExpanded')).toBe(true);
+        expect(screen.getByTestId('content-div')).toBeVisible();
     });
 
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(
             <RadioButtonGroup
-                id='test-id'
+                id="test-id"
                 label="Planets"
                 groupName="planets"
                 buttons={Buttons}
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

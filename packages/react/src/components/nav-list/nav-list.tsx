@@ -24,7 +24,6 @@ export interface NavListProps {
     className?: string;
     /** Sets the current focused element in the menu */
     focusedValue?: string;
-    hidden?: boolean;
 
     /** onChange callback function, invoked when an option is selected */
     onChange?(option: NavListOption): void;
@@ -40,7 +39,6 @@ export const NavList = forwardRef(({
     id: providedId,
     options,
     focusedValue,
-    hidden,
     onChange,
     onKeyDown,
     ordered,
@@ -82,7 +80,6 @@ export const NavList = forwardRef(({
             data-testid={dataTestId}
             id={id}
             ref={ref}
-            hidden={hidden}
         >
             {list.map((option) => (
                 <NavListItem

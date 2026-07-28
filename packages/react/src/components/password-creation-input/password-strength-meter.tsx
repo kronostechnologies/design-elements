@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled, { StyledProps } from 'styled-components';
 import { PasswordStrengthEnum } from './password-strength.enum';
 
@@ -47,7 +47,7 @@ interface PasswordStrengthMeterProps {
     strength: PasswordStrengthEnum;
 }
 
-export const PasswordStrengthMeter: VoidFunctionComponent<PasswordStrengthMeterProps> = ({ strength }) => (
+export const PasswordStrengthMeter: FC<PasswordStrengthMeterProps> = ({ strength }) => (
     <PasswordMeterContainer>
         <ProgressBar
             passwordStrength={strength}
@@ -67,3 +67,5 @@ export const PasswordStrengthMeter: VoidFunctionComponent<PasswordStrengthMeterP
         />
     </PasswordMeterContainer>
 );
+
+PasswordStrengthMeter.displayName = 'PasswordStrengthMeter';

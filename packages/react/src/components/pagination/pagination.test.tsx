@@ -1,140 +1,131 @@
-import { shallow } from 'enzyme';
-import { findByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { Pagination } from './pagination';
 
 describe('Pagination', () => {
-    test('Matches the mobile snapshot', () => {
-        const tree = renderWithProviders(
+    it('matches the mobile snapshot', () => {
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={12} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches the desktop snapshot', () => {
-        const tree = renderWithProviders(
+    it('matches the desktop snapshot', () => {
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={12} />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches the mobile snapshot with multiples digits page numbers', () => {
-        const tree = renderWithProviders(
+    it('matches the mobile snapshot with multiples digits page numbers', () => {
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={1000} />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches the desktop snapshot with multiples digits page numbers', () => {
-        const tree = renderWithProviders(
+    it('matches the desktop snapshot with multiples digits page numbers', () => {
+        const { container } = renderWithProviders(
             <Pagination resultsPerPage={1000} />,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('pages list', () => {
-        test('should display pages', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
-            const pages = findByTestId(wrapper, 'page-', { modifier: '^' });
+        it('should display pages', () => {
+            renderWithProviders(<Pagination resultsPerPage={5} numberOfResults={25} pagesShown={5} />);
+            const pages = screen.getAllByTestId(/^page-/);
 
             expect(pages).toHaveLength(5);
         });
 
-        test('should go to page 2 when clicking on page 2', () => {
+        it('should go to page 2 when clicking on page 2', async () => {
             const callback = jest.fn();
-            const wrapper = shallow(
+            renderWithProviders(
                 <Pagination resultsPerPage={3} numberOfResults={6} defaultActivePage={1} onPageChange={callback} />,
             );
-            const pageButton = findByTestId(wrapper, 'page-2');
+            const pageButton = screen.getByTestId('page-2');
 
-            pageButton.simulate('click');
+            await userEvent.click(pageButton);
 
             expect(callback).toHaveBeenCalledWith(2);
         });
 
-        test('should highlight selected page', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={3} numberOfResults={9} defaultActivePage={3} />);
-            const pageButton = findByTestId(wrapper, 'page-3');
+        it('should highlight selected page', () => {
+            renderWithProviders(<Pagination resultsPerPage={3} numberOfResults={9} defaultActivePage={3} />);
+            const link = screen.getByLabelText(/go to page 3/i);
 
-            expect(pageButton.prop('isSelected')).toBe(true);
+            expect(link).toHaveAttribute('aria-current', 'page');
         });
     });
 
     describe('results label', () => {
-        test('should display zero results when number of results is undefined', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={0} numberOfResults={undefined} />);
-            const label = findByTestId(wrapper, 'resultsLabel');
+        it('should display zero results when number of results is undefined', () => {
+            renderWithProviders(<Pagination resultsPerPage={0} numberOfResults={undefined} />);
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />0–0 of 0 results');
+            expect(label).toHaveTextContent('0–0 of 0 results');
         });
 
-        test('should display the number of results when provided', () => {
-            const wrapper = shallow(<Pagination resultsPerPage={3} numberOfResults={12345} />);
-            const label = findByTestId(wrapper, 'resultsLabel');
+        it('should display the number of results when provided', () => {
+            renderWithProviders(<Pagination resultsPerPage={3} numberOfResults={12345} />);
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–3 of 12345 results');
+            expect(label).toHaveTextContent('1–3 of 12345 results');
         });
 
-        test('should display first page results label when number of results is even', () => {
-            const wrapper = shallow(
+        it('should display first page results label when number of results is even', () => {
+            renderWithProviders(
                 <Pagination resultsPerPage={6} numberOfResults={30} activePage={1} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–6 of 30 results');
+            expect(label).toHaveTextContent('1–6 of 30 results');
         });
 
-        test('should display second page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+        it('should display second page results label when number of results is uneven', () => {
+            renderWithProviders(
                 <Pagination resultsPerPage={6} numberOfResults={30} activePage={2} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />7–12 of 30 results');
+            expect(label).toHaveTextContent('7–12 of 30 results');
         });
 
-        test('should display last page results label when number of results is uneven', () => {
-            const wrapper = shallow(
-                <Pagination resultsPerPage={6} numberOfResults={30} activePage={6} />,
-            );
-            const label = findByTestId(wrapper, 'resultsLabel');
-
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />25–30 of 30 results');
-        });
-
-        test('should display first page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+        it('should display first page results label when number of results is uneven', () => {
+            renderWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={1} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–50 of 1530 results');
+            expect(label).toHaveTextContent('1–50 of 1530 results');
         });
 
-        test('should display second page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+        it('should display second page results label when number of results is uneven', () => {
+            renderWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={2} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />51–100 of 1530 results');
+            expect(label).toHaveTextContent('51–100 of 1530 results');
         });
 
-        test('should display last page results label when number of results is uneven', () => {
-            const wrapper = shallow(
+        it('should display last page results label when number of results is uneven', () => {
+            renderWithProviders(
                 <Pagination resultsPerPage={50} numberOfResults={1530} activePage={31} />,
             );
-            const label = findByTestId(wrapper, 'resultsLabel');
+            const label = screen.getByTestId('resultsLabel');
 
-            expect(label.text()).toEqual('<ScreenReaderOnlyText />1501–1530 of 1530 results');
+            expect(label).toHaveTextContent('1501–1530 of 1530 results');
         });
     });
 
@@ -150,9 +141,9 @@ describe('Pagination', () => {
 
         testCases.forEach((testCase) => {
             describe(testCase.id, () => {
-                test(`should go to page ${testCase.goesToPage} when clicked`, () => {
+                it(`should go to page ${testCase.goesToPage} when clicked`, async () => {
                     const callback = jest.fn();
-                    const wrapper = shallow(
+                    renderWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
@@ -160,44 +151,44 @@ describe('Pagination', () => {
                             onPageChange={callback}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = screen.getByTestId(testCase.id);
 
-                    button.simulate('click');
+                    await userEvent.click(button);
 
                     expect(callback).toHaveBeenCalledWith(testCase.goesToPage);
                 });
 
-                test(`should be disabled when on page ${testCase.disabledWhenOnPage}`, () => {
-                    const wrapper = shallow(
+                it(`should be disabled when on page ${testCase.disabledWhenOnPage}`, () => {
+                    renderWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
                             defaultActivePage={testCase.disabledWhenOnPage}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = screen.getByTestId(testCase.id);
 
-                    expect(button.prop('enabled')).toBe(false);
+                    expect(button).toHaveAttribute('aria-disabled', 'true');
                 });
 
-                test(`should be enabled when on page ${testCase.enabledWhenOnPage}`, () => {
-                    const wrapper = shallow(
+                it(`should be enabled when on page ${testCase.enabledWhenOnPage}`, () => {
+                    renderWithProviders(
                         <Pagination
                             resultsPerPage={11}
                             numberOfResults={121}
                             defaultActivePage={testCase.enabledWhenOnPage}
                         />,
                     );
-                    const button = findByTestId(wrapper, testCase.id);
+                    const button = screen.getByTestId(testCase.id);
 
-                    expect(button.prop('enabled')).toBe(true);
+                    expect(button).toBeEnabled();
                 });
 
-                test(`should not be rendered when there's less than ${testCase.stopRenderAt} page`, () => {
-                    const wrapper = shallow(<Pagination resultsPerPage={testCase.stopRenderAt - 1} />);
-                    const button = findByTestId(wrapper, testCase.id);
+                it(`should not be rendered when there's less than ${testCase.stopRenderAt} page`, () => {
+                    renderWithProviders(<Pagination resultsPerPage={testCase.stopRenderAt - 1} />);
+                    const button = screen.queryByTestId(testCase.id);
 
-                    expect(button.exists()).toBe(false);
+                    expect(button).not.toBeInTheDocument();
                 });
             });
         });

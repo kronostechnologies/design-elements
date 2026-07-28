@@ -1,170 +1,178 @@
-import { Icon, IconButton } from '../..';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders } from '../../test-utils/renderer';
+import { act, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { IconButton } from '../buttons';
+import { Icon } from '../icon';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
 
 describe('Tooltip', () => {
     describe('desktop', () => {
-        test('opens on mouseEnter', () => {
-            const wrapper = mountWithProviders(
+        it('opens on mouseEnter', async () => {
+            renderWithProviders(
                 <Tooltip label="Test Content" />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('mouseenter');
+            await userEvent.hover(screen.getByTestId('tooltip'));
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(true);
+            expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
         });
 
-        test('closes on mouseLeave given tooltip is open', () => {
-            const wrapper = mountWithProviders(
+        it('closes on mouseLeave given tooltip is open', async () => {
+            renderWithProviders(
                 <Tooltip label="Test Content" defaultOpen />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('mouseleave');
+            await userEvent.unhover(screen.getByTestId('tooltip'));
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
 
-        test('does not open on mouseEnter given tooltip is disabled', () => {
-            const wrapper = mountWithProviders(
+        it('does not open on mouseEnter given tooltip is disabled', async () => {
+            renderWithProviders(
                 <Tooltip label="Test Content" disabled />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('mouseenter');
+            await userEvent.hover(screen.getByTestId('tooltip'));
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
 
-        test('opens on focus', () => {
-            const wrapper = mountWithProviders(
+        it('opens on focus', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
                 <Tooltip label="Test Content" />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('focus');
+            await user.tab();
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(true);
+            expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
         });
 
-        test('closes on blur given tooltip is open', () => {
-            const wrapper = mountWithProviders(
+        it('closes on blur given tooltip is open', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
                 <Tooltip label="Test Content" defaultOpen />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('blur');
+            await user.tab();
+            await user.tab();
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
 
-        test('tooltip-confirm-icon should be displayed after tooltip children is clicked', () => {
+        it('tooltip-confirm-icon should be displayed after tooltip children is clicked', async () => {
             const confirmationLabel = 'confirmLabel';
-            const wrapper = mountWithProviders(
+            renderWithProviders(
                 <Tooltip
                     confirmationLabel={confirmationLabel}
                     label="Test Content"
-                    mode='confirm'
+                    mode="confirm"
                     defaultOpen
                 >
-                    <IconButton data-testid='icon-button' buttonType='tertiary' type='button' iconName='copy' />
+                    <IconButton data-testid="icon-button" buttonType="tertiary" type="button" iconName="copy" />
                 </Tooltip>,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'icon-button').simulate('click');
+            await userEvent.click(screen.getByTestId('icon-button'));
 
-            expect(getByTestId(wrapper, 'tooltip-confirm-icon').exists()).toBe(true);
+            expect(screen.getByTestId('tooltip-confirm-icon')).toBeInTheDocument();
         });
 
-        test('label should be confirmation label after tooltip children is clicked', () => {
+        it('label should be confirmation label after tooltip children is clicked', async () => {
             const confirmationLabel = 'confirmLabel';
-            const wrapper = mountWithProviders(
+            renderWithProviders(
                 <Tooltip
                     label="Test Content"
                     confirmationLabel={confirmationLabel}
-                    mode='confirm'
+                    mode="confirm"
                     defaultOpen
                 >
-                    <IconButton data-testid='icon-button' buttonType='tertiary' type='button' iconName='copy' />
+                    <IconButton data-testid="icon-button" buttonType="tertiary" type="button" iconName="copy" />
                 </Tooltip>,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'icon-button').simulate('click');
+            await userEvent.click(screen.getByTestId('icon-button'));
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe(confirmationLabel);
+            expect(screen.getByTestId('tooltip-content-container')).toHaveTextContent(confirmationLabel);
         });
 
-        test('does not open on focus given tooltip is disabled', () => {
-            const wrapper = mountWithProviders(
+        it('does not open on focus given tooltip is disabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
                 <Tooltip label="Test Content" disabled />,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+                'desktop',
             );
 
-            getByTestId(wrapper, 'tooltip').simulate('focus');
+            await user.tab();
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
     });
 
-    test('Has default desktop styles', () => {
-        const tree = mountWithProviders(
+    it('has default desktop styles', () => {
+        const { asFragment } = renderWithProviders(
             <Tooltip label="Test Content" />,
-            { wrappingComponentProps: { staticDevice: 'desktop' } },
+            'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Has default desktop styles (defaultOpen)', () => {
-        const tree = mountWithProviders(
-            <Tooltip defaultOpen label="Test Content" />,
-            { wrappingComponentProps: { staticDevice: 'desktop' } },
+    it('has default desktop styles (defaultOpen)', async () => {
+        const { asFragment } = await act(
+            () => renderWithProviders(
+                <Tooltip defaultOpen label="Test Content" />,
+                'desktop',
+            ),
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Has mobile styles', () => {
-        const tree = mountWithProviders(
+    it('has mobile styles', () => {
+        const { asFragment } = renderWithProviders(
             <Tooltip label="Test Content" />,
-            { wrappingComponentProps: { staticDevice: 'mobile' } },
+            'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('Has mobile styles (defaultOpen)', () => {
-        const tree = mountWithProviders(
+    it('has mobile styles (defaultOpen)', async () => {
+        const { asFragment } = await act(
+            () => renderWithProviders(
+                <Tooltip defaultOpen label="Test Content" />,
+                'mobile',
+            ),
+        );
+
+        expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('renders label', () => {
+        renderWithProviders(
             <Tooltip defaultOpen label="Test Content" />,
-            { wrappingComponentProps: { staticDevice: 'mobile' } },
+            'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(screen.getByTestId('tooltip-content-container')).toHaveTextContent('Test Content');
     });
 
-    test('Renders label', () => {
-        const wrapper = mountWithProviders(
-            <Tooltip defaultOpen label="Test Content" />,
-            { wrappingComponentProps: { staticDevice: 'mobile' } },
-        );
-
-        expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe('Test Content');
-    });
-
-    test('Renders children icon', () => {
-        const wrapper = mountWithProviders(
+    it('renders children icon', () => {
+        renderWithProviders(
             <Tooltip defaultOpen label="Test Content">
                 <Icon data-testid="icon-children" aria-hidden="true" name="settings" size="20" />
             </Tooltip>,
-            { wrappingComponentProps: { staticDevice: 'mobile' } },
+            'mobile',
         );
 
-        const iconChildren = getByTestId(wrapper, 'icon-children');
-
-        expect(iconChildren.exists()).toBe(true);
+        expect(screen.getByTestId('icon-children')).toBeInTheDocument();
     });
 });

@@ -14,7 +14,7 @@ export interface ThemeDeclaration {
     component: ComponentTokenMap<ComponentToken>;
 }
 
-export type ThemeCustomization = {
+export interface ThemeCustomization {
     ref?: Partial<RefTokenMap<RefToken>>;
     alias?: Partial<AliasTokenMap<AliasToken>>;
     component?: Partial<ComponentTokenMap<ComponentToken>>;

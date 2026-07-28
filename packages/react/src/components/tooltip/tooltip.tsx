@@ -1,22 +1,25 @@
 import {
+    cloneElement,
     FunctionComponent,
+    isValidElement,
     KeyboardEvent as ReactKeyboardEvent,
-    MouseEvent,
     PropsWithChildren,
+    ReactElement,
+    ReactNode,
     useCallback,
     useEffect,
-    useRef,
     useMemo,
+    useRef,
     useState,
 } from 'react';
-import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
+import { type PopperOptions, type TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
-import { ResolvedTheme } from '../../themes';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon } from '../icon';
 
 export type TooltipMode = 'normal' | 'confirm';
 export type TooltipVariant = 'normal' | 'success';
@@ -320,10 +323,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, openTooltip]);
 
-    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
-        event.preventDefault();
-    }, []);
-
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
@@ -337,32 +336,45 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         setIsClicked(false);
     }, [isMobile, closeTooltip]);
 
+    const renderChildrenWithAria = (): ReactNode => {
+        if (!children) {
+            return (
+                <Icon
+                    name="info"
+                    size={isMobile ? '24' : '16'}
+                    color={invertedIcon
+                        ? Theme.component['tooltip-inverted-icon-color']
+                        : Theme.component['tooltip-icon-color']}
+                    aria-describedby={isVisible ? tooltipId : undefined}
+                />
+            );
+        }
+
+        if (isValidElement(children)) {
+            return cloneElement(children as ReactElement, {
+                'aria-describedby': tooltipId,
+            });
+        }
+
+        return children;
+    };
+
     return (
         <>
             <StyledSpan
                 data-testid="tooltip"
                 className={className}
-                aria-describedby={tooltipId}
                 id={tooltipTriggerId}
                 tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
                 onClick={handleOnClick}
                 onFocus={handleFocus}
                 onKeyDown={handleKeyDown}
-                onMouseDown={handleMouseDown}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 ref={popperTooltip.setTriggerRef}
             >
-                {children || (
-                    <Icon
-                        name="info"
-                        size={isMobile ? '24' : '16'}
-                        color={invertedIcon
-                            ? Theme.component['tooltip-inverted-icon-color']
-                            : Theme.component['tooltip-icon-color']}
-                    />
-                )}
+                {renderChildrenWithAria()}
             </StyledSpan>
 
             <TooltipContainer
@@ -389,3 +401,5 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         </>
     );
 };
+
+Tooltip.displayName = 'Tooltip';

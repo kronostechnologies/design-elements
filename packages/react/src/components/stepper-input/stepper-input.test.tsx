@@ -1,73 +1,78 @@
-import { fireEvent } from '@testing-library/react';
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderPortalWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
 describe('Stepper input', () => {
-    test('should not show validation message when input is empty and required onBlur', () => {
-        const { getByTestId: byTestId, queryByTestId } = renderPortalWithProviders(
+    it('should not show validation message when input is empty and required onBlur', async () => {
+        renderWithProviders(
             <form>
-                <StepperInput label='test' required validationErrorMessage='This field is required' />
+                <StepperInput label="test" required validationErrorMessage="This field is required" />
                 <button data-testid="submit-button" type="submit">Submit</button>
             </form>,
         );
 
-        fireEvent.blur(byTestId('stepper-input'), { target: { value: '' } });
-        expect(queryByTestId('invalid-field')).toBeNull();
+        const input = screen.getByTestId('stepper-input');
+        await userEvent.clear(input);
+        await userEvent.tab();
+        expect(screen.queryByTestId('invalid-field')).toBeNull();
 
-        fireEvent.click(byTestId('submit-button'));
-        expect(byTestId('invalid-field')).not.toBeNull();
+        await userEvent.click(screen.getByTestId('submit-button'));
+        expect(screen.getByTestId('invalid-field')).not.toBeNull();
     });
 
-    test('onChange callback should be called when input value changes', () => {
+    it('calls onChange callback when input value changes', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(<StepperInput onChange={callback} />);
+        renderWithProviders(<StepperInput onChange={callback} />);
 
-        getByTestId(wrapper, 'stepper-input').simulate('change', { target: { value: 3 } });
+        const input = screen.getByTestId('stepper-input');
+        await userEvent.type(input, '3');
 
         expect(callback).toHaveBeenCalledWith(3);
     });
 
-    test('onBlur callback should be called when input is blurred', () => {
+    it('calls onBlur callback when input is blurred', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(<StepperInput onBlur={callback} />);
+        renderWithProviders(<StepperInput onBlur={callback} />);
 
-        getByTestId(wrapper, 'stepper-input').simulate('blur');
+        const input = screen.getByTestId('stepper-input');
+        await userEvent.click(input);
+        await userEvent.tab();
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onFocus callback should be called when input is focused', () => {
+    it('calls onFocus callback when input is focused', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<StepperInput onFocus={callback} />);
+        renderWithProviders(<StepperInput onFocus={callback} />);
 
-        getByTestId(wrapper, 'stepper-input').simulate('focus');
+        const input = screen.getByTestId('stepper-input');
+        await userEvent.click(input);
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('matches snapshot', () => {
-        const tree = renderWithProviders(<StepperInput label="test" />);
+    it('matches snapshot', () => {
+        const { container } = renderWithProviders(<StepperInput label="test" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" />, 'mobile');
+    it('matches snapshot (mobile)', () => {
+        const { container } = renderWithProviders(<StepperInput label="test" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (invalid)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" valid={false} />);
+    it('matches snapshot (invalid)', () => {
+        const { container } = renderWithProviders(<StepperInput label="test" valid={false} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('matches snapshot (disabled)', () => {
-        const tree = renderWithProviders(<StepperInput label="test" disabled />);
+    it('matches snapshot (disabled)', () => {
+        const { container } = renderWithProviders(<StepperInput label="test" disabled />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

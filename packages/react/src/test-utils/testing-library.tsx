@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { DesignSystem, DesignSystemProps } from '../components/design-system';
+import { DesignSystem, DesignSystemProps } from '../components';
 import { equisoftThemeCustomization } from '../theme';
 
 export function renderWithProviders(
@@ -24,7 +24,7 @@ export function renderWithProviders(
         {
             ...renderOptions,
             wrapper: ({ children }) => (
-                <MemoryRouter>
+                <MemoryRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
                     <DesignSystem
                         isolateStyles={isolateStyles}
                         language={language}

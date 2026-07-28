@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Global Header Matches the snapshot (desktop) 1`] = `
-.c2 {
+exports[`Global Header matches the snapshot (desktop) 1`] = `
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -18,7 +18,7 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
   width: 100%;
 }
 
-.c2 > * + * {
+.c3 > * + * {
   margin-left: var(--spacing-1x);
 }
 
@@ -27,7 +27,7 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #012639;
+  background: #00273C;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -58,19 +58,18 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
   text-decoration: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1 > * {
   height: 100%;
+}
+
+.c2 {
+  height: 24px;
 }
 
 <header
@@ -84,20 +83,21 @@ exports[`Global Header Matches the snapshot (desktop) 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
-      style="height:100%"
+      icon-name="logo-equisoft-reversed"
     />
   </a>
   <div
-    class="c2"
+    class="c3"
   >
     Hello, World!
   </div>
 </header>
 `;
 
-exports[`Global Header Matches the snapshot (mobile) 1`] = `
-.c2 {
+exports[`Global Header matches the snapshot (mobile) 1`] = `
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -126,7 +126,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -137,53 +137,10 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c2 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #006296;
-  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -191,7 +148,36 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c6 {
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c7 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.2);
   height: calc(100vh - 56px);
@@ -210,12 +196,12 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   z-index: 100;
 }
 
-.c5 > .c5 {
+.c6 > .c6 {
   height: 100%;
   top: 0;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
 }
@@ -225,7 +211,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #012639;
+  background: #00273C;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -256,18 +242,17 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   text-decoration: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1 > * {
+  height: 100%;
+}
+
+.c2 {
   height: 100%;
 }
 
@@ -282,28 +267,46 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
-      style="height:100%"
+      icon-name="logo-equisoft-reversed"
     />
   </a>
   <button
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2 c3 c4"
+    class="c3 c4 c5"
     type="button"
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-menu"
+      fill="none"
       focusable="false"
-      height="24"
-      width="24"
-    />
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
   </button>
   <div
     aria-hidden="true"
-    class="c5 c6"
+    class="c6 c7"
     id="menu-drawer"
     origin="right"
     width="100%"
@@ -316,7 +319,7 @@ exports[`Global Header Matches the snapshot (mobile) 1`] = `
 `;
 
 exports[`Global Header mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
-.c2 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -345,7 +348,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -356,53 +359,10 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c2 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
-}
-
-.c3 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-  padding: 0;
-  width: var(--size-3x);
-}
-
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
-  outline: 2px solid #006296;
-  outline-offset: -2px;
-}
-
-.c3:hover,
-.c3[aria-expanded='true'] {
-  background-color: rgb(0 0 0 / 0.5);
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c3[aria-disabled='true'] {
-  background-color: transparent;
-  border-color: transparent;
-  color: #006296;
-  cursor: not-allowed;
 }
 
 .c3 > svg {
@@ -410,7 +370,36 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   width: var(--size-1halfx);
 }
 
-.c6 {
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c4:hover,
+.c4[aria-expanded='true'] {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c4[aria-disabled='true'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #006296;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c7 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 0.2);
   height: calc(100vh - 56px);
@@ -429,12 +418,12 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   z-index: 100;
 }
 
-.c5 > .c5 {
+.c6 > .c6 {
   height: 100%;
   top: 0;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
 }
@@ -444,7 +433,7 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #012639;
+  background: #00273C;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -475,18 +464,17 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   text-decoration: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 .c1 > * {
+  height: 100%;
+}
+
+.c2 {
   height: 100%;
 }
 
@@ -501,28 +489,46 @@ exports[`Global Header mobileDrawerContent prop adds a side drawer and burger bu
   >
     <svg
       aria-hidden="true"
+      class="c2"
       focusable="false"
-      style="height:100%"
+      icon-name="logo-equisoft-reversed"
     />
   </a>
   <button
     aria-controls="menu-drawer"
     aria-expanded="false"
     aria-label="Navigation"
-    class="c2 c3 c4"
+    class="c3 c4 c5"
     type="button"
   >
     <svg
       aria-hidden="true"
-      color="currentColor"
+      class="lucide lucide-menu"
+      fill="none"
       focusable="false"
-      height="24"
-      width="24"
-    />
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 5h16"
+      />
+      <path
+        d="M4 12h16"
+      />
+      <path
+        d="M4 19h16"
+      />
+    </svg>
   </button>
   <div
     aria-hidden="true"
-    class="c5 c6"
+    class="c6 c7"
     id="menu-drawer"
     origin="right"
     width="100%"

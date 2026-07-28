@@ -1,16 +1,7 @@
-import { MenuButton } from '@equisoft/design-elements-react';
+import { MenuButton, MenuOption } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import styled from 'styled-components';
-import { decorateWith } from './utils/decorator';
 
-const StyledDiv = styled.div`
-    display: flex;
-    height: 180px;
-    justify-content: center;
-    width: 100%;
-`;
-
-const options = [
+const options: MenuOption[] = [
     {
         label: 'Option 1',
         onClick: () => console.info('Option 1 clicked'),
@@ -23,12 +14,15 @@ const options = [
         label: 'Option 3',
         onClick: () => console.info('Option 3 clicked'),
     },
+    {
+        label: 'Option 4',
+        onClick: () => console.info('Option 4 clicked'),
+    },
 ];
 
 const MenuButtonMeta: Meta<typeof MenuButton> = {
     title: 'Components/Menu Button',
     component: MenuButton,
-    decorators: [decorateWith(StyledDiv)],
     args: {
         buttonType: 'primary',
     },
@@ -72,11 +66,19 @@ export const Tertiary: Story = {
     },
 };
 
+export const PrimaryDisabled: Story = {
+    ...MenuButtonMeta,
+    args: {
+        disabled: true,
+    },
+};
+
 export const IconPrimary: Story = {
     ...MenuButtonMeta,
     args: {
         iconName: 'moreVertical',
         buttonType: 'tertiary',
+        tooltip: { label: 'A tooltip', desktopPlacement: 'right' },
     },
 };
 

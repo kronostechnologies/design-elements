@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Chooser Button Matches the snapshot 1`] = `
-[
+<DocumentFragment>
   .c0 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -20,7 +20,7 @@ exports[`Chooser Button Matches the snapshot 1`] = `
     name="maritalStatus"
     type="radio"
     value="test value"
-  />,
+  />
   .c1 {
   --border-radius: 8px;
   -webkit-align-items: center;
@@ -59,23 +59,16 @@ exports[`Chooser Button Matches the snapshot 1`] = `
 
 input[type='checkbox']:checked + .c0,
 input[type='radio']:checked + .c1 {
-  background: #E0F0F9;
+  background: #E6EFF5;
   border-color: #006296;
-  color: #003A5A;
+  color: #003B5A;
 }
 
-.c1,
-input[type="checkbox"]:focus + .c1,
-input[type="radio"]:focus + .c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus,
-input[type="checkbox"]:focus + .c1,
-input[type="radio"]:focus + .c1 {
+.c1:focus-visible,
+input[type="checkbox"]:focus-visible + .c1,
+input[type="radio"]:focus-visible + .c1 {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -103,6 +96,6 @@ input[type='radio']:disabled + .c1 {
     for="uuid1"
   >
     Children
-  </label>,
-]
+  </label>
+</DocumentFragment>
 `;

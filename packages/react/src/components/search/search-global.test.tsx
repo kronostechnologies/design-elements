@@ -1,44 +1,44 @@
-import { shallow } from 'enzyme';
-import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { SearchGlobal } from './search-global';
 
 describe('SearchGlobal', () => {
-    it('should call onReset when search resets', () => {
+    it('should call onReset when search resets', async () => {
         const onReset = jest.fn();
-        const wrapper = shallow(<SearchGlobal onReset={onReset} />);
+        renderWithProviders(<SearchGlobal onReset={onReset} value="test" />);
 
-        getByTestId(wrapper, 'search-input').invoke('onReset')();
+        await userEvent.click(screen.getByTestId('search-reset'));
 
         expect(onReset).toHaveBeenCalledTimes(1);
     });
 
-    it('should call onChange when search changes', () => {
+    it('should call onChange when search changes', async () => {
         const onChange = jest.fn();
-        const value = jest.fn();
-        const event = jest.fn();
-        const wrapper = shallow(<SearchGlobal onChange={onChange} />);
+        renderWithProviders(<SearchGlobal onChange={onChange} />);
 
-        getByTestId(wrapper, 'search-input').invoke('onChange')(value, event);
+        const input = screen.getByTestId('search-input');
+        await userEvent.type(input, 'a');
 
-        expect(onChange).toHaveBeenCalledWith(value, event);
+        expect(onChange).toHaveBeenCalledWith('a', expect.anything());
     });
 
-    it('should call onSearch when search', () => {
+    it('should call onSearch when search', async () => {
         const onSearch = jest.fn();
-        const value = jest.fn();
-        const wrapper = shallow(<SearchGlobal onSearch={onSearch} />);
+        renderWithProviders(<SearchGlobal onSearch={onSearch} />);
 
-        getByTestId(wrapper, 'search-input').invoke('onSearch')(value);
+        const input = screen.getByTestId('search-input');
+        await userEvent.type(input, 'test');
+        await userEvent.click(screen.getByTestId('search-button'));
 
-        expect(onSearch).toHaveBeenCalledWith(value);
+        expect(onSearch).toHaveBeenCalledWith('test');
     });
 
-    test('Matches the snapshot', () => {
-        const wrapper = shallow(
-            <SearchGlobal defaultValue="foo" label="Search" onSearch={doNothing} />,
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(
+            <SearchGlobal defaultValue="foo" label="Search" onSearch={jest.fn()} />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

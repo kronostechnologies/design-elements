@@ -1,11 +1,12 @@
-import { VoidFunctionComponent } from 'react';
+import { act, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { type FC } from 'react';
 import { useToasts } from '../../hooks/use-toasts';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { actAndWaitForEffects, mountWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 
 const MESSAGE = 'A message';
 
-const TestConsumer: VoidFunctionComponent = () => {
+const TestConsumer: FC = () => {
     const { addToast, removeToast, toasts } = useToasts();
 
     return (
@@ -13,44 +14,40 @@ const TestConsumer: VoidFunctionComponent = () => {
             <button type="button" data-testid="btn-add" onClick={() => addToast('success', MESSAGE)} />
             <button type="button" data-testid="btn-remove" onClick={() => removeToast(toasts[0]?.id || '')} />
             {toasts.map((toast, i) => (
-                <div key={toast.id} data-testid={`toast-${i}`}>{toast.message}</div>
+                <div key={toast.id} data-testid={`toast-${i}-message`}>{toast.message}</div>
             ))}
         </>
     );
 };
 
 describe('ToastProvider', () => {
-    it('should add toast to context', () => {
-        const wrapper = mountWithProviders(<TestConsumer />);
+    it('should add toast to context', async () => {
+        renderWithProviders(<TestConsumer />);
 
-        getByTestId(wrapper, 'btn-add').simulate('click');
+        await userEvent.click(screen.getByTestId('btn-add'));
 
-        const toast = getByTestId(wrapper, 'toast-0');
-        expect(toast.text()).toBe(MESSAGE);
-        expect(toast.key()).toBeDefined();
+        const toast = screen.getByTestId('toast-0-message');
+        expect(toast).toHaveTextContent(MESSAGE);
     });
 
-    it('should remove toast from context', () => {
-        const wrapper = mountWithProviders(<TestConsumer />);
-        getByTestId(wrapper, 'btn-add').simulate('click');
+    it('should remove toast from context', async () => {
+        renderWithProviders(<TestConsumer />);
+        await userEvent.click(screen.getByTestId('btn-add'));
 
-        getByTestId(wrapper, 'btn-remove').simulate('click');
+        await userEvent.click(screen.getByTestId('btn-remove'));
 
-        const toast = getByTestId(wrapper, 'toast-0');
-        expect(toast.exists()).toBe(false);
+        expect(screen.queryByTestId('toast-0')).not.toBeInTheDocument();
     });
 
     it('should remove toast after dismiss time', async () => {
         jest.useFakeTimers();
+        const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+        renderWithProviders(<TestConsumer />);
+        await user.click(screen.getByTestId('btn-add'));
 
-        const wrapper = mountWithProviders(<TestConsumer />);
-        getByTestId(wrapper, 'btn-add').simulate('click');
+        act(() => jest.runAllTimers());
 
-        await actAndWaitForEffects(wrapper, () => {
-            jest.runAllTimers();
-        });
-
-        const toast = getByTestId(wrapper, 'toast-0');
-        expect(toast.exists()).toBe(false);
+        expect(screen.queryByTestId('toast-0')).not.toBeInTheDocument();
+        jest.useRealTimers();
     });
 });

@@ -1,5 +1,7 @@
 import { type Column, type RowSelectionState } from '@tanstack/react-table';
+import { CSSProperties } from 'react';
 import { type RowSelectionMode, type TableRowId } from '../table';
+import { CustomCell, TableColumn } from '../types';
 
 export function createRowSelectionStateFromSelectedRowIds(
     selectedRowIds: TableRowId[],
@@ -64,4 +66,22 @@ export function isLastColumnInAGroup<TData, TValue>(column: Column<TData, TValue
 
     const parentColumns = column.parent.columns;
     return column === parentColumns[parentColumns.length - 1];
+}
+
+export function findNearestTextAlign<TData extends object, TValue>(
+    column: CustomCell<TData, TValue>['column'],
+): CSSProperties['textAlign'] {
+    if (column.columnDef.textAlign) {
+        return column.columnDef.textAlign;
+    }
+
+    if (column.parent) {
+        const parentColumnDef = column.parent.columnDef as TableColumn<TData>;
+        if (parentColumnDef?.textAlign) {
+            return parentColumnDef.textAlign;
+        }
+        return findNearestTextAlign(column.parent as CustomCell<TData, TValue>['column']);
+    }
+
+    return undefined;
 }

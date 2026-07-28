@@ -1,17 +1,20 @@
-import { KeyboardEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { type FC, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
+import { useDropdown } from '../../hooks/use-dropdown';
+import { activeElementIsInside, getRootElement } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons';
-import { Icon } from '../icon/icon';
-import { NavList } from '../nav-list/nav-list';
-import { NavListOption } from '../nav-list/nav-list-option';
-import { RouteLink } from '../route-link/route-link';
+import { Icon } from '../icon';
+import { NavList, type NavListOption } from '../nav-list';
+import { RouteLink } from '../route-link';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
 export type BreadcrumbElement = NavListOption;
 
-interface BreadcrumbProps {
+export interface BreadcrumbProps {
     className?: string;
     history: BreadcrumbElement[];
 }
@@ -67,9 +70,18 @@ const StyledListWrapper = styled.div`
     z-index: 1;
 `;
 
-const StyledNavList = styled(NavList)`
+interface StyledNavListProps {
+    $left?: string;
+    $top?: string;
+}
+
+const StyledNavList = styled(NavList)<StyledNavListProps>`
+    left: ${(props) => props.$left};
     max-width: 350px;
+    position: absolute;
+    top: ${(props) => props.$top};
     width: initial;
+    z-index: 99998;
 `;
 
 const StyledIconButton = styled(IconButton)`
@@ -83,13 +95,17 @@ function truncateLabel(label: string): string {
     return label;
 }
 
-export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, history }) => {
+export const Breadcrumb: FC<BreadcrumbProps> = ({ className, history }) => {
     const [isOpen, setOpen] = useState(false);
-    const [focusedValue, setFocusedValue] = useState('');
-
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const navListRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
+    const shadowRoot = useShadowRoot();
+    const {
+        x,
+        y,
+        refs: { reference: buttonRef, floating: navListRef, ...refs },
+    } = useDropdown<HTMLButtonElement>({ open: isOpen, placement: 'bottom-end' });
+    const rootElement = getRootElement(shadowRoot);
+
     const {
         shownRoutes,
         hiddenRoutes,
@@ -105,16 +121,13 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
         if (shouldClose) {
             setOpen(false);
         }
-    }, [isOpen]);
+    }, [buttonRef, isOpen, navListRef]);
 
     useEffect(() => {
-        if (history.length > 0) {
-            setFocusedValue(isOpen ? history[1].value : '');
-        }
         document.addEventListener('mouseup', handleClickOutside);
 
         return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [handleClickOutside, isOpen, history]);
+    }, [handleClickOutside]);
 
     function handleNavListKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
@@ -124,7 +137,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
 
         if (isOpen) {
             setTimeout(() => {
-                const isFocusInsideNav = navRef.current?.contains(document.activeElement);
+                const isFocusInsideNav = activeElementIsInside(navListRef.current);
 
                 if (!isFocusInsideNav) {
                     setOpen(false);
@@ -155,7 +168,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
                     <StyledLi>
                         <StyledListWrapper>
                             <StyledIconButton
-                                ref={buttonRef}
+                                ref={refs.setReference}
                                 aria-expanded={isOpen}
                                 type="button"
                                 data-testid="ellipse-button"
@@ -164,16 +177,19 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
                                 label="breadcrumb-list"
                                 onClick={() => setOpen(!isOpen)}
                             />
-                            <StyledNavList
-                                ordered
-                                data-testid="nav-list"
-                                ref={navListRef}
-                                hidden={!isOpen}
-                                focusedValue={focusedValue}
-                                onChange={() => setOpen(false)}
-                                onKeyDown={handleNavListKeyDown}
-                                options={hiddenRoutes}
-                            />
+                            {isOpen && createPortal(
+                                <StyledNavList
+                                    ordered
+                                    data-testid="nav-list"
+                                    ref={refs.setFloating}
+                                    onChange={() => setOpen(false)}
+                                    onKeyDown={handleNavListKeyDown}
+                                    options={hiddenRoutes}
+                                    $left={`${x}px`}
+                                    $top={`${y}px`}
+                                />,
+                                rootElement,
+                            )}
                         </StyledListWrapper>
                         <StyledSeparatorIcon name="chevronRight" size="20" />
                     </StyledLi>
@@ -189,3 +205,5 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
         </nav>
     );
 };
+
+Breadcrumb.displayName = 'Breadcrumb';

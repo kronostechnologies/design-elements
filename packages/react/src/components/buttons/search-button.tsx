@@ -1,10 +1,10 @@
-import { MouseEvent, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent } from 'react';
 import styled from 'styled-components';
-import { Icon } from '../icon/icon';
-import { AbstractButton } from './abstract/abstract-button';
+import { Icon } from '../icon';
+import { AbstractButton } from './abstract';
 
 interface ButtonProps {
-    className: string;
+    className?: string;
     disabled?: boolean;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
@@ -40,10 +40,18 @@ const SearchIcon = styled(Icon).attrs({ name: 'search' })`
     width: 16px;
 `;
 
-export const SearchButton: VoidFunctionComponent<ButtonProps> = ({
-    className, disabled, onClick,
+export const SearchButton: FC<ButtonProps> = ({
+    className, disabled, onClick, ...rest
 }) => (
-    <StyledButton isMobile={false} className={className} disabled={disabled} onClick={onClick}>
+    <StyledButton
+        isMobile={false}
+        className={className}
+        disabled={disabled}
+        onClick={onClick}
+        {...rest /* eslint-disable-line react/jsx-props-no-spreading */}
+    >
         <SearchIcon />
     </StyledButton>
 );
+
+SearchButton.displayName = 'SearchButton';

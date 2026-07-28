@@ -48,6 +48,15 @@ export const WithTooltip: Story = {
     },
 };
 
+export const WithToggletip: Story = {
+    args: {
+        label: 'Planets',
+        toggletip: { label: 'Toggletip label', children: 'Toggletip content' },
+        groupName: 'planets-3',
+        buttons,
+    },
+};
+
 const controlledButtons = [
     { label: 'Earth', value: 'earth' },
     { label: 'Mars', value: 'mars' },

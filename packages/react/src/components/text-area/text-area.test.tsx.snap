@@ -1,7 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`TextArea Is disabled 1`] = `
-.c2 {
+exports[`TextArea matches the snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -10,7 +11,7 @@ exports[`TextArea Is disabled 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -32,7 +33,7 @@ input + .c1 {
 }
 
 .c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -114,43 +115,39 @@ input + .c1 {
   color: #1B1C1E;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 <div
-  class="c0"
-  data-testid="container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    class="c0"
+    data-testid="container"
   >
-    Comment (required)
-  </label>
-  <textarea
-    class="c3"
-    data-testid="textarea"
-    disabled=""
-    id="uuid1"
-    placeholder="Enter your comment"
-    required=""
-  >
-    foo
-  </textarea>
-</div>
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Comment (required)
+    </label>
+    <textarea
+      class="c3"
+      data-testid="some-data-testid"
+      id="uuid1"
+      placeholder="Enter your comment"
+      required=""
+    >
+      foo
+    </textarea>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`TextArea Matches the snapshot 1`] = `
-.c2 {
+exports[`TextArea matches the snapshot when disabled 1`] = `
+<DocumentFragment>
+  .c2 {
   color: #1B1C1E;
   display: block;
   font-size: 0.75rem;
@@ -159,7 +156,7 @@ exports[`TextArea Matches the snapshot 1`] = `
   -moz-letter-spacing: 0.02rem;
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -181,7 +178,7 @@ input + .c1 {
 }
 
 .c0 > :nth-child(1) {
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-quarter);
 }
 
 .c3 {
@@ -263,36 +260,33 @@ input + .c1 {
   color: #1B1C1E;
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
 <div
-  class="c0"
-  data-testid="container"
->
-  <label
-    class="c1 c2"
-    for="uuid1"
-    id="uuid1_label"
+    class="c0"
+    data-testid="container"
   >
-    Comment (required)
-  </label>
-  <textarea
-    class="c3"
-    data-testid="some-data-testid"
-    id="uuid1"
-    placeholder="Enter your comment"
-    required=""
-  >
-    foo
-  </textarea>
-</div>
+    <label
+      class="c1 c2"
+      for="uuid1"
+      id="uuid1_label"
+    >
+      Comment (required)
+    </label>
+    <textarea
+      class="c3"
+      data-testid="textarea"
+      disabled=""
+      id="uuid1"
+      placeholder="Enter your comment"
+      required=""
+    >
+      foo
+    </textarea>
+  </div>
+</DocumentFragment>
 `;

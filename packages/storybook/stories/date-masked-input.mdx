@@ -1,0 +1,25 @@
+import {ArgTypes, Canvas, Meta} from '@storybook/blocks';
+import * as DateMaskedInputStories from './date-masked-input.stories';
+import {DateMaskedInput} from "@equisoft/design-elements-react";
+
+<Meta of={DateMaskedInputStories} />
+
+# Date Masked Input
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Properties](#properties)
+
+## Usage
+
+## Properties
+<ArgTypes of={DateMaskedInput} />
+
+### Date Mask
+By default, the date format is `YYYY-MM-DD` and the separator is `-`. 
+
+<Canvas of={DateMaskedInputStories.DateMask} />
+
+
+### Controlled Date Mask
+
+<Canvas of={DateMaskedInputStories.ControlledDateMask} />

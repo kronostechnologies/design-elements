@@ -1,10 +1,10 @@
-import { FunctionComponent, useEffect, useMemo, useReducer } from 'react';
+import { FunctionComponent, PropsWithChildren, useEffect, useMemo, useReducer } from 'react';
 import { initialUsersContext } from '../constants';
 import { usersReducer, UsersDataContext, UsersDispatchContext } from '../state';
 import { UsersAction } from '../types';
 import { loadUsers } from '../utils';
 
-export const Provider: FunctionComponent = ({ children }) => {
+export const Provider: FunctionComponent<PropsWithChildren> = ({ children }) => {
     const [state, dispatch] = useReducer(usersReducer, initialUsersContext);
 
     useEffect(() => {

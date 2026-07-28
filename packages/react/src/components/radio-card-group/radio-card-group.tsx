@@ -1,16 +1,16 @@
-import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
-import { RadioCardProps, isRadioCard } from './radio-card';
+import React, { type FC, ReactElement, useMemo } from 'react';
+import { useDeviceContext } from '../device-context-provider';
+import { isRadioCard, RadioCardProps } from './radio-card';
 import { Fieldset, Legend } from './styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-interface RadioCardGroupProps {
+export interface RadioCardGroupProps {
     children: ReactElement<RadioCardProps> | ReactElement<RadioCardProps>[];
     className?: string,
     label?: string;
     orientation?: 'horizontal' | 'vertical';
 }
 
-export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
+export const RadioCardGroup: FC<RadioCardGroupProps> = ({
     children,
     className,
     orientation = 'vertical',
@@ -28,3 +28,5 @@ export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
         </Fieldset>
     );
 };
+
+RadioCardGroup.displayName = 'RadioCardGroup';

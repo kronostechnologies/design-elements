@@ -1,51 +1,50 @@
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { SkipLinkProps } from '../skip-link/skip-link';
+import { screen } from '@testing-library/react';
+import { SkipLinkProps } from '../skip-link';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { GlobalHeader } from './global-header';
 
 describe('Global Header', () => {
-    it('Matches the snapshot (desktop)', () => {
-        const tree = renderWithProviders(
+    it('matches the snapshot (desktop)', () => {
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('Matches the snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+    it('matches the snapshot (mobile)', () => {
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <GlobalHeader mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </GlobalHeader>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     describe('SkipLink', () => {
         it('should not exist when skipLink is not defined', () => {
-            const wrapper = shallow(
+            renderWithProviders(
                 <GlobalHeader>
                     Test
                 </GlobalHeader>,
             );
 
-            expect(getByTestId(wrapper, 'skip-link').exists()).toBe(false);
+            expect(screen.queryByTestId('skip-link')).not.toBeInTheDocument();
         });
 
         it('should receive props when skipLink is defined', () => {
@@ -54,47 +53,46 @@ describe('Global Header', () => {
                 onClick: jest.fn(),
             };
 
-            const wrapper = shallow(
+            renderWithProviders(
                 <GlobalHeader skipLink={skipLink}>
                     Test
                 </GlobalHeader>,
             );
 
-            const skipLinkRef = getByTestId(wrapper, 'skip-link');
-            expect(skipLinkRef.prop('href')).toBe(skipLink.href);
-            expect(skipLinkRef.prop('onClick')).toBe(skipLink.onClick);
+            const skipLinkElement = screen.getByRole('link', { name: /skip/i });
+            expect(skipLinkElement).toHaveAttribute('href', skipLink.href);
         });
     });
 
     describe('logo', () => {
         it('should use react-router-link when usesReactRouter is true', () => {
-            const wrapper = shallow(<GlobalHeader usesReactRouter>test</GlobalHeader>);
+            renderWithProviders(<GlobalHeader usesReactRouter>test</GlobalHeader>);
 
-            expect(getByTestId(wrapper, 'logo-react-router-link').exists()).toBe(true);
+            expect(screen.getByTestId('logo-react-router-link')).toBeInTheDocument();
         });
 
         it('should use html-link when usesReactRouter is false', () => {
-            const wrapper = shallow(<GlobalHeader usesReactRouter={false}>test</GlobalHeader>);
+            renderWithProviders(<GlobalHeader usesReactRouter={false}>test</GlobalHeader>);
 
-            expect(getByTestId(wrapper, 'logo-html-link').exists()).toBe(true);
+            expect(screen.getByTestId('logo-html-link')).toBeInTheDocument();
         });
 
         it('contains app-title when appTitleDesktop prop is set given device is desktop', () => {
-            const wrapper = mountWithProviders(
-                <GlobalHeader appTitleDesktop="test">test</GlobalHeader>,
-                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            renderWithProviders(
+                <GlobalHeader appTitleDesktop="some-title">test</GlobalHeader>,
+                'desktop',
             );
 
-            expect(getByTestId(wrapper, 'app-title').exists()).toBe(true);
+            expect(screen.getByTestId('app-title')).toHaveTextContent('some-title');
         });
 
         it('does not contain app-title when device is mobile', () => {
-            const wrapper = mountWithProviders(
+            renderWithProviders(
                 <GlobalHeader appTitleDesktop="test">test</GlobalHeader>,
-                { wrappingComponentProps: { staticDevice: 'mobile' } },
+                'mobile',
             );
 
-            expect(getByTestId(wrapper, 'app-title').exists()).toBe(false);
+            expect(screen.queryByTestId('app-title')).not.toBeInTheDocument();
         });
     });
 });

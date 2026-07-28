@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
+exports[`DropdownMenuButton matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -41,14 +41,9 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -63,13 +58,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -86,9 +76,52 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
-.c13 {
+.c6 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  z-index: 700;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  min-width: inherit;
+  text-transform: unset;
+  width: inherit;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c7 {
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: auto;
+  z-index: 99998;
+}
+
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -106,26 +139,21 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c13:hover {
+.c14:hover {
   color: #003A5A;
 }
 
-.c13:visited {
+.c14:visited {
   color: #006296;
 }
 
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus-visible {
+.c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
-.c19 {
+.c20 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -143,18 +171,13 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c19:focus-visible {
+.c20:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
-.c18 {
+.c19 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -166,7 +189,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   width: 1px;
 }
 
-.c17 {
+.c18 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -179,7 +202,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -190,17 +213,17 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: inline-flex;
 }
 
-.c14:visited svg {
+.c15:visited svg {
   color: #006296;
 }
 
-.c16 {
+.c17 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c15 {
+.c16 {
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -215,51 +238,46 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c15:focus {
+.c16:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #DBDEE1;
 }
 
-.c15:visited {
+.c16:visited {
   color: #006296;
   fill: #006296;
 }
 
-.c15:visited svg {
+.c16:visited svg {
   color: #006296;
   fill: #006296;
 }
 
-.c15[disabled] {
+.c16[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c7:not(:last-child)::after {
+.c8:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -271,7 +289,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   max-width: 100%;
 }
 
-.c11 {
+.c12 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -279,7 +297,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -292,13 +310,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -317,30 +334,25 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c8:focus {
+.c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #DBDEE1;
 }
 
-.c8[disabled],
-.c8[disabled] * {
+.c9[disabled],
+.c9[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -359,23 +371,18 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   white-space: nowrap;
 }
 
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c12:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: transparent;
 }
 
-.c12[disabled],
-.c12[disabled] * {
+.c13[disabled],
+.c13[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -383,83 +390,77 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
-<div
-  aria-label=""
-  class="c0"
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="true"
-    class="c1 c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      class="c4"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
+<body>
+  <div>
+    <div
+      aria-label=""
+      class="c0"
+      data-testid="dropdown-container"
+      id="uuid1"
+    >
+      <button
+        aria-expanded="true"
+        class="c1 c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up c4"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
   <div
-    class="c5 c6"
+    class="c5"
+    data-testid="toasts"
+  />
+  <div
+    class="c6 c7"
     data-testid="menu-dropdownMenu"
     id="uuid2"
   >
     <ul
       aria-labelledby="firstGroup"
-      class="c7"
+      class="c8"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionA"
           href="/testA"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionA
               </span>
@@ -470,19 +471,19 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionB"
           href="/testB"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionB
               </span>
@@ -493,19 +494,19 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionC"
           href="/testC"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionC
               </span>
@@ -516,20 +517,20 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c12"
+          class="c13"
           data-testid="listitem-optionD"
           disabled=""
           href="/testD"
           tabindex="-1"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionD
               </span>
@@ -540,31 +541,47 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
     </ul>
     <ul
       aria-labelledby="secondGroup"
-      class="c7"
+      class="c8"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/a"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalA
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -574,26 +591,42 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/b"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalB
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -603,26 +636,42 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/c"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalC
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -632,26 +681,42 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c19 c14 c15"
+          class="c20 c15 c16"
           disabled=""
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalD
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -660,10 +725,10 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</body>
 `;
 
-exports[`DropdownMenuButton Matches Snapshot 1`] = `
+exports[`DropdownMenuButton matches Snapshot 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -704,14 +769,9 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   user-select: none;
 }
 
-.c1 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c1:focus {
+.c1:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -726,13 +786,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
-  box-shadow: 0 0 0 2px #84C6EA;
+.c2:focus-visible {
+  box-shadow: 0 0 0 2px #99C0D5;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -749,9 +804,52 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   border-color: transparent;
   color: #006296;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
-.c13 {
+.c6 {
+  background-color: #FFFFFF;
+  border: 1px solid #878F9A;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
+  color: #1B1C1E;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  z-index: 700;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  min-width: inherit;
+  text-transform: unset;
+  width: inherit;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c7 {
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: auto;
+  z-index: 99998;
+}
+
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -769,26 +867,21 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c13:hover {
+.c14:hover {
   color: #003A5A;
 }
 
-.c13:visited {
+.c14:visited {
   color: #006296;
 }
 
-.c13 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c13:focus-visible {
+.c14:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
-.c19 {
+.c20 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -806,18 +899,13 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c19 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c19:focus-visible {
+.c20:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
-.c18 {
+.c19 {
   border: 0;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
@@ -829,7 +917,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   width: 1px;
 }
 
-.c17 {
+.c18 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -842,7 +930,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   width: 1rem;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -853,17 +941,17 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: inline-flex;
 }
 
-.c14:visited svg {
+.c15:visited svg {
   color: #006296;
 }
 
-.c16 {
+.c17 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c15 {
+.c16 {
   color: #1B1C1E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -878,51 +966,46 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c15 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c15:focus {
+.c16:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #DBDEE1;
 }
 
-.c15:visited {
+.c16:visited {
   color: #006296;
   fill: #006296;
 }
 
-.c15:visited svg {
+.c16:visited svg {
   color: #006296;
   fill: #006296;
 }
 
-.c15[disabled] {
+.c16[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   overflow-y: auto;
   padding: 0;
 }
 
-.c7:not(:last-child)::after {
+.c8:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -934,7 +1017,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   max-width: 100%;
 }
 
-.c11 {
+.c12 {
   line-height: 1.25rem;
   margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
@@ -942,7 +1025,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -955,13 +1038,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   font-size: 0.875rem;
-  height: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 var(--spacing-half);
 }
 
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -980,30 +1062,25 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c8:focus {
+.c9:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #DBDEE1;
 }
 
-.c8[disabled],
-.c8[disabled] * {
+.c9[disabled],
+.c9[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1022,23 +1099,18 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c12 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c12:focus {
+.c13:focus-visible {
   box-shadow: 0 0 0 0 transparent;
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: transparent;
 }
 
-.c12[disabled],
-.c12[disabled] * {
+.c13[disabled],
+.c13[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -1046,84 +1118,78 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #878F9A;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 0.2);
-  color: #1B1C1E;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
 }
 
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
-<div
-  aria-label=""
-  class="c0"
-  data-testid="dropdown-container"
-  id="uuid1"
->
-  <button
-    aria-expanded="false"
-    class="c1 c2 c3"
-    data-testid="menu-button"
-    type="button"
-  >
-    <svg
-      aria-hidden="true"
-      class="c4"
-      color="currentColor"
-      focusable="false"
-      height="16"
-      width="16"
-    />
-  </button>
+<body>
+  <div>
+    <div
+      aria-label=""
+      class="c0"
+      data-testid="dropdown-container"
+      id="uuid1"
+    >
+      <button
+        aria-expanded="true"
+        class="c1 c2 c3 eds-DropdownMenuButton-button"
+        data-testid="menu-button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-up c4"
+          fill="none"
+          focusable="false"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m18 15-6-6-6 6"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
   <div
-    class="c5 c6"
+    class="c5"
+    data-testid="toasts"
+  />
+  <div
+    class="c6 c7"
     data-testid="menu-dropdownMenu"
-    hidden=""
     id="uuid2"
+    style="width: auto;"
   >
     <ul
       aria-labelledby="firstGroup"
-      class="c7"
+      class="c8"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionA"
           href="/testA"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionA
               </span>
@@ -1134,19 +1200,19 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionB"
           href="/testB"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionB
               </span>
@@ -1157,19 +1223,19 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c8"
+          class="c9"
           data-testid="listitem-optionC"
           href="/testC"
           tabindex="0"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionC
               </span>
@@ -1180,20 +1246,20 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c12"
+          class="c13"
           data-testid="listitem-optionD"
           disabled=""
           href="/testD"
           tabindex="-1"
         >
           <div
-            class="c9"
+            class="c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <span
-                class="c11"
+                class="c12"
               >
                 optionD
               </span>
@@ -1204,31 +1270,47 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
     </ul>
     <ul
       aria-labelledby="secondGroup"
-      class="c7"
+      class="c8"
     >
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/a"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalA
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -1238,26 +1320,42 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/b"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalB
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -1267,26 +1365,42 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c13 c14 c15"
+          class="c14 c15 c16"
           href="https://external-link.com/c"
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalC
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -1296,26 +1410,42 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c19 c14 c15"
+          class="c20 c15 c16"
           disabled=""
           target="_blank"
         >
           <span
-            class="c16"
+            class="c17"
           >
             ExternalD
           </span>
           <svg
-            aria-label="opens in a new tab"
-            class="c17"
-            color="currentColor"
+            aria-hidden="true"
+            class="lucide lucide-external-link c18"
+            fill="none"
             focusable="false"
             height="16"
             role="img"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h6v6"
+            />
+            <path
+              d="M10 14 21 3"
+            />
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+          </svg>
           <span
-            class="c18"
+            class="c19"
             data-testid="screen-reader-text"
           >
             (opens in a new tab)
@@ -1324,5 +1454,5 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</body>
 `;

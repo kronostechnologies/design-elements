@@ -1,48 +1,52 @@
-import { mountWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { RadioButton } from './radio-button';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { doNothing } from '../../test-utils/callbacks';
 
-describe('Radio button', () => {
-    test('should have controllable data-testid', () => {
-        const wrapper = mountWithTheme(<RadioButton checked data-testid="radiobutton-testid" />);
+describe('RadioButton', () => {
+    it('should have controllable data-testid', () => {
+        renderWithProviders(<RadioButton checked id="test-id" onChange={jest.fn()} />);
 
-        expect(getByTestId(wrapper, 'radiobutton-testid').exists()).toBe(true);
+        expect(screen.getByTestId('radiobutton-test-id')).toBeInTheDocument();
     });
 
-    test('should be checked by default is defaultChecked prop is present', () => {
-        const wrapper = mountWithTheme(<RadioButton defaultChecked />);
+    it('should be checked by default is defaultChecked prop is present', () => {
+        renderWithProviders(<RadioButton defaultChecked />);
 
-        const input = wrapper.find('input[type="radio"]');
-        expect(input.prop('defaultChecked')).toBe(true);
+        const input = screen.getByRole('radio');
+
+        expect(input).toBeChecked();
     });
 
-    test('onChange callback should be called when radio button is checked', () => {
+    it('onChange callback should be called when radio button is checked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(<RadioButton onChange={callback} />);
+        renderWithProviders(<RadioButton onChange={callback} />);
 
-        wrapper.find('input[type="radio"]').simulate('change');
+        const input = screen.getByRole('radio');
+        await userEvent.click(input);
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('should be checked when checked prop is set to true', () => {
-        const wrapper = mountWithTheme(<RadioButton checked onChange={doNothing} />);
+    it('should be checked when checked prop is set to true', () => {
+        renderWithProviders(<RadioButton checked onChange={jest.fn()} />);
 
-        const input = wrapper.find('input[type="radio"]');
-        expect(input.prop('checked')).toBe(true);
+        const input = screen.getByRole('radio');
+
+        expect(input).toBeChecked();
     });
 
-    test('should be disabled when disabled prop is set to true', () => {
-        const wrapper = mountWithTheme(<RadioButton disabled />);
+    it('should be disabled when disabled prop is set to true', () => {
+        renderWithProviders(<RadioButton disabled />);
 
-        const input = wrapper.find('input[type="radio"]');
-        expect(input.prop('disabled')).toBe(true);
+        const input = screen.getByRole('radio');
+
+        expect(input).toBeDisabled();
     });
 
-    test('matches snapshot', () => {
-        const tree = mountWithTheme(<RadioButton label="This is a label" />);
+    it('matches snapshot', () => {
+        const { container } = renderWithProviders(<RadioButton label="This is a label" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

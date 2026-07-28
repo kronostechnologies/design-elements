@@ -1,17 +1,16 @@
-import type { Locale } from 'date-fns';
-import { enCA } from 'date-fns/locale';
-import { Month } from 'date-fns/types';
+import type { Locale, Month } from 'date-fns';
+import { enCA, frCA } from 'date-fns/locale';
 import { range } from '../../../utils/range';
-import { DropdownListOption } from '../../dropdown-list/dropdown-list';
+import { type DropdownListOption } from '../../dropdown-list';
 
 const monthNumbers: Month[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
-    const findLocale = localeArray.find((locale) => locale.code === localeCode);
-    return findLocale || enCA;
+export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale | string): Locale {
+    const foundLocale = localeArray.find((locale) => locale.code === localeCode);
+    return foundLocale || (localeCode?.startsWith('fr') ? frCA : enCA);
 }
 
 export function getLocaleMonthsShort(locale: Locale): string[] {
@@ -66,17 +65,18 @@ export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): 
     Object.assign(locale.options || {}, optionsOverride);
 }
 
-/**
- * The version of format as only numbers (ex: "yyyy-MM-dd" would become "yyyyMMdd").
- * Note that Month and Day are always converted to the 2 digits format.
- */
-export function getNumericalDateFormat(dateFormat: string): string | null {
-    if (/[^yMd/\-,. ]/g.test(dateFormat)) {
-        return null;
-    }
-
-    return dateFormat
-        .replace(/[^yMd]/g, '')
-        .replace(/M+/g, 'MM')
-        .replace(/d+/g, 'dd');
+// Allow input values of contiguous, space-, dash- or slash-separated numbers.
+// Formats with a separator also allow single-digit month and day.
+export function getAlternateDateFormats(dateFormat: string): string[] {
+    return [...new Set([
+        // The first format entry is used for formatting the input
+        dateFormat,
+        dateFormat.replace(/[^yMd]/g, ''),
+        dateFormat.replace(/[^yMd]/g, ' '),
+        dateFormat.replace(/[^yMd]/g, '-'),
+        dateFormat.replace(/[^yMd]/g, '/'),
+        dateFormat.replace(/[^yMd]/g, ' ').replace('MM', 'M').replace('dd', 'd'),
+        dateFormat.replace(/[^yMd]/g, '-').replace('MM', 'M').replace('dd', 'd'),
+        dateFormat.replace(/[^yMd]/g, '/').replace('MM', 'M').replace('dd', 'd'),
+    ])];
 }

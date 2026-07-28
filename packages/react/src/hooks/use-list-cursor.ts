@@ -1,9 +1,9 @@
-import { useCallback, useState } from 'react';
+import { type Dispatch, type SetStateAction, useCallback, useState } from 'react';
 import { findFirstElement, findLastElement, findNextElement, findPreviousElement } from '../utils/array';
 
 interface UseListCursorResponse<T> {
     selectedElement: T | undefined;
-    setSelectedElement: (element: T | undefined) => void;
+    setSelectedElement: Dispatch<SetStateAction<T | undefined>>;
     selectPrevious: () => T | undefined;
     selectNext: () => T | undefined;
     selectFirst: () => T | undefined;

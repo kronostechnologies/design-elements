@@ -2,15 +2,9 @@ import { FunctionComponent, PropsWithChildren, ReactElement, useCallback, useEff
 import ReactModal from 'react-modal';
 import { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import {
-    Footer,
-    Header,
-    Main,
-    StyledCloseButton,
-    StyledModal,
-} from './styled';
-import { ModalProps } from './types';
+import { useDeviceContext } from '../device-context-provider';
+import { Footer, Header, Main, StyledCloseButton, StyledModal } from './styled';
+import type { ModalProps } from './types';
 
 export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     appElement,
@@ -65,9 +59,10 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
         }
+        return () => {
+            document.body.style.removeProperty('overflow');
+        };
     }, [isOpen]);
 
     useEffect(() => {
@@ -158,3 +153,5 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
         </StyledModal>
     );
 };
+
+Modal.displayName = 'Modal';

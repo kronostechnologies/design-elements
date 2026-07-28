@@ -1,121 +1,125 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Avatar } from './avatar';
 
 describe('Avatar', () => {
-    test('should display expected username initials', () => {
-        const wrapper = mountWithProviders(<Avatar username="John Doe" />);
+    it('Matches Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" />);
 
-        const avatarInitials = getByTestId(wrapper, 'avatar-initials');
-
-        expect(avatarInitials.prop('children')).toBe('JD');
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" />);
+    it('Matches small avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="small" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches small avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="small" />);
+    it('Matches medium avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="medium" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches medium avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="medium" />);
+    it('Matches large avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="large" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches large avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="large" />);
+    it('Matches mobile Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" />, 'mobile');
+    it('Matches mobile small avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="small" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile small avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="small" />, 'mobile');
+    it('Matches mobile medium avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="medium" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile medium avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="medium" />, 'mobile');
+    it('Matches mobile large avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="large" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile large avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="large" />, 'mobile');
+    it('Matches small avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches small avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />);
+    it('Matches medium avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches medium avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />);
+    it('Matches large avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches large avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />);
+    it('Matches mobile avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" imgSrc="anImage" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" imgSrc="anImage" />, 'mobile');
+    it('Matches mobile small avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile small avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />, 'mobile');
+    it('Matches mobile medium avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile medium avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />, 'mobile');
+    it('Matches mobile large avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Matches mobile large avatar with image Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />, 'mobile');
+    it('Should use user icon when username is empty on desktop', () => {
+        const { container } = renderWithProviders(<Avatar username="" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Should use user icon when username is empty on desktop', () => {
-        const tree = renderWithProviders(<Avatar username="" />);
+    it('Should use bigger user icon when username is empty on mobile', () => {
+        const { container } = renderWithProviders(<Avatar username="" />, 'mobile');
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Should use bigger user icon when username is empty on mobile', () => {
-        const tree = renderWithProviders(<Avatar username="" />, 'mobile');
+    it('Should use user icon when username is undefined', () => {
+        const { container } = renderWithProviders(<Avatar />);
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('Should use user icon when username is undefined', () => {
-        const tree = renderWithProviders(<Avatar />);
+    it('should display expected username initials', () => {
+        renderWithProviders(<Avatar username="John Doe" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(screen.getByTestId('avatar-initials')).toHaveTextContent('JD');
+    });
+
+    it('renders custom icon when iconName is provided', () => {
+        const { container } = renderWithProviders(<Avatar iconName="organization" />);
+
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

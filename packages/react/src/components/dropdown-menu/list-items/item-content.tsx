@@ -1,8 +1,8 @@
-import { VoidFunctionComponent } from 'react';
+import { type FC } from 'react';
 import styled from 'styled-components';
-import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../../icon/icon';
-import { Lozenge } from '../../lozenge/lozenge';
+import { type DeviceContextProps } from '../../device-context-provider/device-context-provider';
+import { Icon, type IconName } from '../../icon';
+import { Lozenge } from '../../lozenge';
 
 export interface ItemContentProps {
     device: DeviceContextProps;
@@ -19,8 +19,8 @@ const StyledIcon = styled(Icon)`
     border: 1px solid ${({ theme }) => theme.component['dropdown-menu-item-content-icon-border-color']};
     border-radius: var(--border-radius);
     flex-shrink: 0;
-    margin: 2px var(--spacing-1x) 2px 0;
-    padding: var(--spacing-1x);
+    margin: 0 var(--spacing-half) 2px 0;
+    padding: var(--spacing-half);
 `;
 
 const StyledDiv = styled.div`
@@ -66,13 +66,12 @@ const LabelContainer = styled.div<{ $smallLabel: boolean, $device: DeviceContext
     display: flex;
     flex-flow: row wrap;
     font-size: ${getFontSize};
-    height: 100%;
     margin: 0;
     overflow: hidden;
     padding: 0 0 0 var(--spacing-half);
 `;
 
-export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
+export const ItemContent: FC<ItemContentProps> = ({
     device,
     description,
     iconName,
@@ -81,7 +80,7 @@ export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
     smallLabel = false,
 }) => (
     <>
-        { iconName && <StyledIcon aria-hidden="true" size="22" name={iconName} /> }
+        { iconName && <StyledIcon size="22" name={iconName} /> }
         <LabelContainer $device={device} $smallLabel={smallLabel}>
             <StyledDiv>
                 <StyledSpan>{label}</StyledSpan>
@@ -91,3 +90,5 @@ export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
         </LabelContainer>
     </>
 );
+
+ItemContent.displayName = 'ItemContent';

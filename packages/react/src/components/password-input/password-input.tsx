@@ -1,22 +1,15 @@
-import {
-    ChangeEvent,
-    useState,
-    VoidFunctionComponent,
-    useMemo,
-    FocusEvent,
-    useCallback,
-} from 'react';
+import { ChangeEvent, type FC, FocusEvent, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { Tooltip } from '../tooltip/tooltip';
-import { inputsStyle } from '../text-input/styles/inputs';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { inputsStyle } from '../text-input/styles';
+import { Tooltip } from '../tooltip';
 
-interface PasswordInputProps {
+export interface PasswordInputProps {
     id?: string;
     name?: string;
     label?: string;
@@ -38,7 +31,7 @@ const PasswordInputContainer = styled.div`
 `;
 
 const StyledInput = styled.input<{ isMobile: boolean }>`
-    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: false })};
+    ${({ theme, isMobile }) => inputsStyle({ theme, isMobile, isFocusable: true })};
     padding-right: var(--size-2x);
 `;
 
@@ -47,7 +40,7 @@ export const ShowPasswordButton = styled.div`
     right: 0.25rem;
 `;
 
-export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
+export const PasswordInput: FC<PasswordInputProps> = ({
     id: providedId,
     name,
     label,
@@ -126,3 +119,5 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
         </FieldContainer>
     );
 };
+
+PasswordInput.displayName = 'PasswordInput';

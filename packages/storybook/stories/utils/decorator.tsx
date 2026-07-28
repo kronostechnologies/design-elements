@@ -14,14 +14,15 @@ export function decorateWith(Component: ElementType): Decorator {
 
 export const LanguageSwitchDecorator: Decorator = (Story: ComponentType) => {
     const [lang, setLang] = useState('fr');
+    const otherLang = lang === 'fr' ? 'en' : 'fr';
 
     function handleClick(): void {
-        setLang(lang === 'fr' ? 'en' : 'fr');
+        setLang(otherLang);
     }
 
     return (
         <DesignSystem language={lang}>
-            <Button buttonType="primary" onClick={handleClick}>Toggle</Button>
+            <Button buttonType="primary" onClick={handleClick}>{`Toggle from ${lang} to ${otherLang}`}</Button>
             <Story />
         </DesignSystem>
     );

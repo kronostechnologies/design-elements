@@ -10,27 +10,29 @@
     "checkLicense": "yarn licenses audit --config=licenses.config.js --output-file=./build/license/license.xml --summary"
   },
   "devDependencies": {
-    "@equisoft/stylelint-config": "^4.0.0",
+    "@equisoft/stylelint-config": "5.2.9",
     "@types/eslint": "^8.56.10",
-    "@types/yargs": "^17.0.32",
-    "conventional-changelog-cli": "^5.0.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
-    "eslint": "^8.39.0",
-    "postcss": "^8.4.35",
-    "postcss-styled-syntax": "^0.6.4",
-    "stylelint": "^16.2.1",
-    "typescript": "~5.5.0",
-    "xmlbuilder": "^15.1.1",
-    "yargs": "^17.7.2"
+    "@types/yargs": "17.0.35",
+    "conventional-changelog-cli": "5.0.0",
+    "conventional-changelog-conventionalcommits": "10.2.1",
+    "eslint": "8.57.1",
+    "postcss": "8.5.20",
+    "postcss-styled-syntax": "0.7.2",
+    "stylelint": "17.14.1",
+    "typescript": "6.0.3",
+    "xmlbuilder": "15.1.1",
+    "yargs": "18.0.0"
   },
   "resolutions": {
-    "@types/react": "^17",
-    "react-docgen-typescript": "^2.0.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@types/react-router-dom": "5.3.3",
     "cheerio": "1.0.0-rc.12",
-    "webpack": "^5",
-    "react-datepicker": "patch:react-datepicker@npm%3A7.5.0#~/.yarn/patches/react-datepicker-npm-7.5.0-ccc658025d.patch",
-    "react-docgen-typescript-plugin": "patch:react-docgen-typescript-plugin@npm%3A1.0.6#~/.yarn/patches/react-docgen-typescript-plugin-npm-1.0.6-aa3dcb318a.patch"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-is": "^18",
+    "react-docgen-typescript": "^2.0.0",
+    "webpack": "^5"
   },
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.17.1"
 }

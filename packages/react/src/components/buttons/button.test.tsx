@@ -1,61 +1,37 @@
-import { shallow } from 'enzyme';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { doNothing } from '../../test-utils/callbacks';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { buttonTypesToDarkenEquisoftLogo } from '../icon/equisoft-logo';
 import { Button } from './button';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 describe('Button', () => {
-    test('onClick callback is called when clicked', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithProviders(<Button onClick={callback} buttonType="primary" label="Primary Button" />);
-
-        wrapper.simulate('click');
-
-        expect(callback).toHaveBeenCalledTimes(1);
-    });
-
-    test('onClick callback cannot be called when disabled', () => {
-        const callback = jest.fn();
-        const wrapper = mountWithProviders(
-            <Button
-                onClick={callback}
-                buttonType="primary"
-                disabled
-                label="Primary Button"
-            />,
-        );
-
-        wrapper.simulate('click');
-
-        expect(callback).toHaveBeenCalledTimes(0);
-    });
-
-    test('has primary disabled styles', () => {
-        const tree = renderWithProviders(
+    it('has primary disabled styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" disabled label="Primary Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has primary styles', () => {
-        const tree = renderWithProviders(
+    it('has primary styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has primary styles (inverted)', () => {
-        const tree = renderWithProviders(
+    it('has primary styles (inverted)', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has secondary styles', () => {
-        const tree = renderWithProviders(
+    it('has secondary styles', () => {
+        const { container } = renderWithProviders(
             <Button
                 onClick={doNothing}
                 buttonType="secondary"
@@ -63,57 +39,59 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has secondary styles (inverted)', () => {
-        const tree = renderWithProviders(
+    it('has secondary styles (inverted)', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="secondary" label="Secondary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has tertiary styles', () => {
-        const tree = renderWithProviders(<Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />);
+    it('has tertiary styles', () => {
+        const { container } = renderWithProviders(
+            <Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />,
+        );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has tertiary styles (inverted)', () => {
-        const tree = renderWithProviders(
+    it('has tertiary styles (inverted)', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has destructive styles', () => {
-        const tree = renderWithProviders(
+    it('has destructive styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has destructive styles (inverted)', () => {
-        const tree = renderWithProviders(
+    it('has destructive styles (inverted)', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" inverted />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has destructive-secondary styles', () => {
-        const tree = renderWithProviders(
+    it('has destructive-secondary styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="destructive-primary" label="Destructive Button" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has destructive-secondary styles (inverted)', () => {
-        const tree = renderWithProviders(
+    it('has destructive-secondary styles (inverted)', () => {
+        const { container } = renderWithProviders(
             <Button
                 onClick={doNothing}
                 buttonType="destructive-secondary"
@@ -122,92 +100,37 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has small styles', () => {
-        const tree = renderWithProviders(
+    it('has small styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has mobile styles', () => {
-        const tree = renderWithProviders(
+    it('has mobile styles', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('has small styles on mobile', () => {
-        const tree = renderWithProviders(
+    it('has small styles on mobile', () => {
+        const { container } = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('focusable button has no tabIndex prop', () => {
-        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
-
-        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBeNull();
-    });
-
-    test('non-focusable button has tabIndex=-1', () => {
-        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
-
-        expect(wrapper.getDOMNode().getAttribute('tabIndex')).toBe('-1');
-    });
-
-    test('focusable button has focus styles', () => {
-        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
-
-        expect(wrapper).toHaveStyleRule('outline', '2px solid #84C6EA', {
-            modifier: ':focus',
-        });
-    });
-
-    test('non-focusable button does not have focus styles', () => {
-        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
-
-        expect(wrapper).not.toHaveStyleRule('outline', 'none', {
-            modifier: ':focus',
-        });
-    });
-
-    test('icons can be placed left and right of the button', () => {
-        const wrapper = shallow(
-            <Button
-                buttonType="primary"
-                label="Primary Button"
-                leftIconName="chevronLeft"
-                rightIconName="chevronRight"
-            />,
-        );
-
-        expect(getByTestId(wrapper, 'left-icon')).toHaveLength(1);
-        expect(getByTestId(wrapper, 'right-icon')).toHaveLength(1);
-    });
-
-    test('icons can be placed on one side of the button', () => {
-        const wrapper = shallow(
-            <Button
-                buttonType="primary"
-                label="Primary Button"
-                rightIconName="chevronRight"
-            />,
-        );
-
-        expect(getByTestId(wrapper, 'left-icon')).toHaveLength(0);
-        expect(getByTestId(wrapper, 'right-icon')).toHaveLength(1);
-    });
-
-    test('has left and right icons', () => {
-        const tree = renderWithProviders(
+    it('has left and right icons', () => {
+        const { container } = renderWithProviders(
             <Button
                 buttonType="primary"
                 label="Primary Button"
@@ -217,6 +140,124 @@ describe('Button', () => {
             />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('calls onClick callback when clicked', async () => {
+        const callback = jest.fn();
+        renderWithProviders(<Button onClick={callback} buttonType="primary" label="Primary Button" />);
+
+        await userEvent.click(screen.getByRole('button', { name: 'Primary Button' }));
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not call onClick callback when disabled', async () => {
+        const callback = jest.fn();
+        renderWithProviders(
+            <Button
+                onClick={callback}
+                buttonType="primary"
+                disabled
+                label="Primary Button"
+            />,
+        );
+
+        await expect(userEvent.click(screen.getByRole('button', { name: 'Primary Button' }))).toReject();
+        expect(callback).toHaveBeenCalledTimes(0);
+    });
+
+    it('has no tabIndex prop when focusable', () => {
+        renderWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        const button = screen.getByRole('button', { name: 'Primary Button' });
+        expect(button).not.toHaveAttribute('tabIndex');
+    });
+
+    it('has tabIndex=-1 when non-focusable', () => {
+        renderWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        const button = screen.getByText('Primary Button');
+        expect(button).toHaveAttribute('tabIndex', '-1');
+    });
+
+    it('has focus styles when focusable', () => {
+        renderWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        const button = screen.getByRole('button', { name: 'Primary Button' });
+        expect(button).toMatchSnapshot();
+    });
+
+    it('does not have focus styles when non-focusable', () => {
+        renderWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        const button = screen.getByText('Primary Button');
+        expect(button).toMatchSnapshot();
+    });
+
+    it('renders icons on left and right', () => {
+        renderWithProviders(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                leftIconName="chevronLeft"
+                rightIconName="chevronRight"
+            />,
+        );
+
+        expect(screen.getByTestId('left-icon')).toBeInTheDocument();
+        expect(screen.getByTestId('right-icon')).toBeInTheDocument();
+    });
+
+    it('renders icon on left side only', () => {
+        renderWithProviders(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                leftIconName="chevronRight"
+            />,
+        );
+
+        expect(screen.queryByTestId('right-icon')).not.toBeInTheDocument();
+        expect(screen.getByTestId('left-icon')).toBeInTheDocument();
+    });
+
+    it('renders icon on right side only', () => {
+        renderWithProviders(
+            <Button
+                buttonType="primary"
+                label="Primary Button"
+                rightIconName="chevronRight"
+            />,
+        );
+
+        expect(screen.queryByTestId('left-icon')).not.toBeInTheDocument();
+        expect(screen.getByTestId('right-icon')).toBeInTheDocument();
+    });
+
+    buttonTypesToDarkenEquisoftLogo.forEach((buttonType) => {
+        it(`changes left equisoft icon color on hover ${buttonType} button`, () => {
+            const { container } = renderWithProviders(
+                <Button
+                    buttonType={buttonType}
+                    label="equisoft"
+                    leftIconName="equisoft"
+                />,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
+
+        it(`changes right equisoft icon color on hover ${buttonType} button`, () => {
+            const { container } = renderWithProviders(
+                <Button
+                    buttonType={buttonType}
+                    label="equisoft"
+                    rightIconName="equisoft"
+                />,
+            );
+
+            expect(container.firstChild).toMatchSnapshot();
+        });
     });
 });

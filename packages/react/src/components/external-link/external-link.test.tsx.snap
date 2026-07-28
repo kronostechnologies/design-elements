@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`External Link matches snapshot (disabled) 1`] = `
 .c0 {
@@ -19,14 +19,9 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -88,14 +83,30 @@ exports[`External Link matches snapshot (disabled) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
-    class="c3"
-    color="currentColor"
+    aria-hidden="true"
+    class="lucide lucide-external-link c3"
+    fill="none"
     focusable="false"
     height="16"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3h6v6"
+    />
+    <path
+      d="M10 14 21 3"
+    />
+    <path
+      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    />
+  </svg>
   <span
     class="c4"
     data-testid="screen-reader-text"
@@ -132,14 +143,9 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -204,26 +210,59 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-mail c2"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
   <span
     class="c3"
   >
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
-    class="c4"
-    color="currentColor"
+    aria-hidden="true"
+    class="lucide lucide-external-link c4"
+    fill="none"
     focusable="false"
     height="16"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3h6v6"
+    />
+    <path
+      d="M10 14 21 3"
+    />
+    <path
+      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    />
+  </svg>
   <span
     class="c5"
     data-testid="screen-reader-text"
@@ -260,14 +299,9 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -332,24 +366,57 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-mail c2"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
   <span
     class="c3"
   />
   <svg
-    aria-label="opens in a new tab"
-    class="c4"
-    color="currentColor"
+    aria-hidden="true"
+    class="lucide lucide-external-link c4"
+    fill="none"
     focusable="false"
     height="16"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3h6v6"
+    />
+    <path
+      d="M10 14 21 3"
+    />
+    <path
+      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    />
+  </svg>
   <span
     class="c5"
     data-testid="screen-reader-text"
@@ -386,14 +453,9 @@ exports[`External Link matches snapshot (without href) 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -458,26 +520,59 @@ exports[`External Link matches snapshot (without href) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c2"
-    color="currentColor"
+    class="lucide lucide-mail c2"
+    fill="none"
     focusable="false"
     height="16"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+    />
+    <rect
+      height="16"
+      rx="2"
+      width="20"
+      x="2"
+      y="4"
+    />
+  </svg>
   <span
     class="c3"
   >
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
-    class="c4"
-    color="currentColor"
+    aria-hidden="true"
+    class="lucide lucide-external-link c4"
+    fill="none"
     focusable="false"
     height="16"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3h6v6"
+    />
+    <path
+      d="M10 14 21 3"
+    />
+    <path
+      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    />
+  </svg>
   <span
     class="c5"
     data-testid="screen-reader-text"
@@ -514,14 +609,9 @@ exports[`External Link matches snapshot 1`] = `
   color: #006296;
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
 .c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -583,14 +673,30 @@ exports[`External Link matches snapshot 1`] = `
     External Link
   </span>
   <svg
-    aria-label="opens in a new tab"
-    class="c3"
-    color="currentColor"
+    aria-hidden="true"
+    class="lucide lucide-external-link c3"
+    fill="none"
     focusable="false"
     height="16"
     role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="16"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3h6v6"
+    />
+    <path
+      d="M10 14 21 3"
+    />
+    <path
+      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    />
+  </svg>
   <span
     class="c4"
     data-testid="screen-reader-text"

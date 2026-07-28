@@ -1,9 +1,10 @@
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { configure } from 'enzyme';
+/// <reference types="jest-extended" />
+import { TextEncoder } from 'util';
 // tslint:disable-next-line:no-import-side-effect
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
-configure({ adapter: new Adapter() });
+globalThis.TextEncoder = TextEncoder as typeof globalThis.TextEncoder;
 
 jest.mock('any.scss', () => ({
     use: jest.fn(),
@@ -25,5 +26,22 @@ jest.mock('react', () => ({
 
     beforeEach(() => {
         counter = 0;
+        document.body.replaceChildren();
+        document.body.removeAttribute('class');
+        document.body.removeAttribute('style');
     });
 }
+
+// Workaround for the offsetParent property in jsdom
+Object.defineProperty(HTMLElement.prototype, 'offsetParent', {
+    get() { return this.parentElement; },
+});
+
+global.ResizeObserver = class {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    observe(): void {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    unobserve(): void {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    disconnect(): void {}
+};

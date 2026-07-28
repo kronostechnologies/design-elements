@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 .c2 {
@@ -7,28 +7,23 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   background-color: #F3F9FD;
   border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  line-height: 24px;
-  padding: var(--spacing-2x) var(--spacing-3x);
-  position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-areas: 'icon content dismiss';
+  grid-template-columns: auto 1fr auto;
+  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -37,8 +32,8 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 1rem;
-  width: 1rem;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -46,10 +41,17 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   margin: 0;
 }
 
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
+  margin-bottom: 0;
+}
+
 .c3 {
-  box-sizing: border-box;
   grid-area: content;
-  margin-left: var(--spacing-1halfx);
 }
 
 <div
@@ -57,12 +59,30 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c1 c2"
-    color="currentColor"
+    class="lucide lucide-info c1 c2"
+    fill="none"
     focusable="false"
     height="20"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+    />
+    <path
+      d="M12 16v-4"
+    />
+    <path
+      d="M12 8h.01"
+    />
+  </svg>
   <div
     class="c3"
   >
@@ -89,28 +109,23 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   background-color: #F3F9FD;
   border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  line-height: 24px;
-  padding: var(--spacing-2x) var(--spacing-3x);
-  position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-areas: 'icon content dismiss';
+  grid-template-columns: auto 1fr auto;
+  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -119,8 +134,8 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 1rem;
-  width: 1rem;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -128,10 +143,17 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   margin: 0;
 }
 
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
+  margin-bottom: 0;
+}
+
 .c3 {
-  box-sizing: border-box;
   grid-area: content;
-  margin-left: var(--spacing-1halfx);
 }
 
 <div
@@ -139,12 +161,30 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c1 c2"
-    color="currentColor"
+    class="lucide lucide-info c1 c2"
+    fill="none"
     focusable="false"
     height="20"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="20"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+    />
+    <path
+      d="M12 16v-4"
+    />
+    <path
+      d="M12 8h.01"
+    />
+  </svg>
   <div
     class="c3"
   >
@@ -160,31 +200,27 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 .c2 {
   grid-area: icon;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
 }
 
 .c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   background-color: #F3F9FD;
   border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  line-height: 28px;
-  padding: var(--spacing-3x) var(--spacing-2x);
-  position: relative;
-  width: 100%;
   display: grid;
-  grid-template-areas: 'icon content' 'button button';
-  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  grid-template-areas: 'icon content dismiss';
+  grid-template-columns: auto 1fr auto;
+  padding: var(--spacing-3x);
 }
 
-.c0 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c0:focus {
+.c0:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -193,8 +229,8 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 1rem;
-  width: 1rem;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .c4 {
@@ -202,10 +238,17 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   margin: 0;
 }
 
+.c4 > *:first-child {
+  margin-top: 0;
+}
+
+.c4:last-child,
+.c4 > *:last-child {
+  margin-bottom: 0;
+}
+
 .c3 {
-  box-sizing: border-box;
   grid-area: content;
-  margin-left: var(--spacing-1halfx);
 }
 
 <div
@@ -213,12 +256,30 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 >
   <svg
     aria-hidden="true"
-    class="c1 c2"
-    color="currentColor"
+    class="lucide lucide-info c1 c2"
+    fill="none"
     focusable="false"
     height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
     width="24"
-  />
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+    />
+    <path
+      d="M12 16v-4"
+    />
+    <path
+      d="M12 8h.01"
+    />
+  </svg>
   <div
     class="c3"
   >

@@ -1,94 +1,113 @@
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { DeviceType } from '../device-context-provider';
 import { Tag, TagProps } from './tag';
 
 describe('Tag', () => {
     const tagSizes: TagProps['size'][] = ['small', 'medium'];
     const tagColors: TagProps['color'][] = ['default', 'decorative-01', 'decorative-02'];
+    const subtleValues: TagProps['subtle'][] = [true, false];
 
     tagSizes.forEach((size) => {
         tagColors.forEach((color) => {
-            describe(`Tag size=${size} color=${color}`, () => {
-                it('should call onRemove callback when delete-button is clicked', () => {
-                    const callback = jest.fn();
-                    const stopPropagation = jest.fn();
-                    const wrapper = shallow(
-                        <Tag size={size} color={color} value={{ label: 'Test' }} onRemove={callback} />,
-                    );
+            subtleValues.forEach((subtle) => {
+                const testProps: Partial<TagProps> = { color, size, subtle };
 
-                    getByTestId(wrapper, 'Test-remove-button').simulate('click', { stopPropagation });
+                describe(`Tag size=${size} color=${color} subtle=${subtle}`, () => {
+                    (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
+                        it(`matches snapshot (${deviceType})`, () => {
+                            const { container } = renderWithProviders(
+                                <Tag
+                                    {...testProps}
+                                    value={{ label: 'Test' }}
+                                />,
+                                deviceType,
+                            );
 
-                    expect(callback).toHaveBeenCalledTimes(1);
-                });
+                            expect(container.firstChild).toMatchSnapshot();
+                        });
 
-                it(
-                    'should have aria-hidden="false" and an icon aria-label when label is not the same as iconName',
-                    () => {
-                        const wrapper = shallow(
-                            <Tag size={size} color={color} iconName="home" value={{ label: 'Test' }} />,
+                        it(`matches snapshot (${deviceType} with icons)`, () => {
+                            const { container } = renderWithProviders(
+                                <Tag
+                                    {...testProps}
+                                    iconName="home"
+                                    value={{ label: 'Test' }}
+                                />,
+                                deviceType,
+                            );
+
+                            expect(container.firstChild).toMatchSnapshot();
+                        });
+
+                        it(`matches snapshot (${deviceType} removable)`, () => {
+                            const { container } = renderWithProviders(
+                                <Tag
+                                    {...testProps}
+                                    value={{ label: 'Test' }}
+                                    onRemove={jest.fn()}
+                                />,
+                                deviceType,
+                            );
+
+                            expect(container.firstChild).toMatchSnapshot();
+                        });
+
+                        it(`calls onRemove callback when delete-button is clicked (${deviceType})`, async () => {
+                            const callback = jest.fn();
+                            const user = userEvent.setup();
+                            renderWithProviders(
+                                <Tag
+                                    {...testProps}
+                                    value={{ label: 'Test' }}
+                                    onRemove={callback}
+                                />,
+                                deviceType,
+                            );
+
+                            await user.click(screen.getByTestId('Test-remove-button'));
+
+                            expect(callback).toHaveBeenCalledTimes(1);
+                        });
+
+                        it(
+                            `has aria-hidden="false" and an icon aria-label when label is not the same as iconName (${deviceType})`,
+                            () => {
+                                renderWithProviders(
+                                    <Tag
+                                        {...testProps}
+                                        iconName="home"
+                                        value={{ label: 'Test' }}
+                                    />,
+                                    deviceType,
+                                );
+
+                                const icon = screen.getByTestId('Test-icon');
+
+                                expect(icon).toHaveAttribute('aria-label', 'home');
+                                expect(icon).toHaveAttribute('aria-hidden', 'false');
+                            },
                         );
 
-                        const testIconWrapper = getByTestId(wrapper, 'Test-icon');
-                        expect(testIconWrapper.prop('aria-label')).toBe('home');
-                        expect(testIconWrapper.prop('aria-hidden')).toBe(false);
-                    },
-                );
+                        it(
+                            `has aria-hidden="true" and no label on icon when the label is the same as the iconName (${deviceType})`,
+                            () => {
+                                renderWithProviders(
+                                    <Tag
+                                        {...testProps}
+                                        iconName="home"
+                                        value={{ label: 'Home' }}
+                                    />,
+                                    deviceType,
+                                );
 
-                it(
-                    'should have aria-hidden="true" and no label on icon when the label is the same as the iconName',
-                    () => {
-                        const wrapper = shallow(
-                            <Tag size={size} color={color} iconName="home" value={{ label: 'Home' }} />,
+                                const icon = screen.getByTestId('Home-icon');
+
+                                expect(icon).not.toHaveAttribute('aria-label');
+                                expect(icon).toHaveAttribute('aria-hidden', 'true');
+                            },
                         );
-
-                        const testIconWrapper = getByTestId(wrapper, 'Home-icon');
-                        expect(testIconWrapper.prop('aria-label')).toBe(undefined);
-                        expect(testIconWrapper.prop('aria-hidden')).toBe(true);
-                    },
-                );
-
-                (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
-                    it(`matches snapshot (${deviceType})`, () => {
-                        const tree = renderWithProviders(
-                            <Tag
-                                size={size}
-                                color={color}
-                                value={{ label: 'Test' }}
-                            />,
-                            deviceType,
-                        );
-
-                        expect(tree).toMatchSnapshot();
-                    });
-
-                    it(`matches snapshot (${deviceType} with icons)`, () => {
-                        const tree = renderWithProviders(
-                            <Tag
-                                size={size}
-                                color={color}
-                                iconName="home"
-                                value={{ label: 'Test' }}
-                            />,
-                            deviceType,
-                        );
-
-                        expect(tree).toMatchSnapshot();
-                    });
-
-                    it(`matches snapshot (${deviceType} removable)`, () => {
-                        const tree = renderWithProviders(
-                            <Tag
-                                size={size}
-                                color={color}
-                                value={{ label: 'Test' }}
-                                onRemove={jest.fn()}
-                            />,
-                            deviceType,
-                        );
-
-                        expect(tree).toMatchSnapshot();
                     });
                 });
             });

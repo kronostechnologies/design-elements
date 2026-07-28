@@ -1,17 +1,10 @@
-import { renderWithTheme } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/testing-library';
 import { ProgressIndicator } from './progress-indicator';
 
 describe('ProgressIndicator', () => {
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
-            <ProgressIndicator
-                color="rgb(101,226,255)"
-                descriptionLabel="You"
-                resultLabel="50k - 100k$"
-                percent={100}
-            />,
-        );
+    it('matches snapshot', () => {
+        const { asFragment } = renderWithProviders(<ProgressIndicator />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

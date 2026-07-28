@@ -2,10 +2,10 @@ import { ComponentProps, FunctionComponent, PropsWithChildren, ReactElement, Rea
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
-import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { SkipLink, SkipLinkProps } from '../skip-link/skip-link';
-import { Content } from './global-header-content';
-import { Logo, LogoName } from './logo';
+import { type DeviceType, useDeviceContext } from '../device-context-provider';
+import { Logo, type LogoName, type LogoProps } from '../logo';
+import { SkipLink, type SkipLinkProps } from '../skip-link';
+import { GlobalHeaderContent } from './global-header-content';
 
 const getPadding = (device: DeviceType): string => {
     if (device === 'tablet') {
@@ -79,7 +79,20 @@ const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMo
     }
 `;
 
-interface GlobalHeaderProps {
+const smallLogos: LogoName[] = ['default', 'plan', 'connect', 'lifeguide'];
+
+function getLogoHeight({ name, mobile }: LogoProps): string {
+    if (name && !mobile && smallLogos.includes(name)) {
+        return '24px';
+    }
+    return '100%';
+}
+
+const StyledLogo = styled(Logo)`
+    height: ${getLogoHeight};
+`;
+
+export interface GlobalHeaderProps {
     /** Set the app name to get the proper logos */
     appName?: LogoName;
     /** Sets app title which appears next to logo on desktop */
@@ -111,7 +124,7 @@ export const GlobalHeader: FunctionComponent<PropsWithChildren<GlobalHeaderProps
     usesReactRouter = true,
 }) => {
     const { device, isMobile } = useDeviceContext();
-    const appLogo = customLogo ?? <Logo name={appName} mobile={isMobile} />;
+    const appLogo = customLogo ?? <StyledLogo name={appName} mobile={isMobile} />;
 
     function renderLogoContent(): ReactElement {
         return (
@@ -141,9 +154,11 @@ export const GlobalHeader: FunctionComponent<PropsWithChildren<GlobalHeaderProps
                 </HtmlLink>
             )}
 
-            <Content mobileDrawerContent={mobileDrawerContent}>
+            <GlobalHeaderContent mobileDrawerContent={mobileDrawerContent}>
                 {children}
-            </Content>
+            </GlobalHeaderContent>
         </Header>
     );
 };
+
+GlobalHeader.displayName = 'GlobalHeader';

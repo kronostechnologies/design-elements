@@ -1,7 +1,8 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import { DesignSystem } from '../design-system';
-import { NavListOption } from '../nav-list/nav-list-option';
+import { type NavListOption } from '../nav-list';
 import { Breadcrumb } from './breadcrumb';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
@@ -41,7 +42,7 @@ jest.mock('./use-breadcrumb-routes', () => ({
 
 describe('Breadcrumb', () => {
     describe('Snapshots', () => {
-        test('Matches snapshot (single entry)', () => {
+        it('matches snapshot (single entry)', () => {
             const history = [{
                 label: 'HOME',
                 href: '/home',
@@ -52,7 +53,7 @@ describe('Breadcrumb', () => {
                 hiddenRoutes: [],
                 overflow: { horizontal: false, vertical: false },
             });
-            const breadcrumb = render(
+            const { baseElement } = render(
                 <BrowserRouter>
                     <DesignSystem>
                         <Breadcrumb history={history} />
@@ -60,10 +61,10 @@ describe('Breadcrumb', () => {
                 </BrowserRouter>,
             );
 
-            expect(breadcrumb).toMatchSnapshot();
+            expect(baseElement).toMatchSnapshot();
         });
 
-        test('Matches snapshot (double entries)', () => {
+        it('matches snapshot (double entries)', () => {
             const history = [...defaultHistory];
             history.pop();
             jest.mocked(useBreadcrumbRoutes).mockReturnValue({
@@ -72,7 +73,7 @@ describe('Breadcrumb', () => {
                 overflow: { horizontal: false, vertical: false },
             });
 
-            const breadcrumb = render(
+            const { baseElement } = render(
                 <BrowserRouter>
                     <DesignSystem>
                         <Breadcrumb history={history} />
@@ -80,10 +81,10 @@ describe('Breadcrumb', () => {
                 </BrowserRouter>,
             );
 
-            expect(breadcrumb).toMatchSnapshot();
+            expect(baseElement).toMatchSnapshot();
         });
 
-        test('Matches snapshot (Three or more entries)', () => {
+        it('matches snapshot (Three or more entries)', () => {
             jest.mocked(useBreadcrumbRoutes).mockReturnValue({
                 shownRoutes: defaultHistory,
                 hiddenRoutes: [],
@@ -100,7 +101,7 @@ describe('Breadcrumb', () => {
             expect(breadcrumb).toMatchSnapshot();
         });
 
-        test('Matches snapshot (Dropdown open with long text)', () => {
+        it('matches snapshot (Dropdown open with long text)', async () => {
             const hiddenRoute: NavListOption = {
                 label: 'FOUR IS GOING TO BE TOO LONG FOR THE ACTUAL DROPDOWN SO IT WILL HAVE ELLIPSIS',
                 href: '/too-long',
@@ -115,7 +116,7 @@ describe('Breadcrumb', () => {
                 hiddenRoutes: [hiddenRoute],
                 overflow: { horizontal: true, vertical: false },
             });
-
+            const user = userEvent.setup();
             const { getByTestId } = render(
                 <BrowserRouter>
                     <DesignSystem>
@@ -124,17 +125,17 @@ describe('Breadcrumb', () => {
                 </BrowserRouter>,
             );
 
-            fireEvent.click(getByTestId('ellipse-button'));
+            await user.click(getByTestId('ellipse-button'));
         });
     });
 
-    test('Menu should be hidden by default', () => {
+    it('Menu should be hidden by default', () => {
         jest.mocked(useBreadcrumbRoutes).mockReturnValue({
             shownRoutes: shownOverflowHistory,
             hiddenRoutes: hiddenOverflowHistory,
             overflow: { horizontal: true, vertical: false },
         });
-        const { getByTestId } = render(
+        const { queryByTestId } = render(
             <BrowserRouter>
                 <DesignSystem>
                     <Breadcrumb
@@ -144,15 +145,16 @@ describe('Breadcrumb', () => {
             </BrowserRouter>,
         );
 
-        expect(getByTestId('nav-list').getAttribute('hidden')).toBe('');
+        expect(queryByTestId('nav-list')).not.toBeInTheDocument();
     });
 
-    test('Menu should be displayed when button is clicked', async () => {
+    it('Menu should be displayed when button is clicked', async () => {
         jest.mocked(useBreadcrumbRoutes).mockReturnValue({
             shownRoutes: shownOverflowHistory,
             hiddenRoutes: hiddenOverflowHistory,
             overflow: { horizontal: true, vertical: false },
         });
+        const user = userEvent.setup();
         const { queryByTestId, getByTestId } = render(
             <BrowserRouter>
                 <DesignSystem>
@@ -161,8 +163,8 @@ describe('Breadcrumb', () => {
             </BrowserRouter>,
         );
         await waitFor(() => expect(queryByTestId('ellipse-button')).toBeTruthy());
-        fireEvent.click(getByTestId('ellipse-button'));
+        await user.click(getByTestId('ellipse-button'));
 
-        expect(getByTestId('nav-list').getAttribute('hidden')).toBe(null);
+        expect(getByTestId('nav-list')).toBeInTheDocument();
     });
 });

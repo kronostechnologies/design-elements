@@ -1,15 +1,10 @@
-import {
-    forwardRef,
-    MouseEventHandler,
-    Ref,
-    SVGProps,
-    useCallback,
-} from 'react';
-import styled, { StyledProps } from 'styled-components';
+import { forwardRef, MouseEventHandler, Ref, SVGProps, useCallback } from 'react';
+import styled, { type StyledProps } from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
 
 export type TagColor =
     | 'default'
@@ -35,20 +30,23 @@ export interface TagValue {
 
 export interface TagProps {
     className?: string;
-    size?: TagSize;
-    value: TagValue;
-    iconName?: IconName;
-
     color?: TagColor;
+    iconName?: IconName;
+    labelRef?: Ref<HTMLSpanElement>;
+    size?: TagSize;
+    subtle?: boolean;
+    value: TagValue;
+
     onRemove?(tag: TagValue): void;
 }
 
 interface TagStylingProps {
-    $isMobile: boolean;
-    $tagSize: TagSize;
     $hasIcon: boolean;
-    $tagColor: TagColor;
+    $isMobile: boolean;
     $removable: boolean;
+    $subtle?: boolean;
+    $tagColor: TagColor;
+    $tagSize: TagSize;
 }
 
 function getFontSize({ $isMobile }: TagStylingProps): number {
@@ -94,10 +92,17 @@ function getTagColors(
     return theme.component[`tag-${$tagColor}-${$colorProperty}`];
 }
 
+function getBorder(props: StyledProps<TagStylingProps>): string {
+    if (props.$subtle) {
+        return 'none';
+    }
+    return `1px solid ${getTagColors(props, 'border-color')}`;
+}
+
 const TagContainer = styled.div<TagStylingProps>`
     align-items: center;
     background-color: ${(props) => getTagColors(props, 'background-color')};
-    border: 1px solid ${(props) => getTagColors(props, 'border-color')};
+    border: ${getBorder};
     border-radius: ${({ $tagSize, $isMobile }) => ($isMobile || isMedium($tagSize) ? 'var(--border-radius-1halfx)' : 'var(--border-radius)')};
     display: inline-flex;
     padding: ${getPadding};
@@ -147,14 +152,18 @@ const RemoveButton = styled(IconButton)<TagStylingProps>`
 
 export const Tag = forwardRef(({
     className,
+    labelRef,
     iconName,
     size = 'medium',
+    subtle = false,
     color = 'default',
     value,
     onRemove,
+    ...otherProps
 }: TagProps, ref: Ref<HTMLDivElement>) => {
     const { t } = useTranslation('tag');
     const { isMobile } = useDeviceContext();
+    const dataAttributes = useDataAttributes(otherProps);
 
     const isRemovable = !!onRemove;
     const hasIcon = !!iconName;
@@ -174,6 +183,8 @@ export const Tag = forwardRef(({
             $removable={isRemovable}
             $hasIcon={hasIcon}
             $tagColor={color}
+            $subtle={subtle}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {hasIcon && (
                 <StyledIcon
@@ -183,7 +194,6 @@ export const Tag = forwardRef(({
                     name={iconName}
                     size={getIconSize(isMobile)}
                     role="img"
-                    focusable
                     $isMobile={isMobile}
                     $tagSize={size}
                     $tagColor={color}
@@ -193,6 +203,7 @@ export const Tag = forwardRef(({
             )}
 
             <TagLabel
+                ref={labelRef}
                 $isMobile={isMobile}
                 $tagSize={size}
                 $tagColor={color}

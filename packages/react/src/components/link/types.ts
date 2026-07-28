@@ -1,7 +1,7 @@
-import { AnchorHTMLAttributes } from 'react';
-import { NavLink, Link as ReactRouterLink, NavLinkProps } from 'react-router-dom';
-import { ButtonProps } from '../buttons';
-import { IconName } from '../icon/icon';
+import { type AnchorHTMLAttributes } from 'react';
+import { Link as ReactRouterLink, NavLink, type NavLinkProps } from 'react-router-dom';
+import { type ButtonProps } from '../buttons';
+import { type IconName } from '../icon';
 
 type BaseLinkProps = Pick<AnchorHTMLAttributes<HTMLAnchorElement>,
     | 'id'
@@ -18,7 +18,7 @@ type BaseLinkProps = Pick<AnchorHTMLAttributes<HTMLAnchorElement>,
     | 'onKeyDown'
 > & Pick<NavLinkProps, 'end'>;
 
-type LinkButtonProps = Pick<ButtonProps,
+export type LinkButtonProps = Pick<ButtonProps,
     | 'autofocus'
     | 'buttonType'
     | 'disabled'
@@ -29,7 +29,25 @@ type LinkButtonProps = Pick<ButtonProps,
     | 'type'
 >;
 
-export interface LinkProps extends BaseLinkProps {
+interface IconOnlyLink {
+    children: never;
+
+    /** Icon Only Variant (with a tooltip)
+     *  Make sure to provide an icon name and a label (for the tooltip)
+     */
+    icon: {
+        name: IconName;
+        label: string;
+    };
+}
+
+interface WithIconLink {
+    icon?: {
+        name: IconName;
+    };
+}
+
+export type LinkProps = BaseLinkProps & {
     disabled?: boolean;
 
     /** Button Link Variant */
@@ -38,13 +56,5 @@ export interface LinkProps extends BaseLinkProps {
     /** External Link Variant */
     external?: boolean;
 
-    /** Icon Only Variant (with a tooltip)
-     *  Make sure to provide an icon name and a label (for the tooltip)
-     */
-    icon?: {
-        name: IconName;
-        label: string;
-    };
-
     routerLink?: typeof NavLink | typeof ReactRouterLink;
-}
+} & (IconOnlyLink | WithIconLink);

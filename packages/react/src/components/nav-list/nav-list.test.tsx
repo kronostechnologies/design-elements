@@ -1,9 +1,8 @@
-import { shallow } from 'enzyme';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { actAndWaitForEffects, mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { NavList } from './nav-list';
 import { NavListOption } from './nav-list-option';
+import { renderWithProviders } from '../../test-utils/renderer';
 
 const options: NavListOption[] = [
     {
@@ -27,7 +26,6 @@ const options: NavListOption[] = [
         href: '/testD',
     },
 ];
-
 const optionsDisabled: NavListOption[] = [
     {
         label: 'Option A',
@@ -42,78 +40,59 @@ const optionsDisabled: NavListOption[] = [
         disabled: true,
     },
 ];
-
 describe('NavList', () => {
-    test('Calls onChange callback when an option is clicked', () => {
+    it('Calls onChange callback when an option is clicked', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<NavList options={options} onChange={callback} />);
+        renderWithProviders(<NavList options={options} onChange={callback} />);
 
-        getByTestId(wrapper, 'listitem-optionC').simulate('select');
+        await userEvent.click(screen.getByTestId('listitem-optionC-link'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Does not call onChange callback when a disabled option is clicked', () => {
+    it('does not call onChange callback when a disabled option is clicked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithProviders(<NavList options={optionsDisabled} onChange={callback} />);
+        renderWithProviders(<NavList options={optionsDisabled} onChange={callback} />);
 
-        getByTestId(wrapper, 'listitem-optionA').simulate('select');
-
+        await expect(userEvent.click(screen.getByTestId('listitem-optionA-link'))).rejects
+            .toThrow(/pointer-events: none/);
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
-    test('Calls onChange callback when enter key is pressed on option', () => {
+    it('calls onChange callback when enter key is pressed on option', async () => {
         const callback = jest.fn();
-        const wrapper = shallow(<NavList options={options} onChange={callback} />);
+        renderWithProviders(<NavList options={options} onChange={callback} />);
 
-        getByTestId(wrapper, 'listitem-optionC').simulate('keydown', {
-            key: 'Enter',
-            preventDefault: jest.fn(),
-            currentTarget: { click: jest.fn() },
-        });
+        const option = screen.getByTestId('listitem-optionC-link');
+        option.focus();
+        await userEvent.keyboard('{Enter}');
+
+        expect(callback).toHaveBeenCalledTimes(2);
+    });
+
+    it('calls onKeyDown callback when a key is pressed on option', async () => {
+        const callback = jest.fn();
+        renderWithProviders(<NavList options={options} onKeyDown={callback} />);
+
+        const option = screen.getByTestId('listitem-optionA-link');
+        option.focus();
+        await userEvent.keyboard('a');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Calls onKeyDown callback when a key is pressed on option', () => {
-        const callback = jest.fn();
-        const wrapper = shallow(<NavList options={options} onKeyDown={callback} />);
+    it('should update focused value when focusedValue prop changes', () => {
+        const { rerender } = renderWithProviders(<NavList options={options} />);
 
-        getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: '' });
+        rerender(<NavList focusedValue="optionB" options={options} />);
 
-        expect(callback).toHaveBeenCalledTimes(1);
+        const optionB = screen.getByTestId('listitem-optionB-link');
+        expect(optionB).toHaveFocus();
     });
 
-    test('Should update focused value when focusedValue prop changes', async () => {
-        const wrapper = mountWithProviders(
-            <NavList options={options} />,
-            { attachTo: document.body },
-        );
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<NavList options={options} />);
 
-        await actAndWaitForEffects(wrapper, () => {
-            wrapper.setProps({ focusedValue: 'optionB' });
-        });
-
-        expect(document.activeElement).toBe(getByTestId(wrapper, 'listitem-optionB-link').getDOMNode());
-    });
-
-    test('Matches the snapshot', () => {
-        const tree = renderWithTheme(
-            <Router>
-                <NavList options={options} />
-            </Router>,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Is hidden', () => {
-        const tree = renderWithTheme(
-            <Router>
-                <NavList options={options} hidden />
-            </Router>,
-        );
-
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

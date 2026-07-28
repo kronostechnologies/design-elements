@@ -1,14 +1,12 @@
-import { MoneyInput } from '@equisoft/design-elements-react';
+import { Button, MoneyInput, type MoneyInputProps } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import { rawCodeParameters } from './utils/parameters';
+import { useCallback, useState } from 'react';
 
 const MoneyInputMeta: Meta<typeof MoneyInput> = {
     title: 'Components/Money Input',
     component: MoneyInput,
     args: {
-        label: 'Entrez un montant',
         hint: 'Hint',
-        locale: 'fr-CA',
     },
     argTypes: {
         onChange: {
@@ -29,12 +27,16 @@ type Story = StoryObj<typeof MoneyInput>;
 
 export const FrenchLocale: Story = {
     ...MoneyInputMeta,
+    args: {
+        label: 'Entrez un montant',
+        locale: 'fr-CA',
+    },
 };
 
 export const EnglishLocale: Story = {
     ...MoneyInputMeta,
     args: {
-        label: 'Choose a number',
+        label: 'Enter a number',
         locale: 'en-CA',
     },
 };
@@ -48,4 +50,36 @@ export const OnChangeCallback: Story = {
         },
     },
 };
-OnChangeCallback.parameters = rawCodeParameters;
+
+export const WithControlledValue: Story = {
+    ...MoneyInputMeta,
+    render: (args) => {
+        const [value, setValue] = useState<number | null>(null);
+        const handleChange: MoneyInputProps['onChange'] = useCallback((
+            newValue: number | null,
+            formattedValue: string,
+        ): void => {
+            setValue(newValue);
+            console.info({ value: newValue, formattedValue });
+        }, []);
+
+        return (
+            <>
+                <Button label="0" buttonType="primary" onClick={() => setValue(0)} />
+                <Button label="+1" buttonType="primary" onClick={() => setValue((value || 0) + 1)} />
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <MoneyInput {...args} value={value} onChange={handleChange} />
+            </>
+        );
+    },
+};
+
+export const WithToggletip: Story = {
+    ...MoneyInputMeta,
+    args: {
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
+        },
+    },
+};

@@ -1,14 +1,8 @@
-import {
-    AriaAttributes,
-    FunctionComponent,
-    PropsWithChildren,
-    ReactElement,
-    ReactNode,
-} from 'react';
+import { AriaAttributes, FunctionComponent, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
-import { IconButton } from '../buttons/icon-button';
+import { IconButton } from '../buttons';
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`
@@ -58,7 +52,7 @@ interface DotProps {
 
 const Dot = styled.button<DotProps>`
     background-color: ${({ active, theme }) => (active ? theme.component['carousel-dot-selected-background-color'] : theme.component['carousel-dot-unselected-background-color'])};
-    border: 1px solid  ${({ theme }) => theme.component['carousel-dot-border-color']};
+    border: 1px solid ${({ theme }) => theme.component['carousel-dot-border-color']};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -146,7 +140,7 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
                             key={i /* eslint-disable-line react/no-array-index-key */}
                             active={isActive}
                             aria-controls={carouselId}
-                            aria-disabled={isActive}
+                            aria-current={isActive}
                             onClick={() => setActive(i)}
                         />
                     );
@@ -226,3 +220,5 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
         </Main>
     );
 };
+
+Carousel.displayName = 'Carousel';

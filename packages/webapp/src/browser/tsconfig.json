@@ -1,13 +1,12 @@
 {
   "extends": "@equisoft/typescript-config/tsconfig.standards.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "jsx": "react-jsx",
     "module": "ES2020",
-    "moduleResolution": "Node",
+    "rootDir": "./",
     "target": "ES2020",
     "lib": [
       "dom",

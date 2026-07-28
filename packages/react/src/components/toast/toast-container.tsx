@@ -1,19 +1,14 @@
-import { useMemo, VoidFunctionComponent } from 'react';
-import styled, {
-    css,
-    FlattenInterpolation,
-    keyframes,
-    ThemedStyledProps,
-    ThemeProps,
-} from 'styled-components';
+import { type FC, useMemo } from 'react';
+import styled, { css, FlattenInterpolation, keyframes, ThemedStyledProps, ThemeProps } from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
-import { IconButton, IconButtonProps } from '../buttons/icon-button';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName, IconProps } from '../icon/icon';
-import { ToastPosition } from './toast-position';
-import { ToastType } from './toast-type';
+import { IconButton, type IconButtonProps } from '../buttons/icon-button';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName, type IconProps } from '../icon';
+import type { ToastPosition } from './toast-position';
+import type { ToastType } from './toast-type';
 
 interface ToastWrapperProps {
     isMobile: boolean;
@@ -120,31 +115,13 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 `;
 
-function getMessageLabel(type: ToastType): string {
-    switch (type) {
-        case 'discovery':
-            return 'discovery';
-        case 'success':
-            return 'success';
-        case 'warning':
-            return 'warning';
-        case 'alert':
-            return 'alert';
-        case 'neutral':
-        default:
-            return 'information';
-    }
-}
+type MessageIconProps = IconProps & Pick<ToastWrapperProps, 'type'> & { $isMobile: boolean };
 
-type MessageIconProps = IconProps & Pick<ToastWrapperProps, 'type'> & Pick<DeviceContextProps, 'isMobile'>;
-const MessageIcon = styled(Icon).attrs(({ type }: MessageIconProps) => ({
-    focusable: true,
-    'aria-label': getMessageLabel(type),
-}))<MessageIconProps>`
+const MessageIcon = styled(Icon)<MessageIconProps>`
     align-self: flex-start;
-    height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     margin-top: 0.25rem;
-    width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    width: ${({ $isMobile }) => ($isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
 function getToastIconName(type: ToastType): IconName {
@@ -171,26 +148,36 @@ interface ToastContainerProps {
     position: ToastPosition;
 }
 
-export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
+export const ToastContainer: FC<ToastContainerProps> = ({
     id,
     className,
     type = 'neutral',
     message,
     position,
+    ...rest
 }) => {
     const { t } = useTranslation('toast');
     const toastIconName = useMemo(() => getToastIconName(type), [type]);
     const { removeToast } = useToasts();
     const { isMobile } = useDeviceContext();
+    const dataAttributes = useDataAttributes(rest);
 
     return (
-        <ToastWrapper isMobile={isMobile} className={className} type={type} position={position} role="status">
+        <ToastWrapper
+            isMobile={isMobile}
+            className={className}
+            type={type}
+            position={position}
+            role="status"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...dataAttributes}
+        >
             <MessageIcon
                 name={toastIconName}
                 size="16"
                 role="img"
                 type={type}
-                isMobile={isMobile}
+                $isMobile={isMobile}
             />
             <StyledMessage $isMobile={isMobile}>
                 {message}
@@ -208,3 +195,5 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
         </ToastWrapper>
     );
 };
+
+ToastContainer.displayName = 'ToastContainer';

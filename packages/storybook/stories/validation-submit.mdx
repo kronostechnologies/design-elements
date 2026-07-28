@@ -1,0 +1,118 @@
+import { Meta } from '@storybook/blocks';
+
+
+<Meta title="Patterns/Forms/Validation on submit" />
+
+# Form Validation (On Submit)
+
+**Note**: 
+This documentation outlines the best practices for handling form submissions with invalid data. 
+It should be followed to ensure a consistent and accessible user experience. However, if project constraints or limitations (such as technical debt) make it impractical to implement this exact pattern, deviations may occur. In such cases, alternative patterns may be used while still aiming to maintain accessibility and usability standards.
+
+## Objective (problem to solve)
+
+Users need feedback when a form has been submitted with errors.
+
+## Solution (how to address the problem)
+
+Notify users by displaying an error summary (a sectional banner) before the form and identifying each invalid form control with clear feedback, including an error message and icon. Additionally, update the page's `<title>` and main heading `<h1>` to indicate an error has occurred.
+## Visual Design
+
+<figure>
+    <img src="doc/patterns/forms/Server-side-errors.png" alt="form with field in error displaying an error summary before the form" style={{ width: '600px' }} />
+    <figcaption>Figure 1: Error state form displayed after submission, highlighting individual fields with validation errors and an error summary positioned above the form for user guidance.</figcaption>
+</figure>
+
+## Behaviour
+
+1. Users enter invalid data in a form or left required field empty.
+2. Users submit the form by activating the submit button.
+3. The form fails validation upon submission.
+4. The page reloads, and the word "Error" is added to the `<title>` element.
+5. The word “Error” is added to the main heading of the page `<h1>`.
+6. An error summary (a sectional banner) is displayed above the form.
+    1. The focus is set to the error summary for immediate attention.
+    2. The heading of the summary indicates the number of errors in the form.
+    3. A list of all the errors is displayed, with each error including:
+        - A description of the error.
+        - Guidance on how to fix it.
+        - An anchor link to the specific form control to facilitate navigation.
+7. Each invalid form control have:
+    1. An error icon and message is displayed next to the form control.
+        - The error message describes the issue and offers guidance on how to resolve it.
+        - The error icon and message have a red color that meets the contrast ratio requirement of 3:1.
+    2. The form control's border turns red, ensuring the contrast ratio is 3:1 for visibility.
+    3. The form control has an `aria-invalid="true"` attribute, announcing the invalid state via screen readers on focus.
+    4. The form control also has an `aria-describedby="[id-of-the-error-message]"` attribute for screen readers to announce the specific error message when the control is focused.
+8. After correcting an error, the corresponding error message disappears, and its reference in the error summary is removed.
+
+## Usage Guidelines
+
+### When to use
+
+Use when users fill out and submit a form, and some of the form controls are invalid after validation.
+
+### When not to use
+
+Do not use with inline validation until the form is submitted.
+
+## Rationale (why this solution)
+
+When a form is submitted, the values are checked and a feedback is necessary to indicate to users if the form was completed correctly or not. When the validation fails and the page reloads with errors, it is necessary to inform all users of the current state of the page.
+
+### `<title>` element
+
+By updating the page's `<title>` element with the word "Error," screen reader users are immediately informed of the page's status. This change is one of the first thing announced when the page reloads, providing quick context.
+
+### Main heading
+
+Adding the word "Error" to the main heading `<h1>` helps all users understand that the page has errors after submission. This ensures that both sighted and screen reader users know that the form needs attention.
+
+### Error summary
+
+Displaying the error summary before the form and setting focus on it helps users quickly identify which fields require attention. Providing clear, actionable error descriptions with links to the relevant form controls simplifies the process of correcting errors.
+
+### Form controls
+
+By providing an error message next to each invalid form control, users can quickly identify where corrections are needed. The use of error icons and clear color contrast ensures that even colorblind users can understand the issue.
+
+### Screen Reader Considerations
+
+The `aria-invalid="true"` and the `aria-describedby="id of the error message"` attributes allows screen reader users to be notified of invalid form control and their respective error message when focused.
+
+## Accessibility
+
+- WCAG 2.1 Success Criterion [1.4.3 Contrast Minimum](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.1 Error Identification](https://www.w3.org/WAI/WCAG21/Understanding/error-identification.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.2 Labels or Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html) (Level A)
+- WCAG 2.1 Success Criterion [3.3.3 Error Suggestions](https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion.html) (Level AA)
+- WCAG 2.1 Success Criterion [3.3.4 Error Prevention (Legal, Financial, Data)](https://www.w3.org/WAI/WCAG21/Understanding/error-prevention-all.html) (Level AA)
+
+## Related components
+- Sectional Banner
+- Combobox
+- Date picker
+- Money input
+- Numeric input
+- Phone input
+- Stepper input
+- Text input
+- Text area
+
+## References
+
+- [https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc](https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc)
+- [https://usability.yale.edu/web-accessibility/articles/forms](https://usability.yale.edu/web-accessibility/articles/forms)
+- [https://webaim.org/techniques/formvalidation/](https://webaim.org/techniques/formvalidation/)
+- [https://www.w3.org/WAI/tutorials/forms/notifications/](https://www.w3.org/WAI/tutorials/forms/notifications/)
+- [https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/](https://www.levelaccess.com/level-access-news/how-to-provide-accessible-error-identification/)
+- [https://www.washington.edu/accessibility/checklist/form-validation/](https://www.washington.edu/accessibility/checklist/form-validation/)
+- [https://www.ibm.com/able/toolkit/design/ux/feedback/](https://www.ibm.com/able/toolkit/design/ux/feedback/)
+- [https://www.ibm.com/able/toolkit/develop/coding-interactions/dynamic-content/#provide-errors-accessibly](https://www.ibm.com/able/toolkit/develop/coding-interactions/dynamic-content/#provide-errors-accessibly)
+- [https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible](https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible)
+- [https://design-system.service.gov.uk/patterns/validation/](https://design-system.service.gov.uk/patterns/validation/)
+- [https://www.carbondesignsystem.com/patterns/forms-pattern/#errors-and-validation](https://www.carbondesignsystem.com/patterns/forms-pattern/#errors-and-validation)
+- [https://design.mindsphere.io/patterns/form-validation.html](https://design.mindsphere.io/patterns/form-validation.html)
+- [https://hds.hel.fi/patterns/form-validation](https://hds.hel.fi/patterns/form-validation)
+- [https://rei.github.io/rei-cedar-docs/patterns/form-validation/](https://rei.github.io/rei-cedar-docs/patterns/form-validation/)
+- [https://ui-patterns.com/patterns/InputFeedback](https://ui-patterns.com/patterns/InputFeedback)

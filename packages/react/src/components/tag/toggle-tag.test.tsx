@@ -1,65 +1,34 @@
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { DeviceType } from '../device-context-provider';
 import { ToggleTag, ToggleTagProps } from './toggle-tag';
 
 describe('ToggleTag', () => {
     const tagSizes: ToggleTagProps['size'][] = ['small', 'medium'];
     tagSizes.forEach((size) => {
         describe(`ToggleTag ${size}`, () => {
-            it('should call onClick callback when tag is clicked', () => {
-                const callback = jest.fn();
-                const wrapper = shallow(
-                    <ToggleTag size={size} value={{ label: 'Test' }} onClick={callback} />,
-                );
-
-                wrapper.simulate('click');
-
-                expect(callback).toHaveBeenCalledTimes(1);
-            });
-
-            it(
-                'should have aria-hidden="false" and an aria-label on icon when the label is not the same as iconName',
-                () => {
-                    const wrapper = shallow(
-                        <ToggleTag size={size} iconName="home" value={{ label: 'Test' }} />,
-                    );
-
-                    const testIconWrapper = getByTestId(wrapper, 'Test-icon');
-                    expect(testIconWrapper.prop('aria-label')).toBe('home');
-                    expect(testIconWrapper.prop('aria-hidden')).toBe(false);
-                },
-            );
-
-            it(
-                'should have aria-hidden="true" and no label on icon when the label is the same as the iconName',
-                () => {
-                    const wrapper = shallow(
-                        <ToggleTag size={size} iconName="home" value={{ label: 'Home' }} />,
-                    );
-
-                    const testIconWrapper = getByTestId(wrapper, 'Home-icon');
-                    expect(testIconWrapper.prop('aria-label')).toBe(undefined);
-                    expect(testIconWrapper.prop('aria-hidden')).toBe(true);
-                },
-            );
-
             (['mobile', 'desktop'] as DeviceType[]).forEach((deviceType) => {
                 it(`matches snapshot (${deviceType})`, () => {
-                    const tree = renderWithProviders(<ToggleTag size={size} value={{ label: 'Test' }} />, 'desktop');
+                    const { container } = renderWithProviders(
+                        <ToggleTag size={size} value={{ label: 'Test' }} />,
+                        'desktop',
+                    );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType})`, () => {
-                    const tree = renderWithProviders(<ToggleTag size={size} value={{ label: 'Test' }} />, 'mobile');
+                    const { container } = renderWithProviders(
+                        <ToggleTag size={size} value={{ label: 'Test' }} />,
+                        'mobile',
+                    );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType} with icons)`, () => {
-                    const tree = renderWithProviders(
+                    const { container } = renderWithProviders(
                         <ToggleTag
                             size={size}
                             iconName="home"
@@ -67,11 +36,11 @@ describe('ToggleTag', () => {
                         />,
                     );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
                 });
 
                 it(`matches snapshot (${deviceType} clickable)`, () => {
-                    const tree = renderWithProviders(
+                    const { container } = renderWithProviders(
                         <ToggleTag
                             size={size}
                             value={{ label: 'Test' }}
@@ -79,7 +48,46 @@ describe('ToggleTag', () => {
                         />,
                     );
 
-                    expect(tree).toMatchSnapshot();
+                    expect(container.firstChild).toMatchSnapshot();
+                });
+
+                it('calls onClick callback when tag is clicked', async () => {
+                    const callback = jest.fn();
+                    renderWithProviders(
+                        <ToggleTag size={size} value={{ label: 'Test' }} onClick={callback} />,
+                        deviceType,
+                    );
+
+                    await userEvent.click(screen.getByRole('button', { name: 'Test' }));
+
+                    expect(callback).toHaveBeenCalledTimes(1);
+                });
+
+                it(
+                    'has aria-hidden="false" and an aria-label on icon when the label is not the same as iconName',
+                    () => {
+                        renderWithProviders(
+                            <ToggleTag size={size} iconName="home" value={{ label: 'Test' }} />,
+                            deviceType,
+                        );
+
+                        const icon = screen.getByTestId('Test-icon');
+
+                        expect(icon).toHaveAttribute('aria-label', 'home');
+                        expect(icon).toHaveAttribute('aria-hidden', 'false');
+                    },
+                );
+
+                it('has aria-hidden="true" and no label on icon when the label is the same as the iconName', () => {
+                    renderWithProviders(
+                        <ToggleTag size={size} iconName="home" value={{ label: 'Home' }} />,
+                        deviceType,
+                    );
+
+                    const icon = screen.getByTestId('Home-icon');
+
+                    expect(icon).not.toHaveAttribute('aria-label');
+                    expect(icon).toHaveAttribute('aria-hidden', 'true');
                 });
             });
         });

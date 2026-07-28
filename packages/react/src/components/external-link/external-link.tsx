@@ -1,10 +1,10 @@
-import { MouseEvent, useCallback, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent, useCallback } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
-import { StyledLink } from '../route-link/styles/styled-link';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName } from '../icon';
+import { StyledLink } from '../route-link/styles';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
 
 const LeftIcon = styled(Icon)`
     align-self: center;
@@ -51,7 +51,7 @@ export interface ExternalLinkProps {
 /**
  * @deprecated This component is deprecated and will be removed in future releases. Use Link instead.
  */
-export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
+export const ExternalLink: FC<ExternalLinkProps> = ({
     className,
     disabled,
     href = '',
@@ -81,12 +81,14 @@ export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
             onClick={disabled ? undefined : handleClick}
             target={target}
         >
-            {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
+            {iconName && <LeftIcon name={iconName} size="16" />}
             <StyledLabel>{label}</StyledLabel>
-            <ExternalIcon aria-label={t('opensInNewTab')} name="externalLink" role="img" size="16" />
+            <ExternalIcon name="externalLink" role="img" size="16" />
             {opensInNewTab && (
                 <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
             )}
         </Link>
     );
 };
+
+ExternalLink.displayName = 'ExternalLink';

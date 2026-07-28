@@ -1,143 +1,390 @@
-import AlertCircle from 'feather-icons/dist/icons/alert-circle.svg';
-import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
-import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
-import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
-import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
-import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
-import ArrowUp from 'feather-icons/dist/icons/arrow-up.svg';
-import Bell from 'feather-icons/dist/icons/bell.svg';
-import Calendar from 'feather-icons/dist/icons/calendar.svg';
-import Check from 'feather-icons/dist/icons/check.svg';
-import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
-import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
-import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
-import ChevronUp from 'feather-icons/dist/icons/chevron-up.svg';
-import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
-import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
-import Circle from 'feather-icons/dist/icons/circle.svg';
-import Copy from 'feather-icons/dist/icons/copy.svg';
-import Edit from 'feather-icons/dist/icons/edit-2.svg';
-import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
-import Eye from 'feather-icons/dist/icons/eye.svg';
-import EyeOff from 'feather-icons/dist/icons/eye-off.svg';
-import Graph from 'feather-icons/dist/icons/bar-chart-2.svg';
-import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
-import Home from 'feather-icons/dist/icons/home.svg';
-import Info from 'feather-icons/dist/icons/info.svg';
-import Mail from 'feather-icons/dist/icons/mail.svg';
-import MapPin from 'feather-icons/dist/icons/map-pin.svg';
-import Maximize from 'feather-icons/dist/icons/maximize-2.svg';
-import Menu from 'feather-icons/dist/icons/menu.svg';
-import Minus from 'feather-icons/dist/icons/minus.svg';
-import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
-import MoreVertical from 'feather-icons/dist/icons/more-vertical.svg';
-import Phone from 'feather-icons/dist/icons/phone.svg';
-import PlusSign from 'feather-icons/dist/icons/plus.svg';
-import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
-import Search from 'feather-icons/dist/icons/search.svg';
-import Send from 'feather-icons/dist/icons/send.svg';
-import Settings from 'feather-icons/dist/icons/settings.svg';
-import Star from 'feather-icons/dist/icons/star.svg';
-import Trash from 'feather-icons/dist/icons/trash-2.svg';
-import User from 'feather-icons/dist/icons/user.svg';
-import Users from 'feather-icons/dist/icons/users.svg';
-import X from 'feather-icons/dist/icons/x.svg';
-import { VoidFunctionComponent } from 'react';
+import { type ComponentType, type FC, type SVGProps } from 'react';
+import {
+    AlertCircle,
+    AlertOctagon,
+    AlertTriangle,
+    ArchiveRestore,
+    Archive,
+    ArrowDown,
+    ArrowDownNarrowWide,
+    ArrowLeft,
+    ArrowRight,
+    ArrowUp,
+    ArrowUpNarrowWide,
+    Baseline,
+    BarChart,
+    Bell,
+    Blocks,
+    Bold,
+    Brain,
+    Briefcase,
+    Building,
+    Cake,
+    Calendar,
+    CalendarCheck,
+    CalendarPlus2,
+    CalendarSync,
+    ChartNoAxesColumn,
+    ChartPie,
+    Check,
+    CheckCircle,
+    ChevronDown,
+    ChevronLeft,
+    ChevronRight,
+    ChevronUp,
+    ChevronsDown,
+    ChevronsLeft,
+    ChevronsRight,
+    ChevronsUp,
+    ChevronsUpDown,
+    Cigarette,
+    Circle,
+    CircleArrowDown,
+    CircleArrowUp,
+    CircleDollarSign,
+    CircleMinus,
+    CirclePlus,
+    CircleStop,
+    CircleX,
+    Clipboard,
+    ClipboardCheck,
+    ClipboardList,
+    ClipboardPlus,
+    Clock,
+    CloudSync,
+    Contact,
+    CornerDownRight,
+    Copy,
+    Database,
+    DollarSign,
+    Download,
+    ExternalLink,
+    Eye,
+    EyeOff,
+    File,
+    FileImage,
+    FileText,
+    Files,
+    Flag,
+    Folder,
+    FolderOpen,
+    Frown,
+    Funnel,
+    Globe,
+    Grip,
+    GripVertical,
+    HandCoins,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
+    Heart,
+    HeartPulse,
+    HelpCircle,
+    Highlighter,
+    History,
+    Home,
+    Image,
+    Info,
+    Italic,
+    Languages,
+    Layers,
+    Lightbulb,
+    Link,
+    List,
+    ListOrdered,
+    Loader,
+    Lock,
+    LogIn,
+    LogOut,
+    Mail,
+    MailPlus,
+    MapPin,
+    Maximize2,
+    Megaphone,
+    Menu,
+    MessageCircle,
+    MessagesSquare,
+    Minimize2,
+    Minus,
+    Moon,
+    MoreHorizontal,
+    MoreVertical,
+    MoveDown,
+    MoveUp,
+    NotebookTabs,
+    NotepadText,
+    PanelLeft,
+    PanelRight,
+    PanelRightClose,
+    PanelRightOpen,
+    Paperclip,
+    Pencil,
+    PenLine,
+    Phone,
+    Plus,
+    Printer,
+    Receipt,
+    Redo2,
+    RefreshCw,
+    RemoveFormatting,
+    Repeat,
+    RotateCcw,
+    RotateCw,
+    Save,
+    Search,
+    Send,
+    Settings,
+    Settings2,
+    Share,
+    Share2,
+    Shield,
+    ShieldAlert,
+    ShieldCheck,
+    ShieldOff,
+    ShieldQuestionMark,
+    ShieldUser,
+    ShieldX,
+    Shuffle,
+    SlidersVertical,
+    SquarePen,
+    SquaresUnite,
+    Star,
+    Strikethrough,
+    Table,
+    Target,
+    TextAlignCenter,
+    TextAlignEnd,
+    TextAlignJustify,
+    TextAlignStart,
+    TextQuote,
+    ThumbsDown,
+    ThumbsUp,
+    Trash2,
+    TrendingUp,
+    Type,
+    Umbrella,
+    Underline,
+    Undo2,
+    Unlink,
+    Unlock,
+    Upload,
+    UploadCloud,
+    User,
+    UserRoundPlus,
+    Users,
+    VenusAndMars,
+    Video,
+    Wallet,
+    Wrench,
+    X,
+} from 'lucide-react';
 import AlertFilled from '../../icons/alert-filled.svg';
-import ArrowDownCircle from '../../icons/arrow-down-circle.svg';
-import ArrowUpCircle from '../../icons/arrow-up-circle.svg';
-import Bento from '../../icons/bento.svg';
-import Contracts from '../../icons/contracts.svg';
-import Files from '../../icons/files.svg';
-import History from '../../icons/history.svg';
-import Link from '../../icons/link.svg';
-import Lightbulb from '../../icons/lightbulb.svg';
-import Megaphone from '../../icons/megaphone.svg';
-import Open from '../../icons/open.svg';
-import Organization from '../../icons/organization.svg';
-import Reorder from '../../icons/reorder.svg';
 import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
-import CaretDown from '../../icons/caret-down.svg';
-import CaretRight from '../../icons/caret-right.svg';
-import Unlink from '../../icons/unlink.svg';
-import Export from '../../icons/export.svg';
-import Table from '../../icons/table.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
     alertFilled: AlertFilled,
-    alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
+    alertShield: ShieldAlert,
+    alertTriangle: AlertTriangle,
+    archive: Archive,
+    arrowAscending: ArrowDownNarrowWide,
+    arrowDescending: ArrowUpNarrowWide,
     arrowDown: ArrowDown,
+    arrowDownCircle: CircleArrowDown,
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
     arrowUp: ArrowUp,
-    arrowDownCircle: ArrowDownCircle,
-    arrowUpCircle: ArrowUpCircle,
+    arrowUpCircle: CircleArrowUp,
+    baseline: Baseline,
+    barChart: BarChart,
     bell: Bell,
-    bento: Bento,
+    bento: Grip,
+    blocks: Blocks,
+    bold: Bold,
+    brain: Brain,
+    briefcase: Briefcase,
+    cake: Cake,
     calendar: Calendar,
-    caretDown: CaretDown,
-    caretRight: CaretRight,
+    calendarAdd: CalendarPlus2,
+    calendarCheck: CalendarCheck,
+    calendarSync: CalendarSync,
     check: Check,
+    checkCircle: CheckCircle,
     chevronDown: ChevronDown,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
     chevronUp: ChevronUp,
+    chevronsDown: ChevronsDown,
     chevronsLeft: ChevronsLeft,
     chevronsRight: ChevronsRight,
+    chevronsUp: ChevronsUp,
+    cigarette: Cigarette,
     circle: Circle,
-    contracts: Contracts,
+    clipboard: Clipboard,
+    clipboardCheck: ClipboardCheck,
+    clipboardList: ClipboardList,
+    clipboardPlus: ClipboardPlus,
+    clock: Clock,
+    cloudSync: CloudSync,
+    contact: Contact,
     copy: Copy,
-    edit: Edit,
+    cornerDownRight: CornerDownRight,
+    database: Database,
+    dollarSign: DollarSign,
+    dollarSignCircle: CircleDollarSign,
+    download: Download,
+    drag: GripVertical,
+    edit: Pencil,
+    editShape: SquarePen,
     equisoft: Equisoft,
     externalLink: ExternalLink,
-    export: Export,
+    export: Share,
     eye: Eye,
     eyeOff: EyeOff,
+    file: File,
+    fileImage: FileImage,
     files: Files,
-    graph: Graph,
+    fileText: FileText,
+    flag: Flag,
+    folder: Folder,
+    frown: Frown,
+    funnel: Funnel,
+    gender: VenusAndMars,
+    globe: Globe,
+    graph: ChartNoAxesColumn,
+    handCoins: HandCoins,
+    heading1: Heading1,
+    heading2: Heading2,
+    heading3: Heading3,
+    heading4: Heading4,
+    heading5: Heading5,
+    heading6: Heading6,
+    heart: Heart,
+    heartPulse: HeartPulse,
     helpCircle: HelpCircle,
+    highlighter: Highlighter,
     history: History,
     home: Home,
+    image: Image,
     info: Info,
-    link: Link,
+    italic: Italic,
+    languages: Languages,
+    layers: Layers,
     lightbulb: Lightbulb,
+    link: Link,
+    list: List,
+    listOrdered: ListOrdered,
+    loader: Loader,
+    lock: Lock,
+    logIn: LogIn,
+    logOut: LogOut,
     mail: Mail,
+    mailPlus: MailPlus,
     mapPin: MapPin,
-    maximize: Maximize,
+    maximize: Maximize2,
     megaphone: Megaphone,
     menu: Menu,
+    merge: SquaresUnite,
+    messageCircle: MessageCircle,
+    messagesSquare: MessagesSquare,
+    minimize: Minimize2,
     minus: Minus,
+    minusCircle: CircleMinus,
+    moon: Moon,
     moreHorizontal: MoreHorizontal,
     moreVertical: MoreVertical,
-    organization: Organization,
-    open: Open,
+    notepadText: NotepadText,
+    notebookTabs: NotebookTabs,
+    open: FolderOpen,
+    organization: Building,
+    panelLeft: PanelRightOpen,
+    panelRight: PanelRightClose,
+    panelRightClose: PanelRightClose,
+    panelRightOpen: PanelRightOpen,
+    paperclip: Paperclip,
+    penLine: PenLine,
     phone: Phone,
-    plusSign: PlusSign,
-    reorder: Reorder,
+    pieChart: ChartPie,
+    plus: Plus,
+    plusCircle: CirclePlus,
+    plusSign: Plus,
+    printer: Printer,
+    receipt: Receipt,
+    redo: Redo2,
+    removeFormatting: RemoveFormatting,
+    reorder: ChevronsUpDown,
+    reorderDown: MoveDown,
+    reorderUp: MoveUp,
+    repeat: Repeat,
+    restore: ArchiveRestore,
+    rotateCcw: RotateCcw,
+    rotateCw: RotateCw,
+    save: Save,
     search: Search,
     send: Send,
     settings: Settings,
+    settingsSliders: Settings2,
+    share: Share2,
+    shield: Shield,
+    shieldCheck: ShieldCheck,
+    shieldOff: ShieldOff,
+    shieldQuestionMark: ShieldQuestionMark,
+    shieldUser: ShieldUser,
+    shieldX: ShieldX,
+    shuffle: Shuffle,
+    sidebarLeft: PanelLeft,
+    sidebarRight: PanelRight,
     star: Star,
+    stopCircle: CircleStop,
+    strikethrough: Strikethrough,
     table: Table,
-    transfer: Transfer,
-    trash: Trash,
+    target: Target,
+    textAlignCenter: TextAlignCenter,
+    textAlignEnd: TextAlignEnd,
+    textAlignJustify: TextAlignJustify,
+    textAlignStart: TextAlignStart,
+    textQuote: TextQuote,
+    thumbsDown: ThumbsDown,
+    thumbsUp: ThumbsUp,
+    transfer: RefreshCw,
+    trash: Trash2,
+    trendingUp: TrendingUp,
+    type: Type,
+    umbrella: Umbrella,
+    undo: Undo2,
+    underline: Underline,
     unlink: Unlink,
+    unlock: Unlock,
+    upload: Upload,
+    uploadCloud: UploadCloud,
     user: User,
+    userRoundPlus: UserRoundPlus,
     users: Users,
+    verticalSliders: SlidersVertical,
+    video: Video,
+    wallet: Wallet,
     warningFilled: WarningFilled,
+    wrench: Wrench,
     x: X,
+    xCircle: CircleX,
 } as const;
 
 export type IconName = keyof typeof iconMapping;
 
-export interface IconProps {
+/**
+ * A custom SVG icon: either a `.svg` file imported as a component (via SVGR)
+ * or any React component that renders an `<svg>` element. Both `lucide-react`
+ * icons and SVGR imports satisfy this type.
+ */
+export type SvgIconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+interface BaseIconProps {
     className?: string;
-    /** Name of the icon, has to be in IconName */
-    name: IconName;
-    focusable?: boolean;
     /**
      * Size will affect both width and height
      * @default 24
@@ -151,15 +398,33 @@ export interface IconProps {
     role?: string;
 }
 
-export const Icon: VoidFunctionComponent<IconProps> = ({
+interface NamedIconProps extends BaseIconProps {
+    /** Name of the icon, has to be in IconName */
+    name: IconName;
+    svg?: never;
+}
+
+interface CustomIconProps extends BaseIconProps {
+    /**
+     * A custom SVG to render instead of a library icon: a `.svg` import (SVGR)
+     * or any SVG React component. Mutually exclusive with `name`.
+     */
+    svg: SvgIconComponent;
+    name?: never;
+}
+
+export type IconProps = NamedIconProps | CustomIconProps;
+
+export const Icon: FC<IconProps> = ({
     className,
     name,
+    svg: SvgComponent,
     size = '24',
     color = 'currentColor',
     role,
     ...props
 }: IconProps) => {
-    const Component = iconMapping[name];
+    const Component = SvgComponent ?? (name !== undefined ? iconMapping[name] : undefined);
 
     if (!Component) {
         return null;
@@ -167,8 +432,13 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
 
     return (
         <Component
+            // SVG icons are considered decorative by default and invisible to assistive technologies. Focusable
+            // components that use icons (such as IconButton) should provide their own role and aria attributes.
+            aria-hidden
             className={className}
             height={size}
+            // This attribute is used to provide backward-compatibility with IE and early versions of Edge,
+            // in which SVG elements would receive focus by default. Using focusable="false" disabled this behavior.
             focusable={false}
             width={size}
             color={color}
@@ -177,3 +447,5 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
         />
     );
 };
+
+Icon.displayName = 'Icon';

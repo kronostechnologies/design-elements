@@ -1,158 +1,126 @@
-import { shallow } from 'enzyme';
-import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { SearchInput } from './search-input';
 
 describe('SearchInput', () => {
     describe('icon', () => {
         it('should display icon when hasIcon is true', () => {
-            const wrapper = shallow(
-                <SearchInput hasIcon />,
-            );
+            renderWithProviders(<SearchInput hasIcon />);
 
-            const searchIcon = getByTestId(wrapper, 'search-icon');
-
-            expect(searchIcon.length).toBe(1);
+            expect(screen.getByTestId('search-icon')).toBeInTheDocument();
         });
 
         it('should not display icon when hasIcon is false', () => {
-            const wrapper = shallow(
-                <SearchInput hasIcon={false} />,
-            );
+            renderWithProviders(<SearchInput hasIcon={false} />);
 
-            const searchIcon = getByTestId(wrapper, 'search-icon');
-
-            expect(searchIcon.length).toBe(0);
+            expect(screen.queryByTestId('search-icon')).not.toBeInTheDocument();
         });
     });
 
     describe('button', () => {
         it('should display button when hasButton is true', () => {
-            const wrapper = shallow(
-                <SearchInput hasButton />,
-            );
+            renderWithProviders(<SearchInput hasButton />);
 
-            const searchButton = getByTestId(wrapper, 'search-button');
-
-            expect(searchButton.length).toBe(1);
+            expect(screen.getByTestId('search-button')).toBeInTheDocument();
         });
 
-        it('should call onSearch when button is clicked', () => {
+        it('should call onSearch when button is clicked', async () => {
             const onSearch = jest.fn();
-            const wrapper = shallow(
-                <SearchInput hasButton onSearch={onSearch} />,
-            );
+            renderWithProviders(<SearchInput hasButton onSearch={onSearch} />);
 
-            getByTestId(wrapper, 'search-button').invoke('onClick')();
+            await userEvent.click(screen.getByTestId('search-button'));
 
             expect(onSearch).toHaveBeenCalledTimes(1);
         });
 
         it('should not display button when hasButton is false', () => {
-            const wrapper = shallow(
-                <SearchInput hasButton={false} />,
-            );
+            renderWithProviders(<SearchInput hasButton={false} />);
 
-            const searchButton = getByTestId(wrapper, 'search-button');
-
-            expect(searchButton.length).toBe(0);
+            expect(screen.queryByTestId('search-button')).not.toBeInTheDocument();
         });
     });
 
     describe('reset', () => {
         it('should display reset when onReset and value are provided', () => {
-            const wrapper = shallow(<SearchInput onReset={jest.fn()} value="test" />);
+            renderWithProviders(<SearchInput onReset={jest.fn()} value="test" />);
 
-            expect(getByTestId(wrapper, 'search-reset').length).toBe(1);
+            expect(screen.getByTestId('search-reset')).toBeInTheDocument();
         });
 
-        it('should call onReset when reset is clicked', () => {
+        it('should call onReset when reset is clicked', async () => {
             const onReset = jest.fn();
-            const wrapper = shallow(
-                <SearchInput onReset={onReset} value="test" />,
-            );
+            renderWithProviders(<SearchInput onReset={onReset} value="test" />);
 
-            getByTestId(wrapper, 'search-reset').invoke('onClick')();
+            await userEvent.click(screen.getByTestId('search-reset'));
 
             expect(onReset).toHaveBeenCalledTimes(1);
         });
 
         it('should not display reset when onReset is not provided', () => {
-            const wrapper = shallow(<SearchInput />);
+            renderWithProviders(<SearchInput />);
 
-            expect(getByTestId(wrapper, 'search-reset').length).toBe(0);
+            expect(screen.queryByTestId('search-reset')).not.toBeInTheDocument();
         });
 
         it('should not display reset when onReset is provided but not value', () => {
-            const wrapper = shallow(<SearchInput onReset={jest.fn()} />);
+            renderWithProviders(<SearchInput onReset={jest.fn()} />);
 
-            expect(getByTestId(wrapper, 'search-reset').length).toBe(0);
+            expect(screen.queryByTestId('search-reset')).not.toBeInTheDocument();
         });
     });
 
     describe('Input', () => {
-        it('should trigger search when Enter key is pressed', () => {
+        it('should trigger search when Enter key is pressed', async () => {
             const onSearch = jest.fn();
-            const wrapper = shallow(
-                <SearchInput onSearch={onSearch} />,
-            );
+            renderWithProviders(<SearchInput onSearch={onSearch} />);
 
-            getByTestId(wrapper, 'search-input').invoke('onKeyDown')({ key: 'Enter' });
+            await userEvent.type(screen.getByTestId('search-input'), '{Enter}');
 
             expect(onSearch).toHaveBeenCalledTimes(1);
         });
 
-        it('should call onChange when input changes', () => {
+        it('should call onChange when input changes', async () => {
             const onChange = jest.fn();
             const newValue = 'a new value';
-            const event = { currentTarget: { value: newValue } };
-            const wrapper = shallow(
-                <SearchInput onChange={onChange} />,
-            );
+            renderWithProviders(<SearchInput onChange={onChange} />);
 
-            getByTestId(wrapper, 'search-input').invoke('onChange')(event);
+            await userEvent.type(screen.getByTestId('search-input'), newValue);
 
-            expect(onChange).toHaveBeenCalledWith(newValue, event);
+            expect(onChange).toHaveBeenCalled();
+            expect(onChange).toHaveBeenLastCalledWith(newValue, expect.anything());
         });
 
         it('should display defaultValue', () => {
             const defaultValue = 'a value';
-            const wrapper = mountWithTheme(
-                <SearchInput defaultValue={defaultValue} />,
-            );
+            renderWithProviders(<SearchInput defaultValue={defaultValue} />);
 
-            const searchInput = getByTestId(wrapper, 'search-input');
-            expect(searchInput.getDOMNode<HTMLInputElement>().value).toBe(defaultValue);
+            expect(screen.getByTestId('search-input')).toHaveValue(defaultValue);
         });
 
         it('should display value', () => {
             const value = 'a value';
-            const wrapper = mountWithTheme(
-                <SearchInput value={value} />,
-            );
+            renderWithProviders(<SearchInput value={value} onChange={jest.fn()} />);
 
-            const searchInput = getByTestId(wrapper, 'search-input');
-            expect(searchInput.getDOMNode<HTMLInputElement>().value).toBe(value);
+            expect(screen.getByTestId('search-input')).toHaveValue(value);
         });
-        it('should call onFocus when input is clicked', () => {
-            const onInputFocus = jest.fn();
-            const wrapper = shallow(
-                <SearchInput onInputFocus={onInputFocus} />,
-            );
 
-            getByTestId(wrapper, 'search-input').simulate('focus');
+        it('should call onFocus when input is clicked', async () => {
+            const onInputFocus = jest.fn();
+            renderWithProviders(<SearchInput onInputFocus={onInputFocus} />);
+
+            await userEvent.click(screen.getByTestId('search-input'));
 
             expect(onInputFocus).toHaveBeenCalledTimes(1);
         });
     });
 
     it('should match the snapshot', () => {
-        const wrapper = mountWithTheme(
+        const { container } = renderWithProviders(
             <SearchInput
-                onSearch={doNothing}
-                onReset={doNothing}
-                onChange={doNothing}
+                onSearch={jest.fn()}
+                onReset={jest.fn()}
+                onChange={jest.fn()}
                 value="a value"
                 label="Search"
                 placeholder="a placeholder"
@@ -163,6 +131,6 @@ describe('SearchInput', () => {
             />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

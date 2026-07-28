@@ -1,8 +1,8 @@
-import { MouseEvent, VoidFunctionComponent } from 'react';
+import { type FC, MouseEvent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { getBaseButtonStyles } from '../buttons';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider';
 
 const StyledLink = styled.a<{ $isMobile: boolean }>`
     ${({ $isMobile }) => getBaseButtonStyles({ $isMobile })};
@@ -34,7 +34,7 @@ export interface SkipLinkProps {
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
-export const SkipLink: VoidFunctionComponent<SkipLinkProps> = ({
+export const SkipLink: FC<SkipLinkProps> = ({
     className, href, onClick,
 }) => {
     const { isMobile } = useDeviceContext();
@@ -51,3 +51,5 @@ export const SkipLink: VoidFunctionComponent<SkipLinkProps> = ({
         </StyledLink>
     );
 };
+
+SkipLink.displayName = 'SkipLink';

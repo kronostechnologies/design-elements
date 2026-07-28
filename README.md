@@ -1,6 +1,10 @@
 # Design Elements
 The Equisoft design system.
 
+## Storybook and documentation
+- [Snapshot](https://ds.equisoft.io/snapshot/) (main branch)
+- [Latest](https://ds.equisoft.io/latest/) (latest release)
+
 ## Repository Structure
 This project is setup as a monorepo containing multiple packages. While closely related, every package in the `/packages/` folder is stand-alone.
 

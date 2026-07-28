@@ -51,6 +51,9 @@ function getDeviceType(): DeviceType {
 
 const DeviceContext = createContext<DeviceContextProps>(getDeviceContext(getDeviceType()));
 
+/**
+ * @internal Use {@link DesignSystem} instead
+ */
 export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceContextProviderProps>> = ({
     children,
     staticDevice,
@@ -91,6 +94,8 @@ export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceCo
         </DeviceContext.Provider>
     );
 };
+
+DeviceContextProvider.displayName = 'DeviceContextProvider';
 
 export function useDeviceContext(): DeviceContextProps {
     return useContext(DeviceContext);

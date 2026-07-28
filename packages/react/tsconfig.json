@@ -2,23 +2,25 @@
   "extends": "@equisoft/typescript-config/tsconfig.standards.json",
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "ES2020",
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "sourceMap": true,
-    "baseUrl": "./src/",
     "outDir": "./dist",
+    "rootDir": "./src",
     "declaration": true,
-    "declarationDir": "./dist"
+    "declarationDir": "./dist",
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "**/*.test.ts?",
+    "**/*.test.ts",
+    "**/*.test.tsx",
     "**/test-utils/**/*"
   ]
 }

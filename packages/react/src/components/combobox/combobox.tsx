@@ -1,50 +1,131 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import {
     ChangeEvent,
+    type FC,
     FocusEvent,
     KeyboardEvent,
+    ReactNode,
     useCallback,
     useEffect,
     useMemo,
     useRef,
     useState,
-    VoidFunctionComponent,
 } from 'react';
+import { createPortal } from 'react-dom';
+import { useShadowRoot } from 'react-shadow';
 import styled from 'styled-components';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
-import { useTranslation } from '../../i18n/use-translation';
-import { ResolvedTheme } from '../../themes';
-import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
-import { IconButton } from '../buttons';
-import { Listbox, ListboxOption } from '../listbox/listbox';
-import { TooltipProps } from '../tooltip/tooltip';
 import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useClickOutside } from '../../hooks/use-click-outside';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useDropdown } from '../../hooks/use-dropdown';
 import { useId } from '../../hooks/use-id';
 import { useListCursor } from '../../hooks/use-list-cursor';
-import { sanitizeId } from '../../utils/dom';
-import { stripDiacritics } from '../../utils/string';
 import { useListSelect } from '../../hooks/use-list-select';
+import { useTranslation } from '../../i18n/use-translation';
+import { type ResolvedTheme } from '../../themes';
+import { focus } from '../../utils/css-state';
+import { getRootElement, sanitizeId } from '../../utils/dom';
+import { stripDiacritics } from '../../utils/string';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { FieldContainer } from '../field-container';
+import { Listbox, ListboxOption } from '../listbox';
+import { ListboxTag, TagValue } from '../listbox/listbox-tag';
+import { type ToggletipProps } from '../toggletip';
+import { type TooltipProps } from '../tooltip';
+import {
+    addUniqueOption, createCustomOption,
+    findOptionsByValue,
+    getDefaultOptions,
+    getJoinedValues,
+    getSelectedOptionValues,
+    getValueAsString,
+    getValueAsStringArray,
+    isOptionEnabled,
+    isOptionSelected, optionsAreEqual,
+    removeOption,
+} from '../listbox/utils';
+import { type RequiredLabelProps } from '../label/label';
+
+type Value = string | string[];
+
+export type ComboboxOption = ListboxOption;
+
+interface StyledListboxProps {
+    $left?: string;
+    $top?: string;
+}
+
+interface TagInputContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    $readOnly?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
 
 interface TextboxProps {
     disabled?: boolean;
     $isMobile: boolean;
+    $readOnly?: boolean;
     theme: ResolvedTheme;
     $valid: boolean;
-    value: string;
+    value: Value;
 }
 
-export type ComboboxOption = ListboxOption;
+interface TextboxContainerProps {
+    disabled?: boolean;
+    $isMobile: boolean;
+    $readOnly?: boolean;
+    theme: ResolvedTheme;
+    $valid: boolean;
+}
 
-function getBorderColor({ disabled, theme, $valid }: TextboxProps): string {
+interface MultiSelectInputProps extends TextboxProps {
+    $readOnly?: boolean;
+    $hasTags?: boolean;
+}
+
+function getBackgroundColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['combobox-readonly-background-color'];
+    }
+
+    if (disabled) {
+        return theme.component['combobox-disabled-background-color'];
+    }
+
+    return theme.component['combobox-background-color'];
+}
+
+function getBorderColor({
+    disabled, $readOnly, theme, $valid,
+}: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['combobox-readonly-border-color'];
+    }
+
     if (disabled) {
         return theme.component['combobox-disabled-border-color'];
     }
+
     if (!$valid) {
         return theme.component['combobox-error-border-color'];
     }
 
     return theme.component['combobox-border-color'];
+}
+
+function getTextColor({ disabled, $readOnly, theme }: TextboxProps | TagInputContainerProps): string {
+    if ($readOnly) {
+        return theme.component['combobox-readonly-text-color'];
+    }
+
+    if (disabled) {
+        return theme.component['combobox-disabled-text-color'];
+    }
+
+    return theme.component['combobox-text-color'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)`
@@ -59,39 +140,28 @@ const StyledContainer = styled.div`
     width: 100%;
 `;
 
-const StyledListbox = styled(Listbox)`
-    margin-top: var(--spacing-half);
+const StyledListbox = styled(Listbox)<StyledListboxProps>`
+    left: ${(props) => props.$left};
+    min-width: 0;
     position: absolute;
+    top: ${(props) => props.$top};
     width: 100%;
+    z-index: 99998;
 `;
 
-const Textbox = styled.input<TextboxProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-disabled-background-color'] : theme.component['combobox-background-color'])};
-    border: 1px solid ${getBorderColor};
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled && theme.component['combobox-disabled-text-color']};
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-    padding: 0 var(--spacing-1x);
-    width: 100%;
-
-    ${focus};
-    
-    &::placeholder {
-        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
-        font-style: italic;
-    }
-`;
-
-const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
-    align-items: center;
+const ArrowButton = styled(IconButton)<{
+    disabled?: boolean,
+    $readOnly?: boolean,
+    $multiselect?: boolean
+}>`
+    align-self: center;
     background-color: ${({ theme }) => theme.component['combobox-arrow-button-background-color']};
     border: 0;
-    color: ${({ disabled, theme }) => theme.component[`combobox-arrow-button${disabled ? '-disabled' : ''}-icon-color`]};    display: flex;
+    color: ${({ disabled, $readOnly, theme }) => theme.component[`combobox-arrow-button${(disabled || $readOnly) ? '-disabled' : ''}-icon-color`]};
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
+    position: ${({ $multiselect }) => ($multiselect && 'absolute')};
     right: 0;
     width: var(--size-1x);
 
@@ -100,21 +170,20 @@ const ArrowButton = styled(IconButton)<{ disabled?: boolean }>`
     }
 `;
 
-const ClearButton = styled(IconButton)<{ disabled?: boolean }>`
-    align-items: center;
+const ClearButton = styled(IconButton)<{ disabled?: boolean, $readOnly?: boolean }>`
+    align-self: center;
     background-color: transparent;
     border: 0;
-color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};    display: flex;
+    color: ${({ disabled, $readOnly, theme }) => ((disabled || $readOnly) ? theme.component['combobox-clear-button-disabled-icon-color'] : theme.component['combobox-clear-button-icon-color'])};
+    display: ${({ $readOnly }) => ($readOnly ? 'none' : 'flex')};
     height: var(--size-1x);
     padding: var(--spacing-half);
-    position: absolute;
-    right: calc(var(--size-1x) + var(--spacing-1halfx));
     width: var(--size-1x);
 
     &::after {
         border-right: ${({ theme }) => `1px solid ${theme.component['combobox-clear-button-border-right-color']}`};
         content: '';
-        height: calc(var(--size-2x) - var(--spacing-2x));
+        height: var(--size-1x);
         margin-left: var(--spacing-1x);
     }
 
@@ -123,7 +192,75 @@ color: ${({ disabled, theme }) => (disabled ? theme.component['combobox-clear-bu
     }
 `;
 
-interface ComboboxProps {
+const BaseInput = styled.input<TextboxProps>`
+    background-color: ${getBackgroundColor};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${getTextColor};
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+`;
+
+const Textbox = styled(BaseInput)<TextboxProps>`
+    border: 0;
+    box-shadow: none;
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    outline: none;
+    padding: 0 var(--spacing-1x);
+    width: 100%;
+
+    &::placeholder {
+        color: ${({ theme }) => theme.component['combobox-placeholder-text-color']};
+        font-style: italic;
+    }
+`;
+
+const TextboxContainer = styled.div<TextboxContainerProps>`
+    background-color: ${getBackgroundColor};
+    border: 1px solid ${getBorderColor};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${getTextColor};
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    min-height: 30px;
+    width: 100%;
+
+    ${({ theme }) => focus({ theme }, { focusType: 'focus-within' })};
+`;
+
+const MultiSelectInput = styled(BaseInput)<MultiSelectInputProps>`
+    align-self: center;
+    background: transparent;
+    border: none;
+    flex: 1 1 0;
+    height: auto;
+    min-height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 0 ${({ $hasTags }) => ($hasTags ? 'var(--spacing-quarter)' : 'var(--spacing-1x)')};
+`;
+
+const TagInputContainer = styled.div<TagInputContainerProps>`
+    background-color: ${getBackgroundColor};
+    border: 1px solid ${getBorderColor};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: ${getTextColor};
+    display: flex;
+    flex-wrap: wrap;
+    font-family: inherit;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    min-height: 30px;
+    padding-right: var(--spacing-2halfx);
+    width: 100%;
+
+    ${({ disabled, theme }) => !disabled && focus({ theme }, { focusType: 'focus-within' })};
+`;
+
+export interface ComboboxProps {
     /**
      * If true, the input can have a value not included in the list of options
      */
@@ -132,6 +269,10 @@ interface ComboboxProps {
      * Aria label for the input (used when no visual label is present)
      */
     ariaLabel?: string;
+    /**
+     * If true, when the input value matches an option, that option is automatically selected
+     */
+    autoSelectMatchingOption?: boolean;
     className?: string;
     /**
      * @default false
@@ -140,7 +281,7 @@ interface ComboboxProps {
     /**
      * The default value and selected option
      */
-    defaultValue?: string;
+    defaultValue?: Value;
     /**
      * Disables the input
      */
@@ -167,11 +308,21 @@ interface ComboboxProps {
     inlineAutoComplete?: boolean;
     isLoading?: boolean;
     label?: string;
+    /**
+     * If true, multiple options can be selected and displayed as tags
+     */
+    multiselect?: boolean;
     name?: string;
     options: ComboboxOption[];
     placeholder?: string;
+    readOnly?: boolean;
     required?: boolean;
+    /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
     tooltip?: TooltipProps;
+    toggletip?: ToggletipProps;
     /**
      * Sets input validity
      */
@@ -184,19 +335,22 @@ interface ComboboxProps {
     /**
      * Sets the selected value (makes the component controlled)
      */
-    value?: string;
+    value?: Value;
     hint?: string;
 
+    portalContainer?: HTMLElement | null;
+
     /**
-     * OnChange callback function, invoked when the value is changed
+     * OnChange callback function, invoked when value/options change
      */
-    onChange?(value: string): void;
+    onChange?(value: string | ComboboxOption | ComboboxOption[]): void;
+
+    onInputChange?(value: string): void;
 }
 
-const optionPredicate: (option: ComboboxOption) => boolean = (option) => !option.disabled;
-
-export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
+export const Combobox: FC<ComboboxProps> = ({
     allowCustomValue = false,
+    autoSelectMatchingOption = false,
     ariaLabel,
     className,
     defaultOpen = false,
@@ -209,16 +363,22 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     inlineAutoComplete = false,
     isLoading = false,
     label,
+    multiselect,
     onChange,
+    onInputChange,
     options,
     placeholder,
     name,
+    readOnly,
     required,
+    requiredLabelType,
     tooltip,
+    toggletip,
     valid = true,
     validationErrorMessage,
     value,
     hint,
+    portalContainer,
     ...otherProps
 }) => {
     const { t } = useTranslation('combobox');
@@ -226,30 +386,57 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const textboxRef = useRef<HTMLInputElement>(null);
-    const listboxRef = useRef<HTMLDivElement>(null);
+    const [showAllOptions, setShowAllOptions] = useState(defaultOpen);
     const arrowButtonRef = useRef<HTMLButtonElement>(null);
     const clearButtonRef = useRef<HTMLButtonElement>(null);
 
+    const shadowRoot = useShadowRoot();
     const [open, setOpen] = useState(defaultOpen);
+    const {
+        x,
+        y,
+        update,
+        refs: { reference: floatingReferenceRef, floating: listboxRef, ...refs },
+    } = useDropdown<HTMLInputElement>({ open, width: 'reference' });
+    const rootElement = getRootElement(shadowRoot) as HTMLElement;
 
-    function findOptionByValue(searchValue?: string): ComboboxOption | undefined {
-        return options.find((option) => option.value.toLowerCase() === searchValue?.toLowerCase());
-    }
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    function validateInputValue(newValue: string): string {
-        if (allowCustomValue || newValue === '') {
-            return newValue;
-        }
+    const findOptionByLabelOrValue = useCallback(
+        (searchValue?: string): ComboboxOption | undefined => options.find((option: ComboboxOption) => {
+            const lowerCaseSearch = searchValue?.toLowerCase();
+            return option.label?.toLowerCase() === lowerCaseSearch || option.value.toLowerCase() === lowerCaseSearch;
+        }),
+        [options],
+    );
 
-        return findOptionByValue(newValue)?.value ?? '';
-    }
+    const getInputValueFromOption = useCallback(
+        (option: ComboboxOption | undefined): string => option?.label ?? option?.value ?? '',
+        [],
+    );
 
     function getInitialInputValue(): string {
-        return validateInputValue(value ?? defaultValue ?? '');
+        if (multiselect) {
+            return '';
+        }
+
+        if (
+            allowCustomValue
+            && defaultValue
+            && findOptionsByValue(options, defaultValue).length === 0
+        ) {
+            return getValueAsString(defaultValue);
+        }
+
+        const foundOptions = findOptionsByValue(options, value);
+        const defaultOptions = foundOptions.length > 0
+            ? foundOptions
+            : findOptionsByValue(options, defaultValue ?? '');
+
+        return getInputValueFromOption(defaultOptions[0] as ComboboxOption);
     }
 
-    const [inputValue, setInputValue] = useState(getInitialInputValue);
+    const [inputValue, setInputValue] = useState<string>(getInitialInputValue);
 
     const getEmptyListMessage: (query: string) => string = useCallback((query) => {
         if (emptyListMessage) {
@@ -276,15 +463,18 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             }];
         }
 
+        update();
         if (inputValue === '' || disableListFiltering) {
             return options;
         }
 
         const filtered = options.filter(
-            (option) => option.value.toLowerCase().startsWith(inputValue.toLowerCase()),
+            (option: ComboboxOption) => getInputValueFromOption(option)
+                .toLowerCase()
+                .startsWith(inputValue.toLowerCase()),
         );
 
-        if (filtered.length === 1 && filtered[0].value === inputValue) {
+        if (showAllOptions && filtered.length === 1 && getInputValueFromOption(filtered[0]) === inputValue) {
             return options;
         }
 
@@ -297,44 +487,65 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         }
 
         return filtered;
-    }, [allowCustomValue, disableListFiltering, getEmptyListMessage, inputValue, isLoading, options, t]);
+    }, [
+        isLoading,
+        options,
+        inputValue,
+        update,
+        disableListFiltering,
+        showAllOptions,
+        getInputValueFromOption,
+        allowCustomValue,
+        t,
+        getEmptyListMessage,
+    ]);
 
-    const [suggestedInputValue, setSuggestedInputValue] = useState('');
+    const [suggestedInputValue, setSuggestedInputValue] = useState<string>('');
 
     function getSuggestedOption(searchValue: string): ComboboxOption | undefined {
         return options.find(
-            (option) => stripDiacritics(option.value)
+            (option: ComboboxOption) => stripDiacritics(getInputValueFromOption(option))
                 .toLowerCase()
-                .startsWith(
-                    stripDiacritics(searchValue).toLowerCase(),
-                ),
+                .startsWith(stripDiacritics(searchValue).toLowerCase()),
         );
     }
 
-    const changeInputValue: (newValue: string) => void = useCallback((newValue) => {
-        setInputValue(newValue);
-        setSuggestedInputValue('');
-
-        onChange?.(newValue);
-    }, [onChange]);
-
-    const initialSelectedOptionCallback: () => ListboxOption | undefined = () => findOptionByValue(
-        value ?? defaultValue,
+    const initialSelectedOptions = useMemo(
+        () => getDefaultOptions(value ?? defaultValue, options),
+        [value, defaultValue, options],
     );
+
     const {
+        clearSelection: clearSelectedOptions,
         currentSelectedElement: selectedOption,
         previousSelectedElement: previousSelectedOption,
         selectElement: selectOption,
-        clearSelection: clearSelectedOptions,
+        selectedElements: selectedOptions,
+        setSelectedElements: setSelectedOptions,
+        toggleSelectedElements: toggleSelectedOptions,
         revertPreviousSelectedElement: revertPreviousSelectedOption,
     } = useListSelect<ComboboxOption>(
-        (option: ComboboxOption, optionToCompare: ComboboxOption) => option.value === optionToCompare.value,
-        initialSelectedOptionCallback,
+        optionsAreEqual,
+        () => initialSelectedOptions,
+        multiselect,
     );
+
+    const changeInputValue: (newOption: ComboboxOption | undefined) => void = useCallback((newOption) => {
+        setInputValue(getInputValueFromOption(newOption));
+        setSuggestedInputValue('');
+        if (!multiselect) {
+            const newValue: string | undefined = newOption?.value;
+            const existingOption: ListboxOption | undefined = findOptionsByValue(options, newValue)[0];
+            const isNotAlreadySelectedOption = existingOption !== undefined && selectedOption?.value !== newValue;
+            if (allowCustomValue || newOption === undefined || isNotAlreadySelectedOption) {
+                onChange?.(newValue || '');
+            }
+        }
+    }, [allowCustomValue, getInputValueFromOption, multiselect, onChange, options, selectedOption?.value]);
 
     const revertInputValue: () => void = useCallback(() => {
         revertPreviousSelectedOption();
-        changeInputValue(previousSelectedOption?.value ?? '');
+        changeInputValue(previousSelectedOption);
     }, [changeInputValue, previousSelectedOption, revertPreviousSelectedOption]);
 
     const {
@@ -346,43 +557,81 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         selectLast: focusLastOption,
     } = useListCursor({
         elements: filteredOptions,
-        initialElement: selectedOption,
-        predicate: optionPredicate,
+        initialElement: multiselect ? undefined : selectedOption,
+        predicate: isOptionEnabled,
         wrapAround: true,
     });
 
-    const [previousValue, setPreviousValue] = useState<string | undefined>(value);
+    const toggleOptionSelection = useCallback((option: ComboboxOption): void => {
+        const newSelectedOptions = !isOptionSelected(option, selectedOptions)
+            ? addUniqueOption(option, selectedOptions)
+            : removeOption(option, selectedOptions);
+
+        toggleSelectedOptions(option);
+        onChange?.(newSelectedOptions);
+    }, [onChange, selectedOptions, toggleSelectedOptions]);
+
+    const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
 
     if (value !== previousValue) {
-        const newOption = findOptionByValue(value);
+        const newOptions = findOptionsByValue(options, value);
 
-        if (newOption) {
-            setInputValue(newOption.value);
-            selectOption(newOption);
+        if (newOptions && newOptions.length > 0) {
+            const newOption = newOptions[0];
+
+            if (multiselect) {
+                setInputValue('');
+                setSelectedOptions(newOptions);
+            } else {
+                setInputValue(getInputValueFromOption(newOption));
+                selectOption(newOption);
+            }
+
             setSuggestedInputValue('');
             setFocusedOption(newOption);
         } else if (allowCustomValue) {
-            setInputValue(value ?? '');
+            if (multiselect) {
+                setInputValue('');
+                clearSelectedOptions();
+
+                const values = getValueAsStringArray(value);
+                const customOptions = values
+                    .filter((v) => !selectedOptions.some((opt) => opt.value === v))
+                    .map((v) => (createCustomOption(v, v) as ComboboxOption));
+                const newSelectedOptions = customOptions.reduce(
+                    (acc, customOption) => addUniqueOption(customOption, acc),
+                    selectedOptions,
+                );
+                setSelectedOptions(newSelectedOptions);
+            } else {
+                setInputValue(getValueAsString(value));
+            }
         } else {
+            if (multiselect) {
+                clearSelectedOptions();
+            }
             setInputValue('');
         }
 
         setPreviousValue(value);
     }
 
-    function openListbox(): void {
-        if (disabled) {
+    const openListbox = useCallback((): void => {
+        if (disabled || readOnly) {
             return;
         }
+
+        setShowAllOptions(true);
 
         if (selectedOption && (!focusedOption || !filteredOptions.includes(focusedOption))) {
             setFocusedOption(selectedOption);
         }
 
         setOpen(true);
-    }
+    }, [disabled, filteredOptions, focusedOption, readOnly, selectedOption, setFocusedOption]);
 
     const closeListbox: () => void = useCallback(() => {
+        setShowAllOptions(false);
         setFocusedOption(undefined);
         setOpen(false);
     }, [setFocusedOption]);
@@ -392,10 +641,15 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
     }
 
     const handleComponentBlur: () => void = useCallback(() => {
-        if (focusedOption && (focusedOption !== selectedOption || inputValue !== focusedOption.value)) {
-            changeInputValue(focusedOption.value);
+        if (multiselect) {
+            changeInputValue(undefined);
+        } else if (
+            focusedOption
+            && (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption))
+        ) {
+            changeInputValue(focusedOption);
             selectOption(focusedOption);
-        } else if (!(allowCustomValue || inputValue === '')) {
+        } else if (!allowCustomValue && inputValue !== getInputValueFromOption(selectedOption)) {
             revertInputValue();
         }
 
@@ -412,11 +666,16 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         revertInputValue,
         selectOption,
         selectedOption,
+        getInputValueFromOption,
+        multiselect,
     ]);
 
-    const componentTargets = [textboxRef, listboxRef, arrowButtonRef, clearButtonRef];
+    const componentTargets = useMemo(
+        () => [floatingReferenceRef, inputRef, listboxRef, arrowButtonRef, clearButtonRef],
+        [listboxRef, floatingReferenceRef],
+    );
 
-    function handleTextboxBlur(event: FocusEvent): void {
+    const handleTextboxBlur = useCallback((event: FocusEvent): void => {
         let outsideComponent = true;
 
         if (event.relatedTarget !== null) {
@@ -430,49 +689,73 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         if (outsideComponent) {
             handleComponentBlur();
         }
-    }
+    }, [componentTargets, handleComponentBlur]);
 
-    function handleTextboxClick(): void {
+    const handleTextboxClick = useCallback((): void => {
         if (open) {
             closeListbox();
         } else {
             openListbox();
         }
-    }
+    }, [closeListbox, open, openListbox]);
 
-    function handleArrowButtonClick(): void {
+    const handleArrowButtonClick = useCallback((): void => {
         if (open) {
             closeListbox();
         } else {
             openListbox();
         }
 
-        textboxRef.current?.focus();
-    }
+        inputRef.current?.focus();
+    }, [closeListbox, open, openListbox]);
 
-    function handleClearButtonClick(): void {
-        changeInputValue('');
+    const handleClearButtonClick = useCallback((): void => {
+        changeInputValue(undefined);
         setFocusedOption(undefined);
         clearSelectedOptions();
 
-        textboxRef.current?.focus();
-    }
+        inputRef.current?.focus();
+    }, [changeInputValue, clearSelectedOptions, setFocusedOption]);
+
+    const handleTagRemove = useCallback((tag: TagValue): void => {
+        const removedOption = selectedOptions?.find((option) => option.value === tag.id);
+
+        if (removedOption !== undefined) {
+            toggleOptionSelection(removedOption);
+        }
+    }, [selectedOptions, toggleOptionSelection]);
+
+    const renderSelectedOptionsTags = (): ReactNode => selectedOptions?.map((option: ComboboxOption) => (
+        <ListboxTag
+            disabled={disabled}
+            key={option.value}
+            option={option}
+            handleTagRemove={handleTagRemove}
+            readOnly={readOnly}
+            textboxRef={floatingReferenceRef}
+        />
+    ));
 
     function handleListboxOptionClick(option: ComboboxOption): void {
-        if (optionPredicate(option)) {
-            if (option !== focusedOption) {
-                setFocusedOption(option);
-            }
+        if (isOptionEnabled(option)) {
+            if (multiselect) {
+                toggleOptionSelection(option);
+                setInputValue('');
+            } else {
+                if (option !== focusedOption) {
+                    setFocusedOption(option);
+                }
 
-            if (option !== selectedOption) {
-                changeInputValue(option.value);
-                selectOption(option);
-            }
+                if (option !== selectedOption) {
+                    changeInputValue(option);
+                    selectOption(option);
+                }
 
-            closeListbox();
+                closeListbox();
+            }
         }
 
-        textboxRef.current?.focus();
+        inputRef.current?.focus();
     }
 
     // With inline autocomplete, the suggestion gets highlighted only when text is entered in
@@ -484,7 +767,6 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 
     function handleTextboxKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         let newFocusedOption: ComboboxOption | undefined;
-
         switch (event.key) {
             case 'ArrowDown':
                 event.preventDefault();
@@ -495,7 +777,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusNextOption() : focusFirstOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getInputValueFromOption(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
@@ -509,18 +791,36 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                     newFocusedOption = focusedOption ? focusPreviousOption() : focusLastOption();
 
                     if (newFocusedOption && inlineAutoComplete) {
-                        setSuggestedInputValue(newFocusedOption.value);
+                        setSuggestedInputValue(getInputValueFromOption(newFocusedOption));
                         suggestionSource.current = 'listbox';
                     }
                 }
                 break;
             case 'Enter':
                 event.preventDefault();
+
+                if (!open && multiselect) {
+                    openListbox();
+                }
+
                 if (focusedOption) {
-                    if (focusedOption !== selectedOption || inputValue !== focusedOption.value) {
-                        changeInputValue(focusedOption.value);
-                        selectOption(focusedOption);
+                    if (focusedOption !== selectedOption || inputValue !== getInputValueFromOption(focusedOption)) {
+                        if (multiselect) {
+                            changeInputValue(undefined);
+                            toggleOptionSelection(focusedOption);
+                        } else {
+                            changeInputValue(focusedOption);
+                            selectOption(focusedOption);
+                        }
                     }
+
+                    if (!multiselect) {
+                        closeListbox();
+                    }
+                } else if (multiselect && allowCustomValue && inputValue.trim() !== '') {
+                    const customOption = createCustomOption(inputValue, inputValue) as ComboboxOption;
+                    changeInputValue(undefined);
+                    toggleOptionSelection(customOption);
                     closeListbox();
                 } else if (open && (allowCustomValue || inputValue === '')) {
                     closeListbox();
@@ -530,8 +830,10 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
                 if (open) {
                     closeListbox();
                 } else {
-                    changeInputValue('');
-                    clearSelectedOptions();
+                    changeInputValue(undefined);
+                    if (!multiselect) {
+                        clearSelectedOptions();
+                    }
                 }
                 break;
             case 'Backspace':
@@ -545,9 +847,11 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         if (!open) {
             openListbox();
         }
+        setShowAllOptions(false);
 
         const newInputValue = event.target.value;
-        changeInputValue(newInputValue);
+        onInputChange?.(newInputValue);
+        changeInputValue({ value: newInputValue, label: newInputValue });
 
         // Always clear the focused option to prevent unwanted selection on textbox blur
         setSuggestedInputValue('');
@@ -555,7 +859,7 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
 
         if (inlineAutoComplete && !hideInlineAutoComplete.current) {
             const newSuggestedOption = getSuggestedOption(newInputValue);
-            setSuggestedInputValue(newSuggestedOption?.value ?? '');
+            setSuggestedInputValue(getInputValueFromOption(newSuggestedOption));
 
             if (newSuggestedOption) {
                 suggestionSource.current = 'textbox';
@@ -566,11 +870,21 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         }
 
         // Select option if the input text is an exact match
-        const matchingOption = findOptionByValue(newInputValue);
+        const matchingOption: ListboxOption | undefined = findOptionByLabelOrValue(newInputValue);
 
         if (matchingOption) {
-            selectOption(matchingOption);
-        } else if (allowCustomValue || newInputValue === '') {
+            if (autoSelectMatchingOption) {
+                if (multiselect) {
+                    changeInputValue(undefined);
+                    toggleOptionSelection(matchingOption);
+                } else {
+                    selectOption(matchingOption);
+                }
+            } else if (multiselect) {
+                // If not auto-selecting, focus the matching option in multiselect mode
+                setFocusedOption(matchingOption);
+            }
+        } else if (!multiselect && (allowCustomValue || newInputValue === '')) {
             clearSelectedOptions();
         }
     }
@@ -581,16 +895,71 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
         }
 
         if (suggestedInputValue.length > inputValue.length) {
-            textboxRef.current?.setSelectionRange(inputValue.length, suggestedInputValue.length);
-        } else if (textboxRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
-            textboxRef.current?.setSelectionRange(inputValue.length, inputValue.length);
+            inputRef.current?.setSelectionRange(inputValue.length, suggestedInputValue.length);
+        } else if (inputRef.current?.selectionStart === inputValue.length || suggestedInputValue.length === 0) {
+            inputRef.current?.setSelectionRange(inputValue.length, inputValue.length);
         }
     }, [inputValue.length, suggestedInputValue.length]);
+
+    const handleClickOutside = useCallback(() => {
+        if (multiselect && open) {
+            closeListbox();
+        }
+    }, [multiselect, open, closeListbox]);
+
+    useClickOutside(
+        [floatingReferenceRef.current, listboxRef.current, arrowButtonRef.current],
+        handleClickOutside,
+    );
 
     const ariaDescribedBy = useAriaConditionalIds([
         { id: `${id}_hint`, include: !!hint },
         { id: `${id}_invalid`, include: !valid },
     ]);
+
+    const sharedInputProps = {
+        'aria-label': !label ? ariaLabel || t('inputAriaLabel') : undefined,
+        'aria-activedescendant': open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined,
+        'aria-autocomplete': (inlineAutoComplete ? 'both' : 'list') as 'both' | 'list',
+        'aria-controls': `${id}_listbox`,
+        'aria-describedby': ariaDescribedBy,
+        'aria-expanded': open,
+        'aria-invalid': !valid,
+        'aria-readonly': readOnly,
+        'aria-required': required,
+        'data-testid': 'textbox',
+        id,
+        $isMobile: isMobile,
+        disabled: disabled || readOnly,
+        name,
+        onBlur: handleTextboxBlur,
+        onChange: handleTextboxChange,
+        onClick: handleTextboxClick,
+        onKeyDown: handleTextboxKeyDown,
+        placeholder: !readOnly ? placeholder : undefined,
+        $readOnly: readOnly,
+        role: 'combobox',
+        tabIndex: 0,
+        $valid: valid,
+        value: suggestedInputValue || inputValue,
+        ...dataAttributes,
+    };
+
+    const arrowButton = (
+        <ArrowButton
+            aria-label={t('showOptions', { label: label || ariaLabel })}
+            buttonType="tertiary"
+            data-testid="arrow"
+            disabled={disabled}
+            focusable={false}
+            iconName={open ? 'chevronUp' : 'chevronDown'}
+            onClick={handleArrowButtonClick}
+            $multiselect={multiselect}
+            $readOnly={readOnly}
+            ref={arrowButtonRef}
+            type="button"
+        />
+    );
 
     return (
         <StyledFieldContainer
@@ -599,76 +968,87 @@ export const Combobox: VoidFunctionComponent<ComboboxProps> = ({
             fieldId={id}
             label={label}
             required={required}
+            requiredLabelType={requiredLabelType}
             tooltip={tooltip}
+            toggletip={toggletip}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
         >
             <StyledContainer>
-                <Textbox
-                    aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
-                    aria-activedescendant={open && focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
-                    aria-autocomplete={inlineAutoComplete ? 'both' : 'list'}
-                    aria-controls={`${id}_listbox`}
-                    aria-describedby={ariaDescribedBy}
-                    aria-expanded={open}
-                    aria-invalid={!valid ? 'true' : 'false'}
-                    aria-required={required ? 'true' : 'false'}
-                    data-testid="textbox"
-                    id={id}
-                    $isMobile={isMobile}
-                    disabled={disabled}
-                    name={name}
-                    onBlur={handleTextboxBlur}
-                    onChange={handleTextboxChange}
-                    onClick={handleTextboxClick}
-                    onKeyDown={handleTextboxKeyDown}
-                    placeholder={placeholder}
-                    ref={textboxRef}
-                    role="combobox"
-                    tabIndex={0}
-                    $valid={valid}
-                    value={suggestedInputValue || inputValue}
-                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                />
-                {inputValue !== '' && !disabled && (
-                    <ClearButton
-                        aria-label={t('clearInput')}
-                        buttonType="tertiary"
-                        data-testid="clear"
-                        focusable={false}
-                        iconName="x"
-                        onClick={handleClearButtonClick}
-                        ref={clearButtonRef}
-                        type="button"
-                    />
+                {multiselect ? (
+                    <>
+                        <TagInputContainer
+                            data-testid="tags"
+                            disabled={disabled}
+                            $isMobile={isMobile}
+                            $readOnly={readOnly}
+                            ref={refs.setReference}
+                            tabIndex={0}
+                            $valid={valid}
+                        >
+                            <input
+                                type="hidden"
+                                name={name}
+                                value={getJoinedValues(selectedOptions)}
+                                data-testid="input"
+                            />
+                            {renderSelectedOptionsTags()}
+                            <MultiSelectInput
+                                {...sharedInputProps}
+                                $hasTags={selectedOptions.length > 0}
+                                ref={inputRef}
+                            />
+                        </TagInputContainer>
+                        {arrowButton}
+                    </>
+                ) : (
+                    <TextboxContainer
+                        data-testid="textbox-container"
+                        disabled={disabled}
+                        $isMobile={isMobile}
+                        $readOnly={readOnly}
+                        $valid={valid}
+                        ref={refs.setReference}
+                    >
+                        <Textbox {...sharedInputProps} ref={inputRef} />
+                        {inputValue !== '' && !disabled && (
+                            <ClearButton
+                                aria-label={t('clearInput')}
+                                buttonType="tertiary"
+                                data-testid="clear"
+                                focusable={false}
+                                iconName="x"
+                                onClick={handleClearButtonClick}
+                                $readOnly={readOnly}
+                                ref={clearButtonRef}
+                                type="button"
+                            />
+                        )}
+                        {arrowButton}
+                    </TextboxContainer>
                 )}
-                <ArrowButton
-                    aria-label={t('showOptions', { label: label || ariaLabel })}
-                    buttonType="tertiary"
-                    data-testid="arrow"
-                    disabled={disabled}
-                    focusable={false}
-                    iconName={open ? 'chevronUp' : 'chevronDown'}
-                    onClick={handleArrowButtonClick}
-                    ref={arrowButtonRef}
-                    type="button"
-                />
             </StyledContainer>
 
-            {open && (
+            {open && createPortal(
                 <StyledListbox
                     ariaLabelledBy={`${id}_label`}
-                    ref={listboxRef}
+                    ref={refs.setFloating}
                     data-testid="listbox"
                     focusable={false}
                     focusedValue={focusedOption?.value}
                     id={`${id}_listbox`}
+                    multiselect={multiselect}
                     onOptionClick={handleListboxOptionClick}
                     options={filteredOptions}
-                    value={selectedOption ? [selectedOption.value] : undefined}
-                />
+                    value={getSelectedOptionValues(selectedOptions)}
+                    $left={`${x}px`}
+                    $top={`${y}px`}
+                />,
+                portalContainer ?? rootElement,
             )}
         </StyledFieldContainer>
     );
 };
+
+Combobox.displayName = 'Combobox';

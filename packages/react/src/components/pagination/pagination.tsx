@@ -1,15 +1,15 @@
-import { useEffect, useState, VoidFunctionComponent } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
 import { clamp } from '../../utils/math';
 import { range } from '../../utils/range';
-import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { IconName } from '../icon/icon';
-import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { calculateShownPageRange } from './util/pagination-util';
+import { IconButton } from '../buttons';
+import { useDeviceContext } from '../device-context-provider';
+import { type IconName } from '../icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text';
+import { calculateShownPageRange } from './util';
 
 type SelectionSuffix = '-selected' | '';
 
@@ -57,7 +57,7 @@ interface NavButtonProps {
     onClick(): void;
 }
 
-const NavButton: VoidFunctionComponent<NavButtonProps> = ({
+const NavButton: FC<NavButtonProps> = ({
     enabled,
     iconName,
     label,
@@ -74,6 +74,8 @@ const NavButton: VoidFunctionComponent<NavButtonProps> = ({
         tab-index={enabled ? 0 : -1}
     />
 );
+
+NavButton.displayName = 'NavButton';
 
 const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
@@ -100,7 +102,7 @@ const Navigation = styled.nav`
     display: flex;
 `;
 
-interface PaginationProps {
+export interface PaginationProps {
     className?: string;
     /**
      * Number of results to display per page
@@ -132,7 +134,7 @@ interface PaginationProps {
     activePage?: number;
 }
 
-export const Pagination: VoidFunctionComponent<PaginationProps> = ({
+export const Pagination: FC<PaginationProps> = ({
     className,
     resultsPerPage,
     numberOfResults,
@@ -239,3 +241,5 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         </Container>
     );
 };
+
+Pagination.displayName = 'Pagination';

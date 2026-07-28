@@ -1,8 +1,9 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
-import { Table, TableProps } from './table';
-import { TableColumn, TableData } from './types';
+import { type RenderResult, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { type DeviceType } from '../device-context-provider';
+import { Table, type TableProps } from './table';
+import { type TableColumn, type TableData } from './types';
 
 interface TestData {
     id: string;
@@ -42,7 +43,7 @@ function renderTable(
     columnsArray: TableColumn<TestData>[],
     currentDevice?: DeviceType,
     props?: TablePropsLite,
-): cheerio.Cheerio {
+): RenderResult {
     return renderWithProviders(
         <Table columns={columnsArray} data={data} rowIdField="id" {...props} />,
         currentDevice,
@@ -84,6 +85,7 @@ const columnsWithHeadersGrouped: TableColumn<TestData>[] = [
                 accessorKey: 'column3',
             },
         ],
+        textAlign: 'right',
     },
 ];
 
@@ -182,11 +184,170 @@ const stickyColumnsData: TestData3Columns[] = [
     },
 ];
 
-const SELECT_ALL_CHECKBOX_TESTID = 'row-checkbox-all';
-
 describe('Table', () => {
-    test('column sorting should be set to defaultSort value when defaultSort is set', () => {
-        const wrapper = mountWithProviders(
+    it('has desktop styles', () => {
+        const { container } = renderTable(columns, 'desktop');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has tablet styles', () => {
+        const { container } = renderTable(columns, 'tablet');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has mobile styles', () => {
+        const { container } = renderTable(columns, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has custom text alignment', () => {
+        const { container } = renderTable(columnsTextAligned);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has sorting styles', () => {
+        const { container } = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has striped styles', () => {
+        const { container } = renderTable(columns, undefined, { striped: true });
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has small rowSize styles', () => {
+        const { container } = renderTable(columns, undefined, { rowSize: 'small' });
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has rowNumbers styles', () => {
+        const { container } = renderTable(columns, undefined, { rowNumbers: true });
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has clickable rows styles', () => {
+        const { container } = renderTable(columns, undefined, { onRowClick: jest.fn() });
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has error rows styles', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData>
+                columns={columns}
+                data={errorData}
+                rowIdField="id"
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has selectable rows styles', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} rowIdField="id" />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has sticky header styles', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has sticky column styles', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} rowIdField="id" />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has aria-label on header columns', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData>
+                columns={columnsWithHeaderAriaLabel}
+                data={data}
+                rowIdField="id"
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('has column with headers grouped', () => {
+        const { container } = renderWithProviders(
+            <Table<TestData>
+                columns={columnsWithHeadersGrouped}
+                data={data}
+                rowIdField="id"
+            />,
+        );
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render table caption', () => {
+        renderWithProviders(
+            <Table<TestData>
+                columns={columns}
+                data={data}
+                rowIdField="id"
+                caption="Test Caption"
+            />,
+        );
+
+        expect(screen.getByText('Test Caption')).toBeInTheDocument();
+    });
+
+    it('should apply aria-labelledby attribute', () => {
+        const headingId = 'table-heading';
+        renderWithProviders(
+            <>
+                <h2 id={headingId}>Table Title</h2>
+                <Table<TestData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="id"
+                    ariaLabelledBy={headingId}
+                />
+            </>,
+        );
+
+        expect(screen.getByRole('table')).toHaveAttribute('aria-labelledby', headingId);
+    });
+
+    it('should apply aria-describedby attribute', () => {
+        const descriptionId = 'table-description';
+        renderWithProviders(
+            <>
+                <p id={descriptionId}>This table describes important data.</p>
+                <Table<TestData>
+                    columns={columns}
+                    data={data}
+                    rowIdField="id"
+                    ariaDescribedBy={descriptionId}
+                />
+            </>,
+        );
+
+        expect(screen.getByRole('table')).toHaveAttribute('aria-describedby', descriptionId);
+    });
+
+    it('column sorting should be set to defaultSort value when defaultSort is set', () => {
+        renderWithProviders(
             <Table<TestData>
                 columns={columnsSorted}
                 data={data}
@@ -195,12 +356,13 @@ describe('Table', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
+        expect(screen.getByRole('columnheader', { name: 'Column 1' })).toHaveAttribute('aria-sort', 'ascending');
     });
 
-    test('onRowClick callback is called when a row is clicked', () => {
+    it('onRowClick callback is called when a row is clicked', async () => {
         const callback = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -210,14 +372,15 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'table-row-0').simulate('click');
+        await user.click(screen.getByTestId('table-row-0'));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('onSelectedRowIds is called when row-checkbox is checked', () => {
+    it('onSelectedRowIds is called when row-checkbox is checked', async () => {
         const onSelectedRowIdsChange = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -227,14 +390,16 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'row-checkbox-0').find('input').simulate('change', { target: { checked: true } });
+        const checkbox = screen.getByTestId('row-checkbox-0');
+        await user.click(checkbox);
 
         expect(onSelectedRowIdsChange).toHaveBeenCalledWith([data[0].id]);
     });
 
-    test('onSelectedRowIds is called with all rows when row-checkbox-all is checked', () => {
+    it('onSelectedRowIds is called with all rows when row-checkbox-all is checked', async () => {
         const onSelectedRowIdsChange = jest.fn();
-        const wrapper = mountWithTheme(
+        const user = userEvent.setup();
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -244,14 +409,14 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, SELECT_ALL_CHECKBOX_TESTID).find('input')
-            .simulate('change', { target: { checked: true } });
+        const checkboxAll = screen.getByTestId('row-checkbox-all');
+        await user.click(checkboxAll);
 
         expect(onSelectedRowIdsChange).toHaveBeenCalledWith(data.map((row) => row.id));
     });
 
-    test('should hide select all checkbox', () => {
-        const wrapper = mountWithTheme(
+    it('should hide select all checkbox', () => {
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -261,119 +426,11 @@ describe('Table', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, SELECT_ALL_CHECKBOX_TESTID).exists()).toBe(false);
+        expect(screen.queryByTestId('row-checkbox-all')).not.toBeInTheDocument();
     });
 
-    test('has desktop styles', () => {
-        const tree = renderTable(columns, 'desktop');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has tablet styles', () => {
-        const tree = renderTable(columns, 'tablet');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has mobile styles', () => {
-        const tree = renderTable(columns, 'mobile');
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has custom text alignment', () => {
-        const tree = renderTable(columnsTextAligned);
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has sorting styles', () => {
-        const tree = renderTable(columnsSorted, undefined, { defaultSort: { id: 'column1', desc: false } });
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has striped styles', () => {
-        const tree = renderTable(columns, undefined, { striped: true });
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has small rowSize styles', () => {
-        const tree = renderTable(columns, undefined, { rowSize: 'small' });
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has rowNumbers styles', () => {
-        const tree = renderTable(columns, undefined, { rowNumbers: true });
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has clickable rows styles', () => {
-        const tree = renderTable(columns, undefined, { onRowClick: jest.fn() });
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has error rows styles', () => {
-        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} rowIdField="id" />);
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has selectable rows styles', () => {
-        const tree = renderWithProviders(
-            <Table<TestData> rowSelectionMode="multiple" columns={columns} data={data} rowIdField="id" />,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has sticky header styles', () => {
-        const tree = renderWithProviders(
-            <Table<TestData> stickyHeader columns={columns} data={data} rowIdField="id" />,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has sticky column styles', () => {
-        const tree = renderWithProviders(
-            <Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} rowIdField="id" />,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has aria-label on header columns', () => {
-        const tree = renderWithProviders(
-            <Table<TestData>
-                columns={columnsWithHeaderAriaLabel}
-                data={data}
-                rowIdField="id"
-            />,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has column with headers grouped', () => {
-        const tree = renderWithProviders(
-            <Table<TestData>
-                columns={columnsWithHeadersGrouped}
-                data={data}
-                rowIdField="id"
-            />,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('has radio buttons in single selection mode', () => {
-        const wrapper = mountWithTheme(
+    it('has radio buttons in single selection mode', () => {
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
@@ -382,13 +439,13 @@ describe('Table', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'row-radiobutton-0')
-            .find('input')
-            .prop('type')).toBe('radio');
+        const radio = screen.getByTestId('radiobutton-row-radiobutton-0');
+        expect(radio).toHaveAttribute('type', 'radio');
     });
 
-    test('has single selection when selecting other row in single selection mode', () => {
-        const wrapper = mountWithTheme(
+    it('has single selection when selecting other row in single selection mode', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
@@ -397,23 +454,19 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'row-radiobutton-0')
-            .find('input')
-            .simulate('change', { target: { checked: true } });
-        getByTestId(wrapper, 'row-radiobutton-1')
-            .find('input')
-            .simulate('change', { target: { checked: true } });
+        const radio0 = screen.getByTestId('radiobutton-row-radiobutton-0');
+        const radio1 = screen.getByTestId('radiobutton-row-radiobutton-1');
 
-        expect(getByTestId(wrapper, 'row-radiobutton-0')
-            .find('input')
-            .prop('checked')).toBe(false);
-        expect(getByTestId(wrapper, 'row-radiobutton-1')
-            .find('input')
-            .prop('checked')).toBe(true);
+        await user.click(radio0);
+        expect(radio0).toBeChecked();
+
+        await user.click(radio1);
+        expect(radio0).not.toBeChecked();
+        expect(radio1).toBeChecked();
     });
 
-    test('should select only one row when multiple selected rows are provided but selectionMode is single', () => {
-        const wrapper = mountWithTheme(
+    it('should select only one row when multiple selected rows are provided but selectionMode is single', () => {
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="single"
                 columns={columns}
@@ -423,16 +476,15 @@ describe('Table', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'row-radiobutton-0')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-radiobutton-1')
-            .find('input')
-            .prop('checked')).toBe(false);
+        const radio0 = screen.getByTestId('radiobutton-row-radiobutton-0');
+        const radio1 = screen.getByTestId('radiobutton-row-radiobutton-1');
+
+        expect(radio0).toBeChecked();
+        expect(radio1).not.toBeChecked();
     });
 
-    test('should select multiple rows when selectionMode is multiple', () => {
-        const wrapper = mountWithTheme(
+    it('should select multiple rows when selectionMode is multiple', () => {
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -442,16 +494,16 @@ describe('Table', () => {
             />,
         );
 
-        expect(getByTestId(wrapper, 'row-checkbox-0')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-checkbox-1')
-            .find('input')
-            .prop('checked')).toBe(true);
+        const checkbox0 = screen.getByTestId('row-checkbox-0');
+        const checkbox1 = screen.getByTestId('row-checkbox-1');
+
+        expect(checkbox0).toBeChecked();
+        expect(checkbox1).toBeChecked();
     });
 
-    test('should select all sub rows when selection parent row', () => {
+    it('should select all sub rows when selection parent row', async () => {
         const onSelectedRowIdsChange = jest.fn();
+        const user = userEvent.setup();
         const dataWithSubrows: TableData<TestData>[] = [
             {
                 id: '0',
@@ -471,7 +523,7 @@ describe('Table', () => {
                 ],
             },
         ];
-        const wrapper = mountWithTheme(
+        renderWithProviders(
             <Table<TestData>
                 rowSelectionMode="multiple"
                 columns={columns}
@@ -482,19 +534,16 @@ describe('Table', () => {
             />,
         );
 
-        getByTestId(wrapper, 'row-checkbox-0')
-            .find('input')
-            .simulate('change', { target: { checked: true } });
+        const checkbox0 = screen.getByTestId('row-checkbox-0');
+        await user.click(checkbox0);
 
-        expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['0', '1', '2']);
-        expect(getByTestId(wrapper, 'row-checkbox-0')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-checkbox-1')
-            .find('input')
-            .prop('checked')).toBe(true);
-        expect(getByTestId(wrapper, 'row-checkbox-2')
-            .find('input')
-            .prop('checked')).toBe(true);
+        await waitFor(() => expect(onSelectedRowIdsChange).toHaveBeenLastCalledWith(['0', '1', '2']));
+        expect(checkbox0).toBeChecked();
+
+        const checkbox1 = screen.getByTestId('row-checkbox-1');
+        const checkbox2 = screen.getByTestId('row-checkbox-2');
+
+        expect(checkbox1).toBeChecked();
+        expect(checkbox2).toBeChecked();
     });
 });

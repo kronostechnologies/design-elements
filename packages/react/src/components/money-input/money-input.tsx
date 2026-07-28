@@ -1,10 +1,12 @@
-import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, type FC, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
 import { TextInput, textInputClasses } from '../text-input';
+import { ToggletipProps } from '../toggletip';
 import { toLocale } from './toLocale';
+import { type RequiredLabelProps } from '../label/label';
 
 type TextAlignment = 'left' | 'right';
 
@@ -31,6 +33,10 @@ export interface MoneyInputProps {
     readOnly?: boolean;
     required?: boolean;
     /**
+     * @default 'text'
+     */
+    requiredLabelType?: RequiredLabelProps['type'];
+    /**
      * Message displayed in case of validation error
      * @default Invalid number.
      */
@@ -55,6 +61,7 @@ export interface MoneyInputProps {
     hint?: string;
     noMargin?: boolean;
     textAlignment?: TextAlignment;
+    toggletip?: ToggletipProps;
 
     onChange?(value: number | null, formattedValue: string): void;
 }
@@ -69,11 +76,12 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
+export const MoneyInput: FC<MoneyInputProps> = ({
     id: providedId,
     className,
     readOnly,
     required,
+    requiredLabelType,
     disabled,
     label,
     onChange,
@@ -85,6 +93,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
     hint,
     noMargin,
     textAlignment = 'left',
+    toggletip,
     ...otherProps
 }) => {
     const { i18n, t } = useTranslation('money-input');
@@ -102,11 +111,13 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
         setDisplayValue(newMaskedValue);
         if (maskedValue !== newMaskedValue) {
             setMaskedValue(newMaskedValue);
-            if (onChange) {
-                onChange(roundedValue, newMaskedValue);
-            }
+            onChange?.(roundedValue, newMaskedValue);
         }
     }, [currency, locale, maskedValue, onChange, precision]);
+
+    if (value !== null && !hasFocus && displayValue !== safeFormatCurrency(value, precision, locale, currency)) {
+        updateFormattedValue(value.toString());
+    }
 
     useEffect(() => {
         if (inputElement.current != null) {
@@ -121,12 +132,6 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             inputElement.current?.select();
         }
     }, [hasFocus]);
-
-    useEffect(() => {
-        const newValue = safeFormatCurrency(value, precision, locale, currency);
-        setDisplayValue(newValue);
-        setMaskedValue(newValue);
-    }, [currency, locale, precision, value]);
 
     const handleBlurEvent: () => void = useCallback(() => {
         setHasFocus(false);
@@ -146,7 +151,11 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
 
         event.preventDefault();
         setDisplayValue(nextDisplayValue);
-    }, []);
+
+        const roundedValue = parseAndRound(nextDisplayValue, precision);
+        const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
+        onChange?.(roundedValue, newMaskedValue);
+    }, [currency, locale, onChange, precision]);
 
     return (
         <StyledTextInput
@@ -155,6 +164,7 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             className={className}
             readOnly={readOnly}
             required={required}
+            requiredLabelType={requiredLabelType}
             disabled={disabled}
             ref={inputElement}
             type="text"
@@ -167,7 +177,10 @@ export const MoneyInput: VoidFunctionComponent<MoneyInputProps> = ({
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
             noMargin={noMargin}
+            toggletip={toggletip}
             {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );
 };
+
+MoneyInput.displayName = 'MoneyInput';

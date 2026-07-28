@@ -1,77 +1,72 @@
-import { FunctionComponent, PropsWithChildren, useState } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useId } from '../../hooks/use-id';
-import {
-    Size,
-    Button,
-    IconButton,
-    ButtonProps,
-} from '../buttons';
-import { IconName } from '../icon/icon';
+import { focus } from '../../utils/css-state';
+import type { MutuallyExclusive } from '../../utils/types';
+import { type ButtonProps } from '../buttons';
+import type { IconButtonProps } from '../buttons/icon-button';
+import { DropdownMenuButton, type DropdownMenuButtonProps } from '../dropdown-menu-button';
+import { Icon, type IconName } from '../icon';
 
-export type ButtonPropsWithoutOnClick = Omit<ButtonProps, 'onClick'> & {
-    iconName?: IconName;
-    size?: Size;
-}
+type ButtonDisclosureButtonProps = Partial<Pick<ButtonProps, 'buttonType'>>
+    & Omit<ButtonProps, 'buttonType' | 'className' | 'onClick'>;
 
-interface DisclosureWidgetProps {
+type IconDisclosureButtonProps = Partial<Pick<IconButtonProps, 'buttonType'>>
+    & Omit<IconButtonProps, 'buttonType' | 'className' | 'onClick'>;
+
+export type DisclosureButtonProps = MutuallyExclusive<ButtonDisclosureButtonProps, IconDisclosureButtonProps>
+
+export interface DisclosureProps {
+    align?: DropdownMenuButtonProps['align'];
+    buttonProps: DisclosureButtonProps;
+    className?: string;
     idContent?: string;
-    buttonProps: ButtonPropsWithoutOnClick;
 }
 
-export const Container = styled.div<{ $expanded: boolean; }>`
-    background-color: ${({ theme }) => theme.component['disclosure-background-color']};
-    border:
-        ${({
-            $expanded,
-            theme,
-        }) => (
-            $expanded ? `1px solid ${theme.component['disclosure-border-color']}` : 0
-        )};
+const Container = styled.div`
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 ${({ theme }) => theme.component['disclosure-box-shadow-color']};
-    color: ${({ theme }) => theme.component['disclosure-text-color']};
-    display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
-    position: absolute;
-    z-index: 700;
+    overflow-y: auto;
+    padding: var(--spacing-half) var(--spacing-2x);
+
+    ${focus};
 `;
 
-const DisclosureContainer = styled.div`
-    position: relative;
-`;
-
-export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureWidgetProps>> = ({
+export const Disclosure: FunctionComponent<PropsWithChildren<DisclosureProps>> = ({
+    align,
     idContent: providedIdContent,
     buttonProps,
+    className,
     children,
 }) => {
-    const [expanded, setExpanded] = useState<boolean>(false);
     const idContent = useId(providedIdContent);
 
+    const {
+        buttonType = 'tertiary',
+        inverted = false,
+        ...otherButtonProps
+    } = buttonProps;
+
+    const icon = 'iconName' in buttonProps && buttonProps.iconName
+        ? <Icon name={buttonProps.iconName as unknown as IconName} />
+        : undefined;
+
     return (
-        <DisclosureContainer>
-            {!buttonProps.iconName && (
-                <Button
-                    {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                    onClick={() => setExpanded(!expanded)}
-                    onBlur={() => setExpanded(false)}
-                    aria-expanded={expanded}
-                    aria-controls={idContent}
-                />
+        <DropdownMenuButton
+            align={align}
+            buttonType={buttonType}
+            className={className}
+            dropdownMenuId={idContent}
+            hasCaret={false}
+            icon={icon}
+            inverted={inverted}
+            render={() => (
+                <Container data-testid="disclosure-content">
+                    {children}
+                </Container>
             )}
-            {buttonProps.iconName && (
-                <IconButton
-                    {...buttonProps /* eslint-disable-line react/jsx-props-no-spreading */}
-                    iconName={buttonProps.iconName}
-                    onClick={() => setExpanded(!expanded)}
-                    onBlur={() => setExpanded(false)}
-                    aria-expanded={expanded}
-                    aria-controls={idContent}
-                />
-            )}
-            <Container $expanded={expanded} id={idContent}>
-                {children}
-            </Container>
-        </DisclosureContainer>
+            {...otherButtonProps /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
     );
 };
+
+Disclosure.displayName = 'Disclosure';

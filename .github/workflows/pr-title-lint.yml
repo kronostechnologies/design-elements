@@ -1,0 +1,15 @@
+name: Lint PR title
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  lint-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint pull request title
+        uses: equisoft-actions/action-pr-title@v1
+        with:
+          allowed_prefixes: 'feat,fix,deps,docs,chore,style,refactor,perf,test,ci'
+          disallowed_prefixes: 'DS'
+          format: 'scope(Component)!: description (DS-0000)'

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Modal Matches snapshot (closed) 1`] = `
 .c0 {
@@ -9,10 +9,7 @@ exports[`Modal Matches snapshot (closed) 1`] = `
   right: var(--spacing-2x);
 }
 
-<body
-  class=""
-  style="overflow: unset;"
->
+<body>
   <div />
   <div
     class="c0"
@@ -35,7 +32,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-4x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
@@ -97,7 +94,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -133,7 +130,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-4x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
@@ -195,7 +192,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -261,14 +258,9 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -286,14 +278,9 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -309,11 +296,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c0 {
@@ -326,7 +309,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-4x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
@@ -400,7 +383,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -418,11 +401,25 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <main
           class="c5"
@@ -480,14 +477,9 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -505,14 +497,9 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -528,11 +515,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
+  pointer-events: none;
 }
 
 .c0 {
@@ -545,7 +528,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-4x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
@@ -619,7 +602,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -637,11 +620,25 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
             height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
             width="16"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <main
           class="c5"
@@ -688,7 +685,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: var(--size-3x);
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -699,14 +696,9 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c2 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c2:focus {
+.c2:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -720,17 +712,12 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: var(--size-3x);
+  width: var(--size-2x);
 }
 
-.c3 {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-}
-
-.c3:focus {
+.c3:focus-visible {
   box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #84C6EA;
+  outline: 2px solid #99C0D5;
   outline-offset: -2px;
 }
 
@@ -746,11 +733,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #B7BBC2;
   cursor: not-allowed;
-}
-
-.c3 > svg {
-  height: var(--size-1halfx);
-  width: var(--size-1halfx);
+  pointer-events: none;
 }
 
 .c0 {
@@ -763,7 +746,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-4x);
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
@@ -837,7 +820,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -855,11 +838,25 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
         >
           <svg
             aria-hidden="true"
-            color="currentColor"
+            class="lucide lucide-x"
+            fill="none"
             focusable="false"
-            height="24"
-            width="24"
-          />
+            height="20"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6 6 18"
+            />
+            <path
+              d="m6 6 12 12"
+            />
+          </svg>
         </button>
         <main
           class="c5"

@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useBreadcrumbOverflow } from './use-breadcrumb-overflow';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
@@ -15,7 +15,7 @@ jest.mock('./use-breadcrumb-overflow', () => ({
     useBreadcrumbOverflow: jest.fn(),
 }));
 
-describe('useBreadcrumpRoutes', () => {
+describe('useBreadcrumbRoutes', () => {
     it('should include routes in the initial shown routes', () => {
         jest.mocked(useBreadcrumbOverflow).mockReturnValue({ horizontal: false, vertical: false });
 

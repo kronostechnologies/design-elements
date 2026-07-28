@@ -1,21 +1,22 @@
-import React, { useMemo, useState, useCallback, createRef } from 'react';
+import React, { createRef, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
-import { Type, Tag } from '../heading/heading';
+import { type HeadingTag, type HeadingType } from '../heading';
 import { AccordionItem } from './accordion-item';
 
 export interface ItemsProps {
     title: string;
     content: React.ReactNode | React.ReactElement;
     id?: string;
-    headingType?: Type | undefined;
-    headingTag?: Tag | undefined;
+    headingType?: HeadingType | undefined;
+    headingTag?: HeadingTag | undefined;
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
 
 interface AccordionProps {
+    className?: string;
     id?: string;
     items: ItemsProps[];
     mode?: 'single' | 'multi';
@@ -29,6 +30,7 @@ export const StyledAccordionGroup = styled.div`
 `;
 
 export const Accordion: React.FC<AccordionProps> = ({
+    className,
     id: providedId,
     mode = 'single',
     items,
@@ -99,7 +101,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     };
 
     return (
-        <StyledAccordionGroup>
+        <StyledAccordionGroup className={className}>
             {items.map((item, index) => {
                 const uniqueId = `${id}-${item.title.replace(/\s+/g, '-')}`;
                 return (
@@ -111,6 +113,8 @@ export const Accordion: React.FC<AccordionProps> = ({
                         expanded={expandedItemIds.includes(uniqueId)}
                         disabled={item.disabled}
                         buttonRef={buttonRefs[index]}
+                        headingType={item.headingType}
+                        headingTag={item.headingTag}
                         onToggle={() => handleToggle(uniqueId)}
                         onKeyDown={(event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index)}
                     />
@@ -119,3 +123,5 @@ export const Accordion: React.FC<AccordionProps> = ({
         </StyledAccordionGroup>
     );
 };
+
+Accordion.displayName = 'Accordion';

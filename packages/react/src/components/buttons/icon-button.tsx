@@ -1,25 +1,23 @@
 import { forwardRef, ReactElement, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { ResolvedTheme } from '../../themes';
-import { AvatarProps } from '../avatar/avatar';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName, IconProps } from '../icon/icon';
-import { AbstractButton } from './abstract/abstract-button';
-import { Size } from './abstract/types';
+import { type ResolvedTheme } from '../../themes';
+import { type AvatarProps } from '../avatar';
+import { useDeviceContext } from '../device-context-provider';
+import { Icon, type IconName, type IconProps } from '../icon';
+import { AbstractButton, type ButtonSize } from './abstract';
+import { type ButtonProps } from './button';
 import { getButtonTypeStyles } from './styled';
-import { ButtonProps } from './types';
 
-export interface IconButtonProps extends ButtonProps {
+export interface IconButtonProps extends Omit<ButtonProps, 'leftIconName' | 'rightIconName'> {
     children?: ReactElement<IconProps | AvatarProps>;
     /**
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
-    size?: Size;
 }
 
 const getButtonSizeStyles = (
-    { isMobile, size }: { isMobile: boolean, size?: Size },
+    { isMobile, size }: { isMobile: boolean, size?: ButtonSize },
 ): FlattenInterpolation<ThemeProps<ResolvedTheme>> => {
     switch (size) {
         case 'small':
@@ -27,13 +25,13 @@ const getButtonSizeStyles = (
                 ${!isMobile && 'min-width: var(--size-1halfx)'};
 
                 padding: 0;
-                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)'};
+                width: ${isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)'};
             `;
         case 'medium':
         default:
             return css`
                 padding: 0;
-                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-2x)'};
+                width: var(--size-2x);
             `;
     }
 };
@@ -41,11 +39,6 @@ const getButtonSizeStyles = (
 const StyledButton = styled(AbstractButton)`
     ${getButtonTypeStyles};
     ${getButtonSizeStyles};
-
-    > svg {
-        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
-    }
 `;
 
 export const IconButton = forwardRef(({
@@ -89,9 +82,8 @@ export const IconButton = forwardRef(({
         >
             { children || (
                 <Icon
-                    aria-hidden="true"
                     name={iconName}
-                    size={isMobile ? '24' : '16'}
+                    size={isMobile ? '20' : '16'}
                 />
             )}
         </StyledButton>

@@ -85,14 +85,17 @@ const TabsMeta: Meta<typeof Tabs> = {
 export default TabsMeta;
 type Story = StoryObj<typeof Tabs>;
 
-export const Default: Story = {
-    ...TabsMeta,
-};
-
-export const Global: Story = {
+export const Medium: Story = {
     ...TabsMeta,
     args: {
-        global: true,
+        size: 'medium',
+    },
+};
+
+export const Small: Story = {
+    ...TabsMeta,
+    args: {
+        size: 'small',
     },
 };
 
@@ -106,18 +109,24 @@ export const AddAndDeleteTabs: Story = {
             setCurrentTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
         }
 
+        const handleAdd = (): void => {
+            addTabCounter += 1;
+            setCurrentTabs([...currentTabs, {
+                id: `tab${addTabCounter}`,
+                title: 'New Tab',
+                panelContent: <StyledDiv>New tab content</StyledDiv>,
+            }]);
+        };
+
         return (
             <Tabs
                 tabs={currentTabs}
                 onRemove={handleRemove}
-                onAddTab={() => {
-                    addTabCounter += 1;
-                    setCurrentTabs([...currentTabs, {
-                        id: `tab${addTabCounter}`,
-                        title: 'New Tab',
-                        panelContent: <StyledDiv>New tab content</StyledDiv>,
-                    },
-                    ]);
+                size="medium"
+                addButton={{
+                    label: 'Add new tab',
+                    tooltipContent: 'Add a new tab',
+                    onClick: handleAdd,
                 }}
             />
         );
@@ -140,16 +149,16 @@ export const Scrollable: Story = {
 
         return (
             <div style={{ maxWidth: '600px' }}>
-                <Tabs tabs={customTabs} />
+                <Tabs tabs={customTabs} size="medium" />
                 <br />
-                <Tabs tabs={customTabs} global />
+                <Tabs tabs={customTabs} size="small" />
             </div>
         );
     },
 };
 
 export const WithForceRenderTabPanels: Story = {
-   ...TabsMeta,
+    ...TabsMeta,
     args: {
         forceRenderTabPanels: true,
     },
@@ -211,6 +220,39 @@ export const DefaultSelectedTab: Story = {
 
         return (
             <Tabs tabs={customTabs} defaultSelectedId='tab2' />
+        );
+    },
+};
+
+export const ControlledTabs: Story = {
+    ...TabsMeta,
+    render: () => {
+        const [activeTabId, setActiveTabId] = useState('tab1');
+
+        const controlledTabs: Tab[] = [
+            {
+                id: 'tab1',
+                title: 'First Button',
+                panelContent: <StyledDiv>First tab content</StyledDiv>,
+            },
+            {
+                id: 'tab2',
+                title: 'Second Button',
+                panelContent: <StyledDiv>Second tab content</StyledDiv>,
+            },
+            {
+                id: 'tab3',
+                title: 'Third Button',
+                panelContent: <StyledDiv>Third tab content</StyledDiv>,
+            },
+        ];
+
+        return (
+            <Tabs
+                tabs={controlledTabs}
+                activeTabId={activeTabId}
+                onTabChange={setActiveTabId}
+            />
         );
     },
 };

@@ -1,48 +1,47 @@
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithTheme } from '../../test-utils/renderer';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Lozenge } from './lozenge';
 
 describe('Lozenge', () => {
-    test('has icon when icon prop is specified', () => {
-        const wrapper = shallow(<Lozenge icon="home">Test</Lozenge>);
+    it('has icon when icon prop is specified', () => {
+        renderWithProviders(<Lozenge icon="home">Test</Lozenge>);
 
-        expect(getByTestId(wrapper, 'lozenge-icon').exists()).toBe(true);
+        expect(screen.getByTestId('lozenge-icon')).toBeInTheDocument();
     });
 
-    test('matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge>Hello World</Lozenge>);
+    it('matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge>Hello World</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('default matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge>default</Lozenge>);
+    it('default matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge>default</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('success matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge variant='success'>success</Lozenge>);
+    it('success matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge variant="success">success</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('warning matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge variant='warning'>warning</Lozenge>);
+    it('warning matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge variant="warning">warning</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('info matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge variant='info'>info</Lozenge>);
+    it('info matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge variant="info">info</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('alert matches the snapshot', () => {
-        const tree = renderWithTheme(<Lozenge variant='alert'>alert</Lozenge>);
+    it('alert matches the snapshot', () => {
+        const { asFragment } = renderWithProviders(<Lozenge variant="alert">alert</Lozenge>);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 });

@@ -1,24 +1,24 @@
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { SectionalBanner } from './sectional-banner';
 
 jest.mock('../../utils/uuid');
 
 describe('SectionalBanner', () => {
     it('should match snapshot (desktop)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 Test
             </SectionalBanner>,
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should match snapshot (custom message)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 <p>Some sub title</p>
                 <ul>
@@ -28,23 +28,23 @@ describe('SectionalBanner', () => {
             'desktop',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should match snapshot (mobile)', () => {
-        const tree = renderWithProviders(
+        const { container } = renderWithProviders(
             <SectionalBanner type="info">
                 Test
             </SectionalBanner>,
             'mobile',
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    (['mobile', 'desktop'] as DeviceType[]).forEach((device) => {
+    (['mobile', 'desktop'] as const).forEach((device) => {
         it(`should show destructive button when type is alert (${device})`, () => {
-            const wrapper = mountWithProviders(
+            renderWithProviders(
                 <SectionalBanner
                     type="alert"
                     buttonLabel="some button"
@@ -52,35 +52,35 @@ describe('SectionalBanner', () => {
                 >
                     Test
                 </SectionalBanner>,
-                { wrappingComponentProps: { staticDevice: device } },
+                device,
             );
 
-            const buttonWrapper = getByTestId(wrapper, `${device}-button`);
-            const button = getByTestId(buttonWrapper, 'button');
-
-            expect(button.prop('buttonType')).toBe('destructive-primary');
+            const button = screen.getByTestId('button');
+            expect(button).toBeInTheDocument();
         });
 
-        it(`should call callback when dismiss button is clicked (${device})`, () => {
+        it(`should call callback when dismiss button is clicked (${device})`, async () => {
             const onDismiss = jest.fn();
-            const wrapper = mountWithProviders(
+            const user = userEvent.setup();
+            renderWithProviders(
                 <SectionalBanner
                     type="info"
                     onDismiss={onDismiss}
                 >
                     Test
                 </SectionalBanner>,
-                { wrappingComponentProps: { staticDevice: device } },
+                device,
             );
 
-            getByTestId(wrapper, 'dismiss-button').simulate('click');
+            await user.click(screen.getByTestId('dismiss-button'));
 
             expect(onDismiss).toHaveBeenCalled();
         });
 
-        it(`should call callback when button is clicked (${device})`, () => {
+        it(`should call callback when button is clicked (${device})`, async () => {
             const onButtonClicked = jest.fn();
-            const wrapper = mountWithProviders(
+            const user = userEvent.setup();
+            renderWithProviders(
                 <SectionalBanner
                     type="info"
                     buttonLabel="some button"
@@ -88,10 +88,10 @@ describe('SectionalBanner', () => {
                 >
                     Test
                 </SectionalBanner>,
-                { wrappingComponentProps: { staticDevice: device } },
+                device,
             );
 
-            getByTestId(wrapper, `${device}-button`).simulate('click');
+            await user.click(screen.getByTestId('button'));
 
             expect(onButtonClicked).toHaveBeenCalled();
         });

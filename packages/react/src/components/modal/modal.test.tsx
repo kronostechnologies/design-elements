@@ -1,8 +1,9 @@
-import { fireEvent, RenderResult } from '@testing-library/react';
+import { RenderResult, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ReactElement } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
-import { renderPortalWithProviders, rerenderPortalWithProviders } from '../../test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { DeviceType } from '../device-context-provider';
 import { Modal } from './modal';
 import { ModalProps } from './types';
 
@@ -16,7 +17,7 @@ const defaultTestProps = {
 };
 
 function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): RenderResult {
-    return renderPortalWithProviders(
+    return renderWithProviders(
         <Modal {...defaultTestProps} {...props}>
             <p id="modal-description">Test Content</p>
         </Modal>,
@@ -25,57 +26,101 @@ function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): Ren
 }
 
 describe('Modal', () => {
-    test('onRequestClose callback is called when close-button is clicked', () => {
+    it('resets body overflow style on unmount', () => {
+        const { unmount } = renderModal({ isOpen: true });
+
+        expect(document.body.style.overflow).toBe('hidden');
+
+        unmount();
+
+        expect(document.body.style.overflow).toBe('');
+    });
+
+    it('resets body overflow style on close', () => {
+        const { rerender } = renderModal({ isOpen: true });
+
+        expect(document.body.style.overflow).toBe('hidden');
+
+        rerender(<Modal {...defaultTestProps} isOpen={false} />);
+
+        expect(document.body.style.overflow).toBe('');
+    });
+
+    it('onRequestClose callback is called when close-button is clicked', async () => {
         const callback = jest.fn();
-        const { getByTestId } = renderPortalWithProviders(
+        const { getByTestId } = renderWithProviders(
             <Modal isOpen onRequestClose={callback} ariaHideApp={false}>
                 <p id="modal-description">Test Content</p>
             </Modal>,
             'desktop',
         );
 
-        fireEvent.click(getByTestId('close-button'));
+        const closeButton = getByTestId('close-button');
+        const icon = closeButton.querySelector('svg')!;
+
+        await userEvent.click(icon);
 
         expect(callback).toHaveBeenCalled();
     });
 
-    test('Matches snapshot (opened, desktop)', () => {
+    it('onAfterClose callback is called after modal is closed', async () => {
+        const onAfterClose = jest.fn();
+        const TestComponent = ({ isOpen }: { isOpen: boolean }): ReactElement => (
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={doNothing}
+                onAfterClose={onAfterClose}
+                ariaHideApp={false}
+            >
+                <p id="modal-description">Test Content</p>
+            </Modal>
+        );
+
+        const { rerender } = renderWithProviders(<TestComponent isOpen />, 'desktop');
+        rerender(<TestComponent isOpen={false} />);
+
+        await waitFor(() => {
+            expect(onAfterClose).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    it('Matches snapshot (opened, desktop)', () => {
         const { baseElement } = renderModal({ isOpen: true }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (opened, mobile)', () => {
+    it('Matches snapshot (opened, mobile)', () => {
         const { baseElement } = renderModal({ isOpen: true }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (no close button, desktop)', () => {
+    it('Matches snapshot (no close button, desktop)', () => {
         const { baseElement } = renderModal({ isOpen: true, hasCloseButton: false }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (no close button, mobile)', () => {
+    it('Matches snapshot (no close button, mobile)', () => {
         const { baseElement } = renderModal({ isOpen: true, hasCloseButton: false }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (closed)', () => {
+    it('Matches snapshot (closed)', () => {
         const { baseElement } = renderModal({ isOpen: false });
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (noPadding)', () => {
+    it('Matches snapshot (noPadding)', () => {
         const { baseElement } = renderModal({ isOpen: true, noPadding: true });
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Modal width prop is applied correctly', () => {
+    it('Modal width prop is applied correctly', () => {
         const initialWidth = '500px';
         const newWidth = '70vw';
         const TestComponent = ({ width }: { width: string }): ReactElement => (
@@ -84,12 +129,12 @@ describe('Modal', () => {
             </Modal>
         );
 
-        const { getByRole, rerender } = renderPortalWithProviders(<TestComponent width={initialWidth} />, 'desktop');
+        const { getByRole, rerender } = renderWithProviders(<TestComponent width={initialWidth} />, 'desktop');
         const modal = getByRole('dialog');
 
         expect(getComputedStyle(modal).width).toBe(initialWidth);
 
-        rerenderPortalWithProviders(<TestComponent width={newWidth} />, rerender, 'desktop');
+        rerender(<TestComponent width={newWidth} />);
 
         expect(getComputedStyle(modal).width).toBe(newWidth);
     });

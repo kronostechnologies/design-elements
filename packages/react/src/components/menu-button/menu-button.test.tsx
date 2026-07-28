@@ -1,150 +1,154 @@
-import { shallow } from 'enzyme';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';
-import { mountWithTheme } from '../../test-utils/renderer';
-import { Button } from '../buttons/button';
-import { IconButton } from '../buttons/icon-button';
-import { MenuOption } from '../menu/menu';
+import { screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { MenuItem } from '../menu';
 import { MenuButton } from './menu-button';
 
-function givenOptions(): MenuOption[] {
-    return [
-        {
-            label: 'Option 1',
-            onClick: jest.fn(),
-        },
-        {
-            label: 'Option 2',
-            onClick: jest.fn(),
-        },
-        {
-            label: 'Option 3',
-            onClick: jest.fn(),
-        },
-    ];
-}
-
 describe('MenuButton', () => {
-    let options: MenuOption[];
+    let options: MenuItem[];
 
     beforeEach(() => {
-        options = givenOptions();
+        options = [
+            {
+                label: 'Option 1',
+                onClick: jest.fn(),
+            },
+            {
+                label: 'Option 2',
+                onClick: jest.fn(),
+            },
+            {
+                label: 'Option 3',
+                onClick: jest.fn(),
+            },
+        ];
     });
 
     it('should return Button component by default', () => {
-        const wrapper = shallow(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+        renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
 
-        expect(getByTestId(wrapper, 'menu-button').type()).toBe(Button);
+        expect(screen.getByRole('button', { name: /test/i })).toBeInTheDocument();
+        expect(screen.getByTestId('chevron-icon')).toBeInTheDocument();
     });
 
     it('should return IconButton component when iconName prop is defined', () => {
-        const wrapper = shallow(<MenuButton iconName="home" buttonType="primary" options={options}>Test</MenuButton>);
+        renderWithProviders(<MenuButton iconName="home" buttonType="primary" options={options}>Test</MenuButton>);
 
-        expect(getByTestId(wrapper, 'menu-button').type()).toBe(IconButton);
+        expect(screen.getByRole('button')).toBeInTheDocument();
+        expect(screen.queryByText('Test')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('chevron-icon')).not.toBeInTheDocument();
     });
 
-    it('should open menu when menu-button is clicked', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
-        waitForComponentToPaint(wrapper);
+    it('should open menu when menu-button is clicked', async () => {
+        renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
 
-        getByTestId(wrapper, 'menu-button').simulate('click');
+        await userEvent.click(screen.getByRole('button', { name: /test/i }));
 
-        expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu')).toBeInTheDocument();
     });
 
-    it('should open menu when Space key is pressed', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
-        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Space' });
-        setTimeout(() => {
-            expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
-        }, 0);
+    it('should open menu when Space key is pressed', async () => {
+        renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+
+        const button = screen.getByRole('button', { name: /test/i });
+        button.focus();
+        await userEvent.keyboard(' ');
+
+        expect(screen.getByTestId('menu')).toBeInTheDocument();
     });
 
-    it('should open menu when Enter key is pressed', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
-        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
-        setTimeout(() => {
-            expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
-        });
+    it('should open menu when Enter key is pressed', async () => {
+        renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+
+        const button = screen.getByRole('button', { name: /test/i });
+        button.focus();
+        await userEvent.keyboard('{Enter}');
+
+        expect(screen.getByTestId('menu')).toBeInTheDocument();
     });
 
-    it('should select menu child #0 if Enter is pressed', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
-        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
-        setTimeout(() => {
-            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu').getNodes()[0]);
-        });
+    it('should select menu child #0 if Enter is pressed', async () => {
+        renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+
+        const button = screen.getByRole('button', { name: /test/i });
+        button.focus();
+        await userEvent.keyboard('{Enter}');
+
+        await waitFor(() => expect(screen.getByTestId('menu-option-0')).toHaveFocus());
     });
 
     it('should be default open when defaultOpen prop is set to true', () => {
-        const wrapper = mountWithTheme(
+        renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>
                 Test
             </MenuButton>,
         );
 
-        expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
+        expect(screen.getByTestId('menu')).toBeInTheDocument();
     });
 
-    it('should close menu when escape key is pressed inside menu', () => {
-        const wrapper = mountWithTheme(
+    it('should close menu when escape key is pressed inside menu', async () => {
+        renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>
                 Test
             </MenuButton>,
         );
 
-        getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Escape' });
+        const firstOption = screen.getByTestId('menu-option-0');
+        firstOption.focus();
+        await userEvent.keyboard('{Escape}');
 
-        expect(getByTestId(wrapper, 'menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu')).not.toBeInTheDocument();
     });
 
-    it('should focus menu-button when escape key is pressed inside menu', () => {
-        const wrapper = mountWithTheme(
+    it('should focus menu-button when escape key is pressed inside menu', async () => {
+        renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>Test</MenuButton>,
-            { attachTo: document.body },
         );
 
-        getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Escape' });
+        const firstOption = screen.getByTestId('menu-option-0');
+        firstOption.focus();
+        await userEvent.keyboard('{Escape}');
 
-        setTimeout(() => {
-            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
-        }, 0);
-        wrapper.detach();
+        await waitFor(() => expect(screen.getByRole('button', { name: /test/i })).toHaveFocus());
     });
 
-    it('should close menu when tab key is pressed inside menu', () => {
-        const wrapper = mountWithTheme(
+    it('should close menu when tab key is pressed inside menu', async () => {
+        renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>
                 Test
             </MenuButton>,
         );
 
-        getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Tab' });
+        const firstOption = screen.getByTestId('menu-option-0');
+        firstOption.focus();
+        await userEvent.keyboard('{Tab}');
 
-        expect(getByTestId(wrapper, 'menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu')).not.toBeInTheDocument();
     });
 
-    it('should close menu when an option is selected inside menu', () => {
-        const wrapper = mountWithTheme(
+    it('should close menu when an option is selected inside menu', async () => {
+        renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>
                 Test
             </MenuButton>,
         );
 
-        getByTestId(wrapper, 'menu-option-0').simulate('click');
+        await userEvent.click(screen.getByTestId('menu-option-0'));
 
-        expect(getByTestId(wrapper, 'menu').exists()).toBe(false);
+        expect(screen.queryByTestId('menu')).not.toBeInTheDocument();
     });
 
     describe('chevron icon', () => {
         it('should point downwards when menu is not open', () => {
-            const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+            renderWithProviders(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
 
-            expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronDown');
+            const button = screen.getByRole('button', { name: /test/i });
+            expect(button).toHaveAttribute('aria-expanded', 'false');
         });
 
         it('should point upwards when menu is open', () => {
-            const wrapper = mountWithTheme(
+            renderWithProviders(
                 <MenuButton
                     buttonType="primary"
                     defaultOpen
@@ -154,7 +158,22 @@ describe('MenuButton', () => {
                 </MenuButton>,
             );
 
-            expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronUp');
+            const button = screen.getByRole('button', { name: /test/i });
+            expect(button).toHaveAttribute('aria-expanded', 'true');
         });
+    });
+
+    it('should render a tooltip when the tooltip prop is provided', async () => {
+        const tooltipProps = { label: 'Tooltip text', placement: 'top' as const };
+        renderWithProviders(
+            <MenuButton buttonType="primary" options={options} tooltip={tooltipProps}>
+                Test
+            </MenuButton>,
+        );
+
+        const button = screen.getByRole('button', { name: /test/i });
+        await userEvent.hover(button);
+
+        expect(await screen.findByText('Tooltip text')).toBeInTheDocument();
     });
 });

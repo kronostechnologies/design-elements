@@ -65,7 +65,7 @@ export const TextAsAdornment: Story = {
     },
 };
 
-export const EventCallbacks: Story = {
+export const WithEventCallbacks: Story = {
     ...TextInputMeta,
     parameters: rawCodeParameters,
     args: {
@@ -79,6 +79,17 @@ export const EventCallbacks: Story = {
         },
         onFocus: (event) => {
             console.info(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
+        },
+    },
+};
+
+export const WithToggletip: Story = {
+    ...TextInputMeta,
+    args: {
+        label: 'First Name',
+        toggletip: {
+            label: 'Toggletip label',
+            children: 'Toggletip content',
         },
     },
 };

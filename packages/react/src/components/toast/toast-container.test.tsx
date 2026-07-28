@@ -1,6 +1,7 @@
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { useToasts } from '../../hooks/use-toasts';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme } from '../../test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { ToastContainer } from './toast-container';
 import { ToastContextProps } from './toast-context';
 import { ToastTypeEnum } from './toast-type';
@@ -8,27 +9,29 @@ import { ToastTypeEnum } from './toast-type';
 jest.mock('../../hooks/use-toasts');
 
 describe('ToastContainer', () => {
-    it('should remove toast when dismiss is clicked', () => {
-        const removeToast: (id: string) => void = jest.fn();
-        jest.mocked(useToasts).mockReturnValue({ removeToast } as ToastContextProps);
-        const wrapper = mountWithTheme(
+    it('should remove toast when dismiss is clicked', async () => {
+        const user = userEvent.setup();
+        const removeToast = jest.fn();
+        jest.mocked(useToasts).mockReturnValue({ removeToast, toasts: [] } as unknown as ToastContextProps);
+
+        renderWithProviders(
             <ToastContainer id="an id" type="success" message="a message" position="bottom-right" />,
         );
 
-        getByTestId(wrapper, 'dismiss').simulate('click');
+        await user.click(screen.getByTestId('dismiss'));
 
         expect(removeToast).toHaveBeenCalled();
     });
 
-    Object.values(ToastTypeEnum).map((type) => (
+    Object.values(ToastTypeEnum).forEach((type) => {
         it(`should match snapshot (${type})`, () => {
-            jest.mocked(useToasts).mockReturnValue({} as ToastContextProps);
+            jest.mocked(useToasts).mockReturnValue({ toasts: [] } as unknown as ToastContextProps);
 
-            const wrapper = mountWithTheme(
+            const { asFragment } = renderWithProviders(
                 <ToastContainer id="an id" type={type} message="a message" position="bottom-right" />,
             );
 
-            expect(wrapper).toMatchSnapshot();
-        })
-    ));
+            expect(asFragment()).toMatchSnapshot();
+        });
+    });
 });

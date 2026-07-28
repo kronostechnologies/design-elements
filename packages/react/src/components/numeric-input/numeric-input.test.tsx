@@ -1,102 +1,102 @@
-import { shallow } from 'enzyme';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { NumericInput } from './numeric-input';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 
 describe('NumericInput', () => {
-    test('matches the snapshot (Normal - Adornment at start)', () => {
-        const tree = renderWithTheme(<NumericInput adornment="%" value="50" />);
+    it('matches the snapshot (Normal - Adornment at start)', () => {
+        const { asFragment } = renderWithProviders(<NumericInput adornment="%" value="50" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Normal - Adornment at end)', () => {
-        const tree = renderWithTheme(<NumericInput adornment="%" adornmentPosition='end' value="50" />);
+    it('matches the snapshot (Normal - Adornment at end)', () => {
+        const { asFragment } = renderWithProviders(<NumericInput adornment="%" adornmentPosition="end" value="50" />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Disabled)', () => {
-        const tree = renderWithTheme(<NumericInput adornment="%" value="50" disabled />);
+    it('matches the snapshot (Disabled)', () => {
+        const { asFragment } = renderWithProviders(<NumericInput adornment="%" value="50" disabled />);
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('matches the snapshot (Invalid)', () => {
-        const tree = renderWithTheme(
+    it('matches the snapshot (Invalid)', () => {
+        const { asFragment } = renderWithProviders(
             <NumericInput value="50" adornment="%" validationErrorMessage="This is an error message" invalid />,
         );
 
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
     });
 
-    test('should call onChange with returned oject', () => {
+    it('should call onChange with returned object', async () => {
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <NumericInput onChange={onChange} />,
-        );
+        renderWithProviders(<NumericInput onChange={onChange} />);
 
-        const event = { target: { value: '123.50' } };
-        getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
+        const input = screen.getByRole('textbox');
+        await userEvent.type(input, '123.50');
 
-        expect(onChange).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
+        expect(onChange).toHaveBeenCalledWith(expect.anything(), { value: '123.50', valueAsNumber: 123.5 });
     });
 
-    test('should call onBlur with returned oject', () => {
+    it('should call onBlur with returned object', async () => {
         const onBlur = jest.fn();
-        const wrapper = shallow(
-            <NumericInput onBlur={onBlur} />,
-        );
+        renderWithProviders(<NumericInput onBlur={onBlur} />);
 
-        const event = { target: { value: '123.50' } };
-        getByTestId(wrapper, 'numeric-input').invoke('onBlur')(event);
+        const input = screen.getByRole('textbox');
+        await userEvent.type(input, '123.50');
+        await userEvent.tab();
 
-        expect(onBlur).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
+        expect(onBlur).toHaveBeenCalledWith(expect.anything(), { value: '123.50', valueAsNumber: 123.5 });
     });
 
-    test('should call onChange with return value null when empty', () => {
+    it('should call onChange with return value null when empty', async () => {
         const onChange = jest.fn();
-        const wrapper = shallow(
-            <NumericInput onChange={onChange} />,
-        );
+        renderWithProviders(<NumericInput onChange={onChange} />);
 
-        const event = { target: { value: '' } };
-        getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
+        const input = screen.getByRole('textbox');
+        await userEvent.type(input, '1');
+        await userEvent.clear(input);
 
-        expect(onChange).toHaveBeenCalledWith(event, { value: '', valueAsNumber: null });
+        expect(onChange).toHaveBeenLastCalledWith(expect.anything(), { value: '', valueAsNumber: null });
     });
 
-    test('has controllable value', () => {
-        const wrapper = shallow(<NumericInput value="500.25" />);
+    it('has controllable value', () => {
+        renderWithProviders(<NumericInput value="500.25" />);
 
-        expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('500.25');
+        expect(screen.getByRole('textbox')).toHaveValue('500.25');
     });
 
-    test('should not accept invalid value', () => {
+    it('should not accept invalid value', () => {
         jest.spyOn(console, 'warn').mockImplementation(() => { });
 
-        const wrapper = shallow(<NumericInput value="test" />);
+        renderWithProviders(<NumericInput value="test" />);
 
-        expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('');
+        expect(screen.getByRole('textbox')).toHaveValue('');
     });
 
-    test('should display error message on invalid value', () => {
-        const wrapper = mountWithTheme(<NumericInput value="2" min={100} />);
-        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
+    it('should display error message on invalid value', () => {
+        renderWithProviders(<NumericInput value="2" min={100} />);
+
+        expect(screen.getByTestId('invalid-field')).toBeInTheDocument();
     });
 
-    test('should display error message on invalid defaultValue', () => {
-        const wrapper = mountWithTheme(<NumericInput defaultValue="2" min={100} />);
-        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(true);
+    it('should display error message on invalid defaultValue', () => {
+        renderWithProviders(<NumericInput defaultValue="2" min={100} />);
+
+        expect(screen.getByTestId('invalid-field')).toBeInTheDocument();
     });
 
-    test('should not have error message on required when value is empty', () => {
-        const wrapper = mountWithTheme(<NumericInput value="" required />);
-        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(false);
+    it('should not have error message on required when value is empty', () => {
+        renderWithProviders(<NumericInput value="" required />);
+
+        expect(screen.queryByTestId('invalid-field')).not.toBeInTheDocument();
     });
 
-    test('should not have error message on required when defaultValue is empty', () => {
-        const wrapper = mountWithTheme(<NumericInput defaultValue="" required />);
-        expect(getByTestId(wrapper, 'invalid-field').exists()).toBe(false);
+    it('should not have error message on required when defaultValue is empty', () => {
+        renderWithProviders(<NumericInput defaultValue="" required />);
+
+        expect(screen.queryByTestId('invalid-field')).not.toBeInTheDocument();
     });
 });

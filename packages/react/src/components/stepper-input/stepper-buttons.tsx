@@ -1,8 +1,8 @@
-import React, { VoidFunctionComponent } from 'react';
+import React, { type FC } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
 import { useTranslation } from '../../i18n/use-translation';
-import { Icon } from '../icon/icon';
+import { focus } from '../../utils/css-state';
+import { Icon } from '../icon';
 
 const Wrapper = styled.div`
     display: flex;
@@ -70,11 +70,11 @@ interface StepperButtonsProps {
     onStop?(): void;
 }
 
-export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
-   disabled,
-   onIncrement,
-   onDecrement,
-   onStop,
+export const StepperButtons: FC<StepperButtonsProps> = ({
+    disabled,
+    onIncrement,
+    onDecrement,
+    onStop,
 }) => {
     const { t } = useTranslation('stepper-buttons');
 
@@ -90,7 +90,7 @@ export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
                 onMouseUp={onStop}
                 onMouseLeave={onStop}
             >
-                <Icon aria-hidden="true" name="chevronUp" size="16" />
+                <Icon name="chevronUp" size="16" />
             </IncrementButton>
             <DecrementButton
                 aria-label={t('decrement-button-aria-label')}
@@ -102,8 +102,10 @@ export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({
                 onMouseUp={onStop}
                 onMouseLeave={onStop}
             >
-                <Icon aria-hidden="true" name="chevronDown" size="16" />
+                <Icon name="chevronDown" size="16" />
             </DecrementButton>
         </Wrapper>
     );
 };
+
+StepperButtons.displayName = 'StepperButtons';
