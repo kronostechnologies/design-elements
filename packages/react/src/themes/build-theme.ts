@@ -75,8 +75,8 @@ function applyContext(theme: ThemeDeclaration, activeContext: TokenContext[]): C
     const contextualTokens: Partial<{ [Context in TokenContext]: AliasToken[] }> = {};
     const nonContextualTokens: Partial<ContextualizedAliasTokenMap> = {};
 
-    Object.entries(theme.alias).forEach(([contextualTokenName, tokenValue]) => {
-        const [tokenName, tokenContext] = contextualTokenName.split(':') as [AliasToken, TokenContext];
+    Object.entries(theme.alias).forEach(([rawTokenName, tokenValue]) => {
+        const [tokenName, tokenContext] = rawTokenName.split(':') as [AliasToken, TokenContext];
 
         if (activeContext.includes(tokenContext)) {
             if (!contextualTokens[tokenContext]) {

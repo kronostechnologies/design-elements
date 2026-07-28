@@ -22,7 +22,7 @@ export interface ThemeWrapperProps {
 // Context values should be added in order of importance. Later values will be applied over earlier values.
 function getTokenContext(
     deviceContext: DeviceContextProps,
-    // @ts-ignore Future use
+    // @ts-expect-error Future use
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     displayPreferences?: DisplayPreferences,
 ): TokenContext[] {
