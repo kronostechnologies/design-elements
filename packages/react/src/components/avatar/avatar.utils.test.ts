@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getAvatarColorsFromString, getDefaultAvatarColors } from './avatar.utils';
 import { type ResolvedTheme } from '../../themes';
-import { type ComponentTokenMap } from '../../themes/tokens';
 
 const mockTheme: ResolvedTheme = {
-    ref: {} as Record<string, unknown>,
-    alias: {} as Record<string, unknown>,
+    ref: {} as any,
+    alias: {} as any,
     component: {
         'avatar-background-color': '#FFFFFF',
         'avatar-text-color': '#000000',
-    } as ComponentTokenMap<Record<string, unknown>>,
+    } as any,
 };
 
 describe('Avatar color utilities', () => {
@@ -121,12 +121,12 @@ describe('Avatar color utilities', () => {
 
         it('returns fallback when active theme changes', () => {
             const anotherTheme: ResolvedTheme = {
-                ref: {} as Record<string, unknown>,
-                alias: {} as Record<string, unknown>,
+                ref: {} as any,
+                alias: {} as any,
                 component: {
                     'avatar-background-color': '#CCCCCC',
                     'avatar-text-color': '#333333',
-                } as ComponentTokenMap<Record<string, unknown>>,
+                } as any,
             };
 
             const result = getAvatarColorsFromString(anotherTheme, '');
