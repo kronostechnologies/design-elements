@@ -122,4 +122,52 @@ describe('Avatar', () => {
 
         expect(container.firstChild).toMatchSnapshot();
     });
+
+    it('uses generated background color from username when bgColor is not provided', () => {
+        const { container } = renderWithProviders(<Avatar username="Alice" />);
+        const avatar = container.firstChild as HTMLElement;
+
+        expect(avatar).toHaveStyle({ background: '#EBE6EB' });
+    });
+
+    it('uses generated text color from username when bgColor is not provided', () => {
+        const { container } = renderWithProviders(<Avatar username="Alice" />);
+        const avatar = container.firstChild as HTMLElement;
+
+        expect(avatar).toHaveStyle({ color: '#220123' });
+    });
+
+    it('uses explicit bgColor and falls back to theme text color when bgColor is provided', () => {
+        const { container } = renderWithProviders(<Avatar username="Alice" bgColor="#123456" />);
+        const avatar = container.firstChild as HTMLElement;
+
+        expect(avatar).toHaveStyle({ background: '#123456' });
+    });
+
+    it('returns different colors for different username first letters', () => {
+        const { container: aliceContainer } = renderWithProviders(<Avatar username="Alice" />);
+        const { container: bobContainer } = renderWithProviders(<Avatar username="Bob" />);
+
+        const aliceAvatar = aliceContainer.firstChild as HTMLElement;
+        const bobAvatar = bobContainer.firstChild as HTMLElement;
+
+        const aliceBg = window.getComputedStyle(aliceAvatar).background;
+        const bobBg = window.getComputedStyle(bobAvatar).background;
+
+        expect(aliceBg).not.toBe(bobBg);
+    });
+
+    it('uses theme fallback colors when username is empty', () => {
+        const { container } = renderWithProviders(<Avatar username="" />);
+        const avatar = container.firstChild as HTMLElement;
+
+        expect(avatar.style.background).not.toBe('#EBE6EB');
+    });
+
+    it('uses theme fallback colors when username is undefined', () => {
+        const { container } = renderWithProviders(<Avatar iconName="user" />);
+        const avatar = container.firstChild as HTMLElement;
+
+        expect(avatar.style.background).not.toBe('#EBE6EB');
+    });
 });
