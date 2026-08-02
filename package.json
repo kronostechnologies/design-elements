@@ -16,12 +16,12 @@
     "conventional-changelog-cli": "5.0.0",
     "conventional-changelog-conventionalcommits": "10.2.1",
     "eslint": "8.57.1",
-    "postcss": "8.5.20",
+    "postcss": "8.5.23",
     "postcss-styled-syntax": "0.7.2",
     "stylelint": "17.14.1",
     "typescript": "6.0.3",
     "xmlbuilder": "15.1.1",
-    "yargs": "18.0.0"
+    "yargs": "18.1.0"
   },
   "resolutions": {
     "@types/react": "^18",
