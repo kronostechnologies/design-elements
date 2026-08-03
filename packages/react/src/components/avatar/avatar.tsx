@@ -1,11 +1,12 @@
 import { type FC, useMemo } from 'react';
-import styled, { css, FlattenInterpolation, ThemeProps, useTheme } from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconName } from '../icon';
 import { getAvatarColorsFromString } from './avatar.utils';
+import { useTheme } from '../../hooks/use-theme';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
@@ -98,7 +99,7 @@ export const Avatar: FC<AvatarProps> = ({
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
-    const theme = useTheme() as ResolvedTheme;
+    const theme = useTheme();
 
     const { backgroundColor: generatedBg, textColor: generatedText } = useMemo(
         () => getAvatarColorsFromString(theme, username),
