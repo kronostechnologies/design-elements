@@ -10,6 +10,18 @@ describe('Avatar', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('Matches xxsmall avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xxsmall" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches xsmall avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xsmall" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     it('Matches small avatar Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" size="small" />);
 
@@ -28,8 +40,26 @@ describe('Avatar', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('Matches xlarge avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xlarge" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     it('Matches mobile Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches mobile xxsmall avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xxsmall" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches mobile xsmall avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xsmall" />, 'mobile');
 
         expect(container.firstChild).toMatchSnapshot();
     });
@@ -52,6 +82,24 @@ describe('Avatar', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('Matches mobile xlarge avatar Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xlarge" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches xxsmall avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xxsmall" imgSrc="anImage" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches xsmall avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xsmall" imgSrc="anImage" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     it('Matches small avatar with image Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />);
 
@@ -70,8 +118,26 @@ describe('Avatar', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('Matches xlarge avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xlarge" imgSrc="anImage" />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     it('Matches mobile avatar with image Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" imgSrc="anImage" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches mobile xxsmall avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xxsmall" imgSrc="anImage" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches mobile xsmall avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xsmall" imgSrc="anImage" />, 'mobile');
 
         expect(container.firstChild).toMatchSnapshot();
     });
@@ -90,6 +156,12 @@ describe('Avatar', () => {
 
     it('Matches mobile large avatar with image Snapshot', () => {
         const { container } = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />, 'mobile');
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('Matches mobile xlarge avatar with image Snapshot', () => {
+        const { container } = renderWithProviders(<Avatar username="AB" size="xlarge" imgSrc="anImage" />, 'mobile');
 
         expect(container.firstChild).toMatchSnapshot();
     });
