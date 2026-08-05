@@ -5,6 +5,8 @@ import { type ResolvedTheme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon, type IconName } from '../icon';
+import { getAvatarColorsFromString } from './avatar.utils';
+import { useTheme } from '../../hooks/use-theme';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
@@ -45,14 +47,15 @@ function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterp
 }
 
 interface StyledDivProps extends SizeStyleProps {
-    bgColor?: string;
+    $bgColor?: string;
+    $textColor?: string;
 }
 
 const StyledDiv = styled.div<StyledDivProps>`
     align-items: center;
-    background: ${({ bgColor, theme }) => bgColor ?? theme.component['avatar-background-color']};
+    background: ${({ $bgColor, theme }) => $bgColor ?? theme.component['avatar-background-color']};
     border-radius: 50%;
-    color: ${({ theme }) => theme.component['avatar-text-color']};
+    color: ${({ $textColor, theme }) => $textColor ?? theme.component['avatar-text-color']};
     display: flex;
     font-weight: var(--font-semi-bold);
     justify-content: center;
@@ -96,6 +99,16 @@ export const Avatar: FC<AvatarProps> = ({
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
+    const theme = useTheme();
+
+    const { backgroundColor: generatedBg, textColor: generatedText } = useMemo(
+        () => getAvatarColorsFromString(theme, username),
+        [theme, username],
+    );
+
+    const resolvedBg = bgColor ?? generatedBg;
+    const resolvedText = bgColor ? undefined : generatedText;
+
     const initials = useMemo(() => {
         if (username === undefined) {
             return '';
@@ -115,7 +128,8 @@ export const Avatar: FC<AvatarProps> = ({
             role="img"
             aria-label={ariaLabel}
             className={className}
-            bgColor={bgColor}
+            $bgColor={resolvedBg}
+            $textColor={resolvedText}
             size={size}
             isMobile={isMobile}
         >
