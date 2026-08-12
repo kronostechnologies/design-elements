@@ -268,4 +268,21 @@ describe('Menu', () => {
 
         expect(asFragment()).toMatchSnapshot();
     });
+
+    it('should show tooltip when hovering an option with a tooltip', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                tooltip: 'This is a tooltip',
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        await userEvent.hover(screen.getByTestId('menu-option-0'));
+
+        expect(screen.getByRole('tooltip')).toBeInTheDocument();
+        expect(screen.getByRole('tooltip')).toHaveTextContent('This is a tooltip');
+    });
 });

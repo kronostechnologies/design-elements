@@ -20,6 +20,25 @@ const options: MenuOption[] = [
     },
 ];
 
+const optionsWithTooltips: MenuOption[] = [
+    {
+        label: 'Option 1',
+        tooltip: 'Additional info about option 1',
+        onClick: () => console.info('Option 1 clicked'),
+    },
+    {
+        label: 'Option 2',
+        tooltip: 'Additional info about option 2',
+        onClick: () => console.info('Option 2 clicked'),
+    },
+    {
+        label: 'Option 3',
+        disabled: true,
+        tooltip: 'This option is currently unavailable',
+        onClick: () => console.info('Option 3 clicked'),
+    },
+];
+
 const MenuButtonMeta: Meta<typeof MenuButton> = {
     title: 'Components/Menu Button',
     component: MenuButton,
@@ -96,4 +115,17 @@ export const IconTertiary: Story = {
         iconName: 'moreVertical',
         buttonType: 'tertiary',
     },
+};
+
+export const WithTooltips: Story = {
+    ...MenuButtonMeta,
+    render: (args) => (
+        <MenuButton
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...args}
+            options={optionsWithTooltips}
+        >
+            Menu
+        </MenuButton>
+    ),
 };
