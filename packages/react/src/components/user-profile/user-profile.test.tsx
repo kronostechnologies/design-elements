@@ -1,6 +1,8 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
+import { equisoftTheme } from '../../theme';
+import { AZ_BG_COLORS, AZ_TXT_COLORS } from '../avatar/avatar.constants';
 import { NavItemProps } from '../dropdown-menu';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
 
@@ -221,5 +223,43 @@ describe('UserProfile', () => {
 
         const button = screen.getByTestId('menu-button');
         expect(button).not.toHaveTextContent(username);
+    });
+
+    describe('inverted', () => {
+        it('should use default theme colors when inverted is true', () => {
+            renderWithProviders(<UserProfile inverted username="Alice" options={options} />);
+
+            const avatar = screen.getByRole('img');
+            expect(avatar).toHaveStyle({
+                background: equisoftTheme.component['avatar-background-color'],
+                color: equisoftTheme.component['avatar-text-color'],
+            });
+        });
+
+        it('should change avatar background and text colors when inverted is false', () => {
+            renderWithProviders(<UserProfile inverted={false} username="Alice" options={options} />);
+
+            const avatar = screen.getByRole('img');
+            expect(avatar).toHaveStyle({
+                background: equisoftTheme.alias['color-background-brand-bold'],
+                color: equisoftTheme.alias['color-content-inverse'],
+            });
+        });
+
+        it('should never base colors on the username when inverted is true', () => {
+            renderWithProviders(<UserProfile inverted username="Alice" options={options} />);
+
+            const avatar = screen.getByRole('img');
+            expect(avatar).not.toHaveStyle({ background: AZ_BG_COLORS[0] });
+            expect(avatar).not.toHaveStyle({ color: AZ_TXT_COLORS[0] });
+        });
+
+        it('should never base colors on the username when inverted is false', () => {
+            renderWithProviders(<UserProfile inverted={false} username="Alice" options={options} />);
+
+            const avatar = screen.getByRole('img');
+            expect(avatar).not.toHaveStyle({ background: AZ_BG_COLORS[0] });
+            expect(avatar).not.toHaveStyle({ color: AZ_TXT_COLORS[0] });
+        });
     });
 });

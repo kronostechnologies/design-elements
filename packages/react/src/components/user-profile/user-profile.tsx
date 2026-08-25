@@ -1,5 +1,6 @@
 import { type FC, useRef } from 'react';
 import styled, { css } from 'styled-components';
+import { useTheme } from '../../hooks/use-theme';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar';
 import { useDeviceContext } from '../device-context-provider';
@@ -63,9 +64,16 @@ export const UserProfile: FC<UserProfileProps> = ({
 }) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
+    const theme = useTheme();
     const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
     const avatarOnly = isMobile || (variant === 'avatar-only');
+    const backgroundColor = inverted
+        ? theme.component['avatar-background-color']
+        : theme.alias['color-background-brand-bold'];
+    const textColor = inverted
+        ? theme.component['avatar-text-color']
+        : theme.alias['color-content-inverse'];
 
     return (
         <StyledDropdownMenuButton
@@ -75,7 +83,14 @@ export const UserProfile: FC<UserProfileProps> = ({
             defaultOpen={defaultOpen}
             hasCaret={!avatarOnly}
             id={id}
-            icon={<StyledAvatar avatarOnly={avatarOnly} username={username} />}
+            icon={(
+                <StyledAvatar
+                    avatarOnly={avatarOnly}
+                    username={username}
+                    bgColor={backgroundColor}
+                    textColor={textColor}
+                />
+            )}
             inverted={inverted}
             tag={tag}
             isMobile={isMobile}
