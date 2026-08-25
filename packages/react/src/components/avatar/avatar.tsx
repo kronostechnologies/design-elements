@@ -73,6 +73,7 @@ interface BaseAvatarProps {
     bgColor?: string;
     className?: string;
     size?: AvatarSize;
+    textColor?: string;
 }
 
 interface IconAvatar extends BaseAvatarProps {
@@ -96,6 +97,7 @@ export const Avatar: FC<AvatarProps> = ({
     imgSrc,
     username,
     size = 'xsmall',
+    textColor,
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
@@ -105,9 +107,6 @@ export const Avatar: FC<AvatarProps> = ({
         () => getAvatarColorsFromString(theme, username),
         [theme, username],
     );
-
-    const resolvedBg = bgColor ?? generatedBg;
-    const resolvedText = bgColor ? undefined : generatedText;
 
     const initials = useMemo(() => {
         if (username === undefined) {
@@ -128,8 +127,8 @@ export const Avatar: FC<AvatarProps> = ({
             role="img"
             aria-label={ariaLabel}
             className={className}
-            $bgColor={resolvedBg}
-            $textColor={resolvedText}
+            $bgColor={bgColor ?? generatedBg}
+            $textColor={textColor ?? generatedText}
             size={size}
             isMobile={isMobile}
         >
