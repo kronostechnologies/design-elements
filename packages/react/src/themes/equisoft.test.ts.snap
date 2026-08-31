@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`buildTheme equisoft (default) theme snapshot 1`] = `
+exports[`buildTheme renders the equisoft (default) theme 1`] = `
 {
   "alias": {
     "color-action": "#006296",
