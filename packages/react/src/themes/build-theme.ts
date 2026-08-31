@@ -10,6 +10,7 @@ import {
     type RefToken,
     type ResolvedTokenMap,
     type TokenContext,
+    type TokenContextValue,
     type TokenMap,
     type TokenName,
     type TokenValue,
@@ -24,7 +25,7 @@ interface ContextualizedTheme extends ThemeDeclaration {
 const themeCache: {
     // Inputs
     themeCustomization: ThemeCustomization | undefined;
-    activeContext: TokenContext[] | undefined;
+    activeContext: TokenContext | undefined;
     // Build stages
     customizedTheme: ThemeDeclaration | undefined;
     contextualizedTheme: ContextualizedTheme | undefined;
@@ -71,12 +72,12 @@ function applyCustomization(customization: ThemeCustomization): ThemeDeclaration
     return customizedTheme;
 }
 
-function applyContext(theme: ThemeDeclaration, activeContext: TokenContext[]): ContextualizedTheme {
-    const contextualTokens: Partial<{ [Context in TokenContext]: AliasToken[] }> = {};
+function applyContext(theme: ThemeDeclaration, activeContext: TokenContext): ContextualizedTheme {
+    const contextualTokens: Partial<{ [Context in TokenContextValue]: AliasToken[] }> = {};
     const nonContextualTokens: Partial<ContextualizedAliasTokenMap> = {};
 
     Object.entries(theme.alias).forEach(([rawTokenName, tokenValue]) => {
-        const [tokenName, tokenContext] = rawTokenName.split(':') as [AliasToken, TokenContext];
+        const [tokenName, tokenContext] = rawTokenName.split(':') as [AliasToken, TokenContextValue];
 
         if (activeContext.includes(tokenContext)) {
             if (!contextualTokens[tokenContext]) {
@@ -129,7 +130,15 @@ function resolveToken(theme: ThemeDeclaration, tokenName: RefToken | AliasToken)
     return '';
 }
 
-export function buildTheme(customization: ThemeCustomization, activeContext: TokenContext[] = []): ResolvedTheme {
+/**
+ * Builds a theme object based on the default token values, mappings and the provided customization.
+ * Contextual tokens will override base tokens if their context suffix matches any active context values.
+ *
+ * @param {ThemeCustomization} customization - Customization overrides for token values and mappings.
+ *     Stable references will prevent unnecessary recalculation of the theme.
+ * @param {TokenContext} activeContext - List of active token context values.
+ */
+export function buildTheme(customization: ThemeCustomization, activeContext: TokenContext = []): ResolvedTheme {
     if (themeCache.customizedTheme === undefined || themeCache.themeCustomization !== customization) {
         themeCache.customizedTheme = applyCustomization(customization);
         themeCache.themeCustomization = customization;

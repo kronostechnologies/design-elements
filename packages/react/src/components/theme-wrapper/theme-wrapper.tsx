@@ -25,18 +25,14 @@ function getTokenContext(
     // @ts-expect-error Future use
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     displayPreferences?: DisplayPreferences,
-): TokenContext[] {
-    const context: TokenContext[] = [];
+): TokenContext {
+    const context: TokenContext = [];
 
     if (deviceContext.isMobile) {
         context.push('mobile');
-    }
-
-    if (deviceContext.isTablet) {
+    } else if (deviceContext.isTablet) {
         context.push('tablet');
-    }
-
-    if (deviceContext.isDesktop) {
+    } else if (deviceContext.isDesktop) {
         context.push('desktop');
     }
 
