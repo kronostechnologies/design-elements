@@ -2,7 +2,7 @@ import { buildTheme } from './build-theme';
 import { equisoftThemeCustomization } from './equisoft';
 
 describe('buildTheme', () => {
-    test('equisoft (default) theme snapshot', () => {
+    it('renders the equisoft (default) theme', () => {
         expect(buildTheme(equisoftThemeCustomization)).toMatchSnapshot();
     });
 });
