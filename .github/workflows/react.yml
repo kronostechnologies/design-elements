@@ -466,7 +466,7 @@ jobs:
           fi
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           branch: gh-pages
           commit-message: ${{ steps.target.outputs.commit }}
@@ -478,7 +478,7 @@ jobs:
 
       - name: Update latest
         if: ${{ needs.setup.outputs.qualifier == 'latest' }}
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           branch: gh-pages
           commit-message: "docs: update latest doc to ${{ needs.setup.outputs.next-version }}"
@@ -659,7 +659,7 @@ jobs:
           yarn build:production
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           branch: gh-pages
           commit-message: ${{ steps.target.outputs.commit }}
@@ -671,7 +671,7 @@ jobs:
 
       - name: Update latest
         if: ${{ needs.setup.outputs.qualifier == 'latest' }}
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           branch: gh-pages
           commit-message: "docs(webapp): update latest doc to ${{ needs.setup.outputs.next-version }}"
