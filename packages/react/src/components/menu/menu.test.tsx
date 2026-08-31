@@ -273,7 +273,7 @@ describe('Menu', () => {
         const optionsWithTooltip: MenuOption[] = [
             {
                 label: 'Mango',
-                tooltip: 'This is a tooltip',
+                tooltip: { label: 'This is a tooltip' },
                 onClick: jest.fn(),
             },
         ];
