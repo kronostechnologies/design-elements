@@ -10,7 +10,7 @@ const decorators: Decorator[] = [
     i18nDecorator,
     (Story, { globals }) => (
         <DesignSystem
-            language={globals.language}
+            language={globals.locale}
             staticDevice={globals.staticDevice}
             themeCustomization={globals.themeCustomization}
         >
@@ -35,6 +35,14 @@ const viewportOptions: Record<string, ModernViewport> = {
             width: '1023px',
         },
         type: 'tablet',
+    },
+    desktop: {
+        name: 'Desktop',
+        styles: {
+            height: '834px',
+            width: '1024px',
+        },
+        type: 'desktop',
     },
 };
 
