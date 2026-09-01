@@ -8,7 +8,7 @@ import { Icon, type IconName } from '../icon';
 import { getAvatarColorsFromString } from './avatar.utils';
 import { useTheme } from '../../hooks/use-theme';
 
-export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
+export type AvatarSize = 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
 
 interface SizeStyleProps {
     size: AvatarSize;
@@ -17,30 +17,46 @@ interface SizeStyleProps {
 
 function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
     switch (size) {
+        case 'xxsmall':
+            return css`
+                font-size: 0.375rem;
+                height: var(--size-1x);
+                letter-spacing: 0.00831rem;
+                width: var(--size-1x);
+            `;
         case 'xsmall':
             return css`
-                font-size: ${(isMobile ? '0.75' : '0.625')}rem;
-                height: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-                letter-spacing: ${(isMobile ? '0.013' : '0.011')}rem;
-                width: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+                font-size: 0.46875rem;
+                height: 1.25rem;
+                letter-spacing: 0.01044rem;
+                width: 1.25rem;
             `;
         case 'small':
             return css`
-                font-size: ${(isMobile ? '0.875' : '0.75')}rem;
-                height: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
-                letter-spacing: ${(isMobile ? '0.014' : '0.013')}rem;
-                width: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+                font-size: ${(isMobile ? '0.75' : '0.5625')}rem;
+                height: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+                letter-spacing: 0.0125rem;
+                width: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
             `;
         case 'medium':
             return css`
-                font-size: 1rem;
-                height: var(--size-3x);
-                width: var(--size-3x);
+                font-size: ${(isMobile ? '1' : '0.75')}rem;
+                height: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+                letter-spacing: 0.0125rem;
+                width: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
             `;
         case 'large':
             return css`
+                font-size: ${(isMobile ? '1.125' : '1')}rem;
+                height: ${(isMobile ? 'var(--size-3halfx)' : 'var(--size-3x)')};
+                letter-spacing: 0.0125rem;
+                width: ${(isMobile ? 'var(--size-3halfx)' : 'var(--size-3x)')};
+            `;
+        case 'xlarge':
+            return css`
                 font-size: 1.5rem;
                 height: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
+                letter-spacing: 0.0125rem;
                 width: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
             `;
     }
@@ -95,7 +111,7 @@ export const Avatar: FC<AvatarProps> = ({
     iconName,
     imgSrc,
     username,
-    size = 'xsmall',
+    size = 'small',
 }) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();

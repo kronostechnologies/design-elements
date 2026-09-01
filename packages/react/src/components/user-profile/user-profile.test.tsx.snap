@@ -97,12 +97,12 @@ exports[`UserProfile matches Snapshot (\`full-name\`) 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   text-transform: capitalize;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   width: var(--size-1halfx);
 }
 
@@ -806,12 +806,12 @@ exports[`UserProfile matches Snapshot (defaultOpen) 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   text-transform: capitalize;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   width: var(--size-1halfx);
 }
 
@@ -1004,10 +1004,10 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
   text-transform: capitalize;
   font-size: 0.75rem;
   height: var(--size-2x);
-  -webkit-letter-spacing: 0.013rem;
-  -moz-letter-spacing: 0.013rem;
-  -ms-letter-spacing: 0.013rem;
-  letter-spacing: 0.013rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   width: var(--size-2x);
 }
 
@@ -1687,12 +1687,12 @@ exports[`UserProfile matches Snapshot (tag="nav") 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   text-transform: capitalize;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   width: var(--size-1halfx);
 }
 
@@ -2398,12 +2398,12 @@ exports[`UserProfile matches Snapshot (variant=\`avatar-only\`) 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   text-transform: capitalize;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   height: var(--size-1halfx);
-  -webkit-letter-spacing: 0.011rem;
-  -moz-letter-spacing: 0.011rem;
-  -ms-letter-spacing: 0.011rem;
-  letter-spacing: 0.011rem;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   width: var(--size-1halfx);
 }
 
