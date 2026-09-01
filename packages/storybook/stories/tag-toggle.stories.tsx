@@ -52,9 +52,7 @@ const ToggleTagMeta: Meta<typeof ToggleTag> = {
 export default ToggleTagMeta;
 type Story = StoryObj<typeof ToggleTag>;
 
-export const Default: Story = {
-    ...ToggleTagMeta,
-};
+export const Default: Story = {};
 
 export const WithRef: Story = () => {
     const ref = useRef(null);

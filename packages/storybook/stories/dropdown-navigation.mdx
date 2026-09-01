@@ -1,5 +1,5 @@
 import { DropdownNavigation } from '@equisoft/design-elements-react';
-import { ArgTypes, Meta, Stories, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes, Meta, Canvas } from '@storybook/blocks';
 import * as DropdownNavigationStories  from './dropdown-navigation.stories';
 
 <Meta of={DropdownNavigationStories} />
@@ -12,33 +12,25 @@ import * as DropdownNavigationStories  from './dropdown-navigation.stories';
 
 ## Definition
 Dropdown navigation allows users to navigate from a menu that opens with a list of internal or external links.
-<Canvas of={DropdownNavigationStories.Desktop} />
+<Canvas of={DropdownNavigationStories.Default} />
 
 ## Usage
-### When to use 
+### When to use
 - Use for links, whether internal to the application or external.
 - Use to group links together when space is limited and when you can't display all the links next to each other.
 - Use when you need to group related navigation elements under categories for more efficient organization and simplified navigation.
 - Use when you need a hierarchical navigation structure.
 
-### When not to use 
+### When not to use
 - Do not use for actions, use menu button instead.
 - Do not use when you have only one link to display [1].
 
 ## Variants
-### Desktop
-#### Default
-<Canvas of={DropdownNavigationStories.Desktop} />
+### Default
+<Canvas of={DropdownNavigationStories.Default} />
 
-#### Icon only
-<Canvas of={DropdownNavigationStories.DesktopIconOnly} />
-
-### Mobile
-#### Default
-<Canvas of={DropdownNavigationStories.Mobile} />
-
-#### Icon only
-<Canvas of={DropdownNavigationStories.MobileIconOnly} />
+### Icon only
+<Canvas of={DropdownNavigationStories.IconOnly} />
 
 ## Properties
 <ArgTypes of={DropdownNavigation} />

@@ -31,6 +31,7 @@ const config: StorybookConfig = {
         getAbsolutePath('@storybook/addon-controls'),
         getAbsolutePath('@storybook/addon-links'),
         getAbsolutePath('@storybook/addon-toolbars'),
+        getAbsolutePath('@storybook/addon-viewport'),
         getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
     ],
     webpackFinal: async (config) => ({
@@ -65,6 +66,9 @@ const config: StorybookConfig = {
     },
     core: {
         disableTelemetry: true,
+    },
+    features: {
+        viewportStoryGlobals: true,
     },
 };
 

@@ -1,7 +1,6 @@
 import { NumericInput } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { LanguageSwitchDecorator } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 const NumericInputMeta: Meta<typeof NumericInput> = {
@@ -41,7 +40,6 @@ type Story = StoryObj<typeof NumericInput>;
 export const Default: Story = {};
 
 export const ControlledValue: Story = {
-    decorators: [LanguageSwitchDecorator],
     render: () => {
         const [inputValue, setInputValue] = useState('50');
         return (

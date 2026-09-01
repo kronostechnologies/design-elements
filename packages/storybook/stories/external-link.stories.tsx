@@ -26,33 +26,27 @@ const ExternalLinkMeta: Meta<typeof ExternalLink> = {
 export default ExternalLinkMeta;
 type Story = StoryObj<typeof ExternalLink>;
 
-export const Default: Story = {
-    ...ExternalLinkMeta,
-};
+export const Default: Story = {};
 
 export const WithIcon: Story = {
-    ...ExternalLinkMeta,
     args: {
         iconName: 'mail',
     },
 };
 
 export const OnlyIcon: Story = {
-    ...ExternalLinkMeta,
     args: {
         label: undefined,
     },
 };
 
 export const Disabled: Story = {
-    ...ExternalLinkMeta,
     args: {
         disabled: true,
     },
 };
 
 export const WithCallback: Story = {
-    ...ExternalLinkMeta,
     args: {
         onClick: () => console.info('Link clicked'),
     },

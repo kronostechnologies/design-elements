@@ -26,7 +26,6 @@ export default MoneyInputMeta;
 type Story = StoryObj<typeof MoneyInput>;
 
 export const FrenchLocale: Story = {
-    ...MoneyInputMeta,
     args: {
         label: 'Entrez un montant',
         locale: 'fr-CA',
@@ -34,7 +33,6 @@ export const FrenchLocale: Story = {
 };
 
 export const EnglishLocale: Story = {
-    ...MoneyInputMeta,
     args: {
         label: 'Enter a number',
         locale: 'en-CA',
@@ -42,7 +40,6 @@ export const EnglishLocale: Story = {
 };
 
 export const OnChangeCallback: Story = {
-    ...MoneyInputMeta,
     args: {
         onChange: (value, formattedValue) => {
             console.info('value:', value);

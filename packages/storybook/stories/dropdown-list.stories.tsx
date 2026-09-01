@@ -69,12 +69,9 @@ const DropdownListMeta: Meta<typeof DropdownList> = {
 export default DropdownListMeta;
 type Story = StoryObj<typeof DropdownList>;
 
-export const Default: Story = {
-    ...DropdownListMeta,
-};
+export const Default: Story = {};
 
 export const MultiSelect: Story = {
-    ...DropdownListMeta,
     args: {
         label: 'Select multiple options',
         multiselect: true,
@@ -91,7 +88,6 @@ export const MultiSelectWithMaximumOfSelectableOptions: Story = {
 };
 
 export const WithIcon: Story = {
-    ...DropdownListMeta,
     args: {
         label: 'Select multiple options',
         iconName: 'home',
@@ -99,7 +95,6 @@ export const WithIcon: Story = {
 };
 
 export const WithCallback: Story = {
-    ...DropdownListMeta,
     args: {
         label: 'Select an option',
         onChange: (option: DropdownListOption) => console.info(`Label: ${option.label} | Value: ${option.value}`),

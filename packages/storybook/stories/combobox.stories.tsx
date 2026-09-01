@@ -42,21 +42,18 @@ export default comboboxMeta;
 type Story = StoryObj<typeof Combobox>;
 
 export const Default: Story = {
-    ...comboboxMeta,
     args: {
         placeholder: 'Select the best province',
     },
 };
 
 export const CustomValue: Story = {
-    ...comboboxMeta,
     args: {
         allowCustomValue: true,
     },
 };
 
 export const WithCallback: Story = {
-    ...comboboxMeta,
     args: {
         onChange: (value: string) => console.log(value), /* eslint-disable-line no-console */
     },
@@ -64,7 +61,6 @@ export const WithCallback: Story = {
 };
 
 export const UsingAsyncDataSource: Story = {
-    ...comboboxMeta,
     render: (args) => {
         const [options, setOptions] = useState<ComboboxOption[]>([]);
         const [isLoading, setIsLoading] = useState(false);

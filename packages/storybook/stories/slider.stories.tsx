@@ -14,9 +14,7 @@ export default SliderMeta;
 type Story = StoryObj<typeof Slider>;
 
 export const Basic: Story = {
-    ...SliderMeta,
     args: {
-        ...SliderMeta.args,
         min: 0,
         max: 100,
         defaultValue: 50,
@@ -24,9 +22,7 @@ export const Basic: Story = {
 };
 
 export const Range: Story = {
-    ...SliderMeta,
     args: {
-        ...SliderMeta.args,
         min: 0,
         max: 100,
         defaultValue: [30, 60],
@@ -34,9 +30,7 @@ export const Range: Story = {
 };
 
 export const Steps: Story = {
-    ...SliderMeta,
     args: {
-        ...SliderMeta.args,
         min: 0,
         max: 1000,
         step: 100,
@@ -45,9 +39,7 @@ export const Steps: Story = {
 };
 
 export const Disabled: Story = {
-    ...SliderMeta,
     args: {
-        ...SliderMeta.args,
         min: 0,
         max: 100,
         defaultValue: 50,

@@ -86,7 +86,6 @@ export default TabsMeta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Medium: Story = {
-    ...TabsMeta,
     args: {
         size: 'medium',
     },
@@ -101,7 +100,6 @@ export const Small: Story = {
 
 let addTabCounter = 3;
 export const AddAndDeleteTabs: Story = {
-    ...TabsMeta,
     render: () => {
         const [currentTabs, setCurrentTabs] = useState<Tab[]>(tabs);
 
@@ -134,7 +132,6 @@ export const AddAndDeleteTabs: Story = {
 };
 
 export const Scrollable: Story = {
-    ...TabsMeta,
     render: () => {
         const customTabs: Tab[] = [...Array(15).keys()].map((i) => ({
             id: `tab${i + 1}`,
@@ -158,14 +155,12 @@ export const Scrollable: Story = {
 };
 
 export const WithForceRenderTabPanels: Story = {
-    ...TabsMeta,
     args: {
         forceRenderTabPanels: true,
     },
 };
 
 export const UnloadTabCallback: Story = {
-    ...TabsMeta,
     render: () => {
         const customTabs: Tab[] = [
             {
@@ -198,7 +193,6 @@ export const UnloadTabCallback: Story = {
 };
 
 export const DefaultSelectedTab: Story = {
-    ...TabsMeta,
     render: () => {
         const customTabs: Tab[] = [
             {

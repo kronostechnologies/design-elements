@@ -1,13 +1,6 @@
 import { GlobalHeader, DropdownNavigation, NavListOption } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import styled from 'styled-components';
-import { decorateWith } from './utils/decorator';
-import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
-
-const StyledDiv = styled.div`
-    height: 180px;
-`;
 
 const options: NavListOption[] = [
     {
@@ -35,7 +28,7 @@ const options: NavListOption[] = [
 const DropdownNavigationMeta: Meta<typeof DropdownNavigation> = {
     title: 'Components/Dropdown Navigation',
     component: DropdownNavigation,
-    decorators: [RouterDecorator, decorateWith(StyledDiv)],
+    decorators: [RouterDecorator],
     argTypes: {
         onDropdownVisibilityChanged: {
             control: { disable: true },
@@ -64,30 +57,11 @@ const DropdownNavigationMeta: Meta<typeof DropdownNavigation> = {
 export default DropdownNavigationMeta;
 type Story = StoryObj<typeof DropdownNavigation>;
 
-export const Desktop: Story = {
-    ...DropdownNavigationMeta,
-};
-Desktop.decorators = [DesktopDecorator];
+export const Default: Story = {};
 
-export const DesktopIconOnly: Story = {
-    ...DropdownNavigationMeta,
+export const IconOnly: Story = {
     args: {
         iconOnly: true,
         iconName: 'home',
     },
 };
-DesktopIconOnly.decorators = [DesktopDecorator];
-
-export const Mobile: Story = {
-    ...DropdownNavigationMeta,
-};
-Mobile.decorators = [MobileDecorator];
-
-export const MobileIconOnly: Story = {
-    ...DropdownNavigationMeta,
-    args: {
-        iconOnly: true,
-        iconName: 'home',
-    },
-};
-MobileIconOnly.decorators = [MobileDecorator];

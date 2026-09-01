@@ -1,11 +1,9 @@
 import { GlobalBanner } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 const GlobalBannerMeta: Meta<typeof GlobalBanner> = {
     title: 'Components/Global Banner',
     component: GlobalBanner,
-    decorators: [DeviceContextDecorator],
     args: {
         actionButton: {
             label: 'Action',

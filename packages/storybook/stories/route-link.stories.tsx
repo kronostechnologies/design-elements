@@ -6,6 +6,7 @@ import { RouterDecorator } from './utils/router-decorator';
 const RouteLinkMeta: Meta<typeof RouteLink> = {
     title: 'Components/Deprecated/Route Link (deprecated)',
     component: RouteLink,
+    decorators: [RouterDecorator],
     args: {
         label: 'Route Link',
         href: '/story1',
@@ -22,7 +23,4 @@ const RouteLinkMeta: Meta<typeof RouteLink> = {
 export default RouteLinkMeta;
 type Story = StoryObj<typeof RouteLink>;
 
-export const Default: Story = {
-    ...RouteLinkMeta,
-};
-Default.decorators = [RouterDecorator];
+export const Default: Story = {};

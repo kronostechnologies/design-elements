@@ -41,6 +41,4 @@ const ErrorSummaryMeta: Meta<typeof ErrorSummary> = {
 export default ErrorSummaryMeta;
 type Story = StoryObj<typeof ErrorSummary>;
 
-export const Default: Story = {
-    ...ErrorSummaryMeta,
-};
+export const Default: Story = {};

@@ -48,19 +48,15 @@ const MenuButtonMeta: Meta<typeof MenuButton> = {
 export default MenuButtonMeta;
 type Story = StoryObj<typeof MenuButton>;
 
-export const Primary: Story = {
-    ...MenuButtonMeta,
-};
+export const Primary: Story = {};
 
 export const Secondary: Story = {
-    ...MenuButtonMeta,
     args: {
         buttonType: 'secondary',
     },
 };
 
 export const Tertiary: Story = {
-    ...MenuButtonMeta,
     args: {
         buttonType: 'tertiary',
     },
@@ -74,7 +70,6 @@ export const PrimaryDisabled: Story = {
 };
 
 export const IconPrimary: Story = {
-    ...MenuButtonMeta,
     args: {
         iconName: 'moreVertical',
         buttonType: 'tertiary',
@@ -83,7 +78,6 @@ export const IconPrimary: Story = {
 };
 
 export const IconSecondary: Story = {
-    ...MenuButtonMeta,
     args: {
         iconName: 'moreVertical',
         buttonType: 'secondary',
@@ -91,7 +85,6 @@ export const IconSecondary: Story = {
 };
 
 export const IconTertiary: Story = {
-    ...MenuButtonMeta,
     args: {
         iconName: 'moreVertical',
         buttonType: 'tertiary',
