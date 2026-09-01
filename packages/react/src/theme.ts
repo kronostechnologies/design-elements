@@ -1,3 +1,6 @@
-export { equisoftTheme } from './themes/equisoft';
-export { ResolvedTheme, ThemeCustomization } from './themes/theme';
-export { buildTheme } from './themes/build-theme';
+export {
+    buildTheme,
+    equisoftThemeCustomization,
+    ResolvedTheme,
+    ThemeCustomization,
+} from './themes';

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { renderWithProviders } from '../../test-utils/testing-library';
-import { buildTheme, ThemeCustomization } from '../../themes';
+import { type ThemeCustomization } from '../../themes';
 import { Button } from '../buttons';
 
 describe('Theme Wrapper', () => {
@@ -22,12 +22,10 @@ describe('Theme Wrapper', () => {
             },
         };
 
-        const builtTheme = buildTheme(themeCustomization);
-
         const { asFragment } = renderWithProviders(
             <Button buttonType="primary" />,
             undefined,
-            { theme: builtTheme },
+            { themeCustomization },
         );
 
         expect(asFragment()).toMatchSnapshot();

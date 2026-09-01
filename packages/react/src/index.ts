@@ -12,6 +12,11 @@ export { useTheme } from './hooks/use-theme';
 export { useToast } from './hooks/use-toast';
 
 // Themes
-export { equisoftTheme, buildTheme } from './themes';
+export {
+    buildTheme,
+    equisoftThemeCustomization,
+    ResolvedTheme as Theme,
+    ThemeCustomization,
+} from './themes';
+
 export { injectMainCss } from './styles';
-export { ResolvedTheme as Theme, ThemeCustomization } from './themes/theme';
