@@ -139,12 +139,13 @@ describe('Avatar', () => {
             expect(element).toHaveStyle({ color: AZ_TXT_COLORS[0] });
         });
 
-        it('should use provided bgColor and not override text color with generated one', () => {
-            const { container } = renderWithProviders(<Avatar username="Alice" bgColor="#123456" />);
+        it('should use provided bgColor and textColor without overriding them with generated values', () => {
+            const { container } = renderWithProviders(
+                <Avatar username="Alice" bgColor="#123456" textColor="#abcdef" />,
+            );
             const element = container.firstChild as HTMLElement;
 
-            expect(element).toHaveStyle({ backgroundColor: '#123456' });
-            // Text color should come from theme token, not from generated colors
+            expect(element).toHaveStyle({ backgroundColor: '#123456', color: '#abcdef' });
             expect(element).not.toHaveStyle({ color: AZ_TXT_COLORS[0] });
         });
 
