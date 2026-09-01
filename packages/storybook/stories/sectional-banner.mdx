@@ -11,73 +11,75 @@ import * as SectionalBannerStories  from './sectional-banner.stories';
 4. [Properties](#properties)
 
 ## Definition
-A sectional banner is a notification element that displays a non-intrusive message inserted into a content area to
+A sectional banner displays a non-intrusive message inserted into a content area to 
 communicate important information that may affect the user's experience.
 <Canvas of={SectionalBannerStories.Neutral} />
 
 ## Usage
 ### When to use
-- To communicate important information in a section of a screen.
-
-There are two major use cases for notifications: task-generated and system-generated [2] :
-
-- Task-generated banner: Task-generated banner are initiated in response to user action during a specific task. They
-  give users direct, immediate feedback. They should be placed in the region of the page the user is working in and
-  be related to the user’s action.
-    - e.g. To notify users of the status of an action or system [1].
-- System-generated banner : These banner are initiated by the application or system, independent of user action. They
-  provide updates on background system status or on events related to a specific section.
-    - e.g. To inform users of updates or changes to system status [1].
+- Use a sectional banner to communicate important information, warnings, discovery messages, or alerts within a specific section of a screen.
+- Use a sectional banner to highlight information that needs to be emphasized so the user can complete a task within the application.
+- Use a sectional banner to notify the user of task-generated or system-generated events [2]:
+  - **Task-Generated Banner**: Triggered by user actions during a specific task, these banners provide direct, immediate feedback. They should be placed in the area where the user is working and be related to the user's action.
+    - Example: To notify users of the status of an action or system update [1].
+  - **System-Generated Banner**: Initiated by the application or system, independent of user action, these banners provide updates on background system status or events related to a specific section.
+    - Example: To inform users of updates or changes to system status [1].
+- Use a sectional banner to give feedback that needs to remain visible on the page.
 
 ### When not to use
-- When banners don't communicate important information that needs to be promoted [2].
-- When they are not directly related to the content or activity of the specific section [2].
-- When they are redundant. Avoid overloading sections with repetitive or redundant banners, which can lead to visual
-  fatigue and a degraded user experience [2].
-- When the message concerns the entire application and not a specific page. Use Global Banner instead.
+- Do not use sectional banners for messages that don’t require emphasis [2].
+- Do not use sectional banners when the message is not directly related to the content or activity within the specific section [2].
+- Do not overload sections with repetitive or redundant banners, as this can cause visual fatigue and degrade the user experience [2].
+- Do not use sectional banners for messages that concern the entire application rather than a specific page. In such cases, use a Global Banner instead.
 
 ## Variants
 ### Neutral
-Neutral banners are used to provide additional information to the user that doesn’t need to grab too much attention.
-This variation is used to inform the user about something that might help or impact their journey.
-- Can be dismissed by the user or the application, depending on the content.
+Neutral banners provide additional information to the user that doesn’t need to draw significant attention. 
+They inform the user about something that might help or impact their journey.
+
 - Does not require immediate action.
+- May be persistent or temporary.
+- Can be dismissed by the user or automatically by the application, depending on the content.
 <Canvas of={SectionalBannerStories.Neutral} />
 
 ### Informative
-Like Neutral banners, Informative banners are used to provide additional information to the user, but instead with
-the purpose of grabbing its attention. This variant is also used to inform the user of something that could help them
-or have an impact on their journey, but with a higher level of importance.
-- Can be dismissed by the user or the application, depending on the content.
+Informative banners provide additional information intended to capture the user's attention. 
+They inform the user of something with a higher level of importance that could help or impact their journey.
+
 - Does not require immediate action.
+- May be persistent or temporary.
+- Can be dismissed by the user or automatically by the application, depending on the content.
 <Canvas of={SectionalBannerStories.Informative} />
 
+### Discovery
+Discovery banners highlight new features or interface elements to the user. 
+They draw attention to something new that is likely to be helpful during the user's journey.
+
+- May be timed or dismissed by the user or automatically by the application, depending on the content.
+<Canvas of={SectionalBannerStories.Discovery} />
+
 ### Success
-Success banners are used to let the user know that an action or event has been successful. This variation is used when
-the user needs the feedback to be delayed, persistent or if a call to action is needed. If not, use the component "toast".
-- Can be dismissed by the user manually, automatically, through a timer, or it can persist, depending on the content.
+Success banners inform the user that an action or event was successful. 
+Use this variation when feedback needs to be delayed, persistent, or if a call to action is required. 
+If not, use a "toast" instead.
+
+- Can be dismissed by the user manually, automatically by the application, or it may persist, depending on the content.
 <Canvas of={SectionalBannerStories.Success} />
 
 ### Warning
-Warning banners are used to display information that needs the user's attention or that requires the user's action to
-avoid potentially dangerous actions or errors.
-- Can be dismissed by the user, automatically, timed or persist, depending on the content.
-- Be cautious about using this banner, it may be stressful for the user.
+Warning banners convey information that requires the user's attention or action to avoid potentially harmful actions or errors.
+
+- Can be dismissed by the user, automatically by the application, or it may persist, depending on the content.
+- Use this banner cautiously, as it may cause stress for the user.
 <Canvas of={SectionalBannerStories.Warning} />
 
 ### Alert
-Alert banners are used to communicate specific problems that need to be resolved immediately by the user to complete
-a particular task.
-- Can't be dismissed by the user.
-- Dismisses automatically once the error is resolved.
-- Can block the user from proceeding until the issue has been resolved.
-<Canvas of={SectionalBannerStories.Alert} />
+Alert banners communicate specific issues that must be resolved immediately for the user to complete a task, such as an error summary.
 
-### Discovery
-Discovery banners are used to communicate something new to the user. This variant is used to draw the user's attention
-to a new feature or interface element that will most likely be helpful during their journey.
-- Can be timed or dismissed by the user or the application, depending on the content.
-<Canvas of={SectionalBannerStories.Discovery} />
+- Cannot be dismissed by the user.
+- Automatically dismisses once the error is resolved.
+- May block the user from proceeding until the issue is resolved.
+<Canvas of={SectionalBannerStories.Alert} />
 
 ## Properties
 <ArgTypes of={SectionalBanner} />
@@ -87,3 +89,4 @@ to a new feature or interface element that will most likely be helpful during th
 2. [https://carbondesignsystem.com/patterns/notification-pattern/](https://carbondesignsystem.com/patterns/notification-pattern/)
 3. [https://www.delldesignsystem.com/components/message-bar/?tab=Design](https://www.delldesignsystem.com/components/message-bar/?tab=Design)
 4. [https://designsystem.morningstar.com/components/banner/?version=4.3.8&tab=design&fwk=Vue](https://designsystem.morningstar.com/components/banner/?version=4.3.8&tab=design&fwk=Vue%202)
+5. [https://uxplanet.org/notification-banners-for-building-trust-factor-in-enterprise-ux-c73e35de83e2](https://uxplanet.org/notification-banners-for-building-trust-factor-in-enterprise-ux-c73e35de83e2)
