@@ -36,7 +36,7 @@
     "@maskito/kit": "5.4.0",
     "@maskito/react": "5.4.0",
     "@mui/base": "5.0.0-beta.70",
-    "@tanstack/react-table": "8.21.3",
+    "@tanstack/react-table": "9.2.4",
     "date-fns": "4.4.0",
     "lucide-react": "1.34.0",
     "prop-types": "15.8.1",
