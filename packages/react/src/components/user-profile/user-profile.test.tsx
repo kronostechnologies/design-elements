@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
-import { equisoftTheme } from '../../theme';
+import { buildTheme, equisoftThemeCustomization } from '../../theme';
 import { AZ_BG_COLORS, AZ_TXT_COLORS } from '../avatar/avatar.constants';
 import { NavItemProps } from '../dropdown-menu';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
@@ -226,13 +226,15 @@ describe('UserProfile', () => {
     });
 
     describe('inverted', () => {
+        const equisoftTheme = buildTheme(equisoftThemeCustomization);
+
         it('should use default theme colors when inverted is true', () => {
             renderWithProviders(<UserProfile inverted username="Alice" options={options} />);
 
             const avatar = screen.getByRole('img');
             expect(avatar).toHaveStyle({
-                background: equisoftTheme.component['avatar-background-color'],
-                color: equisoftTheme.component['avatar-text-color'],
+                background: equisoftTheme.component['user-profile-inverted-background-color'],
+                color: equisoftTheme.component['user-profile-inverted-text-color'],
             });
         });
 
@@ -241,8 +243,8 @@ describe('UserProfile', () => {
 
             const avatar = screen.getByRole('img');
             expect(avatar).toHaveStyle({
-                background: equisoftTheme.alias['color-background-brand-bold'],
-                color: equisoftTheme.alias['color-content-inverse'],
+                background: equisoftTheme.component['user-profile-background-color'],
+                color: equisoftTheme.component['user-profile-text-color'],
             });
         });
 

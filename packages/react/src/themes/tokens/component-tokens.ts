@@ -54,6 +54,7 @@ import { defaultToggleSwitchTokens, ToggleSwitchToken } from './component/toggle
 import { defaultToggleButtonTokens, ToggleButtonToken } from './component/toggle-button-tokens';
 import { defaultToggleTipTokens, ToggleTipToken } from './component/toggletip-tokens';
 import { defaultTooltipTokens, TooltipToken } from './component/tooltip-tokens';
+import { defaultUserProfileTokens, UserProfileToken } from './component/user-profile-tokens';
 import { defaultViewControlTokens, type ViewControlToken } from './component/view-control-tokens';
 
 export type ComponentToken =
@@ -113,6 +114,7 @@ export type ComponentToken =
     | ToggleButtonToken
     | ToggleTipToken
     | TooltipToken
+    | UserProfileToken
     | ViewControlToken;
 
 export const defaultComponentTokens = {
@@ -172,5 +174,6 @@ export const defaultComponentTokens = {
     ...defaultToggleButtonTokens,
     ...defaultToggleTipTokens,
     ...defaultTooltipTokens,
+    ...defaultUserProfileTokens,
     ...defaultViewControlTokens,
 };

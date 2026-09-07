@@ -69,11 +69,11 @@ export const UserProfile: FC<UserProfileProps> = ({
     const firstItemRef = useRef<HTMLAnchorElement>(null);
     const avatarOnly = isMobile || (variant === 'avatar-only');
     const backgroundColor = inverted
-        ? theme.component['avatar-background-color']
-        : theme.alias['color-background-brand-bold'];
+        ? theme.component['user-profile-inverted-background-color']
+        : theme.component['user-profile-background-color'];
     const textColor = inverted
-        ? theme.component['avatar-text-color']
-        : theme.alias['color-content-inverse'];
+        ? theme.component['user-profile-inverted-text-color']
+        : theme.component['user-profile-text-color'];
 
     return (
         <StyledDropdownMenuButton
