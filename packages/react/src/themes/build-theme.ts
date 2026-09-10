@@ -50,6 +50,10 @@ function isComponentToken(tokenName: TokenName): tokenName is ComponentToken {
     return tokenName in defaultComponentTokens;
 }
 
+function isHexColor(value: string): boolean {
+    return /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(value);
+}
+
 function ensureNoSelfReference<T extends TokenName, U>(
     tokenName: T,
     tokenValue: T | U,
@@ -124,6 +128,10 @@ function resolveToken(theme: ThemeDeclaration, tokenName: RefToken | AliasToken)
         }
 
         return tokenValue;
+    }
+
+    if (isHexColor(tokenName)) {
+        return tokenName;
     }
 
     devConsole.error(`Token '${tokenName}' used as value was not found`);

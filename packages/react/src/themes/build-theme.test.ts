@@ -26,6 +26,30 @@ describe('buildTheme', () => {
         expect(theme.alias['color-content']).toEqual(defaultRefTokens[refTokenName]);
     });
 
+    test('custom alias token with a valid hex value is preserved', () => {
+        const hexValue = '#123456';
+        const theme = buildTheme({
+            alias: {
+                // @ts-expect-error-hex-value-test
+                'color-content': hexValue,
+            },
+        });
+
+        expect(theme.alias['color-content']).toEqual(hexValue);
+    });
+
+    test('custom component token with a valid hex value is preserved', () => {
+        const hexValue = '#abcdef';
+        const theme = buildTheme({
+            component: {
+                // @ts-expect-error-hex-value-test
+                'text-input-text-color': hexValue,
+            },
+        });
+
+        expect(theme.component['text-input-text-color']).toEqual(hexValue);
+    });
+
     test('custom component tokens override defaults', () => {
         const refTokenName = 'color-white';
         const theme = buildTheme({
