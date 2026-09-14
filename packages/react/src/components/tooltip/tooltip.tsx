@@ -204,6 +204,11 @@ export interface TooltipProps {
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
+    /**
+     * Popper positioning strategy
+     * @default 'absolute'
+     */
+    strategy?: 'absolute' | 'fixed';
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -227,6 +232,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     label,
     mode = 'normal',
     confirmationLabel,
+    strategy = 'absolute',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -257,7 +263,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
-    }, { modifiers });
+    }, { modifiers, strategy });
 
     if (prevLabel.current !== currentLabel) {
         prevLabel.current = currentLabel;

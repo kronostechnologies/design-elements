@@ -175,4 +175,15 @@ describe('Tooltip', () => {
 
         expect(screen.getByTestId('icon-children')).toBeInTheDocument();
     });
+
+    it('opens on mouseEnter given strategy is fixed', async () => {
+        renderWithProviders(
+            <Tooltip label="Test Content" strategy="fixed" />,
+            'desktop',
+        );
+
+        await userEvent.hover(screen.getByTestId('tooltip'));
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+    });
 });
