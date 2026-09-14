@@ -223,7 +223,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -517,7 +517,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -811,7 +811,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -1105,7 +1105,7 @@ exports[`Tag Tag size=medium color=decorative-01 subtle=true matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -1399,7 +1399,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -1693,7 +1693,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=false matches snapshot (
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -1987,7 +1987,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -2281,7 +2281,7 @@ exports[`Tag Tag size=medium color=decorative-02 subtle=true matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -2575,7 +2575,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (deskto
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -2869,7 +2869,7 @@ exports[`Tag Tag size=medium color=default subtle=false matches snapshot (mobile
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -3163,7 +3163,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (desktop
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -3457,7 +3457,7 @@ exports[`Tag Tag size=medium color=default subtle=true matches snapshot (mobile 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -3752,7 +3752,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -4046,7 +4046,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=false matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -4341,7 +4341,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (de
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -4635,7 +4635,7 @@ exports[`Tag Tag size=small color=decorative-01 subtle=true matches snapshot (mo
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -4930,7 +4930,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (d
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -5224,7 +5224,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=false matches snapshot (m
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -5519,7 +5519,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (de
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -5813,7 +5813,7 @@ exports[`Tag Tag size=small color=decorative-02 subtle=true matches snapshot (mo
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -6108,7 +6108,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (desktop
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -6402,7 +6402,7 @@ exports[`Tag Tag size=small color=default subtle=false matches snapshot (mobile 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -6697,7 +6697,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (desktop 
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"
@@ -6991,7 +6991,7 @@ exports[`Tag Tag size=small color=default subtle=true matches snapshot (mobile w
   <svg
     aria-hidden="false"
     aria-label="home"
-    class="lucide lucide-house c2"
+    class="lucide lucide-house lucide-home c2"
     data-testid="Test-icon"
     fill="none"
     focusable="false"

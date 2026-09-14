@@ -181,7 +181,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-octagon-alert c2"
+      class="lucide lucide-octagon-alert lucide-alert-octagon c2"
       fill="none"
       focusable="false"
       height="16"
@@ -966,7 +966,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-triangle-alert c2"
+      class="lucide lucide-triangle-alert lucide-alert-triangle c2"
       fill="none"
       focusable="false"
       height="16"
@@ -1205,7 +1205,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-octagon-alert c2"
+      class="lucide lucide-octagon-alert lucide-alert-octagon c2"
       fill="none"
       focusable="false"
       height="24"
@@ -2002,7 +2002,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-triangle-alert c2"
+      class="lucide lucide-triangle-alert lucide-alert-triangle c2"
       fill="none"
       focusable="false"
       height="24"

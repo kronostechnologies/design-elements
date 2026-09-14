@@ -125,7 +125,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-octagon-alert c1 c2"
+      class="lucide lucide-octagon-alert lucide-alert-octagon c1 c2"
       fill="none"
       focusable="false"
       height="20"
