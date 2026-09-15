@@ -4,7 +4,7 @@ exports[`Icon matches the snapshot 1`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
-    class="lucide lucide-house"
+    class="lucide lucide-house lucide-home"
     fill="none"
     focusable="false"
     height="24"
